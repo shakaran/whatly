@@ -72,6 +72,12 @@ if (NOT Qt${QT_VERSION_MAJOR}_FOUND)
         "    cmake -S . -B build -DCMAKE_PREFIX_PATH=/path/to/Qt/6.10.0/gcc_64")
 endif()
 
+# Optional: without the Qt Linguist tools the .ts files cannot be compiled and
+# the interface simply stays English, so a missing one must not fail the build.
+# This is searched after the check above because a failed component search
+# resets Qt${QT_VERSION_MAJOR}_FOUND.
+find_package(Qt${QT_VERSION_MAJOR} QUIET COMPONENTS LinguistTools)
+
 # libnotify-qt is a D-Bus (org.freedesktop.Notifications) client and is only
 # used on Linux; other platforms fall back to QSystemTrayIcon notifications.
 if (UNIX AND NOT APPLE)
@@ -234,6 +240,37 @@ add_executable(whatsie
     ${SINGLEAPP_SOURCES}
     ${SINGLEAPP_HEADERS}
 )
+
+# Translations. The .ts files existed but were never compiled or loaded, so the
+# tr() strings always fell back to English and the Italian translation shipped
+# dead. Compile them to .qm and embed them, so main.cpp can load one for the
+# system locale.
+if (Qt${QT_VERSION_MAJOR}LinguistTools_FOUND)
+    qt_add_translations(whatsie
+        TS_FILES
+            src/i18n/ar_SA.ts
+            src/i18n/de_DE.ts
+            src/i18n/es_ES.ts
+            src/i18n/fr_FR.ts
+            src/i18n/hi_IN.ts
+            src/i18n/id_ID.ts
+            src/i18n/it_IT.ts
+            src/i18n/ja_JP.ts
+            src/i18n/ko_KR.ts
+            src/i18n/nl_NL.ts
+            src/i18n/pl_PL.ts
+            src/i18n/pt_BR.ts
+            src/i18n/ru_RU.ts
+            src/i18n/tr_TR.ts
+            src/i18n/zh_CN.ts
+        RESOURCE_PREFIX "/i18n"
+    )
+else()
+    message(WARNING
+        "Qt Linguist tools not found: translations will not be built and the "
+        "interface will be English only. Install them (qt6-tools-dev on Debian "
+        "and Ubuntu) to include the translations.")
+endif()
 
 # Include directories
 target_include_directories(whatsie PRIVATE

@@ -3,6 +3,8 @@
 
 #include "mainwindow.h"
 #include <QDateTime>
+#include <QDir>
+#include <QLocale>
 #include <QMessageBox>
 #include <QStyle>
 #include <QStyleFactory>
@@ -95,6 +97,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
           .settings()
           .value("identifyInLinkedDevices", true)
           .toBool());
+  populateLanguages();
 
   this->appAutoLockingSetChecked(
       SettingsManager::instance()
@@ -592,6 +595,55 @@ void SettingsWidget::on_dismissEmojiPanelCheckBox_toggled(bool checked) {
   SettingsManager::instance().settings().setValue(
       "webtweaks/dismissExpressionsPanel", checked);
   emit webTweaksChanged();
+}
+
+// The translations are compiled into the binary as :/i18n/<locale>.qm, so the
+// picker is built by listing them: dropping a new .ts into src/i18n and adding
+// it to CMakeLists is all it takes for a language to show up here.
+void SettingsWidget::populateLanguages() {
+  const QString current = SettingsManager::instance()
+                              .settings()
+                              .value("language")
+                              .toString();
+
+  ui->languageComboBox->blockSignals(true);
+  ui->languageComboBox->clear();
+  // An empty value means "follow the system", which stays the default.
+  ui->languageComboBox->addItem(tr("System default"), QString());
+
+  const QFileInfoList files =
+      QDir(QStringLiteral(":/i18n")).entryInfoList({QStringLiteral("*.qm")},
+                                                   QDir::Files, QDir::Name);
+  for (const QFileInfo &file : files) {
+    const QString code = file.completeBaseName(); // e.g. es_ES
+    const QLocale locale(code);
+    // Name the language in itself — an Italian speaker looks for "Italiano",
+    // not for whatever the current interface language calls it.
+    QString label = locale.nativeLanguageName();
+    if (label.isEmpty())
+      label = code;
+    else
+      label[0] = label[0].toUpper();
+    ui->languageComboBox->addItem(QStringLiteral("%1 (%2)").arg(label, code),
+                                  code);
+  }
+
+  const int index = ui->languageComboBox->findData(current);
+  ui->languageComboBox->setCurrentIndex(index >= 0 ? index : 0);
+  ui->languageComboBox->blockSignals(false);
+}
+
+void SettingsWidget::on_languageComboBox_currentIndexChanged(int index) {
+  const QString code = ui->languageComboBox->itemData(index).toString();
+  QSettings &settings = SettingsManager::instance().settings();
+  if (settings.value("language").toString() == code)
+    return;
+
+  settings.setValue("language", code);
+  // Qt would need every widget to be rebuilt to retranslate in place, so ask
+  // for a restart rather than leave half the interface in the old language.
+  emit notify(tr("The interface language will change when you restart %1.")
+                  .arg(QApplication::applicationName()));
 }
 
 void SettingsWidget::on_identifyInLinkedDevicesCheckBox_toggled(bool checked) {

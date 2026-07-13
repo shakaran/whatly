@@ -3,7 +3,10 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QLibraryInfo>
+#include <QLocale>
 #include <QStandardPaths>
+#include <QTranslator>
 #include <QtWidgets>
 #include <QtWebEngineCore>
 
@@ -91,6 +94,49 @@ static void clearSilentlyDeniedPermissions() {
   s.setValue(QStringLiteral("permissionPromptsFixed"), true);
 }
 
+// The tr() strings were never actually translated: no QTranslator was ever
+// installed and the .ts files were not even compiled, so the Italian
+// translation in the tree had never once been used. Load one for the system
+// locale, falling back to English when there is none — which is every locale
+// but Italian for now.
+//
+// Note this only covers WhatSie's own interface. The language of the chats
+// themselves is WhatsApp Web's, chosen by WhatsApp from the account and the
+// browser locale; the app neither sets nor can override it.
+static void installTranslations() {
+  // An explicit choice wins over the system locale — the whole point of the
+  // request behind this: there was no way to pick a language at all. Empty
+  // means "follow the system".
+  const QString chosen = SettingsManager::instance()
+                             .settings()
+                             .value(QStringLiteral("language"))
+                             .toString();
+  const QLocale locale =
+      chosen.isEmpty() ? QLocale::system() : QLocale(chosen);
+
+  // Qt's own strings first (standard dialogs, shortcuts, and so on).
+  auto *qtTranslator = new QTranslator(qApp);
+  if (qtTranslator->load(locale, QStringLiteral("qtbase"), QStringLiteral("_"),
+                         QLibraryInfo::path(QLibraryInfo::TranslationsPath))) {
+    qApp->installTranslator(qtTranslator);
+  }
+
+  // Then WhatSie's. qt_add_translations compiles src/i18n/<name>.ts into
+  // :/i18n/<name>.qm, so try the full locale before the bare language.
+  auto *appTranslator = new QTranslator(qApp);
+  const QStringList candidates = {
+      locale.name(),                      // it_IT
+      locale.name().section('_', 0, 0),   // it
+  };
+  for (const QString &candidate : candidates) {
+    if (appTranslator->load(QStringLiteral(":/i18n/%1.qm").arg(candidate))) {
+      qApp->installTranslator(appTranslator);
+      qInfo() << "Loaded interface translation for" << candidate;
+      return;
+    }
+  }
+}
+
 // Must run before QApplication is created so Qt WebEngine picks these up.
 static void setChromiumFlags() {
   if (!qEnvironmentVariableIsEmpty("QTWEBENGINE_CHROMIUM_FLAGS"))
@@ -159,6 +205,8 @@ int main(int argc, char *argv[]) {
   QApplication::setOrganizationDomain("net.shakaran");
   QApplication::setOrganizationName("shakaran");
   QApplication::setApplicationVersion(VERSIONSTR);
+
+  installTranslations();
 
   // This fork changed the organisation name, which moves every QStandardPaths
   // location (settings, and the WebEngine profile that holds the WhatsApp

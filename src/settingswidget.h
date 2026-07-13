@@ -69,6 +69,7 @@ private slots:
   void on_minimizeOnTrayIconClick_toggled(bool checked);
   void on_muteAudioCheckBox_toggled(bool checked);
   void on_dismissEmojiPanelCheckBox_toggled(bool checked);
+  void on_languageComboBox_currentIndexChanged(int index);
   void on_notificationCheckBox_toggled(bool checked);
   void on_notificationCombo_currentIndexChanged(int index);
   void on_notificationTimeOutspinBox_valueChanged(int arg1);
@@ -96,6 +97,10 @@ private slots:
   void on_deletePersistentData_clicked();
 
 private:
+  // Fills the language picker from the .qm files compiled into the binary, so
+  // adding a translation needs no code change.
+  void populateLanguages();
+
   Ui::SettingsWidget *ui;
   QString engineCachePath, enginePersistentStoragePath;
   QTimer *themeSwitchTimer;

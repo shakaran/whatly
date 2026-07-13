@@ -111,6 +111,19 @@ Options:
   -n, --new-chat       Open new chat prompt in a running instance of WhatSie
 ```
 
+## Languages
+
+The interface follows your system locale and can be changed in
+**Settings → General settings → Interface language** (takes effect after a
+restart). 15 languages ship with the app.
+
+> **Only `it_IT` was translated by a human.** The rest were machine-generated
+> without native-speaker review and will contain mistakes. Corrections are very
+> welcome and need no C++ — see [DOCS/TRANSLATIONS.md](DOCS/TRANSLATIONS.md).
+>
+> This covers WhatSie's own interface only. The language of the chats comes from
+> WhatsApp Web and cannot be changed here.
+
 ## Keyboard shortcuts
 
 WhatSie's own shortcuts. The same list is available in the app under

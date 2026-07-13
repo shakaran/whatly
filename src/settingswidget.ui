@@ -368,6 +368,20 @@ background:transparent;
               </property>
              </widget>
             </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="languageLabel">
+              <property name="text">
+               <string>Interface language</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QComboBox" name="languageComboBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of WhatSie's own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
             <item row="5" column="0" colspan="2">
              <widget class="QCheckBox" name="identifyInLinkedDevicesCheckBox">
               <property name="toolTip">
