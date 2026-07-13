@@ -8,6 +8,24 @@ Feature rich WhatsApp web client based on Qt WebEngine for Linux and Windows Des
 > **Keshav Bhatt**, which remains MIT-licensed. All upstream copyright and
 > authorship is preserved — see [LICENSE](LICENSE).
 
+## What WhatSie is (and is not)
+
+WhatSie is a **desktop wrapper around [web.whatsapp.com](https://web.whatsapp.com)**.
+It gives WhatsApp Web a native window with system integration — tray, notifications,
+themes, an app lock, shortcuts, a download manager — but the chat interface itself
+is WhatsApp's own web client, running in Qt WebEngine.
+
+That distinction decides where a problem belongs:
+
+- **WhatsApp Web's limits are not WhatSie bugs.** WhatsApp Web lags behind the
+  phone app for some message types, so you may see *"your version of WhatsApp Web
+  doesn't support it"*. The same message appears in Chrome or Firefox — only Meta
+  can change that.
+- **WhatsApp Web's shortcuts come from WhatsApp**, not from WhatSie, so they never
+  appear in the app's shortcut list (see [Keyboard shortcuts](#keyboard-shortcuts)).
+- **WhatSie is not a WhatsApp client of its own**: it does not implement the
+  protocol, store your messages or talk to WhatsApp's servers directly.
+
 ## What's new in this fork
 
 On top of upstream WhatSie, this fork adds:
