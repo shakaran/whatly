@@ -37,6 +37,12 @@ PermissionDialog::PermissionDialog(QWidget *parent)
       continue;
     addPermissionRow(type, QString::fromLatin1(meta.key(i)));
   }
+
+  // Connected only once the table is populated: setCheckState() emits
+  // itemChanged, so wiring this up earlier would grant or deny every permission
+  // as the rows were being drawn.
+  connect(ui->featuresTableWidget, &QTableWidget::itemChanged, this,
+          &PermissionDialog::onItemChanged);
 }
 
 bool PermissionDialog::isGranted(
@@ -85,16 +91,31 @@ void PermissionDialog::addPermissionRow(
   const int row = ui->featuresTableWidget->rowCount();
   ui->featuresTableWidget->insertRow(row);
 
-  auto *item = new QTableWidgetItem(name);
-  item->setFlags(item->flags() & ~Qt::ItemIsSelectable);
-  ui->featuresTableWidget->setItem(row, 0, item);
+  auto *nameItem = new QTableWidgetItem(name);
+  nameItem->setFlags(nameItem->flags() & ~Qt::ItemIsSelectable);
+  ui->featuresTableWidget->setItem(row, 0, nameItem);
 
-  auto *checkBox = new QCheckBox(nullptr);
-  checkBox->setStyleSheet("border:0px;margin-left:50%; margin-right:50%;");
-  checkBox->setChecked(isGranted(type));
-  connect(checkBox, &QCheckBox::toggled, this,
-          [this, type](bool checked) { setGranted(type, checked); });
-  ui->featuresTableWidget->setCellWidget(row, 1, checkBox);
+  // A checkable item rather than a QCheckBox widget: the view draws it with the
+  // current style and palette, so it follows the theme. The widget it replaces
+  // carried a hardcoded stylesheet that explicitly removed the border
+  // ("border:0px") and, by having any stylesheet at all, opted the checkbox out
+  // of the palette-aware style — leaving the indicator borderless at best and,
+  // on a dark palette, invisible.
+  auto *stateItem = new QTableWidgetItem();
+  stateItem->setFlags((stateItem->flags() | Qt::ItemIsUserCheckable) &
+                      ~Qt::ItemIsSelectable & ~Qt::ItemIsEditable);
+  stateItem->setCheckState(isGranted(type) ? Qt::Checked : Qt::Unchecked);
+  stateItem->setTextAlignment(Qt::AlignCenter);
+  stateItem->setData(Qt::UserRole, static_cast<int>(type));
+  ui->featuresTableWidget->setItem(row, 1, stateItem);
+}
+
+void PermissionDialog::onItemChanged(QTableWidgetItem *item) {
+  if (!item || item->column() != 1)
+    return;
+  const auto type = static_cast<QWebEnginePermission::PermissionType>(
+      item->data(Qt::UserRole).toInt());
+  setGranted(type, item->checkState() == Qt::Checked);
 }
 
 void PermissionDialog::keyPressEvent(QKeyEvent *e) {

@@ -1,9 +1,9 @@
 #ifndef PERMISSIONDIALOG_H
 #define PERMISSIONDIALOG_H
 
-#include <QCheckBox>
 #include <QKeyEvent>
 #include <QMetaEnum>
+#include <QTableWidgetItem>
 #include <QWebEnginePermission>
 #include <QWidget>
 
@@ -22,6 +22,9 @@ public:
 
 protected slots:
   void keyPressEvent(QKeyEvent *e);
+
+private slots:
+  void onItemChanged(QTableWidgetItem *item);
 
 private:
   void addPermissionRow(QWebEnginePermission::PermissionType type,
