@@ -6,6 +6,9 @@
 // userAgent
 extern QString defaultUserAgentStr;
 
+// The origin every page permission belongs to.
+extern const QString whatsAppOrigin;
+
 // appAutoLock
 extern int defaultAppAutoLockDuration;
 extern bool defaultAppAutoLock;

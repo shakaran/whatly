@@ -4,7 +4,7 @@
 #include <QCheckBox>
 #include <QKeyEvent>
 #include <QMetaEnum>
-#include <QWebEnginePage>
+#include <QWebEnginePermission>
 #include <QWidget>
 
 #include "settingsmanager.h"
@@ -20,17 +20,17 @@ public:
   explicit PermissionDialog(QWidget *parent = nullptr);
   ~PermissionDialog();
 
-signals:
-  void webPageFeatureChanged(QWebEnginePage::Feature feature);
-
 protected slots:
   void keyPressEvent(QKeyEvent *e);
 
-private slots:
-  void addToFeaturesTable(QWebEnginePage::Feature feature,
-                          QString &featureName);
-
 private:
+  void addPermissionRow(QWebEnginePermission::PermissionType type,
+                        const QString &name);
+  // Reads the effective state: the engine's own record for permissions it can
+  // persist, and our stored answer for the rest.
+  bool isGranted(QWebEnginePermission::PermissionType type) const;
+  void setGranted(QWebEnginePermission::PermissionType type, bool granted);
+
   Ui::PermissionDialog *ui;
 };
 
