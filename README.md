@@ -93,6 +93,28 @@ Options:
   -n, --new-chat       Open new chat prompt in a running instance of WhatSie
 ```
 
+## Keyboard shortcuts
+
+WhatSie's own shortcuts. The same list is available in the app under
+**Settings → Global shortcuts → Show shortcuts**.
+
+| Shortcut | Action |
+|---|---|
+| <kbd>Ctrl</kbd>+<kbd>N</kbd> | New chat |
+| <kbd>Ctrl</kbd>+<kbd>P</kbd> | Settings |
+| <kbd>Ctrl</kbd>+<kbd>T</kbd> | Toggle light/dark theme |
+| <kbd>Ctrl</kbd>+<kbd>L</kbd> | Lock the app |
+| <kbd>Ctrl</kbd>+<kbd>W</kbd> | Minimize to tray |
+| <kbd>Ctrl</kbd>+<kbd>Q</kbd> | Quit |
+| <kbd>F5</kbd> | Reload |
+| <kbd>F11</kbd> | Toggle fullscreen |
+
+> **WhatsApp Web has its own shortcuts too** — for searching, starting a chat,
+> marking as unread and so on. Those come from WhatsApp itself, not from
+> WhatSie, so they will never show up in the list above; they simply work inside
+> the app as they do in a browser. See WhatsApp's own keyboard-shortcuts help
+> for that list.
+
 ## Build from Source (Linux)
 
 ### Requirements
