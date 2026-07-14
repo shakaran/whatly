@@ -469,11 +469,22 @@ QString MainWindow::getPageTheme() const {
     m_webEngine->page()->runJavaScript(
         "(function(){"
         "  var v = localStorage.getItem('theme');"
+        "  if (v === null) return '';"              // WhatsApp has not stored one
         "  try { v = JSON.parse(v); } catch(e) {}"  // handle both 'dark' and '"dark"'
-        "  return v === 'dark' ? 'dark' : 'light';"
+        "  if (v === 'dark' || v === 'light') return v;"
+        "  return '';"                              // anything else: no opinion
         "})();",
         [=](const QVariant &result) {
-          theme = result.toString() == "dark" ? "dark" : "light";
+          const QString value = result.toString();
+          // Only persist a theme the page actually reported. This ran on the
+          // way out, while the page is being torn down, and runJavaScript then
+          // calls back with an empty result — which the old code folded into
+          // "light" and saved as if the user had chosen it. Every clean exit
+          // therefore reset the theme, and the loss only showed up on the next
+          // launch, which is why it looked like a startup bug.
+          if (value != QLatin1String("dark") && value != QLatin1String("light"))
+            return;
+          theme = value;
           SettingsManager::instance().settings().setValue("windowTheme", theme);
         });
   }
