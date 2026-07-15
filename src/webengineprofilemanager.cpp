@@ -107,7 +107,7 @@ void WebEngineProfileManager::configureProfile(QWebEngineProfile *profile,
     s->setAttribute(QWebEngineSettings::JavascriptCanPaste,                true);
     s->setAttribute(QWebEngineSettings::JavascriptCanAccessClipboard,      true);
 
-    applyUserSettingsTo(profile);
+    applyUserSettingsTo(profile, accountId);
 
     auto *m_profile = profile;   // the scripts below were written against m_profile
 
@@ -190,12 +190,27 @@ QWebEngineProfile *WebEngineProfileManager::profile() const {
 }
 
 void WebEngineProfileManager::applyUserSettings() {
-    // Settings are global, so a change applies to every account's profile.
-    for (QWebEngineProfile *profile : std::as_const(m_profiles))
-        applyUserSettingsTo(profile);
+    // Settings are global, so a change applies to every account's profile — but
+    // the linked-device name is per account, so each needs its own id.
+    for (auto it = m_profiles.constBegin(); it != m_profiles.constEnd(); ++it)
+        applyUserSettingsTo(it.value(), it.key());
 }
 
-void WebEngineProfileManager::applyUserSettingsTo(QWebEngineProfile *profile) {
+// The default account keeps the bare "WhatSie for Linux"; a named one appends
+// its tab name. The names live in the same settings the accounts list is saved
+// to (see MainWindow::saveAccounts).
+QString WebEngineProfileManager::accountLabel(const QString &accountId) {
+    if (accountId.isEmpty())
+        return QString();
+    QSettings &s = SettingsManager::instance().settings();
+    const QStringList ids = s.value(QStringLiteral("accounts/ids")).toStringList();
+    const QStringList names = s.value(QStringLiteral("accounts/names")).toStringList();
+    const int i = ids.indexOf(accountId);
+    return (i >= 0 && i < names.size()) ? names.at(i) : QString();
+}
+
+void WebEngineProfileManager::applyUserSettingsTo(QWebEngineProfile *profile,
+                                                  const QString &accountId) {
     QSettings &s = SettingsManager::instance().settings();
 
     profile->setHttpUserAgent(
@@ -219,5 +234,5 @@ void WebEngineProfileManager::applyUserSettingsTo(QWebEngineProfile *profile) {
     ChatWallpaper::install(profile);
     ChatTheme::install(profile);
     PrivacyBlur::install(profile);
-    LinkedDeviceName::install(profile);
+    LinkedDeviceName::install(profile, accountLabel(accountId));
 }

@@ -23,6 +23,7 @@
 #include "privacyblur.h"
 #include "webengineprofilemanager.h"
 #include "webtweaks.h"
+#include "webview.h"
 
 extern double defaultZoomFactorMaximized;
 extern int    defaultAppAutoLockDuration;
@@ -388,14 +389,18 @@ void MainWindow::initSettingWidget() {
 
   connect(m_settingsWidget, &SettingsWidget::linkedDeviceNameChanged,
           m_settingsWidget, [=]() {
-            // Update the profile scripts for future page loads, and apply the
-            // change to the already-loaded page (Qt does not propagate profile
-            // script changes to an existing page).
-            LinkedDeviceName::install(
-                WebEngineProfileManager::instance().profile());
-            if (m_webEngine && m_webEngine->page())
-              m_webEngine->page()->runJavaScript(
-                  LinkedDeviceName::scriptSource());
+            // Re-apply to every account's profile for future loads, and to each
+            // live page (Qt does not propagate profile script changes to an
+            // existing page). Each account keeps its own label.
+            WebEngineProfileManager::instance().applyUserSettings();
+            for (const Account &account : m_accounts) {
+              if (account.view && account.view->page())
+                account.view->page()->runJavaScript(
+                    LinkedDeviceName::scriptSource(account.name.isEmpty() ||
+                                                           account.id.isEmpty()
+                                                       ? QString()
+                                                       : account.name));
+            }
           });
 
   m_settingsWidget->appLockSetChecked(SettingsManager::instance()

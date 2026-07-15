@@ -37,7 +37,12 @@ private:
     // Storage paths, engine attributes and the injected profile scripts for one
     // account's profile.
     void configureProfile(QWebEngineProfile *profile, const QString &accountId);
-    void applyUserSettingsTo(QWebEngineProfile *profile);
+    void applyUserSettingsTo(QWebEngineProfile *profile,
+                             const QString &accountId);
+
+    // The display name saved for an account id ("" for the default account),
+    // used so each account shows a distinct linked-device name on the phone.
+    static QString accountLabel(const QString &accountId);
 
     QHash<QString, QWebEngineProfile *> m_profiles;
     QWebEngineProfile *m_profile = nullptr;   // the default account, id ""

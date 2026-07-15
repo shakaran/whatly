@@ -17,16 +17,19 @@
 // affects devices linked afterwards (settings key "identifyInLinkedDevices").
 namespace LinkedDeviceName {
 
-// The userscript with the current QSettings baked in. Used both for profile
-// injection (fresh page loads) and for applying a toggle to an already-loaded
-// page via QWebEnginePage::runJavaScript.
-QString scriptSource();
+// The userscript with the current QSettings baked in. accountLabel, when set,
+// is appended so several accounts in the same app show distinct names in the
+// phone's linked-devices list ("WhatSie for Linux (Work)"). Used both for
+// profile injection (fresh page loads) and for applying a toggle to an
+// already-loaded page via QWebEnginePage::runJavaScript.
+QString scriptSource(const QString &accountLabel = QString());
 
 // (Re)installs the userscript on the profile for FUTURE page loads according
 // to the current QSettings; removes it when disabled. Note: Qt does not
 // propagate profile-script changes to an already-created page, so callers
 // must also runJavaScript(scriptSource()) on the live page to apply a toggle
 // immediately.
-void install(QWebEngineProfile *profile);
+void install(QWebEngineProfile *profile,
+             const QString &accountLabel = QString());
 
 } // namespace LinkedDeviceName

@@ -97,16 +97,24 @@ static bool isEnabled() {
       .toBool();
 }
 
-QString scriptSource() {
-  const QString name = isEnabled() ? platformDeviceName() : QString();
+QString scriptSource(const QString &accountLabel) {
+  QString name = isEnabled() ? platformDeviceName() : QString();
+  if (!name.isEmpty() && !accountLabel.isEmpty())
+    name += QStringLiteral(" (%1)").arg(accountLabel);
+
+  // The label ends up inside a JS double-quoted string literal, so a quote or
+  // backslash in an account name must not break out of it.
+  QString escaped = name;
+  escaped.replace(QLatin1Char('\\'), QLatin1String("\\\\"));
+  escaped.replace(QLatin1Char('"'), QLatin1String("\\\""));
 
   QString source = QString::fromLatin1(kScriptTemplate);
   source.replace(QLatin1String("__NAME__"),
-                 QStringLiteral("\"%1\"").arg(name));
+                 QStringLiteral("\"%1\"").arg(escaped));
   return source;
 }
 
-void install(QWebEngineProfile *profile) {
+void install(QWebEngineProfile *profile, const QString &accountLabel) {
   auto *scripts = profile->scripts();
   const auto existing = scripts->find(QLatin1String(kScriptName));
   for (const auto &script : existing)
@@ -117,7 +125,7 @@ void install(QWebEngineProfile *profile) {
 
   QWebEngineScript script;
   script.setName(QLatin1String(kScriptName));
-  script.setSourceCode(scriptSource());
+  script.setSourceCode(scriptSource(accountLabel));
   script.setInjectionPoint(QWebEngineScript::DocumentReady);
   script.setWorldId(QWebEngineScript::MainWorld);
   script.setRunsOnSubFrames(false);
