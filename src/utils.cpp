@@ -1,6 +1,7 @@
 #include "utils.h"
 #include "debuglog.h"
 #include "def.h"
+#include <QStandardPaths>
 #include <QHash>
 #include <time.h>
 
@@ -49,7 +50,53 @@ QString Utils::refreshCacheSize(const QString cache_dir) {
   return QString::number(cache_size) + cache_unit;
 }
 
+// True only for a path that is safe to recursively delete: it must be a real,
+// absolute directory sitting *inside* one of the app's own storage roots.
+//
+// This exists because an empty path here wiped people's home directories.
+// QDir("").removeRecursively() operates on ".", the current working directory,
+// which for an app launched from a desktop or file manager is the user's home —
+// so if the profile ever handed back an empty cache/storage path (an
+// off-the-record profile does exactly that), clearing the cache deleted the
+// home directory. Proven with a throwaway QDir("").removeRecursively() that
+// emptied its cwd. Never trust the path; verify it.
+static bool isSafeToDelete(const QString &path) {
+  if (path.trimmed().isEmpty())
+    return false;
+
+  const QString clean = QDir(path).absolutePath();
+  const QFileInfo info(clean);
+  if (!info.isAbsolute() || clean == QLatin1String("/") ||
+      clean == QDir::homePath() || clean == QDir::rootPath())
+    return false;
+
+  // Must live under a location the app actually owns. Anything else — the home
+  // directory, the working directory, a system path — is refused outright.
+  const QList<QStandardPaths::StandardLocation> roots = {
+      QStandardPaths::AppLocalDataLocation, QStandardPaths::AppDataLocation,
+      QStandardPaths::CacheLocation,        QStandardPaths::AppConfigLocation,
+      QStandardPaths::GenericDataLocation,  QStandardPaths::GenericCacheLocation,
+  };
+  for (const auto root : roots) {
+    for (const QString &base : QStandardPaths::standardLocations(root)) {
+      if (base.isEmpty())
+        continue;
+      const QString baseClean = QDir(base).absolutePath();
+      if (clean == baseClean ||
+          clean.startsWith(baseClean + QLatin1Char('/')))
+        return true;
+    }
+  }
+  return false;
+}
+
 bool Utils::delete_cache(const QString cache_dir) {
+  if (!isSafeToDelete(cache_dir)) {
+    qWarning() << "Refusing to delete an unsafe cache path:" << cache_dir
+               << "(this guard exists because an empty path once wiped home "
+                  "directories — see issue #230)";
+    return false;
+  }
   bool deleted = QDir(cache_dir).removeRecursively();
   QDir(cache_dir).mkpath(cache_dir);
   return deleted;

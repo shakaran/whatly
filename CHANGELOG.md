@@ -44,6 +44,12 @@ over on first run, so nobody is logged out by upgrading.
 
 #### 🐞 Bug Fixes
 
+* **Clearing the cache could delete your home directory.** If the profile ever
+  handed back an empty storage path, the recursive delete ran on `.` — the
+  working directory, which is your home when the app is launched from a desktop
+  or file manager. The delete now refuses any path that is empty, relative, the
+  home directory, the root, or not inside the app's own storage. (Gentoo dropped
+  the app over this.)
 * **The theme could not be set to dark in any language but English.** The
   setting was stored as the combo box's *displayed* text, which is translated:
   running in Spanish wrote `windowTheme=claro`, and every comparison in the code
