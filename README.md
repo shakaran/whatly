@@ -19,7 +19,7 @@ multiple accounts, spell-check and more — on **Linux** and **Windows**.
 
 <br/>
 
-<img src="docs/img/window.png" width="620" alt="Whatly main window"/>
+<img src="docs/img/banner.png" width="820" alt="Whatly"/>
 
 </div>
 
@@ -122,13 +122,15 @@ On top of upstream WhatSie, this fork adds:
 
 <div align="center">
 
-<img src="docs/img/settings.png" width="440" alt="Whatly settings"/>
-&nbsp;&nbsp;
-<img src="docs/img/about.png" width="360" alt="Whatly about"/>
+<img src="docs/img/card-chat.png" width="720" alt="Whatly — chat themes and a privacy blur"/>
 
-<sub>Every feature above is a toggle in **Settings**. On the right, the About box with the built-in bug reporter.</sub>
+<img src="docs/img/card-settings.png" width="720" alt="Whatly settings — every feature is a toggle"/>
+
+<img src="docs/img/card-about.png" width="720" alt="Whatly About — one-click bug reports"/>
 
 </div>
+
+<sub>The chat list above is shown with the <b>privacy blur</b> on — that is the feature in action, not a redaction.</sub>
 
 ## Key features
 
