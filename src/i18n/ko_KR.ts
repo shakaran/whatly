@@ -417,53 +417,53 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="445"/>
-        <location filename="../mainwindow.cpp" line="451"/>
+        <location filename="../mainwindow.cpp" line="448"/>
+        <location filename="../mainwindow.cpp" line="454"/>
         <location filename="../mainwindow_webengine.cpp" line="262"/>
         <location filename="../mainwindow_webengine.cpp" line="265"/>
         <source>| Error</source>
         <translation>| 오류</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="446"/>
+        <location filename="../mainwindow.cpp" line="449"/>
         <source>Unlock to access Settings.</source>
         <translation>설정에 접근하려면 잠금을 해제하세요.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="452"/>
+        <location filename="../mainwindow.cpp" line="455"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>설정 모듈을 초기화할 수 없습니다.
 WebEngine이 초기화되지 않았습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="473"/>
+        <location filename="../mainwindow.cpp" line="476"/>
         <source> | Action required</source>
         <translation> | 작업 필요</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="474"/>
+        <location filename="../mainwindow.cpp" line="477"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>계속하려면 페이지를 다시 불러와야 합니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="679"/>
+        <location filename="../mainwindow.cpp" line="682"/>
         <source>Open</source>
         <translation>열기</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="689"/>
-        <location filename="../mainwindow_tray.cpp" line="13"/>
+        <location filename="../mainwindow.cpp" line="692"/>
+        <location filename="../mainwindow_tray.cpp" line="16"/>
         <source>New Chat</source>
         <translation>새 대화</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="690"/>
+        <location filename="../mainwindow.cpp" line="693"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>국가 번호를 포함한 유효한 WhatsApp 번호를 입력하세요 (예: +82XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="720"/>
+        <location filename="../mainwindow.cpp" line="723"/>
         <source>Rate Application</source>
         <translation>앱 평가</translation>
     </message>
@@ -479,52 +479,52 @@ Open Settings now?</source>
 지금 설정을 여시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="18"/>
+        <location filename="../mainwindow_tray.cpp" line="21"/>
         <source>Fullscreen</source>
         <translation>전체 화면</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="24"/>
+        <location filename="../mainwindow_tray.cpp" line="27"/>
         <source>Mi&amp;nimize to tray</source>
         <translation>트레이로 최소화(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="32"/>
+        <location filename="../mainwindow_tray.cpp" line="35"/>
         <source>&amp;Restore</source>
         <translation>복원(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="36"/>
+        <location filename="../mainwindow_tray.cpp" line="39"/>
         <source>Re&amp;load</source>
         <translation>새로 고침(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="42"/>
+        <location filename="../mainwindow_tray.cpp" line="45"/>
         <source>Loc&amp;k</source>
         <translation>잠금(&amp;K)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="47"/>
+        <location filename="../mainwindow_tray.cpp" line="50"/>
         <source>&amp;Mute audio</source>
         <translation>오디오 음소거(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="56"/>
+        <location filename="../mainwindow_tray.cpp" line="59"/>
         <source>&amp;Settings</source>
         <translation>설정(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="62"/>
+        <location filename="../mainwindow_tray.cpp" line="65"/>
         <source>&amp;Toggle theme</source>
         <translation>테마 전환(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="69"/>
+        <location filename="../mainwindow_tray.cpp" line="72"/>
         <source>&amp;About</source>
         <translation>정보(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="78"/>
+        <location filename="../mainwindow_tray.cpp" line="81"/>
         <source>&amp;Quit</source>
         <translation>종료(&amp;Q)</translation>
     </message>
@@ -980,7 +980,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="287"/>
-        <location filename="../settingswidget.ui" line="953"/>
+        <location filename="../settingswidget.ui" line="963"/>
         <source> Secs</source>
         <translation> 초</translation>
     </message>
@@ -1051,371 +1051,381 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="408"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp의 녹색 아이콘 대신 패널의 나머지와 어울리는 단색 트레이 아이콘을 사용합니다. WhatsApp이 연결되지 않으면 아이콘이 흐려집니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="411"/>
+        <source>Monochrome tray icon</source>
+        <translation>단색 트레이 아이콘</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="418"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;한 줄씩 건너뛰는 대신 스크롤을 부드럽게 움직입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="411"/>
+        <location filename="../settingswidget.ui" line="421"/>
         <source>Smooth scrolling</source>
         <translation>부드러운 스크롤</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="418"/>
-        <location filename="../settingswidget.cpp" line="677"/>
+        <location filename="../settingswidget.ui" line="428"/>
+        <location filename="../settingswidget.cpp" line="679"/>
         <source>Custom CSS</source>
         <translation>사용자 지정 CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="427"/>
+        <location filename="../settingswidget.ui" line="437"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web의 스타일을 바꾸는 .css 파일을 불러옵니다 — 커뮤니티 스타일시트(catppuccin 등)가 여기서 작동합니다. 채팅 테마 위에 적용됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="430"/>
+        <location filename="../settingswidget.ui" line="440"/>
         <source>Choose file…</source>
         <translation>파일 선택…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="437"/>
-        <location filename="../settingswidget.ui" line="510"/>
+        <location filename="../settingswidget.ui" line="447"/>
+        <location filename="../settingswidget.ui" line="520"/>
         <source>Clear</source>
         <translation>지우기</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="446"/>
+        <location filename="../settingswidget.ui" line="456"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;입력하는 동안 맞춤법이 틀린 단어에 밑줄을 긋고 오른쪽 클릭 메뉴에서 수정안을 제안합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="449"/>
-        <location filename="../settingswidget.cpp" line="734"/>
+        <location filename="../settingswidget.ui" line="459"/>
+        <location filename="../settingswidget.cpp" line="741"/>
         <source>Check spelling as I type</source>
         <translation>입력하는 동안 맞춤법 검사</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="456"/>
+        <location filename="../settingswidget.ui" line="466"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;검사 기준이 되는 언어입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="463"/>
+        <location filename="../settingswidget.ui" line="473"/>
         <source>Privacy blur</source>
         <translation>개인정보 흐림</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="470"/>
+        <location filename="../settingswidget.ui" line="480"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;화면을 흘깃 보는 사람이 읽지 못하도록, 마우스를 올리기 전까지 채팅을 흐리게 합니다. 한 줄에 마우스를 올리면 그 줄만 보입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="477"/>
+        <location filename="../settingswidget.ui" line="487"/>
         <source>Chat theme</source>
         <translation>채팅 테마</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="484"/>
+        <location filename="../settingswidget.ui" line="494"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web 자체의 색을 다시 입힙니다. 사진, 아바타, 스티커는 원래 색을 유지합니다. 활성화된 밝은 또는 어두운 테마 위에서 작동합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="491"/>
-        <location filename="../settingswidget.cpp" line="653"/>
+        <location filename="../settingswidget.ui" line="501"/>
+        <location filename="../settingswidget.cpp" line="655"/>
         <source>Chat wallpaper</source>
         <translation>채팅 배경</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="500"/>
+        <location filename="../settingswidget.ui" line="510"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside WhatSie, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp의 Android처럼 채팅 창의 배경으로 자신의 이미지를 사용합니다. 이미지는 WhatSie 내부에 저장되며 어디에도 업로드되지 않고 본인에게만 보입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="503"/>
+        <location filename="../settingswidget.ui" line="513"/>
         <source>Choose image…</source>
         <translation>이미지 선택…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="519"/>
+        <location filename="../settingswidget.ui" line="529"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;WhatSie for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;새 로그인은 휴대전화의 연결된 기기 목록에 «Google Chrome (Linux)» 대신 «WhatSie for Linux»(또는 해당 플랫폼)로 표시됩니다. 이 이름은 기기를 연결할 때 휴대전화에 저장되므로, 이 설정을 바꿔도 이후의 연결에만 적용됩니다. 기존 세션의 이름을 바꾸려면 로그아웃한 뒤 다시 연결하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="522"/>
+        <location filename="../settingswidget.ui" line="532"/>
         <source>Identify as WhatSie in linked devices</source>
         <translation>연결된 기기에서 WhatSie로 표시</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="533"/>
+        <location filename="../settingswidget.ui" line="543"/>
         <source>User Agent</source>
         <translation>사용자 에이전트</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="543"/>
+        <location filename="../settingswidget.ui" line="553"/>
         <source>  Set</source>
         <translation>  적용</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="554"/>
+        <location filename="../settingswidget.ui" line="564"/>
         <source>Reset to default</source>
         <translation>기본값으로 되돌리기</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="577"/>
+        <location filename="../settingswidget.ui" line="587"/>
         <source>Zoom factor when normal</source>
         <translation>일반 창일 때의 확대 비율</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="605"/>
-        <location filename="../settingswidget.ui" line="740"/>
+        <location filename="../settingswidget.ui" line="615"/>
+        <location filename="../settingswidget.ui" line="750"/>
         <source>Zoom Out</source>
         <translation>축소</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="644"/>
-        <location filename="../settingswidget.ui" line="779"/>
+        <location filename="../settingswidget.ui" line="654"/>
+        <location filename="../settingswidget.ui" line="789"/>
         <source>Zoom In</source>
         <translation>확대</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="689"/>
-        <location filename="../settingswidget.ui" line="824"/>
+        <location filename="../settingswidget.ui" line="699"/>
+        <location filename="../settingswidget.ui" line="834"/>
         <source>reset</source>
         <translation>초기화</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="712"/>
+        <location filename="../settingswidget.ui" line="722"/>
         <source>Zoom factor when maximized/fullscreen</source>
         <translation>최대화/전체 화면일 때의 확대 비율</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="847"/>
+        <location filename="../settingswidget.ui" line="857"/>
         <source>Minimize to tray</source>
         <translation>트레이로 최소화</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="856"/>
+        <location filename="../settingswidget.ui" line="866"/>
         <source>Quit</source>
         <translation>종료</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="868"/>
+        <location filename="../settingswidget.ui" line="878"/>
         <source>Global shortcuts</source>
         <translation>전역 단축키</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="875"/>
+        <location filename="../settingswidget.ui" line="885"/>
         <source>Close button action</source>
         <translation>닫기 단추 동작</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="882"/>
+        <location filename="../settingswidget.ui" line="892"/>
         <source>  Show shortcuts</source>
         <translation>  단축키 보기</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="893"/>
+        <location filename="../settingswidget.ui" line="903"/>
         <source>Permissions</source>
         <translation>권한</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="900"/>
+        <location filename="../settingswidget.ui" line="910"/>
         <source>  Show permissions</source>
         <translation>  권한 보기</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="915"/>
+        <location filename="../settingswidget.ui" line="925"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;잠금 화면을 사용합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="918"/>
+        <location filename="../settingswidget.ui" line="928"/>
         <source>Enable App lock on start</source>
         <translation>시작할 때 앱 잠금 사용</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="925"/>
+        <location filename="../settingswidget.ui" line="935"/>
         <source>Current Password</source>
         <translation>현재 비밀번호</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="932"/>
-        <location filename="../settingswidget.ui" line="966"/>
+        <location filename="../settingswidget.ui" line="942"/>
+        <location filename="../settingswidget.ui" line="976"/>
         <source>Change password</source>
         <translation>비밀번호 변경</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="935"/>
-        <location filename="../settingswidget.ui" line="1044"/>
+        <location filename="../settingswidget.ui" line="945"/>
+        <location filename="../settingswidget.ui" line="1054"/>
         <source>Change</source>
         <translation>변경</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="946"/>
+        <location filename="../settingswidget.ui" line="956"/>
         <source>Enable auto locking after</source>
         <translation>다음 시간 후 자동 잠금</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="969"/>
+        <location filename="../settingswidget.ui" line="979"/>
         <source>Reset</source>
         <translation>초기화</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1001"/>
+        <location filename="../settingswidget.ui" line="1011"/>
         <source>View password</source>
         <translation>비밀번호 보기</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1028"/>
+        <location filename="../settingswidget.ui" line="1038"/>
         <source>Default Download location</source>
         <translation>기본 다운로드 위치</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1041"/>
+        <location filename="../settingswidget.ui" line="1051"/>
         <source>Change Download Location</source>
         <translation>다운로드 위치 변경</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1060"/>
+        <location filename="../settingswidget.ui" line="1070"/>
         <source>Storage </source>
         <translation>저장소 </translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1080"/>
+        <location filename="../settingswidget.ui" line="1090"/>
         <source>Property</source>
         <translation>속성</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1087"/>
+        <location filename="../settingswidget.ui" line="1097"/>
         <source>  Clear (requires restart)</source>
         <translation>  비우기 (다시 시작 필요)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1098"/>
+        <location filename="../settingswidget.ui" line="1108"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;지속 데이터에는 지속 쿠키, HTML5 로컬 저장소, 방문한 링크가 포함됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1101"/>
+        <location filename="../settingswidget.ui" line="1111"/>
         <source>Persistent data</source>
         <translation>지속 데이터</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1108"/>
+        <location filename="../settingswidget.ui" line="1118"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1130"/>
+        <location filename="../settingswidget.ui" line="1140"/>
         <source>Size</source>
         <translation>크기</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1152"/>
+        <location filename="../settingswidget.ui" line="1162"/>
         <source>Action</source>
         <translation>동작</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="334"/>
+        <location filename="../settingswidget.cpp" line="336"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>영구 데이터(영구 쿠키 및 캐시 포함)를 삭제하고 애플리케이션을 종료합니다.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="339"/>
+        <location filename="../settingswidget.cpp" line="341"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>쿠키를 삭제하고 애플리케이션을 종료할까요?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="441"/>
+        <location filename="../settingswidget.cpp" line="443"/>
         <source>| Error</source>
         <translation>| 오류</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="442"/>
+        <location filename="../settingswidget.cpp" line="444"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>빈 User-Agent 문자열은 설정할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="493"/>
+        <location filename="../settingswidget.cpp" line="495"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>테마를 직접 변경했기 때문에 자동 테마 전환이 해제되었습니다.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="532"/>
+        <location filename="../settingswidget.cpp" line="534"/>
         <source>App lock is not configured.</source>
         <translation>앱 잠금이 설정되지 않았습니다.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="536"/>
+        <location filename="../settingswidget.cpp" line="538"/>
         <source>Do you want to setup App lock now?</source>
         <translation>지금 앱 잠금을 설정할까요?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="578"/>
+        <location filename="../settingswidget.cpp" line="580"/>
         <source>Feature permissions</source>
         <translation>기능 권한</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="644"/>
+        <location filename="../settingswidget.cpp" line="646"/>
         <source>Choose a chat wallpaper</source>
         <translation>채팅 배경 선택</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="646"/>
+        <location filename="../settingswidget.cpp" line="648"/>
         <source>Images (%1)</source>
         <translation>이미지 (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="654"/>
+        <location filename="../settingswidget.cpp" line="656"/>
         <source>Could not use that image: %1</source>
         <translation>이미지를 사용할 수 없습니다: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="669"/>
+        <location filename="../settingswidget.cpp" line="671"/>
         <source>Choose a CSS file</source>
         <translation>CSS 파일 선택</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="671"/>
+        <location filename="../settingswidget.cpp" line="673"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>스타일시트 (*.css);;모든 파일 (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="678"/>
+        <location filename="../settingswidget.cpp" line="680"/>
         <source>Could not read that file: %1</source>
         <translation>파일을 읽을 수 없습니다: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="733"/>
+        <location filename="../settingswidget.cpp" line="740"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>맞춤법 검사기(설치된 사전 없음)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="824"/>
+        <location filename="../settingswidget.cpp" line="831"/>
         <source>System default</source>
         <translation>시스템 기본값</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="857"/>
+        <location filename="../settingswidget.cpp" line="864"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>%1 을(를) 다시 시작하면 인터페이스 언어가 바뀝니다.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="871"/>
+        <location filename="../settingswidget.cpp" line="878"/>
         <source>App Lock Setup</source>
         <translation>앱 잠금 설정</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="872"/>
+        <location filename="../settingswidget.cpp" line="879"/>
         <source>Please setup the App lock password first.</source>
         <translation>먼저 앱 잠금 비밀번호를 설정하세요.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="981"/>
-        <location filename="../settingswidget.cpp" line="992"/>
+        <location filename="../settingswidget.cpp" line="988"/>
+        <location filename="../settingswidget.cpp" line="999"/>
         <source>Select download directory</source>
         <translation>다운로드 폴더 선택</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1032"/>
+        <location filename="../settingswidget.cpp" line="1039"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -1426,7 +1436,7 @@ You may also require a complete restart of Application!</source>
 애플리케이션을 완전히 다시 시작해야 할 수도 있습니다!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1038"/>
+        <location filename="../settingswidget.cpp" line="1045"/>
         <source>Do you want to proceed?</source>
         <translation>계속할까요?</translation>
     </message>

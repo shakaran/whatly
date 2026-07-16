@@ -408,6 +408,7 @@
         <file>icons/app/notification/whatsie-notify-9.png</file>
         <file>icons/app/notification/whatsie-notify-10.png</file>
         <file>icons/app/notification/whatsie-notify.png</file>
+        <file>icons/app/whatsie-symbolic.svg</file>
         <file>icons/app/notification/whatsie.png</file>
     </qresource>
 </RCC>

@@ -417,53 +417,53 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="445"/>
-        <location filename="../mainwindow.cpp" line="451"/>
+        <location filename="../mainwindow.cpp" line="448"/>
+        <location filename="../mainwindow.cpp" line="454"/>
         <location filename="../mainwindow_webengine.cpp" line="262"/>
         <location filename="../mainwindow_webengine.cpp" line="265"/>
         <source>| Error</source>
         <translation>| त्रुटि</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="446"/>
+        <location filename="../mainwindow.cpp" line="449"/>
         <source>Unlock to access Settings.</source>
         <translation>सेटिंग्स तक पहुँचने के लिए अनलॉक करें।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="452"/>
+        <location filename="../mainwindow.cpp" line="455"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>सेटिंग्स मॉड्यूल आरंभ नहीं किया जा सका।
 WebEngine आरंभ नहीं हुआ है।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="473"/>
+        <location filename="../mainwindow.cpp" line="476"/>
         <source> | Action required</source>
         <translation> | कार्रवाई आवश्यक</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="474"/>
+        <location filename="../mainwindow.cpp" line="477"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>जारी रखने के लिए पृष्ठ को पुनः लोड करना होगा।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="679"/>
+        <location filename="../mainwindow.cpp" line="682"/>
         <source>Open</source>
         <translation>खोलें</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="689"/>
-        <location filename="../mainwindow_tray.cpp" line="13"/>
+        <location filename="../mainwindow.cpp" line="692"/>
+        <location filename="../mainwindow_tray.cpp" line="16"/>
         <source>New Chat</source>
         <translation>नई चैट</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="690"/>
+        <location filename="../mainwindow.cpp" line="693"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>देश कोड सहित मान्य WhatsApp नंबर दर्ज करें (उदा॰ +91XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="720"/>
+        <location filename="../mainwindow.cpp" line="723"/>
         <source>Rate Application</source>
         <translation>ऐप्लिकेशन को रेटिंग दें</translation>
     </message>
@@ -479,52 +479,52 @@ Open Settings now?</source>
 अभी सेटिंग्स खोलें?</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="18"/>
+        <location filename="../mainwindow_tray.cpp" line="21"/>
         <source>Fullscreen</source>
         <translation>पूर्ण स्क्रीन</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="24"/>
+        <location filename="../mainwindow_tray.cpp" line="27"/>
         <source>Mi&amp;nimize to tray</source>
         <translation>ट्रे में छोटा करें (&amp;N)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="32"/>
+        <location filename="../mainwindow_tray.cpp" line="35"/>
         <source>&amp;Restore</source>
         <translation>पुनर्स्थापित करें (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="36"/>
+        <location filename="../mainwindow_tray.cpp" line="39"/>
         <source>Re&amp;load</source>
         <translation>पुनः लोड करें (&amp;L)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="42"/>
+        <location filename="../mainwindow_tray.cpp" line="45"/>
         <source>Loc&amp;k</source>
         <translation>लॉक करें (&amp;K)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="47"/>
+        <location filename="../mainwindow_tray.cpp" line="50"/>
         <source>&amp;Mute audio</source>
         <translation>ऑडियो &amp;म्यूट करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="56"/>
+        <location filename="../mainwindow_tray.cpp" line="59"/>
         <source>&amp;Settings</source>
         <translation>सेटिंग्स (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="62"/>
+        <location filename="../mainwindow_tray.cpp" line="65"/>
         <source>&amp;Toggle theme</source>
         <translation>थीम बदलें (&amp;T)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="69"/>
+        <location filename="../mainwindow_tray.cpp" line="72"/>
         <source>&amp;About</source>
         <translation>परिचय (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="78"/>
+        <location filename="../mainwindow_tray.cpp" line="81"/>
         <source>&amp;Quit</source>
         <translation>बाहर निकलें (&amp;Q)</translation>
     </message>
@@ -980,7 +980,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="287"/>
-        <location filename="../settingswidget.ui" line="953"/>
+        <location filename="../settingswidget.ui" line="963"/>
         <source> Secs</source>
         <translation> से॰</translation>
     </message>
@@ -1051,371 +1051,381 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="408"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp के हरे आइकन के बजाय, आपके पैनल के बाकी हिस्से से मेल खाता एकल-रंग ट्रे आइकन उपयोग करता है। WhatsApp कनेक्ट न होने पर आइकन मंद भी हो जाता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="411"/>
+        <source>Monochrome tray icon</source>
+        <translation>मोनोक्रोम ट्रे आइकन</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="418"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;पंक्ति दर पंक्ति कूदने के बजाय स्क्रॉलिंग को एनिमेट करता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="411"/>
+        <location filename="../settingswidget.ui" line="421"/>
         <source>Smooth scrolling</source>
         <translation>स्मूद स्क्रॉलिंग</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="418"/>
-        <location filename="../settingswidget.cpp" line="677"/>
+        <location filename="../settingswidget.ui" line="428"/>
+        <location filename="../settingswidget.cpp" line="679"/>
         <source>Custom CSS</source>
         <translation>कस्टम CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="427"/>
+        <location filename="../settingswidget.ui" line="437"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web को फिर से स्टाइल करने के लिए एक .css फ़ाइल लोड करें — कम्युनिटी स्टाइलशीट (catppuccin आदि) यहाँ काम करती हैं। चैट थीम के ऊपर लागू होती है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="430"/>
+        <location filename="../settingswidget.ui" line="440"/>
         <source>Choose file…</source>
         <translation>फ़ाइल चुनें…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="437"/>
-        <location filename="../settingswidget.ui" line="510"/>
+        <location filename="../settingswidget.ui" line="447"/>
+        <location filename="../settingswidget.ui" line="520"/>
         <source>Clear</source>
         <translation>साफ़ करें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="446"/>
+        <location filename="../settingswidget.ui" line="456"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;टाइप करते समय गलत वर्तनी वाले शब्दों को रेखांकित करता है और राइट-क्लिक मेनू में सुधार सुझाता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="449"/>
-        <location filename="../settingswidget.cpp" line="734"/>
+        <location filename="../settingswidget.ui" line="459"/>
+        <location filename="../settingswidget.cpp" line="741"/>
         <source>Check spelling as I type</source>
         <translation>टाइप करते समय वर्तनी जाँचें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="456"/>
+        <location filename="../settingswidget.ui" line="466"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;जिस भाषा के विरुद्ध जाँच की जाए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="463"/>
+        <location filename="../settingswidget.ui" line="473"/>
         <source>Privacy blur</source>
         <translation>गोपनीयता ब्लर</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="470"/>
+        <location filename="../settingswidget.ui" line="480"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;जब तक आप उन पर होवर नहीं करते तब तक आपकी चैट को ब्लर रखता है, ताकि स्क्रीन पर नज़र डालने वाला उन्हें न पढ़ सके। किसी पंक्ति पर होवर करने से केवल वही पंक्ति दिखती है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="477"/>
+        <location filename="../settingswidget.ui" line="487"/>
         <source>Chat theme</source>
         <translation>चैट थीम</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="484"/>
+        <location filename="../settingswidget.ui" line="494"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web को ही फिर से रंगता है। तस्वीरें, अवतार और स्टिकर अपने रंग बनाए रखते हैं। जो भी सक्रिय हो, लाइट या डार्क थीम के ऊपर काम करता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="491"/>
-        <location filename="../settingswidget.cpp" line="653"/>
+        <location filename="../settingswidget.ui" line="501"/>
+        <location filename="../settingswidget.cpp" line="655"/>
         <source>Chat wallpaper</source>
         <translation>चैट वॉलपेपर</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="500"/>
+        <location filename="../settingswidget.ui" line="510"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside WhatSie, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;चैट फलक की पृष्ठभूमि के रूप में अपनी कोई छवि उपयोग करें, जैसे WhatsApp Android पर करता है। छवि WhatSie के भीतर संग्रहीत होती है, कहीं अपलोड नहीं होती, और केवल आपको दिखती है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="503"/>
+        <location filename="../settingswidget.ui" line="513"/>
         <source>Choose image…</source>
         <translation>छवि चुनें…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="519"/>
+        <location filename="../settingswidget.ui" line="529"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;WhatSie for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;नए लॉगिन आपके फ़ोन की लिंक किए गए डिवाइस सूची में «Google Chrome (Linux)» के बजाय «WhatSie for Linux» (या संबंधित प्लेटफ़ॉर्म) के रूप में दिखेंगे। यह नाम डिवाइस लिंक करते समय फ़ोन पर सहेजा जाता है, इसलिए इसे बदलने का असर केवल आगे के लिंक पर पड़ेगा — किसी मौजूदा सत्र का नाम बदलने के लिए लॉग आउट कर के फिर से लिंक करें।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="522"/>
+        <location filename="../settingswidget.ui" line="532"/>
         <source>Identify as WhatSie in linked devices</source>
         <translation>लिंक किए गए डिवाइस में WhatSie के रूप में पहचानें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="533"/>
+        <location filename="../settingswidget.ui" line="543"/>
         <source>User Agent</source>
         <translation>यूज़र एजेंट</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="543"/>
+        <location filename="../settingswidget.ui" line="553"/>
         <source>  Set</source>
         <translation>  लागू करें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="554"/>
+        <location filename="../settingswidget.ui" line="564"/>
         <source>Reset to default</source>
         <translation>डिफ़ॉल्ट पर रीसेट करें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="577"/>
+        <location filename="../settingswidget.ui" line="587"/>
         <source>Zoom factor when normal</source>
         <translation>सामान्य विंडो में ज़ूम कारक</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="605"/>
-        <location filename="../settingswidget.ui" line="740"/>
+        <location filename="../settingswidget.ui" line="615"/>
+        <location filename="../settingswidget.ui" line="750"/>
         <source>Zoom Out</source>
         <translation>छोटा करें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="644"/>
-        <location filename="../settingswidget.ui" line="779"/>
+        <location filename="../settingswidget.ui" line="654"/>
+        <location filename="../settingswidget.ui" line="789"/>
         <source>Zoom In</source>
         <translation>बड़ा करें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="689"/>
-        <location filename="../settingswidget.ui" line="824"/>
+        <location filename="../settingswidget.ui" line="699"/>
+        <location filename="../settingswidget.ui" line="834"/>
         <source>reset</source>
         <translation>रीसेट</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="712"/>
+        <location filename="../settingswidget.ui" line="722"/>
         <source>Zoom factor when maximized/fullscreen</source>
         <translation>अधिकतम/पूर्ण स्क्रीन में ज़ूम कारक</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="847"/>
+        <location filename="../settingswidget.ui" line="857"/>
         <source>Minimize to tray</source>
         <translation>ट्रे में छोटा करें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="856"/>
+        <location filename="../settingswidget.ui" line="866"/>
         <source>Quit</source>
         <translation>बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="868"/>
+        <location filename="../settingswidget.ui" line="878"/>
         <source>Global shortcuts</source>
         <translation>वैश्विक शॉर्टकट</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="875"/>
+        <location filename="../settingswidget.ui" line="885"/>
         <source>Close button action</source>
         <translation>बंद करें बटन की क्रिया</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="882"/>
+        <location filename="../settingswidget.ui" line="892"/>
         <source>  Show shortcuts</source>
         <translation>  शॉर्टकट दिखाएँ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="893"/>
+        <location filename="../settingswidget.ui" line="903"/>
         <source>Permissions</source>
         <translation>अनुमतियाँ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="900"/>
+        <location filename="../settingswidget.ui" line="910"/>
         <source>  Show permissions</source>
         <translation>  अनुमतियाँ दिखाएँ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="915"/>
+        <location filename="../settingswidget.ui" line="925"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;लॉक स्क्रीन सक्रिय करें।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="918"/>
+        <location filename="../settingswidget.ui" line="928"/>
         <source>Enable App lock on start</source>
         <translation>प्रारंभ पर ऐप लॉक सक्रिय करें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="925"/>
+        <location filename="../settingswidget.ui" line="935"/>
         <source>Current Password</source>
         <translation>वर्तमान पासवर्ड</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="932"/>
-        <location filename="../settingswidget.ui" line="966"/>
+        <location filename="../settingswidget.ui" line="942"/>
+        <location filename="../settingswidget.ui" line="976"/>
         <source>Change password</source>
         <translation>पासवर्ड बदलें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="935"/>
-        <location filename="../settingswidget.ui" line="1044"/>
+        <location filename="../settingswidget.ui" line="945"/>
+        <location filename="../settingswidget.ui" line="1054"/>
         <source>Change</source>
         <translation>बदलें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="946"/>
+        <location filename="../settingswidget.ui" line="956"/>
         <source>Enable auto locking after</source>
         <translation>इतने समय बाद स्वतः लॉक करें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="969"/>
+        <location filename="../settingswidget.ui" line="979"/>
         <source>Reset</source>
         <translation>रीसेट</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1001"/>
+        <location filename="../settingswidget.ui" line="1011"/>
         <source>View password</source>
         <translation>पासवर्ड देखें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1028"/>
+        <location filename="../settingswidget.ui" line="1038"/>
         <source>Default Download location</source>
         <translation>डिफ़ॉल्ट डाउनलोड स्थान</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1041"/>
+        <location filename="../settingswidget.ui" line="1051"/>
         <source>Change Download Location</source>
         <translation>डाउनलोड स्थान बदलें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1060"/>
+        <location filename="../settingswidget.ui" line="1070"/>
         <source>Storage </source>
         <translation>संग्रहण </translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1080"/>
+        <location filename="../settingswidget.ui" line="1090"/>
         <source>Property</source>
         <translation>गुण</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1087"/>
+        <location filename="../settingswidget.ui" line="1097"/>
         <source>  Clear (requires restart)</source>
         <translation>  साफ़ करें (पुनः आरंभ आवश्यक)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1098"/>
+        <location filename="../settingswidget.ui" line="1108"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;स्थायी डेटा में स्थायी कुकीज़, HTML5 लोकल स्टोरेज और देखे गए लिंक शामिल हैं।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1101"/>
+        <location filename="../settingswidget.ui" line="1111"/>
         <source>Persistent data</source>
         <translation>स्थायी डेटा</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1108"/>
+        <location filename="../settingswidget.ui" line="1118"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1130"/>
+        <location filename="../settingswidget.ui" line="1140"/>
         <source>Size</source>
         <translation>आकार</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1152"/>
+        <location filename="../settingswidget.ui" line="1162"/>
         <source>Action</source>
         <translation>क्रिया</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="334"/>
+        <location filename="../settingswidget.cpp" line="336"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>यह स्थायी डेटा (स्थायी कुकीज़ और कैश सहित) हटा देगा और एप्लिकेशन बंद कर देगा।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="339"/>
+        <location filename="../settingswidget.cpp" line="341"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>कुकीज़ हटाएँ और एप्लिकेशन बंद करें?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="441"/>
+        <location filename="../settingswidget.cpp" line="443"/>
         <source>| Error</source>
         <translation>| त्रुटि</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="442"/>
+        <location filename="../settingswidget.cpp" line="444"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>खाली User-Agent स्ट्रिंग सेट नहीं की जा सकती।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="493"/>
+        <location filename="../settingswidget.cpp" line="495"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>थीम मैन्युअल रूप से बदलने के कारण स्वचालित थीम परिवर्तन निष्क्रिय कर दिया गया।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="532"/>
+        <location filename="../settingswidget.cpp" line="534"/>
         <source>App lock is not configured.</source>
         <translation>ऐप लॉक कॉन्फ़िगर नहीं है।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="536"/>
+        <location filename="../settingswidget.cpp" line="538"/>
         <source>Do you want to setup App lock now?</source>
         <translation>क्या आप अभी ऐप लॉक सेट करना चाहते हैं?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="578"/>
+        <location filename="../settingswidget.cpp" line="580"/>
         <source>Feature permissions</source>
         <translation>सुविधा अनुमतियाँ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="644"/>
+        <location filename="../settingswidget.cpp" line="646"/>
         <source>Choose a chat wallpaper</source>
         <translation>चैट वॉलपेपर चुनें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="646"/>
+        <location filename="../settingswidget.cpp" line="648"/>
         <source>Images (%1)</source>
         <translation>छवियाँ (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="654"/>
+        <location filename="../settingswidget.cpp" line="656"/>
         <source>Could not use that image: %1</source>
         <translation>वह छवि उपयोग नहीं की जा सकी: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="669"/>
+        <location filename="../settingswidget.cpp" line="671"/>
         <source>Choose a CSS file</source>
         <translation>एक CSS फ़ाइल चुनें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="671"/>
+        <location filename="../settingswidget.cpp" line="673"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>स्टाइलशीट (*.css);;सभी फ़ाइलें (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="678"/>
+        <location filename="../settingswidget.cpp" line="680"/>
         <source>Could not read that file: %1</source>
         <translation>वह फ़ाइल नहीं पढ़ी जा सकी: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="733"/>
+        <location filename="../settingswidget.cpp" line="740"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>वर्तनी परीक्षक (कोई शब्दकोश स्थापित नहीं)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="824"/>
+        <location filename="../settingswidget.cpp" line="831"/>
         <source>System default</source>
         <translation>सिस्टम डिफ़ॉल्ट</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="857"/>
+        <location filename="../settingswidget.cpp" line="864"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>%1 को पुनः आरंभ करने पर इंटरफ़ेस भाषा बदल जाएगी।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="871"/>
+        <location filename="../settingswidget.cpp" line="878"/>
         <source>App Lock Setup</source>
         <translation>ऐप लॉक सेटअप</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="872"/>
+        <location filename="../settingswidget.cpp" line="879"/>
         <source>Please setup the App lock password first.</source>
         <translation>कृपया पहले ऐप लॉक पासवर्ड सेट करें।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="981"/>
-        <location filename="../settingswidget.cpp" line="992"/>
+        <location filename="../settingswidget.cpp" line="988"/>
+        <location filename="../settingswidget.cpp" line="999"/>
         <source>Select download directory</source>
         <translation>डाउनलोड फ़ोल्डर चुनें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1032"/>
+        <location filename="../settingswidget.cpp" line="1039"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -1426,7 +1436,7 @@ You may also require a complete restart of Application!</source>
 आपको एप्लिकेशन को पूरी तरह पुनः आरंभ करने की भी आवश्यकता हो सकती है!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1038"/>
+        <location filename="../settingswidget.cpp" line="1045"/>
         <source>Do you want to proceed?</source>
         <translation>क्या आप आगे बढ़ना चाहते हैं?</translation>
     </message>

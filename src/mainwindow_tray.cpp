@@ -6,6 +6,9 @@
 #include <algorithm>
 
 #include <QStyleHints>
+#include <QPainter>
+#include <QPalette>
+#include <QSvgRenderer>
 
 // ── Actions ──────────────────────────────────────────────────────────────────
 
@@ -164,12 +167,104 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason) {
   }
 }
 
+// The tray icon in three independent dimensions: monochrome vs the colourful
+// green (a long-standing request — the only bright icon in an otherwise
+// monochrome tray), connected vs not (so a silent disconnect after boot or
+// resume is visible instead of being noticed hours later), and the unread
+// count. Composed here from one source rather than shipping a matrix of PNGs.
 const QIcon MainWindow::getTrayIcon(const int &notificationCount) const {
-  if (notificationCount == 0)
-    return themeIcon("whatsie-tray", ":/icons/app/notification/whatsie-notify.png");
+  const int count = std::clamp(notificationCount, 0, 10);
+  const bool monochrome = SettingsManager::instance()
+                              .settings()
+                              .value("monochromeTrayIcon", false)
+                              .toBool();
 
-  return themeIcon("whatsie-tray-attentions",
-    QString(":/icons/app/notification/whatsie-notify-%1.png").arg(std::clamp(notificationCount, 1, 10)));
+  const int size = 64;
+  QPixmap base(size, size);
+  base.fill(Qt::transparent);
+
+  if (monochrome) {
+    // A monochrome tray icon is asked for so it stops being the one bright thing
+    // in an otherwise grey tray — and those trays are almost always dark, with
+    // the other icons light. So the glyph is tinted light rather than to the app
+    // palette (which is the *window's* colour, not the panel's, and would be
+    // dark and invisible under a light app theme on a dark panel). A thin dark
+    // outline underneath keeps it visible on the rarer light panel too.
+    // Render the SVG with QSvgRenderer rather than QIcon: QIcon's SVG path
+    // silently yields nothing here (the tray then shows a broken-image glyph),
+    // whereas the renderer is direct and reliable now that Qt Svg is linked.
+    QImage glyphImg(size, size, QImage::Format_ARGB32_Premultiplied);
+    glyphImg.fill(Qt::transparent);
+    {
+      QSvgRenderer renderer(QStringLiteral(":/icons/app/whatsie-symbolic.svg"));
+      QPainter rp(&glyphImg);
+      renderer.render(&rp);
+    }
+    const QPixmap mask = QPixmap::fromImage(glyphImg);
+
+    auto tinted = [&](const QColor &c) {
+      QPixmap px = mask;
+      QPainter tp(&px);
+      tp.setCompositionMode(QPainter::CompositionMode_SourceIn);
+      tp.fillRect(px.rect(), c);
+      tp.end();
+      return px;
+    };
+
+    const QPixmap dark = tinted(QColor(0, 0, 0, 140));   // outline halo
+    const QPixmap light = tinted(QColor(0xea, 0xea, 0xea)); // main fill
+
+    QPainter p(&base);
+    for (int dx = -1; dx <= 1; ++dx)
+      for (int dy = -1; dy <= 1; ++dy)
+        if (dx || dy)
+          p.drawPixmap(dx, dy, dark);
+    p.drawPixmap(0, 0, light);
+    p.end();
+  } else {
+    // The colourful icons already carry the count badge baked in.
+    const QString path =
+        count == 0
+            ? QStringLiteral(":/icons/app/notification/whatsie-notify.png")
+            : QStringLiteral(":/icons/app/notification/whatsie-notify-%1.png")
+                  .arg(count);
+    QPixmap glyph(path);
+    QPainter p(&base);
+    p.drawPixmap(base.rect(), glyph);
+  }
+
+  // In monochrome mode the count is not baked into the glyph, so draw it.
+  if (monochrome && count > 0) {
+    QPainter p(&base);
+    p.setRenderHint(QPainter::Antialiasing);
+    const int d = 34;
+    const QRect badge(size - d, 0, d, d);
+    p.setPen(Qt::NoPen);
+    p.setBrush(QColor(0xea, 0xea, 0xea)); // same light as the glyph
+    p.drawEllipse(badge);
+    QFont f = qApp->font();
+    f.setPixelSize(count >= 10 ? 20 : 26);
+    f.setBold(true);
+    p.setFont(f);
+    p.setPen(QColor(0x11, 0x11, 0x11)); // dark number on the light badge
+    p.drawText(badge, Qt::AlignCenter, count >= 10 ? QStringLiteral("9+")
+                                                   : QString::number(count));
+    p.end();
+  }
+
+
+  // Not connected: dim the whole thing so it plainly reads as inactive.
+  if (!m_trayConnected) {
+    QPixmap dimmed(size, size);
+    dimmed.fill(Qt::transparent);
+    QPainter p(&dimmed);
+    p.setOpacity(0.40);
+    p.drawPixmap(0, 0, base);
+    p.end();
+    return QIcon(dimmed);
+  }
+
+  return QIcon(base);
 }
 
 void MainWindow::handleWebViewTitleChanged(const QString &title) {

@@ -136,6 +136,8 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
   updateCustomCssButtons();
   ui->smoothScrollingCheckBox->setChecked(
       SettingsManager::instance().settings().value("smoothScrolling", false).toBool());
+  ui->monochromeTrayIconCheckBox->setChecked(
+      SettingsManager::instance().settings().value("monochromeTrayIcon", false).toBool());
   updateChatWallpaperButtons();
 
   this->appAutoLockingSetChecked(
@@ -690,6 +692,11 @@ void SettingsWidget::on_clearCustomCssButton_clicked() {
 
 void SettingsWidget::updateCustomCssButtons() {
   ui->clearCustomCssButton->setEnabled(CustomCss::isActive());
+}
+
+void SettingsWidget::on_monochromeTrayIconCheckBox_toggled(bool checked) {
+  SettingsManager::instance().settings().setValue("monochromeTrayIcon", checked);
+  emit trayIconChanged();
 }
 
 void SettingsWidget::on_smoothScrollingCheckBox_toggled(bool checked) {

@@ -55,6 +55,7 @@ find_package(Qt${QT_VERSION_MAJOR} ${QT_VERSION_MAJOR}.${QT_VERSION_MINOR} QUIET
     WebChannel
     Positioning
     Network
+    Svg
 )
 
 if (NOT Qt${QT_VERSION_MAJOR}_FOUND)
@@ -317,6 +318,7 @@ target_link_libraries(whatsie PRIVATE
     Qt${QT_VERSION_MAJOR}::WebChannel
     Qt${QT_VERSION_MAJOR}::Positioning
     Qt${QT_VERSION_MAJOR}::Network
+    Qt${QT_VERSION_MAJOR}::Svg
 )
 
 # Linux-only libraries: D-Bus notifications and X11 (Caps Lock detection).

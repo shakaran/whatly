@@ -155,6 +155,7 @@ private:
   int m_watchdogStrikes = 0;
   int m_watchdogReloads = 0;      // reloads in the current hang episode (capped at 3)
   bool m_watchdogGaveUp = false;  // true once the cap is hit; reset on recovery
+  bool m_trayConnected = true;    // reflected in the tray icon (see getTrayIcon)
 
   QAction *m_reloadAction = nullptr;
   QAction *m_minimizeAction = nullptr;

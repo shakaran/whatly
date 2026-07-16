@@ -288,6 +288,14 @@ void MainWindow::checkConnectionHealth() {
       [this](const QVariant &result) {
         const QString state = result.toString();
 
+        // Reflect the connection in the tray icon (see getTrayIcon). "ok" is
+        // connected; "stuck" and "idle" (still connecting / offline) are not.
+        const bool connected = state == QLatin1String("ok");
+        if (connected != m_trayConnected) {
+          m_trayConnected = connected;
+          updateTrayUnread();   // repaint the tray icon in the new state
+        }
+
         if (state == QLatin1String("ok")) {
           // Connection healthy again: reset so a future, unrelated hang gets a
           // fresh set of recovery attempts.

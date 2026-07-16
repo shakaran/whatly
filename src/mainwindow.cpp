@@ -369,6 +369,9 @@ void MainWindow::initSettingWidget() {
               m_webEngine->page()->runJavaScript(WebTweaks::scriptSource());
           });
 
+  connect(m_settingsWidget, &SettingsWidget::trayIconChanged, m_settingsWidget,
+          [=]() { updateTrayUnread(); });
+
   connect(m_settingsWidget, &SettingsWidget::customCssChanged, m_settingsWidget,
           [=]() {
             CustomCss::install(WebEngineProfileManager::instance().profile());

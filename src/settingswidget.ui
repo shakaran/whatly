@@ -402,6 +402,16 @@ background:transparent;
               </property>
              </widget>
             </item>
+            <item row="12" column="1">
+             <widget class="QCheckBox" name="monochromeTrayIconCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Monochrome tray icon</string>
+              </property>
+             </widget>
+            </item>
             <item row="12" column="0">
              <widget class="QCheckBox" name="smoothScrollingCheckBox">
               <property name="toolTip">
