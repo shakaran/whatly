@@ -181,6 +181,7 @@ set(SOURCES
     src/dictionaries.cpp
     src/chatwallpaper.cpp
     src/customcss.cpp
+    src/globalshortcut.cpp
     src/privacyblur.cpp
     src/webtweaks.cpp
     src/webview.cpp
@@ -321,7 +322,9 @@ target_link_libraries(whatly PRIVATE
     Qt${QT_VERSION_MAJOR}::Svg
 )
 
-# Linux-only libraries: D-Bus notifications and X11 (Caps Lock detection).
+# Linux-only libraries: D-Bus notifications and X11 (Caps Lock detection, and
+# the X11-only global raise-window shortcut in globalshortcut.cpp — xcb is used
+# to read the key events Qt delivers on the xcb platform).
 # Qt DBus is needed directly to build the freedesktop "image-data" notification
 # hint with the byte order the spec requires (see MainWindow::notificationImageHint).
 if(UNIX AND NOT APPLE)
@@ -329,6 +332,7 @@ if(UNIX AND NOT APPLE)
     target_link_libraries(whatly PRIVATE
         notify-qt
         X11
+        xcb
         Qt${QT_VERSION_MAJOR}::DBus
     )
 endif()

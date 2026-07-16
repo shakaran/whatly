@@ -11,6 +11,7 @@
 class WebView;
 class QTabBar;
 class QStackedWidget;
+class GlobalShortcut;
 
 #include "autolockeventfilter.h"
 #include "downloadmanagerwidget.h"
@@ -150,6 +151,10 @@ private:
   // quit into minimize-to-tray (Qt 6.3+ quit() closes windows first and a
   // vetoed close cancels the quit).
   bool m_isQuitting = false;
+
+  // System-wide "raise the window" hotkey (Ctrl+Alt+W). X11 only; null/inactive
+  // on Wayland, where a `whatly -w` desktop shortcut is the alternative.
+  GlobalShortcut *m_globalShortcut = nullptr;
 
   // Connection watchdog: polls the injected WebSocket health probe and reloads
   // the page when WhatsApp's socket has died or gone silent (aggressive mode).

@@ -22,6 +22,7 @@
 
 #include "about.h"
 #include "common.h"
+#include "globalshortcut.h"
 #include "linkeddevicename.h"
 #include "rateapp.h"
 #include "theme.h"
@@ -86,6 +87,24 @@ MainWindow::MainWindow(QWidget *parent)
   // close as a real quit: mark it so closeEvent accepts instead of hiding.
   connect(qApp, &QGuiApplication::commitDataRequest, this,
           [this](QSessionManager &) { m_isQuitting = true; });
+
+#ifdef Q_OS_LINUX
+  // System-wide Ctrl+Alt+W to bring the window to the front from anywhere. This
+  // only works under X11; on Wayland the compositor refuses the grab, so point
+  // the user at the `whatly -w` desktop-shortcut alternative instead.
+  m_globalShortcut = new GlobalShortcut(this);
+  if (m_globalShortcut->tryRegister()) {
+    connect(m_globalShortcut, &GlobalShortcut::activated, this, [this]() {
+      setWindowState((windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
+      show();
+      raise();
+      activateWindow();
+    });
+  } else {
+    qInfo() << "Global raise-window shortcut needs an X11 session; on Wayland, "
+               "bind a desktop shortcut to `whatly -w` instead.";
+  }
+#endif
 }
 
 MainWindow::~MainWindow() { m_webEngine->deleteLater(); }
