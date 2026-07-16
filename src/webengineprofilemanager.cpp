@@ -6,6 +6,7 @@
 #include "chattheme.h"
 #include "dictionaries.h"
 #include "chatwallpaper.h"
+#include "customcss.h"
 #include "privacyblur.h"
 #include "webtweaks.h"
 
@@ -98,7 +99,6 @@ void WebEngineProfileManager::configureProfile(QWebEngineProfile *profile,
     s->setAttribute(QWebEngineSettings::LocalStorageEnabled,               true);
     s->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls,   true);
     s->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls,     true);
-    s->setAttribute(QWebEngineSettings::ScrollAnimatorEnabled,             false);
     s->setAttribute(QWebEngineSettings::DnsPrefetchEnabled,                true);
     s->setAttribute(QWebEngineSettings::FullScreenSupportEnabled,          true);
     s->setAttribute(QWebEngineSettings::LinksIncludedInFocusChain,         false);
@@ -220,6 +220,13 @@ void WebEngineProfileManager::applyUserSettingsTo(QWebEngineProfile *profile,
         QWebEngineSettings::PlaybackRequiresUserGesture,
         s.value(QStringLiteral("autoPlayMedia"), false).toBool());
 
+    // Smooth (animated) scrolling, off by default to match how it always
+    // behaved. A live QWebEngineSettings attribute, so the toggle takes effect
+    // without a reload.
+    profile->settings()->setAttribute(
+        QWebEngineSettings::ScrollAnimatorEnabled,
+        s.value(QStringLiteral("smoothScrolling"), false).toBool());
+
     // Chromium's spell checker underlines nothing unless it is given a language
     // whose .bdic it can actually find, so an empty list is the same as off.
     const QString dictionary = Dictionaries::preferredDictionary();
@@ -232,6 +239,7 @@ void WebEngineProfileManager::applyUserSettingsTo(QWebEngineProfile *profile,
 
     WebTweaks::install(profile);
     ChatWallpaper::install(profile);
+    CustomCss::install(profile);
     ChatTheme::install(profile);
     PrivacyBlur::install(profile);
     LinkedDeviceName::install(profile, accountLabel(accountId));

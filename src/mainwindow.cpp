@@ -21,6 +21,7 @@
 #include "theme.h"
 #include "chattheme.h"
 #include "chatwallpaper.h"
+#include "customcss.h"
 #include "privacyblur.h"
 #include "webengineprofilemanager.h"
 #include "webtweaks.h"
@@ -366,6 +367,14 @@ void MainWindow::initSettingWidget() {
             WebTweaks::install(WebEngineProfileManager::instance().profile());
             if (m_webEngine && m_webEngine->page())
               m_webEngine->page()->runJavaScript(WebTweaks::scriptSource());
+          });
+
+  connect(m_settingsWidget, &SettingsWidget::customCssChanged, m_settingsWidget,
+          [=]() {
+            CustomCss::install(WebEngineProfileManager::instance().profile());
+            for (const Account &account : m_accounts)
+              if (account.view && account.view->page())
+                account.view->page()->runJavaScript(CustomCss::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::chatWallpaperChanged,

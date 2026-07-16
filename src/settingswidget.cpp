@@ -15,6 +15,8 @@
 #include "automatictheme.h"
 #include "chattheme.h"
 #include "chatwallpaper.h"
+#include "customcss.h"
+#include "webengineprofilemanager.h"
 #include "dictionaries.h"
 #include "privacyblur.h"
 
@@ -131,6 +133,9 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
   populateChatThemes();
   populatePrivacyBlur();
   populateSpellCheck();
+  updateCustomCssButtons();
+  ui->smoothScrollingCheckBox->setChecked(
+      SettingsManager::instance().settings().value("smoothScrolling", false).toBool());
   updateChatWallpaperButtons();
 
   this->appAutoLockingSetChecked(
@@ -651,6 +656,41 @@ void SettingsWidget::on_clearChatWallpaperButton_clicked() {
   ChatWallpaper::clear();
   updateChatWallpaperButtons();
   emit chatWallpaperChanged();
+}
+
+void SettingsWidget::on_chooseCustomCssButton_clicked() {
+  const QString path = QFileDialog::getOpenFileName(
+      this, tr("Choose a CSS file"),
+      QStandardPaths::writableLocation(QStandardPaths::DownloadLocation),
+      tr("Stylesheets (*.css);;All files (*)"));
+  if (path.isEmpty())
+    return;
+
+  QString error;
+  if (!CustomCss::setFromFile(path, &error)) {
+    QMessageBox::warning(this, tr("Custom CSS"),
+                         tr("Could not read that file: %1").arg(error));
+    return;
+  }
+  updateCustomCssButtons();
+  emit customCssChanged();
+}
+
+void SettingsWidget::on_clearCustomCssButton_clicked() {
+  CustomCss::clear();
+  updateCustomCssButtons();
+  emit customCssChanged();
+}
+
+void SettingsWidget::updateCustomCssButtons() {
+  ui->clearCustomCssButton->setEnabled(CustomCss::isActive());
+}
+
+void SettingsWidget::on_smoothScrollingCheckBox_toggled(bool checked) {
+  SettingsManager::instance().settings().setValue("smoothScrolling", checked);
+  // Live: applyUserSettings re-applies the QWebEngineSettings attribute to
+  // every account profile.
+  WebEngineProfileManager::instance().applyUserSettings();
 }
 
 // The themes are data, not UI: adding one to ChatTheme::themes() puts it in

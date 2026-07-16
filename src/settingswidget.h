@@ -26,6 +26,7 @@ signals:
   void notificationPopupTimeOutChanged();
   void webTweaksChanged();
   void chatWallpaperChanged();
+  void customCssChanged();
   void chatThemeChanged();
   void privacyBlurChanged();
   void spellCheckChanged();
@@ -88,6 +89,9 @@ private slots:
   void on_useNativeFileDialog_toggled(bool checked);
   void on_chooseChatWallpaperButton_clicked();
   void on_clearChatWallpaperButton_clicked();
+  void on_chooseCustomCssButton_clicked();
+  void on_clearCustomCssButton_clicked();
+  void on_smoothScrollingCheckBox_toggled(bool checked);
   void on_chatThemeComboBox_currentIndexChanged(int index);
   void on_privacyBlurComboBox_currentIndexChanged(int index);
   void on_spellCheckCheckBox_toggled(bool checked);
@@ -110,6 +114,7 @@ private slots:
 
 private:
   void updateChatWallpaperButtons();
+  void updateCustomCssButtons();
   void populateChatThemes();
   void populatePrivacyBlur();
   void populateSpellCheck();

@@ -26,6 +26,9 @@ over on first run, so nobody is logged out by upgrading.
   compiler-generated and change with each of its deploys. Photos and avatars are
   untouched.
 * **Chat wallpaper** — your own image behind the messages.
+* **Custom CSS.** Load a .css file to restyle WhatsApp Web — the community
+  stylesheets (catppuccin and the like) work — applied on top of the chat theme.
+* **Smooth scrolling**, as an option.
 * **Privacy blur.** Blurs the chat list and the open conversation until you
   hover a row, so someone glancing at the screen cannot read them. Five levels.
 * **Theme and blur buttons inside WhatsApp's own sidebar**, above the avatar,

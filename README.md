@@ -39,6 +39,8 @@ On top of upstream WhatSie, this fork adds:
 - **Spell checker** — actually works now. Qt WebEngine needs Chromium `.bdic`
   dictionaries, not hunspell's; the fork converts and ships them, so the language
   list is no longer empty. Pick the language in Settings.
+- **Custom CSS and smooth scrolling** — load a community stylesheet (catppuccin
+  and friends) to restyle WhatsApp Web, and turn on animated scrolling.
 - **Chat themes, wallpaper and a privacy blur** — recolour WhatsApp Web (14
   themes), set your own image behind the chats, or blur them until you hover so
   nobody reads over your shoulder. Toggle the theme and the blur from buttons in

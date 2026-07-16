@@ -402,6 +402,44 @@ background:transparent;
               </property>
              </widget>
             </item>
+            <item row="12" column="0">
+             <widget class="QCheckBox" name="smoothScrollingCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Smooth scrolling</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="0">
+             <widget class="QLabel" name="customCssLabel">
+              <property name="text">
+               <string>Custom CSS</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="1">
+             <layout class="QHBoxLayout" name="customCssLayout">
+              <item>
+               <widget class="QPushButton" name="chooseCustomCssButton">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string>Choose file…</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="clearCustomCssButton">
+                <property name="text">
+                 <string>Clear</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
             <item row="10" column="0">
              <widget class="QCheckBox" name="spellCheckCheckBox">
               <property name="toolTip">
