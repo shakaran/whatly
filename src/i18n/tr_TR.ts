@@ -1105,7 +1105,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="438"/>
-        <location filename="../settingswidget.cpp" line="688"/>
+        <location filename="../settingswidget.cpp" line="712"/>
         <source>Custom CSS</source>
         <translation>Özel CSS</translation>
     </message>
@@ -1132,7 +1132,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="469"/>
-        <location filename="../settingswidget.cpp" line="759"/>
+        <location filename="../settingswidget.cpp" line="783"/>
         <source>Check spelling as I type</source>
         <translation>Yazarken yazımı denetle</translation>
     </message>
@@ -1163,7 +1163,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="511"/>
-        <location filename="../settingswidget.cpp" line="664"/>
+        <location filename="../settingswidget.cpp" line="688"/>
         <source>Chat wallpaper</source>
         <translation>Sohbet duvar kâğıdı</translation>
     </message>
@@ -1358,108 +1358,118 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Eylem</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="345"/>
+        <location filename="../settingswidget.cpp" line="369"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Bu, kalıcı verileri (kalıcı çerezler ve önbellek dahil) silecek ve uygulamayı kapatacaktır.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="350"/>
+        <location filename="../settingswidget.cpp" line="374"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>Çerezler silinsin ve uygulama kapatılsın mı?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="452"/>
+        <location filename="../settingswidget.cpp" line="476"/>
         <source>| Error</source>
         <translation>| Hata</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="453"/>
+        <location filename="../settingswidget.cpp" line="477"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>Boş bir User-Agent dizesi ayarlanamaz.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="504"/>
+        <location filename="../settingswidget.cpp" line="528"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>Tema elle değiştirildiği için otomatik tema değişimi devre dışı bırakıldı.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="543"/>
+        <location filename="../settingswidget.cpp" line="567"/>
         <source>App lock is not configured.</source>
         <translation>Uygulama kilidi yapılandırılmadı.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="547"/>
+        <location filename="../settingswidget.cpp" line="571"/>
         <source>Do you want to setup App lock now?</source>
         <translation>Uygulama kilidini şimdi ayarlamak ister misiniz?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="589"/>
+        <location filename="../settingswidget.cpp" line="613"/>
         <source>Feature permissions</source>
         <translation>Özellik izinleri</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="655"/>
+        <location filename="../settingswidget.cpp" line="679"/>
         <source>Choose a chat wallpaper</source>
         <translation>Bir sohbet duvar kâğıdı seçin</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="657"/>
+        <location filename="../settingswidget.cpp" line="681"/>
         <source>Images (%1)</source>
         <translation>Görseller (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="665"/>
+        <location filename="../settingswidget.cpp" line="689"/>
         <source>Could not use that image: %1</source>
         <translation>Bu görsel kullanılamadı: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="680"/>
+        <location filename="../settingswidget.cpp" line="704"/>
         <source>Choose a CSS file</source>
         <translation>Bir CSS dosyası seçin</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="682"/>
+        <location filename="../settingswidget.cpp" line="706"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Stil sayfaları (*.css);;Tüm dosyalar (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="689"/>
+        <location filename="../settingswidget.cpp" line="713"/>
         <source>Could not read that file: %1</source>
         <translation>Bu dosya okunamadı: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="758"/>
+        <location filename="../settingswidget.cpp" line="782"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Yazım denetleyici (yüklü sözlük yok)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="849"/>
+        <location filename="../settingswidget.cpp" line="833"/>
+        <source>None</source>
+        <translation>Yok</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="837"/>
+        <source>%1 languages</source>
+        <translation>%1 dil</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="919"/>
         <source>System default</source>
         <translation>Sistem varsayılanı</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="882"/>
+        <location filename="../settingswidget.cpp" line="952"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>Arayüz dili %1 yeniden başlatıldığında değişecek.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="896"/>
+        <location filename="../settingswidget.cpp" line="966"/>
         <source>App Lock Setup</source>
         <translation>Uygulama Kilidi Kurulumu</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="897"/>
+        <location filename="../settingswidget.cpp" line="967"/>
         <source>Please setup the App lock password first.</source>
         <translation>Lütfen önce uygulama kilidi parolasını ayarlayın.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1006"/>
-        <location filename="../settingswidget.cpp" line="1017"/>
+        <location filename="../settingswidget.cpp" line="1076"/>
+        <location filename="../settingswidget.cpp" line="1087"/>
         <source>Select download directory</source>
         <translation>İndirme klasörünü seçin</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1057"/>
+        <location filename="../settingswidget.cpp" line="1127"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -1470,7 +1480,7 @@ Bu, mevcut oturumunuzu kapatacaktır.
 Uygulamanın tamamen yeniden başlatılması da gerekebilir!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1063"/>
+        <location filename="../settingswidget.cpp" line="1133"/>
         <source>Do you want to proceed?</source>
         <translation>Devam etmek istiyor musunuz?</translation>
     </message>

@@ -28,6 +28,12 @@ QStringList availableDictionaries();
 // installed, else one matching the system locale, else the first available.
 QString preferredDictionary();
 
+// The dictionaries to spell-check with, as a list — Chromium checks against all
+// of them at once. Comes from the stored "spellCheckLanguages" list, filtered to
+// those still installed; falls back to preferredDictionary() when nothing is
+// stored, so an upgrade from the single-language setting keeps working.
+QStringList selectedDictionaries();
+
 } // namespace Dictionaries
 
 #endif // DICTIONARIES_H

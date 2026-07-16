@@ -1105,7 +1105,7 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="438"/>
-        <location filename="../settingswidget.cpp" line="688"/>
+        <location filename="../settingswidget.cpp" line="712"/>
         <source>Custom CSS</source>
         <translation>Aangepaste CSS</translation>
     </message>
@@ -1132,7 +1132,7 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="469"/>
-        <location filename="../settingswidget.cpp" line="759"/>
+        <location filename="../settingswidget.cpp" line="783"/>
         <source>Check spelling as I type</source>
         <translation>Spelling controleren tijdens het typen</translation>
     </message>
@@ -1163,7 +1163,7 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="511"/>
-        <location filename="../settingswidget.cpp" line="664"/>
+        <location filename="../settingswidget.cpp" line="688"/>
         <source>Chat wallpaper</source>
         <translation>Chatachtergrond</translation>
     </message>
@@ -1358,108 +1358,118 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Actie</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="345"/>
+        <location filename="../settingswidget.cpp" line="369"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Hiermee worden de persistente gegevens (inclusief persistente cookies en cache) verwijderd en wordt de toepassing afgesloten.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="350"/>
+        <location filename="../settingswidget.cpp" line="374"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>Cookies verwijderen en de toepassing afsluiten?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="452"/>
+        <location filename="../settingswidget.cpp" line="476"/>
         <source>| Error</source>
         <translation>| Fout</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="453"/>
+        <location filename="../settingswidget.cpp" line="477"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>Kan geen lege User-Agent-tekenreeks instellen.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="504"/>
+        <location filename="../settingswidget.cpp" line="528"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>Het automatisch wisselen van thema is uitgeschakeld omdat het thema handmatig is gewijzigd.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="543"/>
+        <location filename="../settingswidget.cpp" line="567"/>
         <source>App lock is not configured.</source>
         <translation>De app-vergrendeling is niet ingesteld.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="547"/>
+        <location filename="../settingswidget.cpp" line="571"/>
         <source>Do you want to setup App lock now?</source>
         <translation>Wilt u de app-vergrendeling nu instellen?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="589"/>
+        <location filename="../settingswidget.cpp" line="613"/>
         <source>Feature permissions</source>
         <translation>Functiemachtigingen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="655"/>
+        <location filename="../settingswidget.cpp" line="679"/>
         <source>Choose a chat wallpaper</source>
         <translation>Kies een chatachtergrond</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="657"/>
+        <location filename="../settingswidget.cpp" line="681"/>
         <source>Images (%1)</source>
         <translation>Afbeeldingen (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="665"/>
+        <location filename="../settingswidget.cpp" line="689"/>
         <source>Could not use that image: %1</source>
         <translation>Kon die afbeelding niet gebruiken: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="680"/>
+        <location filename="../settingswidget.cpp" line="704"/>
         <source>Choose a CSS file</source>
         <translation>Kies een CSS-bestand</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="682"/>
+        <location filename="../settingswidget.cpp" line="706"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Stylesheets (*.css);;Alle bestanden (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="689"/>
+        <location filename="../settingswidget.cpp" line="713"/>
         <source>Could not read that file: %1</source>
         <translation>Kon dat bestand niet lezen: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="758"/>
+        <location filename="../settingswidget.cpp" line="782"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Spellingcontrole (geen woordenboeken geïnstalleerd)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="849"/>
+        <location filename="../settingswidget.cpp" line="833"/>
+        <source>None</source>
+        <translation>Geen</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="837"/>
+        <source>%1 languages</source>
+        <translation>%1 talen</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="919"/>
         <source>System default</source>
         <translation>Systeemstandaard</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="882"/>
+        <location filename="../settingswidget.cpp" line="952"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>De interfacetaal verandert wanneer u %1 opnieuw start.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="896"/>
+        <location filename="../settingswidget.cpp" line="966"/>
         <source>App Lock Setup</source>
         <translation>App-vergrendeling instellen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="897"/>
+        <location filename="../settingswidget.cpp" line="967"/>
         <source>Please setup the App lock password first.</source>
         <translation>Stel eerst het wachtwoord voor de app-vergrendeling in.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1006"/>
-        <location filename="../settingswidget.cpp" line="1017"/>
+        <location filename="../settingswidget.cpp" line="1076"/>
+        <location filename="../settingswidget.cpp" line="1087"/>
         <source>Select download directory</source>
         <translation>Downloadmap selecteren</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1057"/>
+        <location filename="../settingswidget.cpp" line="1127"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -1470,7 +1480,7 @@ Hierdoor wordt uw huidige sessie afgemeld.
 Mogelijk is ook een volledige herstart van de toepassing vereist!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1063"/>
+        <location filename="../settingswidget.cpp" line="1133"/>
         <source>Do you want to proceed?</source>
         <translation>Wilt u doorgaan?</translation>
     </message>

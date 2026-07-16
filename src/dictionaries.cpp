@@ -96,4 +96,28 @@ QString preferredDictionary() {
   return available.first();
 }
 
+QStringList selectedDictionaries() {
+  const QStringList available = availableDictionaries();
+  if (available.isEmpty())
+    return {};
+
+  const QStringList stored = SettingsManager::instance()
+                                 .settings()
+                                 .value(QStringLiteral("spellCheckLanguages"))
+                                 .toStringList();
+  QStringList chosen;
+  for (const QString &d : stored)
+    if (available.contains(d)) // drop any that were uninstalled since
+      chosen << d;
+
+  // No multi-language list yet (fresh install or upgrade from the single
+  // setting): fall back to the one preferred dictionary.
+  if (chosen.isEmpty()) {
+    const QString one = preferredDictionary();
+    if (!one.isEmpty())
+      chosen << one;
+  }
+  return chosen;
+}
+
 } // namespace Dictionaries

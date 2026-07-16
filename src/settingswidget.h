@@ -102,7 +102,6 @@ private slots:
   void on_spellCheckCheckBox_toggled(bool checked);
   void on_themeToggleButtonCheckBox_toggled(bool checked);
   void on_privacyBlurButtonCheckBox_toggled(bool checked);
-  void on_spellCheckLanguageComboBox_currentIndexChanged(int index);
   void on_userAgentLineEdit_editingFinished();
   void on_userAgentLineEdit_textChanged(const QString &arg1);
   void on_viewPassword_clicked();
@@ -123,6 +122,8 @@ private:
   void populateChatThemes();
   void populatePrivacyBlur();
   void populateSpellCheck();
+  void updateSpellCheckSummary();
+  void saveSpellCheckLanguages();
   // Fills the language picker from the .qm files compiled into the binary, so
   // adding a translation needs no code change.
   void populateLanguages();

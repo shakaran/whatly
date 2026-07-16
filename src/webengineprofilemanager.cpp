@@ -228,14 +228,15 @@ void WebEngineProfileManager::applyUserSettingsTo(QWebEngineProfile *profile,
         s.value(QStringLiteral("smoothScrolling"), false).toBool());
 
     // Chromium's spell checker underlines nothing unless it is given a language
-    // whose .bdic it can actually find, so an empty list is the same as off.
-    const QString dictionary = Dictionaries::preferredDictionary();
+    // whose .bdic it can actually find, so an empty list is the same as off. It
+    // checks against every language in the list at once, which is the point of
+    // letting more than one be selected.
+    const QStringList dictionaries = Dictionaries::selectedDictionaries();
     const bool spellCheck =
         s.value(QStringLiteral("spellCheckEnabled"), true).toBool() &&
-        !dictionary.isEmpty();
+        !dictionaries.isEmpty();
     profile->setSpellCheckEnabled(spellCheck);
-    profile->setSpellCheckLanguages(spellCheck ? QStringList{dictionary}
-                                               : QStringList{});
+    profile->setSpellCheckLanguages(spellCheck ? dictionaries : QStringList{});
 
     WebTweaks::install(profile);
     ChatWallpaper::install(profile);

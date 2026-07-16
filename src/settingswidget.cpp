@@ -11,6 +11,11 @@
 #include <QMessageBox>
 #include <QStyle>
 #include <QStyleFactory>
+#include <QStandardItemModel>
+#include <QStandardItem>
+#include <QAbstractItemView>
+#include <QLineEdit>
+#include <QMouseEvent>
 
 #include "automatictheme.h"
 #include "chattheme.h"
@@ -243,6 +248,25 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
 }
 
 bool SettingsWidget::eventFilter(QObject *obj, QEvent *event) {
+
+  // The spell-check language combo is a multi-select: a click on the drop-down
+  // list toggles that language's checkbox and keeps the list open, instead of
+  // picking one entry and closing (which is what a plain combo does).
+  if (ui->spellCheckLanguageComboBox->view() &&
+      obj == ui->spellCheckLanguageComboBox->view()->viewport() &&
+      event->type() == QEvent::MouseButtonRelease) {
+    auto *me = static_cast<QMouseEvent *>(event);
+    QAbstractItemView *view = ui->spellCheckLanguageComboBox->view();
+    const QModelIndex index = view->indexAt(me->pos());
+    if (index.isValid()) {
+      const Qt::CheckState now =
+          view->model()->data(index, Qt::CheckStateRole).value<Qt::CheckState>();
+      view->model()->setData(index, now == Qt::Checked ? Qt::Unchecked
+                                                        : Qt::Checked,
+                             Qt::CheckStateRole);
+    }
+    return true; // consume, so the popup does not close
+  }
 
   if (isChildOf(this, obj)) {
     if (event->type() == QEvent::Wheel) {
@@ -759,9 +783,19 @@ void SettingsWidget::populateSpellCheck() {
           : tr("Check spelling as I type"));
   ui->spellCheckCheckBox->blockSignals(false);
 
-  const QString current = Dictionaries::preferredDictionary();
-  ui->spellCheckLanguageComboBox->blockSignals(true);
-  ui->spellCheckLanguageComboBox->clear();
+  // The language picker is multi-select: Chromium can check against several
+  // languages at once. A plain QComboBox is single-select, so its items are made
+  // checkable and an event filter (installed once, below) toggles them on click
+  // without closing the popup.
+  const QStringList selected = Dictionaries::selectedDictionaries();
+  auto *combo = ui->spellCheckLanguageComboBox;
+  combo->blockSignals(true);
+  if (!combo->isEditable()) {
+    combo->setEditable(true);
+    combo->lineEdit()->setReadOnly(true);
+    combo->lineEdit()->setFocusPolicy(Qt::NoFocus);
+  }
+  auto *model = new QStandardItemModel(combo);
   for (const QString &dictionary : available) {
     // "es_ES" reads better as "Español (España)".
     const QLocale locale(dictionary);
@@ -770,14 +804,55 @@ void SettingsWidget::populateSpellCheck() {
                              : locale.nativeLanguageName() +
                                    QStringLiteral(" (") + dictionary +
                                    QStringLiteral(")");
-    ui->spellCheckLanguageComboBox->addItem(name, dictionary);
-    if (dictionary == current)
-      ui->spellCheckLanguageComboBox->setCurrentIndex(
-          ui->spellCheckLanguageComboBox->count() - 1);
+    auto *item = new QStandardItem(name);
+    item->setData(dictionary, Qt::UserRole);
+    item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
+    item->setCheckState(selected.contains(dictionary) ? Qt::Checked
+                                                       : Qt::Unchecked);
+    model->appendRow(item);
   }
-  ui->spellCheckLanguageComboBox->setEnabled(
-      !available.isEmpty() && ui->spellCheckCheckBox->isChecked());
-  ui->spellCheckLanguageComboBox->blockSignals(false);
+  combo->setModel(model);
+  connect(model, &QStandardItemModel::itemChanged, this,
+          [this](QStandardItem *) { saveSpellCheckLanguages(); },
+          Qt::UniqueConnection);
+  // The view's items are toggled by a click that must not dismiss the popup.
+  if (combo->view() && !combo->view()->viewport()->property("whatsieFilter").toBool()) {
+    combo->view()->viewport()->installEventFilter(this);
+    combo->view()->viewport()->setProperty("whatsieFilter", true);
+  }
+  combo->setEnabled(!available.isEmpty() && ui->spellCheckCheckBox->isChecked());
+  combo->blockSignals(false);
+  updateSpellCheckSummary();
+}
+
+// The combo shows a summary of what is checked rather than one entry's text.
+void SettingsWidget::updateSpellCheckSummary() {
+  const QStringList selected = Dictionaries::selectedDictionaries();
+  QString text;
+  if (selected.isEmpty())
+    text = tr("None");
+  else if (selected.size() == 1)
+    text = selected.first();
+  else
+    text = tr("%1 languages").arg(selected.size());
+  ui->spellCheckLanguageComboBox->setCurrentText(text);
+  // A non-editable combo ignores setCurrentText, so also set it as the
+  // placeholder-style display via the line edit if one exists.
+  if (ui->spellCheckLanguageComboBox->lineEdit())
+    ui->spellCheckLanguageComboBox->lineEdit()->setText(text);
+}
+
+void SettingsWidget::saveSpellCheckLanguages() {
+  QStringList chosen;
+  auto *model =
+      qobject_cast<QStandardItemModel *>(ui->spellCheckLanguageComboBox->model());
+  if (model)
+    for (int i = 0; i < model->rowCount(); ++i)
+      if (model->item(i)->checkState() == Qt::Checked)
+        chosen << model->item(i)->data(Qt::UserRole).toString();
+  SettingsManager::instance().settings().setValue("spellCheckLanguages", chosen);
+  updateSpellCheckSummary();
+  emit spellCheckChanged();
 }
 
 void SettingsWidget::on_themeToggleButtonCheckBox_toggled(bool checked) {
@@ -798,12 +873,7 @@ void SettingsWidget::on_spellCheckCheckBox_toggled(bool checked) {
   emit spellCheckChanged();
 }
 
-void SettingsWidget::on_spellCheckLanguageComboBox_currentIndexChanged(int index) {
-  SettingsManager::instance().settings().setValue(
-      "spellCheckLanguage",
-      ui->spellCheckLanguageComboBox->itemData(index).toString());
-  emit spellCheckChanged();
-}
+
 
 void SettingsWidget::populatePrivacyBlur() {
   ui->privacyBlurComboBox->blockSignals(true);
