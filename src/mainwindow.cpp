@@ -9,9 +9,14 @@
 #include <QRegularExpression>
 #include <QScreen>
 #include <QStyleFactory>
+#include <QStyleHints>
 #include <QUrlQuery>
 #ifdef Q_OS_LINUX
 #include <QDBusArgument>
+#include <QDBusConnection>
+#include <QDBusInterface>
+#include <QDBusReply>
+#include <QDBusVariant>
 #endif
 
 #include "about.h"
@@ -56,6 +61,22 @@ MainWindow::MainWindow(QWidget *parent)
   tryLock();
   updateWindowTheme();
   initAutoLock();
+
+  // Follow the desktop's light/dark preference, live, when the setting is on.
+  // The portal's SettingChanged signal is what actually fires on GNOME (Qt's
+  // colorSchemeChanged does not here); keep the Qt signal too for desktops where
+  // it is the one that works.
+#ifdef Q_OS_LINUX
+  QDBusConnection::sessionBus().connect(
+      QStringLiteral("org.freedesktop.portal.Desktop"),
+      QStringLiteral("/org/freedesktop/portal/desktop"),
+      QStringLiteral("org.freedesktop.portal.Settings"),
+      QStringLiteral("SettingChanged"), this,
+      SLOT(onPortalSettingChanged(QString, QString, QDBusVariant)));
+#endif
+  connect(qApp->styleHints(), &QStyleHints::colorSchemeChanged, this,
+          [this](Qt::ColorScheme) { applySystemThemeIfEnabled(); });
+  applySystemThemeIfEnabled();
 }
 
 MainWindow::~MainWindow() { m_webEngine->deleteLater(); }
@@ -248,6 +269,106 @@ void MainWindow::handleZoom() {
 
 // ── Theme ─────────────────────────────────────────────────────────────────────
 
+// Follow the desktop's own light/dark preference (GNOME's colour-scheme toggle,
+// KDE's, the freedesktop appearance portal — Qt surfaces them all through
+// QStyleHints::colorScheme). Enabled by a setting; when on, it overrides the
+// manual theme and the sunrise/sunset switcher, and re-applies the moment the
+// system preference changes.
+// The desktop's light/dark preference, as "dark"/"light", or empty when it
+// cannot be determined. The freedesktop appearance portal is the source of
+// truth and works on GNOME and KDE alike (color-scheme: 1 = dark, 2 = light);
+// QStyleHints is only a fallback, because on GNOME without a Qt platform theme
+// it does not track the setting at all (measured: it stayed "Light" with the
+// system in dark).
+static QString desktopColorScheme() {
+#ifdef Q_OS_LINUX
+  QDBusInterface portal(QStringLiteral("org.freedesktop.portal.Desktop"),
+                        QStringLiteral("/org/freedesktop/portal/desktop"),
+                        QStringLiteral("org.freedesktop.portal.Settings"),
+                        QDBusConnection::sessionBus());
+  if (portal.isValid()) {
+    // portal Settings.Read returns a variant that GNOME nests inside another
+    // variant, so unwrap QDBusVariant until a plain value is left — otherwise
+    // every read looks empty and the whole thing silently falls back to Qt
+    // (which does not track the setting here at all).
+    const auto read = [&](const QString &ns) -> QVariant {
+      QDBusReply<QVariant> reply = portal.call(
+          QStringLiteral("Read"), ns, QStringLiteral("color-scheme"));
+      if (!reply.isValid())
+        return QVariant();
+      QVariant v = reply.value();
+      while (v.canConvert<QDBusVariant>())
+        v = v.value<QDBusVariant>().variant();
+      return v;
+    };
+
+    // GNOME's own key first, as a string. The standard appearance namespace is
+    // stuck reporting "light" on at least one GNOME here (measured), while this
+    // one tracks the setting correctly. Reading through the portal, not
+    // gsettings, keeps it working inside a flatpak/snap sandbox.
+    const QString gnome = read(QStringLiteral("org.gnome.desktop.interface")).toString();
+    if (gnome == QLatin1String("prefer-dark"))
+      return QStringLiteral("dark");
+    if (gnome == QLatin1String("prefer-light"))
+      return QStringLiteral("light");
+    // "default" or absent → try the standard namespace.
+
+    // The cross-desktop standard (KDE and a healthy GNOME): 1 = dark, 2 = light.
+    const QVariant fdo = read(QStringLiteral("org.freedesktop.appearance"));
+    if (fdo.isValid()) {
+      const uint scheme = fdo.toUInt();
+      if (scheme == 1)
+        return QStringLiteral("dark");
+      if (scheme == 2)
+        return QStringLiteral("light");
+    }
+  }
+#endif
+  switch (qApp->styleHints()->colorScheme()) {
+  case Qt::ColorScheme::Dark:
+    return QStringLiteral("dark");
+  case Qt::ColorScheme::Light:
+    return QStringLiteral("light");
+  default:
+    return QString();
+  }
+}
+
+void MainWindow::applySystemThemeIfEnabled() {
+  if (!SettingsManager::instance()
+           .settings()
+           .value("followSystemTheme", false)
+           .toBool())
+    return;
+
+  const QString theme = desktopColorScheme();
+  if (theme.isEmpty()) // no preference exposed; leave the theme as it is
+    return;
+  if (SettingsManager::instance().settings().value("windowTheme").toString() ==
+      theme)
+    return;
+
+  SettingsManager::instance().settings().setValue("windowTheme", theme);
+  updateWindowTheme();
+  updatePageTheme();
+  if (m_settingsWidget)
+    m_settingsWidget->refresh();   // keep the theme combo in step
+}
+
+#ifdef Q_OS_LINUX
+void MainWindow::onPortalSettingChanged(const QString &nspace,
+                                        const QString &key,
+                                        const QDBusVariant &value) {
+  Q_UNUSED(value);
+  // Either namespace's color-scheme change is worth re-checking — GNOME emits on
+  // org.gnome.desktop.interface, KDE on org.freedesktop.appearance.
+  if (key == QLatin1String("color-scheme") &&
+      (nspace == QLatin1String("org.freedesktop.appearance") ||
+       nspace == QLatin1String("org.gnome.desktop.interface")))
+    applySystemThemeIfEnabled();
+}
+#endif
+
 void MainWindow::updateWindowTheme() {
   qApp->setStyle(QStyleFactory::create(SettingsManager::instance()
                                            .settings()
@@ -368,6 +489,9 @@ void MainWindow::initSettingWidget() {
             if (m_webEngine && m_webEngine->page())
               m_webEngine->page()->runJavaScript(WebTweaks::scriptSource());
           });
+
+  connect(m_settingsWidget, &SettingsWidget::followSystemThemeChanged,
+          m_settingsWidget, [=]() { applySystemThemeIfEnabled(); });
 
   connect(m_settingsWidget, &SettingsWidget::trayIconChanged, m_settingsWidget,
           [=]() { updateTrayUnread(); });

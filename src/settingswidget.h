@@ -28,6 +28,7 @@ signals:
   void chatWallpaperChanged();
   void customCssChanged();
   void trayIconChanged();
+  void followSystemThemeChanged();
   void chatThemeChanged();
   void privacyBlurChanged();
   void spellCheckChanged();
@@ -95,6 +96,7 @@ private slots:
   void on_clearCustomCssButton_clicked();
   void on_smoothScrollingCheckBox_toggled(bool checked);
   void on_monochromeTrayIconCheckBox_toggled(bool checked);
+  void on_followSystemThemeCheckBox_toggled(bool checked);
   void on_chatThemeComboBox_currentIndexChanged(int index);
   void on_privacyBlurComboBox_currentIndexChanged(int index);
   void on_spellCheckCheckBox_toggled(bool checked);

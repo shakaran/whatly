@@ -21,6 +21,7 @@ class QStackedWidget;
 #include "webenginepage.h"
 #ifdef Q_OS_LINUX
 #include <libnotify-qt.h>
+#include <QDBusVariant>
 #endif
 
 class MainWindow : public QMainWindow {
@@ -38,6 +39,7 @@ public:
 
 public slots:
   void updateWindowTheme();
+  void applySystemThemeIfEnabled();
   void updatePageTheme();
   void handleWebViewTitleChanged(const QString &title);
   void handleLoadFinished(bool loaded);
@@ -189,6 +191,12 @@ private slots:
   void fullScreenRequested(QWebEngineFullScreenRequest request);
   void checkWindowState();
   void initLock();
+#ifdef Q_OS_LINUX
+  // The freedesktop appearance portal changed a setting; re-apply the
+  // system theme if we are following it.
+  void onPortalSettingChanged(const QString &nspace, const QString &key,
+                              const QDBusVariant &value);
+#endif
   void quitApp();
   void changeLockPassword();
   void appAutoLockChanged();

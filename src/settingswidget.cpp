@@ -138,6 +138,15 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
       SettingsManager::instance().settings().value("smoothScrolling", false).toBool());
   ui->monochromeTrayIconCheckBox->setChecked(
       SettingsManager::instance().settings().value("monochromeTrayIcon", false).toBool());
+  {
+    const bool followSystem =
+        SettingsManager::instance().settings().value("followSystemTheme", false).toBool();
+    ui->followSystemThemeCheckBox->blockSignals(true);
+    ui->followSystemThemeCheckBox->setChecked(followSystem);
+    ui->followSystemThemeCheckBox->blockSignals(false);
+    ui->themeComboBox->setEnabled(!followSystem);
+    ui->automaticThemeCheckBox->setEnabled(!followSystem);
+  }
   updateChatWallpaperButtons();
 
   this->appAutoLockingSetChecked(
@@ -692,6 +701,15 @@ void SettingsWidget::on_clearCustomCssButton_clicked() {
 
 void SettingsWidget::updateCustomCssButtons() {
   ui->clearCustomCssButton->setEnabled(CustomCss::isActive());
+}
+
+void SettingsWidget::on_followSystemThemeCheckBox_toggled(bool checked) {
+  SettingsManager::instance().settings().setValue("followSystemTheme", checked);
+  // When enabled, the manual theme combo and the sunrise/sunset switch no longer
+  // decide the theme, so grey them out to say so.
+  ui->themeComboBox->setEnabled(!checked);
+  ui->automaticThemeCheckBox->setEnabled(!checked);
+  emit followSystemThemeChanged();
 }
 
 void SettingsWidget::on_monochromeTrayIconCheckBox_toggled(bool checked) {

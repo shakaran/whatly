@@ -192,6 +192,16 @@ background:transparent;
               </item>
              </widget>
             </item>
+            <item row="1" column="0" colspan="3">
+             <widget class="QCheckBox" name="followSystemThemeCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Match the desktop's own light/dark preference, and change with it. Overrides the manual theme and the automatic sunrise/sunset switch.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Follow system light/dark theme</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
           <item row="4" column="0">
