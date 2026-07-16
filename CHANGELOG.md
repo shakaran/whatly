@@ -45,7 +45,9 @@ upgrading. If the automatic copy ever misses something, `whatly
 * Image paste from a browser's clipboard.
 * A connection watchdog that reloads the page when WhatsApp's WebSocket hangs,
   capped at three reloads per episode.
-* Identify as Whatly in the phone's linked-devices list, instead of as Chrome.
+* Identify as Whatly in the phone's linked-devices list, instead of as Chrome —
+  reported as a desktop client so the phone shows a computer icon beside the
+  "Whatly for Linux" label rather than leaving it blank.
 * Close the emoji panel by clicking outside it (opt-in).
 * `F1` opens About; its **Report a Bug** button fills in the GitHub issue with
   the version, commit, memory usage of the whole process tree, and the recent

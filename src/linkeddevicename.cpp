@@ -42,37 +42,75 @@ static const char kScriptTemplate[] = R"JS(
       return inf;
     };
   };
+  // The phone draws the linked device as an icon plus the "os" text. The text
+  // is arbitrary (that is how "Whatly for Linux" gets there), but the icon is
+  // chosen from WhatsApp's own set by the *client type*, which
+  // getCompanionWebClientFromBrowser() derives from the browser name. Our name
+  // is deliberately unrecognized (to drop the "Google Chrome" prefix), so that
+  // lookup falls to OTHER_WEB_CLIENT — which has no icon, leaving it blank.
+  // Report the desktop-app client instead, so a computer icon shows next to the
+  // still-prefix-free label. The desktop value is the one the function returns
+  // on Windows; capture it at run time by flipping isWindows for that one call
+  // rather than hardcoding an enum number that WhatsApp could renumber.
+  var hookDeviceIcon = function (modules) {
+    if (window.__whatlyDeviceIconHooked) return;
+    if (!modules['WAWebCompanionRegClientUtils'] || !modules['WAWebEnvironment'])
+      return;
+    var cru = window.require('WAWebCompanionRegClientUtils');
+    var env = window.require('WAWebEnvironment');
+    if (!cru || typeof cru.getCompanionWebClientFromBrowser !== 'function' || !env)
+      return;
+    var saved = env.isWindows;
+    var desktop;
+    try {
+      env.isWindows = true;
+      desktop = cru.getCompanionWebClientFromBrowser();
+    } finally {
+      env.isWindows = saved;
+    }
+    cru.getCompanionWebClientFromBrowser = function () { return desktop; };
+    window.__whatlyDeviceIconHooked = true;
+  };
+
+  var hookName = function (modules) {
+    if (window.__whatlyLinkedDeviceNameHooked) return;
+    // Current builds: bare-function module, patched via the registry.
+    var rec = modules['WAWebBrowserInfo'];
+    if (rec && typeof rec.defaultExport === 'function') {
+      var wrapped = wrap(rec.defaultExport);
+      rec.defaultExport = wrapped;
+      if (rec.exports && typeof rec.exports.default === 'function')
+        rec.exports.default = wrapped;
+      window.__whatlyLinkedDeviceNameHooked = true;
+      return;
+    }
+    // Older builds: plain export on WAWebMiscBrowserUtils. Ask the registry
+    // first — require()ing a module WhatsApp does not have throws, and it
+    // logs "Requiring unknown module" to the console before it does, once
+    // per retry. Current builds no longer ship it at all.
+    if (modules['WAWebMiscBrowserUtils']) {
+      var mod = window.require('WAWebMiscBrowserUtils');
+      if (mod && typeof mod.info === 'function') {
+        mod.info = wrap(mod.info);
+        window.__whatlyLinkedDeviceNameHooked = true;
+      }
+    }
+  };
+
   var tries = 0;
   var hook = function () {
-    if (window.__whatlyLinkedDeviceNameHooked) return;
     try {
       if (typeof window.require === 'function') {
         var modules = window.require('__debug').modulesMap;
-        // Current builds: bare-function module, patched via the registry.
-        var rec = modules['WAWebBrowserInfo'];
-        if (rec && typeof rec.defaultExport === 'function') {
-          var wrapped = wrap(rec.defaultExport);
-          rec.defaultExport = wrapped;
-          if (rec.exports && typeof rec.exports.default === 'function')
-            rec.exports.default = wrapped;
-          window.__whatlyLinkedDeviceNameHooked = true;
-          return;
-        }
-        // Older builds: plain export on WAWebMiscBrowserUtils. Ask the registry
-        // first — require()ing a module WhatsApp does not have throws, and it
-        // logs "Requiring unknown module" to the console before it does, once
-        // per retry. Current builds no longer ship it at all.
-        if (modules['WAWebMiscBrowserUtils']) {
-          var mod = window.require('WAWebMiscBrowserUtils');
-          if (mod && typeof mod.info === 'function') {
-            mod.info = wrap(mod.info);
-            window.__whatlyLinkedDeviceNameHooked = true;
-            return;
-          }
-        }
+        // Each guarded by its own flag: the modules can register at different
+        // times, so install whichever is ready and keep retrying for the rest.
+        try { hookName(modules); } catch (e) { /* retry */ }
+        try { hookDeviceIcon(modules); } catch (e) { /* retry */ }
       }
-    } catch (e) { /* module not registered yet — retry */ }
-    if (++tries < 120) setTimeout(hook, 250);  // ~30s while the app boots
+    } catch (e) { /* module system not registered yet — retry */ }
+    if ((!window.__whatlyLinkedDeviceNameHooked ||
+         !window.__whatlyDeviceIconHooked) && ++tries < 120)
+      setTimeout(hook, 250);  // ~30s while the app boots
   };
   hook();
 })();
