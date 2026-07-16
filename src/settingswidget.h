@@ -45,6 +45,7 @@ public slots:
   void refresh();
   void updateDefaultUAButton(const QString engineUA);
   void appLockSetChecked(bool checked);
+  void muteAudioSetChecked(bool checked);
   void setCurrentPasswordText(QString str);
   void clearAllData();
   void autoAppLockSetChecked(bool checked);

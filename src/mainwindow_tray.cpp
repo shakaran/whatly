@@ -44,6 +44,15 @@ void MainWindow::createActions() {
   connect(m_lockAction, &QAction::triggered, this, &MainWindow::lockApp);
   addAction(m_lockAction);
 
+  m_muteAction = new QAction(tr("&Mute audio"), this);
+  m_muteAction->setCheckable(true);
+  m_muteAction->setShortcut(QKeySequence(Qt::Modifier::CTRL | Qt::Key_M));
+  m_muteAction->setChecked(
+      SettingsManager::instance().settings().value("muteAudio", false).toBool());
+  connect(m_muteAction, &QAction::toggled, this,
+          [this](bool checked) { toggleMute(checked); });
+  addAction(m_muteAction);
+
   m_settingsAction = new QAction(tr("&Settings"), this);
   m_settingsAction->setShortcut(QKeySequence(Qt::Modifier::CTRL | Qt::Key_P));
   connect(m_settingsAction, &QAction::triggered, this,
@@ -82,6 +91,7 @@ void MainWindow::createTrayIcon() {
   m_trayIconMenu->addSeparator();
   m_trayIconMenu->addAction(m_reloadAction);
   m_trayIconMenu->addAction(m_lockAction);
+  m_trayIconMenu->addAction(m_muteAction);
   m_trayIconMenu->addSeparator();
   m_trayIconMenu->addAction(m_openUrlAction);
   m_trayIconMenu->addAction(m_toggleThemeAction);

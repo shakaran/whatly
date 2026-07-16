@@ -466,6 +466,12 @@ void SettingsWidget::updateAppLockPasswordViewer() {
                                  .toUtf8()));
 }
 
+void SettingsWidget::muteAudioSetChecked(bool checked) {
+  ui->muteAudioCheckBox->blockSignals(true);
+  ui->muteAudioCheckBox->setChecked(checked);
+  ui->muteAudioCheckBox->blockSignals(false);
+}
+
 void SettingsWidget::appLockSetChecked(bool checked) {
   ui->applock_checkbox->blockSignals(true);
   ui->applock_checkbox->setChecked(checked);

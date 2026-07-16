@@ -164,6 +164,7 @@ private:
   QAction *m_toggleThemeAction = nullptr;
   QAction *m_quitAction = nullptr;
   QAction *m_lockAction = nullptr;
+  QAction *m_muteAction = nullptr;
   QAction *m_fullscreenAction = nullptr;
   QAction *m_openUrlAction = nullptr;
 

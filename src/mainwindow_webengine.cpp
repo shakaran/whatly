@@ -559,5 +559,17 @@ void MainWindow::fullScreenRequested(QWebEngineFullScreenRequest request) {
 // ── Misc web engine helpers ───────────────────────────────────────────────────
 
 void MainWindow::toggleMute(const bool &checked) {
-  m_webEngine->page()->setAudioMuted(checked);
+  // Mute every account, not just the visible one — a background account's call
+  // tone or notification sound should go quiet too.
+  for (const Account &account : m_accounts)
+    if (account.view && account.view->page())
+      account.view->page()->setAudioMuted(checked);
+
+  SettingsManager::instance().settings().setValue("muteAudio", checked);
+  // Keep the tray action and the Settings checkbox showing the same state,
+  // wherever the toggle came from.
+  if (m_muteAction && m_muteAction->isChecked() != checked)
+    m_muteAction->setChecked(checked);
+  if (m_settingsWidget)
+    m_settingsWidget->muteAudioSetChecked(checked);
 }
