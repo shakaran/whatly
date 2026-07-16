@@ -1,12 +1,49 @@
+<div align="center">
+
+<img src="docs/img/logo.png" width="120" alt="Whatly logo"/>
+
 # Whatly
 
-Feature rich WhatsApp web client based on Qt WebEngine for Linux and Windows Desktop
+**A feature-rich desktop client for WhatsApp Web.**
+Native window, system tray, notifications, chat themes, privacy blur,
+multiple accounts, spell-check and more — on **Linux** and **Windows**.
+
+[![Release](https://img.shields.io/github/v/release/shakaran/whatly?sort=semver&color=0d9488&label=release)](https://github.com/shakaran/whatly/releases/latest)
+[![Windows Build](https://github.com/shakaran/whatly/actions/workflows/windows-build.yml/badge.svg)](https://github.com/shakaran/whatly/actions/workflows/windows-build.yml)
+[![Downloads](https://img.shields.io/github/downloads/shakaran/whatly/total?color=0d9488&label=downloads)](https://github.com/shakaran/whatly/releases)
+[![License: MIT](https://img.shields.io/github/license/shakaran/whatly?color=0d9488)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/shakaran/whatly?color=0d9488)](https://github.com/shakaran/whatly/stargazers)
+![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows-0d9488)
+![Qt](https://img.shields.io/badge/Qt-6.10%2B-41cd52?logo=qt&logoColor=white)
+![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)
+
+<br/>
+
+<img src="docs/img/window.png" width="620" alt="Whatly main window"/>
+
+</div>
+
+---
 
 > **This is a fork.** It is maintained by [Ángel Guzmán Maeso](https://shakaran.net)
 > ([@shakaran](https://github.com/shakaran)) and builds on the original
 > [WhatSie](https://github.com/keshavbhatt/whatsie) created by
 > **Keshav Bhatt**, which remains MIT-licensed. All upstream copyright and
-> authorship is preserved — see [LICENSE](LICENSE).
+> authorship is preserved — see [LICENSE](LICENSE). *Whatly is not affiliated
+> with, endorsed by, or connected to WhatsApp or Meta.*
+
+## ✨ Highlights
+
+|  |  |
+|---|---|
+| 👥 **Multiple accounts** | Separate windows *or* tabs in one window, each a fully separate session. The tray badge sums the unread count across them all. |
+| 🎨 **Chat themes** | 14 themes that recolour WhatsApp Web itself, plus your own **wallpaper** behind the messages and load-your-own **custom CSS**. |
+| 🕶️ **Privacy blur** | Blur the chat list and open conversation until you hover, so nobody reads over your shoulder. Five levels. |
+| 🔤 **Spell checker** | Actually works — Chromium `.bdic` dictionaries are shipped, and you can check against **several languages at once**. |
+| 🖥️ **Native integration** | System tray with a **monochrome** option and live connection status, desktop notifications, an app lock, a download manager, global shortcuts. |
+| 🌗 **Follows your desktop** | Optionally track the system light/dark preference, live. |
+| 🌍 **15 languages** | The interface is translated, with an in-app language picker. |
+| 🪟 **Windows 10+** | One codebase, native toasts and a proper GUI executable. |
 
 ## What Whatly is (and is not)
 
@@ -38,13 +75,19 @@ On top of upstream WhatSie, this fork adds:
   changes if you do not use this.
 - **Spell checker** — actually works now. Qt WebEngine needs Chromium `.bdic`
   dictionaries, not hunspell's; the fork converts and ships them, so the language
-  list is no longer empty. Pick the language in Settings.
-- **Custom CSS and smooth scrolling** — load a community stylesheet (catppuccin
-  and friends) to restyle WhatsApp Web, and turn on animated scrolling.
+  list is no longer empty. Pick **one or several** languages in Settings and
+  Chromium checks against all of them at once.
 - **Chat themes, wallpaper and a privacy blur** — recolour WhatsApp Web (14
   themes), set your own image behind the chats, or blur them until you hover so
   nobody reads over your shoulder. Toggle the theme and the blur from buttons in
   WhatsApp's own sidebar.
+- **Custom CSS and smooth scrolling** — load a community stylesheet (catppuccin
+  and friends) to restyle WhatsApp Web, and turn on animated scrolling.
+- **A smarter system tray** — an optional **monochrome** icon that matches your
+  panel, an unread-count badge, and a **connection-status** dim when WhatsApp is
+  offline.
+- **Follow the system light/dark theme**, live, if you want the window chrome to
+  track your desktop.
 - **A bug report you can actually file** — <kbd>F1</kbd> opens About; its *Report
   a Bug* button opens a GitHub issue with the version, commit, memory use of the
   whole process tree, and the recent log (including WhatsApp Web's console)
@@ -63,73 +106,101 @@ On top of upstream WhatSie, this fork adds:
   get the client treated as an outdated browser. It follows Qt WebEngine upgrades
   automatically.
 - **"Identify as Whatly in linked devices"** — linked sessions show up on your
-  phone as *"Whatly for Linux"* (or the matching platform) instead of a generic
-  *"Google Chrome (Linux)"*. Applies to devices linked afterwards.
+  phone as *"Whatly for Linux"* (or the matching platform) with a desktop icon,
+  instead of a generic *"Google Chrome (Linux)"*. Applies to devices linked
+  afterwards.
 - **"Close emoji/sticker panel when clicking outside"** (opt-in) — WhatsApp Web
   otherwise keeps the expressions panel open until its button is pressed again.
-- **Quit actually quits** — since Qt 6.3 the minimize-to-tray veto cancelled the
-  quit, so tray *Quit* / <kbd>Ctrl</kbd>+<kbd>Q</kbd> minimised the window
-  instead of closing the app when it was visible.
-- **Build docs that match reality** — the documented `make build-release` wrapper
-  never existed; the build is plain CMake + Ninja (see below).
+- **It no longer stalls a KDE logout, and Quit actually quits** — the
+  minimize-to-tray veto used to cancel the session-end close, so logging out
+  waited on the app; a session-end close is now honoured as a real quit.
+- **Safer cache clearing** — the "clear cache" action refuses any path that is
+  not inside the app's own storage, so it can never run a recursive delete on
+  your home directory.
 
-## Whatly Key features
+## Screenshots
 
-- Light and Dark Themes with automatic switching
-- Customized Notifications & Native Notifications
-- Keyboard Shortcuts
-- BuiltIn download manager
-- Mute Audio, Disable Notifications
-- App Lock feature
-- Hardware access permission manager
-- Built in Spell Checker (with support for 31 Major languages)
-- Other settings that let you control every aspect of WebApp like:
-	+ Do not disturb mode
-	+ Full view mode, lets you expand the main view to the full width of the window
-	+ Ability to switch between Native & Custom notification
-	+ Configurable notification popup timeout
-	+ Mute all audio from Whatapp
-	+ Disabling auto playback of media
-	+ Minimize to tray on application start
-	+ Toggle to enable single click hide to the system tray
-	+ Switching download location
-	+ Enable disable app lock on application start
-	+ Auto-locking after a certain interval of time
-	+ App lock password management
-	+ Widget styling
-	+ Configurable auto Theme switching based on day night time
-	+ Configurable close button action
-	+ Global App shortcuts
-	+ Permission manager let you toggle camera mic and other hardware level permissions
-	+ Configurable page zoom factor, switching based on window state maximized on normal 
-	+ Configurable App User Agent
-	+ Application Storage management, lets you clean residual cache and persistent data
+<div align="center">
+
+<img src="docs/img/settings.png" width="440" alt="Whatly settings"/>
+&nbsp;&nbsp;
+<img src="docs/img/about.png" width="360" alt="Whatly about"/>
+
+<sub>Every feature above is a toggle in **Settings**. On the right, the About box with the built-in bug reporter.</sub>
+
+</div>
+
+## Key features
+
+- Light and Dark themes with automatic, time-based switching — or **follow the system**
+- Native desktop notifications *and* a configurable custom popup
+- Global keyboard shortcuts
+- Built-in download manager
+- Mute audio, disable notifications, do-not-disturb
+- App lock, with auto-lock after an interval
+- Hardware-permission manager (camera, microphone, …)
+- Spell checker with 31 dictionaries, **several active at once**
+- Fine-grained control over the web view:
+	+ Full-view mode, configurable page zoom per window state
+	+ Native vs. custom notifications, configurable popup timeout
+	+ Disable auto-playback of media
+	+ Minimize to tray on start, single-click hide to tray
+	+ Switchable download location
+	+ Configurable close-button action and User-Agent
+	+ Storage management (clear residual cache and persistent data — safely)
 	+ Close emoji/sticker panel when clicking outside (opt-in)
-	+ Identify as Whatly in linked devices, instead of a generic browser name
+	+ Identify as Whatly in linked devices, with a desktop icon
 
-## Command line options:
-Comes with general CLI support, with a bunch of options that let you interact with already running instances of Whatly.
+## Install
 
-Run: `whatly -h` to see all supported options.
+### Linux
+
+**Snap** — on any distribution with `snapd`:
+
+```bash
+snap install whatly
+```
+
+**Arch (AUR)** — the community [`whatsie-git`](https://aur.archlinux.org/packages/whatsie-git)
+package (maintained by [M0Rf30](https://github.com/M0Rf30)) tracks the **upstream**
+WhatSie project, not this fork:
+
+```bash
+yay -S whatsie-git
+```
+
+Prebuilt binaries are attached to each [release](https://github.com/shakaran/whatly/releases);
+otherwise [build from source](#build-from-source-linux).
+
+### Windows
+
+Grab the build from the latest [release](https://github.com/shakaran/whatly/releases),
+or the artifact from the **Windows Build** CI run. See
+[DOCS/WINDOWS_BUILD.md](DOCS/WINDOWS_BUILD.md) to build it yourself.
+
+## Command line options
+
+Whatly comes with CLI support to interact with an already-running instance.
+Run `whatly -h` to see them all.
 
 ```
 Usage: whatly [options]
-Feature rich WhatsApp web client based on Qt WebEngine
 
 Options:
-  -h, --help           Displays help on commandline options
-  -v, --version        Displays version information.
-  -b, --build-info     Shows detailed current build infomation
-  -w, --show-window    Show main window of running instance of Whatly
-  -s, --open-settings  Opens Settings dialog in a running instance of Whatly
-  -l, --lock-app       Locks a running instance of Whatly
-  -i, --open-about     Opens About dialog in a running instance of Whatly
-  -t, --toggle-theme   Toggle between dark & light theme in a running instance
-                       of Whatly
-  -r, --reload-app     Reload the app in a running instance of Whatly
-  -n, --new-chat       Open new chat prompt in a running instance of Whatly
-  -p, --profile <name> Run as a separate account with its own session and
-                       settings, in its own window
+  -h, --help            Displays help on commandline options
+  -v, --version         Displays version information
+  -b, --build-info      Shows detailed current build information
+  -w, --show-window     Show main window of a running instance
+  -s, --open-settings   Open the Settings dialog in a running instance
+  -l, --lock-app        Lock a running instance
+  -i, --open-about      Open the About dialog in a running instance
+  -t, --toggle-theme    Toggle dark/light theme in a running instance
+  -r, --reload-app      Reload the app in a running instance
+  -n, --new-chat        Open the new-chat prompt in a running instance
+  -p, --profile <name>  Run as a separate account, in its own window
+      --migrate-from <name> [--dry-run]
+                        Copy settings and the logged-in session from a
+                        previous install (e.g. the older "whatsie" build)
 ```
 
 ### Multiple accounts
@@ -142,8 +213,7 @@ Two independent ways to be signed in to more than one account:
   one already running. Without the flag, everything is exactly as before.
 - **Tabs in one window** — click the **+** on the account tab bar to add another
   account inside the current window. Right-click a tab to rename or remove it. The
-  tray icon's unread badge is the total across every tab. (Each set of tabs
-  belongs to the profile it was created under, so `--profile=work` keeps its own.)
+  tray icon's unread badge is the total across every tab.
 
 ## Languages
 
@@ -177,8 +247,7 @@ Whatly's own shortcuts. The same list is available in the app under
 > **WhatsApp Web has its own shortcuts too** — for searching, starting a chat,
 > marking as unread and so on. Those come from WhatsApp itself, not from
 > Whatly, so they will never show up in the list above; they simply work inside
-> the app as they do in a browser. See WhatsApp's own keyboard-shortcuts help
-> for that list.
+> the app as they do in a browser.
 
 ## Build from Source (Linux)
 
@@ -199,7 +268,7 @@ Whatly's own shortcuts. The same list is available in the app under
 > **Qt WebEngine** and **Qt Positioning** modules) and point CMake at it with
 > `-DCMAKE_PREFIX_PATH=/path/to/Qt/6.10.0/gcc_64`.
 
-### Install Dependencies
+### Install dependencies
 
 **Ubuntu/Debian:**
 ```bash
@@ -218,7 +287,7 @@ sudo dnf install cmake ninja-build qt6-qtbase-devel qt6-qtwebengine-devel \
 sudo pacman -S cmake ninja qt6-base qt6-webengine qt6-positioning
 ```
 
-### Build & Run
+### Build & run
 
 The project uses CMake (with the Ninja generator) and bundles `libnotify-qt`
 as a git submodule, so remember to initialise submodules after cloning.
@@ -236,7 +305,7 @@ cmake --build build --parallel
 ./build/whatly
 ```
 
-### Install (Optional)
+### Install (optional)
 
 The install prefix is baked in at configure time, so set
 `CMAKE_INSTALL_PREFIX` when configuring, then install.
@@ -255,38 +324,20 @@ cmake --build build --parallel
 sudo cmake --install build
 ```
 
-### Common Build Commands
-
-```bash
-# Debug build
-cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
-cmake --build build --parallel
-
-# Rebuild incrementally (after editing sources)
-cmake --build build --parallel
-
-# Build with a fixed number of jobs
-cmake --build build -j8
-
-# Clean build artifacts
-rm -rf build
-
-# Show version / build info
-./build/whatly --version
-./build/whatly --build-info
-```
+> **Coming from the older WhatSie build?** Your settings and logged-in session
+> are copied over automatically on first run. If anything is missed,
+> `whatly --migrate-from=whatsie` (add `--dry-run` to preview) does it by hand.
 
 ### Troubleshooting
 
 | Problem | Solution |
 |---------|----------|
 | CMake not found | `sudo apt install cmake` |
-| `Qt 6.10 or newer is required` (distro ships Qt 6.4) | Install a newer Qt with the [Qt online installer](https://www.qt.io/download-qt-installer) and configure with `-DCMAKE_PREFIX_PATH=/path/to/Qt/6.10.0/gcc_64`. Lowering the minimum does not help — see the note above. |
+| `Qt 6.10 or newer is required` (distro ships Qt 6.4) | Install a newer Qt with the [Qt online installer](https://www.qt.io/download-qt-installer) and configure with `-DCMAKE_PREFIX_PATH=/path/to/Qt/6.10.0/gcc_64`. |
 | `libnotify-qt submodule requires CMake 4.0` | Install `notify-qt6` from your distribution (the submodule is then not built), or upgrade CMake. |
 | Qt6 not found | `sudo apt install qt6-base-dev qt6-webengine-dev` (or `export CMAKE_PREFIX_PATH=/usr/lib/cmake/Qt6`) |
 | Ninja not found | `sudo apt install ninja-build` |
 | `notify-qt` submodule missing | `git submodule update --init --recursive` |
-| `make: *** No rule to make target 'build-release'` | There is no Makefile — this project builds with CMake. Use the commands above. |
 | Permission denied on install | Reconfigure with `-DCMAKE_INSTALL_PREFIX=$HOME/.local` (no sudo) |
 
 For detailed build instructions, see [`DOCS/BUILD_QUICK_REFERENCE.md`](DOCS/BUILD_QUICK_REFERENCE.md)
@@ -302,7 +353,7 @@ and [`DOCS/CMAKE_MIGRATION.md`](DOCS/CMAKE_MIGRATION.md).
    Qt Positioning modules
  - git, cmake >= 3.24
 
-### Build & Run
+### Build & run
 
 ```bat
 git clone https://github.com/shakaran/whatly.git
@@ -314,29 +365,15 @@ build\Release\whatly.exe
 ```
 
 For detailed instructions, see [DOCS/WINDOWS_BUILD.md](DOCS/WINDOWS_BUILD.md).
+Every push is also compile-checked on Windows by the **Windows Build** GitHub
+Actions workflow, which uploads a ready-to-run build as an artifact.
 
-Every push is also compile-checked on Windows by the `Windows Build` GitHub
-Actions workflow, which uploads a ready-to-run build as a workflow artifact.
+## Credits & license
 
-## Install Whatly on Linux Desktop
+Whatly is an MIT-licensed fork of **[WhatSie](https://github.com/keshavbhatt/whatsie)**
+by **Keshav Bhatt** ([ktechpit.com](http://ktechpit.com)); all upstream copyright
+and authorship is preserved. The fork is maintained by
+**[Ángel Guzmán Maeso](https://shakaran.net)**.
 
-> **Note:** this fork is not published to any store yet — build it from source
-> (see above). The packages below distribute the **upstream** project by Keshav
-> Bhatt, not this fork.
-
-### On any snapd supported Linux distributions
-
- `snap install whatsie`
-
-### On any Arch based Linux distribution
-Using Arch User Repository (AUR), [AUR package for Whatsie](https://aur.archlinux.org/packages/whatsie-git) is maintained by [M0Rf30](https://github.com/M0Rf30)
-
- `yay -S whatsie-git`
-
-## Screenshots (could be old)
-
-![Whatly Light Theme](https://github.com/shakaran/whatly/blob/main/screenshots/1.jpg?raw=true)
-![Whatly Dark Theme](https://github.com/shakaran/whatly/blob/main/screenshots/2.jpg?raw=true)
-![Whatly Setting module](https://github.com/shakaran/whatly/blob/main/screenshots/4.jpg?raw=true)
-![Whatly App Lock screen](https://github.com/shakaran/whatly/blob/main/screenshots/3.jpg?raw=true)
-![Whatly Shortcuts & Permissions](https://github.com/shakaran/whatly/blob/main/screenshots/5.jpg?raw=true)
+Released under the [MIT License](LICENSE). Not affiliated with WhatsApp or Meta;
+"WhatsApp" is a trademark of its respective owner.
