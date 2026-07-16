@@ -22,7 +22,7 @@ From a *x64 Native Tools Command Prompt for VS 2022* (or any shell where
 CMake can find MSVC):
 
 ```bat
-git clone https://github.com/shakaran/whatsie.git
+git clone https://github.com/shakaran/whatly.git
 cd whatly
 
 cmake -G "Visual Studio 17 2022" -A x64 -B build ^

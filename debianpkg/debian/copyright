@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: whatly
 Upstream-Contact: krafairus <krafairuspc@gmail.com>
-Source: https://github.com/shakaran/whatsie
+Source: https://github.com/shakaran/whatly
 
 Files: *
 Copyright: 2021 Keshav Bhatt

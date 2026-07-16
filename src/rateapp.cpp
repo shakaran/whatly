@@ -139,7 +139,7 @@ void RateApp::reset() {
 }
 
 void RateApp::on_rateOnGithub_clicked() {
-  QDesktopServices::openUrl(QUrl("https://github.com/shakaran/whatsie"));
+  QDesktopServices::openUrl(QUrl("https://github.com/shakaran/whatly"));
   this->reset();
   this->close();
 }

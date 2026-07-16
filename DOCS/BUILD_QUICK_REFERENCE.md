@@ -7,7 +7,7 @@
 
 ```bash
 # Clone and navigate
-git clone https://github.com/shakaran/whatsie.git
+git clone https://github.com/shakaran/whatly.git
 cd whatly
 
 # Initialise the bundled libnotify-qt submodule

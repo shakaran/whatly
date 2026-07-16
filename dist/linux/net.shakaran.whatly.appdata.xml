@@ -47,9 +47,9 @@
 
   <launchable type="desktop-id">net.shakaran.whatly.desktop</launchable>
 
-  <url type="homepage">https://github.com/shakaran/whatsie</url>
-  <url type="bugtracker">https://github.com/shakaran/whatsie/issues</url>
-  <url type="vcs-browser">https://github.com/shakaran/whatsie</url>
+  <url type="homepage">https://github.com/shakaran/whatly</url>
+  <url type="bugtracker">https://github.com/shakaran/whatly/issues</url>
+  <url type="vcs-browser">https://github.com/shakaran/whatly</url>
   <url type="donation">https://www.paypal.me/shakaran/10</url>
 
   <keywords>
@@ -64,23 +64,23 @@
   <screenshots>
     <screenshot type="default">
       <caption>Main window — Light theme</caption>
-      <image>https://raw.githubusercontent.com/shakaran/whatsie/main/screenshots/1.jpg</image>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/screenshots/1.jpg</image>
     </screenshot>
     <screenshot>
       <caption>Main window — Dark theme</caption>
-      <image>https://raw.githubusercontent.com/shakaran/whatsie/main/screenshots/2.jpg</image>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/screenshots/2.jpg</image>
     </screenshot>
     <screenshot>
       <caption>Settings</caption>
-      <image>https://raw.githubusercontent.com/shakaran/whatsie/main/screenshots/3.jpg</image>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/screenshots/3.jpg</image>
     </screenshot>
     <screenshot>
       <caption>App lock screen</caption>
-      <image>https://raw.githubusercontent.com/shakaran/whatsie/main/screenshots/4.jpg</image>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/screenshots/4.jpg</image>
     </screenshot>
     <screenshot>
       <caption>Hardware access controls and keyboard shortcuts</caption>
-      <image>https://raw.githubusercontent.com/shakaran/whatsie/main/screenshots/5.jpg</image>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/screenshots/5.jpg</image>
     </screenshot>
   </screenshots>
 

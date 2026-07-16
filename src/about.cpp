@@ -37,9 +37,9 @@ About::About(QWidget *parent) : QWidget(parent), ui(new Ui::About) {
 
   donateLink = "https://paypal.me/shakaran/5";
   moreAppsLink = "https://github.com/shakaran";
-  reportBugLink = "https://github.com/shakaran/whatsie/issues/new";
+  reportBugLink = "https://github.com/shakaran/whatly/issues/new";
 
-  appSourceCodeLink = "https://github.com/shakaran/whatsie";
+  appSourceCodeLink = "https://github.com/shakaran/whatly";
   appRateLink = "snap://whatsie";
 
   ui->appNameDesc->setText(

@@ -224,7 +224,7 @@ The project uses CMake (with the Ninja generator) and bundles `libnotify-qt`
 as a git submodule, so remember to initialise submodules after cloning.
 
 ```bash
-git clone https://github.com/shakaran/whatsie.git
+git clone https://github.com/shakaran/whatly.git
 cd whatly
 git submodule update --init --recursive
 
@@ -305,7 +305,7 @@ and [`DOCS/CMAKE_MIGRATION.md`](DOCS/CMAKE_MIGRATION.md).
 ### Build & Run
 
 ```bat
-git clone https://github.com/shakaran/whatsie.git
+git clone https://github.com/shakaran/whatly.git
 cd whatly
 cmake -G "Visual Studio 17 2022" -A x64 -B build -DCMAKE_PREFIX_PATH=C:\Qt\6.10.0\msvc2022_64
 cmake --build build --config Release
@@ -335,8 +335,8 @@ Using Arch User Repository (AUR), [AUR package for Whatsie](https://aur.archlinu
 
 ## Screenshots (could be old)
 
-![Whatly Light Theme](https://github.com/shakaran/whatsie/blob/main/screenshots/1.jpg?raw=true)
-![Whatly Dark Theme](https://github.com/shakaran/whatsie/blob/main/screenshots/2.jpg?raw=true)
-![Whatly Setting module](https://github.com/shakaran/whatsie/blob/main/screenshots/4.jpg?raw=true)
-![Whatly App Lock screen](https://github.com/shakaran/whatsie/blob/main/screenshots/3.jpg?raw=true)
-![Whatly Shortcuts & Permissions](https://github.com/shakaran/whatsie/blob/main/screenshots/5.jpg?raw=true)
+![Whatly Light Theme](https://github.com/shakaran/whatly/blob/main/screenshots/1.jpg?raw=true)
+![Whatly Dark Theme](https://github.com/shakaran/whatly/blob/main/screenshots/2.jpg?raw=true)
+![Whatly Setting module](https://github.com/shakaran/whatly/blob/main/screenshots/4.jpg?raw=true)
+![Whatly App Lock screen](https://github.com/shakaran/whatly/blob/main/screenshots/3.jpg?raw=true)
+![Whatly Shortcuts & Permissions](https://github.com/shakaran/whatly/blob/main/screenshots/5.jpg?raw=true)

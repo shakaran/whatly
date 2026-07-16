@@ -1,6 +1,6 @@
 ## Unreleased
 
-First release of the fork maintained at https://github.com/shakaran/whatsie.
+First release of the fork maintained at https://github.com/shakaran/whatly.
 Everything below is on top of upstream 5.1.0.
 
 **The app is now called Whatly** (it was WhatSie). The application id is
