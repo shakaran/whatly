@@ -1,21 +1,26 @@
 Source: whatly
 Section: utils
 Priority: optional
-Maintainer: krafairus <krafairuspc@gmail.com>
+Maintainer: Ángel Guzmán Maeso <angel@guzmanmaeso.com>
 Uploaders:
-  krafairus <krafairuspc@gmail.com>
+  Ángel Guzmán Maeso <angel@guzmanmaeso.com>
 Build-Depends:
   debhelper-compat (= 13)
 Standards-Version: 4.16.3
 Homepage: https://github.com/shakaran/whatly
 
 Package: whatly
-Architecture: all
+Architecture: any
 Depends:
-  qtwebengine5-dev-tools,
-  libqt5webenginewidgets5,
-  libqt5webengine5,
-  libqt5webengine-data,
+  libqt6webenginewidgets6,
+  libqt6webenginecore6,
+  libqt6positioning6,
   ${misc:Depends},
   ${shlibs:Depends},
-Description: A WhatsApp Web Client using the QT framework
+Description: Feature-rich WhatsApp Web client based on Qt WebEngine
+ Whatly gives WhatsApp Web a native desktop window with system-tray
+ integration, desktop notifications, chat themes, a chat wallpaper, a privacy
+ blur, an app lock, a multi-language spell checker and multiple accounts.
+ .
+ It is an MIT-licensed fork of WhatSie by Keshav Bhatt, and is not affiliated
+ with WhatsApp or Meta.

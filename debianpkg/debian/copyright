@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: whatly
-Upstream-Contact: krafairus <krafairuspc@gmail.com>
+Upstream-Contact: Ángel Guzmán Maeso <angel@guzmanmaeso.com>
 Source: https://github.com/shakaran/whatly
 
 Files: *
@@ -27,4 +27,5 @@ License: MIT
 
 Files: debian/*
 Copyright: 2021 Keshav Bhatt
+           2026 Ángel Guzmán Maeso
 License: OSL-3.0

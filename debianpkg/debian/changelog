@@ -1,0 +1,12 @@
+whatly (6.0.0) unstable; urgency=medium
+
+  * Rebrand WhatSie -> Whatly, with a new teal identity.
+  * Multiple WhatsApp accounts (separate windows or tabs in one window).
+  * Chat themes, chat wallpaper, custom CSS and a five-level privacy blur.
+  * Working spell checker, checking several languages at once.
+  * Monochrome tray option, connection-status indicator, follow system theme.
+  * Native Windows 10+ support and many bug fixes.
+  * Automatic data migration from the previous WhatSie install.
+  * See CHANGELOG.md for the full list.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Thu, 16 Jul 2026 00:00:00 +0200
