@@ -58,3 +58,4 @@ whatly
 build
 build/
 tools/shots/
+tools/__pycache__/
