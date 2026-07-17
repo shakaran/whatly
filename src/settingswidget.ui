@@ -460,6 +460,16 @@ background:transparent;
               </item>
              </layout>
             </item>
+            <item row="14" column="0">
+             <widget class="QCheckBox" name="hideTrayIconCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Hide tray icon</string>
+              </property>
+             </widget>
+            </item>
             <item row="10" column="0">
              <widget class="QCheckBox" name="spellCheckCheckBox">
               <property name="toolTip">

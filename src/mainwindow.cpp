@@ -522,8 +522,15 @@ void MainWindow::initSettingWidget() {
   connect(m_settingsWidget, &SettingsWidget::followSystemThemeChanged,
           m_settingsWidget, [=]() { applySystemThemeIfEnabled(); });
 
-  connect(m_settingsWidget, &SettingsWidget::trayIconChanged, m_settingsWidget,
-          [=]() { updateTrayUnread(); });
+  connect(m_settingsWidget, &SettingsWidget::trayIconChanged, this, [this]() {
+    const bool hidden = SettingsManager::instance()
+                            .settings()
+                            .value("hideTrayIcon", false)
+                            .toBool();
+    m_systemTrayIcon->setVisible(!hidden);
+    if (!hidden)
+      updateTrayUnread();
+  });
 
   connect(m_settingsWidget, &SettingsWidget::customCssChanged, m_settingsWidget,
           [=]() {
@@ -717,7 +724,10 @@ void MainWindow::closeEvent(QCloseEvent *event) {
   QTimer::singleShot(500, m_settingsWidget,
                      [=]() { m_settingsWidget->refresh(); });
 
+  // Hiding to the tray is only safe while the tray icon is actually there to
+  // bring the window back; with it hidden, honour the close as a real quit.
   if (!m_isQuitting && QSystemTrayIcon::isSystemTrayAvailable() &&
+      m_systemTrayIcon && m_systemTrayIcon->isVisible() &&
       SettingsManager::instance()
               .settings()
               .value("closeButtonActionCombo", 0)

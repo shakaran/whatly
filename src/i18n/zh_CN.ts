@@ -417,53 +417,53 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="581"/>
-        <location filename="../mainwindow.cpp" line="587"/>
+        <location filename="../mainwindow.cpp" line="608"/>
+        <location filename="../mainwindow.cpp" line="614"/>
         <location filename="../mainwindow_webengine.cpp" line="262"/>
         <location filename="../mainwindow_webengine.cpp" line="265"/>
         <source>| Error</source>
         <translation>| 错误</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="582"/>
+        <location filename="../mainwindow.cpp" line="609"/>
         <source>Unlock to access Settings.</source>
         <translation>请解锁以访问设置。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="588"/>
+        <location filename="../mainwindow.cpp" line="615"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>无法初始化设置模块。
 WebEngine 未初始化。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="609"/>
+        <location filename="../mainwindow.cpp" line="636"/>
         <source> | Action required</source>
         <translation> | 需要操作</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="610"/>
+        <location filename="../mainwindow.cpp" line="637"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>需要重新加载页面才能继续。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="816"/>
+        <location filename="../mainwindow.cpp" line="846"/>
         <source>Open</source>
         <translation>打开</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="826"/>
+        <location filename="../mainwindow.cpp" line="856"/>
         <location filename="../mainwindow_tray.cpp" line="16"/>
         <source>New Chat</source>
         <translation>新建聊天</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="827"/>
+        <location filename="../mainwindow.cpp" line="857"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>请输入带国家代码的有效 WhatsApp 号码（例如 +86XXXXXXXXXXX）</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="857"/>
+        <location filename="../mainwindow.cpp" line="887"/>
         <source>Rate Application</source>
         <translation>为应用评分</translation>
     </message>
@@ -1031,7 +1031,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="297"/>
-        <location filename="../settingswidget.ui" line="983"/>
+        <location filename="../settingswidget.ui" line="993"/>
         <source> Secs</source>
         <translation> 秒</translation>
     </message>
@@ -1122,7 +1122,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="438"/>
-        <location filename="../settingswidget.cpp" line="714"/>
+        <location filename="../settingswidget.cpp" line="716"/>
         <source>Custom CSS</source>
         <translation>自定义 CSS</translation>
     </message>
@@ -1138,365 +1138,375 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="457"/>
-        <location filename="../settingswidget.ui" line="530"/>
+        <location filename="../settingswidget.ui" line="540"/>
         <source>Clear</source>
         <translation>清除</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="466"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;完全移除系统托盘图标。没有可恢复的托盘时，关闭窗口将退出应用而不是隐藏它。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="469"/>
+        <source>Hide tray icon</source>
+        <translation>隐藏托盘图标</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="476"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在你输入时为拼写错误的词加下划线，并在右键菜单中提供更正建议。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="469"/>
-        <location filename="../settingswidget.cpp" line="789"/>
+        <location filename="../settingswidget.ui" line="479"/>
+        <location filename="../settingswidget.cpp" line="796"/>
         <source>Check spelling as I type</source>
         <translation>输入时检查拼写</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="476"/>
+        <location filename="../settingswidget.ui" line="486"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于检查的语言。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="483"/>
+        <location filename="../settingswidget.ui" line="493"/>
         <source>Privacy blur</source>
         <translation>隐私模糊</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="490"/>
+        <location filename="../settingswidget.ui" line="500"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在你悬停之前一直模糊你的聊天，这样瞥一眼屏幕的人无法阅读。悬停某一行只会显示该行。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="497"/>
+        <location filename="../settingswidget.ui" line="507"/>
         <source>Chat theme</source>
         <translation>聊天主题</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="504"/>
+        <location filename="../settingswidget.ui" line="514"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;重新为 WhatsApp Web 本身上色。照片、头像和贴纸保留原有颜色。可在当前启用的浅色或深色主题之上运行。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="511"/>
-        <location filename="../settingswidget.cpp" line="690"/>
+        <location filename="../settingswidget.ui" line="521"/>
+        <location filename="../settingswidget.cpp" line="692"/>
         <source>Chat wallpaper</source>
         <translation>聊天壁纸</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="520"/>
+        <location filename="../settingswidget.ui" line="530"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;像 WhatsApp 在 Android 上那样，使用你自己的图片作为聊天窗格的背景。图片存储在 Whatly 内部，不会上传到任何地方，仅你可见。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="523"/>
+        <location filename="../settingswidget.ui" line="533"/>
         <source>Choose image…</source>
         <translation>选择图片…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="539"/>
+        <location filename="../settingswidget.ui" line="549"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;新登录将在您手机的已关联设备列表中显示为“Whatly for Linux”（或对应平台），而不是“Google Chrome (Linux)”。该名称在关联设备时保存到手机上，因此更改此项仅影响以后的关联——若要重命名现有会话，请退出登录并重新关联。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="542"/>
+        <location filename="../settingswidget.ui" line="552"/>
         <source>Identify as Whatly in linked devices</source>
         <translation>在已关联设备中标识为 Whatly</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="553"/>
+        <location filename="../settingswidget.ui" line="563"/>
         <source>User Agent</source>
         <translation>用户代理</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="563"/>
+        <location filename="../settingswidget.ui" line="573"/>
         <source>  Set</source>
         <translation>  应用</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="574"/>
+        <location filename="../settingswidget.ui" line="584"/>
         <source>Reset to default</source>
         <translation>重置为默认值</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="597"/>
+        <location filename="../settingswidget.ui" line="607"/>
         <source>Zoom factor when normal</source>
         <translation>普通窗口下的缩放比例</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="625"/>
-        <location filename="../settingswidget.ui" line="760"/>
+        <location filename="../settingswidget.ui" line="635"/>
+        <location filename="../settingswidget.ui" line="770"/>
         <source>Zoom Out</source>
         <translation>缩小</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="664"/>
-        <location filename="../settingswidget.ui" line="799"/>
+        <location filename="../settingswidget.ui" line="674"/>
+        <location filename="../settingswidget.ui" line="809"/>
         <source>Zoom In</source>
         <translation>放大</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="709"/>
-        <location filename="../settingswidget.ui" line="844"/>
+        <location filename="../settingswidget.ui" line="719"/>
+        <location filename="../settingswidget.ui" line="854"/>
         <source>reset</source>
         <translation>重置</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="732"/>
+        <location filename="../settingswidget.ui" line="742"/>
         <source>Zoom factor when maximized/fullscreen</source>
         <translation>最大化/全屏下的缩放比例</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="867"/>
+        <location filename="../settingswidget.ui" line="877"/>
         <source>Minimize to tray</source>
         <translation>最小化到托盘</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="876"/>
+        <location filename="../settingswidget.ui" line="886"/>
         <source>Quit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="888"/>
+        <location filename="../settingswidget.ui" line="898"/>
         <source>Global shortcuts</source>
         <translation>全局快捷键</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="895"/>
+        <location filename="../settingswidget.ui" line="905"/>
         <source>Close button action</source>
         <translation>关闭按钮的行为</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="902"/>
+        <location filename="../settingswidget.ui" line="912"/>
         <source>  Show shortcuts</source>
         <translation>  显示快捷键</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="913"/>
+        <location filename="../settingswidget.ui" line="923"/>
         <source>Permissions</source>
         <translation>权限</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="920"/>
+        <location filename="../settingswidget.ui" line="930"/>
         <source>  Show permissions</source>
         <translation>  显示权限</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="935"/>
+        <location filename="../settingswidget.ui" line="945"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启用锁定屏幕。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="938"/>
+        <location filename="../settingswidget.ui" line="948"/>
         <source>Enable App lock on start</source>
         <translation>启动时启用应用锁</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="945"/>
+        <location filename="../settingswidget.ui" line="955"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;当窗口隐藏到系统托盘时，用密码锁定。需要已设置密码。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="948"/>
+        <location filename="../settingswidget.ui" line="958"/>
         <source>Lock when hidden to tray</source>
         <translation>隐藏到托盘时锁定</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="955"/>
+        <location filename="../settingswidget.ui" line="965"/>
         <source>Current Password</source>
         <translation>当前密码</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="962"/>
-        <location filename="../settingswidget.ui" line="996"/>
+        <location filename="../settingswidget.ui" line="972"/>
+        <location filename="../settingswidget.ui" line="1006"/>
         <source>Change password</source>
         <translation>更改密码</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="965"/>
-        <location filename="../settingswidget.ui" line="1074"/>
+        <location filename="../settingswidget.ui" line="975"/>
+        <location filename="../settingswidget.ui" line="1084"/>
         <source>Change</source>
         <translation>更改</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="976"/>
+        <location filename="../settingswidget.ui" line="986"/>
         <source>Enable auto locking after</source>
         <translation>启用自动锁定，延迟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="999"/>
+        <location filename="../settingswidget.ui" line="1009"/>
         <source>Reset</source>
         <translation>重置</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1031"/>
+        <location filename="../settingswidget.ui" line="1041"/>
         <source>View password</source>
         <translation>查看密码</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1058"/>
+        <location filename="../settingswidget.ui" line="1068"/>
         <source>Default Download location</source>
         <translation>默认下载位置</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1071"/>
+        <location filename="../settingswidget.ui" line="1081"/>
         <source>Change Download Location</source>
         <translation>更改下载位置</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1090"/>
+        <location filename="../settingswidget.ui" line="1100"/>
         <source>Storage </source>
         <translation>存储 </translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1110"/>
+        <location filename="../settingswidget.ui" line="1120"/>
         <source>Property</source>
         <translation>属性</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1117"/>
+        <location filename="../settingswidget.ui" line="1127"/>
         <source>  Clear (requires restart)</source>
         <translation>  清除（需要重启）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1128"/>
+        <location filename="../settingswidget.ui" line="1138"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;持久化数据包括持久化 Cookie、HTML5 本地存储和访问过的链接。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1131"/>
+        <location filename="../settingswidget.ui" line="1141"/>
         <source>Persistent data</source>
         <translation>持久化数据</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1138"/>
+        <location filename="../settingswidget.ui" line="1148"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1160"/>
+        <location filename="../settingswidget.ui" line="1170"/>
         <source>Size</source>
         <translation>大小</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1182"/>
+        <location filename="../settingswidget.ui" line="1192"/>
         <source>Action</source>
         <translation>操作</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="371"/>
+        <location filename="../settingswidget.cpp" line="373"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>这将删除持久数据（包括持久 Cookie 和缓存）并退出应用程序。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="376"/>
+        <location filename="../settingswidget.cpp" line="378"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>删除 Cookie 并退出应用程序？</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="478"/>
+        <location filename="../settingswidget.cpp" line="480"/>
         <source>| Error</source>
         <translation>| 错误</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="479"/>
+        <location filename="../settingswidget.cpp" line="481"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>无法设置空的 User-Agent 字符串。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="530"/>
+        <location filename="../settingswidget.cpp" line="532"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>由于手动切换了主题，自动主题切换已被禁用。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="569"/>
+        <location filename="../settingswidget.cpp" line="571"/>
         <source>App lock is not configured.</source>
         <translation>未配置应用锁。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="573"/>
+        <location filename="../settingswidget.cpp" line="575"/>
         <source>Do you want to setup App lock now?</source>
         <translation>现在设置应用锁吗？</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="615"/>
+        <location filename="../settingswidget.cpp" line="617"/>
         <source>Feature permissions</source>
         <translation>功能权限</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="681"/>
+        <location filename="../settingswidget.cpp" line="683"/>
         <source>Choose a chat wallpaper</source>
         <translation>选择聊天壁纸</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="683"/>
+        <location filename="../settingswidget.cpp" line="685"/>
         <source>Images (%1)</source>
         <translation>图片 (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="691"/>
+        <location filename="../settingswidget.cpp" line="693"/>
         <source>Could not use that image: %1</source>
         <translation>无法使用该图片：%1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="706"/>
+        <location filename="../settingswidget.cpp" line="708"/>
         <source>Choose a CSS file</source>
         <translation>选择 CSS 文件</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="708"/>
+        <location filename="../settingswidget.cpp" line="710"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>样式表 (*.css);;所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="715"/>
+        <location filename="../settingswidget.cpp" line="717"/>
         <source>Could not read that file: %1</source>
         <translation>无法读取该文件：%1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="788"/>
+        <location filename="../settingswidget.cpp" line="795"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>拼写检查器（未安装词典）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="839"/>
+        <location filename="../settingswidget.cpp" line="846"/>
         <source>None</source>
         <translation>无</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="843"/>
+        <location filename="../settingswidget.cpp" line="850"/>
         <source>%1 languages</source>
         <translation>%1 种语言</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="925"/>
+        <location filename="../settingswidget.cpp" line="932"/>
         <source>System default</source>
         <translation>系统默认</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="958"/>
+        <location filename="../settingswidget.cpp" line="965"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>重启 %1 后界面语言将会更改。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="972"/>
+        <location filename="../settingswidget.cpp" line="979"/>
         <source>App Lock Setup</source>
         <translation>应用锁设置</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="973"/>
+        <location filename="../settingswidget.cpp" line="980"/>
         <source>Please setup the App lock password first.</source>
         <translation>请先设置应用锁密码。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1082"/>
-        <location filename="../settingswidget.cpp" line="1093"/>
+        <location filename="../settingswidget.cpp" line="1089"/>
+        <location filename="../settingswidget.cpp" line="1100"/>
         <source>Select download directory</source>
         <translation>选择下载目录</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1133"/>
+        <location filename="../settingswidget.cpp" line="1140"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -1507,7 +1517,7 @@ You may also require a complete restart of Application!</source>
 您可能还需要完全重启应用程序！</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1139"/>
+        <location filename="../settingswidget.cpp" line="1146"/>
         <source>Do you want to proceed?</source>
         <translation>要继续吗？</translation>
     </message>

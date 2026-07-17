@@ -121,7 +121,13 @@ void MainWindow::createTrayIcon() {
   // presenter); the messageClicked path is only wired up on other platforms,
   // where the signal belongs to our own toast.
 
-  m_systemTrayIcon->show();
+  // Hidden on request — but only when the window can still be reached another
+  // way (closeEvent forces "quit" while the tray is hidden, see below).
+  if (!SettingsManager::instance()
+           .settings()
+           .value("hideTrayIcon", false)
+           .toBool())
+    m_systemTrayIcon->show();
 
   if (qApp->styleHints()->showShortcutsInContextMenus()) {
     foreach (QAction *action, m_trayIconMenu->actions()) {

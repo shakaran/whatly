@@ -96,6 +96,7 @@ private slots:
   void on_clearCustomCssButton_clicked();
   void on_smoothScrollingCheckBox_toggled(bool checked);
   void on_monochromeTrayIconCheckBox_toggled(bool checked);
+  void on_hideTrayIconCheckBox_toggled(bool checked);
   void on_lockOnMinimizeCheckBox_toggled(bool checked);
   void on_followSystemThemeCheckBox_toggled(bool checked);
   void on_chatThemeComboBox_currentIndexChanged(int index);
