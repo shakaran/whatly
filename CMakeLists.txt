@@ -28,9 +28,16 @@ execute_process(
 
 string(TIMESTAMP BUILD_TIMESTAMP "%Y-%m-%d %H:%M:%S")
 
-# Set Qt version - Require Qt 6.10 minimum
+# Set Qt version - Require Qt 6.10 minimum by default.
+#
+# The floor is overridable (-DQT_VERSION_MINOR=9) so a packaging environment
+# pinned to a slightly older Qt — notably the Flatpak KDE runtime — can still
+# build. 6.8 is the true API floor (see the note below); 6.9 is what the Flatpak
+# manifest targets. Do not lower it past 8.
 set(QT_VERSION_MAJOR 6)
-set(QT_VERSION_MINOR 10)
+if (NOT DEFINED QT_VERSION_MINOR)
+    set(QT_VERSION_MINOR 10)
+endif()
 
 # Set CMake policies
 set(CMAKE_AUTOMOC ON)
