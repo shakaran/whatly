@@ -94,17 +94,23 @@ if (UNIX AND NOT APPLE)
     if (notify-qt${QT_VERSION_MAJOR}_FOUND)
         add_library(notify-qt ALIAS notify-qt${QT_VERSION_MAJOR})
     elseif (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/libnotify-qt/CMakeLists.txt")
-        # The bundled submodule declares cmake_minimum_required(VERSION 4.0), so
-        # building it needs a newer CMake than this project itself does. Say so
-        # here instead of letting the error surface from inside the submodule,
-        # and point out that a system notify-qt package avoids it entirely.
+        # The bundled submodule declares cmake_minimum_required(VERSION 4.0), but
+        # as a subproject it only does find_package + add_subdirectory(src) and
+        # returns — it uses nothing that actually needs 4.0. On the common CMake
+        # 3.x (most distros, and the Flatpak KDE SDK) rewrite that one line down
+        # to our own floor so packaging builds succeed; a system notify-qt still
+        # takes precedence and skips the submodule entirely.
         if (CMAKE_VERSION VERSION_LESS 4.0)
-            message(FATAL_ERROR
-                "The bundled src/libnotify-qt submodule requires CMake 4.0 or newer "
-                "(you have ${CMAKE_VERSION}).\n"
-                "Either install the notify-qt${QT_VERSION_MAJOR} package from your distribution — the "
-                "submodule is then not built and CMake ${CMAKE_MINIMUM_REQUIRED_VERSION} is enough — "
-                "or upgrade CMake.")
+            set(_ln "${CMAKE_CURRENT_SOURCE_DIR}/src/libnotify-qt/CMakeLists.txt")
+            file(READ "${_ln}" _lncontent)
+            string(REPLACE "cmake_minimum_required(VERSION 4.0)"
+                           "cmake_minimum_required(VERSION 3.24)" _lnpatched
+                           "${_lncontent}")
+            if (NOT _lncontent STREQUAL _lnpatched)
+                file(WRITE "${_ln}" "${_lnpatched}")
+                message(STATUS
+                    "Patched the libnotify-qt submodule to build on CMake ${CMAKE_VERSION}")
+            endif()
         endif()
         add_subdirectory(src/libnotify-qt)
     else()
