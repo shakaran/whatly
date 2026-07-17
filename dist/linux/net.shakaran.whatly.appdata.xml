@@ -63,24 +63,36 @@
 
   <screenshots>
     <screenshot type="default">
-      <caption>Main window — Light theme</caption>
-      <image>https://raw.githubusercontent.com/shakaran/whatly/main/screenshots/1.jpg</image>
+      <caption>A native desktop window for WhatsApp Web</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-chat.png</image>
     </screenshot>
     <screenshot>
-      <caption>Main window — Dark theme</caption>
-      <image>https://raw.githubusercontent.com/shakaran/whatly/main/screenshots/2.jpg</image>
+      <caption>Light and dark themes</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-lightdark.png</image>
     </screenshot>
     <screenshot>
-      <caption>Settings</caption>
-      <image>https://raw.githubusercontent.com/shakaran/whatly/main/screenshots/3.jpg</image>
+      <caption>Chat themes</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-themes.png</image>
     </screenshot>
     <screenshot>
-      <caption>App lock screen</caption>
-      <image>https://raw.githubusercontent.com/shakaran/whatly/main/screenshots/4.jpg</image>
+      <caption>Multiple accounts</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-accounts.png</image>
     </screenshot>
     <screenshot>
-      <caption>Hardware access controls and keyboard shortcuts</caption>
-      <image>https://raw.githubusercontent.com/shakaran/whatly/main/screenshots/5.jpg</image>
+      <caption>App lock and privacy blur</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-lock.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Multi-language spell checker</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-spellcheck.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Keyboard shortcuts</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-shortcuts.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Desktop notifications</caption>
+      <image>https://raw.githubusercontent.com/shakaran/whatly/main/docs/img/card-notifications.png</image>
     </screenshot>
   </screenshots>
 
