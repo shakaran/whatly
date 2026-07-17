@@ -120,6 +120,24 @@ def banner(out, W=1280, H=380):
     d.text(((W-d.textlength(st, font=sf))//2, int(H*0.72)), st, font=sf, fill=(205, 242, 237))
     bg.convert("RGB").save(out); print("  wrote", os.path.relpath(out, REPO))
 
+def section_banner(out, title, subtitle="", W=1280, H=150):
+    """A slim teal strip to head a text-heavy section: the small logo, a bold
+    section title and an optional subtitle, on the brand gradient."""
+    bg = gradient(W, H).convert("RGBA")
+    d = ImageDraw.Draw(bg)
+    lsz = 84
+    bg.alpha_composite(Image.open(LOGO).convert("RGBA").resize((lsz, lsz), Image.LANCZOS),
+                       (48, (H-lsz)//2))
+    tx = 48 + lsz + 26
+    tf = _font(True, 52)
+    tb = d.textbbox((0, 0), title, font=tf)
+    ty = (H - (tb[3]-tb[1]))//2 - tb[1] if not subtitle else int(H*0.28)
+    d.text((tx, ty), title, font=tf, fill=(255, 255, 255))
+    if subtitle:
+        d.text((tx, int(H*0.60)), subtitle, font=_font(False, 26), fill=(200, 240, 235))
+    d.rounded_rectangle([tx, H-20, tx+140, H-14], radius=3, fill=ACCENT)
+    bg.convert("RGB").save(out); print("  wrote", os.path.relpath(out, REPO))
+
 def installers_panel(out, ss=2):
     """A dark panel listing every packaging format Whatly ships in, each as a
     coloured badge + name + the one-line way to install it."""
@@ -418,6 +436,14 @@ def main():
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     banner(os.path.join(a.out, "banner.png"))
+    for slug, title, sub in [
+        ("build-linux",   "Build from source", "Linux — Qt 6.10, CMake and Ninja"),
+        ("build-windows", "Build on Windows",  "Qt 6.10 MSVC, from the same codebase"),
+        ("troubleshooting", "Troubleshooting", "Common fixes for GPU, tray and login issues"),
+        ("install",       "Install",           "snap · Flatpak · AppImage · deb · RPM · AUR · Windows"),
+        ("cli",           "Command line",      "Drive a running instance from your shell or desktop actions"),
+    ]:
+        section_banner(os.path.join(a.out, "banner-" + slug + ".png"), title, sub)
     # Chat-themes card is drawn from the theme list, not captured.
     tp = os.path.join(a.shots, "themes.png"); os.makedirs(a.shots, exist_ok=True)
     themes_panel(tp)

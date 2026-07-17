@@ -146,46 +146,12 @@ On top of upstream WhatSie, this fork adds:
 <img src="docs/img/card-main-dark.png" width="720" alt="Whatly — main screen, dark theme"/>
 <br/>
 <img src="docs/img/card-main-light.png" width="720" alt="Whatly — main screen, light theme"/>
-
-<img src="docs/img/card-chat.png" width="720" alt="Whatly — chat themes and a privacy blur"/>
 <br/>
 <img src="docs/img/card-scheduled.png" width="720" alt="Whatly — schedule messages"/>
 
-<img src="docs/img/card-themes.png" width="720" alt="Whatly — fourteen chat themes"/>
-
-<img src="docs/img/card-wallpaper.png" width="720" alt="Whatly — chat wallpaper"/>
-
-<img src="docs/img/card-sidebar.png" width="720" alt="Whatly — theme and blur buttons in the sidebar"/>
-
-<img src="docs/img/card-lightdark.png" width="720" alt="Whatly — light and dark window theme"/>
-
-<img src="docs/img/card-accounts.png" width="720" alt="Whatly — multiple accounts"/>
-
-<img src="docs/img/card-profiles.png" width="720" alt="Whatly — separate profiles"/>
-
-<img src="docs/img/card-lock.png" width="720" alt="Whatly — app lock"/>
-
-<img src="docs/img/card-spellcheck.png" width="720" alt="Whatly — multi-language spell check"/>
-
-<img src="docs/img/card-tray.png" width="720" alt="Whatly — a smarter system tray"/>
-
-<img src="docs/img/card-notifications.png" width="720" alt="Whatly — native notifications"/>
-
-<img src="docs/img/card-shortcuts.png" width="720" alt="Whatly — keyboard shortcuts"/>
-
-<img src="docs/img/card-watchdog.png" width="720" alt="Whatly — connection watchdog"/>
-
-<img src="docs/img/card-windows.png" width="720" alt="Whatly — runs on Windows too"/>
-<br/>
-<img src="docs/img/card-installers.png" width="720" alt="Whatly — available as snap, Flatpak, AppImage, deb, RPM, AUR and Windows"/>
-
-<img src="docs/img/card-settings.png" width="720" alt="Whatly settings — every feature is a toggle"/>
-
-<img src="docs/img/card-about.png" width="720" alt="Whatly About — one-click bug reports"/>
-
 </div>
 
-<sub>The chat list is shown with the <b>privacy blur</b> on — that is the feature in action, not a redaction.</sub>
+<sub>The chat list is shown with the <b>privacy blur</b> on — that is the feature in action, not a redaction. More screenshots appear next to the features they show, below.</sub>
 
 ## Key features
 
@@ -208,7 +174,29 @@ On top of upstream WhatSie, this fork adds:
 	+ Close emoji/sticker panel when clicking outside (opt-in)
 	+ Identify as Whatly in linked devices, with a desktop icon
 
+<div align="center">
+
+<img src="docs/img/card-chat.png" width="380" alt="Chat themes and a privacy blur"/>
+<img src="docs/img/card-themes.png" width="380" alt="Fourteen chat themes"/>
+<img src="docs/img/card-wallpaper.png" width="380" alt="Chat wallpaper"/>
+<img src="docs/img/card-lightdark.png" width="380" alt="Light and dark window theme"/>
+<img src="docs/img/card-sidebar.png" width="380" alt="Theme and blur buttons in the sidebar"/>
+<img src="docs/img/card-lock.png" width="380" alt="App lock"/>
+<img src="docs/img/card-tray.png" width="380" alt="A smarter system tray"/>
+<img src="docs/img/card-notifications.png" width="380" alt="Native notifications"/>
+<img src="docs/img/card-watchdog.png" width="380" alt="Connection watchdog"/>
+<img src="docs/img/card-settings.png" width="380" alt="Every feature is a toggle"/>
+<img src="docs/img/card-about.png" width="380" alt="One-click bug reports"/>
+
+</div>
+
 ## Install
+
+<img src="docs/img/banner-install.png" width="100%" alt="Install"/>
+
+<div align="center">
+<img src="docs/img/card-installers.png" width="720" alt="Available as snap, Flatpak, AppImage, deb, RPM, AUR and Windows"/>
+</div>
 
 ### Linux
 
@@ -276,6 +264,10 @@ Grab the build from the latest [release](https://github.com/shakaran/whatly/rele
 or the artifact from the **Windows Build** CI run. See
 [docs/WINDOWS_BUILD.md](docs/WINDOWS_BUILD.md) to build it yourself.
 
+<div align="center">
+<img src="docs/img/card-windows.png" width="720" alt="Whatly runs on Windows too"/>
+</div>
+
 ### GPU acceleration
 
 On Linux, Whatly runs Chromium with the GPU **disabled** by default. This avoids
@@ -289,6 +281,8 @@ QTWEBENGINE_CHROMIUM_FLAGS="--disable-translate --no-sandbox" whatly
 ```
 
 ## Command line options
+
+<img src="docs/img/banner-cli.png" width="100%" alt="Command line"/>
 
 Whatly comes with CLI support to interact with an already-running instance.
 Run `whatly -h` to see them all.
@@ -304,6 +298,7 @@ Options:
   -s, --open-settings   Open the Settings dialog in a running instance
   -l, --lock-app        Lock a running instance
   -i, --open-about      Open the About dialog in a running instance
+      --open-scheduled  Open the scheduled-messages dialog in a running instance
   -t, --toggle-theme    Toggle dark/light theme in a running instance
   -r, --reload-app      Reload the app in a running instance
   -n, --new-chat        Open the new-chat prompt in a running instance
@@ -326,6 +321,11 @@ Two independent ways to be signed in to more than one account:
   account inside the current window. Right-click a tab to rename or remove it. The
   tray icon's unread badge is the total across every tab.
 
+<div align="center">
+<img src="docs/img/card-accounts.png" width="380" alt="Multiple accounts"/>
+<img src="docs/img/card-profiles.png" width="380" alt="Separate profiles"/>
+</div>
+
 ## Languages
 
 The interface follows your system locale and can be changed in
@@ -339,10 +339,18 @@ restart). 15 languages ship with the app.
 > This covers Whatly's own interface only. The language of the chats comes from
 > WhatsApp Web and cannot be changed here.
 
+<div align="center">
+<img src="docs/img/card-spellcheck.png" width="720" alt="Multi-language spell checker"/>
+</div>
+
 ## Keyboard shortcuts
 
 Whatly's own shortcuts. The same list is available in the app under
 **Settings → Global shortcuts → Show shortcuts**.
+
+<div align="center">
+<img src="docs/img/card-shortcuts.png" width="720" alt="Keyboard shortcuts"/>
+</div>
 
 | Shortcut | Action |
 |---|---|
@@ -363,6 +371,8 @@ Whatly's own shortcuts. The same list is available in the app under
 > the app as they do in a browser.
 
 ## Build from Source (Linux)
+
+<img src="docs/img/banner-build-linux.png" width="100%" alt="Build from source — Linux"/>
 
 ### Requirements
  - git, ninja-build
@@ -443,6 +453,8 @@ sudo cmake --install build
 
 ### Troubleshooting
 
+<img src="docs/img/banner-troubleshooting.png" width="100%" alt="Troubleshooting"/>
+
 | Problem | Solution |
 |---------|----------|
 | CMake not found | `sudo apt install cmake` |
@@ -457,6 +469,8 @@ For detailed build instructions, see [`docs/BUILD_QUICK_REFERENCE.md`](docs/BUIL
 and [`docs/CMAKE_MIGRATION.md`](docs/CMAKE_MIGRATION.md).
 
 ## Build from Source (Windows)
+
+<img src="docs/img/banner-build-windows.png" width="100%" alt="Build on Windows"/>
 
 ### Requirements
  - Windows 10 or later
