@@ -18,6 +18,7 @@ multiple accounts, spell-check and more — on **Linux** and **Windows**.
 ![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)
 [![whatly](https://snapcraft.io/whatly/badge.svg)](https://snapcraft.io/whatly)
 [![whatly](https://snapcraft.io/whatly/trending.svg?name=0)](https://snapcraft.io/whatly)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-support-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/shakaran)
 
 <a href="https://snapcraft.io/whatly">
   <picture>

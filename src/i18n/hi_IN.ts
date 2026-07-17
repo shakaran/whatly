@@ -35,32 +35,37 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../about.ui" line="178"/>
+        <source>Ko-fi</source>
+        <translation>Ko-fi</translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="185"/>
         <source>Rate in Store</source>
         <translation>स्टोर में रेटिंग दें</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="189"/>
+        <location filename="../about.ui" line="196"/>
         <source>More Applications</source>
         <translation>अन्य ऐप्लिकेशन</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="196"/>
+        <location filename="../about.ui" line="203"/>
         <source>Source Code</source>
         <translation>स्रोत कोड</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="203"/>
+        <location filename="../about.ui" line="210"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copies the debug information below to the clipboard and opens the issue tracker, so it can be pasted straight into the report.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;नीचे दी गई डिबग जानकारी को क्लिपबोर्ड पर कॉपी करता है और इश्यू ट्रैकर खोलता है, ताकि इसे सीधे रिपोर्ट में पेस्ट किया जा सके।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="206"/>
-        <location filename="../about.cpp" line="114"/>
+        <location filename="../about.ui" line="213"/>
+        <location filename="../about.cpp" line="118"/>
         <source>Report a Bug</source>
         <translation>बग की रिपोर्ट करें</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="215"/>
+        <location filename="../about.ui" line="222"/>
         <source>Debug Info</source>
         <translation>डीबग जानकारी</translation>
     </message>
@@ -70,12 +75,12 @@ p, li { white-space: pre-wrap; }
         <translation>संस्करण: </translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="115"/>
+        <location filename="../about.cpp" line="119"/>
         <source>The debug information was too long for the browser to carry, so it has been copied to your clipboard instead. Paste it into the issue.</source>
         <translation>डिबग जानकारी ब्राउज़र के लिए बहुत लंबी थी, इसलिए इसे क्लिपबोर्ड पर कॉपी कर दिया गया है। इसे इश्यू में पेस्ट करें।</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="122"/>
+        <location filename="../about.cpp" line="126"/>
         <source> | About</source>
         <translation> | परिचय</translation>
     </message>
@@ -697,12 +702,12 @@ Open Settings now?</source>
     <name>QObject</name>
     <message>
         <location filename="../about.cpp" line="73"/>
-        <location filename="../about.cpp" line="142"/>
+        <location filename="../about.cpp" line="146"/>
         <source>Show Debug Info</source>
         <translation>डीबग जानकारी दिखाएँ</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="99"/>
+        <location filename="../about.cpp" line="103"/>
         <source>&lt;!-- What did you do, what did you expect, and what happened instead? --&gt;
 
 
@@ -710,7 +715,7 @@ Open Settings now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="147"/>
+        <location filename="../about.cpp" line="151"/>
         <source>Hide Debug Info</source>
         <translation>डीबग जानकारी छिपाएँ</translation>
     </message>

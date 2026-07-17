@@ -173,6 +173,13 @@ p, li { white-space: pre-wrap; }
             </widget>
            </item>
            <item>
+            <widget class="QPushButton" name="kofi">
+             <property name="text">
+              <string>Ko-fi</string>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QPushButton" name="rate">
              <property name="text">
               <string>Rate in Store</string>

@@ -35,32 +35,37 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../about.ui" line="178"/>
+        <source>Ko-fi</source>
+        <translation>Ko-fi</translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="185"/>
         <source>Rate in Store</source>
         <translation>Noter sur la boutique</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="189"/>
+        <location filename="../about.ui" line="196"/>
         <source>More Applications</source>
         <translation>Plus d&apos;applications</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="196"/>
+        <location filename="../about.ui" line="203"/>
         <source>Source Code</source>
         <translation>Code source</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="203"/>
+        <location filename="../about.ui" line="210"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copies the debug information below to the clipboard and opens the issue tracker, so it can be pasted straight into the report.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copie les informations de débogage ci-dessous dans le presse-papiers et ouvre le suivi des tickets, pour les coller directement dans le rapport.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="206"/>
-        <location filename="../about.cpp" line="114"/>
+        <location filename="../about.ui" line="213"/>
+        <location filename="../about.cpp" line="118"/>
         <source>Report a Bug</source>
         <translation>Signaler un bug</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="215"/>
+        <location filename="../about.ui" line="222"/>
         <source>Debug Info</source>
         <translation>Informations de débogage</translation>
     </message>
@@ -70,12 +75,12 @@ p, li { white-space: pre-wrap; }
         <translation>Version : </translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="115"/>
+        <location filename="../about.cpp" line="119"/>
         <source>The debug information was too long for the browser to carry, so it has been copied to your clipboard instead. Paste it into the issue.</source>
         <translation>Les informations de débogage étaient trop longues pour le navigateur ; elles ont été copiées dans le presse-papiers. Collez-les dans le ticket.</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="122"/>
+        <location filename="../about.cpp" line="126"/>
         <source> | About</source>
         <translation> | À propos</translation>
     </message>
@@ -697,12 +702,12 @@ Ouvrir les paramètres maintenant ?</translation>
     <name>QObject</name>
     <message>
         <location filename="../about.cpp" line="73"/>
-        <location filename="../about.cpp" line="142"/>
+        <location filename="../about.cpp" line="146"/>
         <source>Show Debug Info</source>
         <translation>Afficher les informations de débogage</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="99"/>
+        <location filename="../about.cpp" line="103"/>
         <source>&lt;!-- What did you do, what did you expect, and what happened instead? --&gt;
 
 
@@ -710,7 +715,7 @@ Ouvrir les paramètres maintenant ?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="147"/>
+        <location filename="../about.cpp" line="151"/>
         <source>Hide Debug Info</source>
         <translation>Masquer les informations de débogage</translation>
     </message>

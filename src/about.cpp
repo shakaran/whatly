@@ -83,6 +83,10 @@ About::About(QWidget *parent) : QWidget(parent), ui(new Ui::About) {
   connect(ui->donate, &QPushButton::clicked,
           [=]() { QDesktopServices::openUrl(QUrl(donateLink)); });
 
+  connect(ui->kofi, &QPushButton::clicked, [=]() {
+    QDesktopServices::openUrl(QUrl(QStringLiteral("https://ko-fi.com/shakaran")));
+  });
+
   connect(ui->rate, &QPushButton::clicked,
           [=]() { QDesktopServices::openUrl(QUrl(appRateLink)); });
   connect(ui->more_apps, &QPushButton::clicked,
