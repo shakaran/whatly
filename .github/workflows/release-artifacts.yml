@@ -53,7 +53,13 @@ jobs:
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload "${{ github.event.inputs.tag || github.ref_name }}" "$env:ASSET" --clobber --repo $env:GITHUB_REPOSITORY
+        run: |
+          $tag = "${{ github.event.inputs.tag || github.ref_name }}"
+          gh release view "$tag" --repo $env:GITHUB_REPOSITORY *> $null
+          if ($LASTEXITCODE -ne 0) {
+            gh release create "$tag" --repo $env:GITHUB_REPOSITORY --title "$tag" --generate-notes
+          }
+          gh release upload "$tag" "$env:ASSET" --clobber --repo $env:GITHUB_REPOSITORY
 
   # ── Flatpak ────────────────────────────────────────────────────────────────
   # Built inside the KDE 6.9 flatpak SDK image; the manifest's git source is
@@ -91,7 +97,11 @@ jobs:
       - name: Attach to release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload "${{ github.event.inputs.tag || github.ref_name }}" whatly.flatpak --clobber --repo "$GITHUB_REPOSITORY"
+        run: |
+          tag="${{ github.event.inputs.tag || github.ref_name }}"
+          gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
+            || gh release create "$tag" --repo "$GITHUB_REPOSITORY" --title "$tag" --generate-notes || true
+          gh release upload "$tag" whatly.flatpak --clobber --repo "$GITHUB_REPOSITORY"
 
   # ── AppImage (+ .zsync delta updates) ───────────────────────────────────────
   appimage:
@@ -143,4 +153,8 @@ jobs:
       - name: Attach to release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload "${{ github.event.inputs.tag || github.ref_name }}" Whatly-*-x86_64.AppImage Whatly-*-x86_64.AppImage.zsync --clobber --repo "$GITHUB_REPOSITORY"
+        run: |
+          tag="${{ github.event.inputs.tag || github.ref_name }}"
+          gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
+            || gh release create "$tag" --repo "$GITHUB_REPOSITORY" --title "$tag" --generate-notes || true
+          gh release upload "$tag" Whatly-*-x86_64.AppImage Whatly-*-x86_64.AppImage.zsync --clobber --repo "$GITHUB_REPOSITORY"
