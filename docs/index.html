@@ -34,6 +34,11 @@
   video{ width:100%; border-radius:16px; box-shadow:0 24px 70px rgba(0,0,0,.45); display:block; }
   .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:20px; }
   .grid img{ width:100%; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,.35); }
+  .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+  .card{ background:rgba(255,255,255,.05); border:1px solid rgba(45,212,191,.22); border-radius:16px; padding:22px 24px; }
+  .card h3{ font-size:19px; margin-bottom:8px; }
+  .card p{ color:var(--muted); font-size:15px; }
+  code{ background:rgba(0,0,0,.3); padding:2px 7px; border-radius:6px; font-family:"DejaVu Sans Mono",monospace; font-size:.92em; }
   pre{ background:rgba(0,0,0,.35); border:1px solid rgba(45,212,191,.25); border-radius:12px;
        padding:16px 20px; overflow-x:auto; color:var(--ink); font-family:"DejaVu Sans Mono",monospace; }
   .install{ max-width:640px; margin:0 auto; }
@@ -66,13 +71,38 @@
   </div>
 </section>
 
+<section id="highlights">
+  <div class="wrap">
+    <h2>Why Whatly</h2>
+    <p class="sub">WhatsApp Web out of the browser tab and into a proper desktop app.</p>
+    <div class="cards">
+      <div class="card"><h3>⏰ Scheduled messages</h3><p>Write a message and have it sent later — it still goes out on the next launch if the app was closed when it came due.</p></div>
+      <div class="card"><h3>🎨 Themes &amp; privacy</h3><p>14 chat themes, a chat wallpaper, custom CSS, and a privacy blur that hides your chats until you hover.</p></div>
+      <div class="card"><h3>👥 Multiple accounts</h3><p>As tabs in one window or wholly separate windows with <code>--profile</code> — each its own session and settings.</p></div>
+      <div class="card"><h3>🔤 Font &amp; spell-check</h3><p>Render WhatsApp Web in any system font, and check spelling in 31 languages at once.</p></div>
+      <div class="card"><h3>🔒 App lock</h3><p>Guard the window behind a passcode, with optional auto-locking after a period of inactivity.</p></div>
+      <div class="card"><h3>🔔 Real desktop citizen</h3><p>Native notifications, a smarter system tray (badge, monochrome, connection status), and a connection watchdog that reconnects itself.</p></div>
+      <div class="card"><h3>🌗 Follows your desktop</h3><p>Light or dark — or track your system's light/dark preference, live.</p></div>
+      <div class="card"><h3>🪟 Linux &amp; Windows</h3><p>One codebase, a native app on Linux and Windows 10+.</p></div>
+    </div>
+  </div>
+</section>
+
 <section id="install">
   <div class="wrap install">
     <h2>Install</h2>
     <p class="sub">On any distribution with <code>snapd</code>:</p>
     <pre>snap install whatly</pre>
-    <p class="sub" style="margin-top:24px">Also available as Flatpak, AppImage, Debian/Ubuntu, Fedora/COPR, Arch (AUR) and Windows —
-       see the <a href="https://github.com/shakaran/whatly#install">install guide</a>.</p>
+    <p class="sub" style="margin-top:24px">Available everywhere:</p>
+    <div class="btns">
+      <a class="btn" href="https://snapcraft.io/whatly">Snap</a>
+      <a class="btn" href="https://github.com/shakaran/whatly/releases">Flatpak</a>
+      <a class="btn" href="https://github.com/shakaran/whatly/releases">AppImage</a>
+      <a class="btn" href="https://github.com/shakaran/whatly/tree/main/debian">Debian / Ubuntu</a>
+      <a class="btn" href="https://github.com/shakaran/whatly/tree/main/packaging/rpm">Fedora / COPR</a>
+      <a class="btn" href="https://aur.archlinux.org/packages/whatsie-git">Arch (AUR)</a>
+      <a class="btn" href="https://github.com/shakaran/whatly/releases">Windows</a>
+    </div>
   </div>
 </section>
 
