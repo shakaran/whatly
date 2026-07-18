@@ -734,10 +734,13 @@ void MainWindow::showNotification(QString title, QString message) {
                          this->notificationClicked();
                      });
 
+    // Ship a high-resolution icon in the image-data hint so the logo stays
+    // crisp on large notification popups (e.g. Cinnamon on Linux Mint, where a
+    // 32px icon rendered blurry — issue #2). Loaded straight from resources so
+    // it never depends on the icon theme resolving a big enough size, and
+    // image-data takes precedence over the named icon anyway.
     ntf->setHint("image-data",
-                 notificationImageHint(windowIcon().pixmap(
-                     windowIcon().actualSize(QSize(32, 32), QIcon::Normal),
-                     QIcon::Normal, QIcon::On)));
+                 notificationImageHint(QPixmap(":/icons/app/icon-256.png")));
     ntf->show();
     return;
 #else

@@ -179,7 +179,7 @@ void MainWindow::setNotificationPresenter(QWebEngineProfile *profile) {
           QPixmap pix = [proxy](auto img) {
             return Identicons::colorCount(img) > 2
                 ? QPixmap::fromImage(img)
-                : Identicons::letterTile(proxy->notif->title(), QSize(96, 96));
+                : Identicons::letterTile(proxy->notif->title(), QSize(128, 128));
           } (proxy->notif->icon());
           ntf->setHint("image-data", notificationImageHint(
                                         Identicons::clipRRect(pix) /* for eyecandy */));
@@ -211,7 +211,7 @@ void MainWindow::setNotificationPresenter(QWebEngineProfile *profile) {
             QPixmap pix = [proxy](auto img) {
               return Identicons::colorCount(img) > 2
                   ? QPixmap::fromImage(img)
-                  : Identicons::letterTile(proxy->notif->title(), QSize(96, 96));
+                  : Identicons::letterTile(proxy->notif->title(), QSize(128, 128));
             } (proxy->notif->icon());
             // A new toast replaces the visible one, so route messageClicked
             // to the handler of the most recent notification only.
