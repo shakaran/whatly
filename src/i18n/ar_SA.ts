@@ -1374,7 +1374,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
-        <translation>مكان حفظ ذاكرة تخزين HTTP المؤقتة. الذاكرة تُمسح عند الخروج؛ "بلا" يعطّل التخزين المؤقت.</translation>
+        <translation>مكان حفظ ذاكرة تخزين HTTP المؤقتة. الذاكرة تُمسح عند الخروج؛ &quot;بلا&quot; يعطّل التخزين المؤقت.</translation>
     </message>
     <message>
         <source>Max size</source>
@@ -1383,6 +1383,58 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>الحجم الأقصى للذاكرة المؤقتة على القرص. 0 = تلقائي.</translation>
+    </message>
+    <message>
+        <source>Network &amp; Startup</source>
+        <translation>الشبكة &amp; بدء التشغيل</translation>
+    </message>
+    <message>
+        <source>Launch Whatly automatically when you log in to your desktop session.</source>
+        <translation>تشغيل Whatly تلقائيًا عند تسجيل الدخول إلى جلسة سطح المكتب.</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation>تشغيل Whatly عند تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Interface scale</source>
+        <translation>مقياس الواجهة</translation>
+    </message>
+    <message>
+        <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
+        <translation>تغيير مقياس النافذة والصفحة بالكامل (QT_SCALE_FACTOR). "تلقائي" يتبع سطح المكتب. يتجاوز هذا متغيّر البيئة QT_SCALE_FACTOR إذا كان مضبوطًا. يُطبَّق بعد إعادة التشغيل.</translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation>الوكيل</translation>
+    </message>
+    <message>
+        <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
+        <translation>كيفية اتصال Whatly بالشبكة. "النظام" يتبع نظام التشغيل؛ "بلا" يتصل مباشرةً.</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>المضيف</translation>
+    </message>
+    <message>
+        <source>127.0.0.1</source>
+        <translation>127.0.0.1</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>المنفذ</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>اسم المستخدم</translation>
+    </message>
+    <message>
+        <source>Optional</source>
+        <translation>اختياري</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>كلمة المرور</translation>
     </message>
     <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
@@ -1447,6 +1499,22 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Memory</source>
         <translation>الذاكرة</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished">النظام</translation>
+    </message>
+    <message>
+        <source>None (direct)</source>
+        <translation>بلا (مباشر)</translation>
+    </message>
+    <message>
+        <source>SOCKS5</source>
+        <translation>SOCKS5</translation>
+    </message>
+    <message>
+        <source>HTTP</source>
+        <translation>HTTP</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

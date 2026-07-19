@@ -1385,6 +1385,58 @@ Please setup the password in the Settings first.</source>
         <translation>磁盘缓存的最大大小。0 = 自动。</translation>
     </message>
     <message>
+        <source>Network &amp; Startup</source>
+        <translation>网络与启动</translation>
+    </message>
+    <message>
+        <source>Launch Whatly automatically when you log in to your desktop session.</source>
+        <translation>登录桌面会话时自动启动 Whatly。</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation>登录时启动 Whatly</translation>
+    </message>
+    <message>
+        <source>Interface scale</source>
+        <translation>界面缩放</translation>
+    </message>
+    <message>
+        <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
+        <translation>缩放整个窗口和页面（QT_SCALE_FACTOR）。自动则跟随桌面设置。若已设置 QT_SCALE_FACTOR 环境变量，则以其为准。重启后生效。</translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation>代理</translation>
+    </message>
+    <message>
+        <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
+        <translation>Whatly 连接网络的方式。系统跟随操作系统设置；无则直接连接。</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>主机</translation>
+    </message>
+    <message>
+        <source>127.0.0.1</source>
+        <translation>127.0.0.1</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>端口</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>用户名</translation>
+    </message>
+    <message>
+        <source>Optional</source>
+        <translation>可选</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>密码</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>这将删除持久数据（包括持久 Cookie 和缓存）并退出应用程序。</translation>
     </message>
@@ -1447,6 +1499,22 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Memory</source>
         <translation>内存</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished">系统</translation>
+    </message>
+    <message>
+        <source>None (direct)</source>
+        <translation>无（直接连接）</translation>
+    </message>
+    <message>
+        <source>SOCKS5</source>
+        <translation>SOCKS5</translation>
+    </message>
+    <message>
+        <source>HTTP</source>
+        <translation>HTTP</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

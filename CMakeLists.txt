@@ -197,6 +197,8 @@ set(SOURCES
     src/globalshortcut.cpp
     src/privacyblur.cpp
     src/performance.cpp
+    src/networkproxy.cpp
+    src/autostart.cpp
     src/webfont.cpp
     src/mutedstatus.cpp
     src/scheduledmessages.cpp
@@ -239,6 +241,8 @@ set(HEADERS
     src/customcss.h
     src/privacyblur.h
     src/performance.h
+    src/networkproxy.h
+    src/autostart.h
     src/webfont.h
     src/mutedstatus.h
     src/scheduledmessages.h

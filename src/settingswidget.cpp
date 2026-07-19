@@ -29,6 +29,8 @@
 #include "webfont.h"
 #include "mutedstatus.h"
 #include "performance.h"
+#include "networkproxy.h"
+#include "autostart.h"
 
 // The theme combo's two entries, in .ui order. The stored value is derived
 // from these, never from the item text — which is translated.
@@ -162,6 +164,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
           .toInt());
   ui->interfaceFontSizeSpinBox->blockSignals(false);
   loadPerformanceSettings();
+  loadNetworkSettings();
   ui->lockOnMinimizeCheckBox->setChecked(
       SettingsManager::instance().settings().value("lockOnHideToTray", false).toBool());
   {
@@ -867,6 +870,86 @@ void SettingsWidget::on_cacheTypeComboBox_currentIndexChanged(int index) {
 }
 void SettingsWidget::on_cacheMaxSpinBox_valueChanged(int arg1) {
   Performance::setCacheMaxMb(arg1);
+}
+
+void SettingsWidget::loadNetworkSettings() {
+  // Autostart: hide the control on platforms where it is not implemented.
+  ui->autostartCheckBox->setVisible(Autostart::isSupported());
+  if (Autostart::isSupported()) {
+    ui->autostartCheckBox->blockSignals(true);
+    ui->autostartCheckBox->setChecked(Autostart::isEnabled());
+    ui->autostartCheckBox->blockSignals(false);
+  }
+
+  ui->interfaceScaleSpinBox->blockSignals(true);
+  ui->interfaceScaleSpinBox->setValue(Performance::interfaceScaleFactor());
+  ui->interfaceScaleSpinBox->blockSignals(false);
+
+  if (ui->proxyModeComboBox->count() == 0) {
+    ui->proxyModeComboBox->blockSignals(true);
+    ui->proxyModeComboBox->addItem(tr("System"), QStringLiteral("system"));
+    ui->proxyModeComboBox->addItem(tr("None (direct)"), QStringLiteral("none"));
+    ui->proxyModeComboBox->addItem(tr("SOCKS5"), QStringLiteral("socks5"));
+    ui->proxyModeComboBox->addItem(tr("HTTP"), QStringLiteral("http"));
+    ui->proxyModeComboBox->blockSignals(false);
+  }
+  ui->proxyModeComboBox->blockSignals(true);
+  const int idx = ui->proxyModeComboBox->findData(NetworkProxy::mode());
+  ui->proxyModeComboBox->setCurrentIndex(idx < 0 ? 0 : idx);
+  ui->proxyModeComboBox->blockSignals(false);
+
+  ui->proxyHostLineEdit->setText(NetworkProxy::host());
+  ui->proxyPortSpinBox->blockSignals(true);
+  ui->proxyPortSpinBox->setValue(NetworkProxy::port());
+  ui->proxyPortSpinBox->blockSignals(false);
+  ui->proxyUserLineEdit->setText(NetworkProxy::user());
+  ui->proxyPasswordLineEdit->setText(NetworkProxy::password());
+
+  // The host/port/credentials only make sense for a manual proxy.
+  const QString m = NetworkProxy::mode();
+  ui->proxyDetailsWidget->setEnabled(m == QLatin1String("socks5") ||
+                                     m == QLatin1String("http"));
+}
+
+void SettingsWidget::on_autostartCheckBox_toggled(bool checked) {
+  if (!Autostart::setEnabled(checked)) {
+    // Roll the checkbox back if the entry could not be written/removed.
+    ui->autostartCheckBox->blockSignals(true);
+    ui->autostartCheckBox->setChecked(!checked);
+    ui->autostartCheckBox->blockSignals(false);
+  }
+}
+
+void SettingsWidget::on_interfaceScaleSpinBox_valueChanged(double arg1) {
+  Performance::setInterfaceScaleFactor(arg1);
+}
+
+void SettingsWidget::on_proxyModeComboBox_currentIndexChanged(int index) {
+  const QString m = ui->proxyModeComboBox->itemData(index).toString();
+  NetworkProxy::setMode(m);
+  ui->proxyDetailsWidget->setEnabled(m == QLatin1String("socks5") ||
+                                     m == QLatin1String("http"));
+  NetworkProxy::applyToApplication();
+}
+
+void SettingsWidget::on_proxyHostLineEdit_editingFinished() {
+  NetworkProxy::setHost(ui->proxyHostLineEdit->text().trimmed());
+  NetworkProxy::applyToApplication();
+}
+
+void SettingsWidget::on_proxyPortSpinBox_valueChanged(int arg1) {
+  NetworkProxy::setPort(arg1);
+  NetworkProxy::applyToApplication();
+}
+
+void SettingsWidget::on_proxyUserLineEdit_editingFinished() {
+  NetworkProxy::setUser(ui->proxyUserLineEdit->text());
+  NetworkProxy::applyToApplication();
+}
+
+void SettingsWidget::on_proxyPasswordLineEdit_editingFinished() {
+  NetworkProxy::setPassword(ui->proxyPasswordLineEdit->text());
+  NetworkProxy::applyToApplication();
 }
 
 void SettingsWidget::on_smoothScrollingCheckBox_toggled(bool checked) {

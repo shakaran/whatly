@@ -49,6 +49,7 @@ add_executable(tst_logic
     ${S}/webfont.cpp ${S}/chattheme.cpp ${S}/mutedstatus.cpp ${S}/privacyblur.cpp
     ${S}/chatwallpaper.cpp ${S}/customcss.cpp ${S}/webtweaks.cpp
     ${S}/linkeddevicename.cpp ${S}/performance.cpp
+    ${S}/networkproxy.cpp ${S}/autostart.cpp
     ${S}/icons.qrc
 )
 target_include_directories(tst_logic PRIVATE ${S} ${CMAKE_BINARY_DIR})
@@ -56,7 +57,7 @@ target_compile_definitions(tst_logic PRIVATE ${TEST_DEFS})
 target_link_libraries(tst_logic PRIVATE
     Qt${QT_VERSION_MAJOR}::Test Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::Svg
-    Qt${QT_VERSION_MAJOR}::WebEngineCore)
+    Qt${QT_VERSION_MAJOR}::WebEngineCore Qt${QT_VERSION_MAJOR}::Network)
 add_test(NAME logic COMMAND tst_logic)
 set_tests_properties(logic PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
 

@@ -36,6 +36,10 @@
 #include "webtweaks.h"
 #include "linkeddevicename.h"
 #include "performance.h"
+#include "networkproxy.h"
+#include "autostart.h"
+
+#include <QNetworkProxy>
 
 // ─────────────────────────────────────────────────────────────────────────────
 class TstUtils : public QObject {
@@ -817,6 +821,101 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// NetworkProxy: the stored mode/host/port round-trip and applyToApplication()
+// installs the right QNetworkProxy. Runs in QStandardPaths test mode.
+class TstNetworkProxy : public QObject {
+  Q_OBJECT
+private slots:
+  void init() {
+    NetworkProxy::setMode(QStringLiteral("system"));
+    NetworkProxy::setHost(QString());
+    NetworkProxy::setPort(0);
+    NetworkProxy::setUser(QString());
+    NetworkProxy::setPassword(QString());
+  }
+
+  void defaultsToSystem() {
+    QCOMPARE(NetworkProxy::mode(), QStringLiteral("system"));
+  }
+
+  void settersRoundTrip() {
+    NetworkProxy::setMode(QStringLiteral("socks5"));
+    NetworkProxy::setHost(QStringLiteral("10.0.0.1"));
+    NetworkProxy::setPort(1080);
+    NetworkProxy::setUser(QStringLiteral("bob"));
+    NetworkProxy::setPassword(QStringLiteral("secret"));
+    QCOMPARE(NetworkProxy::mode(), QStringLiteral("socks5"));
+    QCOMPARE(NetworkProxy::host(), QStringLiteral("10.0.0.1"));
+    QCOMPARE(NetworkProxy::port(), 1080);
+    QCOMPARE(NetworkProxy::user(), QStringLiteral("bob"));
+    QCOMPARE(NetworkProxy::password(), QStringLiteral("secret"));
+  }
+
+  void portIsClamped() {
+    NetworkProxy::setPort(99999);
+    QCOMPARE(NetworkProxy::port(), 65535);
+    NetworkProxy::setPort(-1);
+    QCOMPARE(NetworkProxy::port(), 0);
+  }
+
+  void applyNoneGivesNoProxy() {
+    NetworkProxy::setMode(QStringLiteral("none"));
+    NetworkProxy::applyToApplication();
+    QCOMPARE(QNetworkProxy::applicationProxy().type(), QNetworkProxy::NoProxy);
+  }
+
+  void applyManualGivesManualProxy() {
+    NetworkProxy::setMode(QStringLiteral("http"));
+    NetworkProxy::setHost(QStringLiteral("proxy.example"));
+    NetworkProxy::setPort(3128);
+    NetworkProxy::setUser(QStringLiteral("u"));
+    NetworkProxy::setPassword(QStringLiteral("p"));
+    NetworkProxy::applyToApplication();
+    const QNetworkProxy p = QNetworkProxy::applicationProxy();
+    QCOMPARE(p.type(), QNetworkProxy::HttpProxy);
+    QCOMPARE(p.hostName(), QStringLiteral("proxy.example"));
+    QCOMPARE(p.port(), quint16(3128));
+    QCOMPARE(p.user(), QStringLiteral("u"));
+
+    NetworkProxy::setMode(QStringLiteral("socks5"));
+    NetworkProxy::applyToApplication();
+    QCOMPARE(QNetworkProxy::applicationProxy().type(),
+             QNetworkProxy::Socks5Proxy);
+  }
+
+  void cleanup() {
+    // Leave the global application proxy in a neutral state for later tests.
+    NetworkProxy::setMode(QStringLiteral("system"));
+    NetworkProxy::applyToApplication();
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Autostart: enabling writes an entry, disabling removes it. In QStandardPaths
+// test mode the XDG autostart dir is a throwaway path, so this is side-effect
+// free on the developer's real session.
+class TstAutostart : public QObject {
+  Q_OBJECT
+private slots:
+  void toggleRoundTrip() {
+    if (!Autostart::isSupported())
+      QSKIP("autostart not implemented on this platform");
+    Autostart::setEnabled(false);
+    QVERIFY(!Autostart::isEnabled());
+    QVERIFY(Autostart::setEnabled(true));
+    QVERIFY(Autostart::isEnabled());
+    QVERIFY(Autostart::setEnabled(false));
+    QVERIFY(!Autostart::isEnabled());
+  }
+  void disableWhenAlreadyOffSucceeds() {
+    if (!Autostart::isSupported())
+      QSKIP("autostart not implemented on this platform");
+    Autostart::setEnabled(false);
+    QVERIFY(Autostart::setEnabled(false));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // install() paths: give each injected-script module a real (headless) profile.
 class TstScriptInstall : public QObject {
   Q_OBJECT
@@ -903,6 +1002,8 @@ int main(int argc, char *argv[]) {
   { TstCustomCss t;           run(&t); }
   { TstChatWallpaper t;       run(&t); }
   { TstPerformance t;         run(&t); }
+  { TstNetworkProxy t;        run(&t); }
+  { TstAutostart t;           run(&t); }
   { TstScriptInstall t;       run(&t); }
   // Profile-mutating test runs last so it doesn't disturb the others.
   { TstAppProfile t;          run(&t); }

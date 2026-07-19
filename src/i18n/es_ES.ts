@@ -1385,6 +1385,58 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>Tamaño máximo de la caché en disco. 0 = automático.</translation>
     </message>
     <message>
+        <source>Network &amp; Startup</source>
+        <translation>Red e inicio</translation>
+    </message>
+    <message>
+        <source>Launch Whatly automatically when you log in to your desktop session.</source>
+        <translation>Iniciar Whatly automáticamente al iniciar sesión en tu escritorio.</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation>Iniciar Whatly al iniciar sesión</translation>
+    </message>
+    <message>
+        <source>Interface scale</source>
+        <translation>Escala de la interfaz</translation>
+    </message>
+    <message>
+        <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
+        <translation>Escala toda la ventana y la página (QT_SCALE_FACTOR). Automático sigue la configuración del escritorio. La variable de entorno QT_SCALE_FACTOR, si está definida, tiene prioridad sobre esta opción. Se aplica tras reiniciar.</translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation>Proxy</translation>
+    </message>
+    <message>
+        <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
+        <translation>Cómo se conecta Whatly a la red. Sistema sigue la configuración del sistema operativo; Ninguno se conecta directamente.</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>127.0.0.1</source>
+        <translation>127.0.0.1</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Puerto</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Nombre de usuario</translation>
+    </message>
+    <message>
+        <source>Optional</source>
+        <translation>Opcional</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Contraseña</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Esto eliminará los datos persistentes (incluidas las cookies persistentes y la caché) y cerrará la aplicación.</translation>
     </message>
@@ -1447,6 +1499,22 @@ Configure primero la contraseña en los ajustes.</translation>
     <message>
         <source>Memory</source>
         <translation>Memoria</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished">Sistema</translation>
+    </message>
+    <message>
+        <source>None (direct)</source>
+        <translation>Ninguno (directo)</translation>
+    </message>
+    <message>
+        <source>SOCKS5</source>
+        <translation>SOCKS5</translation>
+    </message>
+    <message>
+        <source>HTTP</source>
+        <translation>HTTP</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

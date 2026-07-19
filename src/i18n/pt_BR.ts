@@ -1374,7 +1374,7 @@ Defina primeiro a senha nas configurações.</translation>
     </message>
     <message>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
-        <translation>Onde manter o cache HTTP. "Memória" é limpa ao sair; "Nenhum" desativa o cache.</translation>
+        <translation>Onde manter o cache HTTP. &quot;Memória&quot; é limpa ao sair; &quot;Nenhum&quot; desativa o cache.</translation>
     </message>
     <message>
         <source>Max size</source>
@@ -1383,6 +1383,58 @@ Defina primeiro a senha nas configurações.</translation>
     <message>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>Tamanho máximo do cache em disco. 0 = automático.</translation>
+    </message>
+    <message>
+        <source>Network &amp; Startup</source>
+        <translation>Rede &amp; Inicialização</translation>
+    </message>
+    <message>
+        <source>Launch Whatly automatically when you log in to your desktop session.</source>
+        <translation>Iniciar o Whatly automaticamente ao entrar na sua sessão da área de trabalho.</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation>Iniciar o Whatly ao entrar</translation>
+    </message>
+    <message>
+        <source>Interface scale</source>
+        <translation>Escala da interface</translation>
+    </message>
+    <message>
+        <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
+        <translation>Dimensiona toda a janela e a página (QT_SCALE_FACTOR). Automático segue a área de trabalho. A variável de ambiente QT_SCALE_FACTOR, se definida, substitui esta opção. Aplica-se após reiniciar.</translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation>Proxy</translation>
+    </message>
+    <message>
+        <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
+        <translation>Como o Whatly se conecta à rede. Sistema segue o sistema operacional; Nenhum conecta diretamente.</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>127.0.0.1</source>
+        <translation>127.0.0.1</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Porta</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Nome de usuário</translation>
+    </message>
+    <message>
+        <source>Optional</source>
+        <translation>Opcional</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Senha</translation>
     </message>
     <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
@@ -1447,6 +1499,22 @@ Defina primeiro a senha nas configurações.</translation>
     <message>
         <source>Memory</source>
         <translation>Memória</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished">Sistema</translation>
+    </message>
+    <message>
+        <source>None (direct)</source>
+        <translation>Nenhum (direto)</translation>
+    </message>
+    <message>
+        <source>SOCKS5</source>
+        <translation>SOCKS5</translation>
+    </message>
+    <message>
+        <source>HTTP</source>
+        <translation>HTTP</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

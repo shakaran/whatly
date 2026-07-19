@@ -1385,6 +1385,58 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Ukuran cache maksimum pada disk. 0 = otomatis.</translation>
     </message>
     <message>
+        <source>Network &amp; Startup</source>
+        <translation>Jaringan &amp; Mulai</translation>
+    </message>
+    <message>
+        <source>Launch Whatly automatically when you log in to your desktop session.</source>
+        <translation>Jalankan Whatly secara otomatis saat Anda masuk ke sesi desktop.</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation>Mulai Whatly saat saya masuk</translation>
+    </message>
+    <message>
+        <source>Interface scale</source>
+        <translation>Skala antarmuka</translation>
+    </message>
+    <message>
+        <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
+        <translation>Skalakan seluruh jendela dan halaman (QT_SCALE_FACTOR). Otomatis mengikuti desktop. Variabel lingkungan QT_SCALE_FACTOR, jika disetel, akan menggantikan pengaturan ini. Berlaku setelah dimulai ulang.</translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation>Proksi</translation>
+    </message>
+    <message>
+        <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
+        <translation>Cara Whatly terhubung ke jaringan. Sistem mengikuti sistem operasi; Tidak ada terhubung langsung.</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>127.0.0.1</source>
+        <translation>127.0.0.1</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Nama pengguna</translation>
+    </message>
+    <message>
+        <source>Optional</source>
+        <translation>Opsional</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Kata sandi</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Ini akan menghapus data persisten (termasuk cookie persisten dan cache) dan menutup aplikasi.</translation>
     </message>
@@ -1447,6 +1499,22 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
     <message>
         <source>Memory</source>
         <translation>Memori</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished">Sistem</translation>
+    </message>
+    <message>
+        <source>None (direct)</source>
+        <translation>Tidak ada (langsung)</translation>
+    </message>
+    <message>
+        <source>SOCKS5</source>
+        <translation>SOCKS5</translation>
+    </message>
+    <message>
+        <source>HTTP</source>
+        <translation>HTTP</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

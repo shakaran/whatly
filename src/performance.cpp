@@ -50,6 +50,9 @@ QString cacheType() {
   return settings().value(QStringLiteral("perf/cacheType"), QStringLiteral("disk")).toString();
 }
 int cacheMaxMb() { return settings().value(QStringLiteral("perf/cacheMaxMb"), 0).toInt(); }
+double interfaceScaleFactor() {
+  return settings().value(QStringLiteral("perf/interfaceScaleFactor"), 0.0).toDouble();
+}
 
 void setDisableGpu(bool v) { setB(QStringLiteral("perf/disableGpu"), v); }
 void setDisableGpuCompositing(bool v) { setB(QStringLiteral("perf/disableGpuCompositing"), v); }
@@ -67,6 +70,10 @@ void setCacheType(const QString &type) {
 }
 void setCacheMaxMb(int mb) {
   settings().setValue(QStringLiteral("perf/cacheMaxMb"), qMax(0, mb));
+}
+void setInterfaceScaleFactor(double factor) {
+  settings().setValue(QStringLiteral("perf/interfaceScaleFactor"),
+                      factor < 0.0 ? 0.0 : factor);
 }
 
 QString chromiumFlagFragment() {

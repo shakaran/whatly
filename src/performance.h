@@ -40,6 +40,10 @@ int jsMemoryLimitMb();
 QString cacheType();
 int cacheMaxMb();
 
+// Interface/content scale factor (feeds QT_SCALE_FACTOR + --force-device-scale-
+// factor, matching #203). 0 = automatic (let the environment/desktop decide).
+double interfaceScaleFactor();
+
 // Setters (used by the Settings UI).
 void setDisableGpu(bool v);
 void setDisableGpuCompositing(bool v);
@@ -52,6 +56,7 @@ void setWebrtcShield(bool v);
 void setJsMemoryLimitMb(int mb);
 void setCacheType(const QString &type);
 void setCacheMaxMb(int mb);
+void setInterfaceScaleFactor(double factor);
 
 // Build the extra QTWEBENGINE_CHROMIUM_FLAGS fragment from the settings above.
 // Pure function of the stored values, so it is unit-tested directly.

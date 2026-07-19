@@ -1290,7 +1290,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     </message>
     <message>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
-        <translation>Ajustez le moteur de rendu. Les valeurs par défaut conviennent à la plupart des systèmes ; si la fenêtre est vide, si l'application plante au démarrage ou si elle saccade, essayez de les modifier. Les modifications s'appliquent après un redémarrage.</translation>
+        <translation>Ajustez le moteur de rendu. Les valeurs par défaut conviennent à la plupart des systèmes ; si la fenêtre est vide, si l&apos;application plante au démarrage ou si elle saccade, essayez de les modifier. Les modifications s&apos;appliquent après un redémarrage.</translation>
     </message>
     <message>
         <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
@@ -1298,11 +1298,11 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     </message>
     <message>
         <source>Disable GPU acceleration</source>
-        <translation>Désactiver l'accélération GPU</translation>
+        <translation>Désactiver l&apos;accélération GPU</translation>
     </message>
     <message>
         <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
-        <translation>Composite la page sur le CPU (--disable-gpu-compositing). Évite le scintillement d'images figées sur certains pilotes.</translation>
+        <translation>Composite la page sur le CPU (--disable-gpu-compositing). Évite le scintillement d&apos;images figées sur certains pilotes.</translation>
     </message>
     <message>
         <source>Disable GPU compositing</source>
@@ -1310,7 +1310,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     </message>
     <message>
         <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
-        <translation>Désactive la VSync du GPU (--disable-gpu-vsync). Peut réduire la latence des entrées au prix d'un déchirement de l'image.</translation>
+        <translation>Désactive la VSync du GPU (--disable-gpu-vsync). Peut réduire la latence des entrées au prix d&apos;un déchirement de l&apos;image.</translation>
     </message>
     <message>
         <source>Disable GPU VSync</source>
@@ -1326,7 +1326,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     </message>
     <message>
         <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
-        <translation>Force l'accélération même lorsque le pilote figure sur la liste de blocage (--ignore-gpu-blocklist). Essayez ceci pour réactiver le GPU.</translation>
+        <translation>Force l&apos;accélération même lorsque le pilote figure sur la liste de blocage (--ignore-gpu-blocklist). Essayez ceci pour réactiver le GPU.</translation>
     </message>
     <message>
         <source>Ignore GPU blocklist</source>
@@ -1342,7 +1342,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     </message>
     <message>
         <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
-        <translation>Partage un processus de rendu par site (--process-per-site). Réduit l'utilisation de la mémoire.</translation>
+        <translation>Partage un processus de rendu par site (--process-per-site). Réduit l&apos;utilisation de la mémoire.</translation>
     </message>
     <message>
         <source>One process per site (lower memory)</source>
@@ -1354,7 +1354,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     </message>
     <message>
         <source>Prevent WebRTC IP leak</source>
-        <translation>Empêcher la fuite d'IP via WebRTC</translation>
+        <translation>Empêcher la fuite d&apos;IP via WebRTC</translation>
     </message>
     <message>
         <source>JavaScript memory limit</source>
@@ -1362,7 +1362,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     </message>
     <message>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
-        <translation>Limite le tas JavaScript (V8 --max-old-space-size). 0 = automatique. Réduisez-la si l'application utilise trop de RAM.</translation>
+        <translation>Limite le tas JavaScript (V8 --max-old-space-size). 0 = automatique. Réduisez-la si l&apos;application utilise trop de RAM.</translation>
     </message>
     <message>
         <source> MB</source>
@@ -1383,6 +1383,58 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>Taille maximale du cache sur disque. 0 = automatique.</translation>
+    </message>
+    <message>
+        <source>Network &amp; Startup</source>
+        <translation>Réseau &amp; Démarrage</translation>
+    </message>
+    <message>
+        <source>Launch Whatly automatically when you log in to your desktop session.</source>
+        <translation>Lancer Whatly automatiquement à l'ouverture de votre session de bureau.</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation>Démarrer Whatly à l'ouverture de ma session</translation>
+    </message>
+    <message>
+        <source>Interface scale</source>
+        <translation>Échelle de l'interface</translation>
+    </message>
+    <message>
+        <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
+        <translation>Mettre à l'échelle toute la fenêtre et la page (QT_SCALE_FACTOR). Automatique suit le bureau. Une variable d'environnement QT_SCALE_FACTOR, si elle est définie, a priorité sur ce réglage. Prend effet après un redémarrage.</translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation>Proxy</translation>
+    </message>
+    <message>
+        <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
+        <translation>Mode de connexion de Whatly au réseau. Système suit le système d'exploitation ; Aucun se connecte directement.</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Hôte</translation>
+    </message>
+    <message>
+        <source>127.0.0.1</source>
+        <translation>127.0.0.1</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Nom d'utilisateur</translation>
+    </message>
+    <message>
+        <source>Optional</source>
+        <translation>Facultatif</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Mot de passe</translation>
     </message>
     <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
@@ -1447,6 +1499,22 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <source>Memory</source>
         <translation>Mémoire</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished">Système</translation>
+    </message>
+    <message>
+        <source>None (direct)</source>
+        <translation>Aucun (direct)</translation>
+    </message>
+    <message>
+        <source>SOCKS5</source>
+        <translation>SOCKS5</translation>
+    </message>
+    <message>
+        <source>HTTP</source>
+        <translation>HTTP</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

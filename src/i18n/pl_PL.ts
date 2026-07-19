@@ -1385,6 +1385,58 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <translation>Maksymalny rozmiar pamięci podręcznej na dysku. 0 = automatycznie.</translation>
     </message>
     <message>
+        <source>Network &amp; Startup</source>
+        <translation>Sieć i uruchamianie</translation>
+    </message>
+    <message>
+        <source>Launch Whatly automatically when you log in to your desktop session.</source>
+        <translation>Automatycznie uruchamiaj Whatly po zalogowaniu do sesji pulpitu.</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation>Uruchamiaj Whatly po zalogowaniu</translation>
+    </message>
+    <message>
+        <source>Interface scale</source>
+        <translation>Skala interfejsu</translation>
+    </message>
+    <message>
+        <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
+        <translation>Skaluje całe okno oraz stronę (QT_SCALE_FACTOR). Tryb automatyczny korzysta z ustawień pulpitu. Zmienna środowiskowa QT_SCALE_FACTOR, jeśli jest ustawiona, ma pierwszeństwo. Zmiana obowiązuje po ponownym uruchomieniu.</translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation>Serwer proxy</translation>
+    </message>
+    <message>
+        <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
+        <translation>Sposób łączenia Whatly z siecią. System korzysta z ustawień systemu operacyjnego; Brak łączy się bezpośrednio.</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>127.0.0.1</source>
+        <translation>127.0.0.1</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Port</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Nazwa użytkownika</translation>
+    </message>
+    <message>
+        <source>Optional</source>
+        <translation>Opcjonalne</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Hasło</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Spowoduje to usunięcie danych trwałych (w tym trwałych plików cookie i pamięci podręcznej) i zamknięcie aplikacji.</translation>
     </message>
@@ -1447,6 +1499,22 @@ Najpierw ustaw hasło w ustawieniach.</translation>
     <message>
         <source>Memory</source>
         <translation>Pamięć</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished">System</translation>
+    </message>
+    <message>
+        <source>None (direct)</source>
+        <translation>Brak (bezpośrednio)</translation>
+    </message>
+    <message>
+        <source>SOCKS5</source>
+        <translation>SOCKS5</translation>
+    </message>
+    <message>
+        <source>HTTP</source>
+        <translation>HTTP</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

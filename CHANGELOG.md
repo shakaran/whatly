@@ -16,6 +16,23 @@ are stored machine-wide and applied at start-up, so a change takes effect after
 a restart. Covered by new unit tests (`TstPerformance`) and translated into all
 15 languages.
 
+**Network proxy.** Settings → *Network & Startup* now lets you route Whatly
+through a proxy: *System* (follow the OS, the default), *None* (connect
+directly), or a manual *SOCKS5* / *HTTP* proxy with host, port and optional
+username/password. It is applied application-wide, so every account uses it, and
+manual changes take effect for new connections without a restart. Covered by new
+unit tests (`TstNetworkProxy`).
+
+**Start at login.** The same section has a *Start Whatly when I log in* switch.
+On Linux it manages an XDG autostart entry
+(`~/.config/autostart/net.shakaran.whatly.desktop`); on Windows a per-user
+`Run` entry. Covered by new unit tests (`TstAutostart`).
+
+**Interface scale control.** You can now set an interface/content scale factor
+from Settings instead of only via the `QT_SCALE_FACTOR` environment variable
+(which still wins if set). It scales the whole window and the page together
+(matching #203) and applies after a restart.
+
 ## 6.2.1 (2026-07-19)
 
 Bug-fix and hardening release.

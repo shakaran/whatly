@@ -1294,7 +1294,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     </message>
     <message>
         <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
-        <translation>Tamamen CPU üzerinde işle (--disable-gpu). Bazı GPU/sürücü yapılandırmalarında boş pencereleri ve başlangıç çökmelerini düzeltir. Linux'ta varsayılan.</translation>
+        <translation>Tamamen CPU üzerinde işle (--disable-gpu). Bazı GPU/sürücü yapılandırmalarında boş pencereleri ve başlangıç çökmelerini düzeltir. Linux&apos;ta varsayılan.</translation>
     </message>
     <message>
         <source>Disable GPU acceleration</source>
@@ -1310,11 +1310,11 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     </message>
     <message>
         <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
-        <translation>GPU VSync'i devre dışı bırak (--disable-gpu-vsync). Görüntü yırtılması pahasına giriş gecikmesini azaltabilir.</translation>
+        <translation>GPU VSync&apos;i devre dışı bırak (--disable-gpu-vsync). Görüntü yırtılması pahasına giriş gecikmesini azaltabilir.</translation>
     </message>
     <message>
         <source>Disable GPU VSync</source>
-        <translation>GPU VSync'i devre dışı bırak</translation>
+        <translation>GPU VSync&apos;i devre dışı bırak</translation>
     </message>
     <message>
         <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
@@ -1322,11 +1322,11 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     </message>
     <message>
         <source>Run GPU in-process</source>
-        <translation>GPU'yu işlem içinde çalıştır</translation>
+        <translation>GPU&apos;yu işlem içinde çalıştır</translation>
     </message>
     <message>
         <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
-        <translation>Sürücü engelleme listesinde olsa bile hızlandırmayı zorla (--ignore-gpu-blocklist). GPU'yu yeniden açmak için bunu deneyin.</translation>
+        <translation>Sürücü engelleme listesinde olsa bile hızlandırmayı zorla (--ignore-gpu-blocklist). GPU&apos;yu yeniden açmak için bunu deneyin.</translation>
     </message>
     <message>
         <source>Ignore GPU blocklist</source>
@@ -1350,7 +1350,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     </message>
     <message>
         <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
-        <translation>WebRTC'nin yerel IP adresinizi proxy kullanılmayan bağlantılar üzerinden ifşa etmesini engelleyin.</translation>
+        <translation>WebRTC&apos;nin yerel IP adresinizi proxy kullanılmayan bağlantılar üzerinden ifşa etmesini engelleyin.</translation>
     </message>
     <message>
         <source>Prevent WebRTC IP leak</source>
@@ -1383,6 +1383,58 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>En büyük disk önbelleği boyutu. 0 = otomatik.</translation>
+    </message>
+    <message>
+        <source>Network &amp; Startup</source>
+        <translation>Ağ &amp; Başlangıç</translation>
+    </message>
+    <message>
+        <source>Launch Whatly automatically when you log in to your desktop session.</source>
+        <translation>Masaüstü oturumunuza giriş yaptığınızda Whatly'yi otomatik olarak başlatın.</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation>Giriş yaptığımda Whatly'yi başlat</translation>
+    </message>
+    <message>
+        <source>Interface scale</source>
+        <translation>Arayüz ölçeği</translation>
+    </message>
+    <message>
+        <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
+        <translation>Tüm pencereyi ve sayfayı ölçekleyin (QT_SCALE_FACTOR). Otomatik, masaüstünü izler. Ayarlanmışsa bir QT_SCALE_FACTOR ortam değişkeni bunu geçersiz kılar. Yeniden başlatmadan sonra uygulanır.</translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation>Vekil sunucu</translation>
+    </message>
+    <message>
+        <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
+        <translation>Whatly'nin ağa nasıl bağlanacağı. Sistem, işletim sistemini izler; Yok doğrudan bağlanır.</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Ana bilgisayar</translation>
+    </message>
+    <message>
+        <source>127.0.0.1</source>
+        <translation>127.0.0.1</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Bağlantı noktası</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Kullanıcı adı</translation>
+    </message>
+    <message>
+        <source>Optional</source>
+        <translation>İsteğe bağlı</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Parola</translation>
     </message>
     <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
@@ -1447,6 +1499,22 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <source>Memory</source>
         <translation>Bellek</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished">Sistem</translation>
+    </message>
+    <message>
+        <source>None (direct)</source>
+        <translation>Yok (doğrudan)</translation>
+    </message>
+    <message>
+        <source>SOCKS5</source>
+        <translation>SOCKS5</translation>
+    </message>
+    <message>
+        <source>HTTP</source>
+        <translation>HTTP</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

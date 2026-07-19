@@ -1193,15 +1193,15 @@ Imposta la password nelle Impostazioni.</translation>
     </message>
     <message>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
-        <translation>Regola con precisione il motore di rendering. I valori predefiniti sono sicuri sulla maggior parte dei sistemi; se la finestra è vuota o l'app si blocca all'avvio, oppure se scatta, prova a modificarli. Le modifiche si applicano dopo un riavvio.</translation>
+        <translation>Regola con precisione il motore di rendering. I valori predefiniti sono sicuri sulla maggior parte dei sistemi; se la finestra è vuota o l&apos;app si blocca all&apos;avvio, oppure se scatta, prova a modificarli. Le modifiche si applicano dopo un riavvio.</translation>
     </message>
     <message>
         <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
-        <translation>Renderizza interamente sulla CPU (--disable-gpu). Risolve finestre vuote e crash all'avvio su alcune configurazioni GPU/driver. Predefinito su Linux.</translation>
+        <translation>Renderizza interamente sulla CPU (--disable-gpu). Risolve finestre vuote e crash all&apos;avvio su alcune configurazioni GPU/driver. Predefinito su Linux.</translation>
     </message>
     <message>
         <source>Disable GPU acceleration</source>
-        <translation>Disabilita l'accelerazione GPU</translation>
+        <translation>Disabilita l&apos;accelerazione GPU</translation>
     </message>
     <message>
         <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
@@ -1221,7 +1221,7 @@ Imposta la password nelle Impostazioni.</translation>
     </message>
     <message>
         <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
-        <translation>Esegui il processo GPU all'interno del processo principale (--in-process-gpu). Una soluzione alternativa per alcune configurazioni in sandbox.</translation>
+        <translation>Esegui il processo GPU all&apos;interno del processo principale (--in-process-gpu). Una soluzione alternativa per alcune configurazioni in sandbox.</translation>
     </message>
     <message>
         <source>Run GPU in-process</source>
@@ -1229,7 +1229,7 @@ Imposta la password nelle Impostazioni.</translation>
     </message>
     <message>
         <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
-        <translation>Forza l'accelerazione anche quando il driver è nella blocklist (--ignore-gpu-blocklist). Prova questa opzione per riattivare la GPU.</translation>
+        <translation>Forza l&apos;accelerazione anche quando il driver è nella blocklist (--ignore-gpu-blocklist). Prova questa opzione per riattivare la GPU.</translation>
     </message>
     <message>
         <source>Ignore GPU blocklist</source>
@@ -1245,7 +1245,7 @@ Imposta la password nelle Impostazioni.</translation>
     </message>
     <message>
         <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
-        <translation>Condividi un processo di rendering per sito (--process-per-site). Riduce l'uso della memoria.</translation>
+        <translation>Condividi un processo di rendering per sito (--process-per-site). Riduce l&apos;uso della memoria.</translation>
     </message>
     <message>
         <source>One process per site (lower memory)</source>
@@ -1265,7 +1265,7 @@ Imposta la password nelle Impostazioni.</translation>
     </message>
     <message>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
-        <translation>Limita l'heap JavaScript (V8 --max-old-space-size). 0 = automatico. Riducilo se l'app usa troppa RAM.</translation>
+        <translation>Limita l&apos;heap JavaScript (V8 --max-old-space-size). 0 = automatico. Riducilo se l&apos;app usa troppa RAM.</translation>
     </message>
     <message>
         <source> MB</source>
@@ -1277,7 +1277,7 @@ Imposta la password nelle Impostazioni.</translation>
     </message>
     <message>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
-        <translation>Dove conservare la cache HTTP. La memoria si cancella all'uscita; Nessuna disabilita la cache.</translation>
+        <translation>Dove conservare la cache HTTP. La memoria si cancella all&apos;uscita; Nessuna disabilita la cache.</translation>
     </message>
     <message>
         <source>Max size</source>
@@ -1286,6 +1286,58 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>Dimensione massima della cache su disco. 0 = automatico.</translation>
+    </message>
+    <message>
+        <source>Network &amp; Startup</source>
+        <translation>Rete &amp; Avvio</translation>
+    </message>
+    <message>
+        <source>Launch Whatly automatically when you log in to your desktop session.</source>
+        <translation>Avvia Whatly automaticamente all'accesso alla sessione desktop.</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation>Avvia Whatly all'accesso</translation>
+    </message>
+    <message>
+        <source>Interface scale</source>
+        <translation>Scala dell'interfaccia</translation>
+    </message>
+    <message>
+        <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
+        <translation>Ridimensiona l'intera finestra e la pagina (QT_SCALE_FACTOR). Automatico segue il desktop. Una variabile d'ambiente QT_SCALE_FACTOR, se impostata, ha la precedenza. Applicato dopo il riavvio.</translation>
+    </message>
+    <message>
+        <source>Proxy</source>
+        <translation>Proxy</translation>
+    </message>
+    <message>
+        <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
+        <translation>Come Whatly si connette alla rete. Sistema segue il sistema operativo; Nessuno si connette direttamente.</translation>
+    </message>
+    <message>
+        <source>Host</source>
+        <translation>Host</translation>
+    </message>
+    <message>
+        <source>127.0.0.1</source>
+        <translation>127.0.0.1</translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation>Porta</translation>
+    </message>
+    <message>
+        <source>Username</source>
+        <translation>Nome utente</translation>
+    </message>
+    <message>
+        <source>Optional</source>
+        <translation>Facoltativo</translation>
+    </message>
+    <message>
+        <source>Password</source>
+        <translation>Password</translation>
     </message>
     <message>
         <source>Quit</source>
@@ -1454,6 +1506,22 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <source>Memory</source>
         <translation>Memoria</translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished">Sistema</translation>
+    </message>
+    <message>
+        <source>None (direct)</source>
+        <translation>Nessuno (diretto)</translation>
+    </message>
+    <message>
+        <source>SOCKS5</source>
+        <translation>SOCKS5</translation>
+    </message>
+    <message>
+        <source>HTTP</source>
+        <translation>HTTP</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

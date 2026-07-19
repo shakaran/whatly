@@ -3,6 +3,7 @@
 #include <QSocketNotifier>
 
 #include "performance.h"
+#include "networkproxy.h"
 #ifdef Q_OS_UNIX
 #include <csignal>
 #include <sys/socket.h>
@@ -336,6 +337,15 @@ static void setChromiumFlags() {
   flags.prepend(QStringLiteral("--remote-debugging-port=9421 "));
 #endif
 
+  // A user-set interface scale (Settings) feeds the same QT_SCALE_FACTOR path,
+  // but only when the environment did not already set one (an explicit env var
+  // always wins). Must happen before QApplication reads QT_SCALE_FACTOR.
+  if (qEnvironmentVariable("QT_SCALE_FACTOR").isEmpty()) {
+    const double stored = Performance::interfaceScaleFactor();
+    if (stored > 0.0)
+      qputenv("QT_SCALE_FACTOR", QByteArray::number(stored));
+  }
+
   // #203: scale the web content to match the widget scale, so a single
   // QT_SCALE_FACTOR gives a HiDPI/4K display a bigger UI *and* bigger page
   // chrome instead of leaving WhatsApp Web tiny next to a scaled-up window.
@@ -392,6 +402,10 @@ int main(int argc, char *argv[]) {
   QApplication::setOrganizationDomain("net.shakaran");
   QApplication::setOrganizationName("shakaran");
   QApplication::setApplicationVersion(VERSIONSTR);
+
+  // Install the configured network proxy before any account profile opens a
+  // connection (Qt WebEngine honours the application-wide proxy).
+  NetworkProxy::applyToApplication();
 
   // The manual migration flag is handled before any settings are read or
   // written, so --dry-run stays side-effect free and a real copy is not
