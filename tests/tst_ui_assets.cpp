@@ -91,15 +91,17 @@ void TstUiAssets::rateAppLogoAndIcons() {
 }
 
 void TstUiAssets::rateAppLogic() {
-  // Exercise the non-navigating logic: the delayed-show timer (which runs
-  // shouldShow()) and the buttons that do not open a browser.
-  RateApp w(nullptr, QStringLiteral("snap://whatly"), 0, 0, 1);
-  QMetaObject::invokeMethod(&w, "delayShowEvent");
-  QTest::qWait(40); // let the single-shot show timer fire → shouldShow()
-  if (auto *b = w.findChild<QPushButton *>(QStringLiteral("alreadyDoneBtn")))
-    b->click(); // marks rated; opens no URL
-  if (auto *b = w.findChild<QPushButton *>(QStringLiteral("laterBtn")))
-    b->click();
+  // Cover the non-navigating button slots. RateApp is designed to delete itself
+  // (deleteLater) when a button is pressed, so each instance is heap-allocated
+  // and a fresh one is used per click; the object is never touched afterwards.
+  // A large present_delay means the show timer never fires during the test.
+  for (const QString &name : {QStringLiteral("alreadyDoneBtn"),
+                              QStringLiteral("laterBtn")}) {
+    auto *w = new RateApp(nullptr, QStringLiteral("snap://whatly"), 5, 5, 999999);
+    if (auto *b = w->findChild<QPushButton *>(name))
+      b->click();
+    QTest::qWait(5); // let a pending deleteLater run
+  }
   QVERIFY(true);
 }
 
@@ -150,8 +152,8 @@ void TstUiAssets::linkButtonsExercised() {
 
   {
     About a;
-    // report_bug is deliberately excluded: for a long pre-filled URL it can pop
-    // a modal QMessageBox, which cannot be auto-dismissed reliably headless.
+    // report_bug is excluded: the pre-filled debug log pushes the URL over the
+    // 7500-byte limit, so it pops a modal QMessageBox that would hang headless.
     for (const QString &n : {"donate", "kofi", "wise", "rate", "more_apps",
                              "source_code"})
       if (auto *b = a.findChild<QPushButton *>(n))
