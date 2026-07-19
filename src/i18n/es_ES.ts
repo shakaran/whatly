@@ -450,6 +450,14 @@ Configure primero la contraseña en los ajustes.
         <translation>Cambiar &amp;tema</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>Vista por pestañas</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>Vista en cuadrícula</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>&amp;Acerca de</translation>
     </message>

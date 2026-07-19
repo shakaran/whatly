@@ -450,6 +450,14 @@ Open Settings now?</source>
         <translation>تبديل السمة (&amp;T)</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>عرض بعلامات تبويب</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>عرض شبكي</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>حول (&amp;A)</translation>
     </message>

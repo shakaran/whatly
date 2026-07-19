@@ -450,6 +450,14 @@ Otworzyć ustawienia teraz?</translation>
         <translation>Przełącz &amp;motyw</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>Widok kart</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>Widok siatki</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>&amp;O programie</translation>
     </message>

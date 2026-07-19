@@ -422,6 +422,14 @@ Aprire le Impostazioni ora?</translation>
         <translation>Al&amp;terna tema</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>Vista a schede</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>Vista a griglia</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>Info</translation>
     </message>

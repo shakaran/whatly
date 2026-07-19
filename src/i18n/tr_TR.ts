@@ -450,6 +450,14 @@ Ayarlar şimdi açılsın mı?</translation>
         <translation>&amp;Temayı değiştir</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>Sekmeli görünüm</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>Izgara görünümü</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>&amp;Hakkında</translation>
     </message>

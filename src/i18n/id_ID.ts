@@ -450,6 +450,14 @@ Buka pengaturan sekarang?</translation>
         <translation>Ganti &amp;tema</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>Tampilan tab</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>Tampilan kisi</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>&amp;Tentang</translation>
     </message>

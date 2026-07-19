@@ -10,7 +10,11 @@
 #include <QStackedWidget>
 #include <QTabBar>
 #include <QVBoxLayout>
+#include <QGridLayout>
 #include <QWidget>
+#include <QtMath>
+
+#include "settingsmanager.h"
 
 #ifdef Q_OS_LINUX
 #include <QDBusConnection>
@@ -54,8 +58,21 @@ void MainWindow::buildAccountArea() {
   expanding.setVerticalStretch(1);
   m_accountStack->setSizePolicy(expanding);
 
+  // The grid container holds every account view at once when the grid mode is
+  // active. The display stack flips between the tabbed stack (page 0) and the
+  // grid (page 1); the account views are re-parented between the two on switch.
+  m_gridContainer = new QWidget(central);
+  auto *grid = new QGridLayout(m_gridContainer);
+  grid->setContentsMargins(0, 0, 0, 0);
+  grid->setSpacing(2);
+
+  m_displayStack = new QStackedWidget(central);
+  m_displayStack->setSizePolicy(expanding);
+  m_displayStack->addWidget(m_accountStack);   // page 0: tabs
+  m_displayStack->addWidget(m_gridContainer);  // page 1: grid
+
   layout->addWidget(m_accountBar);
-  layout->addWidget(m_accountStack);
+  layout->addWidget(m_displayStack);
   setCentralWidget(central);
 
   connect(m_accountBar, &QTabBar::currentChanged, this, [this](int index) {
@@ -86,6 +103,58 @@ void MainWindow::buildAccountArea() {
           });
 }
 
+void MainWindow::relayoutGrid() {
+  if (!m_gridContainer)
+    return;
+  auto *grid = qobject_cast<QGridLayout *>(m_gridContainer->layout());
+  if (!grid)
+    return;
+  // Detach whatever is currently in the grid (without deleting the views).
+  while (QLayoutItem *item = grid->takeAt(0)) {
+    if (item->widget())
+      item->widget()->setParent(nullptr);
+    delete item;
+  }
+  const int n = m_accounts.size();
+  if (n == 0)
+    return;
+  const int cols = qMax(1, static_cast<int>(qCeil(qSqrt(qreal(n)))));
+  for (int i = 0; i < n; ++i) {
+    WebView *view = m_accounts[i].view;
+    if (!view)
+      continue;
+    grid->addWidget(view, i / cols, i % cols);
+    view->show();
+  }
+}
+
+void MainWindow::setViewMode(ViewMode mode) {
+  m_viewMode = mode;
+  SettingsManager::instance().settings().setValue(
+      "viewMode", static_cast<int>(mode));
+
+  if (mode == ViewMode::Grid) {
+    relayoutGrid();
+    m_displayStack->setCurrentWidget(m_gridContainer);
+  } else {
+    // Move every view back into the tabbed stack, preserving order.
+    for (const Account &account : m_accounts)
+      if (account.view)
+        m_accountStack->addWidget(account.view); // re-parents into the stack
+    if (m_activeAccount >= 0 && m_activeAccount < m_accounts.size() &&
+        m_accounts[m_activeAccount].view)
+      m_accountStack->setCurrentWidget(m_accounts[m_activeAccount].view);
+    m_displayStack->setCurrentWidget(m_accountStack);
+  }
+
+  // The tab bar is only useful in tabs mode with more than one account; in grid
+  // mode it still adds accounts, so keep it whenever there is a choice to make.
+  if (m_viewTabsAction)
+    m_viewTabsAction->setChecked(mode == ViewMode::Tabs);
+  if (m_viewGridAction)
+    m_viewGridAction->setChecked(mode == ViewMode::Grid);
+}
+
 WebView *MainWindow::addAccount(const QString &id, const QString &name,
                                 bool load) {
   auto *view = new WebView(m_accountStack);
@@ -105,6 +174,10 @@ WebView *MainWindow::addAccount(const QString &id, const QString &name,
 
   if (load)
     createPageFor(view, id);
+
+  // In grid mode the new account joins the tiles right away.
+  if (m_viewMode == ViewMode::Grid)
+    relayoutGrid();
   return view;
 }
 
@@ -259,6 +332,8 @@ void MainWindow::removeAccount(int index) {
   saveAccounts();
   refreshAccountTabs();
   setActiveAccount(m_activeAccount);
+  if (m_viewMode == ViewMode::Grid)
+    relayoutGrid();
   updateTrayUnread();
 }
 

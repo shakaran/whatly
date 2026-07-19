@@ -450,6 +450,14 @@ Einstellungen jetzt öffnen?</translation>
         <translation>&amp;Design wechseln</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>Tab-Ansicht</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>Rasteransicht</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>&amp;Über</translation>
     </message>

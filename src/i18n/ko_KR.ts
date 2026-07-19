@@ -450,6 +450,14 @@ Open Settings now?</source>
         <translation>테마 전환(&amp;T)</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>탭 보기</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>그리드 보기</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>정보(&amp;A)</translation>
     </message>

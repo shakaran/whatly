@@ -58,6 +58,13 @@ void MainWindow::createWebEngine() {
   buildAccountArea();
   loadAccounts();
 
+  // Restore the saved layout (tabs or grid) now that the accounts exist.
+  setViewMode(static_cast<ViewMode>(
+      SettingsManager::instance()
+          .settings()
+          .value("viewMode", static_cast<int>(ViewMode::Tabs))
+          .toInt()));
+
   // Connection watchdog: poll the injected WebSocket health probe and reload
   // the page when WhatsApp's socket has died or gone silent.
   if (!m_connectionWatchdog) {

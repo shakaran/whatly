@@ -450,6 +450,14 @@ Open Settings now?</source>
         <translation>Сменить &amp;тему</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>Вид вкладками</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>Вид сеткой</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>&amp;О программе</translation>
     </message>

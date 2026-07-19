@@ -102,7 +102,15 @@ private:
     WebView *view = nullptr;
     int unread = 0;
   };
+  // How the account views are laid out. Tabs (the historical default) shows one
+  // account at a time behind a tab bar; Grid shows every account at once in a
+  // tiled grid. Separate windows remain available via the --profile mechanism
+  // (a second process), unaffected by this.
+  enum class ViewMode { Tabs = 0, Grid = 1 };
   void buildAccountArea();
+  void setViewMode(ViewMode mode);
+  ViewMode viewMode() const { return m_viewMode; }
+  void relayoutGrid();
   WebView *addAccount(const QString &id, const QString &name, bool load);
   void setActiveAccount(int index);
   void promptAddAccount();
@@ -121,6 +129,13 @@ private:
   int m_activeAccount = 0;
   QTabBar *m_accountBar = nullptr;
   QStackedWidget *m_accountStack = nullptr;
+  // Grid view: a container the account views are re-parented into when the grid
+  // mode is active. m_displayStack flips between the tabbed stack and the grid.
+  QStackedWidget *m_displayStack = nullptr;
+  QWidget *m_gridContainer = nullptr;
+  ViewMode m_viewMode = ViewMode::Tabs;
+  QAction *m_viewTabsAction = nullptr;
+  QAction *m_viewGridAction = nullptr;
   void initSettingWidget();
   void tryLock();
   void ensureLockVisible();

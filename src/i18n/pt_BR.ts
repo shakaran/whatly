@@ -450,6 +450,14 @@ Abrir as configurações agora?</translation>
         <translation>Alternar &amp;tema</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>Visualização em abas</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>Visualização em grade</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>&amp;Sobre</translation>
     </message>

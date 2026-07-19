@@ -450,6 +450,14 @@ Open Settings now?</source>
         <translation>थीम बदलें (&amp;T)</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>टैब दृश्य</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>ग्रिड दृश्य</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>परिचय (&amp;A)</translation>
     </message>

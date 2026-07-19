@@ -450,6 +450,14 @@ Instellingen nu openen?</translation>
         <translation>&amp;Thema wisselen</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>Tabbladweergave</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>Rasterweergave</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>&amp;Over</translation>
     </message>

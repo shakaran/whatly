@@ -6,6 +6,7 @@
 #include <algorithm>
 
 #include <QStyleHints>
+#include <QActionGroup>
 #include <QPainter>
 #include <QPalette>
 #include <QSvgRenderer>
@@ -90,6 +91,28 @@ void MainWindow::createActions() {
           &MainWindow::toggleTheme);
   addAction(m_toggleThemeAction);
 
+  // Account layout: Tabs (one at a time) vs Grid (all at once). Separate windows
+  // remain available via --profile. An exclusive, checkable pair; Ctrl+G flips.
+  auto *viewGroup = new QActionGroup(this);
+  viewGroup->setExclusive(true);
+  m_viewTabsAction = new QAction(tr("Tabbed view"), this);
+  m_viewTabsAction->setCheckable(true);
+  m_viewTabsAction->setActionGroup(viewGroup);
+  connect(m_viewTabsAction, &QAction::triggered, this,
+          [this]() { setViewMode(ViewMode::Tabs); });
+  addAction(m_viewTabsAction);
+
+  m_viewGridAction = new QAction(tr("Grid view"), this);
+  m_viewGridAction->setCheckable(true);
+  m_viewGridAction->setShortcut(QKeySequence(Qt::Modifier::CTRL | Qt::Key_G));
+  m_viewGridAction->setActionGroup(viewGroup);
+  connect(m_viewGridAction, &QAction::triggered, this, [this]() {
+    // Ctrl+G toggles: if already in grid, go back to tabs.
+    setViewMode(viewMode() == ViewMode::Grid ? ViewMode::Tabs
+                                             : ViewMode::Grid);
+  });
+  addAction(m_viewGridAction);
+
   m_aboutAction = new QAction(tr("&About"), this);
   // The only way to this dialog used to be the tray menu, and the tray is
   // exactly what is missing or misbehaving on the desktops people file bugs
@@ -119,6 +142,10 @@ void MainWindow::createTrayIcon() {
   m_trayIconMenu->addSeparator();
   m_trayIconMenu->addAction(m_openUrlAction);
   m_trayIconMenu->addAction(m_scheduledMessagesAction);
+  m_trayIconMenu->addSeparator();
+  m_trayIconMenu->addAction(m_viewTabsAction);
+  m_trayIconMenu->addAction(m_viewGridAction);
+  m_trayIconMenu->addSeparator();
   m_trayIconMenu->addAction(m_toggleThemeAction);
   m_trayIconMenu->addAction(m_settingsAction);
   m_trayIconMenu->addAction(m_aboutAction);

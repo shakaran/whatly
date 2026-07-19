@@ -450,6 +450,14 @@ Open Settings now?</source>
         <translation>切换主题(&amp;T)</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>标签页视图</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>网格视图</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>关于(&amp;A)</translation>
     </message>

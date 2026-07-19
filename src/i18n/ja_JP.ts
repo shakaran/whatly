@@ -450,6 +450,14 @@ Open Settings now?</source>
         <translation>テーマを切り替え(&amp;T)</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>タブ表示</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>グリッド表示</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>このアプリについて(&amp;A)</translation>
     </message>

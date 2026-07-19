@@ -54,6 +54,13 @@ per account: the default account keeps its existing `custom.css` (nothing moves
 on upgrade), while a named `--profile` account gets its own stylesheet and its
 own addon set.
 
+**Grid view for multiple accounts.** When you have several in-window accounts you
+can now show them all at once in a tiled grid instead of one at a time. Toggle it
+from the tray menu (*Grid view* / *Tabbed view*) or with `Ctrl+G`; the choice is
+remembered. The existing layouts are untouched: the tabbed view remains the
+default, and separate accounts in separate windows are still available by
+launching with `--profile`.
+
 ## 6.2.1 (2026-07-19)
 
 Bug-fix and hardening release.

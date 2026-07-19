@@ -450,6 +450,14 @@ Ouvrir les paramètres maintenant ?</translation>
         <translation>Changer de &amp;thème</translation>
     </message>
     <message>
+        <source>Tabbed view</source>
+        <translation>Vue par onglets</translation>
+    </message>
+    <message>
+        <source>Grid view</source>
+        <translation>Vue en grille</translation>
+    </message>
+    <message>
         <source>&amp;About</source>
         <translation>À &amp;propos</translation>
     </message>
@@ -1450,7 +1458,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     </message>
     <message>
         <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
-        <translation>Chargez des fichiers .js à exécuter sur WhatsApp Web. Chaque module s'exécute dans son propre bac à sable, de sorte qu'un module défectueux ne peut pas affecter les autres ni la page. Décochez un module pour le désactiver sans le supprimer. Les modifications prennent effet après un redémarrage.</translation>
+        <translation>Chargez des fichiers .js à exécuter sur WhatsApp Web. Chaque module s&apos;exécute dans son propre bac à sable, de sorte qu&apos;un module défectueux ne peut pas affecter les autres ni la page. Décochez un module pour le désactiver sans le supprimer. Les modifications prennent effet après un redémarrage.</translation>
     </message>
     <message>
         <source>Add addon…</source>
@@ -1558,7 +1566,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     </message>
     <message>
         <source>Could not add addon</source>
-        <translation>Impossible d'ajouter le module</translation>
+        <translation>Impossible d&apos;ajouter le module</translation>
     </message>
     <message>
         <source>Remove addon</source>
