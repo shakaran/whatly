@@ -644,7 +644,7 @@ Ouvrir les paramètres maintenant ?</translation>
     </message>
     <message>
         <source>Opens the scheduled messages dialog in a running instance of </source>
-        <translation>Ouvre la boîte de dialogue des messages programmés dans une instance en cours d'exécution de </translation>
+        <translation>Ouvre la boîte de dialogue des messages programmés dans une instance en cours d&apos;exécution de </translation>
     </message>
     <message>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
@@ -898,23 +898,23 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <name>SettingsWidget</name>
     <message>
         <source>Interface font size</source>
-        <translation>Taille de police de l'interface</translation>
+        <translation>Taille de police de l&apos;interface</translation>
     </message>
     <message>
         <source> pt</source>
         <translation> pt</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app's own interface — menus, settings and dialogs. This does not affect WhatsApp Web's text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Taille en points de l'interface de l'application — menus, paramètres et boîtes de dialogue. Cela n'affecte pas le texte de WhatsApp Web ; utilisez le zoom pour cela.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Taille en points de l&apos;interface de l&apos;application — menus, paramètres et boîtes de dialogue. Cela n&apos;affecte pas le texte de WhatsApp Web ; utilisez le zoom pour cela.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Reload automatically after a crash</source>
         <translation>Recharger automatiquement après un plantage</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web's page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si le processus de la page WhatsApp Web plante, le recharger automatiquement au lieu de demander d'abord.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si le processus de la page WhatsApp Web plante, le recharger automatiquement au lieu de demander d&apos;abord.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Form</source>
@@ -1285,6 +1285,106 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
         <translation>Action</translation>
     </message>
     <message>
+        <source>Performance &amp; Privacy</source>
+        <translation>Performances &amp; confidentialité</translation>
+    </message>
+    <message>
+        <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
+        <translation>Ajustez le moteur de rendu. Les valeurs par défaut conviennent à la plupart des systèmes ; si la fenêtre est vide, si l'application plante au démarrage ou si elle saccade, essayez de les modifier. Les modifications s'appliquent après un redémarrage.</translation>
+    </message>
+    <message>
+        <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
+        <translation>Effectue tout le rendu sur le CPU (--disable-gpu). Corrige les fenêtres vides et les plantages au démarrage sur certaines configurations GPU/pilote. Par défaut sous Linux.</translation>
+    </message>
+    <message>
+        <source>Disable GPU acceleration</source>
+        <translation>Désactiver l'accélération GPU</translation>
+    </message>
+    <message>
+        <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
+        <translation>Composite la page sur le CPU (--disable-gpu-compositing). Évite le scintillement d'images figées sur certains pilotes.</translation>
+    </message>
+    <message>
+        <source>Disable GPU compositing</source>
+        <translation>Désactiver la composition GPU</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
+        <translation>Désactive la VSync du GPU (--disable-gpu-vsync). Peut réduire la latence des entrées au prix d'un déchirement de l'image.</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync</source>
+        <translation>Désactiver la VSync du GPU</translation>
+    </message>
+    <message>
+        <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
+        <translation>Exécute le processus GPU au sein du processus principal (--in-process-gpu). Une solution de contournement pour certaines configurations en bac à sable.</translation>
+    </message>
+    <message>
+        <source>Run GPU in-process</source>
+        <translation>Exécuter le GPU dans le processus principal</translation>
+    </message>
+    <message>
+        <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
+        <translation>Force l'accélération même lorsque le pilote figure sur la liste de blocage (--ignore-gpu-blocklist). Essayez ceci pour réactiver le GPU.</translation>
+    </message>
+    <message>
+        <source>Ignore GPU blocklist</source>
+        <translation>Ignorer la liste de blocage du GPU</translation>
+    </message>
+    <message>
+        <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
+        <translation>Exécute tout dans un seul processus (--single-process). Utilise moins de mémoire mais est moins stable.</translation>
+    </message>
+    <message>
+        <source>Single-process mode (lower memory)</source>
+        <translation>Mode processus unique (moins de mémoire)</translation>
+    </message>
+    <message>
+        <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
+        <translation>Partage un processus de rendu par site (--process-per-site). Réduit l'utilisation de la mémoire.</translation>
+    </message>
+    <message>
+        <source>One process per site (lower memory)</source>
+        <translation>Un processus par site (moins de mémoire)</translation>
+    </message>
+    <message>
+        <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
+        <translation>Empêche WebRTC de révéler votre adresse IP locale sur les connexions non relayées par un proxy.</translation>
+    </message>
+    <message>
+        <source>Prevent WebRTC IP leak</source>
+        <translation>Empêcher la fuite d'IP via WebRTC</translation>
+    </message>
+    <message>
+        <source>JavaScript memory limit</source>
+        <translation>Limite de mémoire JavaScript</translation>
+    </message>
+    <message>
+        <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
+        <translation>Limite le tas JavaScript (V8 --max-old-space-size). 0 = automatique. Réduisez-la si l'application utilise trop de RAM.</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> Mo</translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation>Cache HTTP</translation>
+    </message>
+    <message>
+        <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
+        <translation>Emplacement de conservation du cache HTTP. La mémoire est vidée à la fermeture ; « Aucun » désactive la mise en cache.</translation>
+    </message>
+    <message>
+        <source>Max size</source>
+        <translation>Taille maximale</translation>
+    </message>
+    <message>
+        <source>Maximum on-disk cache size. 0 = automatic.</source>
+        <translation>Taille maximale du cache sur disque. 0 = automatique.</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Ceci supprimera les données persistantes (y compris les cookies persistants et le cache) et fermera l&apos;application.</translation>
     </message>
@@ -1339,6 +1439,14 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <source>Could not read that file: %1</source>
         <translation>Impossible de lire ce fichier : %1</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation>Disque</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>Mémoire</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

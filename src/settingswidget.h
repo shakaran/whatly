@@ -107,6 +107,17 @@ private slots:
   void on_hideMutedStatusCheckBox_toggled(bool checked);
   void on_autoRestartCheckBox_toggled(bool checked);
   void on_interfaceFontSizeSpinBox_valueChanged(int arg1);
+  void on_disableGpuCheckBox_toggled(bool checked);
+  void on_disableGpuCompositingCheckBox_toggled(bool checked);
+  void on_disableGpuVsyncCheckBox_toggled(bool checked);
+  void on_inProcessGpuCheckBox_toggled(bool checked);
+  void on_ignoreGpuBlocklistCheckBox_toggled(bool checked);
+  void on_singleProcessCheckBox_toggled(bool checked);
+  void on_processPerSiteCheckBox_toggled(bool checked);
+  void on_webrtcShieldCheckBox_toggled(bool checked);
+  void on_jsMemoryLimitSpinBox_valueChanged(int arg1);
+  void on_cacheTypeComboBox_currentIndexChanged(int index);
+  void on_cacheMaxSpinBox_valueChanged(int arg1);
   void on_spellCheckCheckBox_toggled(bool checked);
   void on_themeToggleButtonCheckBox_toggled(bool checked);
   void on_privacyBlurButtonCheckBox_toggled(bool checked);
@@ -125,6 +136,7 @@ private slots:
   void on_deletePersistentData_clicked();
 
 private:
+  void loadPerformanceSettings();
   void updateChatWallpaperButtons();
   void updateCustomCssButtons();
   void populateChatThemes();

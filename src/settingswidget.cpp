@@ -17,6 +17,7 @@
 #include <QAbstractItemView>
 #include <QLineEdit>
 #include <QMouseEvent>
+#include <QCheckBox>
 
 #include "automatictheme.h"
 #include "chattheme.h"
@@ -27,6 +28,7 @@
 #include "privacyblur.h"
 #include "webfont.h"
 #include "mutedstatus.h"
+#include "performance.h"
 
 // The theme combo's two entries, in .ui order. The stored value is derived
 // from these, never from the item text — which is translated.
@@ -159,6 +161,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
           .value("interfaceFontSize", qApp->font().pointSize())
           .toInt());
   ui->interfaceFontSizeSpinBox->blockSignals(false);
+  loadPerformanceSettings();
   ui->lockOnMinimizeCheckBox->setChecked(
       SettingsManager::instance().settings().value("lockOnHideToTray", false).toBool());
   {
@@ -791,6 +794,79 @@ void SettingsWidget::on_interfaceFontSizeSpinBox_valueChanged(int arg1) {
 
 void SettingsWidget::on_lockOnMinimizeCheckBox_toggled(bool checked) {
   SettingsManager::instance().settings().setValue("lockOnHideToTray", checked);
+}
+
+void SettingsWidget::loadPerformanceSettings() {
+  // Populate the cache-type combo once (index maps to the stored token).
+  if (ui->cacheTypeComboBox->count() == 0) {
+    ui->cacheTypeComboBox->blockSignals(true);
+    ui->cacheTypeComboBox->addItem(tr("Disk"), QStringLiteral("disk"));
+    ui->cacheTypeComboBox->addItem(tr("Memory"), QStringLiteral("memory"));
+    ui->cacheTypeComboBox->addItem(tr("None"), QStringLiteral("none"));
+    ui->cacheTypeComboBox->blockSignals(false);
+  }
+
+  const auto set = [](QCheckBox *box, bool v) {
+    box->blockSignals(true);
+    box->setChecked(v);
+    box->blockSignals(false);
+  };
+  set(ui->disableGpuCheckBox, Performance::disableGpu());
+  set(ui->disableGpuCompositingCheckBox, Performance::disableGpuCompositing());
+  set(ui->disableGpuVsyncCheckBox, Performance::disableGpuVsync());
+  set(ui->inProcessGpuCheckBox, Performance::inProcessGpu());
+  set(ui->ignoreGpuBlocklistCheckBox, Performance::ignoreGpuBlocklist());
+  set(ui->singleProcessCheckBox, Performance::singleProcess());
+  set(ui->processPerSiteCheckBox, Performance::processPerSite());
+  set(ui->webrtcShieldCheckBox, Performance::webrtcShield());
+
+  ui->jsMemoryLimitSpinBox->blockSignals(true);
+  ui->jsMemoryLimitSpinBox->setValue(Performance::jsMemoryLimitMb());
+  ui->jsMemoryLimitSpinBox->blockSignals(false);
+
+  ui->cacheMaxSpinBox->blockSignals(true);
+  ui->cacheMaxSpinBox->setValue(Performance::cacheMaxMb());
+  ui->cacheMaxSpinBox->blockSignals(false);
+
+  ui->cacheTypeComboBox->blockSignals(true);
+  const int idx = ui->cacheTypeComboBox->findData(Performance::cacheType());
+  ui->cacheTypeComboBox->setCurrentIndex(idx < 0 ? 0 : idx);
+  ui->cacheTypeComboBox->blockSignals(false);
+}
+
+void SettingsWidget::on_disableGpuCheckBox_toggled(bool checked) {
+  Performance::setDisableGpu(checked);
+}
+void SettingsWidget::on_disableGpuCompositingCheckBox_toggled(bool checked) {
+  Performance::setDisableGpuCompositing(checked);
+}
+void SettingsWidget::on_disableGpuVsyncCheckBox_toggled(bool checked) {
+  Performance::setDisableGpuVsync(checked);
+}
+void SettingsWidget::on_inProcessGpuCheckBox_toggled(bool checked) {
+  Performance::setInProcessGpu(checked);
+}
+void SettingsWidget::on_ignoreGpuBlocklistCheckBox_toggled(bool checked) {
+  Performance::setIgnoreGpuBlocklist(checked);
+}
+void SettingsWidget::on_singleProcessCheckBox_toggled(bool checked) {
+  Performance::setSingleProcess(checked);
+}
+void SettingsWidget::on_processPerSiteCheckBox_toggled(bool checked) {
+  Performance::setProcessPerSite(checked);
+}
+void SettingsWidget::on_webrtcShieldCheckBox_toggled(bool checked) {
+  Performance::setWebrtcShield(checked);
+}
+void SettingsWidget::on_jsMemoryLimitSpinBox_valueChanged(int arg1) {
+  Performance::setJsMemoryLimitMb(arg1);
+}
+void SettingsWidget::on_cacheTypeComboBox_currentIndexChanged(int index) {
+  Performance::setCacheType(
+      ui->cacheTypeComboBox->itemData(index).toString());
+}
+void SettingsWidget::on_cacheMaxSpinBox_valueChanged(int arg1) {
+  Performance::setCacheMaxMb(arg1);
 }
 
 void SettingsWidget::on_smoothScrollingCheckBox_toggled(bool checked) {

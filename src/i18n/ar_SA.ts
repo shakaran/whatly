@@ -905,7 +905,7 @@ Please setup the password in the Settings first.</source>
         <translation> نقطة</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app's own interface — menus, settings and dialogs. This does not affect WhatsApp Web's text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;حجم النقطة لواجهة التطبيق نفسه — القوائم والإعدادات والحوارات. لا يؤثر ذلك على نص واتساب ويب؛ استخدم التكبير لذلك.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -913,7 +913,7 @@ Please setup the password in the Settings first.</source>
         <translation>إعادة التحميل تلقائيًا بعد التعطل</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web's page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;إذا تعطلت عملية صفحة واتساب ويب، فأعد تحميلها تلقائيًا بدلاً من السؤال أولاً.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -1285,6 +1285,106 @@ Please setup the password in the Settings first.</source>
         <translation>الإجراء</translation>
     </message>
     <message>
+        <source>Performance &amp; Privacy</source>
+        <translation>الأداء والخصوصية</translation>
+    </message>
+    <message>
+        <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
+        <translation>ضبط دقيق لمحرّك العرض. الإعدادات الافتراضية آمنة على معظم الأنظمة؛ إذا كانت النافذة فارغة أو تعطّل التطبيق عند البدء، أو حدث تقطّع، فجرّب تغيير هذه الخيارات. تُطبّق التغييرات بعد إعادة التشغيل.</translation>
+    </message>
+    <message>
+        <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
+        <translation>العرض بالكامل على المعالج (--disable-gpu). يُصلح النوافذ الفارغة وأعطال البدء في بعض إعدادات GPU/التعريف. الافتراضي على Linux.</translation>
+    </message>
+    <message>
+        <source>Disable GPU acceleration</source>
+        <translation>تعطيل تسريع GPU</translation>
+    </message>
+    <message>
+        <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
+        <translation>تركيب الصفحة على المعالج (--disable-gpu-compositing). يتجنّب وميض الإطارات القديمة على بعض التعريفات.</translation>
+    </message>
+    <message>
+        <source>Disable GPU compositing</source>
+        <translation>تعطيل تركيب GPU</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
+        <translation>تعطيل مزامنة VSync لوحدة GPU (--disable-gpu-vsync). قد يقلّل تأخّر الإدخال على حساب تمزّق الصورة.</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync</source>
+        <translation>تعطيل مزامنة VSync لوحدة GPU</translation>
+    </message>
+    <message>
+        <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
+        <translation>تشغيل عملية GPU داخل العملية الرئيسية (--in-process-gpu). حل بديل لبعض الإعدادات المعزولة.</translation>
+    </message>
+    <message>
+        <source>Run GPU in-process</source>
+        <translation>تشغيل GPU داخل العملية</translation>
+    </message>
+    <message>
+        <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
+        <translation>فرض التسريع حتى عندما يكون التعريف في قائمة الحظر (--ignore-gpu-blocklist). جرّب هذا لإعادة تشغيل GPU.</translation>
+    </message>
+    <message>
+        <source>Ignore GPU blocklist</source>
+        <translation>تجاهل قائمة حظر GPU</translation>
+    </message>
+    <message>
+        <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
+        <translation>تشغيل كل شيء في عملية واحدة (--single-process). يستهلك ذاكرة أقل لكنه أقل استقراراً.</translation>
+    </message>
+    <message>
+        <source>Single-process mode (lower memory)</source>
+        <translation>وضع العملية الواحدة (ذاكرة أقل)</translation>
+    </message>
+    <message>
+        <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
+        <translation>مشاركة عملية عرض واحدة لكل موقع (--process-per-site). يقلّل استهلاك الذاكرة.</translation>
+    </message>
+    <message>
+        <source>One process per site (lower memory)</source>
+        <translation>عملية واحدة لكل موقع (ذاكرة أقل)</translation>
+    </message>
+    <message>
+        <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
+        <translation>منع WebRTC من كشف عنوان IP المحلي الخاص بك عبر الاتصالات غير الوسيطة.</translation>
+    </message>
+    <message>
+        <source>Prevent WebRTC IP leak</source>
+        <translation>منع تسرّب عنوان IP عبر WebRTC</translation>
+    </message>
+    <message>
+        <source>JavaScript memory limit</source>
+        <translation>حد ذاكرة JavaScript</translation>
+    </message>
+    <message>
+        <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
+        <translation>حدّد سقف كومة JavaScript (V8 --max-old-space-size). 0 = تلقائي. قلّله إذا استهلك التطبيق الكثير من RAM.</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> MB</translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation>ذاكرة تخزين HTTP المؤقتة</translation>
+    </message>
+    <message>
+        <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
+        <translation>مكان حفظ ذاكرة تخزين HTTP المؤقتة. الذاكرة تُمسح عند الخروج؛ "بلا" يعطّل التخزين المؤقت.</translation>
+    </message>
+    <message>
+        <source>Max size</source>
+        <translation>الحجم الأقصى</translation>
+    </message>
+    <message>
+        <source>Maximum on-disk cache size. 0 = automatic.</source>
+        <translation>الحجم الأقصى للذاكرة المؤقتة على القرص. 0 = تلقائي.</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>سيؤدي هذا إلى حذف البيانات الدائمة (بما في ذلك ملفات تعريف الارتباط الدائمة وذاكرة التخزين المؤقت) وإغلاق التطبيق.</translation>
     </message>
@@ -1339,6 +1439,14 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Could not read that file: %1</source>
         <translation>تعذّرت قراءة ذلك الملف: %1</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation>القرص</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>الذاكرة</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

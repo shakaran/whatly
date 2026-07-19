@@ -1,3 +1,21 @@
+## Unreleased
+
+A sweep of engine-tuning features, with every existing feature kept intact.
+
+**Performance & privacy settings.** Settings → *Performance & Privacy* now
+exposes the rendering-engine knobs that used to be hard-coded. Whatly still
+disables the GPU by default on Linux (the long-standing fix for blank windows
+and start-up crashes on some GPU/driver setups, issues #200 / #234 / #252), but
+you can now turn acceleration back on, ignore the driver blocklist, run the GPU
+in-process, toggle GPU compositing and VSync, or pick a lower-memory process
+model (single-process / process-per-site). A JavaScript memory cap
+(`--max-old-space-size`, for the "eats RAM" reports #241 / #255) and an HTTP
+cache type/size control round it out. A *Prevent WebRTC IP leak* switch stops
+WebRTC from revealing your local IP over non-proxied connections. All of these
+are stored machine-wide and applied at start-up, so a change takes effect after
+a restart. Covered by new unit tests (`TstPerformance`) and translated into all
+15 languages.
+
 ## 6.2.1 (2026-07-19)
 
 Bug-fix and hardening release.

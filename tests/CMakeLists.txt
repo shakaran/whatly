@@ -48,7 +48,7 @@ add_executable(tst_logic
     ${S}/scheduledmessages.cpp
     ${S}/webfont.cpp ${S}/chattheme.cpp ${S}/mutedstatus.cpp ${S}/privacyblur.cpp
     ${S}/chatwallpaper.cpp ${S}/customcss.cpp ${S}/webtweaks.cpp
-    ${S}/linkeddevicename.cpp
+    ${S}/linkeddevicename.cpp ${S}/performance.cpp
     ${S}/icons.qrc
 )
 target_include_directories(tst_logic PRIVATE ${S} ${CMAKE_BINARY_DIR})

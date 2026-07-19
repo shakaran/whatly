@@ -905,7 +905,7 @@ Please setup the password in the Settings first.</source>
         <translation> pt</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app's own interface — menus, settings and dialogs. This does not affect WhatsApp Web's text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ऐप के अपने इंटरफ़ेस — मेन्यू, सेटिंग्स और डायलॉग — का पॉइंट आकार। यह WhatsApp Web के टेक्स्ट को प्रभावित नहीं करता; उसके लिए ज़ूम का उपयोग करें।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -913,7 +913,7 @@ Please setup the password in the Settings first.</source>
         <translation>क्रैश के बाद स्वचालित रूप से पुनः लोड करें</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web's page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;यदि WhatsApp Web की पेज प्रक्रिया क्रैश हो जाए, तो पहले पूछने के बजाय उसे स्वचालित रूप से पुनः लोड करें।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -1285,6 +1285,106 @@ Please setup the password in the Settings first.</source>
         <translation>क्रिया</translation>
     </message>
     <message>
+        <source>Performance &amp; Privacy</source>
+        <translation>प्रदर्शन &amp; गोपनीयता</translation>
+    </message>
+    <message>
+        <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
+        <translation>रेंडरिंग इंजन को बारीकी से समायोजित करें। अधिकांश सिस्टम पर डिफ़ॉल्ट सुरक्षित हैं; अगर विंडो खाली हो या ऐप शुरू होते ही क्रैश हो जाए, या रुक-रुक कर चले, तो इन्हें बदलकर देखें। परिवर्तन पुनः आरंभ के बाद लागू होते हैं।</translation>
+    </message>
+    <message>
+        <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
+        <translation>पूरी तरह CPU पर रेंडर करें (--disable-gpu)। कुछ GPU/ड्राइवर सेटअप पर खाली विंडो और शुरुआती क्रैश ठीक करता है। Linux पर डिफ़ॉल्ट।</translation>
+    </message>
+    <message>
+        <source>Disable GPU acceleration</source>
+        <translation>GPU त्वरण अक्षम करें</translation>
+    </message>
+    <message>
+        <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
+        <translation>पेज को CPU पर कंपोज़िट करें (--disable-gpu-compositing)। कुछ ड्राइवरों पर पुराने-फ्रेम की झिलमिलाहट से बचाता है।</translation>
+    </message>
+    <message>
+        <source>Disable GPU compositing</source>
+        <translation>GPU कंपोज़िटिंग अक्षम करें</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
+        <translation>GPU VSync अक्षम करें (--disable-gpu-vsync)। टियरिंग की कीमत पर इनपुट लैग कम कर सकता है।</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync</source>
+        <translation>GPU VSync अक्षम करें</translation>
+    </message>
+    <message>
+        <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
+        <translation>GPU प्रक्रिया को मुख्य प्रक्रिया के भीतर चलाएँ (--in-process-gpu)। कुछ सैंडबॉक्स्ड सेटअप के लिए एक उपाय।</translation>
+    </message>
+    <message>
+        <source>Run GPU in-process</source>
+        <translation>GPU को प्रक्रिया के भीतर चलाएँ</translation>
+    </message>
+    <message>
+        <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
+        <translation>ड्राइवर के ब्लॉकलिस्ट में होने पर भी त्वरण को बाध्य करें (--ignore-gpu-blocklist)। GPU फिर से चालू करने के लिए यह आज़माएँ।</translation>
+    </message>
+    <message>
+        <source>Ignore GPU blocklist</source>
+        <translation>GPU ब्लॉकलिस्ट अनदेखा करें</translation>
+    </message>
+    <message>
+        <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
+        <translation>सब कुछ एक ही प्रक्रिया में चलाएँ (--single-process)। कम मेमोरी उपयोग करता है पर कम स्थिर है।</translation>
+    </message>
+    <message>
+        <source>Single-process mode (lower memory)</source>
+        <translation>एकल-प्रक्रिया मोड (कम मेमोरी)</translation>
+    </message>
+    <message>
+        <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
+        <translation>प्रति साइट एक रेंडरर प्रक्रिया साझा करें (--process-per-site)। मेमोरी उपयोग घटाता है।</translation>
+    </message>
+    <message>
+        <source>One process per site (lower memory)</source>
+        <translation>प्रति साइट एक प्रक्रिया (कम मेमोरी)</translation>
+    </message>
+    <message>
+        <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
+        <translation>WebRTC को गैर-प्रॉक्सी कनेक्शनों पर आपका स्थानीय IP पता उजागर करने से रोकें।</translation>
+    </message>
+    <message>
+        <source>Prevent WebRTC IP leak</source>
+        <translation>WebRTC IP लीक रोकें</translation>
+    </message>
+    <message>
+        <source>JavaScript memory limit</source>
+        <translation>JavaScript मेमोरी सीमा</translation>
+    </message>
+    <message>
+        <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
+        <translation>JavaScript हीप को सीमित करें (V8 --max-old-space-size)। 0 = स्वचालित। अगर ऐप बहुत अधिक RAM उपयोग करे तो इसे कम करें।</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> MB</translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation>HTTP कैश</translation>
+    </message>
+    <message>
+        <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
+        <translation>HTTP कैश कहाँ रखें। मेमोरी बाहर निकलने पर साफ़ हो जाती है; None कैशिंग अक्षम करता है।</translation>
+    </message>
+    <message>
+        <source>Max size</source>
+        <translation>अधिकतम आकार</translation>
+    </message>
+    <message>
+        <source>Maximum on-disk cache size. 0 = automatic.</source>
+        <translation>डिस्क पर अधिकतम कैश आकार। 0 = स्वचालित।</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>यह स्थायी डेटा (स्थायी कुकीज़ और कैश सहित) हटा देगा और एप्लिकेशन बंद कर देगा।</translation>
     </message>
@@ -1339,6 +1439,14 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Could not read that file: %1</source>
         <translation>वह फ़ाइल नहीं पढ़ी जा सकी: %1</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation>डिस्क</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>मेमोरी</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

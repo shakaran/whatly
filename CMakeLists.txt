@@ -196,6 +196,7 @@ set(SOURCES
     src/customcss.cpp
     src/globalshortcut.cpp
     src/privacyblur.cpp
+    src/performance.cpp
     src/webfont.cpp
     src/mutedstatus.cpp
     src/scheduledmessages.cpp
@@ -237,6 +238,7 @@ set(HEADERS
     src/chatwallpaper.h
     src/customcss.h
     src/privacyblur.h
+    src/performance.h
     src/webfont.h
     src/mutedstatus.h
     src/scheduledmessages.h

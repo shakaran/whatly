@@ -1258,6 +1258,179 @@ background:transparent;
          </layout>
         </widget>
        </item>
+       <item>
+        <widget class="QGroupBox" name="groupBoxPerformance">
+         <property name="title">
+          <string>Performance &amp; Privacy</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayoutPerformance">
+          <item>
+           <widget class="QLabel" name="performanceHintLabel">
+            <property name="text">
+             <string>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="disableGpuCheckBox">
+            <property name="toolTip">
+             <string>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</string>
+            </property>
+            <property name="text">
+             <string>Disable GPU acceleration</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="disableGpuCompositingCheckBox">
+            <property name="toolTip">
+             <string>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</string>
+            </property>
+            <property name="text">
+             <string>Disable GPU compositing</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="disableGpuVsyncCheckBox">
+            <property name="toolTip">
+             <string>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</string>
+            </property>
+            <property name="text">
+             <string>Disable GPU VSync</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="inProcessGpuCheckBox">
+            <property name="toolTip">
+             <string>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</string>
+            </property>
+            <property name="text">
+             <string>Run GPU in-process</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="ignoreGpuBlocklistCheckBox">
+            <property name="toolTip">
+             <string>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</string>
+            </property>
+            <property name="text">
+             <string>Ignore GPU blocklist</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="singleProcessCheckBox">
+            <property name="toolTip">
+             <string>Run everything in a single process (--single-process). Uses less memory but is less stable.</string>
+            </property>
+            <property name="text">
+             <string>Single-process mode (lower memory)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="processPerSiteCheckBox">
+            <property name="toolTip">
+             <string>Share one renderer process per site (--process-per-site). Reduces memory use.</string>
+            </property>
+            <property name="text">
+             <string>One process per site (lower memory)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="webrtcShieldCheckBox">
+            <property name="toolTip">
+             <string>Stop WebRTC from revealing your local IP address over non-proxied connections.</string>
+            </property>
+            <property name="text">
+             <string>Prevent WebRTC IP leak</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayoutJsMem">
+            <item>
+             <widget class="QLabel" name="jsMemoryLimitLabel">
+              <property name="text">
+               <string>JavaScript memory limit</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="jsMemoryLimitSpinBox">
+              <property name="toolTip">
+               <string>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</string>
+              </property>
+              <property name="specialValueText">
+               <string>Automatic</string>
+              </property>
+              <property name="suffix">
+               <string> MB</string>
+              </property>
+              <property name="maximum">
+               <number>8192</number>
+              </property>
+              <property name="singleStep">
+               <number>128</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayoutCache">
+            <item>
+             <widget class="QLabel" name="cacheTypeLabel">
+              <property name="text">
+               <string>HTTP cache</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="cacheTypeComboBox">
+              <property name="toolTip">
+               <string>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="cacheMaxLabel">
+              <property name="text">
+               <string>Max size</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="cacheMaxSpinBox">
+              <property name="toolTip">
+               <string>Maximum on-disk cache size. 0 = automatic.</string>
+              </property>
+              <property name="specialValueText">
+               <string>Automatic</string>
+              </property>
+              <property name="suffix">
+               <string> MB</string>
+              </property>
+              <property name="maximum">
+               <number>4096</number>
+              </property>
+              <property name="singleStep">
+               <number>64</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>

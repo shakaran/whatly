@@ -905,7 +905,7 @@ Please setup the password in the Settings first.</source>
         <translation> pt</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app's own interface — menus, settings and dialogs. This does not affect WhatsApp Web's text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;应用自身界面（菜单、设置和对话框）的磅值大小。这不会影响 WhatsApp Web 的文本；那请使用缩放。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -913,7 +913,7 @@ Please setup the password in the Settings first.</source>
         <translation>崩溃后自动重新加载</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web's page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果 WhatsApp Web 的页面进程崩溃，则自动重新加载，而不是先询问。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -1285,6 +1285,106 @@ Please setup the password in the Settings first.</source>
         <translation>操作</translation>
     </message>
     <message>
+        <source>Performance &amp; Privacy</source>
+        <translation>性能与隐私</translation>
+    </message>
+    <message>
+        <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
+        <translation>微调渲染引擎。默认设置在大多数系统上都是安全的；如果窗口空白、应用启动时崩溃或出现卡顿，可尝试更改这些设置。更改将在重启后生效。</translation>
+    </message>
+    <message>
+        <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
+        <translation>完全在 CPU 上渲染（--disable-gpu）。可修复某些 GPU/驱动配置下的空白窗口和启动崩溃。Linux 上的默认设置。</translation>
+    </message>
+    <message>
+        <source>Disable GPU acceleration</source>
+        <translation>禁用 GPU 加速</translation>
+    </message>
+    <message>
+        <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
+        <translation>在 CPU 上合成页面（--disable-gpu-compositing）。可避免某些驱动上的残帧闪烁。</translation>
+    </message>
+    <message>
+        <source>Disable GPU compositing</source>
+        <translation>禁用 GPU 合成</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
+        <translation>禁用 GPU 垂直同步（--disable-gpu-vsync）。可减少输入延迟，但可能出现画面撕裂。</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync</source>
+        <translation>禁用 GPU 垂直同步</translation>
+    </message>
+    <message>
+        <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
+        <translation>在主进程内运行 GPU 进程（--in-process-gpu）。用于解决某些沙盒环境的临时方案。</translation>
+    </message>
+    <message>
+        <source>Run GPU in-process</source>
+        <translation>在进程内运行 GPU</translation>
+    </message>
+    <message>
+        <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
+        <translation>即使驱动被列入黑名单也强制启用加速（--ignore-gpu-blocklist）。可尝试此项重新启用 GPU。</translation>
+    </message>
+    <message>
+        <source>Ignore GPU blocklist</source>
+        <translation>忽略 GPU 黑名单</translation>
+    </message>
+    <message>
+        <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
+        <translation>在单个进程中运行所有内容（--single-process）。占用内存更少，但稳定性较差。</translation>
+    </message>
+    <message>
+        <source>Single-process mode (lower memory)</source>
+        <translation>单进程模式（更低内存）</translation>
+    </message>
+    <message>
+        <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
+        <translation>每个站点共用一个渲染进程（--process-per-site）。可降低内存占用。</translation>
+    </message>
+    <message>
+        <source>One process per site (lower memory)</source>
+        <translation>每个站点一个进程（更低内存）</translation>
+    </message>
+    <message>
+        <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
+        <translation>阻止 WebRTC 通过非代理连接暴露您的本地 IP 地址。</translation>
+    </message>
+    <message>
+        <source>Prevent WebRTC IP leak</source>
+        <translation>防止 WebRTC IP 泄露</translation>
+    </message>
+    <message>
+        <source>JavaScript memory limit</source>
+        <translation>JavaScript 内存限制</translation>
+    </message>
+    <message>
+        <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
+        <translation>限制 JavaScript 堆大小（V8 --max-old-space-size）。0 = 自动。如果应用占用过多 RAM，请调低此值。</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> MB</translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation>HTTP 缓存</translation>
+    </message>
+    <message>
+        <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
+        <translation>HTTP 缓存的存放位置。内存缓存会在退出时清除；“无”则禁用缓存。</translation>
+    </message>
+    <message>
+        <source>Max size</source>
+        <translation>最大大小</translation>
+    </message>
+    <message>
+        <source>Maximum on-disk cache size. 0 = automatic.</source>
+        <translation>磁盘缓存的最大大小。0 = 自动。</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>这将删除持久数据（包括持久 Cookie 和缓存）并退出应用程序。</translation>
     </message>
@@ -1339,6 +1439,14 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Could not read that file: %1</source>
         <translation>无法读取该文件：%1</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation>磁盘</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>内存</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

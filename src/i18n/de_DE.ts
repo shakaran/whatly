@@ -905,7 +905,7 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
         <translation> pt</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app's own interface — menus, settings and dialogs. This does not affect WhatsApp Web's text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Punktgröße der App-eigenen Oberfläche – Menüs, Einstellungen und Dialoge. Dies wirkt sich nicht auf den Text von WhatsApp Web aus; verwende dafür den Zoom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -913,7 +913,7 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
         <translation>Nach einem Absturz automatisch neu laden</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web's page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wenn der Seitenprozess von WhatsApp Web abstürzt, ihn automatisch neu laden, statt vorher zu fragen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -1285,6 +1285,106 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
         <translation>Aktion</translation>
     </message>
     <message>
+        <source>Performance &amp; Privacy</source>
+        <translation>Leistung &amp; Datenschutz</translation>
+    </message>
+    <message>
+        <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
+        <translation>Feineinstellung der Rendering-Engine. Die Standardwerte sind auf den meisten Systemen sicher; falls das Fenster leer bleibt, die App beim Start abstürzt oder ruckelt, versuche, diese zu ändern. Änderungen werden nach einem Neustart wirksam.</translation>
+    </message>
+    <message>
+        <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
+        <translation>Vollständig auf der CPU rendern (--disable-gpu). Behebt leere Fenster und Startabstürze bei manchen GPU-/Treiberkonfigurationen. Standard unter Linux.</translation>
+    </message>
+    <message>
+        <source>Disable GPU acceleration</source>
+        <translation>GPU-Beschleunigung deaktivieren</translation>
+    </message>
+    <message>
+        <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
+        <translation>Die Seite auf der CPU zusammensetzen (--disable-gpu-compositing). Verhindert Flackern durch veraltete Frames bei manchen Treibern.</translation>
+    </message>
+    <message>
+        <source>Disable GPU compositing</source>
+        <translation>GPU-Compositing deaktivieren</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
+        <translation>GPU-VSync deaktivieren (--disable-gpu-vsync). Kann die Eingabeverzögerung verringern, allerdings auf Kosten von Tearing.</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync</source>
+        <translation>GPU-VSync deaktivieren</translation>
+    </message>
+    <message>
+        <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
+        <translation>Den GPU-Prozess innerhalb des Hauptprozesses ausführen (--in-process-gpu). Eine Behelfslösung für manche Sandbox-Konfigurationen.</translation>
+    </message>
+    <message>
+        <source>Run GPU in-process</source>
+        <translation>GPU im selben Prozess ausführen</translation>
+    </message>
+    <message>
+        <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
+        <translation>Beschleunigung auch dann erzwingen, wenn der Treiber auf der Sperrliste steht (--ignore-gpu-blocklist). Versuche dies, um die GPU wieder zu aktivieren.</translation>
+    </message>
+    <message>
+        <source>Ignore GPU blocklist</source>
+        <translation>GPU-Sperrliste ignorieren</translation>
+    </message>
+    <message>
+        <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
+        <translation>Alles in einem einzigen Prozess ausführen (--single-process). Verbraucht weniger Speicher, ist aber weniger stabil.</translation>
+    </message>
+    <message>
+        <source>Single-process mode (lower memory)</source>
+        <translation>Einzelprozess-Modus (weniger Speicher)</translation>
+    </message>
+    <message>
+        <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
+        <translation>Einen Renderer-Prozess pro Website gemeinsam nutzen (--process-per-site). Reduziert den Speicherverbrauch.</translation>
+    </message>
+    <message>
+        <source>One process per site (lower memory)</source>
+        <translation>Ein Prozess pro Website (weniger Speicher)</translation>
+    </message>
+    <message>
+        <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
+        <translation>Verhindert, dass WebRTC deine lokale IP-Adresse über nicht per Proxy geleitete Verbindungen preisgibt.</translation>
+    </message>
+    <message>
+        <source>Prevent WebRTC IP leak</source>
+        <translation>WebRTC-IP-Leck verhindern</translation>
+    </message>
+    <message>
+        <source>JavaScript memory limit</source>
+        <translation>JavaScript-Speicherlimit</translation>
+    </message>
+    <message>
+        <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
+        <translation>Begrenzt den JavaScript-Heap (V8 --max-old-space-size). 0 = automatisch. Verringere den Wert, wenn die App zu viel RAM verbraucht.</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> MB</translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation>HTTP-Cache</translation>
+    </message>
+    <message>
+        <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
+        <translation>Speicherort für den HTTP-Cache. „Arbeitsspeicher“ wird beim Beenden geleert; „Keiner“ deaktiviert das Caching.</translation>
+    </message>
+    <message>
+        <source>Max size</source>
+        <translation>Maximale Größe</translation>
+    </message>
+    <message>
+        <source>Maximum on-disk cache size. 0 = automatic.</source>
+        <translation>Maximale Cache-Größe auf der Festplatte. 0 = automatisch.</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Dies löscht die persistenten Daten (einschließlich persistenter Cookies und Cache) und beendet die Anwendung.</translation>
     </message>
@@ -1339,6 +1439,14 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
     <message>
         <source>Could not read that file: %1</source>
         <translation>Diese Datei konnte nicht gelesen werden: %1</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation>Festplatte</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>Arbeitsspeicher</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

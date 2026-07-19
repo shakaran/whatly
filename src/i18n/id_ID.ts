@@ -905,7 +905,7 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation> pt</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app's own interface — menus, settings and dialogs. This does not affect WhatsApp Web's text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukuran titik antarmuka aplikasi sendiri — menu, pengaturan, dan dialog. Ini tidak memengaruhi teks WhatsApp Web; gunakan zoom untuk itu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -913,7 +913,7 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Muat ulang otomatis setelah crash</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web's page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Jika proses halaman WhatsApp Web crash, muat ulang secara otomatis alih-alih bertanya dahulu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -1285,6 +1285,106 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Aksi</translation>
     </message>
     <message>
+        <source>Performance &amp; Privacy</source>
+        <translation>Performa &amp; Privasi</translation>
+    </message>
+    <message>
+        <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
+        <translation>Sempurnakan mesin rendering. Pengaturan bawaan aman pada sebagian besar sistem; jika jendela kosong atau aplikasi mogok saat mulai, atau jika tersendat, coba ubah pengaturan ini. Perubahan berlaku setelah memulai ulang.</translation>
+    </message>
+    <message>
+        <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
+        <translation>Render sepenuhnya pada CPU (--disable-gpu). Memperbaiki jendela kosong dan kemogokan saat mulai pada beberapa konfigurasi GPU/driver. Bawaan pada Linux.</translation>
+    </message>
+    <message>
+        <source>Disable GPU acceleration</source>
+        <translation>Nonaktifkan akselerasi GPU</translation>
+    </message>
+    <message>
+        <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
+        <translation>Komposit halaman pada CPU (--disable-gpu-compositing). Menghindari kedipan bingkai usang pada beberapa driver.</translation>
+    </message>
+    <message>
+        <source>Disable GPU compositing</source>
+        <translation>Nonaktifkan kompositing GPU</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
+        <translation>Nonaktifkan GPU VSync (--disable-gpu-vsync). Dapat mengurangi jeda masukan dengan risiko tearing.</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync</source>
+        <translation>Nonaktifkan GPU VSync</translation>
+    </message>
+    <message>
+        <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
+        <translation>Jalankan proses GPU di dalam proses utama (--in-process-gpu). Solusi sementara untuk beberapa konfigurasi sandbox.</translation>
+    </message>
+    <message>
+        <source>Run GPU in-process</source>
+        <translation>Jalankan GPU dalam proses</translation>
+    </message>
+    <message>
+        <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
+        <translation>Paksa akselerasi meski driver masuk daftar blokir (--ignore-gpu-blocklist). Coba ini untuk mengaktifkan kembali GPU.</translation>
+    </message>
+    <message>
+        <source>Ignore GPU blocklist</source>
+        <translation>Abaikan daftar blokir GPU</translation>
+    </message>
+    <message>
+        <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
+        <translation>Jalankan semuanya dalam satu proses (--single-process). Menggunakan lebih sedikit memori tetapi kurang stabil.</translation>
+    </message>
+    <message>
+        <source>Single-process mode (lower memory)</source>
+        <translation>Mode proses tunggal (memori lebih rendah)</translation>
+    </message>
+    <message>
+        <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
+        <translation>Bagikan satu proses perender per situs (--process-per-site). Mengurangi penggunaan memori.</translation>
+    </message>
+    <message>
+        <source>One process per site (lower memory)</source>
+        <translation>Satu proses per situs (memori lebih rendah)</translation>
+    </message>
+    <message>
+        <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
+        <translation>Cegah WebRTC mengungkapkan alamat IP lokal Anda melalui koneksi tanpa proksi.</translation>
+    </message>
+    <message>
+        <source>Prevent WebRTC IP leak</source>
+        <translation>Cegah kebocoran IP WebRTC</translation>
+    </message>
+    <message>
+        <source>JavaScript memory limit</source>
+        <translation>Batas memori JavaScript</translation>
+    </message>
+    <message>
+        <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
+        <translation>Batasi heap JavaScript (V8 --max-old-space-size). 0 = otomatis. Turunkan jika aplikasi menggunakan terlalu banyak RAM.</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> MB</translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation>Cache HTTP</translation>
+    </message>
+    <message>
+        <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
+        <translation>Tempat menyimpan cache HTTP. Memory dihapus saat keluar; None menonaktifkan caching.</translation>
+    </message>
+    <message>
+        <source>Max size</source>
+        <translation>Ukuran maks</translation>
+    </message>
+    <message>
+        <source>Maximum on-disk cache size. 0 = automatic.</source>
+        <translation>Ukuran cache maksimum pada disk. 0 = otomatis.</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Ini akan menghapus data persisten (termasuk cookie persisten dan cache) dan menutup aplikasi.</translation>
     </message>
@@ -1339,6 +1439,14 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
     <message>
         <source>Could not read that file: %1</source>
         <translation>Tidak dapat membaca berkas itu: %1</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation>Disk</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>Memori</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

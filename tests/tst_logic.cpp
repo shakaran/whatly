@@ -35,6 +35,7 @@
 #include "customcss.h"
 #include "webtweaks.h"
 #include "linkeddevicename.h"
+#include "performance.h"
 
 // ─────────────────────────────────────────────────────────────────────────────
 class TstUtils : public QObject {
@@ -716,6 +717,106 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Performance: the Chromium-flag fragment is a pure function of the stored
+// settings, so it can be exercised directly. Runs in QStandardPaths test mode,
+// so it writes to a throwaway settings file and restores every key it touches.
+class TstPerformance : public QObject {
+  Q_OBJECT
+private slots:
+  void init() {
+    // Start from a clean, known slate for every case.
+    Performance::setDisableGpu(false);
+    Performance::setDisableGpuCompositing(false);
+    Performance::setDisableGpuVsync(false);
+    Performance::setInProcessGpu(false);
+    Performance::setIgnoreGpuBlocklist(false);
+    Performance::setSingleProcess(false);
+    Performance::setProcessPerSite(false);
+    Performance::setWebrtcShield(false);
+    Performance::setJsMemoryLimitMb(0);
+    Performance::setCacheType(QStringLiteral("disk"));
+    Performance::setCacheMaxMb(0);
+  }
+
+  void emptyWhenAllOff() {
+    QCOMPARE(Performance::chromiumFlagFragment(), QString());
+  }
+
+  void gpuFlagsMapCorrectly() {
+    Performance::setDisableGpu(true);
+    QVERIFY(Performance::chromiumFlagFragment().contains(
+        QLatin1String("--disable-gpu")));
+    Performance::setDisableGpuCompositing(true);
+    QVERIFY(Performance::chromiumFlagFragment().contains(
+        QLatin1String("--disable-gpu-compositing")));
+    Performance::setInProcessGpu(true);
+    QVERIFY(Performance::chromiumFlagFragment().contains(
+        QLatin1String("--in-process-gpu")));
+    Performance::setIgnoreGpuBlocklist(true);
+    QVERIFY(Performance::chromiumFlagFragment().contains(
+        QLatin1String("--ignore-gpu-blocklist")));
+  }
+
+  void processModelFlags() {
+    Performance::setSingleProcess(true);
+    QVERIFY(Performance::chromiumFlagFragment().contains(
+        QLatin1String("--single-process")));
+    Performance::setProcessPerSite(true);
+    QVERIFY(Performance::chromiumFlagFragment().contains(
+        QLatin1String("--process-per-site")));
+  }
+
+  void webrtcShieldFlag() {
+    QVERIFY(!Performance::chromiumFlagFragment().contains(
+        QLatin1String("webrtc")));
+    Performance::setWebrtcShield(true);
+    QVERIFY(Performance::chromiumFlagFragment().contains(QLatin1String(
+        "--force-webrtc-ip-handling-policy=disable_non_proxied_udp")));
+  }
+
+  void jsMemoryLimitFlag() {
+    QVERIFY(!Performance::chromiumFlagFragment().contains(
+        QLatin1String("--js-flags")));
+    Performance::setJsMemoryLimitMb(512);
+    QVERIFY(Performance::chromiumFlagFragment().contains(
+        QLatin1String("--js-flags=--max-old-space-size=512")));
+    // Negative values are clamped to 0 (no flag).
+    Performance::setJsMemoryLimitMb(-5);
+    QCOMPARE(Performance::jsMemoryLimitMb(), 0);
+    QVERIFY(!Performance::chromiumFlagFragment().contains(
+        QLatin1String("--js-flags")));
+  }
+
+  void settersRoundTrip() {
+    Performance::setDisableGpuVsync(true);
+    QVERIFY(Performance::disableGpuVsync());
+    Performance::setCacheType(QStringLiteral("memory"));
+    QCOMPARE(Performance::cacheType(), QStringLiteral("memory"));
+    Performance::setCacheMaxMb(256);
+    QCOMPARE(Performance::cacheMaxMb(), 256);
+    Performance::setCacheMaxMb(-1);
+    QCOMPARE(Performance::cacheMaxMb(), 0);
+  }
+
+  void applyToProfileIsSafe() {
+    // Must not crash on a null profile, and must set the cache type on a real one.
+    // A named (persistent) profile is used: off-the-record profiles force
+    // MemoryHttpCache and would ignore the disk/none choices.
+    Performance::applyToProfile(nullptr);
+    QWebEngineProfile profile(QStringLiteral("tst_perf"));
+    Performance::setCacheType(QStringLiteral("memory"));
+    Performance::applyToProfile(&profile);
+    QCOMPARE(profile.httpCacheType(), QWebEngineProfile::MemoryHttpCache);
+    Performance::setCacheType(QStringLiteral("none"));
+    Performance::applyToProfile(&profile);
+    QCOMPARE(profile.httpCacheType(), QWebEngineProfile::NoCache);
+    Performance::setCacheType(QStringLiteral("disk"));
+    Performance::applyToProfile(&profile);
+    QCOMPARE(profile.httpCacheType(), QWebEngineProfile::DiskHttpCache);
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // install() paths: give each injected-script module a real (headless) profile.
 class TstScriptInstall : public QObject {
   Q_OBJECT
@@ -801,6 +902,7 @@ int main(int argc, char *argv[]) {
   { TstScripts t;             run(&t); }
   { TstCustomCss t;           run(&t); }
   { TstChatWallpaper t;       run(&t); }
+  { TstPerformance t;         run(&t); }
   { TstScriptInstall t;       run(&t); }
   // Profile-mutating test runs last so it doesn't disturb the others.
   { TstAppProfile t;          run(&t); }

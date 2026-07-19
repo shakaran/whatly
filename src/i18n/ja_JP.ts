@@ -905,7 +905,7 @@ Please setup the password in the Settings first.</source>
         <translation> pt</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app's own interface — menus, settings and dialogs. This does not affect WhatsApp Web's text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;アプリ自体のインターフェース（メニュー、設定、ダイアログ）のポイントサイズです。WhatsApp Web のテキストには影響しません。それにはズームを使用してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -913,7 +913,7 @@ Please setup the password in the Settings first.</source>
         <translation>クラッシュ後に自動的に再読み込みする</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web's page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web のページプロセスがクラッシュした場合、最初に確認せず自動的に再読み込みします。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -1285,6 +1285,106 @@ Please setup the password in the Settings first.</source>
         <translation>操作</translation>
     </message>
     <message>
+        <source>Performance &amp; Privacy</source>
+        <translation>パフォーマンスとプライバシー</translation>
+    </message>
+    <message>
+        <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
+        <translation>レンダリングエンジンを微調整します。デフォルト設定はほとんどのシステムで安全です。ウィンドウが空白になる、起動時にクラッシュする、または動作がカクつく場合は、これらの変更を試してください。変更は再起動後に適用されます。</translation>
+    </message>
+    <message>
+        <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
+        <translation>すべてを CPU でレンダリングします（--disable-gpu）。一部の GPU／ドライバー構成での空白ウィンドウや起動時クラッシュを修正します。Linux ではデフォルトです。</translation>
+    </message>
+    <message>
+        <source>Disable GPU acceleration</source>
+        <translation>GPU アクセラレーションを無効化</translation>
+    </message>
+    <message>
+        <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
+        <translation>ページを CPU で合成します（--disable-gpu-compositing）。一部のドライバーで発生する古いフレームのちらつきを回避します。</translation>
+    </message>
+    <message>
+        <source>Disable GPU compositing</source>
+        <translation>GPU 合成を無効化</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
+        <translation>GPU VSync を無効化します（--disable-gpu-vsync）。ティアリングと引き換えに入力遅延を軽減できる場合があります。</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync</source>
+        <translation>GPU VSync を無効化</translation>
+    </message>
+    <message>
+        <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
+        <translation>GPU プロセスをメインプロセス内で実行します（--in-process-gpu）。一部のサンドボックス構成向けの回避策です。</translation>
+    </message>
+    <message>
+        <source>Run GPU in-process</source>
+        <translation>GPU をプロセス内で実行</translation>
+    </message>
+    <message>
+        <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
+        <translation>ドライバーがブロックリストに含まれていてもアクセラレーションを強制します（--ignore-gpu-blocklist）。GPU を再度有効にするにはこれを試してください。</translation>
+    </message>
+    <message>
+        <source>Ignore GPU blocklist</source>
+        <translation>GPU ブロックリストを無視</translation>
+    </message>
+    <message>
+        <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
+        <translation>すべてを単一プロセスで実行します（--single-process）。メモリ使用量は少なくなりますが、安定性は低下します。</translation>
+    </message>
+    <message>
+        <source>Single-process mode (lower memory)</source>
+        <translation>単一プロセスモード（メモリ削減）</translation>
+    </message>
+    <message>
+        <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
+        <translation>サイトごとに 1 つのレンダラープロセスを共有します（--process-per-site）。メモリ使用量を削減します。</translation>
+    </message>
+    <message>
+        <source>One process per site (lower memory)</source>
+        <translation>サイトごとに 1 プロセス（メモリ削減）</translation>
+    </message>
+    <message>
+        <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
+        <translation>プロキシを経由しない接続で WebRTC がローカル IP アドレスを露呈するのを防ぎます。</translation>
+    </message>
+    <message>
+        <source>Prevent WebRTC IP leak</source>
+        <translation>WebRTC の IP 漏洩を防止</translation>
+    </message>
+    <message>
+        <source>JavaScript memory limit</source>
+        <translation>JavaScript メモリ上限</translation>
+    </message>
+    <message>
+        <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
+        <translation>JavaScript ヒープの上限を設定します（V8 --max-old-space-size）。0 = 自動。アプリが RAM を使いすぎる場合は下げてください。</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> MB</translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation>HTTP キャッシュ</translation>
+    </message>
+    <message>
+        <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
+        <translation>HTTP キャッシュの保存場所。メモリは終了時にクリアされます。なしを選ぶとキャッシュが無効になります。</translation>
+    </message>
+    <message>
+        <source>Max size</source>
+        <translation>最大サイズ</translation>
+    </message>
+    <message>
+        <source>Maximum on-disk cache size. 0 = automatic.</source>
+        <translation>ディスク上のキャッシュの最大サイズ。0 = 自動。</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>永続データ（永続的な Cookie とキャッシュを含む）を削除し、アプリケーションを終了します。</translation>
     </message>
@@ -1339,6 +1439,14 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Could not read that file: %1</source>
         <translation>そのファイルを読み込めませんでした: %1</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation>ディスク</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>メモリ</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

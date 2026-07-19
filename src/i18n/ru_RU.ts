@@ -905,7 +905,7 @@ Please setup the password in the Settings first.</source>
         <translation> pt</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app's own interface — menus, settings and dialogs. This does not affect WhatsApp Web's text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Размер в пунктах собственного интерфейса приложения — меню, настроек и диалогов. Это не влияет на текст WhatsApp Web; для него используйте масштаб.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -913,7 +913,7 @@ Please setup the password in the Settings first.</source>
         <translation>Автоматически перезагружать после сбоя</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web's page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Если процесс страницы WhatsApp Web аварийно завершится, перезагружать её автоматически, не спрашивая.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -1285,6 +1285,106 @@ Please setup the password in the Settings first.</source>
         <translation>Действие</translation>
     </message>
     <message>
+        <source>Performance &amp; Privacy</source>
+        <translation>Производительность и конфиденциальность</translation>
+    </message>
+    <message>
+        <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
+        <translation>Тонкая настройка движка отрисовки. Значения по умолчанию безопасны для большинства систем; если окно пустое, приложение падает при запуске или подтормаживает, попробуйте изменить эти параметры. Изменения вступают в силу после перезапуска.</translation>
+    </message>
+    <message>
+        <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
+        <translation>Полная отрисовка на CPU (--disable-gpu). Устраняет пустые окна и падения при запуске на некоторых конфигурациях GPU/драйверов. По умолчанию в Linux.</translation>
+    </message>
+    <message>
+        <source>Disable GPU acceleration</source>
+        <translation>Отключить ускорение GPU</translation>
+    </message>
+    <message>
+        <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
+        <translation>Композитинг страницы на CPU (--disable-gpu-compositing). Устраняет мерцание устаревших кадров на некоторых драйверах.</translation>
+    </message>
+    <message>
+        <source>Disable GPU compositing</source>
+        <translation>Отключить композитинг GPU</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
+        <translation>Отключить VSync для GPU (--disable-gpu-vsync). Может снизить задержку ввода ценой разрывов изображения.</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync</source>
+        <translation>Отключить VSync для GPU</translation>
+    </message>
+    <message>
+        <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
+        <translation>Запускать процесс GPU внутри основного процесса (--in-process-gpu). Обходной путь для некоторых изолированных сред.</translation>
+    </message>
+    <message>
+        <source>Run GPU in-process</source>
+        <translation>Запускать GPU в основном процессе</translation>
+    </message>
+    <message>
+        <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
+        <translation>Принудительно включить ускорение, даже если драйвер в чёрном списке (--ignore-gpu-blocklist). Попробуйте, чтобы снова включить GPU.</translation>
+    </message>
+    <message>
+        <source>Ignore GPU blocklist</source>
+        <translation>Игнорировать чёрный список GPU</translation>
+    </message>
+    <message>
+        <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
+        <translation>Запускать всё в одном процессе (--single-process). Использует меньше памяти, но менее стабильно.</translation>
+    </message>
+    <message>
+        <source>Single-process mode (lower memory)</source>
+        <translation>Однопроцессный режим (меньше памяти)</translation>
+    </message>
+    <message>
+        <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
+        <translation>Общий процесс отрисовки для каждого сайта (--process-per-site). Снижает использование памяти.</translation>
+    </message>
+    <message>
+        <source>One process per site (lower memory)</source>
+        <translation>Один процесс на сайт (меньше памяти)</translation>
+    </message>
+    <message>
+        <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
+        <translation>Запретить WebRTC раскрывать ваш локальный IP-адрес через соединения без прокси.</translation>
+    </message>
+    <message>
+        <source>Prevent WebRTC IP leak</source>
+        <translation>Предотвратить утечку IP через WebRTC</translation>
+    </message>
+    <message>
+        <source>JavaScript memory limit</source>
+        <translation>Лимит памяти JavaScript</translation>
+    </message>
+    <message>
+        <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
+        <translation>Ограничить кучу JavaScript (V8 --max-old-space-size). 0 = автоматически. Уменьшите, если приложение использует слишком много RAM.</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> МБ</translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation>Кэш HTTP</translation>
+    </message>
+    <message>
+        <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
+        <translation>Где хранить кэш HTTP. Память очищается при выходе; None отключает кэширование.</translation>
+    </message>
+    <message>
+        <source>Max size</source>
+        <translation>Макс. размер</translation>
+    </message>
+    <message>
+        <source>Maximum on-disk cache size. 0 = automatic.</source>
+        <translation>Максимальный размер кэша на диске. 0 = автоматически.</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Это удалит постоянные данные (включая постоянные файлы cookie и кэш) и закроет приложение.</translation>
     </message>
@@ -1339,6 +1439,14 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Could not read that file: %1</source>
         <translation>Не удалось прочитать этот файл: %1</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation>Диск</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>Память</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

@@ -1,6 +1,8 @@
 #include <QApplication>
 #include <QFont>
 #include <QSocketNotifier>
+
+#include "performance.h"
 #ifdef Q_OS_UNIX
 #include <csignal>
 #include <sys/socket.h>
@@ -314,21 +316,22 @@ static void setChromiumFlags() {
   if (!qEnvironmentVariableIsEmpty("QTWEBENGINE_CHROMIUM_FLAGS"))
     return;
 
-  // On Windows the GPU stays enabled (software rendering is visibly slow), but
-  // compositing is kept in software: GPU compositing exhibits stale-frame
-  // flicker with Qt WebEngine on Windows (same workaround as e.g.
-  // ankitects/anki#4470). Chromium's sandbox works fine on Windows, so it is
-  // not disabled there. On the rest, the GPU and the sandbox are both off.
+  // The always-on base: never-wanted browser cruft, plus (on Linux) no sandbox.
+  // The GPU / process-model / WebRTC / JS-heap switches come from the user's
+  // Performance settings (Performance::chromiumFlagFragment), which default to
+  // the historical behaviour — GPU off on Linux — but can now be tuned or turned
+  // back on. The sandbox stays on for Windows.
 #ifdef Q_OS_WIN
   QString flags = QStringLiteral(
-      "--disable-gpu-compositing --disable-translate --disable-extensions "
+      "--disable-translate --disable-extensions "
       "--disable-component-update --disable-default-apps");
 #else
   QString flags = QStringLiteral(
-      "--disable-gpu --disable-gpu-compositing --disable-translate "
-      "--disable-extensions --disable-component-update --disable-default-apps "
-      "--no-sandbox");
+      "--disable-translate --disable-extensions --disable-component-update "
+      "--disable-default-apps --no-sandbox");
 #endif
+  if (const QString perf = Performance::chromiumFlagFragment(); !perf.isEmpty())
+    flags += QLatin1Char(' ') + perf;
 #ifdef QT_DEBUG
   flags.prepend(QStringLiteral("--remote-debugging-port=9421 "));
 #endif

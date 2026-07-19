@@ -905,16 +905,16 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation> pt</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app's own interface — menus, settings and dialogs. This does not affect WhatsApp Web's text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Uygulamanın kendi arayüzünün — menüler, ayarlar ve iletişim kutuları — punto boyutu. Bu, WhatsApp Web'in metnini etkilemez; bunun için yakınlaştırmayı kullanın.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Uygulamanın kendi arayüzünün — menüler, ayarlar ve iletişim kutuları — punto boyutu. Bu, WhatsApp Web&apos;in metnini etkilemez; bunun için yakınlaştırmayı kullanın.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Reload automatically after a crash</source>
         <translation>Çökme sonrası otomatik olarak yeniden yükle</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web's page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web'in sayfa süreci çökerse, önce sormak yerine otomatik olarak yeniden yükle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web&apos;in sayfa süreci çökerse, önce sormak yerine otomatik olarak yeniden yükle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Form</source>
@@ -1285,6 +1285,106 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Eylem</translation>
     </message>
     <message>
+        <source>Performance &amp; Privacy</source>
+        <translation>Performans &amp; Gizlilik</translation>
+    </message>
+    <message>
+        <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
+        <translation>İşleme motorunda ince ayar yapın. Varsayılanlar çoğu sistemde güvenlidir; pencere boşsa veya uygulama başlangıçta çöküyorsa ya da takılıyorsa bunları değiştirmeyi deneyin. Değişiklikler yeniden başlatmadan sonra geçerli olur.</translation>
+    </message>
+    <message>
+        <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
+        <translation>Tamamen CPU üzerinde işle (--disable-gpu). Bazı GPU/sürücü yapılandırmalarında boş pencereleri ve başlangıç çökmelerini düzeltir. Linux'ta varsayılan.</translation>
+    </message>
+    <message>
+        <source>Disable GPU acceleration</source>
+        <translation>GPU hızlandırmayı devre dışı bırak</translation>
+    </message>
+    <message>
+        <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
+        <translation>Sayfayı CPU üzerinde birleştir (--disable-gpu-compositing). Bazı sürücülerde eski kare titremesini önler.</translation>
+    </message>
+    <message>
+        <source>Disable GPU compositing</source>
+        <translation>GPU birleştirmeyi devre dışı bırak</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
+        <translation>GPU VSync'i devre dışı bırak (--disable-gpu-vsync). Görüntü yırtılması pahasına giriş gecikmesini azaltabilir.</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync</source>
+        <translation>GPU VSync'i devre dışı bırak</translation>
+    </message>
+    <message>
+        <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
+        <translation>GPU işlemini ana işlemin içinde çalıştır (--in-process-gpu). Bazı yalıtılmış yapılandırmalar için bir geçici çözüm.</translation>
+    </message>
+    <message>
+        <source>Run GPU in-process</source>
+        <translation>GPU'yu işlem içinde çalıştır</translation>
+    </message>
+    <message>
+        <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
+        <translation>Sürücü engelleme listesinde olsa bile hızlandırmayı zorla (--ignore-gpu-blocklist). GPU'yu yeniden açmak için bunu deneyin.</translation>
+    </message>
+    <message>
+        <source>Ignore GPU blocklist</source>
+        <translation>GPU engelleme listesini yoksay</translation>
+    </message>
+    <message>
+        <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
+        <translation>Her şeyi tek bir işlemde çalıştır (--single-process). Daha az bellek kullanır ancak daha az kararlıdır.</translation>
+    </message>
+    <message>
+        <source>Single-process mode (lower memory)</source>
+        <translation>Tek işlem modu (daha az bellek)</translation>
+    </message>
+    <message>
+        <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
+        <translation>Site başına tek bir işleyici işlemi paylaş (--process-per-site). Bellek kullanımını azaltır.</translation>
+    </message>
+    <message>
+        <source>One process per site (lower memory)</source>
+        <translation>Site başına bir işlem (daha az bellek)</translation>
+    </message>
+    <message>
+        <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
+        <translation>WebRTC'nin yerel IP adresinizi proxy kullanılmayan bağlantılar üzerinden ifşa etmesini engelleyin.</translation>
+    </message>
+    <message>
+        <source>Prevent WebRTC IP leak</source>
+        <translation>WebRTC IP sızıntısını önle</translation>
+    </message>
+    <message>
+        <source>JavaScript memory limit</source>
+        <translation>JavaScript bellek sınırı</translation>
+    </message>
+    <message>
+        <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
+        <translation>JavaScript yığınını sınırla (V8 --max-old-space-size). 0 = otomatik. Uygulama çok fazla RAM kullanıyorsa düşürün.</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> MB</translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation>HTTP önbelleği</translation>
+    </message>
+    <message>
+        <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
+        <translation>HTTP önbelleğinin nerede tutulacağı. Bellek çıkışta temizlenir; Yok önbelleklemeyi devre dışı bırakır.</translation>
+    </message>
+    <message>
+        <source>Max size</source>
+        <translation>En büyük boyut</translation>
+    </message>
+    <message>
+        <source>Maximum on-disk cache size. 0 = automatic.</source>
+        <translation>En büyük disk önbelleği boyutu. 0 = otomatik.</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Bu, kalıcı verileri (kalıcı çerezler ve önbellek dahil) silecek ve uygulamayı kapatacaktır.</translation>
     </message>
@@ -1339,6 +1439,14 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <source>Could not read that file: %1</source>
         <translation>Bu dosya okunamadı: %1</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation>Disk</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>Bellek</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

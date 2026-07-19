@@ -905,15 +905,15 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation> pt</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app's own interface — menus, settings and dialogs. This does not affect WhatsApp Web's text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puntgrootte van de eigen interface van de app — menu's, instellingen en dialoogvensters. Dit heeft geen invloed op de tekst van WhatsApp Web; gebruik daarvoor de zoom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puntgrootte van de eigen interface van de app — menu&apos;s, instellingen en dialoogvensters. Dit heeft geen invloed op de tekst van WhatsApp Web; gebruik daarvoor de zoom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Reload automatically after a crash</source>
         <translation>Automatisch herladen na een crash</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web's page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Als het paginaproces van WhatsApp Web crasht, dit automatisch herladen in plaats van eerst te vragen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -1285,6 +1285,106 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Actie</translation>
     </message>
     <message>
+        <source>Performance &amp; Privacy</source>
+        <translation>Prestaties &amp; privacy</translation>
+    </message>
+    <message>
+        <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
+        <translation>Verfijn de rendering-engine. De standaardwaarden zijn veilig op de meeste systemen; als het venster leeg is of de app vastloopt bij het starten, of als het hapert, probeer deze dan te wijzigen. Wijzigingen worden toegepast na een herstart.</translation>
+    </message>
+    <message>
+        <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
+        <translation>Volledig renderen op de CPU (--disable-gpu). Lost lege vensters en opstartcrashes op bij sommige GPU-/stuurprogrammaconfiguraties. Standaard op Linux.</translation>
+    </message>
+    <message>
+        <source>Disable GPU acceleration</source>
+        <translation>GPU-versnelling uitschakelen</translation>
+    </message>
+    <message>
+        <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
+        <translation>Stel de pagina samen op de CPU (--disable-gpu-compositing). Voorkomt flikkeren door verouderde frames bij sommige stuurprogramma's.</translation>
+    </message>
+    <message>
+        <source>Disable GPU compositing</source>
+        <translation>GPU-compositing uitschakelen</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
+        <translation>GPU-VSync uitschakelen (--disable-gpu-vsync). Kan invoervertraging verminderen ten koste van tearing.</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync</source>
+        <translation>GPU-VSync uitschakelen</translation>
+    </message>
+    <message>
+        <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
+        <translation>Voer het GPU-proces uit binnen het hoofdproces (--in-process-gpu). Een tijdelijke oplossing voor sommige sandboxconfiguraties.</translation>
+    </message>
+    <message>
+        <source>Run GPU in-process</source>
+        <translation>GPU in het proces uitvoeren</translation>
+    </message>
+    <message>
+        <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
+        <translation>Forceer versnelling zelfs als het stuurprogramma op de blokkeerlijst staat (--ignore-gpu-blocklist). Probeer dit om de GPU weer in te schakelen.</translation>
+    </message>
+    <message>
+        <source>Ignore GPU blocklist</source>
+        <translation>GPU-blokkeerlijst negeren</translation>
+    </message>
+    <message>
+        <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
+        <translation>Alles in één proces uitvoeren (--single-process). Gebruikt minder geheugen maar is minder stabiel.</translation>
+    </message>
+    <message>
+        <source>Single-process mode (lower memory)</source>
+        <translation>Enkelprocesmodus (minder geheugen)</translation>
+    </message>
+    <message>
+        <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
+        <translation>Deel één rendererproces per site (--process-per-site). Vermindert geheugengebruik.</translation>
+    </message>
+    <message>
+        <source>One process per site (lower memory)</source>
+        <translation>Eén proces per site (minder geheugen)</translation>
+    </message>
+    <message>
+        <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
+        <translation>Voorkom dat WebRTC uw lokale IP-adres onthult via niet-geproxyde verbindingen.</translation>
+    </message>
+    <message>
+        <source>Prevent WebRTC IP leak</source>
+        <translation>WebRTC-IP-lek voorkomen</translation>
+    </message>
+    <message>
+        <source>JavaScript memory limit</source>
+        <translation>JavaScript-geheugenlimiet</translation>
+    </message>
+    <message>
+        <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
+        <translation>Beperk de JavaScript-heap (V8 --max-old-space-size). 0 = automatisch. Verlaag dit als de app te veel RAM gebruikt.</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> MB</translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation>HTTP-cache</translation>
+    </message>
+    <message>
+        <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
+        <translation>Waar de HTTP-cache wordt bewaard. Geheugen wordt gewist bij afsluiten; Geen schakelt caching uit.</translation>
+    </message>
+    <message>
+        <source>Max size</source>
+        <translation>Maximale grootte</translation>
+    </message>
+    <message>
+        <source>Maximum on-disk cache size. 0 = automatic.</source>
+        <translation>Maximale cachegrootte op schijf. 0 = automatisch.</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Hiermee worden de persistente gegevens (inclusief persistente cookies en cache) verwijderd en wordt de toepassing afgesloten.</translation>
     </message>
@@ -1339,6 +1439,14 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     <message>
         <source>Could not read that file: %1</source>
         <translation>Kon dat bestand niet lezen: %1</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation>Schijf</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>Geheugen</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

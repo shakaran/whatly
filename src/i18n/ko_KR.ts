@@ -905,7 +905,7 @@ Please setup the password in the Settings first.</source>
         <translation> pt</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app's own interface — menus, settings and dialogs. This does not affect WhatsApp Web's text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;앱 자체 인터페이스(메뉴, 설정, 대화 상자)의 포인트 크기입니다. WhatsApp Web의 텍스트에는 영향을 주지 않습니다. 그것은 확대/축소를 사용하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -913,7 +913,7 @@ Please setup the password in the Settings first.</source>
         <translation>충돌 후 자동으로 다시 로드</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web's page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web의 페이지 프로세스가 충돌하면 먼저 묻지 않고 자동으로 다시 로드합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -1285,6 +1285,106 @@ Please setup the password in the Settings first.</source>
         <translation>동작</translation>
     </message>
     <message>
+        <source>Performance &amp; Privacy</source>
+        <translation>성능 및 개인정보 보호</translation>
+    </message>
+    <message>
+        <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
+        <translation>렌더링 엔진을 세밀하게 조정합니다. 기본값은 대부분의 시스템에서 안전합니다. 창이 비어 있거나 시작 시 앱이 충돌하거나 끊김이 발생하면 이 값을 변경해 보세요. 변경 사항은 다시 시작한 후에 적용됩니다.</translation>
+    </message>
+    <message>
+        <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
+        <translation>전적으로 CPU에서 렌더링합니다 (--disable-gpu). 일부 GPU/드라이버 환경에서 빈 창과 시작 시 충돌을 해결합니다. Linux에서 기본값입니다.</translation>
+    </message>
+    <message>
+        <source>Disable GPU acceleration</source>
+        <translation>GPU 가속 비활성화</translation>
+    </message>
+    <message>
+        <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
+        <translation>페이지를 CPU에서 합성합니다 (--disable-gpu-compositing). 일부 드라이버에서 오래된 프레임 깜박임을 방지합니다.</translation>
+    </message>
+    <message>
+        <source>Disable GPU compositing</source>
+        <translation>GPU 합성 비활성화</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
+        <translation>GPU VSync를 비활성화합니다 (--disable-gpu-vsync). 화면 찢어짐을 감수하는 대신 입력 지연을 줄일 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Disable GPU VSync</source>
+        <translation>GPU VSync 비활성화</translation>
+    </message>
+    <message>
+        <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
+        <translation>GPU 프로세스를 메인 프로세스 내에서 실행합니다 (--in-process-gpu). 일부 샌드박스 환경을 위한 해결 방법입니다.</translation>
+    </message>
+    <message>
+        <source>Run GPU in-process</source>
+        <translation>GPU를 프로세스 내에서 실행</translation>
+    </message>
+    <message>
+        <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
+        <translation>드라이버가 차단 목록에 있어도 가속을 강제합니다 (--ignore-gpu-blocklist). GPU를 다시 켜려면 이 옵션을 사용해 보세요.</translation>
+    </message>
+    <message>
+        <source>Ignore GPU blocklist</source>
+        <translation>GPU 차단 목록 무시</translation>
+    </message>
+    <message>
+        <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
+        <translation>모든 것을 단일 프로세스에서 실행합니다 (--single-process). 메모리를 적게 사용하지만 안정성은 떨어집니다.</translation>
+    </message>
+    <message>
+        <source>Single-process mode (lower memory)</source>
+        <translation>단일 프로세스 모드 (메모리 절약)</translation>
+    </message>
+    <message>
+        <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
+        <translation>사이트당 렌더러 프로세스 하나를 공유합니다 (--process-per-site). 메모리 사용량을 줄입니다.</translation>
+    </message>
+    <message>
+        <source>One process per site (lower memory)</source>
+        <translation>사이트당 프로세스 하나 (메모리 절약)</translation>
+    </message>
+    <message>
+        <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
+        <translation>프록시를 거치지 않는 연결에서 WebRTC가 로컬 IP 주소를 노출하지 못하도록 합니다.</translation>
+    </message>
+    <message>
+        <source>Prevent WebRTC IP leak</source>
+        <translation>WebRTC IP 유출 방지</translation>
+    </message>
+    <message>
+        <source>JavaScript memory limit</source>
+        <translation>JavaScript 메모리 제한</translation>
+    </message>
+    <message>
+        <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
+        <translation>JavaScript 힙 크기를 제한합니다 (V8 --max-old-space-size). 0 = 자동. 앱이 RAM을 너무 많이 사용하면 값을 낮추세요.</translation>
+    </message>
+    <message>
+        <source> MB</source>
+        <translation> MB</translation>
+    </message>
+    <message>
+        <source>HTTP cache</source>
+        <translation>HTTP 캐시</translation>
+    </message>
+    <message>
+        <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
+        <translation>HTTP 캐시를 저장할 위치입니다. 메모리는 종료 시 지워지며, 없음은 캐싱을 비활성화합니다.</translation>
+    </message>
+    <message>
+        <source>Max size</source>
+        <translation>최대 크기</translation>
+    </message>
+    <message>
+        <source>Maximum on-disk cache size. 0 = automatic.</source>
+        <translation>디스크 캐시 최대 크기. 0 = 자동.</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>영구 데이터(영구 쿠키 및 캐시 포함)를 삭제하고 애플리케이션을 종료합니다.</translation>
     </message>
@@ -1339,6 +1439,14 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Could not read that file: %1</source>
         <translation>파일을 읽을 수 없습니다: %1</translation>
+    </message>
+    <message>
+        <source>Disk</source>
+        <translation>디스크</translation>
+    </message>
+    <message>
+        <source>Memory</source>
+        <translation>메모리</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

@@ -11,6 +11,7 @@
 #include "webfont.h"
 #include "mutedstatus.h"
 #include "webtweaks.h"
+#include "performance.h"
 
 #include <QDebug>
 #include <QStandardPaths>
@@ -90,6 +91,9 @@ void WebEngineProfileManager::configureProfile(QWebEngineProfile *profile,
     profile->setPersistentStoragePath(dataPath + engineSub);
     profile->setCachePath(cachePath + engineSub);
     profile->setPersistentCookiesPolicy(QWebEngineProfile::AllowPersistentCookies);
+
+    // Apply the user's HTTP-cache preference (type + max size).
+    Performance::applyToProfile(profile);
 
     qDebug() << "WebEngineProfile" << (accountId.isEmpty() ? "(default)" : accountId)
              << "storage:" << profile->persistentStoragePath();
