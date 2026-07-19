@@ -1,5 +1,10 @@
 ## Unreleased
 
+**Fix a crash in the automatic-theme setup.** Opening Settings → automatic theme
+on a system with no geolocation backend (a headless run, or any box without a Qt
+geo plugin) crashed on close: the dialog's destructor dereferenced a null
+position source. Found by a new in-process SettingsWidget test.
+
 **Clean shutdown on SIGTERM.** Whatly now quits gracefully when it receives
 `SIGTERM` (from a session manager, `kill`, or systemd) instead of being torn
 down abruptly, using the Qt-safe socketpair + `QSocketNotifier` pattern.

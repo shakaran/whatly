@@ -534,11 +534,13 @@ that blocks on user interaction and so can't run headless (marked with a
 **Integration coverage.** `tools/integration.sh` drives the real,
 coverage-instrumented binary headless — the CLI, app bootstrap, the main window,
 the Qt WebEngine setup (it loads the QR/link page) and the dialogs reachable over
-the single-instance IPC — under a throwaway `HOME`, without logging in. Combined
-with the unit tests this brings whole-app line coverage to ~59% (`src/main.cpp`
-alone goes from 0% to ~76%). It cannot go much higher: the rest is Qt WebEngine
-internals and the chat/messaging features, which are gated behind a real
-WhatsApp session that a headless CI cannot provide.
+the single-instance IPC — under a throwaway `HOME`, without logging in. An
+in-process `tst_settings` also builds the whole app to construct `SettingsWidget`
+and drive every control. Combined with the unit tests this brings whole-app line
+coverage to ~65% (`src/main.cpp` 0% → ~79%, `settingswidget.cpp` → ~82%). It
+cannot go much higher: the rest is Qt WebEngine internals and the chat/messaging
+features, which are gated behind a real WhatsApp session that a headless CI
+cannot provide.
 
 ## Build from Source (Windows)
 

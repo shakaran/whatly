@@ -67,8 +67,14 @@ AutomaticTheme::AutomaticTheme(QWidget *parent)
 }
 
 AutomaticTheme::~AutomaticTheme() {
-  m_gPosInfoSrc->disconnect();
-  m_gPosInfoSrc->deleteLater();
+  // m_gPosInfoSrc is null when QGeoPositionInfoSource::createDefaultSource()
+  // finds no backend (a headless run, or a system without a geo plugin). Guard
+  // it: dereferencing it here crashed the app when the automatic-theme switcher
+  // was opened on such a system.
+  if (m_gPosInfoSrc) {
+    m_gPosInfoSrc->disconnect();
+    m_gPosInfoSrc->deleteLater();
+  }
   delete ui;
 }
 

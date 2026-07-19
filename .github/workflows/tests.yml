@@ -33,7 +33,7 @@ jobs:
         run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DWHATLY_TESTS=ON -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
 
       - name: Build the tests
-        run: cmake --build build --target tst_ui_assets tst_logic
+        run: cmake --build build --target tst_ui_assets tst_logic tst_settings
 
       - name: Run the tests (headless)
         env:
