@@ -526,10 +526,12 @@ It runs in CI on every push (`.github/workflows/tests.yml`).
 
 **Coverage.** With `gcovr` installed, `tools/coverage.sh` builds the suite
 instrumented, runs it and writes an HTML report. The tested modules (the
-logic + light-widget layer, ~1.7k lines) sit at ~85% line / ~88% function
-coverage. The remaining source — the main window, the Qt WebEngine integration
-and the settings UI — is GUI/engine glue that needs the full running app rather
-than unit tests, so it is not covered here.
+logic + light-widget layer, ~1.7k lines) sit at ~90% line / ~95% function
+coverage. The only thing deliberately excluded there is one modal error dialog
+that blocks on user interaction and so can't run headless (marked with a
+`GCOVR_EXCL` comment). The remaining source — the main window, the Qt WebEngine
+integration and the settings UI — is GUI/engine glue that needs the full running
+app rather than unit tests, so it is not covered here.
 
 ## Build from Source (Windows)
 

@@ -17,7 +17,7 @@ correct and unchanged.
 injected-script generators (fonts, chat themes, muted status, privacy blur,
 wallpaper, custom CSS, tweaks, linked-device name), the scheduled-message queue
 and its persistence, the sun calculations, identicons, palettes, dictionary
-resolution and the About/Rate screens' assets. Roughly 85% line / 88% function
+resolution and the About/Rate screens' assets. Roughly 90% line / 95% function
 coverage of that layer (measure it with `tools/coverage.sh`). Build with
 `-DWHATLY_TESTS=ON`, run with `ctest`; it also runs in CI on every push.
 

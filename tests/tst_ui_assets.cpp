@@ -9,8 +9,22 @@
 #include <QPixmap>
 #include <QPushButton>
 
+#include <QDesktopServices>
+#include <QUrl>
+
 #include "about.h"
 #include "rateapp.h"
+#include "utils.h"
+
+// Captures QDesktopServices::openUrl() calls so clicking the link buttons in the
+// tests exercises their slots without actually launching a browser.
+class UrlSink : public QObject {
+  Q_OBJECT
+public:
+  int count = 0;
+public slots:
+  void handle(const QUrl &) { ++count; }
+};
 
 class TstUiAssets : public QObject {
   Q_OBJECT
@@ -23,6 +37,7 @@ private slots:
   void aboutLogo();
   void aboutButtonIcons();
   void aboutDebugInfoToggle();
+  void linkButtonsExercised();
 };
 
 void TstUiAssets::initTestCase() {
@@ -123,6 +138,34 @@ void TstUiAssets::aboutButtonIcons() {
   }
   QVERIFY2(missing.isEmpty(),
            qPrintable("About: buttons with no icon: " + missing.join(", ")));
+}
+
+void TstUiAssets::linkButtonsExercised() {
+  // Intercept openUrl so the link buttons run their slots without a browser.
+  UrlSink sink;
+  const QStringList schemes = {"https", "http", "snap", "mailto"};
+  for (const QString &s : schemes)
+    QDesktopServices::setUrlHandler(s, &sink, "handle");
+
+  {
+    About a;
+    // report_bug is deliberately excluded: for a long pre-filled URL it can pop
+    // a modal QMessageBox, which cannot be auto-dismissed reliably headless.
+    for (const QString &n : {"donate", "kofi", "wise", "rate", "more_apps",
+                             "source_code"})
+      if (auto *b = a.findChild<QPushButton *>(n))
+        b->click();
+  }
+  {
+    RateApp r(nullptr, QStringLiteral("snap://whatly"), 1, 1, 0);
+    for (const QString &n : {"rateNowBtn", "rateOnGithub", "donate", "donate_2"})
+      if (auto *b = r.findChild<QPushButton *>(n))
+        b->click();
+  }
+
+  for (const QString &s : schemes)
+    QDesktopServices::unsetUrlHandler(s);
+  QVERIFY2(sink.count >= 1, "no link button routed through openUrl");
 }
 
 QTEST_MAIN(TstUiAssets)

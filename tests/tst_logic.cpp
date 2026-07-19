@@ -6,6 +6,7 @@
 #include <QApplication>
 #include <QDir>
 #include <QImage>
+#include <QProcess>
 #include <QPixmap>
 #include <QSignalSpy>
 #include <QStandardPaths>
@@ -86,6 +87,22 @@ private slots:
     QVERIFY(!Utils::delete_cache(QStringLiteral("relative/x")));
     QVERIFY(!Utils::delete_cache(QStringLiteral("/")));       // root
     QVERIFY(!Utils::delete_cache(QDir::homePath()));          // home
+  }
+  // The happy path: a directory under the app's own cache location is safe to
+  // delete, so the guard lets it through and it is actually cleared.
+  void deleteCacheAcceptsOwnedPath() {
+    const QString base =
+        QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+    QVERIFY(!base.isEmpty());
+    const QString target = base + QStringLiteral("/whatly-test-deletable");
+    QVERIFY(QDir().mkpath(target + QStringLiteral("/sub")));
+    QFile f(target + QStringLiteral("/sub/x.txt"));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+    f.close();
+    QVERIFY(Utils::delete_cache(target)); // owned → deleted (then re-created)
+    QVERIFY(!QFileInfo::exists(target + QStringLiteral("/sub/x.txt")));
+    QDir(target).removeRecursively();
   }
 };
 
@@ -269,6 +286,7 @@ private slots:
     QVERIFY(!WebFont::scriptSource().isEmpty());
     WebFont::setCurrentFamily(QString()); // back to WhatsApp default
     QVERIFY(WebFont::currentFamily().isEmpty());
+    WebFont::scriptSource(); // empty-family branch (jsCssFor "")
   }
   void chatTheme() {
     const auto themes = ChatTheme::themes();
@@ -292,13 +310,22 @@ private slots:
     QVERIFY(!MutedStatus::scriptSource().isEmpty());
     MutedStatus::setEnabled(false);
     QVERIFY(!MutedStatus::isEnabled());
+    MutedStatus::scriptSource(); // disabled branch
   }
   void privacyBlur() {
-    QVERIFY(!PrivacyBlur::levels().isEmpty());
-    const QString id = PrivacyBlur::levels().first().id;
-    PrivacyBlur::setCurrentLevelId(id);
-    QCOMPARE(PrivacyBlur::currentLevelId(), id);
-    QVERIFY(!PrivacyBlur::scriptSource().isEmpty());
+    const auto levels = PrivacyBlur::levels();
+    QVERIFY(!levels.isEmpty());
+    // The first level is usually "off" (empty script); a later one recolours.
+    PrivacyBlur::setCurrentLevelId(levels.first().id);
+    QCOMPARE(PrivacyBlur::currentLevelId(), levels.first().id);
+    PrivacyBlur::scriptSource(); // off/default branch
+    bool anyScript = false;
+    for (const auto &lv : levels) {
+      PrivacyBlur::setCurrentLevelId(lv.id);
+      if (!PrivacyBlur::scriptSource().isEmpty())
+        anyScript = true;
+    }
+    QVERIFY(anyScript);
   }
   void otherScriptsNonEmpty() {
     QVERIFY(!ChatWallpaper::scriptSource().isEmpty());
@@ -327,10 +354,16 @@ private slots:
   void refreshCacheSize() {
     QTemporaryDir dir;
     QVERIFY(dir.isValid());
+    // A nested file so dir_size() recurses into a subdirectory.
+    QVERIFY(QDir(dir.path()).mkpath(QStringLiteral("sub")));
     QFile f(dir.filePath(QStringLiteral("a.bin")));
     QVERIFY(f.open(QIODevice::WriteOnly));
     f.write(QByteArray(2048, 'x'));
     f.close();
+    QFile g(dir.filePath(QStringLiteral("sub/b.bin")));
+    QVERIFY(g.open(QIODevice::WriteOnly));
+    g.write(QByteArray(4096, 'y'));
+    g.close();
     const QString s = Utils::refreshCacheSize(dir.path());
     QVERIFY(!s.isEmpty());
   }
@@ -391,8 +424,10 @@ private slots:
     for (const QChar &c : lo) QVERIFY(c.isLower() || !c.isLetter());
   }
   void desktopOpenUrlDoesNotThrow() {
-    // Exercises the xdg-open/desktop-services path; harmless for a bogus file.
+    // Exercises the xdg-open path; waiting lets the async finished handler (and
+    // its QDesktopServices fallback) run for a file that cannot be opened.
     Utils::desktopOpenUrl(QStringLiteral("/tmp/whatly-nonexistent-test.txt"));
+    QTest::qWait(600);
     QVERIFY(true);
   }
   void appDebugInfoContents() {
@@ -400,6 +435,18 @@ private slots:
     QVERIFY(info.contains(QLatin1String("test"))); // VERSIONSTR="test"
     const QString md = Utils::appDebugInfoMarkdown();
     QVERIFY(md.contains(QLatin1String("Commit")));
+  }
+  // With a live child process, processMemoryInfo() walks the /proc tree and sums
+  // the descendant's RSS — covering the tree-walk that has no children otherwise.
+  void processMemoryWalksChildren() {
+    QProcess child;
+    child.start(QStringLiteral("sleep"), {QStringLiteral("3")});
+    if (!child.waitForStarted(1500))
+      QSKIP("sleep not available on this platform");
+    const QString info = Utils::processMemoryInfo();
+    QVERIFY(!info.isEmpty());
+    child.terminate();
+    child.waitForFinished(2000);
   }
 };
 
@@ -422,11 +469,15 @@ class TstDebugLog : public QObject {
 private slots:
   void captureAndFilter() {
     DebugLog::install(); // idempotent
+    DebugLog::install(); // exercise the already-installed early return
     qWarning("whatly-test-marker-visible");
+    qInfo("whatly-test-info-line");        // QtInfoMsg branch
+    qCritical("whatly-test-critical-line"); // QtCriticalMsg branch
     // Benign teardown noise is still captured in the log, just not printed.
     qWarning("QThreadStorage: entry 7 destroyed before end of thread");
     const QString recent = DebugLog::recent(50);
     QVERIFY(recent.contains(QLatin1String("whatly-test-marker-visible")));
+    QVERIFY(recent.contains(QLatin1String("whatly-test-info-line")));
     QVERIFY(recent.contains(QLatin1String("QThreadStorage: entry 7")));
   }
 };
@@ -446,6 +497,13 @@ private slots:
     QVERIFY(!AppProfile::isDefault());
     QVERIFY(!AppProfile::suffix().isEmpty());
     QVERIFY(AppProfile::id().contains(QLatin1String("work")));
+
+    // The space-separated "-p <name>" form takes a different parse branch.
+    char pShort[] = "-p";
+    char pName[] = "team";
+    char *argvShort[] = {arg0, pShort, pName, nullptr};
+    AppProfile::initFromArgs(3, argvShort);
+    QVERIFY(AppProfile::id().contains(QLatin1String("team")));
   }
 };
 
@@ -495,6 +553,17 @@ private slots:
 
     ChatWallpaper::clear();
     QVERIFY(ChatWallpaper::storedImagePath().isEmpty());
+  }
+  void scalesLargeImage() {
+    QTemporaryDir dir;
+    const QString src = dir.filePath(QStringLiteral("big.png"));
+    QImage img(3000, 2000, QImage::Format_ARGB32); // over the max edge
+    img.fill(Qt::magenta);
+    QVERIFY(img.save(src));
+    QString err;
+    QVERIFY2(ChatWallpaper::setImage(src, &err), qPrintable(err));
+    QVERIFY(!ChatWallpaper::storedImagePath().isEmpty());
+    ChatWallpaper::clear();
   }
   void rejectsBadImage() {
     QTemporaryFile txt;
@@ -577,11 +646,22 @@ private slots:
     LinkedDeviceName::install(&profile, QStringLiteral("Work"));
     QVERIFY(profile.scripts()->count() > before);
 
-    // Reset the toggles so we don't leak state into other tests.
+    // Now turn everything off and install again: this exercises each module's
+    // other branch — remove the previously-inserted script, then early-return.
     MutedStatus::setEnabled(false);
     WebFont::setCurrentFamily(QString());
     CustomCss::clear();
     ChatWallpaper::clear();
+    if (!ChatTheme::themes().isEmpty())
+      ChatTheme::setCurrentThemeId(ChatTheme::themes().first().id); // default/off
+    if (!PrivacyBlur::levels().isEmpty())
+      PrivacyBlur::setCurrentLevelId(PrivacyBlur::levels().first().id);
+    WebFont::install(&profile);
+    ChatTheme::install(&profile);
+    MutedStatus::install(&profile);
+    PrivacyBlur::install(&profile);
+    ChatWallpaper::install(&profile);
+    CustomCss::install(&profile);
   }
 };
 

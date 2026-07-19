@@ -476,6 +476,10 @@ QString Utils::appDebugInfoMarkdown() {
   return out.join(QLatin1Char('\n'));
 }
 
+// GCOVR_EXCL_START
+// A modal error dialog that blocks on the user closing it (exec()); it cannot be
+// exercised by a headless unit test, so it is excluded from coverage rather than
+// faked. Its content is trivial (a formatted string builder).
 void Utils::DisplayExceptionErrorDialog(const QString &error_info) {
   QMessageBox message_box(QApplication::activeWindow());
   message_box.setAttribute(Qt::WA_DeleteOnClose, true);
@@ -506,6 +510,7 @@ void Utils::DisplayExceptionErrorDialog(const QString &error_info) {
   message_box.setDetailedText(detailed_text.join("\n"));
   message_box.exec();
 }
+// GCOVR_EXCL_STOP
 
 /**
  * Returns the same number, but rounded to one decimal place
