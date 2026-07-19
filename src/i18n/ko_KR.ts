@@ -1445,6 +1445,22 @@ Please setup the password in the Settings first.</source>
         <translation>비밀번호</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>사용자 지정 JavaScript 애드온</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>WhatsApp Web에서 실행할 .js 파일을 불러옵니다. 각 애드온은 자체 샌드박스에서 실행되므로, 하나가 손상되어도 다른 애드온이나 페이지를 중단시키지 않습니다. 애드온의 체크를 해제하면 제거하지 않고 비활성화됩니다. 변경 사항은 다시 시작한 후에 적용됩니다.</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>애드온 추가…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>제거</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>영구 데이터(영구 쿠키 및 캐시 포함)를 삭제하고 애플리케이션을 종료합니다.</translation>
     </message>
@@ -1531,6 +1547,26 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>System service (libnotify)</source>
         <translation>시스템 서비스 (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>JavaScript 파일 선택</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;모든 파일 (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>애드온을 추가할 수 없습니다</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>애드온 제거</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>애드온 &quot;%1&quot;을(를) 제거하시겠습니까? 해당 파일이 삭제됩니다.</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

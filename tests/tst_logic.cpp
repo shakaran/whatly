@@ -33,6 +33,7 @@
 #include "privacyblur.h"
 #include "chatwallpaper.h"
 #include "customcss.h"
+#include "customjs.h"
 #include "webtweaks.h"
 #include "linkeddevicename.h"
 #include "performance.h"
@@ -593,6 +594,23 @@ private slots:
     QVERIFY(!CustomCss::setFromFile(QStringLiteral("/no/such.css"), &err));
     QVERIFY(!err.isEmpty());
   }
+
+  // The per-account CSS path uses the profile suffix; the default account keeps
+  // the historical filename so nothing moves on upgrade.
+  void pathHasNoSuffixForDefaultAccount() {
+    QTemporaryFile css;
+    css.setFileTemplate(QDir::tempPath() + QStringLiteral("/whatly_XXXXXX.css"));
+    QVERIFY(css.open());
+    css.write("body{}\n");
+    css.close();
+    QString err;
+    QVERIFY(CustomCss::setFromFile(css.fileName(), &err));
+    const QString appData =
+        QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    // Default (no --profile) => "custom.css", not "custom-<name>.css".
+    QVERIFY(QFile::exists(appData + QStringLiteral("/custom.css")));
+    CustomCss::clear();
+  }
   // Make the app data directory unwritable so the write paths of both CustomCss
   // and ChatWallpaper report an error instead of silently failing.
   void reportsWriteFailures() {
@@ -822,6 +840,94 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// CustomJs: the addon manager stores files, tracks per-addon enabled state, and
+// builds a combined guarded script. Runs in QStandardPaths test mode.
+class TstCustomJs : public QObject {
+  Q_OBJECT
+private:
+  QString writeTemp(const QByteArray &body) {
+    auto *f = new QTemporaryFile(QDir::tempPath() +
+                                 QStringLiteral("/whatly_addon_XXXXXX.js"));
+    f->setAutoRemove(false);
+    f->open();
+    f->write(body);
+    f->close();
+    const QString p = f->fileName();
+    delete f;
+    return p;
+  }
+  void clearAll() {
+    for (const auto &a : CustomJs::addons())
+      CustomJs::remove(a.name);
+  }
+private slots:
+  void init() { clearAll(); }
+  void cleanup() { clearAll(); }
+
+  void addEnablesAndAppears() {
+    QVERIFY(CustomJs::addons().isEmpty());
+    QVERIFY(!CustomJs::isActive());
+    QString err;
+    const QString name =
+        CustomJs::addFromFile(writeTemp("console.log('hi');"), &err);
+    QVERIFY2(!name.isEmpty(), qPrintable(err));
+    QCOMPARE(CustomJs::addons().size(), 1);
+    QVERIFY(CustomJs::isEnabled(name));
+    QVERIFY(CustomJs::isActive());
+    QVERIFY(CustomJs::scriptSource().contains(QLatin1String("console.log('hi')")));
+    // Each addon is wrapped in its own try/catch.
+    QVERIFY(CustomJs::scriptSource().contains(QLatin1String("try{")));
+  }
+
+  void disableDropsItFromTheScript() {
+    QString err;
+    const QString name = CustomJs::addFromFile(writeTemp("var x=1;"), &err);
+    QVERIFY(!name.isEmpty());
+    CustomJs::setEnabled(name, false);
+    QVERIFY(!CustomJs::isEnabled(name));
+    QVERIFY(!CustomJs::isActive());
+    QVERIFY(!CustomJs::scriptSource().contains(QLatin1String("var x=1")));
+    // Still listed (disabled, not removed).
+    QCOMPARE(CustomJs::addons().size(), 1);
+  }
+
+  void removeDeletesIt() {
+    QString err;
+    const QString name = CustomJs::addFromFile(writeTemp("void 0;"), &err);
+    QVERIFY(!name.isEmpty());
+    CustomJs::remove(name);
+    QVERIFY(CustomJs::addons().isEmpty());
+    QVERIFY(CustomJs::sourceOf(name).isEmpty());
+  }
+
+  void nameCollisionGetsUniqueSuffix() {
+    QString err;
+    const QString a =
+        CustomJs::addFromFile(writeTemp("1;"), &err, QStringLiteral("dup"));
+    const QString b =
+        CustomJs::addFromFile(writeTemp("2;"), &err, QStringLiteral("dup"));
+    QCOMPARE(a, QStringLiteral("dup"));
+    QVERIFY(b != a);
+    QCOMPARE(CustomJs::addons().size(), 2);
+  }
+
+  void rejectsMissingFile() {
+    QString err;
+    QVERIFY(CustomJs::addFromFile(QStringLiteral("/no/such.js"), &err).isEmpty());
+    QVERIFY(!err.isEmpty());
+  }
+
+  void installOnProfile() {
+    QString err;
+    CustomJs::addFromFile(writeTemp("window.__whatly_test=1;"), &err);
+    QWebEngineProfile profile(QStringLiteral("tst_customjs"));
+    CustomJs::install(&profile);
+    const auto found = profile.scripts()->find(QStringLiteral("whatly-custom-js"));
+    QCOMPARE(found.size(), 1);
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // NetworkProxy: the stored mode/host/port round-trip and applyToApplication()
 // installs the right QNetworkProxy. Runs in QStandardPaths test mode.
 class TstNetworkProxy : public QObject {
@@ -1033,6 +1139,7 @@ int main(int argc, char *argv[]) {
   { TstScheduledPersistence t; run(&t); }
   { TstScripts t;             run(&t); }
   { TstCustomCss t;           run(&t); }
+  { TstCustomJs t;            run(&t); }
   { TstChatWallpaper t;       run(&t); }
   { TstPerformance t;         run(&t); }
   { TstNetworkProxy t;        run(&t); }

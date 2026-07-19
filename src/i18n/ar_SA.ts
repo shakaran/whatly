@@ -1445,6 +1445,22 @@ Please setup the password in the Settings first.</source>
         <translation>كلمة المرور</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>ملحقات JavaScript المخصّصة</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>حمّل ملفات ‎.js‎ لتشغيلها على WhatsApp Web. يعمل كل مُلحق في بيئة معزولة خاصّة به، لذا لا يمكن لمُلحق معطوب أن يُعطّل المُلحقات الأخرى أو الصفحة. أزل التحديد عن مُلحق لتعطيله دون حذفه. تُطبَّق التغييرات بعد إعادة التشغيل.</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>إضافة مُلحق…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>إزالة</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>سيؤدي هذا إلى حذف البيانات الدائمة (بما في ذلك ملفات تعريف الارتباط الدائمة وذاكرة التخزين المؤقت) وإغلاق التطبيق.</translation>
     </message>
@@ -1531,6 +1547,26 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>System service (libnotify)</source>
         <translation>خدمة النظام (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>اختر ملف JavaScript</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;كل الملفات (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>تعذّرت إضافة المُلحق</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>إزالة المُلحق</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>إزالة المُلحق &quot;%1&quot;؟ سيؤدّي ذلك إلى حذف ملفه.</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

@@ -1445,6 +1445,22 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <translation>Hasło</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>Własne dodatki JavaScript</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>Wczytaj pliki .js uruchamiane w WhatsApp Web. Każdy dodatek działa we własnej piaskownicy, więc uszkodzony nie wyłączy pozostałych ani strony. Odznacz dodatek, aby go wyłączyć bez usuwania. Zmiany zaczną obowiązywać po ponownym uruchomieniu.</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>Dodaj dodatek…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Usuń</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Spowoduje to usunięcie danych trwałych (w tym trwałych plików cookie i pamięci podręcznej) i zamknięcie aplikacji.</translation>
     </message>
@@ -1531,6 +1547,26 @@ Najpierw ustaw hasło w ustawieniach.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Usługa systemowa (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>Wybierz plik JavaScript</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;Wszystkie pliki (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>Nie można dodać dodatku</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>Usuń dodatek</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>Usunąć dodatek &quot;%1&quot;? Spowoduje to usunięcie jego pliku.</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

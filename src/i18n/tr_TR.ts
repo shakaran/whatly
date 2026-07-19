@@ -994,7 +994,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     </message>
     <message>
         <source>How native notifications are sent on Linux. Automatic uses the desktop portal inside a Flatpak sandbox and the system service otherwise.</source>
-        <translation>Linux'ta yerel bildirimlerin nasıl gönderileceği. Otomatik seçeneği, Flatpak korumalı alanı içinde masaüstü portalını, aksi durumda sistem hizmetini kullanır.</translation>
+        <translation>Linux&apos;ta yerel bildirimlerin nasıl gönderileceği. Otomatik seçeneği, Flatpak korumalı alanı içinde masaüstü portalını, aksi durumda sistem hizmetini kullanır.</translation>
     </message>
     <message>
         <source>Use Native File Dialog</source>
@@ -1445,6 +1445,22 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Parola</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>Özel JavaScript eklentileri</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>WhatsApp Web üzerinde çalıştırmak için .js dosyaları yükleyin. Her eklenti kendi kum havuzunda çalışır, böylece bozuk bir eklenti diğerlerini veya sayfayı çökertemez. Bir eklentiyi kaldırmadan devre dışı bırakmak için işaretini kaldırın. Değişiklikler yeniden başlatmadan sonra uygulanır.</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>Eklenti ekle…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Kaldır</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Bu, kalıcı verileri (kalıcı çerezler ve önbellek dahil) silecek ve uygulamayı kapatacaktır.</translation>
     </message>
@@ -1531,6 +1547,26 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Sistem hizmeti (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>Bir JavaScript dosyası seçin</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;Tüm dosyalar (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>Eklenti eklenemedi</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>Eklentiyi kaldır</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>&quot;%1&quot; eklentisi kaldırılsın mı? Bu, dosyasını siler.</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

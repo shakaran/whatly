@@ -1445,6 +1445,22 @@ Please setup the password in the Settings first.</source>
         <translation>パスワード</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>カスタムJavaScriptアドオン</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>WhatsApp Web上で実行する.jsファイルを読み込みます。各アドオンは独自のサンドボックスで実行されるため、壊れたアドオンが他のアドオンやページを巻き添えにすることはありません。アドオンのチェックを外すと、削除せずに無効化できます。変更は再起動後に適用されます。</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>アドオンを追加…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>削除</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>永続データ（永続的な Cookie とキャッシュを含む）を削除し、アプリケーションを終了します。</translation>
     </message>
@@ -1531,6 +1547,26 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>System service (libnotify)</source>
         <translation>システムサービス (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>JavaScriptファイルを選択</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;すべてのファイル (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>アドオンを追加できませんでした</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>アドオンを削除</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>アドオン &quot;%1&quot; を削除しますか？ファイルも削除されます。</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

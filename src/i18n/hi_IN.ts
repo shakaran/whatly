@@ -1445,6 +1445,22 @@ Please setup the password in the Settings first.</source>
         <translation>पासवर्ड</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>कस्टम JavaScript ऐडऑन</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>WhatsApp Web पर चलाने के लिए .js फ़ाइलें लोड करें। प्रत्येक ऐडऑन अपने सैंडबॉक्स में चलता है, इसलिए एक खराब ऐडऑन दूसरों या पेज को बंद नहीं कर सकता। किसी ऐडऑन को हटाए बिना अक्षम करने के लिए उसका चेक हटाएँ। परिवर्तन पुनः आरंभ के बाद लागू होते हैं।</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>ऐडऑन जोड़ें…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>हटाएँ</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>यह स्थायी डेटा (स्थायी कुकीज़ और कैश सहित) हटा देगा और एप्लिकेशन बंद कर देगा।</translation>
     </message>
@@ -1531,6 +1547,26 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>System service (libnotify)</source>
         <translation>सिस्टम सेवा (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>एक JavaScript फ़ाइल चुनें</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;सभी फ़ाइलें (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>ऐडऑन नहीं जोड़ा जा सका</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>ऐडऑन हटाएँ</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>ऐडऑन &quot;%1&quot; हटाएँ? इससे इसकी फ़ाइल हट जाती है।</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

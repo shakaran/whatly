@@ -1,5 +1,6 @@
 #include "customcss.h"
 #include "settingsmanager.h"
+#include "appprofile.h"
 
 #include <QDir>
 #include <QFile>
@@ -34,8 +35,11 @@ static const char kScriptTemplate[] = R"JS(
 namespace {
 
 QString cssPath() {
+  // Per-account: the default account keeps custom.css (no migration on upgrade);
+  // a named --profile account gets its own custom-<name>.css.
   return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) +
-         QStringLiteral("/custom.css");
+         QStringLiteral("/custom") + AppProfile::suffix() +
+         QStringLiteral(".css");
 }
 
 // A JS double-quoted string literal from arbitrary CSS text.

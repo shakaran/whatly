@@ -1001,7 +1001,7 @@ Imposta la password nelle Impostazioni.</translation>
     </message>
     <message>
         <source>How native notifications are sent on Linux. Automatic uses the desktop portal inside a Flatpak sandbox and the system service otherwise.</source>
-        <translation>Come vengono inviate le notifiche native su Linux. La modalità automatica usa il portale desktop all'interno di una sandbox Flatpak e il servizio di sistema negli altri casi.</translation>
+        <translation>Come vengono inviate le notifiche native su Linux. La modalità automatica usa il portale desktop all&apos;interno di una sandbox Flatpak e il servizio di sistema negli altri casi.</translation>
     </message>
     <message>
         <source>Use Native File Dialog</source>
@@ -1348,6 +1348,22 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Password</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>Componenti aggiuntivi JavaScript personalizzati</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>Carica file .js da eseguire su WhatsApp Web. Ogni componente aggiuntivo viene eseguito nella propria sandbox, quindi uno difettoso non può compromettere gli altri o la pagina. Deseleziona un componente aggiuntivo per disattivarlo senza rimuoverlo. Le modifiche vengono applicate dopo un riavvio.</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>Aggiungi componente aggiuntivo…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Rimuovi</translation>
+    </message>
+    <message>
         <source>Quit</source>
         <translation>Esci</translation>
     </message>
@@ -1538,6 +1554,26 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Servizio di sistema (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>Scegli un file JavaScript</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;Tutti i file (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>Impossibile aggiungere il componente aggiuntivo</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>Rimuovi componente aggiuntivo</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>Rimuovere il componente aggiuntivo &quot;%1&quot;? Questo ne elimina il file.</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

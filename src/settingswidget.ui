@@ -1603,6 +1603,66 @@ background:transparent;
          </layout>
         </widget>
        </item>
+       <item>
+        <widget class="QGroupBox" name="groupBoxJsAddons">
+         <property name="title">
+          <string>Custom JavaScript addons</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayoutJsAddons">
+          <item>
+           <widget class="QLabel" name="jsAddonsHintLabel">
+            <property name="text">
+             <string>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="jsAddonsList">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>140</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="jsAddonsButtonsLayout">
+            <item>
+             <widget class="QPushButton" name="addJsAddonButton">
+              <property name="text">
+               <string>Add addon…</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="removeJsAddonButton">
+              <property name="text">
+               <string>Remove</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="jsAddonsSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>

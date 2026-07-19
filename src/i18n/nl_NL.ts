@@ -1445,6 +1445,22 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Wachtwoord</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>Aangepaste JavaScript-add-ons</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>Laad .js-bestanden om uit te voeren op WhatsApp Web. Elke add-on draait in zijn eigen sandbox, zodat een defecte add-on de andere of de pagina niet kan verstoren. Vink een add-on uit om deze uit te schakelen zonder te verwijderen. Wijzigingen worden toegepast na een herstart.</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>Add-on toevoegen…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Verwijderen</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Hiermee worden de persistente gegevens (inclusief persistente cookies en cache) verwijderd en wordt de toepassing afgesloten.</translation>
     </message>
@@ -1531,6 +1547,26 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Systeemservice (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>Kies een JavaScript-bestand</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;Alle bestanden (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>Kan add-on niet toevoegen</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>Add-on verwijderen</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>Add-on &quot;%1&quot; verwijderen? Hiermee wordt het bestand verwijderd.</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

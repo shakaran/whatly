@@ -994,7 +994,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     </message>
     <message>
         <source>How native notifications are sent on Linux. Automatic uses the desktop portal inside a Flatpak sandbox and the system service otherwise.</source>
-        <translation>Mode d'envoi des notifications natives sous Linux. Le mode automatique utilise le portail de bureau dans un bac à sable Flatpak, et le service système dans les autres cas.</translation>
+        <translation>Mode d&apos;envoi des notifications natives sous Linux. Le mode automatique utilise le portail de bureau dans un bac à sable Flatpak, et le service système dans les autres cas.</translation>
     </message>
     <message>
         <source>Use Native File Dialog</source>
@@ -1445,6 +1445,22 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
         <translation>Mot de passe</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>Modules JavaScript personnalisés</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>Chargez des fichiers .js à exécuter sur WhatsApp Web. Chaque module s'exécute dans son propre bac à sable, de sorte qu'un module défectueux ne peut pas affecter les autres ni la page. Décochez un module pour le désactiver sans le supprimer. Les modifications prennent effet après un redémarrage.</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>Ajouter un module…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Supprimer</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Ceci supprimera les données persistantes (y compris les cookies persistants et le cache) et fermera l&apos;application.</translation>
     </message>
@@ -1531,6 +1547,26 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Service système (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>Choisir un fichier JavaScript</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;Tous les fichiers (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>Impossible d'ajouter le module</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>Supprimer le module</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>Supprimer le module &quot;%1&quot; ? Cela supprime son fichier.</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

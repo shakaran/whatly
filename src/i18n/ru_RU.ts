@@ -1445,6 +1445,22 @@ Please setup the password in the Settings first.</source>
         <translation>Пароль</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>Пользовательские дополнения JavaScript</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>Загружайте файлы .js для запуска в WhatsApp Web. Каждое дополнение работает в собственной песочнице, поэтому сбойное не нарушит работу остальных или страницы. Снимите флажок, чтобы отключить дополнение, не удаляя его. Изменения вступят в силу после перезапуска.</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>Добавить дополнение…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Удалить</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Это удалит постоянные данные (включая постоянные файлы cookie и кэш) и закроет приложение.</translation>
     </message>
@@ -1531,6 +1547,26 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>System service (libnotify)</source>
         <translation>Системная служба (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>Выберите файл JavaScript</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;Все файлы (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>Не удалось добавить дополнение</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>Удалить дополнение</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>Удалить дополнение &quot;%1&quot;? Его файл будет удалён.</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

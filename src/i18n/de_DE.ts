@@ -994,7 +994,7 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
     </message>
     <message>
         <source>How native notifications are sent on Linux. Automatic uses the desktop portal inside a Flatpak sandbox and the system service otherwise.</source>
-        <translation>Wie native Benachrichtigungen unter Linux gesendet werden. "Automatisch" verwendet das Desktop-Portal innerhalb einer Flatpak-Sandbox, ansonsten den Systemdienst.</translation>
+        <translation>Wie native Benachrichtigungen unter Linux gesendet werden. &quot;Automatisch&quot; verwendet das Desktop-Portal innerhalb einer Flatpak-Sandbox, ansonsten den Systemdienst.</translation>
     </message>
     <message>
         <source>Use Native File Dialog</source>
@@ -1445,6 +1445,22 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
         <translation>Passwort</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>Eigene JavaScript-Add-ons</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>.js-Dateien laden, die auf WhatsApp Web ausgeführt werden. Jedes Add-on läuft in einer eigenen Sandbox, sodass ein fehlerhaftes Add-on weder die anderen noch die Seite beeinträchtigen kann. Deaktivieren Sie das Häkchen bei einem Add-on, um es abzuschalten, ohne es zu entfernen. Änderungen werden nach einem Neustart wirksam.</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>Add-on hinzufügen…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Entfernen</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Dies löscht die persistenten Daten (einschließlich persistenter Cookies und Cache) und beendet die Anwendung.</translation>
     </message>
@@ -1531,6 +1547,26 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Systemdienst (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>JavaScript-Datei auswählen</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;Alle Dateien (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>Add-on konnte nicht hinzugefügt werden</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>Add-on entfernen</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>Das Add-on &quot;%1&quot; entfernen? Dadurch wird seine Datei gelöscht.</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

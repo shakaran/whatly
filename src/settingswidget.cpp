@@ -31,6 +31,9 @@
 #include "performance.h"
 #include "networkproxy.h"
 #include "autostart.h"
+#include "customjs.h"
+
+#include <QListWidget>
 
 // The theme combo's two entries, in .ui order. The stored value is derived
 // from these, never from the item text — which is translated.
@@ -165,6 +168,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
   ui->interfaceFontSizeSpinBox->blockSignals(false);
   loadPerformanceSettings();
   loadNetworkSettings();
+  refreshJsAddonsList();
   ui->lockOnMinimizeCheckBox->setChecked(
       SettingsManager::instance().settings().value("lockOnHideToTray", false).toBool());
   {
@@ -943,6 +947,58 @@ void SettingsWidget::on_notificationBackendComboBox_currentIndexChanged(
   SettingsManager::instance().settings().setValue(
       "notificationBackend",
       ui->notificationBackendComboBox->itemData(index).toString());
+}
+
+void SettingsWidget::refreshJsAddonsList() {
+  ui->jsAddonsList->blockSignals(true);
+  ui->jsAddonsList->clear();
+  const auto addons = CustomJs::addons();
+  for (const CustomJs::Addon &a : addons) {
+    auto *item = new QListWidgetItem(a.name, ui->jsAddonsList);
+    item->setFlags(item->flags() | Qt::ItemIsUserCheckable);
+    item->setCheckState(a.enabled ? Qt::Checked : Qt::Unchecked);
+    item->setData(Qt::UserRole, a.name);
+  }
+  ui->jsAddonsList->blockSignals(false);
+  ui->removeJsAddonButton->setEnabled(ui->jsAddonsList->count() > 0);
+}
+
+void SettingsWidget::on_addJsAddonButton_clicked() {
+  const QString path = QFileDialog::getOpenFileName(
+      this, tr("Choose a JavaScript file"), QString(),
+      tr("JavaScript (*.js);;All files (*)"));
+  if (path.isEmpty())
+    return;
+  QString error;
+  if (CustomJs::addFromFile(path, &error).isEmpty()) {
+    QMessageBox::warning(this, tr("Could not add addon"), error);
+    return;
+  }
+  refreshJsAddonsList();
+  emit customJsChanged();
+}
+
+void SettingsWidget::on_removeJsAddonButton_clicked() {
+  auto *item = ui->jsAddonsList->currentItem();
+  if (!item)
+    return;
+  const QString name = item->data(Qt::UserRole).toString();
+  if (QMessageBox::question(
+          this, tr("Remove addon"),
+          tr("Remove the addon \"%1\"? This deletes its file.").arg(name)) !=
+      QMessageBox::Yes)
+    return;
+  CustomJs::remove(name);
+  refreshJsAddonsList();
+  emit customJsChanged();
+}
+
+void SettingsWidget::on_jsAddonsList_itemChanged(QListWidgetItem *item) {
+  if (!item)
+    return;
+  CustomJs::setEnabled(item->data(Qt::UserRole).toString(),
+                       item->checkState() == Qt::Checked);
+  emit customJsChanged();
 }
 
 void SettingsWidget::on_autostartCheckBox_toggled(bool checked) {

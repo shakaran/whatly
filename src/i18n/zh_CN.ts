@@ -1445,6 +1445,22 @@ Please setup the password in the Settings first.</source>
         <translation>密码</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>自定义 JavaScript 插件</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>加载 .js 文件以在 WhatsApp Web 上运行。每个插件都在各自的沙箱中运行，因此某个插件出错不会影响其他插件或页面。取消勾选可停用插件而无需将其移除。更改将在重启后生效。</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>添加插件…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>移除</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>这将删除持久数据（包括持久 Cookie 和缓存）并退出应用程序。</translation>
     </message>
@@ -1531,6 +1547,26 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>System service (libnotify)</source>
         <translation>系统服务 (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>选择一个 JavaScript 文件</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;所有文件 (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>无法添加插件</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>移除插件</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>移除插件 &quot;%1&quot;？这将删除其文件。</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

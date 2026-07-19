@@ -42,6 +42,18 @@ Flatpak sandbox, the system service otherwise), *Desktop portal (Flatpak)*, or
 *System service (libnotify)*. Clicking a portal notification still raises the
 window and marks the chat. Covered by new unit tests (`TstPortalNotification`).
 
+**Custom JavaScript addons.** Alongside the existing custom-CSS support, you can
+now load your own `.js` files to run on WhatsApp Web (Settings → *Custom
+JavaScript addons*). Add several, tick/untick each to enable or disable it, or
+remove it. Every addon runs inside its own `try`/`catch` sandbox, so a broken
+one can never take down the page or the other addons. Covered by new unit tests
+(`TstCustomJs`).
+
+**Per-account custom CSS/JS.** Custom CSS and the new JS addons are now stored
+per account: the default account keeps its existing `custom.css` (nothing moves
+on upgrade), while a named `--profile` account gets its own stylesheet and its
+own addon set.
+
 ## 6.2.1 (2026-07-19)
 
 Bug-fix and hardening release.

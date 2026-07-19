@@ -194,6 +194,7 @@ set(SOURCES
     src/dictionaries.cpp
     src/chatwallpaper.cpp
     src/customcss.cpp
+    src/customjs.cpp
     src/globalshortcut.cpp
     src/privacyblur.cpp
     src/performance.cpp
@@ -240,6 +241,7 @@ set(HEADERS
     src/dictionaries.h
     src/chatwallpaper.h
     src/customcss.h
+    src/customjs.h
     src/privacyblur.h
     src/performance.h
     src/networkproxy.h

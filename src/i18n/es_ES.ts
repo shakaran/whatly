@@ -1445,6 +1445,22 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>Contraseña</translation>
     </message>
     <message>
+        <source>Custom JavaScript addons</source>
+        <translation>Complementos de JavaScript personalizados</translation>
+    </message>
+    <message>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>Carga archivos .js para ejecutarlos en WhatsApp Web. Cada complemento se ejecuta en su propio entorno aislado, de modo que uno defectuoso no puede afectar a los demás ni a la página. Desmarca un complemento para desactivarlo sin eliminarlo. Los cambios se aplican tras reiniciar.</translation>
+    </message>
+    <message>
+        <source>Add addon…</source>
+        <translation>Añadir complemento…</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Eliminar</translation>
+    </message>
+    <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Esto eliminará los datos persistentes (incluidas las cookies persistentes y la caché) y cerrará la aplicación.</translation>
     </message>
@@ -1531,6 +1547,26 @@ Configure primero la contraseña en los ajustes.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Servicio del sistema (libnotify)</translation>
+    </message>
+    <message>
+        <source>Choose a JavaScript file</source>
+        <translation>Elegir un archivo JavaScript</translation>
+    </message>
+    <message>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;Todos los archivos (*)</translation>
+    </message>
+    <message>
+        <source>Could not add addon</source>
+        <translation>No se pudo añadir el complemento</translation>
+    </message>
+    <message>
+        <source>Remove addon</source>
+        <translation>Eliminar complemento</translation>
+    </message>
+    <message>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>¿Eliminar el complemento &quot;%1&quot;? Esto borra su archivo.</translation>
     </message>
     <message>
         <source>Spell checker (no dictionaries installed)</source>

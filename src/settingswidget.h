@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+class QListWidgetItem;
+
 #include "permissiondialog.h"
 #include "settingsmanager.h"
 #include "utils.h"
@@ -27,6 +29,7 @@ signals:
   void webTweaksChanged();
   void chatWallpaperChanged();
   void customCssChanged();
+  void customJsChanged();
   void trayIconChanged();
   void followSystemThemeChanged();
   void chatThemeChanged();
@@ -126,6 +129,9 @@ private slots:
   void on_proxyUserLineEdit_editingFinished();
   void on_proxyPasswordLineEdit_editingFinished();
   void on_notificationBackendComboBox_currentIndexChanged(int index);
+  void on_addJsAddonButton_clicked();
+  void on_removeJsAddonButton_clicked();
+  void on_jsAddonsList_itemChanged(QListWidgetItem *item);
   void on_spellCheckCheckBox_toggled(bool checked);
   void on_themeToggleButtonCheckBox_toggled(bool checked);
   void on_privacyBlurButtonCheckBox_toggled(bool checked);
@@ -146,6 +152,7 @@ private slots:
 private:
   void loadPerformanceSettings();
   void loadNetworkSettings();
+  void refreshJsAddonsList();
   void updateChatWallpaperButtons();
   void updateCustomCssButtons();
   void populateChatThemes();

@@ -29,6 +29,7 @@
 #include "chattheme.h"
 #include "chatwallpaper.h"
 #include "customcss.h"
+#include "customjs.h"
 #include "privacyblur.h"
 #include "webfont.h"
 #include "mutedstatus.h"
@@ -597,6 +598,13 @@ void MainWindow::initSettingWidget() {
             for (const Account &account : m_accounts)
               if (account.view && account.view->page())
                 account.view->page()->runJavaScript(CustomCss::scriptSource());
+          });
+
+  connect(m_settingsWidget, &SettingsWidget::customJsChanged, m_settingsWidget,
+          [=]() {
+            // Reinstall for future loads; a full effect for script addons needs
+            // a reload, so this only refreshes the injected collection.
+            CustomJs::install(WebEngineProfileManager::instance().profile());
           });
 
   connect(m_settingsWidget, &SettingsWidget::chatWallpaperChanged,
