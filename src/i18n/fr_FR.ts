@@ -831,8 +831,28 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
         <translation> devra peut-être redémarrer. Veuillez signaler l&apos;erreur au développeur.</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>Impossible d&apos;exécuter &apos;tar&apos;</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>Rien à sauvegarder</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>Impossible de créer %1</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>Impossible de copier %1</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>Impossible de créer un répertoire temporaire</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>Impossible de restaurer le fichier de configuration</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1471,6 +1491,26 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
         <translation>Action</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>Sauvegarde</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>Enregistrer ce compte (paramètres, session et modules) dans une archive .tar.gz. L&apos;archive contient votre session connectée — gardez-la privée.</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>Exporter le profil…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>Restaurer un compte depuis une archive .tar.gz. Cela écrase les données actuelles et nécessite un redémarrage.</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>Importer le profil…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>Performances &amp; confidentialité</translation>
     </message>
@@ -1660,7 +1700,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     </message>
     <message>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
-        <translation>Cliquez sur un champ et appuyez sur la combinaison de touches. Videz un champ pour supprimer le raccourci. Les modifications s'appliquent après un redémarrage.</translation>
+        <translation>Cliquez sur un champ et appuyez sur la combinaison de touches. Videz un champ pour supprimer le raccourci. Les modifications s&apos;appliquent après un redémarrage.</translation>
     </message>
     <message>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
@@ -1793,6 +1833,34 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Vider le cache maintenant ? Il sera de nouveau téléchargé au besoin.</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>Exporter le profil</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>L&apos;archive contiendra votre session WhatsApp connectée. Gardez-la privée. Continuer ?</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>Archives (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>Profil exporté.</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>Importer le profil</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>Cela écrase les données du compte actuel avec l&apos;archive, puis Whatly doit être redémarré. Continuer ?</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>Profil importé. Veuillez redémarrer Whatly.</translation>
     </message>
     <message>
         <source>%1 languages</source>

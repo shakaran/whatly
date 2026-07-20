@@ -199,6 +199,7 @@ set(SOURCES
     src/updatechecker.cpp
     src/storageinfo.cpp
     src/shortcuts.cpp
+    src/backup.cpp
     src/globalshortcut.cpp
     src/privacyblur.cpp
     src/performance.cpp
@@ -253,6 +254,7 @@ set(HEADERS
     src/updatechecker.h
     src/storageinfo.h
     src/shortcuts.h
+    src/backup.h
     src/privacyblur.h
     src/performance.h
     src/notificationrules.h

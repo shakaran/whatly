@@ -831,8 +831,28 @@ Please setup the password in the Settings first.</source>
         <translation> 可能需要重新启动。请将该错误报告给开发者。</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>无法运行 &apos;tar&apos;</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>没有可备份的内容</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>无法创建 %1</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>无法复制 %1</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>无法创建临时目录</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>无法恢复设置文件</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1471,6 +1491,26 @@ Please setup the password in the Settings first.</source>
         <translation>操作</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>备份</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>将此账户（设置、会话和附加组件）保存到 .tar.gz 归档文件。该归档文件包含你已登录的会话 — 请妥善保管。</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>导出配置文件…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>从 .tar.gz 归档文件恢复账户。此操作会覆盖当前数据，并需要重新启动。</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>导入配置文件…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>性能与隐私</translation>
     </message>
@@ -1793,6 +1833,34 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>现在清除缓存吗？需要时会重新下载。</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>导出配置文件</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>该归档文件将包含你已登录的 WhatsApp 会话。请妥善保管。是否继续？</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>归档文件 (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>配置文件已导出。</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>导入配置文件</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>此操作会用归档文件覆盖当前账户的数据，随后必须重新启动 Whatly。是否继续？</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>配置文件已导入。请重新启动 Whatly。</translation>
     </message>
     <message>
         <source>%1 languages</source>

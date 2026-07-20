@@ -831,8 +831,28 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <translation> może wymagać ponownego uruchomienia. Zgłoś błąd deweloperowi.</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>Nie udało się uruchomić &apos;tar&apos;</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>Brak danych do zapisania</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>Nie można utworzyć %1</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>Nie można skopiować %1</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>Nie można utworzyć katalogu tymczasowego</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>Nie udało się przywrócić pliku ustawień</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1471,6 +1491,26 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <translation>Działanie</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>Kopia zapasowa</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>Zapisz to konto (ustawienia, sesję i dodatki) do archiwum .tar.gz. Archiwum zawiera Twoją zalogowaną sesję — zachowaj je dla siebie.</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>Eksportuj profil…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>Przywróć konto z archiwum .tar.gz. Spowoduje to nadpisanie bieżących danych i wymaga ponownego uruchomienia.</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>Importuj profil…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>Wydajność i prywatność</translation>
     </message>
@@ -1793,6 +1833,34 @@ Najpierw ustaw hasło w ustawieniach.</translation>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Wyczyścić pamięć podręczną teraz? Zostanie pobrana ponownie w razie potrzeby.</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>Eksportuj profil</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>Archiwum będzie zawierać Twoją zalogowaną sesję WhatsApp. Zachowaj je dla siebie. Kontynuować?</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>Archiwa (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>Wyeksportowano profil.</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>Importuj profil</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>Spowoduje to nadpisanie danych bieżącego konta zawartością archiwum, a następnie trzeba będzie ponownie uruchomić Whatly. Kontynuować?</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>Zaimportowano profil. Uruchom ponownie Whatly.</translation>
     </message>
     <message>
         <source>%1 languages</source>

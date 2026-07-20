@@ -37,6 +37,7 @@
 #include "updatechecker.h"
 #include "storageinfo.h"
 #include "shortcuts.h"
+#include "backup.h"
 
 #include <QListWidget>
 #include <QTimeEdit>
@@ -424,6 +425,49 @@ void SettingsWidget::on_clearCacheButton_clicked() {
   if (Utils::delete_cache(cachePath()))
     ui->cacheSize->setText(
         StorageInfo::humanReadable(StorageInfo::directorySize(cachePath())));
+}
+
+void SettingsWidget::on_exportProfileButton_clicked() {
+  if (QMessageBox::warning(
+          this, tr("Export profile"),
+          tr("The archive will contain your logged-in WhatsApp session. Keep "
+             "it private. Continue?"),
+          QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
+    return;
+  QString path = QFileDialog::getSaveFileName(
+      this, tr("Export profile"),
+      QStringLiteral("whatly-profile.tar.gz"),
+      tr("Archives (*.tar.gz)"));
+  if (path.isEmpty())
+    return;
+  if (!path.endsWith(QLatin1String(".tar.gz")))
+    path += QStringLiteral(".tar.gz");
+  QString error;
+  if (Backup::exportProfile(path, &error))
+    QMessageBox::information(this, tr("Export profile"),
+                             tr("Profile exported."));
+  else
+    QMessageBox::warning(this, tr("Export profile"), error);
+}
+
+void SettingsWidget::on_importProfileButton_clicked() {
+  const QString path = QFileDialog::getOpenFileName(
+      this, tr("Import profile"), QString(), tr("Archives (*.tar.gz)"));
+  if (path.isEmpty())
+    return;
+  if (QMessageBox::warning(
+          this, tr("Import profile"),
+          tr("This overwrites the current account's data with the archive, "
+             "then Whatly must be restarted. Continue?"),
+          QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes)
+    return;
+  QString error;
+  if (Backup::importProfile(path, &error))
+    QMessageBox::information(
+        this, tr("Import profile"),
+        tr("Profile imported. Please restart Whatly."));
+  else
+    QMessageBox::warning(this, tr("Import profile"), error);
 }
 
 void SettingsWidget::updateDefaultUAButton(const QString engineUA) {

@@ -1372,6 +1372,50 @@ background:transparent;
             </item>
            </layout>
           </item>
+          <item>
+           <layout class="QHBoxLayout" name="backupButtonsLayout">
+            <item>
+             <widget class="QLabel" name="backupLabel">
+              <property name="text">
+               <string>Backup</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="exportProfileButton">
+              <property name="toolTip">
+               <string>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</string>
+              </property>
+              <property name="text">
+               <string>Export profile…</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="importProfileButton">
+              <property name="toolTip">
+               <string>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</string>
+              </property>
+              <property name="text">
+               <string>Import profile…</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="backupSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
          </layout>
         </widget>
        </item>

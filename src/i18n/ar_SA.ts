@@ -831,8 +831,28 @@ Please setup the password in the Settings first.</source>
         <translation> قد يحتاج إلى إعادة التشغيل. يُرجى إبلاغ المطوّر بالخطأ.</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>تعذّر تشغيل &apos;tar&apos;</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>لا شيء لنسخه احتياطيًا</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>تعذّر إنشاء %1</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>تعذّر نسخ %1</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>تعذّر إنشاء دليل مؤقّت</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>تعذّر استعادة ملف الإعدادات</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1471,6 +1491,26 @@ Please setup the password in the Settings first.</source>
         <translation>الإجراء</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>نسخ احتياطي</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>احفظ هذا الحساب (الإعدادات والجلسة والإضافات) في أرشيف .tar.gz. يحتوي الأرشيف على جلستك المسجَّلة الدخول — حافظ على خصوصيته.</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>تصدير الملف الشخصي…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>استعادة حساب من أرشيف .tar.gz. يؤدي هذا إلى استبدال البيانات الحالية ويتطلّب إعادة التشغيل.</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>استيراد الملف الشخصي…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>الأداء والخصوصية</translation>
     </message>
@@ -1793,6 +1833,34 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>هل تريد مسح ذاكرة التخزين المؤقت الآن؟ سيُعاد تنزيلها عند الحاجة.</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>تصدير الملف الشخصي</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>سيحتوي الأرشيف على جلسة WhatsApp المسجَّلة الدخول. حافظ على خصوصيته. هل تريد المتابعة؟</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>الأرشيفات (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>تم تصدير الملف الشخصي.</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>استيراد الملف الشخصي</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>سيؤدي هذا إلى استبدال بيانات الحساب الحالي بمحتوى الأرشيف، ثم يجب إعادة تشغيل Whatly. هل تريد المتابعة؟</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>تم استيراد الملف الشخصي. يُرجى إعادة تشغيل Whatly.</translation>
     </message>
     <message>
         <source>%1 languages</source>

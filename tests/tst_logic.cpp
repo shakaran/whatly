@@ -38,6 +38,7 @@
 #include "updatechecker.h"
 #include "storageinfo.h"
 #include "shortcuts.h"
+#include "backup.h"
 #include "webtweaks.h"
 #include "linkeddevicename.h"
 #include "performance.h"
@@ -970,6 +971,53 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Backup: the archive/extract and recursive-copy primitives (round-trip on temp
+// dirs, using the system tar).
+class TstBackup : public QObject {
+  Q_OBJECT
+private slots:
+  void copyRecursivePreservesTree() {
+    QTemporaryDir src, dst;
+    QVERIFY(src.isValid() && dst.isValid());
+    QVERIFY(QDir(src.path()).mkpath(QStringLiteral("a/b")));
+    QFile f(src.filePath(QStringLiteral("a/b/c.txt")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("hello");
+    f.close();
+    QString err;
+    QVERIFY2(Backup::copyDirRecursive(src.path(), dst.path(), &err),
+             qPrintable(err));
+    QFile out(dst.filePath(QStringLiteral("a/b/c.txt")));
+    QVERIFY(out.open(QIODevice::ReadOnly));
+    QCOMPARE(out.readAll(), QByteArray("hello"));
+  }
+
+  void archiveRoundTrip() {
+    QTemporaryDir src, out, back;
+    QVERIFY(src.isValid() && out.isValid() && back.isValid());
+    QFile f(src.filePath(QStringLiteral("data.txt")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("payload-123");
+    f.close();
+    const QString archive = out.filePath(QStringLiteral("p.tar.gz"));
+    QString err;
+    QVERIFY2(Backup::makeArchive(src.path(), archive, &err), qPrintable(err));
+    QVERIFY(QFileInfo(archive).size() > 0);
+    QVERIFY2(Backup::extractArchive(archive, back.path(), &err), qPrintable(err));
+    QFile r(back.filePath(QStringLiteral("data.txt")));
+    QVERIFY(r.open(QIODevice::ReadOnly));
+    QCOMPARE(r.readAll(), QByteArray("payload-123"));
+  }
+
+  void archiveMissingSourceFails() {
+    QString err;
+    QVERIFY(!Backup::makeArchive(QStringLiteral("/no/such/dir"),
+                                 QStringLiteral("/tmp/whatly-x.tar.gz"), &err));
+    QVERIFY(!err.isEmpty());
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Shortcuts: the registry, override round-trip, reset and conflict detection.
 class TstShortcuts : public QObject {
   Q_OBJECT
@@ -1396,6 +1444,7 @@ int main(int argc, char *argv[]) {
   { TstChatWallpaper t;       run(&t); }
   { TstPerformance t;         run(&t); }
   { TstShortcuts t;           run(&t); }
+  { TstBackup t;              run(&t); }
   { TstStorageInfo t;         run(&t); }
   { TstUpdateCheck t;         run(&t); }
   { TstFuzzy t;               run(&t); }

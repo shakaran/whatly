@@ -831,8 +831,28 @@ Defina primeiro a senha nas configurações.</translation>
         <translation> pode precisar ser reiniciado. Informe o erro ao desenvolvedor.</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>Não foi possível executar &apos;tar&apos;</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>Nada para fazer backup</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>Não é possível criar %1</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>Não é possível copiar %1</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>Não é possível criar um diretório temporário</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>Não foi possível restaurar o arquivo de configurações</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1471,6 +1491,26 @@ Defina primeiro a senha nas configurações.</translation>
         <translation>Ação</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>Backup</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>Salva esta conta (configurações, sessão e complementos) em um arquivo .tar.gz. O arquivo contém sua sessão conectada — mantenha-o privado.</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>Exportar perfil…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>Restaura uma conta a partir de um arquivo .tar.gz. Isso substitui os dados atuais e exige reinicialização.</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>Importar perfil…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>Desempenho e privacidade</translation>
     </message>
@@ -1793,6 +1833,34 @@ Defina primeiro a senha nas configurações.</translation>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Limpar o cache agora? Ele será baixado novamente quando necessário.</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>Exportar perfil</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>O arquivo conterá sua sessão do WhatsApp conectada. Mantenha-o privado. Continuar?</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>Arquivos compactados (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>Perfil exportado.</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>Importar perfil</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>Isso substitui os dados da conta atual pelo arquivo e, em seguida, o Whatly precisa ser reiniciado. Continuar?</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>Perfil importado. Reinicie o Whatly.</translation>
     </message>
     <message>
         <source>%1 languages</source>

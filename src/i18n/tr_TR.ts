@@ -831,8 +831,28 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation> yeniden başlatılması gerekebilir. Lütfen hatayı geliştiriciye bildirin.</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>&apos;tar&apos; çalıştırılamadı</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>Yedeklenecek bir şey yok</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>%1 oluşturulamıyor</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>%1 kopyalanamıyor</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>Geçici dizin oluşturulamıyor</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>Ayarlar dosyası geri yüklenemedi</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1471,6 +1491,26 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Eylem</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>Yedekleme</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>Bu hesabı (ayarlar, oturum ve eklentiler) bir .tar.gz arşivine kaydedin. Arşiv, oturum açmış oturumunuzu içerir — gizli tutun.</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>Profili dışa aktar…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>Bir hesabı .tar.gz arşivinden geri yükleyin. Bu, mevcut verilerin üzerine yazar ve yeniden başlatma gerektirir.</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>Profili içe aktar…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>Performans &amp; Gizlilik</translation>
     </message>
@@ -1793,6 +1833,34 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Önbellek şimdi temizlensin mi? Gerektiğinde yeniden indirilecektir.</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>Profili dışa aktar</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>Arşiv, oturum açmış WhatsApp oturumunuzu içerecek. Gizli tutun. Devam edilsin mi?</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>Arşivler (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>Profil dışa aktarıldı.</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>Profili içe aktar</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>Bu, mevcut hesabın verilerinin üzerine arşivi yazar, ardından Whatly'nin yeniden başlatılması gerekir. Devam edilsin mi?</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>Profil içe aktarıldı. Lütfen Whatly'yi yeniden başlatın.</translation>
     </message>
     <message>
         <source>%1 languages</source>

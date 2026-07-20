@@ -831,8 +831,28 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation> mungkin perlu dimulai ulang. Silakan laporkan kesalahan ini kepada pengembang.</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>Tidak dapat menjalankan &apos;tar&apos;</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>Tidak ada yang perlu dicadangkan</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>Tidak dapat membuat %1</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>Tidak dapat menyalin %1</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>Tidak dapat membuat direktori sementara</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>Tidak dapat memulihkan berkas pengaturan</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1471,6 +1491,26 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Aksi</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>Cadangan</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>Simpan akun ini (pengaturan, sesi, dan pengaya) ke arsip .tar.gz. Arsip berisi sesi login Anda — jaga kerahasiaannya.</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>Ekspor profil…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>Pulihkan akun dari arsip .tar.gz. Ini menimpa data saat ini dan memerlukan mulai ulang.</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>Impor profil…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>Performa &amp; Privasi</translation>
     </message>
@@ -1793,6 +1833,34 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Hapus cache sekarang? Cache akan diunduh ulang saat diperlukan.</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>Ekspor profil</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>Arsip akan berisi sesi WhatsApp login Anda. Jaga kerahasiaannya. Lanjutkan?</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>Arsip (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>Profil diekspor.</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>Impor profil</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>Ini menimpa data akun saat ini dengan arsip, lalu Whatly harus dimulai ulang. Lanjutkan?</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>Profil diimpor. Silakan mulai ulang Whatly.</translation>
     </message>
     <message>
         <source>%1 languages</source>

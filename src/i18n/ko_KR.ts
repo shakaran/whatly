@@ -831,8 +831,28 @@ Please setup the password in the Settings first.</source>
         <translation> 을(를) 다시 시작해야 할 수 있습니다. 개발자에게 오류를 알려 주세요.</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>&apos;tar&apos;을(를) 실행할 수 없습니다</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>백업할 항목이 없습니다</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>%1 을(를) 만들 수 없습니다</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>%1을(를) 복사할 수 없습니다</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>임시 디렉터리를 만들 수 없습니다</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>설정 파일을 복원할 수 없습니다</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1471,6 +1491,26 @@ Please setup the password in the Settings first.</source>
         <translation>동작</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>백업</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>이 계정(설정, 세션, 부가 기능)을 .tar.gz 압축 파일에 저장합니다. 압축 파일에는 로그인된 세션이 포함되어 있으니 — 외부에 공개하지 마세요.</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>프로필 내보내기…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>.tar.gz 압축 파일에서 계정을 복원합니다. 현재 데이터를 덮어쓰며 다시 시작해야 합니다.</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>프로필 가져오기…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>성능 및 개인정보 보호</translation>
     </message>
@@ -1793,6 +1833,34 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>지금 캐시를 지우시겠습니까? 필요할 때 다시 다운로드됩니다.</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>프로필 내보내기</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>압축 파일에는 로그인된 WhatsApp 세션이 포함됩니다. 외부에 공개하지 마세요. 계속하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>압축 파일 (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>프로필을 내보냈습니다.</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>프로필 가져오기</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>현재 계정의 데이터를 압축 파일로 덮어쓴 후 Whatly를 다시 시작해야 합니다. 계속하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>프로필을 가져왔습니다. Whatly를 다시 시작하세요.</translation>
     </message>
     <message>
         <source>%1 languages</source>

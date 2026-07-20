@@ -126,6 +126,8 @@ private slots:
   void on_customWindowFrameCheckBox_toggled(bool checked);
   void on_checkUpdatesCheckBox_toggled(bool checked);
   void on_clearCacheButton_clicked();
+  void on_exportProfileButton_clicked();
+  void on_importProfileButton_clicked();
   void on_interfaceScaleSpinBox_valueChanged(double arg1);
   void on_proxyModeComboBox_currentIndexChanged(int index);
   void on_proxyHostLineEdit_editingFinished();

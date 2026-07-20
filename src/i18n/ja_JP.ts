@@ -831,8 +831,28 @@ Please setup the password in the Settings first.</source>
         <translation> の再起動が必要な場合があります。エラーを開発者に報告してください。</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>&apos;tar&apos; を実行できませんでした</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>バックアップするものがありません</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>%1 を作成できません</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>%1 をコピーできません</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>一時ディレクトリを作成できません</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>設定ファイルを復元できませんでした</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1471,6 +1491,26 @@ Please setup the password in the Settings first.</source>
         <translation>操作</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>バックアップ</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>このアカウント（設定、セッション、アドオン）を .tar.gz アーカイブに保存します。アーカイブにはログイン済みのセッションが含まれます — 他人に渡さないでください。</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>プロファイルをエクスポート…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>.tar.gz アーカイブからアカウントを復元します。現在のデータが上書きされ、再起動が必要です。</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>プロファイルをインポート…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>パフォーマンスとプライバシー</translation>
     </message>
@@ -1793,6 +1833,34 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>今すぐキャッシュを消去しますか？必要に応じて再ダウンロードされます。</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>プロファイルをエクスポート</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>アーカイブにはログイン済みの WhatsApp セッションが含まれます。他人に渡さないでください。続行しますか？</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>アーカイブ (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>プロファイルをエクスポートしました。</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>プロファイルをインポート</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>現在のアカウントのデータをアーカイブで上書きし、その後 Whatly を再起動する必要があります。続行しますか？</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>プロファイルをインポートしました。Whatly を再起動してください。</translation>
     </message>
     <message>
         <source>%1 languages</source>

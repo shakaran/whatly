@@ -1,5 +1,12 @@
 ## Unreleased
 
+**Profile backup & restore.** Settings → Storage can now export an entire
+account — settings, the logged-in session and your custom CSS/JS addons —
+to a single `.tar.gz`, and import one back (with a clear warning that the
+archive holds your session and that importing overwrites the current
+account). The archive/extract/copy primitives are covered by unit tests
+(`TstBackup`).
+
 **Customisable keyboard shortcuts.** Settings → *Keyboard shortcuts* lets
 you remap the app's actions (reload, lock, mute, theme, grid, command
 palette, quit, …). Clashing a shortcut with another action is rejected;

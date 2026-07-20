@@ -473,7 +473,7 @@ Aprire le Impostazioni ora?</translation>
     </message>
     <message>
         <source>Minimise to tray</source>
-        <translation>Riduci a icona nell'area di notifica</translation>
+        <translation>Riduci a icona nell&apos;area di notifica</translation>
     </message>
     <message>
         <source>Lock</source>
@@ -837,8 +837,28 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Caricamento...</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>Impossibile eseguire &apos;tar&apos;</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>Nulla di cui fare il backup</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>Impossibile creare %1</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>Impossibile copiare %1</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>Impossibile creare una directory temporanea</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>Impossibile ripristinare il file delle impostazioni</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1374,6 +1394,26 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>  Svuota cache</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>Backup</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>Salva questo account (impostazioni, sessione e componenti aggiuntivi) in un archivio .tar.gz. L&apos;archivio contiene la tua sessione con accesso effettuato — tienilo privato.</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>Esporta profilo…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>Ripristina un account da un archivio .tar.gz. Questa operazione sovrascrive i dati attuali e richiede un riavvio.</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>Importa profilo…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>Prestazioni e privacy</translation>
     </message>
@@ -1791,7 +1831,7 @@ Imposta la password nelle Impostazioni.</translation>
     </message>
     <message>
         <source>That shortcut is already used by another action.</source>
-        <translation>Questa scorciatoia è già usata da un'altra azione.</translation>
+        <translation>Questa scorciatoia è già usata da un&apos;altra azione.</translation>
     </message>
     <message>
         <source>Clear cache</source>
@@ -1800,6 +1840,34 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Svuotare la cache adesso? Verrà scaricata di nuovo quando necessario.</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>Esporta profilo</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>L&apos;archivio conterrà la tua sessione WhatsApp con accesso effettuato. Tienilo privato. Continuare?</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>Archivi (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>Profilo esportato.</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>Importa profilo</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>Questa operazione sovrascrive i dati dell&apos;account attuale con l&apos;archivio, quindi Whatly deve essere riavviato. Continuare?</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>Profilo importato. Riavvia Whatly.</translation>
     </message>
     <message>
         <source>%1 languages</source>

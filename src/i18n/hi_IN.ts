@@ -831,8 +831,28 @@ Please setup the password in the Settings first.</source>
         <translation> को पुनः आरंभ करना पड़ सकता है। कृपया त्रुटि की सूचना डेवलपर को दें।</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>&apos;tar&apos; नहीं चलाया जा सका</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>बैकअप के लिए कुछ नहीं है</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>%1 नहीं बनाया जा सका</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>%1 कॉपी नहीं की जा सकी</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>अस्थायी डायरेक्टरी नहीं बनाई जा सकी</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>सेटिंग्स फ़ाइल पुनर्स्थापित नहीं की जा सकी</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1471,6 +1491,26 @@ Please setup the password in the Settings first.</source>
         <translation>क्रिया</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>बैकअप</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>इस खाते (सेटिंग्स, सत्र और ऐडऑन) को .tar.gz आर्काइव में सहेजें। आर्काइव में आपका लॉग-इन सत्र होता है — इसे निजी रखें।</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>प्रोफ़ाइल निर्यात करें…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>.tar.gz आर्काइव से किसी खाते को पुनर्स्थापित करें। यह मौजूदा डेटा को अधिलेखित करता है और पुनः आरंभ करने की आवश्यकता होती है।</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>प्रोफ़ाइल आयात करें…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>प्रदर्शन &amp; गोपनीयता</translation>
     </message>
@@ -1793,6 +1833,34 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>अभी कैश साफ़ करें? आवश्यकता होने पर इसे फिर से डाउनलोड कर लिया जाएगा।</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>प्रोफ़ाइल निर्यात करें</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>आर्काइव में आपका लॉग-इन WhatsApp सत्र होगा। इसे निजी रखें। जारी रखें?</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>आर्काइव (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>प्रोफ़ाइल निर्यात की गई।</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>प्रोफ़ाइल आयात करें</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>यह मौजूदा खाते के डेटा को आर्काइव से अधिलेखित करता है, फिर Whatly को पुनः आरंभ करना होगा। जारी रखें?</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>प्रोफ़ाइल आयात की गई। कृपया Whatly को पुनः आरंभ करें।</translation>
     </message>
     <message>
         <source>%1 languages</source>

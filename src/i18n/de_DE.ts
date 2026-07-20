@@ -831,8 +831,28 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
         <translation> muss möglicherweise neu gestartet werden. Bitte melden Sie den Fehler dem Entwickler.</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>&apos;tar&apos; konnte nicht ausgeführt werden</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>Nichts zu sichern</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>%1 kann nicht erstellt werden</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>%1 kann nicht kopiert werden</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>Temporäres Verzeichnis kann nicht erstellt werden</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>Die Einstellungsdatei konnte nicht wiederhergestellt werden</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1471,6 +1491,26 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
         <translation>Aktion</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>Sicherung</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>Dieses Konto (Einstellungen, Sitzung und Add-ons) in einem .tar.gz-Archiv speichern. Das Archiv enthält deine angemeldete Sitzung — halte es privat.</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>Profil exportieren…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>Ein Konto aus einem .tar.gz-Archiv wiederherstellen. Dies überschreibt die aktuellen Daten und erfordert einen Neustart.</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>Profil importieren…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>Leistung &amp; Datenschutz</translation>
     </message>
@@ -1793,6 +1833,34 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Cache jetzt leeren? Er wird bei Bedarf erneut heruntergeladen.</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>Profil exportieren</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>Das Archiv enthält deine angemeldete WhatsApp-Sitzung. Halte es privat. Fortfahren?</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>Archive (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>Profil exportiert.</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>Profil importieren</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>Dies überschreibt die Daten des aktuellen Kontos mit dem Archiv, danach muss Whatly neu gestartet werden. Fortfahren?</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>Profil importiert. Bitte starte Whatly neu.</translation>
     </message>
     <message>
         <source>%1 languages</source>

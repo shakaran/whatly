@@ -831,8 +831,28 @@ Please setup the password in the Settings first.</source>
         <translation> может потребоваться перезапуск. Сообщите об ошибке разработчику.</translation>
     </message>
     <message>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>Не удалось запустить &apos;tar&apos;</translation>
+    </message>
+    <message>
+        <source>Nothing to back up</source>
+        <translation>Нечего сохранять</translation>
+    </message>
+    <message>
         <source>Cannot create %1</source>
         <translation>Не удаётся создать %1</translation>
+    </message>
+    <message>
+        <source>Cannot copy %1</source>
+        <translation>Не удалось скопировать %1</translation>
+    </message>
+    <message>
+        <source>Cannot create a temporary directory</source>
+        <translation>Не удалось создать временный каталог</translation>
+    </message>
+    <message>
+        <source>Could not restore the settings file</source>
+        <translation>Не удалось восстановить файл настроек</translation>
     </message>
     <message>
         <source>Cannot write %1</source>
@@ -1471,6 +1491,26 @@ Please setup the password in the Settings first.</source>
         <translation>Действие</translation>
     </message>
     <message>
+        <source>Backup</source>
+        <translation>Резервная копия</translation>
+    </message>
+    <message>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>Сохранить эту учётную запись (настройки, сеанс и дополнения) в архив .tar.gz. Архив содержит ваш активный сеанс — храните его в тайне.</translation>
+    </message>
+    <message>
+        <source>Export profile…</source>
+        <translation>Экспорт профиля…</translation>
+    </message>
+    <message>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>Восстановление учётной записи из архива .tar.gz. Текущие данные будут перезаписаны, потребуется перезапуск.</translation>
+    </message>
+    <message>
+        <source>Import profile…</source>
+        <translation>Импорт профиля…</translation>
+    </message>
+    <message>
         <source>Performance &amp; Privacy</source>
         <translation>Производительность и конфиденциальность</translation>
     </message>
@@ -1793,6 +1833,34 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Очистить кэш сейчас? Он будет загружен заново по мере необходимости.</translation>
+    </message>
+    <message>
+        <source>Export profile</source>
+        <translation>Экспорт профиля</translation>
+    </message>
+    <message>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>Архив будет содержать ваш активный сеанс WhatsApp. Храните его в тайне. Продолжить?</translation>
+    </message>
+    <message>
+        <source>Archives (*.tar.gz)</source>
+        <translation>Архивы (*.tar.gz)</translation>
+    </message>
+    <message>
+        <source>Profile exported.</source>
+        <translation>Профиль экспортирован.</translation>
+    </message>
+    <message>
+        <source>Import profile</source>
+        <translation>Импорт профиля</translation>
+    </message>
+    <message>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>Это перезапишет данные текущей учётной записи содержимым архива, после чего Whatly потребуется перезапустить. Продолжить?</translation>
+    </message>
+    <message>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>Профиль импортирован. Перезапустите Whatly.</translation>
     </message>
     <message>
         <source>%1 languages</source>
