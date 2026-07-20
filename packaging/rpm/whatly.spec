@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        6.2.1
+Version:        6.3.0
 Release:        1%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
@@ -53,6 +53,10 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Mon Jul 20 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.3.0-1
+- Performance/privacy engine controls, network proxy, portal notifications,
+  custom JS addons + per-account CSS/JS, grid view, setup wizard, ARM64
+  AppImage; see CHANGELOG.md
 * Sat Jul 19 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.2.1-1
 - Automatic-theme crash fix, graceful SIGTERM, quieter terminal, About icons,
   and a unit-test suite; see CHANGELOG.md

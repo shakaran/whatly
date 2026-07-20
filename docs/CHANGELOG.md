@@ -1,3 +1,85 @@
+## 6.3.0 (2026-07-20)
+
+A sweep of engine-tuning, connectivity and customisation features, with every
+existing feature kept intact.
+
+**Performance & privacy settings.** Settings → *Performance & Privacy* now
+exposes the rendering-engine knobs that used to be hard-coded. Whatly still
+disables the GPU by default on Linux (the long-standing fix for blank windows
+and start-up crashes on some GPU/driver setups, issues #200 / #234 / #252), but
+you can now turn acceleration back on, ignore the driver blocklist, run the GPU
+in-process, toggle GPU compositing and VSync, or pick a lower-memory process
+model (single-process / process-per-site). A JavaScript memory cap
+(`--max-old-space-size`, for the "eats RAM" reports #241 / #255) and an HTTP
+cache type/size control round it out. A *Prevent WebRTC IP leak* switch stops
+WebRTC from revealing your local IP over non-proxied connections. All of these
+are stored machine-wide and applied at start-up, so a change takes effect after
+a restart. Covered by new unit tests (`TstPerformance`) and translated into all
+15 languages.
+
+**Network proxy.** Settings → *Network & Startup* now lets you route Whatly
+through a proxy: *System* (follow the OS, the default), *None* (connect
+directly), or a manual *SOCKS5* / *HTTP* proxy with host, port and optional
+username/password. It is applied application-wide, so every account uses it, and
+manual changes take effect for new connections without a restart. Covered by new
+unit tests (`TstNetworkProxy`).
+
+**Start at login.** The same section has a *Start Whatly when I log in* switch.
+On Linux it manages an XDG autostart entry
+(`~/.config/autostart/net.shakaran.whatly.desktop`); on Windows a per-user
+`Run` entry. Covered by new unit tests (`TstAutostart`).
+
+**Interface scale control.** You can now set an interface/content scale factor
+from Settings instead of only via the `QT_SCALE_FACTOR` environment variable
+(which still wins if set). It scales the whole window and the page together
+(matching #203) and applies after a restart.
+
+**Portal notifications (Flatpak).** Native notifications can now be delivered
+through the XDG desktop portal (`org.freedesktop.portal.Notification`) instead of
+libnotify. A Flatpak build cannot always reach the system notification service
+directly, but it can always reach the portal. Settings → notifications has a new
+*Notification delivery* choice on Linux: *Automatic* (use the portal inside a
+Flatpak sandbox, the system service otherwise), *Desktop portal (Flatpak)*, or
+*System service (libnotify)*. Clicking a portal notification still raises the
+window and marks the chat. Covered by new unit tests (`TstPortalNotification`).
+
+**Custom JavaScript addons.** Alongside the existing custom-CSS support, you can
+now load your own `.js` files to run on WhatsApp Web (Settings → *Custom
+JavaScript addons*). Add several, tick/untick each to enable or disable it, or
+remove it. Every addon runs inside its own `try`/`catch` sandbox, so a broken
+one can never take down the page or the other addons. Covered by new unit tests
+(`TstCustomJs`).
+
+**Per-account custom CSS/JS.** Custom CSS and the new JS addons are now stored
+per account: the default account keeps its existing `custom.css` (nothing moves
+on upgrade), while a named `--profile` account gets its own stylesheet and its
+own addon set.
+
+**Grid view for multiple accounts.** When you have several in-window accounts you
+can now show them all at once in a tiled grid instead of one at a time. Toggle it
+from the tray menu (*Grid view* / *Tabbed view*) or with `Ctrl+G`; the choice is
+remembered. The existing layouts are untouched: the tabbed view remains the
+default, and separate accounts in separate windows are still available by
+launching with `--profile`.
+
+**First-run setup wizard.** A new account is greeted by a short wizard that
+offers a few sensible starting choices — match the system light/dark theme,
+start at login, and (on Linux) how notifications are delivered — then points at
+the QR code to sign in. Everything it sets is also in Settings, so it is purely a
+friendlier on-ramp; it shows once and never again. Covered by new unit tests
+(`TstSetupWizard`).
+
+**Optional custom window frame.** For a more app-like look you can now replace
+the system title bar with Whatly's own slim one (Settings → *Network & Startup* →
+*Use a custom window frame*). It carries the minimise / maximise / close buttons,
+drags via the compositor (so it works on Wayland and X11), double-click to
+maximise, and a corner grip to resize. Off by default — the native decoration is
+untouched unless you opt in — and it applies after a restart.
+
+**ARM64 AppImage.** Releases now also build a native `aarch64` AppImage (with
+`.zsync` delta updates) alongside the x86_64 one, for Raspberry Pi, PinePhone and
+other 64-bit ARM Linux devices.
+
 ## 6.2.1 (2026-07-19)
 
 Bug-fix and hardening release.

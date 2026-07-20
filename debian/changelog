@@ -1,3 +1,17 @@
+whatly (6.3.0) unstable; urgency=medium
+
+  * Performance & Privacy settings: GPU, process-model, JS-heap and HTTP-cache
+    controls, plus a WebRTC IP-leak shield.
+  * Network proxy (System/None/SOCKS5/HTTP), start-at-login, interface scale,
+    and an optional custom (frameless) window frame.
+  * Portal-based notifications for Flatpak, selectable per delivery backend.
+  * Custom JavaScript addons (sandboxed); custom CSS and addons stored per
+    account.
+  * Grid view for multiple in-window accounts, alongside tabs and windows.
+  * First-run setup wizard, and a native ARM64 AppImage. See CHANGELOG.md.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Mon, 20 Jul 2026 12:00:00 +0200
+
 whatly (6.2.1) unstable; urgency=medium
 
   * Fix a crash opening the automatic-theme setup with no geolocation backend.
