@@ -560,6 +560,10 @@ Abrir as configurações agora?</translation>
         <translation>Adicionar conta…</translation>
     </message>
     <message>
+        <source>Insert: %1</source>
+        <translation>Inserir: %1</translation>
+    </message>
+    <message>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 não lidas</translation>
     </message>
@@ -1715,6 +1719,18 @@ Defina primeiro a senha nas configurações.</translation>
         <translation>Remover</translation>
     </message>
     <message>
+        <source>Saved replies</source>
+        <translation>Respostas salvas</translation>
+    </message>
+    <message>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>Textos curtos que você envia com frequência. Insira um pela paleta de comandos (Ctrl+K) — digite &quot;Inserir&quot; e escolha; o texto é digitado na caixa de mensagem.</translation>
+    </message>
+    <message>
+        <source>Add reply…</source>
+        <translation>Adicionar resposta…</translation>
+    </message>
+    <message>
         <source>Keyboard shortcuts</source>
         <translation>Atalhos de teclado</translation>
     </message>
@@ -1809,6 +1825,18 @@ Defina primeiro a senha nas configurações.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Serviço do sistema (libnotify)</translation>
+    </message>
+    <message>
+        <source>Add reply</source>
+        <translation>Adicionar resposta</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Text to insert</source>
+        <translation>Texto a inserir</translation>
     </message>
     <message>
         <source>Choose a JavaScript file</source>

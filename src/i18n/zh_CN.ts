@@ -560,6 +560,10 @@ Open Settings now?</source>
         <translation>添加账户…</translation>
     </message>
     <message>
+        <source>Insert: %1</source>
+        <translation>插入：%1</translation>
+    </message>
+    <message>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 条未读</translation>
     </message>
@@ -1715,6 +1719,18 @@ Please setup the password in the Settings first.</source>
         <translation>移除</translation>
     </message>
     <message>
+        <source>Saved replies</source>
+        <translation>已保存的回复</translation>
+    </message>
+    <message>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>你经常发送的简短文本。可从命令面板 (Ctrl+K) 插入 — 输入 &quot;插入&quot; 并选择，文本会被输入到消息框中。</translation>
+    </message>
+    <message>
+        <source>Add reply…</source>
+        <translation>添加回复…</translation>
+    </message>
+    <message>
         <source>Keyboard shortcuts</source>
         <translation>键盘快捷键</translation>
     </message>
@@ -1809,6 +1825,18 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>System service (libnotify)</source>
         <translation>系统服务 (libnotify)</translation>
+    </message>
+    <message>
+        <source>Add reply</source>
+        <translation>添加回复</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名称</translation>
+    </message>
+    <message>
+        <source>Text to insert</source>
+        <translation>要插入的文本</translation>
     </message>
     <message>
         <source>Choose a JavaScript file</source>

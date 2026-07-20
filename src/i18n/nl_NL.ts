@@ -560,6 +560,10 @@ Instellingen nu openen?</translation>
         <translation>Account toevoegen…</translation>
     </message>
     <message>
+        <source>Insert: %1</source>
+        <translation>Invoegen: %1</translation>
+    </message>
+    <message>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 ongelezen</translation>
     </message>
@@ -1715,6 +1719,18 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Verwijderen</translation>
     </message>
     <message>
+        <source>Saved replies</source>
+        <translation>Opgeslagen antwoorden</translation>
+    </message>
+    <message>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>Korte teksten die je vaak verstuurt. Voeg er een in via het opdrachtenpalet (Ctrl+K) — typ &quot;Invoegen&quot; en kies hem; de tekst wordt in het berichtvak getypt.</translation>
+    </message>
+    <message>
+        <source>Add reply…</source>
+        <translation>Antwoord toevoegen…</translation>
+    </message>
+    <message>
         <source>Keyboard shortcuts</source>
         <translation>Sneltoetsen</translation>
     </message>
@@ -1809,6 +1825,18 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Systeemservice (libnotify)</translation>
+    </message>
+    <message>
+        <source>Add reply</source>
+        <translation>Antwoord toevoegen</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Text to insert</source>
+        <translation>In te voegen tekst</translation>
     </message>
     <message>
         <source>Choose a JavaScript file</source>

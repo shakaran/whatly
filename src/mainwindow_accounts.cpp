@@ -20,6 +20,7 @@
 #include "settingsmanager.h"
 #include "customtitlebar.h"
 #include "commandpalette.h"
+#include "cannedresponses.h"
 
 #ifdef Q_OS_LINUX
 #include <QDBusConnection>
@@ -148,6 +149,16 @@ void MainWindow::showCommandPalette() {
                  [this, i]() { setActiveAccount(i); }});
   }
   cmds.append({tr("Add account…"), [this]() { promptAddAccount(); }});
+
+  // Saved replies: insert the text straight into the message box.
+  for (const CannedResponses::Response &r : CannedResponses::all()) {
+    const QString text = r.text;
+    cmds.append({tr("Insert: %1").arg(r.title), [this, text]() {
+                   if (m_webEngine && m_webEngine->page())
+                     m_webEngine->page()->runJavaScript(
+                         CannedResponses::insertScript(text));
+                 }});
+  }
 
   auto *palette = new CommandPalette(cmds, this);
   palette->setAttribute(Qt::WA_DeleteOnClose);

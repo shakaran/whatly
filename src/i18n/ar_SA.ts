@@ -560,6 +560,10 @@ Open Settings now?</source>
         <translation>إضافة حساب…</translation>
     </message>
     <message>
+        <source>Insert: %1</source>
+        <translation>إدراج: %1</translation>
+    </message>
+    <message>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 غير مقروءة</translation>
     </message>
@@ -1715,6 +1719,18 @@ Please setup the password in the Settings first.</source>
         <translation>إزالة</translation>
     </message>
     <message>
+        <source>Saved replies</source>
+        <translation>الردود المحفوظة</translation>
+    </message>
+    <message>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>نصوص قصيرة ترسلها كثيرًا. أدرج واحدًا من لوحة الأوامر (Ctrl+K) — اكتب &quot;إدراج&quot; ثم اخترها؛ يُكتب النص في مربع الرسالة.</translation>
+    </message>
+    <message>
+        <source>Add reply…</source>
+        <translation>إضافة رد…</translation>
+    </message>
+    <message>
         <source>Keyboard shortcuts</source>
         <translation>اختصارات لوحة المفاتيح</translation>
     </message>
@@ -1809,6 +1825,18 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>System service (libnotify)</source>
         <translation>خدمة النظام (libnotify)</translation>
+    </message>
+    <message>
+        <source>Add reply</source>
+        <translation>إضافة رد</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>الاسم</translation>
+    </message>
+    <message>
+        <source>Text to insert</source>
+        <translation>النص المراد إدراجه</translation>
     </message>
     <message>
         <source>Choose a JavaScript file</source>

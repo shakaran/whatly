@@ -560,6 +560,10 @@ Ayarlar şimdi açılsın mı?</translation>
         <translation>Hesap ekle…</translation>
     </message>
     <message>
+        <source>Insert: %1</source>
+        <translation>Ekle: %1</translation>
+    </message>
+    <message>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 okunmamış</translation>
     </message>
@@ -1715,6 +1719,18 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Kaldır</translation>
     </message>
     <message>
+        <source>Saved replies</source>
+        <translation>Kayıtlı yanıtlar</translation>
+    </message>
+    <message>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>Sık gönderdiğiniz kısa metinler. Komut paletinden (Ctrl+K) birini ekleyin — &quot;Ekle&quot; yazıp seçin; metin mesaj kutusuna yazılır.</translation>
+    </message>
+    <message>
+        <source>Add reply…</source>
+        <translation>Yanıt ekle…</translation>
+    </message>
+    <message>
         <source>Keyboard shortcuts</source>
         <translation>Klavye kısayolları</translation>
     </message>
@@ -1809,6 +1825,18 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Sistem hizmeti (libnotify)</translation>
+    </message>
+    <message>
+        <source>Add reply</source>
+        <translation>Yanıt ekle</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ad</translation>
+    </message>
+    <message>
+        <source>Text to insert</source>
+        <translation>Eklenecek metin</translation>
     </message>
     <message>
         <source>Choose a JavaScript file</source>

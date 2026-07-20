@@ -560,6 +560,10 @@ Buka pengaturan sekarang?</translation>
         <translation>Tambah akun…</translation>
     </message>
     <message>
+        <source>Insert: %1</source>
+        <translation>Sisipkan: %1</translation>
+    </message>
+    <message>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 belum dibaca</translation>
     </message>
@@ -1715,6 +1719,18 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Hapus</translation>
     </message>
     <message>
+        <source>Saved replies</source>
+        <translation>Balasan tersimpan</translation>
+    </message>
+    <message>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>Teks singkat yang sering Anda kirim. Sisipkan salah satunya dari palet perintah (Ctrl+K) — ketik &quot;Sisipkan&quot; lalu pilih; teksnya diketikkan ke kotak pesan.</translation>
+    </message>
+    <message>
+        <source>Add reply…</source>
+        <translation>Tambah balasan…</translation>
+    </message>
+    <message>
         <source>Keyboard shortcuts</source>
         <translation>Pintasan keyboard</translation>
     </message>
@@ -1809,6 +1825,18 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Layanan sistem (libnotify)</translation>
+    </message>
+    <message>
+        <source>Add reply</source>
+        <translation>Tambah balasan</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nama</translation>
+    </message>
+    <message>
+        <source>Text to insert</source>
+        <translation>Teks yang akan disisipkan</translation>
     </message>
     <message>
         <source>Choose a JavaScript file</source>

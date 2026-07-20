@@ -47,7 +47,7 @@ add_executable(tst_logic
     ${S}/sunclock.cpp ${S}/identicons.cpp ${S}/theme.cpp ${S}/dictionaries.cpp
     ${S}/scheduledmessages.cpp
     ${S}/webfont.cpp ${S}/chattheme.cpp ${S}/mutedstatus.cpp ${S}/privacyblur.cpp
-    ${S}/chatwallpaper.cpp ${S}/customcss.cpp ${S}/customjs.cpp ${S}/commandpalette.cpp ${S}/updatechecker.cpp ${S}/storageinfo.cpp ${S}/shortcuts.cpp ${S}/backup.cpp ${S}/screenlock.cpp ${S}/quickreply.cpp ${S}/focusmode.cpp ${S}/webtweaks.cpp
+    ${S}/chatwallpaper.cpp ${S}/customcss.cpp ${S}/customjs.cpp ${S}/commandpalette.cpp ${S}/updatechecker.cpp ${S}/storageinfo.cpp ${S}/shortcuts.cpp ${S}/backup.cpp ${S}/screenlock.cpp ${S}/quickreply.cpp ${S}/focusmode.cpp ${S}/cannedresponses.cpp ${S}/webtweaks.cpp
     ${S}/linkeddevicename.cpp ${S}/performance.cpp ${S}/notificationrules.cpp
     ${S}/networkproxy.cpp ${S}/autostart.cpp ${S}/portalnotification.cpp
     ${S}/setupwizard.cpp

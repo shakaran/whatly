@@ -560,6 +560,10 @@ Open Settings now?</source>
         <translation>계정 추가…</translation>
     </message>
     <message>
+        <source>Insert: %1</source>
+        <translation>삽입: %1</translation>
+    </message>
+    <message>
         <source>%1 — %2 unread</source>
         <translation>%1 — 읽지 않음 %2개</translation>
     </message>
@@ -1715,6 +1719,18 @@ Please setup the password in the Settings first.</source>
         <translation>제거</translation>
     </message>
     <message>
+        <source>Saved replies</source>
+        <translation>저장된 답장</translation>
+    </message>
+    <message>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>자주 보내는 짧은 문구입니다. 명령 팔레트(Ctrl+K)에서 하나를 삽입하세요 — &quot;삽입&quot;을 입력한 뒤 선택하면 메시지 입력란에 텍스트가 입력됩니다.</translation>
+    </message>
+    <message>
+        <source>Add reply…</source>
+        <translation>답장 추가…</translation>
+    </message>
+    <message>
         <source>Keyboard shortcuts</source>
         <translation>키보드 단축키</translation>
     </message>
@@ -1809,6 +1825,18 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>System service (libnotify)</source>
         <translation>시스템 서비스 (libnotify)</translation>
+    </message>
+    <message>
+        <source>Add reply</source>
+        <translation>답장 추가</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>이름</translation>
+    </message>
+    <message>
+        <source>Text to insert</source>
+        <translation>삽입할 텍스트</translation>
     </message>
     <message>
         <source>Choose a JavaScript file</source>

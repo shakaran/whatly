@@ -42,6 +42,7 @@
 #include "screenlock.h"
 #include "quickreply.h"
 #include "focusmode.h"
+#include "cannedresponses.h"
 #include "webtweaks.h"
 #include "linkeddevicename.h"
 #include "performance.h"
@@ -985,6 +986,41 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// CannedResponses: CRUD round-trip and the escaped insert snippet.
+class TstCannedResponses : public QObject {
+  Q_OBJECT
+private slots:
+  void init() { CannedResponses::setAll({}); }
+  void cleanup() { CannedResponses::setAll({}); }
+
+  void addListRemove() {
+    QVERIFY(CannedResponses::all().isEmpty());
+    CannedResponses::add(QStringLiteral("Greeting"), QStringLiteral("Hi!"));
+    CannedResponses::add(QStringLiteral("Bye"), QStringLiteral("Talk later"));
+    auto list = CannedResponses::all();
+    QCOMPARE(list.size(), 2);
+    QCOMPARE(list.first().title, QStringLiteral("Greeting"));
+    QCOMPARE(list.first().text, QStringLiteral("Hi!"));
+    CannedResponses::removeAt(0);
+    QCOMPARE(CannedResponses::all().size(), 1);
+    QCOMPARE(CannedResponses::all().first().title, QStringLiteral("Bye"));
+    CannedResponses::removeAt(99); // out of range is a no-op
+    QCOMPARE(CannedResponses::all().size(), 1);
+  }
+
+  void insertScriptEscapesText() {
+    const QString js = CannedResponses::insertScript(
+        QStringLiteral("say \"hi\"\nand \\ bye"));
+    QVERIFY(js.contains(QLatin1String("insertText")));
+    QVERIFY(js.contains(QLatin1String("catch")));
+    // Quotes, newlines and backslashes must be escaped, not raw.
+    QVERIFY(js.contains(QLatin1String("\\\"")));
+    QVERIFY(js.contains(QLatin1String("\\n")));
+    QVERIFY(!js.contains(QLatin1String("say \"hi\"\n")));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // FocusMode: the chat-list masking stylesheet toggles with the setting.
 class TstFocusMode : public QObject {
   Q_OBJECT
@@ -1536,6 +1572,7 @@ int main(int argc, char *argv[]) {
   { TstScreenLock t;          run(&t); }
   { TstQuickReply t;          run(&t); }
   { TstFocusMode t;           run(&t); }
+  { TstCannedResponses t;     run(&t); }
   { TstStorageInfo t;         run(&t); }
   { TstUpdateCheck t;         run(&t); }
   { TstFuzzy t;               run(&t); }

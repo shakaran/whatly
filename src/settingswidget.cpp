@@ -40,8 +40,10 @@
 #include "backup.h"
 #include "screenlock.h"
 #include "focusmode.h"
+#include "cannedresponses.h"
 
 #include <QListWidget>
+#include <QInputDialog>
 #include <QTimeEdit>
 #include <QTime>
 #include <QFormLayout>
@@ -183,6 +185,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
   loadNotificationRules();
   loadShortcuts();
   refreshJsAddonsList();
+  refreshCannedList();
   ui->lockOnMinimizeCheckBox->setChecked(
       SettingsManager::instance().settings().value("lockOnHideToTray", false).toBool());
   ui->lockOnScreenLockCheckBox->blockSignals(true);
@@ -1126,6 +1129,35 @@ void SettingsWidget::refreshJsAddonsList() {
   }
   ui->jsAddonsList->blockSignals(false);
   ui->removeJsAddonButton->setEnabled(ui->jsAddonsList->count() > 0);
+}
+
+void SettingsWidget::refreshCannedList() {
+  ui->cannedList->clear();
+  for (const CannedResponses::Response &r : CannedResponses::all())
+    ui->cannedList->addItem(r.title);
+  ui->removeCannedButton->setEnabled(ui->cannedList->count() > 0);
+}
+
+void SettingsWidget::on_addCannedButton_clicked() {
+  bool ok = false;
+  const QString title = QInputDialog::getText(
+      this, tr("Add reply"), tr("Name"), QLineEdit::Normal, QString(), &ok);
+  if (!ok || title.trimmed().isEmpty())
+    return;
+  const QString text = QInputDialog::getMultiLineText(
+      this, tr("Add reply"), tr("Text to insert"), QString(), &ok);
+  if (!ok || text.isEmpty())
+    return;
+  CannedResponses::add(title, text);
+  refreshCannedList();
+}
+
+void SettingsWidget::on_removeCannedButton_clicked() {
+  const int row = ui->cannedList->currentRow();
+  if (row < 0)
+    return;
+  CannedResponses::removeAt(row);
+  refreshCannedList();
 }
 
 void SettingsWidget::on_addJsAddonButton_clicked() {

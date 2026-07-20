@@ -560,6 +560,10 @@ Open Settings now?</source>
         <translation>アカウントを追加…</translation>
     </message>
     <message>
+        <source>Insert: %1</source>
+        <translation>挿入: %1</translation>
+    </message>
+    <message>
         <source>%1 — %2 unread</source>
         <translation>%1 — 未読 %2 件</translation>
     </message>
@@ -1715,6 +1719,18 @@ Please setup the password in the Settings first.</source>
         <translation>削除</translation>
     </message>
     <message>
+        <source>Saved replies</source>
+        <translation>保存した返信</translation>
+    </message>
+    <message>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>よく送る短い定型文です。コマンドパレット（Ctrl+K）から挿入できます — &quot;挿入&quot; と入力して選ぶと、メッセージ入力欄にテキストが入力されます。</translation>
+    </message>
+    <message>
+        <source>Add reply…</source>
+        <translation>返信を追加…</translation>
+    </message>
+    <message>
         <source>Keyboard shortcuts</source>
         <translation>キーボードショートカット</translation>
     </message>
@@ -1809,6 +1825,18 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>System service (libnotify)</source>
         <translation>システムサービス (libnotify)</translation>
+    </message>
+    <message>
+        <source>Add reply</source>
+        <translation>返信を追加</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <source>Text to insert</source>
+        <translation>挿入するテキスト</translation>
     </message>
     <message>
         <source>Choose a JavaScript file</source>

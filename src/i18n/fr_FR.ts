@@ -560,6 +560,10 @@ Ouvrir les paramètres maintenant ?</translation>
         <translation>Ajouter un compte…</translation>
     </message>
     <message>
+        <source>Insert: %1</source>
+        <translation>Insérer : %1</translation>
+    </message>
+    <message>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 non lus</translation>
     </message>
@@ -1715,6 +1719,18 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
         <translation>Supprimer</translation>
     </message>
     <message>
+        <source>Saved replies</source>
+        <translation>Réponses enregistrées</translation>
+    </message>
+    <message>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>Textes courts que vous envoyez souvent. Insérez-en un depuis la palette de commandes (Ctrl+K) — tapez &quot;Insérer&quot; et choisissez-le ; le texte est saisi dans la zone de message.</translation>
+    </message>
+    <message>
+        <source>Add reply…</source>
+        <translation>Ajouter une réponse…</translation>
+    </message>
+    <message>
         <source>Keyboard shortcuts</source>
         <translation>Raccourcis clavier</translation>
     </message>
@@ -1809,6 +1825,18 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Service système (libnotify)</translation>
+    </message>
+    <message>
+        <source>Add reply</source>
+        <translation>Ajouter une réponse</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Text to insert</source>
+        <translation>Texte à insérer</translation>
     </message>
     <message>
         <source>Choose a JavaScript file</source>

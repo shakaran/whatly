@@ -516,6 +516,10 @@ Aprire le Impostazioni ora?</translation>
         <translation>Aggiungi account…</translation>
     </message>
     <message>
+        <source>Insert: %1</source>
+        <translation>Inserisci: %1</translation>
+    </message>
+    <message>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 non letti</translation>
     </message>
@@ -1618,6 +1622,18 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Rimuovi</translation>
     </message>
     <message>
+        <source>Saved replies</source>
+        <translation>Risposte salvate</translation>
+    </message>
+    <message>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>Testi brevi che invii spesso. Inseriscine uno dalla palette dei comandi (Ctrl+K) — digita &quot;Inserisci&quot; e selezionalo; il testo viene scritto nella casella del messaggio.</translation>
+    </message>
+    <message>
+        <source>Add reply…</source>
+        <translation>Aggiungi risposta…</translation>
+    </message>
+    <message>
         <source>Keyboard shortcuts</source>
         <translation>Scorciatoie da tastiera</translation>
     </message>
@@ -1816,6 +1832,18 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Servizio di sistema (libnotify)</translation>
+    </message>
+    <message>
+        <source>Add reply</source>
+        <translation>Aggiungi risposta</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Text to insert</source>
+        <translation>Testo da inserire</translation>
     </message>
     <message>
         <source>Choose a JavaScript file</source>

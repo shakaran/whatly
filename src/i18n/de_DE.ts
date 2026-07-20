@@ -560,6 +560,10 @@ Einstellungen jetzt öffnen?</translation>
         <translation>Konto hinzufügen…</translation>
     </message>
     <message>
+        <source>Insert: %1</source>
+        <translation>Einfügen: %1</translation>
+    </message>
+    <message>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 ungelesen</translation>
     </message>
@@ -1715,6 +1719,18 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
         <translation>Entfernen</translation>
     </message>
     <message>
+        <source>Saved replies</source>
+        <translation>Gespeicherte Antworten</translation>
+    </message>
+    <message>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>Kurze Texte, die Sie häufig senden. Fügen Sie einen über die Befehlspalette (Ctrl+K) ein — geben Sie &quot;Einfügen&quot; ein und wählen Sie ihn aus; der Text wird in das Nachrichtenfeld geschrieben.</translation>
+    </message>
+    <message>
+        <source>Add reply…</source>
+        <translation>Antwort hinzufügen…</translation>
+    </message>
+    <message>
         <source>Keyboard shortcuts</source>
         <translation>Tastenkürzel</translation>
     </message>
@@ -1809,6 +1825,18 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
     <message>
         <source>System service (libnotify)</source>
         <translation>Systemdienst (libnotify)</translation>
+    </message>
+    <message>
+        <source>Add reply</source>
+        <translation>Antwort hinzufügen</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Name</translation>
+    </message>
+    <message>
+        <source>Text to insert</source>
+        <translation>Einzufügender Text</translation>
     </message>
     <message>
         <source>Choose a JavaScript file</source>

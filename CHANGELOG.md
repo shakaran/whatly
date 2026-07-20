@@ -1,5 +1,12 @@
 ## Unreleased
 
+**Saved replies.** Store the short texts you send often (Settings → *Saved
+replies*) and insert one from the command palette: `Ctrl+K`, type
+"Insert", pick it, and the text is typed into the message box — going
+through the page's own input handling, so the Send button enables and
+drafts are tracked as if you had typed it. Covered by unit tests
+(`TstCannedResponses`).
+
 **Grid view captions.** Each tile in the multi-account grid now carries a
 caption with the account's name and its unread count, so it is obvious
 which tile is which; the caption tracks renames and unread changes.

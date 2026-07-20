@@ -1851,6 +1851,66 @@ background:transparent;
         </widget>
        </item>
        <item>
+        <widget class="QGroupBox" name="groupBoxCanned">
+         <property name="title">
+          <string>Saved replies</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayoutCanned">
+          <item>
+           <widget class="QLabel" name="cannedHintLabel">
+            <property name="text">
+             <string>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="cannedList">
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>120</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="cannedButtonsLayout">
+            <item>
+             <widget class="QPushButton" name="addCannedButton">
+              <property name="text">
+               <string>Add reply…</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="removeCannedButton">
+              <property name="text">
+               <string>Remove</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="cannedSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
         <widget class="QGroupBox" name="groupBoxShortcuts">
          <property name="title">
           <string>Keyboard shortcuts</string>

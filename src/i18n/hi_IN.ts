@@ -560,6 +560,10 @@ Open Settings now?</source>
         <translation>खाता जोड़ें…</translation>
     </message>
     <message>
+        <source>Insert: %1</source>
+        <translation>सम्मिलित करें: %1</translation>
+    </message>
+    <message>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 अपठित</translation>
     </message>
@@ -1715,6 +1719,18 @@ Please setup the password in the Settings first.</source>
         <translation>हटाएँ</translation>
     </message>
     <message>
+        <source>Saved replies</source>
+        <translation>सहेजे गए उत्तर</translation>
+    </message>
+    <message>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>छोटे संदेश जिन्हें आप अक्सर भेजते हैं। कमांड पैलेट (Ctrl+K) से कोई एक सम्मिलित करें — &quot;सम्मिलित करें&quot; टाइप करें और उसे चुनें; टेक्स्ट संदेश बॉक्स में लिख दिया जाता है।</translation>
+    </message>
+    <message>
+        <source>Add reply…</source>
+        <translation>उत्तर जोड़ें…</translation>
+    </message>
+    <message>
         <source>Keyboard shortcuts</source>
         <translation>कीबोर्ड शॉर्टकट</translation>
     </message>
@@ -1809,6 +1825,18 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>System service (libnotify)</source>
         <translation>सिस्टम सेवा (libnotify)</translation>
+    </message>
+    <message>
+        <source>Add reply</source>
+        <translation>उत्तर जोड़ें</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>नाम</translation>
+    </message>
+    <message>
+        <source>Text to insert</source>
+        <translation>सम्मिलित किया जाने वाला टेक्स्ट</translation>
     </message>
     <message>
         <source>Choose a JavaScript file</source>
