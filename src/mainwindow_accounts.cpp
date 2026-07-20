@@ -11,10 +11,13 @@
 #include <QTabBar>
 #include <QVBoxLayout>
 #include <QGridLayout>
+#include <QHBoxLayout>
+#include <QSizeGrip>
 #include <QWidget>
 #include <QtMath>
 
 #include "settingsmanager.h"
+#include "customtitlebar.h"
 
 #ifdef Q_OS_LINUX
 #include <QDBusConnection>
@@ -43,6 +46,10 @@ void MainWindow::buildAccountArea() {
   auto *layout = new QVBoxLayout(central);
   layout->setContentsMargins(0, 0, 0, 0);
   layout->setSpacing(0);
+
+  // Optional client-side title bar (frameless mode). Sits above everything.
+  if (CustomTitleBar::isEnabled())
+    layout->addWidget(new CustomTitleBar(this, central));
 
   m_accountBar = new QTabBar(central);
   m_accountBar->setObjectName("accountBar");
@@ -73,6 +80,17 @@ void MainWindow::buildAccountArea() {
 
   layout->addWidget(m_accountBar);
   layout->addWidget(m_displayStack);
+
+  // In frameless mode there is no native resize edge, so give the window a
+  // corner size grip to drag.
+  if (CustomTitleBar::isEnabled()) {
+    auto *gripRow = new QHBoxLayout;
+    gripRow->setContentsMargins(0, 0, 0, 0);
+    gripRow->addStretch();
+    gripRow->addWidget(new QSizeGrip(central), 0, Qt::AlignBottom | Qt::AlignRight);
+    layout->addLayout(gripRow);
+  }
+
   setCentralWidget(central);
 
   connect(m_accountBar, &QTabBar::currentChanged, this, [this](int index) {

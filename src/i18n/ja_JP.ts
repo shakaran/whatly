@@ -207,6 +207,21 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>Minimise</source>
+        <translation>最小化</translation>
+    </message>
+    <message>
+        <source>Maximise</source>
+        <translation>最大化</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">閉じる</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <source>Downloads</source>
@@ -1413,6 +1428,14 @@ Please setup the password in the Settings first.</source>
         <translation>ログイン時に Whatly を起動する</translation>
     </message>
     <message>
+        <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
+        <translation>システムのウィンドウ枠を Whatly 独自のスリムなタイトルバーに置き換えます。再起動後に適用されます。</translation>
+    </message>
+    <message>
+        <source>Use a custom window frame (requires restart)</source>
+        <translation>カスタムウィンドウ枠を使用する（再起動が必要）</translation>
+    </message>
+    <message>
         <source>Interface scale</source>
         <translation>インターフェースの拡大率</translation>
     </message>
@@ -1625,6 +1648,65 @@ You may also require a complete restart of Application!</source>
     <message>
         <source>Do you want to proceed?</source>
         <translation>続行しますか？</translation>
+    </message>
+</context>
+<context>
+    <name>SetupWizard</name>
+    <message>
+        <source>Welcome to Whatly</source>
+        <translation>Whatly へようこそ</translation>
+    </message>
+    <message>
+        <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
+        <translation>デスクトップ向けの高速でネイティブな WhatsApp Web クライアントです。まずはいくつか設定しましょう — これらはすべて後から設定で変更できます。</translation>
+    </message>
+    <message>
+        <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
+        <translation>Whatly はチャットを本格的なデスクトップウィンドウにまとめ、トレイアイコン、通知、テーマ、複数アカウントに対応します。</translation>
+    </message>
+    <message>
+        <source>A few preferences</source>
+        <translation>いくつかの設定</translation>
+    </message>
+    <message>
+        <source>Sensible defaults; tweak to taste.</source>
+        <translation>無難な初期設定です。お好みで調整してください。</translation>
+    </message>
+    <message>
+        <source>Match the system light/dark theme</source>
+        <translation>システムのライト/ダークテーマに合わせる</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation type="unfinished">ログイン時に Whatly を起動する</translation>
+    </message>
+    <message>
+        <source>Notification delivery:</source>
+        <translation>通知の配信:</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">自動</translation>
+    </message>
+    <message>
+        <source>Desktop portal (Flatpak)</source>
+        <translation type="unfinished">デスクトップポータル (Flatpak)</translation>
+    </message>
+    <message>
+        <source>System service (libnotify)</source>
+        <translation type="unfinished">システムサービス (libnotify)</translation>
+    </message>
+    <message>
+        <source>All set</source>
+        <translation>準備完了</translation>
+    </message>
+    <message>
+        <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
+        <translation>準備が整いました。スマートフォンで QR コードをスキャンしてサインインしてください。</translation>
+    </message>
+    <message>
+        <source>Everything here lives in Settings if you change your mind.</source>
+        <translation>ここにある項目はすべて設定にあるので、後で気が変わっても大丈夫です。</translation>
     </message>
 </context>
 <context>

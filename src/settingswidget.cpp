@@ -32,6 +32,7 @@
 #include "networkproxy.h"
 #include "autostart.h"
 #include "customjs.h"
+#include "customtitlebar.h"
 
 #include <QListWidget>
 
@@ -885,6 +886,10 @@ void SettingsWidget::loadNetworkSettings() {
     ui->autostartCheckBox->blockSignals(false);
   }
 
+  ui->customWindowFrameCheckBox->blockSignals(true);
+  ui->customWindowFrameCheckBox->setChecked(CustomTitleBar::isEnabled());
+  ui->customWindowFrameCheckBox->blockSignals(false);
+
   ui->interfaceScaleSpinBox->blockSignals(true);
   ui->interfaceScaleSpinBox->setValue(Performance::interfaceScaleFactor());
   ui->interfaceScaleSpinBox->blockSignals(false);
@@ -1012,6 +1017,10 @@ void SettingsWidget::on_autostartCheckBox_toggled(bool checked) {
 
 void SettingsWidget::on_interfaceScaleSpinBox_valueChanged(double arg1) {
   Performance::setInterfaceScaleFactor(arg1);
+}
+
+void SettingsWidget::on_customWindowFrameCheckBox_toggled(bool checked) {
+  CustomTitleBar::setEnabled(checked);
 }
 
 void SettingsWidget::on_proxyModeComboBox_currentIndexChanged(int index) {

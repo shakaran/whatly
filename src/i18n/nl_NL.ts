@@ -207,6 +207,21 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
     </message>
 </context>
 <context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>Minimise</source>
+        <translation>Minimaliseren</translation>
+    </message>
+    <message>
+        <source>Maximise</source>
+        <translation>Maximaliseren</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Sluiten</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <source>Downloads</source>
@@ -1413,6 +1428,14 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Whatly starten wanneer ik me aanmeld</translation>
     </message>
     <message>
+        <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
+        <translation>Vervang de vensterrand van het systeem door de eigen slanke titelbalk van Whatly. Wordt toegepast na een herstart.</translation>
+    </message>
+    <message>
+        <source>Use a custom window frame (requires restart)</source>
+        <translation>Gebruik een aangepast vensterkader (herstart vereist)</translation>
+    </message>
+    <message>
         <source>Interface scale</source>
         <translation>Interfaceschaal</translation>
     </message>
@@ -1625,6 +1648,65 @@ Mogelijk is ook een volledige herstart van de toepassing vereist!</translation>
     <message>
         <source>Do you want to proceed?</source>
         <translation>Wilt u doorgaan?</translation>
+    </message>
+</context>
+<context>
+    <name>SetupWizard</name>
+    <message>
+        <source>Welcome to Whatly</source>
+        <translation>Welkom bij Whatly</translation>
+    </message>
+    <message>
+        <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
+        <translation>Een snelle, native WhatsApp Web-client voor de desktop. Laten we een paar dingen instellen — je kunt dit allemaal later wijzigen in Instellingen.</translation>
+    </message>
+    <message>
+        <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
+        <translation>Whatly houdt je chats in een volwaardig desktopvenster, met een systeemvakpictogram, meldingen, thema's en meerdere accounts.</translation>
+    </message>
+    <message>
+        <source>A few preferences</source>
+        <translation>Een paar voorkeuren</translation>
+    </message>
+    <message>
+        <source>Sensible defaults; tweak to taste.</source>
+        <translation>Verstandige standaardinstellingen; pas aan naar smaak.</translation>
+    </message>
+    <message>
+        <source>Match the system light/dark theme</source>
+        <translation>Volg het lichte/donkere thema van het systeem</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation type="unfinished">Whatly starten wanneer ik me aanmeld</translation>
+    </message>
+    <message>
+        <source>Notification delivery:</source>
+        <translation>Bezorging van meldingen:</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">Automatisch</translation>
+    </message>
+    <message>
+        <source>Desktop portal (Flatpak)</source>
+        <translation type="unfinished">Bureaubladportaal (Flatpak)</translation>
+    </message>
+    <message>
+        <source>System service (libnotify)</source>
+        <translation type="unfinished">Systeemservice (libnotify)</translation>
+    </message>
+    <message>
+        <source>All set</source>
+        <translation>Helemaal klaar</translation>
+    </message>
+    <message>
+        <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
+        <translation>Je bent klaar om te beginnen. Scan de QR-code met je telefoon om in te loggen.</translation>
+    </message>
+    <message>
+        <source>Everything here lives in Settings if you change your mind.</source>
+        <translation>Alles hier vind je terug in Instellingen als je van gedachten verandert.</translation>
     </message>
 </context>
 <context>

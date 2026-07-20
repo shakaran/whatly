@@ -207,6 +207,21 @@ Möchten Sie die Sicherheitsprüfung übergehen und fortfahren?   </translation>
     </message>
 </context>
 <context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>Minimise</source>
+        <translation>Minimieren</translation>
+    </message>
+    <message>
+        <source>Maximise</source>
+        <translation>Maximieren</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Schließen</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <source>Downloads</source>
@@ -1413,6 +1428,14 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
         <translation>Whatly beim Anmelden starten</translation>
     </message>
     <message>
+        <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
+        <translation>Ersetzt den Fensterrahmen des Systems durch Whatlys eigene schmale Titelleiste. Wird nach einem Neustart wirksam.</translation>
+    </message>
+    <message>
+        <source>Use a custom window frame (requires restart)</source>
+        <translation>Eigenen Fensterrahmen verwenden (Neustart erforderlich)</translation>
+    </message>
+    <message>
         <source>Interface scale</source>
         <translation>Oberflächenskalierung</translation>
     </message>
@@ -1625,6 +1648,65 @@ Möglicherweise ist auch ein vollständiger Neustart der Anwendung erforderlich!
     <message>
         <source>Do you want to proceed?</source>
         <translation>Möchten Sie fortfahren?</translation>
+    </message>
+</context>
+<context>
+    <name>SetupWizard</name>
+    <message>
+        <source>Welcome to Whatly</source>
+        <translation>Willkommen bei Whatly</translation>
+    </message>
+    <message>
+        <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
+        <translation>Ein schneller, nativer WhatsApp Web-Client für den Desktop. Lass uns ein paar Dinge einrichten — du kannst das alles später in den Einstellungen ändern.</translation>
+    </message>
+    <message>
+        <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
+        <translation>Whatly hält deine Chats in einem richtigen Desktop-Fenster bereit — mit Symbol im Infobereich, Benachrichtigungen, Designs und mehreren Konten.</translation>
+    </message>
+    <message>
+        <source>A few preferences</source>
+        <translation>Ein paar Einstellungen</translation>
+    </message>
+    <message>
+        <source>Sensible defaults; tweak to taste.</source>
+        <translation>Sinnvolle Voreinstellungen; nach Belieben anpassen.</translation>
+    </message>
+    <message>
+        <source>Match the system light/dark theme</source>
+        <translation>An das helle/dunkle Systemdesign anpassen</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation type="unfinished">Whatly beim Anmelden starten</translation>
+    </message>
+    <message>
+        <source>Notification delivery:</source>
+        <translation>Benachrichtigungszustellung:</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">Automatisch</translation>
+    </message>
+    <message>
+        <source>Desktop portal (Flatpak)</source>
+        <translation type="unfinished">Desktop-Portal (Flatpak)</translation>
+    </message>
+    <message>
+        <source>System service (libnotify)</source>
+        <translation type="unfinished">Systemdienst (libnotify)</translation>
+    </message>
+    <message>
+        <source>All set</source>
+        <translation>Fertig</translation>
+    </message>
+    <message>
+        <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
+        <translation>Alles bereit. Scanne den QR-Code mit deinem Handy, um dich anzumelden.</translation>
+    </message>
+    <message>
+        <source>Everything here lives in Settings if you change your mind.</source>
+        <translation>Alles hier findest du in den Einstellungen, falls du es dir anders überlegst.</translation>
     </message>
 </context>
 <context>

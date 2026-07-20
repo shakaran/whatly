@@ -207,6 +207,21 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>Minimise</source>
+        <translation>Minimizar</translation>
+    </message>
+    <message>
+        <source>Maximise</source>
+        <translation>Maximizar</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Cerrar</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <source>Downloads</source>
@@ -1413,6 +1428,14 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>Iniciar Whatly al iniciar sesión</translation>
     </message>
     <message>
+        <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
+        <translation>Sustituir el borde de ventana del sistema por la barra de título fina de Whatly. Se aplica tras reiniciar.</translation>
+    </message>
+    <message>
+        <source>Use a custom window frame (requires restart)</source>
+        <translation>Usar un marco de ventana personalizado (requiere reiniciar)</translation>
+    </message>
+    <message>
         <source>Interface scale</source>
         <translation>Escala de la interfaz</translation>
     </message>
@@ -1625,6 +1648,65 @@ Esto cerrará tu sesión actual.
     <message>
         <source>Do you want to proceed?</source>
         <translation>¿Quieres continuar?</translation>
+    </message>
+</context>
+<context>
+    <name>SetupWizard</name>
+    <message>
+        <source>Welcome to Whatly</source>
+        <translation>Te damos la bienvenida a Whatly</translation>
+    </message>
+    <message>
+        <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
+        <translation>Un cliente de WhatsApp Web nativo y rápido para el escritorio. Vamos a configurar algunas cosas — podrás cambiarlas todas más tarde en los Ajustes.</translation>
+    </message>
+    <message>
+        <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
+        <translation>Whatly mantiene tus chats en una ventana de escritorio como es debido, con icono en la bandeja, notificaciones, temas y varias cuentas.</translation>
+    </message>
+    <message>
+        <source>A few preferences</source>
+        <translation>Algunas preferencias</translation>
+    </message>
+    <message>
+        <source>Sensible defaults; tweak to taste.</source>
+        <translation>Valores predeterminados sensatos; ajústalos a tu gusto.</translation>
+    </message>
+    <message>
+        <source>Match the system light/dark theme</source>
+        <translation>Seguir el tema claro/oscuro del sistema</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation type="unfinished">Iniciar Whatly al iniciar sesión</translation>
+    </message>
+    <message>
+        <source>Notification delivery:</source>
+        <translation>Entrega de notificaciones:</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">Automático</translation>
+    </message>
+    <message>
+        <source>Desktop portal (Flatpak)</source>
+        <translation type="unfinished">Portal de escritorio (Flatpak)</translation>
+    </message>
+    <message>
+        <source>System service (libnotify)</source>
+        <translation type="unfinished">Servicio del sistema (libnotify)</translation>
+    </message>
+    <message>
+        <source>All set</source>
+        <translation>Todo listo</translation>
+    </message>
+    <message>
+        <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
+        <translation>Ya está todo listo. Escanea el código QR con tu teléfono para iniciar sesión.</translation>
+    </message>
+    <message>
+        <source>Everything here lives in Settings if you change your mind.</source>
+        <translation>Si cambias de opinión, todo esto está en los Ajustes.</translation>
     </message>
 </context>
 <context>

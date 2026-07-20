@@ -201,6 +201,8 @@ set(SOURCES
     src/networkproxy.cpp
     src/autostart.cpp
     src/portalnotification.cpp
+    src/setupwizard.cpp
+    src/customtitlebar.cpp
     src/webfont.cpp
     src/mutedstatus.cpp
     src/scheduledmessages.cpp
@@ -247,6 +249,8 @@ set(HEADERS
     src/networkproxy.h
     src/autostart.h
     src/portalnotification.h
+    src/setupwizard.h
+    src/customtitlebar.h
     src/webfont.h
     src/mutedstatus.h
     src/scheduledmessages.h

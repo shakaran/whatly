@@ -207,6 +207,21 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>Minimise</source>
+        <translation>تصغير</translation>
+    </message>
+    <message>
+        <source>Maximise</source>
+        <translation>تكبير</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">إغلاق</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <source>Downloads</source>
@@ -1413,6 +1428,14 @@ Please setup the password in the Settings first.</source>
         <translation>تشغيل Whatly عند تسجيل الدخول</translation>
     </message>
     <message>
+        <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
+        <translation>استبدال حدود نافذة النظام بشريط عنوان Whatly النحيل الخاص. يُطبَّق بعد إعادة التشغيل.</translation>
+    </message>
+    <message>
+        <source>Use a custom window frame (requires restart)</source>
+        <translation>استخدام إطار نافذة مخصص (يتطلب إعادة التشغيل)</translation>
+    </message>
+    <message>
         <source>Interface scale</source>
         <translation>مقياس الواجهة</translation>
     </message>
@@ -1625,6 +1648,65 @@ You may also require a complete restart of Application!</source>
     <message>
         <source>Do you want to proceed?</source>
         <translation>هل تريد المتابعة؟</translation>
+    </message>
+</context>
+<context>
+    <name>SetupWizard</name>
+    <message>
+        <source>Welcome to Whatly</source>
+        <translation>مرحبًا بك في Whatly</translation>
+    </message>
+    <message>
+        <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
+        <translation>عميل WhatsApp Web سريع وأصلي لسطح المكتب. لنُعدّ بعض الأمور — يمكنك تغيير كل هذا لاحقًا من الإعدادات.</translation>
+    </message>
+    <message>
+        <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
+        <translation>يُبقي Whatly محادثاتك في نافذة سطح مكتب حقيقية، مع أيقونة في شريط المهام، وإشعارات، وسمات، وحسابات متعددة.</translation>
+    </message>
+    <message>
+        <source>A few preferences</source>
+        <translation>بعض التفضيلات</translation>
+    </message>
+    <message>
+        <source>Sensible defaults; tweak to taste.</source>
+        <translation>إعدادات افتراضية معقولة؛ عدّلها حسب ذوقك.</translation>
+    </message>
+    <message>
+        <source>Match the system light/dark theme</source>
+        <translation>مطابقة سمة النظام الفاتحة/الداكنة</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation type="unfinished">تشغيل Whatly عند تسجيل الدخول</translation>
+    </message>
+    <message>
+        <source>Notification delivery:</source>
+        <translation>تسليم الإشعارات:</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">تلقائي</translation>
+    </message>
+    <message>
+        <source>Desktop portal (Flatpak)</source>
+        <translation type="unfinished">بوابة سطح المكتب (Flatpak)</translation>
+    </message>
+    <message>
+        <source>System service (libnotify)</source>
+        <translation type="unfinished">خدمة النظام (libnotify)</translation>
+    </message>
+    <message>
+        <source>All set</source>
+        <translation>كل شيء جاهز</translation>
+    </message>
+    <message>
+        <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
+        <translation>أنت جاهز للبدء. امسح رمز QR بهاتفك لتسجيل الدخول.</translation>
+    </message>
+    <message>
+        <source>Everything here lives in Settings if you change your mind.</source>
+        <translation>كل ما هنا موجود في الإعدادات إن غيّرت رأيك.</translation>
     </message>
 </context>
 <context>

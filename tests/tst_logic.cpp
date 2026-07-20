@@ -40,6 +40,8 @@
 #include "networkproxy.h"
 #include "autostart.h"
 #include "portalnotification.h"
+#include "setupwizard.h"
+#include "settingsmanager.h"
 
 #include <QNetworkProxy>
 
@@ -1055,6 +1057,30 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// SetupWizard: the first-run flag round-trips, and applyChoices() persists the
+// chosen options. Constructible headlessly since it only touches settings.
+class TstSetupWizard : public QObject {
+  Q_OBJECT
+private slots:
+  void completionFlagRoundTrips() {
+    SettingsManager::instance().settings().setValue("setupWizardCompleted",
+                                                    false);
+    QVERIFY(!SetupWizard::isCompleted());
+    SetupWizard::markCompleted();
+    QVERIFY(SetupWizard::isCompleted());
+  }
+
+  void constructsAndAppliesChoices() {
+    SettingsManager::instance().settings().setValue("setupWizardCompleted",
+                                                    false);
+    SetupWizard wizard;
+    // Applying should mark the wizard completed without needing exec().
+    wizard.applyChoices();
+    QVERIFY(SetupWizard::isCompleted());
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // install() paths: give each injected-script module a real (headless) profile.
 class TstScriptInstall : public QObject {
   Q_OBJECT
@@ -1145,6 +1171,7 @@ int main(int argc, char *argv[]) {
   { TstNetworkProxy t;        run(&t); }
   { TstAutostart t;           run(&t); }
   { TstPortalNotification t;  run(&t); }
+  { TstSetupWizard t;         run(&t); }
   { TstScriptInstall t;       run(&t); }
   // Profile-mutating test runs last so it doesn't disturb the others.
   { TstAppProfile t;          run(&t); }

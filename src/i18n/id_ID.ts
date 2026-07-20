@@ -207,6 +207,21 @@ Apakah Anda ingin melewati pemeriksaan keamanan dan melanjutkan?   </translation
     </message>
 </context>
 <context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>Minimise</source>
+        <translation>Minimalkan</translation>
+    </message>
+    <message>
+        <source>Maximise</source>
+        <translation>Maksimalkan</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Tutup</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <source>Downloads</source>
@@ -1413,6 +1428,14 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Mulai Whatly saat saya masuk</translation>
     </message>
     <message>
+        <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
+        <translation>Ganti bingkai jendela sistem dengan bilah judul ramping milik Whatly. Berlaku setelah memulai ulang.</translation>
+    </message>
+    <message>
+        <source>Use a custom window frame (requires restart)</source>
+        <translation>Gunakan bingkai jendela kustom (perlu memulai ulang)</translation>
+    </message>
+    <message>
         <source>Interface scale</source>
         <translation>Skala antarmuka</translation>
     </message>
@@ -1625,6 +1648,65 @@ Anda mungkin juga perlu memulai ulang aplikasi sepenuhnya!</translation>
     <message>
         <source>Do you want to proceed?</source>
         <translation>Apakah Anda ingin melanjutkan?</translation>
+    </message>
+</context>
+<context>
+    <name>SetupWizard</name>
+    <message>
+        <source>Welcome to Whatly</source>
+        <translation>Selamat datang di Whatly</translation>
+    </message>
+    <message>
+        <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
+        <translation>Klien WhatsApp Web yang cepat dan native untuk desktop. Mari atur beberapa hal — Anda bisa mengubah semuanya nanti di Pengaturan.</translation>
+    </message>
+    <message>
+        <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
+        <translation>Whatly menyimpan obrolan Anda dalam jendela desktop yang semestinya, lengkap dengan ikon baki, notifikasi, tema, dan banyak akun.</translation>
+    </message>
+    <message>
+        <source>A few preferences</source>
+        <translation>Beberapa preferensi</translation>
+    </message>
+    <message>
+        <source>Sensible defaults; tweak to taste.</source>
+        <translation>Pengaturan default yang masuk akal; sesuaikan sesuai selera.</translation>
+    </message>
+    <message>
+        <source>Match the system light/dark theme</source>
+        <translation>Sesuaikan dengan tema terang/gelap sistem</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation type="unfinished">Mulai Whatly saat saya masuk</translation>
+    </message>
+    <message>
+        <source>Notification delivery:</source>
+        <translation>Pengiriman notifikasi:</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">Otomatis</translation>
+    </message>
+    <message>
+        <source>Desktop portal (Flatpak)</source>
+        <translation type="unfinished">Portal desktop (Flatpak)</translation>
+    </message>
+    <message>
+        <source>System service (libnotify)</source>
+        <translation type="unfinished">Layanan sistem (libnotify)</translation>
+    </message>
+    <message>
+        <source>All set</source>
+        <translation>Semua siap</translation>
+    </message>
+    <message>
+        <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
+        <translation>Anda sudah siap. Pindai kode QR dengan ponsel Anda untuk masuk.</translation>
+    </message>
+    <message>
+        <source>Everything here lives in Settings if you change your mind.</source>
+        <translation>Semua yang ada di sini tersedia di Pengaturan jika Anda berubah pikiran.</translation>
     </message>
 </context>
 <context>

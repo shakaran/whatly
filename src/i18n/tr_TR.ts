@@ -207,6 +207,21 @@ Güvenlik denetimini atlayıp devam etmek istiyor musunuz?   </translation>
     </message>
 </context>
 <context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>Minimise</source>
+        <translation>Küçült</translation>
+    </message>
+    <message>
+        <source>Maximise</source>
+        <translation>Büyüt</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Kapat</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <source>Downloads</source>
@@ -1413,6 +1428,14 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Giriş yaptığımda Whatly&apos;yi başlat</translation>
     </message>
     <message>
+        <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
+        <translation>Sistem pencere kenarlığını Whatly&apos;nin kendi ince başlık çubuğuyla değiştirin. Yeniden başlattıktan sonra uygulanır.</translation>
+    </message>
+    <message>
+        <source>Use a custom window frame (requires restart)</source>
+        <translation>Özel bir pencere çerçevesi kullan (yeniden başlatma gerektirir)</translation>
+    </message>
+    <message>
         <source>Interface scale</source>
         <translation>Arayüz ölçeği</translation>
     </message>
@@ -1625,6 +1648,65 @@ Uygulamanın tamamen yeniden başlatılması da gerekebilir!</translation>
     <message>
         <source>Do you want to proceed?</source>
         <translation>Devam etmek istiyor musunuz?</translation>
+    </message>
+</context>
+<context>
+    <name>SetupWizard</name>
+    <message>
+        <source>Welcome to Whatly</source>
+        <translation>Whatly&apos;ye hoş geldiniz</translation>
+    </message>
+    <message>
+        <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
+        <translation>Masaüstü için hızlı, yerel bir WhatsApp Web istemcisi. Hadi birkaç ayarı yapalım — bunların tümünü daha sonra Ayarlar&apos;dan değiştirebilirsiniz.</translation>
+    </message>
+    <message>
+        <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
+        <translation>Whatly, sohbetlerinizi tepsi simgesi, bildirimler, temalar ve birden fazla hesapla birlikte gerçek bir masaüstü penceresinde tutar.</translation>
+    </message>
+    <message>
+        <source>A few preferences</source>
+        <translation>Birkaç tercih</translation>
+    </message>
+    <message>
+        <source>Sensible defaults; tweak to taste.</source>
+        <translation>Makul varsayılanlar; zevkinize göre ayarlayın.</translation>
+    </message>
+    <message>
+        <source>Match the system light/dark theme</source>
+        <translation>Sistemin açık/koyu temasıyla eşleştir</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation type="unfinished">Giriş yaptığımda Whatly&apos;yi başlat</translation>
+    </message>
+    <message>
+        <source>Notification delivery:</source>
+        <translation>Bildirim iletimi:</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">Otomatik</translation>
+    </message>
+    <message>
+        <source>Desktop portal (Flatpak)</source>
+        <translation type="unfinished">Masaüstü portalı (Flatpak)</translation>
+    </message>
+    <message>
+        <source>System service (libnotify)</source>
+        <translation type="unfinished">Sistem hizmeti (libnotify)</translation>
+    </message>
+    <message>
+        <source>All set</source>
+        <translation>Her şey hazır</translation>
+    </message>
+    <message>
+        <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
+        <translation>Kullanmaya hazırsınız. Oturum açmak için QR kodunu telefonunuzla tarayın.</translation>
+    </message>
+    <message>
+        <source>Everything here lives in Settings if you change your mind.</source>
+        <translation>Fikrinizi değiştirirseniz buradaki her şey Ayarlar&apos;da bulunuyor.</translation>
     </message>
 </context>
 <context>

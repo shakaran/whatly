@@ -207,6 +207,21 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>Minimise</source>
+        <translation>최소화</translation>
+    </message>
+    <message>
+        <source>Maximise</source>
+        <translation>최대화</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">닫기</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <source>Downloads</source>
@@ -1413,6 +1428,14 @@ Please setup the password in the Settings first.</source>
         <translation>로그인할 때 Whatly 시작</translation>
     </message>
     <message>
+        <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
+        <translation>시스템 창 테두리를 Whatly 고유의 얇은 제목 표시줄로 바꿉니다. 다시 시작한 후에 적용됩니다.</translation>
+    </message>
+    <message>
+        <source>Use a custom window frame (requires restart)</source>
+        <translation>사용자 지정 창 프레임 사용 (다시 시작 필요)</translation>
+    </message>
+    <message>
         <source>Interface scale</source>
         <translation>인터페이스 배율</translation>
     </message>
@@ -1625,6 +1648,65 @@ You may also require a complete restart of Application!</source>
     <message>
         <source>Do you want to proceed?</source>
         <translation>계속할까요?</translation>
+    </message>
+</context>
+<context>
+    <name>SetupWizard</name>
+    <message>
+        <source>Welcome to Whatly</source>
+        <translation>Whatly에 오신 것을 환영합니다</translation>
+    </message>
+    <message>
+        <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
+        <translation>빠르고 네이티브한 데스크톱용 WhatsApp Web 클라이언트입니다. 몇 가지만 설정해 볼게요 — 나중에 설정에서 모두 변경할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
+        <translation>Whatly는 트레이 아이콘, 알림, 테마, 다중 계정과 함께 대화를 제대로 된 데스크톱 창에서 유지해 줍니다.</translation>
+    </message>
+    <message>
+        <source>A few preferences</source>
+        <translation>몇 가지 환경설정</translation>
+    </message>
+    <message>
+        <source>Sensible defaults; tweak to taste.</source>
+        <translation>합리적인 기본값이며, 취향에 맞게 조정하세요.</translation>
+    </message>
+    <message>
+        <source>Match the system light/dark theme</source>
+        <translation>시스템의 밝은/어두운 테마에 맞추기</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation type="unfinished">로그인할 때 Whatly 시작</translation>
+    </message>
+    <message>
+        <source>Notification delivery:</source>
+        <translation>알림 전달:</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">자동</translation>
+    </message>
+    <message>
+        <source>Desktop portal (Flatpak)</source>
+        <translation type="unfinished">데스크톱 포털 (Flatpak)</translation>
+    </message>
+    <message>
+        <source>System service (libnotify)</source>
+        <translation type="unfinished">시스템 서비스 (libnotify)</translation>
+    </message>
+    <message>
+        <source>All set</source>
+        <translation>모두 완료</translation>
+    </message>
+    <message>
+        <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
+        <translation>이제 준비가 끝났습니다. 휴대폰으로 QR 코드를 스캔하여 로그인하세요.</translation>
+    </message>
+    <message>
+        <source>Everything here lives in Settings if you change your mind.</source>
+        <translation>마음이 바뀌면 여기 있는 모든 항목을 설정에서 다시 바꿀 수 있습니다.</translation>
     </message>
 </context>
 <context>

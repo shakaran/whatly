@@ -188,3 +188,61 @@ jobs:
           gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
             || gh release create "$tag" --repo "$GITHUB_REPOSITORY" --title "$tag" --generate-notes || true
           gh release upload "$tag" Whatly-*-x86_64.AppImage Whatly-*-x86_64.AppImage.zsync --clobber --repo "$GITHUB_REPOSITORY"
+
+  # ── AppImage for ARM64 (Raspberry Pi, PinePhone, Apple-silicon VMs, …) ───────
+  # A separate job on a native arm64 runner, so a hiccup here never blocks the
+  # x86_64 artifacts above. Qt ships official linux_arm64 desktop binaries from
+  # 6.7 on, so aqtinstall can fetch them the same way as x86_64.
+  appimage_aarch64:
+    runs-on: ubuntu-24.04-arm
+    env:
+      APPIMAGE_EXTRACT_AND_RUN: 1   # runners have no FUSE
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.10.*'
+          arch: linux_arm64
+          modules: 'qtwebengine qtwebchannel qtpositioning qtserialport'
+          cache: true
+
+      - name: Build dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ninja-build libx11-dev libxcb1-dev libfuse2
+
+      - name: Build and install into AppDir
+        run: |
+          cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
+          cmake --build build --parallel
+          DESTDIR="$PWD/AppDir" cmake --install build
+
+      - name: Package AppImage
+        run: |
+          base=https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous
+          qtbase=https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous
+          wget -q "$base/linuxdeploy-aarch64.AppImage"
+          wget -q "$qtbase/linuxdeploy-plugin-qt-aarch64.AppImage"
+          chmod +x linuxdeploy*.AppImage
+          tag="${{ github.event.inputs.tag || github.ref_name }}"
+          export QMAKE="$QT_ROOT_DIR/bin/qmake"
+          export UPDATE_INFORMATION="gh-releases-zsync|shakaran|whatly|latest|Whatly-*-aarch64.AppImage.zsync"
+          export OUTPUT="Whatly-${tag#v}-aarch64.AppImage"
+          ./linuxdeploy-aarch64.AppImage --appdir AppDir \
+            --desktop-file AppDir/usr/share/applications/net.shakaran.whatly.desktop \
+            --icon-file AppDir/usr/share/icons/hicolor/256x256/apps/net.shakaran.whatly.png \
+            --plugin qt --output appimage
+
+      - name: Attach to release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="${{ github.event.inputs.tag || github.ref_name }}"
+          gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
+            || gh release create "$tag" --repo "$GITHUB_REPOSITORY" --title "$tag" --generate-notes || true
+          gh release upload "$tag" Whatly-*-aarch64.AppImage Whatly-*-aarch64.AppImage.zsync --clobber --repo "$GITHUB_REPOSITORY"

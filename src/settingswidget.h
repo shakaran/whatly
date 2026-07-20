@@ -122,6 +122,7 @@ private slots:
   void on_cacheTypeComboBox_currentIndexChanged(int index);
   void on_cacheMaxSpinBox_valueChanged(int arg1);
   void on_autostartCheckBox_toggled(bool checked);
+  void on_customWindowFrameCheckBox_toggled(bool checked);
   void on_interfaceScaleSpinBox_valueChanged(double arg1);
   void on_proxyModeComboBox_currentIndexChanged(int index);
   void on_proxyHostLineEdit_editingFinished();

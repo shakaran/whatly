@@ -207,6 +207,21 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>Minimise</source>
+        <translation>Свернуть</translation>
+    </message>
+    <message>
+        <source>Maximise</source>
+        <translation>Развернуть</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Закрыть</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <source>Downloads</source>
@@ -1413,6 +1428,14 @@ Please setup the password in the Settings first.</source>
         <translation>Запускать Whatly при входе в систему</translation>
     </message>
     <message>
+        <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
+        <translation>Заменить системную рамку окна собственным тонким заголовком Whatly. Применяется после перезапуска.</translation>
+    </message>
+    <message>
+        <source>Use a custom window frame (requires restart)</source>
+        <translation>Использовать собственную рамку окна (требуется перезапуск)</translation>
+    </message>
+    <message>
         <source>Interface scale</source>
         <translation>Масштаб интерфейса</translation>
     </message>
@@ -1625,6 +1648,65 @@ You may also require a complete restart of Application!</source>
     <message>
         <source>Do you want to proceed?</source>
         <translation>Хотите продолжить?</translation>
+    </message>
+</context>
+<context>
+    <name>SetupWizard</name>
+    <message>
+        <source>Welcome to Whatly</source>
+        <translation>Добро пожаловать в Whatly</translation>
+    </message>
+    <message>
+        <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
+        <translation>Быстрый нативный клиент WhatsApp Web для компьютера. Давайте кое-что настроим — всё это можно изменить позже в настройках.</translation>
+    </message>
+    <message>
+        <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
+        <translation>Whatly держит ваши чаты в полноценном окне на рабочем столе — со значком в трее, уведомлениями, темами и поддержкой нескольких аккаунтов.</translation>
+    </message>
+    <message>
+        <source>A few preferences</source>
+        <translation>Несколько настроек</translation>
+    </message>
+    <message>
+        <source>Sensible defaults; tweak to taste.</source>
+        <translation>Разумные настройки по умолчанию; настройте по вкусу.</translation>
+    </message>
+    <message>
+        <source>Match the system light/dark theme</source>
+        <translation>Использовать светлую или тёмную тему системы</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation type="unfinished">Запускать Whatly при входе в систему</translation>
+    </message>
+    <message>
+        <source>Notification delivery:</source>
+        <translation>Доставка уведомлений:</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">Автоматически</translation>
+    </message>
+    <message>
+        <source>Desktop portal (Flatpak)</source>
+        <translation type="unfinished">Портал рабочего стола (Flatpak)</translation>
+    </message>
+    <message>
+        <source>System service (libnotify)</source>
+        <translation type="unfinished">Системная служба (libnotify)</translation>
+    </message>
+    <message>
+        <source>All set</source>
+        <translation>Всё готово</translation>
+    </message>
+    <message>
+        <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
+        <translation>Всё готово. Отсканируйте QR-код телефоном, чтобы войти.</translation>
+    </message>
+    <message>
+        <source>Everything here lives in Settings if you change your mind.</source>
+        <translation>Всё это находится в настройках, если вы передумаете.</translation>
     </message>
 </context>
 <context>

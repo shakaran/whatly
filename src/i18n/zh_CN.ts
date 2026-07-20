@@ -207,6 +207,21 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>Minimise</source>
+        <translation>最小化</translation>
+    </message>
+    <message>
+        <source>Maximise</source>
+        <translation>最大化</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">关闭</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <source>Downloads</source>
@@ -1413,6 +1428,14 @@ Please setup the password in the Settings first.</source>
         <translation>登录时启动 Whatly</translation>
     </message>
     <message>
+        <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
+        <translation>用 Whatly 自带的纤薄标题栏替换系统窗口边框。重启后生效。</translation>
+    </message>
+    <message>
+        <source>Use a custom window frame (requires restart)</source>
+        <translation>使用自定义窗口边框（需要重启）</translation>
+    </message>
+    <message>
         <source>Interface scale</source>
         <translation>界面缩放</translation>
     </message>
@@ -1625,6 +1648,65 @@ You may also require a complete restart of Application!</source>
     <message>
         <source>Do you want to proceed?</source>
         <translation>要继续吗？</translation>
+    </message>
+</context>
+<context>
+    <name>SetupWizard</name>
+    <message>
+        <source>Welcome to Whatly</source>
+        <translation>欢迎使用 Whatly</translation>
+    </message>
+    <message>
+        <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
+        <translation>一款快速、原生的桌面版 WhatsApp Web 客户端。我们先来做几项设置 — 这些之后都可以在设置中随时更改。</translation>
+    </message>
+    <message>
+        <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
+        <translation>Whatly 将你的聊天放入独立的桌面窗口，并提供托盘图标、通知、主题以及多账户支持。</translation>
+    </message>
+    <message>
+        <source>A few preferences</source>
+        <translation>几项偏好设置</translation>
+    </message>
+    <message>
+        <source>Sensible defaults; tweak to taste.</source>
+        <translation>合理的默认设置，可按喜好微调。</translation>
+    </message>
+    <message>
+        <source>Match the system light/dark theme</source>
+        <translation>跟随系统浅色/深色主题</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation type="unfinished">登录时启动 Whatly</translation>
+    </message>
+    <message>
+        <source>Notification delivery:</source>
+        <translation>通知方式：</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">自动</translation>
+    </message>
+    <message>
+        <source>Desktop portal (Flatpak)</source>
+        <translation type="unfinished">桌面门户 (Flatpak)</translation>
+    </message>
+    <message>
+        <source>System service (libnotify)</source>
+        <translation type="unfinished">系统服务 (libnotify)</translation>
+    </message>
+    <message>
+        <source>All set</source>
+        <translation>全部就绪</translation>
+    </message>
+    <message>
+        <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
+        <translation>一切准备就绪。用手机扫描 QR 码即可登录。</translation>
+    </message>
+    <message>
+        <source>Everything here lives in Settings if you change your mind.</source>
+        <translation>如果你改变主意，这里的所有设置都可以在设置中找到。</translation>
     </message>
 </context>
 <context>

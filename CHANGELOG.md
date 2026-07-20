@@ -61,6 +61,24 @@ remembered. The existing layouts are untouched: the tabbed view remains the
 default, and separate accounts in separate windows are still available by
 launching with `--profile`.
 
+**First-run setup wizard.** A new account is greeted by a short wizard that
+offers a few sensible starting choices — match the system light/dark theme,
+start at login, and (on Linux) how notifications are delivered — then points at
+the QR code to sign in. Everything it sets is also in Settings, so it is purely a
+friendlier on-ramp; it shows once and never again. Covered by new unit tests
+(`TstSetupWizard`).
+
+**Optional custom window frame.** For a more app-like look you can now replace
+the system title bar with Whatly's own slim one (Settings → *Network & Startup* →
+*Use a custom window frame*). It carries the minimise / maximise / close buttons,
+drags via the compositor (so it works on Wayland and X11), double-click to
+maximise, and a corner grip to resize. Off by default — the native decoration is
+untouched unless you opt in — and it applies after a restart.
+
+**ARM64 AppImage.** Releases now also build a native `aarch64` AppImage (with
+`.zsync` delta updates) alongside the x86_64 one, for Raspberry Pi, PinePhone and
+other 64-bit ARM Linux devices.
+
 ## 6.2.1 (2026-07-19)
 
 Bug-fix and hardening release.

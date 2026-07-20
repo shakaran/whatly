@@ -207,6 +207,21 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>CustomTitleBar</name>
+    <message>
+        <source>Minimise</source>
+        <translation>छोटा करें</translation>
+    </message>
+    <message>
+        <source>Maximise</source>
+        <translation>बड़ा करें</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">बंद करें</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <source>Downloads</source>
@@ -1413,6 +1428,14 @@ Please setup the password in the Settings first.</source>
         <translation>लॉग इन करने पर Whatly प्रारंभ करें</translation>
     </message>
     <message>
+        <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
+        <translation>सिस्टम के विंडो बॉर्डर को Whatly की अपनी पतली टाइटल बार से बदलें। पुनरारंभ के बाद लागू होगा।</translation>
+    </message>
+    <message>
+        <source>Use a custom window frame (requires restart)</source>
+        <translation>कस्टम विंडो फ्रेम का उपयोग करें (पुनरारंभ आवश्यक)</translation>
+    </message>
+    <message>
         <source>Interface scale</source>
         <translation>इंटरफ़ेस स्केल</translation>
     </message>
@@ -1625,6 +1648,65 @@ You may also require a complete restart of Application!</source>
     <message>
         <source>Do you want to proceed?</source>
         <translation>क्या आप आगे बढ़ना चाहते हैं?</translation>
+    </message>
+</context>
+<context>
+    <name>SetupWizard</name>
+    <message>
+        <source>Welcome to Whatly</source>
+        <translation>Whatly में आपका स्वागत है</translation>
+    </message>
+    <message>
+        <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
+        <translation>डेस्कटॉप के लिए एक तेज़, नेटिव WhatsApp Web क्लाइंट। चलिए कुछ चीज़ें सेट कर लेते हैं — यह सब आप बाद में सेटिंग्स में बदल सकते हैं।</translation>
+    </message>
+    <message>
+        <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
+        <translation>Whatly आपकी चैट्स को एक सही डेस्कटॉप विंडो में रखता है — ट्रे आइकन, सूचनाओं, थीम्स और कई खातों के साथ।</translation>
+    </message>
+    <message>
+        <source>A few preferences</source>
+        <translation>कुछ प्राथमिकताएँ</translation>
+    </message>
+    <message>
+        <source>Sensible defaults; tweak to taste.</source>
+        <translation>समझदार डिफ़ॉल्ट; अपने अनुसार बदलें।</translation>
+    </message>
+    <message>
+        <source>Match the system light/dark theme</source>
+        <translation>सिस्टम की लाइट/डार्क थीम से मिलाएँ</translation>
+    </message>
+    <message>
+        <source>Start Whatly when I log in</source>
+        <translation type="unfinished">लॉग इन करने पर Whatly प्रारंभ करें</translation>
+    </message>
+    <message>
+        <source>Notification delivery:</source>
+        <translation>सूचना डिलीवरी:</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished">स्वचालित</translation>
+    </message>
+    <message>
+        <source>Desktop portal (Flatpak)</source>
+        <translation type="unfinished">डेस्कटॉप पोर्टल (Flatpak)</translation>
+    </message>
+    <message>
+        <source>System service (libnotify)</source>
+        <translation type="unfinished">सिस्टम सेवा (libnotify)</translation>
+    </message>
+    <message>
+        <source>All set</source>
+        <translation>सब तैयार है</translation>
+    </message>
+    <message>
+        <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
+        <translation>आप तैयार हैं। साइन इन करने के लिए अपने फ़ोन से QR कोड स्कैन करें।</translation>
+    </message>
+    <message>
+        <source>Everything here lives in Settings if you change your mind.</source>
+        <translation>अगर आपका मन बदले, तो यहाँ की हर चीज़ सेटिंग्स में मौजूद है।</translation>
     </message>
 </context>
 <context>

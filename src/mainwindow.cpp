@@ -30,6 +30,10 @@
 #include "chatwallpaper.h"
 #include "customcss.h"
 #include "customjs.h"
+#include "setupwizard.h"
+#include "customtitlebar.h"
+
+#include <QTimer>
 #include "privacyblur.h"
 #include "webfont.h"
 #include "mutedstatus.h"
@@ -57,6 +61,11 @@ MainWindow::MainWindow(QWidget *parent)
   setObjectName("MainWindow");
   setWindowTitle(QApplication::applicationDisplayName() + AppProfile::label());
   setWindowIcon(themeIcon("whatly", ":/icons/app/icon-64.png"));
+  // Optional client-side decoration: drop the native frame so buildAccountArea
+  // can add its own title bar. Off by default, so nothing changes for anyone who
+  // has not opted in.
+  if (CustomTitleBar::isEnabled())
+    setWindowFlag(Qt::FramelessWindowHint, true);
   applyMinimumSize();
   restoreMainWindow();
   createActions();
@@ -126,6 +135,21 @@ MainWindow::MainWindow(QWidget *parent)
                "to `whatly -w` to raise the window.";
   }
 #endif
+
+  // First-run wizard: shown once, after the window is up, and only when it has
+  // not been completed for this account. Deferred to the event loop so the main
+  // window paints behind it first.
+  if (!SetupWizard::isCompleted()) {
+    QTimer::singleShot(0, this, [this]() {
+      auto *wizard = new SetupWizard(this);
+      wizard->setAttribute(Qt::WA_DeleteOnClose);
+      // Mark completed even if dismissed, so it does not reappear every launch.
+      connect(wizard, &QDialog::rejected, this, []() {
+        SetupWizard::markCompleted();
+      });
+      wizard->show();
+    });
+  }
 }
 
 MainWindow::~MainWindow() { m_webEngine->deleteLater(); }

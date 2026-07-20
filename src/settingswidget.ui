@@ -1462,6 +1462,16 @@ background:transparent;
            </widget>
           </item>
           <item>
+           <widget class="QCheckBox" name="customWindowFrameCheckBox">
+            <property name="toolTip">
+             <string>Replace the system window border with Whatly's own slim title bar. Applies after a restart.</string>
+            </property>
+            <property name="text">
+             <string>Use a custom window frame (requires restart)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <layout class="QHBoxLayout" name="horizontalLayoutScale">
             <item>
              <widget class="QLabel" name="interfaceScaleLabel">

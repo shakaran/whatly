@@ -50,6 +50,7 @@ add_executable(tst_logic
     ${S}/chatwallpaper.cpp ${S}/customcss.cpp ${S}/customjs.cpp ${S}/webtweaks.cpp
     ${S}/linkeddevicename.cpp ${S}/performance.cpp
     ${S}/networkproxy.cpp ${S}/autostart.cpp ${S}/portalnotification.cpp
+    ${S}/setupwizard.cpp
     ${S}/icons.qrc
 )
 target_include_directories(tst_logic PRIVATE ${S} ${CMAKE_BINARY_DIR})
