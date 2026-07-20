@@ -108,6 +108,23 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="6.4.0" date="2026-07-20">
+      <description>
+        <p>A large feature release:</p>
+        <ul>
+          <li>Command palette (Ctrl+K) with fuzzy search over every action, account and saved reply</li>
+          <li>Do Not Disturb schedule and keyword highlights for notifications</li>
+          <li>Recurring scheduled messages, plus a reminder mode that notifies instead of sending</li>
+          <li>Once-a-day update checker (opt-out) and a storage manager with its own Clear cache</li>
+          <li>Customisable keyboard shortcuts, with conflict detection</li>
+          <li>Profile backup and restore as a single .tar.gz</li>
+          <li>Lock Whatly when the desktop session locks</li>
+          <li>Screen sharing in calls now works: a screen/window picker plus PipeWire capture on Wayland</li>
+          <li>Quick reply (the composer is focused when you open a notification), focus mode and saved replies</li>
+          <li>Grid tiles now show the account name and unread count</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.3.0" date="2026-07-20">
       <description>
         <p>A sweep of engine-tuning, connectivity and customisation features:</p>

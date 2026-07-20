@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        6.3.0
+Version:        6.4.0
 Release:        1%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
@@ -53,6 +53,11 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Mon Jul 20 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.4.0-1
+- Command palette, Do-Not-Disturb + keyword rules, recurring schedules and
+  reminders, update checker, storage/shortcut management, profile backup,
+  lock-on-screen-lock, screen sharing, focus mode, saved replies; see
+  CHANGELOG.md
 * Mon Jul 20 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.3.0-1
 - Performance/privacy engine controls, network proxy, portal notifications,
   custom JS addons + per-account CSS/JS, grid view, setup wizard, optional

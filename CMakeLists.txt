@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Set version
-set(PROJECT_VERSION 6.3.0)
+set(PROJECT_VERSION 6.4.0)
 set(PROJECT_DESCRIPTION "Feature rich WhatsApp web client based on Qt WebEngine")
 
 # Get Git information

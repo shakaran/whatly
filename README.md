@@ -110,6 +110,25 @@ On top of upstream WhatSie, this fork adds:
   stylesheet (catppuccin and friends) to restyle WhatsApp Web, add your own
   `.js` addons (each runs in its own sandbox, toggle them individually), and turn
   on animated scrolling. Custom CSS and addons are stored **per account**.
+- **Command palette** — <kbd>Ctrl</kbd>+<kbd>K</kbd> fuzzy-jumps to any action,
+  account or saved reply, then runs it with Enter.
+- **Notification rules** — a daily **Do Not Disturb** window that holds popups
+  back (badges still update), plus **highlight keywords** that always break
+  through. Clicking a notification also focuses the message box, so you can
+  reply by just typing.
+- **Recurring schedules and reminders** — a scheduled message can repeat daily,
+  on weekdays or weekly, and a *remind me* mode notifies you instead of sending.
+- **Saved replies** — keep the texts you send often and insert one from the
+  command palette.
+- **Focus mode** — mask contact names and message previews in the chat list
+  (hover to reveal one) while the open conversation stays readable: for screen
+  sharing and shoulder-surfing.
+- **Screen sharing that works** — a screen/window picker plus PipeWire capture
+  via the desktop portal, so calls can share a screen on Wayland and X11.
+- **Profile backup & restore** — export an entire account (settings, session and
+  addons) to a `.tar.gz` and import it back.
+- **Customisable keyboard shortcuts**, an **update checker**, a **storage
+  manager** with its own *Clear cache*, and **lock-on-screen-lock**.
 - **Performance & privacy controls** — the rendering-engine switches that used to
   be hard-coded are now yours: turn GPU acceleration back on (or off), ignore the
   driver blocklist, pick a lower-memory process model, cap the JavaScript heap,

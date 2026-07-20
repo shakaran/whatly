@@ -1,4 +1,9 @@
-## Unreleased
+## 6.4.0 (2026-07-20)
+
+A large feature release: a command palette, notification rules, recurring
+schedules and reminders, an update checker, storage and shortcut management,
+profile backup, screen-lock integration, working screen sharing, focus mode and
+saved replies.
 
 **Accessibility.** The icon-only controls added in this release (the custom
 title bar's window buttons, the command palette's search field and result

@@ -1,3 +1,15 @@
+whatly (6.4.0) unstable; urgency=medium
+
+  * Command palette (Ctrl+K) with fuzzy search over actions and accounts.
+  * Do Not Disturb schedule and keyword highlights for notifications.
+  * Recurring scheduled messages and reminder mode.
+  * Update checker, storage manager and customisable keyboard shortcuts.
+  * Profile backup/restore, lock when the screen locks.
+  * Working screen sharing (picker + PipeWire), quick reply, focus mode,
+    saved replies and grid tile captions. See CHANGELOG.md.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Mon, 20 Jul 2026 18:00:00 +0200
+
 whatly (6.3.0) unstable; urgency=medium
 
   * Performance & Privacy settings: GPU, process-model, JS-heap and HTTP-cache

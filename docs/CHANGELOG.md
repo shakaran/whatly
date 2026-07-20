@@ -1,3 +1,95 @@
+## 6.4.0 (2026-07-20)
+
+A large feature release: a command palette, notification rules, recurring
+schedules and reminders, an update checker, storage and shortcut management,
+profile backup, screen-lock integration, working screen sharing, focus mode and
+saved replies.
+
+**Accessibility.** The icon-only controls added in this release (the custom
+title bar's window buttons, the command palette's search field and result
+list) now carry accessible names, and each grid tile's view is named after
+its account — so a screen reader announces something meaningful instead of
+nothing.
+
+**Saved replies.** Store the short texts you send often (Settings → *Saved
+replies*) and insert one from the command palette: `Ctrl+K`, type
+"Insert", pick it, and the text is typed into the message box — going
+through the page's own input handling, so the Send button enables and
+drafts are tracked as if you had typed it. Covered by unit tests
+(`TstCannedResponses`).
+
+**Grid view captions.** Each tile in the multi-account grid now carries a
+caption with the account's name and its unread count, so it is obvious
+which tile is which; the caption tracks renames and unread changes.
+
+**Focus mode.** A new privacy toggle masks the contact names and message
+previews in the chat list (hover to reveal one), leaving the conversation
+you are actually reading untouched — for screen sharing, screenshots and
+open-plan desks, where the hover-to-reveal privacy blur is still too
+revealing. Covered by unit tests (`TstFocusMode`).
+
+**Screen sharing in calls.** Screen-share requests from WhatsApp Web were
+being dropped silently (a black screen for the other side). Whatly now
+shows a picker listing your screens and windows, and routes WebRTC capture
+through PipeWire and the desktop portal so it works on Wayland as well as
+X11 (a new *Performance & Privacy* toggle, on by default on Linux). The
+camera/microphone/screen permission prompts were already handled.
+
+**Quick reply from a notification.** Clicking a notification now opens the
+chat *and* puts the caret in the message box, so you can reply by just
+typing — no extra click. (A text field inside the notification itself is
+deliberately not used: the XDG portal spec has no standard entry field and
+the freedesktop inline-reply capability is not available on every backend.)
+
+**Lock when the screen locks.** With a passcode configured, Whatly can now
+lock itself the moment the desktop session locks (it listens for the
+freedesktop/GNOME screensaver signal over D-Bus), not just on a timer or
+when hiding to the tray. Opt in from the app-lock settings. Covered by
+unit tests (`TstScreenLock`).
+
+**Profile backup & restore.** Settings → Storage can now export an entire
+account — settings, the logged-in session and your custom CSS/JS addons —
+to a single `.tar.gz`, and import one back (with a clear warning that the
+archive holds your session and that importing overwrites the current
+account). The archive/extract/copy primitives are covered by unit tests
+(`TstBackup`).
+
+**Customisable keyboard shortcuts.** Settings → *Keyboard shortcuts* lets
+you remap the app's actions (reload, lock, mute, theme, grid, command
+palette, quit, …). Clashing a shortcut with another action is rejected;
+clearing a field removes it. Changes apply after a restart. The registry,
+override round-trip and conflict detection are covered by unit tests
+(`TstShortcuts`).
+
+**Storage manager.** Settings → Storage now also shows the cache size and
+has its own *Clear cache* button (separate from clearing all persistent
+data), so you can reclaim space without signing out. The size helpers are
+covered by unit tests (`TstStorageInfo`).
+
+**Update checker.** Whatly can now check GitHub once a day for a newer
+release and let you know with a click-through notification — it never
+downloads or installs anything itself. Opt out in Settings → *Network &
+Startup*. The version comparison and release parsing are covered by unit
+tests (`TstUpdateCheck`).
+
+**Recurring scheduled messages & reminders.** A scheduled message can now
+repeat — daily, on weekdays, or weekly — rescheduling itself to the next
+occurrence after each successful send. There is also a *remind me* mode
+that pops a desktop notification at the due time instead of sending a
+message. Covered by new unit tests for the next-occurrence maths and the
+reschedule-on-send flow.
+
+**Command palette (Ctrl+K).** A quick "do anything" switcher: press
+`Ctrl+K`, type, and fuzzy-jump to any menu action, account, or the theme
+toggle, then run it with Enter. The fuzzy matcher is covered by unit tests
+(`TstFuzzy`).
+
+**Do Not Disturb & keyword highlights.** Settings → notifications now has a daily
+quiet period that suppresses notification popups (unread badges still update),
+plus a list of highlight keywords that always break through — even during Do Not
+Disturb — when they appear in a message. The DND window may wrap past midnight.
+Covered by new unit tests (`TstNotificationRules`).
+
 ## 6.3.0 (2026-07-20)
 
 A sweep of engine-tuning, connectivity and customisation features, with every
