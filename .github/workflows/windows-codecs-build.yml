@@ -1,0 +1,138 @@
+name: Windows QtWebEngine codecs (build phase)
+
+# Reusable build used twice by windows-codecs.yml (warm, then finish). Both
+# phases share an sccache object cache over the GitHub Actions cache backend, so
+# the second pass recompiles the first pass's objects from cache and finishes
+# within the 6-hour job limit.
+on:
+  workflow_call:
+    inputs:
+      qt_version:
+        required: true
+        type: string
+      phase:
+        required: true
+        type: string   # "warm" or "finish"
+
+jobs:
+  build:
+    runs-on: windows-2022
+    timeout-minutes: 345
+    env:
+      SCCACHE_GHA_ENABLED: 'true'
+      SCCACHE_CACHE_SIZE: '20G'
+    steps:
+      - name: Report free disk
+        shell: pwsh
+        run: |
+          Get-PSDrive -PSProvider FileSystem C |
+            Select-Object @{n='FreeGB';e={[math]::Round($_.Free/1GB,1)}} |
+            Format-Table -AutoSize
+
+      - name: Install base Qt ${{ inputs.qt_version }}
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: ${{ inputs.qt_version }}
+          arch: win64_msvc2022_64
+          modules: 'qtwebchannel qtpositioning'
+          cache: true
+
+      - name: Install build tooling (nasm, flex/bison, gperf, node)
+        shell: pwsh
+        run: |
+          choco install -y ninja gperf nodejs-lts python3 nasm winflexbison3 --no-progress
+          pip install html5lib
+          "$env:ProgramFiles\NASM" | Out-File -FilePath $env:GITHUB_PATH -Append
+          "${env:ProgramFiles(x86)}\NASM" | Out-File -FilePath $env:GITHUB_PATH -Append
+          $wfb = (Get-Command win_flex.exe -ErrorAction SilentlyContinue).Source
+          if ($wfb) {
+            $dir = Split-Path $wfb
+            Copy-Item "$dir\win_flex.exe"  "$dir\flex.exe"  -Force
+            Copy-Item "$dir\win_bison.exe" "$dir\bison.exe" -Force
+          }
+
+      - name: Install the Windows 11 SDK (10.0.26100)
+        shell: pwsh
+        run: |
+          $installer = "C:\Program Files (x86)\Microsoft Visual Studio\Installer\setup.exe"
+          $vs = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
+          & $installer modify --installPath $vs `
+            --add Microsoft.VisualStudio.Component.Windows11SDK.26100 `
+            --quiet --norestart --nocache --force
+          Get-Process -Name setup, vs_installer -ErrorAction SilentlyContinue |
+            Wait-Process -Timeout 1200 -ErrorAction SilentlyContinue
+          if (-not (Test-Path "C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0")) {
+            throw "SDK 10.0.26100 not installed"
+          }
+
+      - name: Set up MSVC 2022 + SDK 26100 environment
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x64
+          sdk: '10.0.26100.0'
+          vsversion: '2022'
+
+      - name: Set up sccache
+        uses: mozilla-actions/sccache-action@v0.0.6
+
+      - name: Download QtWebEngine source (everywhere-src, Chromium bundled)
+        shell: pwsh
+        run: |
+          $ver = "${{ inputs.qt_version }}"
+          $mm  = ($ver -split '\.')[0..1] -join '.'
+          $tar = "qtwebengine-everywhere-src-$ver.tar.xz"
+          $url = "https://download.qt.io/official_releases/qt/$mm/$ver/submodules/$tar"
+          Write-Host "Downloading $url"
+          curl.exe -L --retry 3 -o $tar $url
+          # bsdtar (shipped as tar.exe on Windows) handles .tar.xz natively.
+          tar -xf $tar
+          Rename-Item "qtwebengine-everywhere-src-$ver" qtwebengine
+          "Source size: $([math]::Round(((Get-ChildItem qtwebengine -Recurse -File -EA SilentlyContinue|Measure-Object Length -Sum).Sum/1GB),1)) GB" | Write-Host
+
+      - name: Configure + build (codecs ON, sccache)
+        shell: pwsh
+        run: |
+          $src = "$pwd\qtwebengine"
+          New-Item -ItemType Directory -Force build-we | Out-Null
+          cd build-we
+          & "$env:QT_ROOT_DIR\bin\qt-configure-module.bat" $src `
+            -- -DCMAKE_BUILD_TYPE=Release `
+               -DCMAKE_C_COMPILER_LAUNCHER=sccache `
+               -DCMAKE_CXX_COMPILER_LAUNCHER=sccache `
+               -DQT_FEATURE_webengine_proprietary_codecs=ON `
+               -DQT_FEATURE_qtpdf_build=OFF
+          if ($LASTEXITCODE -ne 0) { throw "configure failed" }
+          # Keep a little headroom before the job hard-limit so sccache flushes.
+          cmake --build . --parallel
+          # In the warm phase a non-zero exit (timeout kill) is expected; the
+          # cache is what matters. In finish it must succeed.
+          if ("${{ inputs.phase }}" -eq "finish" -and $LASTEXITCODE -ne 0) {
+            throw "finish build failed"
+          }
+
+      - name: sccache stats
+        if: always()
+        shell: pwsh
+        run: sccache --show-stats
+
+      - name: Install
+        if: ${{ inputs.phase == 'finish' }}
+        shell: pwsh
+        run: |
+          cd build-we
+          cmake --install .
+
+      - name: Upload built module
+        if: ${{ inputs.phase == 'finish' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtwebengine-codecs-${{ inputs.qt_version }}
+          path: |
+            build-we/**/QtWebEngineCore.dll
+            build-we/**/QtWebEngineProcess.exe
+            build-we/**/libEGL.dll
+            build-we/**/libGLESv2.dll
+            build-we/**/*.pak
+            build-we/**/qtwebengine_*.pak
+            build-we/**/icudtl.dat
+          if-no-files-found: warn

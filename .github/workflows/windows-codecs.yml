@@ -1,14 +1,17 @@
 name: Windows Qt WebEngine (proprietary codecs)
 
-# EXPERIMENTAL / manual only. Qt's official prebuilt Qt WebEngine (what
+# EXPERIMENTAL / manual. Qt's official prebuilt Qt WebEngine (what
 # install-qt-action fetches) is built WITHOUT proprietary codecs, so H.264/AAC —
 # and therefore WhatsApp video and voice messages — do not work on the Windows
-# build. The only fix is to rebuild the QtWebEngine module from source with
-# `-webengine-proprietary-codecs`, which cannot be done via install-qt-action.
+# build. The only fix is rebuilding QtWebEngine from source with
+# `-webengine-proprietary-codecs`.
 #
-# This workflow is a viability trial: `probe` measures the disk and Chromium
-# checkout so we know whether a full build can even fit on a hosted runner
-# before spending hours on it; set `full_build: true` to attempt the compile.
+# A full Chromium compile takes ~7-8 h and does not fit GitHub's 6-hour job
+# limit (a cold build reached 68% at ~5h50m). So this runs in two phases that
+# share an sccache object cache over the GitHub Actions cache backend: `warm`
+# builds as far as it can and populates the cache; `finish` recompiles the
+# already-done objects from cache (fast) and completes the rest within 6 h.
+# Repeat-dispatch converges too, if one pass is not enough.
 on:
   workflow_dispatch:
     inputs:
@@ -16,130 +19,23 @@ on:
         description: 'Qt version to match (e.g. 6.10.2)'
         required: true
         default: '6.10.2'
-      full_build:
-        description: 'Attempt the full QtWebEngine build (hours; may exhaust disk)'
-        type: boolean
-        default: false
+
+concurrency:
+  group: win-codecs-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  build:
-    # Qt 6.10's WebEngine needs BOTH Visual Studio 2022 (windows-2025 ships the
-    # too-new VS 18, which Qt rejects) AND the Windows 11 SDK >= 10.0.26100
-    # (windows-2022 ships an older one). So: windows-2022 for VS 2022, plus the
-    # 26100 SDK installed below.
-    runs-on: windows-2022
-    timeout-minutes: 350
-    steps:
-      - name: Report free disk (viability baseline)
-        shell: pwsh
-        run: |
-          Get-PSDrive -PSProvider FileSystem |
-            Select-Object Name,
-              @{n='UsedGB';e={[math]::Round($_.Used/1GB,1)}},
-              @{n='FreeGB';e={[math]::Round($_.Free/1GB,1)}} |
-            Format-Table -AutoSize
-          "A full Chromium build needs roughly 100 GB and 3-5 h." | Write-Host
+  warm:
+    name: Phase 1 (warm the cache)
+    uses: ./.github/workflows/windows-codecs-build.yml
+    with:
+      qt_version: ${{ github.event.inputs.qt_version }}
+      phase: warm
 
-      - name: Install base Qt ${{ github.event.inputs.qt_version }}
-        uses: jurplel/install-qt-action@v4
-        with:
-          version: ${{ github.event.inputs.qt_version }}
-          arch: win64_msvc2022_64
-          modules: 'qtwebchannel qtpositioning'
-          cache: true
-
-      - name: Install QtWebEngine build tooling
-        shell: pwsh
-        run: |
-          # nasm: proprietary codecs pull in ffmpeg's assembly (fails in
-          # third_party/nasm without it). flex + bison: required by the
-          # Chromium build and reported missing by configure. gperf/ninja/node:
-          # standard QtWebEngine build deps.
-          choco install -y ninja gperf nodejs-lts python3 nasm winflexbison3 --no-progress
-          pip install html5lib
-          "$env:ProgramFiles\NASM" | Out-File -FilePath $env:GITHUB_PATH -Append
-          "${env:ProgramFiles(x86)}\NASM" | Out-File -FilePath $env:GITHUB_PATH -Append
-          # winflexbison ships win_flex/win_bison; QtWebEngine looks for
-          # flex/bison, so expose those names too.
-          $wfb = (Get-Command win_flex.exe -ErrorAction SilentlyContinue).Source
-          if ($wfb) {
-            $dir = Split-Path $wfb
-            Copy-Item "$dir\win_flex.exe"  "$dir\flex.exe"  -Force
-            Copy-Item "$dir\win_bison.exe" "$dir\bison.exe" -Force
-          }
-
-      - name: Install the Windows 11 SDK (10.0.26100)
-        shell: pwsh
-        run: |
-          $installer = "C:\Program Files (x86)\Microsoft Visual Studio\Installer\setup.exe"
-          $vs = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
-          & $installer modify --installPath $vs `
-            --add Microsoft.VisualStudio.Component.Windows11SDK.26100 `
-            --quiet --norestart --nocache --force
-          # setup.exe returns immediately; wait for the child process to finish.
-          Get-Process -Name setup, vs_installer -ErrorAction SilentlyContinue |
-            Wait-Process -Timeout 1200 -ErrorAction SilentlyContinue
-          $sdk = "C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0"
-          if (Test-Path $sdk) { "Windows 11 SDK 26100 present" | Write-Host }
-          else { throw "SDK 10.0.26100 not installed" }
-
-      # Put MSVC 2022 (cl) and the 26100 SDK on PATH so CMake uses them, not a
-      # stray gcc ("GNU compiler is not supported" in earlier attempts).
-      - name: Set up MSVC environment
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          arch: x64
-          sdk: '10.0.26100.0'
-          vsversion: '2022'
-
-      - name: Fetch the QtWebEngine source (matching tag) + Chromium
-        shell: pwsh
-        run: |
-          $ver = "${{ github.event.inputs.qt_version }}"
-          git clone --depth 1 --branch "v$ver" `
-            https://code.qt.io/qt/qtwebengine.git qtwebengine
-          cd qtwebengine
-          # The Chromium submodule is the huge part; time and measure it.
-          $sw = [Diagnostics.Stopwatch]::StartNew()
-          git submodule update --init --recursive --depth 1
-          $sw.Stop()
-          "Chromium checkout took $($sw.Elapsed.TotalMinutes.ToString('0.0')) min" | Write-Host
-          $size = (Get-ChildItem -Recurse -File -ErrorAction SilentlyContinue |
-                   Measure-Object -Property Length -Sum).Sum / 1GB
-          "QtWebEngine + Chromium source: $([math]::Round($size,1)) GB" | Write-Host
-          Get-PSDrive -PSProvider FileSystem C |
-            Select-Object @{n='FreeGB';e={[math]::Round($_.Free/1GB,1)}} |
-            Format-Table -AutoSize
-
-      - name: Configure + build with proprietary codecs
-        if: ${{ github.event.inputs.full_build == 'true' }}
-        shell: pwsh
-        run: |
-          # qt-configure-module must run from a SEPARATE build directory pointing
-          # at the source; running it in-source produced a degenerate configure
-          # that only ran the "configure check" and compiled nothing.
-          $src = "$pwd\qtwebengine"
-          New-Item -ItemType Directory -Force build-we | Out-Null
-          cd build-we
-          & "$env:QT_ROOT_DIR\bin\qt-configure-module.bat" $src `
-            -- -DCMAKE_BUILD_TYPE=Release `
-               -DQT_FEATURE_webengine_proprietary_codecs=ON `
-               -DQT_FEATURE_qtpdf_build=OFF
-          if ($LASTEXITCODE -ne 0) { throw "configure failed" }
-          cmake --build . --parallel
-          if ($LASTEXITCODE -ne 0) { throw "build failed" }
-          cmake --install .
-
-      - name: Upload built module
-        if: ${{ github.event.inputs.full_build == 'true' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: qtwebengine-codecs-${{ github.event.inputs.qt_version }}
-          path: |
-            build-we/**/QtWebEngineCore.dll
-            build-we/**/libEGL.dll
-            build-we/**/libGLESv2.dll
-            build-we/**/QtWebEngineProcess.exe
-            build-we/**/resources/**
-            build-we/**/*.pak
-          if-no-files-found: warn
+  finish:
+    name: Phase 2 (finish + upload)
+    needs: warm
+    uses: ./.github/workflows/windows-codecs-build.yml
+    with:
+      qt_version: ${{ github.event.inputs.qt_version }}
+      phase: finish
