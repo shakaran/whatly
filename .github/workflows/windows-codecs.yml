@@ -35,6 +35,9 @@ jobs:
   finish:
     name: Phase 2 (finish + upload)
     needs: warm
+    # warm intentionally stops early; run finish regardless of its result
+    # (only skip if the whole run was cancelled by hand).
+    if: ${{ !cancelled() }}
     uses: ./.github/workflows/windows-codecs-build.yml
     with:
       qt_version: ${{ github.event.inputs.qt_version }}

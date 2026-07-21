@@ -102,12 +102,25 @@ jobs:
                -DQT_FEATURE_webengine_proprietary_codecs=ON `
                -DQT_FEATURE_qtpdf_build=OFF
           if ($LASTEXITCODE -ne 0) { throw "configure failed" }
-          # Keep a little headroom before the job hard-limit so sccache flushes.
-          cmake --build . --parallel
-          # In the warm phase a non-zero exit (timeout kill) is expected; the
-          # cache is what matters. In finish it must succeed.
-          if ("${{ inputs.phase }}" -eq "finish" -and $LASTEXITCODE -ne 0) {
-            throw "finish build failed"
+          # warm stops the build early (success) so its sccache entries are all
+          # in the GHA cache and the job does not get hard-cancelled — which
+          # would skip finish. finish runs to completion with the warm cache.
+          $softMin = if ("${{ inputs.phase }}" -eq "warm") { 285 } else { 330 }
+          $p = Start-Process -FilePath cmake -ArgumentList '--build','.','--parallel' `
+                 -NoNewWindow -PassThru
+          if ($p.WaitForExit($softMin * 60 * 1000)) {
+            if ("${{ inputs.phase }}" -eq "finish" -and $p.ExitCode -ne 0) {
+              throw "finish build failed ($($p.ExitCode))"
+            }
+            Write-Host "build step exited with code $($p.ExitCode)"
+          } else {
+            # Ran out of the time budget.
+            try { Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue } catch {}
+            if ("${{ inputs.phase }}" -eq "warm") {
+              Write-Host "warm: stopped early to preserve the sccache cache"
+            } else {
+              throw "finish did not complete within the time budget"
+            }
           }
 
       - name: sccache stats
