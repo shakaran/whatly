@@ -1,18 +1,17 @@
 name: Windows QtWebEngine codecs (build phase)
 
-# Reusable build used twice by windows-codecs.yml (warm, then finish). Both
-# phases share an sccache object cache over the GitHub Actions cache backend, so
-# the second pass recompiles the first pass's objects from cache and finishes
-# within the 6-hour job limit.
+# Reusable build. phase = probe | warm | finish.
+#   probe  : configure + ~15 min of build, then report whether Chromium's GN
+#            args.gn got cc_wrapper (i.e. sccache is really in the loop) and the
+#            sccache stats. Fast wiring check.
+#   warm   : build up to a soft budget, stop the tree cleanly (exit success) so
+#            its sccache entries persist for finish.
+#   finish : build to completion with the warm cache, install, upload.
 on:
   workflow_call:
     inputs:
-      qt_version:
-        required: true
-        type: string
-      phase:
-        required: true
-        type: string   # "warm" or "finish"
+      qt_version: { required: true, type: string }
+      phase:      { required: true, type: string }
 
 jobs:
   build:
@@ -20,15 +19,8 @@ jobs:
     timeout-minutes: 345
     env:
       SCCACHE_GHA_ENABLED: 'true'
-      SCCACHE_CACHE_SIZE: '20G'
+      SCCACHE_CACHE_SIZE: '25G'
     steps:
-      - name: Report free disk
-        shell: pwsh
-        run: |
-          Get-PSDrive -PSProvider FileSystem C |
-            Select-Object @{n='FreeGB';e={[math]::Round($_.Free/1GB,1)}} |
-            Format-Table -AutoSize
-
       - name: Install base Qt ${{ inputs.qt_version }}
         uses: jurplel/install-qt-action@v4
         with:
@@ -81,20 +73,18 @@ jobs:
           $ver = "${{ inputs.qt_version }}"
           $mm  = ($ver -split '\.')[0..1] -join '.'
           $tar = "qtwebengine-everywhere-src-$ver.tar.xz"
-          $url = "https://download.qt.io/official_releases/qt/$mm/$ver/submodules/$tar"
-          Write-Host "Downloading $url"
-          curl.exe -L --retry 3 -o $tar $url
-          # bsdtar (shipped as tar.exe on Windows) handles .tar.xz natively.
+          curl.exe -L --retry 3 -o $tar "https://download.qt.io/official_releases/qt/$mm/$ver/submodules/$tar"
           tar -xf $tar
           Rename-Item "qtwebengine-everywhere-src-$ver" qtwebengine
-          "Source size: $([math]::Round(((Get-ChildItem qtwebengine -Recurse -File -EA SilentlyContinue|Measure-Object Length -Sum).Sum/1GB),1)) GB" | Write-Host
 
-      - name: Configure + build (codecs ON, sccache)
+      - name: Configure (Release, codecs ON, sccache as cc_wrapper)
         shell: pwsh
         run: |
           $src = "$pwd\qtwebengine"
           New-Item -ItemType Directory -Force build-we | Out-Null
           cd build-we
+          # Qt maps CMAKE_<LANG>_COMPILER_LAUNCHER to Chromium's GN cc_wrapper,
+          # which is what routes the Chromium compile through sccache.
           & "$env:QT_ROOT_DIR\bin\qt-configure-module.bat" $src `
             -- -DCMAKE_BUILD_TYPE=Release `
                -DCMAKE_C_COMPILER_LAUNCHER=sccache `
@@ -102,31 +92,44 @@ jobs:
                -DQT_FEATURE_webengine_proprietary_codecs=ON `
                -DQT_FEATURE_qtpdf_build=OFF
           if ($LASTEXITCODE -ne 0) { throw "configure failed" }
-          # warm stops the build early (success) so its sccache entries are all
-          # in the GHA cache and the job does not get hard-cancelled — which
-          # would skip finish. finish runs to completion with the warm cache.
-          $softMin = if ("${{ inputs.phase }}" -eq "warm") { 285 } else { 330 }
-          $p = Start-Process -FilePath cmake -ArgumentList '--build','.','--parallel' `
-                 -NoNewWindow -PassThru
-          if ($p.WaitForExit($softMin * 60 * 1000)) {
-            if ("${{ inputs.phase }}" -eq "finish" -and $p.ExitCode -ne 0) {
-              throw "finish build failed ($($p.ExitCode))"
-            }
-            Write-Host "build step exited with code $($p.ExitCode)"
-          } else {
-            # Ran out of the time budget.
-            try { Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue } catch {}
-            if ("${{ inputs.phase }}" -eq "warm") {
-              Write-Host "warm: stopped early to preserve the sccache cache"
-            } else {
-              throw "finish did not complete within the time budget"
+
+      - name: Build (phase-aware)
+        shell: pwsh
+        run: |
+          cd build-we
+          $phase = "${{ inputs.phase }}"
+          $softMin = switch ($phase) { 'probe' { 15 } 'warm' { 285 } default { 330 } }
+          $p = Start-Process cmake -ArgumentList '--build','.','--parallel' -NoNewWindow -PassThru
+          $deadline = (Get-Date).AddMinutes($softMin)
+          $stopped = $false
+          while (-not $p.HasExited) {
+            Start-Sleep -Seconds 20
+            if ((Get-Date) -gt $deadline) {
+              Write-Host "$phase: reached the $softMin-min budget; stopping the build tree"
+              cmd /c "taskkill /F /T /PID $($p.Id)" | Out-Null
+              $stopped = $true
+              break
             }
           }
+          if (-not $stopped -and $phase -eq 'finish' -and $p.ExitCode -ne 0) {
+            throw "finish build failed (exit $($p.ExitCode))"
+          }
+          Write-Host "build step done (stopped=$stopped exit=$($p.HasExited ? $p.ExitCode : 'n/a'))"
 
-      - name: sccache stats
+      - name: Diagnostics — is sccache wired into Chromium?
         if: always()
         shell: pwsh
-        run: sccache --show-stats
+        run: |
+          Write-Host "=== args.gn cc_wrapper lines (should mention sccache) ==="
+          $found = $false
+          Get-ChildItem -Recurse -Filter args.gn build-we -ErrorAction SilentlyContinue |
+            ForEach-Object {
+              $m = Select-String -Path $_.FullName -Pattern 'cc_wrapper'
+              if ($m) { $found = $true; Write-Host "$($_.FullName): $($m.Line.Trim())" }
+            }
+          if (-not $found) { Write-Host "NO cc_wrapper in any args.gn — Chromium is NOT using sccache" }
+          Write-Host "=== sccache stats ==="
+          sccache --show-stats
 
       - name: Install
         if: ${{ inputs.phase == 'finish' }}
@@ -146,6 +149,5 @@ jobs:
             build-we/**/libEGL.dll
             build-we/**/libGLESv2.dll
             build-we/**/*.pak
-            build-we/**/qtwebengine_*.pak
             build-we/**/icudtl.dat
           if-no-files-found: warn

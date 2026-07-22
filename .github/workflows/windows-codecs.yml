@@ -1,17 +1,11 @@
 name: Windows Qt WebEngine (proprietary codecs)
 
-# EXPERIMENTAL / manual. Qt's official prebuilt Qt WebEngine (what
-# install-qt-action fetches) is built WITHOUT proprietary codecs, so H.264/AAC —
-# and therefore WhatsApp video and voice messages — do not work on the Windows
-# build. The only fix is rebuilding QtWebEngine from source with
-# `-webengine-proprietary-codecs`.
-#
-# A full Chromium compile takes ~7-8 h and does not fit GitHub's 6-hour job
-# limit (a cold build reached 68% at ~5h50m). So this runs in two phases that
-# share an sccache object cache over the GitHub Actions cache backend: `warm`
-# builds as far as it can and populates the cache; `finish` recompiles the
-# already-done objects from cache (fast) and completes the rest within 6 h.
-# Repeat-dispatch converges too, if one pass is not enough.
+# EXPERIMENTAL / manual. Rebuilds Qt WebEngine with proprietary codecs
+# (H.264/AAC) so WhatsApp video/voice work on Windows. A cold Chromium build
+# (~7-8h) does not fit GitHub's 6h job limit, so a warm+finish pair shares an
+# sccache object cache. But sccache only helps if Chromium's GN build actually
+# routes through it (cc_wrapper) — use `mode: probe` (~15 min) to confirm the
+# cc_wrapper wiring and sccache activity before spending hours on `mode: full`.
 on:
   workflow_dispatch:
     inputs:
@@ -19,26 +13,35 @@ on:
         description: 'Qt version to match (e.g. 6.10.2)'
         required: true
         default: '6.10.2'
+      mode:
+        description: 'probe (fast wiring check) or full (warm + finish)'
+        type: choice
+        options: [probe, full]
+        default: probe
 
 concurrency:
   group: win-codecs-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  warm:
-    name: Phase 1 (warm the cache)
+  probe:
+    if: ${{ inputs.mode == 'probe' }}
     uses: ./.github/workflows/windows-codecs-build.yml
     with:
-      qt_version: ${{ github.event.inputs.qt_version }}
+      qt_version: ${{ inputs.qt_version }}
+      phase: probe
+
+  warm:
+    if: ${{ inputs.mode == 'full' }}
+    uses: ./.github/workflows/windows-codecs-build.yml
+    with:
+      qt_version: ${{ inputs.qt_version }}
       phase: warm
 
   finish:
-    name: Phase 2 (finish + upload)
     needs: warm
-    # warm intentionally stops early; run finish regardless of its result
-    # (only skip if the whole run was cancelled by hand).
-    if: ${{ !cancelled() }}
+    if: ${{ inputs.mode == 'full' && !cancelled() }}
     uses: ./.github/workflows/windows-codecs-build.yml
     with:
-      qt_version: ${{ github.event.inputs.qt_version }}
+      qt_version: ${{ inputs.qt_version }}
       phase: finish
