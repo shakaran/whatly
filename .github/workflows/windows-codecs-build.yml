@@ -110,16 +110,18 @@ jobs:
           while (-not $p.HasExited) {
             Start-Sleep -Seconds 20
             if ((Get-Date) -gt $deadline) {
-              Write-Host "$phase: reached the $softMin-min budget; stopping the build tree"
-              cmd /c "taskkill /F /T /PID $($p.Id)" | Out-Null
+              Write-Host "$phase reached the $softMin-min budget; stopping the build tree"
+              & taskkill.exe /F /T /PID $p.Id 2>$null
               $stopped = $true
               break
             }
           }
-          if (-not $stopped -and $phase -eq 'finish' -and $p.ExitCode -ne 0) {
-            throw "finish build failed (exit $($p.ExitCode))"
+          $code = -1
+          if ($p.HasExited) { $code = $p.ExitCode }
+          Write-Host "build step done: stopped=$stopped exit=$code"
+          if (-not $stopped -and $phase -eq 'finish' -and $code -ne 0) {
+            throw "finish build failed (exit $code)"
           }
-          Write-Host "build step done (stopped=$stopped exit=$($p.HasExited ? $p.ExitCode : 'n/a'))"
 
       - name: Diagnostics — is sccache wired into Chromium?
         if: always()
