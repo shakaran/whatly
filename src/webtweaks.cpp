@@ -37,14 +37,39 @@ static const char kScriptTemplate[] = R"JS(
   // WhatsApp keeps it open until its button is pressed again. The panel mount
   // node '#expressions-panel-container' always exists (empty, height 0); it is
   // OPEN exactly when its child has a subtree. Close via a synthetic Escape.
+  // OPEN means the panel's subtree is actually laid out on screen. A bare
+  // child-count check is not enough: after a soft remount WhatsApp can leave a
+  // stale, hidden subtree behind, so require a visibly sized box.
   var isOpen = function (c) {
-    return !!(c && c.firstElementChild && c.firstElementChild.childElementCount > 0);
+    if (!(c && c.firstElementChild && c.firstElementChild.childElementCount > 0))
+      return false;
+    var els = c.querySelectorAll('*');
+    for (var i = 0; i < els.length && i < 60; i++) {
+      var r = els[i].getBoundingClientRect();
+      if (r.width > 40 && r.height > 40) return true;
+    }
+    return false;
   };
   document.addEventListener('pointerdown', function (ev) {
     try {
       if (!W.dismissExpressionsPanel) return;
-      var panel = document.querySelector('#expressions-panel-container');
-      if (!isOpen(panel) || panel.contains(ev.target)) return;
+      var panels = document.querySelectorAll('#expressions-panel-container');
+      var open = false, inside = false;
+      for (var i = 0; i < panels.length; i++) {
+        if (isOpen(panels[i])) open = true;
+        if (panels[i].contains(ev.target)) inside = true;
+      }
+      if (!open || inside) return;
+      // Never dismiss for a click anywhere in the emoji subsystem, at ANY
+      // popover depth. The skin-tone / variant picker is a SEPARATE popover
+      // mounted outside #expressions-panel-container whose swatches are
+      // <img class="emojik"> with no data-emoji, so an emoji-cell-only check
+      // missed them and closed the panel mid skin-tone selection. The "emojik"
+      // sprite class is exclusive to the picker UI (chat and composer emojis
+      // use "emoji" without the k), so matching it scopes cleanly.
+      if (ev.target.closest && ev.target.closest(
+          '[data-emoji], .emojik, .emoji-grid, [class*="emoji-variant"], ' +
+          '[class*="skin-tone"], [class*="skintone"]')) return;
       var btn = ev.target.closest && ev.target.closest('button');
       if (btn && /emoji|gif|sticker/i.test(btn.getAttribute('aria-label') || ''))
         return;
