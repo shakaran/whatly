@@ -62,6 +62,15 @@ public:
   // does not start at (0,0). Pure, so it is unit-tested (#5).
   static QPoint topRightWithin(const QRect &avail, const QSize &size,
                                int margin);
+
+  // Whether the window should count as "frontmost" for the tray-click hide
+  // heuristic: active now, or — within a positive grace window — deactivated
+  // less than graceMs ago. The grace recovers the Windows case where the tray
+  // click hands focus to the shell before iconActivated() runs; graceMs <= 0
+  // disables it (every other platform, where isActiveWindow() is reliable).
+  // Pure, so it is unit-tested (#8).
+  static bool wasFrontmostRecently(bool active, qint64 lastDeactivationMs,
+                                   qint64 nowMs, int graceMs);
 };
 
 #endif // UTILS_H

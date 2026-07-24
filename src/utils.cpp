@@ -615,3 +615,10 @@ QPoint Utils::topRightWithin(const QRect &avail, const QSize &size, int margin) 
   return QPoint(avail.x() + avail.width() - size.width() - margin,
                 avail.y() + margin);
 }
+
+bool Utils::wasFrontmostRecently(bool active, qint64 lastDeactivationMs,
+                                 qint64 nowMs, int graceMs) {
+  if (active)
+    return true;
+  return graceMs > 0 && (nowMs - lastDeactivationMs) < graceMs;
+}

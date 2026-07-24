@@ -492,6 +492,23 @@ private slots:
         Utils::topRightWithin(QRect(1920, 200, 1280, 1024), QSize(300, 100), 20);
     QCOMPARE(s, QPoint(1920 + 1280 - 300 - 20, 200 + 20)); // 2880, 220
   }
+
+  // #8: the tray-click "was frontmost a moment ago" heuristic. The grace window
+  // recovers a window that lost activation to the shell just before the click
+  // (Windows); graceMs <= 0 keeps every other platform on true activation only.
+  void trayFrontmostGrace() {
+    // Active now is always frontmost, regardless of grace.
+    QVERIFY(Utils::wasFrontmostRecently(true, 0, 100000, 0));
+    QVERIFY(Utils::wasFrontmostRecently(true, 0, 100000, 300));
+
+    // Not active, with a grace window: frontmost only if it deactivated within it.
+    QVERIFY(Utils::wasFrontmostRecently(false, 100000, 100200, 300));  // 200ms ago
+    QVERIFY(!Utils::wasFrontmostRecently(false, 100000, 100500, 300)); // 500ms ago
+
+    // Grace disabled (non-Windows): an inactive window is never frontmost, so
+    // the behaviour is exactly the pre-change isActiveWindow() check.
+    QVERIFY(!Utils::wasFrontmostRecently(false, 100000, 100010, 0));
+  }
   void installTypeFromEnv() {
     qputenv("INSTALL_TYPE", "snap");
     QCOMPARE(Utils::getInstallType(), QStringLiteral("snap"));

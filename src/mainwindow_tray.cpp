@@ -1,5 +1,6 @@
 // Tray icon, actions, and window-title/notification-count handling.
 #include "mainwindow.h"
+#include "utils.h"
 #include "appprofile.h"
 #include "common.h"
 
@@ -260,11 +261,19 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason) {
   // On Windows the tray click hands focus to the shell before this runs, so
   // isActiveWindow() is already false for a window that WAS frontmost; a short
   // grace window (m_lastDeactivationMs, stamped in changeEvent) recovers that,
-  // so "hide when clicked while frontmost" still works.
+  // so "hide when clicked while frontmost" still works. The grace is
+  // Windows-only — elsewhere isActiveWindow() is reliable here, so keep the
+  // behaviour identical to before this change.
+#ifdef Q_OS_WIN
+  constexpr int kFrontmostGraceMs = 300;
+#else
+  constexpr int kFrontmostGraceMs = 0;
+#endif
   const bool frontmost =
       isVisible() && !isMinimized() &&
-      (isActiveWindow() ||
-       QDateTime::currentMSecsSinceEpoch() - m_lastDeactivationMs < 300);
+      Utils::wasFrontmostRecently(isActiveWindow(), m_lastDeactivationMs,
+                                  QDateTime::currentMSecsSinceEpoch(),
+                                  kFrontmostGraceMs);
   const bool minimizeOnClick = SettingsManager::instance()
                                    .settings()
                                    .value("minimizeOnTrayIconClick", false)
