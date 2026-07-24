@@ -1,5 +1,7 @@
 #include "messaging.h"
 
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QRegularExpression>
 
 namespace Messaging {
@@ -121,6 +123,35 @@ Backend parseBackend(const QString &name, bool *ok) {
 QString backendName(Backend backend) {
   return backend == Backend::Cloud ? QStringLiteral("cloud")
                                    : QStringLiteral("web");
+}
+
+namespace {
+const QLatin1String kSendTag("WHATLY_SEND ");
+}
+
+QString encodeSendCommand(const SendCommand &cmd) {
+  QJsonObject o;
+  o["backend"] = backendName(cmd.backend);
+  o["to"] = cmd.to;
+  o["message"] = cmd.message;
+  return kSendTag +
+         QString::fromUtf8(QJsonDocument(o).toJson(QJsonDocument::Compact));
+}
+
+bool decodeSendCommand(const QString &payload, SendCommand *out) {
+  if (!payload.startsWith(kSendTag))
+    return false;
+  const QJsonDocument doc =
+      QJsonDocument::fromJson(payload.mid(kSendTag.size()).toUtf8());
+  if (!doc.isObject())
+    return false;
+  if (out) {
+    const QJsonObject o = doc.object();
+    out->backend = parseBackend(o.value("backend").toString());
+    out->to = o.value("to").toString();
+    out->message = o.value("message").toString();
+  }
+  return true;
 }
 
 } // namespace Messaging

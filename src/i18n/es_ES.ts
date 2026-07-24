@@ -775,6 +775,14 @@ Configure primero la contraseña en los ajustes.
         <source>Unlock to Reload the App.</source>
         <translation>Desbloquee para recargar la aplicación.</translation>
     </message>
+    <message>
+        <source>Sending through the Cloud API is not available yet.</source>
+        <translation>El envío a través de la Cloud API aún no está disponible.</translation>
+    </message>
+    <message>
+        <source>Only phone-number recipients are supported so far (got: %1).</source>
+        <translation>Por ahora solo se admiten destinatarios con número de teléfono (recibido: %1).</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1122,6 +1130,22 @@ Configure primero la contraseña en los ajustes.</translation>
     <message>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Se recuperó de un fallo de inicio cambiando a renderizado seguro. Puedes ajustarlo en Ajustes → Rendimiento.</translation>
+    </message>
+    <message>
+        <source>Send a message via the running instance, then exit (needs --to and --message)</source>
+        <translation>Envía un mensaje a través de la instancia en ejecución y sale (necesita --to y --message)</translation>
+    </message>
+    <message>
+        <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
+        <translation>Destinatario para --send: un número de teléfono (internacional), un id de grupo o un nombre de contacto</translation>
+    </message>
+    <message>
+        <source>Message text for --send</source>
+        <translation>Texto del mensaje para --send</translation>
+    </message>
+    <message>
+        <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
+        <translation>Cómo entrega --send: 'web' (la sesión de WhatsApp Web en ejecución) o 'cloud' (Meta WhatsApp Business Cloud API)</translation>
     </message>
 </context>
 <context>

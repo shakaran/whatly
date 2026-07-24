@@ -775,6 +775,14 @@ Open Settings now?</source>
         <source>Unlock to Reload the App.</source>
         <translation>ऐप्लिकेशन पुनः लोड करने के लिए अनलॉक करें।</translation>
     </message>
+    <message>
+        <source>Sending through the Cloud API is not available yet.</source>
+        <translation>Cloud API के ज़रिए भेजना अभी उपलब्ध नहीं है।</translation>
+    </message>
+    <message>
+        <source>Only phone-number recipients are supported so far (got: %1).</source>
+        <translation>फ़िलहाल केवल फ़ोन नंबर वाले प्राप्तकर्ता समर्थित हैं (मिला: %1)।</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1122,6 +1130,22 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>स्टार्ट-अप क्रैश से सुरक्षित रेंडरिंग पर स्विच करके पुनर्प्राप्त किया गया। आप इसे सेटिंग्स → प्रदर्शन में समायोजित कर सकते हैं।</translation>
+    </message>
+    <message>
+        <source>Send a message via the running instance, then exit (needs --to and --message)</source>
+        <translation>चालू इंस्टेंस के ज़रिए संदेश भेजता है, फिर बाहर निकल जाता है (--to और --message ज़रूरी)</translation>
+    </message>
+    <message>
+        <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
+        <translation>--send के लिए प्राप्तकर्ता: फ़ोन नंबर (अंतरराष्ट्रीय), समूह आईडी, या संपर्क नाम</translation>
+    </message>
+    <message>
+        <source>Message text for --send</source>
+        <translation>--send के लिए संदेश पाठ</translation>
+    </message>
+    <message>
+        <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
+        <translation>--send कैसे भेजता है: 'web' (चालू WhatsApp Web सत्र) या 'cloud' (Meta WhatsApp Business Cloud API)</translation>
     </message>
 </context>
 <context>

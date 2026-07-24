@@ -28,6 +28,7 @@
 #include "def.h"
 #include "dictionaries.h"
 #include "mainwindow.h"
+#include "messaging.h"
 #include "settingsmanager.h"
 #include "webengineprofilemanager.h"
 #include <singleapplication.h>
@@ -570,9 +571,33 @@ int main(int argc, char *argv[]) {
                     << "unread",
       QObject::tr("Print the current unread message count and exit"));
 
+  // Send a message from the command line to the already-running instance of
+  // this profile (issue: send by command / API).
+  QCommandLineOption sendOption(
+      QStringList() << "send",
+      QObject::tr("Send a message via the running instance, then exit (needs "
+                  "--to and --message)"));
+  QCommandLineOption toOption(
+      QStringList() << "to",
+      QObject::tr("Recipient for --send: a phone number (international), a "
+                  "group id, or a contact name"),
+      QStringLiteral("recipient"));
+  QCommandLineOption messageOption(
+      QStringList() << "message",
+      QObject::tr("Message text for --send"), QStringLiteral("text"));
+  QCommandLineOption backendOption(
+      QStringList() << "backend",
+      QObject::tr("How --send delivers: 'web' (the running WhatsApp Web "
+                  "session) or 'cloud' (Meta WhatsApp Business Cloud API)"),
+      QStringLiteral("web|cloud"), QStringLiteral("web"));
+
   parser.addOption(migrateFromOption);
   parser.addOption(dryRunOption);
   parser.addOption(unreadOption);
+  parser.addOption(sendOption);
+  parser.addOption(toOption);
+  parser.addOption(messageOption);
+  parser.addOption(backendOption);
 
   secondaryInstanceCLIOptions << showAppWindowOption << openSettingsOption
                               << lockAppOption << openAboutOption
@@ -591,6 +616,46 @@ int main(int argc, char *argv[]) {
         << parser.applicationDescription() << "\n"
         << QStringLiteral("version: %1, branch: %2, commit: %3, built_at: %4")
                .arg(VERSIONSTR, GIT_BRANCH, GIT_HASH, BUILD_TIMESTAMP);
+    return 0;
+  }
+
+  // `--send` hands a message to the already-running instance of this profile
+  // and exits. The web backend needs that instance's logged-in WhatsApp Web
+  // session, so there must be one running; the cloud backend will not (Phase 4).
+  if (parser.isSet(sendOption)) {
+    bool backendOk = false;
+    const Messaging::Backend backend =
+        Messaging::parseBackend(parser.value(backendOption), &backendOk);
+    QTextStream err(stderr);
+    if (!backendOk) {
+      err << "whatly --send: unknown --backend '" << parser.value(backendOption)
+          << "' (use 'web' or 'cloud')\n";
+      return 2;
+    }
+    if (!parser.isSet(toOption) || parser.value(toOption).trimmed().isEmpty()) {
+      err << "whatly --send: --to <recipient> is required\n";
+      return 2;
+    }
+    if (!parser.isSet(messageOption)) {
+      err << "whatly --send: --message <text> is required\n";
+      return 2;
+    }
+    if (!instance.isSecondary()) {
+      err << "whatly --send: no running Whatly for this profile"
+          << AppProfile::suffix()
+          << " — start it and sign in first (web backend)\n";
+      return 1;
+    }
+    Messaging::SendCommand cmd;
+    cmd.backend = backend;
+    cmd.to = parser.value(toOption);
+    cmd.message = parser.value(messageOption);
+    if (!instance.sendMessage(Messaging::encodeSendCommand(cmd).toUtf8())) {
+      err << "whatly --send: could not reach the running instance\n";
+      return 1;
+    }
+    QTextStream(stdout) << "Sent to the running Whatly for delivery to "
+                        << cmd.to << '\n';
     return 0;
   }
 
@@ -619,6 +684,17 @@ int main(int argc, char *argv[]) {
                                  QString::number(instanceId) +
                                  ", sent argument: " + message;
         QString messageStr = QString::fromUtf8(message);
+
+        // A `--send` command arrives as a tagged JSON payload (not argv), so it
+        // is decoded before the space-splitting parser below, which would
+        // mangle a message containing spaces.
+        Messaging::SendCommand sc;
+        if (Messaging::decodeSendCommand(messageStr, &sc)) {
+          qInfo() << "cmd:" << "SendMessage" << "backend"
+                  << Messaging::backendName(sc.backend);
+          whatly.commandSend(sc);
+          return;
+        }
 
         QCommandLineParser p;
         p.addOptions(secondaryInstanceCLIOptions);

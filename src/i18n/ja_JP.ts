@@ -775,6 +775,14 @@ Open Settings now?</source>
         <source>Unlock to Reload the App.</source>
         <translation>アプリを再読み込みするにはロックを解除してください。</translation>
     </message>
+    <message>
+        <source>Sending through the Cloud API is not available yet.</source>
+        <translation>Cloud API 経由の送信はまだ利用できません。</translation>
+    </message>
+    <message>
+        <source>Only phone-number recipients are supported so far (got: %1).</source>
+        <translation>現在は電話番号の宛先のみ対応しています（受信: %1）。</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1122,6 +1130,22 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>起動時のクラッシュから安全なレンダリングに切り替えて復旧しました。設定 → パフォーマンスで調整できます。</translation>
+    </message>
+    <message>
+        <source>Send a message via the running instance, then exit (needs --to and --message)</source>
+        <translation>実行中のインスタンス経由でメッセージを送信して終了します（--to と --message が必要）</translation>
+    </message>
+    <message>
+        <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
+        <translation>--send の宛先: 電話番号（国際形式）、グループ ID、または連絡先名</translation>
+    </message>
+    <message>
+        <source>Message text for --send</source>
+        <translation>--send のメッセージ本文</translation>
+    </message>
+    <message>
+        <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
+        <translation>--send の送信方法: 'web'（実行中の WhatsApp Web セッション）または 'cloud'（Meta WhatsApp Business Cloud API）</translation>
     </message>
 </context>
 <context>

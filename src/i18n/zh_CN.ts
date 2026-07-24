@@ -775,6 +775,14 @@ Open Settings now?</source>
         <source>Unlock to Reload the App.</source>
         <translation>请解锁以重新加载应用。</translation>
     </message>
+    <message>
+        <source>Sending through the Cloud API is not available yet.</source>
+        <translation>通过 Cloud API 发送尚不可用。</translation>
+    </message>
+    <message>
+        <source>Only phone-number recipients are supported so far (got: %1).</source>
+        <translation>目前仅支持电话号码收件人（收到：%1）。</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1122,6 +1130,22 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>已通过切换到安全渲染从启动崩溃中恢复。你可以在设置 → 性能中调整此项。</translation>
+    </message>
+    <message>
+        <source>Send a message via the running instance, then exit (needs --to and --message)</source>
+        <translation>通过正在运行的实例发送一条消息，然后退出（需要 --to 和 --message）</translation>
+    </message>
+    <message>
+        <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
+        <translation>--send 的收件人：电话号码（国际格式）、群组 ID 或联系人名称</translation>
+    </message>
+    <message>
+        <source>Message text for --send</source>
+        <translation>--send 的消息文本</translation>
+    </message>
+    <message>
+        <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
+        <translation>--send 的发送方式：'web'（正在运行的 WhatsApp Web 会话）或 'cloud'（Meta WhatsApp Business Cloud API）</translation>
     </message>
 </context>
 <context>

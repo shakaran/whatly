@@ -775,6 +775,14 @@ Open Settings now?</source>
         <source>Unlock to Reload the App.</source>
         <translation>앱을 새로 고치려면 잠금을 해제하세요.</translation>
     </message>
+    <message>
+        <source>Sending through the Cloud API is not available yet.</source>
+        <translation>Cloud API를 통한 전송은 아직 사용할 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Only phone-number recipients are supported so far (got: %1).</source>
+        <translation>현재는 전화번호 수신자만 지원됩니다 (받음: %1).</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1122,6 +1130,22 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>시작 시 충돌에서 안전 렌더링으로 전환하여 복구했습니다. 설정 → 성능에서 조정할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Send a message via the running instance, then exit (needs --to and --message)</source>
+        <translation>실행 중인 인스턴스를 통해 메시지를 보내고 종료합니다 (--to 및 --message 필요)</translation>
+    </message>
+    <message>
+        <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
+        <translation>--send의 수신자: 전화번호(국제), 그룹 ID 또는 연락처 이름</translation>
+    </message>
+    <message>
+        <source>Message text for --send</source>
+        <translation>--send의 메시지 텍스트</translation>
+    </message>
+    <message>
+        <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
+        <translation>--send 전송 방식: 'web'(실행 중인 WhatsApp Web 세션) 또는 'cloud'(Meta WhatsApp Business Cloud API)</translation>
     </message>
 </context>
 <context>

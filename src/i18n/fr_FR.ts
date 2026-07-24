@@ -775,6 +775,14 @@ Ouvrir les paramètres maintenant ?</translation>
         <source>Unlock to Reload the App.</source>
         <translation>Déverrouillez pour recharger l&apos;application.</translation>
     </message>
+    <message>
+        <source>Sending through the Cloud API is not available yet.</source>
+        <translation>L'envoi via la Cloud API n'est pas encore disponible.</translation>
+    </message>
+    <message>
+        <source>Only phone-number recipients are supported so far (got: %1).</source>
+        <translation>Seuls les destinataires avec un numéro de téléphone sont pris en charge pour l'instant (reçu : %1).</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1122,6 +1130,22 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Récupéré après un plantage au démarrage en passant au rendu sécurisé. Vous pouvez l'ajuster dans Paramètres → Performances.</translation>
+    </message>
+    <message>
+        <source>Send a message via the running instance, then exit (needs --to and --message)</source>
+        <translation>Envoie un message via l'instance en cours d'exécution, puis quitte (nécessite --to et --message)</translation>
+    </message>
+    <message>
+        <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
+        <translation>Destinataire pour --send : un numéro de téléphone (international), un identifiant de groupe ou un nom de contact</translation>
+    </message>
+    <message>
+        <source>Message text for --send</source>
+        <translation>Texte du message pour --send</translation>
+    </message>
+    <message>
+        <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
+        <translation>Comment --send envoie : 'web' (la session WhatsApp Web en cours) ou 'cloud' (Meta WhatsApp Business Cloud API)</translation>
     </message>
 </context>
 <context>

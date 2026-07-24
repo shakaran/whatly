@@ -775,6 +775,14 @@ Otworzyć ustawienia teraz?</translation>
         <source>Unlock to Reload the App.</source>
         <translation>Odblokuj, aby przeładować aplikację.</translation>
     </message>
+    <message>
+        <source>Sending through the Cloud API is not available yet.</source>
+        <translation>Wysyłanie przez Cloud API nie jest jeszcze dostępne.</translation>
+    </message>
+    <message>
+        <source>Only phone-number recipients are supported so far (got: %1).</source>
+        <translation>Na razie obsługiwani są tylko odbiorcy z numerem telefonu (otrzymano: %1).</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1122,6 +1130,22 @@ Najpierw ustaw hasło w ustawieniach.</translation>
     <message>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Przywrócono po awarii przy uruchamianiu, przełączając na bezpieczne renderowanie. Możesz to zmienić w Ustawienia → Wydajność.</translation>
+    </message>
+    <message>
+        <source>Send a message via the running instance, then exit (needs --to and --message)</source>
+        <translation>Wysyła wiadomość przez działającą instancję i kończy działanie (wymaga --to i --message)</translation>
+    </message>
+    <message>
+        <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
+        <translation>Odbiorca dla --send: numer telefonu (międzynarodowy), identyfikator grupy lub nazwa kontaktu</translation>
+    </message>
+    <message>
+        <source>Message text for --send</source>
+        <translation>Treść wiadomości dla --send</translation>
+    </message>
+    <message>
+        <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
+        <translation>Jak --send dostarcza: 'web' (działająca sesja WhatsApp Web) lub 'cloud' (Meta WhatsApp Business Cloud API)</translation>
     </message>
 </context>
 <context>

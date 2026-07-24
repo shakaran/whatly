@@ -14,6 +14,8 @@ class QStackedWidget;
 class GlobalShortcut;
 class ScheduledMessages;
 
+#include "messaging.h"
+
 #include "autolockeventfilter.h"
 #include "downloadmanagerwidget.h"
 #include "lock.h"
@@ -55,6 +57,10 @@ public slots:
   void showSettings(bool isAskedByCLI = false);
   void showAbout();
   void showScheduledMessages();
+  // Perform a message send requested over IPC by a `whatly --send …` command
+  // (issue: send by command / API). Returns to the caller immediately; the send
+  // itself runs asynchronously through the page automation.
+  void commandSend(const Messaging::SendCommand &cmd);
   void lockApp();
   void lockOnHideIfEnabled();
   void toggleTheme();

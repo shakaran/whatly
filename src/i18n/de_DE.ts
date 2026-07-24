@@ -775,6 +775,14 @@ Einstellungen jetzt öffnen?</translation>
         <source>Unlock to Reload the App.</source>
         <translation>Entsperren, um die Anwendung neu zu laden.</translation>
     </message>
+    <message>
+        <source>Sending through the Cloud API is not available yet.</source>
+        <translation>Das Senden über die Cloud API ist noch nicht verfügbar.</translation>
+    </message>
+    <message>
+        <source>Only phone-number recipients are supported so far (got: %1).</source>
+        <translation>Bisher werden nur Empfänger mit Telefonnummer unterstützt (erhalten: %1).</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1122,6 +1130,22 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
     <message>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Nach einem Startabsturz wurde auf sicheres Rendering umgeschaltet. Du kannst dies unter Einstellungen → Leistung anpassen.</translation>
+    </message>
+    <message>
+        <source>Send a message via the running instance, then exit (needs --to and --message)</source>
+        <translation>Sendet eine Nachricht über die laufende Instanz und beendet sich (benötigt --to und --message)</translation>
+    </message>
+    <message>
+        <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
+        <translation>Empfänger für --send: eine Telefonnummer (international), eine Gruppen-ID oder ein Kontaktname</translation>
+    </message>
+    <message>
+        <source>Message text for --send</source>
+        <translation>Nachrichtentext für --send</translation>
+    </message>
+    <message>
+        <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
+        <translation>Wie --send zustellt: 'web' (die laufende WhatsApp-Web-Sitzung) oder 'cloud' (Meta WhatsApp Business Cloud API)</translation>
     </message>
 </context>
 <context>

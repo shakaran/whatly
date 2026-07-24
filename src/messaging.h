@@ -59,6 +59,23 @@ QMap<QString, QString> parseVars(const QStringList &kvs);
 Backend parseBackend(const QString &name, bool *ok = nullptr);
 QString backendName(Backend backend);
 
+// A send request passed from a `whatly --send …` invocation to the already
+// running instance of the same profile (over SingleApplication's IPC).
+struct SendCommand {
+  Backend backend = Backend::Web;
+  QString to;      // raw recipient, exactly as given on the command line
+  QString message; // the text to send
+};
+
+// Encode/decode a SendCommand as a single IPC payload. A tagged, JSON-bodied
+// line is used rather than the space-joined argv the other CLI commands share,
+// because a message contains spaces (and newlines and unicode) that argv
+// splitting would mangle. decodeSendCommand returns false (and leaves *out
+// untouched) when the payload is not a send command, so the receiver can fall
+// through to its other IPC handling.
+QString encodeSendCommand(const SendCommand &cmd);
+bool decodeSendCommand(const QString &payload, SendCommand *out);
+
 } // namespace Messaging
 
 #endif // MESSAGING_H

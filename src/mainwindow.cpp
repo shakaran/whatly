@@ -950,6 +950,34 @@ void MainWindow::showScheduledMessages() {
   dialog->show();
 }
 
+void MainWindow::commandSend(const Messaging::SendCommand &cmd) {
+  using namespace Messaging;
+
+  if (cmd.backend == Backend::Cloud) {
+    // Phase 4 will add the Meta Cloud API path; it does not need the page.
+    showNotification(QApplication::applicationDisplayName(),
+                     tr("Sending through the Cloud API is not available yet."));
+    return;
+  }
+
+  const Recipient r = parseRecipient(cmd.to);
+  if (r.kind == RecipientKind::PhoneNumber) {
+    // Reuse the scheduled-message automation: an entry due now is sent
+    // immediately (add() calls checkDue()), through WhatsApp Web, with the same
+    // one-in-flight queue and result reporting.
+    if (m_scheduledMessages)
+      m_scheduledMessages->add(r.value, QString(), cmd.message,
+                               QDateTime::currentDateTime());
+    return;
+  }
+
+  // Groups and contact-name lookups over the web session come in a later phase.
+  showNotification(
+      QApplication::applicationDisplayName(),
+      tr("Only phone-number recipients are supported so far (got: %1).")
+          .arg(cmd.to));
+}
+
 void MainWindow::toggleTheme() {
   if (m_settingsWidget != nullptr)
     m_settingsWidget->toggleTheme();

@@ -764,6 +764,27 @@ private slots:
     QCOMPARE(Messaging::backendName(Messaging::Backend::Cloud),
              QStringLiteral("cloud"));
   }
+
+  // The IPC payload survives a round-trip with spaces, newlines and unicode in
+  // the message (which a space-joined argv would mangle), and a non-send
+  // payload is rejected so the receiver falls through to its other handling.
+  void sendCommandRoundTrip() {
+    Messaging::SendCommand cmd;
+    cmd.backend = Messaging::Backend::Cloud;
+    cmd.to = QStringLiteral("+34 600 123 456");
+    cmd.message = QStringLiteral("Hola\nmundo — ¿qué tal? 😀 a=b c=d");
+    const QString payload = Messaging::encodeSendCommand(cmd);
+
+    Messaging::SendCommand got;
+    QVERIFY(Messaging::decodeSendCommand(payload, &got));
+    QCOMPARE(got.backend, Messaging::Backend::Cloud);
+    QCOMPARE(got.to, cmd.to);
+    QCOMPARE(got.message, cmd.message);
+
+    // A plain CLI argv string is not a send command.
+    QVERIFY(!Messaging::decodeSendCommand(QStringLiteral("-s --open-settings"),
+                                          nullptr));
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────

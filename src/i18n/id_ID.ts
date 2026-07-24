@@ -775,6 +775,14 @@ Buka pengaturan sekarang?</translation>
         <source>Unlock to Reload the App.</source>
         <translation>Buka kunci untuk memuat ulang aplikasi.</translation>
     </message>
+    <message>
+        <source>Sending through the Cloud API is not available yet.</source>
+        <translation>Pengiriman melalui Cloud API belum tersedia.</translation>
+    </message>
+    <message>
+        <source>Only phone-number recipients are supported so far (got: %1).</source>
+        <translation>Untuk saat ini hanya penerima dengan nomor telepon yang didukung (diterima: %1).</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1122,6 +1130,22 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
     <message>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Dipulihkan dari kegagalan saat memulai dengan beralih ke rendering aman. Anda dapat menyesuaikannya di Pengaturan → Kinerja.</translation>
+    </message>
+    <message>
+        <source>Send a message via the running instance, then exit (needs --to and --message)</source>
+        <translation>Kirim pesan melalui instansi yang sedang berjalan, lalu keluar (perlu --to dan --message)</translation>
+    </message>
+    <message>
+        <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
+        <translation>Penerima untuk --send: nomor telepon (internasional), id grup, atau nama kontak</translation>
+    </message>
+    <message>
+        <source>Message text for --send</source>
+        <translation>Teks pesan untuk --send</translation>
+    </message>
+    <message>
+        <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
+        <translation>Cara --send mengirim: 'web' (sesi WhatsApp Web yang berjalan) atau 'cloud' (Meta WhatsApp Business Cloud API)</translation>
     </message>
 </context>
 <context>
