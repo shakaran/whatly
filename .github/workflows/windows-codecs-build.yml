@@ -77,16 +77,21 @@ jobs:
 
       - name: Restore the sccache disk cache
         # Persist SCCACHE_DIR across runs (and across the warm -> finish jobs)
-        # via the current cache service. Per-run key so every run saves a fresh
-        # entry; restore-keys prefer a prior finish, then warm, then any, so
-        # finish inherits what warm built and each run warms the next.
-        uses: actions/cache@v4
+        # via the current cache service. restore-keys prefer a prior finish, then
+        # warm, then any, so finish inherits what warm built and each run resumes
+        # from the furthest-along cache. Restore/save are split (not the combined
+        # action) so the save below can run with if: always() — a full Chromium
+        # build does not fit one warm+finish pass, so the cache MUST persist even
+        # when finish stops incomplete, or the extra progress is lost.
+        uses: actions/cache/restore@v4
         with:
           path: ${{ github.workspace }}\.sccache
-          key: sccache-winwe-${{ inputs.qt_version }}-${{ inputs.phase }}-${{ github.run_id }}
+          key: sccache-winwe-${{ inputs.qt_version }}-${{ github.run_id }}-${{ inputs.phase }}
+          # A single prefix: restore-keys returns the MOST RECENTLY CREATED cache
+          # matching it, so every phase resumes from the furthest-along one —
+          # this run's warm for finish, the previous run's finish for the next
+          # warm — without phase-ordering gotchas.
           restore-keys: |
-            sccache-winwe-${{ inputs.qt_version }}-finish-
-            sccache-winwe-${{ inputs.qt_version }}-warm-
             sccache-winwe-${{ inputs.qt_version }}-
 
       - name: Fetch QtWebEngine source (shallow git; fast on Windows)
@@ -135,6 +140,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { throw "configure failed" }
 
       - name: Build (phase-aware)
+        id: build
         shell: pwsh
         run: |
           cd build-we
@@ -155,17 +161,25 @@ jobs:
           $code = -1
           if ($p.HasExited) { $code = $p.ExitCode }
           Write-Host "build step done: stopped=$stopped exit=$code"
-          # probe/warm are deliberately time-boxed partial builds: a soft-stop
-          # (and the taskkill'd in-flight compiles) is success, so exit 0 rather
-          # than inheriting taskkill's / the killed build's stray exit code — the
-          # pwsh shell ends with `exit $LASTEXITCODE`, which otherwise fails the
-          # step. Only `finish` fails, and only if it did not build to completion.
-          if ($phase -eq 'finish') {
-            if ($stopped -or $code -ne 0) {
-              throw "finish build did not complete (stopped=$stopped exit=$code)"
-            }
-          }
+          # NEVER fail this step: a soft-stop (probe/warm always, and finish when
+          # the build does not fit its budget) is an expected partial build, and
+          # failing here would skip the cache-save below (its post-if) and lose
+          # the progress. Record whether finish actually built to completion; a
+          # later step turns an incomplete finish into a job failure, AFTER the
+          # cache has been saved.
+          $completed = if ($phase -eq 'finish') { (-not $stopped -and $code -eq 0) } else { $true }
+          "completed=$($completed.ToString().ToLower())" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
           exit 0
+
+      - name: Save the sccache disk cache
+        # if: always() so the accumulated cache persists even when finish stops
+        # incomplete — that is what lets a subsequent full run resume further
+        # along until one completes within budget.
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ github.workspace }}\.sccache
+          key: sccache-winwe-${{ inputs.qt_version }}-${{ github.run_id }}-${{ inputs.phase }}
 
       - name: Diagnostics — is sccache wired into Chromium?
         if: always()
@@ -183,14 +197,14 @@ jobs:
           sccache --show-stats
 
       - name: Install
-        if: ${{ inputs.phase == 'finish' }}
+        if: ${{ inputs.phase == 'finish' && steps.build.outputs.completed == 'true' }}
         shell: pwsh
         run: |
           cd build-we
           cmake --install .
 
       - name: Upload built module
-        if: ${{ inputs.phase == 'finish' }}
+        if: ${{ inputs.phase == 'finish' && steps.build.outputs.completed == 'true' }}
         uses: actions/upload-artifact@v4
         with:
           name: qtwebengine-codecs-${{ inputs.qt_version }}
@@ -202,3 +216,14 @@ jobs:
             build-we/**/*.pak
             build-we/**/icudtl.dat
           if-no-files-found: warn
+
+      - name: Signal an incomplete finish (cache already saved above)
+        # The cache has been persisted; now surface that finish ran out of budget
+        # so the run shows as failed and can simply be re-dispatched to resume
+        # from the now-further-along cache until a run completes.
+        if: ${{ inputs.phase == 'finish' && steps.build.outputs.completed != 'true' }}
+        shell: pwsh
+        run: |
+          Write-Host "finish did not build to completion within its budget."
+          Write-Host "The accumulated sccache cache was saved; re-dispatch mode=full to resume."
+          exit 1
