@@ -61,6 +61,9 @@ void MainWindow::createWebEngine() {
   // so this is invisible until a second account is added.
   buildAccountArea();
   loadAccounts();
+  // Optionally rebuild the multi-window arrangement (opt-in setting) before the
+  // tabs/grid view mode is applied.
+  restoreWindowLayout();
 
   // Restore the saved layout (tabs or grid) now that the accounts exist.
   setViewMode(static_cast<ViewMode>(

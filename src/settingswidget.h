@@ -94,6 +94,7 @@ private slots:
   void on_showPermissionsButton_clicked();
   void on_showShortcutsButton_clicked();
   void on_startMinimized_toggled(bool checked);
+  void on_rememberWindowLayoutCheckBox_toggled(bool checked);
   void on_styleComboBox_currentTextChanged(const QString &arg1);
   void on_themeComboBox_currentIndexChanged(int index);
   void on_tryNotification_clicked();

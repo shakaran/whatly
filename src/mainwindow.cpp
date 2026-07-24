@@ -9,6 +9,7 @@
 #include <QRegularExpression>
 #include <QScreen>
 #include <QSessionManager>
+#include <QStackedWidget>
 #include <QStyleFactory>
 #include <QStyleHints>
 #include <QUrlQuery>
@@ -44,6 +45,7 @@
 #include "webfont.h"
 #include "mutedstatus.h"
 #include "scheduledmessages.h"
+#include "detachedaccountwindow.h"
 #include "scheduledmessagesdialog.h"
 #include "webengineprofilemanager.h"
 #include "webtweaks.h"
@@ -334,6 +336,9 @@ void MainWindow::changeEvent(QEvent *e) {
   // frontmost a moment ago" apart from "buried under another window".
   if (e->type() == QEvent::ActivationChange && !isActiveWindow())
     m_lastDeactivationMs = QDateTime::currentMSecsSinceEpoch();
+  // Track focus order: the main window becoming active makes it "main" (front).
+  if (e->type() == QEvent::ActivationChange && isActiveWindow())
+    noteWindowFocused(nullptr);
   QMainWindow::changeEvent(e);
 }
 
@@ -918,7 +923,22 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 }
 
 void MainWindow::quitApp() {
+  // Flush the final arrangement while the windows still exist and BEFORE
+  // m_isQuitting blocks further saves — otherwise the collapse loop and the
+  // teardown of the emptied detached windows would overwrite the layout with a
+  // single-window state. Also clear the crash guard for this clean shutdown.
+  saveWindowLayout();
+  SettingsManager::instance().settings().setValue(
+      QStringLiteral("windowLayout/restoreInProgress"), false);
   m_isQuitting = true;
+  // Reparent any torn-off account views back into the main stack, so every view
+  // is owned by the main window again and torn down in a known order at exit.
+  for (int i = 0; i < m_accounts.size(); ++i)
+    if (m_accounts[i].window) {
+      if (m_accounts[i].view)
+        m_accountStack->addWidget(m_accounts[i].view);
+      m_accounts[i].window = nullptr;
+    }
   saveWindowGeometry();
   getPageTheme();
   // Give the async getPageTheme() call above time to land before quitting.

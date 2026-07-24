@@ -13,6 +13,8 @@ class QTabBar;
 class QStackedWidget;
 class GlobalShortcut;
 class ScheduledMessages;
+class DetachedAccountWindow;
+class AccountTabBar;
 
 #include "autolockeventfilter.h"
 #include "downloadmanagerwidget.h"
@@ -103,6 +105,9 @@ private:
     QString name;    // shown on the tab
     WebView *view = nullptr;
     int unread = 0;
+    // Non-null while the account has been torn off into its own window; its
+    // view then lives in that window rather than in the tab stack/grid.
+    QPointer<DetachedAccountWindow> window = nullptr;
   };
   // How the account views are laid out. Tabs (the historical default) shows one
   // account at a time behind a tab bar; Grid shows every account at once in a
@@ -120,8 +125,67 @@ private:
   void promptAddAccount();
   void renameAccount(int index);
   void removeAccount(int index);
+  // Tear an account off into its own top-level window. An account's `window`
+  // field records which window hosts it (null = the main window); the view is
+  // reparented between windows' stacks but never destroyed on a move.
+  void detachAccount(int index, QPoint dropGlobalPos = QPoint(-1, -1));
+  // Dock the account with `id` into the main window at slot `insertSlot` among
+  // the main strip's tabs (reordering a docked tab, or dragging an account back
+  // in from a detached window).
+  void dockAccountToMainAt(const QString &id, int insertSlot);
+  // Move the account with `id` into an existing detached window at `slot`
+  // (targetWin must be non-null; the main window is dockAccountToMainAt's job).
+  void moveAccountToWindow(const QString &id, DetachedAccountWindow *targetWin,
+                           int slot);
+  // The main window's last tab was dropped into `win`: rather than leave the
+  // main window empty (or destroy it — it owns the tray), the main window
+  // absorbs `win`, taking its geometry and all of its tabs with the dragged
+  // account inserted at `slot`; `win` is then destroyed.
+  void absorbWindowIntoMain(DetachedAccountWindow *win, const QString &movedId,
+                            int slot);
+  // Tear the account off into a brand-new window near `pos`, from anywhere.
+  void tearOutToNewWindow(const QString &id, QPoint pos);
+  // A tab drag ended: if it landed on a strip the strip already handled it; if
+  // on another Whatly window's body, move it there (appended); otherwise tear
+  // off a new window.
+  void onTabDragReleased(const QString &id, QPoint globalPos);
+  DetachedAccountWindow *createDetachedWindow();
+  // Dock all of a closing window's accounts back into the main window.
+  void closeDetachedWindow(DetachedAccountWindow *win);
+  // Rebuild every detached window's tab strip from m_accounts.
+  void refreshDetachedStrips();
+  int accountIndexForId(const QString &id) const;
+  // Most-recently-focused-first list of windows (nullptr = the main window). The
+  // front is the "main" window: it receives newly-added accounts, and a closed
+  // window's tabs dock into the front-most surviving window.
+  QList<DetachedAccountWindow *> m_focusOrder;
+  void noteWindowFocused(DetachedAccountWindow *win);
+  void destroyDetachedWindow(DetachedAccountWindow *win);
+  // Re-derive a window's account order in m_accounts from its strip's tab order
+  // after the user slides a tab (win == nullptr means the main window).
+  void reorderWindowFromStrip(DetachedAccountWindow *win);
+  bool m_reorderingTabs = false; // guards the tabMoved handler against re-entry
+  // Set when a strip's drop already handled a tab drag (positional dock/move),
+  // so the geometry-routing dragReleased handler skips it instead of re-moving.
+  bool m_tabDropHandledByStrip = false;
+  // One-shot tip, the first time a second account appears, telling the user a
+  // tab can be pulled out into its own window.
+  void maybeShowDetachHint();
   void saveAccounts();
   void loadAccounts();
+  // Persist / restore the full multi-window arrangement (which accounts sit in
+  // which window, each detached window's geometry and active tab). The layout is
+  // saved ALWAYS (on every tab move / geometry change); the "rememberWindowLayout"
+  // toggle only decides whether restore rebuilds the windows or comes up
+  // collapsed (tabs kept in ordinal order). A crash guard skips the rebuild once
+  // after a run that did not settle cleanly, without discarding the layout.
+  void saveWindowLayout();
+  void restoreWindowLayout();
+  // Reorder the tabs into "main first, then each non-main window in ordinal
+  // order" for the collapsed (single-window) case.
+  void collapseToOrdinalOrder(const QStringList &assign);
+  bool m_loadingLayout = false; // guards saveAccounts while a layout is restored
+  QTimer *m_layoutSaveTimer = nullptr; // debounces layout saves on window moves
   int accountIndexForView(const QObject *view) const;
   void refreshAccountTabs();
   void updateTrayUnread();
@@ -131,13 +195,16 @@ private:
 
   QList<Account> m_accounts;
   int m_activeAccount = 0;
-  QTabBar *m_accountBar = nullptr;
+  AccountTabBar *m_accountBar = nullptr;
   QStackedWidget *m_accountStack = nullptr;
   // Grid view: a container the account views are re-parented into when the grid
   // mode is active. m_displayStack flips between the tabbed stack and the grid.
   QStackedWidget *m_displayStack = nullptr;
   QWidget *m_gridContainer = nullptr;
   QList<QPointer<QLabel>> m_gridLabels;
+  // The window geometry before Grid grew the window to fit its tiles, restored
+  // when Grid is left. Null when not in (a grown) Grid.
+  QRect m_preGridGeometry;
   ViewMode m_viewMode = ViewMode::Tabs;
   QAction *m_viewTabsAction = nullptr;
   QAction *m_viewGridAction = nullptr;
