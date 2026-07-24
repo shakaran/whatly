@@ -45,7 +45,10 @@ CommandPalette::CommandPalette(QList<Command> commands, QWidget *parent)
     : QDialog(parent), m_commands(std::move(commands)) {
   setWindowTitle(tr("Command palette"));
   setWindowFlag(Qt::FramelessWindowHint, true);
-  setModal(true);
+  // Non-modal on purpose: a modal dialog swallows clicks on the window behind
+  // it, so the only way out would be Escape. Non-modal lets those clicks land
+  // and deactivate the palette, which closes it (see changeEvent).
+  setModal(false);
   resize(520, 360);
 
   auto *layout = new QVBoxLayout(this);
@@ -89,6 +92,14 @@ bool CommandPalette::eventFilter(QObject *watched, QEvent *event) {
     }
   }
   return QDialog::eventFilter(watched, event);
+}
+
+void CommandPalette::changeEvent(QEvent *event) {
+  // Losing window activation means the user clicked outside the palette (or
+  // switched away) — dismiss it, just like Escape.
+  if (event->type() == QEvent::ActivationChange && !isActiveWindow())
+    close();
+  QDialog::changeEvent(event);
 }
 
 void CommandPalette::refilter() {

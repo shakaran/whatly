@@ -181,6 +181,8 @@ set(SOURCES
     src/mainwindow_lock.cpp
     src/mainwindow_tray.cpp
     src/mainwindow_webengine.cpp
+    src/detachedaccountwindow.cpp
+    src/accounttabbar.cpp
     src/permissiondialog.cpp
     src/rateapp.cpp
     src/settingswidget.cpp
@@ -239,6 +241,8 @@ set(HEADERS
     src/lock.h
     src/identicons.h
     src/mainwindow.h
+    src/detachedaccountwindow.h
+    src/accounttabbar.h
     src/notificationpopup.h
     src/permissiondialog.h
     src/rateapp.h

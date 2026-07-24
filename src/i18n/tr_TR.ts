@@ -468,83 +468,83 @@ Güvenlik denetimini atlayıp devam etmek istiyor musunuz?   </translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="391"/>
+        <location filename="../mainwindow_webengine.cpp" line="395"/>
         <source>Waiting for network…</source>
         <translation>Ağ bekleniyor…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="91"/>
+        <location filename="../mainwindow.cpp" line="93"/>
         <source>No WhatsApp window is open</source>
         <translation>Açık bir WhatsApp penceresi yok</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="96"/>
+        <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder</source>
         <translation>Hatırlatıcı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="96"/>
+        <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder: %1</source>
         <translation>Hatırlatıcı: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="166"/>
+        <location filename="../mainwindow.cpp" line="168"/>
         <source>Update available</source>
         <translation>Güncelleme mevcut</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="167"/>
+        <location filename="../mainwindow.cpp" line="169"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Whatly %1 kullanılabilir. İndirme sayfasını açmak için tıklayın.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="777"/>
-        <location filename="../mainwindow.cpp" line="783"/>
-        <location filename="../mainwindow_webengine.cpp" line="350"/>
-        <location filename="../mainwindow_webengine.cpp" line="353"/>
+        <location filename="../mainwindow.cpp" line="782"/>
+        <location filename="../mainwindow.cpp" line="788"/>
+        <location filename="../mainwindow_webengine.cpp" line="354"/>
+        <location filename="../mainwindow_webengine.cpp" line="357"/>
         <source>| Error</source>
         <translation>| Hata</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="778"/>
+        <location filename="../mainwindow.cpp" line="783"/>
         <source>Unlock to access Settings.</source>
         <translation>Ayarlara erişmek için kilidi açın.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="784"/>
+        <location filename="../mainwindow.cpp" line="789"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>Ayarlar modülü başlatılamıyor.
 WebEngine başlatılmadı.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="805"/>
+        <location filename="../mainwindow.cpp" line="810"/>
         <source> | Action required</source>
         <translation> | İşlem gerekli</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="806"/>
+        <location filename="../mainwindow.cpp" line="811"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>Devam etmek için sayfanın yeniden yüklenmesi gerekiyor.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1028"/>
+        <location filename="../mainwindow.cpp" line="1048"/>
         <source>Open</source>
         <translation>Aç</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1038"/>
-        <location filename="../mainwindow_tray.cpp" line="20"/>
+        <location filename="../mainwindow.cpp" line="1058"/>
+        <location filename="../mainwindow_tray.cpp" line="21"/>
         <source>New Chat</source>
         <translation>Yeni sohbet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1039"/>
+        <location filename="../mainwindow.cpp" line="1059"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Ülke kodu ile geçerli bir WhatsApp numarası girin (örn. +90XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1069"/>
+        <location filename="../mainwindow.cpp" line="1089"/>
         <source>Rate Application</source>
         <translation>Uygulamayı değerlendir</translation>
     </message>
@@ -560,218 +560,242 @@ Lütfen önce ayarlardan parolayı belirleyin.
 Ayarlar şimdi açılsın mı?</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="25"/>
-        <location filename="../mainwindow_tray.cpp" line="151"/>
+        <location filename="../mainwindow_tray.cpp" line="26"/>
+        <location filename="../mainwindow_tray.cpp" line="155"/>
         <source>Fullscreen</source>
         <translation>Tam ekran</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="31"/>
+        <location filename="../mainwindow_tray.cpp" line="32"/>
         <source>Mi&amp;nimize to tray</source>
         <translation>Sistem tepsisine k&amp;üçült</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="39"/>
+        <location filename="../mainwindow_tray.cpp" line="40"/>
         <source>&amp;Restore</source>
         <translation>&amp;Geri yükle</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="43"/>
+        <location filename="../mainwindow_tray.cpp" line="44"/>
         <source>Re&amp;load</source>
         <translation>Yeniden &amp;yükle</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="49"/>
+        <location filename="../mainwindow_tray.cpp" line="50"/>
         <source>Loc&amp;k</source>
         <translation>&amp;Kilitle</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="54"/>
+        <location filename="../mainwindow_tray.cpp" line="55"/>
         <source>&amp;Mute audio</source>
         <translation>Sesi &amp;kapat</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="63"/>
+        <location filename="../mainwindow_tray.cpp" line="64"/>
         <source>Zoom in</source>
         <translation>Yakınlaştır</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="69"/>
+        <location filename="../mainwindow_tray.cpp" line="70"/>
         <source>Zoom out</source>
         <translation>Uzaklaştır</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="74"/>
-        <location filename="../mainwindow_tray.cpp" line="153"/>
+        <location filename="../mainwindow_tray.cpp" line="75"/>
+        <location filename="../mainwindow_tray.cpp" line="157"/>
         <source>Reset zoom</source>
         <translation>Yakınlaştırmayı sıfırla</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="79"/>
+        <location filename="../mainwindow_tray.cpp" line="80"/>
         <source>&amp;Settings</source>
         <translation>&amp;Ayarlar</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="85"/>
+        <location filename="../mainwindow_tray.cpp" line="86"/>
         <source>Scheduled &amp;messages…</source>
         <translation>Zamanlanmış &amp;mesajlar…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="90"/>
+        <location filename="../mainwindow_tray.cpp" line="91"/>
         <source>&amp;Toggle theme</source>
         <translation>&amp;Temayı değiştir</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="101"/>
+        <location filename="../mainwindow_tray.cpp" line="102"/>
         <source>Tabbed view</source>
         <translation>Sekmeli görünüm</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="108"/>
-        <location filename="../mainwindow_tray.cpp" line="156"/>
+        <location filename="../mainwindow_tray.cpp" line="109"/>
+        <location filename="../mainwindow_tray.cpp" line="160"/>
         <source>Grid view</source>
         <translation>Izgara görünümü</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="119"/>
-        <location filename="../mainwindow_tray.cpp" line="157"/>
+        <location filename="../mainwindow_tray.cpp" line="120"/>
+        <location filename="../mainwindow_tray.cpp" line="161"/>
         <source>Command palette</source>
         <translation>Komut paleti</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="125"/>
+        <location filename="../mainwindow_tray.cpp" line="129"/>
         <source>&amp;About</source>
         <translation>&amp;Hakkında</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="134"/>
+        <location filename="../mainwindow_tray.cpp" line="138"/>
         <source>&amp;Quit</source>
         <translation>&amp;Çıkış</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="147"/>
+        <location filename="../mainwindow_tray.cpp" line="151"/>
         <source>Reload</source>
         <translation>Yeniden yükle</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="148"/>
+        <location filename="../mainwindow_tray.cpp" line="152"/>
         <source>Minimise to tray</source>
         <translation>Sistem tepsisine küçült</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="149"/>
+        <location filename="../mainwindow_tray.cpp" line="153"/>
         <source>Lock</source>
         <translation>Kilitle</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="150"/>
+        <location filename="../mainwindow_tray.cpp" line="154"/>
         <source>Mute audio</source>
         <translation>Sesi kapat</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="152"/>
+        <location filename="../mainwindow_tray.cpp" line="156"/>
         <source>New chat / open URL</source>
         <translation>Yeni sohbet / URL aç</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="154"/>
+        <location filename="../mainwindow_tray.cpp" line="158"/>
         <source>Settings</source>
         <translation>Ayarlar</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="155"/>
+        <location filename="../mainwindow_tray.cpp" line="159"/>
         <source>Toggle theme</source>
         <translation>Temayı değiştir</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="158"/>
+        <location filename="../mainwindow_tray.cpp" line="162"/>
         <source>Quit</source>
         <translation>Çıkış</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="113"/>
+        <location filename="../mainwindow_accounts.cpp" line="146"/>
+        <location filename="../mainwindow_accounts.cpp" line="841"/>
         <source>Rename…</source>
         <translation>Yeniden adlandır…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="114"/>
+        <location filename="../mainwindow_accounts.cpp" line="147"/>
+        <location filename="../mainwindow_accounts.cpp" line="842"/>
+        <source>Open in own window</source>
+        <translation>Kendi penceresinde aç</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="151"/>
+        <location filename="../mainwindow_accounts.cpp" line="845"/>
         <source>Remove account</source>
         <translation>Hesabı kaldır</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="148"/>
+        <location filename="../mainwindow_accounts.cpp" line="228"/>
         <source>Switch to account: %1</source>
         <translation>Hesaba geç: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="151"/>
+        <location filename="../mainwindow_accounts.cpp" line="231"/>
         <source>Add account…</source>
         <translation>Hesap ekle…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="156"/>
+        <location filename="../mainwindow_accounts.cpp" line="236"/>
         <source>Insert: %1</source>
         <translation>Ekle: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="234"/>
+        <location filename="../mainwindow_accounts.cpp" line="324"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 okunmamış</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="337"/>
+        <location filename="../mainwindow_accounts.cpp" line="627"/>
         <source>Add another account</source>
         <translation>Başka hesap ekle</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="356"/>
-        <location filename="../mainwindow_accounts.cpp" line="361"/>
+        <location filename="../mainwindow_accounts.cpp" line="648"/>
+        <location filename="../mainwindow_accounts.cpp" line="653"/>
         <source>Restore</source>
         <translation>Geri yükle</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="357"/>
+        <location filename="../mainwindow_accounts.cpp" line="649"/>
         <source>messages</source>
         <translation>mesaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="357"/>
+        <location filename="../mainwindow_accounts.cpp" line="649"/>
         <source>message</source>
         <translation>mesaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="401"/>
+        <location filename="../mainwindow_accounts.cpp" line="690"/>
         <source>Add account</source>
         <translation>Hesap ekle</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="402"/>
+        <location filename="../mainwindow_accounts.cpp" line="691"/>
         <source>Name for the new account:</source>
         <translation>Yeni hesabın adı:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="403"/>
-        <location filename="../mainwindow_accounts.cpp" line="478"/>
+        <location filename="../mainwindow_accounts.cpp" line="692"/>
+        <location filename="../mainwindow_accounts.cpp" line="1484"/>
+        <location filename="../mainwindow_accounts.cpp" line="1489"/>
         <source>Account %1</source>
         <translation>Hesap %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="421"/>
+        <location filename="../mainwindow_accounts.cpp" line="719"/>
         <source>Rename account</source>
         <translation>Hesabı yeniden adlandır</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="421"/>
+        <location filename="../mainwindow_accounts.cpp" line="719"/>
         <source>Account name:</source>
         <translation>Hesap adı:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="474"/>
+        <location filename="../mainwindow_accounts.cpp" line="1217"/>
+        <source>Tip: give an account its own window</source>
+        <translation>İpucu: bir hesaba kendi penceresini verin</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1218"/>
+        <source>You now have more than one account, shown as tabs along the top.
+
+You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
+        <translation>Artık birden fazla hesabınız var, üstte sekmeler olarak gösteriliyor.
+
+Herhangi bir hesabı kendi penceresine çıkarabilirsiniz: sekmesine sağ tıklayın ve “Kendi penceresinde aç” seçeneğini seçin. O pencereyi kapatarak hesabı tekrar sekme olarak yerleştirin.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1478"/>
+        <location filename="../mainwindow_accounts.cpp" line="1482"/>
         <source>Account 1</source>
         <translation>Hesap 1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="348"/>
+        <location filename="../mainwindow_webengine.cpp" line="352"/>
         <source>Unlock to Reload the App.</source>
         <translation>Uygulamayı yeniden yüklemek için kilidi açın.</translation>
     </message>
@@ -792,7 +816,7 @@ Ayarlar şimdi açılsın mı?</translation>
 <context>
     <name>NotificationPopup</name>
     <message>
-        <location filename="../notificationpopup.h" line="52"/>
+        <location filename="../notificationpopup.h" line="53"/>
         <source>Close</source>
         <translation>Kapat</translation>
     </message>
@@ -893,104 +917,104 @@ Ayarlar şimdi açılsın mı?</translation>
         <translation>Hata ayıklama bilgilerini gizle</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="182"/>
+        <location filename="../main.cpp" line="183"/>
         <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
         <translation>&quot;%1&quot; kaynağından taşınacak bir şey yok — zaten taşınmış ya da veri bulunamadı.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="187"/>
+        <location filename="../main.cpp" line="188"/>
         <source>Would copy:</source>
         <translation>Kopyalanacak:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="187"/>
+        <location filename="../main.cpp" line="188"/>
         <source>Copied:</source>
         <translation>Kopyalandı:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="191"/>
+        <location filename="../main.cpp" line="192"/>
         <source>Run again without --dry-run to perform the copy.</source>
         <translation>Kopyalamayı gerçekleştirmek için --dry-run olmadan yeniden çalıştırın.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="462"/>
+        <location filename="../main.cpp" line="472"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Qt WebEngine tabanlı, özellik dolu WhatsApp Web istemcisi</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="469"/>
+        <location filename="../main.cpp" line="479"/>
         <source>Displays help on commandline options</source>
         <translation>Komut satırı seçeneklerinin yardımını gösterir</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="474"/>
+        <location filename="../main.cpp" line="484"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>Çalışan bir örneğinde ayarları açar: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="479"/>
+        <location filename="../main.cpp" line="489"/>
         <source>Locks a running instance of </source>
         <translation>Çalışan bir örneğini kilitler: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="485"/>
+        <location filename="../main.cpp" line="495"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>Çalışan bir örneğinde «Hakkında» penceresini açar: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="490"/>
+        <location filename="../main.cpp" line="500"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>Çalışan bir örnekte zamanlanmış mesajlar iletişim kutusunu açar </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="497"/>
+        <location filename="../main.cpp" line="507"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>Çalışan bir örneğinde açık ve koyu tema arasında geçiş yapar: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="504"/>
+        <location filename="../main.cpp" line="514"/>
         <source>Reload the app in a running instance of </source>
         <translation>Çalışan bir örneğinde uygulamayı yeniden yükler: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="510"/>
+        <location filename="../main.cpp" line="520"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>Çalışan bir örneğinde yeni sohbet penceresini açar: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="523"/>
+        <location filename="../main.cpp" line="533"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kendi oturumu ve ayarlarıyla, kendi penceresinde ayrı bir hesap olarak çalıştır&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="530"/>
+        <location filename="../main.cpp" line="540"/>
         <source>Show main window of running instance of </source>
         <translation>Çalışan örneğin ana penceresini gösterir: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="537"/>
+        <location filename="../main.cpp" line="547"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>Önceki bir kurulumdan (örn. eski &quot;whatsie&quot; sürümü) ayarları ve oturum açılmış oturumu buraya kopyala, sonra çık</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="544"/>
+        <location filename="../main.cpp" line="554"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>--migrate-from ile yalnızca nelerin kopyalanacağını bildir</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="561"/>
+        <location filename="../main.cpp" line="571"/>
         <source>Print the current unread message count and exit</source>
         <translation>Geçerli okunmamış mesaj sayısını yazdır ve çık</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="635"/>
+        <location filename="../main.cpp" line="645"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>Uygulama kilidi yapılandırılmamış.
 Lütfen önce ayarlardan parolayı belirleyin.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="345"/>
+        <location filename="../mainwindow_webengine.cpp" line="349"/>
         <source>Reloading...</source>
         <translation>Yeniden yükleniyor...</translation>
     </message>
@@ -1096,30 +1120,31 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>%1 yazılamıyor</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="341"/>
+        <location filename="../webtweaks.cpp" line="343"/>
         <source>Switch to light theme</source>
         <comment>WebTweaks</comment>
         <translation>Açık temaya geç</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="342"/>
+        <location filename="../webtweaks.cpp" line="344"/>
         <source>Switch to dark theme</source>
         <comment>WebTweaks</comment>
         <translation>Koyu temaya geç</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="343"/>
+        <location filename="../webtweaks.cpp" line="345"/>
         <source>Show the chats</source>
         <comment>WebTweaks</comment>
         <translation>Sohbetleri göster</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="344"/>
+        <location filename="../webtweaks.cpp" line="346"/>
         <source>Blur the chats</source>
         <comment>WebTweaks</comment>
         <translation>Sohbetleri bulanıklaştır</translation>
     </message>
     <message>
+        <location filename="../main.cpp" line="743"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Başlangıçtaki bir çökmeden güvenli işlemeye geçilerek kurtarıldı. Bunu Ayarlar → Performans bölümünden ayarlayabilirsiniz.</translation>
     </message>
@@ -1342,17 +1367,17 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
-        <location filename="../settingswidget.ui" line="603"/>
+        <location filename="../settingswidget.ui" line="613"/>
         <source>Interface font size</source>
         <translation>Arayüz yazı tipi boyutu</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="613"/>
+        <location filename="../settingswidget.ui" line="623"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="610"/>
+        <location filename="../settingswidget.ui" line="620"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Uygulamanın kendi arayüzünün — menüler, ayarlar ve iletişim kutuları — punto boyutu. Bu, WhatsApp Web&apos;in metnini etkilemez; bunun için yakınlaştırmayı kullanın.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -1362,12 +1387,12 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Görünüm teması</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="629"/>
+        <location filename="../settingswidget.ui" line="639"/>
         <source>Reload automatically after a crash</source>
         <translation>Çökme sonrası otomatik olarak yeniden yükle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="626"/>
+        <location filename="../settingswidget.ui" line="636"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web&apos;in sayfa süreci çökerse, önce sormak yerine otomatik olarak yeniden yükle.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -1402,10 +1427,10 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="169"/>
-        <location filename="../settingswidget.ui" line="1569"/>
-        <location filename="../settingswidget.ui" line="1613"/>
-        <location filename="../settingswidget.ui" line="1682"/>
-        <location filename="../settingswidget.cpp" line="1309"/>
+        <location filename="../settingswidget.ui" line="1579"/>
+        <location filename="../settingswidget.ui" line="1623"/>
+        <location filename="../settingswidget.ui" line="1692"/>
+        <location filename="../settingswidget.cpp" line="1319"/>
         <source>Automatic</source>
         <translation>Otomatik</translation>
     </message>
@@ -1461,7 +1486,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="297"/>
-        <location filename="../settingswidget.ui" line="1152"/>
+        <location filename="../settingswidget.ui" line="1162"/>
         <source> Secs</source>
         <translation> sn</translation>
     </message>
@@ -1538,144 +1563,154 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="453"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window&apos;s position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Birden fazla hesap penceresi kullandığınızda her pencerenin konumu, boyutu ve sekmeleri hatırlanır ve bir sonraki açılışta geri yüklenir. Varsayılan olarak kapalı: uygulama tüm hesapları içeren tek bir pencere olarak geri gelir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="456"/>
+        <source>Remember multiple window positions on restart</source>
+        <translation>Yeniden başlatmada birden çok pencere konumunu hatırla</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="463"/>
         <source>Show/Hide on clicking tray Icon (if supported)</source>
         <translation>Tepsi simgesine tıklayınca göster/gizle (destekleniyorsa)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="460"/>
+        <location filename="../settingswidget.ui" line="470"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close the emoji, GIF &amp;amp; sticker panel when you click elsewhere. WhatsApp Web otherwise keeps it open until the button is pressed again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Başka bir yere tıkladığınızda emoji, GIF ve çıkartma panelini kapatır. Aksi hâlde WhatsApp Web, düğmeye tekrar basılana kadar paneli açık tutar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="463"/>
+        <location filename="../settingswidget.ui" line="473"/>
         <source>Close emoji/sticker panel when clicking outside</source>
         <translation>Dışına tıklayınca emoji/çıkartma panelini kapat</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="470"/>
+        <location filename="../settingswidget.ui" line="480"/>
         <source>Interface language</source>
         <translation>Arayüz dili</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="477"/>
+        <location filename="../settingswidget.ui" line="487"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of Whatly&apos;s own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whatly arayüzünün dili. Uygulama yeniden başlatıldığında etkili olur. Sohbetlerin dili WhatsApp Web&apos;den gelir ve buradan değiştirilemez.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="484"/>
+        <location filename="../settingswidget.ui" line="494"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a light/dark button to WhatsApp&apos;s own sidebar, just above your profile picture.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp kenar çubuğuna, profil fotoğrafınızın hemen üstüne bir açık/koyu düğmesi ekler.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="487"/>
+        <location filename="../settingswidget.ui" line="497"/>
         <source>Theme button in WhatsApp&apos;s sidebar</source>
         <translation>WhatsApp kenar çubuğunda tema düğmesi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="494"/>
+        <location filename="../settingswidget.ui" line="504"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that blurs and unblurs your chats in one click, without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp kenar çubuğuna, Ayarları açmadan sohbetlerinizi tek tıkla bulanıklaştıran ve gösteren bir düğme ekler.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="497"/>
+        <location filename="../settingswidget.ui" line="507"/>
         <source>Blur button in WhatsApp&apos;s sidebar</source>
         <translation>WhatsApp kenar çubuğunda bulanıklaştırma düğmesi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="504"/>
+        <location filename="../settingswidget.ui" line="514"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp&apos;ın yeşil simgesi yerine, panelinizin geri kalanıyla uyumlu tek renkli bir tepsi simgesi kullanır. WhatsApp bağlı değilken simge ayrıca soluklaşır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="507"/>
+        <location filename="../settingswidget.ui" line="517"/>
         <source>Monochrome tray icon</source>
         <translation>Tek renkli tepsi simgesi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="514"/>
+        <location filename="../settingswidget.ui" line="524"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Satır satır atlamak yerine kaydırmayı animasyonlu yapar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="517"/>
+        <location filename="../settingswidget.ui" line="527"/>
         <source>Smooth scrolling</source>
         <translation>Yumuşak kaydırma</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="524"/>
-        <location filename="../settingswidget.cpp" line="1112"/>
+        <location filename="../settingswidget.ui" line="534"/>
+        <location filename="../settingswidget.cpp" line="1122"/>
         <source>Custom CSS</source>
         <translation>Özel CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="533"/>
+        <location filename="../settingswidget.ui" line="543"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web&apos;in stilini değiştirmek için bir .css dosyası yükleyin — topluluk stil sayfaları (catppuccin ve benzerleri) burada çalışır. Sohbet temasının üzerine uygulanır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="536"/>
+        <location filename="../settingswidget.ui" line="546"/>
         <source>Choose file…</source>
         <translation>Dosya seç…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="543"/>
-        <location filename="../settingswidget.ui" line="683"/>
+        <location filename="../settingswidget.ui" line="553"/>
+        <location filename="../settingswidget.ui" line="693"/>
         <source>Clear</source>
         <translation>Temizle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="552"/>
+        <location filename="../settingswidget.ui" line="562"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sistem tepsisi simgesini tamamen kaldırır. Geri getirilecek tepsi olmadığında pencereyi kapatmak uygulamayı gizlemek yerine kapatır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="555"/>
+        <location filename="../settingswidget.ui" line="565"/>
         <source>Hide tray icon</source>
         <translation>Tepsi simgesini gizle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="562"/>
+        <location filename="../settingswidget.ui" line="572"/>
         <source>Font family</source>
         <translation>Yazı tipi ailesi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="569"/>
+        <location filename="../settingswidget.ui" line="579"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Render WhatsApp Web&apos;s text in a font installed on your system. Emoji, icons and monospaced message formatting are left untouched.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web metnini sisteminizde yüklü bir yazı tipiyle gösterir. Emoji, simgeler ve tek aralıklı mesaj biçimlendirmesi değiştirilmeden bırakılır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="576"/>
+        <location filename="../settingswidget.ui" line="586"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Durum/Güncellemeler panelindeki &quot;Sessize alınan güncellemeler&quot; bölümünü gizler; böylece sessize aldığınız kişilerin durumları hiç görünmez.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="579"/>
+        <location filename="../settingswidget.ui" line="589"/>
         <source>Hide muted status updates</source>
         <translation>Sessize alınmış durum güncellemelerini gizle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="586"/>
+        <location filename="../settingswidget.ui" line="596"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Yazarken yanlış yazılan kelimelerin altını çizer ve sağ tık menüsünde düzeltmeler sunar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="589"/>
-        <location filename="../settingswidget.cpp" line="1555"/>
+        <location filename="../settingswidget.ui" line="599"/>
+        <location filename="../settingswidget.cpp" line="1565"/>
         <source>Check spelling as I type</source>
         <translation>Yazarken yazımı denetle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="596"/>
+        <location filename="../settingswidget.ui" line="606"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Denetimin yapılacağı dil.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="636"/>
+        <location filename="../settingswidget.ui" line="646"/>
         <source>Privacy blur</source>
         <translation>Gizlilik bulanıklığı</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="643"/>
+        <location filename="../settingswidget.ui" line="653"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ekrana göz atan biri okuyamasın diye, üzerine gelene kadar sohbetlerinizi bulanıklaştırır. Bir satırın üzerine gelmek yalnızca o satırı gösterir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -1684,852 +1719,852 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation type="vanished">Sohbet teması</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="650"/>
+        <location filename="../settingswidget.ui" line="660"/>
         <source>Chat colour Tint</source>
         <translation>Sohbet renk tonu</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="657"/>
+        <location filename="../settingswidget.ui" line="667"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web&apos;in kendisini yeniden renklendirir. Fotoğraflar, avatarlar ve çıkartmalar kendi renklerini korur. Hangisi etkinse açık ya da koyu temanın üzerinde çalışır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="664"/>
-        <location filename="../settingswidget.cpp" line="1088"/>
+        <location filename="../settingswidget.ui" line="674"/>
+        <location filename="../settingswidget.cpp" line="1098"/>
         <source>Chat wallpaper</source>
         <translation>Sohbet duvar kâğıdı</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="673"/>
+        <location filename="../settingswidget.ui" line="683"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp&apos;ın Android&apos;de yaptığı gibi, sohbet bölmesinin arka planı olarak kendi görsellerinizden birini kullanın. Görsel Whatly içinde saklanır, hiçbir yere yüklenmez ve yalnızca siz görürsünüz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="676"/>
+        <location filename="../settingswidget.ui" line="686"/>
         <source>Choose image…</source>
         <translation>Görsel seç…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="692"/>
+        <location filename="../settingswidget.ui" line="702"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Yeni oturum açmalar, telefonunuzun bağlı cihazlar listesinde «Google Chrome (Linux)» yerine «Whatly for Linux» (veya ilgili platform) olarak görünür. Ad, bir cihaz bağlanırken telefona kaydedilir; bu nedenle bunu değiştirmek yalnızca gelecekteki bağlantıları etkiler — mevcut bir oturumu yeniden adlandırmak için çıkış yapıp yeniden bağlanın.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="695"/>
+        <location filename="../settingswidget.ui" line="705"/>
         <source>Identify as Whatly in linked devices</source>
         <translation>Bağlı cihazlarda Whatly olarak tanımlan</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="709"/>
+        <location filename="../settingswidget.ui" line="719"/>
         <source>User Agent</source>
         <translation>Kullanıcı aracısı</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="712"/>
+        <location filename="../settingswidget.ui" line="722"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gelişmiş — ne yaptığınızı tam olarak bilmiyorsanız buna dokunmayın. Standart olmayan bir user agent WhatsApp'ın yüklenmesini engelleyebilir ve olağan dışı değerler WhatsApp hesabınızın işaretlenmesine veya kara listeye alınmasına yol açabilir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gelişmiş — ne yaptığınızı tam olarak bilmiyorsanız buna dokunmayın. Standart olmayan bir user agent WhatsApp&apos;ın yüklenmesini engelleyebilir ve olağan dışı değerler WhatsApp hesabınızın işaretlenmesine veya kara listeye alınmasına yol açabilir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="722"/>
+        <location filename="../settingswidget.ui" line="732"/>
         <source>  Set</source>
         <translation>  Uygula</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="733"/>
+        <location filename="../settingswidget.ui" line="743"/>
         <source>Reset to default</source>
         <translation>Varsayılana sıfırla</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="756"/>
+        <location filename="../settingswidget.ui" line="766"/>
         <source>Zoom factor when normal</source>
         <translation>Normal penceredeki yakınlaştırma oranı</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="784"/>
-        <location filename="../settingswidget.ui" line="919"/>
+        <location filename="../settingswidget.ui" line="794"/>
+        <location filename="../settingswidget.ui" line="929"/>
         <source>Zoom Out</source>
         <translation>Uzaklaştır</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="823"/>
-        <location filename="../settingswidget.ui" line="958"/>
+        <location filename="../settingswidget.ui" line="833"/>
+        <location filename="../settingswidget.ui" line="968"/>
         <source>Zoom In</source>
         <translation>Yakınlaştır</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="868"/>
-        <location filename="../settingswidget.ui" line="1003"/>
+        <location filename="../settingswidget.ui" line="878"/>
+        <location filename="../settingswidget.ui" line="1013"/>
         <source>reset</source>
         <translation>sıfırla</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="891"/>
+        <location filename="../settingswidget.ui" line="901"/>
         <source>Zoom factor when maximized/fullscreen</source>
         <translation>Büyütülmüş/tam ekrandaki yakınlaştırma oranı</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1026"/>
+        <location filename="../settingswidget.ui" line="1036"/>
         <source>Minimize to tray</source>
         <translation>Sistem tepsisine küçült</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1035"/>
+        <location filename="../settingswidget.ui" line="1045"/>
         <source>Quit</source>
         <translation>Çıkış</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1047"/>
+        <location filename="../settingswidget.ui" line="1057"/>
         <source>Global shortcuts</source>
         <translation>Genel kısayollar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1054"/>
+        <location filename="../settingswidget.ui" line="1064"/>
         <source>Close button action</source>
         <translation>Kapat düğmesi eylemi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1061"/>
+        <location filename="../settingswidget.ui" line="1071"/>
         <source>  Show shortcuts</source>
         <translation>  Kısayolları göster</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1072"/>
+        <location filename="../settingswidget.ui" line="1082"/>
         <source>Permissions</source>
         <translation>İzinler</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1079"/>
+        <location filename="../settingswidget.ui" line="1089"/>
         <source>  Show permissions</source>
         <translation>  İzinleri göster</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1094"/>
+        <location filename="../settingswidget.ui" line="1104"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kilit ekranını etkinleştir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1097"/>
+        <location filename="../settingswidget.ui" line="1107"/>
         <source>Enable App lock on start</source>
         <translation>Başlangıçta uygulama kilidini etkinleştir</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1104"/>
+        <location filename="../settingswidget.ui" line="1114"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pencere sistem tepsisine gizlendiğinde parola ile kilitle. Bir parola ayarlanmış olmalıdır.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1107"/>
+        <location filename="../settingswidget.ui" line="1117"/>
         <source>Lock when hidden to tray</source>
         <translation>Tepsiye gizlenince kilitle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1114"/>
+        <location filename="../settingswidget.ui" line="1124"/>
         <source>Also lock Whatly when the desktop session locks. Requires a password to be set. (Linux)</source>
         <translation>Masaüstü oturumu kilitlendiğinde Whatly’yi de kilitle. Bir parola ayarlanmış olmalıdır. (Linux)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1117"/>
+        <location filename="../settingswidget.ui" line="1127"/>
         <source>Lock when the screen locks</source>
         <translation>Ekran kilitlendiğinde kilitle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1124"/>
+        <location filename="../settingswidget.ui" line="1134"/>
         <source>Current Password</source>
         <translation>Mevcut parola</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1131"/>
-        <location filename="../settingswidget.ui" line="1165"/>
+        <location filename="../settingswidget.ui" line="1141"/>
+        <location filename="../settingswidget.ui" line="1175"/>
         <source>Change password</source>
         <translation>Parolayı değiştir</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1134"/>
-        <location filename="../settingswidget.ui" line="1243"/>
+        <location filename="../settingswidget.ui" line="1144"/>
+        <location filename="../settingswidget.ui" line="1253"/>
         <source>Change</source>
         <translation>Değiştir</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1145"/>
+        <location filename="../settingswidget.ui" line="1155"/>
         <source>Enable auto locking after</source>
         <translation>Şu süre sonra otomatik kilitle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1168"/>
+        <location filename="../settingswidget.ui" line="1178"/>
         <source>Reset</source>
         <translation>Sıfırla</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1200"/>
+        <location filename="../settingswidget.ui" line="1210"/>
         <source>View password</source>
         <translation>Parolayı göster</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1227"/>
+        <location filename="../settingswidget.ui" line="1237"/>
         <source>Default Download location</source>
         <translation>Varsayılan indirme konumu</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1240"/>
+        <location filename="../settingswidget.ui" line="1250"/>
         <source>Change Download Location</source>
         <translation>İndirme konumunu değiştir</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1259"/>
+        <location filename="../settingswidget.ui" line="1269"/>
         <source>Storage </source>
         <translation>Depolama </translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1279"/>
+        <location filename="../settingswidget.ui" line="1289"/>
         <source>Property</source>
         <translation>Özellik</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1286"/>
+        <location filename="../settingswidget.ui" line="1296"/>
         <source>  Clear (requires restart)</source>
         <translation>  Temizle (yeniden başlatma gerekir)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1297"/>
+        <location filename="../settingswidget.ui" line="1307"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kalıcı veriler; kalıcı çerezleri, HTML5 yerel depolamayı ve ziyaret edilen bağlantıları içerir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1300"/>
+        <location filename="../settingswidget.ui" line="1310"/>
         <source>Persistent data</source>
         <translation>Kalıcı veriler</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1307"/>
-        <location filename="../settingswidget.ui" line="1327"/>
+        <location filename="../settingswidget.ui" line="1317"/>
+        <location filename="../settingswidget.ui" line="1337"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1317"/>
+        <location filename="../settingswidget.ui" line="1327"/>
         <source>The HTTP/media cache. Clearing it is safe — it is re-downloaded as needed.</source>
         <translation>HTTP/medya önbelleği. Temizlenmesi güvenlidir — gerektiğinde yeniden indirilir.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1320"/>
+        <location filename="../settingswidget.ui" line="1330"/>
         <source>Cache</source>
         <translation>Önbellek</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1337"/>
+        <location filename="../settingswidget.ui" line="1347"/>
         <source>  Clear cache</source>
         <translation>  Önbelleği temizle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1360"/>
+        <location filename="../settingswidget.ui" line="1370"/>
         <source>Size</source>
         <translation>Boyut</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1382"/>
+        <location filename="../settingswidget.ui" line="1392"/>
         <source>Action</source>
         <translation>Eylem</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1396"/>
+        <location filename="../settingswidget.ui" line="1406"/>
         <source>Backup</source>
         <translation>Yedekleme</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1403"/>
+        <location filename="../settingswidget.ui" line="1413"/>
         <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
         <translation>Bu hesabı (ayarlar, oturum ve eklentiler) bir .tar.gz arşivine kaydedin. Arşiv, oturum açmış oturumunuzu içerir — gizli tutun.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1406"/>
+        <location filename="../settingswidget.ui" line="1416"/>
         <source>Export profile…</source>
         <translation>Profili dışa aktar…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1413"/>
+        <location filename="../settingswidget.ui" line="1423"/>
         <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
         <translation>Bir hesabı .tar.gz arşivinden geri yükleyin. Bu, mevcut verilerin üzerine yazar ve yeniden başlatma gerektirir.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1416"/>
+        <location filename="../settingswidget.ui" line="1426"/>
         <source>Import profile…</source>
         <translation>Profili içe aktar…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1441"/>
+        <location filename="../settingswidget.ui" line="1451"/>
         <source>Performance &amp; Privacy</source>
         <translation>Performans &amp; Gizlilik</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1447"/>
+        <location filename="../settingswidget.ui" line="1457"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
         <translation>İşleme motorunda ince ayar yapın. Varsayılanlar çoğu sistemde güvenlidir; pencere boşsa veya uygulama başlangıçta çöküyorsa ya da takılıyorsa bunları değiştirmeyi deneyin. Değişiklikler yeniden başlatmadan sonra geçerli olur.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1457"/>
+        <location filename="../settingswidget.ui" line="1467"/>
         <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
         <translation>Tamamen CPU üzerinde işle (--disable-gpu). Bazı GPU/sürücü yapılandırmalarında boş pencereleri ve başlangıç çökmelerini düzeltir. Linux&apos;ta varsayılan.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1460"/>
+        <location filename="../settingswidget.ui" line="1470"/>
         <source>Disable GPU acceleration</source>
         <translation>GPU hızlandırmayı devre dışı bırak</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1467"/>
+        <location filename="../settingswidget.ui" line="1477"/>
         <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
         <translation>Sayfayı CPU üzerinde birleştir (--disable-gpu-compositing). Bazı sürücülerde eski kare titremesini önler.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1470"/>
+        <location filename="../settingswidget.ui" line="1480"/>
         <source>Disable GPU compositing</source>
         <translation>GPU birleştirmeyi devre dışı bırak</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1477"/>
+        <location filename="../settingswidget.ui" line="1487"/>
         <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
         <translation>GPU VSync&apos;i devre dışı bırak (--disable-gpu-vsync). Görüntü yırtılması pahasına giriş gecikmesini azaltabilir.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1480"/>
+        <location filename="../settingswidget.ui" line="1490"/>
         <source>Disable GPU VSync</source>
         <translation>GPU VSync&apos;i devre dışı bırak</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1487"/>
+        <location filename="../settingswidget.ui" line="1497"/>
         <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
         <translation>GPU işlemini ana işlemin içinde çalıştır (--in-process-gpu). Bazı yalıtılmış yapılandırmalar için bir geçici çözüm.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1490"/>
+        <location filename="../settingswidget.ui" line="1500"/>
         <source>Run GPU in-process</source>
         <translation>GPU&apos;yu işlem içinde çalıştır</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1497"/>
+        <location filename="../settingswidget.ui" line="1507"/>
         <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
         <translation>Sürücü engelleme listesinde olsa bile hızlandırmayı zorla (--ignore-gpu-blocklist). GPU&apos;yu yeniden açmak için bunu deneyin.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1500"/>
+        <location filename="../settingswidget.ui" line="1510"/>
         <source>Ignore GPU blocklist</source>
         <translation>GPU engelleme listesini yoksay</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1507"/>
+        <location filename="../settingswidget.ui" line="1517"/>
         <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
         <translation>Her şeyi tek bir işlemde çalıştır (--single-process). Daha az bellek kullanır ancak daha az kararlıdır.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1510"/>
+        <location filename="../settingswidget.ui" line="1520"/>
         <source>Single-process mode (lower memory)</source>
         <translation>Tek işlem modu (daha az bellek)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1517"/>
+        <location filename="../settingswidget.ui" line="1527"/>
         <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
         <translation>Site başına tek bir işleyici işlemi paylaş (--process-per-site). Bellek kullanımını azaltır.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1520"/>
+        <location filename="../settingswidget.ui" line="1530"/>
         <source>One process per site (lower memory)</source>
         <translation>Site başına bir işlem (daha az bellek)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1527"/>
+        <location filename="../settingswidget.ui" line="1537"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>Sohbet listesindeki kişi adlarını ve mesaj önizlemelerini gizler (birini görmek için üzerine gelin). Ekran paylaşırken kullanışlıdır. Açık sohbet değişmez.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1530"/>
+        <location filename="../settingswidget.ui" line="1540"/>
         <source>Focus mode (hide chat-list previews)</source>
         <translation>Odak modu (sohbet önizlemelerini gizle)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1537"/>
+        <location filename="../settingswidget.ui" line="1547"/>
         <source>Default photos and videos to HD quality in the media editor. Depends on WhatsApp Web&apos;s layout; if a WhatsApp update breaks it, turn it off.</source>
         <translation>Medya düzenleyicide fotoğraf ve videoları varsayılan olarak HD kalitede kullan. WhatsApp Web&apos;in düzenine bağlıdır; bir WhatsApp güncellemesi bunu bozarsa kapatın.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1540"/>
+        <location filename="../settingswidget.ui" line="1550"/>
         <source>Send photos and videos in HD by default</source>
         <translation>Fotoğraf ve videoları varsayılan olarak HD gönder</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1547"/>
+        <location filename="../settingswidget.ui" line="1557"/>
         <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
         <translation>WebRTC&apos;nin yerel IP adresinizi proxy kullanılmayan bağlantılar üzerinden ifşa etmesini engelleyin.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1550"/>
+        <location filename="../settingswidget.ui" line="1560"/>
         <source>Prevent WebRTC IP leak</source>
         <translation>WebRTC IP sızıntısını önle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1559"/>
+        <location filename="../settingswidget.ui" line="1569"/>
         <source>JavaScript memory limit</source>
         <translation>JavaScript bellek sınırı</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1566"/>
+        <location filename="../settingswidget.ui" line="1576"/>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
         <translation>JavaScript yığınını sınırla (V8 --max-old-space-size). 0 = otomatik. Uygulama çok fazla RAM kullanıyorsa düşürün.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1572"/>
-        <location filename="../settingswidget.ui" line="1616"/>
+        <location filename="../settingswidget.ui" line="1582"/>
+        <location filename="../settingswidget.ui" line="1626"/>
         <source> MB</source>
         <translation> MB</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1589"/>
+        <location filename="../settingswidget.ui" line="1599"/>
         <source>HTTP cache</source>
         <translation>HTTP önbelleği</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1596"/>
+        <location filename="../settingswidget.ui" line="1606"/>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
         <translation>HTTP önbelleğinin nerede tutulacağı. Bellek çıkışta temizlenir; Yok önbelleklemeyi devre dışı bırakır.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1603"/>
+        <location filename="../settingswidget.ui" line="1613"/>
         <source>Max size</source>
         <translation>En büyük boyut</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1610"/>
+        <location filename="../settingswidget.ui" line="1620"/>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>En büyük disk önbelleği boyutu. 0 = otomatik.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1634"/>
+        <location filename="../settingswidget.ui" line="1644"/>
         <source>Network &amp; Startup</source>
         <translation>Ağ &amp; Başlangıç</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1640"/>
+        <location filename="../settingswidget.ui" line="1650"/>
         <source>Launch Whatly automatically when you log in to your desktop session.</source>
         <translation>Masaüstü oturumunuza giriş yaptığınızda Whatly&apos;yi otomatik olarak başlatın.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1643"/>
+        <location filename="../settingswidget.ui" line="1653"/>
         <source>Start Whatly when I log in</source>
         <translation>Giriş yaptığımda Whatly&apos;yi başlat</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1650"/>
+        <location filename="../settingswidget.ui" line="1660"/>
         <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
         <translation>Sistem pencere kenarlığını Whatly&apos;nin kendi ince başlık çubuğuyla değiştirin. Yeniden başlattıktan sonra uygulanır.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1653"/>
+        <location filename="../settingswidget.ui" line="1663"/>
         <source>Use a custom window frame (requires restart)</source>
         <translation>Özel bir pencere çerçevesi kullan (yeniden başlatma gerektirir)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1660"/>
+        <location filename="../settingswidget.ui" line="1670"/>
         <source>Check GitHub once a day for a newer release and let you know. Whatly never downloads or installs anything on its own.</source>
         <translation>Yeni bir sürüm için GitHub&apos;ı günde bir kez denetler ve sizi bilgilendirir. Whatly kendi başına hiçbir şey indirmez veya kurmaz.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1663"/>
+        <location filename="../settingswidget.ui" line="1673"/>
         <source>Check for updates automatically</source>
         <translation>Güncellemeleri otomatik olarak denetle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1672"/>
+        <location filename="../settingswidget.ui" line="1682"/>
         <source>Interface scale</source>
         <translation>Arayüz ölçeği</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1679"/>
+        <location filename="../settingswidget.ui" line="1689"/>
         <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
         <translation>Tüm pencereyi ve sayfayı ölçekleyin (QT_SCALE_FACTOR). Otomatik, masaüstünü izler. Ayarlanmışsa bir QT_SCALE_FACTOR ortam değişkeni bunu geçersiz kılar. Yeniden başlatmadan sonra uygulanır.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1715"/>
+        <location filename="../settingswidget.ui" line="1725"/>
         <source>Proxy</source>
         <translation>Vekil sunucu</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1722"/>
+        <location filename="../settingswidget.ui" line="1732"/>
         <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
         <translation>Whatly&apos;nin ağa nasıl bağlanacağı. Sistem, işletim sistemini izler; Yok doğrudan bağlanır.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1747"/>
+        <location filename="../settingswidget.ui" line="1757"/>
         <source>Host</source>
         <translation>Ana bilgisayar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1754"/>
+        <location filename="../settingswidget.ui" line="1764"/>
         <source>127.0.0.1</source>
         <translation>127.0.0.1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1761"/>
+        <location filename="../settingswidget.ui" line="1771"/>
         <source>Port</source>
         <translation>Bağlantı noktası</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1775"/>
+        <location filename="../settingswidget.ui" line="1785"/>
         <source>Username</source>
         <translation>Kullanıcı adı</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1782"/>
-        <location filename="../settingswidget.ui" line="1799"/>
+        <location filename="../settingswidget.ui" line="1792"/>
+        <location filename="../settingswidget.ui" line="1809"/>
         <source>Optional</source>
         <translation>İsteğe bağlı</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1789"/>
+        <location filename="../settingswidget.ui" line="1799"/>
         <source>Password</source>
         <translation>Parola</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1812"/>
+        <location filename="../settingswidget.ui" line="1822"/>
         <source>Custom JavaScript addons</source>
         <translation>Özel JavaScript eklentileri</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1818"/>
+        <location filename="../settingswidget.ui" line="1828"/>
         <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
         <translation>WhatsApp Web üzerinde çalıştırmak için .js dosyaları yükleyin. Her eklenti kendi kum havuzunda çalışır, böylece bozuk bir eklenti diğerlerini veya sayfayı çökertemez. Bir eklentiyi kaldırmadan devre dışı bırakmak için işaretini kaldırın. Değişiklikler yeniden başlatmadan sonra uygulanır.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1840"/>
+        <location filename="../settingswidget.ui" line="1850"/>
         <source>Add addon…</source>
         <translation>Eklenti ekle…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1847"/>
-        <location filename="../settingswidget.ui" line="1907"/>
+        <location filename="../settingswidget.ui" line="1857"/>
+        <location filename="../settingswidget.ui" line="1917"/>
         <source>Remove</source>
         <translation>Kaldır</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1872"/>
+        <location filename="../settingswidget.ui" line="1882"/>
         <source>Saved replies</source>
         <translation>Kayıtlı yanıtlar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1878"/>
+        <location filename="../settingswidget.ui" line="1888"/>
         <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
         <translation>Sık gönderdiğiniz kısa metinler. Komut paletinden (Ctrl+K) birini ekleyin — &quot;Ekle&quot; yazıp seçin; metin mesaj kutusuna yazılır.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1900"/>
+        <location filename="../settingswidget.ui" line="1910"/>
         <source>Add reply…</source>
         <translation>Yanıt ekle…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1932"/>
+        <location filename="../settingswidget.ui" line="1942"/>
         <source>Keyboard shortcuts</source>
         <translation>Klavye kısayolları</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1938"/>
+        <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Bir alana tıklayın ve tuş bileşimine basın. Kısayolu kaldırmak için alanı temizleyin. Değişiklikler yeniden başlatmadan sonra uygulanır.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="762"/>
+        <location filename="../settingswidget.cpp" line="768"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Bu, kalıcı verileri (kalıcı çerezler ve önbellek dahil) silecek ve uygulamayı kapatacaktır.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="767"/>
+        <location filename="../settingswidget.cpp" line="773"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>Çerezler silinsin ve uygulama kapatılsın mı?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="869"/>
+        <location filename="../settingswidget.cpp" line="875"/>
         <source>| Error</source>
         <translation>| Hata</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="870"/>
+        <location filename="../settingswidget.cpp" line="876"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>Boş bir User-Agent dizesi ayarlanamaz.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="921"/>
+        <location filename="../settingswidget.cpp" line="927"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>Tema elle değiştirildiği için otomatik tema değişimi devre dışı bırakıldı.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="960"/>
+        <location filename="../settingswidget.cpp" line="966"/>
         <source>App lock is not configured.</source>
         <translation>Uygulama kilidi yapılandırılmadı.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="964"/>
+        <location filename="../settingswidget.cpp" line="970"/>
         <source>Do you want to setup App lock now?</source>
         <translation>Uygulama kilidini şimdi ayarlamak ister misiniz?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1006"/>
+        <location filename="../settingswidget.cpp" line="1012"/>
         <source>Feature permissions</source>
         <translation>Özellik izinleri</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1079"/>
+        <location filename="../settingswidget.cpp" line="1089"/>
         <source>Choose a chat wallpaper</source>
         <translation>Bir sohbet duvar kâğıdı seçin</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1081"/>
+        <location filename="../settingswidget.cpp" line="1091"/>
         <source>Images (%1)</source>
         <translation>Görseller (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1089"/>
+        <location filename="../settingswidget.cpp" line="1099"/>
         <source>Could not use that image: %1</source>
         <translation>Bu görsel kullanılamadı: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1104"/>
+        <location filename="../settingswidget.cpp" line="1114"/>
         <source>Choose a CSS file</source>
         <translation>Bir CSS dosyası seçin</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1106"/>
+        <location filename="../settingswidget.cpp" line="1116"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Stil sayfaları (*.css);;Tüm dosyalar (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1113"/>
+        <location filename="../settingswidget.cpp" line="1123"/>
         <source>Could not read that file: %1</source>
         <translation>Bu dosya okunamadı: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1178"/>
+        <location filename="../settingswidget.cpp" line="1188"/>
         <source>Disk</source>
         <translation>Disk</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1179"/>
+        <location filename="../settingswidget.cpp" line="1189"/>
         <source>Memory</source>
         <translation>Bellek</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1282"/>
+        <location filename="../settingswidget.cpp" line="1292"/>
         <source>System</source>
         <translation>Sistem</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1283"/>
+        <location filename="../settingswidget.cpp" line="1293"/>
         <source>None (direct)</source>
         <translation>Yok (doğrudan)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1284"/>
+        <location filename="../settingswidget.cpp" line="1294"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1285"/>
+        <location filename="../settingswidget.cpp" line="1295"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1311"/>
+        <location filename="../settingswidget.cpp" line="1321"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Masaüstü portalı (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1313"/>
+        <location filename="../settingswidget.cpp" line="1323"/>
         <source>System service (libnotify)</source>
         <translation>Sistem hizmeti (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1410"/>
-        <location filename="../settingswidget.cpp" line="1414"/>
+        <location filename="../settingswidget.cpp" line="1420"/>
+        <location filename="../settingswidget.cpp" line="1424"/>
         <source>Add reply</source>
         <translation>Yanıt ekle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1410"/>
+        <location filename="../settingswidget.cpp" line="1420"/>
         <source>Name</source>
         <translation>Ad</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1414"/>
+        <location filename="../settingswidget.cpp" line="1424"/>
         <source>Text to insert</source>
         <translation>Eklenecek metin</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1431"/>
+        <location filename="../settingswidget.cpp" line="1441"/>
         <source>Choose a JavaScript file</source>
         <translation>Bir JavaScript dosyası seçin</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1432"/>
+        <location filename="../settingswidget.cpp" line="1442"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Tüm dosyalar (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1437"/>
+        <location filename="../settingswidget.cpp" line="1447"/>
         <source>Could not add addon</source>
         <translation>Eklenti eklenemedi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1450"/>
+        <location filename="../settingswidget.cpp" line="1460"/>
         <source>Remove addon</source>
         <translation>Eklentiyi kaldır</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1451"/>
+        <location filename="../settingswidget.cpp" line="1461"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>&quot;%1&quot; eklentisi kaldırılsın mı? Bu, dosyasını siler.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1554"/>
+        <location filename="../settingswidget.cpp" line="1564"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Yazım denetleyici (yüklü sözlük yok)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1180"/>
-        <location filename="../settingswidget.cpp" line="1606"/>
+        <location filename="../settingswidget.cpp" line="1190"/>
+        <location filename="../settingswidget.cpp" line="1615"/>
         <source>None</source>
         <translation>Yok</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="396"/>
+        <location filename="../settingswidget.cpp" line="401"/>
         <source>Basics</source>
         <translation>Temel</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="403"/>
+        <location filename="../settingswidget.cpp" line="408"/>
         <source>Appearance</source>
         <translation>Görünüm</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="418"/>
+        <location filename="../settingswidget.cpp" line="423"/>
         <source>Notifications</source>
         <translation>Bildirimler</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="422"/>
+        <location filename="../settingswidget.cpp" line="427"/>
         <source>Chatting</source>
         <translation>Sohbet</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="431"/>
+        <location filename="../settingswidget.cpp" line="436"/>
         <source>Privacy &amp; Lock</source>
         <translation>Gizlilik ve kilit</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="437"/>
+        <location filename="../settingswidget.cpp" line="442"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>Pencere ve yakınlaştırma</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="445"/>
+        <location filename="../settingswidget.cpp" line="451"/>
         <source>Advanced</source>
         <translation>Gelişmiş</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="679"/>
+        <location filename="../settingswidget.cpp" line="685"/>
         <source>Shortcut in use</source>
         <translation>Kısayol kullanımda</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="680"/>
+        <location filename="../settingswidget.cpp" line="686"/>
         <source>That shortcut is already used by another action.</source>
         <translation>Bu kısayol zaten başka bir işlem tarafından kullanılıyor.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="692"/>
+        <location filename="../settingswidget.cpp" line="698"/>
         <source>Clear cache</source>
         <translation>Önbelleği temizle</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="693"/>
+        <location filename="../settingswidget.cpp" line="699"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Önbellek şimdi temizlensin mi? Gerektiğinde yeniden indirilecektir.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="703"/>
         <location filename="../settingswidget.cpp" line="709"/>
-        <location filename="../settingswidget.cpp" line="718"/>
-        <location filename="../settingswidget.cpp" line="721"/>
+        <location filename="../settingswidget.cpp" line="715"/>
+        <location filename="../settingswidget.cpp" line="724"/>
+        <location filename="../settingswidget.cpp" line="727"/>
         <source>Export profile</source>
         <translation>Profili dışa aktar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="704"/>
+        <location filename="../settingswidget.cpp" line="710"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>Arşiv, oturum açmış WhatsApp oturumunuzu içerecek. Gizli tutun. Devam edilsin mi?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="711"/>
-        <location filename="../settingswidget.cpp" line="726"/>
+        <location filename="../settingswidget.cpp" line="717"/>
+        <location filename="../settingswidget.cpp" line="732"/>
         <source>Archives (*.tar.gz)</source>
         <translation>Arşivler (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="719"/>
+        <location filename="../settingswidget.cpp" line="725"/>
         <source>Profile exported.</source>
         <translation>Profil dışa aktarıldı.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="726"/>
-        <location filename="../settingswidget.cpp" line="730"/>
-        <location filename="../settingswidget.cpp" line="738"/>
-        <location filename="../settingswidget.cpp" line="741"/>
+        <location filename="../settingswidget.cpp" line="732"/>
+        <location filename="../settingswidget.cpp" line="736"/>
+        <location filename="../settingswidget.cpp" line="744"/>
+        <location filename="../settingswidget.cpp" line="747"/>
         <source>Import profile</source>
         <translation>Profili içe aktar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="731"/>
+        <location filename="../settingswidget.cpp" line="737"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>Bu, mevcut hesabın verilerinin üzerine arşivi yazar, ardından Whatly&apos;nin yeniden başlatılması gerekir. Devam edilsin mi?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="739"/>
+        <location filename="../settingswidget.cpp" line="745"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>Profil içe aktarıldı. Lütfen Whatly&apos;yi yeniden başlatın.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1610"/>
+        <location filename="../settingswidget.cpp" line="1619"/>
         <source>%1 languages</source>
         <translation>%1 dil</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1676"/>
+        <location filename="../settingswidget.cpp" line="1685"/>
         <source>WhatsApp default</source>
         <translation>WhatsApp varsayılanı</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1715"/>
+        <location filename="../settingswidget.cpp" line="1724"/>
         <source>System default</source>
         <translation>Sistem varsayılanı</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1750"/>
+        <location filename="../settingswidget.cpp" line="1759"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>Arayüz dili %1 yeniden başlatıldığında değişecek.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1764"/>
+        <location filename="../settingswidget.cpp" line="1773"/>
         <source>App Lock Setup</source>
         <translation>Uygulama Kilidi Kurulumu</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1765"/>
+        <location filename="../settingswidget.cpp" line="1774"/>
         <source>Please setup the App lock password first.</source>
         <translation>Lütfen önce uygulama kilidi parolasını ayarlayın.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1874"/>
-        <location filename="../settingswidget.cpp" line="1885"/>
+        <location filename="../settingswidget.cpp" line="1883"/>
+        <location filename="../settingswidget.cpp" line="1894"/>
         <source>Select download directory</source>
         <translation>İndirme klasörünü seçin</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1925"/>
+        <location filename="../settingswidget.cpp" line="1934"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -2540,7 +2575,7 @@ Bu, mevcut oturumunuzu kapatacaktır.
 Uygulamanın tamamen yeniden başlatılması da gerekebilir!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1931"/>
+        <location filename="../settingswidget.cpp" line="1940"/>
         <source>Do you want to proceed?</source>
         <translation>Devam etmek istiyor musunuz?</translation>
     </message>
