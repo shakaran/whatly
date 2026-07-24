@@ -783,6 +783,14 @@ Otworzyć ustawienia teraz?</translation>
         <source>Only phone-number recipients are supported so far (got: %1).</source>
         <translation>Na razie obsługiwani są tylko odbiorcy z numerem telefonu (otrzymano: %1).</translation>
     </message>
+    <message>
+        <source>Could not read the file to send: %1</source>
+        <translation>Nie można odczytać pliku do wysłania: %1</translation>
+    </message>
+    <message>
+        <source>The file is too large to send over the web backend.</source>
+        <translation>Plik jest za duży, aby wysłać go przez backend web.</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1146,6 +1154,14 @@ Najpierw ustaw hasło w ustawieniach.</translation>
     <message>
         <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
         <translation>Jak --send dostarcza: 'web' (działająca sesja WhatsApp Web) lub 'cloud' (Meta WhatsApp Business Cloud API)</translation>
+    </message>
+    <message>
+        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
+        <translation>Dołącza plik do --send (--message, jeśli podano, staje się podpisem)</translation>
+    </message>
+    <message>
+        <source>Caption for the --file attachment (alias of --message)</source>
+        <translation>Podpis załącznika --file (alias --message)</translation>
     </message>
 </context>
 <context>

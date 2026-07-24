@@ -773,6 +773,7 @@ private slots:
     cmd.backend = Messaging::Backend::Cloud;
     cmd.to = QStringLiteral("+34 600 123 456");
     cmd.message = QStringLiteral("Hola\nmundo — ¿qué tal? 😀 a=b c=d");
+    cmd.file = QStringLiteral("/home/u/My Photos/año 2026.jpg");
     const QString payload = Messaging::encodeSendCommand(cmd);
 
     Messaging::SendCommand got;
@@ -780,6 +781,7 @@ private slots:
     QCOMPARE(got.backend, Messaging::Backend::Cloud);
     QCOMPARE(got.to, cmd.to);
     QCOMPARE(got.message, cmd.message);
+    QCOMPARE(got.file, cmd.file);
 
     // A plain CLI argv string is not a send command.
     QVERIFY(!Messaging::decodeSendCommand(QStringLiteral("-s --open-settings"),

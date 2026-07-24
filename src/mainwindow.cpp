@@ -13,6 +13,11 @@
 #include <QStyleHints>
 #include <QUrlQuery>
 #include <QDateTime>
+#include <QFile>
+#include <QFileInfo>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QMimeDatabase>
 #ifdef Q_OS_LINUX
 #include <QDBusArgument>
 #include <QDBusConnection>
@@ -962,6 +967,10 @@ void MainWindow::commandSend(const Messaging::SendCommand &cmd) {
 
   const Recipient r = parseRecipient(cmd.to);
   if (r.kind == RecipientKind::PhoneNumber) {
+    if (!cmd.file.isEmpty()) {
+      sendAttachmentViaWeb(r.value, cmd.file, cmd.message);
+      return;
+    }
     // Reuse the scheduled-message automation: an entry due now is sent
     // immediately (add() calls checkDue()), through WhatsApp Web, with the same
     // one-in-flight queue and result reporting.
@@ -976,6 +985,55 @@ void MainWindow::commandSend(const Messaging::SendCommand &cmd) {
       QApplication::applicationDisplayName(),
       tr("Only phone-number recipients are supported so far (got: %1).")
           .arg(cmd.to));
+}
+
+void MainWindow::sendAttachmentViaWeb(const QString &number,
+                                      const QString &path,
+                                      const QString &caption) {
+  if (!m_webEngine || !m_webEngine->page()) {
+    showNotification(QApplication::applicationDisplayName(),
+                     tr("No WhatsApp window is open"));
+    return;
+  }
+  QFile f(path);
+  if (!f.open(QIODevice::ReadOnly)) {
+    showNotification(QApplication::applicationDisplayName(),
+                     tr("Could not read the file to send: %1").arg(path));
+    return;
+  }
+  const QByteArray bytes = f.readAll();
+  f.close();
+  // Mirror the CLI cap: the bytes ride into the page (base64 in sessionStorage,
+  // which survives the navigation that opens the chat), so keep it small.
+  constexpr qint64 kMaxWebAttachmentBytes = 3 * 1024 * 1024;
+  if (bytes.size() > kMaxWebAttachmentBytes) {
+    showNotification(QApplication::applicationDisplayName(),
+                     tr("The file is too large to send over the web backend."));
+    return;
+  }
+
+  QJsonObject job;
+  job["number"] = number;
+  job["name"] = QFileInfo(path).fileName();
+  job["mime"] = QMimeDatabase().mimeTypeForFile(path).name();
+  job["b64"] = QString::fromLatin1(bytes.toBase64());
+  job["caption"] = caption;
+  const QString jobJson =
+      QString::fromUtf8(QJsonDocument(job).toJson(QJsonDocument::Compact));
+
+  // Store the job (a JS object literal — JSON is valid JS), then open the chat
+  // via the deep link. The reload keeps sessionStorage, so the attachment
+  // sender script injected on the next load finds the job and completes it.
+  // `number` is digits-only (parseRecipient normalises it), so a plain quoted
+  // literal is safe.
+  const QString js =
+      QStringLiteral("(function(){try{var job=%1;"
+                     "sessionStorage.setItem('whatlyAttachJob',"
+                     "JSON.stringify(job));"
+                     "window.location.href='https://web.whatsapp.com/send?phone='"
+                     "+'%2';}catch(e){console.error('whatly attach: '+e);}})();")
+          .arg(jobJson, number);
+  m_webEngine->page()->runJavaScript(js);
 }
 
 void MainWindow::toggleTheme() {

@@ -783,6 +783,14 @@ Configure primero la contraseña en los ajustes.
         <source>Only phone-number recipients are supported so far (got: %1).</source>
         <translation>Por ahora solo se admiten destinatarios con número de teléfono (recibido: %1).</translation>
     </message>
+    <message>
+        <source>Could not read the file to send: %1</source>
+        <translation>No se pudo leer el fichero a enviar: %1</translation>
+    </message>
+    <message>
+        <source>The file is too large to send over the web backend.</source>
+        <translation>El fichero es demasiado grande para enviarse por el backend web.</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1146,6 +1154,14 @@ Configure primero la contraseña en los ajustes.</translation>
     <message>
         <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
         <translation>Cómo entrega --send: 'web' (la sesión de WhatsApp Web en ejecución) o 'cloud' (Meta WhatsApp Business Cloud API)</translation>
+    </message>
+    <message>
+        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
+        <translation>Adjunta un fichero para --send (su --message, si lo hay, será el pie de foto)</translation>
+    </message>
+    <message>
+        <source>Caption for the --file attachment (alias of --message)</source>
+        <translation>Pie de foto para el adjunto --file (alias de --message)</translation>
     </message>
 </context>
 <context>

@@ -783,6 +783,14 @@ Open Settings now?</source>
         <source>Only phone-number recipients are supported so far (got: %1).</source>
         <translation>현재는 전화번호 수신자만 지원됩니다 (받음: %1).</translation>
     </message>
+    <message>
+        <source>Could not read the file to send: %1</source>
+        <translation>보낼 파일을 읽을 수 없습니다: %1</translation>
+    </message>
+    <message>
+        <source>The file is too large to send over the web backend.</source>
+        <translation>파일이 너무 커서 web 백엔드로 보낼 수 없습니다.</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1146,6 +1154,14 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
         <translation>--send 전송 방식: 'web'(실행 중인 WhatsApp Web 세션) 또는 'cloud'(Meta WhatsApp Business Cloud API)</translation>
+    </message>
+    <message>
+        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
+        <translation>--send에 파일을 첨부합니다 (--message가 있으면 캡션이 됩니다)</translation>
+    </message>
+    <message>
+        <source>Caption for the --file attachment (alias of --message)</source>
+        <translation>--file 첨부의 캡션 (--message의 별칭)</translation>
     </message>
 </context>
 <context>

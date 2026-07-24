@@ -64,7 +64,9 @@ QString backendName(Backend backend);
 struct SendCommand {
   Backend backend = Backend::Web;
   QString to;      // raw recipient, exactly as given on the command line
-  QString message; // the text to send
+  QString message; // the text to send (the caption, when a file is attached)
+  QString file;    // absolute path to an attachment, or empty for a text-only
+                   // message; resolved by the CLI before it is sent over IPC
 };
 
 // Encode/decode a SendCommand as a single IPC payload. A tagged, JSON-bodied

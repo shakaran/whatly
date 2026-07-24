@@ -783,6 +783,14 @@ Ayarlar şimdi açılsın mı?</translation>
         <source>Only phone-number recipients are supported so far (got: %1).</source>
         <translation>Şimdilik yalnızca telefon numarası olan alıcılar destekleniyor (alınan: %1).</translation>
     </message>
+    <message>
+        <source>Could not read the file to send: %1</source>
+        <translation>Gönderilecek dosya okunamadı: %1</translation>
+    </message>
+    <message>
+        <source>The file is too large to send over the web backend.</source>
+        <translation>Dosya, web arka ucu üzerinden gönderilemeyecek kadar büyük.</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1146,6 +1154,14 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
         <translation>--send nasıl iletir: 'web' (çalışan WhatsApp Web oturumu) veya 'cloud' (Meta WhatsApp Business Cloud API)</translation>
+    </message>
+    <message>
+        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
+        <translation>--send için bir dosya ekler (varsa --message başlık olur)</translation>
+    </message>
+    <message>
+        <source>Caption for the --file attachment (alias of --message)</source>
+        <translation>--file eki için başlık (--message ile eş anlamlı)</translation>
     </message>
 </context>
 <context>

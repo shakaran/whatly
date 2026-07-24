@@ -585,6 +585,15 @@ int main(int argc, char *argv[]) {
   QCommandLineOption messageOption(
       QStringList() << "message",
       QObject::tr("Message text for --send"), QStringLiteral("text"));
+  QCommandLineOption fileOption(
+      QStringList() << "file",
+      QObject::tr("Attach a file for --send (its --message, if any, becomes the "
+                  "caption)"),
+      QStringLiteral("path"));
+  QCommandLineOption captionOption(
+      QStringList() << "caption",
+      QObject::tr("Caption for the --file attachment (alias of --message)"),
+      QStringLiteral("text"));
   QCommandLineOption backendOption(
       QStringList() << "backend",
       QObject::tr("How --send delivers: 'web' (the running WhatsApp Web "
@@ -597,6 +606,8 @@ int main(int argc, char *argv[]) {
   parser.addOption(sendOption);
   parser.addOption(toOption);
   parser.addOption(messageOption);
+  parser.addOption(fileOption);
+  parser.addOption(captionOption);
   parser.addOption(backendOption);
 
   secondaryInstanceCLIOptions << showAppWindowOption << openSettingsOption
@@ -636,9 +647,35 @@ int main(int argc, char *argv[]) {
       err << "whatly --send: --to <recipient> is required\n";
       return 2;
     }
-    if (!parser.isSet(messageOption)) {
-      err << "whatly --send: --message <text> is required\n";
+    if (!parser.isSet(messageOption) && !parser.isSet(fileOption)) {
+      err << "whatly --send: --message <text> or --file <path> is required\n";
       return 2;
+    }
+    // Resolve and validate the attachment here (in the caller's working
+    // directory), so the running instance receives an absolute, checked path.
+    QString absFile;
+    if (parser.isSet(fileOption)) {
+      const QFileInfo fi(parser.value(fileOption));
+      if (!fi.exists() || !fi.isFile()) {
+        err << "whatly --send: file not found: " << parser.value(fileOption)
+            << '\n';
+        return 2;
+      }
+      if (!fi.isReadable()) {
+        err << "whatly --send: file is not readable: " << fi.absoluteFilePath()
+            << '\n';
+        return 2;
+      }
+      // The web backend carries the bytes into the page, so cap the size; the
+      // Cloud API (Phase 4) will lift this.
+      constexpr qint64 kMaxWebAttachmentBytes = 3 * 1024 * 1024;
+      if (backend == Messaging::Backend::Web &&
+          fi.size() > kMaxWebAttachmentBytes) {
+        err << "whatly --send: file is too large for the web backend ("
+            << (fi.size() / 1024) << " KiB; max 3072 KiB)\n";
+        return 2;
+      }
+      absFile = fi.absoluteFilePath();
     }
     if (!instance.isSecondary()) {
       err << "whatly --send: no running Whatly for this profile"
@@ -649,7 +686,10 @@ int main(int argc, char *argv[]) {
     Messaging::SendCommand cmd;
     cmd.backend = backend;
     cmd.to = parser.value(toOption);
-    cmd.message = parser.value(messageOption);
+    // --caption is an alias of --message; either becomes the text/caption.
+    cmd.message = parser.isSet(captionOption) ? parser.value(captionOption)
+                                              : parser.value(messageOption);
+    cmd.file = absFile;
     if (!instance.sendMessage(Messaging::encodeSendCommand(cmd).toUtf8())) {
       err << "whatly --send: could not reach the running instance\n";
       return 1;

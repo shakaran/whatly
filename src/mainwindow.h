@@ -156,6 +156,12 @@ private:
   void ensureLockVisible();
   void checkLoadedCorrectly();
   void loadingQuirk(const QString &test);
+  // Send a local file as an attachment to `number` through WhatsApp Web (used
+  // by commandSend for `--send --file`). Best-effort page automation.
+  void sendAttachmentViaWeb(const QString &number, const QString &path,
+                            const QString &caption);
+  // The page-side script that completes an attachment send (injected on load).
+  static QString attachmentSenderScriptSource();
   void checkConnectionHealth();
   void setNotificationPresenter(QWebEngineProfile *profile);
 #ifdef Q_OS_LINUX

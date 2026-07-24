@@ -783,6 +783,14 @@ Open Settings now?</source>
         <source>Only phone-number recipients are supported so far (got: %1).</source>
         <translation>फ़िलहाल केवल फ़ोन नंबर वाले प्राप्तकर्ता समर्थित हैं (मिला: %1)।</translation>
     </message>
+    <message>
+        <source>Could not read the file to send: %1</source>
+        <translation>भेजी जाने वाली फ़ाइल पढ़ी नहीं जा सकी: %1</translation>
+    </message>
+    <message>
+        <source>The file is too large to send over the web backend.</source>
+        <translation>फ़ाइल web बैकएंड से भेजने के लिए बहुत बड़ी है।</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1146,6 +1154,14 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
         <translation>--send कैसे भेजता है: 'web' (चालू WhatsApp Web सत्र) या 'cloud' (Meta WhatsApp Business Cloud API)</translation>
+    </message>
+    <message>
+        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
+        <translation>--send के लिए फ़ाइल संलग्न करें (--message, यदि हो, कैप्शन बन जाता है)</translation>
+    </message>
+    <message>
+        <source>Caption for the --file attachment (alias of --message)</source>
+        <translation>--file अनुलग्नक के लिए कैप्शन (--message का उपनाम)</translation>
     </message>
 </context>
 <context>

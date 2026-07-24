@@ -192,6 +192,130 @@ void MainWindow::installPageBridge(QWebEnginePage *page) {
   for (const auto &script : staleSender)
     scripts.remove(script);
   scripts.insert(sender);
+
+  // The attachment sender: like the scheduled sender, it looks for a job left
+  // in sessionStorage (which survives the navigation that opens the chat),
+  // feeds the file into WhatsApp Web's attach input, sets the caption and
+  // clicks Send. Best-effort and defensive — if WhatsApp Web's DOM changes it
+  // silently stops rather than breaking the page.
+  QWebEngineScript attach;
+  attach.setName(QStringLiteral("whatly-attachment-sender"));
+  attach.setSourceCode(attachmentSenderScriptSource());
+  attach.setInjectionPoint(QWebEngineScript::DocumentReady);
+  attach.setWorldId(QWebEngineScript::MainWorld);
+  attach.setRunsOnSubFrames(false);
+  const auto staleAttach = scripts.find(attach.name());
+  for (const auto &script : staleAttach)
+    scripts.remove(script);
+  scripts.insert(attach);
+}
+
+// The page-side automation for `--send --file`. Injected on every load; a no-op
+// until a job appears in sessionStorage under 'whatlyAttachJob'. Rebuilds a
+// File from the base64 bytes, drops it on WhatsApp Web's attach <input>, types
+// the caption and clicks Send. Not verified against the live site yet — the
+// selectors are best-effort and may need tuning once tested with a real
+// session.
+QString MainWindow::attachmentSenderScriptSource() {
+  return QString::fromLatin1(R"JS(
+(function () {
+  'use strict';
+  if (window.__whatlyAttachReady) return;
+  window.__whatlyAttachReady = true;
+  var KEY = 'whatlyAttachJob';
+
+  function composer() {
+    var b = document.querySelectorAll(
+      'footer div[contenteditable="true"][role="textbox"],'
+      + 'div[contenteditable="true"][data-tab]');
+    return b.length ? b[b.length - 1] : null;
+  }
+  function captionBox() {
+    var b = document.querySelectorAll(
+      'div[contenteditable="true"][role="textbox"],'
+      + 'div[contenteditable="true"][data-tab]');
+    return b.length ? b[b.length - 1] : null;
+  }
+  function sendButton() {
+    var icon = document.querySelector('span[data-icon="send"]')
+      || document.querySelector('button[aria-label="Send"],button[aria-label="Enviar"]');
+    if (!icon) return null;
+    return icon.closest('button,[role="button"]') || icon;
+  }
+  function fileInput(isMedia) {
+    var inputs = document.querySelectorAll('input[type="file"]');
+    for (var i = 0; i < inputs.length; i++) {
+      var acc = inputs[i].getAttribute('accept') || '';
+      if (isMedia && /image|video/i.test(acc)) return inputs[i];
+    }
+    // Fall back to a document-style input (accepts anything) or the first one.
+    for (var j = 0; j < inputs.length; j++) {
+      var a = inputs[j].getAttribute('accept') || '';
+      if (!isMedia && (a === '' || a.indexOf('*') >= 0)) return inputs[j];
+    }
+    return inputs.length ? inputs[0] : null;
+  }
+  function toFile(b64, name, mime) {
+    var bin = atob(b64);
+    var arr = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+    return new File([arr], name || 'file', { type: mime || 'application/octet-stream' });
+  }
+
+  function process() {
+    var raw;
+    try { raw = sessionStorage.getItem(KEY); } catch (e) { return; }
+    if (!raw) return;
+    var job;
+    try { job = JSON.parse(raw); } catch (e) {
+      try { sessionStorage.removeItem(KEY); } catch (e2) {}
+      return;
+    }
+    var deadline = job.deadline || (Date.now() + 60000);
+    var attached = false, done = false;
+    var finish = function () {
+      if (done) return;
+      done = true;
+      clearInterval(timer);
+      try { sessionStorage.removeItem(KEY); } catch (e) {}
+    };
+    var timer = setInterval(function () {
+      try {
+        if (Date.now() > deadline) { finish(); return; }
+        if (!composer()) return; // wait until the chat is open
+        if (!attached) {
+          var isMedia = /^image\/|^video\//.test(job.mime || '');
+          var input = fileInput(isMedia);
+          if (!input) return;
+          var dt = new DataTransfer();
+          dt.items.add(toFile(job.b64, job.name, job.mime));
+          input.files = dt.files;
+          input.dispatchEvent(new Event('change', { bubbles: true }));
+          attached = true;
+          return; // let the preview/caption dialog render
+        }
+        if (job.caption) {
+          var cap = captionBox();
+          if (cap && (!cap.textContent || cap.textContent.trim() === '')) {
+            cap.focus();
+            try { document.execCommand('insertText', false, job.caption); } catch (e) {}
+          }
+        }
+        var btn = sendButton();
+        if (btn) { btn.click(); finish(); }
+      } catch (e) { /* keep trying until the deadline */ }
+    }, 500);
+  }
+
+  // The job may be set just before or just after this script loads.
+  process();
+  var boot = setInterval(function () {
+    try { if (sessionStorage.getItem(KEY)) { clearInterval(boot); process(); } }
+    catch (e) {}
+  }, 500);
+  setTimeout(function () { try { clearInterval(boot); } catch (e) {} }, 15000);
+})();
+)JS");
 }
 
 void MainWindow::setNotificationPresenter(QWebEngineProfile *profile) {

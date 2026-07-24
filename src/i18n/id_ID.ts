@@ -783,6 +783,14 @@ Buka pengaturan sekarang?</translation>
         <source>Only phone-number recipients are supported so far (got: %1).</source>
         <translation>Untuk saat ini hanya penerima dengan nomor telepon yang didukung (diterima: %1).</translation>
     </message>
+    <message>
+        <source>Could not read the file to send: %1</source>
+        <translation>Tidak dapat membaca berkas yang akan dikirim: %1</translation>
+    </message>
+    <message>
+        <source>The file is too large to send over the web backend.</source>
+        <translation>Berkas terlalu besar untuk dikirim melalui backend web.</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1146,6 +1154,14 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
     <message>
         <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
         <translation>Cara --send mengirim: 'web' (sesi WhatsApp Web yang berjalan) atau 'cloud' (Meta WhatsApp Business Cloud API)</translation>
+    </message>
+    <message>
+        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
+        <translation>Lampirkan berkas untuk --send (--message, jika ada, menjadi keterangan)</translation>
+    </message>
+    <message>
+        <source>Caption for the --file attachment (alias of --message)</source>
+        <translation>Keterangan untuk lampiran --file (alias dari --message)</translation>
     </message>
 </context>
 <context>

@@ -783,6 +783,14 @@ Open Settings now?</source>
         <source>Only phone-number recipients are supported so far (got: %1).</source>
         <translation>目前仅支持电话号码收件人（收到：%1）。</translation>
     </message>
+    <message>
+        <source>Could not read the file to send: %1</source>
+        <translation>无法读取要发送的文件：%1</translation>
+    </message>
+    <message>
+        <source>The file is too large to send over the web backend.</source>
+        <translation>文件太大，无法通过 web 后端发送。</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1146,6 +1154,14 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
         <translation>--send 的发送方式：'web'（正在运行的 WhatsApp Web 会话）或 'cloud'（Meta WhatsApp Business Cloud API）</translation>
+    </message>
+    <message>
+        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
+        <translation>为 --send 附加一个文件（若有 --message，则作为标题）</translation>
+    </message>
+    <message>
+        <source>Caption for the --file attachment (alias of --message)</source>
+        <translation>--file 附件的标题（--message 的别名）</translation>
     </message>
 </context>
 <context>

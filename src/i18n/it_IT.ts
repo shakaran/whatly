@@ -789,6 +789,14 @@ WebEngine non è inizializzato.</translation>
         <source>Only phone-number recipients are supported so far (got: %1).</source>
         <translation>Per ora sono supportati solo i destinatari con numero di telefono (ricevuto: %1).</translation>
     </message>
+    <message>
+        <source>Could not read the file to send: %1</source>
+        <translation>Impossibile leggere il file da inviare: %1</translation>
+    </message>
+    <message>
+        <source>The file is too large to send over the web backend.</source>
+        <translation>Il file è troppo grande per essere inviato tramite il backend web.</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1152,6 +1160,14 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
         <translation>Come --send consegna: 'web' (la sessione di WhatsApp Web in esecuzione) o 'cloud' (Meta WhatsApp Business Cloud API)</translation>
+    </message>
+    <message>
+        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
+        <translation>Allega un file a --send (il --message, se presente, diventa la didascalia)</translation>
+    </message>
+    <message>
+        <source>Caption for the --file attachment (alias of --message)</source>
+        <translation>Didascalia per l'allegato --file (alias di --message)</translation>
     </message>
 </context>
 <context>

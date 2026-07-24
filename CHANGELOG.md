@@ -3,11 +3,13 @@
 **Send messages from the command line (work in progress).** `whatly --send
 --to <number> --message "…"` hands a message to the already-running instance of
 that profile and it goes out through the WhatsApp Web session — scriptable, per
-profile. `--backend web` (default) uses the live session; `--backend cloud`
-(Meta WhatsApp Business Cloud API) and attachments, groups/contact-name
-recipients, reusable message templates and a local API are being added on top.
-Covered by unit tests (`TstMessaging`). Note: automating WhatsApp Web is,
-strictly, against WhatsApp's terms — use it for your own account.
+profile. `--file <path>` attaches an image or file (with `--message`/`--caption`
+as the caption), up to 3 MB over the web backend. `--backend web` (default) uses
+the live session; `--backend cloud` (Meta WhatsApp Business Cloud API),
+groups/contact-name recipients, reusable message templates and a local API are
+being added on top. Covered by unit tests (`TstMessaging`). Note: automating
+WhatsApp Web is, strictly, against WhatsApp's terms — use it for your own
+account.
 
 ## 6.5.0 (2026-07-24)
 

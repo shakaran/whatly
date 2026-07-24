@@ -783,6 +783,14 @@ Open Settings now?</source>
         <source>Only phone-number recipients are supported so far (got: %1).</source>
         <translation>現在は電話番号の宛先のみ対応しています（受信: %1）。</translation>
     </message>
+    <message>
+        <source>Could not read the file to send: %1</source>
+        <translation>送信するファイルを読み取れませんでした: %1</translation>
+    </message>
+    <message>
+        <source>The file is too large to send over the web backend.</source>
+        <translation>このファイルは web バックエンドで送信するには大きすぎます。</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1146,6 +1154,14 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
         <translation>--send の送信方法: 'web'（実行中の WhatsApp Web セッション）または 'cloud'（Meta WhatsApp Business Cloud API）</translation>
+    </message>
+    <message>
+        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
+        <translation>--send にファイルを添付します（--message があればキャプションになります）</translation>
+    </message>
+    <message>
+        <source>Caption for the --file attachment (alias of --message)</source>
+        <translation>--file 添付のキャプション（--message の別名）</translation>
     </message>
 </context>
 <context>

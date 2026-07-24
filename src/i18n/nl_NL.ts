@@ -783,6 +783,14 @@ Instellingen nu openen?</translation>
         <source>Only phone-number recipients are supported so far (got: %1).</source>
         <translation>Voorlopig worden alleen ontvangers met een telefoonnummer ondersteund (ontvangen: %1).</translation>
     </message>
+    <message>
+        <source>Could not read the file to send: %1</source>
+        <translation>Kan het te verzenden bestand niet lezen: %1</translation>
+    </message>
+    <message>
+        <source>The file is too large to send over the web backend.</source>
+        <translation>Het bestand is te groot om via de web-backend te versturen.</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1146,6 +1154,14 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     <message>
         <source>How --send delivers: 'web' (the running WhatsApp Web session) or 'cloud' (Meta WhatsApp Business Cloud API)</source>
         <translation>Hoe --send verzendt: 'web' (de actieve WhatsApp Web-sessie) of 'cloud' (Meta WhatsApp Business Cloud API)</translation>
+    </message>
+    <message>
+        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
+        <translation>Voegt een bestand toe aan --send (de --message, indien aanwezig, wordt het bijschrift)</translation>
+    </message>
+    <message>
+        <source>Caption for the --file attachment (alias of --message)</source>
+        <translation>Bijschrift voor de --file-bijlage (alias van --message)</translation>
     </message>
 </context>
 <context>

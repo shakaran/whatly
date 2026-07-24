@@ -134,6 +134,7 @@ QString encodeSendCommand(const SendCommand &cmd) {
   o["backend"] = backendName(cmd.backend);
   o["to"] = cmd.to;
   o["message"] = cmd.message;
+  o["file"] = cmd.file;
   return kSendTag +
          QString::fromUtf8(QJsonDocument(o).toJson(QJsonDocument::Compact));
 }
@@ -150,6 +151,7 @@ bool decodeSendCommand(const QString &payload, SendCommand *out) {
     out->backend = parseBackend(o.value("backend").toString());
     out->to = o.value("to").toString();
     out->message = o.value("message").toString();
+    out->file = o.value("file").toString();
   }
   return true;
 }
