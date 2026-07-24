@@ -45,6 +45,7 @@
 #include "hdmedia.h"
 #include "cannedresponses.h"
 #include "webtweaks.h"
+#include "messaging.h"
 #include "linkeddevicename.h"
 #include "performance.h"
 #include "networkproxy.h"
@@ -681,6 +682,87 @@ private slots:
 
     QFile::remove(path);
     QFile::remove(prev);
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Messaging core: recipient parsing, template filling and backend mapping for
+// the "send by command / API" feature. All pure functions.
+class TstMessaging : public QObject {
+  Q_OBJECT
+private slots:
+  void parsesPhoneNumbers() {
+    auto r = Messaging::parseRecipient(QStringLiteral("+34 600-123-456"));
+    QCOMPARE(r.kind, Messaging::RecipientKind::PhoneNumber);
+    QCOMPARE(r.value, QStringLiteral("34600123456"));
+    r = Messaging::parseRecipient(QStringLiteral("(555) 123.4567"));
+    QCOMPARE(r.kind, Messaging::RecipientKind::PhoneNumber);
+    QCOMPARE(r.value, QStringLiteral("5551234567"));
+  }
+
+  void parsesGroups() {
+    auto r = Messaging::parseRecipient(QStringLiteral("120363012345678901@g.us"));
+    QCOMPARE(r.kind, Messaging::RecipientKind::GroupId);
+    QCOMPARE(r.value, QStringLiteral("120363012345678901"));
+    r = Messaging::parseRecipient(QStringLiteral("group:120363012345678901"));
+    QCOMPARE(r.kind, Messaging::RecipientKind::GroupId);
+    QCOMPARE(r.value, QStringLiteral("120363012345678901"));
+  }
+
+  void parsesContactNames() {
+    auto r = Messaging::parseRecipient(QStringLiteral("Alice Smith"));
+    QCOMPARE(r.kind, Messaging::RecipientKind::ContactName);
+    QCOMPARE(r.value, QStringLiteral("Alice Smith"));
+    // "name:" forces a name even for something that looks like a number.
+    r = Messaging::parseRecipient(QStringLiteral("name:12345"));
+    QCOMPARE(r.kind, Messaging::RecipientKind::ContactName);
+    QCOMPARE(r.value, QStringLiteral("12345"));
+  }
+
+  void invalidRecipient() {
+    QCOMPARE(Messaging::parseRecipient(QStringLiteral("   ")).kind,
+             Messaging::RecipientKind::Invalid);
+  }
+
+  void templatePlaceholdersAndFill() {
+    const QString body =
+        QStringLiteral("Hi {{ name }}, your code is {{code}}. Bye {{name}}.");
+    QCOMPARE(Messaging::templatePlaceholders(body),
+             (QStringList{QStringLiteral("name"), QStringLiteral("code")}));
+    QMap<QString, QString> vars;
+    vars.insert(QStringLiteral("name"), QStringLiteral("Ada"));
+    vars.insert(QStringLiteral("code"), QStringLiteral("42"));
+    QCOMPARE(Messaging::fillTemplate(body, vars),
+             QStringLiteral("Hi Ada, your code is 42. Bye Ada."));
+    // An unknown placeholder is left untouched, so it is visibly unfilled.
+    QMap<QString, QString> partial;
+    partial.insert(QStringLiteral("name"), QStringLiteral("Ada"));
+    QCOMPARE(Messaging::fillTemplate(QStringLiteral("{{name}}/{{code}}"), partial),
+             QStringLiteral("Ada/{{code}}"));
+  }
+
+  void parseVarsSplitsOnFirstEquals() {
+    const auto m = Messaging::parseVars(
+        {QStringLiteral("a=1"), QStringLiteral("url=http://x?y=z"),
+         QStringLiteral("noequals"), QStringLiteral("=bad")});
+    QCOMPARE(m.value(QStringLiteral("a")), QStringLiteral("1"));
+    QCOMPARE(m.value(QStringLiteral("url")), QStringLiteral("http://x?y=z"));
+    QVERIFY(!m.contains(QStringLiteral("noequals")));
+    QCOMPARE(m.size(), 2);
+  }
+
+  void backendMapping() {
+    bool ok = false;
+    QCOMPARE(Messaging::parseBackend(QStringLiteral("Web"), &ok),
+             Messaging::Backend::Web);
+    QVERIFY(ok);
+    QCOMPARE(Messaging::parseBackend(QStringLiteral("cloud"), &ok),
+             Messaging::Backend::Cloud);
+    QVERIFY(ok);
+    Messaging::parseBackend(QStringLiteral("carrier-pigeon"), &ok);
+    QVERIFY(!ok);
+    QCOMPARE(Messaging::backendName(Messaging::Backend::Cloud),
+             QStringLiteral("cloud"));
   }
 };
 
@@ -1744,6 +1826,7 @@ int main(int argc, char *argv[]) {
   { TstUtilsMore t;           run(&t); }
   { TstCommon t;              run(&t); }
   { TstDebugLog t;            run(&t); }
+  { TstMessaging t;           run(&t); }
   { TstIdenticons t;          run(&t); }
   { TstTheme t;               run(&t); }
   { TstDictionaries t;        run(&t); }

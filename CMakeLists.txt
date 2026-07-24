@@ -216,6 +216,7 @@ set(SOURCES
     src/customtitlebar.cpp
     src/webfont.cpp
     src/mutedstatus.cpp
+    src/messaging.cpp
     src/scheduledmessages.cpp
     src/scheduledmessagesdialog.cpp
     src/webtweaks.cpp
@@ -275,6 +276,7 @@ set(HEADERS
     src/customtitlebar.h
     src/webfont.h
     src/mutedstatus.h
+    src/messaging.h
     src/scheduledmessages.h
     src/scheduledmessagesdialog.h
     src/pagebridge.h
