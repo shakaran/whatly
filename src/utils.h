@@ -54,6 +54,14 @@ public:
 private slots:
   // use refreshCacheSize
   static quint64 dir_size(const QString &directory);
+
+public:
+  // Top-right anchor for a popup of `size` inside the available screen rect
+  // `avail`, keeping it fully on-screen with `margin` px of clearance. Uses
+  // avail's own origin, so it is correct on a secondary monitor whose geometry
+  // does not start at (0,0). Pure, so it is unit-tested (#5).
+  static QPoint topRightWithin(const QRect &avail, const QSize &size,
+                               int margin);
 };
 
 #endif // UTILS_H

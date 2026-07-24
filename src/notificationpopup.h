@@ -2,6 +2,7 @@
 #define NOTIFICATIONPOPUP_H
 
 #include "settingsmanager.h"
+#include "utils.h"
 #include "widgets/scrolltext/scrolltext.h"
 
 #include <QApplication>
@@ -119,8 +120,9 @@ protected slots:
       // the popup lands off the corner with its top and left edges clipped.
       this->adjustSize();
       const int margin = 20;  // keep at least a character clear of the screen edge
-      int x = screenRect.x() + screenRect.width() - this->width() - margin;
-      int y = screenRect.y() + margin;
+      const QPoint target = Utils::topRightWithin(screenRect, this->size(), margin);
+      int x = target.x();
+      int y = target.y();
 
       QPropertyAnimation *a = new QPropertyAnimation(this, "pos");
       a->setDuration(200);

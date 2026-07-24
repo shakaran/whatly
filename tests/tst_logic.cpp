@@ -476,6 +476,22 @@ private slots:
     QCOMPARE(Utils::toCamelCase(QStringLiteral("one two three")),
              QStringLiteral("One Two Three"));
   }
+
+  // #5: the notification popup anchors to the top-right of the screen's
+  // available area with a margin, fully on-screen — including on a secondary
+  // monitor whose geometry does not start at (0,0).
+  void notificationPopupAnchor() {
+    // Primary screen at the origin.
+    const QPoint p =
+        Utils::topRightWithin(QRect(0, 0, 1920, 1080), QSize(300, 100), 20);
+    QCOMPARE(p, QPoint(1920 - 300 - 20, 20)); // 1600, 20
+
+    // Secondary monitor offset to the right and down: the anchor must follow
+    // the monitor's own origin, not assume (0,0) (the bug this fixed).
+    const QPoint s =
+        Utils::topRightWithin(QRect(1920, 200, 1280, 1024), QSize(300, 100), 20);
+    QCOMPARE(s, QPoint(1920 + 1280 - 300 - 20, 200 + 20)); // 2880, 220
+  }
   void installTypeFromEnv() {
     qputenv("INSTALL_TYPE", "snap");
     QCOMPARE(Utils::getInstallType(), QStringLiteral("snap"));

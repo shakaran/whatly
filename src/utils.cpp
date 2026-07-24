@@ -610,3 +610,8 @@ QString Utils::detectDesktopEnvironment() {
 
     return "Unknown Desktop Environment";
 }
+
+QPoint Utils::topRightWithin(const QRect &avail, const QSize &size, int margin) {
+  return QPoint(avail.x() + avail.width() - size.width() - margin,
+                avail.y() + margin);
+}
