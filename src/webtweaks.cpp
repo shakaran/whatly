@@ -305,6 +305,8 @@ static const char kScriptTemplate[] = R"JS(
 
 namespace WebTweaks {
 
+QString hdFlagScriptSource() { return QString::fromLatin1(kHdFlagScript); }
+
 static const char *jsBool(bool value) { return value ? "true" : "false"; }
 
 // A translated string as a JS double-quoted literal — the injected button

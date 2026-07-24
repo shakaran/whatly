@@ -440,6 +440,24 @@ private slots:
     CustomCss::scriptSource();
     QVERIFY(!CustomCss::isActive());
   }
+
+  // #6: the expression-panel dismiss guard must recognise the skin-tone /
+  // variant popover (separate popover, <img class="emojik">), so a click there
+  // no longer closes the emoji panel mid-selection.
+  void webTweaksEmojiVariantGuard() {
+    const QString src = WebTweaks::scriptSource();
+    QVERIFY(src.contains(QLatin1String(".emojik")));
+    QVERIFY(src.contains(QLatin1String("skin-tone")));
+    QVERIFY(src.contains(QLatin1String("emoji-variant")));
+  }
+
+  // #7: the always-on HD receive flag script overrides wa_web_show_hd_photo.
+  void webTweaksHdFlagScript() {
+    const QString hd = WebTweaks::hdFlagScriptSource();
+    QVERIFY(!hd.isEmpty());
+    QVERIFY(hd.contains(QLatin1String("wa_web_show_hd_photo")));
+    QVERIFY(hd.contains(QLatin1String("WAWebABProps")));
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1684,6 +1702,12 @@ private slots:
     WebTweaks::install(&profile);
     LinkedDeviceName::install(&profile, QStringLiteral("Work"));
     QVERIFY(profile.scripts()->count() > before);
+
+    // #7: WebTweaks::install() always registers the HD receive-flag script,
+    // independent of any user tweak.
+    QVERIFY(!profile.scripts()
+                 ->find(QStringLiteral("whatly-hd-media-flag"))
+                 .isEmpty());
 
     // Now turn everything off and install again: this exercises each module's
     // other branch — remove the previously-inserted script, then early-return.

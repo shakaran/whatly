@@ -14,6 +14,12 @@ namespace WebTweaks {
 // toggle to an already-loaded page via QWebEnginePage::runJavaScript.
 QString scriptSource();
 
+// The always-on script that forces WhatsApp Web's wa_web_show_hd_photo flag on,
+// so HD media renders as soon as the servers deliver it to linked devices (the
+// receive side). Not user-toggleable; installed unconditionally. Exposed here
+// so it can be unit-tested.
+QString hdFlagScriptSource();
+
 // (Re)installs the userscript on the profile for FUTURE page loads according
 // to the current QSettings; removes it when nothing is enabled. Note: Qt does
 // not propagate profile-script changes to an already-created page, so callers
