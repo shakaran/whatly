@@ -21,8 +21,10 @@ replies automatically to messages in the open conversation using rules —
 the reply). Rules live per account and/or in a JSON file you maintain; manage
 from the CLI: `--autoreply-on` / `--autoreply-off`, `--autoreply-file <path>`,
 `--autoreply-list`. The rules engine and store are covered by unit tests
-(`TstAutoReply`); the page-side observer that detects incoming messages is
-best-effort and being hardened. Same terms-of-service caveat as above.
+(`TstAutoReply`); the page-side observer detects incoming messages by bubble
+position (current WhatsApp Web obfuscates its class names) and was verified live
+end-to-end, including regex captures in the reply. It replies in the open
+conversation. Same terms-of-service caveat as above.
 
 ## 6.5.0 (2026-07-24)
 

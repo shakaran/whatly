@@ -363,30 +363,41 @@ QString MainWindow::attachmentSenderScriptSource() {
 
 // Watches the open conversation for NEW incoming messages and reports each over
 // the bridge (window.__whatlyBridge.incomingMessage). Best-effort and defensive:
-// it baselines the messages already present so history is never replayed, treats
-// a bulk insertion (a chat switch) as a new baseline, and only forwards single
-// new incoming bubbles. Needs verification with a real incoming message.
+// current WhatsApp Web obfuscates its class names (no more .message-in), so
+// direction is read from bubble position — an incoming bubble sits left of the
+// conversation's centre, an outgoing one right. Messages already on screen are
+// baselined so history is never replayed, and a bulk insertion (a chat switch)
+// re-baselines instead of replying. Verified live against current WhatsApp Web.
 QString MainWindow::autoReplyObserverScriptSource() {
   return QString::fromLatin1(R"JS(
 (function () {
   'use strict';
   if (window.__whatlyAutoReplyReady) return;
   window.__whatlyAutoReplyReady = true;
-  var IN = 'div.message-in,[class*="message-in"]';
+  var ROW = 'div[role="row"]';
   var seen = Object.create(null);
 
-  function keyOf(node) {
-    return node.getAttribute('data-id') || (node.textContent || '').slice(0, 60);
+  function textSpan(r) {
+    return r.querySelector('.selectable-text.copyable-text, span.selectable-text');
+  }
+  function keyOf(r) {
+    var e = r.querySelector('[data-id]') || r;
+    return e.getAttribute('data-id') || (r.textContent || '').slice(0, 80);
+  }
+  function isIncoming(r) {
+    // Left of the conversation centre => incoming; right => our own message.
+    var main = document.querySelector('#main');
+    var t = textSpan(r);
+    if (!main || !t) return false;
+    var mr = main.getBoundingClientRect();
+    var br = t.getBoundingClientRect();
+    return (br.left + br.width / 2) < (mr.left + mr.width / 2);
   }
   function markSeen() {
     try {
-      var all = document.querySelectorAll(IN);
-      for (var i = 0; i < all.length; i++) seen[keyOf(all[i])] = 1;
+      var rows = document.querySelectorAll('#main ' + ROW);
+      for (var i = 0; i < rows.length; i++) seen[keyOf(rows[i])] = 1;
     } catch (e) {}
-  }
-  function textOf(node) {
-    var t = node.querySelector('.selectable-text.copyable-text, span.selectable-text');
-    return t ? (t.innerText || '').trim() : '';
   }
   function report(text) {
     try {
@@ -399,26 +410,28 @@ QString MainWindow::autoReplyObserverScriptSource() {
 
   var mo = new MutationObserver(function (muts) {
     try {
-      var incoming = [];
+      var rows = [];
       muts.forEach(function (m) {
         for (var i = 0; i < m.addedNodes.length; i++) {
           var n = m.addedNodes[i];
           if (n.nodeType !== 1) continue;
-          if (n.matches && n.matches(IN)) incoming.push(n);
+          if (n.matches && n.matches(ROW)) rows.push(n);
           if (n.querySelectorAll) {
-            var inner = n.querySelectorAll(IN);
-            for (var j = 0; j < inner.length; j++) incoming.push(inner[j]);
+            var inner = n.querySelectorAll(ROW);
+            for (var j = 0; j < inner.length; j++) rows.push(inner[j]);
           }
         }
       });
-      if (!incoming.length) return;
+      var msgs = rows.filter(function (r) { var t = textSpan(r); return t && t.innerText.trim(); });
+      if (!msgs.length) return;
       // A burst is a chat being loaded/switched, not live traffic: re-baseline.
-      if (incoming.length > 3) { markSeen(); return; }
-      for (var k = 0; k < incoming.length; k++) {
-        var key = keyOf(incoming[k]);
+      if (msgs.length > 3) { markSeen(); return; }
+      for (var k = 0; k < msgs.length; k++) {
+        var key = keyOf(msgs[k]);
         if (seen[key]) continue;
         seen[key] = 1;
-        report(textOf(incoming[k]));
+        if (isIncoming(msgs[k]))
+          report(textSpan(msgs[k]).innerText.trim());
       }
     } catch (e) {}
   });
