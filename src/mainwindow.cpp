@@ -9,6 +9,7 @@
 #include <QRegularExpression>
 #include <QScreen>
 #include <QSessionManager>
+#include <QStackedWidget>
 #include <QStyleFactory>
 #include <QStyleHints>
 #include <QUrlQuery>
@@ -49,6 +50,7 @@
 #include "webfont.h"
 #include "mutedstatus.h"
 #include "scheduledmessages.h"
+#include "detachedaccountwindow.h"
 #include "scheduledmessagesdialog.h"
 #include "webengineprofilemanager.h"
 #include "webtweaks.h"
@@ -318,6 +320,11 @@ void MainWindow::hideEvent(QHideEvent *event) {
 void MainWindow::resizeEvent(QResizeEvent *event) {
   QMainWindow::resizeEvent(event);
   trackNormalGeometry();
+  // A user resize while the grid is showing counts as a customization (ours are
+  // flagged via m_gridResizing so they don't).
+  if (m_viewMode == ViewMode::Grid && !m_gridResizing &&
+      event->oldSize().isValid() && event->size() != event->oldSize())
+    markGridCustomized();
   if (!m_lockWidget || event->size() == event->oldSize())
     return;
   // Track the central widget it now lives in, not the whole window.
@@ -339,6 +346,9 @@ void MainWindow::changeEvent(QEvent *e) {
   // frontmost a moment ago" apart from "buried under another window".
   if (e->type() == QEvent::ActivationChange && !isActiveWindow())
     m_lastDeactivationMs = QDateTime::currentMSecsSinceEpoch();
+  // Track focus order: the main window becoming active makes it "main" (front).
+  if (e->type() == QEvent::ActivationChange && isActiveWindow())
+    noteWindowFocused(nullptr);
   QMainWindow::changeEvent(e);
 }
 
@@ -422,6 +432,11 @@ void MainWindow::zoomIn() { zoomBy(0.1); }
 void MainWindow::zoomOut() { zoomBy(-0.1); }
 
 void MainWindow::zoomReset() {
+  // In grid view, Ctrl+0 redistributes the tiles equally instead of zooming.
+  if (m_viewMode == ViewMode::Grid) {
+    resetGridTiles();
+    return;
+  }
   const bool maximized = windowState().testFlag(Qt::WindowMaximized) ||
                          windowState().testFlag(Qt::WindowFullScreen);
   const QString key = maximized ? QStringLiteral("zoomFactorMaximized")
@@ -923,7 +938,22 @@ void MainWindow::closeEvent(QCloseEvent *event) {
 }
 
 void MainWindow::quitApp() {
+  // Flush the final arrangement while the windows still exist and BEFORE
+  // m_isQuitting blocks further saves — otherwise the collapse loop and the
+  // teardown of the emptied detached windows would overwrite the layout with a
+  // single-window state. Also clear the crash guard for this clean shutdown.
+  saveWindowLayout();
+  SettingsManager::instance().settings().setValue(
+      QStringLiteral("windowLayout/restoreInProgress"), false);
   m_isQuitting = true;
+  // Reparent any torn-off account views back into the main stack, so every view
+  // is owned by the main window again and torn down in a known order at exit.
+  for (int i = 0; i < m_accounts.size(); ++i)
+    if (m_accounts[i].window) {
+      if (m_accounts[i].view)
+        m_accountStack->addWidget(m_accounts[i].view);
+      m_accounts[i].window = nullptr;
+    }
   saveWindowGeometry();
   getPageTheme();
   // Give the async getPageTheme() call above time to land before quitting.

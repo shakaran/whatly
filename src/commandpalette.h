@@ -32,6 +32,9 @@ public:
 
 protected:
   bool eventFilter(QObject *watched, QEvent *event) override;
+  // Dismiss the palette when it loses focus, so a click outside it closes it
+  // (matching Escape). It is shown non-modal for exactly this reason.
+  void changeEvent(QEvent *event) override;
 
 private:
   void refilter();

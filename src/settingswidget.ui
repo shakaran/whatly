@@ -447,6 +447,16 @@ background:transparent;
               </property>
              </widget>
             </item>
+            <item row="50" column="0">
+             <widget class="QCheckBox" name="rememberWindowLayoutCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window's position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Remember multiple window positions on restart</string>
+              </property>
+             </widget>
+            </item>
             <item row="4" column="0">
              <widget class="QCheckBox" name="minimizeOnTrayIconClick">
               <property name="text">

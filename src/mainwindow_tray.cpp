@@ -119,6 +119,9 @@ void MainWindow::createActions() {
 
   m_commandPaletteAction = new QAction(tr("Command palette"), this);
   m_commandPaletteAction->setShortcut(QKeySequence(Qt::Modifier::CTRL | Qt::Key_K));
+  // Application-wide so Ctrl+K opens the palette from a detached window too, not
+  // only from the main window.
+  m_commandPaletteAction->setShortcutContext(Qt::ApplicationShortcut);
   connect(m_commandPaletteAction, &QAction::triggered, this,
           &MainWindow::showCommandPalette);
   addAction(m_commandPaletteAction);

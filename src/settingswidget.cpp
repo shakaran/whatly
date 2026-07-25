@@ -153,6 +153,11 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
                                      .settings()
                                      .value("startMinimized", false)
                                      .toBool());
+  ui->rememberWindowLayoutCheckBox->setChecked(
+      SettingsManager::instance()
+          .settings()
+          .value("rememberWindowLayout", false)
+          .toBool());
   ui->dismissEmojiPanelCheckBox->setChecked(
       SettingsManager::instance()
           .settings()
@@ -438,6 +443,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     moveRow(body(window), ui->label, ui->closeButtonActionComboBox, G6);
     moveWidget(body(window), ui->startMinimized, G);
     moveWidget(body(window), ui->minimizeOnTrayIconClick, G);
+    moveWidget(body(window), ui->rememberWindowLayoutCheckBox, G);
     moveWidget(body(window), ui->hideTrayIconCheckBox, G);
     moveLayout(body(window), ui->gridLayout_9); // zoom block
 
@@ -1066,6 +1072,10 @@ void SettingsWidget::on_useNativeFileDialog_toggled(bool checked) {
 
 void SettingsWidget::on_startMinimized_toggled(bool checked) {
   SettingsManager::instance().settings().setValue("startMinimized", checked);
+}
+
+void SettingsWidget::on_rememberWindowLayoutCheckBox_toggled(bool checked) {
+  SettingsManager::instance().settings().setValue("rememberWindowLayout", checked);
 }
 
 void SettingsWidget::on_dismissEmojiPanelCheckBox_toggled(bool checked) {
