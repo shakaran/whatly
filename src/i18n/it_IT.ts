@@ -1169,6 +1169,26 @@ Imposta la password nelle Impostazioni.</translation>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Didascalia per l'allegato --file (alias di --message)</translation>
     </message>
+    <message>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>Usa il modello salvato con questo nome come messaggio di --send (riempi i suoi {{campi}} con --var)</translation>
+    </message>
+    <message>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>Riempi un campo del modello: key=value (ripetibile)</translation>
+    </message>
+    <message>
+        <source>List the saved message templates and exit</source>
+        <translation>Elenca i modelli di messaggio salvati ed esci</translation>
+    </message>
+    <message>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>Salva (o sostituisci) un modello di messaggio, poi esci: name=body</translation>
+    </message>
+    <message>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>Elimina il modello di messaggio con questo nome, poi esci</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

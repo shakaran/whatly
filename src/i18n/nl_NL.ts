@@ -1163,6 +1163,26 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Bijschrift voor de --file-bijlage (alias van --message)</translation>
     </message>
+    <message>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>Gebruikt de opgeslagen sjabloon met deze naam als --send-bericht (vult de {{velden}} met --var)</translation>
+    </message>
+    <message>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>Een sjabloonveld invullen: key=value (herhaalbaar)</translation>
+    </message>
+    <message>
+        <source>List the saved message templates and exit</source>
+        <translation>De opgeslagen berichtsjablonen tonen en afsluiten</translation>
+    </message>
+    <message>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>Een berichtsjabloon opslaan (of vervangen), dan afsluiten: name=body</translation>
+    </message>
+    <message>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>De opgeslagen berichtsjabloon met deze naam verwijderen en afsluiten</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

@@ -1163,6 +1163,26 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Bildunterschrift für den --file-Anhang (Alias von --message)</translation>
     </message>
+    <message>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>Verwendet die gespeicherte Vorlage dieses Namens als --send-Nachricht (füllt ihre {{Felder}} mit --var)</translation>
+    </message>
+    <message>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>Ein Vorlagenfeld füllen: key=value (wiederholbar)</translation>
+    </message>
+    <message>
+        <source>List the saved message templates and exit</source>
+        <translation>Die gespeicherten Nachrichtenvorlagen auflisten und beenden</translation>
+    </message>
+    <message>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>Eine Nachrichtenvorlage speichern (oder ersetzen), dann beenden: name=body</translation>
+    </message>
+    <message>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>Die gespeicherte Nachrichtenvorlage dieses Namens löschen und beenden</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

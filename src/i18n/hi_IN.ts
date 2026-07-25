@@ -1163,6 +1163,26 @@ Please setup the password in the Settings first.</source>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>--file अनुलग्नक के लिए कैप्शन (--message का उपनाम)</translation>
     </message>
+    <message>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>इस नाम के सहेजे गए टेम्पलेट को --send संदेश के रूप में उपयोग करें (--var से इसके {{fields}} भरें)</translation>
+    </message>
+    <message>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>टेम्पलेट का एक फ़ील्ड भरें: key=value (दोहराने योग्य)</translation>
+    </message>
+    <message>
+        <source>List the saved message templates and exit</source>
+        <translation>सहेजे गए संदेश टेम्पलेट सूचीबद्ध करें और बाहर निकलें</translation>
+    </message>
+    <message>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>संदेश टेम्पलेट सहेजें (या बदलें), फिर बाहर निकलें: name=body</translation>
+    </message>
+    <message>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>इस नाम का सहेजा गया संदेश टेम्पलेट हटाएँ और बाहर निकलें</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

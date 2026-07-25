@@ -1163,6 +1163,26 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Podpis załącznika --file (alias --message)</translation>
     </message>
+    <message>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>Użyj zapisanego szablonu o tej nazwie jako wiadomości --send (wypełnij jego {{pola}} przez --var)</translation>
+    </message>
+    <message>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>Wypełnij pole szablonu: key=value (można powtarzać)</translation>
+    </message>
+    <message>
+        <source>List the saved message templates and exit</source>
+        <translation>Wyświetl zapisane szablony wiadomości i zakończ</translation>
+    </message>
+    <message>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>Zapisz (lub zastąp) szablon wiadomości, następnie zakończ: name=body</translation>
+    </message>
+    <message>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>Usuń zapisany szablon wiadomości o tej nazwie i zakończ</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

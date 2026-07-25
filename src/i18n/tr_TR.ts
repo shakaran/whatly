@@ -1163,6 +1163,26 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>--file eki için başlık (--message ile eş anlamlı)</translation>
     </message>
+    <message>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>Bu addaki kayıtlı şablonu --send mesajı olarak kullanır ({{alanları}} --var ile doldurur)</translation>
+    </message>
+    <message>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>Bir şablon alanını doldur: key=value (tekrarlanabilir)</translation>
+    </message>
+    <message>
+        <source>List the saved message templates and exit</source>
+        <translation>Kayıtlı mesaj şablonlarını listele ve çık</translation>
+    </message>
+    <message>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>Bir mesaj şablonunu kaydet (veya değiştir), sonra çık: name=body</translation>
+    </message>
+    <message>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>Bu addaki kayıtlı mesaj şablonunu sil ve çık</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

@@ -29,6 +29,7 @@
 #include "dictionaries.h"
 #include "mainwindow.h"
 #include "messaging.h"
+#include "messagetemplates.h"
 #include "settingsmanager.h"
 #include "webengineprofilemanager.h"
 #include <singleapplication.h>
@@ -599,6 +600,27 @@ int main(int argc, char *argv[]) {
       QObject::tr("How --send delivers: 'web' (the running WhatsApp Web "
                   "session) or 'cloud' (Meta WhatsApp Business Cloud API)"),
       QStringLiteral("web|cloud"), QStringLiteral("web"));
+  // Reusable message templates (per account).
+  QCommandLineOption templateOption(
+      QStringList() << "template",
+      QObject::tr("Use the saved template of this name as the --send message "
+                  "(fill its {{fields}} with --var)"),
+      QStringLiteral("name"));
+  QCommandLineOption varOption(
+      QStringList() << "var",
+      QObject::tr("Fill a template field: key=value (repeatable)"),
+      QStringLiteral("key=value"));
+  QCommandLineOption templateListOption(
+      QStringList() << "template-list",
+      QObject::tr("List the saved message templates and exit"));
+  QCommandLineOption templateSetOption(
+      QStringList() << "template-set",
+      QObject::tr("Save (or replace) a message template, then exit: name=body"),
+      QStringLiteral("name=body"));
+  QCommandLineOption templateRemoveOption(
+      QStringList() << "template-remove",
+      QObject::tr("Delete the saved message template of this name, then exit"),
+      QStringLiteral("name"));
 
   parser.addOption(migrateFromOption);
   parser.addOption(dryRunOption);
@@ -609,6 +631,11 @@ int main(int argc, char *argv[]) {
   parser.addOption(fileOption);
   parser.addOption(captionOption);
   parser.addOption(backendOption);
+  parser.addOption(templateOption);
+  parser.addOption(varOption);
+  parser.addOption(templateListOption);
+  parser.addOption(templateSetOption);
+  parser.addOption(templateRemoveOption);
 
   secondaryInstanceCLIOptions << showAppWindowOption << openSettingsOption
                               << lockAppOption << openAboutOption
@@ -630,6 +657,38 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
+  // Template management operates directly on this profile's settings and exits;
+  // it needs neither a running instance nor the GUI.
+  if (parser.isSet(templateListOption)) {
+    QTextStream out(stdout);
+    const auto list = MessageTemplates::all();
+    for (const auto &t : list)
+      out << t.name << '\n';
+    return 0;
+  }
+  if (parser.isSet(templateSetOption)) {
+    const QString spec = parser.value(templateSetOption);
+    const qsizetype eq = spec.indexOf(QLatin1Char('='));
+    if (eq <= 0) {
+      QTextStream(stderr)
+          << "whatly --template-set: expected name=body\n";
+      return 2;
+    }
+    MessageTemplates::set(spec.left(eq), spec.mid(eq + 1));
+    SettingsManager::instance().settings().sync();
+    QTextStream(stdout) << "Saved template " << spec.left(eq) << '\n';
+    return 0;
+  }
+  if (parser.isSet(templateRemoveOption)) {
+    const QString name = parser.value(templateRemoveOption);
+    const bool removed = MessageTemplates::remove(name);
+    SettingsManager::instance().settings().sync();
+    QTextStream(removed ? stdout : stderr)
+        << (removed ? "Removed template " : "No such template: ") << name
+        << '\n';
+    return removed ? 0 : 1;
+  }
+
   // `--send` hands a message to the already-running instance of this profile
   // and exits. The web backend needs that instance's logged-in WhatsApp Web
   // session, so there must be one running; the cloud backend will not (Phase 4).
@@ -647,9 +706,33 @@ int main(int argc, char *argv[]) {
       err << "whatly --send: --to <recipient> is required\n";
       return 2;
     }
-    if (!parser.isSet(messageOption) && !parser.isSet(fileOption)) {
-      err << "whatly --send: --message <text> or --file <path> is required\n";
+    if (!parser.isSet(messageOption) && !parser.isSet(fileOption) &&
+        !parser.isSet(templateOption)) {
+      err << "whatly --send: --message, --file or --template is required\n";
       return 2;
+    }
+    // Resolve a template (per-account) into the message text here in the caller,
+    // filling its {{fields}} from --var; any left unfilled is an error.
+    QString bodyText;
+    if (parser.isSet(templateOption)) {
+      const QString tname = parser.value(templateOption);
+      if (!MessageTemplates::exists(tname)) {
+        err << "whatly --send: no such template: " << tname << '\n';
+        return 2;
+      }
+      bodyText = Messaging::fillTemplate(
+          MessageTemplates::body(tname),
+          Messaging::parseVars(parser.values(varOption)));
+      const QStringList missing = Messaging::templatePlaceholders(bodyText);
+      if (!missing.isEmpty()) {
+        err << "whatly --send: template '" << tname << "' still needs: "
+            << missing.join(QStringLiteral(", "))
+            << " (pass them with --var key=value)\n";
+        return 2;
+      }
+    } else {
+      bodyText = parser.isSet(captionOption) ? parser.value(captionOption)
+                                             : parser.value(messageOption);
     }
     // Resolve and validate the attachment here (in the caller's working
     // directory), so the running instance receives an absolute, checked path.
@@ -686,9 +769,7 @@ int main(int argc, char *argv[]) {
     Messaging::SendCommand cmd;
     cmd.backend = backend;
     cmd.to = parser.value(toOption);
-    // --caption is an alias of --message; either becomes the text/caption.
-    cmd.message = parser.isSet(captionOption) ? parser.value(captionOption)
-                                              : parser.value(messageOption);
+    cmd.message = bodyText; // from --template, or --caption/--message
     cmd.file = absFile;
     if (!instance.sendMessage(Messaging::encodeSendCommand(cmd).toUtf8())) {
       err << "whatly --send: could not reach the running instance\n";

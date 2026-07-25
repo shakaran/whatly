@@ -1163,6 +1163,26 @@ Please setup the password in the Settings first.</source>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>--file 첨부의 캡션 (--message의 별칭)</translation>
     </message>
+    <message>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>이 이름의 저장된 템플릿을 --send 메시지로 사용합니다 (--var로 {{필드}} 채우기)</translation>
+    </message>
+    <message>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>템플릿 필드 채우기: key=value (반복 가능)</translation>
+    </message>
+    <message>
+        <source>List the saved message templates and exit</source>
+        <translation>저장된 메시지 템플릿을 나열하고 종료합니다</translation>
+    </message>
+    <message>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>메시지 템플릿을 저장(또는 교체)하고 종료합니다: name=body</translation>
+    </message>
+    <message>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>이 이름의 저장된 메시지 템플릿을 삭제하고 종료합니다</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

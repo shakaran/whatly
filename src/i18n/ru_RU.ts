@@ -1163,6 +1163,26 @@ Please setup the password in the Settings first.</source>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Подпись для вложения --file (псевдоним --message)</translation>
     </message>
+    <message>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>Использовать сохранённый шаблон с этим именем как сообщение --send (заполнить его {{поля}} через --var)</translation>
+    </message>
+    <message>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>Заполнить поле шаблона: key=value (можно повторять)</translation>
+    </message>
+    <message>
+        <source>List the saved message templates and exit</source>
+        <translation>Показать сохранённые шаблоны сообщений и выйти</translation>
+    </message>
+    <message>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>Сохранить (или заменить) шаблон сообщения, затем выйти: name=body</translation>
+    </message>
+    <message>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>Удалить сохранённый шаблон сообщения с этим именем и выйти</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

@@ -4,12 +4,15 @@
 --to <number> --message "…"` hands a message to the already-running instance of
 that profile and it goes out through the WhatsApp Web session — scriptable, per
 profile. `--file <path>` attaches an image or file (with `--message`/`--caption`
-as the caption), up to 3 MB over the web backend. `--backend web` (default) uses
-the live session; `--backend cloud` (Meta WhatsApp Business Cloud API),
-groups/contact-name recipients, reusable message templates and a local API are
-being added on top. Covered by unit tests (`TstMessaging`). Note: automating
-WhatsApp Web is, strictly, against WhatsApp's terms — use it for your own
-account.
+as the caption), up to 3 MB over the web backend. Reusable **message
+templates** (per account) let you save a body with `{{fields}}` and send it
+with `--send --template <name> --var key=value`; manage them with
+`--template-set name=body`, `--template-list` and `--template-remove`.
+`--backend web` (default) uses the live session; `--backend cloud` (Meta
+WhatsApp Business Cloud API), groups/contact-name recipients and a local API are
+being added on top. Covered by unit tests (`TstMessaging`,
+`TstMessageTemplates`). Note: automating WhatsApp Web is, strictly, against
+WhatsApp's terms — use it for your own account.
 
 ## 6.5.0 (2026-07-24)
 

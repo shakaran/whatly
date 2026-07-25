@@ -1163,6 +1163,26 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Keterangan untuk lampiran --file (alias dari --message)</translation>
     </message>
+    <message>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>Gunakan templat tersimpan bernama ini sebagai pesan --send (isi {{field}}-nya dengan --var)</translation>
+    </message>
+    <message>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>Isi sebuah field templat: key=value (dapat diulang)</translation>
+    </message>
+    <message>
+        <source>List the saved message templates and exit</source>
+        <translation>Tampilkan templat pesan tersimpan lalu keluar</translation>
+    </message>
+    <message>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>Simpan (atau ganti) templat pesan, lalu keluar: name=body</translation>
+    </message>
+    <message>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>Hapus templat pesan bernama ini, lalu keluar</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

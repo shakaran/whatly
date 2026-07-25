@@ -1163,6 +1163,26 @@ Defina primeiro a senha nas configurações.</translation>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Legenda para o anexo --file (alias de --message)</translation>
     </message>
+    <message>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>Usa o modelo salvo com este nome como mensagem do --send (preenche seus {{campos}} com --var)</translation>
+    </message>
+    <message>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>Preencher um campo do modelo: key=value (repetível)</translation>
+    </message>
+    <message>
+        <source>List the saved message templates and exit</source>
+        <translation>Listar os modelos de mensagem salvos e sair</translation>
+    </message>
+    <message>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>Salvar (ou substituir) um modelo de mensagem e sair: name=body</translation>
+    </message>
+    <message>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>Excluir o modelo de mensagem com este nome e sair</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

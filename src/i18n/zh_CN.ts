@@ -1163,6 +1163,26 @@ Please setup the password in the Settings first.</source>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>--file 附件的标题（--message 的别名）</translation>
     </message>
+    <message>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>使用此名称的已保存模板作为 --send 消息（用 --var 填充其 {{字段}}）</translation>
+    </message>
+    <message>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>填充模板字段：key=value（可重复）</translation>
+    </message>
+    <message>
+        <source>List the saved message templates and exit</source>
+        <translation>列出已保存的消息模板并退出</translation>
+    </message>
+    <message>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>保存（或替换）一个消息模板，然后退出：name=body</translation>
+    </message>
+    <message>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>删除此名称的已保存消息模板，然后退出</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

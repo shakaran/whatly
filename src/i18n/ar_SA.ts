@@ -1163,6 +1163,26 @@ Please setup the password in the Settings first.</source>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>تعليق لمرفق --file (اسم بديل لـ --message)</translation>
     </message>
+    <message>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>استخدم القالب المحفوظ بهذا الاسم كرسالة لـ --send (املأ {{الحقول}} فيه باستخدام --var)</translation>
+    </message>
+    <message>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>املأ حقلًا في القالب: key=value (قابل للتكرار)</translation>
+    </message>
+    <message>
+        <source>List the saved message templates and exit</source>
+        <translation>اعرض قوالب الرسائل المحفوظة ثم اخرج</translation>
+    </message>
+    <message>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>احفظ (أو استبدل) قالب رسالة ثم اخرج: name=body</translation>
+    </message>
+    <message>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>احذف قالب الرسالة المحفوظ بهذا الاسم ثم اخرج</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

@@ -46,6 +46,7 @@
 #include "cannedresponses.h"
 #include "webtweaks.h"
 #include "messaging.h"
+#include "messagetemplates.h"
 #include "linkeddevicename.h"
 #include "performance.h"
 #include "networkproxy.h"
@@ -786,6 +787,57 @@ private slots:
     // A plain CLI argv string is not a send command.
     QVERIFY(!Messaging::decodeSendCommand(QStringLiteral("-s --open-settings"),
                                           nullptr));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Whatly's own reusable message templates (per-account store). Runs in
+// QStandardPaths test mode, so it writes to a throwaway settings file.
+class TstMessageTemplates : public QObject {
+  Q_OBJECT
+private slots:
+  void init() { MessageTemplates::setAll({}); } // clean slate each case
+
+  void addUpdateRemove() {
+    QVERIFY(!MessageTemplates::exists(QStringLiteral("welcome")));
+    MessageTemplates::set(QStringLiteral("welcome"),
+                          QStringLiteral("Hi {{name}}"));
+    QVERIFY(MessageTemplates::exists(QStringLiteral("welcome")));
+    QCOMPARE(MessageTemplates::body(QStringLiteral("welcome")),
+             QStringLiteral("Hi {{name}}"));
+
+    // set() on the same name updates the body rather than duplicating.
+    MessageTemplates::set(QStringLiteral("welcome"),
+                          QStringLiteral("Hello {{name}}!"));
+    QCOMPARE(MessageTemplates::all().size(), 1);
+    QCOMPARE(MessageTemplates::body(QStringLiteral("welcome")),
+             QStringLiteral("Hello {{name}}!"));
+
+    QVERIFY(MessageTemplates::remove(QStringLiteral("welcome")));
+    QVERIFY(!MessageTemplates::exists(QStringLiteral("welcome")));
+    QVERIFY(!MessageTemplates::remove(QStringLiteral("welcome"))); // already gone
+  }
+
+  void ignoresEmptyName() {
+    MessageTemplates::set(QStringLiteral("   "), QStringLiteral("x"));
+    QCOMPARE(MessageTemplates::all().size(), 0);
+  }
+
+  // The end-to-end resolution used by `--send --template`: look up the body,
+  // then fill it with Messaging.
+  void resolveAndFill() {
+    MessageTemplates::set(QStringLiteral("otp"),
+                          QStringLiteral("Your code is {{code}} ({{name}})"));
+    const QString body = MessageTemplates::body(QStringLiteral("otp"));
+    QMap<QString, QString> vars = Messaging::parseVars(
+        {QStringLiteral("code=1234"), QStringLiteral("name=Ada")});
+    QCOMPARE(Messaging::fillTemplate(body, vars),
+             QStringLiteral("Your code is 1234 (Ada)"));
+    // A missing var leaves its placeholder, which templatePlaceholders() surfaces.
+    QCOMPARE(Messaging::templatePlaceholders(
+                 Messaging::fillTemplate(body, {{QStringLiteral("code"),
+                                                 QStringLiteral("9")}})),
+             QStringList{QStringLiteral("name")});
   }
 };
 
@@ -1850,6 +1902,7 @@ int main(int argc, char *argv[]) {
   { TstCommon t;              run(&t); }
   { TstDebugLog t;            run(&t); }
   { TstMessaging t;           run(&t); }
+  { TstMessageTemplates t;    run(&t); }
   { TstIdenticons t;          run(&t); }
   { TstTheme t;               run(&t); }
   { TstDictionaries t;        run(&t); }
