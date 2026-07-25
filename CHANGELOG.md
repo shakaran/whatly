@@ -3,8 +3,9 @@
 **Send messages from the command line (work in progress).** `whatly --send
 --to <number> --message "…"` hands a message to the already-running instance of
 that profile and it goes out through the WhatsApp Web session — scriptable, per
-profile. `--file <path>` attaches an image or file (with `--message`/`--caption`
-as the caption), up to 3 MB over the web backend. Reusable **message
+profile. `--file <path>` attaches an image or file with `--message`/`--caption` as its
+caption (the caption is attached to the media in a single message), up to 3 MB
+over the web backend. Reusable **message
 templates** (per account) let you save a body with `{{fields}}` and send it
 with `--send --template <name> --var key=value`; manage them with
 `--template-set name=body`, `--template-list` and `--template-remove`.

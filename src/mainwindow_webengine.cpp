@@ -211,11 +211,11 @@ void MainWindow::installPageBridge(QWebEnginePage *page) {
 }
 
 // The page-side automation for `--send --file`. Injected on every load; a no-op
-// until a job appears in sessionStorage under 'whatlyAttachJob'. Rebuilds a
-// File from the base64 bytes, drops it on WhatsApp Web's attach <input>, types
-// the caption and clicks Send. Not verified against the live site yet — the
-// selectors are best-effort and may need tuning once tested with a real
-// session.
+// until a job appears in sessionStorage under 'whatlyAttachJob'. Verified live
+// against current WhatsApp Web: type the caption into the composer first, then
+// PASTE the image (a ClipboardEvent carrying the File — the hidden file-input
+// path attaches the image but loses the caption), which opens the media editor
+// with the caption already set; then click Send with a full pointer sequence.
 QString MainWindow::attachmentSenderScriptSource() {
   return QString::fromLatin1(R"JS(
 (function () {
@@ -232,13 +232,6 @@ QString MainWindow::attachmentSenderScriptSource() {
     var b = [].slice.call(document.querySelectorAll(
       'footer div[contenteditable="true"][role="textbox"],'
       + 'div[contenteditable="true"][data-tab]')).filter(vis);
-    return b.length ? b[b.length - 1] : null;
-  }
-  // In the media preview the caption field is the only *visible* contenteditable
-  // (the chat composer behind it is hidden), so pick the last visible one.
-  function captionBox() {
-    var b = [].slice.call(
-      document.querySelectorAll('div[contenteditable="true"]')).filter(vis);
     return b.length ? b[b.length - 1] : null;
   }
   // The preview's Send is a <button aria-label="Send"> whose icon is
@@ -266,19 +259,6 @@ QString MainWindow::attachmentSenderScriptSource() {
       } catch (e) {}
     });
   }
-  function fileInput(isMedia) {
-    var inputs = document.querySelectorAll('input[type="file"]');
-    for (var i = 0; i < inputs.length; i++) {
-      var acc = inputs[i].getAttribute('accept') || '';
-      if (isMedia && /image|video/i.test(acc)) return inputs[i];
-    }
-    // Fall back to a document-style input (accepts anything) or the first one.
-    for (var j = 0; j < inputs.length; j++) {
-      var a = inputs[j].getAttribute('accept') || '';
-      if (!isMedia && (a === '' || a.indexOf('*') >= 0)) return inputs[j];
-    }
-    return inputs.length ? inputs[0] : null;
-  }
   function toFile(b64, name, mime) {
     var bin = atob(b64);
     var arr = new Uint8Array(bin.length);
@@ -295,8 +275,12 @@ QString MainWindow::attachmentSenderScriptSource() {
       try { sessionStorage.removeItem(KEY); } catch (e2) {}
       return;
     }
+    // Exactly one run, ever, per page: without this the caption was typed on
+    // every tick / every re-entry and went out as a runaway text message.
+    if (window.__whatlyAttachActive) return;
+    window.__whatlyAttachActive = true;
     var deadline = job.deadline || (Date.now() + 60000);
-    var attached = false, captioned = false, done = false;
+    var captioned = false, pasted = false, done = false;
     var finish = function () {
       if (done) return;
       done = true;
@@ -306,46 +290,53 @@ QString MainWindow::attachmentSenderScriptSource() {
     var timer = setInterval(function () {
       try {
         if (Date.now() > deadline) { finish(); return; }
-        if (!composer()) return; // wait until the chat is open
-        if (!attached) {
-          var isMedia = /^image\/|^video\//.test(job.mime || '');
-          var input = fileInput(isMedia);
-          if (!input) return;
+        var comp = composer();
+        if (!comp) return; // wait until the chat is open
+        // 1) Caption FIRST, into the composer. WhatsApp Web's caption editor is
+        //    React/Lexical-controlled: injecting into the media preview's own
+        //    field does not update its state (the caption is dropped, or goes
+        //    out as a separate message). Typing into the composer and THEN
+        //    pasting the image keeps the text as the media caption. Verified
+        //    live over the remote debugger.
+        if (job.caption && !captioned) {
+          comp.focus();
+          try { document.execCommand('insertText', false, job.caption); } catch (e) {}
+          captioned = true;
+          return;
+        }
+        // 2) Paste the image as a File (a ClipboardEvent, NOT the file input):
+        //    this opens the media editor with the caption already in place.
+        if (!pasted) {
           var dt = new DataTransfer();
           dt.items.add(toFile(job.b64, job.name, job.mime));
-          input.files = dt.files;
-          input.dispatchEvent(new Event('change', { bubbles: true }));
-          attached = true;
-          return; // let the preview render
+          comp.focus();
+          comp.dispatchEvent(new ClipboardEvent('paste',
+            { clipboardData: dt, bubbles: true, cancelable: true }));
+          pasted = true;
+          return; // let the media editor render
         }
+        // 3) Send only once the media EDITOR is unambiguously open. Its toolbar
+        //    carries icons that never exist in the plain composer (crop
+        //    'scissors', close 'x-alt'); gating on one of those guarantees we
+        //    press the EDITOR's Send — not the composer's, which shares the same
+        //    send icon and would fire the caption as a separate text message.
+        var editorOpen = !!document.querySelector(
+          '[data-icon="scissors"], [data-icon="x-alt"]');
         var btn = sendButton();
-        if (!btn) return; // preview not ready yet
-        // Type the caption on one tick and Send on the NEXT: the editor is
-        // React/Lexical, and clicking Send in the same tick sends the image
-        // before the caption is committed to its state — which is why the
-        // caption used to go out as a separate message.
-        if (job.caption && !captioned) {
-          var cap = captionBox();
-          if (cap) {
-            cap.focus();
-            try { document.execCommand('insertText', false, job.caption); } catch (e) {}
-          }
-          captioned = true;
-          return; // give the caption a tick to register before sending
-        }
+        if (!editorOpen || !btn) return;
         press(btn);
         finish();
       } catch (e) { /* keep trying until the deadline */ }
     }, 600);
   }
 
-  // The job may be set just before or just after this script loads.
-  process();
+  // Poll for the job (it may be set just before or after this script loads);
+  // process() self-guards so only one run ever starts.
   var boot = setInterval(function () {
     try { if (sessionStorage.getItem(KEY)) { clearInterval(boot); process(); } }
     catch (e) {}
   }, 500);
-  setTimeout(function () { try { clearInterval(boot); } catch (e) {} }, 15000);
+  setTimeout(function () { try { clearInterval(boot); } catch (e) {} }, 20000);
 })();
 )JS");
 }
