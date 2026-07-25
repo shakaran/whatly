@@ -1199,6 +1199,34 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Utiliser ce fichier JSON comme source de règles de réponse automatique, puis quitter (vide pour l'effacer)</translation>
     </message>
+    <message>
+        <source>Set the Cloud API phone-number id, then exit</source>
+        <translation>Définir l'identifiant du numéro de téléphone de la Cloud API, puis quitter</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
+        <translation>Définir le jeton d'accès de la Cloud API, puis quitter (stocké dans la configuration du compte)</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
+        <translation>Définir la version graph de la Cloud API (p. ex. v21.0), puis quitter</translation>
+    </message>
+    <message>
+        <source>Show whether the Cloud API is configured, then exit</source>
+        <translation>Indiquer si la Cloud API est configurée, puis quitter</translation>
+    </message>
+    <message>
+        <source>For --send --backend cloud: send this Meta-approved template</source>
+        <translation>Pour --send --backend cloud : envoyer ce modèle approuvé par Meta</translation>
+    </message>
+    <message>
+        <source>Language code for --cloud-template (e.g. es, en_US)</source>
+        <translation>Code de langue pour --cloud-template (p. ex. es, en_US)</translation>
+    </message>
+    <message>
+        <source>A positional body parameter for --cloud-template (repeatable)</source>
+        <translation>Un paramètre positionnel du corps pour --cloud-template (répétable)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

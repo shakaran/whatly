@@ -1199,6 +1199,34 @@ Please setup the password in the Settings first.</source>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>この JSON ファイルを自動返信ルールのソースとして使用して終了します（空で解除）</translation>
     </message>
+    <message>
+        <source>Set the Cloud API phone-number id, then exit</source>
+        <translation>Cloud API の電話番号 ID を設定して終了します</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
+        <translation>Cloud API のアクセストークンを設定して終了します（アカウント設定に保存されます）</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
+        <translation>Cloud API の graph バージョンを設定して終了します（例: v21.0）</translation>
+    </message>
+    <message>
+        <source>Show whether the Cloud API is configured, then exit</source>
+        <translation>Cloud API が設定済みかどうかを表示して終了します</translation>
+    </message>
+    <message>
+        <source>For --send --backend cloud: send this Meta-approved template</source>
+        <translation>--send --backend cloud 用: この Meta 承認済みテンプレートを送信します</translation>
+    </message>
+    <message>
+        <source>Language code for --cloud-template (e.g. es, en_US)</source>
+        <translation>--cloud-template の言語コード（例: es、en_US）</translation>
+    </message>
+    <message>
+        <source>A positional body parameter for --cloud-template (repeatable)</source>
+        <translation>--cloud-template の位置指定の本文パラメータ（繰り返し可能）</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

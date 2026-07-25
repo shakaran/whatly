@@ -1199,6 +1199,34 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Gunakan berkas JSON ini sebagai sumber aturan balasan otomatis lalu keluar (kosongkan untuk menghapus)</translation>
     </message>
+    <message>
+        <source>Set the Cloud API phone-number id, then exit</source>
+        <translation>Setel id nomor telepon Cloud API, lalu keluar</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
+        <translation>Setel token akses Cloud API, lalu keluar (disimpan di konfigurasi akun)</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
+        <translation>Setel versi graph Cloud API (mis. v21.0), lalu keluar</translation>
+    </message>
+    <message>
+        <source>Show whether the Cloud API is configured, then exit</source>
+        <translation>Tampilkan apakah Cloud API sudah dikonfigurasi, lalu keluar</translation>
+    </message>
+    <message>
+        <source>For --send --backend cloud: send this Meta-approved template</source>
+        <translation>Untuk --send --backend cloud: kirim templat yang disetujui Meta ini</translation>
+    </message>
+    <message>
+        <source>Language code for --cloud-template (e.g. es, en_US)</source>
+        <translation>Kode bahasa untuk --cloud-template (mis. es, en_US)</translation>
+    </message>
+    <message>
+        <source>A positional body parameter for --cloud-template (repeatable)</source>
+        <translation>Sebuah parameter body posisional untuk --cloud-template (dapat diulang)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

@@ -48,6 +48,10 @@
 #include "messaging.h"
 #include "messagetemplates.h"
 #include "autoreply.h"
+#include "cloudapi.h"
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 #include "linkeddevicename.h"
 #include "performance.h"
 #include "networkproxy.h"
@@ -953,6 +957,75 @@ private slots:
     AutoReply::setRulesFilePath(file.fileName());
     QCOMPARE(AutoReply::activeRules().size(), 2); // stored + file
     QCOMPARE(AutoReply::replyFor(QStringLiteral("ping")), QStringLiteral("from-file"));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Cloud API (Meta WhatsApp Business) request builders — pure.
+class TstCloudApi : public QObject {
+  Q_OBJECT
+  static QJsonObject obj(const QByteArray &j) { return QJsonDocument::fromJson(j).object(); }
+private slots:
+  void urls() {
+    QCOMPARE(CloudApi::messagesUrl(QStringLiteral("v21.0"), QStringLiteral("123")),
+             QStringLiteral("https://graph.facebook.com/v21.0/123/messages"));
+    QCOMPARE(CloudApi::mediaUrl(QStringLiteral("v21.0"), QStringLiteral("123")),
+             QStringLiteral("https://graph.facebook.com/v21.0/123/media"));
+  }
+
+  void textPayload() {
+    auto o = obj(CloudApi::textPayload(QStringLiteral("+34 600-123-456"),
+                                       QStringLiteral("Hola 😀")));
+    QCOMPARE(o.value("messaging_product").toString(), QStringLiteral("whatsapp"));
+    QCOMPARE(o.value("to").toString(), QStringLiteral("34600123456")); // digits only
+    QCOMPARE(o.value("type").toString(), QStringLiteral("text"));
+    QCOMPARE(o.value("text").toObject().value("body").toString(),
+             QStringLiteral("Hola 😀"));
+  }
+
+  void mediaPayload() {
+    auto o = obj(CloudApi::mediaPayload(QStringLiteral("34600123456"),
+                                        QStringLiteral("image"),
+                                        QStringLiteral("MID1"),
+                                        QStringLiteral("una foto")));
+    QCOMPARE(o.value("type").toString(), QStringLiteral("image"));
+    auto img = o.value("image").toObject();
+    QCOMPARE(img.value("id").toString(), QStringLiteral("MID1"));
+    QCOMPARE(img.value("caption").toString(), QStringLiteral("una foto"));
+    // Audio takes no caption.
+    auto a = obj(CloudApi::mediaPayload(QStringLiteral("34600123456"),
+                                        QStringLiteral("audio"),
+                                        QStringLiteral("MID2"),
+                                        QStringLiteral("ignored")));
+    QVERIFY(!a.value("audio").toObject().contains(QStringLiteral("caption")));
+  }
+
+  void templatePayload() {
+    auto o = obj(CloudApi::templatePayload(
+        QStringLiteral("34600123456"), QStringLiteral("order_update"),
+        QStringLiteral("es"), {QStringLiteral("42"), QStringLiteral("hoy")}));
+    QCOMPARE(o.value("type").toString(), QStringLiteral("template"));
+    auto t = o.value("template").toObject();
+    QCOMPARE(t.value("name").toString(), QStringLiteral("order_update"));
+    QCOMPARE(t.value("language").toObject().value("code").toString(),
+             QStringLiteral("es"));
+    auto comps = t.value("components").toArray();
+    QCOMPARE(comps.size(), 1);
+    auto params = comps.first().toObject().value("parameters").toArray();
+    QCOMPARE(params.size(), 2);
+    QCOMPARE(params.first().toObject().value("text").toString(),
+             QStringLiteral("42"));
+  }
+
+  void mediaTypeMapping() {
+    QCOMPARE(CloudApi::mediaTypeForMime(QStringLiteral("image/png")),
+             QStringLiteral("image"));
+    QCOMPARE(CloudApi::mediaTypeForMime(QStringLiteral("video/mp4")),
+             QStringLiteral("video"));
+    QCOMPARE(CloudApi::mediaTypeForMime(QStringLiteral("audio/ogg")),
+             QStringLiteral("audio"));
+    QCOMPARE(CloudApi::mediaTypeForMime(QStringLiteral("application/pdf")),
+             QStringLiteral("document"));
   }
 };
 
@@ -2019,6 +2092,7 @@ int main(int argc, char *argv[]) {
   { TstMessaging t;           run(&t); }
   { TstMessageTemplates t;    run(&t); }
   { TstAutoReply t;           run(&t); }
+  { TstCloudApi t;            run(&t); }
   { TstIdenticons t;          run(&t); }
   { TstTheme t;               run(&t); }
   { TstDictionaries t;        run(&t); }

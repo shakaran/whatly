@@ -1199,6 +1199,34 @@ Please setup the password in the Settings first.</source>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>이 JSON 파일을 자동 회신 규칙의 소스로 사용하고 종료합니다 (비우면 해제)</translation>
     </message>
+    <message>
+        <source>Set the Cloud API phone-number id, then exit</source>
+        <translation>Cloud API 전화번호 ID를 설정하고 종료합니다</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
+        <translation>Cloud API 액세스 토큰을 설정하고 종료합니다(계정 설정에 저장됨)</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
+        <translation>Cloud API graph 버전을 설정하고 종료합니다(예: v21.0)</translation>
+    </message>
+    <message>
+        <source>Show whether the Cloud API is configured, then exit</source>
+        <translation>Cloud API 구성 여부를 표시하고 종료합니다</translation>
+    </message>
+    <message>
+        <source>For --send --backend cloud: send this Meta-approved template</source>
+        <translation>--send --backend cloud용: Meta가 승인한 이 템플릿을 전송합니다</translation>
+    </message>
+    <message>
+        <source>Language code for --cloud-template (e.g. es, en_US)</source>
+        <translation>--cloud-template의 언어 코드(예: es, en_US)</translation>
+    </message>
+    <message>
+        <source>A positional body parameter for --cloud-template (repeatable)</source>
+        <translation>--cloud-template의 위치 본문 매개변수(반복 가능)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

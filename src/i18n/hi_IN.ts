@@ -1199,6 +1199,34 @@ Please setup the password in the Settings first.</source>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>इस JSON फ़ाइल को स्वतः-उत्तर नियमों के स्रोत के रूप में उपयोग करें और बाहर निकलें (हटाने के लिए खाली)</translation>
     </message>
+    <message>
+        <source>Set the Cloud API phone-number id, then exit</source>
+        <translation>Cloud API फ़ोन-नंबर आईडी सेट करें, फिर बाहर निकलें</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
+        <translation>Cloud API एक्सेस टोकन सेट करें, फिर बाहर निकलें (खाता कॉन्फ़िगरेशन में संग्रहीत)</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
+        <translation>Cloud API ग्राफ़ संस्करण सेट करें (उदा. v21.0), फिर बाहर निकलें</translation>
+    </message>
+    <message>
+        <source>Show whether the Cloud API is configured, then exit</source>
+        <translation>दिखाएँ कि Cloud API कॉन्फ़िगर है या नहीं, फिर बाहर निकलें</translation>
+    </message>
+    <message>
+        <source>For --send --backend cloud: send this Meta-approved template</source>
+        <translation>--send --backend cloud के लिए: Meta द्वारा अनुमोदित यह टेम्पलेट भेजें</translation>
+    </message>
+    <message>
+        <source>Language code for --cloud-template (e.g. es, en_US)</source>
+        <translation>--cloud-template के लिए भाषा कोड (उदा. es, en_US)</translation>
+    </message>
+    <message>
+        <source>A positional body parameter for --cloud-template (repeatable)</source>
+        <translation>--cloud-template के लिए एक स्थानिक बॉडी पैरामीटर (दोहराने योग्य)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

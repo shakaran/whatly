@@ -1199,6 +1199,34 @@ Please setup the password in the Settings first.</source>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>استخدم ملف JSON هذا كمصدر لقواعد الرد التلقائي ثم اخرج (فارغ للإزالة)</translation>
     </message>
+    <message>
+        <source>Set the Cloud API phone-number id, then exit</source>
+        <translation>تعيين معرّف رقم هاتف Cloud API ثم الخروج</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
+        <translation>تعيين رمز الوصول لـ Cloud API ثم الخروج (يُخزَّن في إعدادات الحساب)</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
+        <translation>تعيين إصدار graph لـ Cloud API (مثل v21.0) ثم الخروج</translation>
+    </message>
+    <message>
+        <source>Show whether the Cloud API is configured, then exit</source>
+        <translation>إظهار ما إذا كان Cloud API مُهيّأً ثم الخروج</translation>
+    </message>
+    <message>
+        <source>For --send --backend cloud: send this Meta-approved template</source>
+        <translation>لـ --send --backend cloud: إرسال هذا القالب المعتمد من Meta</translation>
+    </message>
+    <message>
+        <source>Language code for --cloud-template (e.g. es, en_US)</source>
+        <translation>رمز اللغة لـ --cloud-template (مثل es، en_US)</translation>
+    </message>
+    <message>
+        <source>A positional body parameter for --cloud-template (repeatable)</source>
+        <translation>معامل نص موضعي لـ --cloud-template (قابل للتكرار)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

@@ -1199,6 +1199,34 @@ Please setup the password in the Settings first.</source>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>使用此 JSON 文件作为自动回复规则来源，然后退出（留空则清除）</translation>
     </message>
+    <message>
+        <source>Set the Cloud API phone-number id, then exit</source>
+        <translation>设置 Cloud API 的电话号码 id，然后退出</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
+        <translation>设置 Cloud API 的访问令牌，然后退出（存储在账户配置中）</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
+        <translation>设置 Cloud API 的 graph 版本（例如 v21.0），然后退出</translation>
+    </message>
+    <message>
+        <source>Show whether the Cloud API is configured, then exit</source>
+        <translation>显示 Cloud API 是否已配置，然后退出</translation>
+    </message>
+    <message>
+        <source>For --send --backend cloud: send this Meta-approved template</source>
+        <translation>用于 --send --backend cloud：发送此经 Meta 批准的模板</translation>
+    </message>
+    <message>
+        <source>Language code for --cloud-template (e.g. es, en_US)</source>
+        <translation>--cloud-template 的语言代码（例如 es、en_US）</translation>
+    </message>
+    <message>
+        <source>A positional body parameter for --cloud-template (repeatable)</source>
+        <translation>--cloud-template 的位置正文参数（可重复）</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

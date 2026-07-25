@@ -1199,6 +1199,34 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Dit JSON-bestand als bron van auto-antwoordregels gebruiken en afsluiten (leeg om te wissen)</translation>
     </message>
+    <message>
+        <source>Set the Cloud API phone-number id, then exit</source>
+        <translation>De telefoonnummer-id van de Cloud API instellen en afsluiten</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
+        <translation>De toegangstoken van de Cloud API instellen en afsluiten (opgeslagen in de accountconfiguratie)</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
+        <translation>De graph-versie van de Cloud API instellen (bijv. v21.0) en afsluiten</translation>
+    </message>
+    <message>
+        <source>Show whether the Cloud API is configured, then exit</source>
+        <translation>Tonen of de Cloud API is geconfigureerd en afsluiten</translation>
+    </message>
+    <message>
+        <source>For --send --backend cloud: send this Meta-approved template</source>
+        <translation>Voor --send --backend cloud: dit door Meta goedgekeurde sjabloon verzenden</translation>
+    </message>
+    <message>
+        <source>Language code for --cloud-template (e.g. es, en_US)</source>
+        <translation>Taalcode voor --cloud-template (bijv. es, en_US)</translation>
+    </message>
+    <message>
+        <source>A positional body parameter for --cloud-template (repeatable)</source>
+        <translation>Een positionele bodyparameter voor --cloud-template (herhaalbaar)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

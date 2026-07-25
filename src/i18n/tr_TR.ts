@@ -1199,6 +1199,34 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Bu JSON dosyasını otomatik yanıt kuralları kaynağı olarak kullan ve çık (temizlemek için boş)</translation>
     </message>
+    <message>
+        <source>Set the Cloud API phone-number id, then exit</source>
+        <translation>Cloud API telefon numarası kimliğini ayarla ve çık</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
+        <translation>Cloud API erişim belirtecini ayarla ve çık (hesap yapılandırmasında saklanır)</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
+        <translation>Cloud API graph sürümünü ayarla (örn. v21.0) ve çık</translation>
+    </message>
+    <message>
+        <source>Show whether the Cloud API is configured, then exit</source>
+        <translation>Cloud API'nin yapılandırılıp yapılandırılmadığını göster ve çık</translation>
+    </message>
+    <message>
+        <source>For --send --backend cloud: send this Meta-approved template</source>
+        <translation>--send --backend cloud için: Meta tarafından onaylanmış bu şablonu gönder</translation>
+    </message>
+    <message>
+        <source>Language code for --cloud-template (e.g. es, en_US)</source>
+        <translation>--cloud-template için dil kodu (örn. es, en_US)</translation>
+    </message>
+    <message>
+        <source>A positional body parameter for --cloud-template (repeatable)</source>
+        <translation>--cloud-template için konumsal bir gövde parametresi (yinelenebilir)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

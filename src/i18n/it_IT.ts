@@ -1205,6 +1205,34 @@ Imposta la password nelle Impostazioni.</translation>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Usa questo file JSON come sorgente di regole di risposta automatica ed esci (vuoto per rimuoverlo)</translation>
     </message>
+    <message>
+        <source>Set the Cloud API phone-number id, then exit</source>
+        <translation>Imposta l'id del numero di telefono della Cloud API, poi esci</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
+        <translation>Imposta il token di accesso della Cloud API, poi esci (memorizzato nella configurazione dell'account)</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
+        <translation>Imposta la versione graph della Cloud API (es. v21.0), poi esci</translation>
+    </message>
+    <message>
+        <source>Show whether the Cloud API is configured, then exit</source>
+        <translation>Mostra se la Cloud API è configurata, poi esci</translation>
+    </message>
+    <message>
+        <source>For --send --backend cloud: send this Meta-approved template</source>
+        <translation>Per --send --backend cloud: invia questo modello approvato da Meta</translation>
+    </message>
+    <message>
+        <source>Language code for --cloud-template (e.g. es, en_US)</source>
+        <translation>Codice lingua per --cloud-template (es. es, en_US)</translation>
+    </message>
+    <message>
+        <source>A positional body parameter for --cloud-template (repeatable)</source>
+        <translation>Un parametro posizionale del corpo per --cloud-template (ripetibile)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

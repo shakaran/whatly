@@ -26,6 +26,18 @@ position (current WhatsApp Web obfuscates its class names) and was verified live
 end-to-end, including regex captures in the reply. It replies in the open
 conversation. Same terms-of-service caveat as above.
 
+**Cloud API backend for sending (work in progress).** `--send --backend cloud`
+now sends directly through the Meta WhatsApp Business Cloud API — no running
+WhatsApp Web session needed, so it works headless and scriptable. It supports
+plain text, media (`--file`, uploaded then sent with an optional caption) and
+Meta-approved **templates** (`--cloud-template <name> --cloud-lang <code>
+--cloud-param <value>…` for positional `{{1}},{{2}}…` body parameters).
+Configure it per account with `--cloud-phone-id`, `--cloud-token` and
+`--cloud-api-version` (the access token is one you supply and is stored in the
+account config; Whatly never obtains it itself), and check it with
+`--cloud-status`. The URL/payload builders are covered by unit tests
+(`TstCloudApi`).
+
 ## 6.5.0 (2026-07-24)
 
 **Recover from a start-up crash (#3).** If Qt WebEngine aborts while

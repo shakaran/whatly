@@ -29,6 +29,7 @@
 #include "dictionaries.h"
 #include "mainwindow.h"
 #include "autoreply.h"
+#include "cloudapi.h"
 #include "messaging.h"
 #include "messagetemplates.h"
 #include "settingsmanager.h"
@@ -637,6 +638,35 @@ int main(int argc, char *argv[]) {
       QObject::tr("Use this JSON file as a source of auto-reply rules, then "
                   "exit (empty to clear)"),
       QStringLiteral("path"));
+  // Meta WhatsApp Business Cloud API configuration + template send.
+  QCommandLineOption cloudPhoneIdOption(
+      QStringList() << "cloud-phone-id",
+      QObject::tr("Set the Cloud API phone-number id, then exit"),
+      QStringLiteral("id"));
+  QCommandLineOption cloudTokenOption(
+      QStringList() << "cloud-token",
+      QObject::tr("Set the Cloud API access token, then exit (stored in the "
+                  "account config)"),
+      QStringLiteral("token"));
+  QCommandLineOption cloudApiVersionOption(
+      QStringList() << "cloud-api-version",
+      QObject::tr("Set the Cloud API graph version (e.g. v21.0), then exit"),
+      QStringLiteral("version"));
+  QCommandLineOption cloudStatusOption(
+      QStringList() << "cloud-status",
+      QObject::tr("Show whether the Cloud API is configured, then exit"));
+  QCommandLineOption cloudTemplateOption(
+      QStringList() << "cloud-template",
+      QObject::tr("For --send --backend cloud: send this Meta-approved template"),
+      QStringLiteral("name"));
+  QCommandLineOption cloudLangOption(
+      QStringList() << "cloud-lang",
+      QObject::tr("Language code for --cloud-template (e.g. es, en_US)"),
+      QStringLiteral("code"), QStringLiteral("en_US"));
+  QCommandLineOption cloudParamOption(
+      QStringList() << "cloud-param",
+      QObject::tr("A positional body parameter for --cloud-template (repeatable)"),
+      QStringLiteral("value"));
 
   parser.addOption(migrateFromOption);
   parser.addOption(dryRunOption);
@@ -656,6 +686,13 @@ int main(int argc, char *argv[]) {
   parser.addOption(autoReplyOffOption);
   parser.addOption(autoReplyListOption);
   parser.addOption(autoReplyFileOption);
+  parser.addOption(cloudPhoneIdOption);
+  parser.addOption(cloudTokenOption);
+  parser.addOption(cloudApiVersionOption);
+  parser.addOption(cloudStatusOption);
+  parser.addOption(cloudTemplateOption);
+  parser.addOption(cloudLangOption);
+  parser.addOption(cloudParamOption);
 
   secondaryInstanceCLIOptions << showAppWindowOption << openSettingsOption
                               << lockAppOption << openAboutOption
@@ -739,6 +776,28 @@ int main(int argc, char *argv[]) {
     return 0;
   }
 
+  // Cloud API configuration operates on this profile's settings and exits.
+  if (parser.isSet(cloudPhoneIdOption) || parser.isSet(cloudTokenOption) ||
+      parser.isSet(cloudApiVersionOption)) {
+    if (parser.isSet(cloudPhoneIdOption))
+      CloudApi::setPhoneNumberId(parser.value(cloudPhoneIdOption));
+    if (parser.isSet(cloudTokenOption))
+      CloudApi::setAccessToken(parser.value(cloudTokenOption));
+    if (parser.isSet(cloudApiVersionOption))
+      CloudApi::setApiVersion(parser.value(cloudApiVersionOption));
+    SettingsManager::instance().settings().sync();
+    QTextStream(stdout) << "Cloud API config updated.\n";
+    return 0;
+  }
+  if (parser.isSet(cloudStatusOption)) {
+    QTextStream(stdout)
+        << "Cloud API: " << (CloudApi::isConfigured() ? "configured" : "not configured")
+        << " (phone-number id " << (CloudApi::phoneNumberId().isEmpty() ? "unset" : "set")
+        << ", token " << (CloudApi::accessToken().isEmpty() ? "unset" : "set")
+        << ", api " << CloudApi::apiVersion() << ")\n";
+    return 0;
+  }
+
   // `--send` hands a message to the already-running instance of this profile
   // and exits. The web backend needs that instance's logged-in WhatsApp Web
   // session, so there must be one running; the cloud backend will not (Phase 4).
@@ -756,8 +815,10 @@ int main(int argc, char *argv[]) {
       err << "whatly --send: --to <recipient> is required\n";
       return 2;
     }
+    const bool cloudTemplate =
+        backend == Messaging::Backend::Cloud && parser.isSet(cloudTemplateOption);
     if (!parser.isSet(messageOption) && !parser.isSet(fileOption) &&
-        !parser.isSet(templateOption)) {
+        !parser.isSet(templateOption) && !cloudTemplate) {
       err << "whatly --send: --message, --file or --template is required\n";
       return 2;
     }
@@ -810,6 +871,38 @@ int main(int argc, char *argv[]) {
       }
       absFile = fi.absoluteFilePath();
     }
+
+    // The cloud backend sends directly over HTTP — no running instance needed.
+    if (backend == Messaging::Backend::Cloud) {
+      const Messaging::Recipient rc =
+          Messaging::parseRecipient(parser.value(toOption));
+      if (rc.kind != Messaging::RecipientKind::PhoneNumber) {
+        err << "whatly --send: the cloud backend needs a phone number in --to\n";
+        return 2;
+      }
+      if (!CloudApi::isConfigured()) {
+        err << "whatly --send: Cloud API is not configured — set "
+               "--cloud-phone-id and --cloud-token first\n";
+        return 1;
+      }
+      CloudApi::Result res;
+      if (parser.isSet(cloudTemplateOption))
+        res = CloudApi::sendTemplate(rc.value, parser.value(cloudTemplateOption),
+                                     parser.value(cloudLangOption),
+                                     parser.values(cloudParamOption));
+      else if (!absFile.isEmpty())
+        res = CloudApi::sendMediaFile(rc.value, absFile, bodyText);
+      else
+        res = CloudApi::sendText(rc.value, bodyText);
+      if (res.ok) {
+        QTextStream(stdout)
+            << "Sent via Cloud API (message id " << res.messageId << ")\n";
+        return 0;
+      }
+      err << "whatly --send: Cloud API send failed: " << res.error << '\n';
+      return 1;
+    }
+
     if (!instance.isSecondary()) {
       err << "whatly --send: no running Whatly for this profile"
           << AppProfile::suffix()
