@@ -47,6 +47,7 @@
 #include "webtweaks.h"
 #include "messaging.h"
 #include "messagetemplates.h"
+#include "autoreply.h"
 #include "linkeddevicename.h"
 #include "performance.h"
 #include "networkproxy.h"
@@ -838,6 +839,74 @@ private slots:
                  Messaging::fillTemplate(body, {{QStringLiteral("code"),
                                                  QStringLiteral("9")}})),
              QStringList{QStringLiteral("name")});
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Auto-reply ("listener") rules engine: matching incoming text and producing
+// the reply. All pure.
+class TstAutoReply : public QObject {
+  Q_OBJECT
+  using R = AutoReply::Rule;
+  using MT = AutoReply::MatchType;
+private slots:
+  void exactMatch() {
+    R r; r.type = MT::Exact; r.pattern = QStringLiteral("ping"); r.reply = QStringLiteral("pong");
+    QVERIFY(AutoReply::matches(r, QStringLiteral("  ping  ")));   // trimmed
+    QVERIFY(AutoReply::matches(r, QStringLiteral("PING")));       // case-insensitive default
+    QVERIFY(!AutoReply::matches(r, QStringLiteral("ping me")));
+    r.caseSensitive = true;
+    QVERIFY(!AutoReply::matches(r, QStringLiteral("PING")));
+  }
+
+  void containsMatch() {
+    R r; r.type = MT::Contains; r.pattern = QStringLiteral("precio");
+    QVERIFY(AutoReply::matches(r, QStringLiteral("¿cuál es el PRECIO?")));
+    QVERIFY(!AutoReply::matches(r, QStringLiteral("gratis")));
+  }
+
+  void hashtagMatch() {
+    R r; r.type = MT::Hashtag; r.pattern = QStringLiteral("oferta");
+    QVERIFY(AutoReply::matches(r, QStringLiteral("gran #oferta hoy")));
+    QVERIFY(AutoReply::matches(r, QStringLiteral("#OFERTA")));      // case-insensitive
+    QVERIFY(!AutoReply::matches(r, QStringLiteral("una oferta")));  // needs the #
+    QVERIFY(!AutoReply::matches(r, QStringLiteral("#ofertas")));    // whole token
+    // A leading '#' in the pattern is tolerated.
+    r.pattern = QStringLiteral("#oferta");
+    QVERIFY(AutoReply::matches(r, QStringLiteral("mira #oferta")));
+  }
+
+  void regexWithCaptures() {
+    R r; r.type = MT::Regex;
+    r.pattern = QStringLiteral("pedido (\\d+)");
+    r.reply = QStringLiteral("Tu pedido $1 está en camino");
+    QStringList caps;
+    QVERIFY(AutoReply::matches(r, QStringLiteral("estado del pedido 42?"), &caps));
+    QCOMPARE(caps.value(1), QStringLiteral("42"));
+    QList<R> rules{r};
+    QCOMPARE(AutoReply::evaluate(QStringLiteral("estado del pedido 42?"), rules),
+             QStringLiteral("Tu pedido 42 está en camino"));
+  }
+
+  void firstEnabledWins() {
+    R a; a.type = MT::Contains; a.pattern = QStringLiteral("hola"); a.reply = QStringLiteral("A"); a.enabled = false;
+    R b; b.type = MT::Contains; b.pattern = QStringLiteral("hola"); b.reply = QStringLiteral("B");
+    QCOMPARE(AutoReply::evaluate(QStringLiteral("hola!"), {a, b}), QStringLiteral("B"));
+    QCOMPARE(AutoReply::evaluate(QStringLiteral("nada"), {a, b}), QString());
+  }
+
+  void invalidRegexNoCrash() {
+    R r; r.type = MT::Regex; r.pattern = QStringLiteral("([unclosed"); r.reply = QStringLiteral("x");
+    QVERIFY(!AutoReply::matches(r, QStringLiteral("anything")));
+  }
+
+  void backendNameRoundTrip() {
+    bool ok = false;
+    QCOMPARE(AutoReply::parseMatchType(QStringLiteral("Regex"), &ok), MT::Regex);
+    QVERIFY(ok);
+    AutoReply::parseMatchType(QStringLiteral("nope"), &ok);
+    QVERIFY(!ok);
+    QCOMPARE(AutoReply::matchTypeName(MT::Hashtag), QStringLiteral("hashtag"));
   }
 };
 
@@ -1903,6 +1972,7 @@ int main(int argc, char *argv[]) {
   { TstDebugLog t;            run(&t); }
   { TstMessaging t;           run(&t); }
   { TstMessageTemplates t;    run(&t); }
+  { TstAutoReply t;           run(&t); }
   { TstIdenticons t;          run(&t); }
   { TstTheme t;               run(&t); }
   { TstDictionaries t;        run(&t); }

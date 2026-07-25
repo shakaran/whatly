@@ -218,6 +218,7 @@ set(SOURCES
     src/mutedstatus.cpp
     src/messaging.cpp
     src/messagetemplates.cpp
+    src/autoreply.cpp
     src/scheduledmessages.cpp
     src/scheduledmessagesdialog.cpp
     src/webtweaks.cpp
@@ -279,6 +280,7 @@ set(HEADERS
     src/mutedstatus.h
     src/messaging.h
     src/messagetemplates.h
+    src/autoreply.h
     src/scheduledmessages.h
     src/scheduledmessagesdialog.h
     src/pagebridge.h
