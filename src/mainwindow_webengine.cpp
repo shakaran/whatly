@@ -224,23 +224,47 @@ QString MainWindow::attachmentSenderScriptSource() {
   window.__whatlyAttachReady = true;
   var KEY = 'whatlyAttachJob';
 
+  function vis(e) {
+    var r = e.getBoundingClientRect();
+    return r.width > 0 && r.height > 0;
+  }
   function composer() {
-    var b = document.querySelectorAll(
+    var b = [].slice.call(document.querySelectorAll(
       'footer div[contenteditable="true"][role="textbox"],'
-      + 'div[contenteditable="true"][data-tab]');
+      + 'div[contenteditable="true"][data-tab]')).filter(vis);
     return b.length ? b[b.length - 1] : null;
   }
+  // In the media preview the caption field is the only *visible* contenteditable
+  // (the chat composer behind it is hidden), so pick the last visible one.
   function captionBox() {
-    var b = document.querySelectorAll(
-      'div[contenteditable="true"][role="textbox"],'
-      + 'div[contenteditable="true"][data-tab]');
+    var b = [].slice.call(
+      document.querySelectorAll('div[contenteditable="true"]')).filter(vis);
     return b.length ? b[b.length - 1] : null;
   }
+  // The preview's Send is a <button aria-label="Send"> whose icon is
+  // 'wds-ic-send-filled' on current WhatsApp Web (older builds used 'send').
   function sendButton() {
-    var icon = document.querySelector('span[data-icon="send"]')
-      || document.querySelector('button[aria-label="Send"],button[aria-label="Enviar"]');
-    if (!icon) return null;
-    return icon.closest('button,[role="button"]') || icon;
+    var icon = document.querySelector('[data-icon="wds-ic-send-filled"]')
+      || document.querySelector('span[data-icon="send"]');
+    if (icon) return icon.closest('button,[role="button"]') || icon;
+    var cands = [].slice.call(document.querySelectorAll(
+      'button[aria-label],[role="button"][aria-label]')).filter(function (x) {
+        return /^(send|enviar)/i.test(x.getAttribute('aria-label') || '') && vis(x);
+      });
+    return cands.length ? cands[cands.length - 1] : null;
+  }
+  // WhatsApp Web's send button ignores a bare click(); it needs the full
+  // pointer/mouse sequence (verified live over the remote debugger).
+  function press(btn) {
+    var r = btn.getBoundingClientRect();
+    var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    ['pointerdown', 'mousedown', 'pointerup', 'mouseup', 'click'].forEach(function (type) {
+      var Ev = type.indexOf('pointer') === 0 ? PointerEvent : MouseEvent;
+      try {
+        btn.dispatchEvent(new Ev(type, { bubbles: true, cancelable: true,
+          clientX: cx, clientY: cy, button: 0 }));
+      } catch (e) {}
+    });
   }
   function fileInput(isMedia) {
     var inputs = document.querySelectorAll('input[type="file"]');
@@ -272,7 +296,7 @@ QString MainWindow::attachmentSenderScriptSource() {
       return;
     }
     var deadline = job.deadline || (Date.now() + 60000);
-    var attached = false, done = false;
+    var attached = false, captioned = false, done = false;
     var finish = function () {
       if (done) return;
       done = true;
@@ -292,19 +316,27 @@ QString MainWindow::attachmentSenderScriptSource() {
           input.files = dt.files;
           input.dispatchEvent(new Event('change', { bubbles: true }));
           attached = true;
-          return; // let the preview/caption dialog render
+          return; // let the preview render
         }
-        if (job.caption) {
+        var btn = sendButton();
+        if (!btn) return; // preview not ready yet
+        // Type the caption on one tick and Send on the NEXT: the editor is
+        // React/Lexical, and clicking Send in the same tick sends the image
+        // before the caption is committed to its state — which is why the
+        // caption used to go out as a separate message.
+        if (job.caption && !captioned) {
           var cap = captionBox();
-          if (cap && (!cap.textContent || cap.textContent.trim() === '')) {
+          if (cap) {
             cap.focus();
             try { document.execCommand('insertText', false, job.caption); } catch (e) {}
           }
+          captioned = true;
+          return; // give the caption a tick to register before sending
         }
-        var btn = sendButton();
-        if (btn) { btn.click(); finish(); }
+        press(btn);
+        finish();
       } catch (e) { /* keep trying until the deadline */ }
-    }, 500);
+    }, 600);
   }
 
   // The job may be set just before or just after this script loads.
