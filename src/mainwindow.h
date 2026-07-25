@@ -261,6 +261,19 @@ private:
   void applyMinimumSize();
   static constexpr int kBaseMinWidth = 525;
   static constexpr int kBaseMinHeight = 448;
+  // Grid divider thickness; also the gap the grid's minimum size accounts for.
+  static constexpr int kGridHandle = 6;
+  // A grid tile is a glance pane, not a full workspace, so it does not borrow
+  // the window minimum. It keeps the width WhatsApp Web wants before it
+  // collapses the chat list, but only enough height to read recent messages —
+  // the window minimum's 448 forces a 2-row grid past what a 1080p laptop can
+  // show, which leaves the dividers with nothing to redistribute.
+  static constexpr int kGridMinWidth = kBaseMinWidth;
+  static constexpr int kGridMinHeight = 320;
+  // Room beyond the grid minimum, so the dividers can be dragged as soon as
+  // Grid view opens rather than only once the window is enlarged by hand.
+  static constexpr int kGridSlack = 80;
+  QSize gridTileMinSize() const;
   void forceLogOut();
   bool isLoggedIn();
   void tryLogOut();

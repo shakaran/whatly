@@ -291,6 +291,19 @@ void MainWindow::clearGridCells() {
   m_gridLabels.clear();
 }
 
+// The minimum size of one grid tile. Like the window minimum
+// (applyMinimumSize), it follows a zoomed-out page down, so zooming out fits
+// more accounts on screen instead of pinning every tile at full size.
+QSize MainWindow::gridTileMinSize() const {
+  const double zoom = SettingsManager::instance()
+                          .settings()
+                          .value("zoomFactor", 1.0)
+                          .toDouble();
+  const double factor = qBound(0.5, zoom, 1.0);
+  return QSize(static_cast<int>(kGridMinWidth * factor),
+               static_cast<int>(kGridMinHeight * factor));
+}
+
 // Build the grid as a vertical splitter of rows, each a horizontal splitter of
 // tiles (caption + account view). Dragging a divider resizes a row or column;
 // column widths are mirrored across rows so a column stays uniform. Every view
@@ -307,17 +320,18 @@ void MainWindow::relayoutGrid() {
 
   const int cols = qMax(1, static_cast<int>(qCeil(qSqrt(qreal(n)))));
   const int rows = (n + cols - 1) / cols;
+  const QSize tileMin = gridTileMinSize();
 
   m_gridVSplit = new QSplitter(Qt::Vertical, m_gridContainer);
   m_gridVSplit->setChildrenCollapsible(false);
-  m_gridVSplit->setHandleWidth(3);
+  m_gridVSplit->setHandleWidth(kGridHandle);
   m_gridContainer->layout()->addWidget(m_gridVSplit);
 
   int idx = 0;
   for (int r = 0; r < rows; ++r) {
     auto *rowSplit = new QSplitter(Qt::Horizontal, m_gridVSplit);
     rowSplit->setChildrenCollapsible(false);
-    rowSplit->setHandleWidth(3);
+    rowSplit->setHandleWidth(kGridHandle);
     for (int c = 0; c < cols && idx < n; ++c, ++idx) {
       WebView *view = m_accounts[idx].view;
       if (!view) {
@@ -335,7 +349,7 @@ void MainWindow::relayoutGrid() {
       caption->setAlignment(Qt::AlignCenter);
       caption->setContentsMargins(4, 2, 4, 2);
       view->setAccessibleName(m_accounts[idx].name);
-      view->setMinimumSize(kBaseMinWidth, kBaseMinHeight);
+      view->setMinimumSize(tileMin);
       box->addWidget(caption);
       box->addWidget(view, 1); // reparents the view into the tile, from anywhere
       m_gridLabels.append(caption);
@@ -365,9 +379,10 @@ void MainWindow::relayoutGrid() {
   // container at least this big, so the scroll area shows a single full-grid
   // scrollbar when the window is too small — instead of shrinking each tile
   // until it grows its own scrollbar.
-  const int handle = 3, captionH = 24;
-  m_gridMinSize = QSize(cols * kBaseMinWidth + (cols - 1) * handle,
-                        rows * (kBaseMinHeight + captionH) + (rows - 1) * handle);
+  const int captionH = 24;
+  m_gridMinSize =
+      QSize(cols * tileMin.width() + (cols - 1) * kGridHandle,
+            rows * (tileMin.height() + captionH) + (rows - 1) * kGridHandle);
   syncGridContainerSize();
   updateGridCaptions();
 }
@@ -430,9 +445,16 @@ void MainWindow::growWindowForGrid() {
   const int n = qMax(1, m_accounts.size());
   const int cols = qMax(1, static_cast<int>(qCeil(qSqrt(qreal(n)))));
   const int rows = (n + cols - 1) / cols;
-  const int spacing = 3, captionH = 24;
-  const int needW = cols * kBaseMinWidth + (cols - 1) * spacing;
-  const int needH = rows * (kBaseMinHeight + captionH) + (rows - 1) * spacing;
+  const int captionH = 24;
+  const QSize tileMin = gridTileMinSize();
+  // Ask for the whole grid at minimum PLUS some slack. Growing to exactly the
+  // minimum leaves every tile pinned at its floor, so a divider cannot give one
+  // tile room without taking it from a neighbour that has none to give — the
+  // dividers look broken until the window is enlarged by hand.
+  const int needW =
+      cols * tileMin.width() + (cols - 1) * kGridHandle + kGridSlack;
+  const int needH = rows * (tileMin.height() + captionH) +
+                    (rows - 1) * kGridHandle + kGridSlack;
   // Grow the WINDOW by however much more the display area needs, so window
   // chrome (title bar, margins) is accounted for automatically.
   const QSize cur = m_displayStack ? m_displayStack->size() : size();
