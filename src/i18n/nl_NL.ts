@@ -478,6 +478,22 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
         <translation>Er is geen WhatsApp-venster geopend</translation>
     </message>
     <message>
+        <source>Attachments to a contact or group by name aren't supported yet over the web backend — send text, or use a phone number.</source>
+        <translation>Bijlagen naar een contact of groep op naam worden nog niet ondersteund via de web-backend — stuur tekst of gebruik een telefoonnummer.</translation>
+    </message>
+    <message>
+        <source>Could not understand the recipient: %1</source>
+        <translation>Kan de ontvanger niet begrijpen: %1</translation>
+    </message>
+    <message>
+        <source>Opening the group and sending…</source>
+        <translation>Groep openen en verzenden…</translation>
+    </message>
+    <message>
+        <source>Opening the chat with "%1" and sending…</source>
+        <translation>Chat met "%1" openen en verzenden…</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder</source>
         <translation>Herinnering</translation>

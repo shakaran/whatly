@@ -478,6 +478,22 @@ Do you wish to override the security check and continue ?   </source>
         <translation>कोई WhatsApp विंडो खुली नहीं है</translation>
     </message>
     <message>
+        <source>Attachments to a contact or group by name aren't supported yet over the web backend — send text, or use a phone number.</source>
+        <translation>नाम से किसी संपर्क या समूह को अटैचमेंट भेजना वेब बैकएंड पर अभी समर्थित नहीं है — टेक्स्ट भेजें, या फ़ोन नंबर का उपयोग करें।</translation>
+    </message>
+    <message>
+        <source>Could not understand the recipient: %1</source>
+        <translation>प्राप्तकर्ता को समझा नहीं जा सका: %1</translation>
+    </message>
+    <message>
+        <source>Opening the group and sending…</source>
+        <translation>समूह खोलकर भेजा जा रहा है…</translation>
+    </message>
+    <message>
+        <source>Opening the chat with "%1" and sending…</source>
+        <translation>"%1" के साथ चैट खोलकर भेजा जा रहा है…</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder</source>
         <translation>अनुस्मारक</translation>

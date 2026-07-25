@@ -478,6 +478,22 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Нет открытого окна WhatsApp</translation>
     </message>
     <message>
+        <source>Attachments to a contact or group by name aren't supported yet over the web backend — send text, or use a phone number.</source>
+        <translation>Вложения для контакта или группы по имени пока не поддерживаются в веб-бэкенде — отправьте текст или используйте номер телефона.</translation>
+    </message>
+    <message>
+        <source>Could not understand the recipient: %1</source>
+        <translation>Не удалось распознать получателя: %1</translation>
+    </message>
+    <message>
+        <source>Opening the group and sending…</source>
+        <translation>Открытие группы и отправка…</translation>
+    </message>
+    <message>
+        <source>Opening the chat with "%1" and sending…</source>
+        <translation>Открытие чата с "%1" и отправка…</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder</source>
         <translation>Напоминание</translation>

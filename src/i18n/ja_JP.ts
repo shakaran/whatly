@@ -478,6 +478,22 @@ Do you wish to override the security check and continue ?   </source>
         <translation>WhatsApp のウィンドウが開いていません</translation>
     </message>
     <message>
+        <source>Attachments to a contact or group by name aren't supported yet over the web backend — send text, or use a phone number.</source>
+        <translation>名前による連絡先やグループへの添付は、Web バックエンドではまだ対応していません — テキストを送信するか、電話番号を使用してください。</translation>
+    </message>
+    <message>
+        <source>Could not understand the recipient: %1</source>
+        <translation>宛先を認識できませんでした: %1</translation>
+    </message>
+    <message>
+        <source>Opening the group and sending…</source>
+        <translation>グループを開いて送信しています…</translation>
+    </message>
+    <message>
+        <source>Opening the chat with "%1" and sending…</source>
+        <translation>"%1" とのチャットを開いて送信しています…</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder</source>
         <translation>リマインダー</translation>

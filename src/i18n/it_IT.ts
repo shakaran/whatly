@@ -740,6 +740,22 @@ Puoi estrarre qualsiasi account in una finestra propria: fai clic con il tasto d
         <translation>Nessuna finestra di WhatsApp è aperta</translation>
     </message>
     <message>
+        <source>Attachments to a contact or group by name aren't supported yet over the web backend — send text, or use a phone number.</source>
+        <translation>Gli allegati a un contatto o gruppo per nome non sono ancora supportati con il backend web — invia testo o usa un numero di telefono.</translation>
+    </message>
+    <message>
+        <source>Could not understand the recipient: %1</source>
+        <translation>Impossibile interpretare il destinatario: %1</translation>
+    </message>
+    <message>
+        <source>Opening the group and sending…</source>
+        <translation>Apertura del gruppo e invio…</translation>
+    </message>
+    <message>
+        <source>Opening the chat with "%1" and sending…</source>
+        <translation>Apertura della chat con "%1" e invio…</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder</source>
         <translation>Promemoria</translation>

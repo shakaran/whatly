@@ -478,6 +478,22 @@ Do you wish to override the security check and continue ?   </source>
         <translation>لا توجد نافذة واتساب مفتوحة</translation>
     </message>
     <message>
+        <source>Attachments to a contact or group by name aren't supported yet over the web backend — send text, or use a phone number.</source>
+        <translation>إرفاق الملفات إلى جهة اتصال أو مجموعة بالاسم غير مدعوم بعد عبر الواجهة الخلفية للويب — أرسل نصًا أو استخدم رقم هاتف.</translation>
+    </message>
+    <message>
+        <source>Could not understand the recipient: %1</source>
+        <translation>تعذّر فهم المستلم: %1</translation>
+    </message>
+    <message>
+        <source>Opening the group and sending…</source>
+        <translation>جارٍ فتح المجموعة والإرسال…</translation>
+    </message>
+    <message>
+        <source>Opening the chat with "%1" and sending…</source>
+        <translation>جارٍ فتح المحادثة مع "%1" والإرسال…</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder</source>
         <translation>تذكير</translation>

@@ -478,6 +478,22 @@ Czy chcesz pominąć kontrolę bezpieczeństwa i kontynuować?   </translation>
         <translation>Żadne okno WhatsApp nie jest otwarte</translation>
     </message>
     <message>
+        <source>Attachments to a contact or group by name aren't supported yet over the web backend — send text, or use a phone number.</source>
+        <translation>Załączniki do kontaktu lub grupy według nazwy nie są jeszcze obsługiwane przez backend sieciowy — wyślij tekst lub użyj numeru telefonu.</translation>
+    </message>
+    <message>
+        <source>Could not understand the recipient: %1</source>
+        <translation>Nie można zinterpretować odbiorcy: %1</translation>
+    </message>
+    <message>
+        <source>Opening the group and sending…</source>
+        <translation>Otwieranie grupy i wysyłanie…</translation>
+    </message>
+    <message>
+        <source>Opening the chat with "%1" and sending…</source>
+        <translation>Otwieranie czatu z "%1" i wysyłanie…</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder</source>
         <translation>Przypomnienie</translation>

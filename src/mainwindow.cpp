@@ -1020,11 +1020,59 @@ void MainWindow::commandSend(const Messaging::SendCommand &cmd) {
     return;
   }
 
-  // Groups and contact-name lookups over the web session come in a later phase.
+  if (r.kind == RecipientKind::ContactName || r.kind == RecipientKind::GroupId) {
+    if (!cmd.file.isEmpty()) {
+      // Attaching a file to a by-name/group chat needs the open-then-attach
+      // choreography; not wired yet. Text works.
+      showNotification(
+          QApplication::applicationDisplayName(),
+          tr("Attachments to a contact or group by name aren't supported yet "
+             "over the web backend — send text, or use a phone number."));
+      return;
+    }
+    sendByNameViaWeb(r, cmd.message);
+    return;
+  }
+
+  showNotification(QApplication::applicationDisplayName(),
+                   tr("Could not understand the recipient: %1").arg(cmd.to));
+}
+
+void MainWindow::sendByNameViaWeb(const Messaging::Recipient &recipient,
+                                  const QString &text) {
+  using namespace Messaging;
+  if (!m_webEngine || !m_webEngine->page()) {
+    showNotification(QApplication::applicationDisplayName(),
+                     tr("No WhatsApp window is open"));
+    return;
+  }
+  // Leave a job the injected name-sender script (see nameSenderScriptSource)
+  // picks up: it opens the chat by exact-title search (or, for a group id, via
+  // the internal store) and sends the text. No navigation, so the currently
+  // open session and login are reused.
+  QJsonObject job;
+  job["kind"] = recipient.kind == RecipientKind::GroupId
+                    ? QStringLiteral("groupid")
+                    : QStringLiteral("name");
+  job["query"] = recipient.value;
+  job["text"] = text;
+  const QString jobJson =
+      QString::fromUtf8(QJsonDocument(job).toJson(QJsonDocument::Compact));
+
+  const QString js =
+      QStringLiteral("(function(){try{var job=%1;"
+                     "job.deadline=Date.now()+45000;"
+                     "sessionStorage.setItem('whatlyNameJob',"
+                     "JSON.stringify(job));}"
+                     "catch(e){console.error('whatly name: '+e);}})();")
+          .arg(jobJson);
+  m_webEngine->page()->runJavaScript(js);
+
   showNotification(
       QApplication::applicationDisplayName(),
-      tr("Only phone-number recipients are supported so far (got: %1).")
-          .arg(cmd.to));
+      recipient.kind == RecipientKind::GroupId
+          ? tr("Opening the group and sending…")
+          : tr("Opening the chat with \"%1\" and sending…").arg(recipient.value));
 }
 
 void MainWindow::sendAttachmentViaWeb(const QString &number,

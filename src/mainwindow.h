@@ -257,6 +257,14 @@ private:
                             const QString &caption);
   // The page-side script that completes an attachment send (injected on load).
   static QString attachmentSenderScriptSource();
+  // Send text to a contact/group given by name (or a group id) through WhatsApp
+  // Web: opens the target chat by exact-title search, then types and sends.
+  // Used by commandSend for a non-phone-number recipient. Best-effort.
+  void sendByNameViaWeb(const Messaging::Recipient &recipient,
+                        const QString &text);
+  // The page-side script that opens a chat by name/id and sends (injected on
+  // load).
+  static QString nameSenderScriptSource();
   // The page-side observer that reports new incoming messages over the bridge.
   static QString autoReplyObserverScriptSource();
   // Evaluate the auto-reply rules for an incoming message and, if one matches,

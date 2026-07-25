@@ -478,6 +478,22 @@ Deseja ignorar a verificação de segurança e continuar?   </translation>
         <translation>Nenhuma janela do WhatsApp está aberta</translation>
     </message>
     <message>
+        <source>Attachments to a contact or group by name aren't supported yet over the web backend — send text, or use a phone number.</source>
+        <translation>Anexos para um contato ou grupo por nome ainda não têm suporte no backend web — envie texto ou use um número de telefone.</translation>
+    </message>
+    <message>
+        <source>Could not understand the recipient: %1</source>
+        <translation>Não foi possível interpretar o destinatário: %1</translation>
+    </message>
+    <message>
+        <source>Opening the group and sending…</source>
+        <translation>Abrindo o grupo e enviando…</translation>
+    </message>
+    <message>
+        <source>Opening the chat with "%1" and sending…</source>
+        <translation>Abrindo a conversa com "%1" e enviando…</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder</source>
         <translation>Lembrete</translation>

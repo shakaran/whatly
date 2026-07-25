@@ -231,6 +231,25 @@ void MainWindow::installPageBridge(QWebEnginePage *page) {
   for (const auto &script : staleObs)
     scripts.remove(script);
   scripts.insert(observer);
+
+  // The name/group sender: for `--send` to a contact or group given by name
+  // (or a group id), it opens the target chat from a job left in
+  // sessionStorage — typing the name into WhatsApp Web's chat search and
+  // clicking the result whose title matches EXACTLY (case-insensitive), so a
+  // message never lands in the wrong chat — then types the text and sends.
+  // A group id is opened best-effort through WhatsApp Web's internal store,
+  // which is not always reachable. Defensive: if nothing matches it aborts
+  // rather than guessing.
+  QWebEngineScript nameSender;
+  nameSender.setName(QStringLiteral("whatly-name-sender"));
+  nameSender.setSourceCode(nameSenderScriptSource());
+  nameSender.setInjectionPoint(QWebEngineScript::DocumentReady);
+  nameSender.setWorldId(QWebEngineScript::MainWorld);
+  nameSender.setRunsOnSubFrames(false);
+  const auto staleName = scripts.find(nameSender.name());
+  for (const auto &script : staleName)
+    scripts.remove(script);
+  scripts.insert(nameSender);
 }
 
 // The page-side automation for `--send --file`. Injected on every load; a no-op
@@ -355,6 +374,179 @@ QString MainWindow::attachmentSenderScriptSource() {
 
   // Poll for the job (it may be set just before or after this script loads);
   // process() self-guards so only one run ever starts.
+  var boot = setInterval(function () {
+    try { if (sessionStorage.getItem(KEY)) { clearInterval(boot); process(); } }
+    catch (e) {}
+  }, 500);
+  setTimeout(function () { try { clearInterval(boot); } catch (e) {} }, 20000);
+})();
+)JS");
+}
+
+// The page-side automation for `--send` to a contact/group by name (or a group
+// id). Injected on every load; a no-op until a job appears in sessionStorage
+// under 'whatlyNameJob'. It opens the target chat, then types the text and
+// sends. Best-effort and defensive — it aborts rather than send to the wrong
+// chat, and reports the outcome over the bridge so C++ can notify the user.
+// NOTE: written against current WhatsApp Web selectors but NOT yet verified
+// live; treat as work-in-progress.
+QString MainWindow::nameSenderScriptSource() {
+  return QString::fromLatin1(R"JS(
+(function () {
+  'use strict';
+  if (window.__whatlyNameReady) return;
+  window.__whatlyNameReady = true;
+  var KEY = 'whatlyNameJob';
+
+  function report(ok, err) {
+    try {
+      if (window.__whatlyBridge && window.__whatlyBridge.scheduledMessageResult)
+        window.__whatlyBridge.scheduledMessageResult('name', !!ok, String(err || ''));
+    } catch (e) { /* bridge not ready; C++ falls back to an optimistic notice */ }
+  }
+  function vis(e) {
+    var r = e.getBoundingClientRect();
+    return r.width > 0 && r.height > 0;
+  }
+  function norm(s) { return (s || '').replace(/\s+/g, ' ').trim().toLowerCase(); }
+
+  function searchBox() {
+    // The chat-list search field (not the composer). data-tab has drifted across
+    // builds, so try the labelled search box first, then known tab values.
+    return document.querySelector('div[contenteditable="true"][aria-label*="Search" i]')
+      || document.querySelector('div[contenteditable="true"][aria-label*="Buscar" i]')
+      || document.querySelector('#side div[contenteditable="true"][data-tab="3"]')
+      || document.querySelector('div[contenteditable="true"][data-tab="3"]');
+  }
+  function setText(el, text) {
+    el.focus();
+    try { document.execCommand('selectAll', false, null); } catch (e) {}
+    try { document.execCommand('insertText', false, text); } catch (e) {}
+    el.dispatchEvent(new InputEvent('input', { bubbles: true }));
+  }
+  // A chat row in the side list; its visible title lives in a span[title].
+  function matchingResult(query) {
+    var rows = [].slice.call(document.querySelectorAll(
+      '#side div[role="listitem"], #pane-side div[role="listitem"]')).filter(vis);
+    for (var i = 0; i < rows.length; i++) {
+      var t = rows[i].querySelector('span[title]');
+      if (t && norm(t.getAttribute('title') || t.textContent) === query)
+        return rows[i];
+    }
+    return null;
+  }
+  function clickRow(row) {
+    var target = row.querySelector('span[title]') || row;
+    var r = target.getBoundingClientRect();
+    var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    ['pointerdown', 'mousedown', 'pointerup', 'mouseup', 'click'].forEach(function (type) {
+      var Ev = type.indexOf('pointer') === 0 ? PointerEvent : MouseEvent;
+      try {
+        target.dispatchEvent(new Ev(type, { bubbles: true, cancelable: true,
+          clientX: cx, clientY: cy, button: 0 }));
+      } catch (e) {}
+    });
+  }
+  function composer() {
+    var b = [].slice.call(document.querySelectorAll(
+      'footer div[contenteditable="true"][role="textbox"],'
+      + 'div[contenteditable="true"][data-tab]')).filter(vis);
+    return b.length ? b[b.length - 1] : null;
+  }
+  function sendButton() {
+    var icon = document.querySelector('footer [data-icon="wds-ic-send-filled"]')
+      || document.querySelector('footer span[data-icon="send"]')
+      || document.querySelector('span[data-icon="send"]');
+    if (icon) return icon.closest('button,[role="button"]') || icon;
+    return null;
+  }
+  function press(btn) {
+    var r = btn.getBoundingClientRect();
+    var cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    ['pointerdown', 'mousedown', 'pointerup', 'mouseup', 'click'].forEach(function (type) {
+      var Ev = type.indexOf('pointer') === 0 ? PointerEvent : MouseEvent;
+      try {
+        btn.dispatchEvent(new Ev(type, { bubbles: true, cancelable: true,
+          clientX: cx, clientY: cy, button: 0 }));
+      } catch (e) {}
+    });
+  }
+  // Best-effort open of a group by its bare id, through WhatsApp Web's internal
+  // store. The store is not reliably exposed on the page, so this often no-ops;
+  // the name path above is the supported one.
+  function openGroupById(id) {
+    try {
+      var S = window.Store || (window.WWebJS && window.WWebJS.Store);
+      if (!S || !S.Chat || !S.Cmd) return false;
+      var jid = id.indexOf('@') === -1 ? (id + '@g.us') : id;
+      var chat = S.Chat.get(jid);
+      if (!chat) return false;
+      S.Cmd.openChatAt(chat);
+      return true;
+    } catch (e) { return false; }
+  }
+
+  function process() {
+    var raw;
+    try { raw = sessionStorage.getItem(KEY); } catch (e) { return; }
+    if (!raw) return;
+    if (window.__whatlyNameActive) return;
+    window.__whatlyNameActive = true;
+    var job;
+    try { job = JSON.parse(raw); } catch (e) {
+      try { sessionStorage.removeItem(KEY); } catch (e2) {}
+      return;
+    }
+    var deadline = job.deadline || (Date.now() + 45000);
+    var query = norm(job.query);
+    var opened = false, searched = false, groupTried = false, typed = false, done = false;
+    var finish = function (ok, err) {
+      if (done) return;
+      done = true;
+      clearInterval(timer);
+      try { sessionStorage.removeItem(KEY); } catch (e) {}
+      report(ok, err);
+    };
+
+    var timer = setInterval(function () {
+      try {
+        if (Date.now() > deadline) {
+          finish(false, 'timeout: no exact match for "' + (job.query || '') + '"');
+          return;
+        }
+        // Phase A: open the target chat.
+        if (!opened) {
+          if (job.kind === 'groupid') {
+            if (!groupTried) { groupTried = true; opened = openGroupById(job.query); }
+            if (!opened) { finish(false, 'could not open the group by id over the web backend'); return; }
+          } else {
+            var box = searchBox();
+            if (!box) return; // side panel not ready yet
+            if (!searched) { setText(box, job.query); searched = true; return; }
+            var row = matchingResult(query);
+            if (!row) return; // keep waiting for an EXACT match until the deadline
+            clickRow(row);
+            opened = true;
+            return; // let the conversation open
+          }
+        }
+        // Phase B: the chat is open once its composer is present. Type + send.
+        var comp = composer();
+        if (!comp) return;
+        if (job.text && !typed) {
+          comp.focus();
+          try { document.execCommand('insertText', false, job.text); } catch (e) {}
+          typed = true;
+          return;
+        }
+        var btn = sendButton();
+        if (!btn) return;
+        press(btn);
+        setTimeout(function () { finish(true, ''); }, 400);
+      } catch (e) { /* keep trying until the deadline */ }
+    }, 700);
+  }
+
   var boot = setInterval(function () {
     try { if (sessionStorage.getItem(KEY)) { clearInterval(boot); process(); } }
     catch (e) {}

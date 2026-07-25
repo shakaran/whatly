@@ -26,6 +26,16 @@ position (current WhatsApp Web obfuscates its class names) and was verified live
 end-to-end, including regex captures in the reply. It replies in the open
 conversation. Same terms-of-service caveat as above.
 
+**Send to a contact or group by name (work in progress).** `--send` over the
+web backend now accepts a non-number recipient: `--to "Alice Smith"` (or
+`--to name:Alice`) opens the chat whose title matches **exactly** (case-
+insensitive) via WhatsApp Web's search and sends the text — it aborts rather
+than message the wrong chat if there is no exact match. A group given by name
+works the same way; a group id (`--to group:<id>`) is attempted best-effort
+through WhatsApp Web's internal store. Text only for now (attachments by name
+come next). This is page automation and is being verified live before it is
+considered stable.
+
 **Cloud API backend for sending (work in progress).** `--send --backend cloud`
 now sends directly through the Meta WhatsApp Business Cloud API — no running
 WhatsApp Web session needed, so it works headless and scriptable. It supports

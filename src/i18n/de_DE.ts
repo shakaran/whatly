@@ -478,6 +478,22 @@ Möchten Sie die Sicherheitsprüfung übergehen und fortfahren?   </translation>
         <translation>Kein WhatsApp-Fenster ist geöffnet</translation>
     </message>
     <message>
+        <source>Attachments to a contact or group by name aren't supported yet over the web backend — send text, or use a phone number.</source>
+        <translation>Anhänge an einen Kontakt oder eine Gruppe per Name werden über das Web-Backend noch nicht unterstützt — sende Text oder verwende eine Telefonnummer.</translation>
+    </message>
+    <message>
+        <source>Could not understand the recipient: %1</source>
+        <translation>Empfänger konnte nicht interpretiert werden: %1</translation>
+    </message>
+    <message>
+        <source>Opening the group and sending…</source>
+        <translation>Gruppe wird geöffnet und gesendet…</translation>
+    </message>
+    <message>
+        <source>Opening the chat with "%1" and sending…</source>
+        <translation>Chat mit "%1" wird geöffnet und gesendet…</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder</source>
         <translation>Erinnerung</translation>

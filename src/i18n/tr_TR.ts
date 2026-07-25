@@ -478,6 +478,22 @@ Güvenlik denetimini atlayıp devam etmek istiyor musunuz?   </translation>
         <translation>Açık bir WhatsApp penceresi yok</translation>
     </message>
     <message>
+        <source>Attachments to a contact or group by name aren't supported yet over the web backend — send text, or use a phone number.</source>
+        <translation>Bir kişiye veya gruba ada göre dosya ekleme, web arka ucunda henüz desteklenmiyor — metin gönderin ya da bir telefon numarası kullanın.</translation>
+    </message>
+    <message>
+        <source>Could not understand the recipient: %1</source>
+        <translation>Alıcı anlaşılamadı: %1</translation>
+    </message>
+    <message>
+        <source>Opening the group and sending…</source>
+        <translation>Grup açılıyor ve gönderiliyor…</translation>
+    </message>
+    <message>
+        <source>Opening the chat with "%1" and sending…</source>
+        <translation>"%1" ile sohbet açılıyor ve gönderiliyor…</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder</source>
         <translation>Hatırlatıcı</translation>

@@ -478,6 +478,22 @@ Do you wish to override the security check and continue ?   </source>
         <translation>没有打开的 WhatsApp 窗口</translation>
     </message>
     <message>
+        <source>Attachments to a contact or group by name aren't supported yet over the web backend — send text, or use a phone number.</source>
+        <translation>暂不支持通过网页后端按名称向联系人或群组发送附件 — 请发送文本，或使用电话号码。</translation>
+    </message>
+    <message>
+        <source>Could not understand the recipient: %1</source>
+        <translation>无法识别收件人：%1</translation>
+    </message>
+    <message>
+        <source>Opening the group and sending…</source>
+        <translation>正在打开群组并发送…</translation>
+    </message>
+    <message>
+        <source>Opening the chat with "%1" and sending…</source>
+        <translation>正在打开与 "%1" 的聊天并发送…</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="98"/>
         <source>Reminder</source>
         <translation>提醒</translation>
