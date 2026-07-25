@@ -38,6 +38,16 @@ account config; Whatly never obtains it itself), and check it with
 `--cloud-status`. The URL/payload builders are covered by unit tests
 (`TstCloudApi`).
 
+**Multi-window account tabs (#10).** Multiple accounts now live in a
+Chrome-style tab strip: add one with **+**, rename or close from a right-click
+menu, and drag a tab out of the strip to **tear it off into its own window**
+(or drop it back to redock). A **grid view** tiles every account side by side
+with resizable panes and thin scrollbars, and the whole multi-window
+arrangement (which account is where, each window's geometry and active tab, tile
+sizes) is optionally restored on the next launch. Each account stays its own
+Chromium storage partition, so sessions never touch and the tray badge still
+sums unread across them all. Thanks to @gbmaizol.
+
 ## 6.5.0 (2026-07-24)
 
 **Recover from a start-up crash (#3).** If Qt WebEngine aborts while

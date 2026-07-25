@@ -948,11 +948,21 @@ void MainWindow::quitApp() {
   m_isQuitting = true;
   // Reparent any torn-off account views back into the main stack, so every view
   // is owned by the main window again and torn down in a known order at exit.
+  // Collect the (possibly shared) detached windows so each is hidden and
+  // scheduled for deletion exactly once — otherwise the now-empty top-levels
+  // linger on screen during the async getPageTheme() shutdown delay and leak.
+  QSet<DetachedAccountWindow *> detachedWindows;
   for (int i = 0; i < m_accounts.size(); ++i)
     if (m_accounts[i].window) {
       if (m_accounts[i].view)
         m_accountStack->addWidget(m_accounts[i].view);
+      detachedWindows.insert(m_accounts[i].window);
       m_accounts[i].window = nullptr;
+    }
+  for (DetachedAccountWindow *win : detachedWindows)
+    if (win) {
+      win->hide();
+      win->deleteLater();
     }
   saveWindowGeometry();
   getPageTheme();
