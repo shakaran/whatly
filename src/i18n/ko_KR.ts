@@ -1183,6 +1183,22 @@ Please setup the password in the Settings first.</source>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>이 이름의 저장된 메시지 템플릿을 삭제하고 종료합니다</translation>
     </message>
+    <message>
+        <source>Turn auto-reply to incoming messages on, then exit</source>
+        <translation>수신 메시지에 대한 자동 회신을 켜고 종료합니다</translation>
+    </message>
+    <message>
+        <source>Turn auto-reply off, then exit</source>
+        <translation>자동 회신을 끄고 종료합니다</translation>
+    </message>
+    <message>
+        <source>List the active auto-reply rules (status included) and exit</source>
+        <translation>활성화된 자동 회신 규칙(상태 포함)을 나열하고 종료합니다</translation>
+    </message>
+    <message>
+        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
+        <translation>이 JSON 파일을 자동 회신 규칙의 소스로 사용하고 종료합니다 (비우면 해제)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

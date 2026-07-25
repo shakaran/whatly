@@ -43,6 +43,35 @@ QString evaluate(const QString &incoming, const QList<Rule> &rules);
 MatchType parseMatchType(const QString &name, bool *ok = nullptr);
 QString matchTypeName(MatchType type);
 
+// ── Serialization ──────────────────────────────────────────────────────────
+// Rules round-trip through JSON: [{ "match": "...", "pattern": "...",
+// "reply": "...", "caseSensitive": false, "enabled": true }, ...]. This is what
+// a user-edited rules file holds and what the per-account store keeps. Pure.
+QByteArray rulesToJson(const QList<Rule> &rules);
+QList<Rule> rulesFromJson(const QByteArray &json, QString *error = nullptr);
+
+// ── Store (per account) ────────────────────────────────────────────────────
+// The master switch: when off, no incoming message is ever auto-replied to.
+bool isEnabled();
+void setEnabled(bool on);
+
+// Rules kept in the account's settings (managed from the CLI/UI).
+QList<Rule> storedRules();
+void setStoredRules(const QList<Rule> &rules);
+
+// Optional path to a user-maintained JSON rules file (empty = none).
+QString rulesFilePath();
+void setRulesFilePath(const QString &path);
+
+// The rules actually in effect: the stored rules followed by the file's rules
+// (the file is re-read each call so edits take effect without a restart). A
+// malformed file contributes nothing rather than throwing.
+QList<Rule> activeRules();
+
+// Given an incoming message, the reply to send, or empty if auto-reply is off
+// or nothing matches. Convenience over isEnabled()/activeRules()/evaluate().
+QString replyFor(const QString &incoming);
+
 } // namespace AutoReply
 
 #endif // AUTOREPLY_H

@@ -1183,6 +1183,22 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>De opgeslagen berichtsjabloon met deze naam verwijderen en afsluiten</translation>
     </message>
+    <message>
+        <source>Turn auto-reply to incoming messages on, then exit</source>
+        <translation>Automatisch antwoorden op inkomende berichten inschakelen en afsluiten</translation>
+    </message>
+    <message>
+        <source>Turn auto-reply off, then exit</source>
+        <translation>Automatisch antwoorden uitschakelen en afsluiten</translation>
+    </message>
+    <message>
+        <source>List the active auto-reply rules (status included) and exit</source>
+        <translation>De actieve auto-antwoordregels (met status) tonen en afsluiten</translation>
+    </message>
+    <message>
+        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
+        <translation>Dit JSON-bestand als bron van auto-antwoordregels gebruiken en afsluiten (leeg om te wissen)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

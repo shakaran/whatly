@@ -850,6 +850,12 @@ class TstAutoReply : public QObject {
   using R = AutoReply::Rule;
   using MT = AutoReply::MatchType;
 private slots:
+  void init() {
+    AutoReply::setEnabled(false);
+    AutoReply::setStoredRules({});
+    AutoReply::setRulesFilePath(QString());
+  }
+
   void exactMatch() {
     R r; r.type = MT::Exact; r.pattern = QStringLiteral("ping"); r.reply = QStringLiteral("pong");
     QVERIFY(AutoReply::matches(r, QStringLiteral("  ping  ")));   // trimmed
@@ -907,6 +913,46 @@ private slots:
     AutoReply::parseMatchType(QStringLiteral("nope"), &ok);
     QVERIFY(!ok);
     QCOMPARE(AutoReply::matchTypeName(MT::Hashtag), QStringLiteral("hashtag"));
+  }
+
+  void jsonRoundTrip() {
+    R a; a.type = MT::Regex; a.pattern = QStringLiteral("pedido (\\d+)");
+    a.reply = QStringLiteral("nº $1"); a.caseSensitive = true; a.enabled = false;
+    R b; b.type = MT::Hashtag; b.pattern = QStringLiteral("oferta"); b.reply = QStringLiteral("¡Sí!");
+    const QByteArray json = AutoReply::rulesToJson({a, b});
+    QString err;
+    const QList<R> back = AutoReply::rulesFromJson(json, &err);
+    QVERIFY(err.isEmpty());
+    QCOMPARE(back.size(), 2);
+    QCOMPARE(back[0].type, MT::Regex);
+    QCOMPARE(back[0].pattern, a.pattern);
+    QCOMPARE(back[0].reply, a.reply);
+    QVERIFY(back[0].caseSensitive);
+    QVERIFY(!back[0].enabled);
+    QCOMPARE(back[1].type, MT::Hashtag);
+    // Malformed JSON reports an error and yields nothing (never throws).
+    AutoReply::rulesFromJson(QByteArray("{ not json"), &err);
+    QVERIFY(!err.isEmpty());
+  }
+
+  void storeAndActiveRules() {
+    // replyFor is gated by the master switch.
+    R s; s.type = MT::Contains; s.pattern = QStringLiteral("hola"); s.reply = QStringLiteral("stored");
+    AutoReply::setStoredRules({s});
+    QCOMPARE(AutoReply::replyFor(QStringLiteral("hola")), QString()); // disabled
+    AutoReply::setEnabled(true);
+    QCOMPARE(AutoReply::replyFor(QStringLiteral("hola")), QStringLiteral("stored"));
+
+    // A rules file is merged after the stored rules and re-read each call.
+    QTemporaryFile file;
+    file.setFileTemplate(QDir::tempPath() + QStringLiteral("/whatly_rules_XXXXXX.json"));
+    QVERIFY(file.open());
+    R f; f.type = MT::Exact; f.pattern = QStringLiteral("ping"); f.reply = QStringLiteral("from-file");
+    file.write(AutoReply::rulesToJson({f}));
+    file.flush();
+    AutoReply::setRulesFilePath(file.fileName());
+    QCOMPARE(AutoReply::activeRules().size(), 2); // stored + file
+    QCOMPARE(AutoReply::replyFor(QStringLiteral("ping")), QStringLiteral("from-file"));
   }
 };
 

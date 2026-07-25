@@ -28,6 +28,7 @@
 #include "def.h"
 #include "dictionaries.h"
 #include "mainwindow.h"
+#include "autoreply.h"
 #include "messaging.h"
 #include "messagetemplates.h"
 #include "settingsmanager.h"
@@ -621,6 +622,21 @@ int main(int argc, char *argv[]) {
       QStringList() << "template-remove",
       QObject::tr("Delete the saved message template of this name, then exit"),
       QStringLiteral("name"));
+  // Auto-reply ("listener") management.
+  QCommandLineOption autoReplyOnOption(
+      QStringList() << "autoreply-on",
+      QObject::tr("Turn auto-reply to incoming messages on, then exit"));
+  QCommandLineOption autoReplyOffOption(
+      QStringList() << "autoreply-off",
+      QObject::tr("Turn auto-reply off, then exit"));
+  QCommandLineOption autoReplyListOption(
+      QStringList() << "autoreply-list",
+      QObject::tr("List the active auto-reply rules (status included) and exit"));
+  QCommandLineOption autoReplyFileOption(
+      QStringList() << "autoreply-file",
+      QObject::tr("Use this JSON file as a source of auto-reply rules, then "
+                  "exit (empty to clear)"),
+      QStringLiteral("path"));
 
   parser.addOption(migrateFromOption);
   parser.addOption(dryRunOption);
@@ -636,6 +652,10 @@ int main(int argc, char *argv[]) {
   parser.addOption(templateListOption);
   parser.addOption(templateSetOption);
   parser.addOption(templateRemoveOption);
+  parser.addOption(autoReplyOnOption);
+  parser.addOption(autoReplyOffOption);
+  parser.addOption(autoReplyListOption);
+  parser.addOption(autoReplyFileOption);
 
   secondaryInstanceCLIOptions << showAppWindowOption << openSettingsOption
                               << lockAppOption << openAboutOption
@@ -687,6 +707,36 @@ int main(int argc, char *argv[]) {
         << (removed ? "Removed template " : "No such template: ") << name
         << '\n';
     return removed ? 0 : 1;
+  }
+
+  // Auto-reply management operates on this profile's settings and exits.
+  if (parser.isSet(autoReplyOnOption) || parser.isSet(autoReplyOffOption)) {
+    AutoReply::setEnabled(parser.isSet(autoReplyOnOption));
+    SettingsManager::instance().settings().sync();
+    QTextStream(stdout) << "Auto-reply is now "
+                        << (AutoReply::isEnabled() ? "on" : "off") << '\n';
+    return 0;
+  }
+  if (parser.isSet(autoReplyFileOption)) {
+    AutoReply::setRulesFilePath(parser.value(autoReplyFileOption).trimmed());
+    SettingsManager::instance().settings().sync();
+    QTextStream(stdout) << "Auto-reply rules file set to: "
+                        << (AutoReply::rulesFilePath().isEmpty()
+                                ? QStringLiteral("(none)")
+                                : AutoReply::rulesFilePath())
+                        << '\n';
+    return 0;
+  }
+  if (parser.isSet(autoReplyListOption)) {
+    QTextStream out(stdout);
+    out << "Auto-reply: " << (AutoReply::isEnabled() ? "ON" : "OFF") << '\n';
+    const auto rules = AutoReply::activeRules();
+    for (const auto &r : rules)
+      out << "  [" << AutoReply::matchTypeName(r.type) << (r.enabled ? "" : ", disabled")
+          << "] " << r.pattern << " -> " << r.reply << '\n';
+    if (rules.isEmpty())
+      out << "  (no rules)\n";
+    return 0;
   }
 
   // `--send` hands a message to the already-running instance of this profile

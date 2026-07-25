@@ -1183,6 +1183,22 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Bu addaki kayıtlı mesaj şablonunu sil ve çık</translation>
     </message>
+    <message>
+        <source>Turn auto-reply to incoming messages on, then exit</source>
+        <translation>Gelen mesajlara otomatik yanıtı aç ve çık</translation>
+    </message>
+    <message>
+        <source>Turn auto-reply off, then exit</source>
+        <translation>Otomatik yanıtı kapat ve çık</translation>
+    </message>
+    <message>
+        <source>List the active auto-reply rules (status included) and exit</source>
+        <translation>Etkin otomatik yanıt kurallarını (durumuyla) listele ve çık</translation>
+    </message>
+    <message>
+        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
+        <translation>Bu JSON dosyasını otomatik yanıt kuralları kaynağı olarak kullan ve çık (temizlemek için boş)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

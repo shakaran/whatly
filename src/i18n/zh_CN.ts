@@ -1183,6 +1183,22 @@ Please setup the password in the Settings first.</source>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>删除此名称的已保存消息模板，然后退出</translation>
     </message>
+    <message>
+        <source>Turn auto-reply to incoming messages on, then exit</source>
+        <translation>开启对收到消息的自动回复，然后退出</translation>
+    </message>
+    <message>
+        <source>Turn auto-reply off, then exit</source>
+        <translation>关闭自动回复，然后退出</translation>
+    </message>
+    <message>
+        <source>List the active auto-reply rules (status included) and exit</source>
+        <translation>列出生效的自动回复规则（含状态）并退出</translation>
+    </message>
+    <message>
+        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
+        <translation>使用此 JSON 文件作为自动回复规则来源，然后退出（留空则清除）</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

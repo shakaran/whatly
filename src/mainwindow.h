@@ -162,6 +162,11 @@ private:
                             const QString &caption);
   // The page-side script that completes an attachment send (injected on load).
   static QString attachmentSenderScriptSource();
+  // The page-side observer that reports new incoming messages over the bridge.
+  static QString autoReplyObserverScriptSource();
+  // Evaluate the auto-reply rules for an incoming message and, if one matches,
+  // send the reply into the open conversation.
+  void handleIncomingMessage(const QString &text);
   void checkConnectionHealth();
   void setNotificationPresenter(QWebEngineProfile *profile);
 #ifdef Q_OS_LINUX

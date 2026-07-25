@@ -15,6 +15,15 @@ being added on top. Covered by unit tests (`TstMessaging`,
 `TstMessageTemplates`). Note: automating WhatsApp Web is, strictly, against
 WhatsApp's terms — use it for your own account.
 
+**Auto-reply to incoming messages (work in progress).** An opt-in "listener"
+replies automatically to messages in the open conversation using rules —
+`exact`, `contains`, `hashtag` or `regex` (with `$1..$9` capture substitution in
+the reply). Rules live per account and/or in a JSON file you maintain; manage
+from the CLI: `--autoreply-on` / `--autoreply-off`, `--autoreply-file <path>`,
+`--autoreply-list`. The rules engine and store are covered by unit tests
+(`TstAutoReply`); the page-side observer that detects incoming messages is
+best-effort and being hardened. Same terms-of-service caveat as above.
+
 ## 6.5.0 (2026-07-24)
 
 **Recover from a start-up crash (#3).** If Qt WebEngine aborts while

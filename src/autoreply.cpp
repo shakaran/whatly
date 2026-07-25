@@ -1,6 +1,12 @@
 #include "autoreply.h"
+#include "settingsmanager.h"
 
+#include <QFile>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QRegularExpression>
+#include <QSettings>
 
 namespace AutoReply {
 
@@ -97,6 +103,96 @@ QString matchTypeName(MatchType type) {
     return QStringLiteral("hashtag");
   }
   return QStringLiteral("contains");
+}
+
+QByteArray rulesToJson(const QList<Rule> &rules) {
+  QJsonArray arr;
+  for (const Rule &r : rules) {
+    QJsonObject o;
+    o["match"] = matchTypeName(r.type);
+    o["pattern"] = r.pattern;
+    o["reply"] = r.reply;
+    o["caseSensitive"] = r.caseSensitive;
+    o["enabled"] = r.enabled;
+    arr.append(o);
+  }
+  return QJsonDocument(arr).toJson(QJsonDocument::Indented);
+}
+
+QList<Rule> rulesFromJson(const QByteArray &json, QString *error) {
+  QList<Rule> out;
+  if (json.trimmed().isEmpty())
+    return out;
+  QJsonParseError pe;
+  const QJsonDocument doc = QJsonDocument::fromJson(json, &pe);
+  if (pe.error != QJsonParseError::NoError) {
+    if (error)
+      *error = pe.errorString();
+    return out;
+  }
+  if (!doc.isArray()) {
+    if (error)
+      *error = QStringLiteral("expected a JSON array of rules");
+    return out;
+  }
+  const QJsonArray arr = doc.array();
+  for (const QJsonValue &v : arr) {
+    if (!v.isObject())
+      continue;
+    const QJsonObject o = v.toObject();
+    Rule r;
+    r.type = parseMatchType(o.value("match").toString());
+    r.pattern = o.value("pattern").toString();
+    r.reply = o.value("reply").toString();
+    r.caseSensitive = o.value("caseSensitive").toBool(false);
+    r.enabled = o.value("enabled").toBool(true);
+    if (!r.pattern.isEmpty())
+      out.append(r);
+  }
+  return out;
+}
+
+namespace {
+QSettings &settings() { return SettingsManager::instance().settings(); }
+} // namespace
+
+bool isEnabled() {
+  return settings().value(QStringLiteral("autoReply/enabled"), false).toBool();
+}
+void setEnabled(bool on) {
+  settings().setValue(QStringLiteral("autoReply/enabled"), on);
+}
+
+QList<Rule> storedRules() {
+  return rulesFromJson(
+      settings().value(QStringLiteral("autoReply/rulesJson")).toByteArray());
+}
+void setStoredRules(const QList<Rule> &rules) {
+  settings().setValue(QStringLiteral("autoReply/rulesJson"), rulesToJson(rules));
+}
+
+QString rulesFilePath() {
+  return settings().value(QStringLiteral("autoReply/rulesFile")).toString();
+}
+void setRulesFilePath(const QString &path) {
+  settings().setValue(QStringLiteral("autoReply/rulesFile"), path);
+}
+
+QList<Rule> activeRules() {
+  QList<Rule> all = storedRules();
+  const QString path = rulesFilePath();
+  if (!path.isEmpty()) {
+    QFile f(path);
+    if (f.open(QIODevice::ReadOnly))
+      all += rulesFromJson(f.readAll());
+  }
+  return all;
+}
+
+QString replyFor(const QString &incoming) {
+  if (!isEnabled())
+    return QString();
+  return evaluate(incoming, activeRules());
 }
 
 } // namespace AutoReply

@@ -1189,6 +1189,22 @@ Imposta la password nelle Impostazioni.</translation>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Elimina il modello di messaggio con questo nome, poi esci</translation>
     </message>
+    <message>
+        <source>Turn auto-reply to incoming messages on, then exit</source>
+        <translation>Attiva la risposta automatica ai messaggi in arrivo ed esci</translation>
+    </message>
+    <message>
+        <source>Turn auto-reply off, then exit</source>
+        <translation>Disattiva la risposta automatica ed esci</translation>
+    </message>
+    <message>
+        <source>List the active auto-reply rules (status included) and exit</source>
+        <translation>Elenca le regole di risposta automatica attive (con lo stato) ed esci</translation>
+    </message>
+    <message>
+        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
+        <translation>Usa questo file JSON come sorgente di regole di risposta automatica ed esci (vuoto per rimuoverlo)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

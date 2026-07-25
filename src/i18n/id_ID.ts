@@ -1183,6 +1183,22 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Hapus templat pesan bernama ini, lalu keluar</translation>
     </message>
+    <message>
+        <source>Turn auto-reply to incoming messages on, then exit</source>
+        <translation>Aktifkan balasan otomatis untuk pesan masuk lalu keluar</translation>
+    </message>
+    <message>
+        <source>Turn auto-reply off, then exit</source>
+        <translation>Nonaktifkan balasan otomatis lalu keluar</translation>
+    </message>
+    <message>
+        <source>List the active auto-reply rules (status included) and exit</source>
+        <translation>Tampilkan aturan balasan otomatis yang aktif (beserta statusnya) lalu keluar</translation>
+    </message>
+    <message>
+        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
+        <translation>Gunakan berkas JSON ini sebagai sumber aturan balasan otomatis lalu keluar (kosongkan untuk menghapus)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

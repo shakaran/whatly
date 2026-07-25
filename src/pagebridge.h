@@ -23,11 +23,16 @@ public slots:
     emit scheduledMessageFinished(id, ok, error);
   }
 
+  // Invoked by the auto-reply observer for each new incoming message in the open
+  // conversation, so MainWindow can evaluate the rules and reply.
+  void incomingMessage(const QString &text) { emit incomingMessageReceived(text); }
+
 signals:
   void themeToggleRequested();
   void privacyBlurToggleRequested();
   void scheduledMessageFinished(const QString &id, bool ok,
                                 const QString &error);
+  void incomingMessageReceived(const QString &text);
 };
 
 #endif // PAGEBRIDGE_H

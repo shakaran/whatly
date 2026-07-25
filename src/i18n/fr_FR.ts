@@ -1183,6 +1183,22 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Supprimer le modèle de message portant ce nom, puis quitter</translation>
     </message>
+    <message>
+        <source>Turn auto-reply to incoming messages on, then exit</source>
+        <translation>Activer la réponse automatique aux messages entrants, puis quitter</translation>
+    </message>
+    <message>
+        <source>Turn auto-reply off, then exit</source>
+        <translation>Désactiver la réponse automatique, puis quitter</translation>
+    </message>
+    <message>
+        <source>List the active auto-reply rules (status included) and exit</source>
+        <translation>Lister les règles de réponse automatique actives (avec leur état) et quitter</translation>
+    </message>
+    <message>
+        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
+        <translation>Utiliser ce fichier JSON comme source de règles de réponse automatique, puis quitter (vide pour l'effacer)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

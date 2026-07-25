@@ -1183,6 +1183,22 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Usuń zapisany szablon wiadomości o tej nazwie i zakończ</translation>
     </message>
+    <message>
+        <source>Turn auto-reply to incoming messages on, then exit</source>
+        <translation>Włącz automatyczne odpowiedzi na wiadomości przychodzące i zakończ</translation>
+    </message>
+    <message>
+        <source>Turn auto-reply off, then exit</source>
+        <translation>Wyłącz automatyczne odpowiedzi i zakończ</translation>
+    </message>
+    <message>
+        <source>List the active auto-reply rules (status included) and exit</source>
+        <translation>Wyświetl aktywne reguły automatycznych odpowiedzi (ze stanem) i zakończ</translation>
+    </message>
+    <message>
+        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
+        <translation>Użyj tego pliku JSON jako źródła reguł automatycznych odpowiedzi i zakończ (puste, aby wyczyścić)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

@@ -1183,6 +1183,22 @@ Please setup the password in the Settings first.</source>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Удалить сохранённый шаблон сообщения с этим именем и выйти</translation>
     </message>
+    <message>
+        <source>Turn auto-reply to incoming messages on, then exit</source>
+        <translation>Включить автоответ на входящие сообщения и выйти</translation>
+    </message>
+    <message>
+        <source>Turn auto-reply off, then exit</source>
+        <translation>Выключить автоответ и выйти</translation>
+    </message>
+    <message>
+        <source>List the active auto-reply rules (status included) and exit</source>
+        <translation>Показать активные правила автоответа (со статусом) и выйти</translation>
+    </message>
+    <message>
+        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
+        <translation>Использовать этот JSON-файл как источник правил автоответа и выйти (пусто — очистить)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

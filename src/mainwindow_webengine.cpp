@@ -16,6 +16,9 @@
 #include "portalnotification.h"
 #include "notificationrules.h"
 #include "performance.h"
+#include "autoreply.h"
+#include <QJsonArray>
+#include <QJsonDocument>
 
 #include <QDateTime>
 
@@ -139,6 +142,8 @@ void MainWindow::installPageBridge(QWebEnginePage *page) {
               if (m_scheduledMessages)
                 m_scheduledMessages->reportResult(id, ok, error);
             });
+    connect(m_pageBridge, &PageBridge::incomingMessageReceived, this,
+            &MainWindow::handleIncomingMessage);
   }
   if (!m_webChannel) {
     m_webChannel = new QWebChannel(this);
@@ -208,6 +213,21 @@ void MainWindow::installPageBridge(QWebEnginePage *page) {
   for (const auto &script : staleAttach)
     scripts.remove(script);
   scripts.insert(attach);
+
+  // The auto-reply observer: watches the open conversation for new *incoming*
+  // messages and reports each one over the bridge, so MainWindow can evaluate
+  // the auto-reply rules and send a reply. Defensive — narrow observer, no-op
+  // when nothing matches.
+  QWebEngineScript observer;
+  observer.setName(QStringLiteral("whatly-autoreply-observer"));
+  observer.setSourceCode(autoReplyObserverScriptSource());
+  observer.setInjectionPoint(QWebEngineScript::DocumentReady);
+  observer.setWorldId(QWebEngineScript::MainWorld);
+  observer.setRunsOnSubFrames(false);
+  const auto staleObs = scripts.find(observer.name());
+  for (const auto &script : staleObs)
+    scripts.remove(script);
+  scripts.insert(observer);
 }
 
 // The page-side automation for `--send --file`. Injected on every load; a no-op
@@ -339,6 +359,115 @@ QString MainWindow::attachmentSenderScriptSource() {
   setTimeout(function () { try { clearInterval(boot); } catch (e) {} }, 20000);
 })();
 )JS");
+}
+
+// Watches the open conversation for NEW incoming messages and reports each over
+// the bridge (window.__whatlyBridge.incomingMessage). Best-effort and defensive:
+// it baselines the messages already present so history is never replayed, treats
+// a bulk insertion (a chat switch) as a new baseline, and only forwards single
+// new incoming bubbles. Needs verification with a real incoming message.
+QString MainWindow::autoReplyObserverScriptSource() {
+  return QString::fromLatin1(R"JS(
+(function () {
+  'use strict';
+  if (window.__whatlyAutoReplyReady) return;
+  window.__whatlyAutoReplyReady = true;
+  var IN = 'div.message-in,[class*="message-in"]';
+  var seen = Object.create(null);
+
+  function keyOf(node) {
+    return node.getAttribute('data-id') || (node.textContent || '').slice(0, 60);
+  }
+  function markSeen() {
+    try {
+      var all = document.querySelectorAll(IN);
+      for (var i = 0; i < all.length; i++) seen[keyOf(all[i])] = 1;
+    } catch (e) {}
+  }
+  function textOf(node) {
+    var t = node.querySelector('.selectable-text.copyable-text, span.selectable-text');
+    return t ? (t.innerText || '').trim() : '';
+  }
+  function report(text) {
+    try {
+      if (text && window.__whatlyBridge && window.__whatlyBridge.incomingMessage)
+        window.__whatlyBridge.incomingMessage(String(text));
+    } catch (e) {}
+  }
+
+  markSeen(); // baseline: never reply to messages already on screen
+
+  var mo = new MutationObserver(function (muts) {
+    try {
+      var incoming = [];
+      muts.forEach(function (m) {
+        for (var i = 0; i < m.addedNodes.length; i++) {
+          var n = m.addedNodes[i];
+          if (n.nodeType !== 1) continue;
+          if (n.matches && n.matches(IN)) incoming.push(n);
+          if (n.querySelectorAll) {
+            var inner = n.querySelectorAll(IN);
+            for (var j = 0; j < inner.length; j++) incoming.push(inner[j]);
+          }
+        }
+      });
+      if (!incoming.length) return;
+      // A burst is a chat being loaded/switched, not live traffic: re-baseline.
+      if (incoming.length > 3) { markSeen(); return; }
+      for (var k = 0; k < incoming.length; k++) {
+        var key = keyOf(incoming[k]);
+        if (seen[key]) continue;
+        seen[key] = 1;
+        report(textOf(incoming[k]));
+      }
+    } catch (e) {}
+  });
+  try {
+    mo.observe(document.body, { childList: true, subtree: true });
+  } catch (e) {}
+})();
+)JS");
+}
+
+void MainWindow::handleIncomingMessage(const QString &text) {
+  const QString reply = AutoReply::replyFor(text);
+  if (reply.isEmpty() || !m_webEngine || !m_webEngine->page())
+    return;
+  // Type the reply into the open conversation's composer and press Send. Reuses
+  // the same composer-insert + pointer-press technique as the other senders.
+  static const QString kTemplate = QString::fromLatin1(R"JS(
+(function () {
+  'use strict';
+  try {
+    var TEXT = %1;
+    function vis(e){var r=e.getBoundingClientRect();return r.width>0&&r.height>0;}
+    var box = [].slice.call(document.querySelectorAll(
+      'footer div[contenteditable="true"][role="textbox"],'
+      + 'div[contenteditable="true"][data-tab]')).filter(vis).pop();
+    if (!box) return;
+    box.focus();
+    document.execCommand('insertText', false, TEXT);
+    setTimeout(function () {
+      var icon = document.querySelector('[data-icon="wds-ic-send-filled"]')
+        || document.querySelector('span[data-icon="send"]');
+      var btn = icon ? (icon.closest('button,[role="button"]') || icon) : null;
+      if (!btn) return;
+      var r = btn.getBoundingClientRect(), cx = r.left + r.width/2, cy = r.top + r.height/2;
+      ['pointerdown','mousedown','pointerup','mouseup','click'].forEach(function (t) {
+        var Ev = t.indexOf('pointer') === 0 ? PointerEvent : MouseEvent;
+        try { btn.dispatchEvent(new Ev(t, { bubbles:true, cancelable:true, clientX:cx, clientY:cy, button:0 })); } catch (e) {}
+      });
+    }, 250);
+  } catch (e) { /* never break the page */ }
+})();
+)JS");
+  // Encode the reply as a safe JS string literal via JSON.
+  const QString literal = QString::fromUtf8(
+      QJsonDocument(QJsonArray{reply}).toJson(QJsonDocument::Compact));
+  // literal is ["reply"]; take the element to get a quoted JS string.
+  const QString jsStr =
+      literal.mid(1, literal.size() - 2); // strip [ ]
+  m_webEngine->page()->runJavaScript(kTemplate.arg(jsStr));
 }
 
 void MainWindow::setNotificationPresenter(QWebEngineProfile *profile) {

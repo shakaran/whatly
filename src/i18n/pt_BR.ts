@@ -1183,6 +1183,22 @@ Defina primeiro a senha nas configurações.</translation>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Excluir o modelo de mensagem com este nome e sair</translation>
     </message>
+    <message>
+        <source>Turn auto-reply to incoming messages on, then exit</source>
+        <translation>Ativa a resposta automática a mensagens recebidas e sai</translation>
+    </message>
+    <message>
+        <source>Turn auto-reply off, then exit</source>
+        <translation>Desativa a resposta automática e sai</translation>
+    </message>
+    <message>
+        <source>List the active auto-reply rules (status included) and exit</source>
+        <translation>Lista as regras de resposta automática ativas (com o status) e sai</translation>
+    </message>
+    <message>
+        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
+        <translation>Usa este arquivo JSON como fonte de regras de resposta automática e sai (vazio para remover)</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>
