@@ -34,7 +34,18 @@ void MainWindow::createActions() {
   // shortcut sheet can read it back instead of hardcoding the key.
   m_minimizeAction->setShortcut(QKeySequence(Qt::Modifier::CTRL | Qt::Key_W));
   m_minimizeAction->setAutoRepeat(false);
-  connect(m_minimizeAction, &QAction::triggered, this, &QMainWindow::hide);
+  // Same guard as closeEvent: hiding is only safe while the tray icon is there
+  // to bring the window back. With it hidden there is nothing left to click, and
+  // Ctrl+W — which reads as "close tab" in a tabbed app — would strand the
+  // window, so fall back to an ordinary minimise to the taskbar. This also
+  // covers the "minimize in tray on start" setting, which triggers this action.
+  connect(m_minimizeAction, &QAction::triggered, this, [this]() {
+    if (QSystemTrayIcon::isSystemTrayAvailable() && m_systemTrayIcon &&
+        m_systemTrayIcon->isVisible())
+      hide();
+    else
+      showMinimized();
+  });
   addAction(m_minimizeAction);
 
   m_restoreAction = new QAction(tr("&Restore"), this);
