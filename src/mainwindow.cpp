@@ -1035,16 +1035,7 @@ void MainWindow::commandSend(const Messaging::SendCommand &cmd) {
   }
 
   if (r.kind == RecipientKind::ContactName || r.kind == RecipientKind::GroupId) {
-    if (!cmd.file.isEmpty()) {
-      // Attaching a file to a by-name/group chat needs the open-then-attach
-      // choreography; not wired yet. Text works.
-      showNotification(
-          QApplication::applicationDisplayName(),
-          tr("Attachments to a contact or group by name aren't supported yet "
-             "over the web backend — send text, or use a phone number."));
-      return;
-    }
-    sendByNameViaWeb(r, cmd.message);
+    sendByNameViaWeb(r, cmd.message, cmd.file);
     return;
   }
 
@@ -1053,7 +1044,7 @@ void MainWindow::commandSend(const Messaging::SendCommand &cmd) {
 }
 
 void MainWindow::sendByNameViaWeb(const Messaging::Recipient &recipient,
-                                  const QString &text) {
+                                  const QString &text, const QString &filePath) {
   using namespace Messaging;
   if (!m_webEngine || !m_webEngine->page()) {
     showNotification(QApplication::applicationDisplayName(),
@@ -1062,14 +1053,41 @@ void MainWindow::sendByNameViaWeb(const Messaging::Recipient &recipient,
   }
   // Leave a job the injected name-sender script (see nameSenderScriptSource)
   // picks up: it opens the chat by exact-title search (or, for a group id, via
-  // the internal store) and sends the text. No navigation, so the currently
-  // open session and login are reused.
+  // the internal store) and then sends. No navigation, so the currently open
+  // session and login are reused.
   QJsonObject job;
   job["kind"] = recipient.kind == RecipientKind::GroupId
                     ? QStringLiteral("groupid")
                     : QStringLiteral("name");
   job["query"] = recipient.value;
-  job["text"] = text;
+  job["text"] = text; // the message, or the caption when a file is attached
+
+  // Optional attachment: read it here and ride it into the page as base64 (the
+  // same size cap and transport as sendAttachmentViaWeb). When present, `text`
+  // becomes the media caption.
+  if (!filePath.isEmpty()) {
+    QFile f(filePath);
+    if (!f.open(QIODevice::ReadOnly)) {
+      showNotification(QApplication::applicationDisplayName(),
+                       tr("Could not read the file to send: %1").arg(filePath));
+      return;
+    }
+    const QByteArray bytes = f.readAll();
+    f.close();
+    constexpr qint64 kMaxWebAttachmentBytes = 3 * 1024 * 1024;
+    if (bytes.size() > kMaxWebAttachmentBytes) {
+      showNotification(
+          QApplication::applicationDisplayName(),
+          tr("The file is too large to send over the web backend."));
+      return;
+    }
+    QJsonObject attach;
+    attach["name"] = QFileInfo(filePath).fileName();
+    attach["mime"] = QMimeDatabase().mimeTypeForFile(filePath).name();
+    attach["b64"] = QString::fromLatin1(bytes.toBase64());
+    job["attach"] = attach;
+  }
+
   const QString jobJson =
       QString::fromUtf8(QJsonDocument(job).toJson(QJsonDocument::Compact));
 

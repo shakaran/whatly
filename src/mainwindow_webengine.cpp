@@ -453,12 +453,17 @@ QString MainWindow::nameSenderScriptSource() {
       + 'div[contenteditable="true"][data-tab]')).filter(vis);
     return b.length ? b[b.length - 1] : null;
   }
+  // Works for both the composer's Send and the media editor's Send (the editor
+  // is not inside <footer>), so the attachment path can reuse it.
   function sendButton() {
-    var icon = document.querySelector('footer [data-icon="wds-ic-send-filled"]')
-      || document.querySelector('footer span[data-icon="send"]')
+    var icon = document.querySelector('[data-icon="wds-ic-send-filled"]')
       || document.querySelector('span[data-icon="send"]');
     if (icon) return icon.closest('button,[role="button"]') || icon;
-    return null;
+    var cands = [].slice.call(document.querySelectorAll(
+      'button[aria-label],[role="button"][aria-label]')).filter(function (x) {
+        return /^(send|enviar)/i.test(x.getAttribute('aria-label') || '') && vis(x);
+      });
+    return cands.length ? cands[cands.length - 1] : null;
   }
   function press(btn) {
     var r = btn.getBoundingClientRect();
@@ -485,6 +490,12 @@ QString MainWindow::nameSenderScriptSource() {
       return true;
     } catch (e) { return false; }
   }
+  function toFile(b64, name, mime) {
+    var bin = atob(b64);
+    var arr = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+    return new File([arr], name || 'file', { type: mime || 'application/octet-stream' });
+  }
 
   function process() {
     var raw;
@@ -500,6 +511,7 @@ QString MainWindow::nameSenderScriptSource() {
     var deadline = job.deadline || (Date.now() + 45000);
     var query = norm(job.query);
     var opened = false, searched = false, groupTried = false, typed = false, done = false;
+    var captioned = false, pasted = false; // attachment sub-steps
     var finish = function (ok, err) {
       if (done) return;
       done = true;
@@ -530,9 +542,39 @@ QString MainWindow::nameSenderScriptSource() {
             return; // let the conversation open
           }
         }
-        // Phase B: the chat is open once its composer is present. Type + send.
+        // Phase B: the chat is open once its composer is present.
         var comp = composer();
         if (!comp) return;
+
+        // B2: attachment. Same caption-first, paste-as-File, send-from-the-media
+        // -EDITOR choreography as the attachment sender (verified live there): a
+        // caption typed into the composer stays attached to the media, and
+        // gating Send on an editor-only icon avoids firing the composer's Send.
+        if (job.attach && job.attach.b64) {
+          if (job.text && !captioned) {
+            comp.focus();
+            try { document.execCommand('insertText', false, job.text); } catch (e) {}
+            captioned = true;
+            return;
+          }
+          if (!pasted) {
+            var dt = new DataTransfer();
+            dt.items.add(toFile(job.attach.b64, job.attach.name, job.attach.mime));
+            comp.focus();
+            comp.dispatchEvent(new ClipboardEvent('paste',
+              { clipboardData: dt, bubbles: true, cancelable: true }));
+            pasted = true;
+            return; // let the media editor render
+          }
+          var editorOpen = !!document.querySelector('[data-icon="scissors"], [data-icon="x-alt"]');
+          var abtn = sendButton();
+          if (!editorOpen || !abtn) return;
+          press(abtn);
+          setTimeout(function () { finish(true, ''); }, 400);
+          return;
+        }
+
+        // B1: plain text. Type it then send.
         if (job.text && !typed) {
           comp.focus();
           try { document.execCommand('insertText', false, job.text); } catch (e) {}

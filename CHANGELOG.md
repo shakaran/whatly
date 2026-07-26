@@ -32,9 +32,10 @@ web backend now accepts a non-number recipient: `--to "Alice Smith"` (or
 insensitive) via WhatsApp Web's search and sends the text — it aborts rather
 than message the wrong chat if there is no exact match. A group given by name
 works the same way; a group id (`--to group:<id>`) is attempted best-effort
-through WhatsApp Web's internal store. Text only for now (attachments by name
-come next). This is page automation and is being verified live before it is
-considered stable.
+through WhatsApp Web's internal store. An attachment works too — `--file <path>`
+with `--message`/`--caption` opens the matched chat and sends the media with its
+caption (up to 3 MB, same as the phone-number path). This is page automation and
+is being verified live before it is considered stable.
 
 **Cloud API backend for sending (work in progress).** `--send --backend cloud`
 now sends directly through the Meta WhatsApp Business Cloud API — no running

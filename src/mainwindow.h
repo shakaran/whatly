@@ -262,7 +262,8 @@ private:
   // Web: opens the target chat by exact-title search, then types and sends.
   // Used by commandSend for a non-phone-number recipient. Best-effort.
   void sendByNameViaWeb(const Messaging::Recipient &recipient,
-                        const QString &text);
+                        const QString &text,
+                        const QString &filePath = QString());
   // The page-side script that opens a chat by name/id and sends (injected on
   // load).
   static QString nameSenderScriptSource();
