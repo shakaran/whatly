@@ -1,5 +1,14 @@
 ## Unreleased
 
+**Start-up crash on newer distros fixed (#11, #12).** The Linux packages
+(AppImage, .deb, .rpm) bundle the linked NSS libraries but were missing the
+PKCS#11 modules NSS loads at runtime (`libsoftokn3`, `libfreebl3`,
+`libnssckbi`). On distros with a newer NSS (e.g. Debian 14, PikaOS) the app
+loaded the host's `libsoftokn3` against the bundled older `libnssutil3`, which
+lacks the `NSSUTIL_3.x` symbol version it needs, and Chromium aborted on
+launch (`nss_util.cc … FATAL`). The packaging now ships the matching NSS module
+set, and CI fails the build if they go missing again.
+
 **Zoom buttons in WhatsApp's sidebar.** Zoom out / reset / zoom in buttons can
 now be added to WhatsApp Web's own left rail (next to the theme and blur
 buttons), so you can scale the page live without opening Settings or reaching

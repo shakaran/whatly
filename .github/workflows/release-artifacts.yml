@@ -155,7 +155,7 @@ jobs:
       - name: Build dependencies
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y ninja-build libx11-dev libxcb1-dev libfuse2
+          sudo apt-get install -y ninja-build libx11-dev libxcb1-dev libfuse2 libnss3
 
       - name: Build and install into AppDir
         run: |
@@ -163,6 +163,22 @@ jobs:
             -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
           cmake --build build --parallel
           DESTDIR="$PWD/AppDir" cmake --install build
+
+      # linuxdeploy bundles the *linked* NSS libraries (libnss3, libnssutil3, …)
+      # but not the ones NSS dlopen()s at runtime (softokn/freebl/nssckbi). Ship
+      # the matching set from this runner, so the app loads its own bundled
+      # libsoftokn3 instead of the host's newer one — otherwise the bundled (old)
+      # libnssutil3 is missing the NSSUTIL_3.x symbol version the host softokn3
+      # requires and Chromium aborts on start-up (issues #11, #12). Copied before
+      # linuxdeploy so it patches their RPATH and pulls in their own deps.
+      - name: Bundle the NSS PKCS#11 modules
+        run: |
+          mkdir -p AppDir/usr/lib
+          for lib in libsoftokn3.so libfreebl3.so libnssckbi.so libnssdbm3.so; do
+            f=$(find /usr/lib/x86_64-linux-gnu -maxdepth 2 -name "$lib" | head -1)
+            if [ -n "$f" ]; then cp -v "$f" AppDir/usr/lib/; \
+            else echo "::error::NSS module $lib not found on the runner"; exit 1; fi
+          done
 
       - name: Package AppImage
         run: |
@@ -179,6 +195,14 @@ jobs:
             --desktop-file AppDir/usr/share/applications/net.shakaran.whatly.desktop \
             --icon-file AppDir/usr/share/icons/hicolor/256x256/apps/net.shakaran.whatly.png \
             --plugin qt --output appimage
+
+      - name: Verify the NSS modules survived bundling
+        run: |
+          # Guard against a future change (or a linuxdeploy exclude) dropping the
+          # dlopen()ed NSS modules again — the class of crash in issues #11/#12.
+          test -f AppDir/usr/lib/libsoftokn3.so \
+            || { echo "::error::libsoftokn3.so missing from the AppImage bundle"; exit 1; }
+          echo "ok: NSS PKCS#11 modules bundled"
 
       - name: Attach to release
         env:
@@ -215,7 +239,7 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y ninja-build libx11-dev libxcb1-dev libfuse2 \
-            ruby ruby-dev rpm
+            libnss3 ruby ruby-dev rpm
           sudo gem install --no-document fpm
 
       - name: Build and bundle into AppDir
@@ -224,6 +248,16 @@ jobs:
             -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
           cmake --build build --parallel
           DESTDIR="$PWD/AppDir" cmake --install build
+          # Bundle the NSS PKCS#11 modules that NSS dlopen()s at runtime (which
+          # linuxdeploy's dependency scan misses), so the app never mixes the
+          # bundled (old) libnssutil3 with the host's newer libsoftokn3 — the
+          # NSSUTIL_3.x start-up crash in issues #11, #12.
+          mkdir -p AppDir/usr/lib
+          for lib in libsoftokn3.so libfreebl3.so libnssckbi.so libnssdbm3.so; do
+            f=$(find /usr/lib/x86_64-linux-gnu -maxdepth 2 -name "$lib" | head -1)
+            if [ -n "$f" ]; then cp -v "$f" AppDir/usr/lib/; \
+            else echo "::error::NSS module $lib not found on the runner"; exit 1; fi
+          done
           qtbase=https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous
           base=https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous
           wget -q "$base/linuxdeploy-x86_64.AppImage"
@@ -269,6 +303,11 @@ jobs:
           need_file QtWebEngineProcess
           need_file icudtl.dat
           need_file qtwebengine_resources.pak
+          # NSS PKCS#11 modules: without these the app loads the host's newer
+          # libsoftokn3 against the bundled older libnssutil3 and aborts on the
+          # NSSUTIL_3.x symbol version (issues #11, #12).
+          need_file libsoftokn3.so
+          need_file libfreebl3.so
           # At least one localised .pak must be present.
           if ! find "$root" -path '*qtwebengine_locales*.pak' -print -quit | grep -q .; then
             echo "::error::missing from the bundle: qtwebengine_locales/*.pak"
