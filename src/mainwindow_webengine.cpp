@@ -490,19 +490,21 @@ QString MainWindow::nameSenderScriptSource() {
       } catch (e) {}
     });
   }
-  // Best-effort open of a group by its bare id, through WhatsApp Web's internal
-  // store. The store is not reliably exposed on the page, so this often no-ops;
-  // the name path above is the supported one.
-  function openGroupById(id) {
+  // Resolve a group id to its display title through WhatsApp Web's internal
+  // module loader (Meta's require(), not webpack), verified live:
+  // require('WAWebChatCollection').ChatCollection.get(jid).formattedTitle.
+  // The by-name search path then opens it like any other chat — far more robust
+  // than driving an internal "open chat" action. Returns '' if unavailable.
+  function groupTitleForId(id) {
     try {
-      var S = window.Store || (window.WWebJS && window.WWebJS.Store);
-      if (!S || !S.Chat || !S.Cmd) return false;
+      if (typeof window.require !== 'function') return '';
       var jid = id.indexOf('@') === -1 ? (id + '@g.us') : id;
-      var chat = S.Chat.get(jid);
-      if (!chat) return false;
-      S.Cmd.openChatAt(chat);
-      return true;
-    } catch (e) { return false; }
+      var mod = window.require('WAWebChatCollection');
+      var CC = mod && mod.ChatCollection;
+      if (!CC || !CC.get) return '';
+      var chat = CC.get(jid);
+      return chat ? (chat.formattedTitle || chat.name || '') : '';
+    } catch (e) { return ''; }
   }
   function toFile(b64, name, mime) {
     var bin = atob(b64);
@@ -523,7 +525,8 @@ QString MainWindow::nameSenderScriptSource() {
       return;
     }
     var deadline = job.deadline || (Date.now() + 45000);
-    var query = norm(job.query);
+    var query = norm(job.query);      // normalised title, for the exact match
+    var searchText = job.query;       // what we type into the search box
     var opened = false, searched = false, groupTried = false, typed = false, done = false;
     var captioned = false, pasted = false; // attachment sub-steps
     var finish = function (ok, err) {
@@ -544,19 +547,27 @@ QString MainWindow::nameSenderScriptSource() {
         }
         // Phase A: open the target chat.
         if (!opened) {
-          if (job.kind === 'groupid') {
-            if (!groupTried) { groupTried = true; opened = openGroupById(job.query); }
-            if (!opened) { finish(false, 'could not open the group by id over the web backend'); return; }
-          } else {
-            var box = searchBox();
-            if (!box) return; // side panel not ready yet
-            if (!searched) { setText(box, job.query); searched = true; return; }
-            var row = matchingResult(query);
-            if (!row) return; // keep waiting for an EXACT match until the deadline
-            clickRow(row);
-            opened = true;
-            return; // let the conversation open
+          // A group id: resolve it to its title once, then fall through to the
+          // same exact-title search used for a name.
+          if (job.kind === 'groupid' && !groupTried) {
+            groupTried = true;
+            var title = groupTitleForId(job.query);
+            if (!title) {
+              finish(false, 'could not resolve the group id (open WhatsApp Web '
+                          + 'fully first, or send by the group name)');
+              return;
+            }
+            searchText = title;
+            query = norm(title);
           }
+          var box = searchBox();
+          if (!box) return; // side panel not ready yet
+          if (!searched) { setText(box, searchText); searched = true; return; }
+          var row = matchingResult(query);
+          if (!row) return; // keep waiting for an EXACT match until the deadline
+          clickRow(row);
+          opened = true;
+          return; // let the conversation open
         }
         // Phase B: the chat is open once its composer is present.
         var comp = composer();

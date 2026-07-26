@@ -31,6 +31,15 @@ QString digitsOnly(const QString &s) {
       out.append(c);
   return out;
 }
+// A WhatsApp group id is digits plus a '-' separator (e.g. 12345-67890); unlike
+// a phone number the hyphen is part of the id, so it must be preserved.
+QString groupIdOnly(const QString &s) {
+  QString out;
+  for (const QChar c : s)
+    if (c.isDigit() || c == QLatin1Char('-'))
+      out.append(c);
+  return out;
+}
 } // namespace
 
 Recipient parseRecipient(const QString &to) {
@@ -42,12 +51,12 @@ Recipient parseRecipient(const QString &to) {
 
   if (t.startsWith(QLatin1String("group:"), Qt::CaseInsensitive)) {
     r.kind = RecipientKind::GroupId;
-    r.value = digitsOnly(t.mid(6));
+    r.value = groupIdOnly(t.mid(6));
     return r;
   }
   if (t.endsWith(QLatin1String("@g.us"), Qt::CaseInsensitive)) {
     r.kind = RecipientKind::GroupId;
-    r.value = digitsOnly(t.left(t.size() - 5));
+    r.value = groupIdOnly(t.left(t.size() - 5));
     return r;
   }
   if (t.startsWith(QLatin1String("name:"), Qt::CaseInsensitive)) {

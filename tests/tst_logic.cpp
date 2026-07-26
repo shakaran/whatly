@@ -716,6 +716,13 @@ private slots:
     r = Messaging::parseRecipient(QStringLiteral("group:120363012345678901"));
     QCOMPARE(r.kind, Messaging::RecipientKind::GroupId);
     QCOMPARE(r.value, QStringLiteral("120363012345678901"));
+    // A legacy group id keeps its '-' separator (it is part of the id, unlike a
+    // phone number's punctuation).
+    r = Messaging::parseRecipient(QStringLiteral("group:11111111111-2222222222"));
+    QCOMPARE(r.kind, Messaging::RecipientKind::GroupId);
+    QCOMPARE(r.value, QStringLiteral("11111111111-2222222222"));
+    r = Messaging::parseRecipient(QStringLiteral("11111111111-2222222222@g.us"));
+    QCOMPARE(r.value, QStringLiteral("11111111111-2222222222"));
   }
 
   void parsesContactNames() {

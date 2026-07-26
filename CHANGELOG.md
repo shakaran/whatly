@@ -26,17 +26,18 @@ position (current WhatsApp Web obfuscates its class names) and was verified live
 end-to-end, including regex captures in the reply. It replies in the open
 conversation. Same terms-of-service caveat as above.
 
-**Send to a contact or group by name (work in progress).** `--send` over the
-web backend now accepts a non-number recipient: `--to "Alice Smith"` (or
-`--to name:Alice`) opens the chat whose title matches **exactly** (case-
-insensitive) via WhatsApp Web's search and sends the text — it aborts rather
-than message the wrong chat if there is no exact match. A group given by name
-works the same way; a group id (`--to group:<id>`) is attempted best-effort
-through WhatsApp Web's internal store. An attachment works too — `--file <path>`
-with `--message`/`--caption` opens the matched chat and sends the media with its
-caption (up to 3 MB, same as the phone-number path). The text send was verified
-live end-to-end; the attachment and group-id paths are page automation still
-being hardened.
+**Send to a contact or group by name.** `--send` over the web backend now
+accepts a non-number recipient: `--to "Alice Smith"` (or `--to name:Alice`)
+opens the chat whose title matches **exactly** (case-insensitive) via WhatsApp
+Web's search and sends — it aborts rather than message the wrong chat if there
+is no exact match. A group given by name works the same way. A group id
+(`--to group:<id>` or `<id>@g.us`) is resolved to its chat title through
+WhatsApp Web's internal module loader and then opened by that title. An
+attachment works too — `--file <path>` with `--message`/`--caption` opens the
+matched chat and sends the media with its caption (up to 3 MB, same as the
+phone-number path). Verified live end-to-end (text, attachment, group by name
+and group by id). This is page automation, so it can still break when WhatsApp
+Web changes its markup.
 
 **Cloud API backend for sending (work in progress).** `--send --backend cloud`
 now sends directly through the Meta WhatsApp Business Cloud API — no running
