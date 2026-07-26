@@ -1292,6 +1292,26 @@ Please setup the password in the Settings first.</source>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>ローカル HTTP API の設定を表示して終了します</translation>
     </message>
+    <message>
+        <source>Enable receiving Cloud API webhooks, then exit</source>
+        <translation>Cloud API の Webhook 受信を有効にして終了します</translation>
+    </message>
+    <message>
+        <source>Disable receiving Cloud API webhooks, then exit</source>
+        <translation>Cloud API の Webhook 受信を無効にして終了します</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API webhook verify token, then exit</source>
+        <translation>Cloud API Webhook の検証トークンを設定して終了します</translation>
+    </message>
+    <message>
+        <source>Set the Meta app secret for webhook signature checks, then exit</source>
+        <translation>Webhook 署名検証用の Meta アプリシークレットを設定して終了します</translation>
+    </message>
+    <message>
+        <source>Show the Cloud API webhook configuration, then exit</source>
+        <translation>Cloud API Webhook の設定を表示して終了します</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

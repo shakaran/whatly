@@ -65,8 +65,10 @@ bool authorized(const Request &req, const QString &token);
 bool parseSendBody(const QByteArray &body, Messaging::SendCommand *out,
                    QString *error);
 
-// Build an HTTP/1.1 response with a compact JSON body and Connection: close.
-QByteArray buildResponse(int status, const QByteArray &jsonBody);
+// Build an HTTP/1.1 response with the given body, content type and
+// Connection: close. Defaults to JSON.
+QByteArray buildResponse(int status, const QByteArray &body,
+                         const QByteArray &contentType = "application/json");
 // A one-field JSON object, e.g. jsonField("error","bad token") -> {"error":"…"}.
 QByteArray jsonField(const QString &key, const QString &value);
 
@@ -91,6 +93,10 @@ signals:
   // A well-formed, authorised send request. The receiver performs the actual
   // send (web through the page, cloud through the Cloud API).
   void sendRequested(const Messaging::SendCommand &cmd);
+  // An incoming text message delivered by a Cloud API webhook (POST /webhook).
+  // `from` is the sender's number. The receiver evaluates the auto-reply rules
+  // and may reply through the Cloud API.
+  void webhookMessageReceived(const QString &from, const QString &text);
 
 private:
   void onNewConnection();

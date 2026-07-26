@@ -1292,6 +1292,26 @@ Please setup the password in the Settings first.</source>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>로컬 HTTP API 구성을 표시하고 종료합니다</translation>
     </message>
+    <message>
+        <source>Enable receiving Cloud API webhooks, then exit</source>
+        <translation>Cloud API 웹훅 수신을 활성화하고 종료합니다</translation>
+    </message>
+    <message>
+        <source>Disable receiving Cloud API webhooks, then exit</source>
+        <translation>Cloud API 웹훅 수신을 비활성화하고 종료합니다</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API webhook verify token, then exit</source>
+        <translation>Cloud API 웹훅 확인 토큰을 설정하고 종료합니다</translation>
+    </message>
+    <message>
+        <source>Set the Meta app secret for webhook signature checks, then exit</source>
+        <translation>웹훅 서명 확인을 위한 Meta 앱 시크릿을 설정하고 종료합니다</translation>
+    </message>
+    <message>
+        <source>Show the Cloud API webhook configuration, then exit</source>
+        <translation>Cloud API 웹훅 구성을 표시하고 종료합니다</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

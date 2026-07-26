@@ -49,6 +49,18 @@ account config; Whatly never obtains it itself), and check it with
 can now also be set in **Settings → Cloud API** instead of on the command line.
 The URL/payload builders are covered by unit tests (`TstCloudApi`).
 
+**Cloud API webhooks — auto-reply without a browser (work in progress).** The
+Cloud backend can now *receive* messages too: Whatly serves Meta's webhook on
+the local API port (`GET /webhook` verify handshake + `POST /webhook` events),
+validates the `X-Hub-Signature-256` HMAC against your Meta app secret, and runs
+each incoming message through the same auto-reply rules — replying through the
+Cloud API, no WhatsApp Web session involved. Because it rides the loopback
+local-API port, expose it to Meta with a tunnel or reverse proxy
+(cloudflared/ngrok → `127.0.0.1`) rather than opening Whatly to the network.
+Configure with `--webhook-on` / `--webhook-off`, `--webhook-verify-token`,
+`--webhook-app-secret` and `--webhook-status`. Verification, signature and
+payload parsing are covered by unit tests (`TstCloudWebhook`).
+
 **Local HTTP API for sending (work in progress).** An opt-in HTTP endpoint lets
 other programs on the same machine send through the running instance — the
 scriptable counterpart of `whatly --send`, callable over HTTP (cron jobs,

@@ -1292,6 +1292,26 @@ Please setup the password in the Settings first.</source>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>عرض إعدادات واجهة HTTP المحلية ثم الخروج</translation>
     </message>
+    <message>
+        <source>Enable receiving Cloud API webhooks, then exit</source>
+        <translation>تفعيل استقبال webhooks الخاصة بـ Cloud API ثم الخروج</translation>
+    </message>
+    <message>
+        <source>Disable receiving Cloud API webhooks, then exit</source>
+        <translation>تعطيل استقبال webhooks الخاصة بـ Cloud API ثم الخروج</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API webhook verify token, then exit</source>
+        <translation>تعيين رمز التحقق لـ webhook الخاص بـ Cloud API ثم الخروج</translation>
+    </message>
+    <message>
+        <source>Set the Meta app secret for webhook signature checks, then exit</source>
+        <translation>تعيين سر تطبيق Meta للتحقق من توقيع webhook ثم الخروج</translation>
+    </message>
+    <message>
+        <source>Show the Cloud API webhook configuration, then exit</source>
+        <translation>عرض إعدادات webhook الخاص بـ Cloud API ثم الخروج</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

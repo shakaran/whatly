@@ -1292,6 +1292,26 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>De configuratie van de lokale HTTP-API tonen en afsluiten</translation>
     </message>
+    <message>
+        <source>Enable receiving Cloud API webhooks, then exit</source>
+        <translation>Het ontvangen van Cloud API-webhooks inschakelen en afsluiten</translation>
+    </message>
+    <message>
+        <source>Disable receiving Cloud API webhooks, then exit</source>
+        <translation>Het ontvangen van Cloud API-webhooks uitschakelen en afsluiten</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API webhook verify token, then exit</source>
+        <translation>Het verificatietoken van de Cloud API-webhook instellen en afsluiten</translation>
+    </message>
+    <message>
+        <source>Set the Meta app secret for webhook signature checks, then exit</source>
+        <translation>Het Meta-app-geheim voor webhook-handtekeningcontrole instellen en afsluiten</translation>
+    </message>
+    <message>
+        <source>Show the Cloud API webhook configuration, then exit</source>
+        <translation>De configuratie van de Cloud API-webhook tonen en afsluiten</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

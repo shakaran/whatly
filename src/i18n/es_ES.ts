@@ -1292,6 +1292,26 @@ Configure primero la contraseña en los ajustes.</translation>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>Muestra la configuración de la API HTTP local y sale</translation>
     </message>
+    <message>
+        <source>Enable receiving Cloud API webhooks, then exit</source>
+        <translation>Activa la recepción de webhooks de la Cloud API y sale</translation>
+    </message>
+    <message>
+        <source>Disable receiving Cloud API webhooks, then exit</source>
+        <translation>Desactiva la recepción de webhooks de la Cloud API y sale</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API webhook verify token, then exit</source>
+        <translation>Establece el token de verificación del webhook de la Cloud API y sale</translation>
+    </message>
+    <message>
+        <source>Set the Meta app secret for webhook signature checks, then exit</source>
+        <translation>Establece el secreto de app de Meta para comprobar la firma del webhook y sale</translation>
+    </message>
+    <message>
+        <source>Show the Cloud API webhook configuration, then exit</source>
+        <translation>Muestra la configuración del webhook de la Cloud API y sale</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

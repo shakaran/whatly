@@ -1292,6 +1292,26 @@ Please setup the password in the Settings first.</source>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>显示本地 HTTP API 配置，然后退出</translation>
     </message>
+    <message>
+        <source>Enable receiving Cloud API webhooks, then exit</source>
+        <translation>启用接收 Cloud API webhook，然后退出</translation>
+    </message>
+    <message>
+        <source>Disable receiving Cloud API webhooks, then exit</source>
+        <translation>禁用接收 Cloud API webhook，然后退出</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API webhook verify token, then exit</source>
+        <translation>设置 Cloud API webhook 验证令牌，然后退出</translation>
+    </message>
+    <message>
+        <source>Set the Meta app secret for webhook signature checks, then exit</source>
+        <translation>设置用于 webhook 签名校验的 Meta 应用密钥，然后退出</translation>
+    </message>
+    <message>
+        <source>Show the Cloud API webhook configuration, then exit</source>
+        <translation>显示 Cloud API webhook 配置，然后退出</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

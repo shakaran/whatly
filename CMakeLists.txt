@@ -223,6 +223,7 @@ set(SOURCES
     src/autoreply.cpp
     src/cloudapi.cpp
     src/localapi.cpp
+    src/cloudwebhook.cpp
     src/scheduledmessages.cpp
     src/scheduledmessagesdialog.cpp
     src/webtweaks.cpp
@@ -289,6 +290,7 @@ set(HEADERS
     src/autoreply.h
     src/cloudapi.h
     src/localapi.h
+    src/cloudwebhook.h
     src/scheduledmessages.h
     src/scheduledmessagesdialog.h
     src/pagebridge.h

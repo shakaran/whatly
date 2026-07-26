@@ -1292,6 +1292,26 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>Tampilkan konfigurasi API HTTP lokal, lalu keluar</translation>
     </message>
+    <message>
+        <source>Enable receiving Cloud API webhooks, then exit</source>
+        <translation>Aktifkan penerimaan webhook Cloud API, lalu keluar</translation>
+    </message>
+    <message>
+        <source>Disable receiving Cloud API webhooks, then exit</source>
+        <translation>Nonaktifkan penerimaan webhook Cloud API, lalu keluar</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API webhook verify token, then exit</source>
+        <translation>Setel token verifikasi webhook Cloud API, lalu keluar</translation>
+    </message>
+    <message>
+        <source>Set the Meta app secret for webhook signature checks, then exit</source>
+        <translation>Setel app secret Meta untuk pemeriksaan tanda tangan webhook, lalu keluar</translation>
+    </message>
+    <message>
+        <source>Show the Cloud API webhook configuration, then exit</source>
+        <translation>Tampilkan konfigurasi webhook Cloud API, lalu keluar</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

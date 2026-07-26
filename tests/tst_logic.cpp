@@ -50,6 +50,8 @@
 #include "autoreply.h"
 #include "cloudapi.h"
 #include "localapi.h"
+#include "cloudwebhook.h"
+#include <QMessageAuthenticationCode>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
@@ -1102,6 +1104,72 @@ private slots:
     QVERIFY(resp.contains("Content-Length: " + QByteArray::number(body.size())));
     QVERIFY(resp.contains("Connection: close"));
     QVERIFY(resp.endsWith(body));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Cloud API webhook: verification, signature and payload parsing — pure.
+class TstCloudWebhook : public QObject {
+  Q_OBJECT
+private slots:
+  void parsesQuery() {
+    auto q = CloudWebhook::parseQuery(
+        QStringLiteral("/webhook?hub.mode=subscribe&hub.verify_token=tok&"
+                       "hub.challenge=42"));
+    QCOMPARE(q.value("hub.mode"), QStringLiteral("subscribe"));
+    QCOMPARE(q.value("hub.verify_token"), QStringLiteral("tok"));
+    QCOMPARE(q.value("hub.challenge"), QStringLiteral("42"));
+    QVERIFY(CloudWebhook::parseQuery(QStringLiteral("/webhook")).isEmpty());
+  }
+
+  void verifyChallenge() {
+    auto q = CloudWebhook::parseQuery(
+        QStringLiteral("/webhook?hub.mode=subscribe&hub.verify_token=tok&"
+                       "hub.challenge=42"));
+    QCOMPARE(CloudWebhook::verifyChallenge(q, QStringLiteral("tok")),
+             QStringLiteral("42"));
+    // Wrong token, wrong mode and empty expected token all reject.
+    QVERIFY(CloudWebhook::verifyChallenge(q, QStringLiteral("nope")).isEmpty());
+    QVERIFY(CloudWebhook::verifyChallenge(q, QString()).isEmpty());
+    auto bad = CloudWebhook::parseQuery(
+        QStringLiteral("/webhook?hub.mode=unsubscribe&hub.verify_token=tok"));
+    QVERIFY(CloudWebhook::verifyChallenge(bad, QStringLiteral("tok")).isEmpty());
+  }
+
+  void verifiesSignature() {
+    const QByteArray body = "{\"hello\":\"world\"}";
+    const QByteArray secret = "s3cr3t";
+    const QByteArray hex =
+        QMessageAuthenticationCode::hash(body, secret,
+                                         QCryptographicHash::Sha256)
+            .toHex();
+    QVERIFY(CloudWebhook::verifySignature(body, "sha256=" + QString::fromLatin1(hex),
+                                          QString::fromUtf8(secret)));
+    QVERIFY(!CloudWebhook::verifySignature(body, "sha256=deadbeef",
+                                           QString::fromUtf8(secret)));
+    QVERIFY(!CloudWebhook::verifySignature(body, "nosha", QString::fromUtf8(secret)));
+    // No secret configured -> the check is skipped (returns true).
+    QVERIFY(CloudWebhook::verifySignature(body, QString(), QString()));
+  }
+
+  void parsesIncoming() {
+    const QByteArray payload = R"({
+      "object":"whatsapp_business_account",
+      "entry":[{"changes":[{"value":{
+        "messages":[
+          {"from":"34600123456","id":"wamid.1","type":"text",
+           "text":{"body":"hola"}},
+          {"from":"34600999999","id":"wamid.2","type":"image"}
+        ]}}]}]
+    })";
+    auto msgs = CloudWebhook::parseIncoming(payload);
+    QCOMPARE(msgs.size(), 2);
+    QCOMPARE(msgs.at(0).from, QStringLiteral("34600123456"));
+    QCOMPARE(msgs.at(0).text, QStringLiteral("hola"));
+    QCOMPARE(msgs.at(0).type, QStringLiteral("text"));
+    QCOMPARE(msgs.at(1).type, QStringLiteral("image"));
+    QVERIFY(msgs.at(1).text.isEmpty()); // non-text carries no body
+    QVERIFY(CloudWebhook::parseIncoming("not json").isEmpty());
   }
 };
 
@@ -2170,6 +2238,7 @@ int main(int argc, char *argv[]) {
   { TstAutoReply t;           run(&t); }
   { TstCloudApi t;            run(&t); }
   { TstLocalApi t;            run(&t); }
+  { TstCloudWebhook t;        run(&t); }
   { TstIdenticons t;          run(&t); }
   { TstTheme t;               run(&t); }
   { TstDictionaries t;        run(&t); }

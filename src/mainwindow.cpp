@@ -48,6 +48,8 @@
 #include <QDesktopServices>
 #include "privacyblur.h"
 #include "localapi.h"
+#include "cloudapi.h"
+#include "autoreply.h"
 #include "webfont.h"
 #include "mutedstatus.h"
 #include "scheduledmessages.h"
@@ -119,6 +121,8 @@ MainWindow::MainWindow(QWidget *parent)
   m_localApi = new LocalApiServer(this);
   connect(m_localApi, &LocalApiServer::sendRequested, this,
           &MainWindow::commandSend);
+  connect(m_localApi, &LocalApiServer::webhookMessageReceived, this,
+          &MainWindow::handleCloudIncoming);
   startLocalApi();
 
   // Follow the desktop's light/dark preference, live, when the setting is on.
@@ -1081,6 +1085,19 @@ void MainWindow::sendByNameViaWeb(const Messaging::Recipient &recipient,
       recipient.kind == RecipientKind::GroupId
           ? tr("Opening the group and sending…")
           : tr("Opening the chat with \"%1\" and sending…").arg(recipient.value));
+}
+
+void MainWindow::handleCloudIncoming(const QString &from, const QString &text) {
+  // A Cloud API webhook delivered an incoming message. Evaluate the same
+  // auto-reply rules used for the web session; if one matches, reply straight
+  // back through the Cloud API (no page needed).
+  const QString reply = AutoReply::replyFor(text);
+  if (reply.isEmpty())
+    return;
+  const CloudApi::Result res = CloudApi::sendText(from, reply);
+  if (!res.ok)
+    qWarning().noquote() << "Cloud webhook auto-reply to" << from
+                         << "failed:" << res.error;
 }
 
 void MainWindow::startLocalApi() {

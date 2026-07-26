@@ -1292,6 +1292,26 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>Yerel HTTP API yapılandırmasını göster ve çık</translation>
     </message>
+    <message>
+        <source>Enable receiving Cloud API webhooks, then exit</source>
+        <translation>Cloud API webhook alımını etkinleştir ve çık</translation>
+    </message>
+    <message>
+        <source>Disable receiving Cloud API webhooks, then exit</source>
+        <translation>Cloud API webhook alımını devre dışı bırak ve çık</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API webhook verify token, then exit</source>
+        <translation>Cloud API webhook doğrulama belirtecini ayarla ve çık</translation>
+    </message>
+    <message>
+        <source>Set the Meta app secret for webhook signature checks, then exit</source>
+        <translation>Webhook imza denetimi için Meta uygulama gizli anahtarını ayarla ve çık</translation>
+    </message>
+    <message>
+        <source>Show the Cloud API webhook configuration, then exit</source>
+        <translation>Cloud API webhook yapılandırmasını göster ve çık</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

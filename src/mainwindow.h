@@ -269,6 +269,9 @@ private:
   // Start (or stop) the opt-in local HTTP API according to the current
   // settings. Safe to call again after the settings change.
   void startLocalApi();
+  // Handle an incoming message delivered by a Cloud API webhook: evaluate the
+  // auto-reply rules and reply through the Cloud API if one matches.
+  void handleCloudIncoming(const QString &from, const QString &text);
   // The page-side observer that reports new incoming messages over the bridge.
   static QString autoReplyObserverScriptSource();
   // Evaluate the auto-reply rules for an incoming message and, if one matches,

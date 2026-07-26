@@ -1292,6 +1292,26 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>Afficher la configuration de l'API HTTP locale, puis quitter</translation>
     </message>
+    <message>
+        <source>Enable receiving Cloud API webhooks, then exit</source>
+        <translation>Activer la réception des webhooks de l'API Cloud, puis quitter</translation>
+    </message>
+    <message>
+        <source>Disable receiving Cloud API webhooks, then exit</source>
+        <translation>Désactiver la réception des webhooks de l'API Cloud, puis quitter</translation>
+    </message>
+    <message>
+        <source>Set the Cloud API webhook verify token, then exit</source>
+        <translation>Définir le jeton de vérification du webhook de l'API Cloud, puis quitter</translation>
+    </message>
+    <message>
+        <source>Set the Meta app secret for webhook signature checks, then exit</source>
+        <translation>Définir le secret d'application Meta pour la vérification de signature du webhook, puis quitter</translation>
+    </message>
+    <message>
+        <source>Show the Cloud API webhook configuration, then exit</source>
+        <translation>Afficher la configuration du webhook de l'API Cloud, puis quitter</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>

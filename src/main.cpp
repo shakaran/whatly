@@ -31,6 +31,7 @@
 #include "autoreply.h"
 #include "cloudapi.h"
 #include "localapi.h"
+#include "cloudwebhook.h"
 #include "messaging.h"
 #include "messagetemplates.h"
 #include "settingsmanager.h"
@@ -686,6 +687,24 @@ int main(int argc, char *argv[]) {
   QCommandLineOption localApiStatusOption(
       QStringList() << "localapi-status",
       QObject::tr("Show the local HTTP API configuration, then exit"));
+  // Cloud API webhook (incoming messages) configuration.
+  QCommandLineOption webhookOnOption(
+      QStringList() << "webhook-on",
+      QObject::tr("Enable receiving Cloud API webhooks, then exit"));
+  QCommandLineOption webhookOffOption(
+      QStringList() << "webhook-off",
+      QObject::tr("Disable receiving Cloud API webhooks, then exit"));
+  QCommandLineOption webhookVerifyTokenOption(
+      QStringList() << "webhook-verify-token",
+      QObject::tr("Set the Cloud API webhook verify token, then exit"),
+      QStringLiteral("token"));
+  QCommandLineOption webhookAppSecretOption(
+      QStringList() << "webhook-app-secret",
+      QObject::tr("Set the Meta app secret for webhook signature checks, then exit"),
+      QStringLiteral("secret"));
+  QCommandLineOption webhookStatusOption(
+      QStringList() << "webhook-status",
+      QObject::tr("Show the Cloud API webhook configuration, then exit"));
 
   parser.addOption(migrateFromOption);
   parser.addOption(dryRunOption);
@@ -717,6 +736,11 @@ int main(int argc, char *argv[]) {
   parser.addOption(localApiPortOption);
   parser.addOption(localApiTokenOption);
   parser.addOption(localApiStatusOption);
+  parser.addOption(webhookOnOption);
+  parser.addOption(webhookOffOption);
+  parser.addOption(webhookVerifyTokenOption);
+  parser.addOption(webhookAppSecretOption);
+  parser.addOption(webhookStatusOption);
 
   secondaryInstanceCLIOptions << showAppWindowOption << openSettingsOption
                               << lockAppOption << openAboutOption
@@ -853,6 +877,36 @@ int main(int argc, char *argv[]) {
         << (LocalApi::isEnabled() ? "enabled" : "disabled") << ", token "
         << (LocalApi::token().isEmpty() ? "unset" : "set") << ", "
         << LocalApi::bindAddress() << ":" << LocalApi::port() << ")\n";
+    return 0;
+  }
+
+  // Cloud API webhook configuration operates on this profile's settings and
+  // exits. A running instance picks it up on its next launch.
+  if (parser.isSet(webhookOnOption) || parser.isSet(webhookOffOption) ||
+      parser.isSet(webhookVerifyTokenOption) ||
+      parser.isSet(webhookAppSecretOption)) {
+    if (parser.isSet(webhookOffOption))
+      CloudWebhook::setEnabled(false);
+    if (parser.isSet(webhookOnOption))
+      CloudWebhook::setEnabled(true);
+    if (parser.isSet(webhookVerifyTokenOption))
+      CloudWebhook::setVerifyToken(parser.value(webhookVerifyTokenOption));
+    if (parser.isSet(webhookAppSecretOption))
+      CloudWebhook::setAppSecret(parser.value(webhookAppSecretOption));
+    SettingsManager::instance().settings().sync();
+    QTextStream(stdout) << "Cloud API webhook config updated.\n";
+    return 0;
+  }
+  if (parser.isSet(webhookStatusOption)) {
+    QTextStream(stdout)
+        << "Cloud API webhook: "
+        << (CloudWebhook::isEnabled() ? "enabled" : "disabled")
+        << " (verify token "
+        << (CloudWebhook::verifyToken().isEmpty() ? "unset" : "set")
+        << ", app secret "
+        << (CloudWebhook::appSecret().isEmpty() ? "unset" : "set")
+        << ", served at " << LocalApi::bindAddress() << ":" << LocalApi::port()
+        << "/webhook)\n";
     return 0;
   }
 

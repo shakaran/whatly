@@ -1,4 +1,5 @@
 #include "localapi.h"
+#include "cloudwebhook.h"
 #include "settingsmanager.h"
 
 #include <QHostAddress>
@@ -128,20 +129,21 @@ bool parseSendBody(const QByteArray &body, Messaging::SendCommand *out,
   return true;
 }
 
-QByteArray buildResponse(int status, const QByteArray &jsonBody) {
+QByteArray buildResponse(int status, const QByteArray &body,
+                         const QByteArray &contentType) {
   static const QMap<int, QByteArray> reason{
       {200, "OK"},         {202, "Accepted"},
       {400, "Bad Request"}, {401, "Unauthorized"},
-      {404, "Not Found"},  {405, "Method Not Allowed"},
-      {500, "Internal Server Error"}};
+      {403, "Forbidden"},  {404, "Not Found"},
+      {405, "Method Not Allowed"}, {500, "Internal Server Error"}};
   QByteArray out;
   out += "HTTP/1.1 " + QByteArray::number(status) + ' ' +
          reason.value(status, "Status") + "\r\n";
-  out += "Content-Type: application/json\r\n";
-  out += "Content-Length: " + QByteArray::number(jsonBody.size()) + "\r\n";
+  out += "Content-Type: " + contentType + "\r\n";
+  out += "Content-Length: " + QByteArray::number(body.size()) + "\r\n";
   out += "Connection: close\r\n";
   out += "\r\n";
-  out += jsonBody;
+  out += body;
   return out;
 }
 
@@ -159,10 +161,12 @@ LocalApiServer::LocalApiServer(QObject *parent) : QObject(parent) {}
 
 bool LocalApiServer::start(QString *error) {
   stop();
-  if (!LocalApi::isConfigured()) {
+  // Start if the send API is configured OR webhooks are on: the two share the
+  // loopback port but are gated independently (bearer token vs verify token).
+  if (!LocalApi::isConfigured() && !CloudWebhook::isEnabled()) {
     if (error)
       *error = QStringLiteral(
-          "the local API is off or has no token set");
+          "the local API is off (no token) and webhooks are disabled");
     return false;
   }
   m_server = new QTcpServer(this);
@@ -230,6 +234,43 @@ void LocalApiServer::serviceRequest(QTcpSocket *sock,
     sock->flush();
     sock->disconnectFromHost();
   };
+  const auto replyText = [sock](int status, const QByteArray &text) {
+    sock->write(buildResponse(status, text, "text/plain"));
+    sock->flush();
+    sock->disconnectFromHost();
+  };
+
+  // The Cloud API webhook endpoint. Not bearer-protected: Meta authenticates
+  // via the GET verify-token handshake and the POST HMAC signature instead.
+  if (req.path == QStringLiteral("/webhook") ||
+      req.path.startsWith(QStringLiteral("/webhook?"))) {
+    if (!CloudWebhook::isEnabled())
+      return reply(404, jsonField(QStringLiteral("error"),
+                                  QStringLiteral("webhook disabled")));
+    if (req.method == QStringLiteral("GET")) {
+      const QString challenge = CloudWebhook::verifyChallenge(
+          CloudWebhook::parseQuery(req.path), CloudWebhook::verifyToken());
+      if (challenge.isEmpty())
+        return replyText(403, "verification failed");
+      return replyText(200, challenge.toUtf8());
+    }
+    if (req.method == QStringLiteral("POST")) {
+      if (!CloudWebhook::verifySignature(
+              req.body, req.headers.value(QStringLiteral("x-hub-signature-256")),
+              CloudWebhook::appSecret()))
+        return reply(401, jsonField(QStringLiteral("error"),
+                                    QStringLiteral("bad signature")));
+      const auto incoming = CloudWebhook::parseIncoming(req.body);
+      for (const auto &in : incoming)
+        if (!in.text.isEmpty() && !in.from.isEmpty())
+          emit webhookMessageReceived(in.from, in.text);
+      // Always 200 so Meta does not retry a delivered event.
+      return reply(200, jsonField(QStringLiteral("status"),
+                                  QStringLiteral("received")));
+    }
+    return reply(405, jsonField(QStringLiteral("error"),
+                                QStringLiteral("use GET or POST")));
+  }
 
   if (!authorized(req, token()))
     return reply(401, jsonField(QStringLiteral("error"),
