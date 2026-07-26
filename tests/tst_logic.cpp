@@ -2358,6 +2358,12 @@ int main(int argc, char *argv[]) {
   // Keep the (headless) QWebEngineProfile used by the install() test happy on CI
   // runners: no sandbox, no GPU. Must be set before QApplication.
   qputenv("QTWEBENGINE_CHROMIUM_FLAGS", "--no-sandbox --disable-gpu");
+  // Performance:: and NetworkProxy:: keep a machine-wide store that ignores both
+  // the application name and QStandardPaths test mode — on Windows it is the
+  // registry, which test mode does not redirect at all. Without this the proxy
+  // tests below leave their fixture host, port, user and password in the
+  // developer's real configuration.
+  qputenv("WHATLY_SETTINGS_APP", "whatly-test");
   QApplication app(argc, argv);
   QCoreApplication::setOrganizationName(QStringLiteral("shakaran"));
   QCoreApplication::setApplicationName(QStringLiteral("whatly-test"));

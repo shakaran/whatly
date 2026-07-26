@@ -30,8 +30,16 @@ namespace Performance {
 
 QSettings &settings() {
   // Machine-wide: always the default profile's file, whatever account is active.
+  // The names are literals rather than QCoreApplication's because this store is
+  // first read from setChromiumFlags(), before QApplication exists to carry
+  // them. That also means setting an application name cannot redirect it — so
+  // without the escape hatch below, running the test suite rewrites the
+  // developer's own settings (see tests/CMakeLists.txt).
   static QSettings s(QSettings::NativeFormat, QSettings::UserScope,
-                     QStringLiteral("shakaran"), QStringLiteral("whatly"));
+                     QStringLiteral("shakaran"),
+                     qEnvironmentVariableIsEmpty("WHATLY_SETTINGS_APP")
+                         ? QStringLiteral("whatly")
+                         : qEnvironmentVariable("WHATLY_SETTINGS_APP"));
   return s;
 }
 

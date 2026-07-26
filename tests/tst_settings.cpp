@@ -15,6 +15,7 @@
 #include <QPushButton>
 #include <QSlider>
 #include <QSpinBox>
+#include <QStandardPaths>
 #include <QTemporaryDir>
 #include <QTimer>
 #include <QToolButton>
@@ -26,8 +27,18 @@ class TstSettings : public QObject {
   QTimer m_modalCloser;
 private slots:
   void initTestCase() {
+    // Performance:: and NetworkProxy:: keep a machine-wide store that ignores
+    // the application name, so setting it below is not enough to keep this test
+    // out of the developer's real settings — exerciseEveryControl() drives every
+    // spin box to its maximum and every combo through every value. ctest sets
+    // this too; doing it here as well covers running the binary directly.
+    qputenv("WHATLY_SETTINGS_APP", "whatly-test");
     QCoreApplication::setOrganizationName(QStringLiteral("shakaran"));
     QCoreApplication::setApplicationName(QStringLiteral("whatly-test"));
+    // As tst_logic already does: redirects the per-account settings too, on the
+    // platforms where QSettings is a file (it cannot redirect the Windows
+    // registry, which is what the variable above is for).
+    QStandardPaths::setTestModeEnabled(true);
     m_modalCloser.setInterval(25);
     connect(&m_modalCloser, &QTimer::timeout, [] {
       for (QWidget *w : QApplication::topLevelWidgets())
