@@ -2071,6 +2071,23 @@ private slots:
     QCOMPARE(QNetworkProxy::applicationProxy().type(), QNetworkProxy::NoProxy);
   }
 
+  // A manual mode with no host must not install an unusable proxy: doing so
+  // fails every request with ERR_NO_SUPPORTED_PROXIES, which looks like the
+  // network is down rather than like a settings problem.
+  void applyManualWithoutHostGivesNoProxy() {
+    NetworkProxy::setMode(QStringLiteral("http"));
+    NetworkProxy::setHost(QString());
+    NetworkProxy::setPort(65535);
+    NetworkProxy::applyToApplication();
+    QCOMPARE(QNetworkProxy::applicationProxy().type(), QNetworkProxy::NoProxy);
+
+    // Same for socks5, and for a host that is only whitespace.
+    NetworkProxy::setMode(QStringLiteral("socks5"));
+    NetworkProxy::setHost(QStringLiteral("   "));
+    NetworkProxy::applyToApplication();
+    QCOMPARE(QNetworkProxy::applicationProxy().type(), QNetworkProxy::NoProxy);
+  }
+
   void applyManualGivesManualProxy() {
     NetworkProxy::setMode(QStringLiteral("http"));
     NetworkProxy::setHost(QStringLiteral("proxy.example"));
