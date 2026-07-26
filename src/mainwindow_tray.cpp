@@ -3,6 +3,7 @@
 #include "utils.h"
 #include "appprofile.h"
 #include "common.h"
+#include "trayicon.h"
 
 #include <algorithm>
 
@@ -320,14 +321,27 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason) {
 // count. Composed here from one source rather than shipping a matrix of PNGs.
 const QIcon MainWindow::getTrayIcon(const int &notificationCount) const {
   const int count = std::clamp(notificationCount, 0, 10);
-  const bool monochrome = SettingsManager::instance()
-                              .settings()
-                              .value("monochromeTrayIcon", false)
-                              .toBool();
+  bool monochrome = SettingsManager::instance()
+                        .settings()
+                        .value("monochromeTrayIcon", false)
+                        .toBool();
 
   const int size = 64;
   QPixmap base(size, size);
   base.fill(Qt::transparent);
+
+  // When monochrome is asked for, build the glyph mask up front. The helper
+  // prefers the SVG but falls back to the colour icon's shape if the SVG renders
+  // empty on some setup (issue #14); if even that yields nothing, drop out of
+  // monochrome so the tray shows the colour icon instead of a blank slot.
+  QImage monoMask;
+  if (monochrome) {
+    monoMask = TrayIcon::monochromeGlyphMask(
+        QStringLiteral(":/icons/app/whatly-symbolic.svg"),
+        QStringLiteral(":/icons/app/notification/whatly-notify.png"), size);
+    if (TrayIcon::isFullyTransparent(monoMask))
+      monochrome = false;
+  }
 
   if (monochrome) {
     // A monochrome tray icon is asked for so it stops being the one bright thing
@@ -336,17 +350,7 @@ const QIcon MainWindow::getTrayIcon(const int &notificationCount) const {
     // palette (which is the *window's* colour, not the panel's, and would be
     // dark and invisible under a light app theme on a dark panel). A thin dark
     // outline underneath keeps it visible on the rarer light panel too.
-    // Render the SVG with QSvgRenderer rather than QIcon: QIcon's SVG path
-    // silently yields nothing here (the tray then shows a broken-image glyph),
-    // whereas the renderer is direct and reliable now that Qt Svg is linked.
-    QImage glyphImg(size, size, QImage::Format_ARGB32_Premultiplied);
-    glyphImg.fill(Qt::transparent);
-    {
-      QSvgRenderer renderer(QStringLiteral(":/icons/app/whatly-symbolic.svg"));
-      QPainter rp(&glyphImg);
-      renderer.render(&rp);
-    }
-    const QPixmap mask = QPixmap::fromImage(glyphImg);
+    const QPixmap mask = QPixmap::fromImage(monoMask);
 
     auto tinted = [&](const QColor &c) {
       QPixmap px = mask;

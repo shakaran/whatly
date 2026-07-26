@@ -210,6 +210,7 @@ set(SOURCES
     src/globalshortcut.cpp
     src/privacyblur.cpp
     src/performance.cpp
+    src/trayicon.cpp
     src/notificationrules.cpp
     src/networkproxy.cpp
     src/autostart.cpp
@@ -277,6 +278,7 @@ set(HEADERS
     src/cannedresponses.h
     src/privacyblur.h
     src/performance.h
+    src/trayicon.h
     src/notificationrules.h
     src/networkproxy.h
     src/autostart.h
