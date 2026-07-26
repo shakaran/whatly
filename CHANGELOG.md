@@ -34,8 +34,9 @@ than message the wrong chat if there is no exact match. A group given by name
 works the same way; a group id (`--to group:<id>`) is attempted best-effort
 through WhatsApp Web's internal store. An attachment works too — `--file <path>`
 with `--message`/`--caption` opens the matched chat and sends the media with its
-caption (up to 3 MB, same as the phone-number path). This is page automation and
-is being verified live before it is considered stable.
+caption (up to 3 MB, same as the phone-number path). The text send was verified
+live end-to-end; the attachment and group-id paths are page automation still
+being hardened.
 
 **Cloud API backend for sending (work in progress).** `--send --backend cloud`
 now sends directly through the Meta WhatsApp Business Cloud API — no running
