@@ -17,6 +17,11 @@ public slots:
   void toggleTheme() { emit themeToggleRequested(); }
   void togglePrivacyBlur() { emit privacyBlurToggleRequested(); }
 
+  // Invoked by the injected zoom buttons: adjust the page zoom live.
+  void zoomIn() { emit zoomInRequested(); }
+  void zoomOut() { emit zoomOutRequested(); }
+  void zoomReset() { emit zoomResetRequested(); }
+
   // Invoked by the scheduled-message sender once it has clicked Send (or given
   // up), so the schedule can mark the message sent or failed.
   void scheduledMessageResult(const QString &id, bool ok, const QString &error) {
@@ -30,6 +35,9 @@ public slots:
 signals:
   void themeToggleRequested();
   void privacyBlurToggleRequested();
+  void zoomInRequested();
+  void zoomOutRequested();
+  void zoomResetRequested();
   void scheduledMessageFinished(const QString &id, bool ok,
                                 const QString &error);
   void incomingMessageReceived(const QString &text);

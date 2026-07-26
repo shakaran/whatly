@@ -1,5 +1,14 @@
 ## Unreleased
 
+**Zoom buttons in WhatsApp's sidebar.** Zoom out / reset / zoom in buttons can
+now be added to WhatsApp Web's own left rail (next to the theme and blur
+buttons), so you can scale the page live without opening Settings or reaching
+for Ctrl +/−/0. They drive the same page zoom, clamped to a sane range (the
+clamp is unit-tested, `TstZoom`). Toggle them in **Settings → Appearance →
+"Zoom buttons in WhatsApp's sidebar"**. Note: this is the WhatsApp *page* zoom
+(instant); the separate interface-scale setting scales the whole Qt UI and still
+needs a restart.
+
 **Send messages from the command line (work in progress).** `whatly --send
 --to <number> --message "…"` hands a message to the already-running instance of
 that profile and it goes out through the WhatsApp Web session — scriptable, per

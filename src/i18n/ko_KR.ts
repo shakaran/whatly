@@ -1192,6 +1192,21 @@ Please setup the password in the Settings first.</source>
         <translation>채팅 흐리게</translation>
     </message>
     <message>
+        <source>Zoom in</source>
+        <comment>WebTweaks</comment>
+        <translation>확대</translation>
+    </message>
+    <message>
+        <source>Zoom out</source>
+        <comment>WebTweaks</comment>
+        <translation>축소</translation>
+    </message>
+    <message>
+        <source>Reset zoom</source>
+        <comment>WebTweaks</comment>
+        <translation>확대/축소 초기화</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="743"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>시작 시 충돌에서 안전 렌더링으로 전환하여 복구했습니다. 설정 → 성능에서 조정할 수 있습니다.</translation>
@@ -2438,6 +2453,14 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="1942"/>
         <source>Keyboard shortcuts</source>
         <translation>키보드 단축키</translation>
+    </message>
+    <message>
+        <source>Zoom buttons in WhatsApp's sidebar</source>
+        <translation>WhatsApp 사이드바의 확대/축소 버튼</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp's own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;설정을 열지 않고 페이지를 실시간으로 확대/축소할 수 있도록 WhatsApp 사이드바에 축소 / 초기화 / 확대 버튼을 추가합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Local API &amp; Cloud webhooks</source>

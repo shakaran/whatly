@@ -1192,6 +1192,21 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
         <translation>Flouter les discussions</translation>
     </message>
     <message>
+        <source>Zoom in</source>
+        <comment>WebTweaks</comment>
+        <translation>Zoom avant</translation>
+    </message>
+    <message>
+        <source>Zoom out</source>
+        <comment>WebTweaks</comment>
+        <translation>Zoom arrière</translation>
+    </message>
+    <message>
+        <source>Reset zoom</source>
+        <comment>WebTweaks</comment>
+        <translation>Réinitialiser le zoom</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="743"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Récupéré après un plantage au démarrage en passant au rendu sécurisé. Vous pouvez l&apos;ajuster dans Paramètres → Performances.</translation>
@@ -2438,6 +2453,14 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
         <location filename="../settingswidget.ui" line="1942"/>
         <source>Keyboard shortcuts</source>
         <translation>Raccourcis clavier</translation>
+    </message>
+    <message>
+        <source>Zoom buttons in WhatsApp's sidebar</source>
+        <translation>Boutons de zoom dans la barre latérale de WhatsApp</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp's own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ajoute des boutons zoom arrière / réinitialiser / zoom avant à la barre latérale de WhatsApp, pour redimensionner la page en direct sans ouvrir les Réglages.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Local API &amp; Cloud webhooks</source>

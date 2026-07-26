@@ -54,6 +54,7 @@ static const char kScriptTemplate[] = R"JS(
     W.dismissExpressionsPanel = FLAGS.dismissExpressionsPanel;  // live update
     W.themeToggleButton = FLAGS.themeToggleButton;
     W.privacyBlurButton = FLAGS.privacyBlurButton;
+    W.zoomButtons = FLAGS.zoomButtons;
   } else {
     W = window.__whatlyWebTweaks = FLAGS;
   }
@@ -126,6 +127,12 @@ static const char kScriptTemplate[] = R"JS(
     eye: '<path d="M12 5C6.9 5 2.7 9.3 1.5 12c1.2 2.7 5.4 7 10.5 7s9.3-4.3 10.5-7C21.3 9.3 17.1 5 12 5zm0 11.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/><circle cx="12" cy="12" r="2.3"/>',
     // Struck-through eye: shown while clear, i.e. click to blur.
     eyeOff: '<path d="M12 5C6.9 5 2.7 9.3 1.5 12c.6 1.3 1.9 3 3.7 4.4l2-2A4.5 4.5 0 0 1 12 7.5c.5 0 1 .1 1.5.2l1.8-1.8A11 11 0 0 0 12 5zm7.3 1.3-1.6 1.6c1.4 1.1 2.5 2.5 3 3.1-1.1 2.4-4.7 6-9.7 6-.9 0-1.7-.1-2.5-.3l-1.8 1.8c1.3.4 2.8.7 4.3.7 5.1 0 9.3-4.3 10.5-7-.5-1.2-1.6-2.8-3.2-4.2z"/><path d="M4.3 20.4 3 19.1 19.1 3l1.3 1.3z"/>',
+    // Magnifier with a '+' (zoom in).
+    zoomIn: '<circle cx="11" cy="11" r="6.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.6 15.6 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M11 8.2v5.6M8.2 11h5.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>',
+    // Magnifier with a '-' (zoom out).
+    zoomOut: '<circle cx="11" cy="11" r="6.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.6 15.6 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.2 11h5.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>',
+    // Magnifier with a dot centre (reset zoom to 100%).
+    zoomReset: '<circle cx="11" cy="11" r="6.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.6 15.6 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="11" cy="11" r="1.6"/>',
   };
   var isDark = function () {
     try {
@@ -165,6 +172,38 @@ static const char kScriptTemplate[] = R"JS(
       click: function () {
         if (window.__whatlyBridge && window.__whatlyBridge.togglePrivacyBlur)
           window.__whatlyBridge.togglePrivacyBlur();
+      },
+    },
+    // Live page-zoom controls (out / reset / in). The zoom itself lives on the
+    // Qt side (page()->setZoomFactor via the bridge), so these are stateless.
+    {
+      id: 'whatly-zoom-out',
+      enabled: function () { return W.zoomButtons; },
+      icon: function () { return ICON.zoomOut; },
+      label: function () { return LABELS.zoomOut; },
+      click: function () {
+        if (window.__whatlyBridge && window.__whatlyBridge.zoomOut)
+          window.__whatlyBridge.zoomOut();
+      },
+    },
+    {
+      id: 'whatly-zoom-reset',
+      enabled: function () { return W.zoomButtons; },
+      icon: function () { return ICON.zoomReset; },
+      label: function () { return LABELS.resetZoom; },
+      click: function () {
+        if (window.__whatlyBridge && window.__whatlyBridge.zoomReset)
+          window.__whatlyBridge.zoomReset();
+      },
+    },
+    {
+      id: 'whatly-zoom-in',
+      enabled: function () { return W.zoomButtons; },
+      icon: function () { return ICON.zoomIn; },
+      label: function () { return LABELS.zoomIn; },
+      click: function () {
+        if (window.__whatlyBridge && window.__whatlyBridge.zoomIn)
+          window.__whatlyBridge.zoomIn();
       },
     },
   ];
@@ -328,22 +367,29 @@ QString scriptSource() {
       s.value(QStringLiteral("webtweaks/themeToggleButton"), true).toBool();
   const bool blurButton =
       s.value(QStringLiteral("webtweaks/privacyBlurButton"), true).toBool();
+  const bool zoomButtons =
+      s.value(QStringLiteral("webtweaks/zoomButtons"), true).toBool();
 
   const QString flags =
       QStringLiteral("{\"dismissExpressionsPanel\":%1,\"themeToggleButton\":%2,"
-                     "\"privacyBlurButton\":%3}")
+                     "\"privacyBlurButton\":%3,\"zoomButtons\":%4}")
           .arg(QLatin1String(jsBool(dismiss)), QLatin1String(jsBool(themeButton)),
-               QLatin1String(jsBool(blurButton)));
+               QLatin1String(jsBool(blurButton)),
+               QLatin1String(jsBool(zoomButtons)));
 
   // The injected buttons' accessible labels, translated. QObject::tr with an
   // explicit "WebTweaks" context so they land in the translation catalogue.
   const QString labels =
       QStringLiteral("{\"switchToLight\":%1,\"switchToDark\":%2,"
-                     "\"showChats\":%3,\"blurChats\":%4}")
+                     "\"showChats\":%3,\"blurChats\":%4,\"zoomIn\":%5,"
+                     "\"zoomOut\":%6,\"resetZoom\":%7}")
           .arg(jsString(QObject::tr("Switch to light theme", "WebTweaks")),
                jsString(QObject::tr("Switch to dark theme", "WebTweaks")),
                jsString(QObject::tr("Show the chats", "WebTweaks")),
-               jsString(QObject::tr("Blur the chats", "WebTweaks")));
+               jsString(QObject::tr("Blur the chats", "WebTweaks")),
+               jsString(QObject::tr("Zoom in", "WebTweaks")),
+               jsString(QObject::tr("Zoom out", "WebTweaks")),
+               jsString(QObject::tr("Reset zoom", "WebTweaks")));
 
   QString source = QString::fromLatin1(kScriptTemplate);
   source.replace(QLatin1String("__FLAGS__"), flags);
@@ -376,7 +422,9 @@ void install(QWebEngineProfile *profile) {
       s.value(QStringLiteral("webtweaks/themeToggleButton"), true).toBool();
   const bool blurButton =
       s.value(QStringLiteral("webtweaks/privacyBlurButton"), true).toBool();
-  if (!dismiss && !themeButton && !blurButton)
+  const bool zoomButtons =
+      s.value(QStringLiteral("webtweaks/zoomButtons"), true).toBool();
+  if (!dismiss && !themeButton && !blurButton && !zoomButtons)
     return; // nothing enabled → do not inject on fresh loads
 
   QWebEngineScript script;

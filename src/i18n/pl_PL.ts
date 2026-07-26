@@ -1192,6 +1192,21 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <translation>Rozmyj czaty</translation>
     </message>
     <message>
+        <source>Zoom in</source>
+        <comment>WebTweaks</comment>
+        <translation>Powiększ</translation>
+    </message>
+    <message>
+        <source>Zoom out</source>
+        <comment>WebTweaks</comment>
+        <translation>Pomniejsz</translation>
+    </message>
+    <message>
+        <source>Reset zoom</source>
+        <comment>WebTweaks</comment>
+        <translation>Resetuj powiększenie</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="743"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Przywrócono po awarii przy uruchamianiu, przełączając na bezpieczne renderowanie. Możesz to zmienić w Ustawienia → Wydajność.</translation>
@@ -2438,6 +2453,14 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <location filename="../settingswidget.ui" line="1942"/>
         <source>Keyboard shortcuts</source>
         <translation>Skróty klawiszowe</translation>
+    </message>
+    <message>
+        <source>Zoom buttons in WhatsApp's sidebar</source>
+        <translation>Przyciski powiększenia na pasku bocznym WhatsAppa</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp's own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dodaje przyciski pomniejszania / resetowania / powiększania do paska bocznego WhatsAppa, aby skalować stronę na żywo bez otwierania Ustawień.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Local API &amp; Cloud webhooks</source>

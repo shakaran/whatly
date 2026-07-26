@@ -1379,6 +1379,27 @@ private slots:
 // Performance: the Chromium-flag fragment is a pure function of the stored
 // settings, so it can be exercised directly. Runs in QStandardPaths test mode,
 // so it writes to a throwaway settings file and restores every key it touches.
+// ─────────────────────────────────────────────────────────────────────────────
+// Page-zoom clamping — pure. Guards the bounds used by Ctrl +/- and the injected
+// zoom buttons so a runaway value can't make the UI unusable.
+class TstZoom : public QObject {
+  Q_OBJECT
+private slots:
+  void clampsWithinBounds() {
+    QCOMPARE(clampZoom(1.0), 1.0);
+    QCOMPARE(clampZoom(kMinZoomFactor), kMinZoomFactor);
+    QCOMPARE(clampZoom(kMaxZoomFactor), kMaxZoomFactor);
+  }
+  void clampsOutOfRange() {
+    QCOMPARE(clampZoom(0.05), kMinZoomFactor);   // far too small
+    QCOMPARE(clampZoom(-1.0), kMinZoomFactor);   // negative
+    QCOMPARE(clampZoom(9.0), kMaxZoomFactor);    // far too large
+    // A normal Ctrl+- step from the floor stays at the floor.
+    QCOMPARE(clampZoom(kMinZoomFactor - 0.1), kMinZoomFactor);
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 class TstPerformance : public QObject {
   Q_OBJECT
 private slots:
@@ -2256,6 +2277,7 @@ int main(int argc, char *argv[]) {
   { TstCustomCss t;           run(&t); }
   { TstCustomJs t;            run(&t); }
   { TstChatWallpaper t;       run(&t); }
+  { TstZoom t;                run(&t); }
   { TstPerformance t;         run(&t); }
   { TstShortcuts t;           run(&t); }
   { TstBackup t;              run(&t); }

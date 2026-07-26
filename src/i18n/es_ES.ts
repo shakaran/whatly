@@ -1192,6 +1192,21 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>Desenfocar los chats</translation>
     </message>
     <message>
+        <source>Zoom in</source>
+        <comment>WebTweaks</comment>
+        <translation>Acercar</translation>
+    </message>
+    <message>
+        <source>Zoom out</source>
+        <comment>WebTweaks</comment>
+        <translation>Alejar</translation>
+    </message>
+    <message>
+        <source>Reset zoom</source>
+        <comment>WebTweaks</comment>
+        <translation>Restablecer zoom</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="743"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Se recuperó de un fallo de inicio cambiando a renderizado seguro. Puedes ajustarlo en Ajustes → Rendimiento.</translation>
@@ -2438,6 +2453,14 @@ Configure primero la contraseña en los ajustes.</translation>
         <location filename="../settingswidget.ui" line="1942"/>
         <source>Keyboard shortcuts</source>
         <translation>Atajos de teclado</translation>
+    </message>
+    <message>
+        <source>Zoom buttons in WhatsApp's sidebar</source>
+        <translation>Botones de zoom en la barra lateral de WhatsApp</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp's own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Añade botones de alejar / restablecer / acercar a la barra lateral de WhatsApp, para escalar la página en vivo sin abrir Ajustes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Local API &amp; Cloud webhooks</source>

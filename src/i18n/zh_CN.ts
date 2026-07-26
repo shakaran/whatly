@@ -1192,6 +1192,21 @@ Please setup the password in the Settings first.</source>
         <translation>模糊聊天</translation>
     </message>
     <message>
+        <source>Zoom in</source>
+        <comment>WebTweaks</comment>
+        <translation>放大</translation>
+    </message>
+    <message>
+        <source>Zoom out</source>
+        <comment>WebTweaks</comment>
+        <translation>缩小</translation>
+    </message>
+    <message>
+        <source>Reset zoom</source>
+        <comment>WebTweaks</comment>
+        <translation>重置缩放</translation>
+    </message>
+    <message>
         <location filename="../main.cpp" line="743"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>已通过切换到安全渲染从启动崩溃中恢复。你可以在设置 → 性能中调整此项。</translation>
@@ -2438,6 +2453,14 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="1942"/>
         <source>Keyboard shortcuts</source>
         <translation>键盘快捷键</translation>
+    </message>
+    <message>
+        <source>Zoom buttons in WhatsApp's sidebar</source>
+        <translation>在 WhatsApp 侧边栏中的缩放按钮</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp's own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在 WhatsApp 侧边栏中添加缩小 / 重置 / 放大按钮，无需打开设置即可实时缩放页面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Local API &amp; Cloud webhooks</source>

@@ -176,6 +176,11 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
           .settings()
           .value("webtweaks/privacyBlurButton", true)
           .toBool());
+  ui->zoomButtonsCheckBox->setChecked(
+      SettingsManager::instance()
+          .settings()
+          .value("webtweaks/zoomButtons", true)
+          .toBool());
   ui->identifyInLinkedDevicesCheckBox->setChecked(
       SettingsManager::instance()
           .settings()
@@ -421,6 +426,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
             ui->interfaceFontSizeSpinBox, G);
     moveRowL(body(appearance), ui->customCssLabel, ui->customCssLayout, G);
     moveWidget(body(appearance), ui->themeToggleButtonCheckBox, G);
+    moveWidget(body(appearance), ui->zoomButtonsCheckBox, G);
     moveWidget(body(appearance), ui->smoothScrollingCheckBox, G);
     moveWidget(body(appearance), ui->monochromeTrayIconCheckBox, G);
 
@@ -1709,6 +1715,12 @@ void SettingsWidget::saveSpellCheckLanguages() {
 void SettingsWidget::on_themeToggleButtonCheckBox_toggled(bool checked) {
   SettingsManager::instance().settings().setValue(
       "webtweaks/themeToggleButton", checked);
+  emit webTweaksChanged();
+}
+
+void SettingsWidget::on_zoomButtonsCheckBox_toggled(bool checked) {
+  SettingsManager::instance().settings().setValue("webtweaks/zoomButtons",
+                                                  checked);
   emit webTweaksChanged();
 }
 

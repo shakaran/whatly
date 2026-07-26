@@ -165,6 +165,7 @@ private slots:
   void on_spellCheckCheckBox_toggled(bool checked);
   void on_themeToggleButtonCheckBox_toggled(bool checked);
   void on_privacyBlurButtonCheckBox_toggled(bool checked);
+  void on_zoomButtonsCheckBox_toggled(bool checked);
   void on_userAgentLineEdit_editingFinished();
   void on_userAgentLineEdit_textChanged(const QString &arg1);
   void on_viewPassword_clicked();

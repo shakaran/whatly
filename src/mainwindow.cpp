@@ -433,8 +433,7 @@ void MainWindow::zoomBy(double delta) {
                                 : QStringLiteral("zoomFactor");
   const double def = maximized ? defaultZoomFactorMaximized : 1.0;
   QSettings &s = SettingsManager::instance().settings();
-  const double next =
-      std::clamp(s.value(key, def).toDouble() + delta, 0.3, 3.0);
+  const double next = clampZoom(s.value(key, def).toDouble() + delta);
   s.setValue(key, next);
   m_webEngine->page()->setZoomFactor(next);
   applyMinimumSize();
@@ -443,6 +442,7 @@ void MainWindow::zoomBy(double delta) {
 void MainWindow::zoomIn() { zoomBy(0.1); }
 void MainWindow::zoomOut() { zoomBy(-0.1); }
 
+// Reset the in-effect zoom (normal or maximized) back to 1:1.
 void MainWindow::zoomReset() {
   // In grid view, Ctrl+0 redistributes the tiles equally instead of zooming.
   if (m_viewMode == ViewMode::Grid) {

@@ -140,6 +140,12 @@ void MainWindow::installPageBridge(QWebEnginePage *page) {
             &MainWindow::toggleTheme);
     connect(m_pageBridge, &PageBridge::privacyBlurToggleRequested, this,
             &MainWindow::togglePrivacyBlur);
+    connect(m_pageBridge, &PageBridge::zoomInRequested, this,
+            &MainWindow::zoomIn);
+    connect(m_pageBridge, &PageBridge::zoomOutRequested, this,
+            &MainWindow::zoomOut);
+    connect(m_pageBridge, &PageBridge::zoomResetRequested, this,
+            &MainWindow::zoomReset);
     connect(m_pageBridge, &PageBridge::scheduledMessageFinished, this,
             [this](const QString &id, bool ok, const QString &error) {
               if (m_scheduledMessages)
