@@ -57,6 +57,7 @@
 #include <QJsonArray>
 #include "linkeddevicename.h"
 #include "performance.h"
+#include "trayicon.h"
 #include "networkproxy.h"
 #include "notificationrules.h"
 #include "autostart.h"
@@ -1423,6 +1424,7 @@ private slots:
     Performance::setWebrtcShield(false);
     Performance::setWebrtcPipeWire(false);
     Performance::setJsMemoryLimitMb(0);
+    Performance::setOptimizeForSize(false); // default is on; isolate other cases
     Performance::setCacheType(QStringLiteral("disk"));
     Performance::setCacheMaxMb(0);
     // No start-up crash recovery pending: level 0, watch disarmed.
@@ -1547,6 +1549,38 @@ private slots:
         QLatin1String("--js-flags")));
   }
 
+  // optimize-for-size (issue #15) trims the baseline heap and is on by default.
+  // It shares the single --js-flags token with the heap cap: Qt splits the env
+  // var on whitespace, so only one sub-flag can travel, and an explicit cap wins.
+  void optimizeForSizeFlag() {
+    // Not present once init() has turned it off.
+    QVERIFY(!Performance::chromiumFlagFragment().contains(
+        QLatin1String("--js-flags")));
+
+    Performance::setOptimizeForSize(true);
+    QVERIFY(Performance::chromiumFlagFragment().contains(
+        QLatin1String("--js-flags=--optimize-for-size")));
+
+    // An explicit heap cap takes the slot (single space-free token, cap wins).
+    Performance::setJsMemoryLimitMb(512);
+    const QString withCap = Performance::chromiumFlagFragment();
+    QVERIFY(withCap.contains(QLatin1String("--js-flags=--max-old-space-size=512")));
+    QVERIFY(!withCap.contains(QLatin1String("--optimize-for-size")));
+
+    // Removing the cap falls back to optimize-for-size again.
+    Performance::setJsMemoryLimitMb(0);
+    QVERIFY(Performance::chromiumFlagFragment().contains(
+        QLatin1String("--js-flags=--optimize-for-size")));
+    Performance::setOptimizeForSize(false);
+  }
+
+  // The default (a fresh install, no keys written) has optimize-for-size on.
+  void optimizeForSizeDefaultsOn() {
+    Performance::settings().remove(QStringLiteral("perf/optimizeForSize"));
+    QVERIFY(Performance::optimizeForSize());
+    Performance::setOptimizeForSize(false); // restore the isolated baseline
+  }
+
   void settersRoundTrip() {
     Performance::setDisableGpuVsync(true);
     QVERIFY(Performance::disableGpuVsync());
@@ -1573,6 +1607,56 @@ private slots:
     Performance::setCacheType(QStringLiteral("disk"));
     Performance::applyToProfile(&profile);
     QCOMPARE(profile.httpCacheType(), QWebEngineProfile::DiskHttpCache);
+  }
+};
+
+// Monochrome tray glyph mask (issue #14): the SVG is preferred, but the helper
+// must fall back to the colour icon's shape when the SVG can't be rendered, so
+// the tray is never left blank.
+class TstTrayIcon : public QObject {
+  Q_OBJECT
+private slots:
+  void fullyTransparentDetectsEmpty() {
+    QImage empty(8, 8, QImage::Format_ARGB32_Premultiplied);
+    empty.fill(Qt::transparent);
+    QVERIFY(TrayIcon::isFullyTransparent(empty));
+    QVERIFY(TrayIcon::isFullyTransparent(QImage())); // null counts as empty
+
+    QImage opaque(8, 8, QImage::Format_ARGB32_Premultiplied);
+    opaque.fill(Qt::white);
+    QVERIFY(!TrayIcon::isFullyTransparent(opaque));
+
+    QImage oneDot(8, 8, QImage::Format_ARGB32_Premultiplied);
+    oneDot.fill(Qt::transparent);
+    oneDot.setPixelColor(3, 3, QColor(0, 0, 0, 1)); // a single non-zero alpha
+    QVERIFY(!TrayIcon::isFullyTransparent(oneDot));
+  }
+
+  void svgRendersGlyph() {
+    // The real bundled symbolic icon renders to a non-empty mask of the size.
+    const QImage m = TrayIcon::monochromeGlyphMask(
+        QStringLiteral(":/icons/app/whatly-symbolic.svg"),
+        QStringLiteral(":/icons/app/notification/whatly-notify.png"), 64);
+    QCOMPARE(m.size(), QSize(64, 64));
+    QVERIFY(!TrayIcon::isFullyTransparent(m));
+  }
+
+  void fallsBackToPngWhenSvgFails() {
+    // A bogus SVG path forces the fallback: the colour PNG's shape must still
+    // give a visible mask.
+    const QImage m = TrayIcon::monochromeGlyphMask(
+        QStringLiteral(":/does/not/exist.svg"),
+        QStringLiteral(":/icons/app/notification/whatly-notify.png"), 64);
+    QVERIFY(!TrayIcon::isFullyTransparent(m));
+  }
+
+  void emptyWhenBothSourcesFail() {
+    // Both sources missing → transparent, so the caller degrades to colour.
+    const QImage m = TrayIcon::monochromeGlyphMask(
+        QStringLiteral(":/does/not/exist.svg"),
+        QStringLiteral(":/also/missing.png"), 32);
+    QCOMPARE(m.size(), QSize(32, 32));
+    QVERIFY(TrayIcon::isFullyTransparent(m));
   }
 };
 
@@ -2304,6 +2388,7 @@ int main(int argc, char *argv[]) {
   { TstChatWallpaper t;       run(&t); }
   { TstZoom t;                run(&t); }
   { TstPerformance t;         run(&t); }
+  { TstTrayIcon t;            run(&t); }
   { TstShortcuts t;           run(&t); }
   { TstBackup t;              run(&t); }
   { TstScreenLock t;          run(&t); }

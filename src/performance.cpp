@@ -56,6 +56,9 @@ bool webrtcPipeWire() {
 int jsMemoryLimitMb() {
   return settings().value(QStringLiteral("perf/jsMemoryLimitMb"), 0).toInt();
 }
+bool optimizeForSize() {
+  return b(QStringLiteral("perf/optimizeForSize"), true);
+}
 QString cacheType() {
   return settings().value(QStringLiteral("perf/cacheType"), QStringLiteral("disk")).toString();
 }
@@ -75,6 +78,9 @@ void setWebrtcShield(bool v) { setB(QStringLiteral("perf/webrtcShield"), v); }
 void setWebrtcPipeWire(bool v) { setB(QStringLiteral("perf/webrtcPipeWire"), v); }
 void setJsMemoryLimitMb(int mb) {
   settings().setValue(QStringLiteral("perf/jsMemoryLimitMb"), qMax(0, mb));
+}
+void setOptimizeForSize(bool v) {
+  setB(QStringLiteral("perf/optimizeForSize"), v);
 }
 void setCacheType(const QString &type) {
   settings().setValue(QStringLiteral("perf/cacheType"), type);
@@ -141,8 +147,15 @@ QString chromiumFlagFragment() {
         "--force-webrtc-ip-handling-policy=disable_non_proxied_udp");
   if (webrtcPipeWire())
     f << QStringLiteral("--enable-features=WebRTCPipeWireCapturer");
+  // V8 heap tuning, packed into a single --js-flags token. Qt tokenises
+  // QTWEBENGINE_CHROMIUM_FLAGS on whitespace, so the value passed to Chromium
+  // must not itself contain a space — only one sub-flag can travel here. An
+  // explicit heap cap is the stronger, user-chosen bound, so it wins the slot
+  // when set; otherwise optimize-for-size trims the baseline heap by default.
   if (const int mb = jsMemoryLimitMb(); mb > 0)
     f << QStringLiteral("--js-flags=--max-old-space-size=%1").arg(mb);
+  else if (optimizeForSize())
+    f << QStringLiteral("--js-flags=--optimize-for-size");
 
   // Start-up crash recovery (issue #3): after a crash before the page loaded,
   // force progressively safer rendering. Level 1 drops all GPU/GL use for the

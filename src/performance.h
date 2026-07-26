@@ -40,6 +40,12 @@ bool webrtcPipeWire();             // --enable-features=WebRTCPipeWireCapturer
 // V8 heap cap in MB (0 = Chromium default) — helps the "eats RAM" reports.
 int jsMemoryLimitMb();
 
+// Ask V8 to trade a little speed for a smaller heap (--js-flags=--optimize-for-
+// size). Sensible default for an always-on tray app whose renderer sits idle in
+// the background most of the time; trims the baseline QtWebEngineProcess
+// footprint (issue #15). Default: true.
+bool optimizeForSize();
+
 // HTTP cache: "disk" (default), "memory" or "none"; max size in MB (0 = auto).
 QString cacheType();
 int cacheMaxMb();
@@ -59,6 +65,7 @@ void setProcessPerSite(bool v);
 void setWebrtcShield(bool v);
 void setWebrtcPipeWire(bool v);
 void setJsMemoryLimitMb(int mb);
+void setOptimizeForSize(bool v);
 void setCacheType(const QString &type);
 void setCacheMaxMb(int mb);
 void setInterfaceScaleFactor(double factor);
