@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        6.5.0
+Version:        6.6.0
 Release:        1%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
@@ -53,6 +53,12 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Sun Jul 26 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.6.0-1
+- Send from the command line and a local HTTP API (text, media, templates; to a
+  number or a contact/group by name); Cloud API backend and webhooks; auto-reply
+  rules; multi-window account tabs with detachable windows and a grid view (#10);
+  zoom buttons in WhatsApp's sidebar; fix a start-up crash on newer distros by
+  bundling the NSS PKCS#11 modules (#11, #12); see CHANGELOG.md
 * Fri Jul 24 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.5.0-1
 - Recover from a start-up GPU/GL crash (safe-rendering fallback + Chromium
   logging), settings reorganised into collapsible sections, emoji skin-tone

@@ -1,3 +1,110 @@
+## 6.6.0 (2026-07-26)
+
+**Start-up crash on newer distros fixed (#11, #12).** The Linux packages
+(AppImage, .deb, .rpm) bundle the linked NSS libraries but were missing the
+PKCS#11 modules NSS loads at runtime (`libsoftokn3`, `libfreebl3`,
+`libnssckbi`). On distros with a newer NSS (e.g. Debian 14, PikaOS) the app
+loaded the host's `libsoftokn3` against the bundled older `libnssutil3`, which
+lacks the `NSSUTIL_3.x` symbol version it needs, and Chromium aborted on
+launch (`nss_util.cc … FATAL`). The packaging now ships the matching NSS module
+set, and CI fails the build if they go missing again.
+
+**Zoom buttons in WhatsApp's sidebar.** Zoom out / reset / zoom in buttons can
+now be added to WhatsApp Web's own left rail (next to the theme and blur
+buttons), so you can scale the page live without opening Settings or reaching
+for Ctrl +/−/0. They drive the same page zoom, clamped to a sane range (the
+clamp is unit-tested, `TstZoom`). Toggle them in **Settings → Appearance →
+"Zoom buttons in WhatsApp's sidebar"**. Note: this is the WhatsApp *page* zoom
+(instant); the separate interface-scale setting scales the whole Qt UI and still
+needs a restart.
+
+**Send messages from the command line (work in progress).** `whatly --send
+--to <number> --message "…"` hands a message to the already-running instance of
+that profile and it goes out through the WhatsApp Web session — scriptable, per
+profile. `--file <path>` attaches an image or file with `--message`/`--caption` as its
+caption (the caption is attached to the media in a single message), up to 3 MB
+over the web backend. Reusable **message
+templates** (per account) let you save a body with `{{fields}}` and send it
+with `--send --template <name> --var key=value`; manage them with
+`--template-set name=body`, `--template-list` and `--template-remove`.
+`--backend web` (default) uses the live session; `--backend cloud` (Meta
+WhatsApp Business Cloud API), groups/contact-name recipients and a local API are
+being added on top. Covered by unit tests (`TstMessaging`,
+`TstMessageTemplates`). Note: automating WhatsApp Web is, strictly, against
+WhatsApp's terms — use it for your own account.
+
+**Auto-reply to incoming messages (work in progress).** An opt-in "listener"
+replies automatically to messages in the open conversation using rules —
+`exact`, `contains`, `hashtag` or `regex` (with `$1..$9` capture substitution in
+the reply). Rules live per account and/or in a JSON file you maintain; manage
+from the CLI: `--autoreply-on` / `--autoreply-off`, `--autoreply-file <path>`,
+`--autoreply-list`. The rules engine and store are covered by unit tests
+(`TstAutoReply`); the page-side observer detects incoming messages by bubble
+position (current WhatsApp Web obfuscates its class names) and was verified live
+end-to-end, including regex captures in the reply. It replies in the open
+conversation. Same terms-of-service caveat as above.
+
+**Send to a contact or group by name.** `--send` over the web backend now
+accepts a non-number recipient: `--to "Alice Smith"` (or `--to name:Alice`)
+opens the chat whose title matches **exactly** (case-insensitive) via WhatsApp
+Web's search and sends — it aborts rather than message the wrong chat if there
+is no exact match. A group given by name works the same way. A group id
+(`--to group:<id>` or `<id>@g.us`) is resolved to its chat title through
+WhatsApp Web's internal module loader and then opened by that title. An
+attachment works too — `--file <path>` with `--message`/`--caption` opens the
+matched chat and sends the media with its caption (up to 3 MB, same as the
+phone-number path). Verified live end-to-end (text, attachment, group by name
+and group by id). This is page automation, so it can still break when WhatsApp
+Web changes its markup.
+
+**Cloud API backend for sending (work in progress).** `--send --backend cloud`
+now sends directly through the Meta WhatsApp Business Cloud API — no running
+WhatsApp Web session needed, so it works headless and scriptable. It supports
+plain text, media (`--file`, uploaded then sent with an optional caption) and
+Meta-approved **templates** (`--cloud-template <name> --cloud-lang <code>
+--cloud-param <value>…` for positional `{{1}},{{2}}…` body parameters).
+Configure it per account with `--cloud-phone-id`, `--cloud-token` and
+`--cloud-api-version` (the access token is one you supply and is stored in the
+account config; Whatly never obtains it itself), and check it with
+`--cloud-status`. The same phone-number id, access token and Graph API version
+can now also be set in **Settings → Cloud API** instead of on the command line.
+The URL/payload builders are covered by unit tests (`TstCloudApi`).
+
+**Cloud API webhooks — auto-reply without a browser (work in progress).** The
+Cloud backend can now *receive* messages too: Whatly serves Meta's webhook on
+the local API port (`GET /webhook` verify handshake + `POST /webhook` events),
+validates the `X-Hub-Signature-256` HMAC against your Meta app secret, and runs
+each incoming message through the same auto-reply rules — replying through the
+Cloud API, no WhatsApp Web session involved. Because it rides the loopback
+local-API port, expose it to Meta with a tunnel or reverse proxy
+(cloudflared/ngrok → `127.0.0.1`) rather than opening Whatly to the network.
+Configure with `--webhook-on` / `--webhook-off`, `--webhook-verify-token`,
+`--webhook-app-secret` and `--webhook-status`. Verification, signature and
+payload parsing are covered by unit tests (`TstCloudWebhook`).
+
+**Local HTTP API for sending (work in progress).** An opt-in HTTP endpoint lets
+other programs on the same machine send through the running instance — the
+scriptable counterpart of `whatly --send`, callable over HTTP (cron jobs,
+home-server automations, other languages). `POST /send` with a JSON body
+(`{"to":"…","message":"…","file":"…","backend":"web|cloud"}`) queues the send
+and returns `202`. It binds to the loopback interface only (`127.0.0.1`) and
+every request must carry a bearer token, so it is never reachable from the
+network; it is off until you enable it. Configure with `--localapi-on` /
+`--localapi-off`, `--localapi-port` (default 8590), `--localapi-token`, and
+`--localapi-status`, or in **Settings → Local API & Cloud webhooks** (which also
+holds the webhook fields below). Request parsing, auth and the JSON→command
+mapping are covered by unit tests (`TstLocalApi`).
+
+**Multi-window account tabs (#10).** Multiple accounts now live in a
+Chrome-style tab strip: add one with **+**, rename or close from a right-click
+menu, and drag a tab out of the strip to **tear it off into its own window**
+(or drop it back to redock). A **grid view** tiles every account side by side
+with resizable panes and thin scrollbars, and the whole multi-window
+arrangement (which account is where, each window's geometry and active tab, tile
+sizes) is optionally restored on the next launch. Each account stays its own
+Chromium storage partition, so sessions never touch and the tray badge still
+sums unread across them all. Thanks to @gbmaizol.
+
 ## 6.5.0 (2026-07-24)
 
 **Recover from a start-up crash (#3).** If Qt WebEngine aborts while

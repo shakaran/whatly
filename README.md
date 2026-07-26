@@ -191,6 +191,18 @@ On top of upstream WhatSie, this fork adds:
 - **Settings, reorganised** — the long settings list is grouped into themed,
   collapsible sections (Basics, Appearance, Notifications, Chatting, Privacy &
   Lock, Window & zoom, Advanced), with only the first open on launch.
+- **Send from the command line and a local API** — `whatly --send` delivers a
+  message (text, media, or a reusable template) through the running session, to
+  a phone number or to a contact/group by name; an opt-in loopback HTTP API does
+  the same over HTTP for scripts and automations.
+- **Cloud API backend** — send through the Meta WhatsApp Business Cloud API with
+  no browser session, and receive incoming messages via webhooks so the
+  **auto-reply** rules (exact / contains / hashtag / regex) can answer over the
+  cloud too.
+- **Multi-window account tabs** — Chrome-style tabs for multiple accounts,
+  detachable per-account windows, and a resizable grid view.
+- **Zoom buttons in WhatsApp's sidebar** — scale the page live without opening
+  Settings.
 
 ## Screenshots
 

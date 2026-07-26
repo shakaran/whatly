@@ -108,6 +108,19 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="6.6.0" date="2026-07-26">
+      <description>
+        <p>A large feature release, plus a start-up fix:</p>
+        <ul>
+          <li>Send messages from the command line and an opt-in local HTTP API — text, media and reusable templates, to a phone number or to a contact or group by name</li>
+          <li>Cloud API backend: send through the Meta WhatsApp Business Cloud API with no browser session, and receive incoming messages via webhooks so auto-reply works over the cloud too</li>
+          <li>Auto-reply rules answer incoming messages (exact, contains, hashtag or regex)</li>
+          <li>Multi-window account tabs (Chrome-style), with detachable per-account windows and a resizable grid view</li>
+          <li>Zoom buttons in WhatsApp's own sidebar to scale the page live</li>
+          <li>Fixed a start-up crash on distros with a newer NSS (Debian 14, PikaOS): the packages now bundle the NSS PKCS#11 modules</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.5.0" date="2026-07-24">
       <description>
         <p>Fixes and refinements, several from community pull requests:</p>

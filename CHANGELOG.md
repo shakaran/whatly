@@ -1,4 +1,4 @@
-## Unreleased
+## 6.6.0 (2026-07-26)
 
 **Start-up crash on newer distros fixed (#11, #12).** The Linux packages
 (AppImage, .deb, .rpm) bundle the linked NSS libraries but were missing the

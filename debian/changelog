@@ -1,3 +1,17 @@
+whatly (6.6.0) unstable; urgency=medium
+
+  * Send messages from the command line and an opt-in local HTTP API: text,
+    media and reusable templates, to a number or to a contact/group by name.
+  * Cloud API backend: send through the Meta WhatsApp Business Cloud API with
+    no browser session, and receive messages via webhooks for cloud auto-reply.
+  * Auto-reply rules for incoming messages (exact/contains/hashtag/regex).
+  * Multi-window account tabs (Chrome-style), detachable windows, grid view (#10).
+  * Zoom buttons in WhatsApp's own sidebar to scale the page live.
+  * Fix a start-up crash on newer distros (Debian 14, PikaOS): bundle the NSS
+    PKCS#11 modules the packages were missing (#11, #12). See CHANGELOG.md.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Sun, 26 Jul 2026 18:00:00 +0200
+
 whatly (6.5.0) unstable; urgency=medium
 
   * Automatic recovery from a start-up GPU/GL crash: fall back to safer
