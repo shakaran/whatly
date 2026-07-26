@@ -2428,6 +2428,46 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Klavye kısayolları</translation>
     </message>
     <message>
+        <source>Local API &amp; Cloud webhooks</source>
+        <translation>Yerel API ve Cloud webhook'ları</translation>
+    </message>
+    <message>
+        <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
+        <translation>Geri döngü arabirimindeki (127.0.0.1) küçük bir HTTP uç noktası, bu makinedeki diğer programların Whatly üzerinden göndermesine ve Meta'nın Cloud API webhook'larını (gelen mesajlar) iletmesine olanak tanır; böylece otomatik yanıt tarayıcı olmadan çalışır. Asla ağa açılmaz; Meta'dan webhook almak için bağlantı noktasını bir tünel veya ters proxy ile yönlendirin (ör. cloudflared veya ngrok).</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API (send over HTTP)</source>
+        <translation>Yerel HTTP API'sini etkinleştir (HTTP ile gönder)</translation>
+    </message>
+    <message>
+        <source>Bearer token</source>
+        <translation>Bearer belirteci</translation>
+    </message>
+    <message>
+        <source>required to authorise requests</source>
+        <translation>istekleri yetkilendirmek için gereklidir</translation>
+    </message>
+    <message>
+        <source>Receive Cloud API webhooks (incoming messages)</source>
+        <translation>Cloud API webhook'larını al (gelen mesajlar)</translation>
+    </message>
+    <message>
+        <source>Webhook verify token</source>
+        <translation>Webhook doğrulama belirteci</translation>
+    </message>
+    <message>
+        <source>echoed to Meta during setup</source>
+        <translation>kurulum sırasında Meta'ya gönderilir</translation>
+    </message>
+    <message>
+        <source>Meta app secret</source>
+        <translation>Meta uygulama gizli anahtarı</translation>
+    </message>
+    <message>
+        <source>verifies the webhook signature</source>
+        <translation>webhook imzasını doğrular</translation>
+    </message>
+    <message>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API (tarayıcı oturumu olmadan gönderme)</translation>
     </message>

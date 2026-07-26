@@ -2428,6 +2428,46 @@ Please setup the password in the Settings first.</source>
         <translation>Сочетания клавиш</translation>
     </message>
     <message>
+        <source>Local API &amp; Cloud webhooks</source>
+        <translation>Локальный API и вебхуки Cloud</translation>
+    </message>
+    <message>
+        <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
+        <translation>Небольшая HTTP-точка на интерфейсе обратной петли (127.0.0.1) позволяет другим программам на этом компьютере отправлять через Whatly, а Meta — доставлять вебхуки Cloud API (входящие сообщения), чтобы автоответы работали без браузера. Она никогда не открыта в сеть; чтобы получать вебхуки от Meta, перенаправьте порт через туннель или обратный прокси (например, cloudflared или ngrok).</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API (send over HTTP)</source>
+        <translation>Включить локальный HTTP API (отправка по HTTP)</translation>
+    </message>
+    <message>
+        <source>Bearer token</source>
+        <translation>Токен Bearer</translation>
+    </message>
+    <message>
+        <source>required to authorise requests</source>
+        <translation>требуется для авторизации запросов</translation>
+    </message>
+    <message>
+        <source>Receive Cloud API webhooks (incoming messages)</source>
+        <translation>Получать вебхуки Cloud API (входящие сообщения)</translation>
+    </message>
+    <message>
+        <source>Webhook verify token</source>
+        <translation>Токен проверки вебхука</translation>
+    </message>
+    <message>
+        <source>echoed to Meta during setup</source>
+        <translation>отправляется в Meta при настройке</translation>
+    </message>
+    <message>
+        <source>Meta app secret</source>
+        <translation>Секрет приложения Meta</translation>
+    </message>
+    <message>
+        <source>verifies the webhook signature</source>
+        <translation>проверяет подпись вебхука</translation>
+    </message>
+    <message>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API (отправка без сессии браузера)</translation>
     </message>

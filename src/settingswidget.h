@@ -44,6 +44,9 @@ signals:
   void zoomChanged();
   void zoomMaximizedChanged();
   void appAutoLockChanged();
+  // Emitted when the local API / webhook settings change, so the window can
+  // (re)start or stop the server.
+  void localApiSettingsChanged();
 
 public:
   explicit SettingsWidget(QWidget *parent = nullptr, int screenNumber = 0,
@@ -140,6 +143,12 @@ private slots:
   void on_cloudPhoneIdEdit_editingFinished();
   void on_cloudTokenEdit_editingFinished();
   void on_cloudApiVersionEdit_editingFinished();
+  void on_localApiEnabledCheckBox_toggled(bool checked);
+  void on_localApiPortSpinBox_valueChanged(int value);
+  void on_localApiTokenEdit_editingFinished();
+  void on_webhookEnabledCheckBox_toggled(bool checked);
+  void on_webhookVerifyTokenEdit_editingFinished();
+  void on_webhookAppSecretEdit_editingFinished();
   void on_proxyPortSpinBox_valueChanged(int arg1);
   void on_proxyUserLineEdit_editingFinished();
   void on_proxyPasswordLineEdit_editingFinished();
@@ -174,6 +183,7 @@ private:
   void loadPerformanceSettings();
   void loadNetworkSettings();
   void loadCloudApiSettings();
+  void loadLocalApiSettings();
   void loadNotificationRules();
   void loadShortcuts();
   void refreshJsAddonsList();

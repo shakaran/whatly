@@ -2428,6 +2428,46 @@ Please setup the password in the Settings first.</source>
         <translation>कीबोर्ड शॉर्टकट</translation>
     </message>
     <message>
+        <source>Local API &amp; Cloud webhooks</source>
+        <translation>स्थानीय API और Cloud वेबहुक</translation>
+    </message>
+    <message>
+        <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
+        <translation>लूपबैक इंटरफ़ेस (127.0.0.1) पर एक छोटा HTTP एंडपॉइंट इस मशीन के अन्य प्रोग्रामों को Whatly के ज़रिए भेजने देता है, और Meta को Cloud API वेबहुक (आने वाले संदेश) पहुँचाने देता है ताकि ऑटो-रिप्लाई बिना ब्राउज़र के काम करे। यह कभी नेटवर्क पर उजागर नहीं होता; Meta से वेबहुक प्राप्त करने के लिए, पोर्ट को किसी टनल या रिवर्स प्रॉक्सी (जैसे cloudflared या ngrok) से फ़ॉरवर्ड करें।</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API (send over HTTP)</source>
+        <translation>स्थानीय HTTP API सक्षम करें (HTTP से भेजें)</translation>
+    </message>
+    <message>
+        <source>Bearer token</source>
+        <translation>Bearer टोकन</translation>
+    </message>
+    <message>
+        <source>required to authorise requests</source>
+        <translation>अनुरोधों को अधिकृत करने के लिए आवश्यक</translation>
+    </message>
+    <message>
+        <source>Receive Cloud API webhooks (incoming messages)</source>
+        <translation>Cloud API वेबहुक प्राप्त करें (आने वाले संदेश)</translation>
+    </message>
+    <message>
+        <source>Webhook verify token</source>
+        <translation>वेबहुक सत्यापन टोकन</translation>
+    </message>
+    <message>
+        <source>echoed to Meta during setup</source>
+        <translation>सेटअप के दौरान Meta को भेजा जाता है</translation>
+    </message>
+    <message>
+        <source>Meta app secret</source>
+        <translation>Meta ऐप सीक्रेट</translation>
+    </message>
+    <message>
+        <source>verifies the webhook signature</source>
+        <translation>वेबहुक हस्ताक्षर सत्यापित करता है</translation>
+    </message>
+    <message>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API (ब्राउज़र सत्र के बिना भेजें)</translation>
     </message>

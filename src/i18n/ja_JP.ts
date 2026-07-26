@@ -2428,6 +2428,46 @@ Please setup the password in the Settings first.</source>
         <translation>キーボードショートカット</translation>
     </message>
     <message>
+        <source>Local API &amp; Cloud webhooks</source>
+        <translation>ローカル API と Cloud Webhook</translation>
+    </message>
+    <message>
+        <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
+        <translation>ループバックインターフェイス（127.0.0.1）上の小さな HTTP エンドポイントにより、このマシンの他のプログラムが Whatly 経由で送信でき、Meta が Cloud API Webhook（受信メッセージ）を配信できるため、自動返信がブラウザーなしで機能します。ネットワークに公開されることはありません。Meta から Webhook を受信するには、トンネルまたはリバースプロキシ（例: cloudflared や ngrok）でポートを転送してください。</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API (send over HTTP)</source>
+        <translation>ローカル HTTP API を有効にする（HTTP で送信）</translation>
+    </message>
+    <message>
+        <source>Bearer token</source>
+        <translation>Bearer トークン</translation>
+    </message>
+    <message>
+        <source>required to authorise requests</source>
+        <translation>リクエストの認可に必要です</translation>
+    </message>
+    <message>
+        <source>Receive Cloud API webhooks (incoming messages)</source>
+        <translation>Cloud API Webhook を受信する（受信メッセージ）</translation>
+    </message>
+    <message>
+        <source>Webhook verify token</source>
+        <translation>Webhook 検証トークン</translation>
+    </message>
+    <message>
+        <source>echoed to Meta during setup</source>
+        <translation>セットアップ時に Meta へ送信されます</translation>
+    </message>
+    <message>
+        <source>Meta app secret</source>
+        <translation>Meta アプリシークレット</translation>
+    </message>
+    <message>
+        <source>verifies the webhook signature</source>
+        <translation>Webhook 署名を検証します</translation>
+    </message>
+    <message>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API（ブラウザーセッションなしで送信）</translation>
     </message>

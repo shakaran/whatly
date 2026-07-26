@@ -2428,6 +2428,46 @@ Please setup the password in the Settings first.</source>
         <translation>키보드 단축키</translation>
     </message>
     <message>
+        <source>Local API &amp; Cloud webhooks</source>
+        <translation>로컬 API 및 Cloud 웹훅</translation>
+    </message>
+    <message>
+        <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
+        <translation>루프백 인터페이스(127.0.0.1)의 작은 HTTP 엔드포인트를 통해 이 컴퓨터의 다른 프로그램이 Whatly로 전송하고, Meta가 Cloud API 웹훅(수신 메시지)을 전달할 수 있어 자동 회신이 브라우저 없이 작동합니다. 네트워크에 노출되지 않습니다. Meta로부터 웹훅을 받으려면 터널이나 리버스 프록시(예: cloudflared 또는 ngrok)로 포트를 전달하세요.</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API (send over HTTP)</source>
+        <translation>로컬 HTTP API 활성화(HTTP로 전송)</translation>
+    </message>
+    <message>
+        <source>Bearer token</source>
+        <translation>Bearer 토큰</translation>
+    </message>
+    <message>
+        <source>required to authorise requests</source>
+        <translation>요청을 승인하는 데 필요합니다</translation>
+    </message>
+    <message>
+        <source>Receive Cloud API webhooks (incoming messages)</source>
+        <translation>Cloud API 웹훅 수신(수신 메시지)</translation>
+    </message>
+    <message>
+        <source>Webhook verify token</source>
+        <translation>웹훅 확인 토큰</translation>
+    </message>
+    <message>
+        <source>echoed to Meta during setup</source>
+        <translation>설정 중 Meta로 전송됩니다</translation>
+    </message>
+    <message>
+        <source>Meta app secret</source>
+        <translation>Meta 앱 시크릿</translation>
+    </message>
+    <message>
+        <source>verifies the webhook signature</source>
+        <translation>웹훅 서명을 확인합니다</translation>
+    </message>
+    <message>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API(브라우저 세션 없이 전송)</translation>
     </message>

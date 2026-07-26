@@ -2428,6 +2428,46 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Pintasan keyboard</translation>
     </message>
     <message>
+        <source>Local API &amp; Cloud webhooks</source>
+        <translation>API lokal &amp; webhook Cloud</translation>
+    </message>
+    <message>
+        <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
+        <translation>Sebuah endpoint HTTP kecil di antarmuka loopback (127.0.0.1) memungkinkan program lain di komputer ini mengirim lewat Whatly, dan memungkinkan Meta mengirimkan webhook Cloud API (pesan masuk) sehingga balasan otomatis bekerja tanpa browser. Ini tidak pernah terekspos ke jaringan; untuk menerima webhook dari Meta, teruskan port dengan tunnel atau reverse proxy (mis. cloudflared atau ngrok).</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API (send over HTTP)</source>
+        <translation>Aktifkan API HTTP lokal (kirim lewat HTTP)</translation>
+    </message>
+    <message>
+        <source>Bearer token</source>
+        <translation>Token Bearer</translation>
+    </message>
+    <message>
+        <source>required to authorise requests</source>
+        <translation>diperlukan untuk mengesahkan permintaan</translation>
+    </message>
+    <message>
+        <source>Receive Cloud API webhooks (incoming messages)</source>
+        <translation>Terima webhook Cloud API (pesan masuk)</translation>
+    </message>
+    <message>
+        <source>Webhook verify token</source>
+        <translation>Token verifikasi webhook</translation>
+    </message>
+    <message>
+        <source>echoed to Meta during setup</source>
+        <translation>dikirim ke Meta saat penyiapan</translation>
+    </message>
+    <message>
+        <source>Meta app secret</source>
+        <translation>App secret Meta</translation>
+    </message>
+    <message>
+        <source>verifies the webhook signature</source>
+        <translation>memverifikasi tanda tangan webhook</translation>
+    </message>
+    <message>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API (kirim tanpa sesi browser)</translation>
     </message>

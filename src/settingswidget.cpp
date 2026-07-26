@@ -37,6 +37,8 @@
 #include "mutedstatus.h"
 #include "performance.h"
 #include "cloudapi.h"
+#include "localapi.h"
+#include "cloudwebhook.h"
 #include "networkproxy.h"
 #include "autostart.h"
 #include "customjs.h"
@@ -206,6 +208,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
   loadNotificationRules();
   loadShortcuts();
   loadCloudApiSettings();
+  loadLocalApiSettings();
   refreshJsAddonsList();
   refreshCannedList();
   ui->lockOnMinimizeCheckBox->setChecked(
@@ -1365,6 +1368,52 @@ void SettingsWidget::on_cloudTokenEdit_editingFinished() {
 
 void SettingsWidget::on_cloudApiVersionEdit_editingFinished() {
   CloudApi::setApiVersion(ui->cloudApiVersionEdit->text());
+}
+
+void SettingsWidget::loadLocalApiSettings() {
+  ui->localApiEnabledCheckBox->blockSignals(true);
+  ui->localApiEnabledCheckBox->setChecked(LocalApi::isEnabled());
+  ui->localApiEnabledCheckBox->blockSignals(false);
+  ui->localApiPortSpinBox->blockSignals(true);
+  ui->localApiPortSpinBox->setValue(LocalApi::port());
+  ui->localApiPortSpinBox->blockSignals(false);
+  ui->localApiTokenEdit->setText(LocalApi::token());
+
+  ui->webhookEnabledCheckBox->blockSignals(true);
+  ui->webhookEnabledCheckBox->setChecked(CloudWebhook::isEnabled());
+  ui->webhookEnabledCheckBox->blockSignals(false);
+  ui->webhookVerifyTokenEdit->setText(CloudWebhook::verifyToken());
+  ui->webhookAppSecretEdit->setText(CloudWebhook::appSecret());
+}
+
+void SettingsWidget::on_localApiEnabledCheckBox_toggled(bool checked) {
+  LocalApi::setEnabled(checked);
+  emit localApiSettingsChanged();
+}
+
+void SettingsWidget::on_localApiPortSpinBox_valueChanged(int value) {
+  LocalApi::setPort(value);
+  emit localApiSettingsChanged();
+}
+
+void SettingsWidget::on_localApiTokenEdit_editingFinished() {
+  LocalApi::setToken(ui->localApiTokenEdit->text());
+  emit localApiSettingsChanged();
+}
+
+void SettingsWidget::on_webhookEnabledCheckBox_toggled(bool checked) {
+  CloudWebhook::setEnabled(checked);
+  emit localApiSettingsChanged();
+}
+
+void SettingsWidget::on_webhookVerifyTokenEdit_editingFinished() {
+  CloudWebhook::setVerifyToken(ui->webhookVerifyTokenEdit->text());
+  emit localApiSettingsChanged();
+}
+
+void SettingsWidget::on_webhookAppSecretEdit_editingFinished() {
+  CloudWebhook::setAppSecret(ui->webhookAppSecretEdit->text());
+  emit localApiSettingsChanged();
 }
 
 void SettingsWidget::loadNotificationRules() {

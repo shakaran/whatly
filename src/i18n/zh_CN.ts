@@ -2428,6 +2428,46 @@ Please setup the password in the Settings first.</source>
         <translation>键盘快捷键</translation>
     </message>
     <message>
+        <source>Local API &amp; Cloud webhooks</source>
+        <translation>本地 API 与 Cloud webhook</translation>
+    </message>
+    <message>
+        <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
+        <translation>环回接口（127.0.0.1）上的一个小型 HTTP 端点让本机上的其他程序通过 Whatly 发送，并让 Meta 投递 Cloud API webhook（收到的消息），从而使自动回复无需浏览器即可工作。它绝不会暴露到网络；若要接收来自 Meta 的 webhook，请用隧道或反向代理（例如 cloudflared 或 ngrok）转发该端口。</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API (send over HTTP)</source>
+        <translation>启用本地 HTTP API（通过 HTTP 发送）</translation>
+    </message>
+    <message>
+        <source>Bearer token</source>
+        <translation>Bearer 令牌</translation>
+    </message>
+    <message>
+        <source>required to authorise requests</source>
+        <translation>授权请求所必需</translation>
+    </message>
+    <message>
+        <source>Receive Cloud API webhooks (incoming messages)</source>
+        <translation>接收 Cloud API webhook（收到的消息）</translation>
+    </message>
+    <message>
+        <source>Webhook verify token</source>
+        <translation>Webhook 验证令牌</translation>
+    </message>
+    <message>
+        <source>echoed to Meta during setup</source>
+        <translation>设置时发送给 Meta</translation>
+    </message>
+    <message>
+        <source>Meta app secret</source>
+        <translation>Meta 应用密钥</translation>
+    </message>
+    <message>
+        <source>verifies the webhook signature</source>
+        <translation>校验 webhook 签名</translation>
+    </message>
+    <message>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API（无需浏览器会话即可发送）</translation>
     </message>

@@ -2288,6 +2288,46 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Scorciatoie da tastiera</translation>
     </message>
     <message>
+        <source>Local API &amp; Cloud webhooks</source>
+        <translation>API locale e webhook Cloud</translation>
+    </message>
+    <message>
+        <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
+        <translation>Un piccolo endpoint HTTP sull'interfaccia di loopback (127.0.0.1) consente ad altri programmi su questo computer di inviare tramite Whatly e a Meta di recapitare i webhook della Cloud API (messaggi in arrivo), così la risposta automatica funziona senza browser. Non è mai esposto alla rete; per ricevere i webhook da Meta, inoltra la porta con un tunnel o un reverse proxy (es. cloudflared o ngrok).</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API (send over HTTP)</source>
+        <translation>Attiva l'API HTTP locale (invia via HTTP)</translation>
+    </message>
+    <message>
+        <source>Bearer token</source>
+        <translation>Token Bearer</translation>
+    </message>
+    <message>
+        <source>required to authorise requests</source>
+        <translation>necessario per autorizzare le richieste</translation>
+    </message>
+    <message>
+        <source>Receive Cloud API webhooks (incoming messages)</source>
+        <translation>Ricevi i webhook della Cloud API (messaggi in arrivo)</translation>
+    </message>
+    <message>
+        <source>Webhook verify token</source>
+        <translation>Token di verifica del webhook</translation>
+    </message>
+    <message>
+        <source>echoed to Meta during setup</source>
+        <translation>inviato a Meta durante la configurazione</translation>
+    </message>
+    <message>
+        <source>Meta app secret</source>
+        <translation>Secret dell'app Meta</translation>
+    </message>
+    <message>
+        <source>verifies the webhook signature</source>
+        <translation>verifica la firma del webhook</translation>
+    </message>
+    <message>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API (invio senza sessione del browser)</translation>
     </message>

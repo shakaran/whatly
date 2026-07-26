@@ -622,6 +622,8 @@ void MainWindow::initSettingWidget() {
           &MainWindow::updatePageTheme);
   connect(m_settingsWidget, &SettingsWidget::muteToggled, this,
           &MainWindow::toggleMute);
+  connect(m_settingsWidget, &SettingsWidget::localApiSettingsChanged, this,
+          &MainWindow::startLocalApi);
 
   connect(m_settingsWidget, &SettingsWidget::userAgentChanged,
           m_settingsWidget, [=](QString userAgentStr) {

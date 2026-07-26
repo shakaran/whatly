@@ -70,8 +70,9 @@ and returns `202`. It binds to the loopback interface only (`127.0.0.1`) and
 every request must carry a bearer token, so it is never reachable from the
 network; it is off until you enable it. Configure with `--localapi-on` /
 `--localapi-off`, `--localapi-port` (default 8590), `--localapi-token`, and
-`--localapi-status`. Request parsing, auth and the JSON→command mapping are
-covered by unit tests (`TstLocalApi`).
+`--localapi-status`, or in **Settings → Local API & Cloud webhooks** (which also
+holds the webhook fields below). Request parsing, auth and the JSON→command
+mapping are covered by unit tests (`TstLocalApi`).
 
 **Multi-window account tabs (#10).** Multiple accounts now live in a
 Chrome-style tab strip: add one with **+**, rename or close from a right-click
