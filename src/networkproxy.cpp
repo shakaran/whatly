@@ -46,6 +46,15 @@ void applyToApplication() {
   }
   if (m == QLatin1String("socks5") || m == QLatin1String("http")) {
     QNetworkProxyFactory::setUseSystemConfiguration(false);
+    // A manual mode with no host is an unfinished configuration, not a request
+    // to proxy through "". Installing that proxy fails every single request with
+    // ERR_NO_SUPPORTED_PROXIES — WhatsApp Web never loads and the only symptom
+    // is "This site can't be reached", with nothing pointing at the proxy
+    // setting. Connect directly instead, which is what "no host" means.
+    if (host().trimmed().isEmpty()) {
+      QNetworkProxy::setApplicationProxy(QNetworkProxy(QNetworkProxy::NoProxy));
+      return;
+    }
     QNetworkProxy proxy(m == QLatin1String("socks5")
                             ? QNetworkProxy::Socks5Proxy
                             : QNetworkProxy::HttpProxy,
