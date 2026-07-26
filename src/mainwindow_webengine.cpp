@@ -411,23 +411,37 @@ QString MainWindow::nameSenderScriptSource() {
   function norm(s) { return (s || '').replace(/\s+/g, ' ').trim().toLowerCase(); }
 
   function searchBox() {
-    // The chat-list search field (not the composer). data-tab has drifted across
-    // builds, so try the labelled search box first, then known tab values.
-    return document.querySelector('div[contenteditable="true"][aria-label*="Search" i]')
-      || document.querySelector('div[contenteditable="true"][aria-label*="Buscar" i]')
-      || document.querySelector('#side div[contenteditable="true"][data-tab="3"]')
+    // The chat-list search field (not the composer). Current WhatsApp Web uses a
+    // plain <input> (data-tab="3"); older builds used a contenteditable div, so
+    // fall back to that. Verified live: it is an <input aria-label="Search…">.
+    return document.querySelector('input[aria-label*="Search" i]')
+      || document.querySelector('input[aria-label*="Buscar" i]')
+      || document.querySelector('input[data-tab="3"]')
       || document.querySelector('div[contenteditable="true"][data-tab="3"]');
   }
   function setText(el, text) {
     el.focus();
-    try { document.execCommand('selectAll', false, null); } catch (e) {}
-    try { document.execCommand('insertText', false, text); } catch (e) {}
-    el.dispatchEvent(new InputEvent('input', { bubbles: true }));
+    // A React-controlled <input> ignores execCommand; drive its native value
+    // setter then fire 'input'. A contenteditable field uses execCommand.
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      var proto = el.tagName === 'INPUT'
+        ? window.HTMLInputElement.prototype : window.HTMLTextAreaElement.prototype;
+      try {
+        Object.getOwnPropertyDescriptor(proto, 'value').set.call(el, text);
+      } catch (e) { el.value = text; }
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+    } else {
+      try { document.execCommand('selectAll', false, null); } catch (e) {}
+      try { document.execCommand('insertText', false, text); } catch (e) {}
+      el.dispatchEvent(new InputEvent('input', { bubbles: true }));
+    }
   }
   // A chat row in the side list; its visible title lives in a span[title].
+  // Current WhatsApp Web marks rows with role="row" (older builds: "listitem").
   function matchingResult(query) {
     var rows = [].slice.call(document.querySelectorAll(
-      '#side div[role="listitem"], #pane-side div[role="listitem"]')).filter(vis);
+      '#pane-side [role="row"], #side [role="row"],'
+      + '#pane-side [role="listitem"], #side [role="listitem"]')).filter(vis);
     for (var i = 0; i < rows.length; i++) {
       var t = rows[i].querySelector('span[title]');
       if (t && norm(t.getAttribute('title') || t.textContent) === query)
@@ -517,6 +531,8 @@ QString MainWindow::nameSenderScriptSource() {
       done = true;
       clearInterval(timer);
       try { sessionStorage.removeItem(KEY); } catch (e) {}
+      // Release the guard so a later --send (same page, no reload) is picked up.
+      window.__whatlyNameActive = false;
       report(ok, err);
     };
 
@@ -589,11 +605,15 @@ QString MainWindow::nameSenderScriptSource() {
     }, 700);
   }
 
-  var boot = setInterval(function () {
-    try { if (sessionStorage.getItem(KEY)) { clearInterval(boot); process(); } }
-    catch (e) {}
+  // Poll indefinitely: unlike the scheduled/attachment senders (which navigate,
+  // so a fresh script re-injects on reload), a by-name send leaves its job in
+  // sessionStorage on the ALREADY-loaded page — which may be hours old. A run
+  // clears __whatlyNameActive on finish, so back-to-back sends are handled.
+  setInterval(function () {
+    try {
+      if (sessionStorage.getItem(KEY) && !window.__whatlyNameActive) process();
+    } catch (e) {}
   }, 500);
-  setTimeout(function () { try { clearInterval(boot); } catch (e) {} }, 20000);
 })();
 )JS");
 }
