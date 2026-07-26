@@ -2408,6 +2408,30 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>Atajos de teclado</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API (enviar sin sesión de navegador)</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>Envía con `--send --backend cloud` a través de la Meta WhatsApp Business Cloud API — sin necesidad de una sesión de WhatsApp Web abierta. El token de acceso es uno que proporcionas tú desde Meta; se guarda en la configuración de esta cuenta y Whatly nunca lo obtiene por sí mismo.</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>ID del número de teléfono</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>Token de acceso</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>tu token de acceso de Meta</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>Versión de la Graph API</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Haz clic en un campo y pulsa la combinación de teclas. Borra un campo para eliminar el atajo. Los cambios se aplican tras reiniciar.</translation>

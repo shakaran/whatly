@@ -2408,6 +2408,30 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Sneltoetsen</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API (verzenden zonder browsersessie)</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>Verzend met `--send --backend cloud` via de Meta WhatsApp Business Cloud API — geen actieve WhatsApp Web-sessie nodig. Het toegangstoken lever je zelf aan vanuit Meta; het wordt opgeslagen in de configuratie van dit account en Whatly verkrijgt het nooit zelf.</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>Telefoonnummer-id</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>Toegangstoken</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>je Meta-toegangstoken</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>Graph API-versie</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Klik op een veld en druk op de toetsencombinatie. Wis een veld om de sneltoets te verwijderen. Wijzigingen worden na een herstart toegepast.</translation>

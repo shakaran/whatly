@@ -2408,6 +2408,30 @@ Please setup the password in the Settings first.</source>
         <translation>キーボードショートカット</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API（ブラウザーセッションなしで送信）</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>Meta WhatsApp Business Cloud API を介して `--send --backend cloud` で送信します — WhatsApp Web のセッションは不要です。アクセストークンは Meta から自分で用意するもので、このアカウントの設定に保存され、Whatly が自ら取得することはありません。</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>電話番号 ID</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>アクセストークン</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>あなたの Meta アクセストークン</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>Graph API のバージョン</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>フィールドをクリックしてキーの組み合わせを押します。ショートカットを削除するにはフィールドを空にします。変更は再起動後に適用されます。</translation>

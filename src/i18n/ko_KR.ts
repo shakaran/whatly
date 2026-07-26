@@ -2408,6 +2408,30 @@ Please setup the password in the Settings first.</source>
         <translation>키보드 단축키</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API(브라우저 세션 없이 전송)</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>Meta WhatsApp Business Cloud API를 통해 `--send --backend cloud`로 전송합니다 — 실행 중인 WhatsApp Web 세션이 필요하지 않습니다. 액세스 토큰은 Meta에서 직접 제공하는 것으로, 이 계정 구성에 저장되며 Whatly가 직접 획득하지 않습니다.</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>전화번호 ID</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>액세스 토큰</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>사용자의 Meta 액세스 토큰</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>Graph API 버전</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>필드를 클릭하고 키 조합을 누르세요. 단축키를 제거하려면 필드를 비우세요. 변경 사항은 다시 시작한 후에 적용됩니다.</translation>

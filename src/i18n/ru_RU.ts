@@ -2408,6 +2408,30 @@ Please setup the password in the Settings first.</source>
         <translation>Сочетания клавиш</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API (отправка без сессии браузера)</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>Отправляйте с помощью `--send --backend cloud` через Meta WhatsApp Business Cloud API — без запущенной сессии WhatsApp Web. Токен доступа вы предоставляете сами из Meta; он хранится в конфигурации этой учётной записи, и Whatly никогда не получает его самостоятельно.</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>Идентификатор номера телефона</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>Токен доступа</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>ваш токен доступа Meta</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>Версия Graph API</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Щёлкните поле и нажмите сочетание клавиш. Очистите поле, чтобы удалить сочетание. Изменения вступают в силу после перезапуска.</translation>

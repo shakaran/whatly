@@ -2408,6 +2408,30 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Klavye kısayolları</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API (tarayıcı oturumu olmadan gönderme)</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>`--send --backend cloud` ile Meta WhatsApp Business Cloud API üzerinden gönderin — çalışan bir WhatsApp Web oturumu gerekmez. Erişim belirtecini Meta'dan siz sağlarsınız; bu hesabın yapılandırmasında saklanır ve Whatly bunu asla kendisi edinmez.</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>Telefon numarası kimliği</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>Erişim belirteci</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>Meta erişim belirteciniz</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>Graph API sürümü</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Bir alana tıklayın ve tuş bileşimine basın. Kısayolu kaldırmak için alanı temizleyin. Değişiklikler yeniden başlatmadan sonra uygulanır.</translation>

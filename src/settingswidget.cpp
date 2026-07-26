@@ -36,6 +36,7 @@
 #include "webfont.h"
 #include "mutedstatus.h"
 #include "performance.h"
+#include "cloudapi.h"
 #include "networkproxy.h"
 #include "autostart.h"
 #include "customjs.h"
@@ -204,6 +205,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
   loadNetworkSettings();
   loadNotificationRules();
   loadShortcuts();
+  loadCloudApiSettings();
   refreshJsAddonsList();
   refreshCannedList();
   ui->lockOnMinimizeCheckBox->setChecked(
@@ -1345,6 +1347,24 @@ void SettingsWidget::on_notificationBackendComboBox_currentIndexChanged(
   SettingsManager::instance().settings().setValue(
       "notificationBackend",
       ui->notificationBackendComboBox->itemData(index).toString());
+}
+
+void SettingsWidget::loadCloudApiSettings() {
+  ui->cloudPhoneIdEdit->setText(CloudApi::phoneNumberId());
+  ui->cloudTokenEdit->setText(CloudApi::accessToken());
+  ui->cloudApiVersionEdit->setText(CloudApi::apiVersion());
+}
+
+void SettingsWidget::on_cloudPhoneIdEdit_editingFinished() {
+  CloudApi::setPhoneNumberId(ui->cloudPhoneIdEdit->text());
+}
+
+void SettingsWidget::on_cloudTokenEdit_editingFinished() {
+  CloudApi::setAccessToken(ui->cloudTokenEdit->text());
+}
+
+void SettingsWidget::on_cloudApiVersionEdit_editingFinished() {
+  CloudApi::setApiVersion(ui->cloudApiVersionEdit->text());
 }
 
 void SettingsWidget::loadNotificationRules() {

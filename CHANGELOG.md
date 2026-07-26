@@ -45,8 +45,9 @@ Meta-approved **templates** (`--cloud-template <name> --cloud-lang <code>
 Configure it per account with `--cloud-phone-id`, `--cloud-token` and
 `--cloud-api-version` (the access token is one you supply and is stored in the
 account config; Whatly never obtains it itself), and check it with
-`--cloud-status`. The URL/payload builders are covered by unit tests
-(`TstCloudApi`).
+`--cloud-status`. The same phone-number id, access token and Graph API version
+can now also be set in **Settings → Cloud API** instead of on the command line.
+The URL/payload builders are covered by unit tests (`TstCloudApi`).
 
 **Local HTTP API for sending (work in progress).** An opt-in HTTP endpoint lets
 other programs on the same machine send through the running instance — the

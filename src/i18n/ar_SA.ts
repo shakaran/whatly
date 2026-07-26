@@ -2408,6 +2408,30 @@ Please setup the password in the Settings first.</source>
         <translation>اختصارات لوحة المفاتيح</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API (الإرسال دون جلسة متصفح)</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>أرسل باستخدام `--send --backend cloud` عبر Meta WhatsApp Business Cloud API — دون الحاجة إلى جلسة WhatsApp Web قيد التشغيل. رمز الوصول توفّره أنت من Meta؛ يُخزَّن في إعدادات هذا الحساب ولا يحصل عليه Whatly بنفسه أبدًا.</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>معرّف رقم الهاتف</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>رمز الوصول</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>رمز وصول Meta الخاص بك</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>إصدار Graph API</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>انقر فوق حقل واضغط على تركيبة المفاتيح. امسح الحقل لإزالة الاختصار. تُطبَّق التغييرات بعد إعادة التشغيل.</translation>

@@ -2408,6 +2408,30 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <translation>Skróty klawiszowe</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API (wysyłanie bez sesji przeglądarki)</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>Wysyłaj za pomocą `--send --backend cloud` przez Meta WhatsApp Business Cloud API — bez działającej sesji WhatsApp Web. Token dostępu podajesz samodzielnie z Meta; jest przechowywany w konfiguracji tego konta, a Whatly nigdy nie uzyskuje go samodzielnie.</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>Identyfikator numeru telefonu</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>Token dostępu</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>Twój token dostępu Meta</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>Wersja Graph API</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Kliknij pole i naciśnij kombinację klawiszy. Wyczyść pole, aby usunąć skrót. Zmiany zostaną zastosowane po ponownym uruchomieniu.</translation>

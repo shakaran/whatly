@@ -137,6 +137,9 @@ private slots:
   void on_interfaceScaleSpinBox_valueChanged(double arg1);
   void on_proxyModeComboBox_currentIndexChanged(int index);
   void on_proxyHostLineEdit_editingFinished();
+  void on_cloudPhoneIdEdit_editingFinished();
+  void on_cloudTokenEdit_editingFinished();
+  void on_cloudApiVersionEdit_editingFinished();
   void on_proxyPortSpinBox_valueChanged(int arg1);
   void on_proxyUserLineEdit_editingFinished();
   void on_proxyPasswordLineEdit_editingFinished();
@@ -170,6 +173,7 @@ private slots:
 private:
   void loadPerformanceSettings();
   void loadNetworkSettings();
+  void loadCloudApiSettings();
   void loadNotificationRules();
   void loadShortcuts();
   void refreshJsAddonsList();

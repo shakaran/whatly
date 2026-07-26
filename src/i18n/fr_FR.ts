@@ -2408,6 +2408,30 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
         <translation>Raccourcis clavier</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>API Cloud (envoyer sans session de navigateur)</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>Envoyez avec `--send --backend cloud` via l'API Meta WhatsApp Business Cloud — sans session WhatsApp Web active. Le jeton d'accès est un jeton que vous fournissez depuis Meta ; il est stocké dans la configuration de ce compte et Whatly ne l'obtient jamais lui-même.</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>Identifiant du numéro de téléphone</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>Jeton d'accès</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>votre jeton d'accès Meta</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>Version de l'API Graph</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Cliquez sur un champ et appuyez sur la combinaison de touches. Videz un champ pour supprimer le raccourci. Les modifications s&apos;appliquent après un redémarrage.</translation>

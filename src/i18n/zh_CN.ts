@@ -2408,6 +2408,30 @@ Please setup the password in the Settings first.</source>
         <translation>键盘快捷键</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API（无需浏览器会话即可发送）</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>通过 Meta WhatsApp Business Cloud API 使用 `--send --backend cloud` 发送 — 无需运行中的 WhatsApp Web 会话。访问令牌由你从 Meta 自行提供；它存储在此账户的配置中，Whatly 从不自行获取。</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>电话号码 ID</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>访问令牌</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>你的 Meta 访问令牌</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>Graph API 版本</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>点击某个字段并按下组合键。清空字段可移除该快捷键。更改将在重启后生效。</translation>

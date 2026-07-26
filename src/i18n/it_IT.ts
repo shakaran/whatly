@@ -2268,6 +2268,30 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Scorciatoie da tastiera</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API (invio senza sessione del browser)</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>Invia con `--send --backend cloud` tramite la Meta WhatsApp Business Cloud API — senza una sessione WhatsApp Web attiva. Il token di accesso è uno che fornisci tu da Meta; viene memorizzato nella configurazione di questo account e Whatly non lo ottiene mai da solo.</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>ID del numero di telefono</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>Token di accesso</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>il tuo token di accesso Meta</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>Versione della Graph API</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Fai clic su un campo e premi la combinazione di tasti. Svuota un campo per rimuovere la scorciatoia. Le modifiche vengono applicate dopo un riavvio.</translation>

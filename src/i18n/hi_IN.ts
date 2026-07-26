@@ -2408,6 +2408,30 @@ Please setup the password in the Settings first.</source>
         <translation>कीबोर्ड शॉर्टकट</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API (ब्राउज़र सत्र के बिना भेजें)</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>Meta WhatsApp Business Cloud API के ज़रिए `--send --backend cloud` से भेजें — किसी चालू WhatsApp Web सत्र की ज़रूरत नहीं। एक्सेस टोकन आप Meta से स्वयं देते हैं; यह इस खाते के कॉन्फ़िगरेशन में संग्रहीत होता है और Whatly इसे कभी स्वयं प्राप्त नहीं करता।</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>फ़ोन-नंबर आईडी</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>एक्सेस टोकन</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>आपका Meta एक्सेस टोकन</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>Graph API संस्करण</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>किसी फ़ील्ड पर क्लिक करें और कुंजी संयोजन दबाएँ। शॉर्टकट हटाने के लिए फ़ील्ड साफ़ करें। परिवर्तन पुनरारंभ के बाद लागू होते हैं।</translation>

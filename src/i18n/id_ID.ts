@@ -2408,6 +2408,30 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Pintasan keyboard</translation>
     </message>
     <message>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API (kirim tanpa sesi browser)</translation>
+    </message>
+    <message>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</source>
+        <translation>Kirim dengan `--send --backend cloud` melalui Meta WhatsApp Business Cloud API — tanpa perlu sesi WhatsApp Web yang berjalan. Token akses Anda sediakan sendiri dari Meta; token disimpan di konfigurasi akun ini dan Whatly tidak pernah memperolehnya sendiri.</translation>
+    </message>
+    <message>
+        <source>Phone-number ID</source>
+        <translation>ID nomor telepon</translation>
+    </message>
+    <message>
+        <source>Access token</source>
+        <translation>Token akses</translation>
+    </message>
+    <message>
+        <source>your Meta access token</source>
+        <translation>token akses Meta Anda</translation>
+    </message>
+    <message>
+        <source>Graph API version</source>
+        <translation>Versi Graph API</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1948"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Klik sebuah bidang dan tekan kombinasi tombol. Kosongkan bidang untuk menghapus pintasan. Perubahan berlaku setelah dimulai ulang.</translation>

@@ -1958,6 +1958,70 @@ background:transparent;
          </layout>
         </widget>
        </item>
+       <item>
+        <widget class="QGroupBox" name="groupBoxCloudApi">
+         <property name="title">
+          <string>Cloud API (send without a browser session)</string>
+         </property>
+         <layout class="QFormLayout" name="formLayoutCloudApi">
+          <item row="0" column="0" colspan="2">
+           <widget class="QLabel" name="cloudApiHintLabel">
+            <property name="text">
+             <string>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account's config and Whatly never obtains it itself.</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="cloudPhoneIdLabel">
+            <property name="text">
+             <string>Phone-number ID</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="cloudPhoneIdEdit">
+            <property name="placeholderText">
+             <string notr="true">e.g. 123456789012345</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="cloudTokenLabel">
+            <property name="text">
+             <string>Access token</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="cloudTokenEdit">
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
+            <property name="placeholderText">
+             <string>your Meta access token</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="cloudApiVersionLabel">
+            <property name="text">
+             <string>Graph API version</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="cloudApiVersionEdit">
+            <property name="placeholderText">
+             <string notr="true">v21.0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>
