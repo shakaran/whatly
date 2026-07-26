@@ -152,10 +152,14 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
                                           .settings()
                                           .value("useNativeFileDialog", true)
                                           .toBool());
+  // Loading must not run the tray mutual-exclusion in the toggled slots, which
+  // would rewrite the saved values in load order rather than by user intent.
+  ui->startMinimized->blockSignals(true);
   ui->startMinimized->setChecked(SettingsManager::instance()
                                      .settings()
                                      .value("startMinimized", false)
                                      .toBool());
+  ui->startMinimized->blockSignals(false);
   ui->rememberWindowLayoutCheckBox->setChecked(
       SettingsManager::instance()
           .settings()
@@ -196,8 +200,10 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
       SettingsManager::instance().settings().value("smoothScrolling", false).toBool());
   ui->monochromeTrayIconCheckBox->setChecked(
       SettingsManager::instance().settings().value("monochromeTrayIcon", false).toBool());
+  ui->hideTrayIconCheckBox->blockSignals(true);
   ui->hideTrayIconCheckBox->setChecked(
       SettingsManager::instance().settings().value("hideTrayIcon", false).toBool());
+  ui->hideTrayIconCheckBox->blockSignals(false);
   ui->hideMutedStatusCheckBox->setChecked(MutedStatus::isEnabled());
   ui->autoRestartCheckBox->setChecked(
       SettingsManager::instance().settings().value("autoRestartOnCrash", false).toBool());
@@ -246,11 +252,13 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
           .settings()
           .value("autoLockDuration", defaultAppAutoLockDuration)
           .toInt());
+  ui->minimizeOnTrayIconClick->blockSignals(true);
   ui->minimizeOnTrayIconClick->setChecked(
       SettingsManager::instance()
           .settings()
           .value("minimizeOnTrayIconClick", false)
           .toBool());
+  ui->minimizeOnTrayIconClick->blockSignals(false);
   ui->defaultDownloadLocation->setText(QDir::toNativeSeparators(
       SettingsManager::instance()
           .settings()
@@ -1083,6 +1091,8 @@ void SettingsWidget::on_useNativeFileDialog_toggled(bool checked) {
 
 void SettingsWidget::on_startMinimized_toggled(bool checked) {
   SettingsManager::instance().settings().setValue("startMinimized", checked);
+  if (checked) // needs a tray icon — see on_hideTrayIconCheckBox_toggled
+    ui->hideTrayIconCheckBox->setChecked(false);
 }
 
 void SettingsWidget::on_rememberWindowLayoutCheckBox_toggled(bool checked) {
@@ -1159,6 +1169,14 @@ void SettingsWidget::on_followSystemThemeCheckBox_toggled(bool checked) {
 
 void SettingsWidget::on_hideTrayIconCheckBox_toggled(bool checked) {
   SettingsManager::instance().settings().setValue("hideTrayIcon", checked);
+  // There is nothing to start minimised into, and nothing to click, once the
+  // tray icon is gone — so turning this on quietly turns those two off instead
+  // of leaving settings that silently do nothing. Each of them turns this one
+  // back off the same way; the chain stops because only enabling excludes.
+  if (checked) {
+    ui->startMinimized->setChecked(false);
+    ui->minimizeOnTrayIconClick->setChecked(false);
+  }
   emit trayIconChanged();
 }
 
@@ -1876,6 +1894,8 @@ void SettingsWidget::on_resetAppAutoLockPushButton_clicked() {
 void SettingsWidget::on_minimizeOnTrayIconClick_toggled(bool checked) {
   SettingsManager::instance().settings().setValue("minimizeOnTrayIconClick",
                                                   checked);
+  if (checked) // needs a tray icon — see on_hideTrayIconCheckBox_toggled
+    ui->hideTrayIconCheckBox->setChecked(false);
 }
 
 void SettingsWidget::on_styleComboBox_currentTextChanged(const QString &arg1) {

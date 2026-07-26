@@ -1,3 +1,14 @@
+## Unreleased
+
+**Never strand the window when the tray icon is hidden (#13).** With **Hide tray
+icon** on, minimising (Ctrl+W, or *minimise in tray on start*) used to hide the
+window with nothing left to click to bring it back — the app kept running,
+invisible. Minimise now hides to the tray only while a tray icon is actually
+there, and otherwise minimises to the taskbar; and **Hide tray icon** is now
+mutually exclusive with *start minimised* and *minimise on tray-icon click*, so
+the broken combination can't be built in the first place. Thanks to @gbmaizol.
+Covered by a unit test (`TstSettings::traySettingsMutuallyExclusive`).
+
 ## 6.6.0 (2026-07-26)
 
 **Start-up crash on newer distros fixed (#11, #12).** The Linux packages

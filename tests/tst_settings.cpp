@@ -79,6 +79,35 @@ private slots:
     QVERIFY(true);
   }
 
+  // #13: "Hide tray icon" and the two settings that need a tray icon to work
+  // (start minimised into the tray, minimise on tray-click) are mutually
+  // exclusive, so the window can never be sent somewhere with no icon left to
+  // bring it back.
+  void traySettingsMutuallyExclusive() {
+    QTemporaryDir cache, storage;
+    SettingsWidget sw(nullptr, 0, cache.path(), storage.path());
+    auto *hide = sw.findChild<QCheckBox *>("hideTrayIconCheckBox");
+    auto *startMin = sw.findChild<QCheckBox *>("startMinimized");
+    auto *minClick = sw.findChild<QCheckBox *>("minimizeOnTrayIconClick");
+    QVERIFY(hide && startMin && minClick);
+
+    // Turning on "hide tray icon" turns the other two off.
+    startMin->setChecked(true);
+    minClick->setChecked(true);
+    hide->setChecked(true);
+    QVERIFY(!startMin->isChecked());
+    QVERIFY(!minClick->isChecked());
+
+    // Turning either of those back on turns "hide tray icon" off again — and the
+    // chain stops there (only enabling excludes), so it can't loop.
+    startMin->setChecked(true);
+    QVERIFY(!hide->isChecked());
+    hide->setChecked(true);
+    QVERIFY(!startMin->isChecked());
+    minClick->setChecked(true);
+    QVERIFY(!hide->isChecked());
+  }
+
   // #9: the settings page is a set of collapsible accordion sections — an arrow
   // header (▾ open / ▸ collapsed) per group that shows/hides the whole group.
   // Only the first is open on launch, and toggling a header reveals/hides its
