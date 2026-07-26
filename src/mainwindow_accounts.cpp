@@ -859,7 +859,11 @@ void MainWindow::updateTrayUnread() {
     setWindowIcon(getTrayIcon(total));
   } else {
     m_restoreAction->setText(tr("Restore"));
-    m_systemTrayIcon->setIcon(m_trayIconNormal);
+    // Route the idle icon through getTrayIcon(0) too, so it honours the
+    // monochrome choice and the connection state instead of always showing the
+    // fixed colour icon (issue #14: monochrome appeared to do nothing whenever
+    // there were no unread messages).
+    m_systemTrayIcon->setIcon(getTrayIcon(0));
     setWindowIcon(themeIcon("whatly", ":/icons/app/icon-64.png"));
   }
 

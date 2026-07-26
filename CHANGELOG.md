@@ -9,10 +9,16 @@ user-chosen bound takes over. Can be turned off via `perf/optimizeForSize`.
 Covered by unit tests (`TstPerformance::optimizeForSizeFlag`,
 `optimizeForSizeDefaultsOn`).
 
-**Monochrome tray icon never comes out blank (#14).** If the symbolic SVG can't
-be rendered on some setup, the monochrome tray glyph now falls back to the
-colour icon's shape, and if even that fails it degrades to the full-colour icon
-instead of leaving an empty tray slot. Covered by unit tests (`TstTrayIcon`).
+**Monochrome tray icon now works with no unread messages (#14).** The
+monochrome choice appeared to do nothing (KDE Plasma, and likely everywhere)
+because the idle tray icon — the one shown whenever the inbox is clear — bypassed
+the icon composition and always drew the fixed colour icon; only the unread-count
+icon honoured the setting. The idle icon now goes through the same path, so it
+respects both the monochrome choice and the connection state. The composition is
+also hardened: if the symbolic SVG can't be rendered on some setup it falls back
+to the colour icon's shape, and if even that fails it degrades to the full-colour
+icon instead of leaving an empty tray slot. Covered by unit tests (`TstTrayIcon`,
+including the idle-honours-monochrome regression). Thanks to @Sadi58.
 
 **Adding an account is discoverable now.** The account strip (with its trailing
 "+") is shown in tabbed view even with a single account, and the tray menu gains

@@ -1658,6 +1658,34 @@ private slots:
     QCOMPARE(m.size(), QSize(32, 32));
     QVERIFY(TrayIcon::isFullyTransparent(m));
   }
+
+  // The #14 regression: with zero unread messages the tray must still honour the
+  // monochrome choice. The idle icon used to bypass composition and always show
+  // the colour icon, so the toggle "did nothing" whenever the inbox was clear.
+  void idleIconHonoursMonochrome() {
+    const QImage colour = TrayIcon::composeTrayImage(0, false, true, 64);
+    const QImage mono = TrayIcon::composeTrayImage(0, true, true, 64);
+    QCOMPARE(colour.size(), QSize(64, 64));
+    QCOMPARE(mono.size(), QSize(64, 64));
+    QVERIFY(!TrayIcon::isFullyTransparent(colour));
+    QVERIFY(!TrayIcon::isFullyTransparent(mono));
+    // The two must actually differ — that is the whole point of the setting.
+    QVERIFY(colour != mono);
+  }
+
+  // A count badge changes the monochrome icon (the number is drawn on top).
+  void monochromeCountDiffersFromIdle() {
+    const QImage idle = TrayIcon::composeTrayImage(0, true, true, 64);
+    const QImage three = TrayIcon::composeTrayImage(3, true, true, 64);
+    QVERIFY(idle != three);
+  }
+
+  // A disconnected state dims the icon, so it differs from the connected one.
+  void disconnectedIsDimmed() {
+    const QImage up = TrayIcon::composeTrayImage(0, false, true, 64);
+    const QImage down = TrayIcon::composeTrayImage(0, false, false, 64);
+    QVERIFY(up != down);
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
