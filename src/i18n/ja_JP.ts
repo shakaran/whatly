@@ -2262,6 +2262,16 @@ Please setup the password in the Settings first.</source>
         <translation>サイトごとに 1 プロセス（メモリ削減）</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1547"/>
+        <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
+        <translation>JavaScript エンジンに、わずかな速度低下と引き換えにメモリ使用量を減らすよう指示します（V8 --optimize-for-size）。トレイに常駐するアプリに推奨。下で JavaScript メモリ制限を設定している場合は無視されます。</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1550"/>
+        <source>Optimize memory over speed (lower memory)</source>
+        <translation>速度よりメモリを優先する（メモリ節約）</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1537"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>チャット一覧の連絡先名とメッセージのプレビューを隠します（ホバーで1件だけ表示）。画面共有時に便利です。開いている会話はそのままです。</translation>

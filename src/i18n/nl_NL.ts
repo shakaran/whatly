@@ -2262,6 +2262,16 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Eén proces per site (minder geheugen)</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1547"/>
+        <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
+        <translation>Vraagt de JavaScript-engine om minder geheugen te gebruiken tegen een klein snelheidsverlies (V8 --optimize-for-size). Aanbevolen voor een app die in het systeemvak blijft. Wordt genegeerd als hieronder een JavaScript-geheugenlimiet is ingesteld.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1550"/>
+        <source>Optimize memory over speed (lower memory)</source>
+        <translation>Geheugen optimaliseren boven snelheid (minder geheugen)</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1537"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>Verberg contactnamen en berichtvoorbeelden in de chatlijst (beweeg de muis eroverheen om er één te tonen). Handig bij schermdelen. Het geopende gesprek blijft ongewijzigd.</translation>

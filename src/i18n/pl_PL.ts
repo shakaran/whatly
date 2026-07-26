@@ -2262,6 +2262,16 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <translation>Jeden proces na witrynę (mniejsze zużycie pamięci)</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1547"/>
+        <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
+        <translation>Prosi silnik JavaScript o użycie mniejszej ilości pamięci kosztem niewielkiej szybkości (V8 --optimize-for-size). Zalecane dla aplikacji pozostającej w zasobniku systemowym. Ignorowane, gdy poniżej ustawiono limit pamięci JavaScript.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1550"/>
+        <source>Optimize memory over speed (lower memory)</source>
+        <translation>Optymalizuj pamięć zamiast szybkości (mniej pamięci)</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1537"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>Ukrywa nazwy kontaktów i podglądy wiadomości na liście czatów (najedź, aby odsłonić jeden). Przydatne przy udostępnianiu ekranu. Otwarta rozmowa pozostaje bez zmian.</translation>

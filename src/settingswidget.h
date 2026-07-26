@@ -125,6 +125,7 @@ private slots:
   void on_ignoreGpuBlocklistCheckBox_toggled(bool checked);
   void on_singleProcessCheckBox_toggled(bool checked);
   void on_processPerSiteCheckBox_toggled(bool checked);
+  void on_optimizeForSizeCheckBox_toggled(bool checked);
   void on_webrtcShieldCheckBox_toggled(bool checked);
   void on_focusModeCheckBox_toggled(bool checked);
   void on_hdMediaCheckBox_toggled(bool checked);

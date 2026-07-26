@@ -2262,6 +2262,16 @@ Please setup the password in the Settings first.</source>
         <translation>प्रति साइट एक प्रक्रिया (कम मेमोरी)</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1547"/>
+        <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
+        <translation>JavaScript इंजन से थोड़ी गति की कीमत पर कम मेमोरी उपयोग करने को कहता है (V8 --optimize-for-size)। ट्रे में बने रहने वाले ऐप के लिए अनुशंसित। नीचे JavaScript मेमोरी सीमा सेट होने पर इसे अनदेखा किया जाता है।</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1550"/>
+        <source>Optimize memory over speed (lower memory)</source>
+        <translation>गति के बजाय मेमोरी अनुकूलित करें (कम मेमोरी)</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1537"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>चैट सूची में संपर्क नाम और संदेश पूर्वावलोकन छिपाएँ (एक दिखाने के लिए होवर करें)। स्क्रीन साझा करते समय उपयोगी। खुली बातचीत अपरिवर्तित रहती है।</translation>

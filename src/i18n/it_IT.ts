@@ -2122,6 +2122,16 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Un processo per sito (meno memoria)</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1547"/>
+        <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
+        <translation>Chiede al motore JavaScript di usare meno memoria a un piccolo costo in velocità (V8 --optimize-for-size). Consigliato per un'app che resta nell'area di notifica. Ignorato quando è impostato un limite di memoria JavaScript qui sotto.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1550"/>
+        <source>Optimize memory over speed (lower memory)</source>
+        <translation>Ottimizza la memoria rispetto alla velocità (meno memoria)</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1537"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>Nasconde i nomi dei contatti e le anteprime dei messaggi nell’elenco chat (passa il mouse per rivelarne uno). Utile quando condividi lo schermo. La conversazione aperta resta invariata.</translation>

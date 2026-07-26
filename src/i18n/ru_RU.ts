@@ -2262,6 +2262,16 @@ Please setup the password in the Settings first.</source>
         <translation>Один процесс на сайт (меньше памяти)</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1547"/>
+        <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
+        <translation>Просит движок JavaScript использовать меньше памяти ценой небольшой потери скорости (V8 --optimize-for-size). Рекомендуется для приложения, которое остаётся в системном лотке. Игнорируется, если ниже задан лимит памяти JavaScript.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1550"/>
+        <source>Optimize memory over speed (lower memory)</source>
+        <translation>Оптимизировать память вместо скорости (меньше памяти)</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1537"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>Скрывает имена контактов и превью сообщений в списке чатов (наведите курсор, чтобы показать одно). Удобно при демонстрации экрана. Открытая переписка не изменяется.</translation>

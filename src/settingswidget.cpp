@@ -1232,6 +1232,7 @@ void SettingsWidget::loadPerformanceSettings() {
   set(ui->ignoreGpuBlocklistCheckBox, Performance::ignoreGpuBlocklist());
   set(ui->singleProcessCheckBox, Performance::singleProcess());
   set(ui->processPerSiteCheckBox, Performance::processPerSite());
+  set(ui->optimizeForSizeCheckBox, Performance::optimizeForSize());
   set(ui->webrtcShieldCheckBox, Performance::webrtcShield());
   set(ui->focusModeCheckBox, FocusMode::isEnabled());
   set(ui->hdMediaCheckBox, HdMedia::isEnabled());
@@ -1270,6 +1271,9 @@ void SettingsWidget::on_singleProcessCheckBox_toggled(bool checked) {
 }
 void SettingsWidget::on_processPerSiteCheckBox_toggled(bool checked) {
   Performance::setProcessPerSite(checked);
+}
+void SettingsWidget::on_optimizeForSizeCheckBox_toggled(bool checked) {
+  Performance::setOptimizeForSize(checked);
 }
 void SettingsWidget::on_webrtcShieldCheckBox_toggled(bool checked) {
   Performance::setWebrtcShield(checked);

@@ -2262,6 +2262,16 @@ Please setup the password in the Settings first.</source>
         <translation>每个站点一个进程（更低内存）</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1547"/>
+        <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
+        <translation>让 JavaScript 引擎以少量速度为代价使用更少内存（V8 --optimize-for-size）。建议用于常驻托盘的应用。若在下方设置了 JavaScript 内存限制，则忽略此项。</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1550"/>
+        <source>Optimize memory over speed (lower memory)</source>
+        <translation>优先优化内存而非速度（更省内存）</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1537"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>隐藏聊天列表中的联系人姓名和消息预览（悬停可显示其中一条）。共享屏幕时很有用。已打开的对话不受影响。</translation>

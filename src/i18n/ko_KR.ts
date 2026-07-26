@@ -2262,6 +2262,16 @@ Please setup the password in the Settings first.</source>
         <translation>사이트당 프로세스 하나 (메모리 절약)</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1547"/>
+        <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
+        <translation>JavaScript 엔진이 약간의 속도를 희생하여 메모리를 더 적게 사용하도록 요청합니다(V8 --optimize-for-size). 트레이에 상주하는 앱에 권장됩니다. 아래에서 JavaScript 메모리 한도를 설정하면 무시됩니다.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1550"/>
+        <source>Optimize memory over speed (lower memory)</source>
+        <translation>속도보다 메모리 최적화 (메모리 절약)</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1537"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>대화 목록의 연락처 이름과 메시지 미리보기를 숨깁니다(마우스를 올리면 하나만 표시). 화면 공유 시 유용합니다. 열려 있는 대화는 그대로 유지됩니다.</translation>

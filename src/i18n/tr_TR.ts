@@ -2262,6 +2262,16 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Site başına bir işlem (daha az bellek)</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1547"/>
+        <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
+        <translation>JavaScript motorundan küçük bir hız kaybı pahasına daha az bellek kullanmasını ister (V8 --optimize-for-size). Sistem tepsisinde kalan bir uygulama için önerilir. Aşağıda bir JavaScript bellek sınırı ayarlandığında yok sayılır.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1550"/>
+        <source>Optimize memory over speed (lower memory)</source>
+        <translation>Hız yerine belleği iyileştir (daha az bellek)</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1537"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>Sohbet listesindeki kişi adlarını ve mesaj önizlemelerini gizler (birini görmek için üzerine gelin). Ekran paylaşırken kullanışlıdır. Açık sohbet değişmez.</translation>

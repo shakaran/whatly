@@ -1542,6 +1542,16 @@ background:transparent;
            </widget>
           </item>
           <item>
+           <widget class="QCheckBox" name="optimizeForSizeCheckBox">
+            <property name="toolTip">
+             <string>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</string>
+            </property>
+            <property name="text">
+             <string>Optimize memory over speed (lower memory)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QCheckBox" name="focusModeCheckBox">
             <property name="toolTip">
              <string>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</string>

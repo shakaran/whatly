@@ -2262,6 +2262,16 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Satu proses per situs (memori lebih rendah)</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1547"/>
+        <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
+        <translation>Meminta mesin JavaScript menggunakan lebih sedikit memori dengan sedikit mengorbankan kecepatan (V8 --optimize-for-size). Disarankan untuk aplikasi yang tetap berada di baki sistem. Diabaikan jika batas memori JavaScript diatur di bawah.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1550"/>
+        <source>Optimize memory over speed (lower memory)</source>
+        <translation>Optimalkan memori daripada kecepatan (lebih sedikit memori)</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1537"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>Sembunyikan nama kontak dan pratinjau pesan di daftar obrolan (arahkan kursor untuk menampilkan satu). Berguna saat berbagi layar. Percakapan yang terbuka tidak berubah.</translation>

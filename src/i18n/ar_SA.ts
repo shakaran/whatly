@@ -2262,6 +2262,16 @@ Please setup the password in the Settings first.</source>
         <translation>عملية واحدة لكل موقع (ذاكرة أقل)</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1547"/>
+        <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
+        <translation>يطلب من محرك JavaScript استخدام ذاكرة أقل مقابل انخفاض طفيف في السرعة (V8 --optimize-for-size). يُنصح به لتطبيق يبقى في شريط النظام. يُتجاهل عند تعيين حد لذاكرة JavaScript أدناه.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1550"/>
+        <source>Optimize memory over speed (lower memory)</source>
+        <translation>تحسين الذاكرة على حساب السرعة (ذاكرة أقل)</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="1537"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>إخفاء أسماء جهات الاتصال ومعاينات الرسائل في قائمة المحادثات (مرّر المؤشر لإظهار واحدة). مفيد عند مشاركة الشاشة. المحادثة المفتوحة تبقى كما هي.</translation>
