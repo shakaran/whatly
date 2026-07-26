@@ -46,7 +46,7 @@ add_executable(tst_logic
     ${S}/utils.cpp ${S}/debuglog.cpp ${S}/appprofile.cpp ${S}/common.cpp
     ${S}/sunclock.cpp ${S}/identicons.cpp ${S}/theme.cpp ${S}/dictionaries.cpp
     ${S}/scheduledmessages.cpp ${S}/messaging.cpp ${S}/messagetemplates.cpp ${S}/autoreply.cpp ${S}/cloudapi.cpp ${S}/localapi.cpp ${S}/cloudwebhook.cpp
-    ${S}/webfont.cpp ${S}/chattheme.cpp ${S}/mutedstatus.cpp ${S}/privacyblur.cpp
+    ${S}/webfont.cpp ${S}/chattheme.cpp ${S}/mutedstatus.cpp ${S}/privacyblur.cpp ${S}/chatliststrip.cpp
     ${S}/chatwallpaper.cpp ${S}/customcss.cpp ${S}/customjs.cpp ${S}/commandpalette.cpp ${S}/updatechecker.cpp ${S}/storageinfo.cpp ${S}/shortcuts.cpp ${S}/backup.cpp ${S}/screenlock.cpp ${S}/quickreply.cpp ${S}/focusmode.cpp ${S}/hdmedia.cpp ${S}/cannedresponses.cpp ${S}/webtweaks.cpp
     ${S}/linkeddevicename.cpp ${S}/performance.cpp ${S}/trayicon.cpp ${S}/notificationrules.cpp
     ${S}/networkproxy.cpp ${S}/autostart.cpp ${S}/portalnotification.cpp

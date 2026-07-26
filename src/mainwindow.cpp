@@ -46,6 +46,7 @@
 
 #include <QTimer>
 #include <QDesktopServices>
+#include "chatliststrip.h"
 #include "privacyblur.h"
 #include "localapi.h"
 #include "cloudapi.h"
@@ -1234,6 +1235,25 @@ void MainWindow::togglePrivacyBlur() {
     m_webEngine->page()->runJavaScript(PrivacyBlur::scriptSource());
   if (m_settingsWidget)
     m_settingsWidget->refresh();   // keep the combo box telling the truth
+}
+
+// The command palette shows an action by its text, so the entry has to say what
+// pressing it will DO, not what the feature is called.
+void MainWindow::refreshChatListStripAction() {
+  if (m_chatListStripAction)
+    m_chatListStripAction->setText(ChatListStrip::isCollapsed()
+                                       ? tr("Expand the chat list")
+                                       : tr("Collapse the chat list"));
+}
+
+// Collapse WhatsApp's chat list to a strip of avatars, or bring it back.
+// Reached from the button in WhatsApp's own rail and from the command palette.
+void MainWindow::toggleChatListStrip() {
+  ChatListStrip::setCollapsed(!ChatListStrip::isCollapsed());
+  ChatListStrip::install(WebEngineProfileManager::instance().profile());
+  if (m_webEngine && m_webEngine->page())
+    m_webEngine->page()->runJavaScript(ChatListStrip::scriptSource());
+  refreshChatListStripAction();
 }
 
 // ── Chat / URL helpers ────────────────────────────────────────────────────────

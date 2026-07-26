@@ -45,6 +45,7 @@
 #include "hdmedia.h"
 #include "cannedresponses.h"
 #include "webtweaks.h"
+#include "chatliststrip.h"
 #include "messaging.h"
 #include "messagetemplates.h"
 #include "autoreply.h"
@@ -476,6 +477,55 @@ private slots:
     QVERIFY(!hd.isEmpty());
     QVERIFY(hd.contains(QLatin1String("wa_web_show_hd_photo")));
     QVERIFY(hd.contains(QLatin1String("WAWebABProps")));
+  }
+
+  // The chat-list strip is a toggle, so both directions have to produce a valid
+  // script: collapsed installs the stylesheet, expanded removes it again. The
+  // expanded script is NOT empty — it is what takes the stylesheet back out.
+  void chatListStrip() {
+    ChatListStrip::setCollapsed(false);
+    QVERIFY(!ChatListStrip::isCollapsed());
+    const QString off = ChatListStrip::scriptSource();
+    QVERIFY(!off.isEmpty());
+    // It still NAMES #pane-side — that is the tooltip cleanup — but it must
+    // carry no width rule, or it would collapse the list while "expanded".
+    QVERIFY(!off.contains(QLatin1String("min-width")));
+
+    ChatListStrip::setCollapsed(true);
+    QVERIFY(ChatListStrip::isCollapsed());
+    const QString on = ChatListStrip::scriptSource();
+    QVERIFY(on.contains(QLatin1String("#pane-side")));
+    QVERIFY(on.contains(QLatin1String("min-width")));
+    QVERIFY(on.contains(QLatin1String("whatly-chatlist-strip")));
+    // The pane columns are found by measurement and tagged, because the layout
+    // carries more than one of them and only styling the visible one leaves the
+    // conversation's divider stranded at the old width.
+    QVERIFY(on.contains(QLatin1String("data-whatly-pane")));
+    // …and the width must never be set through the `flex` shorthand: in the
+    // Calls section the column's parent runs vertically, so that would set the
+    // height and fold the section into a 97px box.
+    QVERIFY(!on.contains(QLatin1String("flex:0 0")));
+    QVERIFY(on.contains(QLatin1String("flex-basis:auto")));
+    // Collapsed, the clipped name/preview/time stay reachable as a hover
+    // preview — a clone of the row, so emoji and formatting survive — and the
+    // clipped search box stays reachable with one click.
+    QVERIFY(on.contains(QLatin1String("pointerover")));
+    QVERIFY(on.contains(QLatin1String("cloneNode")));
+    QVERIFY(on.contains(QLatin1String("whatly-chatlist-tip")));
+
+    ChatListStrip::setCollapsed(false);
+  }
+
+  // The rail button reads its own state off that stylesheet's id, so the two
+  // modules have to agree on it — nothing else connects them.
+  void chatListStripButtonMatchesStylesheetId() {
+    const QString tweaks = WebTweaks::scriptSource();
+    QVERIFY(tweaks.contains(QLatin1String("whatly-chatlist-strip")));
+    QVERIFY(tweaks.contains(QLatin1String("toggleChatListStrip")));
+    ChatListStrip::setCollapsed(true);
+    QVERIFY(ChatListStrip::scriptSource().contains(
+        QLatin1String("whatly-chatlist-strip")));
+    ChatListStrip::setCollapsed(false);
   }
 };
 
@@ -2351,6 +2401,8 @@ private slots:
     ChatTheme::install(&profile);
     MutedStatus::install(&profile);
     PrivacyBlur::install(&profile);
+    ChatListStrip::setCollapsed(true);
+    ChatListStrip::install(&profile);
     ChatWallpaper::install(&profile);
     CustomCss::install(&profile);
     WebTweaks::install(&profile);
@@ -2377,6 +2429,8 @@ private slots:
     ChatTheme::install(&profile);
     MutedStatus::install(&profile);
     PrivacyBlur::install(&profile);
+    ChatListStrip::setCollapsed(false);
+    ChatListStrip::install(&profile);
     ChatWallpaper::install(&profile);
     CustomCss::install(&profile);
   }

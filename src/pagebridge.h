@@ -16,6 +16,7 @@ public slots:
   // Invoked by the buttons injected next to the profile avatar.
   void toggleTheme() { emit themeToggleRequested(); }
   void togglePrivacyBlur() { emit privacyBlurToggleRequested(); }
+  void toggleChatListStrip() { emit chatListStripToggleRequested(); }
 
   // Invoked by the injected zoom buttons: adjust the page zoom live.
   void zoomIn() { emit zoomInRequested(); }
@@ -35,6 +36,7 @@ public slots:
 signals:
   void themeToggleRequested();
   void privacyBlurToggleRequested();
+  void chatListStripToggleRequested();
   void zoomInRequested();
   void zoomOutRequested();
   void zoomResetRequested();

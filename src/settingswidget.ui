@@ -518,6 +518,16 @@ background:transparent;
               </property>
              </widget>
             </item>
+            <item row="13" column="1">
+             <widget class="QCheckBox" name="chatListStripButtonCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp's own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using. Ctrl+B does the same.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Chat-list collapse button in WhatsApp's sidebar</string>
+              </property>
+             </widget>
+            </item>
             <item row="12" column="1">
              <widget class="QCheckBox" name="monochromeTrayIconCheckBox">
               <property name="toolTip">
