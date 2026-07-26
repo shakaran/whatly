@@ -66,6 +66,14 @@
 
 #include <QNetworkProxy>
 
+#ifdef Q_OS_WIN
+// MSVC has no timegm(); _mkgmtime is the same function under another name.
+// Without this the whole logic suite fails to compile on Windows, so none of it
+// runs there at all — ctest just reports "Not Run".
+#include <ctime>
+#define timegm _mkgmtime
+#endif
+
 // ─────────────────────────────────────────────────────────────────────────────
 class TstUtils : public QObject {
   Q_OBJECT
