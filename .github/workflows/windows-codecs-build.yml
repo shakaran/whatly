@@ -83,7 +83,7 @@ jobs:
         # action) so the save below can run with if: always() — a full Chromium
         # build does not fit one warm+finish pass, so the cache MUST persist even
         # when finish stops incomplete, or the extra progress is lost.
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ${{ github.workspace }}\.sccache
           key: sccache-winwe-${{ inputs.qt_version }}-${{ github.run_id }}-${{ inputs.phase }}
@@ -176,7 +176,7 @@ jobs:
         # incomplete — that is what lets a subsequent full run resume further
         # along until one completes within budget.
         if: always()
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ${{ github.workspace }}\.sccache
           key: sccache-winwe-${{ inputs.qt_version }}-${{ github.run_id }}-${{ inputs.phase }}
@@ -205,7 +205,7 @@ jobs:
 
       - name: Upload built module
         if: ${{ inputs.phase == 'finish' && steps.build.outputs.completed == 'true' }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: qtwebengine-codecs-${{ inputs.qt_version }}
           path: |

@@ -10,7 +10,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout source
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Go Semantic Release
         uses: go-semantic-release/action@v1.17.0
         id: semrel

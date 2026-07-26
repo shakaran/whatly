@@ -77,7 +77,7 @@ jobs:
           echo "ASSET=$out" >> "$GITHUB_ENV"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: whatly-macos-dmg
           path: ${{ env.ASSET }}

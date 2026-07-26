@@ -17,7 +17,41 @@ permissions:
   contents: write
 
 jobs:
+  # Create the GitHub release first, with the matching CHANGELOG.md section as
+  # the body — so every release reads like a proper release note instead of the
+  # bare auto-generated "What's Changed" list. The artifact jobs below depend on
+  # this and only upload their binaries.
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Create (or update) the release from CHANGELOG.md
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="${{ github.event.inputs.tag || github.ref_name }}"
+          ver="${tag#v}"
+          # Pull the "## <ver> …" section out of CHANGELOG.md (literal match, so
+          # the version's dots aren't treated as a regex), up to the next "## ".
+          awk -v pfx="## $ver " '
+            substr($0,1,length(pfx))==pfx { insec=1; next }
+            insec && /^## / { exit }
+            insec { print }
+          ' CHANGELOG.md > notes.md
+          if [ ! -s notes.md ]; then
+            echo "::warning::no CHANGELOG.md section for $ver — falling back to generated notes"
+            gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
+              || gh release create "$tag" --repo "$GITHUB_REPOSITORY" --title "$tag" --generate-notes
+          elif gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release edit "$tag" --repo "$GITHUB_REPOSITORY" --title "$tag" --notes-file notes.md
+          else
+            gh release create "$tag" --repo "$GITHUB_REPOSITORY" --title "$tag" --notes-file notes.md
+          fi
+
   windows:
+    needs: create-release
     runs-on: windows-2022
     # Optional Windows code signing via the SignPath Foundation free OSS program
     # (issue #325). Everything below is a no-op until the SIGNPATH_API_TOKEN
@@ -52,7 +86,7 @@ jobs:
       - name: Upload unsigned .exe for signing
         if: env.SIGNPATH_API_TOKEN != ''
         id: upload-unsigned
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: whatly-unsigned-exe
           path: build/Release/whatly.exe
@@ -95,6 +129,7 @@ jobs:
   # Built inside the KDE 6.9 flatpak SDK image; the manifest's git source is
   # swapped for the checked-out tree so CI always packages the pushed commit.
   flatpak:
+    needs: create-release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -135,6 +170,7 @@ jobs:
 
   # ── AppImage (+ .zsync delta updates) ───────────────────────────────────────
   appimage:
+    needs: create-release
     runs-on: ubuntu-22.04
     env:
       APPIMAGE_EXTRACT_AND_RUN: 1   # runners have no FUSE
@@ -220,6 +256,7 @@ jobs:
   # and the desktop entry + icon in /usr/share, so it works on any distro.
   # Standalone job: a failure here never blocks the other artifacts.
   packages:
+    needs: create-release
     runs-on: ubuntu-22.04
     env:
       APPIMAGE_EXTRACT_AND_RUN: 1
