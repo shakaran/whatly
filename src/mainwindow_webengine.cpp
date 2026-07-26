@@ -104,14 +104,18 @@ void MainWindow::createPageFor(WebView *view, const QString &accountId) {
 
   QWebEnginePage *page = new WebEnginePage(profile, view);
   installPageBridge(page);
-  if (SettingsManager::instance()
-          .settings()
-          .value("windowTheme", "light")
-          .toString() == "dark") {
-    page->setBackgroundColor(QColor(17, 27, 33));   // WhatsApp dark bg
-  } else {
-    page->setBackgroundColor(QColor(240, 240, 240)); // WhatsApp light bg
-  }
+  const bool dark = SettingsManager::instance()
+                        .settings()
+                        .value("windowTheme", "light")
+                        .toString() == "dark";
+  const QColor pageBg = dark ? QColor(17, 27, 33)      // WhatsApp dark bg
+                             : QColor(240, 240, 240);  // WhatsApp light bg
+  page->setBackgroundColor(pageBg);
+  // Paint the view widget itself in the same colour, so the area exposed while
+  // Chromium is still repainting a live resize shows the page colour rather than
+  // a flash of the default (or a mismatched theme) background.
+  view->setStyleSheet(
+      QStringLiteral("QWebEngineView{background:%1;}").arg(pageBg.name()));
   view->setPage(page);
 
   auto randomValue = QRandomGenerator::global()->generateDouble() * 300.0;
