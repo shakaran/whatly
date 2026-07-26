@@ -47,6 +47,7 @@
 #include <QTimer>
 #include <QDesktopServices>
 #include "privacyblur.h"
+#include "localapi.h"
 #include "webfont.h"
 #include "mutedstatus.h"
 #include "scheduledmessages.h"
@@ -112,6 +113,13 @@ MainWindow::MainWindow(QWidget *parent)
   tryLock();
   updateWindowTheme();
   initAutoLock();
+
+  // Local HTTP API (opt-in, loopback only): lets other programs on this machine
+  // send through the running instance, the HTTP counterpart of `whatly --send`.
+  m_localApi = new LocalApiServer(this);
+  connect(m_localApi, &LocalApiServer::sendRequested, this,
+          &MainWindow::commandSend);
+  startLocalApi();
 
   // Follow the desktop's light/dark preference, live, when the setting is on.
   // The portal's SettingChanged signal is what actually fires on GNOME (Qt's
@@ -1073,6 +1081,25 @@ void MainWindow::sendByNameViaWeb(const Messaging::Recipient &recipient,
       recipient.kind == RecipientKind::GroupId
           ? tr("Opening the group and sending…")
           : tr("Opening the chat with \"%1\" and sending…").arg(recipient.value));
+}
+
+void MainWindow::startLocalApi() {
+  if (!m_localApi)
+    return;
+  if (!LocalApi::isConfigured()) {
+    m_localApi->stop();
+    return;
+  }
+  QString error;
+  if (m_localApi->start(&error)) {
+    qInfo().noquote() << "Local API listening on"
+                      << LocalApi::bindAddress() + ':' +
+                             QString::number(m_localApi->listeningPort());
+  } else {
+    qWarning().noquote() << "Local API could not start:" << error;
+    showNotification(QApplication::applicationDisplayName(),
+                     tr("The local API could not start: %1").arg(error));
+  }
 }
 
 void MainWindow::sendAttachmentViaWeb(const QString &number,

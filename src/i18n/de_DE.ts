@@ -490,6 +490,10 @@ Möchten Sie die Sicherheitsprüfung übergehen und fortfahren?   </translation>
         <translation>Gruppe wird geöffnet und gesendet…</translation>
     </message>
     <message>
+        <source>The local API could not start: %1</source>
+        <translation>Die lokale API konnte nicht gestartet werden: %1</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Chat mit "%1" wird geöffnet und gesendet…</translation>
     </message>
@@ -1267,6 +1271,26 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
     <message>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Ein Positions-Textparameter für --cloud-template (wiederholbar)</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>Die lokale HTTP-API aktivieren und beenden</translation>
+    </message>
+    <message>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>Die lokale HTTP-API deaktivieren und beenden</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>Den Port der lokalen HTTP-API festlegen (Standard 8590) und beenden</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>Das Bearer-Token der lokalen HTTP-API festlegen und beenden</translation>
+    </message>
+    <message>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>Die Konfiguration der lokalen HTTP-API anzeigen und beenden</translation>
     </message>
 </context>
 <context>

@@ -30,6 +30,7 @@
 #include "mainwindow.h"
 #include "autoreply.h"
 #include "cloudapi.h"
+#include "localapi.h"
 #include "messaging.h"
 #include "messagetemplates.h"
 #include "settingsmanager.h"
@@ -667,6 +668,24 @@ int main(int argc, char *argv[]) {
       QStringList() << "cloud-param",
       QObject::tr("A positional body parameter for --cloud-template (repeatable)"),
       QStringLiteral("value"));
+  // Local HTTP API (loopback only) configuration.
+  QCommandLineOption localApiOnOption(
+      QStringList() << "localapi-on",
+      QObject::tr("Enable the local HTTP API, then exit"));
+  QCommandLineOption localApiOffOption(
+      QStringList() << "localapi-off",
+      QObject::tr("Disable the local HTTP API, then exit"));
+  QCommandLineOption localApiPortOption(
+      QStringList() << "localapi-port",
+      QObject::tr("Set the local HTTP API port (default 8590), then exit"),
+      QStringLiteral("port"));
+  QCommandLineOption localApiTokenOption(
+      QStringList() << "localapi-token",
+      QObject::tr("Set the local HTTP API bearer token, then exit"),
+      QStringLiteral("token"));
+  QCommandLineOption localApiStatusOption(
+      QStringList() << "localapi-status",
+      QObject::tr("Show the local HTTP API configuration, then exit"));
 
   parser.addOption(migrateFromOption);
   parser.addOption(dryRunOption);
@@ -693,6 +712,11 @@ int main(int argc, char *argv[]) {
   parser.addOption(cloudTemplateOption);
   parser.addOption(cloudLangOption);
   parser.addOption(cloudParamOption);
+  parser.addOption(localApiOnOption);
+  parser.addOption(localApiOffOption);
+  parser.addOption(localApiPortOption);
+  parser.addOption(localApiTokenOption);
+  parser.addOption(localApiStatusOption);
 
   secondaryInstanceCLIOptions << showAppWindowOption << openSettingsOption
                               << lockAppOption << openAboutOption
@@ -795,6 +819,40 @@ int main(int argc, char *argv[]) {
         << " (phone-number id " << (CloudApi::phoneNumberId().isEmpty() ? "unset" : "set")
         << ", token " << (CloudApi::accessToken().isEmpty() ? "unset" : "set")
         << ", api " << CloudApi::apiVersion() << ")\n";
+    return 0;
+  }
+
+  // Local HTTP API configuration operates on this profile's settings and exits.
+  // A running instance picks up the change on its next launch (or via Settings).
+  if (parser.isSet(localApiOnOption) || parser.isSet(localApiOffOption) ||
+      parser.isSet(localApiPortOption) || parser.isSet(localApiTokenOption)) {
+    if (parser.isSet(localApiOffOption))
+      LocalApi::setEnabled(false);
+    if (parser.isSet(localApiOnOption))
+      LocalApi::setEnabled(true);
+    if (parser.isSet(localApiPortOption)) {
+      bool ok = false;
+      const int p = parser.value(localApiPortOption).toInt(&ok);
+      if (!ok || p <= 0 || p > 65535) {
+        QTextStream(stderr) << "whatly --localapi-port: a port in 1..65535 is "
+                               "required\n";
+        return 2;
+      }
+      LocalApi::setPort(p);
+    }
+    if (parser.isSet(localApiTokenOption))
+      LocalApi::setToken(parser.value(localApiTokenOption));
+    SettingsManager::instance().settings().sync();
+    QTextStream(stdout) << "Local API config updated.\n";
+    return 0;
+  }
+  if (parser.isSet(localApiStatusOption)) {
+    QTextStream(stdout)
+        << "Local API: "
+        << (LocalApi::isConfigured() ? "configured" : "not configured") << " ("
+        << (LocalApi::isEnabled() ? "enabled" : "disabled") << ", token "
+        << (LocalApi::token().isEmpty() ? "unset" : "set") << ", "
+        << LocalApi::bindAddress() << ":" << LocalApi::port() << ")\n";
     return 0;
   }
 

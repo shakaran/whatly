@@ -490,6 +490,10 @@ Do you wish to override the security check and continue ?   </source>
         <translation>समूह खोलकर भेजा जा रहा है…</translation>
     </message>
     <message>
+        <source>The local API could not start: %1</source>
+        <translation>स्थानीय API प्रारंभ नहीं हो सका: %1</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>"%1" के साथ चैट खोलकर भेजा जा रहा है…</translation>
     </message>
@@ -1267,6 +1271,26 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>--cloud-template के लिए एक स्थानिक बॉडी पैरामीटर (दोहराने योग्य)</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>स्थानीय HTTP API सक्षम करें, फिर बाहर निकलें</translation>
+    </message>
+    <message>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>स्थानीय HTTP API अक्षम करें, फिर बाहर निकलें</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>स्थानीय HTTP API पोर्ट सेट करें (डिफ़ॉल्ट 8590), फिर बाहर निकलें</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>स्थानीय HTTP API बियरर टोकन सेट करें, फिर बाहर निकलें</translation>
+    </message>
+    <message>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>स्थानीय HTTP API कॉन्फ़िगरेशन दिखाएँ, फिर बाहर निकलें</translation>
     </message>
 </context>
 <context>

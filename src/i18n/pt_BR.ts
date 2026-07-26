@@ -490,6 +490,10 @@ Deseja ignorar a verificação de segurança e continuar?   </translation>
         <translation>Abrindo o grupo e enviando…</translation>
     </message>
     <message>
+        <source>The local API could not start: %1</source>
+        <translation>Não foi possível iniciar a API local: %1</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Abrindo a conversa com "%1" e enviando…</translation>
     </message>
@@ -1267,6 +1271,26 @@ Defina primeiro a senha nas configurações.</translation>
     <message>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Um parâmetro posicional do corpo para --cloud-template (repetível)</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>Ativa a API HTTP local e sai</translation>
+    </message>
+    <message>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>Desativa a API HTTP local e sai</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>Define a porta da API HTTP local (padrão 8590) e sai</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>Define o token Bearer da API HTTP local e sai</translation>
+    </message>
+    <message>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>Mostra a configuração da API HTTP local e sai</translation>
     </message>
 </context>
 <context>

@@ -490,6 +490,10 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Abriendo el grupo y enviando…</translation>
     </message>
     <message>
+        <source>The local API could not start: %1</source>
+        <translation>No se pudo iniciar la API local: %1</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Abriendo el chat con "%1" y enviando…</translation>
     </message>
@@ -1267,6 +1271,26 @@ Configure primero la contraseña en los ajustes.</translation>
     <message>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Un parámetro posicional del cuerpo para --cloud-template (repetible)</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>Activa la API HTTP local y sale</translation>
+    </message>
+    <message>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>Desactiva la API HTTP local y sale</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>Establece el puerto de la API HTTP local (por defecto 8590) y sale</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>Establece el token Bearer de la API HTTP local y sale</translation>
+    </message>
+    <message>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>Muestra la configuración de la API HTTP local y sale</translation>
     </message>
 </context>
 <context>

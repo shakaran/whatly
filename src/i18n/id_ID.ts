@@ -490,6 +490,10 @@ Apakah Anda ingin melewati pemeriksaan keamanan dan melanjutkan?   </translation
         <translation>Membuka grup dan mengirim…</translation>
     </message>
     <message>
+        <source>The local API could not start: %1</source>
+        <translation>Tidak dapat memulai API lokal: %1</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Membuka obrolan dengan "%1" dan mengirim…</translation>
     </message>
@@ -1267,6 +1271,26 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
     <message>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Sebuah parameter body posisional untuk --cloud-template (dapat diulang)</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>Aktifkan API HTTP lokal, lalu keluar</translation>
+    </message>
+    <message>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>Nonaktifkan API HTTP lokal, lalu keluar</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>Setel port API HTTP lokal (bawaan 8590), lalu keluar</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>Setel token Bearer API HTTP lokal, lalu keluar</translation>
+    </message>
+    <message>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>Tampilkan konfigurasi API HTTP lokal, lalu keluar</translation>
     </message>
 </context>
 <context>

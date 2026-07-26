@@ -752,6 +752,10 @@ Puoi estrarre qualsiasi account in una finestra propria: fai clic con il tasto d
         <translation>Apertura del gruppo e invio…</translation>
     </message>
     <message>
+        <source>The local API could not start: %1</source>
+        <translation>Impossibile avviare l'API locale: %1</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Apertura della chat con "%1" e invio…</translation>
     </message>
@@ -1273,6 +1277,26 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Un parametro posizionale del corpo per --cloud-template (ripetibile)</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>Attiva l'API HTTP locale, poi esci</translation>
+    </message>
+    <message>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>Disattiva l'API HTTP locale, poi esci</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>Imposta la porta dell'API HTTP locale (predefinita 8590), poi esci</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>Imposta il token Bearer dell'API HTTP locale, poi esci</translation>
+    </message>
+    <message>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>Mostra la configurazione dell'API HTTP locale, poi esci</translation>
     </message>
 </context>
 <context>

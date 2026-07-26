@@ -490,6 +490,10 @@ Do you wish to override the security check and continue ?   </source>
         <translation>그룹을 열고 전송하는 중…</translation>
     </message>
     <message>
+        <source>The local API could not start: %1</source>
+        <translation>로컬 API를 시작할 수 없습니다: %1</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>"%1"와의 채팅을 열고 전송하는 중…</translation>
     </message>
@@ -1267,6 +1271,26 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>--cloud-template의 위치 본문 매개변수(반복 가능)</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>로컬 HTTP API를 활성화하고 종료합니다</translation>
+    </message>
+    <message>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>로컬 HTTP API를 비활성화하고 종료합니다</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>로컬 HTTP API 포트를 설정하고 종료합니다(기본값 8590)</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>로컬 HTTP API Bearer 토큰을 설정하고 종료합니다</translation>
+    </message>
+    <message>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>로컬 HTTP API 구성을 표시하고 종료합니다</translation>
     </message>
 </context>
 <context>

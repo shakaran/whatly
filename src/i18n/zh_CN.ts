@@ -490,6 +490,10 @@ Do you wish to override the security check and continue ?   </source>
         <translation>正在打开群组并发送…</translation>
     </message>
     <message>
+        <source>The local API could not start: %1</source>
+        <translation>无法启动本地 API：%1</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>正在打开与 "%1" 的聊天并发送…</translation>
     </message>
@@ -1267,6 +1271,26 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>--cloud-template 的位置正文参数（可重复）</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>启用本地 HTTP API，然后退出</translation>
+    </message>
+    <message>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>禁用本地 HTTP API，然后退出</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>设置本地 HTTP API 端口（默认 8590），然后退出</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>设置本地 HTTP API 的 Bearer 令牌，然后退出</translation>
+    </message>
+    <message>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>显示本地 HTTP API 配置，然后退出</translation>
     </message>
 </context>
 <context>

@@ -490,6 +490,10 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
         <translation>Groep openen en verzenden…</translation>
     </message>
     <message>
+        <source>The local API could not start: %1</source>
+        <translation>Kan de lokale API niet starten: %1</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Chat met "%1" openen en verzenden…</translation>
     </message>
@@ -1267,6 +1271,26 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     <message>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Een positionele bodyparameter voor --cloud-template (herhaalbaar)</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>De lokale HTTP-API inschakelen en afsluiten</translation>
+    </message>
+    <message>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>De lokale HTTP-API uitschakelen en afsluiten</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>De poort van de lokale HTTP-API instellen (standaard 8590) en afsluiten</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>Het Bearer-token van de lokale HTTP-API instellen en afsluiten</translation>
+    </message>
+    <message>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>De configuratie van de lokale HTTP-API tonen en afsluiten</translation>
     </message>
 </context>
 <context>

@@ -490,6 +490,10 @@ Güvenlik denetimini atlayıp devam etmek istiyor musunuz?   </translation>
         <translation>Grup açılıyor ve gönderiliyor…</translation>
     </message>
     <message>
+        <source>The local API could not start: %1</source>
+        <translation>Yerel API başlatılamadı: %1</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>"%1" ile sohbet açılıyor ve gönderiliyor…</translation>
     </message>
@@ -1267,6 +1271,26 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>--cloud-template için konumsal bir gövde parametresi (yinelenebilir)</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>Yerel HTTP API'sini etkinleştir ve çık</translation>
+    </message>
+    <message>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>Yerel HTTP API'sini devre dışı bırak ve çık</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>Yerel HTTP API bağlantı noktasını ayarla (varsayılan 8590) ve çık</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>Yerel HTTP API Bearer belirtecini ayarla ve çık</translation>
+    </message>
+    <message>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>Yerel HTTP API yapılandırmasını göster ve çık</translation>
     </message>
 </context>
 <context>

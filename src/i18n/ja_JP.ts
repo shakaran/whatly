@@ -490,6 +490,10 @@ Do you wish to override the security check and continue ?   </source>
         <translation>グループを開いて送信しています…</translation>
     </message>
     <message>
+        <source>The local API could not start: %1</source>
+        <translation>ローカル API を開始できませんでした: %1</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>"%1" とのチャットを開いて送信しています…</translation>
     </message>
@@ -1267,6 +1271,26 @@ Please setup the password in the Settings first.</source>
     <message>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>--cloud-template の位置指定の本文パラメータ（繰り返し可能）</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>ローカル HTTP API を有効にして終了します</translation>
+    </message>
+    <message>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>ローカル HTTP API を無効にして終了します</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>ローカル HTTP API のポートを設定して終了します（既定 8590）</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>ローカル HTTP API の Bearer トークンを設定して終了します</translation>
+    </message>
+    <message>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>ローカル HTTP API の設定を表示して終了します</translation>
     </message>
 </context>
 <context>

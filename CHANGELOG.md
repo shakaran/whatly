@@ -48,6 +48,18 @@ account config; Whatly never obtains it itself), and check it with
 `--cloud-status`. The URL/payload builders are covered by unit tests
 (`TstCloudApi`).
 
+**Local HTTP API for sending (work in progress).** An opt-in HTTP endpoint lets
+other programs on the same machine send through the running instance — the
+scriptable counterpart of `whatly --send`, callable over HTTP (cron jobs,
+home-server automations, other languages). `POST /send` with a JSON body
+(`{"to":"…","message":"…","file":"…","backend":"web|cloud"}`) queues the send
+and returns `202`. It binds to the loopback interface only (`127.0.0.1`) and
+every request must carry a bearer token, so it is never reachable from the
+network; it is off until you enable it. Configure with `--localapi-on` /
+`--localapi-off`, `--localapi-port` (default 8590), `--localapi-token`, and
+`--localapi-status`. Request parsing, auth and the JSON→command mapping are
+covered by unit tests (`TstLocalApi`).
+
 **Multi-window account tabs (#10).** Multiple accounts now live in a
 Chrome-style tab strip: add one with **+**, rename or close from a right-click
 menu, and drag a tab out of the strip to **tear it off into its own window**

@@ -490,6 +490,10 @@ Voulez-vous ignorer le contrôle de sécurité et continuer ?   </translation>
         <translation>Ouverture du groupe et envoi…</translation>
     </message>
     <message>
+        <source>The local API could not start: %1</source>
+        <translation>Impossible de démarrer l'API locale : %1</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Ouverture de la discussion avec "%1" et envoi…</translation>
     </message>
@@ -1267,6 +1271,26 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Un paramètre positionnel du corps pour --cloud-template (répétable)</translation>
+    </message>
+    <message>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>Activer l'API HTTP locale, puis quitter</translation>
+    </message>
+    <message>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>Désactiver l'API HTTP locale, puis quitter</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>Définir le port de l'API HTTP locale (par défaut 8590), puis quitter</translation>
+    </message>
+    <message>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>Définir le jeton Bearer de l'API HTTP locale, puis quitter</translation>
+    </message>
+    <message>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>Afficher la configuration de l'API HTTP locale, puis quitter</translation>
     </message>
 </context>
 <context>

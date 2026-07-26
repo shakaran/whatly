@@ -49,6 +49,7 @@
 #include "messagetemplates.h"
 #include "autoreply.h"
 #include "cloudapi.h"
+#include "localapi.h"
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
@@ -1026,6 +1027,81 @@ private slots:
              QStringLiteral("audio"));
     QCOMPARE(CloudApi::mediaTypeForMime(QStringLiteral("application/pdf")),
              QStringLiteral("document"));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Local HTTP API request parsing / auth / mapping — pure.
+class TstLocalApi : public QObject {
+  Q_OBJECT
+private slots:
+  void parsesRequestAndBody() {
+    QByteArray raw =
+        "POST /send HTTP/1.1\r\n"
+        "Host: 127.0.0.1:8590\r\n"
+        "Authorization: Bearer s3cr3t\r\n"
+        "Content-Type: application/json\r\n"
+        "Content-Length: 12\r\n"
+        "\r\n"
+        "{\"to\":\"123\"}";
+    auto r = LocalApi::parseRequest(raw);
+    QVERIFY(r.headersComplete);
+    QVERIFY(r.bodyComplete);
+    QCOMPARE(r.method, QStringLiteral("POST"));
+    QCOMPARE(r.path, QStringLiteral("/send"));
+    QCOMPARE(r.headers.value("authorization"), QStringLiteral("Bearer s3cr3t"));
+    QCOMPARE(r.body, QByteArray("{\"to\":\"123\"}"));
+  }
+
+  void partialBodyIsIncomplete() {
+    QByteArray raw = "POST /send HTTP/1.1\r\n"
+                     "Content-Length: 20\r\n\r\n"
+                     "{\"to\":";
+    auto r = LocalApi::parseRequest(raw);
+    QVERIFY(r.headersComplete);
+    QVERIFY(!r.bodyComplete); // fewer bytes than Content-Length
+  }
+
+  void authNeedsExactBearer() {
+    QByteArray raw = "GET / HTTP/1.1\r\nAuthorization: Bearer good\r\n\r\n";
+    auto r = LocalApi::parseRequest(raw);
+    QVERIFY(LocalApi::authorized(r, QStringLiteral("good")));
+    QVERIFY(!LocalApi::authorized(r, QStringLiteral("bad")));
+    QVERIFY(!LocalApi::authorized(r, QString())); // empty token never authorises
+  }
+
+  void mapsSendBody() {
+    Messaging::SendCommand cmd;
+    QString err;
+    QVERIFY(LocalApi::parseSendBody(
+        "{\"to\":\"+34600\",\"message\":\"hi\",\"backend\":\"cloud\"}", &cmd,
+        &err));
+    QCOMPARE(cmd.to, QStringLiteral("+34600"));
+    QCOMPARE(cmd.message, QStringLiteral("hi"));
+    QCOMPARE(cmd.backend, Messaging::Backend::Cloud);
+
+    // Defaults to the web backend when omitted.
+    QVERIFY(LocalApi::parseSendBody("{\"to\":\"x\"}", &cmd, &err));
+    QCOMPARE(cmd.backend, Messaging::Backend::Web);
+  }
+
+  void rejectsBadSendBody() {
+    Messaging::SendCommand cmd;
+    QString err;
+    QVERIFY(!LocalApi::parseSendBody("not json", &cmd, &err));
+    QVERIFY(!err.isEmpty());
+    QVERIFY(!LocalApi::parseSendBody("{\"message\":\"no recipient\"}", &cmd, &err));
+    QVERIFY(!LocalApi::parseSendBody("{\"to\":\"x\",\"backend\":\"smoke\"}", &cmd, &err));
+  }
+
+  void buildsResponse() {
+    QByteArray body = LocalApi::jsonField(QStringLiteral("status"),
+                                          QStringLiteral("accepted"));
+    QByteArray resp = LocalApi::buildResponse(202, body);
+    QVERIFY(resp.startsWith("HTTP/1.1 202 Accepted\r\n"));
+    QVERIFY(resp.contains("Content-Length: " + QByteArray::number(body.size())));
+    QVERIFY(resp.contains("Connection: close"));
+    QVERIFY(resp.endsWith(body));
   }
 };
 
@@ -2093,6 +2169,7 @@ int main(int argc, char *argv[]) {
   { TstMessageTemplates t;    run(&t); }
   { TstAutoReply t;           run(&t); }
   { TstCloudApi t;            run(&t); }
+  { TstLocalApi t;            run(&t); }
   { TstIdenticons t;          run(&t); }
   { TstTheme t;               run(&t); }
   { TstDictionaries t;        run(&t); }

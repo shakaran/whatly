@@ -17,6 +17,7 @@ class GlobalShortcut;
 class ScheduledMessages;
 class DetachedAccountWindow;
 class AccountTabBar;
+class LocalApiServer;
 
 #include "messaging.h"
 
@@ -265,6 +266,9 @@ private:
   // The page-side script that opens a chat by name/id and sends (injected on
   // load).
   static QString nameSenderScriptSource();
+  // Start (or stop) the opt-in local HTTP API according to the current
+  // settings. Safe to call again after the settings change.
+  void startLocalApi();
   // The page-side observer that reports new incoming messages over the bridge.
   static QString autoReplyObserverScriptSource();
   // Evaluate the auto-reply rules for an incoming message and, if one matches,
@@ -361,6 +365,7 @@ private:
   PageBridge *m_pageBridge = nullptr;
   QWebChannel *m_webChannel = nullptr;
   ScheduledMessages *m_scheduledMessages = nullptr;
+  LocalApiServer *m_localApi = nullptr;
   SettingsWidget *m_settingsWidget = nullptr;
   Lock *m_lockWidget = nullptr;
   AutoLockEventFilter *m_autoLockEventFilter = nullptr;
