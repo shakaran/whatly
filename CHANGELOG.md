@@ -1,5 +1,19 @@
 ## Unreleased
 
+**Lower baseline memory (#15).** The Chromium renderer now starts V8 in
+*optimize-for-size* mode by default, trimming the idle `QtWebEngineProcess`
+footprint at a negligible speed cost — sensible for an app that lives in the
+tray. It shares the single `--js-flags` slot with the existing **JS memory
+limit** setting (Settings → Performance): set an explicit cap and that stronger,
+user-chosen bound takes over. Can be turned off via `perf/optimizeForSize`.
+Covered by unit tests (`TstPerformance::optimizeForSizeFlag`,
+`optimizeForSizeDefaultsOn`).
+
+**Monochrome tray icon never comes out blank (#14).** If the symbolic SVG can't
+be rendered on some setup, the monochrome tray glyph now falls back to the
+colour icon's shape, and if even that fails it degrades to the full-colour icon
+instead of leaving an empty tray slot. Covered by unit tests (`TstTrayIcon`).
+
 **Adding an account is discoverable now.** The account strip (with its trailing
 "+") is shown in tabbed view even with a single account, and the tray menu gains
 an **Add account…** entry — so a second account no longer requires knowing the
