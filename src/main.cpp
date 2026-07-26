@@ -402,6 +402,23 @@ int main(int argc, char *argv[]) {
   SingleApplication instance(argc, argv, true, SingleApplication::Mode::User,
                              1000, AppProfile::id());
   instance.setQuitOnLastWindowClosed(false);
+
+#ifdef Q_OS_WIN
+  // Started from the Windows system directory — what a bare shell prompt hands
+  // you — Qt WebEngine resolves Chromium's DLLs against the wrong copies and
+  // aborts before the first page loads (EXCEPTION_BREAKPOINT, 0x80000003).
+  // Launching from the executable's own directory is reliable, so correct only
+  // that one case. Any other working directory is left exactly as it was, so
+  // relative paths given on the command line (`--send --attach ./photo.jpg`)
+  // still resolve against the directory the user ran the command from.
+  {
+    const QString systemRoot = qEnvironmentVariable("SystemRoot");
+    if (!systemRoot.isEmpty() &&
+        QDir(QDir::currentPath()) ==
+            QDir(systemRoot + QStringLiteral("/System32")))
+      QDir::setCurrent(QCoreApplication::applicationDirPath());
+  }
+#endif
   instance.setWindowIcon(themeIcon("whatly", ":/icons/app/icon-64.png"));
   // The machine name is lowercase — it is the leaf of every QStandardPaths
   // location (~/.local/share/shakaran/whatly, ~/.config/shakaran/whatly.conf)
