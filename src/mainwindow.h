@@ -243,6 +243,7 @@ private:
   ViewMode m_viewMode = ViewMode::Tabs;
   QAction *m_viewTabsAction = nullptr;
   QAction *m_viewGridAction = nullptr;
+  QAction *m_addAccountAction = nullptr;
   QAction *m_commandPaletteAction = nullptr;
   void showCommandPalette();
   class UpdateChecker *m_updateChecker = nullptr;

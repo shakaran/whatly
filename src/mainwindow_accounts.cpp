@@ -832,8 +832,10 @@ void MainWindow::refreshAccountTabs() {
   m_accountBar->setTabData(plus, QVariant()); // no data marks the "+" tab
   m_accountBar->setTabToolTip(plus, tr("Add another account"));
 
-  // Strip shows whenever ≥2 accounts exist app-wide (every window gets one).
-  m_accountBar->setVisible(m_accounts.size() > 1);
+  // Always show the strip in tabbed mode (Grid hides it separately), even for a
+  // single account, so the trailing "+" is a visible, discoverable way to add
+  // another account — otherwise the only entry point was Ctrl+K.
+  m_accountBar->setVisible(viewMode() != ViewMode::Grid);
   m_accountBar->setCurrentIndex(activeTab);
 
   refreshDetachedStrips(); // keep every detached window's strip in step too

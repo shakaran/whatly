@@ -1,5 +1,11 @@
 ## Unreleased
 
+**Adding an account is discoverable now.** The account strip (with its trailing
+"+") is shown in tabbed view even with a single account, and the tray menu gains
+an **Add account…** entry — so a second account no longer requires knowing the
+`Ctrl+K` command palette. Same on every platform (the tabs were never
+Windows-gated; they were just hidden until a second account existed).
+
 **Never strand the window when the tray icon is hidden (#13).** With **Hide tray
 icon** on, minimising (Ctrl+W, or *minimise in tray on start*) used to hide the
 window with nothing left to click to bring it back — the app kept running,

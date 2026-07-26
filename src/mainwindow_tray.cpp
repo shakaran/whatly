@@ -128,6 +128,13 @@ void MainWindow::createActions() {
   });
   addAction(m_viewGridAction);
 
+  // A visible way to add another account (the "+" tab only shows once the
+  // account strip is up); mirrors the command palette's "Add account…".
+  m_addAccountAction = new QAction(tr("Add account…"), this);
+  connect(m_addAccountAction, &QAction::triggered, this,
+          &MainWindow::promptAddAccount);
+  addAction(m_addAccountAction);
+
   m_commandPaletteAction = new QAction(tr("Command palette"), this);
   m_commandPaletteAction->setShortcut(QKeySequence(Qt::Modifier::CTRL | Qt::Key_K));
   // Application-wide so Ctrl+K opens the palette from a detached window too, not
@@ -198,6 +205,7 @@ void MainWindow::createTrayIcon() {
   m_trayIconMenu->addSeparator();
   m_trayIconMenu->addAction(m_viewTabsAction);
   m_trayIconMenu->addAction(m_viewGridAction);
+  m_trayIconMenu->addAction(m_addAccountAction);
   m_trayIconMenu->addSeparator();
   m_trayIconMenu->addAction(m_toggleThemeAction);
   m_trayIconMenu->addAction(m_settingsAction);
