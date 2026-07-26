@@ -494,6 +494,18 @@ Güvenlik denetimini atlayıp devam etmek istiyor musunuz?   </translation>
         <translation>Yerel API başlatılamadı: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>Cloud API ile gönderme başarısız: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>Cloud API yapılandırılmamış.</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>Cloud API, alıcı olarak bir telefon numarası gerektirir.</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>"%1" ile sohbet açılıyor ve gönderiliyor…</translation>
     </message>

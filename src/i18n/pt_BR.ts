@@ -494,6 +494,18 @@ Deseja ignorar a verificação de segurança e continuar?   </translation>
         <translation>Não foi possível iniciar a API local: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>Falha ao enviar pela Cloud API: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>A Cloud API não está configurada.</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>A Cloud API precisa de um número de telefone como destinatário.</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Abrindo a conversa com "%1" e enviando…</translation>
     </message>

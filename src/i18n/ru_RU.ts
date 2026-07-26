@@ -494,6 +494,18 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Не удалось запустить локальный API: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>Не удалось отправить через Cloud API: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>Cloud API не настроен.</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>Для Cloud API нужен номер телефона в качестве получателя.</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Открытие чата с "%1" и отправка…</translation>
     </message>

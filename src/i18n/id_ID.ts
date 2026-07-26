@@ -494,6 +494,18 @@ Apakah Anda ingin melewati pemeriksaan keamanan dan melanjutkan?   </translation
         <translation>Tidak dapat memulai API lokal: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>Gagal mengirim melalui Cloud API: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>Cloud API belum dikonfigurasi.</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>Cloud API memerlukan nomor telepon sebagai penerima.</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Membuka obrolan dengan "%1" dan mengirim…</translation>
     </message>

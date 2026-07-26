@@ -1013,9 +1013,27 @@ void MainWindow::commandSend(const Messaging::SendCommand &cmd) {
   using namespace Messaging;
 
   if (cmd.backend == Backend::Cloud) {
-    // Phase 4 will add the Meta Cloud API path; it does not need the page.
-    showNotification(QApplication::applicationDisplayName(),
-                     tr("Sending through the Cloud API is not available yet."));
+    // The Cloud API needs no page. The CLI sends cloud headlessly before this
+    // IPC handler is reached, but the local HTTP API routes cloud sends here, so
+    // perform them directly.
+    const Recipient rc = parseRecipient(cmd.to);
+    if (rc.kind != RecipientKind::PhoneNumber) {
+      showNotification(QApplication::applicationDisplayName(),
+                       tr("The Cloud API needs a phone number as the recipient."));
+      return;
+    }
+    if (!CloudApi::isConfigured()) {
+      showNotification(QApplication::applicationDisplayName(),
+                       tr("The Cloud API is not configured."));
+      return;
+    }
+    const CloudApi::Result res =
+        cmd.file.isEmpty() ? CloudApi::sendText(rc.value, cmd.message)
+                           : CloudApi::sendMediaFile(rc.value, cmd.file,
+                                                     cmd.message);
+    if (!res.ok)
+      showNotification(QApplication::applicationDisplayName(),
+                       tr("Cloud API send failed: %1").arg(res.error));
     return;
   }
 

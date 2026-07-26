@@ -494,6 +494,18 @@ Do you wish to override the security check and continue ?   </source>
         <translation>स्थानीय API प्रारंभ नहीं हो सका: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>Cloud API से भेजना विफल: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>Cloud API कॉन्फ़िगर नहीं है।</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>Cloud API को प्राप्तकर्ता के रूप में एक फ़ोन नंबर चाहिए।</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>"%1" के साथ चैट खोलकर भेजा जा रहा है…</translation>
     </message>

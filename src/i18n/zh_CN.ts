@@ -494,6 +494,18 @@ Do you wish to override the security check and continue ?   </source>
         <translation>无法启动本地 API：%1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>通过 Cloud API 发送失败：%1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>Cloud API 未配置。</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>Cloud API 需要一个电话号码作为收件人。</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>正在打开与 "%1" 的聊天并发送…</translation>
     </message>

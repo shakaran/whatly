@@ -756,6 +756,18 @@ Puoi estrarre qualsiasi account in una finestra propria: fai clic con il tasto d
         <translation>Impossibile avviare l'API locale: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>Invio tramite Cloud API non riuscito: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>La Cloud API non è configurata.</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>La Cloud API richiede un numero di telefono come destinatario.</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Apertura della chat con "%1" e invio…</translation>
     </message>

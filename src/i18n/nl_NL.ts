@@ -494,6 +494,18 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
         <translation>Kan de lokale API niet starten: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>Verzenden via de Cloud API mislukt: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>De Cloud API is niet geconfigureerd.</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>De Cloud API heeft een telefoonnummer als ontvanger nodig.</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Chat met "%1" openen en verzenden…</translation>
     </message>

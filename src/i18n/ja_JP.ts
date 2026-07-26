@@ -494,6 +494,18 @@ Do you wish to override the security check and continue ?   </source>
         <translation>ローカル API を開始できませんでした: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>Cloud API での送信に失敗しました: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>Cloud API が設定されていません。</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>Cloud API には宛先として電話番号が必要です。</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>"%1" とのチャットを開いて送信しています…</translation>
     </message>

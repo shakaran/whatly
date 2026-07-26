@@ -494,6 +494,18 @@ Do you wish to override the security check and continue ?   </source>
         <translation>No se pudo iniciar la API local: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>Fallo al enviar por la Cloud API: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>La Cloud API no está configurada.</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>La Cloud API necesita un número de teléfono como destinatario.</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Abriendo el chat con "%1" y enviando…</translation>
     </message>

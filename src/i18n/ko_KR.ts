@@ -494,6 +494,18 @@ Do you wish to override the security check and continue ?   </source>
         <translation>로컬 API를 시작할 수 없습니다: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>Cloud API 전송 실패: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>Cloud API가 구성되지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>Cloud API에는 수신자로 전화번호가 필요합니다.</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>"%1"와의 채팅을 열고 전송하는 중…</translation>
     </message>

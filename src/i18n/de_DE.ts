@@ -494,6 +494,18 @@ Möchten Sie die Sicherheitsprüfung übergehen und fortfahren?   </translation>
         <translation>Die lokale API konnte nicht gestartet werden: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>Cloud-API-Senden fehlgeschlagen: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>Die Cloud API ist nicht konfiguriert.</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>Die Cloud API benötigt eine Telefonnummer als Empfänger.</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Chat mit "%1" wird geöffnet und gesendet…</translation>
     </message>

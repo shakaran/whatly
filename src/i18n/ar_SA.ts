@@ -494,6 +494,18 @@ Do you wish to override the security check and continue ?   </source>
         <translation>تعذّر بدء تشغيل الواجهة المحلية: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>فشل الإرسال عبر Cloud API: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>لم يتم تهيئة Cloud API.</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>يتطلب Cloud API رقم هاتف كمستلم.</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>جارٍ فتح المحادثة مع "%1" والإرسال…</translation>
     </message>

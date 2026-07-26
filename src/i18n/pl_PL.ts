@@ -494,6 +494,18 @@ Czy chcesz pominąć kontrolę bezpieczeństwa i kontynuować?   </translation>
         <translation>Nie można uruchomić lokalnego API: %1</translation>
     </message>
     <message>
+        <source>Cloud API send failed: %1</source>
+        <translation>Wysyłanie przez Cloud API nie powiodło się: %1</translation>
+    </message>
+    <message>
+        <source>The Cloud API is not configured.</source>
+        <translation>Cloud API nie jest skonfigurowane.</translation>
+    </message>
+    <message>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>Cloud API wymaga numeru telefonu jako odbiorcy.</translation>
+    </message>
+    <message>
         <source>Opening the chat with "%1" and sending…</source>
         <translation>Otwieranie czatu z "%1" i wysyłanie…</translation>
     </message>
