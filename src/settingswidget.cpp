@@ -464,6 +464,12 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     moveWidget(body(window), ui->minimizeOnTrayIconClick, G);
     moveWidget(body(window), ui->rememberWindowLayoutCheckBox, G);
     moveWidget(body(window), ui->hideTrayIconCheckBox, G);
+    // These three shape the window's own chrome, so they belong here rather
+    // than under "Network & Startup", where the frame checkbox had ended up
+    // next to the autostart one and was not where anyone looked for it.
+    moveWidget(body(window), ui->alwaysShowAccountTabsCheckBox, G);
+    moveWidget(body(window), ui->customWindowFrameCheckBox, G);
+    moveWidget(body(window), ui->tabsInTitleBarCheckBox, G);
     moveLayout(body(window), ui->gridLayout_9); // zoom block
 
     // ── Advanced ────────────────────────────────────────────
@@ -1308,9 +1314,12 @@ void SettingsWidget::loadNetworkSettings() {
     ui->autostartCheckBox->blockSignals(false);
   }
 
-  ui->customWindowFrameCheckBox->blockSignals(true);
-  ui->customWindowFrameCheckBox->setChecked(CustomTitleBar::isEnabled());
-  ui->customWindowFrameCheckBox->blockSignals(false);
+  ui->alwaysShowAccountTabsCheckBox->blockSignals(true);
+  ui->alwaysShowAccountTabsCheckBox->setChecked(
+      MainWindow::alwaysShowAccountTabs());
+  ui->alwaysShowAccountTabsCheckBox->blockSignals(false);
+
+  updateTitleBarOptionState(); // both window-frame boxes
 
   ui->checkUpdatesCheckBox->blockSignals(true);
   ui->checkUpdatesCheckBox->setChecked(UpdateChecker::isEnabled());
@@ -1584,8 +1593,40 @@ void SettingsWidget::on_interfaceScaleSpinBox_valueChanged(double arg1) {
   Performance::setInterfaceScaleFactor(arg1);
 }
 
+// Hiding the title bar means drawing the window's chrome ourselves, so it needs
+// the custom frame. Rather than greying the option out until the user has found
+// and understood the other one — which reads as the app refusing a setting for
+// no stated reason — turning this on turns that on too.
+void SettingsWidget::updateTitleBarOptionState() {
+  ui->customWindowFrameCheckBox->blockSignals(true);
+  ui->customWindowFrameCheckBox->setChecked(CustomTitleBar::isEnabled());
+  ui->customWindowFrameCheckBox->blockSignals(false);
+  ui->tabsInTitleBarCheckBox->blockSignals(true);
+  ui->tabsInTitleBarCheckBox->setChecked(CustomTitleBar::tabsInTitleBar());
+  ui->tabsInTitleBarCheckBox->blockSignals(false);
+}
+
 void SettingsWidget::on_customWindowFrameCheckBox_toggled(bool checked) {
   CustomTitleBar::setEnabled(checked);
+  // Switching the frame off leaves the stored "hide the title bar" value alone,
+  // so switching it back on restores what the user actually chose — but the
+  // checkbox has to stop claiming a hidden title bar in the meantime.
+  updateTitleBarOptionState();
+}
+
+void SettingsWidget::on_tabsInTitleBarCheckBox_toggled(bool checked) {
+  CustomTitleBar::setTabsInTitleBar(checked);
+  if (checked)
+    CustomTitleBar::setEnabled(true);
+  updateTitleBarOptionState();
+}
+
+void SettingsWidget::on_alwaysShowAccountTabsCheckBox_toggled(bool checked) {
+  MainWindow::setAlwaysShowAccountTabs(checked);
+  // Unlike the frame settings this one needs no restart: the strip is just
+  // shown or hidden.
+  if (auto *w = qobject_cast<MainWindow *>(parent()))
+    w->refreshAccountStrip();
 }
 
 void SettingsWidget::on_checkUpdatesCheckBox_toggled(bool checked) {

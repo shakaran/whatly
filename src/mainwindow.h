@@ -71,6 +71,14 @@ public slots:
   void toggleTheme();
   void togglePrivacyBlur();
   void newChat();
+  // Whether the account strip stays up with only one account, where it is a row
+  // of chrome carrying a single tab. Off by default; the "+" it holds is also
+  // on Ctrl+K, the command palette and the Add-account action.
+  static bool alwaysShowAccountTabs();
+  static void setAlwaysShowAccountTabs(bool enabled);
+  int accountCount() const { return m_accounts.size(); }
+  // Re-run the strip's visibility and labels after that setting changes.
+  void refreshAccountStrip();
 
 protected slots:
   void closeEvent(QCloseEvent *event) override;

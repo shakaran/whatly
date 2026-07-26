@@ -1677,10 +1677,30 @@ background:transparent;
           <item>
            <widget class="QCheckBox" name="customWindowFrameCheckBox">
             <property name="toolTip">
-             <string>Replace the system window border with Whatly's own slim title bar. Applies after a restart.</string>
+             <string>Let Whatly draw the window's border and title bar instead of the system, so they follow Whatly's own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</string>
             </property>
             <property name="text">
              <string>Use a custom window frame (requires restart)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="alwaysShowAccountTabsCheckBox">
+            <property name="toolTip">
+             <string>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</string>
+            </property>
+            <property name="text">
+             <string>Show the account tabs even with a single account</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="tabsInTitleBarCheckBox">
+            <property name="toolTip">
+             <string>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</string>
+            </property>
+            <property name="text">
+             <string>Hide the title bar (requires restart)</string>
             </property>
            </widget>
           </item>

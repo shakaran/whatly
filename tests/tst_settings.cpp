@@ -20,6 +20,7 @@
 #include <QTimer>
 #include <QToolButton>
 
+#include "customtitlebar.h"
 #include "settingswidget.h"
 
 class TstSettings : public QObject {
@@ -117,6 +118,60 @@ private slots:
     QVERIFY(!startMin->isChecked());
     minClick->setChecked(true);
     QVERIFY(!hide->isChecked());
+  }
+
+  // Gert's request #6: the account tabs can move into the title bar, but only
+  // where there is a custom title bar for them to move into. A stored "yes"
+  // left over from before the custom frame was switched off must not produce a
+  // window with neither a native title bar nor buttons of its own.
+  void tabsInTitleBarNeedsCustomFrame() {
+    const bool frame = CustomTitleBar::isEnabled();
+
+    CustomTitleBar::setTabsInTitleBar(true);
+    CustomTitleBar::setEnabled(false);
+    QVERIFY(!CustomTitleBar::tabsInTitleBar());
+
+    // Turning the frame back on restores the choice rather than losing it.
+    CustomTitleBar::setEnabled(true);
+    QVERIFY(CustomTitleBar::tabsInTitleBar());
+
+    CustomTitleBar::setTabsInTitleBar(false);
+    QVERIFY(!CustomTitleBar::tabsInTitleBar());
+
+    CustomTitleBar::setEnabled(frame);
+  }
+
+  // ...so ticking "Hide the title bar" has to bring the custom frame with it.
+  // Greying the box out until the user finds the other one reads as the app
+  // refusing a setting for no stated reason, so it is granted instead.
+  void hidingTitleBarSwitchesTheFrameOn() {
+    const bool frame = CustomTitleBar::isEnabled();
+    CustomTitleBar::setEnabled(false);
+    CustomTitleBar::setTabsInTitleBar(false);
+
+    QTemporaryDir cache, storage;
+    SettingsWidget sw(nullptr, 0, cache.path(), storage.path());
+    auto *frameBox = sw.findChild<QCheckBox *>("customWindowFrameCheckBox");
+    auto *tabsBox = sw.findChild<QCheckBox *>("tabsInTitleBarCheckBox");
+    QVERIFY(frameBox && tabsBox);
+    QVERIFY(tabsBox->isEnabled()); // never denied
+    QVERIFY(!frameBox->isChecked());
+
+    tabsBox->setChecked(true);
+    QVERIFY(CustomTitleBar::isEnabled());
+    QVERIFY(CustomTitleBar::tabsInTitleBar());
+    QVERIFY(frameBox->isChecked()); // and the other box says so
+
+    // Dropping the frame takes the title bar back, and the box stops claiming
+    // otherwise — but the stored choice survives for when it is switched on.
+    frameBox->setChecked(false);
+    QVERIFY(!CustomTitleBar::tabsInTitleBar());
+    QVERIFY(!tabsBox->isChecked());
+    frameBox->setChecked(true);
+    QVERIFY(CustomTitleBar::tabsInTitleBar());
+
+    CustomTitleBar::setEnabled(frame);
+    CustomTitleBar::setTabsInTitleBar(false);
   }
 
   // #9: the settings page is a set of collapsible accordion sections — an arrow
