@@ -337,6 +337,10 @@ R"JS(
         else if (applied && document.querySelector('#all-filter') &&
                  !document.querySelector('[data-whatly-filters]'))
           prepare();
+        // A net under the click handler: the panel can also be opened from the
+        // keyboard, and this costs one querySelector on a node that is empty
+        // whenever no panel is open.
+        clampPanel();
       } catch (e) { /* never break the page */ }
     }, 1000);
 
@@ -429,6 +433,54 @@ R"JS(
     }, true);
     document.addEventListener('scroll', hide, true);
     document.addEventListener('pointerdown', hide, true);
+
+    // WhatsApp centres the emoji / GIF / sticker panel on the button that opens
+    // it and clamps it against the RIGHT edge of the window only. With the list
+    // at full width the composer never sits far enough left for that to matter;
+    // collapsed, it moves across by the width the list gave up and the panel is
+    // placed at a negative left — measured at -41.5px for a 560px panel — so it
+    // is cropped down its own left side. Nudge it back on screen.
+    //
+    // Only while collapsed, and only when it is actually off screen, so a page
+    // WhatsApp has positioned properly is never touched. The panel animates in
+    // under a scale transform, and a transformed box measures smaller than the
+    // one being positioned, so this waits for that to finish rather than
+    // correcting against a half-open size.
+    var clampPanel = function () {
+      try {
+        if (!collapsed()) return;
+        var mount = document.getElementById('expressions-panel-container');
+        var panel = mount && mount.querySelector('[role="application"]');
+        if (!panel) return;
+        var cs = getComputedStyle(panel);
+        if (cs.transform !== 'none' && cs.transform !== 'matrix(1, 0, 0, 1, 0, 0)')
+          return;                                   // still animating open
+        var r = panel.getBoundingClientRect();
+        if (r.width < 100) return;                  // not open
+        var side = document.querySelector('#side');
+        var stripRight = side
+            ? side.parentElement.getBoundingClientRect().right : 4;
+        var vw = document.documentElement.clientWidth;
+        // Sit against the conversation's left edge where there is room for the
+        // whole panel there, and simply on screen where there is not. Never
+        // moved leftwards: a panel WhatsApp has already placed sensibly is left
+        // exactly where it put it.
+        var want = Math.max(4, Math.min(stripRight, vw - r.width - 4));
+        if (r.left >= want - 0.5) return;
+        var left = parseFloat(cs.left);
+        if (isNaN(left)) return;
+        panel.style.setProperty('left', (left + (want - r.left)) + 'px',
+                                'important');
+      } catch (e) { /* never break the page */ }
+    };
+    // It opens on a click, and the animation is short; the later pass is what
+    // usually does the work, the earlier one just shortens the visible glitch.
+    document.addEventListener('click', function () {
+      setTimeout(clampPanel, 80);
+      setTimeout(clampPanel, 320);
+    }, true);
+    // Resizing re-runs WhatsApp's own positioning, so it can go off again.
+    window.addEventListener('resize', function () { setTimeout(clampPanel, 200); });
 
     // Collapsed, the search box above the list is clipped to a sliver, so a
     // click up there can only mean "I want to search". Open the list back up
