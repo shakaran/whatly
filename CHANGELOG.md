@@ -1,3 +1,11 @@
+## Unreleased
+
+**Windows .msi installer.** Releases now ship a proper `.msi` installer for
+Windows alongside the portable `.zip`. It installs to Program Files, adds Start
+Menu and Desktop shortcuts, appears in Add/Remove Programs, and upgrades an
+earlier install in place. Built in CI with the WiX Toolset from the same
+`windeployqt` output as the zip.
+
 ## 6.7.0 (2026-07-27)
 
 **Windows build & startup fixes.** Configuring with spell-check on now finds

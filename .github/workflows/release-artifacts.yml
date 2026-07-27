@@ -103,6 +103,21 @@ jobs:
           wait-for-completion: true
           output-artifact-directory: build/Release
 
+      # Build the .msi from the deployed tree (build\Release) before it is
+      # renamed for the .zip below. WiX harvests the whole folder, so the signed
+      # exe (if signing ran) and every Qt/WebEngine DLL are included.
+      - name: Build MSI installer
+        shell: pwsh
+        run: |
+          $tag = "${{ github.event.inputs.tag }}"
+          if (-not $tag) { $tag = "${{ github.ref_name }}" }
+          $ver = $tag.TrimStart('v')
+          dotnet tool install --global wix --version 5.*
+          $env:PATH = "$env:PATH;$env:USERPROFILE\.dotnet\tools"
+          $msi = "whatly-$ver-x64.msi"
+          wix build packaging\windows\whatly.wxs -arch x64 -d Version=$ver -d Src=build\Release -o $msi
+          echo "MSI=$msi" >> $env:GITHUB_ENV
+
       - name: Package
         shell: pwsh
         run: |
@@ -123,7 +138,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) {
             gh release create "$tag" --repo $env:GITHUB_REPOSITORY --title "$tag" --generate-notes
           }
-          gh release upload "$tag" "$env:ASSET" --clobber --repo $env:GITHUB_REPOSITORY
+          gh release upload "$tag" "$env:ASSET" "$env:MSI" --clobber --repo $env:GITHUB_REPOSITORY
 
   # ── Flatpak ────────────────────────────────────────────────────────────────
   # Built inside the KDE 6.9 flatpak SDK image; the manifest's git source is
