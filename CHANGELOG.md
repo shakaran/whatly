@@ -1,4 +1,4 @@
-## Unreleased
+## 6.7.0 (2026-07-27)
 
 **Windows build & startup fixes.** Configuring with spell-check on now finds
 `qwebengine_convert_dict` in Qt's `bin/` (where Windows and macOS keep it, vs

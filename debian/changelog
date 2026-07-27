@@ -1,3 +1,18 @@
+whatly (6.7.0) unstable; urgency=medium
+
+  * Lower idle memory: V8 starts in optimize-for-size mode by default, with a
+    Settings toggle and a JS heap limit (#15).
+  * Monochrome tray icon now applies with no unread messages, not only when a
+    count is shown (#14).
+  * Adding a second account is discoverable: account bar with its "+" shows
+    with a single account, plus a tray "Add account…" entry.
+  * Never strand the window when the tray icon is hidden (#13).
+  * Windows build and start-up fixes: spell-check tool lookup (#18) and
+    launching from the system directory (#19).
+  * Test suite no longer writes into the real settings (#23).
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Mon, 27 Jul 2026 12:00:00 +0200
+
 whatly (6.6.0) unstable; urgency=medium
 
   * Send messages from the command line and an opt-in local HTTP API: text,

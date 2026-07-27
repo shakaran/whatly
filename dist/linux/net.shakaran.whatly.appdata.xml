@@ -108,6 +108,19 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="6.7.0" date="2026-07-27">
+      <description>
+        <p>A polish and fixes release:</p>
+        <ul>
+          <li>Lower idle memory: V8 now starts in optimize-for-size mode by default, with a toggle and a JS heap limit in Settings &gt; Performance</li>
+          <li>The monochrome tray icon now applies even when there are no unread messages, not only when a count is shown</li>
+          <li>Adding a second account is discoverable: the account bar with its "+" shows with a single account, and the tray menu gains an "Add account…" entry</li>
+          <li>The window is never stranded when the tray icon is hidden</li>
+          <li>Windows build and start-up fixes (spell-check tool lookup, and launching from the system directory)</li>
+          <li>The test suite no longer writes into your real settings</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.6.0" date="2026-07-26">
       <description>
         <p>A large feature release, plus a start-up fix:</p>

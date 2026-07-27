@@ -133,7 +133,9 @@ On top of upstream WhatSie, this fork adds:
   be hard-coded are now yours: turn GPU acceleration back on (or off), ignore the
   driver blocklist, pick a lower-memory process model, cap the JavaScript heap,
   choose the HTTP cache type/size, and shield your local IP from WebRTC leaks
-  (Settings → *Performance & Privacy*).
+  (Settings → *Performance & Privacy*). The JavaScript engine now defaults to
+  **optimize-for-size**, trimming the idle memory footprint of an always-on tray
+  app, and you can toggle it off if you prefer speed.
 - **Network proxy** — route Whatly through your system proxy, none (direct), or a
   manual SOCKS5 / HTTP proxy with optional credentials (Settings → *Network &
   Startup*).

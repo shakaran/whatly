@@ -1,3 +1,55 @@
+## 6.7.0 (2026-07-27)
+
+**Windows build & startup fixes.** Configuring with spell-check on now finds
+`qwebengine_convert_dict` in Qt's `bin/` (where Windows and macOS keep it, vs
+`libexec/` on Linux), instead of failing the build (#18, thanks @gbmaizol). And
+launching `whatly.exe` from the Windows system directory — what a bare shell
+prompt hands you — no longer aborts at start-up: Qt WebEngine was resolving
+Chromium's DLLs against the wrong copies, so we now step out of `System32` while
+leaving every other working directory (and relative command-line paths)
+untouched (#19, thanks @gbmaizol).
+
+**Tests no longer touch your real settings (#23).** The machine-wide
+`Performance`/`NetworkProxy` store ignores the application name (it is read
+before `QApplication` exists), so running the suite used to rewrite the
+developer's own config — leaving the interface scale at 300% and a broken proxy.
+The suite now redirects that store via `WHATLY_SETTINGS_APP`. Thanks @gbmaizol.
+
+**Lower baseline memory (#15).** The Chromium renderer now starts V8 in
+*optimize-for-size* mode by default, trimming the idle `QtWebEngineProcess`
+footprint at a negligible speed cost — sensible for an app that lives in the
+tray. It shares the single `--js-flags` slot with the existing **JS memory
+limit** setting (Settings → Performance): set an explicit cap and that stronger,
+user-chosen bound takes over. Can be turned off via `perf/optimizeForSize`.
+Covered by unit tests (`TstPerformance::optimizeForSizeFlag`,
+`optimizeForSizeDefaultsOn`).
+
+**Monochrome tray icon now works with no unread messages (#14).** The
+monochrome choice appeared to do nothing (KDE Plasma, and likely everywhere)
+because the idle tray icon — the one shown whenever the inbox is clear — bypassed
+the icon composition and always drew the fixed colour icon; only the unread-count
+icon honoured the setting. The idle icon now goes through the same path, so it
+respects both the monochrome choice and the connection state. The composition is
+also hardened: if the symbolic SVG can't be rendered on some setup it falls back
+to the colour icon's shape, and if even that fails it degrades to the full-colour
+icon instead of leaving an empty tray slot. Covered by unit tests (`TstTrayIcon`,
+including the idle-honours-monochrome regression). Thanks to @Sadi58.
+
+**Adding an account is discoverable now.** The account strip (with its trailing
+"+") is shown in tabbed view even with a single account, and the tray menu gains
+an **Add account…** entry — so a second account no longer requires knowing the
+`Ctrl+K` command palette. Same on every platform (the tabs were never
+Windows-gated; they were just hidden until a second account existed).
+
+**Never strand the window when the tray icon is hidden (#13).** With **Hide tray
+icon** on, minimising (Ctrl+W, or *minimise in tray on start*) used to hide the
+window with nothing left to click to bring it back — the app kept running,
+invisible. Minimise now hides to the tray only while a tray icon is actually
+there, and otherwise minimises to the taskbar; and **Hide tray icon** is now
+mutually exclusive with *start minimised* and *minimise on tray-icon click*, so
+the broken combination can't be built in the first place. Thanks to @gbmaizol.
+Covered by a unit test (`TstSettings::traySettingsMutuallyExclusive`).
+
 ## 6.6.0 (2026-07-26)
 
 **Start-up crash on newer distros fixed (#11, #12).** The Linux packages

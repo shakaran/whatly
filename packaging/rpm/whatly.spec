@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        6.6.0
+Version:        6.7.0
 Release:        1%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
@@ -53,6 +53,13 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Mon Jul 27 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.7.0-1
+- Lower idle memory: V8 starts in optimize-for-size mode by default, with a
+  Settings toggle and a JS heap limit (#15); monochrome tray icon now applies
+  with no unread messages (#14); adding a second account is discoverable
+  (account bar + tray "Add account…"); never strand the window when the tray
+  icon is hidden (#13); Windows build/start-up fixes (#18, #19); the test suite
+  no longer writes into the real settings (#23); see CHANGELOG.md
 * Sun Jul 26 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.6.0-1
 - Send from the command line and a local HTTP API (text, media, templates; to a
   number or a contact/group by name); Cloud API backend and webhooks; auto-reply
