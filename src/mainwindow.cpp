@@ -570,17 +570,25 @@ void MainWindow::updateWindowTheme() {
                         .settings()
                         .value("windowTheme", "light")
                         .toString() == "dark";
-  if (dark) {
-    qApp->setPalette(Theme::getDarkPalette());
-    m_webEngine->setStyleSheet("QWebEngineView{background:rgb(17, 27, 33);}");
-  } else {
-    qApp->setPalette(Theme::getLightPalette());
-    m_webEngine->setStyleSheet("QWebEngineView{background:#F0F0F0;}");
-  }
+  qApp->setPalette(dark ? Theme::getDarkPalette() : Theme::getLightPalette());
+  const QString viewStyle =
+      dark ? QStringLiteral("QWebEngineView{background:rgb(17, 27, 33);}")
+           : QStringLiteral("QWebEngineView{background:#F0F0F0;}");
+  const QColor pageBg = dark ? QColor(17, 27, 33) : QColor(240, 240, 240);
 
-  if (m_webEngine->page()) {
-    m_webEngine->page()->setBackgroundColor(
-        dark ? QColor(17, 27, 33) : QColor(240, 240, 240));
+  m_webEngine->setStyleSheet(viewStyle);
+  if (m_webEngine->page())
+    m_webEngine->page()->setBackgroundColor(pageBg);
+
+  // And every other account: in grid view they are all on screen at once, so a
+  // theme change that reached only the current one left the rest of the tiles
+  // sitting on the old background.
+  for (const Account &account : m_accounts) {
+    if (!account.view || account.view == m_webEngine)
+      continue;
+    account.view->setStyleSheet(viewStyle);
+    if (account.view->page())
+      account.view->page()->setBackgroundColor(pageBg);
   }
 
   for (QWidget *w : findChildren<QWidget *>())
@@ -753,9 +761,20 @@ void MainWindow::initSettingWidget() {
 
   connect(m_settingsWidget, &SettingsWidget::privacyBlurChanged,
           m_settingsWidget, [=]() {
-            PrivacyBlur::install(WebEngineProfileManager::instance().profile());
-            if (m_webEngine && m_webEngine->page())
-              m_webEngine->page()->runJavaScript(PrivacyBlur::scriptSource());
+            WebEngineProfileManager::instance().applyUserSettings();
+            for (const Account &account : m_accounts)
+              if (account.view && account.view->page())
+                account.view->page()->runJavaScript(
+                    PrivacyBlur::scriptSource());
+          });
+
+  connect(m_settingsWidget, &SettingsWidget::chatListStripChanged,
+          m_settingsWidget, [=]() {
+            WebEngineProfileManager::instance().applyUserSettings();
+            for (const Account &account : m_accounts)
+              if (account.view && account.view->page())
+                account.view->page()->runJavaScript(
+                    ChatListStrip::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::fontChanged, m_settingsWidget,
@@ -1230,9 +1249,12 @@ void MainWindow::togglePrivacyBlur() {
     PrivacyBlur::setCurrentLevelId(QStringLiteral("off"));
   }
 
-  PrivacyBlur::install(WebEngineProfileManager::instance().profile());
-  if (m_webEngine && m_webEngine->page())
-    m_webEngine->page()->runJavaScript(PrivacyBlur::scriptSource());
+  // Every account, not just the current one: the setting is app-wide, and in
+  // grid view they are all on screen at once. See toggleChatListStrip().
+  WebEngineProfileManager::instance().applyUserSettings();
+  for (const Account &account : m_accounts)
+    if (account.view && account.view->page())
+      account.view->page()->runJavaScript(PrivacyBlur::scriptSource());
   if (m_settingsWidget)
     m_settingsWidget->refresh();   // keep the combo box telling the truth
 }
@@ -1250,9 +1272,17 @@ void MainWindow::refreshChatListStripAction() {
 // Reached from the button in WhatsApp's own rail and from the command palette.
 void MainWindow::toggleChatListStrip() {
   ChatListStrip::setCollapsed(!ChatListStrip::isCollapsed());
-  ChatListStrip::install(WebEngineProfileManager::instance().profile());
-  if (m_webEngine && m_webEngine->page())
-    m_webEngine->page()->runJavaScript(ChatListStrip::scriptSource());
+  // Every account, not just the current one. The state is app-wide, but the
+  // button that flips it sits inside a page — and in grid view every account is
+  // on screen at once, so reaching only m_webEngine left the click apparently
+  // doing nothing in the tile it was made in while a different tile collapsed.
+  // applyUserSettings() reinstalls in every account's PROFILE for future loads;
+  // the pages already open have to be told separately, as Qt does not propagate
+  // a profile's script changes to them.
+  WebEngineProfileManager::instance().applyUserSettings();
+  for (const Account &account : m_accounts)
+    if (account.view && account.view->page())
+      account.view->page()->runJavaScript(ChatListStrip::scriptSource());
   refreshChatListStripAction();
 }
 

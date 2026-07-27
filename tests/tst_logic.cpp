@@ -516,6 +516,50 @@ private slots:
     ChatListStrip::setCollapsed(false);
   }
 
+  // Two things withdraw the strip without touching the setting: leaving Chats,
+  // and a filter that empties the list — Favourites with no favourites, where
+  // WhatsApp swaps the rows for an explanatory panel that at 97px is unreadable
+  // fragments. Both are decided live in the page, so what a test can pin is
+  // that the script still carries both guards and still asks for both.
+  void chatListStripStandsDownWithNothingToShow() {
+    ChatListStrip::setCollapsed(true);
+    const QString on = ChatListStrip::scriptSource();
+    QVERIFY(on.contains(QLatin1String("aria-pressed")));   // which section
+    QVERIFY(on.contains(QLatin1String("var listed")));     // are there rows
+    QVERIFY(on.contains(QLatin1String("inChats() && listed()")));
+    ChatListStrip::setCollapsed(false);
+  }
+
+  // The hover preview's default size follows the platform: the value settled on
+  // against Windows' font rendering came back too small from Linux. Whatever
+  // the default, the chosen id has to reach the script as a NUMBER, and an id
+  // that is not one of ours must fall back rather than put "undefined" into the
+  // page, where it would take the whole preview down with it.
+  void chatListStripPreviewSize() {
+    const QString platformDefault = ChatListStrip::currentPreviewSizeId();
+    bool known = false;
+    for (const ChatListStrip::PreviewSize &size : ChatListStrip::previewSizes())
+      if (size.id == platformDefault)
+        known = true;
+    QVERIFY(known);
+
+    ChatListStrip::setCollapsed(true);
+    ChatListStrip::setCurrentPreviewSizeId(QStringLiteral("large"));
+    QCOMPARE(ChatListStrip::currentPreviewSizeId(), QStringLiteral("large"));
+    QVERIFY(ChatListStrip::scriptSource().contains(QLatin1String("ZOOM = 1;")));
+    ChatListStrip::setCurrentPreviewSizeId(QStringLiteral("small"));
+    QVERIFY(
+        ChatListStrip::scriptSource().contains(QLatin1String("ZOOM = 0.7;")));
+
+    ChatListStrip::setCurrentPreviewSizeId(QStringLiteral("nonsense"));
+    QCOMPARE(ChatListStrip::currentPreviewSizeId(), platformDefault);
+    QVERIFY(!ChatListStrip::scriptSource().contains(
+        QLatin1String("ZOOM = undefined")));
+
+    ChatListStrip::setCurrentPreviewSizeId(platformDefault);
+    ChatListStrip::setCollapsed(false);
+  }
+
   // The rail button reads its own state off that stylesheet's id, so the two
   // modules have to agree on it — nothing else connects them.
   void chatListStripButtonMatchesStylesheetId() {

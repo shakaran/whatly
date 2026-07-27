@@ -37,6 +37,7 @@ signals:
   void followSystemThemeChanged();
   void chatThemeChanged();
   void privacyBlurChanged();
+  void chatListStripChanged();
   void fontChanged();
   void mutedStatusChanged();
   void spellCheckChanged();
@@ -168,6 +169,7 @@ private slots:
   void on_privacyBlurButtonCheckBox_toggled(bool checked);
   void on_zoomButtonsCheckBox_toggled(bool checked);
   void on_chatListStripButtonCheckBox_toggled(bool checked);
+  void on_chatListPreviewSizeComboBox_currentIndexChanged(int index);
   void on_userAgentLineEdit_editingFinished();
   void on_userAgentLineEdit_textChanged(const QString &arg1);
   void on_viewPassword_clicked();
@@ -195,6 +197,7 @@ private:
   void updateCustomCssButtons();
   void populateChatThemes();
   void populatePrivacyBlur();
+  void populateChatListPreviewSize();
   void populateFontFamilies();
   void populateSpellCheck();
   void updateSpellCheckSummary();

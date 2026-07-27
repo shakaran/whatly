@@ -1,12 +1,14 @@
 #include "chatliststrip.h"
 #include "settingsmanager.h"
 
+#include <QCoreApplication>
 #include <QWebEngineProfile>
 #include <QWebEngineScript>
 #include <QWebEngineScriptCollection>
 
 static const char kScriptName[] = "whatly-chatlist-strip";
 static const char kSettingsKey[] = "chatListStrip";
+static const char kPreviewSizeKey[] = "chatListStripPreviewSize";
 
 // How wide the collapsed list is: WhatsApp's own 48px avatar plus the 23px and
 // 25px of padding its row already draws either side of it — 96px — plus the 1px
@@ -24,7 +26,16 @@ static const char kStripWidth[] = "97px";
 // How much the hover preview shrinks its content. The clone is laid out at
 // (panel width / this), so a smaller number means both smaller text AND more
 // room for it before anything wraps.
-static const char kPreviewZoom[] = "0.7";
+//
+// One number does not suit every platform. 0.7 was settled on against Windows'
+// font rendering; the same build on Linux came back "slightly too small", the
+// text there being drawn lighter and narrower at the same nominal size. So the
+// default is per-platform and the user can override it — this is a matter of
+// eyesight and screen as much as of toolkit, and nobody else's measurement
+// settles it.
+static const char kPreviewZoomSmall[] = "0.7";
+static const char kPreviewZoomMedium[] = "0.85";
+static const char kPreviewZoomLarge[] = "1";
 
 // The pane is narrowed and its contents are then simply CLIPPED, rather than
 // each unwanted element being selected and hidden — clipping needs to know
@@ -273,9 +284,29 @@ R"JS(
       }
     };
 
-    // Put the stylesheet in or take it out to match "collapsed AND in Chats".
-    // Called on every toggle and once a second, so leaving Chats expands the
-    // pane and coming back collapses it again without anything else running.
+    // A filter can leave Chats with no list at all. Pick Favourites with no
+    // favourites, or search for something nothing matches, and WhatsApp swaps
+    // the rows for an explanatory panel — a heading and a paragraph telling you
+    // how to add one — which at 97px is the same ragged-fragment mess the
+    // directory sections were, and there is nothing to gain from collapsing a
+    // list that is not there. So the strip stands down until rows come back,
+    // and as with leaving Chats the SETTING is left alone: clear the filter and
+    // it collapses again, exactly as it was.
+    var listed = function () {
+      try {
+        var pane = document.querySelector('#pane-side');
+        return !!(pane && pane.querySelector('[role="row"]'));
+      } catch (e) {
+        return true;
+      }
+    };
+
+    var wanted = function () { return inChats() && listed(); };
+
+    // Put the stylesheet in or take it out to match "collapsed AND a chat list
+    // to collapse". Called on every toggle and once a second, so leaving Chats
+    // expands the pane and coming back collapses it again without anything else
+    // running.
     //
     // It reads window.__whatlyStripCss, NOT the CSS captured above, and that is
     // a correctness requirement rather than a style: expanding runs this script
@@ -285,7 +316,7 @@ R"JS(
     // opened at all. Same reasoning as the live flags object in webtweaks.cpp.
     var sync = function () {
       var style = document.getElementById('whatly-chatlist-strip');
-      var want = window.__whatlyStripCss && inChats();
+      var want = window.__whatlyStripCss && wanted();
       if (!want) {
         if (style) style.remove();
         var t = document.getElementById(TIP);
@@ -328,8 +359,9 @@ R"JS(
         if (!window.__whatlyStripCss) return; // expanded: nothing to keep up
         var style = document.getElementById('whatly-chatlist-strip');
         var applied = !!style;
-        // Leaving or entering Chats, or WhatsApp rebuilding the pane under us.
-        if (applied !== inChats() ||
+        // Leaving or entering Chats, a filter emptying or refilling the list,
+        // or WhatsApp rebuilding the pane under us.
+        if (applied !== wanted() ||
             (applied && !document.querySelector('[data-whatly-pane]')))
           sync();
         // On a cold start the script runs before WhatsApp has built the filter
@@ -524,6 +556,15 @@ QString jsStringLiteral(const QString &value) {
   return QLatin1Char('"') + escaped + QLatin1Char('"');
 }
 
+// Which step a fresh installation starts on. See the note on the zooms above.
+QString defaultPreviewSizeId() {
+#ifdef Q_OS_WIN
+  return QStringLiteral("small");
+#else
+  return QStringLiteral("medium");
+#endif
+}
+
 } // namespace
 
 namespace ChatListStrip {
@@ -540,17 +581,49 @@ void setCollapsed(bool collapsed) {
                                                   collapsed);
 }
 
+QList<PreviewSize> previewSizes() {
+  return {
+      {QStringLiteral("small"),
+       QCoreApplication::translate("ChatListStrip", "Small")},
+      {QStringLiteral("medium"),
+       QCoreApplication::translate("ChatListStrip", "Medium")},
+      {QStringLiteral("large"),
+       QCoreApplication::translate("ChatListStrip", "Large")},
+  };
+}
+
+QString currentPreviewSizeId() {
+  const QString id = SettingsManager::instance()
+                         .settings()
+                         .value(QLatin1String(kPreviewSizeKey),
+                                defaultPreviewSizeId())
+                         .toString();
+  for (const PreviewSize &size : previewSizes())
+    if (size.id == id)
+      return id;
+  return defaultPreviewSizeId();
+}
+
+void setCurrentPreviewSizeId(const QString &id) {
+  SettingsManager::instance().settings().setValue(
+      QLatin1String(kPreviewSizeKey), id);
+}
+
 QString scriptSource() {
   const QString css =
       isCollapsed()
           ? QString::fromLatin1(kCollapseCss).arg(QLatin1String(kStripWidth))
           : QString();
+  const QString sizeId = currentPreviewSizeId();
+  const char *zoom = sizeId == QLatin1String("large")    ? kPreviewZoomLarge
+                     : sizeId == QLatin1String("medium") ? kPreviewZoomMedium
+                                                         : kPreviewZoomSmall;
   // fromUtf8, not fromLatin1: this file is UTF-8, so the fallback glyph in the
   // filter grid would otherwise reach the page as one mangled byte per
   // character.
   QString source = QString::fromUtf8(kScriptTemplate);
   source.replace(QLatin1String("__CSS__"), jsStringLiteral(css));
-  source.replace(QLatin1String("__ZOOM__"), QLatin1String(kPreviewZoom));
+  source.replace(QLatin1String("__ZOOM__"), QLatin1String(zoom));
   return source;
 }
 

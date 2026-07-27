@@ -32,6 +32,7 @@
 #include "customcss.h"
 #include "webengineprofilemanager.h"
 #include "dictionaries.h"
+#include "chatliststrip.h"
 #include "privacyblur.h"
 #include "webfont.h"
 #include "mutedstatus.h"
@@ -198,6 +199,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
   populateLanguages();
   populateChatThemes();
   populatePrivacyBlur();
+  populateChatListPreviewSize();
   populateFontFamilies();
   populateSpellCheck();
   updateCustomCssButtons();
@@ -441,6 +443,8 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     moveWidget(body(appearance), ui->themeToggleButtonCheckBox, G);
     moveWidget(body(appearance), ui->zoomButtonsCheckBox, G);
     moveWidget(body(appearance), ui->chatListStripButtonCheckBox, G);
+    moveRow(body(appearance), ui->chatListPreviewSizeLabel,
+            ui->chatListPreviewSizeComboBox, G);
     moveWidget(body(appearance), ui->smoothScrollingCheckBox, G);
     moveWidget(body(appearance), ui->monochromeTrayIconCheckBox, G);
 
@@ -1789,6 +1793,26 @@ void SettingsWidget::on_privacyBlurComboBox_currentIndexChanged(int index) {
   PrivacyBlur::setCurrentLevelId(
       ui->privacyBlurComboBox->itemData(index).toString());
   emit privacyBlurChanged();
+}
+
+void SettingsWidget::populateChatListPreviewSize() {
+  ui->chatListPreviewSizeComboBox->blockSignals(true);
+  ui->chatListPreviewSizeComboBox->clear();
+  const QString current = ChatListStrip::currentPreviewSizeId();
+  for (const ChatListStrip::PreviewSize &size : ChatListStrip::previewSizes()) {
+    ui->chatListPreviewSizeComboBox->addItem(size.name, size.id);
+    if (size.id == current)
+      ui->chatListPreviewSizeComboBox->setCurrentIndex(
+          ui->chatListPreviewSizeComboBox->count() - 1);
+  }
+  ui->chatListPreviewSizeComboBox->blockSignals(false);
+}
+
+void SettingsWidget::on_chatListPreviewSizeComboBox_currentIndexChanged(
+    int index) {
+  ChatListStrip::setCurrentPreviewSizeId(
+      ui->chatListPreviewSizeComboBox->itemData(index).toString());
+  emit chatListStripChanged();
 }
 
 void SettingsWidget::populateFontFamilies() {
