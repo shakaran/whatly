@@ -353,6 +353,7 @@ if (Qt${QT_VERSION_MAJOR}LinguistTools_FOUND)
         TS_FILES
             src/i18n/ar_SA.ts
             src/i18n/de_DE.ts
+            src/i18n/eo.ts
             src/i18n/es_ES.ts
             src/i18n/fr_FR.ts
             src/i18n/hi_IN.ts
