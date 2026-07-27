@@ -1,5 +1,20 @@
 ## Unreleased
 
+**Windows build & startup fixes.** Configuring with spell-check on now finds
+`qwebengine_convert_dict` in Qt's `bin/` (where Windows and macOS keep it, vs
+`libexec/` on Linux), instead of failing the build (#18, thanks @gbmaizol). And
+launching `whatly.exe` from the Windows system directory — what a bare shell
+prompt hands you — no longer aborts at start-up: Qt WebEngine was resolving
+Chromium's DLLs against the wrong copies, so we now step out of `System32` while
+leaving every other working directory (and relative command-line paths)
+untouched (#19, thanks @gbmaizol).
+
+**Tests no longer touch your real settings (#23).** The machine-wide
+`Performance`/`NetworkProxy` store ignores the application name (it is read
+before `QApplication` exists), so running the suite used to rewrite the
+developer's own config — leaving the interface scale at 300% and a broken proxy.
+The suite now redirects that store via `WHATLY_SETTINGS_APP`. Thanks @gbmaizol.
+
 **Lower baseline memory (#15).** The Chromium renderer now starts V8 in
 *optimize-for-size* mode by default, trimming the idle `QtWebEngineProcess`
 footprint at a negligible speed cost — sensible for an app that lives in the
