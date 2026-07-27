@@ -6,9 +6,15 @@
 namespace NetworkProxy {
 
 QSettings &settings() {
-  // Same machine-wide store as the rest of the global settings.
+  // Same machine-wide store as the rest of the global settings, and for the same
+  // reason it ignores the application name — see Performance::settings(). The
+  // WHATLY_SETTINGS_APP escape hatch keeps the test suite out of the developer's
+  // real proxy configuration.
   static QSettings s(QSettings::NativeFormat, QSettings::UserScope,
-                     QStringLiteral("shakaran"), QStringLiteral("whatly"));
+                     QStringLiteral("shakaran"),
+                     qEnvironmentVariableIsEmpty("WHATLY_SETTINGS_APP")
+                         ? QStringLiteral("whatly")
+                         : qEnvironmentVariable("WHATLY_SETTINGS_APP"));
   return s;
 }
 

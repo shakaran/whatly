@@ -63,7 +63,11 @@ if(UNIX AND NOT APPLE)
     target_link_libraries(tst_logic PRIVATE Qt${QT_VERSION_MAJOR}::DBus)
 endif()
 add_test(NAME logic COMMAND tst_logic)
-set_tests_properties(logic PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
+# WHATLY_SETTINGS_APP: Performance:: and NetworkProxy:: use a machine-wide store
+# that ignores the application name, so without this the tests write into the
+# developer's own settings — the interface scale and the proxy in particular.
+set_tests_properties(logic PROPERTIES ENVIRONMENT
+    "QT_QPA_PLATFORM=offscreen;WHATLY_SETTINGS_APP=whatly-test")
 
 # ── SettingsWidget in-process test ──────────────────────────────────────────
 # SettingsWidget is coupled to MainWindow (a qobject_cast), so it links the whole
@@ -93,4 +97,4 @@ if(UNIX AND NOT APPLE)
 endif()
 add_test(NAME settings COMMAND tst_settings)
 set_tests_properties(settings PROPERTIES ENVIRONMENT
-    "QT_QPA_PLATFORM=offscreen;QTWEBENGINE_CHROMIUM_FLAGS=--no-sandbox --disable-gpu")
+    "QT_QPA_PLATFORM=offscreen;QTWEBENGINE_CHROMIUM_FLAGS=--no-sandbox --disable-gpu;WHATLY_SETTINGS_APP=whatly-test")
