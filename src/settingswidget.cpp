@@ -349,6 +349,11 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     // An empty titled sub-section, ready to receive controls.
     const auto newSection = [host](const QString &title) {
       auto *g = new QGroupBox(title, host);
+      // Named so makeCollapsible can draw its outline by object name; a bare
+      // "QGroupBox" rule would reach the nested groups inside it too.
+      g->setObjectName(QStringLiteral("whatlySection%1")
+                           .arg(QString(title).remove(QLatin1Char(' '))
+                                    .remove(QLatin1Char('&'))));
       auto *v = new QVBoxLayout(g);
       v->setContentsMargins(12, 6, 6, 6);
       v->setSpacing(6);
@@ -464,6 +469,9 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     moveWidget(body(window), ui->minimizeOnTrayIconClick, G);
     moveWidget(body(window), ui->rememberWindowLayoutCheckBox, G);
     moveWidget(body(window), ui->hideTrayIconCheckBox, G);
+    // Right beside the settings that need one, rather than wherever the .ui
+    // happened to put it.
+    moveWidget(body(window), ui->restartNowButton, G);
     moveLayout(body(window), ui->gridLayout_9); // zoom block
 
     // ── Advanced ────────────────────────────────────────────
@@ -515,7 +523,14 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
                             "text-align: left; padding: 3px 6px; }");
 
       box->setTitle(QString()); // the header shows the title now
-      box->setStyleSheet("QGroupBox { border: none; margin-top: 0px; }");
+      // An outline around an open section's contents, so it reads as one block
+      // belonging to the header above it rather than as loose controls. Scoped
+      // by object name: a plain "QGroupBox" rule would also outline the groups
+      // nested inside, doubling the borders.
+      box->setStyleSheet(
+          QStringLiteral("QGroupBox#%1{border:1px solid palette(mid);"
+                         "border-radius:6px;margin-top:0px;padding:2px}")
+              .arg(box->objectName()));
       box->setVisible(open);
 
       QObject::connect(
@@ -574,6 +589,11 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     makeCollapsible(ui->groupBoxJsAddons, false);    // JS Addons
     makeCollapsible(ui->groupBoxCanned, false);      // Canned responses
     makeCollapsible(ui->groupBoxShortcuts, false);   // Shortcuts
+    // These two arrived after the redesign and were left as bare groups, so
+    // they were the only settings on the page with no header to fold them away.
+    // ANY new group belongs on this list — or in one of the sections above.
+    makeCollapsible(ui->groupBoxCloudApi, false);    // Cloud API
+    makeCollapsible(ui->groupBoxLocalApi, false);    // Local API & webhooks
 
     // Stack the section headers directly beneath one another with about one
     // character of breathing room, instead of letting the column stretch them
@@ -1586,6 +1606,59 @@ void SettingsWidget::on_interfaceScaleSpinBox_valueChanged(double arg1) {
 
 void SettingsWidget::on_customWindowFrameCheckBox_toggled(bool checked) {
   CustomTitleBar::setEnabled(checked);
+}
+
+void SettingsWidget::on_restartNowButton_clicked() { emit restartRequested(); }
+
+// The accordion headers, in the order they appear. They are the QToolButtons
+// carrying an arrow — the same handle the section test uses — so there is no
+// second list to keep in step with the one that builds them.
+static QList<QToolButton *> sectionHeaders(const QWidget *page) {
+  QList<QToolButton *> headers;
+  for (auto *tb : page->findChildren<QToolButton *>())
+    if (tb->arrowType() == Qt::DownArrow || tb->arrowType() == Qt::RightArrow)
+      headers << tb;
+  return headers;
+}
+
+void SettingsWidget::saveUiState() {
+  QSettings &s = SettingsManager::instance().settings();
+  QStringList open;
+  const QList<QToolButton *> headers = sectionHeaders(this);
+  for (int i = 0; i < headers.size(); ++i)
+    if (headers[i]->isChecked())
+      open << QString::number(i);
+  s.setValue(QStringLiteral("ui/settingsSections"), open.join(QLatin1Char(',')));
+  s.setValue(QStringLiteral("ui/settingsScroll"),
+             ui->scrollArea->verticalScrollBar()->value());
+  s.setValue(QStringLiteral("ui/settingsGeometry"), saveGeometry());
+  s.setValue(QStringLiteral("ui/settingsWasOpen"), isVisible());
+}
+
+void SettingsWidget::restoreUiState() {
+  QSettings &s = SettingsManager::instance().settings();
+  const QByteArray geom =
+      s.value(QStringLiteral("ui/settingsGeometry")).toByteArray();
+  if (!geom.isEmpty())
+    restoreGeometry(geom);
+
+  QSet<int> want;
+  const QStringList open = s.value(QStringLiteral("ui/settingsSections"))
+                               .toString()
+                               .split(QLatin1Char(','), Qt::SkipEmptyParts);
+  for (const QString &n : open)
+    want.insert(n.toInt());
+  const QList<QToolButton *> headers = sectionHeaders(this);
+  for (int i = 0; i < headers.size(); ++i)
+    headers[i]->setChecked(want.contains(i));
+
+  // The sections have only just been told to open; the scroll range they
+  // create does not exist until the layout settles, so the offset is applied
+  // one turn of the event loop later.
+  const int offset = s.value(QStringLiteral("ui/settingsScroll"), 0).toInt();
+  QTimer::singleShot(0, this, [this, offset]() {
+    ui->scrollArea->verticalScrollBar()->setValue(offset);
+  });
 }
 
 void SettingsWidget::on_checkUpdatesCheckBox_toggled(bool checked) {

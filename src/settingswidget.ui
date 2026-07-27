@@ -1685,6 +1685,16 @@ background:transparent;
            </widget>
           </item>
           <item>
+           <widget class="QPushButton" name="restartNowButton">
+            <property name="toolTip">
+             <string>Restart Whatly now so the settings above take effect. The windows, and this page with it, come back exactly as they are.</string>
+            </property>
+            <property name="text">
+             <string>Restart now</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QCheckBox" name="checkUpdatesCheckBox">
             <property name="toolTip">
              <string>Check GitHub once a day for a newer release and let you know. Whatly never downloads or installs anything on its own.</string>

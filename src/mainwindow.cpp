@@ -46,6 +46,8 @@
 
 #include <QTimer>
 #include <QDesktopServices>
+#include <QMessageBox>
+#include <QProcess>
 #include "privacyblur.h"
 #include "localapi.h"
 #include "cloudapi.h"
@@ -673,6 +675,23 @@ void MainWindow::initSettingWidget() {
             setNotificationPresenter(m_webEngine->page()->profile());
           });
 
+  connect(m_settingsWidget, &SettingsWidget::restartRequested, this,
+          &MainWindow::restartApp);
+
+  // Coming back from a restart: put the settings page back the way it was left,
+  // then forget it, so an ordinary launch does not open it.
+  {
+    QSettings &s = SettingsManager::instance().settings();
+    if (s.value(QStringLiteral("ui/settingsWasOpen"), false).toBool()) {
+      s.setValue(QStringLiteral("ui/settingsWasOpen"), false);
+      QTimer::singleShot(0, this, [this]() {
+        showSettings();
+        if (m_settingsWidget)
+          m_settingsWidget->restoreUiState();
+      });
+    }
+  }
+
   connect(m_settingsWidget, &SettingsWidget::webTweaksChanged, m_settingsWidget,
           [=]() {
             // Update the profile scripts for future page loads, and apply the
@@ -1204,6 +1223,50 @@ void MainWindow::sendAttachmentViaWeb(const QString &number,
                      "+'%2';}catch(e){console.error('whatly attach: '+e);}})();")
           .arg(jobJson, number);
   m_webEngine->page()->runJavaScript(js);
+}
+
+void MainWindow::raiseWindow() {
+  setWindowState((windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
+  show();
+  raise();
+  activateWindow();
+}
+
+// Come back as the SAME program, launched the SAME way. applicationFilePath()
+// rather than argv[0] (which can be a bare name found on PATH), and the real
+// argument list rather than a reconstruction of it, so --profile=work or a
+// --send still means what it meant.
+//
+// The new process cannot simply be started and left to it: SingleApplication
+// keys on the profile, so a second instance of the same account would hand its
+// arguments to the one still running and exit — and then nothing would be left.
+// It is handed the current process id instead and waits for it to go before
+// claiming the key. Nothing is killed: this window closes through the ordinary
+// quit path, which is also what writes the window layout out.
+void MainWindow::restartApp() {
+  QStringList args = QCoreApplication::arguments();
+  if (!args.isEmpty())
+    args.removeFirst(); // argv[0]
+  args.removeIf([](const QString &a) {
+    return a.startsWith(QLatin1String("--restart-wait="));
+  });
+  args << QStringLiteral("--restart-wait=%1")
+              .arg(QCoreApplication::applicationPid());
+
+  if (m_settingsWidget)
+    m_settingsWidget->saveUiState();
+  saveWindowLayout();
+  SettingsManager::instance().settings().sync(); // the new process reads these
+
+  if (!QProcess::startDetached(QCoreApplication::applicationFilePath(), args)) {
+    // Nothing has been closed yet, so a failure here costs the user nothing
+    // beyond the message.
+    QMessageBox::warning(this, tr("Restart"),
+                         tr("Whatly could not start a new instance, so it has "
+                            "not closed this one. Please quit and reopen it."));
+    return;
+  }
+  quitApp();
 }
 
 void MainWindow::toggleTheme() {
