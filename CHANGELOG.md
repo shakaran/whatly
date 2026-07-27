@@ -1,5 +1,9 @@
 ## Unreleased
 
+**Cleaner monochrome tray icon (#14).** The faint dark outline under the light
+glyph is now much subtler, so it is not noticeable on the usual dark panel while
+still keeping the icon legible on a light one. Thanks to @Sadi58.
+
 **Windows .msi installer.** Releases now ship a proper `.msi` installer for
 Windows alongside the portable `.zip`. It installs to Program Files, adds Start
 Menu and Desktop shortcuts, appears in Add/Remove Programs, and upgrades an

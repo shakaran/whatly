@@ -85,8 +85,9 @@ QImage composeTrayImage(int notificationCount, bool monochrome, bool connected,
     // in an otherwise grey tray — and those trays are almost always dark, with
     // the other icons light. So the glyph is tinted light rather than to the app
     // palette (which is the *window's* colour, not the panel's, and would be
-    // dark and invisible under a light app theme on a dark panel). A thin dark
-    // outline underneath keeps it visible on the rarer light panel too.
+    // dark and invisible under a light app theme on a dark panel). A faint dark
+    // outline underneath keeps it legible on the rarer light panel too, kept
+    // subtle so it is not noticeable on the common dark panel (issue #14).
     const QPixmap mask = QPixmap::fromImage(monoMask);
 
     auto tinted = [&](const QColor &c) {
@@ -98,7 +99,7 @@ QImage composeTrayImage(int notificationCount, bool monochrome, bool connected,
       return px;
     };
 
-    const QPixmap dark = tinted(QColor(0, 0, 0, 140));      // outline halo
+    const QPixmap dark = tinted(QColor(0, 0, 0, 70));       // faint outline halo
     const QPixmap light = tinted(QColor(0xea, 0xea, 0xea)); // main fill
 
     QPainter p(&base);
