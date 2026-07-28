@@ -17,8 +17,8 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Release tag to publish (e.g. v6.8.0)'
-        required: true
+        description: 'Version to publish, e.g. v6.8.0 (default: CMakeLists PROJECT_VERSION)'
+        required: false
 
 jobs:
   # ── Build-test the source package in a real Arch container (no secrets) ──────
@@ -41,10 +41,14 @@ jobs:
           # All deps are installed above, so no -s (which would need root).
           # Use an absolute workspace path: the step's CWD is not reliably the
           # checkout dir inside the container.
-          echo "cwd=$(pwd) workspace=$GITHUB_WORKSPACE"
-          ls -la "$GITHUB_WORKSPACE/packaging/aur"
           useradd -m builder
           cp -r "$GITHUB_WORKSPACE/packaging/aur/whatly" /tmp/whatly
+          # Single source of truth for the version: CMakeLists PROJECT_VERSION
+          # (bumped by each release). Stamp it into the PKGBUILD so the committed
+          # pkgver never needs hand-editing and always tests the current release.
+          ver="$(grep -m1 'set(PROJECT_VERSION' "$GITHUB_WORKSPACE/CMakeLists.txt" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')"
+          echo "Building whatly $ver"
+          sed -i "s/^pkgver=.*/pkgver=$ver/" /tmp/whatly/PKGBUILD
           chown -R builder /tmp/whatly
           sudo -u builder bash -c 'cd /tmp/whatly && makepkg --noconfirm --nocheck --clean'
 
@@ -60,8 +64,13 @@ jobs:
       - name: Stamp version and checksums
         if: env.AUR_SSH_PRIVATE_KEY != ''
         run: |
-          tag="${{ github.event.inputs.tag || github.ref_name }}"
-          ver="${tag#v}"
+          # Version from the (optional) dispatch input, else the single source of
+          # truth: CMakeLists PROJECT_VERSION (== the tag being released).
+          ver="${{ github.event.inputs.tag }}"; ver="${ver#v}"
+          if [ -z "$ver" ]; then
+            ver="$(grep -m1 'set(PROJECT_VERSION' CMakeLists.txt | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')"
+          fi
+          tag="v$ver"
           echo "PKGVER=$ver" >> "$GITHUB_ENV"
           sed -i "s/^pkgver=.*/pkgver=$ver/" \
             packaging/aur/whatly/PKGBUILD packaging/aur/whatly-bin/PKGBUILD
