@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        6.7.0
+Version:        6.7.1
 Release:        1%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
@@ -53,6 +53,10 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Tue Jul 28 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.7.1-1
+- Windows releases now ship a proper .msi installer alongside the portable zip;
+  softened the monochrome tray icon outline so it is not noticeable on a dark
+  panel (#14); see CHANGELOG.md
 * Mon Jul 27 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.7.0-1
 - Lower idle memory: V8 starts in optimize-for-size mode by default, with a
   Settings toggle and a JS heap limit (#15); monochrome tray icon now applies

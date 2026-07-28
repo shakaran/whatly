@@ -108,6 +108,15 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="6.7.1" date="2026-07-28">
+      <description>
+        <p>A small patch release:</p>
+        <ul>
+          <li>Windows releases now ship a proper .msi installer alongside the portable zip</li>
+          <li>Softened the monochrome tray icon outline so it is not noticeable on a dark panel</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.7.0" date="2026-07-27">
       <description>
         <p>A polish and fixes release:</p>

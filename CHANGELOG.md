@@ -1,4 +1,4 @@
-## Unreleased
+## 6.7.1 (2026-07-28)
 
 **Cleaner monochrome tray icon (#14).** The faint dark outline under the light
 glyph is now much subtler, so it is not noticeable on the usual dark panel while

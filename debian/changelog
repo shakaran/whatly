@@ -1,3 +1,12 @@
+whatly (6.7.1) unstable; urgency=medium
+
+  * Windows releases now ship a proper .msi installer alongside the portable
+    zip.
+  * Softened the monochrome tray icon outline so it is not noticeable on a dark
+    panel (#14).
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Tue, 28 Jul 2026 12:00:00 +0200
+
 whatly (6.7.0) unstable; urgency=medium
 
   * Lower idle memory: V8 starts in optimize-for-size mode by default, with a
