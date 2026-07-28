@@ -32,6 +32,7 @@
 #include "customcss.h"
 #include "webengineprofilemanager.h"
 #include "dictionaries.h"
+#include "chatliststrip.h"
 #include "privacyblur.h"
 #include "webfont.h"
 #include "mutedstatus.h"
@@ -185,6 +186,11 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
           .settings()
           .value("webtweaks/zoomButtons", true)
           .toBool());
+  ui->chatListStripButtonCheckBox->setChecked(
+      SettingsManager::instance()
+          .settings()
+          .value("webtweaks/chatListStripButton", true)
+          .toBool());
   ui->identifyInLinkedDevicesCheckBox->setChecked(
       SettingsManager::instance()
           .settings()
@@ -193,6 +199,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
   populateLanguages();
   populateChatThemes();
   populatePrivacyBlur();
+  populateChatListPreviewSize();
   populateFontFamilies();
   populateSpellCheck();
   updateCustomCssButtons();
@@ -435,6 +442,9 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     moveRowL(body(appearance), ui->customCssLabel, ui->customCssLayout, G);
     moveWidget(body(appearance), ui->themeToggleButtonCheckBox, G);
     moveWidget(body(appearance), ui->zoomButtonsCheckBox, G);
+    moveWidget(body(appearance), ui->chatListStripButtonCheckBox, G);
+    moveRow(body(appearance), ui->chatListPreviewSizeLabel,
+            ui->chatListPreviewSizeComboBox, G);
     moveWidget(body(appearance), ui->smoothScrollingCheckBox, G);
     moveWidget(body(appearance), ui->monochromeTrayIconCheckBox, G);
 
@@ -1746,6 +1756,12 @@ void SettingsWidget::on_zoomButtonsCheckBox_toggled(bool checked) {
   emit webTweaksChanged();
 }
 
+void SettingsWidget::on_chatListStripButtonCheckBox_toggled(bool checked) {
+  SettingsManager::instance().settings().setValue(
+      "webtweaks/chatListStripButton", checked);
+  emit webTweaksChanged();
+}
+
 void SettingsWidget::on_privacyBlurButtonCheckBox_toggled(bool checked) {
   SettingsManager::instance().settings().setValue(
       "webtweaks/privacyBlurButton", checked);
@@ -1777,6 +1793,26 @@ void SettingsWidget::on_privacyBlurComboBox_currentIndexChanged(int index) {
   PrivacyBlur::setCurrentLevelId(
       ui->privacyBlurComboBox->itemData(index).toString());
   emit privacyBlurChanged();
+}
+
+void SettingsWidget::populateChatListPreviewSize() {
+  ui->chatListPreviewSizeComboBox->blockSignals(true);
+  ui->chatListPreviewSizeComboBox->clear();
+  const QString current = ChatListStrip::currentPreviewSizeId();
+  for (const ChatListStrip::PreviewSize &size : ChatListStrip::previewSizes()) {
+    ui->chatListPreviewSizeComboBox->addItem(size.name, size.id);
+    if (size.id == current)
+      ui->chatListPreviewSizeComboBox->setCurrentIndex(
+          ui->chatListPreviewSizeComboBox->count() - 1);
+  }
+  ui->chatListPreviewSizeComboBox->blockSignals(false);
+}
+
+void SettingsWidget::on_chatListPreviewSizeComboBox_currentIndexChanged(
+    int index) {
+  ChatListStrip::setCurrentPreviewSizeId(
+      ui->chatListPreviewSizeComboBox->itemData(index).toString());
+  emit chatListStripChanged();
 }
 
 void SettingsWidget::populateFontFamilies() {

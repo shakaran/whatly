@@ -70,6 +70,9 @@ public slots:
   void lockOnHideIfEnabled();
   void toggleTheme();
   void togglePrivacyBlur();
+  void toggleChatListStrip();
+  // Keep that action's text saying what it will do next, for the palette.
+  void refreshChatListStripAction();
   void newChat();
 
 protected slots:
@@ -360,6 +363,7 @@ private:
   QAction *m_zoomInAction = nullptr;
   QAction *m_zoomOutAction = nullptr;
   QAction *m_zoomResetAction = nullptr;
+  QAction *m_chatListStripAction = nullptr;
 
   QMenu *m_trayIconMenu = nullptr;
   QSystemTrayIcon *m_systemTrayIcon = nullptr;

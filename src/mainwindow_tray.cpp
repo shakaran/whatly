@@ -88,6 +88,16 @@ void MainWindow::createActions() {
   connect(m_zoomResetAction, &QAction::triggered, this, &MainWindow::zoomReset);
   addAction(m_zoomResetAction);
 
+  // No default shortcut. Ctrl+B was the obvious pick and the wrong one: it is
+  // Bold in WhatsApp's message box, so it only worked with the cursor outside
+  // the very field you spend the day in. The action is still in the command
+  // palette and can be given a key of the user's choosing in Settings.
+  m_chatListStripAction = new QAction(this);
+  refreshChatListStripAction();
+  connect(m_chatListStripAction, &QAction::triggered, this,
+          &MainWindow::toggleChatListStrip);
+  addAction(m_chatListStripAction);
+
   m_settingsAction = new QAction(tr("&Settings"), this);
   m_settingsAction->setShortcut(QKeySequence(Qt::Modifier::CTRL | Qt::Key_P));
   connect(m_settingsAction, &QAction::triggered, this,
@@ -173,6 +183,9 @@ void MainWindow::createActions() {
       {m_fullscreenAction, "fullscreen", tr("Fullscreen")},
       {m_openUrlAction, "openChat", tr("New chat / open URL")},
       {m_zoomResetAction, "zoomReset", tr("Reset zoom")},
+      // Registered with no default so it appears in the shortcut sheet and can
+      // be bound to whatever the user likes.
+      {m_chatListStripAction, "chatListStrip", tr("Collapse the chat list")},
       {m_settingsAction, "settings", tr("Settings")},
       {m_toggleThemeAction, "toggleTheme", tr("Toggle theme")},
       {m_viewGridAction, "gridView", tr("Grid view")},

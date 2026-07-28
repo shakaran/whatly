@@ -45,6 +45,7 @@
 #include "hdmedia.h"
 #include "cannedresponses.h"
 #include "webtweaks.h"
+#include "chatliststrip.h"
 #include "messaging.h"
 #include "messagetemplates.h"
 #include "autoreply.h"
@@ -477,6 +478,122 @@ private slots:
     QVERIFY(!hd.isEmpty());
     QVERIFY(hd.contains(QLatin1String("wa_web_show_hd_photo")));
     QVERIFY(hd.contains(QLatin1String("WAWebABProps")));
+  }
+
+  // The chat-list strip is a toggle, so both directions have to produce a valid
+  // script: collapsed installs the stylesheet, expanded removes it again. The
+  // expanded script is NOT empty — it is what takes the stylesheet back out.
+  void chatListStrip() {
+    ChatListStrip::setCollapsed(false);
+    QVERIFY(!ChatListStrip::isCollapsed());
+    const QString off = ChatListStrip::scriptSource();
+    QVERIFY(!off.isEmpty());
+    // It still NAMES #pane-side — that is the tooltip cleanup — but it must
+    // carry no width rule, or it would collapse the list while "expanded".
+    QVERIFY(!off.contains(QLatin1String("min-width")));
+
+    ChatListStrip::setCollapsed(true);
+    QVERIFY(ChatListStrip::isCollapsed());
+    const QString on = ChatListStrip::scriptSource();
+    QVERIFY(on.contains(QLatin1String("#pane-side")));
+    QVERIFY(on.contains(QLatin1String("min-width")));
+    QVERIFY(on.contains(QLatin1String("whatly-chatlist-strip")));
+    // The pane columns are found by measurement and tagged, because the layout
+    // carries more than one of them and only styling the visible one leaves the
+    // conversation's divider stranded at the old width.
+    QVERIFY(on.contains(QLatin1String("data-whatly-pane")));
+    // …and the width must never be set through the `flex` shorthand: in the
+    // Calls section the column's parent runs vertically, so that would set the
+    // height and fold the section into a 97px box.
+    QVERIFY(!on.contains(QLatin1String("flex:0 0")));
+    QVERIFY(on.contains(QLatin1String("flex-basis:auto")));
+    // Collapsed, the clipped name/preview/time stay reachable as a hover
+    // preview — a clone of the row, so emoji and formatting survive — and the
+    // clipped search box stays reachable with one click.
+    QVERIFY(on.contains(QLatin1String("pointerover")));
+    QVERIFY(on.contains(QLatin1String("cloneNode")));
+    QVERIFY(on.contains(QLatin1String("whatly-chatlist-tip")));
+
+    ChatListStrip::setCollapsed(false);
+  }
+
+  // Two things withdraw the strip without touching the setting: leaving Chats,
+  // and a filter that empties the list — Favourites with no favourites, where
+  // WhatsApp swaps the rows for an explanatory panel that at 97px is unreadable
+  // fragments. Both are decided live in the page, so what a test can pin is
+  // that the script still carries both guards and still asks for both.
+  void chatListStripStandsDownWithNothingToShow() {
+    ChatListStrip::setCollapsed(true);
+    const QString on = ChatListStrip::scriptSource();
+    QVERIFY(on.contains(QLatin1String("aria-pressed")));   // which section
+    QVERIFY(on.contains(QLatin1String("var listed")));     // are there rows
+    QVERIFY(on.contains(QLatin1String("inChats() && listed()")));
+    ChatListStrip::setCollapsed(false);
+  }
+
+  // The hover preview's default size follows the platform: the value settled on
+  // against Windows' font rendering came back too small from Linux. Whatever
+  // the default, the chosen id has to reach the script as a NUMBER, and an id
+  // that is not one of ours must fall back rather than put "undefined" into the
+  // page, where it would take the whole preview down with it.
+  void chatListStripPreviewSize() {
+    // Ask what a FRESH INSTALL defaults to, which means asking with nothing
+    // stored. Reading the current id instead would return whatever a previous
+    // run left behind — the settings store outlives the process, and
+    // tst_settings builds a real SettingsWidget after this suite — and the
+    // fallback assertion below would then be comparing against that rather
+    // than against the default it is meant to check.
+    QSettings &settings = SettingsManager::instance().settings();
+    settings.remove(QStringLiteral("chatListStripPreviewSize"));
+    const QString freshDefault = ChatListStrip::currentPreviewSizeId();
+    bool known = false;
+    for (const ChatListStrip::PreviewSize &size : ChatListStrip::previewSizes())
+      if (size.id == freshDefault)
+        known = true;
+    QVERIFY(known);
+
+    ChatListStrip::setCollapsed(true);
+    ChatListStrip::setCurrentPreviewSizeId(QStringLiteral("large"));
+    QCOMPARE(ChatListStrip::currentPreviewSizeId(), QStringLiteral("large"));
+    QVERIFY(ChatListStrip::scriptSource().contains(
+        QLatin1String("__whatlyStripZoom = 1;")));
+    ChatListStrip::setCurrentPreviewSizeId(QStringLiteral("small"));
+    const QString source = ChatListStrip::scriptSource();
+    QVERIFY(source.contains(QLatin1String("__whatlyStripZoom = 0.7;")));
+
+    // The preview outlives the run that defined it, so the size has to reach it
+    // through the window rather than through a captured variable, and it has to
+    // be set BEFORE the once-per-page guard — everything past that guard is
+    // skipped on a re-run, which is exactly what changing the setting does.
+    QVERIFY(source.contains(QLatin1String("window.__whatlyStripZoom ||")));
+    const int zoomAt = source.indexOf(QLatin1String("__whatlyStripZoom ="));
+    const int guardAt =
+        source.indexOf(QLatin1String("__whatlyStripReady) return;"));
+    QVERIFY(zoomAt >= 0);
+    QVERIFY(guardAt >= 0);
+    QVERIFY(zoomAt < guardAt);
+
+    ChatListStrip::setCurrentPreviewSizeId(QStringLiteral("nonsense"));
+    QCOMPARE(ChatListStrip::currentPreviewSizeId(), freshDefault);
+    QVERIFY(!ChatListStrip::scriptSource().contains(
+        QLatin1String("__whatlyStripZoom = undefined")));
+
+    // Leave the setting UNSET rather than pinned to the default, so the next
+    // run starts from the same place this one did.
+    settings.remove(QStringLiteral("chatListStripPreviewSize"));
+    ChatListStrip::setCollapsed(false);
+  }
+
+  // The rail button reads its own state off that stylesheet's id, so the two
+  // modules have to agree on it — nothing else connects them.
+  void chatListStripButtonMatchesStylesheetId() {
+    const QString tweaks = WebTweaks::scriptSource();
+    QVERIFY(tweaks.contains(QLatin1String("whatly-chatlist-strip")));
+    QVERIFY(tweaks.contains(QLatin1String("toggleChatListStrip")));
+    ChatListStrip::setCollapsed(true);
+    QVERIFY(ChatListStrip::scriptSource().contains(
+        QLatin1String("whatly-chatlist-strip")));
+    ChatListStrip::setCollapsed(false);
   }
 };
 
@@ -2393,6 +2510,8 @@ private slots:
     ChatTheme::install(&profile);
     MutedStatus::install(&profile);
     PrivacyBlur::install(&profile);
+    ChatListStrip::setCollapsed(true);
+    ChatListStrip::install(&profile);
     ChatWallpaper::install(&profile);
     CustomCss::install(&profile);
     WebTweaks::install(&profile);
@@ -2419,6 +2538,8 @@ private slots:
     ChatTheme::install(&profile);
     MutedStatus::install(&profile);
     PrivacyBlur::install(&profile);
+    ChatListStrip::setCollapsed(false);
+    ChatListStrip::install(&profile);
     ChatWallpaper::install(&profile);
     CustomCss::install(&profile);
   }
@@ -2441,7 +2562,18 @@ int main(int argc, char *argv[]) {
   QStandardPaths::setTestModeEnabled(true);
 
   int status = 0;
-  auto run = [&](QObject *obj) { status |= QTest::qExec(obj, argc, argv); };
+  // qExec returns the number of failed functions, but prints the detail to
+  // stdout — which is lost whenever the suite runs somewhere without a console
+  // (CI logs that capture only stderr, IDE runners, ctest on Windows). Naming
+  // the failing class on stderr costs nothing and turns "logic failed" into a
+  // place to look.
+  auto run = [&](QObject *obj) {
+    const int failed = QTest::qExec(obj, argc, argv);
+    if (failed != 0)
+      fprintf(stderr, "TEST CLASS FAILED: %s (%d function(s))\n",
+              obj->metaObject()->className(), failed);
+    status |= failed;
+  };
   { TstUtils t;               run(&t); }
   { TstUtilsMore t;           run(&t); }
   { TstCommon t;              run(&t); }

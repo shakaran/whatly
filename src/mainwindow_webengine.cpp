@@ -144,6 +144,8 @@ void MainWindow::installPageBridge(QWebEnginePage *page) {
             &MainWindow::toggleTheme);
     connect(m_pageBridge, &PageBridge::privacyBlurToggleRequested, this,
             &MainWindow::togglePrivacyBlur);
+    connect(m_pageBridge, &PageBridge::chatListStripToggleRequested, this,
+            &MainWindow::toggleChatListStrip);
     connect(m_pageBridge, &PageBridge::zoomInRequested, this,
             &MainWindow::zoomIn);
     connect(m_pageBridge, &PageBridge::zoomOutRequested, this,

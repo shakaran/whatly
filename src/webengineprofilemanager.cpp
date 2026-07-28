@@ -10,6 +10,7 @@
 #include "customjs.h"
 #include "focusmode.h"
 #include "hdmedia.h"
+#include "chatliststrip.h"
 #include "privacyblur.h"
 #include "webfont.h"
 #include "mutedstatus.h"
@@ -255,6 +256,7 @@ void WebEngineProfileManager::applyUserSettingsTo(QWebEngineProfile *profile,
     HdMedia::install(profile);
     ChatTheme::install(profile);
     PrivacyBlur::install(profile);
+    ChatListStrip::install(profile);
     WebFont::install(profile);
     MutedStatus::install(profile);
     LinkedDeviceName::install(profile, accountLabel(accountId));

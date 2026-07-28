@@ -209,6 +209,7 @@ set(SOURCES
     src/cannedresponses.cpp
     src/globalshortcut.cpp
     src/privacyblur.cpp
+    src/chatliststrip.cpp
     src/performance.cpp
     src/trayicon.cpp
     src/dropattach.cpp
@@ -278,6 +279,7 @@ set(HEADERS
     src/hdmedia.h
     src/cannedresponses.h
     src/privacyblur.h
+    src/chatliststrip.h
     src/performance.h
     src/trayicon.h
     src/dropattach.h

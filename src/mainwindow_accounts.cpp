@@ -231,8 +231,8 @@ void MainWindow::showCommandPalette() {
       m_reloadAction,      m_minimizeAction,  m_restoreAction,
       m_lockAction,        m_muteAction,      m_fullscreenAction,
       m_openUrlAction,     m_scheduledMessagesAction, m_toggleThemeAction,
-      m_settingsAction,    m_aboutAction,     m_viewTabsAction,
-      m_viewGridAction,    m_quitAction};
+      m_chatListStripAction, m_settingsAction, m_aboutAction,
+      m_viewTabsAction,    m_viewGridAction,  m_quitAction};
   for (QAction *a : actions) {
     if (!a)
       continue;

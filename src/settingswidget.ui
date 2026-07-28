@@ -518,6 +518,30 @@ background:transparent;
               </property>
              </widget>
             </item>
+            <item row="13" column="1">
+             <widget class="QCheckBox" name="chatListStripButtonCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp's own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Chat-list collapse button in WhatsApp's sidebar</string>
+              </property>
+             </widget>
+            </item>
+            <item row="19" column="0">
+             <widget class="QLabel" name="chatListPreviewSizeLabel">
+              <property name="text">
+               <string>Collapsed chat preview</string>
+              </property>
+             </widget>
+            </item>
+            <item row="19" column="1">
+             <widget class="QComboBox" name="chatListPreviewSizeComboBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform's font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
             <item row="12" column="1">
              <widget class="QCheckBox" name="monochromeTrayIconCheckBox">
               <property name="toolTip">

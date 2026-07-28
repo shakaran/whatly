@@ -55,6 +55,7 @@ static const char kScriptTemplate[] = R"JS(
     W.themeToggleButton = FLAGS.themeToggleButton;
     W.privacyBlurButton = FLAGS.privacyBlurButton;
     W.zoomButtons = FLAGS.zoomButtons;
+    W.chatListStripButton = FLAGS.chatListStripButton;
   } else {
     W = window.__whatlyWebTweaks = FLAGS;
   }
@@ -133,6 +134,12 @@ static const char kScriptTemplate[] = R"JS(
     zoomOut: '<circle cx="11" cy="11" r="6.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.6 15.6 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.2 11h5.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>',
     // Magnifier with a dot centre (reset zoom to 100%).
     zoomReset: '<circle cx="11" cy="11" r="6.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.6 15.6 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="11" cy="11" r="1.6"/>',
+    // A pane with an arrow folding into it: shown while the chat list is open,
+    // i.e. click to collapse it to a strip.
+    collapseList: '<rect x="3" y="4" width="2.2" height="16" rx="1.1"/><path d="M19.6 11h-8.4l2.9-2.9a1 1 0 0 0-1.4-1.4l-4.6 4.6a1 1 0 0 0 0 1.4l4.6 4.6a1 1 0 0 0 1.4-1.4L11.2 13h8.4a1 1 0 0 0 0-2z"/>',
+    // The same arrow pointing back out: shown while collapsed, i.e. click to
+    // bring the chat list back.
+    expandList: '<rect x="3" y="4" width="2.2" height="16" rx="1.1"/><path d="M9 13h8.4l-2.9 2.9a1 1 0 0 0 1.4 1.4l4.6-4.6a1 1 0 0 0 0-1.4l-4.6-4.6a1 1 0 0 0-1.4 1.4l2.9 2.9H9a1 1 0 0 0 0 2z"/>',
   };
   var isDark = function () {
     try {
@@ -145,6 +152,11 @@ static const char kScriptTemplate[] = R"JS(
   // state off it — no second channel to keep in sync with the app.
   var isBlurred = function () {
     var style = document.getElementById('whatly-privacy-blur');
+    return !!(style && style.textContent);
+  };
+  // Same trick for the chat-list strip: its stylesheet IS its state.
+  var isListCollapsed = function () {
+    var style = document.getElementById('whatly-chatlist-strip');
     return !!(style && style.textContent);
   };
 
@@ -172,6 +184,21 @@ static const char kScriptTemplate[] = R"JS(
       click: function () {
         if (window.__whatlyBridge && window.__whatlyBridge.togglePrivacyBlur)
           window.__whatlyBridge.togglePrivacyBlur();
+      },
+    },
+    {
+      id: 'whatly-chatlist-toggle',
+      enabled: function () { return W.chatListStripButton; },
+      icon: function () {
+        return isListCollapsed() ? ICON.expandList : ICON.collapseList;
+      },
+      label: function () {
+        return isListCollapsed() ? LABELS.expandChatList
+                                 : LABELS.collapseChatList;
+      },
+      click: function () {
+        if (window.__whatlyBridge && window.__whatlyBridge.toggleChatListStrip)
+          window.__whatlyBridge.toggleChatListStrip();
       },
     },
     // Live page-zoom controls (out / reset / in). The zoom itself lives on the
@@ -369,27 +396,34 @@ QString scriptSource() {
       s.value(QStringLiteral("webtweaks/privacyBlurButton"), true).toBool();
   const bool zoomButtons =
       s.value(QStringLiteral("webtweaks/zoomButtons"), true).toBool();
+  const bool stripButton =
+      s.value(QStringLiteral("webtweaks/chatListStripButton"), true).toBool();
 
   const QString flags =
       QStringLiteral("{\"dismissExpressionsPanel\":%1,\"themeToggleButton\":%2,"
-                     "\"privacyBlurButton\":%3,\"zoomButtons\":%4}")
+                     "\"privacyBlurButton\":%3,\"zoomButtons\":%4,"
+                     "\"chatListStripButton\":%5}")
           .arg(QLatin1String(jsBool(dismiss)), QLatin1String(jsBool(themeButton)),
                QLatin1String(jsBool(blurButton)),
-               QLatin1String(jsBool(zoomButtons)));
+               QLatin1String(jsBool(zoomButtons)),
+               QLatin1String(jsBool(stripButton)));
 
   // The injected buttons' accessible labels, translated. QObject::tr with an
   // explicit "WebTweaks" context so they land in the translation catalogue.
   const QString labels =
       QStringLiteral("{\"switchToLight\":%1,\"switchToDark\":%2,"
                      "\"showChats\":%3,\"blurChats\":%4,\"zoomIn\":%5,"
-                     "\"zoomOut\":%6,\"resetZoom\":%7}")
+                     "\"zoomOut\":%6,\"resetZoom\":%7,\"collapseChatList\":%8,"
+                     "\"expandChatList\":%9}")
           .arg(jsString(QObject::tr("Switch to light theme", "WebTweaks")),
                jsString(QObject::tr("Switch to dark theme", "WebTweaks")),
                jsString(QObject::tr("Show the chats", "WebTweaks")),
                jsString(QObject::tr("Blur the chats", "WebTweaks")),
                jsString(QObject::tr("Zoom in", "WebTweaks")),
                jsString(QObject::tr("Zoom out", "WebTweaks")),
-               jsString(QObject::tr("Reset zoom", "WebTweaks")));
+               jsString(QObject::tr("Reset zoom", "WebTweaks")),
+               jsString(QObject::tr("Collapse the chat list", "WebTweaks")),
+               jsString(QObject::tr("Show the chat list", "WebTweaks")));
 
   QString source = QString::fromLatin1(kScriptTemplate);
   source.replace(QLatin1String("__FLAGS__"), flags);
@@ -424,7 +458,9 @@ void install(QWebEngineProfile *profile) {
       s.value(QStringLiteral("webtweaks/privacyBlurButton"), true).toBool();
   const bool zoomButtons =
       s.value(QStringLiteral("webtweaks/zoomButtons"), true).toBool();
-  if (!dismiss && !themeButton && !blurButton && !zoomButtons)
+  const bool stripButton =
+      s.value(QStringLiteral("webtweaks/chatListStripButton"), true).toBool();
+  if (!dismiss && !themeButton && !blurButton && !zoomButtons && !stripButton)
     return; // nothing enabled → do not inject on fresh loads
 
   QWebEngineScript script;
