@@ -44,8 +44,12 @@ jobs:
         run: |
           # makepkg refuses to run as root, so build as an unprivileged user.
           # All deps are installed above, so no -s (which would need root).
+          # Use an absolute workspace path: the step's CWD is not reliably the
+          # checkout dir inside the container.
+          echo "cwd=$(pwd) workspace=$GITHUB_WORKSPACE"
+          ls -la "$GITHUB_WORKSPACE/packaging/aur"
           useradd -m builder
-          cp -r packaging/aur/whatly /tmp/whatly
+          cp -r "$GITHUB_WORKSPACE/packaging/aur/whatly" /tmp/whatly
           chown -R builder /tmp/whatly
           sudo -u builder bash -c 'cd /tmp/whatly && makepkg --noconfirm --nocheck --clean'
 
