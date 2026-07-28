@@ -621,7 +621,12 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     makeCollapsible(ui->groupBoxShortcuts, false);   // Shortcuts
     // These two arrived after the redesign and were left as bare groups, so
     // they were the only settings on the page with no header to fold them away.
-    // ANY new group belongs on this list — or in one of the sections above.
+    //
+    // PLEASE KEEP IT THAT WAY: every setting on this page lives inside a
+    // section that folds. A new one goes into whichever section above it
+    // belongs to; a new group of them gets a header of its own and joins this
+    // list. Nothing should sit loose on the page — that is how the custom
+    // window frame ended up somewhere nobody looked for it.
     makeCollapsible(ui->groupBoxCloudApi, false);    // Cloud API
     makeCollapsible(ui->groupBoxLocalApi, false);    // Local API & webhooks
 
