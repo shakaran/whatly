@@ -21,10 +21,12 @@ QString scriptSource(const QList<File> &files) {
   const QString json =
       QString::fromUtf8(QJsonDocument(arr).toJson(QJsonDocument::Compact));
 
-  // Rebuild each file as a File in a DataTransfer, then fire the drag sequence
-  // (dragenter, dragover, drop) on the open conversation so WhatsApp Web opens
-  // its media preview exactly as it would for a real drop. #main is the chat
-  // panel; fall back to the body when no chat is open.
+  // Rebuild each file as a File in a DataTransfer and hand it to the open chat
+  // with a synthetic paste event on the message composer. A synthetic HTML5
+  // drop event does not reach WhatsApp Web's handler, but a paste does, and it
+  // opens the right preview for every type (media editor for images/videos, the
+  // document preview otherwise) exactly as pasting or a real drop would. The
+  // composer is focused first so the paste lands on the active conversation.
   static const QString kTemplate = QStringLiteral(R"JS(
 (function () {
   try {
@@ -36,12 +38,13 @@ QString scriptSource(const QList<File> &files) {
       for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
       dt.items.add(new File([bytes], f.name, { type: f.type }));
     });
-    var target = document.querySelector("#main") || document.body;
-    ["dragenter", "dragover", "drop"].forEach(function (type) {
-      target.dispatchEvent(new DragEvent(type, {
-        bubbles: true, cancelable: true, dataTransfer: dt
-      }));
-    });
+    var box = document.querySelector("#main footer [contenteditable='true']") ||
+              document.querySelector("[contenteditable='true']");
+    if (box) box.focus();
+    var target = box || document.activeElement || document.body;
+    target.dispatchEvent(new ClipboardEvent("paste", {
+      clipboardData: dt, bubbles: true, cancelable: true
+    }));
   } catch (e) {
     console.error("whatly: dropping the attachment failed: " + e);
   }

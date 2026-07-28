@@ -1706,10 +1706,10 @@ private slots:
                   QStringLiteral("application/pdf"), QStringLiteral("REVG")});
     const QString js = DropAttach::scriptSource(files);
     QVERIFY(!js.isEmpty());
-    // Uses a DataTransfer and fires the drop sequence on the chat panel.
+    // Rebuilds a DataTransfer and hands it to the composer via a paste event.
     QVERIFY(js.contains(QLatin1String("new DataTransfer()")));
-    QVERIFY(js.contains(QLatin1String("\"drop\"")));
-    QVERIFY(js.contains(QLatin1String("DragEvent")));
+    QVERIFY(js.contains(QLatin1String("ClipboardEvent")));
+    QVERIFY(js.contains(QLatin1String("\"paste\"")));
     QVERIFY(js.contains(QLatin1String("#main")));
     // Both files (name, type and payload) are embedded as JSON.
     QVERIFY(js.contains(QLatin1String("photo.png")));
