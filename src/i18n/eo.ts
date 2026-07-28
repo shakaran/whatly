@@ -1840,8 +1840,8 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="480"/>
-        <source>Interface language</source>
-        <translation>Lingvo de la interfaco</translation>
+        <source>Interface language (requires restart)</source>
+        <translation>Lingvo de la interfaco (postulas restartigon)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="487"/>
