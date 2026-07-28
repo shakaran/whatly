@@ -532,10 +532,12 @@ if(WHATLY_SPELLCHECK)
 find_program(QWEBENGINE_CONVERT_DICT
     NAMES qwebengine_convert_dict
     # Qt keeps this tool in libexec/ on Linux but in bin/ on Windows (and in the
-    # bin/ of a macOS Qt install), so without that hint the search finds nothing
-    # there and the FATAL_ERROR below stops the build outright.
+    # bin/ of a macOS Qt install); Arch drops it straight in lib/qt6/. Without a
+    # hint covering the layout the search finds nothing and the FATAL_ERROR below
+    # stops the build outright.
     HINTS "${QT6_INSTALL_PREFIX}/libexec" "${QT6_INSTALL_PREFIX}/bin"
-          /usr/lib/qt6/libexec
+          "${QT6_INSTALL_PREFIX}/lib/qt6" "${QT6_INSTALL_PREFIX}/lib/qt6/libexec"
+          /usr/lib/qt6 /usr/lib/qt6/libexec
           /usr/lib/x86_64-linux-gnu/qt6/libexec /usr/lib64/qt6/libexec
 )
 
