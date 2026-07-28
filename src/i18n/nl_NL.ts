@@ -2498,7 +2498,7 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>Houd de accounttabbladbalk zichtbaar, ook als er maar één account is, zodat de "+" altijd binnen handbereik is. Uitgeschakeld verschijnt de balk zodra er een tweede account bestaat; je kunt er nog steeds een toevoegen met Ctrl+K.</translation>
+        <translation>Houd de accounttabbladbalk zichtbaar, ook als er maar één account is, zodat de &quot;+&quot; altijd binnen handbereik is. Uitgeschakeld verschijnt de balk zodra er een tweede account bestaat; je kunt er nog steeds een toevoegen met Ctrl+K.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2636,7 +2636,7 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>Laat Whatly de rand en de titelbalk van het venster tekenen in plaats van het systeem, zodat ze het eigen thema van Whatly volgen. Op zichzelf verandert dit alleen hun uiterlijk; vink ook "Titelbalk verbergen" aan om de titelrij helemaal te verwijderen. Wordt van kracht na een herstart.</translation>
+        <translation>Laat Whatly de rand en de titelbalk van het venster tekenen in plaats van het systeem, zodat ze het eigen thema van Whatly volgen. Op zichzelf verandert dit alleen hun uiterlijk; vink ook &quot;Titelbalk verbergen&quot; aan om de titelrij helemaal te verwijderen. Wordt van kracht na een herstart.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ Mogelijk is ook een volledige herstart van de toepassing vereist!</translation>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>Renderproces normaal beëindigd</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>Renderproces abnormaal beëindigd</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>Renderproces vastgelopen</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>Renderproces beëindigd</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web blijft afsluiten</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>De renderer van WhatsApp Web blijft afsluiten (code %1), dus Whatly is gestopt met opnieuw laden om een lus te voorkomen.
+
+Dit is vaak een GPU- of sandboxprobleem. Probeer GPU-versnelling uit te schakelen bij Instellingen → Prestaties en laad daarna opnieuw.</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>Renderproces afgesloten met code: %1

@@ -2498,7 +2498,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>アカウントが1つだけでもアカウントのタブバーを常に表示し、その "+" にいつでもアクセスできるようにします。オフの場合、タブバーは2つ目のアカウントができたときに表示されます。それでも Ctrl+K で追加できます。</translation>
+        <translation>アカウントが1つだけでもアカウントのタブバーを常に表示し、その &quot;+&quot; にいつでもアクセスできるようにします。オフの場合、タブバーは2つ目のアカウントができたときに表示されます。それでも Ctrl+K で追加できます。</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2636,7 +2636,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>ウィンドウの枠とタイトルバーをシステムではなく Whatly に描画させ、Whatly 自身のテーマに合わせます。これだけでは見た目が変わるだけです。タイトル行を完全になくすには "タイトルバーを非表示にする" も併せてオンにしてください。再起動後に適用されます。</translation>
+        <translation>ウィンドウの枠とタイトルバーをシステムではなく Whatly に描画させ、Whatly 自身のテーマに合わせます。これだけでは見た目が変わるだけです。タイトル行を完全になくすには &quot;タイトルバーを非表示にする&quot; も併せてオンにしてください。再起動後に適用されます。</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>レンダープロセスが正常に終了しました</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>レンダープロセスが異常終了しました</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>レンダープロセスがクラッシュしました</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>レンダープロセスが強制終了されました</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web が繰り返し終了します</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>WhatsApp Web のレンダラーが繰り返し終了するため（コード %1）、ループを避けるために Whatly は再読み込みを停止しました。
+
+これは多くの場合、GPU またはサンドボックスの問題です。設定 → パフォーマンスで GPU アクセラレーションをオフにしてから、再読み込みしてください。</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>レンダープロセスがコード %1 で終了しました

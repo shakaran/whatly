@@ -2498,7 +2498,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>Yalnızca tek bir hesap olsa bile hesap sekmesi şeridini açık tutun; böylece "+" düğmesi her zaman elinizin altında olur. Kapalıyken şerit, ikinci bir hesap oluştuğunda görünür; yine de Ctrl+K ile bir hesap ekleyebilirsiniz.</translation>
+        <translation>Yalnızca tek bir hesap olsa bile hesap sekmesi şeridini açık tutun; böylece &quot;+&quot; düğmesi her zaman elinizin altında olur. Kapalıyken şerit, ikinci bir hesap oluştuğunda görünür; yine de Ctrl+K ile bir hesap ekleyebilirsiniz.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2636,7 +2636,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>Pencerenin kenarlığını ve başlık çubuğunu sistem yerine Whatly'nin çizmesine izin verin; böylece Whatly'nin kendi temasına uyarlar. Tek başına bu yalnızca görünümlerini değiştirir; başlık satırını tamamen kaldırmak için ayrıca "Başlık çubuğunu gizle" seçeneğini işaretleyin. Yeniden başlatmadan sonra geçerli olur.</translation>
+        <translation>Pencerenin kenarlığını ve başlık çubuğunu sistem yerine Whatly&apos;nin çizmesine izin verin; böylece Whatly&apos;nin kendi temasına uyarlar. Tek başına bu yalnızca görünümlerini değiştirir; başlık satırını tamamen kaldırmak için ayrıca &quot;Başlık çubuğunu gizle&quot; seçeneğini işaretleyin. Yeniden başlatmadan sonra geçerli olur.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ Uygulamanın tamamen yeniden başlatılması da gerekebilir!</translation>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>Oluşturma süreci normal şekilde sonlandı</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>Oluşturma süreci anormal şekilde sonlandı</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>Oluşturma süreci çöktü</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>Oluşturma süreci sonlandırıldı</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web sürekli kapanıyor</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>WhatsApp Web'in oluşturucusu sürekli sonlanıyor (kod %1), bu yüzden Whatly bir döngüyü önlemek için onu yeniden yüklemeyi durdurdu.
+
+Bu genellikle bir GPU veya sandbox sorunudur. Ayarlar → Performans bölümünden GPU hızlandırmayı kapatmayı deneyin ve ardından yeniden yükleyin.</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>Oluşturma süreci şu kodla sonlandı: %1

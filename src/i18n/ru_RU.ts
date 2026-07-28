@@ -2498,7 +2498,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>Всегда показывать панель вкладок аккаунтов, даже если аккаунт только один, чтобы её "+" был всегда под рукой. Если отключено, панель появляется при наличии второго аккаунта; добавить его всё равно можно через Ctrl+K.</translation>
+        <translation>Всегда показывать панель вкладок аккаунтов, даже если аккаунт только один, чтобы её &quot;+&quot; был всегда под рукой. Если отключено, панель появляется при наличии второго аккаунта; добавить его всё равно можно через Ctrl+K.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2636,7 +2636,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>Разрешите Whatly рисовать рамку и строку заголовка окна вместо системы, чтобы они следовали собственной теме Whatly. Само по себе это меняет только их внешний вид; отметьте также "Скрыть строку заголовка", чтобы полностью убрать строку заголовка. Применяется после перезапуска.</translation>
+        <translation>Разрешите Whatly рисовать рамку и строку заголовка окна вместо системы, чтобы они следовали собственной теме Whatly. Само по себе это меняет только их внешний вид; отметьте также &quot;Скрыть строку заголовка&quot;, чтобы полностью убрать строку заголовка. Применяется после перезапуска.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>Процесс отрисовки завершился нормально</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>Процесс отрисовки завершился аварийно</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>Процесс отрисовки аварийно завершился</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>Процесс отрисовки был остановлен</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web постоянно закрывается</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>Отрисовщик WhatsApp Web постоянно завершает работу (код %1), поэтому Whatly прекратил его перезагрузку, чтобы избежать зацикливания.
+
+Часто это связано с проблемой GPU или песочницы. Попробуйте отключить аппаратное ускорение GPU в разделе Настройки → Производительность, затем перезагрузите.</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>Процесс отрисовки завершился с кодом: %1

@@ -2498,7 +2498,7 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>Tetap tampilkan bilah tab akun bahkan saat hanya ada satu akun, agar tombol "+" selalu mudah dijangkau. Jika dimatikan, bilah muncul begitu ada akun kedua; Anda tetap bisa menambahkannya dengan Ctrl+K.</translation>
+        <translation>Tetap tampilkan bilah tab akun bahkan saat hanya ada satu akun, agar tombol &quot;+&quot; selalu mudah dijangkau. Jika dimatikan, bilah muncul begitu ada akun kedua; Anda tetap bisa menambahkannya dengan Ctrl+K.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2636,7 +2636,7 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>Biarkan Whatly menggambar bingkai dan bilah judul jendela alih-alih sistem, sehingga keduanya mengikuti tema Whatly sendiri. Dengan sendirinya, ini hanya mengubah tampilannya; centang juga "Sembunyikan bilah judul" untuk menghilangkan baris judul sepenuhnya. Berlaku setelah dimulai ulang.</translation>
+        <translation>Biarkan Whatly menggambar bingkai dan bilah judul jendela alih-alih sistem, sehingga keduanya mengikuti tema Whatly sendiri. Dengan sendirinya, ini hanya mengubah tampilannya; centang juga &quot;Sembunyikan bilah judul&quot; untuk menghilangkan baris judul sepenuhnya. Berlaku setelah dimulai ulang.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ Anda mungkin juga perlu memulai ulang aplikasi sepenuhnya!</translation>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>Proses render berakhir normal</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>Proses render berakhir tidak normal</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>Proses render mengalami crash</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>Proses render dihentikan</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web terus menutup</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>Perender WhatsApp Web terus berhenti (kode %1), sehingga Whatly berhenti memuatnya ulang untuk menghindari perulangan.
+
+Ini sering kali merupakan masalah GPU atau sandbox. Coba matikan akselerasi GPU di Pengaturan → Kinerja, lalu muat ulang.</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>Proses render berakhir dengan kode: %1

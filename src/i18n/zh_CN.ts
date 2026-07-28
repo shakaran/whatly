@@ -2498,7 +2498,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>即使只有一个账号，也始终显示账号标签栏，让它的 "+" 随时可用。关闭后，标签栏会在出现第二个账号时才显示；你仍然可以用 Ctrl+K 添加账号。</translation>
+        <translation>即使只有一个账号，也始终显示账号标签栏，让它的 &quot;+&quot; 随时可用。关闭后，标签栏会在出现第二个账号时才显示；你仍然可以用 Ctrl+K 添加账号。</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2636,7 +2636,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>让 Whatly 而非系统来绘制窗口的边框和标题栏，使它们遵循 Whatly 自己的主题。单独启用时只会改变它们的外观；再勾选 "隐藏标题栏" 才能彻底去掉整行标题。重启后生效。</translation>
+        <translation>让 Whatly 而非系统来绘制窗口的边框和标题栏，使它们遵循 Whatly 自己的主题。单独启用时只会改变它们的外观；再勾选 &quot;隐藏标题栏&quot; 才能彻底去掉整行标题。重启后生效。</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>渲染进程正常退出</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>渲染进程异常退出</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>渲染进程已崩溃</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>渲染进程已被终止</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web 不断关闭</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>WhatsApp Web 的渲染器不断终止（代码 %1），因此 Whatly 已停止重新加载它，以避免陷入循环。
+
+这通常是 GPU 或沙盒问题。请尝试在设置 → 性能中关闭 GPU 加速，然后重新加载。</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>渲染进程退出，代码：%1

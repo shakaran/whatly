@@ -2498,7 +2498,7 @@ Configure primero la contraseña en los ajustes.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>Mantén siempre visible la barra de pestañas de cuentas aunque solo haya una cuenta, para tener su "+" siempre a mano. Si está desactivada, la barra aparece cuando existe una segunda cuenta; aun así puedes añadir una con Ctrl+K.</translation>
+        <translation>Mantén siempre visible la barra de pestañas de cuentas aunque solo haya una cuenta, para tener su &quot;+&quot; siempre a mano. Si está desactivada, la barra aparece cuando existe una segunda cuenta; aun así puedes añadir una con Ctrl+K.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2636,7 +2636,7 @@ Configure primero la contraseña en los ajustes.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>Deja que Whatly dibuje el borde y la barra de título de la ventana en lugar del sistema, para que sigan el propio tema de Whatly. Por sí solo, esto solo cambia su aspecto; marca también "Ocultar la barra de título" para eliminar por completo la fila del título. Se aplica tras reiniciar.</translation>
+        <translation>Deja que Whatly dibuje el borde y la barra de título de la ventana en lugar del sistema, para que sigan el propio tema de Whatly. Por sí solo, esto solo cambia su aspecto; marca también &quot;Ocultar la barra de título&quot; para eliminar por completo la fila del título. Se aplica tras reiniciar.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ Esto cerrará tu sesión actual.
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>El proceso de renderizado terminó con normalidad</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>El proceso de renderizado terminó de forma anómala</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>El proceso de renderizado se bloqueó</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>El proceso de renderizado fue terminado</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web se cierra continuamente</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>El renderizador de WhatsApp Web sigue finalizando (código %1), por lo que Whatly ha dejado de recargarlo para evitar un bucle.
+
+Esto suele ser un problema de la GPU o del sandbox. Prueba a desactivar la aceleración por GPU en Ajustes → Rendimiento y luego recarga.</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>El proceso de renderizado terminó con el código: %1

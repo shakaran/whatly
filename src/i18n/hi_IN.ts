@@ -2498,7 +2498,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>जब केवल एक ही खाता हो तब भी खाता टैब पट्टी को दिखाए रखें, ताकि इसका "+" हमेशा हाथ में रहे। इसे बंद रखने पर पट्टी तभी दिखती है जब दूसरा खाता मौजूद हो; फिर भी आप Ctrl+K से खाता जोड़ सकते हैं।</translation>
+        <translation>जब केवल एक ही खाता हो तब भी खाता टैब पट्टी को दिखाए रखें, ताकि इसका &quot;+&quot; हमेशा हाथ में रहे। इसे बंद रखने पर पट्टी तभी दिखती है जब दूसरा खाता मौजूद हो; फिर भी आप Ctrl+K से खाता जोड़ सकते हैं।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2636,7 +2636,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>विंडो का किनारा और शीर्षक पट्टी सिस्टम के बजाय Whatly से बनवाएं, ताकि वे Whatly की अपनी थीम का अनुसरण करें। अकेले यह केवल उनका रूप बदलता है; शीर्षक पंक्ति को पूरी तरह हटाने के लिए "शीर्षक पट्टी छिपाएं" को भी चुनें। पुनः आरंभ के बाद लागू होता है।</translation>
+        <translation>विंडो का किनारा और शीर्षक पट्टी सिस्टम के बजाय Whatly से बनवाएं, ताकि वे Whatly की अपनी थीम का अनुसरण करें। अकेले यह केवल उनका रूप बदलता है; शीर्षक पंक्ति को पूरी तरह हटाने के लिए &quot;शीर्षक पट्टी छिपाएं&quot; को भी चुनें। पुनः आरंभ के बाद लागू होता है।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>रेंडर प्रक्रिया सामान्य रूप से समाप्त हुई</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>रेंडर प्रक्रिया असामान्य रूप से समाप्त हुई</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>रेंडर प्रक्रिया क्रैश हो गई</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>रेंडर प्रक्रिया समाप्त कर दी गई</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web बार-बार बंद हो रहा है</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>WhatsApp Web का रेंडरर बार-बार बंद हो रहा है (कोड %1), इसलिए एक लूप से बचने के लिए Whatly ने इसे फिर से लोड करना रोक दिया है।
+
+यह अक्सर GPU या सैंडबॉक्स की समस्या होती है। सेटिंग्स → प्रदर्शन में GPU त्वरण को बंद करके देखें, फिर फिर से लोड करें।</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>रेंडर प्रक्रिया इस कोड के साथ समाप्त हुई: %1

@@ -30,6 +30,14 @@ private:
   // Reads the local files from a drop and hands them to WhatsApp Web as an
   // attachment (issue #285). Returns true when at least one file was sent.
   bool dropFiles(const class QMimeData *mime);
+
+  // Break a runaway render-process crash loop (issue #28): when the renderer
+  // keeps terminating (e.g. repeatedly SIGTERM'd in a Flatpak), stop reloading
+  // and re-prompting so the user is not trapped in an endless dialog. Tracks how
+  // many terminations happened within a short window.
+  qint64 m_lastRenderCrashMs = 0;
+  int m_renderCrashCount = 0;
+  bool m_renderCrashDialogUp = false;
 };
 
 #endif // WEBVIEW_H

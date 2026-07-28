@@ -2498,7 +2498,7 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>Halte die Kontenleiste auch dann sichtbar, wenn es nur ein Konto gibt, damit ihr "+" immer griffbereit ist. Ist die Option aus, erscheint die Leiste, sobald ein zweites Konto vorhanden ist; hinzufügen kannst du eins trotzdem mit Ctrl+K.</translation>
+        <translation>Halte die Kontenleiste auch dann sichtbar, wenn es nur ein Konto gibt, damit ihr &quot;+&quot; immer griffbereit ist. Ist die Option aus, erscheint die Leiste, sobald ein zweites Konto vorhanden ist; hinzufügen kannst du eins trotzdem mit Ctrl+K.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2636,7 +2636,7 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>Lass Whatly den Rahmen und die Titelleiste des Fensters statt des Systems zeichnen, damit sie Whatlys eigenem Design folgen. Für sich genommen ändert das nur ihr Aussehen; aktiviere zusätzlich "Titelleiste ausblenden", um die Titelzeile ganz zu entfernen. Wird nach einem Neustart wirksam.</translation>
+        <translation>Lass Whatly den Rahmen und die Titelleiste des Fensters statt des Systems zeichnen, damit sie Whatlys eigenem Design folgen. Für sich genommen ändert das nur ihr Aussehen; aktiviere zusätzlich &quot;Titelleiste ausblenden&quot;, um die Titelzeile ganz zu entfernen. Wird nach einem Neustart wirksam.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ Möglicherweise ist auch ein vollständiger Neustart der Anwendung erforderlich!
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>Render-Prozess normal beendet</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>Render-Prozess unerwartet beendet</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>Render-Prozess abgestürzt</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>Render-Prozess abgebrochen</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web wird ständig geschlossen</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>Der Renderer von WhatsApp Web wird immer wieder beendet (Code %1), daher hat Whatly das Neuladen gestoppt, um eine Schleife zu vermeiden.
+
+Dies ist oft ein GPU- oder Sandbox-Problem. Deaktiviere die GPU-Beschleunigung unter Einstellungen → Leistung und lade dann neu.</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>Render-Prozess mit Code %1 beendet

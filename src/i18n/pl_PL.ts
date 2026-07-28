@@ -2498,7 +2498,7 @@ Najpierw ustaw hasło w ustawieniach.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>Zawsze pokazuj pasek kart kont, nawet gdy istnieje tylko jedno konto, aby jego "+" był zawsze pod ręką. Po wyłączeniu pasek pojawia się dopiero, gdy istnieje drugie konto; konto nadal możesz dodać skrótem Ctrl+K.</translation>
+        <translation>Zawsze pokazuj pasek kart kont, nawet gdy istnieje tylko jedno konto, aby jego &quot;+&quot; był zawsze pod ręką. Po wyłączeniu pasek pojawia się dopiero, gdy istnieje drugie konto; konto nadal możesz dodać skrótem Ctrl+K.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2636,7 +2636,7 @@ Najpierw ustaw hasło w ustawieniach.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>Pozwól, aby to Whatly rysował obramowanie i pasek tytułu okna zamiast systemu, dzięki czemu będą zgodne z własnym motywem Whatly. Samo w sobie zmienia to tylko ich wygląd; zaznacz również "Ukryj pasek tytułu", aby całkowicie usunąć wiersz tytułu. Zmiana działa po ponownym uruchomieniu.</translation>
+        <translation>Pozwól, aby to Whatly rysował obramowanie i pasek tytułu okna zamiast systemu, dzięki czemu będą zgodne z własnym motywem Whatly. Samo w sobie zmienia to tylko ich wygląd; zaznacz również &quot;Ukryj pasek tytułu&quot;, aby całkowicie usunąć wiersz tytułu. Zmiana działa po ponownym uruchomieniu.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ Może być również konieczne pełne ponowne uruchomienie aplikacji!</translati
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>Proces renderowania zakończył się normalnie</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>Proces renderowania zakończył się nieprawidłowo</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>Proces renderowania uległ awarii</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>Proces renderowania został zakończony</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web ciągle się zamyka</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>Renderer WhatsApp Web wciąż się kończy (kod %1), dlatego Whatly przestał go przeładowywać, aby uniknąć pętli.
+
+To często problem z GPU lub piaskownicą. Spróbuj wyłączyć akcelerację GPU w Ustawienia → Wydajność, a następnie przeładuj.</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>Proces renderowania zakończył się z kodem: %1

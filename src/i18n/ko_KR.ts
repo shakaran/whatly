@@ -2498,7 +2498,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>계정이 하나뿐이어도 계정 탭 막대를 항상 표시하여 "+"를 언제든 쓸 수 있게 합니다. 끄면 두 번째 계정이 생겼을 때 막대가 나타납니다. 그래도 Ctrl+K로 계정을 추가할 수 있습니다.</translation>
+        <translation>계정이 하나뿐이어도 계정 탭 막대를 항상 표시하여 &quot;+&quot;를 언제든 쓸 수 있게 합니다. 끄면 두 번째 계정이 생겼을 때 막대가 나타납니다. 그래도 Ctrl+K로 계정을 추가할 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2636,7 +2636,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>창의 테두리와 제목 표시줄을 시스템 대신 Whatly가 그리도록 하여 Whatly 자체 테마를 따르게 합니다. 이것만으로는 모양만 바뀝니다. 제목 줄을 완전히 없애려면 "제목 표시줄 숨기기"도 함께 선택하세요. 다시 시작한 뒤에 적용됩니다.</translation>
+        <translation>창의 테두리와 제목 표시줄을 시스템 대신 Whatly가 그리도록 하여 Whatly 자체 테마를 따르게 합니다. 이것만으로는 모양만 바뀝니다. 제목 줄을 완전히 없애려면 &quot;제목 표시줄 숨기기&quot;도 함께 선택하세요. 다시 시작한 뒤에 적용됩니다.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>렌더 프로세스가 정상적으로 종료되었습니다</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>렌더 프로세스가 비정상적으로 종료되었습니다</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>렌더 프로세스가 충돌했습니다</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>렌더 프로세스가 강제 종료되었습니다</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web가 계속 종료됩니다</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>WhatsApp Web의 렌더러가 계속 종료되어(코드 %1) 반복을 피하기 위해 Whatly가 다시 불러오기를 중단했습니다.
+
+이는 대개 GPU 또는 샌드박스 문제입니다. 설정 → 성능에서 GPU 가속을 끈 다음 다시 불러오세요.</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>렌더 프로세스가 코드 %1 (으)로 종료되었습니다

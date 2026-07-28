@@ -1,5 +1,13 @@
 ## Unreleased
 
+**No more endless "Render process exited" dialog loop (#28).** When WhatsApp
+Web's renderer kept terminating (seen in the Flatpak, repeatedly SIGTERM'd with
+code 15), every termination popped its own modal, stacking without end, and with
+auto-reload on it just relaunched a renderer that died again. Whatly now counts
+terminations within a short window and, after a few in a row, stops reloading and
+shows a single notice pointing at Settings → Performance (GPU) instead of looping.
+Thanks @KAMiKAZOW for the report.
+
 **Collapse the chat list to a strip of profile pictures.** A button in
 WhatsApp's own sidebar (and a command-palette entry) folds the chat list down to
 a column of avatars, giving that width back to the conversation; hovering an

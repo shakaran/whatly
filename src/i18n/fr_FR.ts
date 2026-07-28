@@ -2498,7 +2498,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>Gardez la barre d'onglets des comptes affichée même s'il n'y a qu'un seul compte, pour avoir son "+" toujours sous la main. Désactivée, la barre apparaît dès qu'un deuxième compte existe ; vous pouvez toujours en ajouter un avec Ctrl+K.</translation>
+        <translation>Gardez la barre d&apos;onglets des comptes affichée même s&apos;il n&apos;y a qu&apos;un seul compte, pour avoir son &quot;+&quot; toujours sous la main. Désactivée, la barre apparaît dès qu&apos;un deuxième compte existe ; vous pouvez toujours en ajouter un avec Ctrl+K.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2508,7 +2508,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1740"/>
         <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
-        <translation>Supprime la barre de titre et place ses boutons au bout de la barre d'onglets des comptes, comme le fait un navigateur, au lieu de leur réserver une ligne. Active le cadre de fenêtre personnalisé, dont elle a besoin. S'applique après un redémarrage.</translation>
+        <translation>Supprime la barre de titre et place ses boutons au bout de la barre d&apos;onglets des comptes, comme le fait un navigateur, au lieu de leur réserver une ligne. Active le cadre de fenêtre personnalisé, dont elle a besoin. S&apos;applique après un redémarrage.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1743"/>
@@ -2636,7 +2636,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>Laissez Whatly dessiner la bordure et la barre de titre de la fenêtre à la place du système, afin qu'elles suivent le thème propre de Whatly. À lui seul, cela ne change que leur apparence ; cochez aussi "Masquer la barre de titre" pour supprimer complètement la ligne de titre. S'applique après un redémarrage.</translation>
+        <translation>Laissez Whatly dessiner la bordure et la barre de titre de la fenêtre à la place du système, afin qu&apos;elles suivent le thème propre de Whatly. À lui seul, cela ne change que leur apparence ; cochez aussi &quot;Masquer la barre de titre&quot; pour supprimer complètement la ligne de titre. S&apos;applique après un redémarrage.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ Un redémarrage complet de l&apos;application peut aussi être nécessaire !</tr
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>Le processus de rendu s&apos;est arrêté normalement</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>Le processus de rendu s&apos;est arrêté anormalement</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>Le processus de rendu a planté</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>Le processus de rendu a été arrêté</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web ne cesse de se fermer</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>Le moteur de rendu de WhatsApp Web ne cesse de s'arrêter (code %1), c'est pourquoi Whatly a cessé de le recharger afin d'éviter une boucle.
+
+C'est souvent un problème de GPU ou de sandbox. Essayez de désactiver l'accélération GPU dans Paramètres → Performances, puis rechargez.</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>Le processus de rendu s&apos;est arrêté avec le code : %1

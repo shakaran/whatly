@@ -2498,7 +2498,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1730"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>أبقِ شريط علامات تبويب الحسابات ظاهرًا حتى عند وجود حساب واحد فقط، ليكون زر "+" في متناول يدك دائمًا. عند إيقافه يظهر الشريط بمجرد وجود حساب ثانٍ؛ ولا يزال بإمكانك إضافة حساب باستخدام Ctrl+K.</translation>
+        <translation>أبقِ شريط علامات تبويب الحسابات ظاهرًا حتى عند وجود حساب واحد فقط، ليكون زر &quot;+&quot; في متناول يدك دائمًا. عند إيقافه يظهر الشريط بمجرد وجود حساب ثانٍ؛ ولا يزال بإمكانك إضافة حساب باستخدام Ctrl+K.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1733"/>
@@ -2636,7 +2636,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>دع Whatly يرسم حدود النافذة وشريط عنوانها بدلاً من النظام، حتى يتبعا سمة Whatly الخاصة. هذا وحده يغيّر مظهرهما فقط؛ فعّل أيضًا "إخفاء شريط العنوان" للتخلص من صف العنوان بالكامل. يُطبَّق بعد إعادة التشغيل.</translation>
+        <translation>دع Whatly يرسم حدود النافذة وشريط عنوانها بدلاً من النظام، حتى يتبعا سمة Whatly الخاصة. هذا وحده يغيّر مظهرهما فقط؛ فعّل أيضًا &quot;إخفاء شريط العنوان&quot; للتخلص من صف العنوان بالكامل. يُطبَّق بعد إعادة التشغيل.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2108"/>
@@ -3225,27 +3225,41 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="48"/>
+        <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
         <translation>انتهت عملية العرض بشكل طبيعي</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="51"/>
+        <location filename="../webview.cpp" line="57"/>
         <source>Render process abnormal exit</source>
         <translation>انتهت عملية العرض بشكل غير طبيعي</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="60"/>
         <source>Render process crashed</source>
         <translation>تعطّلت عملية العرض</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="63"/>
         <source>Render process killed</source>
         <translation>أُنهيت عملية العرض</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="80"/>
+        <location filename="../webview.cpp" line="99"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>يستمر WhatsApp Web في الإغلاق</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>يستمر مُصيِّر WhatsApp Web في التوقف (الرمز %1)، لذلك توقف Whatly عن إعادة تحميله لتفادي حدوث حلقة مكررة.
+
+غالبًا ما تكون هذه مشكلة في GPU أو في بيئة العزل (sandbox). حاول إيقاف تسريع GPU من الإعدادات → الأداء، ثم أعد التحميل.</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="126"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>انتهت عملية العرض بالرمز: %1

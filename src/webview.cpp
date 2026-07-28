@@ -4,6 +4,7 @@
 #include <QChildEvent>
 #include <QClipboard>
 #include <QContextMenuEvent>
+#include <QDateTime>
 #include <QDragEnterEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
@@ -69,10 +70,46 @@ WebView::WebView(QWidget *parent)
             if (termStatus == QWebEnginePage::NormalTerminationStatus)
               return;
 
+            // Break a runaway crash loop (issue #28): if the renderer keeps
+            // terminating in a short window — seen in the Flatpak where it is
+            // repeatedly SIGTERM'd (code 15) — neither auto-reloading nor
+            // re-prompting helps; both just relaunch a renderer that dies again,
+            // stacking endless dialogs. Count terminations within a 60s window
+            // and, past a small threshold, stop and surface the problem once.
+            const qint64 now = QDateTime::currentMSecsSinceEpoch();
+            if (m_lastRenderCrashMs == 0 || now - m_lastRenderCrashMs > 60000)
+              m_renderCrashCount = 0;
+            m_lastRenderCrashMs = now;
+            ++m_renderCrashCount;
+            constexpr int kCrashLoopThreshold = 3;
+
             const bool autoRestart = SettingsManager::instance()
                                          .settings()
                                          .value("autoRestartOnCrash", false)
                                          .toBool();
+
+            if (m_renderCrashCount >= kCrashLoopThreshold) {
+              qWarning() << "Render process ended:" << status << "code"
+                         << statusCode << "-" << m_renderCrashCount
+                         << "times in a row; stopping the reload loop.";
+              // Only one notice, and not another until the user acts.
+              if (!m_renderCrashDialogUp) {
+                m_renderCrashDialogUp = true;
+                QMessageBox::warning(
+                    window(), tr("WhatsApp Web keeps closing"),
+                    tr("WhatsApp Web's renderer keeps terminating (code %1), so "
+                       "Whatly has stopped reloading it to avoid a loop.\n\n"
+                       "This is often a GPU or sandbox problem. Try turning off "
+                       "GPU acceleration in Settings → Performance, then reload.")
+                        .arg(statusCode));
+                m_renderCrashDialogUp = false;
+                // Let a later, calmer crash prompt again from scratch.
+                m_renderCrashCount = 0;
+                m_lastRenderCrashMs = 0;
+              }
+              return;
+            }
+
             if (autoRestart) {
               qWarning() << "Render process ended:" << status
                          << "code" << statusCode << "- reloading automatically.";
@@ -80,11 +117,16 @@ WebView::WebView(QWidget *parent)
               return;
             }
 
+            // Don't stack modal dialogs if terminations arrive back to back.
+            if (m_renderCrashDialogUp)
+              return;
+            m_renderCrashDialogUp = true;
             QMessageBox::StandardButton btn =
                 QMessageBox::question(window(), status,
                                       tr("Render process exited with code: %1\n"
                                          "Do you want to reload the page ?")
                                           .arg(statusCode));
+            m_renderCrashDialogUp = false;
             if (btn == QMessageBox::Yes)
               QTimer::singleShot(0, this, [this] { this->reload(); });
           });
