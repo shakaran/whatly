@@ -31,19 +31,23 @@ jobs:
     runs-on: ubuntu-latest
     container: archlinux:base-devel
     steps:
+      # actions/checkout needs git in the container; without it, it falls back to
+      # a REST tarball that does not land in the workspace as expected.
+      - name: Install git
+        run: pacman -Sy --noconfirm --needed git
       - uses: actions/checkout@v5
-      - name: Install toolchain
+      - name: Install build dependencies
         run: |
-          pacman -Syu --noconfirm --needed git cmake ninja \
-            qt6-webengine qt6-svg qt6-positioning qt6-webchannel qt6-tools \
-            sudo
+          pacman -Syu --noconfirm --needed cmake ninja \
+            qt6-webengine qt6-svg qt6-positioning qt6-webchannel qt6-tools
       - name: makepkg (source package)
         run: |
           # makepkg refuses to run as root, so build as an unprivileged user.
+          # All deps are installed above, so no -s (which would need root).
           useradd -m builder
           cp -r packaging/aur/whatly /tmp/whatly
           chown -R builder /tmp/whatly
-          sudo -u builder bash -c 'cd /tmp/whatly && makepkg -s --noconfirm --nocheck --clean'
+          sudo -u builder bash -c 'cd /tmp/whatly && makepkg --noconfirm --nocheck --clean'
 
   # ── Publish both packages to the AUR (only when the SSH secret is set) ───────
   publish:
