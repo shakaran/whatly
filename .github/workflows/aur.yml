@@ -1,0 +1,95 @@
+name: AUR
+
+# Build-test the AUR PKGBUILDs, and (once configured) publish them to the AUR on
+# every release. Publishing is a no-op until the maintainer sets it up once:
+#   1. Create an AUR account.
+#   2. Register an SSH public key with it.
+#   3. Add the matching PRIVATE key as the repo secret AUR_SSH_PRIVATE_KEY.
+# Until that secret exists, the publish steps are skipped (like the SignPath
+# signing in release-artifacts.yml). See packaging/aur/README.md.
+
+on:
+  push:
+    paths:
+      - 'packaging/aur/**'
+      - '.github/workflows/aur.yml'
+  pull_request:
+    paths:
+      - 'packaging/aur/**'
+      - '.github/workflows/aur.yml'
+  release:
+    types: [released]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag to publish (e.g. v6.7.2)'
+        required: true
+
+jobs:
+  # ── Build-test the source package in a real Arch container (no secrets) ──────
+  build-test:
+    runs-on: ubuntu-latest
+    container: archlinux:base-devel
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install toolchain
+        run: |
+          pacman -Syu --noconfirm --needed git cmake ninja \
+            qt6-webengine qt6-svg qt6-positioning qt6-webchannel qt6-tools \
+            sudo
+      - name: makepkg (source package)
+        run: |
+          # makepkg refuses to run as root, so build as an unprivileged user.
+          useradd -m builder
+          cp -r packaging/aur/whatly /tmp/whatly
+          chown -R builder /tmp/whatly
+          sudo -u builder bash -c 'cd /tmp/whatly && makepkg -s --noconfirm --nocheck --clean'
+
+  # ── Publish both packages to the AUR (only when the SSH secret is set) ───────
+  publish:
+    if: github.event_name == 'release' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    env:
+      AUR_SSH_PRIVATE_KEY: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Stamp version and checksums
+        if: env.AUR_SSH_PRIVATE_KEY != ''
+        run: |
+          tag="${{ github.event.inputs.tag || github.event.release.tag_name }}"
+          ver="${tag#v}"
+          echo "PKGVER=$ver" >> "$GITHUB_ENV"
+          sed -i "s/^pkgver=.*/pkgver=$ver/" \
+            packaging/aur/whatly/PKGBUILD packaging/aur/whatly-bin/PKGBUILD
+          # whatly-bin pins the AppImage checksum; fetch it from the release.
+          url="https://github.com/${GITHUB_REPOSITORY}/releases/download/${tag}/Whatly-${ver}-x86_64.AppImage"
+          sum="$(curl -fsSL "$url" | sha256sum | awk '{print $1}')"
+          [ -n "$sum" ] || { echo "::error::could not checksum $url"; exit 1; }
+          sed -i "s/^sha256sums=.*/sha256sums=('$sum')/" packaging/aur/whatly-bin/PKGBUILD
+
+      - name: Publish whatly (source)
+        if: env.AUR_SSH_PRIVATE_KEY != ''
+        uses: KSXGitHub/github-actions-deploy-aur@v2.7.2
+        with:
+          pkgname: whatly
+          pkgbuild: packaging/aur/whatly/PKGBUILD
+          commit_username: ${{ github.actor }}
+          commit_email: angel@guzmanmaeso.com
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          commit_message: "whatly ${{ env.PKGVER }}"
+          updpkgsums: false
+          test: true
+
+      - name: Publish whatly-bin (prebuilt)
+        if: env.AUR_SSH_PRIVATE_KEY != ''
+        uses: KSXGitHub/github-actions-deploy-aur@v2.7.2
+        with:
+          pkgname: whatly-bin
+          pkgbuild: packaging/aur/whatly-bin/PKGBUILD
+          commit_username: ${{ github.actor }}
+          commit_email: angel@guzmanmaeso.com
+          ssh_private_key: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
+          commit_message: "whatly-bin ${{ env.PKGVER }}"
+          updpkgsums: false
+          test: false
