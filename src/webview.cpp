@@ -15,6 +15,11 @@
 #include <QMimeData>
 #include <QMimeDatabase>
 #include <QUrl>
+#ifdef Q_OS_LINUX
+#include <QDBusConnection>
+#include <QDBusInterface>
+#include <QDBusReply>
+#endif
 #include <mainwindow.h>
 #include <QWebEngineContextMenuRequest>
 
@@ -159,17 +164,21 @@ bool WebView::eventFilter(QObject *watched, QEvent *event) {
   }
 
   // Drops arrive on the internal render widget, not the view. Only claim drops
-  // that carry local files (issue #285); leave in-page drags to Chromium.
+  // that carry files (issue #285); leave in-page drags to Chromium. A file
+  // dragged into a Flatpak sandbox comes as the XDG FileTransfer portal mime
+  // rather than a local URL (issue #32), so accept that too.
   if (event->type() == QEvent::DragEnter || event->type() == QEvent::DragMove) {
     auto *dragEvent = static_cast<QDragMoveEvent *>(event);
     const QMimeData *mime = dragEvent->mimeData();
-    if (mime && mime->hasUrls()) {
-      for (const QUrl &url : mime->urls()) {
-        if (url.isLocalFile()) {
-          dragEvent->acceptProposedAction();
-          return true;
-        }
-      }
+    bool droppable = mime &&
+        mime->hasFormat(QStringLiteral("application/vnd.portal.filetransfer"));
+    if (mime && !droppable && mime->hasUrls()) {
+      for (const QUrl &url : mime->urls())
+        if (url.isLocalFile()) { droppable = true; break; }
+    }
+    if (droppable) {
+      dragEvent->acceptProposedAction();
+      return true;
     }
   } else if (event->type() == QEvent::Drop) {
     auto *dropEvent = static_cast<QDropEvent *>(event);
@@ -181,9 +190,51 @@ bool WebView::eventFilter(QObject *watched, QEvent *event) {
   return QWebEngineView::eventFilter(watched, event);
 }
 
+// Turn a drop's contents into paths this process can actually read. Native
+// builds get the plain local paths from the URLs. Inside a Flatpak sandbox an
+// OS drag arrives via the XDG FileTransfer portal (mime
+// application/vnd.portal.filetransfer), and the host paths in the URLs are not
+// visible here; the portal's RetrieveFiles hands back readable paths under
+// /run/user/<uid>/doc/ instead (issue #32). Falls back to the URLs whenever the
+// portal path is absent or yields nothing.
+static QStringList resolveDroppedFilePaths(const QMimeData *mime) {
+  QStringList paths;
+#ifdef Q_OS_LINUX
+  const QString kPortalMime =
+      QStringLiteral("application/vnd.portal.filetransfer");
+  if (mime->hasFormat(kPortalMime)) {
+    QString key = QString::fromUtf8(mime->data(kPortalMime));
+    key.remove(QChar(u'\0'));
+    key = key.trimmed();
+    QDBusInterface portal(QStringLiteral("org.freedesktop.portal.Desktop"),
+                          QStringLiteral("/org/freedesktop/portal/desktop"),
+                          QStringLiteral("org.freedesktop.portal.FileTransfer"),
+                          QDBusConnection::sessionBus());
+    if (portal.isValid() && !key.isEmpty()) {
+      const QDBusReply<QStringList> reply =
+          portal.call(QStringLiteral("RetrieveFiles"), key, QVariantMap());
+      if (reply.isValid())
+        paths = reply.value();
+      else
+        qWarning() << "whatly: FileTransfer portal RetrieveFiles failed:"
+                   << reply.error().message();
+    }
+  }
+#endif
+  if (paths.isEmpty()) {
+    const QList<QUrl> urls = mime->urls();
+    for (const QUrl &url : urls)
+      if (url.isLocalFile())
+        paths << url.toLocalFile();
+  }
+  return paths;
+}
+
 bool WebView::dropFiles(const QMimeData *mime) {
-  if (!mime || !mime->hasUrls())
+  if (!mime)
     return false;
+
+  const QStringList paths = resolveDroppedFilePaths(mime);
 
   // Cap the total read into memory: the files are base64-encoded and handed to
   // the page as a JS string, so a huge drop would balloon the renderer.
@@ -192,10 +243,8 @@ bool WebView::dropFiles(const QMimeData *mime) {
   QList<DropAttach::File> files;
   QMimeDatabase mimeDb;
   qint64 total = 0;
-  for (const QUrl &url : mime->urls()) {
-    if (!url.isLocalFile())
-      continue;
-    const QFileInfo info(url.toLocalFile());
+  for (const QString &path : paths) {
+    const QFileInfo info(path);
     if (!info.isFile())
       continue;
     if (info.size() <= 0 || total + info.size() > kMaxTotalBytes) {
@@ -214,8 +263,17 @@ bool WebView::dropFiles(const QMimeData *mime) {
     files.append({info.fileName(), type, QString::fromLatin1(data.toBase64())});
   }
 
-  if (files.isEmpty())
+  if (files.isEmpty()) {
+    // Fail loudly: the drag was accepted but nothing could be read. In a Flatpak
+    // this is the sandbox hiding the host path when the portal route did not
+    // apply (issue #32); elsewhere it is an unreadable or empty file.
+    if (mime->hasUrls() ||
+        mime->hasFormat(QStringLiteral("application/vnd.portal.filetransfer")))
+      qWarning() << "whatly: a file was dropped but none could be read; in a "
+                    "Flatpak, files outside the granted folders are not visible "
+                    "unless delivered through the FileTransfer portal (issue #32)";
     return false;
+  }
 
   page()->runJavaScript(DropAttach::scriptSource(files));
   return true;

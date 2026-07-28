@@ -1,3 +1,32 @@
+## Unreleased
+
+**Collapse the chat list to a strip of profile pictures.** A button in
+WhatsApp's own sidebar (and a command-palette entry) folds the chat list down to
+a column of avatars, giving that width back to the conversation; hovering an
+avatar shows the name and last message, and the state is remembered. Chats only,
+withdrawn in Calls/Status/Channels. Thanks @gbmaizol.
+
+**A "Restart now" button for settings that need a relaunch.** It comes back as
+the same program with the same command line, restoring the windows and the
+settings page exactly as they were. The Cloud/Local API groups gained collapsible
+headers, an open section now has an outline, and picking a tray-menu entry brings
+the window to the front. Thanks @gbmaizol.
+
+**Optional account strip and a hide-the-title-bar option.** The account tab strip
+can now be hidden when there is only one account (off by default), and the custom
+window frame can merge the window buttons into the account strip to drop the
+title row entirely. Both under Window & zoom. Thanks @gbmaizol.
+
+**Esperanto interface.** A sixteenth language, contributed and dogfooded by
+@gbmaizol.
+
+**Drag and drop works in the Flatpak now (#32).** A file dragged from outside
+`~/Downloads` silently did nothing under the Flatpak sandbox, because the drop's
+host path was not visible inside it. The drop now resolves files through the XDG
+FileTransfer portal (sandbox-readable paths), falling back to the plain local
+path on native and Windows builds, and warns loudly when a drop yields nothing.
+Thanks @gbmaizol for the report.
+
 ## 6.7.2 (2026-07-28)
 
 **Drag and drop files to send them (#285).** Dropping one or more files onto the
