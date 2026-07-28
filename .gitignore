@@ -52,7 +52,9 @@ compile_commands.json
 *creator.user*
 
 qtwebengine_dictionaries
-whatly
+# Anchored to the repo root so it only ignores an in-source build binary, not
+# paths like packaging/aur/whatly/ (out-of-source builds live under build/).
+/whatly
 
 .idea
 build
