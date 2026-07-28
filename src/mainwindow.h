@@ -73,6 +73,14 @@ public slots:
   void toggleChatListStrip();
   // Keep that action's text saying what it will do next, for the palette.
   void refreshChatListStripAction();
+  // Relaunch this same executable with this same command line, so the settings
+  // that only apply at startup take effect without the user having to quit and
+  // find Whatly again. Everything about how the desk looks is saved first and
+  // put back by the new process.
+  void restartApp();
+  // Bring the window up and give it focus. The tray menu uses it: an action
+  // picked from there used to run with the window still behind everything.
+  void raiseWindow();
   void newChat();
 
 protected slots:

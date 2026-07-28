@@ -48,6 +48,9 @@ signals:
   // Emitted when the local API / webhook settings change, so the window can
   // (re)start or stop the server.
   void localApiSettingsChanged();
+  // "Restart now": the settings that only take effect at launch are worth
+  // nothing until the app comes back, so offer to do it here.
+  void restartRequested();
 
 public:
   explicit SettingsWidget(QWidget *parent = nullptr, int screenNumber = 0,
@@ -57,6 +60,11 @@ public:
 
 public slots:
   void refresh();
+  // Remember/replay everything about how this page is left: which sections are
+  // open, how far it is scrolled, where the window sits, and whether it was
+  // open at all — so a restart can put it back rather than merely reopening it.
+  void saveUiState();
+  void restoreUiState();
   void updateDefaultUAButton(const QString engineUA);
   void appLockSetChecked(bool checked);
   void muteAudioSetChecked(bool checked);
@@ -135,6 +143,7 @@ private slots:
   void on_cacheMaxSpinBox_valueChanged(int arg1);
   void on_autostartCheckBox_toggled(bool checked);
   void on_customWindowFrameCheckBox_toggled(bool checked);
+  void on_restartNowButton_clicked();
   void on_checkUpdatesCheckBox_toggled(bool checked);
   void on_clearCacheButton_clicked();
   void on_exportProfileButton_clicked();

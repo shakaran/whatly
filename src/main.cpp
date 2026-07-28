@@ -9,7 +9,11 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #endif
+#ifdef Q_OS_WIN
+#include <windows.h> // OpenProcess, for the restart handshake below
+#endif
 #include <QDebug>
+#include <QThread>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
@@ -371,8 +375,40 @@ static void setChromiumFlags() {
   qputenv("QTWEBENGINE_CHROMIUM_FLAGS", flags.toUtf8());
 }
 
+// "Restart now" starts this process while the old one is still shutting down.
+// SingleApplication would see that one and hand these arguments over instead of
+// starting up, leaving nothing running at all, so wait for it to go first. It
+// is a wait, not a kill: the old instance is quitting through its own quit
+// path, which is what writes the window layout and the settings out.
+static void waitForPreviousInstance(int argc, char *argv[]) {
+  qint64 pid = 0;
+  const QLatin1String flag("--restart-wait=");
+  for (int i = 1; i < argc; ++i) {
+    const QString arg = QString::fromLocal8Bit(argv[i]);
+    if (arg.startsWith(flag)) {
+      pid = arg.mid(flag.size()).toLongLong();
+      break;
+    }
+  }
+  if (pid <= 0)
+    return;
+#ifdef Q_OS_WIN
+  if (HANDLE h = OpenProcess(SYNCHRONIZE, FALSE, static_cast<DWORD>(pid))) {
+    WaitForSingleObject(h, 20000); // never hang for ever on a wedged instance
+    CloseHandle(h);
+  }
+#else
+  for (int i = 0; i < 400 && ::kill(static_cast<pid_t>(pid), 0) == 0; ++i)
+    QThread::msleep(50);
+#endif
+  // The lock file/socket can outlive the process by a moment.
+  QThread::msleep(300);
+}
+
 int main(int argc, char *argv[]) {
   DebugLog::install();   // before anything can log
+
+  waitForPreviousInstance(argc, argv);
 
   // Which account this is has to be settled before anything else: it feeds the
   // single-instance key below, the settings file, and the WebEngine storage,
@@ -557,6 +593,16 @@ int main(int argc, char *argv[]) {
                   "in its own window"),
       QStringLiteral("name"));
 
+  // Likewise consumed by waitForPreviousInstance() before QApplication existed.
+  // It MUST be registered even though nothing reads it here: the parser rejects
+  // an unknown option outright, so a restart would spawn a process that put up
+  // "Unknown option 'restart-wait'" and died, leaving nothing running at all.
+  QCommandLineOption restartWaitOption(
+      QStringList() << "restart-wait",
+      QObject::tr("Internal: wait for the process with this id to exit before "
+                  "starting, used by \"Restart now\""),
+      QStringLiteral("pid"));
+
   QCommandLineOption showAppWindowOption(
       QStringList() << "w"
                     << "show-window",
@@ -588,6 +634,7 @@ int main(int argc, char *argv[]) {
   parser.addOption(reloadAppOption);
   parser.addOption(newChatOption);
   parser.addOption(profileOption);
+  parser.addOption(restartWaitOption);
   QCommandLineOption unreadOption(
       QStringList() << "u"
                     << "unread",

@@ -226,6 +226,28 @@ void MainWindow::createTrayIcon() {
   m_trayIconMenu->addSeparator();
   m_trayIconMenu->addAction(m_quitAction);
 
+  // Anything picked from the tray menu is a request to use Whatly, so bring it
+  // to the front — it used to run with the window still buried, which is
+  // baffling for "Settings" or "New chat". The three that are ABOUT the window
+  // not being up are the exceptions: quitting, minimising, and the theme
+  // toggle, which is worth having without stealing focus.
+  connect(m_trayIconMenu, &QMenu::triggered, this, [this](QAction *action) {
+    if (action == m_quitAction || action == m_minimizeAction ||
+        action == m_toggleThemeAction)
+      return;
+    raiseWindow();
+    // Settings opens a window of its own, and raising the main window above it
+    // is worse than not raising anything: the page you asked for ends up behind
+    // and without the keyboard. Put it back on top once this menu has unwound.
+    if (action == m_settingsAction)
+      QTimer::singleShot(0, this, [this]() {
+        if (m_settingsWidget && m_settingsWidget->isVisible()) {
+          m_settingsWidget->raise();
+          m_settingsWidget->activateWindow();
+        }
+      });
+  });
+
   m_systemTrayIcon = new QSystemTrayIcon(m_trayIconNormal, this);
   m_systemTrayIcon->setContextMenu(m_trayIconMenu);
   connect(m_trayIconMenu, &QMenu::aboutToShow, this,
