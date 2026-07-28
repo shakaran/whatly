@@ -3,11 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GitHub Pages serves this project site under /whatly/. Pin the base so every
+     relative URL (images, favicon) resolves correctly whether the page is opened
+     as /whatly/ or /whatly, making the trailing slash optional. -->
+<base href="/whatly/">
 <title>Whatly — a feature-rich desktop client for WhatsApp Web</title>
 <meta name="description" content="Whatly puts WhatsApp Web in a native desktop window: chat themes, a privacy blur, scheduled messages, multiple accounts, spell-check, an app lock and more. MIT-licensed, for Linux, Windows and macOS.">
 <meta property="og:title" content="Whatly — a feature-rich desktop client for WhatsApp Web">
 <meta property="og:description" content="WhatsApp Web as a real desktop app: themes, privacy, scheduled messages, everywhere.">
-<meta property="og:image" content="img/banner-snapcraft.png">
+<meta property="og:image" content="https://shakaran.github.io/whatly/img/banner-snapcraft.png">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#053f39">
 <link rel="icon" type="image/png" href="favicon.png">
