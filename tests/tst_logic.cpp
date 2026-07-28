@@ -536,7 +536,7 @@ private slots:
   // that is not one of ours must fall back rather than put "undefined" into the
   // page, where it would take the whole preview down with it.
   void chatListStripPreviewSize() {
-    // Ask what the PLATFORM defaults to, which means asking with nothing
+    // Ask what a FRESH INSTALL defaults to, which means asking with nothing
     // stored. Reading the current id instead would return whatever a previous
     // run left behind — the settings store outlives the process, and
     // tst_settings builds a real SettingsWidget after this suite — and the
@@ -544,10 +544,10 @@ private slots:
     // than against the default it is meant to check.
     QSettings &settings = SettingsManager::instance().settings();
     settings.remove(QStringLiteral("chatListStripPreviewSize"));
-    const QString platformDefault = ChatListStrip::currentPreviewSizeId();
+    const QString freshDefault = ChatListStrip::currentPreviewSizeId();
     bool known = false;
     for (const ChatListStrip::PreviewSize &size : ChatListStrip::previewSizes())
-      if (size.id == platformDefault)
+      if (size.id == freshDefault)
         known = true;
     QVERIFY(known);
 
@@ -573,7 +573,7 @@ private slots:
     QVERIFY(zoomAt < guardAt);
 
     ChatListStrip::setCurrentPreviewSizeId(QStringLiteral("nonsense"));
-    QCOMPARE(ChatListStrip::currentPreviewSizeId(), platformDefault);
+    QCOMPARE(ChatListStrip::currentPreviewSizeId(), freshDefault);
     QVERIFY(!ChatListStrip::scriptSource().contains(
         QLatin1String("__whatlyStripZoom = undefined")));
 

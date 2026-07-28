@@ -27,12 +27,11 @@ static const char kStripWidth[] = "97px";
 // (panel width / this), so a smaller number means both smaller text AND more
 // room for it before anything wraps.
 //
-// One number does not suit every platform. 0.7 was settled on against Windows'
-// font rendering; the same build on Linux came back "slightly too small", the
-// text there being drawn lighter and narrower at the same nominal size. So the
-// default is per-platform and the user can override it — this is a matter of
-// eyesight and screen as much as of toolkit, and nobody else's measurement
-// settles it.
+// 0.7 was settled on against Windows' font rendering first, but the same build
+// on Linux came back "slightly too small" and Windows agreed once there was a
+// control to compare against. Everyone starts on the middle step, and the user
+// can override it — this is a matter of eyesight and screen as much as of
+// toolkit, and nobody else's measurement settles it.
 static const char kPreviewZoomSmall[] = "0.7";
 static const char kPreviewZoomMedium[] = "0.85";
 static const char kPreviewZoomLarge[] = "1";
@@ -588,13 +587,7 @@ QString jsStringLiteral(const QString &value) {
 }
 
 // Which step a fresh installation starts on. See the note on the zooms above.
-QString defaultPreviewSizeId() {
-#ifdef Q_OS_WIN
-  return QStringLiteral("small");
-#else
-  return QStringLiteral("medium");
-#endif
-}
+QString defaultPreviewSizeId() { return QStringLiteral("medium"); }
 
 } // namespace
 
