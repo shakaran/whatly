@@ -554,15 +554,28 @@ private slots:
     ChatListStrip::setCollapsed(true);
     ChatListStrip::setCurrentPreviewSizeId(QStringLiteral("large"));
     QCOMPARE(ChatListStrip::currentPreviewSizeId(), QStringLiteral("large"));
-    QVERIFY(ChatListStrip::scriptSource().contains(QLatin1String("ZOOM = 1;")));
+    QVERIFY(ChatListStrip::scriptSource().contains(
+        QLatin1String("__whatlyStripZoom = 1;")));
     ChatListStrip::setCurrentPreviewSizeId(QStringLiteral("small"));
-    QVERIFY(
-        ChatListStrip::scriptSource().contains(QLatin1String("ZOOM = 0.7;")));
+    const QString source = ChatListStrip::scriptSource();
+    QVERIFY(source.contains(QLatin1String("__whatlyStripZoom = 0.7;")));
+
+    // The preview outlives the run that defined it, so the size has to reach it
+    // through the window rather than through a captured variable, and it has to
+    // be set BEFORE the once-per-page guard — everything past that guard is
+    // skipped on a re-run, which is exactly what changing the setting does.
+    QVERIFY(source.contains(QLatin1String("window.__whatlyStripZoom ||")));
+    const int zoomAt = source.indexOf(QLatin1String("__whatlyStripZoom ="));
+    const int guardAt =
+        source.indexOf(QLatin1String("__whatlyStripReady) return;"));
+    QVERIFY(zoomAt >= 0);
+    QVERIFY(guardAt >= 0);
+    QVERIFY(zoomAt < guardAt);
 
     ChatListStrip::setCurrentPreviewSizeId(QStringLiteral("nonsense"));
     QCOMPARE(ChatListStrip::currentPreviewSizeId(), platformDefault);
     QVERIFY(!ChatListStrip::scriptSource().contains(
-        QLatin1String("ZOOM = undefined")));
+        QLatin1String("__whatlyStripZoom = undefined")));
 
     // Leave the setting UNSET rather than pinned to the default, so the next
     // run starts from the same place this one did.

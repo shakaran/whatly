@@ -128,12 +128,12 @@ static const char kScriptTemplate[] = R"JS(
 (function () {
   'use strict';
   var TIP = 'whatly-chatlist-tip';
-  var ZOOM = __ZOOM__;
   try {
     // The LIVE desired state, replaced by every re-run of this script. Anything
-    // that outlives one run — the timer below — must read it from here rather
-    // than close over it. See the note on sync().
+    // that outlives one run — the timer and the preview below — must read it
+    // from here rather than close over it. See the note on sync().
     window.__whatlyStripCss = __CSS__;
+    window.__whatlyStripZoom = __ZOOM__;
     var el = document.getElementById('whatly-chatlist-strip');
 
     var untag = function (attr) {
@@ -436,9 +436,12 @@ R"JS(
       // row rather than less, and the name cannot collide with the timestamp.
       var w = Math.round(window.__whatlyPaneWidth ||
                          document.documentElement.clientWidth * 0.4);
+      // Live, not captured: this function outlives the run that defined it, so a
+      // captured size would be the one chosen when the page loaded, for ever.
+      var zoom = window.__whatlyStripZoom || 1;
       var clone = row.cloneNode(true);
       clone.removeAttribute('id');
-      clone.style.zoom = ZOOM;
+      clone.style.zoom = zoom;
       // A chat row is built to hold exactly one line of preview, so its inner
       // blocks have fixed heights and centre what is in them. Let the message
       // wrap inside that and it grows both ways, pushing itself up over the
@@ -472,7 +475,7 @@ R"JS(
       // box means a longer one is clipped at the BOTTOM — the ordinary way to
       // treat text that does not fit, and no worse for it, since the middle of
       // a long message is not what anyone is reading a preview for.
-      t.style.height = Math.round(r.height * 2 * ZOOM) + 'px';
+      t.style.height = Math.round(r.height * 2 * zoom) + 'px';
       t.style.display = 'block';
       var h = t.getBoundingClientRect().height;
       t.style.left =
