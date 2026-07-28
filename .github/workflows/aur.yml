@@ -1,15 +1,14 @@
 name: AUR
 
 # Build-test the AUR PKGBUILDs, and publish them to the AUR. The publish job runs
-# on a version tag push (a release bumps the PKGBUILDs, so the tag matches the
-# paths filter) or a manual dispatch, and authenticates with the
-# AUR_SSH_PRIVATE_KEY repo secret. See packaging/aur/README.md.
+# on a version tag push (every release) or a manual dispatch, and authenticates
+# with the AUR_SSH_PRIVATE_KEY repo secret. Build-test also runs on PRs that
+# touch the packaging. See packaging/aur/README.md.
 
 on:
   push:
-    paths:
-      - 'packaging/aur/**'
-      - '.github/workflows/aur.yml'
+    tags:
+      - 'v*'
   pull_request:
     paths:
       - 'packaging/aur/**'

@@ -318,12 +318,13 @@ chmod +x Whatly-*-x86_64.AppImage
 **Debian/Ubuntu and Fedora** — `debian/` and `packaging/rpm/whatly.spec` build a
 native `.deb` and RPM; see [packaging/README.md](packaging/README.md).
 
-**Arch (AUR)** — the community [`whatsie-git`](https://aur.archlinux.org/packages/whatsie-git)
-package (maintained by [M0Rf30](https://github.com/M0Rf30)) tracks the **upstream**
-WhatSie project, not this fork:
+**Arch (AUR)** — two packages: [`whatly`](https://aur.archlinux.org/packages/whatly)
+builds from the release source, [`whatly-bin`](https://aur.archlinux.org/packages/whatly-bin)
+installs the prebuilt AppImage (no compilation).
 
 ```bash
-yay -S whatsie-git
+yay -S whatly        # build from source
+yay -S whatly-bin    # prebuilt
 ```
 
 Prebuilt binaries are attached to each [release](https://github.com/shakaran/whatly/releases);
