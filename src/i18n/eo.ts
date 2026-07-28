@@ -2045,7 +2045,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     <message>
         <location filename="../settingswidget.ui" line="732"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Progresinta — ne tuŝu tion krom se vi scias precize kion vi faras. Nenorma uzantagento povas igi Vacapon rifuzi ŝargiĝi, kaj nekutimaj valoroj riskas, ke via konto ĉe Vacapo estu markita aŭ nigralistigita.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fakula — ne tuŝu tion krom se vi scias precize kion vi faras. Nenorma uzantagento povas igi Vacapon rifuzi ŝargiĝi, kaj nekutimaj valoroj riskas, ke via konto ĉe Vacapo estu markita aŭ nigralistigita.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="742"/>
@@ -2675,7 +2675,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     <message>
         <location filename="../settingswidget.cpp" line="470"/>
         <source>Advanced</source>
-        <translation>Progresinta</translation>
+        <translation>Fakula</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="704"/>
