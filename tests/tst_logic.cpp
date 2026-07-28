@@ -536,6 +536,14 @@ private slots:
   // that is not one of ours must fall back rather than put "undefined" into the
   // page, where it would take the whole preview down with it.
   void chatListStripPreviewSize() {
+    // Ask what the PLATFORM defaults to, which means asking with nothing
+    // stored. Reading the current id instead would return whatever a previous
+    // run left behind — the settings store outlives the process, and
+    // tst_settings builds a real SettingsWidget after this suite — and the
+    // fallback assertion below would then be comparing against that rather
+    // than against the default it is meant to check.
+    QSettings &settings = SettingsManager::instance().settings();
+    settings.remove(QStringLiteral("chatListStripPreviewSize"));
     const QString platformDefault = ChatListStrip::currentPreviewSizeId();
     bool known = false;
     for (const ChatListStrip::PreviewSize &size : ChatListStrip::previewSizes())
@@ -556,7 +564,9 @@ private slots:
     QVERIFY(!ChatListStrip::scriptSource().contains(
         QLatin1String("ZOOM = undefined")));
 
-    ChatListStrip::setCurrentPreviewSizeId(platformDefault);
+    // Leave the setting UNSET rather than pinned to the default, so the next
+    // run starts from the same place this one did.
+    settings.remove(QStringLiteral("chatListStripPreviewSize"));
     ChatListStrip::setCollapsed(false);
   }
 
@@ -2497,7 +2507,18 @@ int main(int argc, char *argv[]) {
   QStandardPaths::setTestModeEnabled(true);
 
   int status = 0;
-  auto run = [&](QObject *obj) { status |= QTest::qExec(obj, argc, argv); };
+  // qExec returns the number of failed functions, but prints the detail to
+  // stdout — which is lost whenever the suite runs somewhere without a console
+  // (CI logs that capture only stderr, IDE runners, ctest on Windows). Naming
+  // the failing class on stderr costs nothing and turns "logic failed" into a
+  // place to look.
+  auto run = [&](QObject *obj) {
+    const int failed = QTest::qExec(obj, argc, argv);
+    if (failed != 0)
+      fprintf(stderr, "TEST CLASS FAILED: %s (%d function(s))\n",
+              obj->metaObject()->className(), failed);
+    status |= failed;
+  };
   { TstUtils t;               run(&t); }
   { TstUtilsMore t;           run(&t); }
   { TstCommon t;              run(&t); }
