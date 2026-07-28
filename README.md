@@ -12,6 +12,7 @@ experimental **macOS** build.
 [![Release](https://img.shields.io/github/v/release/shakaran/whatly?sort=semver&color=0d9488&label=release)](https://github.com/shakaran/whatly/releases/latest)
 [![Windows Build](https://github.com/shakaran/whatly/actions/workflows/windows-build.yml/badge.svg)](https://github.com/shakaran/whatly/actions/workflows/windows-build.yml)
 [![Downloads](https://img.shields.io/github/downloads/shakaran/whatly/total?color=0d9488&label=downloads)](https://github.com/shakaran/whatly/releases)
+[![Downloads (latest)](https://img.shields.io/github/downloads/shakaran/whatly/latest/total?color=0d9488&label=downloads%40latest)](https://github.com/shakaran/whatly/releases/latest)
 [![License: MIT](https://img.shields.io/github/license/shakaran/whatly?color=0d9488)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/shakaran/whatly?color=0d9488)](https://github.com/shakaran/whatly/stargazers)
 ![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20Windows%20%7C%20macOS-0d9488)
