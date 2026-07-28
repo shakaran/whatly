@@ -1,3 +1,12 @@
+## Unreleased
+
+**Drag and drop files to send them (#285).** Dropping one or more files onto the
+window now hands them to the open chat as attachments, opening WhatsApp Web's
+media preview just like a real drop. Qt WebEngine does not forward an OS file
+drop to the page, so the drop is caught, the files are read (up to 64 MB total),
+and rebuilt as a `DataTransfer` on a synthetic drop event. Works for any file
+type, not just images. Covered by unit tests (`TstDropAttach`).
+
 ## 6.7.1 (2026-07-28)
 
 **Cleaner monochrome tray icon (#14).** The faint dark outline under the light

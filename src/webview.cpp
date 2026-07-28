@@ -4,19 +4,30 @@
 #include <QChildEvent>
 #include <QClipboard>
 #include <QContextMenuEvent>
+#include <QDragEnterEvent>
+#include <QDragMoveEvent>
+#include <QDropEvent>
+#include <QFile>
+#include <QFileInfo>
 #include <QGuiApplication>
 #include <QImage>
 #include <QMenu>
 #include <QMimeData>
+#include <QMimeDatabase>
+#include <QUrl>
 #include <mainwindow.h>
 #include <QWebEngineContextMenuRequest>
 
+#include "dropattach.h"
 #include "settingsmanager.h"
 
 using QWebEngineContextMenuData = QWebEngineContextMenuRequest;
 
 WebView::WebView(QWidget *parent)
     : QWebEngineView(parent) {
+
+  // Accept dropped files so they can be sent as attachments (issue #285).
+  setAcceptDrops(true);
 
   QObject *parentMainWindow = this->parent();
   while (!parentMainWindow->objectName().contains("MainWindow")) {
@@ -146,7 +157,68 @@ bool WebView::eventFilter(QObject *watched, QEvent *event) {
     if (keyEvent->matches(QKeySequence::Paste) && pasteClipboardImage())
       return true; // handled here; skip the native paste that would drop it
   }
+
+  // Drops arrive on the internal render widget, not the view. Only claim drops
+  // that carry local files (issue #285); leave in-page drags to Chromium.
+  if (event->type() == QEvent::DragEnter || event->type() == QEvent::DragMove) {
+    auto *dragEvent = static_cast<QDragMoveEvent *>(event);
+    const QMimeData *mime = dragEvent->mimeData();
+    if (mime && mime->hasUrls()) {
+      for (const QUrl &url : mime->urls()) {
+        if (url.isLocalFile()) {
+          dragEvent->acceptProposedAction();
+          return true;
+        }
+      }
+    }
+  } else if (event->type() == QEvent::Drop) {
+    auto *dropEvent = static_cast<QDropEvent *>(event);
+    if (dropFiles(dropEvent->mimeData())) {
+      dropEvent->acceptProposedAction();
+      return true;
+    }
+  }
   return QWebEngineView::eventFilter(watched, event);
+}
+
+bool WebView::dropFiles(const QMimeData *mime) {
+  if (!mime || !mime->hasUrls())
+    return false;
+
+  // Cap the total read into memory: the files are base64-encoded and handed to
+  // the page as a JS string, so a huge drop would balloon the renderer.
+  constexpr qint64 kMaxTotalBytes = 64LL * 1024 * 1024;
+
+  QList<DropAttach::File> files;
+  QMimeDatabase mimeDb;
+  qint64 total = 0;
+  for (const QUrl &url : mime->urls()) {
+    if (!url.isLocalFile())
+      continue;
+    const QFileInfo info(url.toLocalFile());
+    if (!info.isFile())
+      continue;
+    if (info.size() <= 0 || total + info.size() > kMaxTotalBytes) {
+      qWarning() << "whatly: skipping dropped file (too large for the drop"
+                    " buffer):"
+                 << info.fileName();
+      continue;
+    }
+    QFile file(info.absoluteFilePath());
+    if (!file.open(QIODevice::ReadOnly))
+      continue;
+    const QByteArray data = file.readAll();
+    total += data.size();
+    const QString type =
+        mimeDb.mimeTypeForFileNameAndData(info.fileName(), data).name();
+    files.append({info.fileName(), type, QString::fromLatin1(data.toBase64())});
+  }
+
+  if (files.isEmpty())
+    return false;
+
+  page()->runJavaScript(DropAttach::scriptSource(files));
+  return true;
 }
 
 bool WebView::pasteClipboardImage() {

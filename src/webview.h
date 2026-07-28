@@ -26,6 +26,10 @@ private:
   // Hands a clipboard image to the page when Qt WebEngine would otherwise drop
   // it. Returns true when it handled the paste, so the native one is skipped.
   bool pasteClipboardImage();
+
+  // Reads the local files from a drop and hands them to WhatsApp Web as an
+  // attachment (issue #285). Returns true when at least one file was sent.
+  bool dropFiles(const class QMimeData *mime);
 };
 
 #endif // WEBVIEW_H

@@ -58,6 +58,7 @@
 #include "linkeddevicename.h"
 #include "performance.h"
 #include "trayicon.h"
+#include "dropattach.h"
 #include "networkproxy.h"
 #include "notificationrules.h"
 #include "autostart.h"
@@ -1688,6 +1689,47 @@ private slots:
   }
 };
 
+// Drag-and-drop attachments (issue #285): the script generator rebuilds dropped
+// files as a DataTransfer and dispatches a synthetic drop on the open chat.
+class TstDropAttach : public QObject {
+  Q_OBJECT
+private slots:
+  void emptyGivesNoScript() {
+    QVERIFY(DropAttach::scriptSource({}).isEmpty());
+  }
+
+  void buildsDropScript() {
+    QList<DropAttach::File> files;
+    files.append({QStringLiteral("photo.png"), QStringLiteral("image/png"),
+                  QStringLiteral("QUJD")}); // "ABC"
+    files.append({QStringLiteral("doc.pdf"),
+                  QStringLiteral("application/pdf"), QStringLiteral("REVG")});
+    const QString js = DropAttach::scriptSource(files);
+    QVERIFY(!js.isEmpty());
+    // Uses a DataTransfer and fires the drop sequence on the chat panel.
+    QVERIFY(js.contains(QLatin1String("new DataTransfer()")));
+    QVERIFY(js.contains(QLatin1String("\"drop\"")));
+    QVERIFY(js.contains(QLatin1String("DragEvent")));
+    QVERIFY(js.contains(QLatin1String("#main")));
+    // Both files (name, type and payload) are embedded as JSON.
+    QVERIFY(js.contains(QLatin1String("photo.png")));
+    QVERIFY(js.contains(QLatin1String("application/pdf")));
+    QVERIFY(js.contains(QLatin1String("QUJD")));
+    QVERIFY(js.contains(QLatin1String("REVG")));
+  }
+
+  // A filename with characters special to JSON/JS must stay safely quoted.
+  void escapesAwkwardNames() {
+    QList<DropAttach::File> files;
+    files.append({QStringLiteral("a\"b'c.png"), QStringLiteral("image/png"),
+                  QStringLiteral("QQ==")});
+    const QString js = DropAttach::scriptSource(files);
+    QVERIFY(!js.isEmpty());
+    // The double quote is JSON-escaped, so the script stays well-formed.
+    QVERIFY(js.contains(QLatin1String("a\\\"b'c.png")));
+  }
+};
+
 // ─────────────────────────────────────────────────────────────────────────────
 // CustomJs: the addon manager stores files, tracks per-addon enabled state, and
 // builds a combined guarded script. Runs in QStandardPaths test mode.
@@ -2423,6 +2465,7 @@ int main(int argc, char *argv[]) {
   { TstZoom t;                run(&t); }
   { TstPerformance t;         run(&t); }
   { TstTrayIcon t;            run(&t); }
+  { TstDropAttach t;          run(&t); }
   { TstShortcuts t;           run(&t); }
   { TstBackup t;              run(&t); }
   { TstScreenLock t;          run(&t); }
