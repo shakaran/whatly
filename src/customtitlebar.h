@@ -15,12 +15,25 @@ class QToolButton;
 class CustomTitleBar : public QWidget {
   Q_OBJECT
 public:
+  // Standalone is the bar described above: its own row, with the icon and the
+  // window title. Merged drops both and keeps only the window buttons, so it
+  // can sit at the right-hand end of the account tab strip and let the tabs
+  // themselves be the title bar — Chrome-style, one row instead of two.
+  enum class Mode { Standalone, Merged };
+
   // `window` is the top-level window this bar decorates.
-  explicit CustomTitleBar(QWidget *window, QWidget *parent = nullptr);
+  explicit CustomTitleBar(QWidget *window, QWidget *parent = nullptr,
+                          Mode mode = Mode::Standalone);
 
   // Whether the custom-frame mode is enabled in settings.
   static bool isEnabled();
   static void setEnabled(bool enabled);
+
+  // Whether the account tabs share the title bar's row. A refinement of the
+  // custom frame rather than a mode of its own, so it is only ever true when
+  // isEnabled() is.
+  static bool tabsInTitleBar();
+  static void setTabsInTitleBar(bool enabled);
 
 protected:
   void mousePressEvent(QMouseEvent *event) override;

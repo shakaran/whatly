@@ -54,6 +54,20 @@ static QString unreadCountFile() {
   return dir + QStringLiteral("/whatly-unread") + AppProfile::suffix();
 }
 
+bool MainWindow::alwaysShowAccountTabs() {
+  return SettingsManager::instance()
+      .settings()
+      .value(QStringLiteral("alwaysShowAccountTabs"), false)
+      .toBool();
+}
+
+void MainWindow::setAlwaysShowAccountTabs(bool enabled) {
+  SettingsManager::instance().settings().setValue(
+      QStringLiteral("alwaysShowAccountTabs"), enabled);
+}
+
+void MainWindow::refreshAccountStrip() { refreshAccountTabs(); }
+
 void MainWindow::buildAccountArea() {
   m_focusOrder.append(nullptr); // the main window starts as the focused ("main") one
 
@@ -69,8 +83,11 @@ void MainWindow::buildAccountArea() {
   layout->setContentsMargins(0, 0, 0, 0);
   layout->setSpacing(0);
 
-  // Optional client-side title bar (frameless mode). Sits above everything.
-  if (CustomTitleBar::isEnabled())
+  // Optional client-side title bar (frameless mode). Sits above everything —
+  // unless the tabs are to share its row, in which case it is built further
+  // down, beside them.
+  const bool tabsInTitleBar = CustomTitleBar::tabsInTitleBar();
+  if (CustomTitleBar::isEnabled() && !tabsInTitleBar)
     layout->addWidget(new CustomTitleBar(this, central));
 
   m_accountBar = new AccountTabBar(central);
@@ -115,7 +132,21 @@ void MainWindow::buildAccountArea() {
   m_displayStack->addWidget(m_accountStack);   // page 0: tabs
   m_displayStack->addWidget(m_gridScroll);     // page 1: grid (scrollable)
 
-  layout->addWidget(m_accountBar);
+  if (tabsInTitleBar) {
+    // Chrome-style: the tab strip IS the title bar, which buys back the whole
+    // 34px the separate bar was costing. The two stay separate widgets on
+    // purpose — Grid view hides the strip, and a window still needs its
+    // minimise/maximise/close buttons when it does.
+    auto *titleRow = new QHBoxLayout;
+    titleRow->setContentsMargins(0, 0, 0, 0);
+    titleRow->setSpacing(0);
+    titleRow->addWidget(m_accountBar, 0);
+    titleRow->addWidget(
+        new CustomTitleBar(this, central, CustomTitleBar::Mode::Merged), 1);
+    layout->addLayout(titleRow);
+  } else {
+    layout->addWidget(m_accountBar);
+  }
   layout->addWidget(m_displayStack);
 
   // In frameless mode there is no native resize edge, so give the window a
@@ -832,10 +863,13 @@ void MainWindow::refreshAccountTabs() {
   m_accountBar->setTabData(plus, QVariant()); // no data marks the "+" tab
   m_accountBar->setTabToolTip(plus, tr("Add another account"));
 
-  // Always show the strip in tabbed mode (Grid hides it separately), even for a
-  // single account, so the trailing "+" is a visible, discoverable way to add
-  // another account — otherwise the only entry point was Ctrl+K.
-  m_accountBar->setVisible(viewMode() != ViewMode::Grid);
+  // With more than one account the strip is the only way to reach the others,
+  // so it is always up in tabbed mode (Grid hides it separately). With a single
+  // account it is a row of chrome showing one tab, and the "+" it carries is
+  // reachable from Ctrl+K, the command palette and the Add-account action — so
+  // it stays out of the way unless asked for.
+  m_accountBar->setVisible(viewMode() != ViewMode::Grid &&
+                           (docked.size() > 1 || alwaysShowAccountTabs()));
   m_accountBar->setCurrentIndex(activeTab);
 
   refreshDetachedStrips(); // keep every detached window's strip in step too

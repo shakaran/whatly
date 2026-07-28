@@ -144,6 +144,8 @@ private slots:
   void on_autostartCheckBox_toggled(bool checked);
   void on_customWindowFrameCheckBox_toggled(bool checked);
   void on_restartNowButton_clicked();
+  void on_tabsInTitleBarCheckBox_toggled(bool checked);
+  void on_alwaysShowAccountTabsCheckBox_toggled(bool checked);
   void on_checkUpdatesCheckBox_toggled(bool checked);
   void on_clearCacheButton_clicked();
   void on_exportProfileButton_clicked();
@@ -194,6 +196,10 @@ private slots:
   void on_deletePersistentData_clicked();
 
 private:
+  // Keep the two window-frame checkboxes telling the truth about each other:
+  // hiding the title bar switches the custom frame on, and dropping the custom
+  // frame means the title bar is back whatever the other box remembers.
+  void updateTitleBarOptionState();
   void loadPerformanceSettings();
   void loadNetworkSettings();
   void loadCloudApiSettings();
