@@ -1,3 +1,16 @@
+whatly (6.8.0) unstable; urgency=medium
+
+  * Collapse the chat list to a strip of profile pictures (#25).
+  * "Restart now" button for launch-only settings; tray menu brings the window
+    to the front; collapsible Cloud/Local API groups (#27).
+  * Optional account strip with one account, and a hide-the-title-bar option (#26).
+  * Esperanto interface, a 16th language (#29).
+  * Drag and drop attachments now work in the Flatpak (FileTransfer portal) (#32).
+  * No more endless render-crash dialog loop (#28).
+  * AUR packaging (#30).
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Tue, 28 Jul 2026 20:00:00 +0200
+
 whatly (6.7.2) unstable; urgency=medium
 
   * Drag and drop files onto the window to send them as attachments (any file

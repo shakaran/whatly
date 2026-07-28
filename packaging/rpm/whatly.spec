@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        6.7.2
+Version:        6.8.0
 Release:        1%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
@@ -53,6 +53,13 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Tue Jul 28 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.8.0-1
+- Collapse the chat list to a strip of profile pictures (#25); "Restart now"
+  button and tray-brings-window-to-front (#27); optional account strip and a
+  hide-the-title-bar option (#26); Esperanto as a 16th language (#29); drag and
+  drop attachments now work in the Flatpak via the FileTransfer portal (#32); no
+  more endless render-crash dialog loop (#28); AUR packaging (#30); see
+  CHANGELOG.md
 * Tue Jul 28 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.7.2-1
 - Drag and drop files onto the window to send them as attachments, any file type
   (#285); see CHANGELOG.md

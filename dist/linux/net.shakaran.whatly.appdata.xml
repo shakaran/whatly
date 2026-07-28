@@ -108,6 +108,20 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="6.8.0" date="2026-07-28">
+      <description>
+        <p>A feature release:</p>
+        <ul>
+          <li>Collapse the chat list to a strip of profile pictures, giving the conversation the width</li>
+          <li>A "Restart now" button for settings that only take effect at launch; the tray menu now brings the window to the front</li>
+          <li>Optionally keep the account strip with a single account, and optionally hide the title bar</li>
+          <li>Esperanto interface (a sixteenth language)</li>
+          <li>Drag and drop attachments now work inside the Flatpak sandbox</li>
+          <li>No more endless "render process exited" dialog loop when the page keeps crashing</li>
+          <li>Available on the AUR (whatly and whatly-bin)</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.7.2" date="2026-07-28">
       <description>
         <p>Drag and drop files onto the window to send them as attachments (any file type), opening WhatsApp Web's media editor for images and videos or the document preview otherwise.</p>

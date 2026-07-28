@@ -1,4 +1,4 @@
-## Unreleased
+## 6.8.0 (2026-07-28)
 
 **No more endless "Render process exited" dialog loop (#28).** When WhatsApp
 Web's renderer kept terminating (seen in the Flatpak, repeatedly SIGTERM'd with
@@ -34,6 +34,11 @@ host path was not visible inside it. The drop now resolves files through the XDG
 FileTransfer portal (sandbox-readable paths), falling back to the plain local
 path on native and Windows builds, and warns loudly when a drop yields nothing.
 Thanks @gbmaizol for the report.
+
+**Install from the AUR (#30).** Arch packaging landed: `whatly` (builds from the
+release source with Qt 6) and `whatly-bin` (the prebuilt AppImage). CI
+build-tests the source package and publishes both to the AUR on each release.
+Thanks @mysteryx93.
 
 ## 6.7.2 (2026-07-28)
 
