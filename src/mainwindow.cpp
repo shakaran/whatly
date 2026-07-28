@@ -685,11 +685,14 @@ void MainWindow::initSettingWidget() {
   connect(m_settingsWidget, &SettingsWidget::webTweaksChanged, m_settingsWidget,
           [=]() {
             // Update the profile scripts for future page loads, and apply the
-            // change to the already-loaded page (Qt does not propagate profile
-            // script changes to an existing page).
-            WebTweaks::install(WebEngineProfileManager::instance().profile());
-            if (m_webEngine && m_webEngine->page())
-              m_webEngine->page()->runJavaScript(WebTweaks::scriptSource());
+            // change to the already-loaded pages (Qt does not propagate profile
+            // script changes to an existing page). Every account, not just the
+            // current one: these buttons are drawn inside each account's page,
+            // and in grid view they are all on screen at once.
+            WebEngineProfileManager::instance().applyUserSettings();
+            for (const Account &account : m_accounts)
+              if (account.view && account.view->page())
+                account.view->page()->runJavaScript(WebTweaks::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::followSystemThemeChanged,

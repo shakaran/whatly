@@ -225,7 +225,21 @@ static const char kScriptTemplate[] = R"JS(
             if (kids[i].querySelector('button')) cells.push(kids[i]);
             if (kids[i].contains(more)) break;
           }
-          cells.slice(0, 4).forEach(function (c) {
+          // The "more" cell is kept whatever else is dropped. The stylesheet
+          // hides every child that is NOT tagged, so trimming the list to the
+          // first four would take the ▾ off screen entirely on any account that
+          // shows a fourth pill — WhatsApp adds "Groups" for some — and there
+          // would then be no way to reach the other lists without expanding.
+          // So the EARLIER pills give way instead, and ▾ keeps the last cell.
+          var moreCell = null;
+          for (var j = cells.length - 1; j >= 0; j--)
+            if (cells[j].contains(more)) {
+              moreCell = cells.splice(j, 1)[0];
+              break;
+            }
+          var shown = cells.slice(0, moreCell ? 3 : 4);
+          if (moreCell) shown.push(moreCell);
+          shown.forEach(function (c) {
             c.setAttribute('data-whatly-cell', '1');
             var b = c.querySelector('button');
             if (!b) return;
@@ -328,6 +342,8 @@ R"JS(
         return false;
       }
       prepare();
+      // A fresh pane gets a fresh budget of catch-up attempts; see the timer.
+      window.__whatlyStripTries = 0;
       if (!style) {
         style = document.createElement('style');
         style.id = 'whatly-chatlist-strip';
@@ -366,9 +382,21 @@ R"JS(
           sync();
         // On a cold start the script runs before WhatsApp has built the filter
         // row, so this is also how the buttons first get their letters.
-        else if (applied && document.querySelector('#all-filter') &&
-                 !document.querySelector('[data-whatly-filters]'))
+        //
+        // Bounded, because prepare() measures every div in the document and
+        // this runs once a second: if WhatsApp ever renames #additional-filters
+        // the tagging can never succeed, and an unbounded retry would then pay
+        // for a full-document layout read every second for as long as the app
+        // is open. Twenty tries is far more than a cold start needs, and the
+        // budget is reset by sync() whenever the pane is rebuilt. The counter
+        // lives on window, NOT in this closure — the timer outlives the run
+        // that created it, same reasoning as __whatlyStripCss above.
+        else if (applied && (window.__whatlyStripTries || 0) < 20 &&
+                 document.querySelector('#all-filter') &&
+                 !document.querySelector('[data-whatly-filters]')) {
+          window.__whatlyStripTries = (window.__whatlyStripTries || 0) + 1;
           prepare();
+        }
         // A net under the click handler: the panel can also be opened from the
         // keyboard, and this costs one querySelector on a node that is empty
         // whenever no panel is open.
