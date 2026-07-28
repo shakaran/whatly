@@ -186,6 +186,21 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>ChatListStrip</name>
+    <message>
+        <source>Small</source>
+        <translation>Malgranda</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>Meza</translation>
+    </message>
+    <message>
+        <source>Large</source>
+        <translation>Granda</translation>
+    </message>
+</context>
+<context>
     <name>ChatTheme</name>
     <message>
         <location filename="../chattheme.cpp" line="156"/>
@@ -854,6 +869,22 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <source>Waiting for network…</source>
         <translation>Atendado de la reto…</translation>
     </message>
+    <message>
+        <source>Restart</source>
+        <translation>Restartigo</translation>
+    </message>
+    <message>
+        <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
+        <translation>Whatly ne povis lanĉi novan instancon, do ĝi ne fermis ĉi tiun. Bonvolu eliri kaj remalfermi ĝin.</translation>
+    </message>
+    <message>
+        <source>Expand the chat list</source>
+        <translation>Malfaldi la liston de babiloj</translation>
+    </message>
+    <message>
+        <source>Collapse the chat list</source>
+        <translation>Faldi la liston de babiloj</translation>
+    </message>
 </context>
 <context>
     <name>MoreApps</name>
@@ -1383,6 +1414,20 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <source>Reset zoom</source>
         <comment>WebTweaks</comment>
         <translation>Restarigi la zomon</translation>
+    </message>
+    <message>
+        <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
+        <translation>Interna: atendi la finiĝon de la procezo kun ĉi tiu identigilo antaŭ ol lanĉiĝi; uzata de “Restartigi nun”</translation>
+    </message>
+    <message>
+        <source>Collapse the chat list</source>
+        <comment>WebTweaks</comment>
+        <translation>Faldi la liston de babiloj</translation>
+    </message>
+    <message>
+        <source>Show the chat list</source>
+        <comment>WebTweaks</comment>
+        <translation>Montri la liston de babiloj</translation>
     </message>
 </context>
 <context>
@@ -2907,6 +2952,50 @@ Eble vi ankaŭ bezonos kompletan restartigon de la aplikaĵo!</translation>
         <location filename="../settingswidget.cpp" line="2045"/>
         <source>Do you want to proceed?</source>
         <translation>Ĉu vi volas daŭrigi?</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aldonas butonon al la propra flanka breto de Vacapo, kiu faldas la liston de babiloj en strion de profilbildoj, donante al la konversacio la larĝon kiun ĝi uzis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Chat-list collapse button in WhatsApp&apos;s sidebar</source>
+        <translation>Falda butono de la listo de babiloj en la flanka breto de Vacapo</translation>
+    </message>
+    <message>
+        <source>Collapsed chat preview</source>
+        <translation>Antaŭrigardo en la faldita listo</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform&apos;s font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kiom grande desegni la antaŭrigardon kiu aperas kiam vi ŝvebas super bildo en la faldita listo de babiloj. La defaŭlta valoro konvenas al la tiparbildigo de ĉi tiu platformo; elektu alian se ĝi legiĝas tro malgranda aŭ tro granda sur via ekrano.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
+        <translation>Lasi Whatly desegni la randon kaj la titolbreton de la fenestro anstataŭ la sistemon, por ke ili sekvu la propran etoson de Whatly. Per si mem tio ŝanĝas nur ilian aspekton; marku ankaŭ “Kaŝi la titolbreton” por tute forigi la titolan vicon. Efektiviĝas post restartigo.</translation>
+    </message>
+    <message>
+        <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
+        <translation>Teni la strion de kontolangetoj videbla eĉ kiam ekzistas nur unu konto, por ke ĝia “+” ĉiam estu ĉemane. Kiam ĝi estas malŝaltita, la strio aperas post kiam ekzistas dua konto; vi tamen povas aldoni konton per Ctrl+K.</translation>
+    </message>
+    <message>
+        <source>Show the account tabs even with a single account</source>
+        <translation>Montri la kontolangetojn eĉ kun unu sola konto</translation>
+    </message>
+    <message>
+        <source>Restart Whatly now so the settings above take effect. The windows, and this page with it, come back exactly as they are.</source>
+        <translation>Restartigi Whatly nun por ke la supraj agordoj efektiviĝu. La fenestroj, kaj ĉi tiu paĝo kun ili, revenos ĝuste tiaj, kiaj ili estas.</translation>
+    </message>
+    <message>
+        <source>Restart now</source>
+        <translation>Restartigi nun</translation>
+    </message>
+    <message>
+        <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
+        <translation>Forigi la titolbreton kaj meti ĝiajn butonojn ĉe la fino de la strio de kontolangetoj, kiel faras retumilo, anstataŭ doni al ili propran vicon. Ŝaltas la propran fenestran kadron, kiun ĝi bezonas. Efektiviĝas post restartigo.</translation>
+    </message>
+    <message>
+        <source>Hide the title bar (requires restart)</source>
+        <translation>Kaŝi la titolbreton (postulas restartigon)</translation>
     </message>
 </context>
 <context>
