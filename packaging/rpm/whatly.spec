@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        6.7.1
+Version:        6.7.2
 Release:        1%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
@@ -53,6 +53,9 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Tue Jul 28 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.7.2-1
+- Drag and drop files onto the window to send them as attachments, any file type
+  (#285); see CHANGELOG.md
 * Tue Jul 28 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.7.1-1
 - Windows releases now ship a proper .msi installer alongside the portable zip;
   softened the monochrome tray icon outline so it is not noticeable on a dark

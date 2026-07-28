@@ -1,3 +1,10 @@
+whatly (6.7.2) unstable; urgency=medium
+
+  * Drag and drop files onto the window to send them as attachments (any file
+    type), opening WhatsApp Web's media editor or document preview (#285).
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Tue, 28 Jul 2026 18:00:00 +0200
+
 whatly (6.7.1) unstable; urgency=medium
 
   * Windows releases now ship a proper .msi installer alongside the portable

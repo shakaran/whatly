@@ -1,4 +1,4 @@
-## Unreleased
+## 6.7.2 (2026-07-28)
 
 **Drag and drop files to send them (#285).** Dropping one or more files onto the
 window now hands them to the open chat as attachments, opening WhatsApp Web's

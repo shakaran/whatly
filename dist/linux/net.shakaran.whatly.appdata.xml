@@ -108,6 +108,11 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="6.7.2" date="2026-07-28">
+      <description>
+        <p>Drag and drop files onto the window to send them as attachments (any file type), opening WhatsApp Web's media editor for images and videos or the document preview otherwise.</p>
+      </description>
+    </release>
     <release version="6.7.1" date="2026-07-28">
       <description>
         <p>A small patch release:</p>
