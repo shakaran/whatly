@@ -18,6 +18,7 @@
 #include <QLineEdit>
 #include <QMouseEvent>
 #include <QCheckBox>
+#include <QPushButton>
 #include <QToolButton>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -370,17 +371,29 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
         p->removeItem(inner);
       dst->addLayout(inner);
     };
-    // Move one control (detached from its source layout) onto its own row.
-    const auto moveWidget = [](QVBoxLayout *dst, QWidget *w, QLayout *src) {
+    // Move one control (detached from its source layout) onto its own row. An
+    // `end` widget rides at the right-hand end of that row instead of costing a
+    // row of its own — the shape the zoom controls already use.
+    const auto moveWidget = [](QVBoxLayout *dst, QWidget *w, QLayout *src,
+                               QWidget *end = nullptr) {
       if (!dst || !w)
         return;
       if (src)
         src->removeWidget(w);
-      dst->addWidget(w);
+      if (!end) {
+        dst->addWidget(w);
+        return;
+      }
+      auto *h = new QHBoxLayout;
+      h->setContentsMargins(0, 0, 0, 0);
+      h->addWidget(w);
+      h->addStretch(1);
+      h->addWidget(end);
+      dst->addLayout(h);
     };
     // Move a label + field pair onto a single row.
     const auto moveRow = [](QVBoxLayout *dst, QWidget *a, QWidget *b,
-                            QLayout *src) {
+                            QLayout *src, QWidget *end = nullptr) {
       if (!dst)
         return;
       auto *h = new QHBoxLayout;
@@ -395,7 +408,20 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
           src->removeWidget(b);
         h->addWidget(b, 1);
       }
+      if (end)
+        h->addWidget(end);
       dst->addLayout(h);
+    };
+    // A second "Restart now", for a section that has one setting needing a
+    // restart rather than a run of them. Same words and same tooltip as the
+    // button in the .ui, so there is nothing extra to translate.
+    const auto restartButton = [this]() {
+      auto *b = new QPushButton(ui->restartNowButton->text(), this);
+      b->setToolTip(ui->restartNowButton->toolTip());
+      b->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Fixed);
+      connect(b, &QPushButton::clicked, this,
+              &SettingsWidget::restartRequested);
+      return b;
     };
     // Move a label + a nested control-layout pair onto a single row.
     const auto moveRowL = [](QVBoxLayout *dst, QWidget *a, QLayout *sub,
@@ -422,7 +448,8 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
 
     // ── Basics ──────────────────────────────────────────────
     auto *basics = newSection(tr("Basics"));
-    moveRow(body(basics), ui->languageLabel, ui->languageComboBox, G);
+    moveRow(body(basics), ui->languageLabel, ui->languageComboBox, G,
+            restartButton());
     moveLayout(body(basics), ui->gridLayout_7); // default download location
     moveWidget(body(basics), ui->useNativeFileDialog, G);
     moveWidget(body(basics), ui->identifyInLinkedDevicesCheckBox, G);
@@ -469,9 +496,12 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     moveWidget(body(window), ui->minimizeOnTrayIconClick, G);
     moveWidget(body(window), ui->rememberWindowLayoutCheckBox, G);
     moveWidget(body(window), ui->hideTrayIconCheckBox, G);
-    // Right beside the settings that need one, rather than wherever the .ui
-    // happened to put it.
-    moveWidget(body(window), ui->restartNowButton, G);
+    // Right beside the setting that needs one, rather than wherever the .ui
+    // happened to put it — which also brings the frame checkbox over from
+    // "Network & Startup", where it had ended up next to the autostart one and
+    // was not where anyone looked for it.
+    moveWidget(body(window), ui->customWindowFrameCheckBox, G,
+               ui->restartNowButton);
     moveLayout(body(window), ui->gridLayout_9); // zoom block
 
     // ── Advanced ────────────────────────────────────────────
