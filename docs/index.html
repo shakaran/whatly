@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- GitHub Pages serves this project site under /whatly/. Pin the base so every
-     relative URL (images, favicon) resolves correctly whether the page is opened
-     as /whatly/ or /whatly, making the trailing slash optional. -->
-<base href="/whatly/">
+<!-- Root-absolute asset paths (/whatly/…) so they resolve the same whether the
+     page is opened as /whatly or /whatly/ — the trailing slash is optional and
+     no <base> is needed. Canonical URL is the slashless form. -->
+<link rel="canonical" href="https://shakaran.github.io/whatly">
+<meta property="og:url" content="https://shakaran.github.io/whatly">
 <title>Whatly — a feature-rich desktop client for WhatsApp Web</title>
 <meta name="description" content="Whatly puts WhatsApp Web in a native desktop window: chat themes, a privacy blur, scheduled messages, multiple accounts, spell-check, an app lock and more. MIT-licensed, for Linux, Windows and macOS.">
 <meta property="og:title" content="Whatly — a feature-rich desktop client for WhatsApp Web">
@@ -14,7 +15,7 @@
 <meta property="og:image" content="https://shakaran.github.io/whatly/img/banner-snapcraft.png">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#053f39">
-<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/png" href="/whatly/favicon.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -23,7 +24,7 @@
   "applicationCategory": "CommunicationApplication",
   "operatingSystem": "Linux, Windows, macOS",
   "description": "A feature-rich, MIT-licensed desktop client for WhatsApp Web: chat themes, a privacy blur, scheduled messages, multiple accounts, spell-check and an app lock.",
-  "url": "https://shakaran.github.io/whatly/",
+  "url": "https://shakaran.github.io/whatly",
   "downloadUrl": "https://github.com/shakaran/whatly/releases",
   "softwareVersion": "6.7.2",
   "license": "https://opensource.org/licenses/MIT",
@@ -200,7 +201,7 @@
 
 <nav class="top">
   <div class="wrap">
-    <a class="brand" href="#"><img src="favicon.png" alt=""><span>Whatly</span></a>
+    <a class="brand" href="#"><img src="/whatly/favicon.png" alt=""><span>Whatly</span></a>
     <div class="links">
       <a href="#video" class="hide-sm">Video</a>
       <a href="#highlights">Features</a>
@@ -216,7 +217,7 @@
 
 <header>
   <div class="wrap">
-    <img class="banner" src="img/banner-snapcraft.png" alt="Whatly">
+    <img class="banner" src="/whatly/img/banner-snapcraft.png" alt="Whatly">
     <h1>WhatsApp Web, as a real desktop app</h1>
     <p class="tag">A feature-rich, MIT-licensed desktop client for WhatsApp Web — chat themes,
        a privacy blur, scheduled messages, multiple accounts, spell-check, an app lock and more.</p>
@@ -301,11 +302,11 @@
     <p class="compare-note">✓ full&nbsp;&nbsp;·&nbsp;&nbsp;~ partial or needs a workaround&nbsp;&nbsp;·&nbsp;&nbsp;✗ not available&nbsp;&nbsp;·&nbsp;&nbsp;— not applicable</p>
     <div class="theme-showcase" id="theme-showcase">
       <figure>
-        <img src="img/card-main-dark.png" alt="Whatly's main window in a dark theme, with the privacy blur on" loading="lazy">
+        <img src="/whatly/img/card-main-dark.png" alt="Whatly's main window in a dark theme, with the privacy blur on" loading="lazy">
         <figcaption>🌙 Dark theme, privacy blur on</figcaption>
       </figure>
       <figure>
-        <img src="img/card-main-light.png" alt="Whatly's main window in a light theme" loading="lazy">
+        <img src="/whatly/img/card-main-light.png" alt="Whatly's main window in a light theme" loading="lazy">
         <figcaption>☀️ Light theme</figcaption>
       </figure>
     </div>
@@ -378,18 +379,18 @@
     <h2>Everything it does</h2>
     <p class="sub">One codebase, a proper desktop app. Click any shot to enlarge.</p>
     <div class="grid" id="gallery">
-      <img src="img/card-main-dark.png" alt="Main window, dark theme" loading="lazy">
-      <img src="img/card-main-light.png" alt="Main window, light theme" loading="lazy">
-      <img src="img/card-scheduled.png" alt="Scheduled messages" loading="lazy">
-      <img src="img/card-themes.png" alt="Fourteen chat themes" loading="lazy">
-      <img src="img/card-chat.png" alt="Chat themes and a privacy blur" loading="lazy">
-      <img src="img/card-accounts.png" alt="Multiple accounts" loading="lazy">
-      <img src="img/card-lock.png" alt="App lock" loading="lazy">
-      <img src="img/card-spellcheck.png" alt="Multi-language spell checker" loading="lazy">
-      <img src="img/card-shortcuts.png" alt="Keyboard shortcuts" loading="lazy">
-      <img src="img/card-tray.png" alt="A smarter system tray" loading="lazy">
-      <img src="img/card-notifications.png" alt="Native notifications" loading="lazy">
-      <img src="img/card-installers.png" alt="Available everywhere" loading="lazy">
+      <img src="/whatly/img/card-main-dark.png" alt="Main window, dark theme" loading="lazy">
+      <img src="/whatly/img/card-main-light.png" alt="Main window, light theme" loading="lazy">
+      <img src="/whatly/img/card-scheduled.png" alt="Scheduled messages" loading="lazy">
+      <img src="/whatly/img/card-themes.png" alt="Fourteen chat themes" loading="lazy">
+      <img src="/whatly/img/card-chat.png" alt="Chat themes and a privacy blur" loading="lazy">
+      <img src="/whatly/img/card-accounts.png" alt="Multiple accounts" loading="lazy">
+      <img src="/whatly/img/card-lock.png" alt="App lock" loading="lazy">
+      <img src="/whatly/img/card-spellcheck.png" alt="Multi-language spell checker" loading="lazy">
+      <img src="/whatly/img/card-shortcuts.png" alt="Keyboard shortcuts" loading="lazy">
+      <img src="/whatly/img/card-tray.png" alt="A smarter system tray" loading="lazy">
+      <img src="/whatly/img/card-notifications.png" alt="Native notifications" loading="lazy">
+      <img src="/whatly/img/card-installers.png" alt="Available everywhere" loading="lazy">
     </div>
   </div>
 </section>
