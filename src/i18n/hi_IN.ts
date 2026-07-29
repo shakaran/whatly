@@ -1673,6 +1673,14 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Play sound</source>
+        <translation>ध्वनि चलाएँ</translation>
+    </message>
+    <message>
+        <source>Ask the notification service to play a sound for new messages.</source>
+        <translation>नए संदेशों के लिए सूचना सेवा से ध्वनि चलाने का अनुरोध करें।</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="647"/>
         <source>Interface font size</source>
         <translation>इंटरफ़ेस फ़ॉन्ट आकार</translation>

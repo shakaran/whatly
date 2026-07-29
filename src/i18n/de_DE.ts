@@ -1673,6 +1673,14 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Play sound</source>
+        <translation>Ton abspielen</translation>
+    </message>
+    <message>
+        <source>Ask the notification service to play a sound for new messages.</source>
+        <translation>Den Benachrichtigungsdienst bitten, bei neuen Nachrichten einen Ton abzuspielen.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="647"/>
         <source>Interface font size</source>
         <translation>Schriftgröße der Oberfläche</translation>

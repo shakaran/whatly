@@ -1400,6 +1400,15 @@ Notification::EventPtr MainWindow::notify(const QString& title, const QString& b
   ntf->addAction("open", tr("Open"));
   ntf->setHint("action-icons", false);
   ntf->setHintString("image-path", "whatly");
+  // Ask the notification service to play a sound for the message (issue #120).
+  // "message-new-instant" is the freedesktop sound-naming-spec event for a new
+  // instant message; the daemon (KDE, GNOME, ...) maps it to its own sound. Some
+  // desktops stay silent without this hint, so it is on by default.
+  if (SettingsManager::instance()
+          .settings()
+          .value("notificationSound", true)
+          .toBool())
+    ntf->setHintString("sound-name", "message-new-instant");
   return ntf;
 }
 #endif

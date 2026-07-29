@@ -1673,6 +1673,14 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Play sound</source>
+        <translation>音を鳴らす</translation>
+    </message>
+    <message>
+        <source>Ask the notification service to play a sound for new messages.</source>
+        <translation>新着メッセージで通知サービスに音を鳴らすよう要求します。</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="647"/>
         <source>Interface font size</source>
         <translation>インターフェースのフォントサイズ</translation>

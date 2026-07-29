@@ -1673,6 +1673,14 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Play sound</source>
+        <translation>Putar suara</translation>
+    </message>
+    <message>
+        <source>Ask the notification service to play a sound for new messages.</source>
+        <translation>Minta layanan notifikasi memutar suara untuk pesan baru.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="647"/>
         <source>Interface font size</source>
         <translation>Ukuran font antarmuka</translation>

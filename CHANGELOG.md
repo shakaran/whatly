@@ -1,5 +1,10 @@
 ## Unreleased
 
+**A sound for new-message notifications (#120).** Notifications now ask the
+desktop's notification service to play its new-message sound, which some setups
+stayed silent without. It is on by default and can be turned off under
+Notifications with the new "Play sound" option.
+
 **Voice and video calls now open in their own Whatly window.** WhatsApp Web's
 "Move to new window" during a call (the call popout) used to do nothing: the
 window request was handed to the browser or discarded, so the popped-out call had

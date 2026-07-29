@@ -1679,6 +1679,14 @@ Imposta la password nelle Impostazioni.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Play sound</source>
+        <translation>Riproduci suono</translation>
+    </message>
+    <message>
+        <source>Ask the notification service to play a sound for new messages.</source>
+        <translation>Chiedi al servizio di notifiche di riprodurre un suono per i nuovi messaggi.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="647"/>
         <source>Interface font size</source>
         <translation>Dimensione del carattere dell&apos;interfaccia</translation>

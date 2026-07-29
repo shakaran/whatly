@@ -1669,6 +1669,14 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Play sound</source>
+        <translation>Ludi sonon</translation>
+    </message>
+    <message>
+        <source>Ask the notification service to play a sound for new messages.</source>
+        <translation>Peti la sciigan servon ludi sonon por novaj mesaĝoj.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="14"/>
         <source>Form</source>
         <translation>Formularo</translation>

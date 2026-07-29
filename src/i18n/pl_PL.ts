@@ -1673,6 +1673,14 @@ Najpierw ustaw hasło w ustawieniach.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Play sound</source>
+        <translation>Odtwórz dźwięk</translation>
+    </message>
+    <message>
+        <source>Ask the notification service to play a sound for new messages.</source>
+        <translation>Poproś usługę powiadomień o odtworzenie dźwięku dla nowych wiadomości.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="647"/>
         <source>Interface font size</source>
         <translation>Rozmiar czcionki interfejsu</translation>

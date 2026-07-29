@@ -1673,6 +1673,14 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Play sound</source>
+        <translation>Geluid afspelen</translation>
+    </message>
+    <message>
+        <source>Ask the notification service to play a sound for new messages.</source>
+        <translation>Vraag de meldingsservice om een geluid af te spelen bij nieuwe berichten.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="647"/>
         <source>Interface font size</source>
         <translation>Lettergrootte van de interface</translation>

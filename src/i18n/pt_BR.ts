@@ -1673,6 +1673,14 @@ Defina primeiro a senha nas configurações.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Play sound</source>
+        <translation>Reproduzir som</translation>
+    </message>
+    <message>
+        <source>Ask the notification service to play a sound for new messages.</source>
+        <translation>Pede ao serviço de notificações para reproduzir um som para novas mensagens.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="647"/>
         <source>Interface font size</source>
         <translation>Tamanho da fonte da interface</translation>

@@ -1673,6 +1673,14 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Play sound</source>
+        <translation>Jouer un son</translation>
+    </message>
+    <message>
+        <source>Ask the notification service to play a sound for new messages.</source>
+        <translation>Demander au service de notifications de jouer un son pour les nouveaux messages.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="647"/>
         <source>Interface font size</source>
         <translation>Taille de police de l&apos;interface</translation>

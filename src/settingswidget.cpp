@@ -150,6 +150,10 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
                                              .settings()
                                              .value("notificationCombo", 0)
                                              .toInt());
+  ui->notificationSoundCheckBox->setChecked(SettingsManager::instance()
+                                                .settings()
+                                                .value("notificationSound", true)
+                                                .toBool());
   ui->useNativeFileDialog->setChecked(SettingsManager::instance()
                                           .settings()
                                           .value("useNativeFileDialog", true)
@@ -880,6 +884,10 @@ void SettingsWidget::clearAllData() {
 void SettingsWidget::on_notificationCheckBox_toggled(bool checked) {
   SettingsManager::instance().settings().setValue("disableNotificationPopups",
                                                   checked);
+}
+
+void SettingsWidget::on_notificationSoundCheckBox_toggled(bool checked) {
+  SettingsManager::instance().settings().setValue("notificationSound", checked);
 }
 
 void SettingsWidget::on_themeComboBox_currentIndexChanged(int index) {

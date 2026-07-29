@@ -99,6 +99,7 @@ private slots:
   void on_dismissEmojiPanelCheckBox_toggled(bool checked);
   void on_languageComboBox_currentIndexChanged(int index);
   void on_notificationCheckBox_toggled(bool checked);
+  void on_notificationSoundCheckBox_toggled(bool checked);
   void on_notificationCombo_currentIndexChanged(int index);
   void on_notificationTimeOutspinBox_valueChanged(int arg1);
   void on_resetAppAutoLockPushButton_clicked();
