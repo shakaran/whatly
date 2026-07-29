@@ -999,6 +999,16 @@ Anda dapat menarik akun mana pun ke jendelanya sendiri: klik kanan tabnya dan pi
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../common.cpp" line="31"/>
+        <source>WhatsApp Web %1</source>
+        <translation>WhatsApp Web %1</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="33"/>
+        <source>Build token: %1</source>
+        <translation>Token build: %1</translation>
+    </message>
+    <message>
         <location filename="../about.cpp" line="94"/>
         <location filename="../about.cpp" line="172"/>
         <source>Show Debug Info</source>

@@ -3,6 +3,8 @@
 #include <QString>
 #include <QIcon>
 
+class QUrl;
+
 // userAgent
 extern QString defaultUserAgentStr;
 
@@ -15,6 +17,18 @@ extern bool defaultAppAutoLock;
 extern double defaultZoomFactorMaximized;
 
 QIcon themeIcon(const QString& name, const QString& fallback);
+
+// A window request (window.open / target="_blank") whose URL lives on
+// web.whatsapp.com is one of WhatsApp's own in-app popups — above all the call
+// "Move to new window" popout — and must stay inside Whatly rather than being
+// handed to the browser. Anything else is an external link. Pure, unit tested.
+bool isInAppPopupUrl(const QUrl &url);
+
+// The account tab tooltip: the WhatsApp Web version (once known) and the build
+// token from the page URL, one per line, each omitted when empty. Pure, unit
+// tested. Note: the URL "v=" token is a per-load cache-buster, not a version,
+// so it is labelled a build token rather than shown as one.
+QString accountTabTooltipText(const QString &version, const QString &token);
 
 // Page-zoom bounds for Ctrl +/-/0 and the injected zoom buttons; the zoom is
 // clamped so it can never become unusably tiny or huge. Pure, so it is unit

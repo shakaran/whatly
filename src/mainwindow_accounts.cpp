@@ -10,7 +10,9 @@
 #include <QStandardPaths>
 #include <QMenu>
 #include <QStackedWidget>
+#include <QPointer>
 #include <QTabBar>
+#include <QUrlQuery>
 #include <QVBoxLayout>
 #include <QGridLayout>
 #include <QHBoxLayout>
@@ -813,6 +815,33 @@ void MainWindow::reorderWindowFromStrip(DetachedAccountWindow *win) {
   saveAccounts();
 }
 
+void MainWindow::captureAccountVersion(WebView *view) {
+  if (!view || !view->page())
+    return;
+  QPointer<WebView> guarded(view);
+  view->page()->runJavaScript(
+      QStringLiteral("(window.Debug && window.Debug.VERSION) || ''"),
+      [this, guarded](const QVariant &result) {
+        if (!guarded)
+          return;
+        const QString ver = result.toString();
+        if (ver.isEmpty())
+          return;
+        const int idx = accountIndexForView(guarded);
+        if (idx < 0 || m_accounts[idx].waVersion == ver)
+          return; // unchanged: nothing to relabel
+        m_accounts[idx].waVersion = ver;
+        refreshAccountTabs(); // also refreshes every detached window's strip
+      });
+}
+
+QString MainWindow::accountTabTooltip(const Account &acc) const {
+  QString token;
+  if (acc.view && acc.view->page())
+    token = QUrlQuery(acc.view->page()->url()).queryItemValue(QStringLiteral("v"));
+  return accountTabTooltipText(acc.waVersion, token);
+}
+
 // Rebuild the tab labels: the account name, plus its own unread count, plus a
 // trailing "+" tab. Cheap, and called only when something actually changed.
 void MainWindow::refreshAccountTabs() {
@@ -854,7 +883,7 @@ void MainWindow::refreshAccountTabs() {
       label += QStringLiteral("  (%1)").arg(m_accounts[i].unread);
     m_accountBar->setTabText(t, label);
     m_accountBar->setTabData(t, m_accounts[i].id); // stable id, drag identity
-    m_accountBar->setTabToolTip(t, QString());
+    m_accountBar->setTabToolTip(t, accountTabTooltip(m_accounts[i]));
     if (i == m_activeAccount)
       activeTab = t;
   }
@@ -1447,6 +1476,7 @@ void MainWindow::refreshDetachedStrips() {
         label += QStringLiteral("  (%1)").arg(m_accounts[i].unread);
       bar->setTabText(t, label);
       bar->setTabData(t, m_accounts[i].id);
+      bar->setTabToolTip(t, accountTabTooltip(m_accounts[i]));
       if (m_accounts[i].view == current)
         activeTab = t;
     }

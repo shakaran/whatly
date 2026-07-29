@@ -139,6 +139,9 @@ private:
     QString name;    // shown on the tab
     WebView *view = nullptr;
     int unread = 0;
+    // WhatsApp Web version (window.Debug.VERSION), captured on load and shown in
+    // the tab tooltip. Empty until the page reports it.
+    QString waVersion;
     // Non-null while the account has been torn off into its own window; its
     // view then lives in that window rather than in the tab stack/grid.
     QPointer<DetachedAccountWindow> window = nullptr;
@@ -222,6 +225,12 @@ private:
   QTimer *m_layoutSaveTimer = nullptr; // debounces layout saves on window moves
   int accountIndexForView(const QObject *view) const;
   void refreshAccountTabs();
+  // Ask a freshly loaded account's page for its WhatsApp Web version and cache
+  // it on the Account, then refresh the tab tooltips.
+  void captureAccountVersion(WebView *view);
+  // The tab tooltip for an account: its WhatsApp Web version (once known) and
+  // the build token from the page URL. Empty while neither is available.
+  QString accountTabTooltip(const Account &acc) const;
   void updateTrayUnread();
   // Emit the unread total as a taskbar badge via the com.canonical.Unity
   // LauncherEntry D-Bus protocol (read by KDE Plasma, Dash-to-Dock and others).

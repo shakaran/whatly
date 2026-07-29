@@ -759,6 +759,34 @@ private slots:
     QVERIFY(!whatsAppOrigin.isEmpty());
     QVERIFY(!defaultUserAgentStr.isEmpty());
   }
+
+  // The call popout (web.whatsapp.com/call/popout) and any other WhatsApp-origin
+  // window.open must be kept in-app; everything else is an external link.
+  void inAppPopupUrl() {
+    QVERIFY(isInAppPopupUrl(
+        QUrl(QStringLiteral("https://web.whatsapp.com/call/popout"))));
+    QVERIFY(isInAppPopupUrl(QUrl(QStringLiteral("https://web.whatsapp.com/"))));
+    QVERIFY(!isInAppPopupUrl(QUrl(QStringLiteral("https://example.com/x"))));
+    QVERIFY(!isInAppPopupUrl(
+        QUrl(QStringLiteral("https://faq.whatsapp.com/help")))); // other host
+    QVERIFY(!isInAppPopupUrl(QUrl(QStringLiteral("about:blank")))); // no host
+    QVERIFY(!isInAppPopupUrl(QUrl()));                             // invalid
+  }
+
+  // The account tab tooltip: version line and build-token line, each dropped
+  // when empty, joined by a newline.
+  void accountTooltip() {
+    QCOMPARE(accountTabTooltipText(QStringLiteral("2.3000.104"),
+                                   QStringLiteral("147.977")),
+             QStringLiteral("WhatsApp Web 2.3000.104\nBuild token: 147.977"));
+    // Version not yet known: only the token line.
+    QCOMPARE(accountTabTooltipText(QString(), QStringLiteral("147.977")),
+             QStringLiteral("Build token: 147.977"));
+    // Neither available: empty tooltip, no stray newline.
+    QCOMPARE(accountTabTooltipText(QString(), QString()), QString());
+    QVERIFY(!accountTabTooltipText(QStringLiteral("2.3000.104"), QString())
+                 .contains(QLatin1Char('\n')));
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────

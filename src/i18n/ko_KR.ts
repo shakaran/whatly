@@ -999,6 +999,16 @@ You can pull any account out into its own window: right-click its tab and choose
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../common.cpp" line="31"/>
+        <source>WhatsApp Web %1</source>
+        <translation>WhatsApp Web %1</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="33"/>
+        <source>Build token: %1</source>
+        <translation>빌드 토큰: %1</translation>
+    </message>
+    <message>
         <location filename="../about.cpp" line="94"/>
         <location filename="../about.cpp" line="172"/>
         <source>Show Debug Info</source>

@@ -1023,6 +1023,12 @@ void MainWindow::handleLoadFinished(bool loaded) {
     // idempotent and only sends once the page has loaded.
     if (m_scheduledMessages != nullptr)
       m_scheduledMessages->start();
+    // The page is up, so window.Debug.VERSION is now readable: cache the
+    // WhatsApp Web version of whichever account just finished, for its tooltip.
+    if (auto *loadedView = qobject_cast<WebView *>(sender()))
+      captureAccountVersion(loadedView);
+    else if (auto *active = qobject_cast<WebView *>(m_webEngine))
+      captureAccountVersion(active);
   }
 }
 

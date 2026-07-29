@@ -999,6 +999,16 @@ Sie können jedes Konto in ein eigenes Fenster ziehen: Klicken Sie mit der recht
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../common.cpp" line="31"/>
+        <source>WhatsApp Web %1</source>
+        <translation>WhatsApp Web %1</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="33"/>
+        <source>Build token: %1</source>
+        <translation>Build-Token: %1</translation>
+    </message>
+    <message>
         <location filename="../about.cpp" line="94"/>
         <location filename="../about.cpp" line="172"/>
         <source>Show Debug Info</source>

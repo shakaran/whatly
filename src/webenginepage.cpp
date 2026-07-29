@@ -9,8 +9,11 @@
 #include "debuglog.h"
 #include "webengineprofilemanager.h"
 #include <QApplication>
+#include <QDesktopServices>
 #include <QDir>
 #include <QFileInfo>
+#include <QWebEngineView>
+#include <memory>
 
 WebEnginePage::WebEnginePage(QWebEngineProfile *profile, QObject *parent)
     : QWebEnginePage(profile, parent) {
@@ -108,25 +111,53 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl &url,
   return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
 }
 
-// A window request — middle-clicking a link, target="_blank" — used to return a
-// fresh WebEnginePage that was never put into a view and had no parent. Such a
-// page leaks, and QWebEnginePage::view() returns nullptr for it, which the
-// dialog handlers below dereference to parent their message boxes. Links belong
-// in the browser here anyway (acceptNavigationRequest already sends a plain
-// click there), so hand the URL to the desktop and discard the page. It is a
-// plain QWebEnginePage on purpose: none of this class's dialog handlers are
-// wired to it, so nothing can reach a view that does not exist.
+// A window request — window.open(), target="_blank", middle-click. Two very
+// different things arrive here and cannot be told apart until the URL is known:
+//
+//   * genuine external links, which belong in the user's browser, and
+//   * WhatsApp's own in-app popups — above all the call "Move to new window"
+//     popout (web.whatsapp.com/call/popout). That one MUST stay inside Whatly:
+//     handing it to the browser (or discarding it, as this used to) leaves the
+//     popped-out call with nowhere to live, so the button did nothing.
+//
+// So create a real page and view up front and decide on the first navigation:
+// a web.whatsapp.com URL becomes an in-app window; anything else goes to the
+// browser and the throwaway window is torn down. The page is a WebEnginePage on
+// purpose — the popped-out call needs this class's microphone/camera and
+// screen-share permission handling to work.
 QWebEnginePage *
 WebEnginePage::createWindow(QWebEnginePage::WebWindowType type) {
   Q_UNUSED(type);
-  auto *scratch = new QWebEnginePage(profile(), this);
-  connect(scratch, &QWebEnginePage::urlChanged, scratch,
-          [scratch](const QUrl &url) {
-            if (url.isValid() && !url.isEmpty())
+  auto *page = new WebEnginePage(profile(), this);
+  auto *view = new QWebEngineView;
+  view->setAttribute(Qt::WA_DeleteOnClose);
+  page->setParent(view); // page and window are torn down together
+  view->setPage(page);
+  view->setWindowTitle(QApplication::applicationDisplayName());
+  view->setWindowIcon(qApp->windowIcon());
+  view->resize(480, 640);
+
+  // Ending the call (or closing the popout) asks the window to close.
+  connect(page, &QWebEnginePage::windowCloseRequested, view, &QWidget::close);
+
+  // Decide exactly once, on the first real URL (skip the initial about:blank).
+  auto decided = std::make_shared<bool>(false);
+  connect(page, &QWebEnginePage::urlChanged, view,
+          [view, decided](const QUrl &url) {
+            if (*decided || !url.isValid() || url.isEmpty() ||
+                url.scheme() == QLatin1String("about"))
+              return;
+            *decided = true;
+            if (isInAppPopupUrl(url)) {
+              view->show();
+              view->raise();
+              view->activateWindow();
+            } else {
               QDesktopServices::openUrl(url);
-            scratch->deleteLater();
+              view->close(); // WA_DeleteOnClose disposes of the page too
+            }
           });
-  return scratch;
+  return page;
 }
 
 // view() is null for any page that is not inside a view. A null parent is fine
