@@ -1,8 +1,8 @@
 name: Snap
 
 # Build the snap on every push to main and publish it to the store's edge
-# channel, so edge always tracks the latest commit. Tagged releases are promoted
-# to stable separately (by hand, after they have been tried on edge).
+# channel, so edge always tracks the latest commit. A version tag (a release)
+# publishes to stable instead, so `snap install whatly` tracks releases.
 on:
   push:
     branches: [main]
@@ -11,6 +11,10 @@ on:
       - '**.md'
       - 'docs/**'
       - 'LICENSE'
+    # A release tag publishes to stable (see the channel step below). Tag pushes
+    # are not filtered by paths-ignore above, which only applies to branches.
+    tags:
+      - 'v*'
   workflow_dispatch:
 
 concurrency:
@@ -36,14 +40,26 @@ jobs:
         uses: snapcore/action-build@v1
         id: build
 
-      - name: Publish to edge
+      # A version tag is a release: publish straight to stable so
+      # `snap install whatly` (which tracks stable) gets it. Every other push to
+      # main goes to edge, which trails the latest commit.
+      - name: Choose channel
+        id: channel
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            echo "release=stable" >> "$GITHUB_OUTPUT"
+          else
+            echo "release=edge" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish
         if: env.SNAP_STORE_CREDS != ''
         uses: snapcore/action-publish@v1
         env:
           SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
         with:
           snap: ${{ steps.build.outputs.snap }}
-          release: edge
+          release: ${{ steps.channel.outputs.release }}
 
       - name: Credentials not set (skipped publish)
         if: env.SNAP_STORE_CREDS == ''
@@ -52,5 +68,6 @@ jobs:
           echo "SNAPCRAFT_STORE_CREDENTIALS secret is not set. Add it with:"
           echo "  snapcraft export-login --snaps=whatly \\"
           echo "    --acls package_push,package_release,package_update \\"
-          echo "    --channels=edge snapcraft-creds.txt"
-          echo "then paste the file's contents into the repo secret."
+          echo "    --channels=edge,stable snapcraft-creds.txt"
+          echo "then paste the file's contents into the repo secret. The stable"
+          echo "channel is required so release tags can publish to stable."
