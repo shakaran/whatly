@@ -1,3 +1,28 @@
+## 6.8.1 (2026-07-30)
+
+**Group invite links now open (#186).** Clicking a `chat.whatsapp.com` group
+invite (which reaches the app as a `whatsapp://chat?code=…` link) used to do
+nothing. Whatly now opens WhatsApp Web's own "Join group" preview for it, so the
+invite can be accepted from the desktop app.
+
+**A sound for new-message notifications (#120).** Notifications now ask the
+desktop's notification service to play its new-message sound, which some setups
+stayed silent without. It is on by default and can be turned off under
+Notifications with the new "Play sound" option.
+
+**Voice and video calls now open in their own Whatly window.** WhatsApp Web's
+"Move to new window" during a call (the call popout) used to do nothing: the
+window request was handed to the browser or discarded, so the popped-out call had
+nowhere to live. Whatly now hosts that popout in a proper Whatly window, with the
+microphone, camera and screen-share permissions it needs, and closes it when the
+call ends. Genuine external links still open in your browser as before. Voice and
+video calls themselves work out of the box (#106, #43, #287, #112, #218, #187).
+
+**Each account tab shows its WhatsApp Web version.** Hovering an account tab now
+lists the WhatsApp Web version in use and the page build token, so a mismatch
+between accounts is visible at a glance. The tooltip is translated into all
+sixteen languages.
+
 ## 6.8.0 (2026-07-28)
 
 **No more endless "Render process exited" dialog loop (#28).** When WhatsApp

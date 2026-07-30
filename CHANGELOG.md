@@ -1,4 +1,4 @@
-## Unreleased
+## 6.8.1 (2026-07-30)
 
 **Group invite links now open (#186).** Clicking a `chat.whatsapp.com` group
 invite (which reaches the app as a `whatsapp://chat?code=…` link) used to do

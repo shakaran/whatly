@@ -108,6 +108,17 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="6.8.1" date="2026-07-30">
+      <description>
+        <p>A feature release:</p>
+        <ul>
+          <li>Group invite links (chat.whatsapp.com) now open WhatsApp Web's "Join group" preview</li>
+          <li>A sound for new-message notifications, on by default with a "Play sound" toggle</li>
+          <li>The call "Move to new window" popout now opens in its own Whatly window; voice and video calls work out of the box</li>
+          <li>Each account tab shows the WhatsApp Web version in its tooltip</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.8.0" date="2026-07-28">
       <description>
         <p>A feature release:</p>

@@ -1,3 +1,14 @@
+whatly (6.8.1) unstable; urgency=medium
+
+  * Open WhatsApp group invite links (whatsapp://chat?code=…) (#186).
+  * Sound for new-message notifications, on by default with a "Play sound"
+    toggle (#120).
+  * The call "Move to new window" popout opens in its own Whatly window; voice
+    and video calls work out of the box.
+  * Each account tab shows the WhatsApp Web version in its tooltip.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Thu, 30 Jul 2026 12:00:00 +0200
+
 whatly (6.8.0) unstable; urgency=medium
 
   * Collapse the chat list to a strip of profile pictures (#25).

@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        6.8.0
+Version:        6.8.1
 Release:        1%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
@@ -53,6 +53,12 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Thu Jul 30 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.8.1-1
+- Open WhatsApp group invite links (#186); sound for new-message notifications
+  with a "Play sound" toggle (#120); the call "Move to new window" popout opens
+  in its own Whatly window and voice/video calls work out of the box; each
+  account tab shows the WhatsApp Web version in its tooltip. See CHANGELOG.md.
+
 * Tue Jul 28 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.8.0-1
 - Collapse the chat list to a strip of profile pictures (#25); "Restart now"
   button and tray-brings-window-to-front (#27); optional account strip and a
