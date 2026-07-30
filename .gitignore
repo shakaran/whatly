@@ -73,3 +73,6 @@ whatly.flatpak
 
 # Generated promo video (regenerate with tools/make-video.py; upload to YouTube)
 *.mp4
+
+# Snap Store login export (a valid credential macaroon; never commit)
+snapcraft-creds*.txt
