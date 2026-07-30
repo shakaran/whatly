@@ -332,9 +332,13 @@ otherwise [build from source](#build-from-source-linux).
 
 ### Windows
 
-Grab the build from the latest [release](https://github.com/shakaran/whatly/releases),
-or the artifact from the **Windows Build** CI run. See
-[docs/WINDOWS_BUILD.md](docs/WINDOWS_BUILD.md) to build it yourself.
+Grab the `.msi` installer or the portable `.zip` from the latest
+[release](https://github.com/shakaran/whatly/releases), or the artifact from the
+**Windows Build** CI run. See [docs/WINDOWS_BUILD.md](docs/WINDOWS_BUILD.md) to
+build it yourself.
+
+Free Windows code signing is provided by [SignPath.io](https://signpath.io),
+with a certificate issued by the [SignPath Foundation](https://signpath.org).
 
 <div align="center">
 <img src="docs/img/card-windows.png" width="720" alt="Whatly runs on Windows too"/>
