@@ -1,5 +1,12 @@
 ## Unreleased
 
+**No more "HD quality" dialog loop when attaching (#34).** With "Send photos and
+videos in HD by default" on, attaching an image below HD resolution made WhatsApp
+answer with a "this media is not HD resolution" dialog, and Whatly kept
+re-clicking HD, which re-opened the dialog on every press until the app was
+restarted. Whatly now enables HD at most once per media editor, so the dialog no
+longer loops.
+
 **Chat themes recolour the message-options button too (#35).** On a chat theme,
 the little fade behind the "options" button on your own text messages stayed
 WhatsApp's default green over a themed (for example pink) bubble. The theme now

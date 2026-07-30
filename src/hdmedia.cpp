@@ -36,14 +36,21 @@ static const char kScriptTemplate[] = R"JS(
       return null;
     }
 
-    var acting = false;
+    // Act at most once per editor session. Sub-HD media cannot be sent in HD:
+    // WhatsApp answers a click with a "this media is not HD resolution" dialog
+    // and leaves the control unpressed, so a retry loop re-opened that dialog
+    // forever (issue #34). `tried` gates re-clicks; it resets only when the
+    // editor (and its HD control) is gone, so the next attach gets one attempt.
+    var acting = false, tried = false;
     function tryEnable() {
       if (acting) return;
       var btn = findHd();
-      if (!btn) return;
-      // aria-pressed / a "on" marker tells us HD is already selected.
+      if (!btn) { tried = false; return; }   // editor closed: arm for next time
+      if (tried) return;                      // already handled this editor
+      tried = true;                           // mark before clicking, so a
+                                              // rejection dialog cannot retrigger
       var pressed = btn.getAttribute('aria-pressed');
-      if (pressed === 'true') return;
+      if (pressed === 'true') return;         // HD already on: nothing to do
       acting = true;
       try { btn.click(); } catch (e) {}
       // WhatsApp sometimes opens a small menu; pick the HD-quality entry.
