@@ -1,3 +1,11 @@
+## Unreleased
+
+**Chat themes recolour the message-options button too (#35).** On a chat theme,
+the little fade behind the "options" button on your own text messages stayed
+WhatsApp's default green over a themed (for example pink) bubble. The theme now
+also recolours WhatsApp's `--*-RGB` design-system colour tokens (stored as bare
+`r, g, b` channels), which that fade uses, so it matches the bubble.
+
 ## 6.8.2 (2026-07-30)
 
 **Add spell-check dictionaries without repacking (#24).** Whatly now keeps a

@@ -41,6 +41,14 @@ static const char kScriptTemplate[] = R"JS(
     m = /^rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)(?:[,\s\/]+([\d.]+))?\s*\)$/i.exec(v);
     if (m) return {r: +m[1], g: +m[2], b: +m[3],
                    a: m[4] === undefined ? 1 : +m[4]};
+    // Bare RGB channels, e.g. "20, 77, 55" — WhatsApp's design-system tokens
+    // (--WDS-*-RGB) store colours this way for use inside rgb(var(--x) / a). The
+    // caller only trusts this for a variable whose name marks it as RGB, and
+    // must re-emit it as bare channels, not as hsl(). Without this every
+    // --*-RGB colour was skipped, so the outgoing-bubble green that the message
+    // options button fades over stayed green under a themed (pink) bubble.
+    m = /^(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})$/.exec(v);
+    if (m) return {r: +m[1], g: +m[2], b: +m[3], a: 1, channels: true};
     return null;   // var() alias, gradient, or not a colour at all
   };
 
@@ -60,6 +68,19 @@ static const char kScriptTemplate[] = R"JS(
   var css = function (h, s, l, a) {
     var body = h.toFixed(0) + ' ' + (s * 100).toFixed(1) + '% ' + (l * 100).toFixed(1) + '%';
     return a === 1 ? 'hsl(' + body + ')' : 'hsl(' + body + ' / ' + a + ')';
+  };
+
+  // For --*-RGB tokens the value must go back as bare "r, g, b" channels, since
+  // the page consumes them as rgb(var(--x) / a); an hsl() there would be invalid.
+  var hslToRgb = function (h, s, l) {
+    h = ((h % 360) + 360) % 360;
+    var C = (1 - Math.abs(2 * l - 1)) * s, X = C * (1 - Math.abs((h / 60) % 2 - 1)), m = l - C / 2;
+    var r = 0, g = 0, b = 0;
+    if (h < 60) { r = C; g = X; } else if (h < 120) { r = X; g = C; }
+    else if (h < 180) { g = C; b = X; } else if (h < 240) { g = X; b = C; }
+    else if (h < 300) { r = X; b = C; } else { r = C; b = X; }
+    return (Math.round((r + m) * 255)) + ', ' + (Math.round((g + m) * 255)) +
+           ', ' + (Math.round((b + m) * 255));
   };
 
   var apply = function () {
@@ -89,18 +110,25 @@ static const char kScriptTemplate[] = R"JS(
         if (name.indexOf('--') !== 0) continue;
         var rgb = parse(rule.style.getPropertyValue(name).trim());
         if (!rgb) continue;
+        // A bare numeric triple is only a colour when the token name says so
+        // (--*-RGB); otherwise it could be anything (spacing, a ratio, ...).
+        if (rgb.channels && name.toLowerCase().indexOf('rgb') < 0) continue;
         var c = hsl(rgb);
+        var out = null; // {h,s,l,a} of the themed colour, or null to leave it
         if (c.c < P.neutralChroma) {
           if (c.l <= 0.02) continue;                       // pure black: a tint would not show
-          decls.push(name + ':' +
-              css(P.hue, P.neutralTint, Math.min(c.l, P.lightnessCeiling), rgb.a) +
-              ' !important');
+          out = {h: P.hue, s: P.neutralTint,
+                 l: Math.min(c.l, P.lightnessCeiling), a: rgb.a};
         } else if (c.h >= P.greenLo && c.h <= P.greenHi) {
           var l = c.l < 0.5 ? Math.min(c.l + P.accentLift, 0.72) : c.l;
-          decls.push(name + ':' +
-              css(P.hue, Math.min(c.s, P.accentSat), l, rgb.a) + ' !important');
+          out = {h: P.hue, s: Math.min(c.s, P.accentSat), l: l, a: rgb.a};
         }
         // Everything else — link blue, warning red — keeps its meaning.
+        if (!out) continue;
+        decls.push(name + ':' +
+            (rgb.channels ? hslToRgb(out.h, out.s, out.l)
+                          : css(out.h, out.s, out.l, out.a)) +
+            ' !important');
       }
       if (decls.length)
         blocks.push(rule.selectorText + '{' + decls.join(';') + '}');
