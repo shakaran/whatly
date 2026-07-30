@@ -47,6 +47,8 @@ public:
   ~MainWindow();
 
   void loadSchemaUrl(const QString &arg);
+  // Open WhatsApp Web's "Join group" preview for an invite code (issue #186).
+  void openGroupInvite(const QString &code);
   void alreadyRunning();
   void runMinimized();
   void showNotification(QString title, QString message);

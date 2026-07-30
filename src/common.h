@@ -30,6 +30,12 @@ bool isInAppPopupUrl(const QUrl &url);
 // so it is labelled a build token rather than shown as one.
 QString accountTabTooltipText(const QString &version, const QString &token);
 
+// The group-invite code from a link handed to the app: a
+// https://chat.whatsapp.com/<code> web link or a whatsapp://chat?code=<code>
+// deep link (the form the x-scheme-handler delivers). Empty when the URL is not
+// an invite (e.g. a whatsapp://send request). Pure, unit tested (issue #186).
+QString inviteCodeFromUrl(const QString &url);
+
 // Page-zoom bounds for Ctrl +/-/0 and the injected zoom buttons; the zoom is
 // clamped so it can never become unusably tiny or huge. Pure, so it is unit
 // tested directly.

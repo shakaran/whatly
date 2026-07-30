@@ -787,6 +787,26 @@ private slots:
     QVERIFY(!accountTabTooltipText(QStringLiteral("2.3000.104"), QString())
                  .contains(QLatin1Char('\n')));
   }
+
+  // Group-invite links resolve to their code; sends and other URLs do not.
+  void inviteCode() {
+    QCOMPARE(inviteCodeFromUrl(QStringLiteral(
+                 "https://chat.whatsapp.com/Ia4u47cGotk6AIAc6S0P36")),
+             QStringLiteral("Ia4u47cGotk6AIAc6S0P36"));
+    QCOMPARE(inviteCodeFromUrl(QStringLiteral("chat.whatsapp.com/XyZ_123-4")),
+             QStringLiteral("XyZ_123-4"));
+    QCOMPARE(inviteCodeFromUrl(QStringLiteral("whatsapp://chat?code=ABC123")),
+             QStringLiteral("ABC123"));
+    QCOMPARE(inviteCodeFromUrl(QStringLiteral("whatsapp://chat/?code=ABC123")),
+             QStringLiteral("ABC123"));
+    // A send request is not an invite, even if its text mentions "code=".
+    QCOMPARE(inviteCodeFromUrl(QStringLiteral(
+                 "whatsapp://send?phone=34600000000&text=my%20code=hi")),
+             QString());
+    QCOMPARE(inviteCodeFromUrl(QStringLiteral("https://example.com/x")),
+             QString());
+    QCOMPARE(inviteCodeFromUrl(QString()), QString());
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────

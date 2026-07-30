@@ -1,6 +1,7 @@
 #include "common.h"
 
 #include <QObject>
+#include <QRegularExpression>
 #include <QStringList>
 #include <QUrl>
 
@@ -32,4 +33,26 @@ QString accountTabTooltipText(const QString &version, const QString &token) {
   if (!token.isEmpty())
     lines << QObject::tr("Build token: %1").arg(token);
   return lines.join(QLatin1Char('\n'));
+}
+
+QString inviteCodeFromUrl(const QString &url) {
+  const QString u = url.trimmed();
+  // A web invite link: https://chat.whatsapp.com/<code> (older links carry an
+  // extra /invite/ segment). Checked first so it wins regardless of scheme.
+  static const QRegularExpression web(
+      QStringLiteral("chat\\.whatsapp\\.com/(?:invite/)?([A-Za-z0-9._-]+)"));
+  QRegularExpressionMatch m = web.match(u);
+  if (m.hasMatch())
+    return m.captured(1);
+  // The deep link the x-scheme-handler delivers: whatsapp://chat?code=<code>.
+  // Scoped to the "chat" action so a whatsapp://send?...&text=code=... request
+  // can never be mistaken for an invite.
+  if (u.startsWith(QLatin1String("whatsapp://chat"), Qt::CaseInsensitive)) {
+    static const QRegularExpression codeParam(
+        QStringLiteral("[?&]code=([A-Za-z0-9._-]+)"));
+    m = codeParam.match(u);
+    if (m.hasMatch())
+      return m.captured(1);
+  }
+  return QString();
 }

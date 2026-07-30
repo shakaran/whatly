@@ -1,5 +1,10 @@
 ## Unreleased
 
+**Group invite links now open (#186).** Clicking a `chat.whatsapp.com` group
+invite (which reaches the app as a `whatsapp://chat?code=…` link) used to do
+nothing. Whatly now opens WhatsApp Web's own "Join group" preview for it, so the
+invite can be accepted from the desktop app.
+
 **A sound for new-message notifications (#120).** Notifications now ask the
 desktop's notification service to play its new-message sound, which some setups
 stayed silent without. It is on by default and can be turned off under

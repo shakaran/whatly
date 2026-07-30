@@ -1355,6 +1355,13 @@ void MainWindow::toggleChatListStrip() {
 // ── Chat / URL helpers ────────────────────────────────────────────────────────
 
 void MainWindow::loadSchemaUrl(const QString &arg) {
+  // A group-invite link (issue #186): open its "Join group" preview. This must
+  // come before the send handling below so an invite is never treated as a send.
+  const QString invite = inviteCodeFromUrl(arg);
+  if (!invite.isEmpty()) {
+    openGroupInvite(invite);
+    return;
+  }
   if (arg.contains("send?") || arg.contains("send/?")) {
     QString newArg = arg;
     newArg = newArg.replace("?", "&");
@@ -1362,6 +1369,30 @@ void MainWindow::loadSchemaUrl(const QString &arg) {
     triggerNewChat(query.queryItemValue("phone"),
                    query.queryItemValue("text"));
   }
+}
+
+// WhatsApp Web only opens a group invite when a link carrying its
+// chat.whatsapp.com href is clicked inside the page; navigating there or hitting
+// an /accept route does nothing. So synthesise such a link and click it, which
+// pops up WhatsApp's own "Join group" preview (verified live for issue #186).
+// The code is validated to [A-Za-z0-9._-] by inviteCodeFromUrl, so embedding it
+// in the script is safe.
+void MainWindow::openGroupInvite(const QString &code) {
+  if (code.isEmpty() || !m_webEngine || !m_webEngine->page())
+    return;
+  const QString js = QStringLiteral(
+      "(function(){"
+      "  var a=document.createElement('a');"
+      "  a.href='https://chat.whatsapp.com/%1';"
+      "  a.rel='noopener';"
+      "  a.style.display='none';"
+      "  document.body.appendChild(a);"
+      "  a.dispatchEvent(new MouseEvent('click',"
+      "    {bubbles:true,cancelable:true,view:window}));"
+      "  setTimeout(function(){a.remove();},0);"
+      "})();")
+      .arg(code);
+  m_webEngine->page()->runJavaScript(js);
 }
 
 #ifdef Q_OS_LINUX
