@@ -1,5 +1,11 @@
 ## Unreleased
 
+**Drag and drop no longer needs the FileTransfer portal outside a sandbox (#34).**
+On a normal install the dropped files are read directly from their real paths, so
+the app no longer tries (and noisily fails) the XDG FileTransfer portal on
+desktops whose portal does not expose that interface. The portal is still used as
+the fallback inside the Flatpak sandbox, where the real paths are not readable.
+
 **Native Wayland in the AppImage and .deb (#36).** The portable builds bundled
 only the X11 platform plugin, so on a Wayland desktop they fell back to Xwayland,
 where scrolling stutters even with smooth scrolling on. The Wayland platform

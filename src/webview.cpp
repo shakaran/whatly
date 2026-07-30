@@ -234,13 +234,25 @@ bool WebView::eventFilter(QObject *watched, QEvent *event) {
 
 // Turn a drop's contents into paths this process can actually read. Native
 // builds get the plain local paths from the URLs. Inside a Flatpak sandbox an
-// OS drag arrives via the XDG FileTransfer portal (mime
-// application/vnd.portal.filetransfer), and the host paths in the URLs are not
-// visible here; the portal's RetrieveFiles hands back readable paths under
-// /run/user/<uid>/doc/ instead (issue #32). Falls back to the URLs whenever the
-// portal path is absent or yields nothing.
+// Turn a drop into readable file paths. A normal (non-sandboxed) install gets
+// the real file:// paths in the drop and reads them directly — no portal, so
+// nothing to fail on desktops whose portal lacks FileTransfer (#34). Only when
+// none of the dropped URLs are readable here (the Flatpak sandbox sees host
+// paths it cannot open) do we resolve them through the XDG FileTransfer portal,
+// which hands back readable copies under /run/user/<uid>/doc/ (issue #32).
 static QStringList resolveDroppedFilePaths(const QMimeData *mime) {
+  const QList<QUrl> urls = mime->urls();
+
   QStringList paths;
+  for (const QUrl &url : urls)
+    if (url.isLocalFile()) {
+      const QString p = url.toLocalFile();
+      if (QFileInfo(p).isReadable())
+        paths << p;
+    }
+  if (!paths.isEmpty())
+    return paths; // real, readable files: the common case, no portal needed
+
 #ifdef Q_OS_LINUX
   const QString kPortalMime =
       QStringLiteral("application/vnd.portal.filetransfer");
@@ -263,12 +275,13 @@ static QStringList resolveDroppedFilePaths(const QMimeData *mime) {
     }
   }
 #endif
-  if (paths.isEmpty()) {
-    const QList<QUrl> urls = mime->urls();
+
+  // Last resort: hand back any local-file URLs even if the readability probe
+  // above was inconclusive, so behaviour never regresses below the old path.
+  if (paths.isEmpty())
     for (const QUrl &url : urls)
       if (url.isLocalFile())
         paths << url.toLocalFile();
-  }
   return paths;
 }
 
