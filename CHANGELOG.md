@@ -6,12 +6,6 @@ the app no longer tries (and noisily fails) the XDG FileTransfer portal on
 desktops whose portal does not expose that interface. The portal is still used as
 the fallback inside the Flatpak sandbox, where the real paths are not readable.
 
-**Native Wayland in the AppImage and .deb (#36).** The portable builds bundled
-only the X11 platform plugin, so on a Wayland desktop they fell back to Xwayland,
-where scrolling stutters even with smooth scrolling on. The Wayland platform
-plugin and its integration plugins are now bundled, so `whatly-bin` runs natively
-on Wayland and smooth scrolling works.
-
 **No more "HD quality" dialog loop when attaching (#34).** With "Send photos and
 videos in HD by default" on, attaching an image below HD resolution made WhatsApp
 answer with a "this media is not HD resolution" dialog, and Whatly kept

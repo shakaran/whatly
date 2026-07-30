@@ -55,9 +55,8 @@ not affiliated with WhatsApp or Meta.
 %changelog
 * Fri Jul 31 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.8.3-1
 - Drag and drop reads real paths directly and only uses the FileTransfer portal
-  in the Flatpak sandbox (#34); bundle the Qt Wayland platform plugin so the
-  AppImage/.deb run natively on Wayland (#36); no more HD-quality dialog loop on
-  sub-HD attachments (#34); chat themes recolour the message-options fade (#35).
+  in the Flatpak sandbox (#34); no more HD-quality dialog loop on sub-HD
+  attachments (#34); chat themes recolour the message-options fade (#35).
   See CHANGELOG.md.
 
 * Thu Jul 30 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.8.2-1
