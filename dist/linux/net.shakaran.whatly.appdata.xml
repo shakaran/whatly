@@ -108,6 +108,17 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="6.8.3" date="2026-07-31">
+      <description>
+        <p>A maintenance release:</p>
+        <ul>
+          <li>Drag and drop no longer depends on the FileTransfer portal outside a sandbox, fixing attachments on some desktops</li>
+          <li>The AppImage and .deb now run natively on Wayland (bundled Wayland plugin), so smooth scrolling works</li>
+          <li>No more "HD quality" dialog loop when attaching sub-HD images with HD-by-default on</li>
+          <li>Chat themes also recolour the message options button fade</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.8.2" date="2026-07-30">
       <description>
         <p>A maintenance release:</p>

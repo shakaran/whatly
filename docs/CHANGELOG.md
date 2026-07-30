@@ -1,3 +1,29 @@
+## 6.8.3 (2026-07-31)
+
+**Drag and drop no longer needs the FileTransfer portal outside a sandbox (#34).**
+On a normal install the dropped files are read directly from their real paths, so
+the app no longer tries (and noisily fails) the XDG FileTransfer portal on
+desktops whose portal does not expose that interface. The portal is still used as
+the fallback inside the Flatpak sandbox.
+
+**Native Wayland in the AppImage and .deb (#36).** The portable builds bundled
+only the X11 platform plugin, so on a Wayland desktop they fell back to Xwayland,
+where scrolling stutters even with smooth scrolling on. The Wayland platform
+plugin and its integration plugins are now bundled, so `whatly-bin` runs natively
+on Wayland and smooth scrolling works.
+
+**No more "HD quality" dialog loop when attaching (#34).** With "Send photos and
+videos in HD by default" on, attaching an image below HD resolution made WhatsApp
+answer with a "this media is not HD resolution" dialog, and Whatly kept
+re-clicking HD until the app was restarted. Whatly now enables HD at most once
+per media editor, so the dialog no longer loops.
+
+**Chat themes recolour the message-options button too (#35).** On a chat theme,
+the little fade behind the "options" button on your own text messages stayed
+WhatsApp's default green over a themed bubble. The theme now also recolours
+WhatsApp's `--*-RGB` design-system colour tokens, which that fade uses, so it
+matches the bubble.
+
 ## 6.8.2 (2026-07-30)
 
 **Add spell-check dictionaries without repacking (#24).** Whatly now keeps a

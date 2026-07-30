@@ -1,4 +1,4 @@
-## Unreleased
+## 6.8.3 (2026-07-31)
 
 **Drag and drop no longer needs the FileTransfer portal outside a sandbox (#34).**
 On a normal install the dropped files are read directly from their real paths, so

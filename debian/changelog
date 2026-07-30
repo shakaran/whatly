@@ -1,3 +1,16 @@
+whatly (6.8.3) unstable; urgency=medium
+
+  * Drag and drop reads real file paths directly and only uses the FileTransfer
+    portal inside the Flatpak sandbox, fixing attachments on desktops whose
+    portal lacks that interface (#34).
+  * Bundle the Qt Wayland platform plugin so the AppImage and .deb run natively
+    on Wayland, fixing stuttering scroll (#36).
+  * No more "HD quality" dialog loop when attaching sub-HD images with HD by
+    default on (#34).
+  * Chat themes also recolour the message-options button fade (#35).
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Fri, 31 Jul 2026 12:00:00 +0200
+
 whatly (6.8.2) unstable; urgency=medium
 
   * Add spell-check dictionaries without repacking: Whatly mirrors the bundled
