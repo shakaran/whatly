@@ -213,6 +213,7 @@ set(SOURCES
     src/performance.cpp
     src/trayicon.cpp
     src/dropattach.cpp
+    src/dropresolve.cpp
     src/notificationrules.cpp
     src/networkproxy.cpp
     src/autostart.cpp

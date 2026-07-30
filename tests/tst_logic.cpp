@@ -13,6 +13,7 @@
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTemporaryDir>
+#include <QMimeData>
 #include <QTemporaryFile>
 #include <QWebEngineProfile>
 #include <QWebEngineScriptCollection>
@@ -60,6 +61,7 @@
 #include "performance.h"
 #include "trayicon.h"
 #include "dropattach.h"
+#include "dropresolve.h"
 #include "networkproxy.h"
 #include "notificationrules.h"
 #include "autostart.h"
@@ -460,6 +462,14 @@ private slots:
         anyScript = true;
     }
     QVERIFY(anyScript);
+    // #35: the recolouring must also handle WhatsApp's bare "r, g, b" channel
+    // tokens (--*-RGB), re-emitted as channels via hslToRgb, not only full
+    // colour values, or the message-options fade stays the unthemed green.
+    ChatTheme::setCurrentThemeId(QStringLiteral("barbie"));
+    const QString themed = ChatTheme::scriptSource();
+    QVERIFY(themed.contains(QLatin1String("hslToRgb")));
+    QVERIFY(themed.contains(QLatin1String("channels")));
+    ChatTheme::setCurrentThemeId(QStringLiteral("none"));
   }
   void mutedStatus() {
     MutedStatus::setEnabled(true);
@@ -1927,6 +1937,65 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// DropResolve: turning a drop into readable paths. A normal install reads the
+// real files directly (no portal), which is what #34 fixed. The portal fallback
+// itself needs D-Bus and is not exercised here.
+class TstDropResolve : public QObject {
+  Q_OBJECT
+private slots:
+  void nullMimeIsEmpty() {
+    QCOMPARE(DropResolve::droppedFilePaths(nullptr), QStringList());
+  }
+
+  // A readable local file is returned directly.
+  void readableLocalFileUsed() {
+    QTemporaryDir dir;
+    QVERIFY(dir.isValid());
+    const QString path = dir.filePath(QStringLiteral("a.jpg"));
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("x");
+    f.close();
+
+    QMimeData m;
+    m.setUrls({QUrl::fromLocalFile(path)});
+    const QStringList got = DropResolve::droppedFilePaths(&m);
+    QCOMPARE(got.size(), 1);
+    QVERIFY(got.first().endsWith(QStringLiteral("a.jpg")));
+  }
+
+  // The #34 fix: when a readable local path is present, it is used directly and
+  // the FileTransfer portal is never consulted, even if the portal mime is set.
+  void readableLocalWinsOverPortalMime() {
+    QTemporaryDir dir;
+    QVERIFY(dir.isValid());
+    const QString path = dir.filePath(QStringLiteral("b.png"));
+    QFile f(path);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write("y");
+    f.close();
+
+    QMimeData m;
+    m.setUrls({QUrl::fromLocalFile(path)});
+    // A portal handle that, if consulted, would resolve to something else (or
+    // fail). It must be ignored because the local file is readable.
+    m.setData(QStringLiteral("application/vnd.portal.filetransfer"),
+              QByteArrayLiteral("bogus-key"));
+    const QStringList got = DropResolve::droppedFilePaths(&m);
+    QCOMPARE(got.size(), 1);
+    QVERIFY(got.first().endsWith(QStringLiteral("b.png")));
+  }
+
+  // A non-local URL with no portal handle yields nothing (no crash, no bogus
+  // path).
+  void nonLocalYieldsEmpty() {
+    QMimeData m;
+    m.setUrls({QUrl(QStringLiteral("https://example.com/x"))});
+    QVERIFY(DropResolve::droppedFilePaths(&m).isEmpty());
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CustomJs: the addon manager stores files, tracks per-addon enabled state, and
 // builds a combined guarded script. Runs in QStandardPaths test mode.
 class TstCustomJs : public QObject {
@@ -2029,6 +2098,10 @@ private slots:
     QVERIFY(js.contains(QLatin1String("HD")));
     QVERIFY(js.contains(QLatin1String("catch")));       // never breaks the page
     QVERIFY(js.contains(QLatin1String("disconnect")));   // re-runnable
+    // #34: HD is enabled at most once per editor session (a `tried` guard reset
+    // only when the editor closes), so a "not HD resolution" rejection on
+    // sub-HD media cannot re-open the dialog forever.
+    QVERIFY(js.contains(QLatin1String("tried")));
     HdMedia::setEnabled(false);
   }
   void installOnProfile() {
@@ -2677,6 +2750,7 @@ int main(int argc, char *argv[]) {
   { TstPerformance t;         run(&t); }
   { TstTrayIcon t;            run(&t); }
   { TstDropAttach t;          run(&t); }
+  { TstDropResolve t;         run(&t); }
   { TstShortcuts t;           run(&t); }
   { TstBackup t;              run(&t); }
   { TstScreenLock t;          run(&t); }

@@ -1,4 +1,5 @@
 #include "webview.h"
+#include "dropresolve.h"
 
 #include <QBuffer>
 #include <QChildEvent>
@@ -234,62 +235,11 @@ bool WebView::eventFilter(QObject *watched, QEvent *event) {
 
 // Turn a drop's contents into paths this process can actually read. Native
 // builds get the plain local paths from the URLs. Inside a Flatpak sandbox an
-// Turn a drop into readable file paths. A normal (non-sandboxed) install gets
-// the real file:// paths in the drop and reads them directly — no portal, so
-// nothing to fail on desktops whose portal lacks FileTransfer (#34). Only when
-// none of the dropped URLs are readable here (the Flatpak sandbox sees host
-// paths it cannot open) do we resolve them through the XDG FileTransfer portal,
-// which hands back readable copies under /run/user/<uid>/doc/ (issue #32).
-static QStringList resolveDroppedFilePaths(const QMimeData *mime) {
-  const QList<QUrl> urls = mime->urls();
-
-  QStringList paths;
-  for (const QUrl &url : urls)
-    if (url.isLocalFile()) {
-      const QString p = url.toLocalFile();
-      if (QFileInfo(p).isReadable())
-        paths << p;
-    }
-  if (!paths.isEmpty())
-    return paths; // real, readable files: the common case, no portal needed
-
-#ifdef Q_OS_LINUX
-  const QString kPortalMime =
-      QStringLiteral("application/vnd.portal.filetransfer");
-  if (mime->hasFormat(kPortalMime)) {
-    QString key = QString::fromUtf8(mime->data(kPortalMime));
-    key.remove(QChar(u'\0'));
-    key = key.trimmed();
-    QDBusInterface portal(QStringLiteral("org.freedesktop.portal.Desktop"),
-                          QStringLiteral("/org/freedesktop/portal/desktop"),
-                          QStringLiteral("org.freedesktop.portal.FileTransfer"),
-                          QDBusConnection::sessionBus());
-    if (portal.isValid() && !key.isEmpty()) {
-      const QDBusReply<QStringList> reply =
-          portal.call(QStringLiteral("RetrieveFiles"), key, QVariantMap());
-      if (reply.isValid())
-        paths = reply.value();
-      else
-        qWarning() << "whatly: FileTransfer portal RetrieveFiles failed:"
-                   << reply.error().message();
-    }
-  }
-#endif
-
-  // Last resort: hand back any local-file URLs even if the readability probe
-  // above was inconclusive, so behaviour never regresses below the old path.
-  if (paths.isEmpty())
-    for (const QUrl &url : urls)
-      if (url.isLocalFile())
-        paths << url.toLocalFile();
-  return paths;
-}
-
 bool WebView::dropFiles(const QMimeData *mime) {
   if (!mime)
     return false;
 
-  const QStringList paths = resolveDroppedFilePaths(mime);
+  const QStringList paths = DropResolve::droppedFilePaths(mime);
 
   // Cap the total read into memory: the files are base64-encoded and handed to
   // the page as a JS string, so a huge drop would balloon the renderer.
