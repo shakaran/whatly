@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        6.8.1
+Version:        6.8.2
 Release:        1%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
@@ -53,6 +53,11 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Thu Jul 30 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.8.2-1
+- Add spell-check dictionaries without repacking: Whatly mirrors the bundled
+  dictionaries into a writable user folder and picks up any .bdic dropped there
+  (#24). See CHANGELOG.md.
+
 * Thu Jul 30 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.8.1-1
 - Open WhatsApp group invite links (#186); sound for new-message notifications
   with a "Play sound" toggle (#120); the call "Move to new window" popout opens

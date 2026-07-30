@@ -1,3 +1,13 @@
+## 6.8.2 (2026-07-30)
+
+**Add spell-check dictionaries without repacking (#24).** Whatly now keeps a
+writable `qtwebengine_dictionaries` folder under your data directory and mirrors
+the bundled dictionaries into it on start-up, so you can drop an extra
+`<language>.bdic` (from a `hunspell-<language>` package) beside them and it is
+picked up automatically. It merges with the bundled set rather than replacing
+it, and works even for the AppImage, Flatpak and snap, whose own bundle is
+read-only. Setting `QTWEBENGINE_DICTIONARIES_PATH` still overrides everything.
+
 ## 6.8.1 (2026-07-30)
 
 **Group invite links now open (#186).** Clicking a `chat.whatsapp.com` group

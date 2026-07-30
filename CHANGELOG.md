@@ -1,4 +1,4 @@
-## Unreleased
+## 6.8.2 (2026-07-30)
 
 **Add spell-check dictionaries without repacking (#24).** Whatly now keeps a
 writable `qtwebengine_dictionaries` folder under your data directory and mirrors

@@ -108,6 +108,14 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="6.8.2" date="2026-07-30">
+      <description>
+        <p>A maintenance release:</p>
+        <ul>
+          <li>Add spell-check dictionaries without repacking: Whatly mirrors the bundled dictionaries into a writable user folder and picks up any .bdic you drop there</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.8.1" date="2026-07-30">
       <description>
         <p>A feature release:</p>
