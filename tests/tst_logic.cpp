@@ -259,6 +259,37 @@ private slots:
     QCOMPARE(Dictionaries::preferredDictionary(), loc);
     qunsetenv("QTWEBENGINE_DICTIONARIES_PATH");
   }
+  // syncDictionaryDirs mirrors the bundle into the user dir, keeps a user-added
+  // dictionary, and prunes a stale (broken) symlink from a previous run.
+  void userDictSync() {
+    QTemporaryDir bundle, user;
+    QVERIFY(bundle.isValid() && user.isValid());
+    for (const QString &n : {"en_US", "es_ES"}) {
+      QFile f(bundle.filePath(n + QStringLiteral(".bdic")));
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("BDIC");
+      f.close();
+    }
+    // A dictionary the user dropped in themselves...
+    QFile uf(user.filePath(QStringLiteral("zz_ZZ.bdic")));
+    QVERIFY(uf.open(QIODevice::WriteOnly));
+    uf.write("BDIC");
+    uf.close();
+    // ...and a stale link left over from a previous run (target does not exist).
+    QFile::link(QStringLiteral("/nonexistent/gone.bdic"),
+                user.filePath(QStringLiteral("stale.bdic")));
+
+    Dictionaries::syncDictionaryDirs(user.path(), bundle.path());
+
+    // QDir::Files resolves symlinks: valid links to the bundle count, the broken
+    // one does not.
+    const QStringList have =
+        QDir(user.path()).entryList({QStringLiteral("*.bdic")}, QDir::Files);
+    QVERIFY(have.contains(QStringLiteral("en_US.bdic")));  // mirrored
+    QVERIFY(have.contains(QStringLiteral("es_ES.bdic")));  // mirrored
+    QVERIFY(have.contains(QStringLiteral("zz_ZZ.bdic")));  // user's own, kept
+    QVERIFY(!have.contains(QStringLiteral("stale.bdic"))); // pruned
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────

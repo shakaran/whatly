@@ -18,6 +18,25 @@ namespace Dictionaries {
 // QTWEBENGINE_DICTIONARIES_PATH once, when the profile is constructed.
 QString dictionaryPath();
 
+// A writable per-user dictionaries directory (under AppDataLocation). Users can
+// drop extra <language>.bdic files here to add spell-check languages without
+// touching a read-only bundle (AppImage/Flatpak/snap). Empty if no data
+// location is available.
+QString userDictionaryPath();
+
+// Make the user directory the one Qt is pointed at: mirror the bundled .bdic
+// files into it (as symlinks) so they merge with any the user dropped there,
+// and drop stale links from a previous run (an AppImage remounts at a new path
+// each launch). No-op when QTWEBENGINE_DICTIONARIES_PATH is set, since then the
+// user is managing the directory explicitly. Call before dictionaryPath().
+void syncUserDictionaries();
+
+// The mechanism behind syncUserDictionaries(), on explicit directories so it is
+// unit tested: prune broken symlinks in userDir, then symlink every *.bdic from
+// bundledDir that userDir does not already provide (a real file the user added
+// keeps its place). bundledDir may be empty (prune only).
+void syncDictionaryDirs(const QString &userDir, const QString &bundledDir);
+
 // Basenames of the .bdic files in that directory ("en_US", "es_ES", ...) —
 // exactly what QWebEngineProfile::setSpellCheckLanguages() expects. Note the
 // underscore: the old default was "en-US", with a hyphen, which could not have

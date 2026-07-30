@@ -515,6 +515,11 @@ int main(int argc, char *argv[]) {
     qApp->setFont(f);
   }
 
+  // Mirror the bundled dictionaries into the writable user directory (and keep
+  // any the user dropped there), so spell-check languages can be added without
+  // touching a read-only bundle. Must run before dictionaryPath() reads it.
+  Dictionaries::syncUserDictionaries();
+
   // Qt reads QTWEBENGINE_DICTIONARIES_PATH once, when the profile is
   // constructed, so this has to happen before anything touches the profile.
   // Without it Chromium looks beside the executable, finds nothing, and the

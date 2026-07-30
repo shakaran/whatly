@@ -3,20 +3,18 @@
 
 #include <QCoreApplication>
 #include <QDir>
+#include <QFile>
 #include <QFileInfo>
 #include <QLocale>
+#include <QStandardPaths>
 
 namespace {
 
-// Everywhere a directory of .bdic files can plausibly live, most specific first.
-QStringList candidateDirectories() {
+// The read-only places a bundled directory of .bdic files can live, most
+// specific first. Excludes the env override and the writable user directory, so
+// syncUserDictionaries() can treat it purely as the source to mirror from.
+QStringList bundledCandidateDirectories() {
   QStringList candidates;
-
-  // An explicit override always wins.
-  const QString env = qEnvironmentVariable("QTWEBENGINE_DICTIONARIES_PATH");
-  if (!env.isEmpty())
-    candidates << env;
-
   // The dictionaries this build converted. The binary lands in <prefix>/bin and
   // they land in <prefix>/share/whatly, so derive one from the other instead of
   // baking in an absolute path: this has to work from a build tree, from a
@@ -31,7 +29,35 @@ QStringList candidateDirectories() {
   candidates << QStringLiteral("/usr/share/hunspell-bdic")
              << QStringLiteral("/usr/share/qt6/qtwebengine_dictionaries")
              << QStringLiteral("/usr/share/chromium/dictionaries");
+  return candidates;
+}
 
+// The first bundled directory that actually holds .bdic files, canonicalised.
+QString bundledSourceDir() {
+  for (const QString &candidate : bundledCandidateDirectories()) {
+    QDir dir(candidate);
+    if (dir.exists() &&
+        !dir.entryList({QStringLiteral("*.bdic")}, QDir::Files).isEmpty())
+      return dir.canonicalPath();
+  }
+  return QString();
+}
+
+QStringList candidateDirectories() {
+  QStringList candidates;
+
+  // An explicit override always wins.
+  const QString env = qEnvironmentVariable("QTWEBENGINE_DICTIONARIES_PATH");
+  if (!env.isEmpty())
+    candidates << env;
+
+  // The writable user directory next: syncUserDictionaries() fills it with the
+  // bundled dictionaries plus any the user dropped in, so it is the merged set.
+  const QString userDir = Dictionaries::userDictionaryPath();
+  if (!userDir.isEmpty())
+    candidates << userDir;
+
+  candidates << bundledCandidateDirectories();
   return candidates;
 }
 
@@ -50,6 +76,54 @@ QString dictionaryPath() {
       return dir.canonicalPath();
   }
   return QString();
+}
+
+QString userDictionaryPath() {
+  const QString base =
+      QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+  if (base.isEmpty())
+    return QString();
+  return base + QStringLiteral("/qtwebengine_dictionaries");
+}
+
+void syncDictionaryDirs(const QString &userDir, const QString &bundledDir) {
+  if (userDir.isEmpty())
+    return;
+  QDir().mkpath(userDir);
+  QDir ud(userDir);
+
+  // Drop stale links first: an AppImage remounts at a fresh path each launch, so
+  // last run's symlinks into the bundle no longer resolve. QDir::System is what
+  // makes a listing include a symlink whose target is gone.
+  const auto entries = ud.entryInfoList(
+      {QStringLiteral("*.bdic")},
+      QDir::Files | QDir::System | QDir::NoDotAndDotDot);
+  for (const QFileInfo &fi : entries) {
+    if (fi.isSymLink() && !QFileInfo::exists(fi.symLinkTarget()))
+      QFile::remove(fi.absoluteFilePath());
+  }
+
+  if (bundledDir.isEmpty() ||
+      QDir(bundledDir).canonicalPath() == ud.canonicalPath())
+    return; // nothing to mirror, or the user dir already is the bundle
+
+  // Symlink each bundled dictionary the user dir does not already provide. A
+  // real .bdic the user dropped in keeps its place and shadows the bundled one
+  // of the same name; a still-valid link from a previous run is left as is.
+  const QStringList bundled =
+      QDir(bundledDir).entryList({QStringLiteral("*.bdic")}, QDir::Files);
+  for (const QString &f : bundled) {
+    const QString dest = ud.filePath(f);
+    if (!QFileInfo::exists(dest))
+      QFile::link(QDir(bundledDir).filePath(f), dest);
+  }
+}
+
+void syncUserDictionaries() {
+  // An explicit override means the user manages that directory themselves.
+  if (!qEnvironmentVariable("QTWEBENGINE_DICTIONARIES_PATH").isEmpty())
+    return;
+  syncDictionaryDirs(userDictionaryPath(), bundledSourceDir());
 }
 
 QStringList availableDictionaries() {
