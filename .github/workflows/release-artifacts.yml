@@ -250,6 +250,12 @@ jobs:
           export QMAKE="$QT_ROOT_DIR/bin/qmake"
           export UPDATE_INFORMATION="gh-releases-zsync|shakaran|whatly|latest|Whatly-*-x86_64.AppImage.zsync"
           export OUTPUT="Whatly-${tag#v}-x86_64.AppImage"
+          # linuxdeploy-plugin-qt only bundles the platform plugin used at build
+          # time (xcb, since the CI runner is X11), so the AppImage fell back to
+          # Xwayland on Wayland desktops — where scrolling stutters (#36). Force
+          # the Wayland platform plugin and its integration plugins in too.
+          export EXTRA_PLATFORM_PLUGINS="libqwayland-generic.so;libqwayland-egl.so"
+          export EXTRA_QT_PLUGINS="wayland-decoration-client;wayland-graphics-integration-client;wayland-shell-integration"
           ./linuxdeploy-x86_64.AppImage --appdir AppDir \
             --desktop-file AppDir/usr/share/applications/net.shakaran.whatly.desktop \
             --icon-file AppDir/usr/share/icons/hicolor/256x256/apps/net.shakaran.whatly.png \
@@ -262,6 +268,14 @@ jobs:
           test -f AppDir/usr/lib/libsoftokn3.so \
             || { echo "::error::libsoftokn3.so missing from the AppImage bundle"; exit 1; }
           echo "ok: NSS PKCS#11 modules bundled"
+
+      - name: Verify the Wayland platform plugin is bundled
+        run: |
+          # Without it the app falls back to Xwayland on Wayland (stuttering
+          # scroll, #36). Fail rather than silently ship an Xwayland-only build.
+          ls AppDir/usr/plugins/platforms/libqwayland-*.so >/dev/null 2>&1 \
+            || { echo "::error::Wayland platform plugin missing from the AppImage bundle"; exit 1; }
+          echo "ok: Wayland platform plugin bundled"
 
       - name: Attach to release
         env:
@@ -324,6 +338,11 @@ jobs:
           wget -q "$qtbase/linuxdeploy-plugin-qt-x86_64.AppImage"
           chmod +x linuxdeploy*.AppImage
           export QMAKE="$QT_ROOT_DIR/bin/qmake"
+          # Bundle the Wayland platform plugin too, or the package falls back to
+          # Xwayland on Wayland desktops (stuttering scroll, #36). Same as the
+          # AppImage job.
+          export EXTRA_PLATFORM_PLUGINS="libqwayland-generic.so;libqwayland-egl.so"
+          export EXTRA_QT_PLUGINS="wayland-decoration-client;wayland-graphics-integration-client;wayland-shell-integration"
           # Populate AppDir with the bundled Qt runtime (RPATH => $ORIGIN/../lib).
           ./linuxdeploy-x86_64.AppImage --appdir AppDir \
             --desktop-file AppDir/usr/share/applications/net.shakaran.whatly.desktop \
