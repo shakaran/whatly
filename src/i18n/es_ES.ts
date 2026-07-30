@@ -1673,6 +1673,26 @@ Configure primero la contraseña en los ajustes.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>Hinting de fuentes</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>Cómo se ajustan los bordes de los glifos a los píxeles. Automático sigue tu sistema; un nivel más ligero puede corregir texto pesado o irregular.</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>Ligero</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>Mediano</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>Completo</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>Reproducir sonido</translation>
     </message>

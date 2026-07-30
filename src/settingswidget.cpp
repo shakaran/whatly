@@ -1295,6 +1295,24 @@ void SettingsWidget::loadPerformanceSettings() {
     ui->cacheTypeComboBox->blockSignals(false);
   }
 
+  // Font-hinting combo: item data is the stored token ("" = follow the system).
+  if (ui->fontHintingComboBox->count() == 0) {
+    ui->fontHintingComboBox->blockSignals(true);
+    ui->fontHintingComboBox->addItem(tr("Automatic"), QString());
+    ui->fontHintingComboBox->addItem(tr("None"), QStringLiteral("none"));
+    ui->fontHintingComboBox->addItem(tr("Slight"), QStringLiteral("slight"));
+    ui->fontHintingComboBox->addItem(tr("Medium"), QStringLiteral("medium"));
+    ui->fontHintingComboBox->addItem(tr("Full"), QStringLiteral("full"));
+    ui->fontHintingComboBox->blockSignals(false);
+  }
+  {
+    const int idx =
+        ui->fontHintingComboBox->findData(Performance::fontHinting());
+    ui->fontHintingComboBox->blockSignals(true);
+    ui->fontHintingComboBox->setCurrentIndex(idx < 0 ? 0 : idx);
+    ui->fontHintingComboBox->blockSignals(false);
+  }
+
   const auto set = [](QCheckBox *box, bool v) {
     box->blockSignals(true);
     box->setChecked(v);
@@ -1369,6 +1387,11 @@ void SettingsWidget::on_jsMemoryLimitSpinBox_valueChanged(int arg1) {
 void SettingsWidget::on_cacheTypeComboBox_currentIndexChanged(int index) {
   Performance::setCacheType(
       ui->cacheTypeComboBox->itemData(index).toString());
+}
+void SettingsWidget::on_fontHintingComboBox_currentIndexChanged(int index) {
+  // Applied as a Chromium flag at start-up, so it takes effect after a restart.
+  Performance::setFontHinting(
+      ui->fontHintingComboBox->itemData(index).toString());
 }
 void SettingsWidget::on_cacheMaxSpinBox_valueChanged(int arg1) {
   Performance::setCacheMaxMb(arg1);

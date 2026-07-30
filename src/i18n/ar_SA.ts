@@ -1673,6 +1673,26 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>تلميح الخطوط</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>كيفية محاذاة حواف المحارف مع البكسل. «تلقائي» يتبع نظامك؛ قد يُصلح المستوى الأخف النص الثقيل أو غير المنتظم.</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>خفيف</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>متوسط</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>كامل</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>تشغيل صوت</translation>
     </message>

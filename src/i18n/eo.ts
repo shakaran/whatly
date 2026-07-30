@@ -1669,6 +1669,26 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>Tiparo-hintado</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>Kiel glifaj randoj alĝustiĝas al bilderoj. Aŭtomata sekvas vian sistemon; pli malpeza nivelo povas ripari pezan aŭ neregulan tekston.</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>Malpeza</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>Meza</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>Plena</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>Ludi sonon</translation>
     </message>

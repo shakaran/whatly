@@ -1673,6 +1673,26 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>字体微调</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>字形边缘如何对齐到像素。自动跟随系统；较轻的级别可以修复过重或不均匀的文字。</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>轻微</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>中等</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>完全</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>播放声音</translation>
     </message>

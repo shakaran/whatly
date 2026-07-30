@@ -1673,6 +1673,26 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>Hinting font</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>Bagaimana tepi glif disesuaikan ke piksel. Otomatis mengikuti sistem Anda; tingkat yang lebih ringan dapat memperbaiki teks yang berat atau tidak rata.</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>Ringan</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>Sedang</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>Penuh</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>Putar suara</translation>
     </message>

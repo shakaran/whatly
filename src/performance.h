@@ -50,6 +50,10 @@ bool optimizeForSize();
 QString cacheType();
 int cacheMaxMb();
 
+// Font hinting for the page: "" (default, follow the system) or one of
+// none/slight/medium/full, mapped to --font-render-hinting (issue #37).
+QString fontHinting();
+
 // Interface/content scale factor (feeds QT_SCALE_FACTOR + --force-device-scale-
 // factor, matching #203). 0 = automatic (let the environment/desktop decide).
 double interfaceScaleFactor();
@@ -67,6 +71,7 @@ void setWebrtcPipeWire(bool v);
 void setJsMemoryLimitMb(int mb);
 void setOptimizeForSize(bool v);
 void setCacheType(const QString &type);
+void setFontHinting(const QString &level);
 void setCacheMaxMb(int mb);
 void setInterfaceScaleFactor(double factor);
 

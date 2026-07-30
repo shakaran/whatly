@@ -1673,6 +1673,26 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>Font-hinting</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>Hoe glyphranden op pixels worden uitgelijnd. Automatisch volgt je systeem; een lichter niveau kan zwaar of ongelijk tekstbeeld verhelpen.</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>Licht</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>Gemiddeld</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>Volledig</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>Geluid afspelen</translation>
     </message>

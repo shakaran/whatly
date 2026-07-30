@@ -1673,6 +1673,26 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>Hinting des polices</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>Comment les contours des glyphes sont alignés sur les pixels. Automatique suit votre système ; un niveau plus léger peut corriger un texte lourd ou irrégulier.</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>Léger</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>Moyen</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>Complet</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>Jouer un son</translation>
     </message>

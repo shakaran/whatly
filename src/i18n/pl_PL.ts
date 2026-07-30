@@ -1673,6 +1673,26 @@ Najpierw ustaw hasło w ustawieniach.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>Hinting czcionek</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>Jak krawędzie glifów są dopasowywane do pikseli. Automatyczny podąża za systemem; lżejszy poziom może poprawić ciężki lub nierówny tekst.</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>Lekki</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>Średni</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>Pełny</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>Odtwórz dźwięk</translation>
     </message>

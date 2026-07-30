@@ -1673,6 +1673,26 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>글꼴 힌팅</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>글리프 가장자리를 픽셀에 맞추는 방식입니다. 자동은 시스템을 따릅니다. 더 가벼운 수준은 두껍거나 고르지 않은 텍스트를 개선할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>약간</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>보통</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>전체</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>소리 재생</translation>
     </message>

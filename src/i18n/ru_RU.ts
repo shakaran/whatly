@@ -1673,6 +1673,26 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>Хинтинг шрифтов</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>Как края глифов привязываются к пикселям. «Автоматически» следует системе; более лёгкий уровень может исправить тяжёлый или неровный текст.</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>Слабый</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>Средний</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>Полный</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>Воспроизводить звук</translation>
     </message>

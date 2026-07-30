@@ -1679,6 +1679,26 @@ Imposta la password nelle Impostazioni.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>Hinting dei caratteri</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>Come i bordi dei glifi vengono allineati ai pixel. Automatico segue il sistema; un livello più leggero può correggere testo pesante o irregolare.</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>Leggero</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>Medio</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>Completo</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>Riproduci suono</translation>
     </message>

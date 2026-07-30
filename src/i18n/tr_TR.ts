@@ -1673,6 +1673,26 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>Yazı tipi hinting</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>Glif kenarlarının piksellere nasıl hizalandığı. Otomatik sisteminizi izler; daha hafif bir düzey ağır veya düzensiz metni düzeltebilir.</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>Hafif</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>Orta</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>Tam</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>Ses çal</translation>
     </message>

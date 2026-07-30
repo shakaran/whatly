@@ -1689,6 +1689,24 @@ background:transparent;
             </item>
            </layout>
           </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayoutFontHinting">
+            <item>
+             <widget class="QLabel" name="fontHintingLabel">
+              <property name="text">
+               <string>Font hinting</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="fontHintingComboBox">
+              <property name="toolTip">
+               <string>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
          </layout>
         </widget>
        </item>

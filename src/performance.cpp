@@ -70,6 +70,11 @@ bool optimizeForSize() {
 QString cacheType() {
   return settings().value(QStringLiteral("perf/cacheType"), QStringLiteral("disk")).toString();
 }
+QString fontHinting() {
+  // "" means leave Chromium's default (derived from fontconfig); otherwise one
+  // of none/slight/medium/full. See --font-render-hinting (issue #37).
+  return settings().value(QStringLiteral("perf/fontHinting"), QString()).toString();
+}
 int cacheMaxMb() { return settings().value(QStringLiteral("perf/cacheMaxMb"), 0).toInt(); }
 double interfaceScaleFactor() {
   return settings().value(QStringLiteral("perf/interfaceScaleFactor"), 0.0).toDouble();
@@ -92,6 +97,9 @@ void setOptimizeForSize(bool v) {
 }
 void setCacheType(const QString &type) {
   settings().setValue(QStringLiteral("perf/cacheType"), type);
+}
+void setFontHinting(const QString &level) {
+  settings().setValue(QStringLiteral("perf/fontHinting"), level);
 }
 void setCacheMaxMb(int mb) {
   settings().setValue(QStringLiteral("perf/cacheMaxMb"), qMax(0, mb));
@@ -164,6 +172,15 @@ QString chromiumFlagFragment() {
     f << QStringLiteral("--js-flags=--max-old-space-size=%1").arg(mb);
   else if (optimizeForSize())
     f << QStringLiteral("--js-flags=--optimize-for-size");
+
+  // Font hinting. WhatsApp Web glyphs can render with heavier hinting than a
+  // stock browser because Qt WebEngine follows the system fontconfig; letting
+  // the user force a level fixes that mismatch (issue #37). Empty = leave the
+  // default. The value is one word, so it is safe as a single flag token.
+  if (const QString hint = fontHinting();
+      hint == QLatin1String("none") || hint == QLatin1String("slight") ||
+      hint == QLatin1String("medium") || hint == QLatin1String("full"))
+    f << QStringLiteral("--font-render-hinting=%1").arg(hint);
 
   // Start-up crash recovery (issue #3): after a crash before the page loaded,
   // force progressively safer rendering. Level 1 drops all GPU/GL use for the

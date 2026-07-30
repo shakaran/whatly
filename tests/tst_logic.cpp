@@ -1634,6 +1634,8 @@ private slots:
     Performance::setOptimizeForSize(false); // default is on; isolate other cases
     Performance::setCacheType(QStringLiteral("disk"));
     Performance::setCacheMaxMb(0);
+    Performance::setFontHinting(QString()); // default: follow the system
+
     // No start-up crash recovery pending: level 0, watch disarmed.
     Performance::markStartupSucceeded();
   }
@@ -1786,6 +1788,30 @@ private slots:
     Performance::settings().remove(QStringLiteral("perf/optimizeForSize"));
     QVERIFY(Performance::optimizeForSize());
     Performance::setOptimizeForSize(false); // restore the isolated baseline
+  }
+
+  // Font hinting (issue #37): default follows the system (no flag); a set level
+  // maps to --font-render-hinting; an unknown value is ignored.
+  void fontHintingFlag() {
+    QCOMPARE(Performance::fontHinting(), QString());       // default
+    QVERIFY(!Performance::chromiumFlagFragment().contains(
+        QLatin1String("--font-render-hinting")));
+
+    Performance::setFontHinting(QStringLiteral("slight"));
+    QCOMPARE(Performance::fontHinting(), QStringLiteral("slight"));
+    QVERIFY(Performance::chromiumFlagFragment().contains(
+        QLatin1String("--font-render-hinting=slight")));
+
+    Performance::setFontHinting(QStringLiteral("none"));
+    QVERIFY(Performance::chromiumFlagFragment().contains(
+        QLatin1String("--font-render-hinting=none")));
+
+    // Anything not in {none,slight,medium,full} adds no flag.
+    Performance::setFontHinting(QStringLiteral("bogus"));
+    QVERIFY(!Performance::chromiumFlagFragment().contains(
+        QLatin1String("--font-render-hinting")));
+
+    Performance::setFontHinting(QString()); // restore the isolated baseline
   }
 
   void settersRoundTrip() {

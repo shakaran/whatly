@@ -1673,6 +1673,26 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Font hinting</source>
+        <translation>फ़ॉन्ट हिंटिंग</translation>
+    </message>
+    <message>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>ग्लिफ़ किनारों को पिक्सेल के साथ कैसे संरेखित किया जाता है। स्वचालित आपके सिस्टम का अनुसरण करता है; हल्का स्तर भारी या असमान टेक्स्ट ठीक कर सकता है।</translation>
+    </message>
+    <message>
+        <source>Slight</source>
+        <translation>हल्का</translation>
+    </message>
+    <message>
+        <source>Medium</source>
+        <translation>मध्यम</translation>
+    </message>
+    <message>
+        <source>Full</source>
+        <translation>पूर्ण</translation>
+    </message>
+    <message>
         <source>Play sound</source>
         <translation>ध्वनि चलाएँ</translation>
     </message>
