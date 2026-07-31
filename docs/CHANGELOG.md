@@ -1,3 +1,12 @@
+## 6.8.4 (2026-07-31)
+
+**Font hinting option (#37).** WhatsApp Web glyphs could render with heavier
+hinting than a stock browser, since Qt WebEngine follows the system fontconfig.
+Settings → Performance now has a "Font hinting" control (Automatic, None,
+Slight, Medium, Full) that maps to Chromium's `--font-render-hinting`, so a
+lighter level can be chosen when text looks heavy or uneven. Automatic (the
+default) keeps the current behaviour. Applied at start-up, so it needs a restart.
+
 ## 6.8.3 (2026-07-31)
 
 **Drag and drop no longer needs the FileTransfer portal outside a sandbox (#34).**

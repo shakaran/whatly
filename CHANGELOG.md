@@ -1,4 +1,4 @@
-## Unreleased
+## 6.8.4 (2026-07-31)
 
 **Font hinting option (#37).** WhatsApp Web glyphs could render with heavier
 hinting than a stock browser, since Qt WebEngine follows the system fontconfig.

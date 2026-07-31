@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        6.8.3
+Version:        6.8.4
 Release:        1%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
@@ -53,6 +53,12 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Fri Jul 31 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.8.4-1
+- New "Font hinting" option under Settings > Performance
+  (Automatic/None/Slight/Medium/Full), mapped to Chromium's
+  --font-render-hinting, for when text looks heavy or uneven (#37).
+  See CHANGELOG.md.
+
 * Fri Jul 31 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.8.3-1
 - Drag and drop reads real paths directly and only uses the FileTransfer portal
   in the Flatpak sandbox (#34); no more HD-quality dialog loop on sub-HD

@@ -108,6 +108,14 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="6.8.4" date="2026-07-31">
+      <description>
+        <p>A maintenance release:</p>
+        <ul>
+          <li>New "Font hinting" option under Settings → Performance (Automatic, None, Slight, Medium, Full), for when WhatsApp Web text looks heavy or uneven</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.8.3" date="2026-07-31">
       <description>
         <p>A maintenance release:</p>
