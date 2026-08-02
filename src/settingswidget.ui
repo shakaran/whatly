@@ -1536,7 +1536,7 @@ background:transparent;
        <item>
         <widget class="QGroupBox" name="groupBoxPerformance">
          <property name="title">
-          <string>Performance &amp; Privacy</string>
+          <string>Performance &amp; Privacy (requires restart)</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayoutPerformance">
           <item>
@@ -2129,7 +2129,7 @@ background:transparent;
             <item>
              <widget class="QLabel" name="interfaceScaleLabel">
               <property name="text">
-               <string>Interface scale</string>
+               <string>Interface scale (requires restart)</string>
               </property>
              </widget>
             </item>
@@ -2269,7 +2269,7 @@ background:transparent;
        <item>
         <widget class="QGroupBox" name="groupBoxJsAddons">
          <property name="title">
-          <string>Custom JavaScript addons</string>
+          <string>Custom JavaScript addons (requires restart)</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayoutJsAddons">
           <item>
@@ -2389,7 +2389,7 @@ background:transparent;
        <item>
         <widget class="QGroupBox" name="groupBoxShortcuts">
          <property name="title">
-          <string>Keyboard shortcuts</string>
+          <string>Keyboard shortcuts (requires restart)</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayoutShortcuts">
           <item>
