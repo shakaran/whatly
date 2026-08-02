@@ -70,6 +70,22 @@ bool optimizeForSize() {
 QString cacheType() {
   return settings().value(QStringLiteral("perf/cacheType"), QStringLiteral("disk")).toString();
 }
+bool suspendInactiveAccounts() {
+  return b(QStringLiteral("perf/suspendInactiveAccounts"), false);
+}
+int suspendAfterMinutes() {
+  const int m = settings().value(QStringLiteral("perf/suspendAfterMinutes"), 15).toInt();
+  return m < 1 ? 1 : m;
+}
+bool shouldSuspendAccount(bool enabled, bool isActive, bool isVisible,
+                          int idleSecs, int thresholdSecs) {
+  // Only a background (non-active, off-screen) account that has been idle past
+  // the threshold is suspended. The active or any visible view is never frozen,
+  // so a single-account user (whose only account is always active) is never
+  // affected.
+  return enabled && !isActive && !isVisible && idleSecs >= thresholdSecs;
+}
+
 QString fontHinting() {
   // "" means leave Chromium's default (derived from fontconfig); otherwise one
   // of none/slight/medium/full. See --font-render-hinting (issue #37).
@@ -100,6 +116,12 @@ void setCacheType(const QString &type) {
 }
 void setFontHinting(const QString &level) {
   settings().setValue(QStringLiteral("perf/fontHinting"), level);
+}
+void setSuspendInactiveAccounts(bool v) {
+  setB(QStringLiteral("perf/suspendInactiveAccounts"), v);
+}
+void setSuspendAfterMinutes(int m) {
+  settings().setValue(QStringLiteral("perf/suspendAfterMinutes"), qMax(1, m));
 }
 void setCacheMaxMb(int mb) {
   settings().setValue(QStringLiteral("perf/cacheMaxMb"), qMax(0, mb));

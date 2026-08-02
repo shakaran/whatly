@@ -1673,6 +1673,22 @@ Configure primero la contraseña en los ajustes.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>Suspender cuentas inactivas</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>Libera memoria suspendiendo las cuentas que no estás viendo. Una cuenta suspendida no recibe mensajes hasta que vuelves a ella. Las configuraciones de una sola cuenta no se ven afectadas.</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>tras</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> min</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>Hinting de fuentes</translation>
     </message>

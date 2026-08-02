@@ -1329,6 +1329,11 @@ void SettingsWidget::loadPerformanceSettings() {
   set(ui->webrtcShieldCheckBox, Performance::webrtcShield());
   set(ui->focusModeCheckBox, FocusMode::isEnabled());
   set(ui->hdMediaCheckBox, HdMedia::isEnabled());
+  set(ui->suspendInactiveAccountsCheckBox,
+      Performance::suspendInactiveAccounts());
+  ui->suspendAfterSpinBox->blockSignals(true);
+  ui->suspendAfterSpinBox->setValue(Performance::suspendAfterMinutes());
+  ui->suspendAfterSpinBox->blockSignals(false);
 
   ui->jsMemoryLimitSpinBox->blockSignals(true);
   ui->jsMemoryLimitSpinBox->setValue(Performance::jsMemoryLimitMb());
@@ -1387,6 +1392,12 @@ void SettingsWidget::on_jsMemoryLimitSpinBox_valueChanged(int arg1) {
 void SettingsWidget::on_cacheTypeComboBox_currentIndexChanged(int index) {
   Performance::setCacheType(
       ui->cacheTypeComboBox->itemData(index).toString());
+}
+void SettingsWidget::on_suspendInactiveAccountsCheckBox_toggled(bool checked) {
+  Performance::setSuspendInactiveAccounts(checked);
+}
+void SettingsWidget::on_suspendAfterSpinBox_valueChanged(int arg1) {
+  Performance::setSuspendAfterMinutes(arg1);
 }
 void SettingsWidget::on_fontHintingComboBox_currentIndexChanged(int index) {
   // Applied as a Chromium flag at start-up, so it takes effect after a restart.

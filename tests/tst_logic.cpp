@@ -1635,6 +1635,7 @@ private slots:
     Performance::setCacheType(QStringLiteral("disk"));
     Performance::setCacheMaxMb(0);
     Performance::setFontHinting(QString()); // default: follow the system
+    Performance::setSuspendInactiveAccounts(false);
 
     // No start-up crash recovery pending: level 0, watch disarmed.
     Performance::markStartupSucceeded();
@@ -1812,6 +1813,23 @@ private slots:
         QLatin1String("--font-render-hinting")));
 
     Performance::setFontHinting(QString()); // restore the isolated baseline
+  }
+
+  // Idle account suspension (#1): only a background, off-screen, idle account is
+  // frozen; the active or any visible view never is.
+  void suspendDecision() {
+    QVERIFY(!Performance::shouldSuspendAccount(false, false, false, 9999, 60)); // off
+    QVERIFY(!Performance::shouldSuspendAccount(true, true, false, 9999, 60));   // active
+    QVERIFY(!Performance::shouldSuspendAccount(true, false, true, 9999, 60));   // visible
+    QVERIFY(!Performance::shouldSuspendAccount(true, false, false, 30, 60));    // not idle yet
+    QVERIFY(Performance::shouldSuspendAccount(true, false, false, 120, 60));    // suspend
+
+    Performance::setSuspendInactiveAccounts(true);
+    QVERIFY(Performance::suspendInactiveAccounts());
+    Performance::setSuspendAfterMinutes(0);
+    QCOMPARE(Performance::suspendAfterMinutes(), 1); // clamped to >= 1
+    Performance::setSuspendInactiveAccounts(false);
+    Performance::setSuspendAfterMinutes(15);
   }
 
   void settersRoundTrip() {

@@ -1707,6 +1707,40 @@ background:transparent;
             </item>
            </layout>
           </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayoutSuspend">
+            <item>
+             <widget class="QCheckBox" name="suspendInactiveAccountsCheckBox">
+              <property name="toolTip">
+               <string>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</string>
+              </property>
+              <property name="text">
+               <string>Suspend inactive accounts</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="suspendAfterLabel">
+              <property name="text">
+               <string>after</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="suspendAfterSpinBox">
+              <property name="suffix">
+               <string> min</string>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>1440</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
          </layout>
         </widget>
        </item>

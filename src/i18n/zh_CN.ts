@@ -1673,6 +1673,22 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>挂起非活动账户</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>通过挂起你未查看的账户来释放内存。挂起的账户在你切换回来之前不会收到消息。单账户设置不受影响。</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>于</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> 分钟</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>字体微调</translation>
     </message>

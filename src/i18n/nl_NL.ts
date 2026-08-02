@@ -1673,6 +1673,22 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>Inactieve accounts opschorten</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>Maakt geheugen vrij door accounts die je niet bekijkt op te schorten. Een opgeschort account ontvangt geen berichten tot je terugschakelt. Configuraties met één account worden niet beïnvloed.</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>na</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> min</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>Font-hinting</translation>
     </message>

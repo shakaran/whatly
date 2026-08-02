@@ -1673,6 +1673,22 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>Etkin olmayan hesapları askıya al</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>Görüntülemediğiniz hesapları askıya alarak bellek boşaltır. Askıya alınmış bir hesap, ona geri dönene kadar mesaj almaz. Tek hesaplı kurulumlar etkilenmez.</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>sonra</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> min</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>Yazı tipi hinting</translation>
     </message>

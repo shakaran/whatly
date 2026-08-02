@@ -1673,6 +1673,22 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>Inaktive Konten aussetzen</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>Gibt Speicher frei, indem Konten ausgesetzt werden, die Sie nicht ansehen. Ein ausgesetztes Konto empfängt keine Nachrichten, bis Sie zurückwechseln. Einzelkonto-Setups sind nicht betroffen.</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>nach</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> min</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>Font-Hinting</translation>
     </message>

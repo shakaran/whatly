@@ -6,6 +6,7 @@
 #include <QMenu>
 #include <QSystemTrayIcon>
 #include <QWebChannel>
+#include <QDateTime>
 #include <QTimer>
 
 class WebView;
@@ -144,6 +145,8 @@ private:
     // WhatsApp Web version (window.Debug.VERSION), captured on load and shown in
     // the tab tooltip. Empty until the page reports it.
     QString waVersion;
+    // When this account was last the active/visible one; drives idle suspension.
+    QDateTime lastActive;
     // Non-null while the account has been torn off into its own window; its
     // view then lives in that window rather than in the tab stack/grid.
     QPointer<DetachedAccountWindow> window = nullptr;
@@ -230,6 +233,10 @@ private:
   // Ask a freshly loaded account's page for its WhatsApp Web version and cache
   // it on the Account, then refresh the tab tooltips.
   void captureAccountVersion(WebView *view);
+  // Freeze background account pages that have been idle past the configured
+  // threshold, to cut memory (Performance setting; off by default).
+  void suspendIdleAccounts();
+  QTimer *m_suspendTimer = nullptr;
   // The tab tooltip for an account: its WhatsApp Web version (once known) and
   // the build token from the page URL. Empty while neither is available.
   QString accountTabTooltip(const Account &acc) const;

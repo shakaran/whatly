@@ -1673,6 +1673,22 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>निष्क्रिय खाते निलंबित करें</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>उन खातों को निलंबित करके मेमोरी खाली करता है जिन्हें आप नहीं देख रहे। निलंबित खाता तब तक संदेश नहीं पाता जब तक आप वापस नहीं जाते। एकल-खाता सेटअप प्रभावित नहीं होते।</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>के बाद</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> मि</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>फ़ॉन्ट हिंटिंग</translation>
     </message>

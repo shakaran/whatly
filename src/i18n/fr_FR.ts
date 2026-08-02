@@ -1673,6 +1673,22 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>Suspendre les comptes inactifs</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>Libère de la mémoire en suspendant les comptes que vous ne consultez pas. Un compte suspendu ne reçoit pas de messages jusqu'à ce que vous y reveniez. Les configurations à compte unique ne sont pas affectées.</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>après</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> min</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>Hinting des polices</translation>
     </message>

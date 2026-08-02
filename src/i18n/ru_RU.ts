@@ -1673,6 +1673,22 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>Приостанавливать неактивные аккаунты</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>Освобождает память, приостанавливая аккаунты, которые вы не просматриваете. Приостановленный аккаунт не получает сообщения, пока вы не вернётесь к нему. Конфигурации с одним аккаунтом не затрагиваются.</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>через</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> мин</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>Хинтинг шрифтов</translation>
     </message>

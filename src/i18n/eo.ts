@@ -1669,6 +1669,22 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>Prokrasti neaktivajn kontojn</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>Liberigas memoron prokrastante kontojn kiujn vi ne rigardas. Prokrastita konto ne ricevas mesaĝojn ĝis vi reiras al ĝi. Unukontaj agordoj ne estas influataj.</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>post</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> min</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>Tiparo-hintado</translation>
     </message>

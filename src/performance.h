@@ -54,6 +54,16 @@ int cacheMaxMb();
 // none/slight/medium/full, mapped to --font-render-hinting (issue #37).
 QString fontHinting();
 
+// Suspend (freeze) background account pages after they have been idle, to cut
+// memory with multiple accounts. Off by default; a suspended account does not
+// receive messages until it is reopened.
+bool suspendInactiveAccounts();
+int suspendAfterMinutes();
+// Pure decision used by the suspend timer and unit tested: freeze only a
+// background (non-active, off-screen) account idle past the threshold.
+bool shouldSuspendAccount(bool enabled, bool isActive, bool isVisible,
+                          int idleSecs, int thresholdSecs);
+
 // Interface/content scale factor (feeds QT_SCALE_FACTOR + --force-device-scale-
 // factor, matching #203). 0 = automatic (let the environment/desktop decide).
 double interfaceScaleFactor();
@@ -72,6 +82,8 @@ void setJsMemoryLimitMb(int mb);
 void setOptimizeForSize(bool v);
 void setCacheType(const QString &type);
 void setFontHinting(const QString &level);
+void setSuspendInactiveAccounts(bool v);
+void setSuspendAfterMinutes(int m);
 void setCacheMaxMb(int mb);
 void setInterfaceScaleFactor(double factor);
 

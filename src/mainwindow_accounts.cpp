@@ -41,7 +41,10 @@
 #include "common.h"
 #include "detachedaccountwindow.h"
 #include "utils.h"
+#include "performance.h"
 #include "webview.h"
+#include <QDateTime>
+#include <QWebEnginePage>
 
 #include <QTimer>
 
@@ -80,6 +83,14 @@ void MainWindow::buildAccountArea() {
   m_layoutSaveTimer->setInterval(500);
   connect(m_layoutSaveTimer, &QTimer::timeout, this,
           [this]() { saveWindowLayout(); });
+
+  // Periodically freeze idle background accounts to save memory (opt-in). The
+  // check is cheap and a no-op unless the setting is on.
+  m_suspendTimer = new QTimer(this);
+  m_suspendTimer->setInterval(60 * 1000);
+  connect(m_suspendTimer, &QTimer::timeout, this,
+          [this]() { suspendIdleAccounts(); });
+  m_suspendTimer->start();
   auto *central = new QWidget(this);
   auto *layout = new QVBoxLayout(central);
   layout->setContentsMargins(0, 0, 0, 0);
@@ -636,6 +647,7 @@ WebView *MainWindow::addAccount(const QString &id, const QString &name,
 
   m_accountStack->addWidget(view);
   m_accounts.append({id, name, view, 0});
+  m_accounts.last().lastActive = QDateTime::currentDateTime();
 
   // The active view is the one the rest of MainWindow drives through
   // m_webEngine; without a page yet, point it here so the first account is
@@ -657,8 +669,16 @@ void MainWindow::setActiveAccount(int index) {
     return;
   if (m_accounts[index].window)
     return; // detached: it lives in its own window, not the main strip/stack
+  // The account we are leaving starts its idle clock now.
+  if (m_activeAccount >= 0 && m_activeAccount < m_accounts.size())
+    m_accounts[m_activeAccount].lastActive = QDateTime::currentDateTime();
   m_activeAccount = index;
   m_webEngine = m_accounts[index].view;   // everything current-account flows through this
+  m_accounts[index].lastActive = QDateTime::currentDateTime();
+  // Wake the account we are switching to (no-op if it was never suspended).
+  if (m_accounts[index].view && m_accounts[index].view->page())
+    m_accounts[index].view->page()->setLifecycleState(
+        QWebEnginePage::LifecycleState::Active);
   m_accountStack->setCurrentWidget(m_accounts[index].view);
   // Point the strip at the tab carrying this account's id.
   QSignalBlocker block(m_accountBar);
@@ -833,6 +853,32 @@ void MainWindow::captureAccountVersion(WebView *view) {
         m_accounts[idx].waVersion = ver;
         refreshAccountTabs(); // also refreshes every detached window's strip
       });
+}
+
+void MainWindow::suspendIdleAccounts() {
+  const bool enabled = Performance::suspendInactiveAccounts();
+  const int threshold = Performance::suspendAfterMinutes() * 60;
+  const QDateTime now = QDateTime::currentDateTime();
+  for (int i = 0; i < m_accounts.size(); ++i) {
+    Account &a = m_accounts[i];
+    if (!a.view || !a.view->page())
+      continue;
+    const bool isActive = (i == m_activeAccount);
+    const bool isVisible = a.view->isVisible(); // grid tiles / detached windows
+    const int idle = a.lastActive.isValid()
+                         ? int(a.lastActive.secsTo(now))
+                         : 0;
+    auto *page = a.view->page();
+    if (Performance::shouldSuspendAccount(enabled, isActive, isVisible, idle,
+                                          threshold)) {
+      if (page->lifecycleState() == QWebEnginePage::LifecycleState::Active)
+        page->setLifecycleState(QWebEnginePage::LifecycleState::Frozen);
+    } else if (!enabled &&
+               page->lifecycleState() != QWebEnginePage::LifecycleState::Active) {
+      // Feature turned off: wake anything we had frozen.
+      page->setLifecycleState(QWebEnginePage::LifecycleState::Active);
+    }
+  }
 }
 
 QString MainWindow::accountTabTooltip(const Account &acc) const {

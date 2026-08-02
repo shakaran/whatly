@@ -1673,6 +1673,22 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>非アクティブなアカウントを一時停止</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>表示していないアカウントを一時停止してメモリを解放します。一時停止したアカウントは、切り替えて戻すまでメッセージを受信しません。単一アカウントの設定には影響しません。</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>経過後</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> 分</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>フォントのヒンティング</translation>
     </message>

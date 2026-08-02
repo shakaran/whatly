@@ -1673,6 +1673,22 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>Tangguhkan akun tidak aktif</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>Membebaskan memori dengan menangguhkan akun yang tidak Anda lihat. Akun yang ditangguhkan tidak menerima pesan sampai Anda beralih kembali. Pengaturan akun tunggal tidak terpengaruh.</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>setelah</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> min</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>Hinting font</translation>
     </message>

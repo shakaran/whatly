@@ -1673,6 +1673,22 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>تعليق الحسابات غير النشطة</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>يوفّر الذاكرة بتعليق الحسابات التي لا تعرضها. الحساب المُعلَّق لا يستقبل الرسائل حتى تعود إليه. الإعدادات ذات الحساب الواحد لا تتأثر.</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>بعد</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> دقيقة</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>تلميح الخطوط</translation>
     </message>

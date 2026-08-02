@@ -1,5 +1,12 @@
 ## Unreleased
 
+**Suspend inactive accounts to save memory.** With more than one account, each is
+a full page holding hundreds of MB. A new Settings → Performance option freezes
+the pages of accounts you are not viewing after an idle timeout, giving that
+memory back, and wakes them when you switch. Off by default; a suspended account
+does not receive messages until you switch back to it, and single-account setups
+are never affected.
+
 **Flatpak drag-and-drop from media folders (#32).** Files dragged from a host
 file manager arrive as a plain `file://` path with no portal token, which the
 sandbox could not read outside `~/Downloads`. The Flatpak now also gets

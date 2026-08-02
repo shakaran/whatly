@@ -1673,6 +1673,22 @@ Najpierw ustaw hasło w ustawieniach.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>Wstrzymaj nieaktywne konta</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>Zwalnia pamięć, wstrzymując konta, których nie przeglądasz. Wstrzymane konto nie odbiera wiadomości, dopóki do niego nie wrócisz. Konfiguracje z jednym kontem nie są objęte.</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>po</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> min</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>Hinting czcionek</translation>
     </message>

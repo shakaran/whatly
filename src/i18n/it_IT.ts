@@ -1679,6 +1679,22 @@ Imposta la password nelle Impostazioni.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>Suspend inactive accounts</source>
+        <translation>Sospendi gli account inattivi</translation>
+    </message>
+    <message>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>Libera memoria sospendendo gli account che non stai guardando. Un account sospeso non riceve messaggi finché non ci torni. Le configurazioni a account singolo non sono interessate.</translation>
+    </message>
+    <message>
+        <source>after</source>
+        <translation>dopo</translation>
+    </message>
+    <message>
+        <source> min</source>
+        <translation> min</translation>
+    </message>
+    <message>
         <source>Font hinting</source>
         <translation>Hinting dei caratteri</translation>
     </message>
