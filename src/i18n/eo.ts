@@ -2372,8 +2372,8 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1485"/>
-        <source>Performance &amp; Privacy</source>
-        <translation>Rendimento kaj privateco</translation>
+        <source>Performance &amp; Privacy (requires restart)</source>
+        <translation>Rendimento kaj privateco (postulas restartigon)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1491"/>
@@ -2562,8 +2562,8 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1762"/>
-        <source>Interface scale</source>
-        <translation>Skalo de la interfaco</translation>
+        <source>Interface scale (requires restart)</source>
+        <translation>Skalo de la interfaco (postulas restartigon)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1769"/>
@@ -2614,8 +2614,8 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1902"/>
-        <source>Custom JavaScript addons</source>
-        <translation>Propraj JavaScript-aldonaĵoj</translation>
+        <source>Custom JavaScript addons (requires restart)</source>
+        <translation>Propraj JavaScript-aldonaĵoj (postulas restartigon)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1908"/>
@@ -2650,8 +2650,8 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2022"/>
-        <source>Keyboard shortcuts</source>
-        <translation>Fulmoklavoj</translation>
+        <source>Keyboard shortcuts (requires restart)</source>
+        <translation>Fulmoklavoj (postulas restartigon)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2028"/>

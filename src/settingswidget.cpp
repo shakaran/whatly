@@ -629,6 +629,22 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     makeCollapsible(privacy, false);
     makeCollapsible(window, false);
     makeCollapsible(advanced, false);
+    // Give each group made up entirely of restart-only settings its own
+    // "Restart now" button (bottom-right) — the same one offered beside
+    // Interface language and the window-frame controls (#27). One per group.
+    const auto addGroupRestart = [restartButton](QVBoxLayout *v) {
+      if (!v)
+        return;
+      auto *h = new QHBoxLayout;
+      h->setContentsMargins(0, 0, 0, 0);
+      h->addStretch(1);
+      h->addWidget(restartButton());
+      v->addLayout(h);
+    };
+    addGroupRestart(ui->verticalLayoutPerformance);
+    addGroupRestart(ui->verticalLayoutJsAddons);
+    addGroupRestart(ui->verticalLayoutShortcuts);
+
     makeCollapsible(ui->groupBox_7, false);          // Storage
     makeCollapsible(ui->groupBoxPerformance, false); // Performance & Privacy
     makeCollapsible(ui->groupBoxNetwork, false);     // Network & Startup
