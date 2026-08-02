@@ -9,6 +9,7 @@
 #include <QNetworkRequest>
 #include <QUrl>
 #include <QFile>
+#include <QTimer>
 
 static const char kEnabledKey[] = "aiEnabled";
 static const char kEndpointKey[] = "aiEndpoint";
@@ -210,8 +211,22 @@ void AiClient::complete(const QString &systemPrompt, const QString &userPrompt) 
   const QByteArray body =
       Ai::buildChatRequest(Ai::model(), systemPrompt, userPrompt);
   QNetworkReply *reply = m_net->post(req, body);
-  connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+
+  // Bound the wait: a hung endpoint (or a local model that never answers) would
+  // otherwise leave the request spinning with no resolution. On timeout we abort
+  // the reply, which surfaces as a clear failure below.
+  auto *timeout = new QTimer(reply);
+  timeout->setSingleShot(true);
+  connect(timeout, &QTimer::timeout, reply, [reply]() {
+    if (reply->isRunning())
+      reply->abort();
+  });
+  timeout->start(180000); // 3 min: local models can be slow
+
+  connect(reply, &QNetworkReply::finished, this, [this, reply, timeout]() {
+    timeout->stop();
     reply->deleteLater();
+    const bool aborted = reply->error() == QNetworkReply::OperationCanceledError;
     const QByteArray data = reply->readAll();
     QString err;
     const QString out = Ai::parseChatResponse(data, &err);
@@ -219,7 +234,9 @@ void AiClient::complete(const QString &systemPrompt, const QString &userPrompt) 
       emit completed(out);
       return;
     }
-    if (reply->error() != QNetworkReply::NoError && err.isEmpty())
+    if (aborted)
+      err = tr("The assistant took too long and was cancelled.");
+    else if (reply->error() != QNetworkReply::NoError && err.isEmpty())
       err = reply->errorString();
     emit failed(err.isEmpty() ? tr("The assistant request failed.") : err);
   });

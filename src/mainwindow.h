@@ -322,10 +322,17 @@ private:
   void aiSummarizeChat();
   void aiImproveComposer();
   void aiSuggestReply();
-  // Send system+user prompts and hand the result to `onResult`; feedback and
-  // errors are shown as in-page toasts. Guards on the AI being enabled.
+  // Send system+user prompts and hand the result to `onResult`; progress and
+  // errors are shown as an in-page toast (and a desktop notification on error,
+  // so feedback is not lost if the window is unfocused). Guards on AI enabled.
   void runAssistant(const QString &systemPrompt, const QString &userPrompt,
                     std::function<void(const QString &)> onResult);
+  // Put AI text into the composer, then verify it actually landed; if it did not
+  // (e.g. the window was not focused when the reply arrived), show it in a dialog
+  // so the result is never silently lost.
+  void deliverAiText(const QString &text);
+  // A simple read-only dialog for AI output (summary, or the fallback above).
+  void showTextDialog(const QString &title, const QString &text);
   class UpdateChecker *m_updateChecker = nullptr;
   QString m_pendingUpdateUrl;
   void initSettingWidget();

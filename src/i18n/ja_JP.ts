@@ -93,22 +93,27 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AiClient</name>
     <message>
-        <location filename="../aiassistant.cpp" line="189"/>
+        <location filename="../aiassistant.cpp" line="190"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
         <translation>AI エンドポイントが設定されていません（設定 → AI アシスタント）。</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="193"/>
+        <location filename="../aiassistant.cpp" line="194"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
         <translation>AI モデルが設定されていません（設定 → AI アシスタント）。</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="197"/>
+        <location filename="../aiassistant.cpp" line="198"/>
         <source>There is nothing to send to the assistant.</source>
         <translation>アシスタントに送るものがありません。</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="224"/>
+        <location filename="../aiassistant.cpp" line="238"/>
+        <source>The assistant took too long and was cancelled.</source>
+        <translation>アシスタントの応答に時間がかかりすぎたため中止しました。</translation>
+    </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="241"/>
         <source>The assistant request failed.</source>
         <translation>アシスタントへのリクエストに失敗しました。</translation>
     </message>
@@ -509,7 +514,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="257"/>
+        <location filename="../mainwindow_tray.cpp" line="271"/>
         <source>Recent unread</source>
         <translation>最近の未読</translation>
     </message>
@@ -619,12 +624,27 @@ Do you wish to override the security check and continue ?   </source>
         <translation>アシスタントに問い合わせ中…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1654"/>
+        <location filename="../mainwindow_webengine.cpp" line="1642"/>
+        <source>AI assistant</source>
+        <translation type="unfinished">AI アシスタント</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1684"/>
+        <source>Message updated.</source>
+        <translation>メッセージを更新しました。</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1687"/>
+        <source>AI result</source>
+        <translation>AI の結果</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1700"/>
         <source>Chat summary</source>
         <translation>チャットの要約</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1661"/>
+        <location filename="../mainwindow_webengine.cpp" line="1657"/>
         <source>Close</source>
         <translation type="unfinished">閉じる</translation>
     </message>
@@ -737,7 +757,7 @@ WebEngine が初期化されていません。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1346"/>
-        <location filename="../mainwindow_tray.cpp" line="223"/>
+        <location filename="../mainwindow_tray.cpp" line="237"/>
         <source>Collapse the chat list</source>
         <translation>チャット一覧を折りたたむ</translation>
     </message>
@@ -748,7 +768,7 @@ WebEngine が初期化されていません。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1462"/>
-        <location filename="../mainwindow_tray.cpp" line="21"/>
+        <location filename="../mainwindow_tray.cpp" line="22"/>
         <source>New Chat</source>
         <translation>新規チャット</translation>
     </message>
@@ -774,156 +794,156 @@ Open Settings now?</source>
 今すぐ設定を開きますか？</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="26"/>
-        <location filename="../mainwindow_tray.cpp" line="218"/>
+        <location filename="../mainwindow_tray.cpp" line="27"/>
+        <location filename="../mainwindow_tray.cpp" line="232"/>
         <source>Fullscreen</source>
         <translation>全画面</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="32"/>
+        <location filename="../mainwindow_tray.cpp" line="33"/>
         <source>Mi&amp;nimize to tray</source>
         <translation>トレイに最小化(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="51"/>
+        <location filename="../mainwindow_tray.cpp" line="52"/>
         <source>&amp;Restore</source>
         <translation>元に戻す(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="55"/>
+        <location filename="../mainwindow_tray.cpp" line="56"/>
         <source>Re&amp;load</source>
         <translation>再読み込み(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="61"/>
+        <location filename="../mainwindow_tray.cpp" line="62"/>
         <source>Loc&amp;k</source>
         <translation>ロック(&amp;K)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="66"/>
+        <location filename="../mainwindow_tray.cpp" line="67"/>
         <source>&amp;Mute audio</source>
         <translation>音声をミュート(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="75"/>
+        <location filename="../mainwindow_tray.cpp" line="76"/>
         <source>Zoom in</source>
         <translation>拡大</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="81"/>
+        <location filename="../mainwindow_tray.cpp" line="82"/>
         <source>Zoom out</source>
         <translation>縮小</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="86"/>
-        <location filename="../mainwindow_tray.cpp" line="220"/>
+        <location filename="../mainwindow_tray.cpp" line="87"/>
+        <location filename="../mainwindow_tray.cpp" line="234"/>
         <source>Reset zoom</source>
         <translation>ズームをリセット</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="101"/>
+        <location filename="../mainwindow_tray.cpp" line="102"/>
         <source>&amp;Settings</source>
         <translation>設定(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="107"/>
+        <location filename="../mainwindow_tray.cpp" line="108"/>
         <source>Scheduled &amp;messages…</source>
         <translation>予約メッセージ…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="114"/>
-        <location filename="../mainwindow_tray.cpp" line="225"/>
+        <location filename="../mainwindow_tray.cpp" line="115"/>
+        <location filename="../mainwindow_tray.cpp" line="239"/>
         <source>Translate selection</source>
         <translation>選択範囲を翻訳</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="119"/>
-        <location filename="../mainwindow_tray.cpp" line="227"/>
+        <location filename="../mainwindow_tray.cpp" line="122"/>
+        <location filename="../mainwindow_tray.cpp" line="241"/>
         <source>Translate message box</source>
         <translation>メッセージ欄を翻訳</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="126"/>
+        <location filename="../mainwindow_tray.cpp" line="131"/>
         <source>Export chat…</source>
         <translation>チャットをエクスポート…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="132"/>
-        <location filename="../mainwindow_tray.cpp" line="229"/>
+        <location filename="../mainwindow_tray.cpp" line="140"/>
+        <location filename="../mainwindow_tray.cpp" line="243"/>
         <source>AI: Summarise chat</source>
         <translation>AI: チャットを要約</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="137"/>
-        <location filename="../mainwindow_tray.cpp" line="230"/>
+        <location filename="../mainwindow_tray.cpp" line="147"/>
+        <location filename="../mainwindow_tray.cpp" line="244"/>
         <source>AI: Improve message</source>
         <translation>AI: メッセージを改善</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="142"/>
-        <location filename="../mainwindow_tray.cpp" line="231"/>
+        <location filename="../mainwindow_tray.cpp" line="154"/>
+        <location filename="../mainwindow_tray.cpp" line="245"/>
         <source>AI: Suggest a reply</source>
         <translation>AI: 返信を提案</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="147"/>
+        <location filename="../mainwindow_tray.cpp" line="161"/>
         <source>&amp;Toggle theme</source>
         <translation>テーマを切り替え(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="158"/>
+        <location filename="../mainwindow_tray.cpp" line="172"/>
         <source>Tabbed view</source>
         <translation>タブ表示</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="165"/>
-        <location filename="../mainwindow_tray.cpp" line="234"/>
+        <location filename="../mainwindow_tray.cpp" line="179"/>
+        <location filename="../mainwindow_tray.cpp" line="248"/>
         <source>Grid view</source>
         <translation>グリッド表示</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="183"/>
-        <location filename="../mainwindow_tray.cpp" line="235"/>
+        <location filename="../mainwindow_tray.cpp" line="197"/>
+        <location filename="../mainwindow_tray.cpp" line="249"/>
         <source>Command palette</source>
         <translation>コマンドパレット</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="192"/>
+        <location filename="../mainwindow_tray.cpp" line="206"/>
         <source>&amp;About</source>
         <translation>このアプリについて(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="201"/>
+        <location filename="../mainwindow_tray.cpp" line="215"/>
         <source>&amp;Quit</source>
         <translation>終了(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="214"/>
+        <location filename="../mainwindow_tray.cpp" line="228"/>
         <source>Reload</source>
         <translation>再読み込み</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="215"/>
+        <location filename="../mainwindow_tray.cpp" line="229"/>
         <source>Minimise to tray</source>
         <translation>トレイに最小化</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="216"/>
+        <location filename="../mainwindow_tray.cpp" line="230"/>
         <source>Lock</source>
         <translation>ロック</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="217"/>
+        <location filename="../mainwindow_tray.cpp" line="231"/>
         <source>Mute audio</source>
         <translation>音声をミュート</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="219"/>
+        <location filename="../mainwindow_tray.cpp" line="233"/>
         <source>New chat / open URL</source>
         <translation>新規チャット / URL を開く</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="228"/>
+        <location filename="../mainwindow_tray.cpp" line="242"/>
         <location filename="../mainwindow_webengine.cpp" line="1379"/>
         <location filename="../mainwindow_webengine.cpp" line="1383"/>
         <location filename="../mainwindow_webengine.cpp" line="1396"/>
@@ -935,35 +955,35 @@ Open Settings now?</source>
         <translation>チャットをエクスポート</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="232"/>
+        <location filename="../mainwindow_tray.cpp" line="246"/>
         <source>Settings</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="233"/>
+        <location filename="../mainwindow_tray.cpp" line="247"/>
         <source>Toggle theme</source>
         <translation>テーマを切り替え</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="236"/>
+        <location filename="../mainwindow_tray.cpp" line="250"/>
         <source>Quit</source>
         <translation>終了</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="214"/>
-        <location filename="../mainwindow_accounts.cpp" line="1216"/>
+        <location filename="../mainwindow_accounts.cpp" line="1224"/>
         <source>Rename…</source>
         <translation>名前を変更…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="215"/>
-        <location filename="../mainwindow_accounts.cpp" line="1217"/>
+        <location filename="../mainwindow_accounts.cpp" line="1225"/>
         <source>Open in own window</source>
         <translation>独立したウィンドウで開く</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="219"/>
-        <location filename="../mainwindow_accounts.cpp" line="1220"/>
+        <location filename="../mainwindow_accounts.cpp" line="1228"/>
         <source>Remove account</source>
         <translation>アカウントを削除</translation>
     </message>
@@ -974,7 +994,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="302"/>
-        <location filename="../mainwindow_tray.cpp" line="178"/>
+        <location filename="../mainwindow_tray.cpp" line="192"/>
         <source>Add account…</source>
         <translation>アカウントを追加…</translation>
     </message>
@@ -989,60 +1009,60 @@ Open Settings now?</source>
         <translation>%1 — 未読 %2 件</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="992"/>
+        <location filename="../mainwindow_accounts.cpp" line="1000"/>
         <source>Add another account</source>
         <translation>別のアカウントを追加</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1019"/>
-        <location filename="../mainwindow_accounts.cpp" line="1024"/>
+        <location filename="../mainwindow_accounts.cpp" line="1027"/>
+        <location filename="../mainwindow_accounts.cpp" line="1032"/>
         <source>Restore</source>
         <translation>元に戻す</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1020"/>
+        <location filename="../mainwindow_accounts.cpp" line="1028"/>
         <source>messages</source>
         <translation>件のメッセージ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1020"/>
+        <location filename="../mainwindow_accounts.cpp" line="1028"/>
         <source>message</source>
         <translation>件のメッセージ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1065"/>
+        <location filename="../mainwindow_accounts.cpp" line="1073"/>
         <source>Add account</source>
         <translation>アカウントを追加</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1066"/>
+        <location filename="../mainwindow_accounts.cpp" line="1074"/>
         <source>Name for the new account:</source>
         <translation>新しいアカウントの名前:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1067"/>
-        <location filename="../mainwindow_accounts.cpp" line="1914"/>
-        <location filename="../mainwindow_accounts.cpp" line="1919"/>
+        <location filename="../mainwindow_accounts.cpp" line="1075"/>
+        <location filename="../mainwindow_accounts.cpp" line="1922"/>
+        <location filename="../mainwindow_accounts.cpp" line="1927"/>
         <source>Account %1</source>
         <translation>アカウント %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1094"/>
+        <location filename="../mainwindow_accounts.cpp" line="1102"/>
         <source>Rename account</source>
         <translation>アカウント名を変更</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1094"/>
+        <location filename="../mainwindow_accounts.cpp" line="1102"/>
         <source>Account name:</source>
         <translation>アカウント名:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1602"/>
+        <location filename="../mainwindow_accounts.cpp" line="1610"/>
         <source>Tip: give an account its own window</source>
         <translation>ヒント: アカウントに専用のウィンドウを与える</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1603"/>
+        <location filename="../mainwindow_accounts.cpp" line="1611"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1051,8 +1071,8 @@ You can pull any account out into its own window: right-click its tab and choose
 任意のアカウントを独立したウィンドウに引き出せます。タブを右クリックして「独立したウィンドウで開く」を選択してください。そのウィンドウを閉じると、アカウントは再びタブとして戻ります。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1908"/>
-        <location filename="../mainwindow_accounts.cpp" line="1912"/>
+        <location filename="../mainwindow_accounts.cpp" line="1916"/>
+        <location filename="../mainwindow_accounts.cpp" line="1920"/>
         <source>Account 1</source>
         <translation>アカウント 1</translation>
     </message>
@@ -1663,12 +1683,12 @@ Please setup the password in the Settings first.</source>
         <translation>翻訳に失敗しました。</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="85"/>
+        <location filename="../aiassistant.cpp" line="86"/>
         <source>Unexpected response from the AI service.</source>
         <translation>AI サービスから予期しない応答がありました。</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="107"/>
+        <location filename="../aiassistant.cpp" line="108"/>
         <source>The AI service returned no text.</source>
         <translation>AI サービスがテキストを返しませんでした。</translation>
     </message>

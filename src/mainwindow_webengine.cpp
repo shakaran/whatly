@@ -1633,11 +1633,61 @@ void MainWindow::runAssistant(const QString &systemPrompt,
                           onResult(text);
                         }));
   conns->append(connect(m_aiClient, &AiClient::failed, this,
-                        [toast, cleanup](const QString &err) {
+                        [this, toast, cleanup](const QString &err) {
                           cleanup();
                           toast(err, false);
+                          // Also a desktop notification: the in-page toast is
+                          // easy to miss (or gone) if the window lost focus
+                          // during a slow request.
+                          notify(tr("AI assistant"), err, 6000);
                         }));
   m_aiClient->complete(systemPrompt, userPrompt);
+}
+
+void MainWindow::showTextDialog(const QString &title, const QString &text) {
+  auto *dlg = new QDialog(this);
+  dlg->setAttribute(Qt::WA_DeleteOnClose);
+  dlg->setWindowTitle(title);
+  dlg->resize(520, 380);
+  auto *lay = new QVBoxLayout(dlg);
+  auto *edit = new QPlainTextEdit(dlg);
+  edit->setPlainText(text);
+  edit->setReadOnly(true);
+  lay->addWidget(edit);
+  auto *close = new QPushButton(tr("Close"), dlg);
+  connect(close, &QPushButton::clicked, dlg, &QDialog::accept);
+  lay->addWidget(close);
+  dlg->show();
+  dlg->raise();
+  dlg->activateWindow();
+}
+
+void MainWindow::deliverAiText(const QString &text) {
+  if (!m_webEngine || !m_webEngine->page())
+    return;
+  auto *page = m_webEngine->page();
+  // Capture the composer, replace it, then read it back to confirm the change
+  // actually took — execCommand silently no-ops when the window is not focused,
+  // which is easy to hit after a slow model call.
+  page->runJavaScript(Translate::readComposerScript(), [this, text](
+                                                           const QVariant &b) {
+    const QString before = b.toString().trimmed();
+    if (!m_webEngine || !m_webEngine->page())
+      return;
+    m_webEngine->page()->runJavaScript(Translate::replaceComposerScript(text));
+    m_webEngine->page()->runJavaScript(
+        Translate::readComposerScript(), [this, text, before](const QVariant &a) {
+          const QString after = a.toString().trimmed();
+          if (!after.isEmpty() && after != before) {
+            if (m_webEngine && m_webEngine->page())
+              m_webEngine->page()->runJavaScript(
+                  Translate::toastScript(tr("Message updated."), false));
+          } else {
+            // The composer did not change — show the result so it is not lost.
+            showTextDialog(tr("AI result"), text);
+          }
+        });
+  });
 }
 
 void MainWindow::aiSummarizeChat() {
@@ -1645,24 +1695,9 @@ void MainWindow::aiSummarizeChat() {
     return;
   m_webEngine->page()->runJavaScript(
       Ai::readContextScript(200), [this](const QVariant &v) {
-        const QString context = v.toString();
-        runAssistant(Ai::summarizeSystemPrompt(), context,
+        runAssistant(Ai::summarizeSystemPrompt(), v.toString(),
                      [this](const QString &summary) {
-                       // Show the summary in a simple read-only dialog.
-                       auto *dlg = new QDialog(this);
-                       dlg->setAttribute(Qt::WA_DeleteOnClose);
-                       dlg->setWindowTitle(tr("Chat summary"));
-                       dlg->resize(520, 380);
-                       auto *lay = new QVBoxLayout(dlg);
-                       auto *edit = new QPlainTextEdit(dlg);
-                       edit->setPlainText(summary);
-                       edit->setReadOnly(true);
-                       lay->addWidget(edit);
-                       auto *close = new QPushButton(tr("Close"), dlg);
-                       connect(close, &QPushButton::clicked, dlg, &QDialog::accept);
-                       lay->addWidget(close);
-                       dlg->show();
-                       dlg->raise();
+                       showTextDialog(tr("Chat summary"), summary);
                      });
       });
 }
@@ -1673,11 +1708,7 @@ void MainWindow::aiImproveComposer() {
   m_webEngine->page()->runJavaScript(
       Translate::readComposerScript(), [this](const QVariant &v) {
         runAssistant(Ai::improveSystemPrompt(), v.toString(),
-                     [this](const QString &improved) {
-                       if (m_webEngine && m_webEngine->page())
-                         m_webEngine->page()->runJavaScript(
-                             Translate::replaceComposerScript(improved));
-                     });
+                     [this](const QString &improved) { deliverAiText(improved); });
       });
 }
 
@@ -1688,9 +1719,7 @@ void MainWindow::aiSuggestReply() {
       Ai::readContextScript(60), [this](const QVariant &v) {
         runAssistant(Ai::suggestReplySystemPrompt(), v.toString(),
                      [this](const QString &suggestion) {
-                       if (m_webEngine && m_webEngine->page())
-                         m_webEngine->page()->runJavaScript(
-                             Translate::replaceComposerScript(suggestion));
+                       deliverAiText(suggestion);
                      });
       });
 }
