@@ -1663,31 +1663,48 @@ void MainWindow::showTextDialog(const QString &title, const QString &text) {
 }
 
 void MainWindow::deliverAiText(const QString &text) {
-  if (!m_webEngine || !m_webEngine->page())
+  if (!m_webEngine || !m_webEngine->page()) {
+    showTextDialog(tr("AI result"), text);
     return;
-  auto *page = m_webEngine->page();
-  // Capture the composer, replace it, then read it back to confirm the change
-  // actually took — execCommand silently no-ops when the window is not focused,
-  // which is easy to hit after a slow model call.
-  page->runJavaScript(Translate::readComposerScript(), [this, text](
-                                                           const QVariant &b) {
-    const QString before = b.toString().trimmed();
-    if (!m_webEngine || !m_webEngine->page())
+  }
+
+  // Deliver exactly once, and never depend on the page staying responsive: a
+  // heavy local model can leave the render process briefly unresponsive, and a
+  // page callback that never fires would otherwise swallow the result. A timer
+  // guarantees the result is shown (in a dialog) if we cannot confirm within a
+  // short window that it landed in the composer.
+  auto done = std::make_shared<bool>(false);
+  QTimer::singleShot(3000, this, [this, text, done]() {
+    if (*done)
       return;
-    m_webEngine->page()->runJavaScript(Translate::replaceComposerScript(text));
-    m_webEngine->page()->runJavaScript(
-        Translate::readComposerScript(), [this, text, before](const QVariant &a) {
-          const QString after = a.toString().trimmed();
-          if (!after.isEmpty() && after != before) {
-            if (m_webEngine && m_webEngine->page())
-              m_webEngine->page()->runJavaScript(
-                  Translate::toastScript(tr("Message updated."), false));
-          } else {
-            // The composer did not change — show the result so it is not lost.
-            showTextDialog(tr("AI result"), text);
-          }
-        });
+    *done = true;
+    showTextDialog(tr("AI result"), text);
   });
+
+  auto *page = m_webEngine->page();
+  page->runJavaScript(
+      Translate::readComposerScript(), [this, text, done](const QVariant &b) {
+        if (*done || !m_webEngine || !m_webEngine->page())
+          return;
+        const QString before = b.toString().trimmed();
+        m_webEngine->page()->runJavaScript(Translate::replaceComposerScript(text));
+        m_webEngine->page()->runJavaScript(
+            Translate::readComposerScript(),
+            [this, text, before, done](const QVariant &a) {
+              if (*done)
+                return;
+              *done = true;
+              const QString after = a.toString().trimmed();
+              if (!after.isEmpty() && after != before) {
+                if (m_webEngine && m_webEngine->page())
+                  m_webEngine->page()->runJavaScript(
+                      Translate::toastScript(tr("Message updated."), false));
+              } else {
+                // Composer did not change (e.g. window unfocused) — show it.
+                showTextDialog(tr("AI result"), text);
+              }
+            });
+      });
 }
 
 void MainWindow::aiSummarizeChat() {
