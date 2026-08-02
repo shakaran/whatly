@@ -210,6 +210,7 @@ set(SOURCES
     src/translator.cpp
     src/chatexport.cpp
     src/notificationreply.cpp
+    src/aiassistant.cpp
     src/cannedresponses.cpp
     src/globalshortcut.cpp
     src/privacyblur.cpp
@@ -287,6 +288,7 @@ set(HEADERS
     src/translator.h
     src/chatexport.h
     src/notificationreply.h
+    src/aiassistant.h
     src/cannedresponses.h
     src/privacyblur.h
     src/chatliststrip.h

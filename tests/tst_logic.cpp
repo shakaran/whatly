@@ -48,6 +48,7 @@
 #include "translator.h"
 #include "chatexport.h"
 #include "notificationreply.h"
+#include "aiassistant.h"
 #include "cannedresponses.h"
 #include "webtweaks.h"
 #include "chatliststrip.h"
@@ -2434,6 +2435,66 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// AiAssistant (#5): OpenAI-compatible request building, response parsing,
+// prompts, the context script and settings.
+class TstAiAssistant : public QObject {
+  Q_OBJECT
+private slots:
+  void requestBody() {
+    const QByteArray b = Ai::buildChatRequest(
+        QStringLiteral("gpt-4o-mini"), QStringLiteral("sys"),
+        QStringLiteral("hello"));
+    const QJsonObject o = QJsonDocument::fromJson(b).object();
+    QCOMPARE(o.value("model").toString(), QStringLiteral("gpt-4o-mini"));
+    const QJsonArray msgs = o.value("messages").toArray();
+    QCOMPARE(msgs.size(), 2);
+    QCOMPARE(msgs[0].toObject().value("role").toString(),
+             QStringLiteral("system"));
+    QCOMPARE(msgs[0].toObject().value("content").toString(),
+             QStringLiteral("sys"));
+    QCOMPARE(msgs[1].toObject().value("role").toString(),
+             QStringLiteral("user"));
+    QCOMPARE(msgs[1].toObject().value("content").toString(),
+             QStringLiteral("hello"));
+  }
+  void responseParsing() {
+    QString err;
+    const QByteArray ok =
+        "{\"choices\":[{\"message\":{\"role\":\"assistant\","
+        "\"content\":\"  hi there  \"}}]}";
+    QCOMPARE(Ai::parseChatResponse(ok, &err), QStringLiteral("hi there"));
+    QVERIFY(err.isEmpty());
+    // OpenAI nested error object.
+    QVERIFY(Ai::parseChatResponse(
+                "{\"error\":{\"message\":\"bad key\"}}", &err).isEmpty());
+    QCOMPARE(err, QStringLiteral("bad key"));
+    // Garbage never crashes.
+    QVERIFY(Ai::parseChatResponse("not json", &err).isEmpty());
+    QVERIFY(!err.isEmpty());
+  }
+  void promptsAndContext() {
+    QVERIFY(!Ai::summarizeSystemPrompt().isEmpty());
+    QVERIFY(!Ai::improveSystemPrompt().isEmpty());
+    QVERIFY(!Ai::suggestReplySystemPrompt().isEmpty());
+    const QString js = Ai::readContextScript(50);
+    QVERIFY(js.contains(QLatin1String("data-pre-plain-text")));
+    QVERIFY(js.contains(QLatin1String("selectable-text")));
+    QVERIFY(js.contains(QLatin1String("slice(-50)")));
+    QVERIFY(js.contains(QLatin1String("catch")));
+  }
+  void settingsRoundTrip() {
+    Ai::setEnabled(true);
+    QVERIFY(Ai::isEnabled());
+    Ai::setEndpoint(QStringLiteral("  http://localhost:11434/v1/chat/completions  "));
+    QCOMPARE(Ai::endpoint(),
+             QStringLiteral("http://localhost:11434/v1/chat/completions"));
+    Ai::setModel(QStringLiteral("llama3"));
+    QCOMPARE(Ai::model(), QStringLiteral("llama3"));
+    Ai::setEnabled(false);
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CannedResponses: CRUD round-trip and the escaped insert snippet.
 class TstCannedResponses : public QObject {
   Q_OBJECT
@@ -3132,6 +3193,7 @@ int main(int argc, char *argv[]) {
   { TstUndoSend t;            run(&t); }
   { TstTranslator t;          run(&t); }
   { TstChatExport t;          run(&t); }
+  { TstAiAssistant t;         run(&t); }
   { TstStorageInfo t;         run(&t); }
   { TstUpdateCheck t;         run(&t); }
   { TstFuzzy t;               run(&t); }

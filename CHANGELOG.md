@@ -1,5 +1,15 @@
 ## Unreleased
 
+**AI assistant.** A new Settings → AI assistant section connects Whatly to any
+OpenAI-compatible `/chat/completions` endpoint (OpenAI, OpenRouter, Groq, or a
+local runner like Ollama or LM Studio, which keeps everything on your machine).
+Three actions in the command palette and Shortcuts: "AI: Summarise chat" shows a
+summary of the open conversation, "AI: Improve message" rewrites your draft in
+the message box, and "AI: Suggest a reply" proposes a response and puts it in the
+box to review before sending. The chat text is sent to the endpoint you choose,
+so pick one you trust; the request is made by the app, so the endpoint and
+optional API key never reach WhatsApp Web. Off by default.
+
 **Reply from notifications.** On desktops whose notification service supports it
 (KDE Plasma, and others that advertise the freedesktop `inline-reply`
 capability), message notifications now carry a reply field: type an answer and it

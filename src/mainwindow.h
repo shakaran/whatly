@@ -30,11 +30,13 @@ class LocalApiServer;
 
 #include <QHash>
 #include <QPointer>
+#include <functional>
 
 class PortalNotification;
 class QLabel;
 class Translator;
 class NotificationReply;
+class AiClient;
 #include "settingswidget.h"
 #include "pagebridge.h"
 #include "webenginepage.h"
@@ -310,6 +312,20 @@ private:
   // Reads the completed collector payload from the page and writes the
   // transcript, JSON and media files into a dated subfolder of `baseDir`.
   void writeChatExport(const QString &baseDir);
+
+  // AI assistant (idea #5): summarise the open chat, improve the composer text,
+  // or suggest a reply, through the configured OpenAI-compatible endpoint.
+  AiClient *m_aiClient = nullptr;
+  QAction *m_aiSummarizeAction = nullptr;
+  QAction *m_aiImproveAction = nullptr;
+  QAction *m_aiSuggestAction = nullptr;
+  void aiSummarizeChat();
+  void aiImproveComposer();
+  void aiSuggestReply();
+  // Send system+user prompts and hand the result to `onResult`; feedback and
+  // errors are shown as in-page toasts. Guards on the AI being enabled.
+  void runAssistant(const QString &systemPrompt, const QString &userPrompt,
+                    std::function<void(const QString &)> onResult);
   class UpdateChecker *m_updateChecker = nullptr;
   QString m_pendingUpdateUrl;
   void initSettingWidget();

@@ -91,6 +91,29 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>AiClient</name>
+    <message>
+        <location filename="../aiassistant.cpp" line="162"/>
+        <source>No AI endpoint is configured (Settings → AI assistant).</source>
+        <translation>未配置 AI 端点（设置 → AI 助手）。</translation>
+    </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="166"/>
+        <source>No AI model is configured (Settings → AI assistant).</source>
+        <translation>未配置 AI 模型（设置 → AI 助手）。</translation>
+    </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="170"/>
+        <source>There is nothing to send to the assistant.</source>
+        <translation>没有可发送给助手的内容。</translation>
+    </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="197"/>
+        <source>The assistant request failed.</source>
+        <translation>助手请求失败。</translation>
+    </message>
+</context>
+<context>
     <name>AutomaticTheme</name>
     <message>
         <location filename="../automatictheme.ui" line="14"/>
@@ -486,94 +509,119 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="238"/>
+        <location filename="../mainwindow_tray.cpp" line="257"/>
         <source>Recent unread</source>
         <translation>最近未读</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="841"/>
+        <location filename="../mainwindow_webengine.cpp" line="846"/>
         <source>Reply</source>
         <translation>回复</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="842"/>
+        <location filename="../mainwindow_webengine.cpp" line="847"/>
         <source>Reply to %1…</source>
         <translation>回复 %1……</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="990"/>
+        <location filename="../mainwindow_webengine.cpp" line="995"/>
         <source>Waiting for network…</source>
         <translation>正在等待网络…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1331"/>
+        <location filename="../mainwindow_webengine.cpp" line="1336"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>内联翻译已关闭（在设置 → 翻译中启用）。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1335"/>
+        <location filename="../mainwindow_webengine.cpp" line="1340"/>
         <source>The message box is empty.</source>
         <translation>消息框为空。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1336"/>
+        <location filename="../mainwindow_webengine.cpp" line="1341"/>
         <source>Select some text to translate first.</source>
         <translation>请先选择要翻译的文本。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1374"/>
+        <location filename="../mainwindow_webengine.cpp" line="1379"/>
         <source>No conversation is open.</source>
         <translation>没有打开的对话。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1378"/>
+        <location filename="../mainwindow_webengine.cpp" line="1383"/>
         <source>An export is already running.</source>
         <translation>已有一个导出正在进行。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1383"/>
+        <location filename="../mainwindow_webengine.cpp" line="1388"/>
         <source>Choose a folder for the exported chat</source>
         <translation>为导出的聊天选择一个文件夹</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1389"/>
+        <location filename="../mainwindow_webengine.cpp" line="1394"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>正在收集消息……滚动浏览对话。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1390"/>
+        <location filename="../mainwindow_webengine.cpp" line="1395"/>
         <source>Cancel</source>
         <translation type="unfinished">取消</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1437"/>
+        <location filename="../mainwindow_webengine.cpp" line="1442"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>正在收集消息……（目前 %1 条）</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1443"/>
+        <location filename="../mainwindow_webengine.cpp" line="1448"/>
         <source>Could not read the conversation: %1</source>
         <translation>无法读取对话：%1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1467"/>
+        <location filename="../mainwindow_webengine.cpp" line="1472"/>
         <source>chat</source>
         <translation>聊天</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1479"/>
+        <location filename="../mainwindow_webengine.cpp" line="1484"/>
         <source>Could not create the export folder.</source>
         <translation>无法创建导出文件夹。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1509"/>
+        <location filename="../mainwindow_webengine.cpp" line="1514"/>
         <source>The export could not be fully written.</source>
         <translation>导出未能完整写入。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1513"/>
+        <location filename="../mainwindow_webengine.cpp" line="1518"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>已将 %1 条消息和 %2 个媒体文件保存到 %3</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1594"/>
+        <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
+        <translation>AI 助手已关闭（在设置 → AI 助手中启用）。</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1598"/>
+        <source>There is nothing for the assistant to work on.</source>
+        <translation>没有可供助手处理的内容。</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1604"/>
+        <source>Asking the assistant…</source>
+        <translation>正在询问助手……</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1636"/>
+        <source>Chat summary</source>
+        <translation>聊天摘要</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1643"/>
+        <source>Close</source>
+        <translation type="unfinished">关闭</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="105"/>
@@ -640,8 +688,8 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../mainwindow.cpp" line="865"/>
         <location filename="../mainwindow.cpp" line="871"/>
-        <location filename="../mainwindow_webengine.cpp" line="949"/>
-        <location filename="../mainwindow_webengine.cpp" line="952"/>
+        <location filename="../mainwindow_webengine.cpp" line="954"/>
+        <location filename="../mainwindow_webengine.cpp" line="957"/>
         <source>| Error</source>
         <translation>| 错误</translation>
     </message>
@@ -684,7 +732,7 @@ WebEngine 未初始化。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1346"/>
-        <location filename="../mainwindow_tray.cpp" line="207"/>
+        <location filename="../mainwindow_tray.cpp" line="223"/>
         <source>Collapse the chat list</source>
         <translation>折叠聊天列表</translation>
     </message>
@@ -722,7 +770,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="26"/>
-        <location filename="../mainwindow_tray.cpp" line="202"/>
+        <location filename="../mainwindow_tray.cpp" line="218"/>
         <source>Fullscreen</source>
         <translation>全屏</translation>
     </message>
@@ -763,7 +811,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="86"/>
-        <location filename="../mainwindow_tray.cpp" line="204"/>
+        <location filename="../mainwindow_tray.cpp" line="220"/>
         <source>Reset zoom</source>
         <translation>重置缩放</translation>
     </message>
@@ -779,13 +827,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="114"/>
-        <location filename="../mainwindow_tray.cpp" line="209"/>
+        <location filename="../mainwindow_tray.cpp" line="225"/>
         <source>Translate selection</source>
         <translation>翻译所选内容</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="119"/>
-        <location filename="../mainwindow_tray.cpp" line="211"/>
+        <location filename="../mainwindow_tray.cpp" line="227"/>
         <source>Translate message box</source>
         <translation>翻译消息框</translation>
     </message>
@@ -795,183 +843,201 @@ Open Settings now?</source>
         <translation>导出聊天……</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="131"/>
+        <location filename="../mainwindow_tray.cpp" line="132"/>
+        <location filename="../mainwindow_tray.cpp" line="229"/>
+        <source>AI: Summarise chat</source>
+        <translation>AI：总结聊天</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="137"/>
+        <location filename="../mainwindow_tray.cpp" line="230"/>
+        <source>AI: Improve message</source>
+        <translation>AI：改进消息</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="142"/>
+        <location filename="../mainwindow_tray.cpp" line="231"/>
+        <source>AI: Suggest a reply</source>
+        <translation>AI：建议回复</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="147"/>
         <source>&amp;Toggle theme</source>
         <translation>切换主题(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="142"/>
+        <location filename="../mainwindow_tray.cpp" line="158"/>
         <source>Tabbed view</source>
         <translation>标签页视图</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="149"/>
-        <location filename="../mainwindow_tray.cpp" line="215"/>
+        <location filename="../mainwindow_tray.cpp" line="165"/>
+        <location filename="../mainwindow_tray.cpp" line="234"/>
         <source>Grid view</source>
         <translation>网格视图</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="167"/>
-        <location filename="../mainwindow_tray.cpp" line="216"/>
+        <location filename="../mainwindow_tray.cpp" line="183"/>
+        <location filename="../mainwindow_tray.cpp" line="235"/>
         <source>Command palette</source>
         <translation>命令面板</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="176"/>
+        <location filename="../mainwindow_tray.cpp" line="192"/>
         <source>&amp;About</source>
         <translation>关于(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="185"/>
+        <location filename="../mainwindow_tray.cpp" line="201"/>
         <source>&amp;Quit</source>
         <translation>退出(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="198"/>
+        <location filename="../mainwindow_tray.cpp" line="214"/>
         <source>Reload</source>
         <translation>重新加载</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="199"/>
+        <location filename="../mainwindow_tray.cpp" line="215"/>
         <source>Minimise to tray</source>
         <translation>最小化到托盘</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="200"/>
+        <location filename="../mainwindow_tray.cpp" line="216"/>
         <source>Lock</source>
         <translation>锁定</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="201"/>
+        <location filename="../mainwindow_tray.cpp" line="217"/>
         <source>Mute audio</source>
         <translation>静音</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="203"/>
+        <location filename="../mainwindow_tray.cpp" line="219"/>
         <source>New chat / open URL</source>
         <translation>新建聊天 / 打开 URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="212"/>
-        <location filename="../mainwindow_webengine.cpp" line="1374"/>
-        <location filename="../mainwindow_webengine.cpp" line="1378"/>
-        <location filename="../mainwindow_webengine.cpp" line="1391"/>
-        <location filename="../mainwindow_webengine.cpp" line="1442"/>
-        <location filename="../mainwindow_webengine.cpp" line="1478"/>
-        <location filename="../mainwindow_webengine.cpp" line="1508"/>
-        <location filename="../mainwindow_webengine.cpp" line="1512"/>
+        <location filename="../mainwindow_tray.cpp" line="228"/>
+        <location filename="../mainwindow_webengine.cpp" line="1379"/>
+        <location filename="../mainwindow_webengine.cpp" line="1383"/>
+        <location filename="../mainwindow_webengine.cpp" line="1396"/>
+        <location filename="../mainwindow_webengine.cpp" line="1447"/>
+        <location filename="../mainwindow_webengine.cpp" line="1483"/>
+        <location filename="../mainwindow_webengine.cpp" line="1513"/>
+        <location filename="../mainwindow_webengine.cpp" line="1517"/>
         <source>Export chat</source>
         <translation>导出聊天</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="213"/>
+        <location filename="../mainwindow_tray.cpp" line="232"/>
         <source>Settings</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="214"/>
+        <location filename="../mainwindow_tray.cpp" line="233"/>
         <source>Toggle theme</source>
         <translation>切换主题</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="217"/>
+        <location filename="../mainwindow_tray.cpp" line="236"/>
         <source>Quit</source>
         <translation>退出</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="214"/>
-        <location filename="../mainwindow_accounts.cpp" line="1215"/>
+        <location filename="../mainwindow_accounts.cpp" line="1216"/>
         <source>Rename…</source>
         <translation>重命名…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="215"/>
-        <location filename="../mainwindow_accounts.cpp" line="1216"/>
+        <location filename="../mainwindow_accounts.cpp" line="1217"/>
         <source>Open in own window</source>
         <translation>在独立窗口中打开</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="219"/>
-        <location filename="../mainwindow_accounts.cpp" line="1219"/>
+        <location filename="../mainwindow_accounts.cpp" line="1220"/>
         <source>Remove account</source>
         <translation>移除账号</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="298"/>
+        <location filename="../mainwindow_accounts.cpp" line="299"/>
         <source>Switch to account: %1</source>
         <translation>切换到账户：%1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="301"/>
-        <location filename="../mainwindow_tray.cpp" line="162"/>
+        <location filename="../mainwindow_accounts.cpp" line="302"/>
+        <location filename="../mainwindow_tray.cpp" line="178"/>
         <source>Add account…</source>
         <translation>添加账户…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="306"/>
+        <location filename="../mainwindow_accounts.cpp" line="307"/>
         <source>Insert: %1</source>
         <translation>插入：%1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="584"/>
+        <location filename="../mainwindow_accounts.cpp" line="585"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 条未读</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="991"/>
+        <location filename="../mainwindow_accounts.cpp" line="992"/>
         <source>Add another account</source>
         <translation>添加另一个账号</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1018"/>
-        <location filename="../mainwindow_accounts.cpp" line="1023"/>
+        <location filename="../mainwindow_accounts.cpp" line="1019"/>
+        <location filename="../mainwindow_accounts.cpp" line="1024"/>
         <source>Restore</source>
         <translation>还原</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1019"/>
+        <location filename="../mainwindow_accounts.cpp" line="1020"/>
         <source>messages</source>
         <translation>条消息</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1019"/>
+        <location filename="../mainwindow_accounts.cpp" line="1020"/>
         <source>message</source>
         <translation>条消息</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1064"/>
+        <location filename="../mainwindow_accounts.cpp" line="1065"/>
         <source>Add account</source>
         <translation>添加账号</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1065"/>
+        <location filename="../mainwindow_accounts.cpp" line="1066"/>
         <source>Name for the new account:</source>
         <translation>新账号的名称：</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1066"/>
-        <location filename="../mainwindow_accounts.cpp" line="1913"/>
-        <location filename="../mainwindow_accounts.cpp" line="1918"/>
+        <location filename="../mainwindow_accounts.cpp" line="1067"/>
+        <location filename="../mainwindow_accounts.cpp" line="1914"/>
+        <location filename="../mainwindow_accounts.cpp" line="1919"/>
         <source>Account %1</source>
         <translation>账号 %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1093"/>
+        <location filename="../mainwindow_accounts.cpp" line="1094"/>
         <source>Rename account</source>
         <translation>重命名账号</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1093"/>
+        <location filename="../mainwindow_accounts.cpp" line="1094"/>
         <source>Account name:</source>
         <translation>账号名称：</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1601"/>
+        <location filename="../mainwindow_accounts.cpp" line="1602"/>
         <source>Tip: give an account its own window</source>
         <translation>提示：让账户拥有自己的窗口</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1602"/>
+        <location filename="../mainwindow_accounts.cpp" line="1603"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -980,13 +1046,13 @@ You can pull any account out into its own window: right-click its tab and choose
 您可以将任意账户拖到独立窗口中：右键单击其标签页并选择“在独立窗口中打开”。关闭该窗口即可将账户重新停靠为标签页。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1907"/>
-        <location filename="../mainwindow_accounts.cpp" line="1911"/>
+        <location filename="../mainwindow_accounts.cpp" line="1908"/>
+        <location filename="../mainwindow_accounts.cpp" line="1912"/>
         <source>Account 1</source>
         <translation>账号 1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="947"/>
+        <location filename="../mainwindow_webengine.cpp" line="952"/>
         <source>Unlock to Reload the App.</source>
         <translation>请解锁以重新加载应用。</translation>
     </message>
@@ -1227,7 +1293,7 @@ Please setup the password in the Settings first.</source>
 请先在设置中设置密码。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="944"/>
+        <location filename="../mainwindow_webengine.cpp" line="949"/>
         <source>Reloading...</source>
         <translation>正在重新加载...</translation>
     </message>
@@ -1591,6 +1657,16 @@ Please setup the password in the Settings first.</source>
         <source>Translation failed.</source>
         <translation>翻译失败。</translation>
     </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="84"/>
+        <source>Unexpected response from the AI service.</source>
+        <translation>AI 服务返回了意外的响应。</translation>
+    </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="106"/>
+        <source>The AI service returned no text.</source>
+        <translation>AI 服务未返回文本。</translation>
+    </message>
 </context>
 <context>
     <name>RateApp</name>
@@ -1840,47 +1916,47 @@ Please setup the password in the Settings first.</source>
         <translation>例如 吵闹的群</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1862"/>
+        <location filename="../settingswidget.ui" line="1932"/>
         <source>Suspend inactive accounts</source>
         <translation>挂起非活动账户</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1859"/>
+        <location filename="../settingswidget.ui" line="1929"/>
         <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
         <translation>通过挂起你未查看的账户来释放内存。挂起的账户在你切换回来之前不会收到消息。单账户设置不受影响。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1869"/>
+        <location filename="../settingswidget.ui" line="1939"/>
         <source>after</source>
         <translation>于</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1876"/>
+        <location filename="../settingswidget.ui" line="1946"/>
         <source> min</source>
         <translation> 分钟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1841"/>
+        <location filename="../settingswidget.ui" line="1911"/>
         <source>Font hinting</source>
         <translation>字体微调</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1848"/>
+        <location filename="../settingswidget.ui" line="1918"/>
         <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
         <translation>字形边缘如何对齐到像素。自动跟随系统；较轻的级别可以修复过重或不均匀的文字。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1305"/>
+        <location filename="../settingswidget.cpp" line="1306"/>
         <source>Slight</source>
         <translation>轻微</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1306"/>
+        <location filename="../settingswidget.cpp" line="1307"/>
         <source>Medium</source>
         <translation>中等</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1307"/>
+        <location filename="../settingswidget.cpp" line="1308"/>
         <source>Full</source>
         <translation>完全</translation>
     </message>
@@ -1951,11 +2027,11 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="169"/>
-        <location filename="../settingswidget.ui" line="1777"/>
-        <location filename="../settingswidget.ui" line="1821"/>
-        <location filename="../settingswidget.ui" line="1978"/>
-        <location filename="../settingswidget.cpp" line="1303"/>
-        <location filename="../settingswidget.cpp" line="1494"/>
+        <location filename="../settingswidget.ui" line="1847"/>
+        <location filename="../settingswidget.ui" line="1891"/>
+        <location filename="../settingswidget.ui" line="2048"/>
+        <location filename="../settingswidget.cpp" line="1304"/>
+        <location filename="../settingswidget.cpp" line="1511"/>
         <source>Automatic</source>
         <translation>自动</translation>
     </message>
@@ -2188,7 +2264,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="622"/>
-        <location filename="../settingswidget.cpp" line="1220"/>
+        <location filename="../settingswidget.cpp" line="1221"/>
         <source>Custom CSS</source>
         <translation>自定义 CSS</translation>
     </message>
@@ -2245,7 +2321,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="687"/>
-        <location filename="../settingswidget.cpp" line="1913"/>
+        <location filename="../settingswidget.cpp" line="1930"/>
         <source>Check spelling as I type</source>
         <translation>输入时检查拼写</translation>
     </message>
@@ -2276,7 +2352,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="762"/>
-        <location filename="../settingswidget.cpp" line="1196"/>
+        <location filename="../settingswidget.cpp" line="1197"/>
         <source>Chat wallpaper</source>
         <translation>聊天壁纸</translation>
     </message>
@@ -2683,6 +2759,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1701"/>
+        <location filename="../settingswidget.ui" line="1771"/>
         <source>Endpoint</source>
         <translation>端点</translation>
     </message>
@@ -2698,6 +2775,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1718"/>
+        <location filename="../settingswidget.ui" line="1805"/>
         <source>API key (optional)</source>
         <translation>API 密钥（可选）</translation>
     </message>
@@ -2723,200 +2801,245 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1755"/>
+        <source>AI assistant</source>
+        <translation>AI 助手</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1761"/>
+        <source>Summarise a chat, improve your draft or suggest a reply through an OpenAI-compatible service. The chat text is sent to that service, so use one you trust (a local runner keeps it on your machine). The request is made by the app, so the endpoint and key never reach WhatsApp Web. Actions live in the command palette and Shortcuts.</source>
+        <translation>通过与 OpenAI 兼容的服务总结聊天、改进草稿或建议回复。聊天文本会发送到该服务，因此请使用你信任的服务（本地运行器可将其保留在你的设备上）。请求由应用发出，因此端点和密钥绝不会到达 WhatsApp Web。相关操作位于命令面板和“快捷键”中。</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1764"/>
+        <source>Enable AI assistant</source>
+        <translation>启用 AI 助手</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1778"/>
+        <source>An OpenAI-compatible /chat/completions URL, e.g. https://api.openai.com/v1/chat/completions or http://localhost:11434/v1/chat/completions for a local Ollama.</source>
+        <translation>与 OpenAI 兼容的 /chat/completions URL，例如 https://api.openai.com/v1/chat/completions，或本地 Ollama 的 http://localhost:11434/v1/chat/completions。</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1781"/>
+        <source>https://api.openai.com/v1/chat/completions</source>
+        <translation>https://api.openai.com/v1/chat/completions</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1788"/>
+        <source>Model</source>
+        <translation>模型</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1795"/>
+        <source>The model name the endpoint expects, e.g. gpt-4o-mini or llama3.</source>
+        <translation>端点所需的模型名称，例如 gpt-4o-mini 或 llama3。</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1798"/>
+        <source>e.g. gpt-4o-mini</source>
+        <translation>例如 gpt-4o-mini</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1812"/>
+        <source>Sent as a Bearer token. Not needed by most local runners. Stored locally.</source>
+        <translation>以 Bearer 令牌发送。多数本地运行器不需要。存储在本地。</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1825"/>
         <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
         <translation>阻止 WebRTC 通过非代理连接暴露您的本地 IP 地址。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1758"/>
+        <location filename="../settingswidget.ui" line="1828"/>
         <source>Prevent WebRTC IP leak</source>
         <translation>防止 WebRTC IP 泄露</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1767"/>
+        <location filename="../settingswidget.ui" line="1837"/>
         <source>JavaScript memory limit</source>
         <translation>JavaScript 内存限制</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1774"/>
+        <location filename="../settingswidget.ui" line="1844"/>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
         <translation>限制 JavaScript 堆大小（V8 --max-old-space-size）。0 = 自动。如果应用占用过多 RAM，请调低此值。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1780"/>
-        <location filename="../settingswidget.ui" line="1824"/>
+        <location filename="../settingswidget.ui" line="1850"/>
+        <location filename="../settingswidget.ui" line="1894"/>
         <source> MB</source>
         <translation> MB</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1797"/>
+        <location filename="../settingswidget.ui" line="1867"/>
         <source>HTTP cache</source>
         <translation>HTTP 缓存</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1804"/>
+        <location filename="../settingswidget.ui" line="1874"/>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
         <translation>HTTP 缓存的存放位置。内存缓存会在退出时清除；“无”则禁用缓存。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1811"/>
+        <location filename="../settingswidget.ui" line="1881"/>
         <source>Max size</source>
         <translation>最大大小</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1818"/>
+        <location filename="../settingswidget.ui" line="1888"/>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>磁盘缓存的最大大小。0 = 自动。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1894"/>
+        <location filename="../settingswidget.ui" line="1964"/>
         <source>Network &amp; Startup</source>
         <translation>网络与启动</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1900"/>
+        <location filename="../settingswidget.ui" line="1970"/>
         <source>Launch Whatly automatically when you log in to your desktop session.</source>
         <translation>登录桌面会话时自动启动 Whatly。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1903"/>
+        <location filename="../settingswidget.ui" line="1973"/>
         <source>Start Whatly when I log in</source>
         <translation>登录时启动 Whatly</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1913"/>
+        <location filename="../settingswidget.ui" line="1983"/>
         <source>Use a custom window frame (requires restart)</source>
         <translation>使用自定义窗口边框（需要重启）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1926"/>
+        <location filename="../settingswidget.ui" line="1996"/>
         <source>Restart Whatly now so the settings above take effect. The windows, and this page with it, come back exactly as they are.</source>
         <translation>立即重启 Whatly，使上述设置生效。窗口以及这个页面都会原样恢复。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1929"/>
+        <location filename="../settingswidget.ui" line="1999"/>
         <source>Restart now</source>
         <translation>立即重启</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1936"/>
+        <location filename="../settingswidget.ui" line="2006"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
         <translation>即使只有一个账号，也始终显示账号标签栏，让它的 &quot;+&quot; 随时可用。关闭后，标签栏会在出现第二个账号时才显示；你仍然可以用 Ctrl+K 添加账号。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1939"/>
+        <location filename="../settingswidget.ui" line="2009"/>
         <source>Show the account tabs even with a single account</source>
         <translation>即使只有一个账号也显示账号标签</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1946"/>
+        <location filename="../settingswidget.ui" line="2016"/>
         <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
         <translation>去掉标题栏，并像浏览器那样把它的按钮放到账号标签栏的末尾，而不是单独占一行。会开启所需的自定义窗口边框。重启后生效。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1949"/>
+        <location filename="../settingswidget.ui" line="2019"/>
         <source>Hide the title bar (requires restart)</source>
         <translation>隐藏标题栏（需要重启）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1956"/>
+        <location filename="../settingswidget.ui" line="2026"/>
         <source>Check GitHub once a day for a newer release and let you know. Whatly never downloads or installs anything on its own.</source>
         <translation>每天检查一次 GitHub 是否有新版本并通知你。Whatly 绝不会自行下载或安装任何内容。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1959"/>
+        <location filename="../settingswidget.ui" line="2029"/>
         <source>Check for updates automatically</source>
         <translation>自动检查更新</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1968"/>
+        <location filename="../settingswidget.ui" line="2038"/>
         <source>Interface scale</source>
         <translation>界面缩放</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1975"/>
+        <location filename="../settingswidget.ui" line="2045"/>
         <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
         <translation>缩放整个窗口和页面（QT_SCALE_FACTOR）。自动则跟随桌面设置。若已设置 QT_SCALE_FACTOR 环境变量，则以其为准。重启后生效。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2011"/>
+        <location filename="../settingswidget.ui" line="2081"/>
         <source>Proxy</source>
         <translation>代理</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2018"/>
+        <location filename="../settingswidget.ui" line="2088"/>
         <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
         <translation>Whatly 连接网络的方式。系统跟随操作系统设置；无则直接连接。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2043"/>
+        <location filename="../settingswidget.ui" line="2113"/>
         <source>Host</source>
         <translation>主机</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2050"/>
+        <location filename="../settingswidget.ui" line="2120"/>
         <source>127.0.0.1</source>
         <translation>127.0.0.1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2057"/>
-        <location filename="../settingswidget.ui" line="2337"/>
+        <location filename="../settingswidget.ui" line="2127"/>
+        <location filename="../settingswidget.ui" line="2407"/>
         <source>Port</source>
         <translation>端口</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2071"/>
+        <location filename="../settingswidget.ui" line="2141"/>
         <source>Username</source>
         <translation>用户名</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2078"/>
-        <location filename="../settingswidget.ui" line="2095"/>
+        <location filename="../settingswidget.ui" line="2148"/>
+        <location filename="../settingswidget.ui" line="2165"/>
         <source>Optional</source>
         <translation>可选</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2085"/>
+        <location filename="../settingswidget.ui" line="2155"/>
         <source>Password</source>
         <translation>密码</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2108"/>
+        <location filename="../settingswidget.ui" line="2178"/>
         <source>Custom JavaScript addons</source>
         <translation>自定义 JavaScript 插件</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2114"/>
+        <location filename="../settingswidget.ui" line="2184"/>
         <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
         <translation>加载 .js 文件以在 WhatsApp Web 上运行。每个插件都在各自的沙箱中运行，因此某个插件出错不会影响其他插件或页面。取消勾选可停用插件而无需将其移除。更改将在重启后生效。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2136"/>
+        <location filename="../settingswidget.ui" line="2206"/>
         <source>Add addon…</source>
         <translation>添加插件…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2143"/>
-        <location filename="../settingswidget.ui" line="2203"/>
+        <location filename="../settingswidget.ui" line="2213"/>
+        <location filename="../settingswidget.ui" line="2273"/>
         <source>Remove</source>
         <translation>移除</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2168"/>
+        <location filename="../settingswidget.ui" line="2238"/>
         <source>Saved replies</source>
         <translation>已保存的回复</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2174"/>
+        <location filename="../settingswidget.ui" line="2244"/>
         <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
         <translation>你经常发送的简短文本。可从命令面板 (Ctrl+K) 插入 — 输入 &quot;插入&quot; 并选择，文本会被输入到消息框中。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2196"/>
+        <location filename="../settingswidget.ui" line="2266"/>
         <source>Add reply…</source>
         <translation>添加回复…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2228"/>
+        <location filename="../settingswidget.ui" line="2298"/>
         <source>Keyboard shortcuts</source>
         <translation>键盘快捷键</translation>
     </message>
@@ -2936,393 +3059,393 @@ Please setup the password in the Settings first.</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在 WhatsApp 侧边栏中添加缩小 / 重置 / 放大按钮，无需打开设置即可实时缩放页面。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1910"/>
+        <location filename="../settingswidget.ui" line="1980"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>让 Whatly 而非系统来绘制窗口的边框和标题栏，使它们遵循 Whatly 自己的主题。单独启用时只会改变它们的外观；再勾选 &quot;隐藏标题栏&quot; 才能彻底去掉整行标题。重启后生效。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2314"/>
+        <location filename="../settingswidget.ui" line="2384"/>
         <source>Local API &amp; Cloud webhooks</source>
         <translation>本地 API 与 Cloud webhook</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2320"/>
+        <location filename="../settingswidget.ui" line="2390"/>
         <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
         <translation>环回接口（127.0.0.1）上的一个小型 HTTP 端点让本机上的其他程序通过 Whatly 发送，并让 Meta 投递 Cloud API webhook（收到的消息），从而使自动回复无需浏览器即可工作。它绝不会暴露到网络；若要接收来自 Meta 的 webhook，请用隧道或反向代理（例如 cloudflared 或 ngrok）转发该端口。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2330"/>
+        <location filename="../settingswidget.ui" line="2400"/>
         <source>Enable the local HTTP API (send over HTTP)</source>
         <translation>启用本地 HTTP API（通过 HTTP 发送）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2354"/>
+        <location filename="../settingswidget.ui" line="2424"/>
         <source>Bearer token</source>
         <translation>Bearer 令牌</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2364"/>
+        <location filename="../settingswidget.ui" line="2434"/>
         <source>required to authorise requests</source>
         <translation>授权请求所必需</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2371"/>
+        <location filename="../settingswidget.ui" line="2441"/>
         <source>Receive Cloud API webhooks (incoming messages)</source>
         <translation>接收 Cloud API webhook（收到的消息）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2378"/>
+        <location filename="../settingswidget.ui" line="2448"/>
         <source>Webhook verify token</source>
         <translation>Webhook 验证令牌</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2388"/>
+        <location filename="../settingswidget.ui" line="2458"/>
         <source>echoed to Meta during setup</source>
         <translation>设置时发送给 Meta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2395"/>
+        <location filename="../settingswidget.ui" line="2465"/>
         <source>Meta app secret</source>
         <translation>Meta 应用密钥</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2405"/>
+        <location filename="../settingswidget.ui" line="2475"/>
         <source>verifies the webhook signature</source>
         <translation>校验 webhook 签名</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2250"/>
+        <location filename="../settingswidget.ui" line="2320"/>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API（无需浏览器会话即可发送）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2256"/>
+        <location filename="../settingswidget.ui" line="2326"/>
         <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account&apos;s config and Whatly never obtains it itself.</source>
         <translation>通过 Meta WhatsApp Business Cloud API 使用 `--send --backend cloud` 发送 — 无需运行中的 WhatsApp Web 会话。访问令牌由你从 Meta 自行提供；它存储在此账户的配置中，Whatly 从不自行获取。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2266"/>
+        <location filename="../settingswidget.ui" line="2336"/>
         <source>Phone-number ID</source>
         <translation>电话号码 ID</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2280"/>
+        <location filename="../settingswidget.ui" line="2350"/>
         <source>Access token</source>
         <translation>访问令牌</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2290"/>
+        <location filename="../settingswidget.ui" line="2360"/>
         <source>your Meta access token</source>
         <translation>你的 Meta 访问令牌</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2297"/>
+        <location filename="../settingswidget.ui" line="2367"/>
         <source>Graph API version</source>
         <translation>Graph API 版本</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2234"/>
+        <location filename="../settingswidget.ui" line="2304"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>点击某个字段并按下组合键。清空字段可移除该快捷键。更改将在重启后生效。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="860"/>
+        <location filename="../settingswidget.cpp" line="861"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>这将删除持久数据（包括持久 Cookie 和缓存）并退出应用程序。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="865"/>
+        <location filename="../settingswidget.cpp" line="866"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>删除 Cookie 并退出应用程序？</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="971"/>
+        <location filename="../settingswidget.cpp" line="972"/>
         <source>| Error</source>
         <translation>| 错误</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="972"/>
+        <location filename="../settingswidget.cpp" line="973"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>无法设置空的 User-Agent 字符串。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1023"/>
+        <location filename="../settingswidget.cpp" line="1024"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>由于手动切换了主题，自动主题切换已被禁用。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1062"/>
+        <location filename="../settingswidget.cpp" line="1063"/>
         <source>App lock is not configured.</source>
         <translation>未配置应用锁。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1066"/>
+        <location filename="../settingswidget.cpp" line="1067"/>
         <source>Do you want to setup App lock now?</source>
         <translation>现在设置应用锁吗？</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1108"/>
+        <location filename="../settingswidget.cpp" line="1109"/>
         <source>Feature permissions</source>
         <translation>功能权限</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1187"/>
+        <location filename="../settingswidget.cpp" line="1188"/>
         <source>Choose a chat wallpaper</source>
         <translation>选择聊天壁纸</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1189"/>
+        <location filename="../settingswidget.cpp" line="1190"/>
         <source>Images (%1)</source>
         <translation>图片 (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1197"/>
+        <location filename="../settingswidget.cpp" line="1198"/>
         <source>Could not use that image: %1</source>
         <translation>无法使用该图片：%1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1212"/>
+        <location filename="../settingswidget.cpp" line="1213"/>
         <source>Choose a CSS file</source>
         <translation>选择 CSS 文件</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1214"/>
+        <location filename="../settingswidget.cpp" line="1215"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>样式表 (*.css);;所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1221"/>
+        <location filename="../settingswidget.cpp" line="1222"/>
         <source>Could not read that file: %1</source>
         <translation>无法读取该文件：%1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1294"/>
+        <location filename="../settingswidget.cpp" line="1295"/>
         <source>Disk</source>
         <translation>磁盘</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1295"/>
+        <location filename="../settingswidget.cpp" line="1296"/>
         <source>Memory</source>
         <translation>内存</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1467"/>
+        <location filename="../settingswidget.cpp" line="1484"/>
         <source>System</source>
         <translation>系统</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1468"/>
+        <location filename="../settingswidget.cpp" line="1485"/>
         <source>None (direct)</source>
         <translation>无（直接连接）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1469"/>
+        <location filename="../settingswidget.cpp" line="1486"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1470"/>
+        <location filename="../settingswidget.cpp" line="1487"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1496"/>
+        <location filename="../settingswidget.cpp" line="1513"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>桌面门户 (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1498"/>
+        <location filename="../settingswidget.cpp" line="1515"/>
         <source>System service (libnotify)</source>
         <translation>系统服务 (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1683"/>
-        <location filename="../settingswidget.cpp" line="1687"/>
+        <location filename="../settingswidget.cpp" line="1700"/>
+        <location filename="../settingswidget.cpp" line="1704"/>
         <source>Add reply</source>
         <translation>添加回复</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1683"/>
+        <location filename="../settingswidget.cpp" line="1700"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1687"/>
+        <location filename="../settingswidget.cpp" line="1704"/>
         <source>Text to insert</source>
         <translation>要插入的文本</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1704"/>
+        <location filename="../settingswidget.cpp" line="1721"/>
         <source>Choose a JavaScript file</source>
         <translation>选择一个 JavaScript 文件</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1705"/>
+        <location filename="../settingswidget.cpp" line="1722"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1710"/>
+        <location filename="../settingswidget.cpp" line="1727"/>
         <source>Could not add addon</source>
         <translation>无法添加插件</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1723"/>
+        <location filename="../settingswidget.cpp" line="1740"/>
         <source>Remove addon</source>
         <translation>移除插件</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1724"/>
+        <location filename="../settingswidget.cpp" line="1741"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>移除插件 &quot;%1&quot;？这将删除其文件。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1912"/>
+        <location filename="../settingswidget.cpp" line="1929"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>拼写检查器（未安装词典）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1296"/>
-        <location filename="../settingswidget.cpp" line="1304"/>
-        <location filename="../settingswidget.cpp" line="1963"/>
+        <location filename="../settingswidget.cpp" line="1297"/>
+        <location filename="../settingswidget.cpp" line="1305"/>
+        <location filename="../settingswidget.cpp" line="1980"/>
         <source>None</source>
         <translation>无</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="463"/>
+        <location filename="../settingswidget.cpp" line="464"/>
         <source>Basics</source>
         <translation>基本</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="471"/>
+        <location filename="../settingswidget.cpp" line="472"/>
         <source>Appearance</source>
         <translation>外观</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="490"/>
+        <location filename="../settingswidget.cpp" line="491"/>
         <source>Notifications</source>
         <translation>通知</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="494"/>
+        <location filename="../settingswidget.cpp" line="495"/>
         <source>Chatting</source>
         <translation>聊天</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="503"/>
+        <location filename="../settingswidget.cpp" line="504"/>
         <source>Privacy &amp; Lock</source>
         <translation>隐私与锁定</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="509"/>
+        <location filename="../settingswidget.cpp" line="510"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>窗口与缩放</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="526"/>
+        <location filename="../settingswidget.cpp" line="527"/>
         <source>Advanced</source>
         <translation>高级</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="777"/>
+        <location filename="../settingswidget.cpp" line="778"/>
         <source>Shortcut in use</source>
         <translation>快捷键已被占用</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="778"/>
+        <location filename="../settingswidget.cpp" line="779"/>
         <source>That shortcut is already used by another action.</source>
         <translation>该快捷键已被另一个操作使用。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="790"/>
+        <location filename="../settingswidget.cpp" line="791"/>
         <source>Clear cache</source>
         <translation>清除缓存</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="791"/>
+        <location filename="../settingswidget.cpp" line="792"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>现在清除缓存吗？需要时会重新下载。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="801"/>
-        <location filename="../settingswidget.cpp" line="807"/>
-        <location filename="../settingswidget.cpp" line="816"/>
-        <location filename="../settingswidget.cpp" line="819"/>
+        <location filename="../settingswidget.cpp" line="802"/>
+        <location filename="../settingswidget.cpp" line="808"/>
+        <location filename="../settingswidget.cpp" line="817"/>
+        <location filename="../settingswidget.cpp" line="820"/>
         <source>Export profile</source>
         <translation>导出配置文件</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="802"/>
+        <location filename="../settingswidget.cpp" line="803"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>该归档文件将包含你已登录的 WhatsApp 会话。请妥善保管。是否继续？</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="809"/>
-        <location filename="../settingswidget.cpp" line="824"/>
+        <location filename="../settingswidget.cpp" line="810"/>
+        <location filename="../settingswidget.cpp" line="825"/>
         <source>Archives (*.tar.gz)</source>
         <translation>归档文件 (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="817"/>
+        <location filename="../settingswidget.cpp" line="818"/>
         <source>Profile exported.</source>
         <translation>配置文件已导出。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="824"/>
-        <location filename="../settingswidget.cpp" line="828"/>
-        <location filename="../settingswidget.cpp" line="836"/>
-        <location filename="../settingswidget.cpp" line="839"/>
+        <location filename="../settingswidget.cpp" line="825"/>
+        <location filename="../settingswidget.cpp" line="829"/>
+        <location filename="../settingswidget.cpp" line="837"/>
+        <location filename="../settingswidget.cpp" line="840"/>
         <source>Import profile</source>
         <translation>导入配置文件</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="829"/>
+        <location filename="../settingswidget.cpp" line="830"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>此操作会用归档文件覆盖当前账户的数据，随后必须重新启动 Whatly。是否继续？</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="837"/>
+        <location filename="../settingswidget.cpp" line="838"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>配置文件已导入。请重新启动 Whatly。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1967"/>
+        <location filename="../settingswidget.cpp" line="1984"/>
         <source>%1 languages</source>
         <translation>%1 种语言</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2065"/>
+        <location filename="../settingswidget.cpp" line="2082"/>
         <source>WhatsApp default</source>
         <translation>WhatsApp 默认</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2104"/>
+        <location filename="../settingswidget.cpp" line="2121"/>
         <source>System default</source>
         <translation>系统默认</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2139"/>
+        <location filename="../settingswidget.cpp" line="2156"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>重启 %1 后界面语言将会更改。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2153"/>
+        <location filename="../settingswidget.cpp" line="2170"/>
         <source>App Lock Setup</source>
         <translation>应用锁设置</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2154"/>
+        <location filename="../settingswidget.cpp" line="2171"/>
         <source>Please setup the App lock password first.</source>
         <translation>请先设置应用锁密码。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2265"/>
-        <location filename="../settingswidget.cpp" line="2276"/>
+        <location filename="../settingswidget.cpp" line="2282"/>
+        <location filename="../settingswidget.cpp" line="2293"/>
         <source>Select download directory</source>
         <translation>选择下载目录</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2316"/>
+        <location filename="../settingswidget.cpp" line="2333"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3333,7 +3456,7 @@ You may also require a complete restart of Application!</source>
 您可能还需要完全重启应用程序！</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2322"/>
+        <location filename="../settingswidget.cpp" line="2339"/>
         <source>Do you want to proceed?</source>
         <translation>要继续吗？</translation>
     </message>

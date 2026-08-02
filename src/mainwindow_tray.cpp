@@ -128,6 +128,22 @@ void MainWindow::createActions() {
           &MainWindow::exportCurrentChat);
   addAction(m_exportChatAction);
 
+  // AI assistant (idea #5). No default shortcuts; command palette / Shortcuts.
+  m_aiSummarizeAction = new QAction(tr("AI: Summarise chat"), this);
+  connect(m_aiSummarizeAction, &QAction::triggered, this,
+          &MainWindow::aiSummarizeChat);
+  addAction(m_aiSummarizeAction);
+
+  m_aiImproveAction = new QAction(tr("AI: Improve message"), this);
+  connect(m_aiImproveAction, &QAction::triggered, this,
+          &MainWindow::aiImproveComposer);
+  addAction(m_aiImproveAction);
+
+  m_aiSuggestAction = new QAction(tr("AI: Suggest a reply"), this);
+  connect(m_aiSuggestAction, &QAction::triggered, this,
+          &MainWindow::aiSuggestReply);
+  addAction(m_aiSuggestAction);
+
   m_toggleThemeAction = new QAction(tr("&Toggle theme"), this);
   m_toggleThemeAction->setShortcut(
       QKeySequence(Qt::Modifier::CTRL | Qt::Key_T));
@@ -210,6 +226,9 @@ void MainWindow::createActions() {
       {m_translateComposerAction, "translateComposer",
        tr("Translate message box")},
       {m_exportChatAction, "exportChat", tr("Export chat")},
+      {m_aiSummarizeAction, "aiSummarize", tr("AI: Summarise chat")},
+      {m_aiImproveAction, "aiImprove", tr("AI: Improve message")},
+      {m_aiSuggestAction, "aiSuggest", tr("AI: Suggest a reply")},
       {m_settingsAction, "settings", tr("Settings")},
       {m_toggleThemeAction, "toggleTheme", tr("Toggle theme")},
       {m_viewGridAction, "gridView", tr("Grid view")},

@@ -146,6 +146,10 @@ private slots:
   void on_translateEndpointLineEdit_editingFinished();
   void on_translateApiKeyLineEdit_editingFinished();
   void on_translateTargetLineEdit_editingFinished();
+  void on_aiEnabledCheckBox_toggled(bool checked);
+  void on_aiEndpointLineEdit_editingFinished();
+  void on_aiModelLineEdit_editingFinished();
+  void on_aiApiKeyLineEdit_editingFinished();
   void on_jsMemoryLimitSpinBox_valueChanged(int arg1);
   void on_cacheTypeComboBox_currentIndexChanged(int index);
   void on_fontHintingComboBox_currentIndexChanged(int index);

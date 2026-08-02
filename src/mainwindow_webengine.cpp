@@ -21,6 +21,11 @@
 #include "chatexport.h"
 #include "notificationreply.h"
 #include "messaging.h"
+#include "aiassistant.h"
+#include <QDialog>
+#include <QPlainTextEdit>
+#include <QPushButton>
+#include <QVBoxLayout>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -1574,4 +1579,100 @@ bool MainWindow::ensureInlineReply() {
             });
   }
   return m_notificationReply->isAvailable();
+}
+
+// ── AI assistant (idea #5) ──────────────────────────────────────────────────
+
+void MainWindow::runAssistant(const QString &systemPrompt,
+                              const QString &userPrompt,
+                              std::function<void(const QString &)> onResult) {
+  auto toast = [this](const QString &msg) {
+    if (m_webEngine && m_webEngine->page())
+      m_webEngine->page()->runJavaScript(Translate::toastScript(msg));
+  };
+  if (!Ai::isEnabled()) {
+    toast(tr("The AI assistant is off (enable it in Settings → AI assistant)."));
+    return;
+  }
+  if (userPrompt.trimmed().isEmpty()) {
+    toast(tr("There is nothing for the assistant to work on."));
+    return;
+  }
+  if (!m_aiClient)
+    m_aiClient = new AiClient(this);
+
+  toast(tr("Asking the assistant…"));
+
+  auto conns = std::make_shared<QList<QMetaObject::Connection>>();
+  auto cleanup = [conns]() {
+    for (const auto &c : *conns)
+      QObject::disconnect(c);
+    conns->clear();
+  };
+  conns->append(connect(m_aiClient, &AiClient::completed, this,
+                        [onResult, cleanup](const QString &text) {
+                          cleanup();
+                          onResult(text);
+                        }));
+  conns->append(connect(m_aiClient, &AiClient::failed, this,
+                        [toast, cleanup](const QString &err) {
+                          cleanup();
+                          toast(err);
+                        }));
+  m_aiClient->complete(systemPrompt, userPrompt);
+}
+
+void MainWindow::aiSummarizeChat() {
+  if (!m_webEngine || !m_webEngine->page())
+    return;
+  m_webEngine->page()->runJavaScript(
+      Ai::readContextScript(200), [this](const QVariant &v) {
+        const QString context = v.toString();
+        runAssistant(Ai::summarizeSystemPrompt(), context,
+                     [this](const QString &summary) {
+                       // Show the summary in a simple read-only dialog.
+                       auto *dlg = new QDialog(this);
+                       dlg->setAttribute(Qt::WA_DeleteOnClose);
+                       dlg->setWindowTitle(tr("Chat summary"));
+                       dlg->resize(520, 380);
+                       auto *lay = new QVBoxLayout(dlg);
+                       auto *edit = new QPlainTextEdit(dlg);
+                       edit->setPlainText(summary);
+                       edit->setReadOnly(true);
+                       lay->addWidget(edit);
+                       auto *close = new QPushButton(tr("Close"), dlg);
+                       connect(close, &QPushButton::clicked, dlg, &QDialog::accept);
+                       lay->addWidget(close);
+                       dlg->show();
+                       dlg->raise();
+                     });
+      });
+}
+
+void MainWindow::aiImproveComposer() {
+  if (!m_webEngine || !m_webEngine->page())
+    return;
+  m_webEngine->page()->runJavaScript(
+      Translate::readComposerScript(), [this](const QVariant &v) {
+        runAssistant(Ai::improveSystemPrompt(), v.toString(),
+                     [this](const QString &improved) {
+                       if (m_webEngine && m_webEngine->page())
+                         m_webEngine->page()->runJavaScript(
+                             Translate::replaceComposerScript(improved));
+                     });
+      });
+}
+
+void MainWindow::aiSuggestReply() {
+  if (!m_webEngine || !m_webEngine->page())
+    return;
+  m_webEngine->page()->runJavaScript(
+      Ai::readContextScript(60), [this](const QVariant &v) {
+        runAssistant(Ai::suggestReplySystemPrompt(), v.toString(),
+                     [this](const QString &suggestion) {
+                       if (m_webEngine && m_webEngine->page())
+                         m_webEngine->page()->runJavaScript(
+                             Translate::replaceComposerScript(suggestion));
+                     });
+      });
 }

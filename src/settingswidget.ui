@@ -1750,6 +1750,76 @@ background:transparent;
            </widget>
           </item>
           <item>
+           <widget class="QGroupBox" name="aiGroupBox">
+            <property name="title">
+             <string>AI assistant</string>
+            </property>
+            <layout class="QFormLayout" name="aiFormLayout">
+             <item row="0" column="0" colspan="2">
+              <widget class="QCheckBox" name="aiEnabledCheckBox">
+               <property name="toolTip">
+                <string>Summarise a chat, improve your draft or suggest a reply through an OpenAI-compatible service. The chat text is sent to that service, so use one you trust (a local runner keeps it on your machine). The request is made by the app, so the endpoint and key never reach WhatsApp Web. Actions live in the command palette and Shortcuts.</string>
+               </property>
+               <property name="text">
+                <string>Enable AI assistant</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="aiEndpointLabel">
+               <property name="text">
+                <string>Endpoint</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="aiEndpointLineEdit">
+               <property name="toolTip">
+                <string>An OpenAI-compatible /chat/completions URL, e.g. https://api.openai.com/v1/chat/completions or http://localhost:11434/v1/chat/completions for a local Ollama.</string>
+               </property>
+               <property name="placeholderText">
+                <string>https://api.openai.com/v1/chat/completions</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="aiModelLabel">
+               <property name="text">
+                <string>Model</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="aiModelLineEdit">
+               <property name="toolTip">
+                <string>The model name the endpoint expects, e.g. gpt-4o-mini or llama3.</string>
+               </property>
+               <property name="placeholderText">
+                <string>e.g. gpt-4o-mini</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="aiApiKeyLabel">
+               <property name="text">
+                <string>API key (optional)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="aiApiKeyLineEdit">
+               <property name="toolTip">
+                <string>Sent as a Bearer token. Not needed by most local runners. Stored locally.</string>
+               </property>
+               <property name="echoMode">
+                <enum>QLineEdit::Password</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
            <widget class="QCheckBox" name="webrtcShieldCheckBox">
             <property name="toolTip">
              <string>Stop WebRTC from revealing your local IP address over non-proxied connections.</string>

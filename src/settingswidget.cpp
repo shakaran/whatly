@@ -55,6 +55,7 @@
 #include "hdmedia.h"
 #include "undosend.h"
 #include "translator.h"
+#include "aiassistant.h"
 #include "cannedresponses.h"
 
 #include <QListWidget>
@@ -1339,6 +1340,10 @@ void SettingsWidget::loadPerformanceSettings() {
   ui->translateEndpointLineEdit->setText(Translate::endpoint());
   ui->translateApiKeyLineEdit->setText(Translate::apiKey());
   ui->translateTargetLineEdit->setText(Translate::targetLang());
+  set(ui->aiEnabledCheckBox, Ai::isEnabled());
+  ui->aiEndpointLineEdit->setText(Ai::endpoint());
+  ui->aiModelLineEdit->setText(Ai::model());
+  ui->aiApiKeyLineEdit->setText(Ai::apiKey());
   set(ui->suspendInactiveAccountsCheckBox,
       Performance::suspendInactiveAccounts());
   ui->suspendAfterSpinBox->blockSignals(true);
@@ -1415,6 +1420,18 @@ void SettingsWidget::on_translateApiKeyLineEdit_editingFinished() {
 }
 void SettingsWidget::on_translateTargetLineEdit_editingFinished() {
   Translate::setTargetLang(ui->translateTargetLineEdit->text());
+}
+void SettingsWidget::on_aiEnabledCheckBox_toggled(bool checked) {
+  Ai::setEnabled(checked);
+}
+void SettingsWidget::on_aiEndpointLineEdit_editingFinished() {
+  Ai::setEndpoint(ui->aiEndpointLineEdit->text());
+}
+void SettingsWidget::on_aiModelLineEdit_editingFinished() {
+  Ai::setModel(ui->aiModelLineEdit->text());
+}
+void SettingsWidget::on_aiApiKeyLineEdit_editingFinished() {
+  Ai::setApiKey(ui->aiApiKeyLineEdit->text());
 }
 void SettingsWidget::on_jsMemoryLimitSpinBox_valueChanged(int arg1) {
   Performance::setJsMemoryLimitMb(arg1);
