@@ -98,24 +98,24 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AiClient</name>
     <message>
-        <location filename="../aiassistant.cpp" line="162"/>
+        <location filename="../aiassistant.cpp" line="189"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
         <translation>Nessun endpoint IA configurato (Impostazioni → Assistente IA).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="166"/>
+        <location filename="../aiassistant.cpp" line="193"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
         <translation>Nessun modello IA configurato (Impostazioni → Assistente IA).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="170"/>
+        <location filename="../aiassistant.cpp" line="197"/>
         <source>There is nothing to send to the assistant.</source>
-        <translation>Non c'è nulla da inviare all'assistente.</translation>
+        <translation>Non c&apos;è nulla da inviare all&apos;assistente.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="197"/>
+        <location filename="../aiassistant.cpp" line="224"/>
         <source>The assistant request failed.</source>
-        <translation>La richiesta all'assistente non è riuscita.</translation>
+        <translation>La richiesta all&apos;assistente non è riuscita.</translation>
     </message>
 </context>
 <context>
@@ -605,27 +605,32 @@ Desideri ignorare il controllo di sicurezza e continuare?</translation>
         <translation>Salvati %1 messaggi e %2 file multimediali in %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1594"/>
+        <location filename="../mainwindow_webengine.cpp" line="1599"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
-        <translation>L'assistente IA è disattivato (attivalo in Impostazioni → Assistente IA).</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1598"/>
-        <source>There is nothing for the assistant to work on.</source>
-        <translation>Non c'è nulla su cui l'assistente possa lavorare.</translation>
+        <translation>L&apos;assistente IA è disattivato (attivalo in Impostazioni → Assistente IA).</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1604"/>
-        <source>Asking the assistant…</source>
-        <translation>Interrogazione dell'assistente…</translation>
+        <source>There is nothing for the assistant to work on.</source>
+        <translation>Non c&apos;è nulla su cui l&apos;assistente possa lavorare.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1636"/>
+        <location filename="../mainwindow_webengine.cpp" line="1616"/>
+        <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
+        <translation>Interrogazione dell'assistente… (memoria scarsa: %1 MB liberi; un modello locale può fallire o rallentare l'app)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1621"/>
+        <source>Asking the assistant…</source>
+        <translation>Interrogazione dell&apos;assistente…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1654"/>
         <source>Chat summary</source>
         <translation>Riepilogo della chat</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1643"/>
+        <location filename="../mainwindow_webengine.cpp" line="1661"/>
         <source>Close</source>
         <translation type="unfinished">Chiudi</translation>
     </message>
@@ -1649,27 +1654,27 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Il servizio di traduzione non ha restituito testo.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="214"/>
+        <location filename="../translator.cpp" line="224"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Nessun endpoint di traduzione configurato (Impostazioni → Traduzione).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="220"/>
+        <location filename="../translator.cpp" line="230"/>
         <source>Nothing to translate.</source>
         <translation>Niente da tradurre.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="246"/>
+        <location filename="../translator.cpp" line="256"/>
         <source>Translation failed.</source>
         <translation>Traduzione non riuscita.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="84"/>
+        <location filename="../aiassistant.cpp" line="85"/>
         <source>Unexpected response from the AI service.</source>
         <translation>Risposta imprevista dal servizio IA.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="106"/>
+        <location filename="../aiassistant.cpp" line="107"/>
         <source>The AI service returned no text.</source>
         <translation>Il servizio IA non ha restituito testo.</translation>
     </message>
@@ -2671,12 +2676,12 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1761"/>
         <source>Summarise a chat, improve your draft or suggest a reply through an OpenAI-compatible service. The chat text is sent to that service, so use one you trust (a local runner keeps it on your machine). The request is made by the app, so the endpoint and key never reach WhatsApp Web. Actions live in the command palette and Shortcuts.</source>
-        <translation>Riepiloga una chat, migliora la tua bozza o suggerisce una risposta tramite un servizio compatibile con OpenAI. Il testo della chat viene inviato a quel servizio, quindi usane uno di cui ti fidi (un runner locale lo mantiene sul tuo dispositivo). La richiesta la fa l'app, quindi l'endpoint e la chiave non raggiungono mai WhatsApp Web. Le azioni sono nella palette dei comandi e in Scorciatoie.</translation>
+        <translation>Riepiloga una chat, migliora la tua bozza o suggerisce una risposta tramite un servizio compatibile con OpenAI. Il testo della chat viene inviato a quel servizio, quindi usane uno di cui ti fidi (un runner locale lo mantiene sul tuo dispositivo). La richiesta la fa l&apos;app, quindi l&apos;endpoint e la chiave non raggiungono mai WhatsApp Web. Le azioni sono nella palette dei comandi e in Scorciatoie.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1764"/>
         <source>Enable AI assistant</source>
-        <translation>Attiva l'assistente IA</translation>
+        <translation>Attiva l&apos;assistente IA</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1778"/>
@@ -2696,7 +2701,7 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1795"/>
         <source>The model name the endpoint expects, e.g. gpt-4o-mini or llama3.</source>
-        <translation>Il nome del modello atteso dall'endpoint, ad es. gpt-4o-mini o llama3.</translation>
+        <translation>Il nome del modello atteso dall&apos;endpoint, ad es. gpt-4o-mini o llama3.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1798"/>

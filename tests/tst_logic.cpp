@@ -2492,6 +2492,16 @@ private slots:
     QCOMPARE(Ai::model(), QStringLiteral("llama3"));
     Ai::setEnabled(false);
   }
+  void memAvailableParsing() {
+    const QByteArray mi =
+        "MemTotal:       30412860 kB\n"
+        "MemFree:          361234 kB\n"
+        "MemAvailable:    2097152 kB\n"
+        "Buffers:           12345 kB\n";
+    QCOMPARE(Ai::memAvailableMbFromProc(mi), 2048L); // 2097152 kB -> 2048 MiB
+    QCOMPARE(Ai::memAvailableMbFromProc("MemTotal: 100 kB\n"), -1L);
+    QCOMPARE(Ai::memAvailableMbFromProc(QByteArray()), -1L);
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────

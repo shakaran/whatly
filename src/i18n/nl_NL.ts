@@ -93,22 +93,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AiClient</name>
     <message>
-        <location filename="../aiassistant.cpp" line="162"/>
+        <location filename="../aiassistant.cpp" line="189"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
         <translation>Er is geen AI-endpoint ingesteld (Instellingen → AI-assistent).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="166"/>
+        <location filename="../aiassistant.cpp" line="193"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
         <translation>Er is geen AI-model ingesteld (Instellingen → AI-assistent).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="170"/>
+        <location filename="../aiassistant.cpp" line="197"/>
         <source>There is nothing to send to the assistant.</source>
         <translation>Er is niets om naar de assistent te sturen.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="197"/>
+        <location filename="../aiassistant.cpp" line="224"/>
         <source>The assistant request failed.</source>
         <translation>Het verzoek aan de assistent is mislukt.</translation>
     </message>
@@ -599,27 +599,32 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
         <translation>%1 berichten en %2 mediabestanden opgeslagen in %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1594"/>
+        <location filename="../mainwindow_webengine.cpp" line="1599"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>De AI-assistent staat uit (schakel dit in bij Instellingen → AI-assistent).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1598"/>
+        <location filename="../mainwindow_webengine.cpp" line="1604"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>Er is niets waaraan de assistent kan werken.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1604"/>
+        <location filename="../mainwindow_webengine.cpp" line="1616"/>
+        <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
+        <translation>De assistent raadplegen… (weinig geheugen: %1 MB vrij; een lokaal model kan mislukken of de app vertragen)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1621"/>
         <source>Asking the assistant…</source>
         <translation>De assistent raadplegen…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1636"/>
+        <location filename="../mainwindow_webengine.cpp" line="1654"/>
         <source>Chat summary</source>
         <translation>Gesprekssamenvatting</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1643"/>
+        <location filename="../mainwindow_webengine.cpp" line="1661"/>
         <source>Close</source>
         <translation type="unfinished">Sluiten</translation>
     </message>
@@ -1643,27 +1648,27 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>De vertaaldienst gaf geen tekst terug.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="214"/>
+        <location filename="../translator.cpp" line="224"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Er is geen vertaal-endpoint ingesteld (Instellingen → Vertaling).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="220"/>
+        <location filename="../translator.cpp" line="230"/>
         <source>Nothing to translate.</source>
         <translation>Niets om te vertalen.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="246"/>
+        <location filename="../translator.cpp" line="256"/>
         <source>Translation failed.</source>
         <translation>Vertaling mislukt.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="84"/>
+        <location filename="../aiassistant.cpp" line="85"/>
         <source>Unexpected response from the AI service.</source>
         <translation>Onverwacht antwoord van de AI-dienst.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="106"/>
+        <location filename="../aiassistant.cpp" line="107"/>
         <source>The AI service returned no text.</source>
         <translation>De AI-dienst gaf geen tekst terug.</translation>
     </message>

@@ -1586,22 +1586,39 @@ bool MainWindow::ensureInlineReply() {
 void MainWindow::runAssistant(const QString &systemPrompt,
                               const QString &userPrompt,
                               std::function<void(const QString &)> onResult) {
-  auto toast = [this](const QString &msg) {
+  auto toast = [this](const QString &msg, bool persistent) {
     if (m_webEngine && m_webEngine->page())
-      m_webEngine->page()->runJavaScript(Translate::toastScript(msg));
+      m_webEngine->page()->runJavaScript(
+          Translate::toastScript(msg, persistent));
+  };
+  auto hideToast = [this]() {
+    if (m_webEngine && m_webEngine->page())
+      m_webEngine->page()->runJavaScript(Translate::hideToastScript());
   };
   if (!Ai::isEnabled()) {
-    toast(tr("The AI assistant is off (enable it in Settings → AI assistant)."));
+    toast(tr("The AI assistant is off (enable it in Settings → AI assistant)."),
+          false);
     return;
   }
   if (userPrompt.trimmed().isEmpty()) {
-    toast(tr("There is nothing for the assistant to work on."));
+    toast(tr("There is nothing for the assistant to work on."), false);
     return;
   }
   if (!m_aiClient)
     m_aiClient = new AiClient(this);
 
-  toast(tr("Asking the assistant…"));
+  // A persistent toast while the model works (it can take a while, especially a
+  // local one), removed as soon as the result or an error arrives. When free
+  // memory is low, warn: a local model loading several GB can exhaust RAM and
+  // destabilise the page (as opposed to a remote endpoint, which does not).
+  const long freeMb = Ai::availableMemoryMb();
+  if (freeMb >= 0 && freeMb < 1500)
+    toast(tr("Asking the assistant… (low memory: %1 MB free; a local model "
+             "may fail or slow the app)")
+              .arg(freeMb),
+          true);
+  else
+    toast(tr("Asking the assistant…"), true);
 
   auto conns = std::make_shared<QList<QMetaObject::Connection>>();
   auto cleanup = [conns]() {
@@ -1610,14 +1627,15 @@ void MainWindow::runAssistant(const QString &systemPrompt,
     conns->clear();
   };
   conns->append(connect(m_aiClient, &AiClient::completed, this,
-                        [onResult, cleanup](const QString &text) {
+                        [onResult, cleanup, hideToast](const QString &text) {
                           cleanup();
+                          hideToast();
                           onResult(text);
                         }));
   conns->append(connect(m_aiClient, &AiClient::failed, this,
                         [toast, cleanup](const QString &err) {
                           cleanup();
-                          toast(err);
+                          toast(err, false);
                         }));
   m_aiClient->complete(systemPrompt, userPrompt);
 }

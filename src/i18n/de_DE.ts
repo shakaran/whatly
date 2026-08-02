@@ -93,22 +93,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AiClient</name>
     <message>
-        <location filename="../aiassistant.cpp" line="162"/>
+        <location filename="../aiassistant.cpp" line="189"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
         <translation>Es ist kein KI-Endpunkt konfiguriert (Einstellungen → KI-Assistent).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="166"/>
+        <location filename="../aiassistant.cpp" line="193"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
         <translation>Es ist kein KI-Modell konfiguriert (Einstellungen → KI-Assistent).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="170"/>
+        <location filename="../aiassistant.cpp" line="197"/>
         <source>There is nothing to send to the assistant.</source>
         <translation>Es gibt nichts, das an den Assistenten gesendet werden könnte.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="197"/>
+        <location filename="../aiassistant.cpp" line="224"/>
         <source>The assistant request failed.</source>
         <translation>Die Anfrage an den Assistenten ist fehlgeschlagen.</translation>
     </message>
@@ -599,27 +599,32 @@ Möchten Sie die Sicherheitsprüfung übergehen und fortfahren?   </translation>
         <translation>%1 Nachrichten und %2 Mediendateien in %3 gespeichert</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1594"/>
+        <location filename="../mainwindow_webengine.cpp" line="1599"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>Der KI-Assistent ist aus (in Einstellungen → KI-Assistent aktivieren).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1598"/>
+        <location filename="../mainwindow_webengine.cpp" line="1604"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>Es gibt nichts, woran der Assistent arbeiten könnte.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1604"/>
+        <location filename="../mainwindow_webengine.cpp" line="1616"/>
+        <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
+        <translation>Assistent wird gefragt… (wenig Speicher: %1 MB frei; ein lokales Modell kann fehlschlagen oder die App verlangsamen)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1621"/>
         <source>Asking the assistant…</source>
         <translation>Assistent wird gefragt…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1636"/>
+        <location filename="../mainwindow_webengine.cpp" line="1654"/>
         <source>Chat summary</source>
         <translation>Chat-Zusammenfassung</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1643"/>
+        <location filename="../mainwindow_webengine.cpp" line="1661"/>
         <source>Close</source>
         <translation type="unfinished">Schließen</translation>
     </message>
@@ -1643,27 +1648,27 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
         <translation>Der Übersetzungsdienst hat keinen Text zurückgegeben.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="214"/>
+        <location filename="../translator.cpp" line="224"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Es ist kein Übersetzungs-Endpunkt konfiguriert (Einstellungen → Übersetzung).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="220"/>
+        <location filename="../translator.cpp" line="230"/>
         <source>Nothing to translate.</source>
         <translation>Nichts zu übersetzen.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="246"/>
+        <location filename="../translator.cpp" line="256"/>
         <source>Translation failed.</source>
         <translation>Übersetzung fehlgeschlagen.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="84"/>
+        <location filename="../aiassistant.cpp" line="85"/>
         <source>Unexpected response from the AI service.</source>
         <translation>Unerwartete Antwort vom KI-Dienst.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="106"/>
+        <location filename="../aiassistant.cpp" line="107"/>
         <source>The AI service returned no text.</source>
         <translation>Der KI-Dienst hat keinen Text zurückgegeben.</translation>
     </message>

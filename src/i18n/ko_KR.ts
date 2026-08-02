@@ -93,22 +93,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AiClient</name>
     <message>
-        <location filename="../aiassistant.cpp" line="162"/>
+        <location filename="../aiassistant.cpp" line="189"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
         <translation>AI 엔드포인트가 구성되지 않았습니다 (설정 → AI 어시스턴트).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="166"/>
+        <location filename="../aiassistant.cpp" line="193"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
         <translation>AI 모델이 구성되지 않았습니다 (설정 → AI 어시스턴트).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="170"/>
+        <location filename="../aiassistant.cpp" line="197"/>
         <source>There is nothing to send to the assistant.</source>
         <translation>어시스턴트에게 보낼 내용이 없습니다.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="197"/>
+        <location filename="../aiassistant.cpp" line="224"/>
         <source>The assistant request failed.</source>
         <translation>어시스턴트 요청에 실패했습니다.</translation>
     </message>
@@ -599,27 +599,32 @@ Do you wish to override the security check and continue ?   </source>
         <translation>메시지 %1개와 미디어 파일 %2개를 %3에 저장했습니다</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1594"/>
+        <location filename="../mainwindow_webengine.cpp" line="1599"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>AI 어시스턴트가 꺼져 있습니다 (설정 → AI 어시스턴트에서 켜세요).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1598"/>
+        <location filename="../mainwindow_webengine.cpp" line="1604"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>어시스턴트가 처리할 내용이 없습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1604"/>
+        <location filename="../mainwindow_webengine.cpp" line="1616"/>
+        <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
+        <translation>어시스턴트에 요청 중… (메모리 부족: %1 MB 남음; 로컬 모델이 실패하거나 앱이 느려질 수 있습니다)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1621"/>
         <source>Asking the assistant…</source>
         <translation>어시스턴트에 요청 중…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1636"/>
+        <location filename="../mainwindow_webengine.cpp" line="1654"/>
         <source>Chat summary</source>
         <translation>채팅 요약</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1643"/>
+        <location filename="../mainwindow_webengine.cpp" line="1661"/>
         <source>Close</source>
         <translation type="unfinished">닫기</translation>
     </message>
@@ -1643,27 +1648,27 @@ Please setup the password in the Settings first.</source>
         <translation>번역 서비스가 텍스트를 반환하지 않았습니다.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="214"/>
+        <location filename="../translator.cpp" line="224"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>번역 엔드포인트가 구성되지 않았습니다 (설정 → 번역).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="220"/>
+        <location filename="../translator.cpp" line="230"/>
         <source>Nothing to translate.</source>
         <translation>번역할 내용이 없습니다.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="246"/>
+        <location filename="../translator.cpp" line="256"/>
         <source>Translation failed.</source>
         <translation>번역에 실패했습니다.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="84"/>
+        <location filename="../aiassistant.cpp" line="85"/>
         <source>Unexpected response from the AI service.</source>
         <translation>AI 서비스에서 예기치 않은 응답이 왔습니다.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="106"/>
+        <location filename="../aiassistant.cpp" line="107"/>
         <source>The AI service returned no text.</source>
         <translation>AI 서비스가 텍스트를 반환하지 않았습니다.</translation>
     </message>

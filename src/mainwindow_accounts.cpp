@@ -653,6 +653,14 @@ WebView *MainWindow::addAccount(const QString &id, const QString &name,
   view->addAction(m_lockAction);
   view->addAction(m_quitAction);
 
+  // Right-click menu: the discoverable path to Whatly's text actions, so they
+  // need no shortcut or command palette. Composer actions appear in the message
+  // box, selection actions when text is selected, chat actions always.
+  view->setContextActions(
+      {m_aiImproveAction, m_aiSuggestAction, m_translateComposerAction},
+      {m_translateSelectionAction},
+      {m_aiSummarizeAction, m_exportChatAction});
+
   m_accountStack->addWidget(view);
   m_accounts.append({id, name, view, 0});
   m_accounts.last().lastActive = QDateTime::currentDateTime();

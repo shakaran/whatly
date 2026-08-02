@@ -40,6 +40,12 @@ QString suggestReplySystemPrompt();
 // loaded messages of the open chat (no scrolling, no media), for context.
 QString readContextScript(int maxMessages);
 
+// Available system memory in MiB, or -1 if it cannot be determined (non-Linux).
+// A local model can need several GB, so callers warn when this is low.
+long availableMemoryMb();
+// Parse MemAvailable (in MiB) from /proc/meminfo contents; -1 if not found.
+long memAvailableMbFromProc(const QByteArray &procMeminfo);
+
 } // namespace Ai
 
 class AiClient : public QObject {

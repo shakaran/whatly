@@ -8,6 +8,7 @@
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QUrl>
+#include <QFile>
 
 static const char kEnabledKey[] = "aiEnabled";
 static const char kEndpointKey[] = "aiEndpoint";
@@ -150,6 +151,32 @@ QString readContextScript(int maxMessages) {
              "return out.slice(-%1).join('\\n');"
              "}catch(e){return '';}})();")
       .arg(n);
+}
+
+long memAvailableMbFromProc(const QByteArray &procMeminfo) {
+  // Look for a line "MemAvailable:   12345 kB".
+  for (const QByteArray &line : procMeminfo.split('\n')) {
+    if (!line.startsWith("MemAvailable:"))
+      continue;
+    const QByteArray rest = line.mid(QByteArray("MemAvailable:").size()).trimmed();
+    bool ok = false;
+    const long kb = rest.split(' ').first().toLong(&ok);
+    if (ok)
+      return kb / 1024; // kB -> MiB
+    return -1;
+  }
+  return -1;
+}
+
+long availableMemoryMb() {
+#ifdef Q_OS_LINUX
+  QFile f(QStringLiteral("/proc/meminfo"));
+  if (!f.open(QIODevice::ReadOnly | QIODevice::Text))
+    return -1;
+  return memAvailableMbFromProc(f.readAll());
+#else
+  return -1;
+#endif
 }
 
 } // namespace Ai

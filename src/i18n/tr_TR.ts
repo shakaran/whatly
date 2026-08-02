@@ -93,22 +93,22 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AiClient</name>
     <message>
-        <location filename="../aiassistant.cpp" line="162"/>
+        <location filename="../aiassistant.cpp" line="189"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
         <translation>Yapay zekâ uç noktası yapılandırılmadı (Ayarlar → Yapay zekâ asistanı).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="166"/>
+        <location filename="../aiassistant.cpp" line="193"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
         <translation>Yapay zekâ modeli yapılandırılmadı (Ayarlar → Yapay zekâ asistanı).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="170"/>
+        <location filename="../aiassistant.cpp" line="197"/>
         <source>There is nothing to send to the assistant.</source>
         <translation>Asistana gönderilecek bir şey yok.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="197"/>
+        <location filename="../aiassistant.cpp" line="224"/>
         <source>The assistant request failed.</source>
         <translation>Asistan isteği başarısız oldu.</translation>
     </message>
@@ -599,27 +599,32 @@ Güvenlik denetimini atlayıp devam etmek istiyor musunuz?   </translation>
         <translation>%1 mesaj ve %2 medya dosyası %3 konumuna kaydedildi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1594"/>
+        <location filename="../mainwindow_webengine.cpp" line="1599"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
-        <translation>Yapay zekâ asistanı kapalı (Ayarlar → Yapay zekâ asistanı'ndan açın).</translation>
+        <translation>Yapay zekâ asistanı kapalı (Ayarlar → Yapay zekâ asistanı&apos;ndan açın).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1598"/>
+        <location filename="../mainwindow_webengine.cpp" line="1604"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>Asistanın üzerinde çalışacağı bir şey yok.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1604"/>
+        <location filename="../mainwindow_webengine.cpp" line="1616"/>
+        <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
+        <translation>Asistana soruluyor… (düşük bellek: %1 MB boş; yerel bir model başarısız olabilir veya uygulamayı yavaşlatabilir)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1621"/>
         <source>Asking the assistant…</source>
         <translation>Asistana soruluyor…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1636"/>
+        <location filename="../mainwindow_webengine.cpp" line="1654"/>
         <source>Chat summary</source>
         <translation>Sohbet özeti</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1643"/>
+        <location filename="../mainwindow_webengine.cpp" line="1661"/>
         <source>Close</source>
         <translation type="unfinished">Kapat</translation>
     </message>
@@ -1643,27 +1648,27 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Çeviri hizmeti metin döndürmedi.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="214"/>
+        <location filename="../translator.cpp" line="224"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Çeviri uç noktası yapılandırılmadı (Ayarlar → Çeviri).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="220"/>
+        <location filename="../translator.cpp" line="230"/>
         <source>Nothing to translate.</source>
         <translation>Çevrilecek bir şey yok.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="246"/>
+        <location filename="../translator.cpp" line="256"/>
         <source>Translation failed.</source>
         <translation>Çeviri başarısız oldu.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="84"/>
+        <location filename="../aiassistant.cpp" line="85"/>
         <source>Unexpected response from the AI service.</source>
         <translation>Yapay zekâ hizmetinden beklenmeyen yanıt.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="106"/>
+        <location filename="../aiassistant.cpp" line="107"/>
         <source>The AI service returned no text.</source>
         <translation>Yapay zekâ hizmeti metin döndürmedi.</translation>
     </message>
@@ -2807,7 +2812,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1761"/>
         <source>Summarise a chat, improve your draft or suggest a reply through an OpenAI-compatible service. The chat text is sent to that service, so use one you trust (a local runner keeps it on your machine). The request is made by the app, so the endpoint and key never reach WhatsApp Web. Actions live in the command palette and Shortcuts.</source>
-        <translation>Bir sohbeti özetler, taslağınızı iyileştirir veya OpenAI uyumlu bir hizmetle yanıt önerir. Sohbet metni bu hizmete gönderilir, bu yüzden güvendiğiniz birini kullanın (yerel bir çalıştırıcı onu cihazınızda tutar). İstek uygulama tarafından yapılır, böylece uç nokta ve anahtar WhatsApp Web'e hiç ulaşmaz. Eylemler komut paletinde ve Kısayollar'da bulunur.</translation>
+        <translation>Bir sohbeti özetler, taslağınızı iyileştirir veya OpenAI uyumlu bir hizmetle yanıt önerir. Sohbet metni bu hizmete gönderilir, bu yüzden güvendiğiniz birini kullanın (yerel bir çalıştırıcı onu cihazınızda tutar). İstek uygulama tarafından yapılır, böylece uç nokta ve anahtar WhatsApp Web&apos;e hiç ulaşmaz. Eylemler komut paletinde ve Kısayollar&apos;da bulunur.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1764"/>
@@ -2817,7 +2822,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1778"/>
         <source>An OpenAI-compatible /chat/completions URL, e.g. https://api.openai.com/v1/chat/completions or http://localhost:11434/v1/chat/completions for a local Ollama.</source>
-        <translation>OpenAI uyumlu bir /chat/completions URL'si, ör. https://api.openai.com/v1/chat/completions veya yerel Ollama için http://localhost:11434/v1/chat/completions.</translation>
+        <translation>OpenAI uyumlu bir /chat/completions URL&apos;si, ör. https://api.openai.com/v1/chat/completions veya yerel Ollama için http://localhost:11434/v1/chat/completions.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1781"/>

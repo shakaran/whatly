@@ -169,14 +169,44 @@ void WebView::contextMenuEvent(QContextMenuEvent *event) {
     QWebEngineView::contextMenuEvent(event);
     return;
   }
-  // if content is not editable
-  if (data.selectedText().isEmpty() && !data.isContentEditable()) {
+
+  const bool editable = data.isContentEditable();
+  const bool hasSelection = !data.selectedText().isEmpty();
+
+  // Whatly's own actions (AI, translate, export), grouped by where they apply.
+  // This is the discoverable path to them: no shortcut or command palette
+  // needed. Composer actions show in the message box, selection actions when
+  // text is selected, chat actions always.
+  auto addGroup = [&](const QList<QAction *> &acts) {
+    if (acts.isEmpty())
+      return;
+    menu->addSeparator();
+    for (QAction *a : acts)
+      menu->addAction(a);
+  };
+  if (editable)
+    addGroup(m_composerActions);
+  if (hasSelection)
+    addGroup(m_selectionActions);
+  addGroup(m_chatActions);
+
+  // Nothing useful to show on a plain, non-editable area with no selection and
+  // no app actions: keep the previous "no menu" behaviour.
+  if (!editable && !hasSelection && m_chatActions.isEmpty()) {
     event->ignore();
     return;
   }
 
   connect(menu, &QMenu::aboutToHide, menu, &QObject::deleteLater);
   menu->popup(event->globalPos());
+}
+
+void WebView::setContextActions(const QList<QAction *> &composer,
+                                const QList<QAction *> &selection,
+                                const QList<QAction *> &chat) {
+  m_composerActions = composer;
+  m_selectionActions = selection;
+  m_chatActions = chat;
 }
 
 // ── Clipboard image paste ─────────────────────────────────────────────────────

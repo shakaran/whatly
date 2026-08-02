@@ -11,6 +11,7 @@
 #include <QDateTime>
 #include <QActionGroup>
 #include <QPainter>
+#include <QIcon>
 
 #include "shortcuts.h"
 #include <QPalette>
@@ -112,11 +113,15 @@ void MainWindow::createActions() {
   // Inline translation (idea #6). No default shortcuts — both live in the
   // command palette and can be bound to keys of the user's choosing in Settings.
   m_translateSelectionAction = new QAction(tr("Translate selection"), this);
+  m_translateSelectionAction->setIcon(
+      QIcon::fromTheme(QStringLiteral("preferences-desktop-locale")));
   connect(m_translateSelectionAction, &QAction::triggered, this,
           &MainWindow::translateSelection);
   addAction(m_translateSelectionAction);
 
   m_translateComposerAction = new QAction(tr("Translate message box"), this);
+  m_translateComposerAction->setIcon(
+      QIcon::fromTheme(QStringLiteral("preferences-desktop-locale")));
   connect(m_translateComposerAction, &QAction::triggered, this,
           &MainWindow::translateComposer);
   addAction(m_translateComposerAction);
@@ -124,22 +129,31 @@ void MainWindow::createActions() {
   // Export the open conversation (idea #9). No default shortcut; command palette
   // and Shortcuts expose it.
   m_exportChatAction = new QAction(tr("Export chat…"), this);
+  m_exportChatAction->setIcon(
+      QIcon::fromTheme(QStringLiteral("document-save")));
   connect(m_exportChatAction, &QAction::triggered, this,
           &MainWindow::exportCurrentChat);
   addAction(m_exportChatAction);
 
-  // AI assistant (idea #5). No default shortcuts; command palette / Shortcuts.
+  // AI assistant (idea #5). No default shortcuts; command palette / Shortcuts /
+  // right-click menu. Icons make them explicit in the context menu.
   m_aiSummarizeAction = new QAction(tr("AI: Summarise chat"), this);
+  m_aiSummarizeAction->setIcon(
+      QIcon::fromTheme(QStringLiteral("view-list-text")));
   connect(m_aiSummarizeAction, &QAction::triggered, this,
           &MainWindow::aiSummarizeChat);
   addAction(m_aiSummarizeAction);
 
   m_aiImproveAction = new QAction(tr("AI: Improve message"), this);
+  m_aiImproveAction->setIcon(
+      QIcon::fromTheme(QStringLiteral("tools-check-spelling")));
   connect(m_aiImproveAction, &QAction::triggered, this,
           &MainWindow::aiImproveComposer);
   addAction(m_aiImproveAction);
 
   m_aiSuggestAction = new QAction(tr("AI: Suggest a reply"), this);
+  m_aiSuggestAction->setIcon(
+      QIcon::fromTheme(QStringLiteral("mail-reply-sender")));
   connect(m_aiSuggestAction, &QAction::triggered, this,
           &MainWindow::aiSuggestReply);
   addAction(m_aiSuggestAction);

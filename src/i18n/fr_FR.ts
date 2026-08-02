@@ -93,24 +93,24 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AiClient</name>
     <message>
-        <location filename="../aiassistant.cpp" line="162"/>
+        <location filename="../aiassistant.cpp" line="189"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
-        <translation>Aucun point d'accès IA n'est configuré (Paramètres → Assistant IA).</translation>
+        <translation>Aucun point d&apos;accès IA n&apos;est configuré (Paramètres → Assistant IA).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="166"/>
+        <location filename="../aiassistant.cpp" line="193"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
-        <translation>Aucun modèle IA n'est configuré (Paramètres → Assistant IA).</translation>
-    </message>
-    <message>
-        <location filename="../aiassistant.cpp" line="170"/>
-        <source>There is nothing to send to the assistant.</source>
-        <translation>Il n'y a rien à envoyer à l'assistant.</translation>
+        <translation>Aucun modèle IA n&apos;est configuré (Paramètres → Assistant IA).</translation>
     </message>
     <message>
         <location filename="../aiassistant.cpp" line="197"/>
+        <source>There is nothing to send to the assistant.</source>
+        <translation>Il n&apos;y a rien à envoyer à l&apos;assistant.</translation>
+    </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="224"/>
         <source>The assistant request failed.</source>
-        <translation>La requête à l'assistant a échoué.</translation>
+        <translation>La requête à l&apos;assistant a échoué.</translation>
     </message>
 </context>
 <context>
@@ -599,27 +599,32 @@ Voulez-vous ignorer le contrôle de sécurité et continuer ?   </translation>
         <translation>%1 messages et %2 fichiers multimédias enregistrés dans %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1594"/>
+        <location filename="../mainwindow_webengine.cpp" line="1599"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
-        <translation>L'assistant IA est désactivé (activez-le dans Paramètres → Assistant IA).</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1598"/>
-        <source>There is nothing for the assistant to work on.</source>
-        <translation>L'assistant n'a rien sur quoi travailler.</translation>
+        <translation>L&apos;assistant IA est désactivé (activez-le dans Paramètres → Assistant IA).</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1604"/>
-        <source>Asking the assistant…</source>
-        <translation>Consultation de l'assistant…</translation>
+        <source>There is nothing for the assistant to work on.</source>
+        <translation>L&apos;assistant n&apos;a rien sur quoi travailler.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1636"/>
+        <location filename="../mainwindow_webengine.cpp" line="1616"/>
+        <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
+        <translation>Consultation de l'assistant… (mémoire faible : %1 Mo libres ; un modèle local peut échouer ou ralentir l'application)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1621"/>
+        <source>Asking the assistant…</source>
+        <translation>Consultation de l&apos;assistant…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1654"/>
         <source>Chat summary</source>
         <translation>Résumé de la conversation</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1643"/>
+        <location filename="../mainwindow_webengine.cpp" line="1661"/>
         <source>Close</source>
         <translation type="unfinished">Fermer</translation>
     </message>
@@ -1643,29 +1648,29 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
         <translation>Le service de traduction n&apos;a renvoyé aucun texte.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="214"/>
+        <location filename="../translator.cpp" line="224"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Aucun point d&apos;accès de traduction n&apos;est configuré (Paramètres → Traduction).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="220"/>
+        <location filename="../translator.cpp" line="230"/>
         <source>Nothing to translate.</source>
         <translation>Rien à traduire.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="246"/>
+        <location filename="../translator.cpp" line="256"/>
         <source>Translation failed.</source>
         <translation>La traduction a échoué.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="84"/>
+        <location filename="../aiassistant.cpp" line="85"/>
         <source>Unexpected response from the AI service.</source>
         <translation>Réponse inattendue du service IA.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="106"/>
+        <location filename="../aiassistant.cpp" line="107"/>
         <source>The AI service returned no text.</source>
-        <translation>Le service IA n'a renvoyé aucun texte.</translation>
+        <translation>Le service IA n&apos;a renvoyé aucun texte.</translation>
     </message>
 </context>
 <context>
@@ -2807,12 +2812,12 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1761"/>
         <source>Summarise a chat, improve your draft or suggest a reply through an OpenAI-compatible service. The chat text is sent to that service, so use one you trust (a local runner keeps it on your machine). The request is made by the app, so the endpoint and key never reach WhatsApp Web. Actions live in the command palette and Shortcuts.</source>
-        <translation>Résume une conversation, améliore votre brouillon ou suggère une réponse via un service compatible OpenAI. Le texte de la conversation est envoyé à ce service, utilisez-en un de confiance (un serveur local le garde sur votre machine). La requête est faite par l'application, donc le point d'accès et la clé n'atteignent jamais WhatsApp Web. Les actions sont dans la palette de commandes et dans Raccourcis.</translation>
+        <translation>Résume une conversation, améliore votre brouillon ou suggère une réponse via un service compatible OpenAI. Le texte de la conversation est envoyé à ce service, utilisez-en un de confiance (un serveur local le garde sur votre machine). La requête est faite par l&apos;application, donc le point d&apos;accès et la clé n&apos;atteignent jamais WhatsApp Web. Les actions sont dans la palette de commandes et dans Raccourcis.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1764"/>
         <source>Enable AI assistant</source>
-        <translation>Activer l'assistant IA</translation>
+        <translation>Activer l&apos;assistant IA</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1778"/>
@@ -2832,7 +2837,7 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1795"/>
         <source>The model name the endpoint expects, e.g. gpt-4o-mini or llama3.</source>
-        <translation>Le nom du modèle attendu par le point d'accès, par ex. gpt-4o-mini ou llama3.</translation>
+        <translation>Le nom du modèle attendu par le point d&apos;accès, par ex. gpt-4o-mini ou llama3.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1798"/>

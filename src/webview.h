@@ -6,6 +6,8 @@
 
 #include "settingsmanager.h"
 
+class QAction;
+
 class WebView : public QWebEngineView {
   Q_OBJECT
 
@@ -15,6 +17,14 @@ public:
   // Which account this view belongs to ("" for the default account). Lets the
   // one title/load handler in MainWindow tell the accounts apart.
   QString accountId;
+
+  // App actions offered in the right-click menu (idea #5 discoverability):
+  // `composer` actions appear when the click is in an editable field (the
+  // message box), `selection` when text is selected, and `chat` always. The
+  // actions themselves belong to MainWindow and act on the active account.
+  void setContextActions(const QList<QAction *> &composer,
+                         const QList<QAction *> &selection,
+                         const QList<QAction *> &chat);
 
 protected:
   void contextMenuEvent(QContextMenuEvent *event) override;
@@ -38,6 +48,8 @@ private:
   qint64 m_lastRenderCrashMs = 0;
   int m_renderCrashCount = 0;
   bool m_renderCrashDialogUp = false;
+
+  QList<QAction *> m_composerActions, m_selectionActions, m_chatActions;
 };
 
 #endif // WEBVIEW_H

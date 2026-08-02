@@ -43,8 +43,12 @@ QString readComposerScript();
 // via execCommand, so the Send button enables). The text is JSON-escaped.
 QString replaceComposerScript(const QString &text);
 // JS showing a small dismissable toast with `text` near the current selection
-// (or bottom-centre if there is none). The text is JSON-escaped.
-QString toastScript(const QString &text);
+// (or bottom-centre if there is none). The text is JSON-escaped. When
+// `persistent` is true the toast stays until replaced or hidden (for long
+// operations); otherwise it fades after a few seconds.
+QString toastScript(const QString &text, bool persistent = false);
+// JS removing the toast, if any (pairs with a persistent toastScript()).
+QString hideToastScript();
 
 } // namespace Translate
 

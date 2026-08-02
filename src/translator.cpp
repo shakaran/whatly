@@ -162,12 +162,19 @@ QString replaceComposerScript(const QString &text) {
   return js;
 }
 
-QString toastScript(const QString &text) {
+QString hideToastScript() {
+  return QStringLiteral(
+      "(function(){var e=document.getElementById('whatly-translate-toast');"
+      "if(e)e.remove();})();");
+}
+
+QString toastScript(const QString &text, bool persistent) {
   QString js = QString::fromLatin1(R"JS(
 (function () {
   'use strict';
   try {
     var TEXT = __TEXT__;
+    var PERSIST = __PERSIST__;
     var old = document.getElementById('whatly-translate-toast');
     if (old) old.remove();
     var t = document.createElement('div');
@@ -196,11 +203,14 @@ QString toastScript(const QString &text) {
     }
     t.onclick = function () { t.remove(); };
     (document.body || document.documentElement).appendChild(t);
-    setTimeout(function () { if (t && t.parentNode) t.remove(); }, 12000);
+    if (!PERSIST)
+      setTimeout(function () { if (t && t.parentNode) t.remove(); }, 12000);
   } catch (e) { /* never break the page */ }
 })();
 )JS");
   js.replace(QLatin1String("__TEXT__"), jsString(text));
+  js.replace(QLatin1String("__PERSIST__"),
+             persistent ? QLatin1String("true") : QLatin1String("false"));
   return js;
 }
 
