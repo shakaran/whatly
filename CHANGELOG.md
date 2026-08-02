@@ -1,5 +1,10 @@
 ## Unreleased
 
+**Recent unread chats in the tray menu.** The tray menu now has a "Recent
+unread" submenu listing conversations with unread messages (name and count);
+picking one brings the window up and opens that chat. It hides itself when
+nothing is unread.
+
 **Suspend inactive accounts to save memory.** With more than one account, each is
 a full page holding hundreds of MB. A new Settings → Performance option freezes
 the pages of accounts you are not viewing after an idle timeout, giving that

@@ -49,7 +49,7 @@ add_executable(tst_logic
     ${S}/scheduledmessages.cpp ${S}/messaging.cpp ${S}/messagetemplates.cpp ${S}/autoreply.cpp ${S}/cloudapi.cpp ${S}/localapi.cpp ${S}/cloudwebhook.cpp
     ${S}/webfont.cpp ${S}/chattheme.cpp ${S}/mutedstatus.cpp ${S}/privacyblur.cpp ${S}/chatliststrip.cpp
     ${S}/chatwallpaper.cpp ${S}/customcss.cpp ${S}/customjs.cpp ${S}/commandpalette.cpp ${S}/updatechecker.cpp ${S}/storageinfo.cpp ${S}/shortcuts.cpp ${S}/backup.cpp ${S}/screenlock.cpp ${S}/quickreply.cpp ${S}/focusmode.cpp ${S}/hdmedia.cpp ${S}/cannedresponses.cpp ${S}/webtweaks.cpp
-    ${S}/linkeddevicename.cpp ${S}/performance.cpp ${S}/trayicon.cpp ${S}/dropattach.cpp ${S}/dropresolve.cpp ${S}/notificationrules.cpp
+    ${S}/linkeddevicename.cpp ${S}/performance.cpp ${S}/trayicon.cpp ${S}/dropattach.cpp ${S}/chatnav.cpp ${S}/dropresolve.cpp ${S}/notificationrules.cpp
     ${S}/networkproxy.cpp ${S}/autostart.cpp ${S}/portalnotification.cpp
     ${S}/setupwizard.cpp
     ${S}/icons.qrc

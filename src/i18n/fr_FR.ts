@@ -486,6 +486,10 @@ Voulez-vous ignorer le contrôle de sécurité et continuer ?   </translation>
 <context>
     <name>MainWindow</name>
     <message>
+        <source>Recent unread</source>
+        <translation>Non lus récents</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="961"/>
         <source>Waiting for network…</source>
         <translation>En attente du réseau…</translation>

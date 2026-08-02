@@ -486,6 +486,10 @@ Möchten Sie die Sicherheitsprüfung übergehen und fortfahren?   </translation>
 <context>
     <name>MainWindow</name>
     <message>
+        <source>Recent unread</source>
+        <translation>Kürzlich ungelesen</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="961"/>
         <source>Waiting for network…</source>
         <translation>Warten auf Netzwerk…</translation>

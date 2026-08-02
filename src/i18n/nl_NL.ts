@@ -486,6 +486,10 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
 <context>
     <name>MainWindow</name>
     <message>
+        <source>Recent unread</source>
+        <translation>Recent ongelezen</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="961"/>
         <source>Waiting for network…</source>
         <translation>Wachten op netwerk…</translation>

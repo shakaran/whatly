@@ -60,6 +60,7 @@
 #include "linkeddevicename.h"
 #include "performance.h"
 #include "trayicon.h"
+#include "chatnav.h"
 #include "dropattach.h"
 #include "dropresolve.h"
 #include "networkproxy.h"
@@ -2076,6 +2077,31 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// ChatNav: the JS builders for the tray "recent unread" feature (#3). The
+// runtime behaviour is verified live; here we check structure and escaping.
+class TstChatNav : public QObject {
+  Q_OBJECT
+private slots:
+  void unreadScript() {
+    const QString js = ChatNav::unreadChatsScript(6);
+    QVERIFY(js.contains(QLatin1String("#pane-side")));
+    QVERIFY(js.contains(QLatin1String("JSON.stringify")));
+    QVERIFY(js.contains(QLatin1String(">= 6"))); // the limit was substituted
+    QVERIFY(!ChatNav::unreadChatsScript(0).isEmpty()); // clamped, still valid
+  }
+  void openScriptEscapesName() {
+    const QString js =
+        ChatNav::openChatByNameScript(QStringLiteral("a\"b'c\n<x>"));
+    QVERIFY(js.contains(QLatin1String("pointerdown"))); // the click sequence
+    QVERIFY(js.contains(QLatin1String("getBoundingClientRect")));
+    // The name is JSON-escaped: the quote and newline are backslash-escaped,
+    // so no raw quote/newline can break out of the string literal.
+    QVERIFY(js.contains(QLatin1String("a\\\"b")));
+    QVERIFY(js.contains(QLatin1String("\\n")));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CustomJs: the addon manager stores files, tracks per-addon enabled state, and
 // builds a combined guarded script. Runs in QStandardPaths test mode.
 class TstCustomJs : public QObject {
@@ -2832,6 +2858,7 @@ int main(int argc, char *argv[]) {
   { TstDropAttach t;          run(&t); }
   { TstDropResolve t;         run(&t); }
   { TstFlatpakManifest t;     run(&t); }
+  { TstChatNav t;             run(&t); }
   { TstShortcuts t;           run(&t); }
   { TstBackup t;              run(&t); }
   { TstScreenLock t;          run(&t); }

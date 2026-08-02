@@ -486,6 +486,10 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
+        <source>Recent unread</source>
+        <translation>最近未读</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="961"/>
         <source>Waiting for network…</source>
         <translation>正在等待网络…</translation>

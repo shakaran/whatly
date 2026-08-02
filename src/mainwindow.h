@@ -237,6 +237,11 @@ private:
   // threshold, to cut memory (Performance setting; off by default).
   void suspendIdleAccounts();
   QTimer *m_suspendTimer = nullptr;
+  // Recent unread chats in the tray menu (idea #3): refresh the cached list from
+  // the active account and jump to one on click.
+  QMenu *m_recentUnreadMenu = nullptr;
+  void refreshRecentUnread();
+  void openChatByName(const QString &accountId, const QString &name);
   // The tab tooltip for an account: its WhatsApp Web version (once known) and
   // the build token from the page URL. Empty while neither is available.
   QString accountTabTooltip(const Account &acc) const;

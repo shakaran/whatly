@@ -41,9 +41,14 @@
 #include "common.h"
 #include "detachedaccountwindow.h"
 #include "utils.h"
+#include "chatnav.h"
 #include "performance.h"
 #include "webview.h"
+#include <QAction>
 #include <QDateTime>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QWebEnginePage>
 
 #include <QTimer>
@@ -881,6 +886,51 @@ void MainWindow::suspendIdleAccounts() {
   }
 }
 
+void MainWindow::refreshRecentUnread() {
+  if (!m_recentUnreadMenu || !m_webEngine || !m_webEngine->page())
+    return;
+  const QString accountId =
+      (m_activeAccount >= 0 && m_activeAccount < m_accounts.size())
+          ? m_accounts[m_activeAccount].id
+          : QString();
+  m_webEngine->page()->runJavaScript(
+      ChatNav::unreadChatsScript(6), [this, accountId](const QVariant &result) {
+        if (!m_recentUnreadMenu)
+          return;
+        const QJsonArray arr =
+            QJsonDocument::fromJson(result.toString().toUtf8()).array();
+        m_recentUnreadMenu->clear();
+        for (const QJsonValue &v : arr) {
+          const QString name = v.toObject().value(QStringLiteral("name")).toString();
+          const int count = v.toObject().value(QStringLiteral("count")).toInt();
+          if (name.isEmpty())
+            continue;
+          QString label = name;
+          if (label.size() > 32)
+            label = label.left(31) + QChar(0x2026);
+          QAction *a = m_recentUnreadMenu->addAction(
+              QStringLiteral("%1  (%2)").arg(label).arg(count));
+          connect(a, &QAction::triggered, this,
+                  [this, accountId, name]() { openChatByName(accountId, name); });
+        }
+        m_recentUnreadMenu->menuAction()->setVisible(
+            !m_recentUnreadMenu->isEmpty());
+      });
+}
+
+void MainWindow::openChatByName(const QString &accountId, const QString &name) {
+  // A tray pick is a request to use Whatly: raise the window first.
+  setWindowState((windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
+  show();
+  raise();
+  activateWindow();
+  const int idx = accountIndexForId(accountId);
+  if (idx >= 0)
+    setActiveAccount(idx);
+  if (m_webEngine && m_webEngine->page())
+    m_webEngine->page()->runJavaScript(ChatNav::openChatByNameScript(name));
+}
+
 QString MainWindow::accountTabTooltip(const Account &acc) const {
   QString token;
   if (acc.view && acc.view->page())
@@ -951,6 +1001,7 @@ void MainWindow::refreshAccountTabs() {
 }
 
 void MainWindow::updateTrayUnread() {
+  refreshRecentUnread(); // keep the tray's recent-unread submenu in step (#3)
   int total = 0;
   for (const Account &a : m_accounts)
     total += a.unread;

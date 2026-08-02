@@ -209,6 +209,11 @@ void MainWindow::createTrayIcon() {
   m_trayIconMenu->addAction(m_minimizeAction);
   m_trayIconMenu->addAction(m_restoreAction);
   m_trayIconMenu->addSeparator();
+  // Recent unread chats (idea #3): populated live from the active account; the
+  // submenu hides itself when there is nothing unread.
+  m_recentUnreadMenu = m_trayIconMenu->addMenu(tr("Recent unread"));
+  m_recentUnreadMenu->menuAction()->setVisible(false);
+  m_trayIconMenu->addSeparator();
   m_trayIconMenu->addAction(m_reloadAction);
   m_trayIconMenu->addAction(m_lockAction);
   m_trayIconMenu->addAction(m_muteAction);

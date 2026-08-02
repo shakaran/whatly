@@ -491,6 +491,10 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
+        <source>Recent unread</source>
+        <translation>Lastaj nelegitaj</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="104"/>
         <location filename="../mainwindow.cpp" line="1111"/>
         <location filename="../mainwindow.cpp" line="1207"/>
