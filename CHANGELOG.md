@@ -1,5 +1,14 @@
 ## Unreleased
 
+**Reply from notifications.** On desktops whose notification service supports it
+(KDE Plasma, and others that advertise the freedesktop `inline-reply`
+capability), message notifications now carry a reply field: type an answer and it
+is sent straight to that chat, no window needed. Whatly posts these through
+`org.freedesktop.Notifications` itself, so the reply text stays local and the
+per-contact icon is preserved. Where the service does not support it, or when the
+option is turned off (Settings → Notifications), notifications behave exactly as
+before.
+
 **Export chat.** A new "Export chat" action (command palette and Shortcuts)
 saves the open conversation to a folder you pick: a WhatsApp-style `chat.txt`
 transcript, a structured `chat.json`, and a `media/` folder with the images,

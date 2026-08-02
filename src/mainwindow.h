@@ -34,6 +34,7 @@ class LocalApiServer;
 class PortalNotification;
 class QLabel;
 class Translator;
+class NotificationReply;
 #include "settingswidget.h"
 #include "pagebridge.h"
 #include "webenginepage.h"
@@ -453,6 +454,15 @@ private:
   PortalNotification *m_portalNotifier = nullptr;
   QHash<QString, WebEngineNotifProxyPtr> m_portalProxies;
   quint64 m_portalNotifSeq = 0;
+
+  // Inline-reply notification backend (idea #2). Created lazily; each posted
+  // notification is tracked by its server id together with the chat it is for,
+  // so a typed reply can be sent straight back to that chat.
+  NotificationReply *m_notificationReply = nullptr;
+  QHash<quint32, QPair<WebEngineNotifProxyPtr, QString>> m_replyNotifs;
+  // Sets up m_notificationReply and its signal wiring on first use; returns true
+  // when inline reply is enabled and available.
+  bool ensureInlineReply();
   // Whether the portal backend should be used for this run (from settings +
   // availability). Resolved once, lazily.
   bool usePortalNotifications();

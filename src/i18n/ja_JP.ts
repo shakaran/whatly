@@ -491,77 +491,87 @@ Do you wish to override the security check and continue ?   </source>
         <translation>最近の未読</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="972"/>
+        <location filename="../mainwindow_webengine.cpp" line="841"/>
+        <source>Reply</source>
+        <translation>返信</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="842"/>
+        <source>Reply to %1…</source>
+        <translation>%1 に返信…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="990"/>
         <source>Waiting for network…</source>
         <translation>ネットワークを待っています…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1313"/>
+        <location filename="../mainwindow_webengine.cpp" line="1331"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>インライン翻訳はオフです（設定 → 翻訳で有効にしてください）。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1317"/>
+        <location filename="../mainwindow_webengine.cpp" line="1335"/>
         <source>The message box is empty.</source>
         <translation>メッセージ入力欄が空です。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1318"/>
+        <location filename="../mainwindow_webengine.cpp" line="1336"/>
         <source>Select some text to translate first.</source>
         <translation>先に翻訳するテキストを選択してください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1356"/>
+        <location filename="../mainwindow_webengine.cpp" line="1374"/>
         <source>No conversation is open.</source>
         <translation>開いている会話がありません。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1360"/>
+        <location filename="../mainwindow_webengine.cpp" line="1378"/>
         <source>An export is already running.</source>
         <translation>すでにエクスポートが実行中です。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1365"/>
+        <location filename="../mainwindow_webengine.cpp" line="1383"/>
         <source>Choose a folder for the exported chat</source>
         <translation>エクスポートするチャットの保存先フォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1371"/>
+        <location filename="../mainwindow_webengine.cpp" line="1389"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>メッセージを収集中… 会話をスクロールしています。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1372"/>
+        <location filename="../mainwindow_webengine.cpp" line="1390"/>
         <source>Cancel</source>
         <translation type="unfinished">キャンセル</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1419"/>
+        <location filename="../mainwindow_webengine.cpp" line="1437"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>メッセージを収集中…（現在 %1 件）</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1425"/>
+        <location filename="../mainwindow_webengine.cpp" line="1443"/>
         <source>Could not read the conversation: %1</source>
         <translation>会話を読み取れませんでした: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1449"/>
+        <location filename="../mainwindow_webengine.cpp" line="1467"/>
         <source>chat</source>
         <translation>チャット</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1461"/>
+        <location filename="../mainwindow_webengine.cpp" line="1479"/>
         <source>Could not create the export folder.</source>
         <translation>エクスポート用フォルダーを作成できませんでした。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1491"/>
+        <location filename="../mainwindow_webengine.cpp" line="1509"/>
         <source>The export could not be fully written.</source>
         <translation>エクスポートを完全に書き出せませんでした。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1495"/>
+        <location filename="../mainwindow_webengine.cpp" line="1513"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>%1 件のメッセージと %2 個のメディアファイルを %3 に保存しました</translation>
     </message>
@@ -630,8 +640,8 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../mainwindow.cpp" line="865"/>
         <location filename="../mainwindow.cpp" line="871"/>
-        <location filename="../mainwindow_webengine.cpp" line="931"/>
-        <location filename="../mainwindow_webengine.cpp" line="934"/>
+        <location filename="../mainwindow_webengine.cpp" line="949"/>
+        <location filename="../mainwindow_webengine.cpp" line="952"/>
         <source>| Error</source>
         <translation>| エラー</translation>
     </message>
@@ -843,13 +853,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="212"/>
-        <location filename="../mainwindow_webengine.cpp" line="1356"/>
-        <location filename="../mainwindow_webengine.cpp" line="1360"/>
-        <location filename="../mainwindow_webengine.cpp" line="1373"/>
-        <location filename="../mainwindow_webengine.cpp" line="1424"/>
-        <location filename="../mainwindow_webengine.cpp" line="1460"/>
-        <location filename="../mainwindow_webengine.cpp" line="1490"/>
-        <location filename="../mainwindow_webengine.cpp" line="1494"/>
+        <location filename="../mainwindow_webengine.cpp" line="1374"/>
+        <location filename="../mainwindow_webengine.cpp" line="1378"/>
+        <location filename="../mainwindow_webengine.cpp" line="1391"/>
+        <location filename="../mainwindow_webengine.cpp" line="1442"/>
+        <location filename="../mainwindow_webengine.cpp" line="1478"/>
+        <location filename="../mainwindow_webengine.cpp" line="1508"/>
+        <location filename="../mainwindow_webengine.cpp" line="1512"/>
         <source>Export chat</source>
         <translation>チャットをエクスポート</translation>
     </message>
@@ -976,7 +986,7 @@ You can pull any account out into its own window: right-click its tab and choose
         <translation>アカウント 1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="929"/>
+        <location filename="../mainwindow_webengine.cpp" line="947"/>
         <source>Unlock to Reload the App.</source>
         <translation>アプリを再読み込みするにはロックを解除してください。</translation>
     </message>
@@ -1217,7 +1227,7 @@ Please setup the password in the Settings first.</source>
 先に設定でパスワードを登録してください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="926"/>
+        <location filename="../mainwindow_webengine.cpp" line="944"/>
         <source>Reloading...</source>
         <translation>再読み込み中...</translation>
     </message>
@@ -1830,32 +1840,32 @@ Please setup the password in the Settings first.</source>
         <translation>例: うるさいグループ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1852"/>
+        <location filename="../settingswidget.ui" line="1862"/>
         <source>Suspend inactive accounts</source>
         <translation>非アクティブなアカウントを一時停止</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1849"/>
+        <location filename="../settingswidget.ui" line="1859"/>
         <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
         <translation>表示していないアカウントを一時停止してメモリを解放します。一時停止したアカウントは、切り替えて戻すまでメッセージを受信しません。単一アカウントの設定には影響しません。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1859"/>
+        <location filename="../settingswidget.ui" line="1869"/>
         <source>after</source>
         <translation>経過後</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1866"/>
+        <location filename="../settingswidget.ui" line="1876"/>
         <source> min</source>
         <translation> 分</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1831"/>
+        <location filename="../settingswidget.ui" line="1841"/>
         <source>Font hinting</source>
         <translation>フォントのヒンティング</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1838"/>
+        <location filename="../settingswidget.ui" line="1848"/>
         <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
         <translation>グリフの輪郭をピクセルにどう合わせるか。自動はシステムに従います。軽いレベルは重い・不均一な文字を改善できます。</translation>
     </message>
@@ -1885,17 +1895,17 @@ Please setup the password in the Settings first.</source>
         <translation>新着メッセージで通知サービスに音を鳴らすよう要求します。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="691"/>
+        <location filename="../settingswidget.ui" line="701"/>
         <source>Interface font size</source>
         <translation>インターフェースのフォントサイズ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="701"/>
+        <location filename="../settingswidget.ui" line="711"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="698"/>
+        <location filename="../settingswidget.ui" line="708"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;アプリ自体のインターフェース（メニュー、設定、ダイアログ）のポイントサイズです。WhatsApp Web のテキストには影響しません。それにはズームを使用してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -1905,12 +1915,12 @@ Please setup the password in the Settings first.</source>
         <translation>表示テーマ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="717"/>
+        <location filename="../settingswidget.ui" line="727"/>
         <source>Reload automatically after a crash</source>
         <translation>クラッシュ後に自動的に再読み込みする</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="714"/>
+        <location filename="../settingswidget.ui" line="724"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web のページプロセスがクラッシュした場合、最初に確認せず自動的に再読み込みします。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -1941,9 +1951,9 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="169"/>
-        <location filename="../settingswidget.ui" line="1767"/>
-        <location filename="../settingswidget.ui" line="1811"/>
-        <location filename="../settingswidget.ui" line="1968"/>
+        <location filename="../settingswidget.ui" line="1777"/>
+        <location filename="../settingswidget.ui" line="1821"/>
+        <location filename="../settingswidget.ui" line="1978"/>
         <location filename="../settingswidget.cpp" line="1303"/>
         <location filename="../settingswidget.cpp" line="1494"/>
         <source>Automatic</source>
@@ -2001,7 +2011,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="297"/>
-        <location filename="../settingswidget.ui" line="1240"/>
+        <location filename="../settingswidget.ui" line="1250"/>
         <source> Secs</source>
         <translation> 秒</translation>
     </message>
@@ -2057,951 +2067,961 @@ Please setup the password in the Settings first.</source>
         <translation>例: 緊急、上司、請求書</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="469"/>
+        <location filename="../settingswidget.ui" line="440"/>
+        <source>Add a reply field to desktop notifications so you can answer a message without opening the window. Only works where the notification service supports it (e.g. KDE Plasma); elsewhere notifications behave as before.</source>
+        <translation>デスクトップ通知に返信欄を追加し、ウィンドウを開かずにメッセージへ返信できます。通知サービスが対応している場合のみ動作します（例: KDE Plasma）。それ以外では通知は従来どおりです。</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="443"/>
+        <source>Reply directly from notifications (where supported)</source>
+        <translation>通知から直接返信する（対応環境のみ）</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="479"/>
         <source>Use Native File Dialog</source>
         <translation>ネイティブのファイルダイアログを使う</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="476"/>
+        <location filename="../settingswidget.ui" line="486"/>
         <source>Mute Audio from Page</source>
         <translation>ページの音声をミュート</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="483"/>
+        <location filename="../settingswidget.ui" line="493"/>
         <source>Disable Auto Playback of Media</source>
         <translation>メディアの自動再生を無効にする</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="490"/>
+        <location filename="../settingswidget.ui" line="500"/>
         <source>Minimize in tray on start</source>
         <translation>起動時にトレイへ最小化する</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="497"/>
+        <location filename="../settingswidget.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window&apos;s position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;複数のアカウントウィンドウを使用している場合、各ウィンドウの位置、サイズ、タブを記憶し、次回起動時に復元します。デフォルトはオフ: アプリはすべてのアカウントを含む単一のウィンドウとして起動します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="500"/>
+        <location filename="../settingswidget.ui" line="510"/>
         <source>Remember multiple window positions on restart</source>
         <translation>再起動時に複数ウィンドウの位置を記憶する</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="507"/>
+        <location filename="../settingswidget.ui" line="517"/>
         <source>Show/Hide on clicking tray Icon (if supported)</source>
         <translation>トレイアイコンのクリックで表示/非表示（対応している場合）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="514"/>
+        <location filename="../settingswidget.ui" line="524"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close the emoji, GIF &amp;amp; sticker panel when you click elsewhere. WhatsApp Web otherwise keeps it open until the button is pressed again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;他の場所をクリックしたときに絵文字・GIF・ステッカーのパネルを閉じます。そうしない場合、WhatsApp Web はボタンをもう一度押すまでパネルを開いたままにします。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="517"/>
+        <location filename="../settingswidget.ui" line="527"/>
         <source>Close emoji/sticker panel when clicking outside</source>
         <translation>パネルの外をクリックしたら絵文字/ステッカーのパネルを閉じる</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="531"/>
+        <location filename="../settingswidget.ui" line="541"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of Whatly&apos;s own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whatly 自身のインターフェースの言語です。アプリを再起動すると有効になります。チャット自体の言語は WhatsApp Web によるもので、ここでは変更できません。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="538"/>
+        <location filename="../settingswidget.ui" line="548"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a light/dark button to WhatsApp&apos;s own sidebar, just above your profile picture.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp のサイドバー、プロフィール写真のすぐ上にライト/ダークボタンを追加します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="541"/>
+        <location filename="../settingswidget.ui" line="551"/>
         <source>Theme button in WhatsApp&apos;s sidebar</source>
         <translation>WhatsApp のサイドバーのテーマボタン</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="548"/>
+        <location filename="../settingswidget.ui" line="558"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that blurs and unblurs your chats in one click, without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;設定を開かずにワンクリックでチャットをぼかしたり解除したりするボタンを WhatsApp のサイドバーに追加します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="551"/>
+        <location filename="../settingswidget.ui" line="561"/>
         <source>Blur button in WhatsApp&apos;s sidebar</source>
         <translation>WhatsApp のサイドバーのぼかしボタン</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="568"/>
+        <location filename="../settingswidget.ui" line="578"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp のサイドバーにボタンを追加し、チャット一覧をプロフィール写真だけの細い列に折りたたんで、空いた幅を会話に割り当てます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="571"/>
+        <location filename="../settingswidget.ui" line="581"/>
         <source>Chat-list collapse button in WhatsApp&apos;s sidebar</source>
         <translation>WhatsApp のサイドバーにあるチャット一覧の折りたたみボタン</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="578"/>
+        <location filename="../settingswidget.ui" line="588"/>
         <source>Collapsed chat preview</source>
         <translation>折りたたみ時のチャットプレビュー</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="585"/>
+        <location filename="../settingswidget.ui" line="595"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform&apos;s font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;折りたたんだチャット一覧で写真にカーソルを合わせたときに表示されるプレビューの大きさです。既定値はこのプラットフォームのフォント描画に合わせてありますが、画面上で小さすぎたり大きすぎたりする場合は別の値を選んでください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="592"/>
+        <location filename="../settingswidget.ui" line="602"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp の緑色のアイコンではなく、パネルの他の部分に合う単色のトレイアイコンを使います。WhatsApp が未接続のときはアイコンが暗くなります。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="595"/>
+        <location filename="../settingswidget.ui" line="605"/>
         <source>Monochrome tray icon</source>
         <translation>モノクロのトレイアイコン</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="602"/>
+        <location filename="../settingswidget.ui" line="612"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;行ごとに飛ぶのではなく、スクロールをアニメーション表示します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="605"/>
+        <location filename="../settingswidget.ui" line="615"/>
         <source>Smooth scrolling</source>
         <translation>スムーズスクロール</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="612"/>
+        <location filename="../settingswidget.ui" line="622"/>
         <location filename="../settingswidget.cpp" line="1220"/>
         <source>Custom CSS</source>
         <translation>カスタム CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="621"/>
+        <location filename="../settingswidget.ui" line="631"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web のスタイルを変更する .css ファイルを読み込みます。コミュニティのスタイルシート（catppuccin など）が使えます。チャットのテーマの上に適用されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="624"/>
+        <location filename="../settingswidget.ui" line="634"/>
         <source>Choose file…</source>
         <translation>ファイルを選択…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="631"/>
-        <location filename="../settingswidget.ui" line="771"/>
+        <location filename="../settingswidget.ui" line="641"/>
+        <location filename="../settingswidget.ui" line="781"/>
         <source>Clear</source>
         <translation>クリア</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="640"/>
+        <location filename="../settingswidget.ui" line="650"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;システムトレイアイコンを完全に削除します。復元するトレイがないため、ウィンドウを閉じるとアプリは隠れずに終了します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="643"/>
+        <location filename="../settingswidget.ui" line="653"/>
         <source>Hide tray icon</source>
         <translation>トレイアイコンを隠す</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="650"/>
+        <location filename="../settingswidget.ui" line="660"/>
         <source>Font family</source>
         <translation>フォントファミリー</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="657"/>
+        <location filename="../settingswidget.ui" line="667"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Render WhatsApp Web&apos;s text in a font installed on your system. Emoji, icons and monospaced message formatting are left untouched.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web のテキストをシステムにインストールされたフォントで表示します。絵文字、アイコン、等幅のメッセージ書式はそのままです。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="664"/>
+        <location filename="../settingswidget.ui" line="674"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ステータス/アップデートパネルの「ミュート中のアップデート」セクションを非表示にし、ミュートした連絡先のステータスをまったく表示しないようにします。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="667"/>
+        <location filename="../settingswidget.ui" line="677"/>
         <source>Hide muted status updates</source>
         <translation>ミュートしたステータスの更新を非表示</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="674"/>
+        <location filename="../settingswidget.ui" line="684"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;入力中にスペルの誤りに下線を引き、右クリックメニューで修正候補を表示します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="677"/>
-        <location filename="../settingswidget.cpp" line="1905"/>
+        <location filename="../settingswidget.ui" line="687"/>
+        <location filename="../settingswidget.cpp" line="1913"/>
         <source>Check spelling as I type</source>
         <translation>入力中にスペルチェック</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="684"/>
+        <location filename="../settingswidget.ui" line="694"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;チェックの対象となる言語。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="724"/>
+        <location filename="../settingswidget.ui" line="734"/>
         <source>Privacy blur</source>
         <translation>プライバシーぼかし</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="731"/>
+        <location filename="../settingswidget.ui" line="741"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;画面をちらっと見た人が読めないよう、ポインタを乗せるまでチャットをぼかします。行にポインタを乗せると、その行だけが表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="738"/>
+        <location filename="../settingswidget.ui" line="748"/>
         <source>Chat colour Tint</source>
         <translation>チャットの色合い</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="745"/>
+        <location filename="../settingswidget.ui" line="755"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web 自体を配色し直します。写真・アバター・ステッカーは元の色を保ちます。有効なライトまたはダークテーマの上で機能します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="752"/>
+        <location filename="../settingswidget.ui" line="762"/>
         <location filename="../settingswidget.cpp" line="1196"/>
         <source>Chat wallpaper</source>
         <translation>チャットの壁紙</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="761"/>
+        <location filename="../settingswidget.ui" line="771"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp の Android 版のように、チャット領域の背景に自分の画像を使えます。画像は Whatly 内に保存され、どこにもアップロードされず、あなただけに見えます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="764"/>
+        <location filename="../settingswidget.ui" line="774"/>
         <source>Choose image…</source>
         <translation>画像を選択…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="780"/>
+        <location filename="../settingswidget.ui" line="790"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;新しいログインは、スマートフォンのリンク済みデバイス一覧に「Google Chrome (Linux)」ではなく「Whatly for Linux」（または対応するプラットフォーム名）として表示されます。この名前はデバイスをリンクしたときにスマートフォンへ保存されるため、変更しても以後のリンクにのみ反映されます。既存のセッション名を変更するには、ログアウトして再リンクしてください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="783"/>
+        <location filename="../settingswidget.ui" line="793"/>
         <source>Identify as Whatly in linked devices</source>
         <translation>リンク済みデバイスで Whatly として識別する</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="797"/>
+        <location filename="../settingswidget.ui" line="807"/>
         <source>User Agent</source>
         <translation>ユーザーエージェント</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="800"/>
+        <location filename="../settingswidget.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;詳細設定 — 何をしているかを正確に理解している場合を除き、この項目は変更しないでください。非標準のユーザーエージェントを設定すると WhatsApp が読み込まれなくなることがあり、通常と異なる値は WhatsApp アカウントがフラグ付けされたりブラックリストに登録されたりする危険があります。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="810"/>
+        <location filename="../settingswidget.ui" line="820"/>
         <source>  Set</source>
         <translation>  適用</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="821"/>
+        <location filename="../settingswidget.ui" line="831"/>
         <source>Reset to default</source>
         <translation>既定値に戻す</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="844"/>
+        <location filename="../settingswidget.ui" line="854"/>
         <source>Zoom factor when normal</source>
         <translation>通常ウィンドウ時の拡大率</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="872"/>
-        <location filename="../settingswidget.ui" line="1007"/>
+        <location filename="../settingswidget.ui" line="882"/>
+        <location filename="../settingswidget.ui" line="1017"/>
         <source>Zoom Out</source>
         <translation>縮小</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="911"/>
-        <location filename="../settingswidget.ui" line="1046"/>
+        <location filename="../settingswidget.ui" line="921"/>
+        <location filename="../settingswidget.ui" line="1056"/>
         <source>Zoom In</source>
         <translation>拡大</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="956"/>
-        <location filename="../settingswidget.ui" line="1091"/>
+        <location filename="../settingswidget.ui" line="966"/>
+        <location filename="../settingswidget.ui" line="1101"/>
         <source>reset</source>
         <translation>リセット</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="979"/>
+        <location filename="../settingswidget.ui" line="989"/>
         <source>Zoom factor when maximized/fullscreen</source>
         <translation>最大化/全画面時の拡大率</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1114"/>
+        <location filename="../settingswidget.ui" line="1124"/>
         <source>Minimize to tray</source>
         <translation>トレイに最小化</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1123"/>
+        <location filename="../settingswidget.ui" line="1133"/>
         <source>Quit</source>
         <translation>終了</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1135"/>
+        <location filename="../settingswidget.ui" line="1145"/>
         <source>Global shortcuts</source>
         <translation>グローバルショートカット</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1142"/>
+        <location filename="../settingswidget.ui" line="1152"/>
         <source>Close button action</source>
         <translation>閉じるボタンの動作</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1149"/>
+        <location filename="../settingswidget.ui" line="1159"/>
         <source>  Show shortcuts</source>
         <translation>  ショートカットを表示</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1160"/>
+        <location filename="../settingswidget.ui" line="1170"/>
         <source>Permissions</source>
         <translation>権限</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1167"/>
+        <location filename="../settingswidget.ui" line="1177"/>
         <source>  Show permissions</source>
         <translation>  権限を表示</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1182"/>
+        <location filename="../settingswidget.ui" line="1192"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ロック画面を有効にします。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1185"/>
+        <location filename="../settingswidget.ui" line="1195"/>
         <source>Enable App lock on start</source>
         <translation>起動時にアプリロックを有効にする</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1192"/>
+        <location filename="../settingswidget.ui" line="1202"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ウィンドウをシステムトレイに隠したとき、パスコードでロックします。パスワードの設定が必要です。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1195"/>
+        <location filename="../settingswidget.ui" line="1205"/>
         <source>Lock when hidden to tray</source>
         <translation>トレイに隠したときにロック</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1202"/>
+        <location filename="../settingswidget.ui" line="1212"/>
         <source>Also lock Whatly when the desktop session locks. Requires a password to be set. (Linux)</source>
         <translation>デスクトップセッションのロック時に Whatly もロックします。パスワードの設定が必要です。(Linux)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1205"/>
+        <location filename="../settingswidget.ui" line="1215"/>
         <source>Lock when the screen locks</source>
         <translation>画面ロック時にロックする</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1212"/>
+        <location filename="../settingswidget.ui" line="1222"/>
         <source>Current Password</source>
         <translation>現在のパスワード</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1219"/>
-        <location filename="../settingswidget.ui" line="1253"/>
+        <location filename="../settingswidget.ui" line="1229"/>
+        <location filename="../settingswidget.ui" line="1263"/>
         <source>Change password</source>
         <translation>パスワードを変更</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1222"/>
-        <location filename="../settingswidget.ui" line="1331"/>
+        <location filename="../settingswidget.ui" line="1232"/>
+        <location filename="../settingswidget.ui" line="1341"/>
         <source>Change</source>
         <translation>変更</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1233"/>
+        <location filename="../settingswidget.ui" line="1243"/>
         <source>Enable auto locking after</source>
         <translation>次の時間が経過したら自動ロックする</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1256"/>
+        <location filename="../settingswidget.ui" line="1266"/>
         <source>Reset</source>
         <translation>リセット</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1288"/>
+        <location filename="../settingswidget.ui" line="1298"/>
         <source>View password</source>
         <translation>パスワードを表示</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1315"/>
+        <location filename="../settingswidget.ui" line="1325"/>
         <source>Default Download location</source>
         <translation>既定のダウンロード先</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1328"/>
+        <location filename="../settingswidget.ui" line="1338"/>
         <source>Change Download Location</source>
         <translation>ダウンロード先を変更</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1347"/>
+        <location filename="../settingswidget.ui" line="1357"/>
         <source>Storage </source>
         <translation>ストレージ </translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1367"/>
+        <location filename="../settingswidget.ui" line="1377"/>
         <source>Property</source>
         <translation>プロパティ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1374"/>
+        <location filename="../settingswidget.ui" line="1384"/>
         <source>  Clear (requires restart)</source>
         <translation>  消去（再起動が必要）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1385"/>
+        <location filename="../settingswidget.ui" line="1395"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;永続データには、永続的な Cookie、HTML5 ローカルストレージ、訪問済みリンクが含まれます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1388"/>
+        <location filename="../settingswidget.ui" line="1398"/>
         <source>Persistent data</source>
         <translation>永続データ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1395"/>
-        <location filename="../settingswidget.ui" line="1415"/>
+        <location filename="../settingswidget.ui" line="1405"/>
+        <location filename="../settingswidget.ui" line="1425"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1405"/>
+        <location filename="../settingswidget.ui" line="1415"/>
         <source>The HTTP/media cache. Clearing it is safe — it is re-downloaded as needed.</source>
         <translation>HTTP/メディアのキャッシュです。消去しても安全です — 必要に応じて再ダウンロードされます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1408"/>
+        <location filename="../settingswidget.ui" line="1418"/>
         <source>Cache</source>
         <translation>キャッシュ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1425"/>
+        <location filename="../settingswidget.ui" line="1435"/>
         <source>  Clear cache</source>
         <translation>  キャッシュを消去</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1448"/>
+        <location filename="../settingswidget.ui" line="1458"/>
         <source>Size</source>
         <translation>サイズ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1470"/>
+        <location filename="../settingswidget.ui" line="1480"/>
         <source>Action</source>
         <translation>操作</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1484"/>
+        <location filename="../settingswidget.ui" line="1494"/>
         <source>Backup</source>
         <translation>バックアップ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1491"/>
+        <location filename="../settingswidget.ui" line="1501"/>
         <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
         <translation>このアカウント（設定、セッション、アドオン）を .tar.gz アーカイブに保存します。アーカイブにはログイン済みのセッションが含まれます — 他人に渡さないでください。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1494"/>
+        <location filename="../settingswidget.ui" line="1504"/>
         <source>Export profile…</source>
         <translation>プロファイルをエクスポート…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1501"/>
+        <location filename="../settingswidget.ui" line="1511"/>
         <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
         <translation>.tar.gz アーカイブからアカウントを復元します。現在のデータが上書きされ、再起動が必要です。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1504"/>
+        <location filename="../settingswidget.ui" line="1514"/>
         <source>Import profile…</source>
         <translation>プロファイルをインポート…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1529"/>
+        <location filename="../settingswidget.ui" line="1539"/>
         <source>Performance &amp; Privacy</source>
         <translation>パフォーマンスとプライバシー</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1535"/>
+        <location filename="../settingswidget.ui" line="1545"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
         <translation>レンダリングエンジンを微調整します。デフォルト設定はほとんどのシステムで安全です。ウィンドウが空白になる、起動時にクラッシュする、または動作がカクつく場合は、これらの変更を試してください。変更は再起動後に適用されます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1545"/>
+        <location filename="../settingswidget.ui" line="1555"/>
         <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
         <translation>すべてを CPU でレンダリングします（--disable-gpu）。一部の GPU／ドライバー構成での空白ウィンドウや起動時クラッシュを修正します。Linux ではデフォルトです。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1548"/>
+        <location filename="../settingswidget.ui" line="1558"/>
         <source>Disable GPU acceleration</source>
         <translation>GPU アクセラレーションを無効化</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1555"/>
+        <location filename="../settingswidget.ui" line="1565"/>
         <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
         <translation>ページを CPU で合成します（--disable-gpu-compositing）。一部のドライバーで発生する古いフレームのちらつきを回避します。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1558"/>
+        <location filename="../settingswidget.ui" line="1568"/>
         <source>Disable GPU compositing</source>
         <translation>GPU 合成を無効化</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1565"/>
+        <location filename="../settingswidget.ui" line="1575"/>
         <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
         <translation>GPU VSync を無効化します（--disable-gpu-vsync）。ティアリングと引き換えに入力遅延を軽減できる場合があります。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1568"/>
+        <location filename="../settingswidget.ui" line="1578"/>
         <source>Disable GPU VSync</source>
         <translation>GPU VSync を無効化</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1575"/>
+        <location filename="../settingswidget.ui" line="1585"/>
         <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
         <translation>GPU プロセスをメインプロセス内で実行します（--in-process-gpu）。一部のサンドボックス構成向けの回避策です。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1578"/>
+        <location filename="../settingswidget.ui" line="1588"/>
         <source>Run GPU in-process</source>
         <translation>GPU をプロセス内で実行</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1585"/>
+        <location filename="../settingswidget.ui" line="1595"/>
         <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
         <translation>ドライバーがブロックリストに含まれていてもアクセラレーションを強制します（--ignore-gpu-blocklist）。GPU を再度有効にするにはこれを試してください。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1588"/>
+        <location filename="../settingswidget.ui" line="1598"/>
         <source>Ignore GPU blocklist</source>
         <translation>GPU ブロックリストを無視</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1595"/>
+        <location filename="../settingswidget.ui" line="1605"/>
         <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
         <translation>すべてを単一プロセスで実行します（--single-process）。メモリ使用量は少なくなりますが、安定性は低下します。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1598"/>
+        <location filename="../settingswidget.ui" line="1608"/>
         <source>Single-process mode (lower memory)</source>
         <translation>単一プロセスモード（メモリ削減）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1605"/>
+        <location filename="../settingswidget.ui" line="1615"/>
         <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
         <translation>サイトごとに 1 つのレンダラープロセスを共有します（--process-per-site）。メモリ使用量を削減します。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1608"/>
+        <location filename="../settingswidget.ui" line="1618"/>
         <source>One process per site (lower memory)</source>
         <translation>サイトごとに 1 プロセス（メモリ削減）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1615"/>
+        <location filename="../settingswidget.ui" line="1625"/>
         <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
         <translation>JavaScript エンジンに、わずかな速度低下と引き換えにメモリ使用量を減らすよう指示します（V8 --optimize-for-size）。トレイに常駐するアプリに推奨。下で JavaScript メモリ制限を設定している場合は無視されます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1618"/>
+        <location filename="../settingswidget.ui" line="1628"/>
         <source>Optimize memory over speed (lower memory)</source>
         <translation>速度よりメモリを優先する（メモリ節約）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1625"/>
+        <location filename="../settingswidget.ui" line="1635"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>チャット一覧の連絡先名とメッセージのプレビューを隠します（ホバーで1件だけ表示）。画面共有時に便利です。開いている会話はそのままです。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1628"/>
+        <location filename="../settingswidget.ui" line="1638"/>
         <source>Focus mode (hide chat-list previews)</source>
         <translation>フォーカスモード（チャット一覧のプレビューを隠す）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1635"/>
+        <location filename="../settingswidget.ui" line="1645"/>
         <source>Default photos and videos to HD quality in the media editor. Depends on WhatsApp Web&apos;s layout; if a WhatsApp update breaks it, turn it off.</source>
         <translation>メディアエディターで写真と動画を既定でHD画質にします。WhatsApp Web のレイアウトに依存します。WhatsApp の更新で動作しなくなった場合はオフにしてください。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1638"/>
+        <location filename="../settingswidget.ui" line="1648"/>
         <source>Send photos and videos in HD by default</source>
         <translation>写真と動画を既定でHDで送信する</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1647"/>
+        <location filename="../settingswidget.ui" line="1657"/>
         <source>Hold a message for a few seconds after you press Enter, showing an &quot;Undo&quot; button before it is actually sent. Press Enter again to send at once.</source>
         <translation>Enter を押した後、メッセージを数秒間保留し、実際に送信される前に「取り消し」ボタンを表示します。もう一度 Enter を押すとすぐに送信します。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1650"/>
+        <location filename="../settingswidget.ui" line="1660"/>
         <source>Undo send (hold Enter-sent messages briefly)</source>
         <translation>送信の取り消し（Enter で送信したメッセージを少しの間保留）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1657"/>
+        <location filename="../settingswidget.ui" line="1667"/>
         <source>How long to hold a message before it is sent.</source>
         <translation>送信するまでメッセージを保留する時間。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1660"/>
+        <location filename="../settingswidget.ui" line="1670"/>
         <source> s</source>
         <translation> 秒</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1675"/>
+        <location filename="../settingswidget.ui" line="1685"/>
         <source>Inline translation</source>
         <translation>インライン翻訳</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1681"/>
+        <location filename="../settingswidget.ui" line="1691"/>
         <source>Translate selected text or your message box through a LibreTranslate-compatible service. The request is made by the app, so the endpoint and key never reach WhatsApp Web. Bind keys to &quot;Translate selection&quot; / &quot;Translate message box&quot; in Shortcuts, or use the command palette.</source>
         <translation>選択したテキストやメッセージ欄を LibreTranslate 互換サービスで翻訳します。リクエストはアプリが行うため、エンドポイントとキーが WhatsApp Web に届くことはありません。ショートカットで「選択範囲を翻訳」「メッセージ欄を翻訳」にキーを割り当てるか、コマンドパレットを使ってください。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1684"/>
+        <location filename="../settingswidget.ui" line="1694"/>
         <source>Enable inline translation</source>
         <translation>インライン翻訳を有効にする</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1691"/>
+        <location filename="../settingswidget.ui" line="1701"/>
         <source>Endpoint</source>
         <translation>エンドポイント</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1698"/>
+        <location filename="../settingswidget.ui" line="1708"/>
         <source>A LibreTranslate-compatible &quot;/translate&quot; URL, e.g. http://localhost:5000/translate for a self-hosted instance.</source>
         <translation>LibreTranslate 互換の「/translate」URL。例: 自己ホストのインスタンスなら http://localhost:5000/translate。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1701"/>
+        <location filename="../settingswidget.ui" line="1711"/>
         <source>https://your-libretranslate/translate</source>
         <translation>https://your-libretranslate/translate</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1708"/>
+        <location filename="../settingswidget.ui" line="1718"/>
         <source>API key (optional)</source>
         <translation>API キー（任意）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1715"/>
+        <location filename="../settingswidget.ui" line="1725"/>
         <source>Only needed by endpoints that require one. Stored locally.</source>
         <translation>必要とするエンドポイントでのみ使用します。ローカルに保存されます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1725"/>
+        <location filename="../settingswidget.ui" line="1735"/>
         <source>Target language</source>
         <translation>翻訳先の言語</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1732"/>
+        <location filename="../settingswidget.ui" line="1742"/>
         <source>Two-letter code to translate into (e.g. en, es, fr). Leave empty to use the app&apos;s language. The source language is detected automatically.</source>
         <translation>翻訳先の2文字の言語コード（例: en, es, fr）。空欄にするとアプリの言語を使います。元の言語は自動検出されます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1735"/>
+        <location filename="../settingswidget.ui" line="1745"/>
         <source>app language</source>
         <translation>アプリの言語</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1745"/>
+        <location filename="../settingswidget.ui" line="1755"/>
         <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
         <translation>プロキシを経由しない接続で WebRTC がローカル IP アドレスを露呈するのを防ぎます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1748"/>
+        <location filename="../settingswidget.ui" line="1758"/>
         <source>Prevent WebRTC IP leak</source>
         <translation>WebRTC の IP 漏洩を防止</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1757"/>
+        <location filename="../settingswidget.ui" line="1767"/>
         <source>JavaScript memory limit</source>
         <translation>JavaScript メモリ上限</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1764"/>
+        <location filename="../settingswidget.ui" line="1774"/>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
         <translation>JavaScript ヒープの上限を設定します（V8 --max-old-space-size）。0 = 自動。アプリが RAM を使いすぎる場合は下げてください。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1770"/>
-        <location filename="../settingswidget.ui" line="1814"/>
+        <location filename="../settingswidget.ui" line="1780"/>
+        <location filename="../settingswidget.ui" line="1824"/>
         <source> MB</source>
         <translation> MB</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1787"/>
+        <location filename="../settingswidget.ui" line="1797"/>
         <source>HTTP cache</source>
         <translation>HTTP キャッシュ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1794"/>
+        <location filename="../settingswidget.ui" line="1804"/>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
         <translation>HTTP キャッシュの保存場所。メモリは終了時にクリアされます。なしを選ぶとキャッシュが無効になります。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1801"/>
+        <location filename="../settingswidget.ui" line="1811"/>
         <source>Max size</source>
         <translation>最大サイズ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1808"/>
+        <location filename="../settingswidget.ui" line="1818"/>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>ディスク上のキャッシュの最大サイズ。0 = 自動。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1884"/>
+        <location filename="../settingswidget.ui" line="1894"/>
         <source>Network &amp; Startup</source>
         <translation>ネットワークと起動</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1890"/>
+        <location filename="../settingswidget.ui" line="1900"/>
         <source>Launch Whatly automatically when you log in to your desktop session.</source>
         <translation>デスクトップセッションにログインしたときに Whatly を自動的に起動します。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1893"/>
+        <location filename="../settingswidget.ui" line="1903"/>
         <source>Start Whatly when I log in</source>
         <translation>ログイン時に Whatly を起動する</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1903"/>
+        <location filename="../settingswidget.ui" line="1913"/>
         <source>Use a custom window frame (requires restart)</source>
         <translation>カスタムウィンドウ枠を使用する（再起動が必要）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1916"/>
+        <location filename="../settingswidget.ui" line="1926"/>
         <source>Restart Whatly now so the settings above take effect. The windows, and this page with it, come back exactly as they are.</source>
         <translation>上記の設定を反映させるため、今すぐ Whatly を再起動してください。ウィンドウとこのページは、そのままの状態で元に戻ります。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1919"/>
+        <location filename="../settingswidget.ui" line="1929"/>
         <source>Restart now</source>
         <translation>今すぐ再起動</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1926"/>
+        <location filename="../settingswidget.ui" line="1936"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
         <translation>アカウントが1つだけでもアカウントのタブバーを常に表示し、その &quot;+&quot; にいつでもアクセスできるようにします。オフの場合、タブバーは2つ目のアカウントができたときに表示されます。それでも Ctrl+K で追加できます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1929"/>
+        <location filename="../settingswidget.ui" line="1939"/>
         <source>Show the account tabs even with a single account</source>
         <translation>アカウントが1つだけでもアカウントタブを表示する</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1936"/>
+        <location filename="../settingswidget.ui" line="1946"/>
         <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
         <translation>タイトルバーをなくし、そのボタンを専用の行に置くのではなく、ブラウザのようにアカウントタブバーの末尾に配置します。これに必要なカスタムウィンドウ枠をオンにします。再起動後に適用されます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1939"/>
+        <location filename="../settingswidget.ui" line="1949"/>
         <source>Hide the title bar (requires restart)</source>
         <translation>タイトルバーを非表示にする（再起動が必要）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1946"/>
+        <location filename="../settingswidget.ui" line="1956"/>
         <source>Check GitHub once a day for a newer release and let you know. Whatly never downloads or installs anything on its own.</source>
         <translation>1日に1回 GitHub をチェックして新しいリリースがあればお知らせします。Whatly が自動で何かをダウンロードまたはインストールすることは一切ありません。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1949"/>
+        <location filename="../settingswidget.ui" line="1959"/>
         <source>Check for updates automatically</source>
         <translation>自動的に更新を確認する</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1958"/>
+        <location filename="../settingswidget.ui" line="1968"/>
         <source>Interface scale</source>
         <translation>インターフェースの拡大率</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1965"/>
+        <location filename="../settingswidget.ui" line="1975"/>
         <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
         <translation>ウィンドウとページ全体を拡大縮小します（QT_SCALE_FACTOR）。「自動」はデスクトップの設定に従います。QT_SCALE_FACTOR 環境変数が設定されている場合はこの設定より優先されます。再起動後に適用されます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2001"/>
+        <location filename="../settingswidget.ui" line="2011"/>
         <source>Proxy</source>
         <translation>プロキシ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2008"/>
+        <location filename="../settingswidget.ui" line="2018"/>
         <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
         <translation>Whatly のネットワーク接続方法。「システム」はオペレーティングシステムの設定に従い、「なし」は直接接続します。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2033"/>
+        <location filename="../settingswidget.ui" line="2043"/>
         <source>Host</source>
         <translation>ホスト</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2040"/>
+        <location filename="../settingswidget.ui" line="2050"/>
         <source>127.0.0.1</source>
         <translation>127.0.0.1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2047"/>
-        <location filename="../settingswidget.ui" line="2327"/>
+        <location filename="../settingswidget.ui" line="2057"/>
+        <location filename="../settingswidget.ui" line="2337"/>
         <source>Port</source>
         <translation>ポート</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2061"/>
+        <location filename="../settingswidget.ui" line="2071"/>
         <source>Username</source>
         <translation>ユーザー名</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2068"/>
-        <location filename="../settingswidget.ui" line="2085"/>
+        <location filename="../settingswidget.ui" line="2078"/>
+        <location filename="../settingswidget.ui" line="2095"/>
         <source>Optional</source>
         <translation>任意</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2075"/>
+        <location filename="../settingswidget.ui" line="2085"/>
         <source>Password</source>
         <translation>パスワード</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2098"/>
+        <location filename="../settingswidget.ui" line="2108"/>
         <source>Custom JavaScript addons</source>
         <translation>カスタムJavaScriptアドオン</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2104"/>
+        <location filename="../settingswidget.ui" line="2114"/>
         <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
         <translation>WhatsApp Web上で実行する.jsファイルを読み込みます。各アドオンは独自のサンドボックスで実行されるため、壊れたアドオンが他のアドオンやページを巻き添えにすることはありません。アドオンのチェックを外すと、削除せずに無効化できます。変更は再起動後に適用されます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2126"/>
+        <location filename="../settingswidget.ui" line="2136"/>
         <source>Add addon…</source>
         <translation>アドオンを追加…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2133"/>
-        <location filename="../settingswidget.ui" line="2193"/>
+        <location filename="../settingswidget.ui" line="2143"/>
+        <location filename="../settingswidget.ui" line="2203"/>
         <source>Remove</source>
         <translation>削除</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2158"/>
+        <location filename="../settingswidget.ui" line="2168"/>
         <source>Saved replies</source>
         <translation>保存した返信</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2164"/>
+        <location filename="../settingswidget.ui" line="2174"/>
         <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
         <translation>よく送る短い定型文です。コマンドパレット（Ctrl+K）から挿入できます — &quot;挿入&quot; と入力して選ぶと、メッセージ入力欄にテキストが入力されます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2186"/>
+        <location filename="../settingswidget.ui" line="2196"/>
         <source>Add reply…</source>
         <translation>返信を追加…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2218"/>
+        <location filename="../settingswidget.ui" line="2228"/>
         <source>Keyboard shortcuts</source>
         <translation>キーボードショートカット</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="561"/>
+        <location filename="../settingswidget.ui" line="571"/>
         <source>Zoom buttons in WhatsApp&apos;s sidebar</source>
         <translation>WhatsApp のサイドバーにズームボタン</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="524"/>
+        <location filename="../settingswidget.ui" line="534"/>
         <source>Interface language (requires restart)</source>
         <translation>インターフェースの言語（再起動が必要）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="558"/>
+        <location filename="../settingswidget.ui" line="568"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp&apos;s own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;設定を開かずにページをその場で拡大縮小できるよう、WhatsApp のサイドバーに縮小 / リセット / 拡大ボタンを追加します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1900"/>
+        <location filename="../settingswidget.ui" line="1910"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>ウィンドウの枠とタイトルバーをシステムではなく Whatly に描画させ、Whatly 自身のテーマに合わせます。これだけでは見た目が変わるだけです。タイトル行を完全になくすには &quot;タイトルバーを非表示にする&quot; も併せてオンにしてください。再起動後に適用されます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2304"/>
+        <location filename="../settingswidget.ui" line="2314"/>
         <source>Local API &amp; Cloud webhooks</source>
         <translation>ローカル API と Cloud Webhook</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2310"/>
+        <location filename="../settingswidget.ui" line="2320"/>
         <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
         <translation>ループバックインターフェイス（127.0.0.1）上の小さな HTTP エンドポイントにより、このマシンの他のプログラムが Whatly 経由で送信でき、Meta が Cloud API Webhook（受信メッセージ）を配信できるため、自動返信がブラウザーなしで機能します。ネットワークに公開されることはありません。Meta から Webhook を受信するには、トンネルまたはリバースプロキシ（例: cloudflared や ngrok）でポートを転送してください。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2320"/>
+        <location filename="../settingswidget.ui" line="2330"/>
         <source>Enable the local HTTP API (send over HTTP)</source>
         <translation>ローカル HTTP API を有効にする（HTTP で送信）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2344"/>
+        <location filename="../settingswidget.ui" line="2354"/>
         <source>Bearer token</source>
         <translation>Bearer トークン</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2354"/>
+        <location filename="../settingswidget.ui" line="2364"/>
         <source>required to authorise requests</source>
         <translation>リクエストの認可に必要です</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2361"/>
+        <location filename="../settingswidget.ui" line="2371"/>
         <source>Receive Cloud API webhooks (incoming messages)</source>
         <translation>Cloud API Webhook を受信する（受信メッセージ）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2368"/>
+        <location filename="../settingswidget.ui" line="2378"/>
         <source>Webhook verify token</source>
         <translation>Webhook 検証トークン</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2378"/>
+        <location filename="../settingswidget.ui" line="2388"/>
         <source>echoed to Meta during setup</source>
         <translation>セットアップ時に Meta へ送信されます</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2385"/>
+        <location filename="../settingswidget.ui" line="2395"/>
         <source>Meta app secret</source>
         <translation>Meta アプリシークレット</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2395"/>
+        <location filename="../settingswidget.ui" line="2405"/>
         <source>verifies the webhook signature</source>
         <translation>Webhook 署名を検証します</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2240"/>
+        <location filename="../settingswidget.ui" line="2250"/>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API（ブラウザーセッションなしで送信）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2246"/>
+        <location filename="../settingswidget.ui" line="2256"/>
         <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account&apos;s config and Whatly never obtains it itself.</source>
         <translation>Meta WhatsApp Business Cloud API を介して `--send --backend cloud` で送信します — WhatsApp Web のセッションは不要です。アクセストークンは Meta から自分で用意するもので、このアカウントの設定に保存され、Whatly が自ら取得することはありません。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2256"/>
+        <location filename="../settingswidget.ui" line="2266"/>
         <source>Phone-number ID</source>
         <translation>電話番号 ID</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2270"/>
+        <location filename="../settingswidget.ui" line="2280"/>
         <source>Access token</source>
         <translation>アクセストークン</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2280"/>
+        <location filename="../settingswidget.ui" line="2290"/>
         <source>your Meta access token</source>
         <translation>あなたの Meta アクセストークン</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2287"/>
+        <location filename="../settingswidget.ui" line="2297"/>
         <source>Graph API version</source>
         <translation>Graph API のバージョン</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2224"/>
+        <location filename="../settingswidget.ui" line="2234"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>フィールドをクリックしてキーの組み合わせを押します。ショートカットを削除するにはフィールドを空にします。変更は再起動後に適用されます。</translation>
     </message>
@@ -3116,55 +3136,55 @@ Please setup the password in the Settings first.</source>
         <translation>システムサービス (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1675"/>
-        <location filename="../settingswidget.cpp" line="1679"/>
+        <location filename="../settingswidget.cpp" line="1683"/>
+        <location filename="../settingswidget.cpp" line="1687"/>
         <source>Add reply</source>
         <translation>返信を追加</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1675"/>
+        <location filename="../settingswidget.cpp" line="1683"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1679"/>
+        <location filename="../settingswidget.cpp" line="1687"/>
         <source>Text to insert</source>
         <translation>挿入するテキスト</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1696"/>
+        <location filename="../settingswidget.cpp" line="1704"/>
         <source>Choose a JavaScript file</source>
         <translation>JavaScriptファイルを選択</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1697"/>
+        <location filename="../settingswidget.cpp" line="1705"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;すべてのファイル (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1702"/>
+        <location filename="../settingswidget.cpp" line="1710"/>
         <source>Could not add addon</source>
         <translation>アドオンを追加できませんでした</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1715"/>
+        <location filename="../settingswidget.cpp" line="1723"/>
         <source>Remove addon</source>
         <translation>アドオンを削除</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1716"/>
+        <location filename="../settingswidget.cpp" line="1724"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>アドオン &quot;%1&quot; を削除しますか？ファイルも削除されます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1904"/>
+        <location filename="../settingswidget.cpp" line="1912"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>スペルチェッカー（辞書がインストールされていません）</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1296"/>
         <location filename="../settingswidget.cpp" line="1304"/>
-        <location filename="../settingswidget.cpp" line="1955"/>
+        <location filename="../settingswidget.cpp" line="1963"/>
         <source>None</source>
         <translation>なし</translation>
     </message>
@@ -3266,43 +3286,43 @@ Please setup the password in the Settings first.</source>
         <translation>プロファイルをインポートしました。Whatly を再起動してください。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1959"/>
+        <location filename="../settingswidget.cpp" line="1967"/>
         <source>%1 languages</source>
         <translation>%1 言語</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2057"/>
+        <location filename="../settingswidget.cpp" line="2065"/>
         <source>WhatsApp default</source>
         <translation>WhatsApp のデフォルト</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2096"/>
+        <location filename="../settingswidget.cpp" line="2104"/>
         <source>System default</source>
         <translation>システムの既定</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2131"/>
+        <location filename="../settingswidget.cpp" line="2139"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>%1 を再起動するとインターフェースの言語が変わります。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2145"/>
+        <location filename="../settingswidget.cpp" line="2153"/>
         <source>App Lock Setup</source>
         <translation>アプリロックの設定</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2146"/>
+        <location filename="../settingswidget.cpp" line="2154"/>
         <source>Please setup the App lock password first.</source>
         <translation>先にアプリロックのパスワードを設定してください。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2257"/>
-        <location filename="../settingswidget.cpp" line="2268"/>
+        <location filename="../settingswidget.cpp" line="2265"/>
+        <location filename="../settingswidget.cpp" line="2276"/>
         <source>Select download directory</source>
         <translation>ダウンロードフォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2308"/>
+        <location filename="../settingswidget.cpp" line="2316"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3313,7 +3333,7 @@ You may also require a complete restart of Application!</source>
 アプリケーションの完全な再起動が必要になる場合もあります！</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2314"/>
+        <location filename="../settingswidget.cpp" line="2322"/>
         <source>Do you want to proceed?</source>
         <translation>続行しますか？</translation>
     </message>

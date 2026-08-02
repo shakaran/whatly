@@ -434,6 +434,16 @@ background:transparent;
               </property>
              </widget>
             </item>
+            <item row="7" column="0" colspan="2">
+             <widget class="QCheckBox" name="inlineReplyCheckBox">
+              <property name="toolTip">
+               <string>Add a reply field to desktop notifications so you can answer a message without opening the window. Only works where the notification service supports it (e.g. KDE Plasma); elsewhere notifications behave as before.</string>
+              </property>
+              <property name="text">
+               <string>Reply directly from notifications (where supported)</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
           <item row="7" column="0">

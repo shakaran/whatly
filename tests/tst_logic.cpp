@@ -47,6 +47,7 @@
 #include "undosend.h"
 #include "translator.h"
 #include "chatexport.h"
+#include "notificationreply.h"
 #include "cannedresponses.h"
 #include "webtweaks.h"
 #include "chatliststrip.h"
@@ -2764,6 +2765,25 @@ private slots:
                                               QStringLiteral("Alice (2)")));
     QVERIFY(!NotificationRules::matchesContact({QStringLiteral("Carol")},
                                                QStringLiteral("Alice")));
+  }
+
+  void inlineReplySetting() {
+    // Default on (idea #2); it only takes effect where the backend supports it.
+    NotificationRules::settings().remove(QStringLiteral("notif/inlineReply"));
+    QVERIFY(NotificationRules::inlineReplyEnabled());
+    NotificationRules::setInlineReplyEnabled(false);
+    QVERIFY(!NotificationRules::inlineReplyEnabled());
+    NotificationRules::setInlineReplyEnabled(true);
+    QVERIFY(NotificationRules::inlineReplyEnabled());
+  }
+
+  void inlineReplyCapabilityDetection() {
+    QVERIFY(NotificationReplyUtil::hasInlineReply(
+        {QStringLiteral("body"), QStringLiteral("actions"),
+         QStringLiteral("inline-reply")}));
+    QVERIFY(!NotificationReplyUtil::hasInlineReply(
+        {QStringLiteral("body"), QStringLiteral("actions")}));
+    QVERIFY(!NotificationReplyUtil::hasInlineReply({}));
   }
 
   QDateTime at(int h, int m) {

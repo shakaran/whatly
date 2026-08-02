@@ -183,6 +183,7 @@ private slots:
   void on_keywordsLineEdit_editingFinished();
   void on_vipContactsLineEdit_editingFinished();
   void on_mutedContactsLineEdit_editingFinished();
+  void on_inlineReplyCheckBox_toggled(bool checked);
   void on_addCannedButton_clicked();
   void on_removeCannedButton_clicked();
   void on_addJsAddonButton_clicked();

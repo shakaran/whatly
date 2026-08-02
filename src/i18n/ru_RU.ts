@@ -491,77 +491,87 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Недавние непрочитанные</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="972"/>
+        <location filename="../mainwindow_webengine.cpp" line="841"/>
+        <source>Reply</source>
+        <translation>Ответить</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="842"/>
+        <source>Reply to %1…</source>
+        <translation>Ответить %1…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="990"/>
         <source>Waiting for network…</source>
         <translation>Ожидание сети…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1313"/>
+        <location filename="../mainwindow_webengine.cpp" line="1331"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>Встроенный перевод выключен (включите его в Настройки → Перевод).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1317"/>
+        <location filename="../mainwindow_webengine.cpp" line="1335"/>
         <source>The message box is empty.</source>
         <translation>Поле сообщения пусто.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1318"/>
+        <location filename="../mainwindow_webengine.cpp" line="1336"/>
         <source>Select some text to translate first.</source>
         <translation>Сначала выделите текст для перевода.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1356"/>
+        <location filename="../mainwindow_webengine.cpp" line="1374"/>
         <source>No conversation is open.</source>
         <translation>Ни один разговор не открыт.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1360"/>
+        <location filename="../mainwindow_webengine.cpp" line="1378"/>
         <source>An export is already running.</source>
         <translation>Экспорт уже выполняется.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1365"/>
+        <location filename="../mainwindow_webengine.cpp" line="1383"/>
         <source>Choose a folder for the exported chat</source>
         <translation>Выберите папку для экспортированного чата</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1371"/>
+        <location filename="../mainwindow_webengine.cpp" line="1389"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>Сбор сообщений… прокрутка разговора.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1372"/>
+        <location filename="../mainwindow_webengine.cpp" line="1390"/>
         <source>Cancel</source>
         <translation type="unfinished">Отмена</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1419"/>
+        <location filename="../mainwindow_webengine.cpp" line="1437"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>Сбор сообщений… (пока %1)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1425"/>
+        <location filename="../mainwindow_webengine.cpp" line="1443"/>
         <source>Could not read the conversation: %1</source>
         <translation>Не удалось прочитать разговор: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1449"/>
+        <location filename="../mainwindow_webengine.cpp" line="1467"/>
         <source>chat</source>
         <translation>чат</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1461"/>
+        <location filename="../mainwindow_webengine.cpp" line="1479"/>
         <source>Could not create the export folder.</source>
         <translation>Не удалось создать папку экспорта.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1491"/>
+        <location filename="../mainwindow_webengine.cpp" line="1509"/>
         <source>The export could not be fully written.</source>
         <translation>Не удалось полностью записать экспорт.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1495"/>
+        <location filename="../mainwindow_webengine.cpp" line="1513"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>Сохранено %1 сообщений и %2 медиафайлов в %3</translation>
     </message>
@@ -630,8 +640,8 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../mainwindow.cpp" line="865"/>
         <location filename="../mainwindow.cpp" line="871"/>
-        <location filename="../mainwindow_webengine.cpp" line="931"/>
-        <location filename="../mainwindow_webengine.cpp" line="934"/>
+        <location filename="../mainwindow_webengine.cpp" line="949"/>
+        <location filename="../mainwindow_webengine.cpp" line="952"/>
         <source>| Error</source>
         <translation>| Ошибка</translation>
     </message>
@@ -843,13 +853,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="212"/>
-        <location filename="../mainwindow_webengine.cpp" line="1356"/>
-        <location filename="../mainwindow_webengine.cpp" line="1360"/>
-        <location filename="../mainwindow_webengine.cpp" line="1373"/>
-        <location filename="../mainwindow_webengine.cpp" line="1424"/>
-        <location filename="../mainwindow_webengine.cpp" line="1460"/>
-        <location filename="../mainwindow_webengine.cpp" line="1490"/>
-        <location filename="../mainwindow_webengine.cpp" line="1494"/>
+        <location filename="../mainwindow_webengine.cpp" line="1374"/>
+        <location filename="../mainwindow_webengine.cpp" line="1378"/>
+        <location filename="../mainwindow_webengine.cpp" line="1391"/>
+        <location filename="../mainwindow_webengine.cpp" line="1442"/>
+        <location filename="../mainwindow_webengine.cpp" line="1478"/>
+        <location filename="../mainwindow_webengine.cpp" line="1508"/>
+        <location filename="../mainwindow_webengine.cpp" line="1512"/>
         <source>Export chat</source>
         <translation>Экспортировать чат</translation>
     </message>
@@ -976,7 +986,7 @@ You can pull any account out into its own window: right-click its tab and choose
         <translation>Аккаунт 1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="929"/>
+        <location filename="../mainwindow_webengine.cpp" line="947"/>
         <source>Unlock to Reload the App.</source>
         <translation>Разблокируйте, чтобы перезагрузить приложение.</translation>
     </message>
@@ -1217,7 +1227,7 @@ Please setup the password in the Settings first.</source>
 Сначала задайте пароль в настройках.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="926"/>
+        <location filename="../mainwindow_webengine.cpp" line="944"/>
         <source>Reloading...</source>
         <translation>Перезагрузка...</translation>
     </message>
@@ -1830,32 +1840,32 @@ Please setup the password in the Settings first.</source>
         <translation>напр. Шумная группа</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1852"/>
+        <location filename="../settingswidget.ui" line="1862"/>
         <source>Suspend inactive accounts</source>
         <translation>Приостанавливать неактивные аккаунты</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1849"/>
+        <location filename="../settingswidget.ui" line="1859"/>
         <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
         <translation>Освобождает память, приостанавливая аккаунты, которые вы не просматриваете. Приостановленный аккаунт не получает сообщения, пока вы не вернётесь к нему. Конфигурации с одним аккаунтом не затрагиваются.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1859"/>
+        <location filename="../settingswidget.ui" line="1869"/>
         <source>after</source>
         <translation>через</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1866"/>
+        <location filename="../settingswidget.ui" line="1876"/>
         <source> min</source>
         <translation> мин</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1831"/>
+        <location filename="../settingswidget.ui" line="1841"/>
         <source>Font hinting</source>
         <translation>Хинтинг шрифтов</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1838"/>
+        <location filename="../settingswidget.ui" line="1848"/>
         <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
         <translation>Как края глифов привязываются к пикселям. «Автоматически» следует системе; более лёгкий уровень может исправить тяжёлый или неровный текст.</translation>
     </message>
@@ -1885,17 +1895,17 @@ Please setup the password in the Settings first.</source>
         <translation>Просить службу уведомлений воспроизводить звук для новых сообщений.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="691"/>
+        <location filename="../settingswidget.ui" line="701"/>
         <source>Interface font size</source>
         <translation>Размер шрифта интерфейса</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="701"/>
+        <location filename="../settingswidget.ui" line="711"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="698"/>
+        <location filename="../settingswidget.ui" line="708"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Размер в пунктах собственного интерфейса приложения — меню, настроек и диалогов. Это не влияет на текст WhatsApp Web; для него используйте масштаб.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -1905,12 +1915,12 @@ Please setup the password in the Settings first.</source>
         <translation>Тема оформления</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="717"/>
+        <location filename="../settingswidget.ui" line="727"/>
         <source>Reload automatically after a crash</source>
         <translation>Автоматически перезагружать после сбоя</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="714"/>
+        <location filename="../settingswidget.ui" line="724"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Если процесс страницы WhatsApp Web аварийно завершится, перезагружать её автоматически, не спрашивая.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -1941,9 +1951,9 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="169"/>
-        <location filename="../settingswidget.ui" line="1767"/>
-        <location filename="../settingswidget.ui" line="1811"/>
-        <location filename="../settingswidget.ui" line="1968"/>
+        <location filename="../settingswidget.ui" line="1777"/>
+        <location filename="../settingswidget.ui" line="1821"/>
+        <location filename="../settingswidget.ui" line="1978"/>
         <location filename="../settingswidget.cpp" line="1303"/>
         <location filename="../settingswidget.cpp" line="1494"/>
         <source>Automatic</source>
@@ -2001,7 +2011,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="297"/>
-        <location filename="../settingswidget.ui" line="1240"/>
+        <location filename="../settingswidget.ui" line="1250"/>
         <source> Secs</source>
         <translation> с</translation>
     </message>
@@ -2057,951 +2067,961 @@ Please setup the password in the Settings first.</source>
         <translation>напр. срочно, начальник, счёт</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="469"/>
+        <location filename="../settingswidget.ui" line="440"/>
+        <source>Add a reply field to desktop notifications so you can answer a message without opening the window. Only works where the notification service supports it (e.g. KDE Plasma); elsewhere notifications behave as before.</source>
+        <translation>Добавляет поле ответа в уведомления рабочего стола, чтобы ответить на сообщение, не открывая окно. Работает только там, где служба уведомлений это поддерживает (например, KDE Plasma); в остальных случаях уведомления ведут себя как прежде.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="443"/>
+        <source>Reply directly from notifications (where supported)</source>
+        <translation>Отвечать прямо из уведомлений (где поддерживается)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="479"/>
         <source>Use Native File Dialog</source>
         <translation>Использовать системный диалог файлов</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="476"/>
+        <location filename="../settingswidget.ui" line="486"/>
         <source>Mute Audio from Page</source>
         <translation>Отключить звук страницы</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="483"/>
+        <location filename="../settingswidget.ui" line="493"/>
         <source>Disable Auto Playback of Media</source>
         <translation>Отключить автовоспроизведение мультимедиа</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="490"/>
+        <location filename="../settingswidget.ui" line="500"/>
         <source>Minimize in tray on start</source>
         <translation>Запускать свёрнутым в трей</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="497"/>
+        <location filename="../settingswidget.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window&apos;s position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Когда вы используете несколько окон с учётными записями, положение, размер и вкладки каждого окна запоминаются и восстанавливаются при следующем запуске. По умолчанию выключено: приложение открывается одним окном со всеми учётными записями.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="500"/>
+        <location filename="../settingswidget.ui" line="510"/>
         <source>Remember multiple window positions on restart</source>
         <translation>Запоминать положение нескольких окон при перезапуске</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="507"/>
+        <location filename="../settingswidget.ui" line="517"/>
         <source>Show/Hide on clicking tray Icon (if supported)</source>
         <translation>Показывать/скрывать по щелчку на значке в трее (если поддерживается)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="514"/>
+        <location filename="../settingswidget.ui" line="524"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close the emoji, GIF &amp;amp; sticker panel when you click elsewhere. WhatsApp Web otherwise keeps it open until the button is pressed again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Закрывает панель эмодзи, GIF и стикеров при щелчке в другом месте. Иначе WhatsApp Web оставляет её открытой до повторного нажатия кнопки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="517"/>
+        <location filename="../settingswidget.ui" line="527"/>
         <source>Close emoji/sticker panel when clicking outside</source>
         <translation>Закрывать панель эмодзи/стикеров при щелчке вне её</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="531"/>
+        <location filename="../settingswidget.ui" line="541"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of Whatly&apos;s own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Язык интерфейса Whatly. Вступает в силу после перезапуска приложения. Язык самих чатов задаётся WhatsApp Web и не меняется здесь.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="538"/>
+        <location filename="../settingswidget.ui" line="548"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a light/dark button to WhatsApp&apos;s own sidebar, just above your profile picture.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Добавляет кнопку светлой/тёмной темы на боковую панель WhatsApp, прямо над вашим фото профиля.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="541"/>
+        <location filename="../settingswidget.ui" line="551"/>
         <source>Theme button in WhatsApp&apos;s sidebar</source>
         <translation>Кнопка темы на боковой панели WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="548"/>
+        <location filename="../settingswidget.ui" line="558"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that blurs and unblurs your chats in one click, without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Добавляет на боковую панель WhatsApp кнопку, которая одним щелчком размывает и показывает ваши чаты, не открывая настройки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="551"/>
+        <location filename="../settingswidget.ui" line="561"/>
         <source>Blur button in WhatsApp&apos;s sidebar</source>
         <translation>Кнопка размытия на боковой панели WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="568"/>
+        <location filename="../settingswidget.ui" line="578"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Добавляет на боковую панель WhatsApp кнопку, которая сворачивает список чатов до полоски с фотографиями профилей, отдавая беседе освободившуюся ширину.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="571"/>
+        <location filename="../settingswidget.ui" line="581"/>
         <source>Chat-list collapse button in WhatsApp&apos;s sidebar</source>
         <translation>Кнопка сворачивания списка чатов на боковой панели WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="578"/>
+        <location filename="../settingswidget.ui" line="588"/>
         <source>Collapsed chat preview</source>
         <translation>Предпросмотр свёрнутого чата</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="585"/>
+        <location filename="../settingswidget.ui" line="595"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform&apos;s font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Размер, с которым отображается предпросмотр, появляющийся при наведении курсора на фото в свёрнутом списке чатов. Значение по умолчанию подходит для отрисовки шрифтов на этой платформе; выберите другое, если на вашем экране он выглядит мелким или крупным.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="592"/>
+        <location filename="../settingswidget.ui" line="602"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Использует одноцветный значок в трее в тон остальной панели вместо зелёного значка WhatsApp. Значок также тускнеет, когда WhatsApp не подключён.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="595"/>
+        <location filename="../settingswidget.ui" line="605"/>
         <source>Monochrome tray icon</source>
         <translation>Монохромный значок в трее</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="602"/>
+        <location filename="../settingswidget.ui" line="612"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Плавно анимирует прокрутку вместо перескакивания по строкам.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="605"/>
+        <location filename="../settingswidget.ui" line="615"/>
         <source>Smooth scrolling</source>
         <translation>Плавная прокрутка</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="612"/>
+        <location filename="../settingswidget.ui" line="622"/>
         <location filename="../settingswidget.cpp" line="1220"/>
         <source>Custom CSS</source>
         <translation>Пользовательский CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="621"/>
+        <location filename="../settingswidget.ui" line="631"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Загрузите файл .css, чтобы изменить стиль WhatsApp Web — стили сообщества (catppuccin и подобные) здесь работают. Применяется поверх темы чата.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="624"/>
+        <location filename="../settingswidget.ui" line="634"/>
         <source>Choose file…</source>
         <translation>Выбрать файл…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="631"/>
-        <location filename="../settingswidget.ui" line="771"/>
+        <location filename="../settingswidget.ui" line="641"/>
+        <location filename="../settingswidget.ui" line="781"/>
         <source>Clear</source>
         <translation>Очистить</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="640"/>
+        <location filename="../settingswidget.ui" line="650"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Полностью убирает значок в системном трее. Без трея для восстановления закрытие окна завершает приложение, а не сворачивает его.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="643"/>
+        <location filename="../settingswidget.ui" line="653"/>
         <source>Hide tray icon</source>
         <translation>Скрыть значок в трее</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="650"/>
+        <location filename="../settingswidget.ui" line="660"/>
         <source>Font family</source>
         <translation>Семейство шрифтов</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="657"/>
+        <location filename="../settingswidget.ui" line="667"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Render WhatsApp Web&apos;s text in a font installed on your system. Emoji, icons and monospaced message formatting are left untouched.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Отображает текст WhatsApp Web шрифтом, установленным в системе. Эмодзи, значки и моноширинное форматирование сообщений не изменяются.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="664"/>
+        <location filename="../settingswidget.ui" line="674"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Скрывает раздел «Отключённые обновления» на панели статусов, чтобы статусы отключённых контактов вообще не отображались.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="667"/>
+        <location filename="../settingswidget.ui" line="677"/>
         <source>Hide muted status updates</source>
         <translation>Скрывать отключённые обновления статусов</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="674"/>
+        <location filename="../settingswidget.ui" line="684"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Подчёркивает слова с ошибками при вводе и предлагает исправления в контекстном меню.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="677"/>
-        <location filename="../settingswidget.cpp" line="1905"/>
+        <location filename="../settingswidget.ui" line="687"/>
+        <location filename="../settingswidget.cpp" line="1913"/>
         <source>Check spelling as I type</source>
         <translation>Проверять орфографию при вводе</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="684"/>
+        <location filename="../settingswidget.ui" line="694"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Язык, по которому выполняется проверка.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="724"/>
+        <location filename="../settingswidget.ui" line="734"/>
         <source>Privacy blur</source>
         <translation>Размытие для приватности</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="731"/>
+        <location filename="../settingswidget.ui" line="741"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Размывает ваши чаты, пока вы не наведёте на них курсор, чтобы случайный взгляд на экран не смог их прочитать. Наведение на строку открывает только её.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="738"/>
+        <location filename="../settingswidget.ui" line="748"/>
         <source>Chat colour Tint</source>
         <translation>Оттенок цвета чата</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="745"/>
+        <location filename="../settingswidget.ui" line="755"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Перекрашивает сам WhatsApp Web. Фото, аватары и стикеры сохраняют свои цвета. Работает поверх светлой или тёмной темы, какая активна.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="752"/>
+        <location filename="../settingswidget.ui" line="762"/>
         <location filename="../settingswidget.cpp" line="1196"/>
         <source>Chat wallpaper</source>
         <translation>Обои чата</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="761"/>
+        <location filename="../settingswidget.ui" line="771"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Используйте своё изображение как фон панели чата, как это делает WhatsApp на Android. Изображение хранится внутри Whatly, никуда не загружается и видно только вам.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="764"/>
+        <location filename="../settingswidget.ui" line="774"/>
         <source>Choose image…</source>
         <translation>Выбрать изображение…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="780"/>
+        <location filename="../settingswidget.ui" line="790"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Новые входы отображаются в списке связанных устройств телефона как «Whatly для Linux» (или соответствующая платформа) вместо «Google Chrome (Linux)». Имя сохраняется на телефоне при связывании устройства, поэтому изменение влияет только на будущие связывания — выйдите и свяжите заново, чтобы переименовать существующий сеанс.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="783"/>
+        <location filename="../settingswidget.ui" line="793"/>
         <source>Identify as Whatly in linked devices</source>
         <translation>Определяться как Whatly в связанных устройствах</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="797"/>
+        <location filename="../settingswidget.ui" line="807"/>
         <source>User Agent</source>
         <translation>User-Agent</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="800"/>
+        <location filename="../settingswidget.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Дополнительно — не меняйте это, если точно не знаете, что делаете. Нестандартный user agent может помешать загрузке WhatsApp, а необычные значения могут привести к тому, что ваш аккаунт WhatsApp будет помечен или занесён в чёрный список.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="810"/>
+        <location filename="../settingswidget.ui" line="820"/>
         <source>  Set</source>
         <translation>  Применить</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="821"/>
+        <location filename="../settingswidget.ui" line="831"/>
         <source>Reset to default</source>
         <translation>Сбросить по умолчанию</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="844"/>
+        <location filename="../settingswidget.ui" line="854"/>
         <source>Zoom factor when normal</source>
         <translation>Масштаб в обычном окне</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="872"/>
-        <location filename="../settingswidget.ui" line="1007"/>
+        <location filename="../settingswidget.ui" line="882"/>
+        <location filename="../settingswidget.ui" line="1017"/>
         <source>Zoom Out</source>
         <translation>Уменьшить</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="911"/>
-        <location filename="../settingswidget.ui" line="1046"/>
+        <location filename="../settingswidget.ui" line="921"/>
+        <location filename="../settingswidget.ui" line="1056"/>
         <source>Zoom In</source>
         <translation>Увеличить</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="956"/>
-        <location filename="../settingswidget.ui" line="1091"/>
+        <location filename="../settingswidget.ui" line="966"/>
+        <location filename="../settingswidget.ui" line="1101"/>
         <source>reset</source>
         <translation>сбросить</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="979"/>
+        <location filename="../settingswidget.ui" line="989"/>
         <source>Zoom factor when maximized/fullscreen</source>
         <translation>Масштаб в развёрнутом/полноэкранном режиме</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1114"/>
+        <location filename="../settingswidget.ui" line="1124"/>
         <source>Minimize to tray</source>
         <translation>Свернуть в трей</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1123"/>
+        <location filename="../settingswidget.ui" line="1133"/>
         <source>Quit</source>
         <translation>Выход</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1135"/>
+        <location filename="../settingswidget.ui" line="1145"/>
         <source>Global shortcuts</source>
         <translation>Глобальные сочетания клавиш</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1142"/>
+        <location filename="../settingswidget.ui" line="1152"/>
         <source>Close button action</source>
         <translation>Действие кнопки закрытия</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1149"/>
+        <location filename="../settingswidget.ui" line="1159"/>
         <source>  Show shortcuts</source>
         <translation>  Показать сочетания клавиш</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1160"/>
+        <location filename="../settingswidget.ui" line="1170"/>
         <source>Permissions</source>
         <translation>Разрешения</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1167"/>
+        <location filename="../settingswidget.ui" line="1177"/>
         <source>  Show permissions</source>
         <translation>  Показать разрешения</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1182"/>
+        <location filename="../settingswidget.ui" line="1192"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Включить экран блокировки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1185"/>
+        <location filename="../settingswidget.ui" line="1195"/>
         <source>Enable App lock on start</source>
         <translation>Включать блокировку при запуске</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1192"/>
+        <location filename="../settingswidget.ui" line="1202"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Когда окно сворачивается в системный трей, блокировать его кодом. Требуется заданный пароль.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1195"/>
+        <location filename="../settingswidget.ui" line="1205"/>
         <source>Lock when hidden to tray</source>
         <translation>Блокировать при сворачивании в трей</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1202"/>
+        <location filename="../settingswidget.ui" line="1212"/>
         <source>Also lock Whatly when the desktop session locks. Requires a password to be set. (Linux)</source>
         <translation>Также блокировать Whatly при блокировке сеанса рабочего стола. Требуется установленный пароль. (Linux)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1205"/>
+        <location filename="../settingswidget.ui" line="1215"/>
         <source>Lock when the screen locks</source>
         <translation>Блокировать при блокировке экрана</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1212"/>
+        <location filename="../settingswidget.ui" line="1222"/>
         <source>Current Password</source>
         <translation>Текущий пароль</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1219"/>
-        <location filename="../settingswidget.ui" line="1253"/>
+        <location filename="../settingswidget.ui" line="1229"/>
+        <location filename="../settingswidget.ui" line="1263"/>
         <source>Change password</source>
         <translation>Сменить пароль</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1222"/>
-        <location filename="../settingswidget.ui" line="1331"/>
+        <location filename="../settingswidget.ui" line="1232"/>
+        <location filename="../settingswidget.ui" line="1341"/>
         <source>Change</source>
         <translation>Сменить</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1233"/>
+        <location filename="../settingswidget.ui" line="1243"/>
         <source>Enable auto locking after</source>
         <translation>Включить автоблокировку через</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1256"/>
+        <location filename="../settingswidget.ui" line="1266"/>
         <source>Reset</source>
         <translation>Сбросить</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1288"/>
+        <location filename="../settingswidget.ui" line="1298"/>
         <source>View password</source>
         <translation>Показать пароль</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1315"/>
+        <location filename="../settingswidget.ui" line="1325"/>
         <source>Default Download location</source>
         <translation>Папка загрузок по умолчанию</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1328"/>
+        <location filename="../settingswidget.ui" line="1338"/>
         <source>Change Download Location</source>
         <translation>Изменить папку загрузок</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1347"/>
+        <location filename="../settingswidget.ui" line="1357"/>
         <source>Storage </source>
         <translation>Хранилище </translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1367"/>
+        <location filename="../settingswidget.ui" line="1377"/>
         <source>Property</source>
         <translation>Свойство</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1374"/>
+        <location filename="../settingswidget.ui" line="1384"/>
         <source>  Clear (requires restart)</source>
         <translation>  Очистить (требуется перезапуск)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1385"/>
+        <location filename="../settingswidget.ui" line="1395"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Постоянные данные включают постоянные cookie, локальное хранилище HTML5 и посещённые ссылки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1388"/>
+        <location filename="../settingswidget.ui" line="1398"/>
         <source>Persistent data</source>
         <translation>Постоянные данные</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1395"/>
-        <location filename="../settingswidget.ui" line="1415"/>
+        <location filename="../settingswidget.ui" line="1405"/>
+        <location filename="../settingswidget.ui" line="1425"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1405"/>
+        <location filename="../settingswidget.ui" line="1415"/>
         <source>The HTTP/media cache. Clearing it is safe — it is re-downloaded as needed.</source>
         <translation>Кэш HTTP и медиафайлов. Его очистка безопасна — он загружается заново по мере необходимости.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1408"/>
+        <location filename="../settingswidget.ui" line="1418"/>
         <source>Cache</source>
         <translation>Кэш</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1425"/>
+        <location filename="../settingswidget.ui" line="1435"/>
         <source>  Clear cache</source>
         <translation>  Очистить кэш</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1448"/>
+        <location filename="../settingswidget.ui" line="1458"/>
         <source>Size</source>
         <translation>Размер</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1470"/>
+        <location filename="../settingswidget.ui" line="1480"/>
         <source>Action</source>
         <translation>Действие</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1484"/>
+        <location filename="../settingswidget.ui" line="1494"/>
         <source>Backup</source>
         <translation>Резервная копия</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1491"/>
+        <location filename="../settingswidget.ui" line="1501"/>
         <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
         <translation>Сохранить эту учётную запись (настройки, сеанс и дополнения) в архив .tar.gz. Архив содержит ваш активный сеанс — храните его в тайне.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1494"/>
+        <location filename="../settingswidget.ui" line="1504"/>
         <source>Export profile…</source>
         <translation>Экспорт профиля…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1501"/>
+        <location filename="../settingswidget.ui" line="1511"/>
         <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
         <translation>Восстановление учётной записи из архива .tar.gz. Текущие данные будут перезаписаны, потребуется перезапуск.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1504"/>
+        <location filename="../settingswidget.ui" line="1514"/>
         <source>Import profile…</source>
         <translation>Импорт профиля…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1529"/>
+        <location filename="../settingswidget.ui" line="1539"/>
         <source>Performance &amp; Privacy</source>
         <translation>Производительность и конфиденциальность</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1535"/>
+        <location filename="../settingswidget.ui" line="1545"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
         <translation>Тонкая настройка движка отрисовки. Значения по умолчанию безопасны для большинства систем; если окно пустое, приложение падает при запуске или подтормаживает, попробуйте изменить эти параметры. Изменения вступают в силу после перезапуска.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1545"/>
+        <location filename="../settingswidget.ui" line="1555"/>
         <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
         <translation>Полная отрисовка на CPU (--disable-gpu). Устраняет пустые окна и падения при запуске на некоторых конфигурациях GPU/драйверов. По умолчанию в Linux.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1548"/>
+        <location filename="../settingswidget.ui" line="1558"/>
         <source>Disable GPU acceleration</source>
         <translation>Отключить ускорение GPU</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1555"/>
+        <location filename="../settingswidget.ui" line="1565"/>
         <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
         <translation>Композитинг страницы на CPU (--disable-gpu-compositing). Устраняет мерцание устаревших кадров на некоторых драйверах.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1558"/>
+        <location filename="../settingswidget.ui" line="1568"/>
         <source>Disable GPU compositing</source>
         <translation>Отключить композитинг GPU</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1565"/>
+        <location filename="../settingswidget.ui" line="1575"/>
         <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
         <translation>Отключить VSync для GPU (--disable-gpu-vsync). Может снизить задержку ввода ценой разрывов изображения.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1568"/>
+        <location filename="../settingswidget.ui" line="1578"/>
         <source>Disable GPU VSync</source>
         <translation>Отключить VSync для GPU</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1575"/>
+        <location filename="../settingswidget.ui" line="1585"/>
         <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
         <translation>Запускать процесс GPU внутри основного процесса (--in-process-gpu). Обходной путь для некоторых изолированных сред.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1578"/>
+        <location filename="../settingswidget.ui" line="1588"/>
         <source>Run GPU in-process</source>
         <translation>Запускать GPU в основном процессе</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1585"/>
+        <location filename="../settingswidget.ui" line="1595"/>
         <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
         <translation>Принудительно включить ускорение, даже если драйвер в чёрном списке (--ignore-gpu-blocklist). Попробуйте, чтобы снова включить GPU.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1588"/>
+        <location filename="../settingswidget.ui" line="1598"/>
         <source>Ignore GPU blocklist</source>
         <translation>Игнорировать чёрный список GPU</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1595"/>
+        <location filename="../settingswidget.ui" line="1605"/>
         <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
         <translation>Запускать всё в одном процессе (--single-process). Использует меньше памяти, но менее стабильно.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1598"/>
+        <location filename="../settingswidget.ui" line="1608"/>
         <source>Single-process mode (lower memory)</source>
         <translation>Однопроцессный режим (меньше памяти)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1605"/>
+        <location filename="../settingswidget.ui" line="1615"/>
         <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
         <translation>Общий процесс отрисовки для каждого сайта (--process-per-site). Снижает использование памяти.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1608"/>
+        <location filename="../settingswidget.ui" line="1618"/>
         <source>One process per site (lower memory)</source>
         <translation>Один процесс на сайт (меньше памяти)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1615"/>
+        <location filename="../settingswidget.ui" line="1625"/>
         <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
         <translation>Просит движок JavaScript использовать меньше памяти ценой небольшой потери скорости (V8 --optimize-for-size). Рекомендуется для приложения, которое остаётся в системном лотке. Игнорируется, если ниже задан лимит памяти JavaScript.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1618"/>
+        <location filename="../settingswidget.ui" line="1628"/>
         <source>Optimize memory over speed (lower memory)</source>
         <translation>Оптимизировать память вместо скорости (меньше памяти)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1625"/>
+        <location filename="../settingswidget.ui" line="1635"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>Скрывает имена контактов и превью сообщений в списке чатов (наведите курсор, чтобы показать одно). Удобно при демонстрации экрана. Открытая переписка не изменяется.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1628"/>
+        <location filename="../settingswidget.ui" line="1638"/>
         <source>Focus mode (hide chat-list previews)</source>
         <translation>Режим фокуса (скрыть превью чатов)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1635"/>
+        <location filename="../settingswidget.ui" line="1645"/>
         <source>Default photos and videos to HD quality in the media editor. Depends on WhatsApp Web&apos;s layout; if a WhatsApp update breaks it, turn it off.</source>
         <translation>По умолчанию использовать HD-качество для фото и видео в редакторе медиафайлов. Зависит от вёрстки WhatsApp Web; если обновление WhatsApp нарушит работу, отключите эту опцию.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1638"/>
+        <location filename="../settingswidget.ui" line="1648"/>
         <source>Send photos and videos in HD by default</source>
         <translation>Отправлять фото и видео в HD по умолчанию</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1647"/>
+        <location filename="../settingswidget.ui" line="1657"/>
         <source>Hold a message for a few seconds after you press Enter, showing an &quot;Undo&quot; button before it is actually sent. Press Enter again to send at once.</source>
         <translation>Задерживает сообщение на несколько секунд после нажатия Enter, показывая кнопку «Отменить» до фактической отправки. Нажмите Enter ещё раз, чтобы отправить сразу.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1650"/>
+        <location filename="../settingswidget.ui" line="1660"/>
         <source>Undo send (hold Enter-sent messages briefly)</source>
         <translation>Отмена отправки (кратко задерживать сообщения, отправляемые Enter)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1657"/>
+        <location filename="../settingswidget.ui" line="1667"/>
         <source>How long to hold a message before it is sent.</source>
         <translation>Как долго задерживать сообщение перед отправкой.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1660"/>
+        <location filename="../settingswidget.ui" line="1670"/>
         <source> s</source>
         <translation> с</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1675"/>
+        <location filename="../settingswidget.ui" line="1685"/>
         <source>Inline translation</source>
         <translation>Встроенный перевод</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1681"/>
+        <location filename="../settingswidget.ui" line="1691"/>
         <source>Translate selected text or your message box through a LibreTranslate-compatible service. The request is made by the app, so the endpoint and key never reach WhatsApp Web. Bind keys to &quot;Translate selection&quot; / &quot;Translate message box&quot; in Shortcuts, or use the command palette.</source>
         <translation>Переводит выделенный текст или поле сообщения через сервис, совместимый с LibreTranslate. Запрос делает приложение, поэтому адрес и ключ никогда не попадают в WhatsApp Web. Назначьте клавиши для «Перевести выделенное» / «Перевести поле сообщения» в Сочетаниях клавиш или используйте палитру команд.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1684"/>
+        <location filename="../settingswidget.ui" line="1694"/>
         <source>Enable inline translation</source>
         <translation>Включить встроенный перевод</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1691"/>
+        <location filename="../settingswidget.ui" line="1701"/>
         <source>Endpoint</source>
         <translation>Адрес сервиса</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1698"/>
+        <location filename="../settingswidget.ui" line="1708"/>
         <source>A LibreTranslate-compatible &quot;/translate&quot; URL, e.g. http://localhost:5000/translate for a self-hosted instance.</source>
         <translation>URL «/translate», совместимый с LibreTranslate, например http://localhost:5000/translate для собственного сервера.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1701"/>
+        <location filename="../settingswidget.ui" line="1711"/>
         <source>https://your-libretranslate/translate</source>
         <translation>https://your-libretranslate/translate</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1708"/>
+        <location filename="../settingswidget.ui" line="1718"/>
         <source>API key (optional)</source>
         <translation>Ключ API (необязательно)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1715"/>
+        <location filename="../settingswidget.ui" line="1725"/>
         <source>Only needed by endpoints that require one. Stored locally.</source>
         <translation>Нужен только для сервисов, которые его требуют. Хранится локально.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1725"/>
+        <location filename="../settingswidget.ui" line="1735"/>
         <source>Target language</source>
         <translation>Язык перевода</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1732"/>
+        <location filename="../settingswidget.ui" line="1742"/>
         <source>Two-letter code to translate into (e.g. en, es, fr). Leave empty to use the app&apos;s language. The source language is detected automatically.</source>
         <translation>Двухбуквенный код языка перевода (например en, es, fr). Оставьте пустым, чтобы использовать язык приложения. Язык оригинала определяется автоматически.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1735"/>
+        <location filename="../settingswidget.ui" line="1745"/>
         <source>app language</source>
         <translation>язык приложения</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1745"/>
+        <location filename="../settingswidget.ui" line="1755"/>
         <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
         <translation>Запретить WebRTC раскрывать ваш локальный IP-адрес через соединения без прокси.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1748"/>
+        <location filename="../settingswidget.ui" line="1758"/>
         <source>Prevent WebRTC IP leak</source>
         <translation>Предотвратить утечку IP через WebRTC</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1757"/>
+        <location filename="../settingswidget.ui" line="1767"/>
         <source>JavaScript memory limit</source>
         <translation>Лимит памяти JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1764"/>
+        <location filename="../settingswidget.ui" line="1774"/>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
         <translation>Ограничить кучу JavaScript (V8 --max-old-space-size). 0 = автоматически. Уменьшите, если приложение использует слишком много RAM.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1770"/>
-        <location filename="../settingswidget.ui" line="1814"/>
+        <location filename="../settingswidget.ui" line="1780"/>
+        <location filename="../settingswidget.ui" line="1824"/>
         <source> MB</source>
         <translation> МБ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1787"/>
+        <location filename="../settingswidget.ui" line="1797"/>
         <source>HTTP cache</source>
         <translation>Кэш HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1794"/>
+        <location filename="../settingswidget.ui" line="1804"/>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
         <translation>Где хранить кэш HTTP. Память очищается при выходе; None отключает кэширование.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1801"/>
+        <location filename="../settingswidget.ui" line="1811"/>
         <source>Max size</source>
         <translation>Макс. размер</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1808"/>
+        <location filename="../settingswidget.ui" line="1818"/>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>Максимальный размер кэша на диске. 0 = автоматически.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1884"/>
+        <location filename="../settingswidget.ui" line="1894"/>
         <source>Network &amp; Startup</source>
         <translation>Сеть и запуск</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1890"/>
+        <location filename="../settingswidget.ui" line="1900"/>
         <source>Launch Whatly automatically when you log in to your desktop session.</source>
         <translation>Автоматически запускать Whatly при входе в сеанс рабочего стола.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1893"/>
+        <location filename="../settingswidget.ui" line="1903"/>
         <source>Start Whatly when I log in</source>
         <translation>Запускать Whatly при входе в систему</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1903"/>
+        <location filename="../settingswidget.ui" line="1913"/>
         <source>Use a custom window frame (requires restart)</source>
         <translation>Использовать собственную рамку окна (требуется перезапуск)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1916"/>
+        <location filename="../settingswidget.ui" line="1926"/>
         <source>Restart Whatly now so the settings above take effect. The windows, and this page with it, come back exactly as they are.</source>
         <translation>Перезапустите Whatly сейчас, чтобы указанные выше настройки вступили в силу. Окна, а вместе с ними и эта страница, вернутся точно в том же виде.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1919"/>
+        <location filename="../settingswidget.ui" line="1929"/>
         <source>Restart now</source>
         <translation>Перезапустить сейчас</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1926"/>
+        <location filename="../settingswidget.ui" line="1936"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
         <translation>Всегда показывать панель вкладок аккаунтов, даже если аккаунт только один, чтобы её &quot;+&quot; был всегда под рукой. Если отключено, панель появляется при наличии второго аккаунта; добавить его всё равно можно через Ctrl+K.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1929"/>
+        <location filename="../settingswidget.ui" line="1939"/>
         <source>Show the account tabs even with a single account</source>
         <translation>Показывать вкладки аккаунтов даже при одном аккаунте</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1936"/>
+        <location filename="../settingswidget.ui" line="1946"/>
         <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
         <translation>Убирает строку заголовка и переносит её кнопки в конец панели вкладок аккаунтов, как в браузере, вместо отдельной строки. Включает нужную для этого пользовательскую рамку окна. Применяется после перезапуска.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1939"/>
+        <location filename="../settingswidget.ui" line="1949"/>
         <source>Hide the title bar (requires restart)</source>
         <translation>Скрыть строку заголовка (требуется перезапуск)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1946"/>
+        <location filename="../settingswidget.ui" line="1956"/>
         <source>Check GitHub once a day for a newer release and let you know. Whatly never downloads or installs anything on its own.</source>
         <translation>Проверять GitHub раз в день на наличие новой версии и уведомлять вас. Whatly никогда ничего не загружает и не устанавливает самостоятельно.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1949"/>
+        <location filename="../settingswidget.ui" line="1959"/>
         <source>Check for updates automatically</source>
         <translation>Проверять обновления автоматически</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1958"/>
+        <location filename="../settingswidget.ui" line="1968"/>
         <source>Interface scale</source>
         <translation>Масштаб интерфейса</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1965"/>
+        <location filename="../settingswidget.ui" line="1975"/>
         <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
         <translation>Масштабирование всего окна и страницы (QT_SCALE_FACTOR). «Автоматически» использует настройки рабочего стола. Если задана переменная окружения QT_SCALE_FACTOR, она имеет приоритет. Применяется после перезапуска.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2001"/>
+        <location filename="../settingswidget.ui" line="2011"/>
         <source>Proxy</source>
         <translation>Прокси</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2008"/>
+        <location filename="../settingswidget.ui" line="2018"/>
         <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
         <translation>Способ подключения Whatly к сети. «Системный» использует настройки операционной системы; «Без прокси» подключается напрямую.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2033"/>
+        <location filename="../settingswidget.ui" line="2043"/>
         <source>Host</source>
         <translation>Хост</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2040"/>
+        <location filename="../settingswidget.ui" line="2050"/>
         <source>127.0.0.1</source>
         <translation>127.0.0.1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2047"/>
-        <location filename="../settingswidget.ui" line="2327"/>
+        <location filename="../settingswidget.ui" line="2057"/>
+        <location filename="../settingswidget.ui" line="2337"/>
         <source>Port</source>
         <translation>Порт</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2061"/>
+        <location filename="../settingswidget.ui" line="2071"/>
         <source>Username</source>
         <translation>Имя пользователя</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2068"/>
-        <location filename="../settingswidget.ui" line="2085"/>
+        <location filename="../settingswidget.ui" line="2078"/>
+        <location filename="../settingswidget.ui" line="2095"/>
         <source>Optional</source>
         <translation>Необязательно</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2075"/>
+        <location filename="../settingswidget.ui" line="2085"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2098"/>
+        <location filename="../settingswidget.ui" line="2108"/>
         <source>Custom JavaScript addons</source>
         <translation>Пользовательские дополнения JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2104"/>
+        <location filename="../settingswidget.ui" line="2114"/>
         <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
         <translation>Загружайте файлы .js для запуска в WhatsApp Web. Каждое дополнение работает в собственной песочнице, поэтому сбойное не нарушит работу остальных или страницы. Снимите флажок, чтобы отключить дополнение, не удаляя его. Изменения вступят в силу после перезапуска.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2126"/>
+        <location filename="../settingswidget.ui" line="2136"/>
         <source>Add addon…</source>
         <translation>Добавить дополнение…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2133"/>
-        <location filename="../settingswidget.ui" line="2193"/>
+        <location filename="../settingswidget.ui" line="2143"/>
+        <location filename="../settingswidget.ui" line="2203"/>
         <source>Remove</source>
         <translation>Удалить</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2158"/>
+        <location filename="../settingswidget.ui" line="2168"/>
         <source>Saved replies</source>
         <translation>Сохранённые ответы</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2164"/>
+        <location filename="../settingswidget.ui" line="2174"/>
         <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
         <translation>Короткие тексты, которые вы часто отправляете. Вставьте один из палитры команд (Ctrl+K) — введите &quot;Вставить&quot; и выберите его; текст будет вписан в поле сообщения.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2186"/>
+        <location filename="../settingswidget.ui" line="2196"/>
         <source>Add reply…</source>
         <translation>Добавить ответ…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2218"/>
+        <location filename="../settingswidget.ui" line="2228"/>
         <source>Keyboard shortcuts</source>
         <translation>Сочетания клавиш</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="561"/>
+        <location filename="../settingswidget.ui" line="571"/>
         <source>Zoom buttons in WhatsApp&apos;s sidebar</source>
         <translation>Кнопки масштаба на боковой панели WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="524"/>
+        <location filename="../settingswidget.ui" line="534"/>
         <source>Interface language (requires restart)</source>
         <translation>Язык интерфейса (требуется перезапуск)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="558"/>
+        <location filename="../settingswidget.ui" line="568"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp&apos;s own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Добавляет кнопки уменьшения / сброса / увеличения на боковую панель WhatsApp, чтобы масштабировать страницу на лету без открытия настроек.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1900"/>
+        <location filename="../settingswidget.ui" line="1910"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>Разрешите Whatly рисовать рамку и строку заголовка окна вместо системы, чтобы они следовали собственной теме Whatly. Само по себе это меняет только их внешний вид; отметьте также &quot;Скрыть строку заголовка&quot;, чтобы полностью убрать строку заголовка. Применяется после перезапуска.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2304"/>
+        <location filename="../settingswidget.ui" line="2314"/>
         <source>Local API &amp; Cloud webhooks</source>
         <translation>Локальный API и вебхуки Cloud</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2310"/>
+        <location filename="../settingswidget.ui" line="2320"/>
         <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
         <translation>Небольшая HTTP-точка на интерфейсе обратной петли (127.0.0.1) позволяет другим программам на этом компьютере отправлять через Whatly, а Meta — доставлять вебхуки Cloud API (входящие сообщения), чтобы автоответы работали без браузера. Она никогда не открыта в сеть; чтобы получать вебхуки от Meta, перенаправьте порт через туннель или обратный прокси (например, cloudflared или ngrok).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2320"/>
+        <location filename="../settingswidget.ui" line="2330"/>
         <source>Enable the local HTTP API (send over HTTP)</source>
         <translation>Включить локальный HTTP API (отправка по HTTP)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2344"/>
+        <location filename="../settingswidget.ui" line="2354"/>
         <source>Bearer token</source>
         <translation>Токен Bearer</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2354"/>
+        <location filename="../settingswidget.ui" line="2364"/>
         <source>required to authorise requests</source>
         <translation>требуется для авторизации запросов</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2361"/>
+        <location filename="../settingswidget.ui" line="2371"/>
         <source>Receive Cloud API webhooks (incoming messages)</source>
         <translation>Получать вебхуки Cloud API (входящие сообщения)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2368"/>
+        <location filename="../settingswidget.ui" line="2378"/>
         <source>Webhook verify token</source>
         <translation>Токен проверки вебхука</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2378"/>
+        <location filename="../settingswidget.ui" line="2388"/>
         <source>echoed to Meta during setup</source>
         <translation>отправляется в Meta при настройке</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2385"/>
+        <location filename="../settingswidget.ui" line="2395"/>
         <source>Meta app secret</source>
         <translation>Секрет приложения Meta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2395"/>
+        <location filename="../settingswidget.ui" line="2405"/>
         <source>verifies the webhook signature</source>
         <translation>проверяет подпись вебхука</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2240"/>
+        <location filename="../settingswidget.ui" line="2250"/>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API (отправка без сессии браузера)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2246"/>
+        <location filename="../settingswidget.ui" line="2256"/>
         <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account&apos;s config and Whatly never obtains it itself.</source>
         <translation>Отправляйте с помощью `--send --backend cloud` через Meta WhatsApp Business Cloud API — без запущенной сессии WhatsApp Web. Токен доступа вы предоставляете сами из Meta; он хранится в конфигурации этой учётной записи, и Whatly никогда не получает его самостоятельно.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2256"/>
+        <location filename="../settingswidget.ui" line="2266"/>
         <source>Phone-number ID</source>
         <translation>Идентификатор номера телефона</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2270"/>
+        <location filename="../settingswidget.ui" line="2280"/>
         <source>Access token</source>
         <translation>Токен доступа</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2280"/>
+        <location filename="../settingswidget.ui" line="2290"/>
         <source>your Meta access token</source>
         <translation>ваш токен доступа Meta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2287"/>
+        <location filename="../settingswidget.ui" line="2297"/>
         <source>Graph API version</source>
         <translation>Версия Graph API</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2224"/>
+        <location filename="../settingswidget.ui" line="2234"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Щёлкните поле и нажмите сочетание клавиш. Очистите поле, чтобы удалить сочетание. Изменения вступают в силу после перезапуска.</translation>
     </message>
@@ -3116,55 +3136,55 @@ Please setup the password in the Settings first.</source>
         <translation>Системная служба (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1675"/>
-        <location filename="../settingswidget.cpp" line="1679"/>
+        <location filename="../settingswidget.cpp" line="1683"/>
+        <location filename="../settingswidget.cpp" line="1687"/>
         <source>Add reply</source>
         <translation>Добавить ответ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1675"/>
+        <location filename="../settingswidget.cpp" line="1683"/>
         <source>Name</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1679"/>
+        <location filename="../settingswidget.cpp" line="1687"/>
         <source>Text to insert</source>
         <translation>Текст для вставки</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1696"/>
+        <location filename="../settingswidget.cpp" line="1704"/>
         <source>Choose a JavaScript file</source>
         <translation>Выберите файл JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1697"/>
+        <location filename="../settingswidget.cpp" line="1705"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Все файлы (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1702"/>
+        <location filename="../settingswidget.cpp" line="1710"/>
         <source>Could not add addon</source>
         <translation>Не удалось добавить дополнение</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1715"/>
+        <location filename="../settingswidget.cpp" line="1723"/>
         <source>Remove addon</source>
         <translation>Удалить дополнение</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1716"/>
+        <location filename="../settingswidget.cpp" line="1724"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>Удалить дополнение &quot;%1&quot;? Его файл будет удалён.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1904"/>
+        <location filename="../settingswidget.cpp" line="1912"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Проверка орфографии (словари не установлены)</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1296"/>
         <location filename="../settingswidget.cpp" line="1304"/>
-        <location filename="../settingswidget.cpp" line="1955"/>
+        <location filename="../settingswidget.cpp" line="1963"/>
         <source>None</source>
         <translation>Нет</translation>
     </message>
@@ -3266,43 +3286,43 @@ Please setup the password in the Settings first.</source>
         <translation>Профиль импортирован. Перезапустите Whatly.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1959"/>
+        <location filename="../settingswidget.cpp" line="1967"/>
         <source>%1 languages</source>
         <translation>Языков: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2057"/>
+        <location filename="../settingswidget.cpp" line="2065"/>
         <source>WhatsApp default</source>
         <translation>По умолчанию WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2096"/>
+        <location filename="../settingswidget.cpp" line="2104"/>
         <source>System default</source>
         <translation>Системный по умолчанию</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2131"/>
+        <location filename="../settingswidget.cpp" line="2139"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>Язык интерфейса изменится после перезапуска %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2145"/>
+        <location filename="../settingswidget.cpp" line="2153"/>
         <source>App Lock Setup</source>
         <translation>Настройка блокировки</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2146"/>
+        <location filename="../settingswidget.cpp" line="2154"/>
         <source>Please setup the App lock password first.</source>
         <translation>Сначала задайте пароль блокировки приложения.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2257"/>
-        <location filename="../settingswidget.cpp" line="2268"/>
+        <location filename="../settingswidget.cpp" line="2265"/>
+        <location filename="../settingswidget.cpp" line="2276"/>
         <source>Select download directory</source>
         <translation>Выберите папку загрузок</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2308"/>
+        <location filename="../settingswidget.cpp" line="2316"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3313,7 +3333,7 @@ You may also require a complete restart of Application!</source>
 Может также потребоваться полный перезапуск приложения!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2314"/>
+        <location filename="../settingswidget.cpp" line="2322"/>
         <source>Do you want to proceed?</source>
         <translation>Хотите продолжить?</translation>
     </message>

@@ -19,6 +19,8 @@
 #include "autoreply.h"
 #include "translator.h"
 #include "chatexport.h"
+#include "notificationreply.h"
+#include "messaging.h"
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -821,15 +823,31 @@ void MainWindow::setNotificationPresenter(QWebEngineProfile *profile) {
               return;
             }
           }
-          auto ntf = notify(proxy->notif->title(), proxy->notif->message(), timeout);
-          // Use locally generated identicon when
-          // QWebEngine (or whatsapp) passes blank
-          // image
+          // Build the per-contact identicon once; both the inline-reply path
+          // and the libnotify path below reuse it.
           QPixmap pix = [proxy](auto img) {
             return Identicons::colorCount(img) > 2
                 ? QPixmap::fromImage(img)
                 : Identicons::letterTile(proxy->notif->title(), QSize(128, 128));
           } (proxy->notif->icon());
+
+          // Inline-reply path (idea #2): where the server supports it and the
+          // user has it on, post through org.freedesktop.Notifications with a
+          // reply field so the message can be answered without opening a window.
+          if (ensureInlineReply()) {
+            const QString chat = proxy->notif->title();
+            const quint32 id = m_notificationReply->notify(
+                QStringLiteral("Whatly"), chat, proxy->notif->message(),
+                Identicons::clipRRect(pix).toImage(), timeout, tr("Reply"),
+                tr("Reply to %1…").arg(chat));
+            if (id) {
+              m_replyNotifs.insert(id, qMakePair(proxy, chat));
+              proxy->invoke(&QWebEngineNotification::show);
+              return;
+            }
+          }
+
+          auto ntf = notify(proxy->notif->title(), proxy->notif->message(), timeout);
           ntf->setHint("image-data", notificationImageHint(
                                         Identicons::clipRRect(pix) /* for eyecandy */));
           connect(ntf.get(), &Notification::Event::actionInvoked, this,
@@ -1498,4 +1516,62 @@ void MainWindow::writeChatExport(const QString &baseDir) {
                    .arg(dir.absolutePath()),
                8000);
       });
+}
+
+// ── Inline-reply notifications (idea #2) ────────────────────────────────────
+
+bool MainWindow::ensureInlineReply() {
+  if (!NotificationRules::inlineReplyEnabled())
+    return false;
+  if (!m_notificationReply) {
+    m_notificationReply = new NotificationReply(this);
+
+    // A typed reply: send it straight to the chat the notification was for,
+    // through the existing name-sender automation (opens the chat by exact
+    // title and sends; no window navigation needed).
+    connect(m_notificationReply, &NotificationReply::replied, this,
+            [this](quint32 id, const QString &text) {
+              auto it = m_replyNotifs.find(id);
+              if (it == m_replyNotifs.end())
+                return;
+              const QString chat = it->second;
+              m_replyNotifs.erase(it);
+              const QString body = text.trimmed();
+              if (body.isEmpty())
+                return;
+              Messaging::Recipient r;
+              r.kind = Messaging::RecipientKind::ContactName;
+              r.value = chat;
+              r.raw = chat;
+              sendByNameViaWeb(r, body, QString());
+            });
+
+    // A plain click still opens the conversation, like the other backends.
+    connect(m_notificationReply, &NotificationReply::actionInvoked, this,
+            [this](quint32 id, const QString &action) {
+              auto it = m_replyNotifs.find(id);
+              if (it == m_replyNotifs.end())
+                return;
+              if (action != QLatin1String("default") &&
+                  action != QLatin1String("open"))
+                return;
+              WebEngineNotifProxyPtr proxy = it->first;
+              m_replyNotifs.erase(it);
+              if (proxy)
+                proxy->invoke(&QWebEngineNotification::click);
+              notificationClicked();
+            });
+
+    connect(m_notificationReply, &NotificationReply::closed, this,
+            [this](quint32 id, quint32) {
+              auto it = m_replyNotifs.find(id);
+              if (it == m_replyNotifs.end())
+                return;
+              WebEngineNotifProxyPtr proxy = it->first;
+              m_replyNotifs.erase(it);
+              if (proxy)
+                proxy->invoke(&QWebEngineNotification::close);
+            });
+  }
+  return m_notificationReply->isAvailable();
 }

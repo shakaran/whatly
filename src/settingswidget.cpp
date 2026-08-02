@@ -1605,6 +1605,10 @@ void SettingsWidget::loadNotificationRules() {
   ui->mutedContactsLineEdit->setText(
       NotificationRules::mutedContacts().join(QStringLiteral(", ")));
 
+  ui->inlineReplyCheckBox->blockSignals(true);
+  ui->inlineReplyCheckBox->setChecked(NotificationRules::inlineReplyEnabled());
+  ui->inlineReplyCheckBox->blockSignals(false);
+
   const bool on = NotificationRules::dndEnabled();
   ui->dndStartTimeEdit->setEnabled(on);
   ui->dndEndTimeEdit->setEnabled(on);
@@ -1646,6 +1650,10 @@ void SettingsWidget::on_mutedContactsLineEdit_editingFinished() {
   NotificationRules::setMutedContacts(
       ui->mutedContactsLineEdit->text().split(QLatin1Char(','),
                                               Qt::SkipEmptyParts));
+}
+
+void SettingsWidget::on_inlineReplyCheckBox_toggled(bool checked) {
+  NotificationRules::setInlineReplyEnabled(checked);
 }
 
 void SettingsWidget::refreshJsAddonsList() {

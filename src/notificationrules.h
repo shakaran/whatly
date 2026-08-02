@@ -39,6 +39,13 @@ void setKeywords(const QStringList &words);
 void setVipContacts(const QStringList &names);
 void setMutedContacts(const QStringList &names);
 
+// Inline reply (idea #2): show a reply text field in the desktop notification
+// (where the backend supports it) so a message can be answered without opening
+// the window. Default on; it is only used where the notification server
+// advertises the "inline-reply" capability. Linux only in practice.
+bool inlineReplyEnabled();
+void setInlineReplyEnabled(bool enabled);
+
 // True when any entry in `names` is contained (case-insensitive) in `title`.
 bool matchesContact(const QStringList &names, const QString &title);
 

@@ -51,6 +51,7 @@ add_executable(tst_logic
     ${S}/chatwallpaper.cpp ${S}/customcss.cpp ${S}/customjs.cpp ${S}/commandpalette.cpp ${S}/updatechecker.cpp ${S}/storageinfo.cpp ${S}/shortcuts.cpp ${S}/backup.cpp ${S}/screenlock.cpp ${S}/quickreply.cpp ${S}/focusmode.cpp ${S}/hdmedia.cpp ${S}/undosend.cpp ${S}/translator.cpp ${S}/chatexport.cpp ${S}/cannedresponses.cpp ${S}/webtweaks.cpp
     ${S}/linkeddevicename.cpp ${S}/performance.cpp ${S}/trayicon.cpp ${S}/dropattach.cpp ${S}/chatnav.cpp ${S}/dropresolve.cpp ${S}/notificationrules.cpp
     ${S}/networkproxy.cpp ${S}/autostart.cpp ${S}/portalnotification.cpp
+    ${S}/notificationreply.cpp
     ${S}/setupwizard.cpp
     ${S}/icons.qrc
 )

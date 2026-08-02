@@ -69,6 +69,13 @@ void setMutedContacts(const QStringList &n) {
   settings().setValue(QStringLiteral("notif/mutedContacts"), cleanList(n));
 }
 
+bool inlineReplyEnabled() {
+  return settings().value(QStringLiteral("notif/inlineReply"), true).toBool();
+}
+void setInlineReplyEnabled(bool e) {
+  settings().setValue(QStringLiteral("notif/inlineReply"), e);
+}
+
 bool matchesContact(const QStringList &names, const QString &title) {
   for (const QString &n : names) {
     const QString t = n.trimmed();
