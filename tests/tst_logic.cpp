@@ -45,6 +45,7 @@
 #include "focusmode.h"
 #include "hdmedia.h"
 #include "undosend.h"
+#include "translator.h"
 #include "cannedresponses.h"
 #include "webtweaks.h"
 #include "chatliststrip.h"
@@ -2267,6 +2268,89 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Translator (#6): pure request/response/target-language and script helpers.
+class TstTranslator : public QObject {
+  Q_OBJECT
+private slots:
+  void targetLanguageResolution() {
+    // A configured code always wins, lower-cased.
+    QCOMPARE(Translate::effectiveTargetLang(QStringLiteral("FR"),
+                                            QStringLiteral("es_ES")),
+             QStringLiteral("fr"));
+    // Otherwise the base of the app language, region stripped.
+    QCOMPARE(Translate::effectiveTargetLang(QString(), QStringLiteral("es_ES")),
+             QStringLiteral("es"));
+    QCOMPARE(Translate::effectiveTargetLang(QString(), QStringLiteral("pt-BR")),
+             QStringLiteral("pt"));
+    QCOMPARE(Translate::effectiveTargetLang(QString(), QStringLiteral("de")),
+             QStringLiteral("de"));
+    // Nothing usable falls back to English.
+    QCOMPARE(Translate::effectiveTargetLang(QString(), QString()),
+             QStringLiteral("en"));
+  }
+  void requestBody() {
+    const QByteArray b = Translate::buildRequestBody(
+        QStringLiteral("hola"), QString(), QStringLiteral("en"),
+        QStringLiteral("k3y"));
+    const QJsonObject o = QJsonDocument::fromJson(b).object();
+    QCOMPARE(o.value("q").toString(), QStringLiteral("hola"));
+    QCOMPARE(o.value("source").toString(), QStringLiteral("auto")); // auto-detect
+    QCOMPARE(o.value("target").toString(), QStringLiteral("en"));
+    QCOMPARE(o.value("format").toString(), QStringLiteral("text"));
+    QCOMPARE(o.value("api_key").toString(), QStringLiteral("k3y"));
+    // An empty key is omitted entirely, not sent blank.
+    const QJsonObject o2 =
+        QJsonDocument::fromJson(Translate::buildRequestBody(
+                                    QStringLiteral("x"), QStringLiteral("es"),
+                                    QStringLiteral("en"), QString()))
+            .object();
+    QVERIFY(!o2.contains(QStringLiteral("api_key")));
+    QCOMPARE(o2.value("source").toString(), QStringLiteral("es"));
+  }
+  void responseParsing() {
+    QString err;
+    QCOMPARE(Translate::parseResponse(
+                 QByteArray("{\"translatedText\":\"hello\"}"), &err),
+             QStringLiteral("hello"));
+    QVERIFY(err.isEmpty());
+    // LibreTranslate error object surfaces its message and no text.
+    QVERIFY(Translate::parseResponse(QByteArray("{\"error\":\"bad key\"}"), &err)
+                .isEmpty());
+    QCOMPARE(err, QStringLiteral("bad key"));
+    // Garbage never crashes; it reports an error.
+    QVERIFY(Translate::parseResponse(QByteArray("not json"), &err).isEmpty());
+    QVERIFY(!err.isEmpty());
+  }
+  void scriptsAreSafe() {
+    // Composer replace and toast must JSON-escape the payload and never throw.
+    const QString rep = Translate::replaceComposerScript(
+        QStringLiteral("say \"hi\"\nline2 \\ end"));
+    QVERIFY(rep.contains(QLatin1String("execCommand")));
+    QVERIFY(rep.contains(QLatin1String("\\\"")));
+    QVERIFY(rep.contains(QLatin1String("\\n")));
+    QVERIFY(rep.contains(QLatin1String("catch")));
+    const QString toast = Translate::toastScript(QStringLiteral("¡hola \"tú\"!"));
+    QVERIFY(toast.contains(QLatin1String("whatly-translate-toast")));
+    QVERIFY(toast.contains(QLatin1String("\\\"")));
+    QVERIFY(toast.contains(QLatin1String("catch")));
+    QVERIFY(Translate::readSelectionScript().contains(
+        QLatin1String("getSelection")));
+    QVERIFY(Translate::readComposerScript().contains(
+        QLatin1String("contenteditable")));
+  }
+  void settingsRoundTrip() {
+    Translate::setEnabled(true);
+    QVERIFY(Translate::isEnabled());
+    Translate::setEndpoint(QStringLiteral("  https://lt.example/translate  "));
+    QCOMPARE(Translate::endpoint(),
+             QStringLiteral("https://lt.example/translate")); // trimmed
+    Translate::setTargetLang(QStringLiteral("fr"));
+    QCOMPARE(Translate::targetLang(), QStringLiteral("fr"));
+    Translate::setEnabled(false);
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CannedResponses: CRUD round-trip and the escaped insert snippet.
 class TstCannedResponses : public QObject {
   Q_OBJECT
@@ -2944,6 +3028,7 @@ int main(int argc, char *argv[]) {
   { TstCannedResponses t;     run(&t); }
   { TstHdMedia t;             run(&t); }
   { TstUndoSend t;            run(&t); }
+  { TstTranslator t;          run(&t); }
   { TstStorageInfo t;         run(&t); }
   { TstUpdateCheck t;         run(&t); }
   { TstFuzzy t;               run(&t); }

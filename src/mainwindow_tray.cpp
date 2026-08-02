@@ -109,6 +109,18 @@ void MainWindow::createActions() {
           &MainWindow::showScheduledMessages);
   addAction(m_scheduledMessagesAction);
 
+  // Inline translation (idea #6). No default shortcuts — both live in the
+  // command palette and can be bound to keys of the user's choosing in Settings.
+  m_translateSelectionAction = new QAction(tr("Translate selection"), this);
+  connect(m_translateSelectionAction, &QAction::triggered, this,
+          &MainWindow::translateSelection);
+  addAction(m_translateSelectionAction);
+
+  m_translateComposerAction = new QAction(tr("Translate message box"), this);
+  connect(m_translateComposerAction, &QAction::triggered, this,
+          &MainWindow::translateComposer);
+  addAction(m_translateComposerAction);
+
   m_toggleThemeAction = new QAction(tr("&Toggle theme"), this);
   m_toggleThemeAction->setShortcut(
       QKeySequence(Qt::Modifier::CTRL | Qt::Key_T));
@@ -186,6 +198,10 @@ void MainWindow::createActions() {
       // Registered with no default so it appears in the shortcut sheet and can
       // be bound to whatever the user likes.
       {m_chatListStripAction, "chatListStrip", tr("Collapse the chat list")},
+      {m_translateSelectionAction, "translateSelection",
+       tr("Translate selection")},
+      {m_translateComposerAction, "translateComposer",
+       tr("Translate message box")},
       {m_settingsAction, "settings", tr("Settings")},
       {m_toggleThemeAction, "toggleTheme", tr("Toggle theme")},
       {m_viewGridAction, "gridView", tr("Grid view")},

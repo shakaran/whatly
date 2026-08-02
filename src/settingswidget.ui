@@ -1670,6 +1670,76 @@ background:transparent;
            </layout>
           </item>
           <item>
+           <widget class="QGroupBox" name="translationGroupBox">
+            <property name="title">
+             <string>Inline translation</string>
+            </property>
+            <layout class="QFormLayout" name="translationFormLayout">
+             <item row="0" column="0" colspan="2">
+              <widget class="QCheckBox" name="translateEnabledCheckBox">
+               <property name="toolTip">
+                <string>Translate selected text or your message box through a LibreTranslate-compatible service. The request is made by the app, so the endpoint and key never reach WhatsApp Web. Bind keys to "Translate selection" / "Translate message box" in Shortcuts, or use the command palette.</string>
+               </property>
+               <property name="text">
+                <string>Enable inline translation</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="translateEndpointLabel">
+               <property name="text">
+                <string>Endpoint</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="translateEndpointLineEdit">
+               <property name="toolTip">
+                <string>A LibreTranslate-compatible "/translate" URL, e.g. http://localhost:5000/translate for a self-hosted instance.</string>
+               </property>
+               <property name="placeholderText">
+                <string>https://your-libretranslate/translate</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="translateApiKeyLabel">
+               <property name="text">
+                <string>API key (optional)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="translateApiKeyLineEdit">
+               <property name="toolTip">
+                <string>Only needed by endpoints that require one. Stored locally.</string>
+               </property>
+               <property name="echoMode">
+                <enum>QLineEdit::Password</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="translateTargetLabel">
+               <property name="text">
+                <string>Target language</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="translateTargetLineEdit">
+               <property name="toolTip">
+                <string>Two-letter code to translate into (e.g. en, es, fr). Leave empty to use the app's language. The source language is detected automatically.</string>
+               </property>
+               <property name="placeholderText">
+                <string>app language</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
            <widget class="QCheckBox" name="webrtcShieldCheckBox">
             <property name="toolTip">
              <string>Stop WebRTC from revealing your local IP address over non-proxied connections.</string>

@@ -33,6 +33,7 @@ class LocalApiServer;
 
 class PortalNotification;
 class QLabel;
+class Translator;
 #include "settingswidget.h"
 #include "pagebridge.h"
 #include "webenginepage.h"
@@ -288,6 +289,17 @@ private:
   QAction *m_addAccountAction = nullptr;
   QAction *m_commandPaletteAction = nullptr;
   void showCommandPalette();
+
+  // Inline translation (idea #6). Reads the current selection or the composer,
+  // sends it to the configured LibreTranslate endpoint from C++, then shows the
+  // result in a toast (selection) or replaces the composer text (outgoing).
+  Translator *m_translator = nullptr;
+  void translateSelection();
+  void translateComposer();
+  // Read `text` from the page, translate it, and either toast the result or put
+  // it back into the composer. Empty/failed input is reported to the user.
+  void runTranslation(const QString &text, bool intoComposer);
+  QString appTargetLanguage() const;
   class UpdateChecker *m_updateChecker = nullptr;
   QString m_pendingUpdateUrl;
   void initSettingWidget();
@@ -403,6 +415,8 @@ private:
   QAction *m_zoomOutAction = nullptr;
   QAction *m_zoomResetAction = nullptr;
   QAction *m_chatListStripAction = nullptr;
+  QAction *m_translateSelectionAction = nullptr;
+  QAction *m_translateComposerAction = nullptr;
 
   QMenu *m_trayIconMenu = nullptr;
   QSystemTrayIcon *m_systemTrayIcon = nullptr;

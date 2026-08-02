@@ -17,10 +17,13 @@
 #include "notificationrules.h"
 #include "performance.h"
 #include "autoreply.h"
+#include "translator.h"
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QLocale>
 
 #include <QDateTime>
+#include <memory>
 
 // Decide, once, whether desktop notifications go through the XDG portal instead
 // of libnotify. The "notificationBackend" setting is "auto" (default), "portal"
@@ -1259,4 +1262,81 @@ void MainWindow::toggleMute(const bool &checked) {
     m_muteAction->setChecked(checked);
   if (m_settingsWidget)
     m_settingsWidget->muteAudioSetChecked(checked);
+}
+
+// ── Inline translation (idea #6) ────────────────────────────────────────────
+
+// The target language: the configured code, or the base of the app UI language.
+QString MainWindow::appTargetLanguage() const {
+  const QString appLang = SettingsManager::instance()
+                              .settings()
+                              .value(QStringLiteral("language"))
+                              .toString();
+  return Translate::effectiveTargetLang(
+      Translate::targetLang(),
+      appLang.isEmpty() ? QLocale::system().name() : appLang);
+}
+
+void MainWindow::translateSelection() {
+  if (!m_webEngine || !m_webEngine->page())
+    return;
+  m_webEngine->page()->runJavaScript(
+      Translate::readSelectionScript(), [this](const QVariant &v) {
+        runTranslation(v.toString(), /*intoComposer=*/false);
+      });
+}
+
+void MainWindow::translateComposer() {
+  if (!m_webEngine || !m_webEngine->page())
+    return;
+  m_webEngine->page()->runJavaScript(
+      Translate::readComposerScript(), [this](const QVariant &v) {
+        runTranslation(v.toString(), /*intoComposer=*/true);
+      });
+}
+
+void MainWindow::runTranslation(const QString &text, bool intoComposer) {
+  const QString trimmed = text.trimmed();
+  auto toast = [this](const QString &msg) {
+    if (m_webEngine && m_webEngine->page())
+      m_webEngine->page()->runJavaScript(Translate::toastScript(msg));
+  };
+  if (!Translate::isEnabled()) {
+    toast(tr("Inline translation is off (enable it in Settings → Translation)."));
+    return;
+  }
+  if (trimmed.isEmpty()) {
+    toast(intoComposer ? tr("The message box is empty.")
+                       : tr("Select some text to translate first."));
+    return;
+  }
+  if (!m_translator)
+    m_translator = new Translator(this);
+
+  // One request at a time: connect fresh handlers and tear both down when
+  // either fires, so results never cross wires between calls.
+  auto conns = std::make_shared<QList<QMetaObject::Connection>>();
+  auto cleanup = [conns]() {
+    for (const auto &c : *conns)
+      QObject::disconnect(c);
+    conns->clear();
+  };
+  conns->append(connect(
+      m_translator, &Translator::translated, this,
+      [this, intoComposer, toast, cleanup](const QString &out, const QString &) {
+        cleanup();
+        if (intoComposer) {
+          if (m_webEngine && m_webEngine->page())
+            m_webEngine->page()->runJavaScript(
+                Translate::replaceComposerScript(out));
+        } else {
+          toast(out);
+        }
+      }));
+  conns->append(connect(m_translator, &Translator::failed, this,
+                        [toast, cleanup](const QString &err) {
+                          cleanup();
+                          toast(err);
+                        }));
+  m_translator->translate(trimmed, appTargetLanguage());
 }

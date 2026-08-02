@@ -1,5 +1,15 @@
 ## Unreleased
 
+**Inline translation.** A new Settings → Performance section connects Whatly to
+a LibreTranslate-compatible endpoint (self-hosted or otherwise). Two actions,
+"Translate selection" and "Translate message box", are in the command palette
+and can be bound to keys in Shortcuts: the first shows the translation of the
+selected text in a toast, the second translates what you have typed and puts it
+back in the message box before you send. The target language follows the app's
+language by default (configurable); the source is detected automatically. The
+request is made by the app itself, so the endpoint and optional API key never
+reach WhatsApp Web. Off by default.
+
 **Undo send.** A new Settings → Performance option holds a message for a few
 seconds after you press Enter, showing an "Undo" button before it is actually
 sent, so a mistaken Enter no longer sends instantly. Pressing Enter again sends

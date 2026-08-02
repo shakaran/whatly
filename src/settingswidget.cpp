@@ -54,6 +54,7 @@
 #include "focusmode.h"
 #include "hdmedia.h"
 #include "undosend.h"
+#include "translator.h"
 #include "cannedresponses.h"
 
 #include <QListWidget>
@@ -1334,6 +1335,10 @@ void SettingsWidget::loadPerformanceSettings() {
   ui->undoSendSecondsSpinBox->blockSignals(true);
   ui->undoSendSecondsSpinBox->setValue(UndoSend::seconds());
   ui->undoSendSecondsSpinBox->blockSignals(false);
+  set(ui->translateEnabledCheckBox, Translate::isEnabled());
+  ui->translateEndpointLineEdit->setText(Translate::endpoint());
+  ui->translateApiKeyLineEdit->setText(Translate::apiKey());
+  ui->translateTargetLineEdit->setText(Translate::targetLang());
   set(ui->suspendInactiveAccountsCheckBox,
       Performance::suspendInactiveAccounts());
   ui->suspendAfterSpinBox->blockSignals(true);
@@ -1398,6 +1403,18 @@ void SettingsWidget::on_undoSendCheckBox_toggled(bool checked) {
 void SettingsWidget::on_undoSendSecondsSpinBox_valueChanged(int arg1) {
   UndoSend::setSeconds(arg1);
   emit undoSendChanged();
+}
+void SettingsWidget::on_translateEnabledCheckBox_toggled(bool checked) {
+  Translate::setEnabled(checked);
+}
+void SettingsWidget::on_translateEndpointLineEdit_editingFinished() {
+  Translate::setEndpoint(ui->translateEndpointLineEdit->text());
+}
+void SettingsWidget::on_translateApiKeyLineEdit_editingFinished() {
+  Translate::setApiKey(ui->translateApiKeyLineEdit->text());
+}
+void SettingsWidget::on_translateTargetLineEdit_editingFinished() {
+  Translate::setTargetLang(ui->translateTargetLineEdit->text());
 }
 void SettingsWidget::on_jsMemoryLimitSpinBox_valueChanged(int arg1) {
   Performance::setJsMemoryLimitMb(arg1);
