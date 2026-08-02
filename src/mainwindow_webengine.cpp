@@ -18,9 +18,17 @@
 #include "performance.h"
 #include "autoreply.h"
 #include "translator.h"
+#include "chatexport.h"
 #include <QJsonArray>
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QLocale>
+#include <QDir>
+#include <QFile>
+#include <QFileDialog>
+#include <QProgressDialog>
+#include <QStandardPaths>
+#include <QTimer>
 
 #include <QDateTime>
 #include <memory>
@@ -1339,4 +1347,155 @@ void MainWindow::runTranslation(const QString &text, bool intoComposer) {
                           toast(err);
                         }));
   m_translator->translate(trimmed, appTargetLanguage());
+}
+
+// ── Export the open conversation (idea #9) ──────────────────────────────────
+
+void MainWindow::exportCurrentChat() {
+  if (!m_webEngine || !m_webEngine->page()) {
+    notify(tr("Export chat"), tr("No conversation is open."), 5000);
+    return;
+  }
+  if (m_exportPollTimer && m_exportPollTimer->isActive()) {
+    notify(tr("Export chat"), tr("An export is already running."), 5000);
+    return;
+  }
+
+  const QString baseDir = QFileDialog::getExistingDirectory(
+      this, tr("Choose a folder for the exported chat"),
+      QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
+  if (baseDir.isEmpty())
+    return;
+
+  auto *progress = new QProgressDialog(
+      tr("Collecting messages… scrolling through the conversation."),
+      tr("Cancel"), 0, 0, this);
+  progress->setWindowTitle(tr("Export chat"));
+  progress->setWindowModality(Qt::NonModal);
+  progress->setMinimumDuration(0);
+  progress->setValue(0);
+  progress->show();
+
+  // Kick the async page collector; it stores its result on window.__whatlyExport.
+  m_webEngine->page()->runJavaScript(ChatExport::collectorScript());
+
+  if (!m_exportPollTimer)
+    m_exportPollTimer = new QTimer(this);
+  m_exportPollTimer->setInterval(600);
+
+  QWidget *pageOwner = m_webEngine;
+  auto finish = [this, progress]() {
+    if (m_exportPollTimer)
+      m_exportPollTimer->stop();
+    if (m_exportPollTimer)
+      m_exportPollTimer->disconnect();
+    progress->close();
+    progress->deleteLater();
+  };
+
+  connect(progress, &QProgressDialog::canceled, this, [finish, this]() {
+    finish();
+    // Best-effort: let the page abandon the collector on the next reload.
+    if (m_webEngine && m_webEngine->page())
+      m_webEngine->page()->runJavaScript(
+          QStringLiteral("window.__whatlyExport={status:'cancelled'};"));
+  });
+
+  connect(m_exportPollTimer, &QTimer::timeout, this,
+          [this, progress, baseDir, finish, pageOwner]() {
+            if (!m_webEngine || m_webEngine != pageOwner || !m_webEngine->page()) {
+              finish();
+              return;
+            }
+            m_webEngine->page()->runJavaScript(
+                ChatExport::statusScript(), [this, progress, baseDir, finish](
+                                                const QVariant &v) {
+                  const QJsonObject st =
+                      QJsonDocument::fromJson(v.toString().toUtf8()).object();
+                  const QString status = st.value("status").toString();
+                  if (status == QLatin1String("running")) {
+                    const int count = st.value("count").toInt();
+                    progress->setLabelText(
+                        tr("Collecting messages… (%1 so far)").arg(count));
+                    return;
+                  }
+                  if (status == QLatin1String("error")) {
+                    finish();
+                    notify(tr("Export chat"),
+                           tr("Could not read the conversation: %1")
+                               .arg(st.value("error").toString()),
+                           6000);
+                    return;
+                  }
+                  if (status != QLatin1String("done"))
+                    return; // "none"/"cancelled": stop quietly next tick
+                  // Pull the full payload once, then write it out.
+                  finish();
+                  writeChatExport(baseDir);
+                });
+          });
+  m_exportPollTimer->start();
+}
+
+// Reads window.__whatlyExport (the completed payload) and writes the files.
+void MainWindow::writeChatExport(const QString &baseDir) {
+  if (!m_webEngine || !m_webEngine->page())
+    return;
+  m_webEngine->page()->runJavaScript(
+      QStringLiteral("JSON.stringify(window.__whatlyExport||{})"),
+      [this, baseDir](const QVariant &v) {
+        const QJsonObject root =
+            QJsonDocument::fromJson(v.toString().toUtf8()).object();
+        const QString chatName = root.value("chat").toString(tr("chat"));
+        const QJsonArray raw = root.value("messages").toArray();
+
+        QHash<QString, QByteArray> media;
+        const QList<ChatExport::Message> msgs = ChatExport::parse(raw, &media);
+
+        const QString folderName = QStringLiteral("%1 - %2").arg(
+            ChatExport::sanitizeFileName(chatName),
+            QDateTime::currentDateTime().toString(QStringLiteral("yyyy-MM-dd")));
+        QDir dir(baseDir);
+        if (!dir.mkpath(folderName)) {
+          notify(tr("Export chat"),
+                 tr("Could not create the export folder."), 6000);
+          return;
+        }
+        dir.cd(folderName);
+
+        bool ok = true;
+        QFile txt(dir.filePath(QStringLiteral("chat.txt")));
+        if (txt.open(QIODevice::WriteOnly | QIODevice::Text))
+          txt.write(ChatExport::buildTranscript(chatName, msgs).toUtf8());
+        else
+          ok = false;
+        QFile js(dir.filePath(QStringLiteral("chat.json")));
+        if (js.open(QIODevice::WriteOnly))
+          js.write(ChatExport::buildJson(msgs));
+        else
+          ok = false;
+
+        int savedMedia = 0;
+        if (!media.isEmpty() && dir.mkpath(QStringLiteral("media"))) {
+          for (auto it = media.constBegin(); it != media.constEnd(); ++it) {
+            QFile f(dir.filePath(QStringLiteral("media/") + it.key()));
+            if (f.open(QIODevice::WriteOnly)) {
+              f.write(it.value());
+              ++savedMedia;
+            }
+          }
+        }
+
+        if (!ok) {
+          notify(tr("Export chat"),
+                 tr("The export could not be fully written."), 6000);
+          return;
+        }
+        notify(tr("Export chat"),
+               tr("Saved %1 messages and %2 media files to %3")
+                   .arg(msgs.size())
+                   .arg(savedMedia)
+                   .arg(dir.absolutePath()),
+               8000);
+      });
 }

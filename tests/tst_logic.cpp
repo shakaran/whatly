@@ -46,6 +46,7 @@
 #include "hdmedia.h"
 #include "undosend.h"
 #include "translator.h"
+#include "chatexport.h"
 #include "cannedresponses.h"
 #include "webtweaks.h"
 #include "chatliststrip.h"
@@ -2351,6 +2352,87 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// ChatExport (#9): parsing the collected payload, media decoding, and the
+// transcript/JSON writers.
+class TstChatExport : public QObject {
+  Q_OBJECT
+private slots:
+  void mimeAndSanitize() {
+    QCOMPARE(ChatExport::extForMime("image/jpeg"), QStringLiteral(".jpg"));
+    QCOMPARE(ChatExport::extForMime("image/png"), QStringLiteral(".png"));
+    QCOMPARE(ChatExport::extForMime("video/mp4"), QStringLiteral(".mp4"));
+    QCOMPARE(ChatExport::extForMime("application/octet-stream"),
+             QStringLiteral(".bin"));
+    QCOMPARE(ChatExport::sanitizeFileName("a/b:c*?\"<>|d"),
+             QStringLiteral("a_b_c______d")); // / : * ? " < > | -> one _ each
+    QCOMPARE(ChatExport::sanitizeFileName("   "), QStringLiteral("chat"));
+  }
+  void decodesDataUrl() {
+    QString mime;
+    // "hi" base64 is "aGk=".
+    const QByteArray b =
+        ChatExport::decodeDataUrl("data:image/png;base64,aGk=", &mime);
+    QCOMPARE(mime, QStringLiteral("image/png"));
+    QCOMPARE(b, QByteArray("hi"));
+    QVERIFY(ChatExport::decodeDataUrl("not a data url", &mime).isEmpty());
+  }
+  void parsesMessagesAndMedia() {
+    QJsonArray arr;
+    arr.append(QJsonObject{{"ts", "08:49, 2/8/2026"},
+                           {"sender", "Ana"},
+                           {"dir", "in"},
+                           {"type", "text"},
+                           {"text", "hola"}});
+    arr.append(QJsonObject{
+        {"ts", "08:50, 2/8/2026"},
+        {"sender", ""},
+        {"dir", "out"},
+        {"type", "image"},
+        {"text", "caption"},
+        {"media", QJsonObject{{"dataUrl", "data:image/jpeg;base64,aGk="},
+                              {"mime", "image/jpeg"}}}});
+    arr.append(QJsonObject{{"ts", "08:51, 2/8/2026"},
+                           {"sender", ""},
+                           {"dir", "in"},
+                           {"type", "video"},
+                           {"text", ""}}); // media not downloaded
+
+    QHash<QString, QByteArray> media;
+    const QList<ChatExport::Message> msgs = ChatExport::parse(arr, &media);
+    QCOMPARE(msgs.size(), 3);
+    QCOMPARE(media.size(), 1);
+    QCOMPARE(msgs[1].mediaFile, QStringLiteral("0001.jpg"));
+    QCOMPARE(media.value("0001.jpg"), QByteArray("hi"));
+    QVERIFY(!msgs[0].mediaMissing);
+    QVERIFY(msgs[2].mediaMissing); // video with no bytes
+
+    // Transcript: WhatsApp-style lines, media reference, and "You" for an
+    // outgoing message that had no sender name.
+    const QString txt = ChatExport::buildTranscript("Ana", msgs);
+    QVERIFY(txt.contains(QLatin1String("[08:49, 2/8/2026] Ana: hola")));
+    QVERIFY(txt.contains(QLatin1String("[08:50, 2/8/2026] You: <attached: media/0001.jpg> caption")));
+    QVERIFY(txt.contains(QLatin1String("<video omitted>")));
+
+    // JSON: media path present for the downloaded one, null for the missing one.
+    const QJsonArray out =
+        QJsonDocument::fromJson(ChatExport::buildJson(msgs)).array();
+    QCOMPARE(out.size(), 3);
+    QCOMPARE(out[1].toObject().value("media").toString(),
+             QStringLiteral("media/0001.jpg"));
+    QVERIFY(out[2].toObject().value("media").isNull());
+  }
+  void scriptsWellFormed() {
+    const QString col = ChatExport::collectorScript();
+    QVERIFY(col.contains(QLatin1String("__whatlyExport")));
+    QVERIFY(col.contains(QLatin1String("data-pre-plain-text")));
+    QVERIFY(col.contains(QLatin1String("scrollTop")));   // auto-scroll
+    QVERIFY(col.contains(QLatin1String("readAsDataURL"))); // media capture
+    QVERIFY(col.contains(QLatin1String("catch")));
+    QVERIFY(ChatExport::statusScript().contains(QLatin1String("status")));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CannedResponses: CRUD round-trip and the escaped insert snippet.
 class TstCannedResponses : public QObject {
   Q_OBJECT
@@ -3029,6 +3111,7 @@ int main(int argc, char *argv[]) {
   { TstHdMedia t;             run(&t); }
   { TstUndoSend t;            run(&t); }
   { TstTranslator t;          run(&t); }
+  { TstChatExport t;          run(&t); }
   { TstStorageInfo t;         run(&t); }
   { TstUpdateCheck t;         run(&t); }
   { TstFuzzy t;               run(&t); }

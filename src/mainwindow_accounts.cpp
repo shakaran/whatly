@@ -282,6 +282,7 @@ void MainWindow::showCommandPalette() {
       m_openUrlAction,     m_scheduledMessagesAction, m_toggleThemeAction,
       m_chatListStripAction, m_settingsAction, m_aboutAction,
       m_translateSelectionAction, m_translateComposerAction,
+      m_exportChatAction,
       m_viewTabsAction,    m_viewGridAction,  m_quitAction};
   for (QAction *a : actions) {
     if (!a)

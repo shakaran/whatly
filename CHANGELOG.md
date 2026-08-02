@@ -1,5 +1,14 @@
 ## Unreleased
 
+**Export chat.** A new "Export chat" action (command palette and Shortcuts)
+saves the open conversation to a folder you pick: a WhatsApp-style `chat.txt`
+transcript, a structured `chat.json`, and a `media/` folder with the images,
+videos and audio that were loaded. It scrolls the whole conversation to pull in
+history first (WhatsApp Web only keeps a small window of messages in memory at a
+time), and downloads each attachment while it is on screen. Media that never
+finished loading is noted in the transcript rather than saved. All local; no
+data leaves the machine.
+
 **Inline translation.** A new Settings → Performance section connects Whatly to
 a LibreTranslate-compatible endpoint (self-hosted or otherwise). Two actions,
 "Translate selection" and "Translate message box", are in the command palette

@@ -486,29 +486,84 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="230"/>
+        <location filename="../mainwindow_tray.cpp" line="238"/>
         <source>Recent unread</source>
         <translation>हाल के अपठित</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="964"/>
+        <location filename="../mainwindow_webengine.cpp" line="972"/>
         <source>Waiting for network…</source>
         <translation>नेटवर्क की प्रतीक्षा…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1305"/>
+        <location filename="../mainwindow_webengine.cpp" line="1313"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>इनलाइन अनुवाद बंद है (इसे सेटिंग्स → अनुवाद में चालू करें)।</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1309"/>
+        <location filename="../mainwindow_webengine.cpp" line="1317"/>
         <source>The message box is empty.</source>
         <translation>संदेश बॉक्स खाली है।</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1310"/>
+        <location filename="../mainwindow_webengine.cpp" line="1318"/>
         <source>Select some text to translate first.</source>
         <translation>पहले अनुवाद करने के लिए कुछ पाठ चुनें।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1356"/>
+        <source>No conversation is open.</source>
+        <translation>कोई बातचीत खुली नहीं है।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1360"/>
+        <source>An export is already running.</source>
+        <translation>एक निर्यात पहले से चल रहा है।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1365"/>
+        <source>Choose a folder for the exported chat</source>
+        <translation>निर्यात किए गए चैट के लिए एक फ़ोल्डर चुनें</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1371"/>
+        <source>Collecting messages… scrolling through the conversation.</source>
+        <translation>संदेश एकत्र किए जा रहे हैं… बातचीत में स्क्रॉल किया जा रहा है।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1372"/>
+        <source>Cancel</source>
+        <translation type="unfinished">रद्द करें</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1419"/>
+        <source>Collecting messages… (%1 so far)</source>
+        <translation>संदेश एकत्र किए जा रहे हैं… (अब तक %1)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1425"/>
+        <source>Could not read the conversation: %1</source>
+        <translation>बातचीत नहीं पढ़ी जा सकी: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1449"/>
+        <source>chat</source>
+        <translation>चैट</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1461"/>
+        <source>Could not create the export folder.</source>
+        <translation>निर्यात फ़ोल्डर नहीं बनाया जा सका।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1491"/>
+        <source>The export could not be fully written.</source>
+        <translation>निर्यात पूरी तरह नहीं लिखा जा सका।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1495"/>
+        <source>Saved %1 messages and %2 media files to %3</source>
+        <translation>%1 संदेश और %2 मीडिया फ़ाइलें %3 में सहेजी गईं</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="105"/>
@@ -575,8 +630,8 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../mainwindow.cpp" line="865"/>
         <location filename="../mainwindow.cpp" line="871"/>
-        <location filename="../mainwindow_webengine.cpp" line="923"/>
-        <location filename="../mainwindow_webengine.cpp" line="926"/>
+        <location filename="../mainwindow_webengine.cpp" line="931"/>
+        <location filename="../mainwindow_webengine.cpp" line="934"/>
         <source>| Error</source>
         <translation>| त्रुटि</translation>
     </message>
@@ -619,7 +674,7 @@ WebEngine आरंभ नहीं हुआ है।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1346"/>
-        <location filename="../mainwindow_tray.cpp" line="200"/>
+        <location filename="../mainwindow_tray.cpp" line="207"/>
         <source>Collapse the chat list</source>
         <translation>चैट सूची समेटें</translation>
     </message>
@@ -657,7 +712,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="26"/>
-        <location filename="../mainwindow_tray.cpp" line="195"/>
+        <location filename="../mainwindow_tray.cpp" line="202"/>
         <source>Fullscreen</source>
         <translation>पूर्ण स्क्रीन</translation>
     </message>
@@ -698,7 +753,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="86"/>
-        <location filename="../mainwindow_tray.cpp" line="197"/>
+        <location filename="../mainwindow_tray.cpp" line="204"/>
         <source>Reset zoom</source>
         <translation>ज़ूम रीसेट करें</translation>
     </message>
@@ -714,182 +769,199 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="114"/>
-        <location filename="../mainwindow_tray.cpp" line="202"/>
+        <location filename="../mainwindow_tray.cpp" line="209"/>
         <source>Translate selection</source>
         <translation>चयन का अनुवाद करें</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="119"/>
-        <location filename="../mainwindow_tray.cpp" line="204"/>
+        <location filename="../mainwindow_tray.cpp" line="211"/>
         <source>Translate message box</source>
         <translation>संदेश बॉक्स का अनुवाद करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="124"/>
+        <location filename="../mainwindow_tray.cpp" line="126"/>
+        <source>Export chat…</source>
+        <translation>चैट निर्यात करें…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="131"/>
         <source>&amp;Toggle theme</source>
         <translation>थीम बदलें (&amp;T)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="135"/>
+        <location filename="../mainwindow_tray.cpp" line="142"/>
         <source>Tabbed view</source>
         <translation>टैब दृश्य</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="142"/>
-        <location filename="../mainwindow_tray.cpp" line="207"/>
+        <location filename="../mainwindow_tray.cpp" line="149"/>
+        <location filename="../mainwindow_tray.cpp" line="215"/>
         <source>Grid view</source>
         <translation>ग्रिड दृश्य</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="160"/>
-        <location filename="../mainwindow_tray.cpp" line="208"/>
+        <location filename="../mainwindow_tray.cpp" line="167"/>
+        <location filename="../mainwindow_tray.cpp" line="216"/>
         <source>Command palette</source>
         <translation>कमांड पैलेट</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="169"/>
+        <location filename="../mainwindow_tray.cpp" line="176"/>
         <source>&amp;About</source>
         <translation>परिचय (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="178"/>
+        <location filename="../mainwindow_tray.cpp" line="185"/>
         <source>&amp;Quit</source>
         <translation>बाहर निकलें (&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="191"/>
+        <location filename="../mainwindow_tray.cpp" line="198"/>
         <source>Reload</source>
         <translation>पुनः लोड करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="192"/>
+        <location filename="../mainwindow_tray.cpp" line="199"/>
         <source>Minimise to tray</source>
         <translation>ट्रे में छोटा करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="193"/>
+        <location filename="../mainwindow_tray.cpp" line="200"/>
         <source>Lock</source>
         <translation>लॉक करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="194"/>
+        <location filename="../mainwindow_tray.cpp" line="201"/>
         <source>Mute audio</source>
         <translation>ऑडियो म्यूट करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="196"/>
+        <location filename="../mainwindow_tray.cpp" line="203"/>
         <source>New chat / open URL</source>
         <translation>नई चैट / URL खोलें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="205"/>
+        <location filename="../mainwindow_tray.cpp" line="212"/>
+        <location filename="../mainwindow_webengine.cpp" line="1356"/>
+        <location filename="../mainwindow_webengine.cpp" line="1360"/>
+        <location filename="../mainwindow_webengine.cpp" line="1373"/>
+        <location filename="../mainwindow_webengine.cpp" line="1424"/>
+        <location filename="../mainwindow_webengine.cpp" line="1460"/>
+        <location filename="../mainwindow_webengine.cpp" line="1490"/>
+        <location filename="../mainwindow_webengine.cpp" line="1494"/>
+        <source>Export chat</source>
+        <translation>चैट निर्यात करें</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="213"/>
         <source>Settings</source>
         <translation>सेटिंग्स</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="206"/>
+        <location filename="../mainwindow_tray.cpp" line="214"/>
         <source>Toggle theme</source>
         <translation>थीम टॉगल करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="209"/>
+        <location filename="../mainwindow_tray.cpp" line="217"/>
         <source>Quit</source>
         <translation>बाहर निकलें</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="214"/>
-        <location filename="../mainwindow_accounts.cpp" line="1214"/>
+        <location filename="../mainwindow_accounts.cpp" line="1215"/>
         <source>Rename…</source>
         <translation>नाम बदलें…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="215"/>
-        <location filename="../mainwindow_accounts.cpp" line="1215"/>
+        <location filename="../mainwindow_accounts.cpp" line="1216"/>
         <source>Open in own window</source>
         <translation>अपनी विंडो में खोलें</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="219"/>
-        <location filename="../mainwindow_accounts.cpp" line="1218"/>
+        <location filename="../mainwindow_accounts.cpp" line="1219"/>
         <source>Remove account</source>
         <translation>खाता हटाएँ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="297"/>
+        <location filename="../mainwindow_accounts.cpp" line="298"/>
         <source>Switch to account: %1</source>
         <translation>इस खाते पर स्विच करें: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="300"/>
-        <location filename="../mainwindow_tray.cpp" line="155"/>
+        <location filename="../mainwindow_accounts.cpp" line="301"/>
+        <location filename="../mainwindow_tray.cpp" line="162"/>
         <source>Add account…</source>
         <translation>खाता जोड़ें…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="305"/>
+        <location filename="../mainwindow_accounts.cpp" line="306"/>
         <source>Insert: %1</source>
         <translation>सम्मिलित करें: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="583"/>
+        <location filename="../mainwindow_accounts.cpp" line="584"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 अपठित</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="990"/>
+        <location filename="../mainwindow_accounts.cpp" line="991"/>
         <source>Add another account</source>
         <translation>एक और खाता जोड़ें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1017"/>
-        <location filename="../mainwindow_accounts.cpp" line="1022"/>
+        <location filename="../mainwindow_accounts.cpp" line="1018"/>
+        <location filename="../mainwindow_accounts.cpp" line="1023"/>
         <source>Restore</source>
         <translation>पुनर्स्थापित करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1018"/>
+        <location filename="../mainwindow_accounts.cpp" line="1019"/>
         <source>messages</source>
         <translation>संदेश</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1018"/>
+        <location filename="../mainwindow_accounts.cpp" line="1019"/>
         <source>message</source>
         <translation>संदेश</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1063"/>
+        <location filename="../mainwindow_accounts.cpp" line="1064"/>
         <source>Add account</source>
         <translation>खाता जोड़ें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1064"/>
+        <location filename="../mainwindow_accounts.cpp" line="1065"/>
         <source>Name for the new account:</source>
         <translation>नए खाते का नाम:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1065"/>
-        <location filename="../mainwindow_accounts.cpp" line="1912"/>
-        <location filename="../mainwindow_accounts.cpp" line="1917"/>
+        <location filename="../mainwindow_accounts.cpp" line="1066"/>
+        <location filename="../mainwindow_accounts.cpp" line="1913"/>
+        <location filename="../mainwindow_accounts.cpp" line="1918"/>
         <source>Account %1</source>
         <translation>खाता %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1092"/>
+        <location filename="../mainwindow_accounts.cpp" line="1093"/>
         <source>Rename account</source>
         <translation>खाते का नाम बदलें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1092"/>
+        <location filename="../mainwindow_accounts.cpp" line="1093"/>
         <source>Account name:</source>
         <translation>खाते का नाम:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1600"/>
+        <location filename="../mainwindow_accounts.cpp" line="1601"/>
         <source>Tip: give an account its own window</source>
         <translation>सुझाव: किसी खाते को उसकी अपनी विंडो दें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1601"/>
+        <location filename="../mainwindow_accounts.cpp" line="1602"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -898,13 +970,13 @@ You can pull any account out into its own window: right-click its tab and choose
 आप किसी भी खाते को उसकी अपनी विंडो में खींच सकते हैं: उसके टैब पर राइट-क्लिक करें और “अपनी विंडो में खोलें” चुनें। उस विंडो को बंद करके खाते को फिर से टैब के रूप में जोड़ें।</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1906"/>
-        <location filename="../mainwindow_accounts.cpp" line="1910"/>
+        <location filename="../mainwindow_accounts.cpp" line="1907"/>
+        <location filename="../mainwindow_accounts.cpp" line="1911"/>
         <source>Account 1</source>
         <translation>खाता 1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="921"/>
+        <location filename="../mainwindow_webengine.cpp" line="929"/>
         <source>Unlock to Reload the App.</source>
         <translation>ऐप्लिकेशन पुनः लोड करने के लिए अनलॉक करें।</translation>
     </message>
@@ -1145,7 +1217,7 @@ Please setup the password in the Settings first.</source>
 कृपया पहले सेटिंग्स में पासवर्ड सेट करें।</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="918"/>
+        <location filename="../mainwindow_webengine.cpp" line="926"/>
         <source>Reloading...</source>
         <translation>पुनः लोड हो रहा है...</translation>
     </message>

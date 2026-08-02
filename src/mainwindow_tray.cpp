@@ -121,6 +121,13 @@ void MainWindow::createActions() {
           &MainWindow::translateComposer);
   addAction(m_translateComposerAction);
 
+  // Export the open conversation (idea #9). No default shortcut; command palette
+  // and Shortcuts expose it.
+  m_exportChatAction = new QAction(tr("Export chat…"), this);
+  connect(m_exportChatAction, &QAction::triggered, this,
+          &MainWindow::exportCurrentChat);
+  addAction(m_exportChatAction);
+
   m_toggleThemeAction = new QAction(tr("&Toggle theme"), this);
   m_toggleThemeAction->setShortcut(
       QKeySequence(Qt::Modifier::CTRL | Qt::Key_T));
@@ -202,6 +209,7 @@ void MainWindow::createActions() {
        tr("Translate selection")},
       {m_translateComposerAction, "translateComposer",
        tr("Translate message box")},
+      {m_exportChatAction, "exportChat", tr("Export chat")},
       {m_settingsAction, "settings", tr("Settings")},
       {m_toggleThemeAction, "toggleTheme", tr("Toggle theme")},
       {m_viewGridAction, "gridView", tr("Grid view")},

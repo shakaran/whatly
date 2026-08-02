@@ -208,6 +208,7 @@ set(SOURCES
     src/hdmedia.cpp
     src/undosend.cpp
     src/translator.cpp
+    src/chatexport.cpp
     src/cannedresponses.cpp
     src/globalshortcut.cpp
     src/privacyblur.cpp
@@ -283,6 +284,7 @@ set(HEADERS
     src/hdmedia.h
     src/undosend.h
     src/translator.h
+    src/chatexport.h
     src/cannedresponses.h
     src/privacyblur.h
     src/chatliststrip.h

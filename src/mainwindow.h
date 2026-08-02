@@ -300,6 +300,15 @@ private:
   // it back into the composer. Empty/failed input is reported to the user.
   void runTranslation(const QString &text, bool intoComposer);
   QString appTargetLanguage() const;
+
+  // Export the open conversation (idea #9): kick the page collector, poll its
+  // progress, then write a .txt + .json + media/ folder into a chosen directory.
+  QAction *m_exportChatAction = nullptr;
+  QTimer *m_exportPollTimer = nullptr;
+  void exportCurrentChat();
+  // Reads the completed collector payload from the page and writes the
+  // transcript, JSON and media files into a dated subfolder of `baseDir`.
+  void writeChatExport(const QString &baseDir);
   class UpdateChecker *m_updateChecker = nullptr;
   QString m_pendingUpdateUrl;
   void initSettingWidget();
