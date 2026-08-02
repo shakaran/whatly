@@ -33,7 +33,15 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=org.freedesktop.ScreenSaver
+  # Read-only access to the standard media/document folders so files dragged
+  # from a host file manager (which delivers a plain file:// path, not a portal
+  # token) can be attached. Scoped to media dirs rather than the whole home to
+  # keep the sandbox tight (issue #32).
   - --filesystem=xdg-download
+  - --filesystem=xdg-pictures:ro
+  - --filesystem=xdg-videos:ro
+  - --filesystem=xdg-documents:ro
+  - --filesystem=xdg-music:ro
 
 cleanup-commands:
   - /app/cleanup-BaseApp.sh

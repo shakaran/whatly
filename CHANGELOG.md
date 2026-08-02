@@ -1,3 +1,12 @@
+## Unreleased
+
+**Flatpak drag-and-drop from media folders (#32).** Files dragged from a host
+file manager arrive as a plain `file://` path with no portal token, which the
+sandbox could not read outside `~/Downloads`. The Flatpak now also gets
+read-only access to the standard Pictures, Videos, Documents and Music folders,
+so dragging media and documents from those works. It stays scoped to those
+folders (no whole-home access); files elsewhere still need a portal-aware source.
+
 ## 6.8.4 (2026-07-31)
 
 **Font hinting option (#37).** WhatsApp Web glyphs could render with heavier

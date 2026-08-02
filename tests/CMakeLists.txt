@@ -24,7 +24,8 @@ set(S ${CMAKE_SOURCE_DIR}/src)
 
 # Shared build-stamp macros the app sources expect.
 set(TEST_DEFS VERSIONSTR="test" GIT_HASH="test" GIT_BRANCH="test"
-              BUILD_TIMESTAMP="test")
+              BUILD_TIMESTAMP="test"
+              WHATLY_SOURCE_DIR="${CMAKE_SOURCE_DIR}")
 
 # ── UI-asset test (widgets: About + RateApp) ────────────────────────────────
 add_executable(tst_ui_assets

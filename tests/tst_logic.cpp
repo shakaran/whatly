@@ -2022,6 +2022,42 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// The Flatpak manifests must grant read access to the standard media folders so
+// files dragged from a host file manager can be attached (#32), while staying
+// scoped: no whole-home or host access, which the Flathub sandbox forbids.
+class TstFlatpakManifest : public QObject {
+  Q_OBJECT
+  static QString read(const QString &rel) {
+    QFile f(QStringLiteral(WHATLY_SOURCE_DIR) + QLatin1Char('/') + rel);
+    if (!f.open(QIODevice::ReadOnly | QIODevice::Text))
+      return QString();
+    return QString::fromUtf8(f.readAll());
+  }
+private slots:
+  void mediaDirsGrantedAndScoped() {
+    const QStringList manifests = {
+        QStringLiteral("packaging/flatpak/net.shakaran.whatly.yml"),
+        QStringLiteral("packaging/flathub/net.shakaran.whatly.yml")};
+    for (const QString &rel : manifests) {
+      const QString m = read(rel);
+      QVERIFY2(!m.isEmpty(), qPrintable(rel));
+      // The read-only media/document grants that make drag-drop work (#32).
+      for (const char *grant :
+           {"--filesystem=xdg-download", "--filesystem=xdg-pictures:ro",
+            "--filesystem=xdg-videos:ro", "--filesystem=xdg-documents:ro",
+            "--filesystem=xdg-music:ro"})
+        QVERIFY2(m.contains(QLatin1String(grant)),
+                 qPrintable(rel + ": missing " + grant));
+      // Stay scoped: never widen to the whole home or the host filesystem.
+      QVERIFY2(!m.contains(QLatin1String("--filesystem=home")),
+               qPrintable(rel + ": must not grant home"));
+      QVERIFY2(!m.contains(QLatin1String("--filesystem=host")),
+               qPrintable(rel + ": must not grant host"));
+    }
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CustomJs: the addon manager stores files, tracks per-addon enabled state, and
 // builds a combined guarded script. Runs in QStandardPaths test mode.
 class TstCustomJs : public QObject {
@@ -2777,6 +2813,7 @@ int main(int argc, char *argv[]) {
   { TstTrayIcon t;            run(&t); }
   { TstDropAttach t;          run(&t); }
   { TstDropResolve t;         run(&t); }
+  { TstFlatpakManifest t;     run(&t); }
   { TstShortcuts t;           run(&t); }
   { TstBackup t;              run(&t); }
   { TstScreenLock t;          run(&t); }
