@@ -1640,6 +1640,36 @@ background:transparent;
            </widget>
           </item>
           <item>
+           <layout class="QHBoxLayout" name="horizontalLayoutUndoSend">
+            <item>
+             <widget class="QCheckBox" name="undoSendCheckBox">
+              <property name="toolTip">
+               <string>Hold a message for a few seconds after you press Enter, showing an "Undo" button before it is actually sent. Press Enter again to send at once.</string>
+              </property>
+              <property name="text">
+               <string>Undo send (hold Enter-sent messages briefly)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="undoSendSecondsSpinBox">
+              <property name="toolTip">
+               <string>How long to hold a message before it is sent.</string>
+              </property>
+              <property name="suffix">
+               <string> s</string>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>30</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
            <widget class="QCheckBox" name="webrtcShieldCheckBox">
             <property name="toolTip">
              <string>Stop WebRTC from revealing your local IP address over non-proxied connections.</string>

@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copia al portapapeles la información de depuración de abajo y abre el gestor de incidencias, para pegarla directamente en el informe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>Informar de un fallo</translation>
     </message>
@@ -201,72 +201,72 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatTheme</name>
     <message>
-        <location filename="../chattheme.cpp" line="156"/>
+        <location filename="../chattheme.cpp" line="184"/>
         <source>WhatsApp (default)</source>
         <translation>WhatsApp (predeterminado)</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="158"/>
+        <location filename="../chattheme.cpp" line="186"/>
         <source>Barbie pink</source>
         <translation>Rosa Barbie</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="160"/>
+        <location filename="../chattheme.cpp" line="188"/>
         <source>Dusty rose</source>
         <translation>Rosa palo</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="162"/>
+        <location filename="../chattheme.cpp" line="190"/>
         <source>Lavender</source>
         <translation>Lavanda</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="164"/>
+        <location filename="../chattheme.cpp" line="192"/>
         <source>Violet</source>
         <translation>Violeta</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="166"/>
+        <location filename="../chattheme.cpp" line="194"/>
         <source>Sky blue</source>
         <translation>Azul cielo</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="168"/>
+        <location filename="../chattheme.cpp" line="196"/>
         <source>Deep ocean</source>
         <translation>Océano profundo</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="170"/>
+        <location filename="../chattheme.cpp" line="198"/>
         <source>Teal</source>
         <translation>Verde azulado</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="172"/>
+        <location filename="../chattheme.cpp" line="200"/>
         <source>Mint</source>
         <translation>Menta</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="174"/>
+        <location filename="../chattheme.cpp" line="202"/>
         <source>Coral</source>
         <translation>Coral</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="176"/>
+        <location filename="../chattheme.cpp" line="204"/>
         <source>Peach</source>
         <translation>Melocotón</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="178"/>
+        <location filename="../chattheme.cpp" line="206"/>
         <source>Gold</source>
         <translation>Oro</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="180"/>
+        <location filename="../chattheme.cpp" line="208"/>
         <source>Crimson</source>
         <translation>Carmesí</translation>
     </message>
     <message>
-        <location filename="../chattheme.cpp" line="182"/>
+        <location filename="../chattheme.cpp" line="210"/>
         <source>Graphite</source>
         <translation>Grafito</translation>
     </message>
@@ -486,6 +486,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
+        <location filename="../mainwindow_tray.cpp" line="214"/>
         <source>Recent unread</source>
         <translation>No leídos recientes</translation>
     </message>
@@ -495,140 +496,136 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Esperando a la red…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="104"/>
-        <location filename="../mainwindow.cpp" line="1111"/>
-        <location filename="../mainwindow.cpp" line="1207"/>
+        <location filename="../mainwindow.cpp" line="105"/>
+        <location filename="../mainwindow.cpp" line="1123"/>
+        <location filename="../mainwindow.cpp" line="1219"/>
         <source>No WhatsApp window is open</source>
         <translation>No hay ninguna ventana de WhatsApp abierta</translation>
     </message>
     <message>
-        <source>Attachments to a contact or group by name aren&apos;t supported yet over the web backend — send text, or use a phone number.</source>
-        <translation type="vanished">No se admite todavía adjuntar archivos a un contacto o grupo por nombre con el backend web — envía texto, o usa un número de teléfono.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1103"/>
+        <location filename="../mainwindow.cpp" line="1115"/>
         <source>Could not understand the recipient: %1</source>
         <translation>No se pudo interpretar el destinatario: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1166"/>
+        <location filename="../mainwindow.cpp" line="1178"/>
         <source>Opening the group and sending…</source>
         <translation>Abriendo el grupo y enviando…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1198"/>
+        <location filename="../mainwindow.cpp" line="1210"/>
         <source>The local API could not start: %1</source>
         <translation>No se pudo iniciar la API local: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1078"/>
+        <location filename="../mainwindow.cpp" line="1090"/>
         <source>Cloud API send failed: %1</source>
         <translation>Fallo al enviar por la Cloud API: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1069"/>
+        <location filename="../mainwindow.cpp" line="1081"/>
         <source>The Cloud API is not configured.</source>
         <translation>La Cloud API no está configurada.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1064"/>
+        <location filename="../mainwindow.cpp" line="1076"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>La Cloud API necesita un número de teléfono como destinatario.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1167"/>
+        <location filename="../mainwindow.cpp" line="1179"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>Abriendo el chat con &quot;%1&quot; y enviando…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="109"/>
+        <location filename="../mainwindow.cpp" line="110"/>
         <source>Reminder</source>
         <translation>Recordatorio</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="109"/>
+        <location filename="../mainwindow.cpp" line="110"/>
         <source>Reminder: %1</source>
         <translation>Recordatorio: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="188"/>
+        <location filename="../mainwindow.cpp" line="189"/>
         <source>Update available</source>
         <translation>Actualización disponible</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="189"/>
+        <location filename="../mainwindow.cpp" line="190"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Whatly %1 ya está disponible. Haz clic para abrir la página de descarga.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="853"/>
-        <location filename="../mainwindow.cpp" line="859"/>
+        <location filename="../mainwindow.cpp" line="865"/>
+        <location filename="../mainwindow.cpp" line="871"/>
         <location filename="../mainwindow_webengine.cpp" line="920"/>
         <location filename="../mainwindow_webengine.cpp" line="923"/>
         <source>| Error</source>
         <translation>| Error</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="854"/>
+        <location filename="../mainwindow.cpp" line="866"/>
         <source>Unlock to access Settings.</source>
         <translation>Desbloquee para acceder a los ajustes.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="860"/>
+        <location filename="../mainwindow.cpp" line="872"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>No se puede inicializar el módulo de ajustes.
 WebEngine no está inicializado.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="881"/>
+        <location filename="../mainwindow.cpp" line="893"/>
         <source> | Action required</source>
         <translation> | Acción requerida</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="882"/>
+        <location filename="../mainwindow.cpp" line="894"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>La página debe recargarse para continuar.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1287"/>
+        <location filename="../mainwindow.cpp" line="1299"/>
         <source>Restart</source>
         <translation>Reiniciar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1288"/>
+        <location filename="../mainwindow.cpp" line="1300"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly no pudo iniciar una nueva instancia, por lo que no ha cerrado esta. Cierra la aplicación y vuelve a abrirla.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1333"/>
+        <location filename="../mainwindow.cpp" line="1345"/>
         <source>Expand the chat list</source>
         <translation>Expandir la lista de chats</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1334"/>
+        <location filename="../mainwindow.cpp" line="1346"/>
         <location filename="../mainwindow_tray.cpp" line="188"/>
         <source>Collapse the chat list</source>
         <translation>Contraer la lista de chats</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1400"/>
+        <location filename="../mainwindow.cpp" line="1443"/>
         <source>Open</source>
         <translation>Abrir</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1410"/>
+        <location filename="../mainwindow.cpp" line="1462"/>
         <location filename="../mainwindow_tray.cpp" line="21"/>
         <source>New Chat</source>
         <translation>Nuevo chat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1411"/>
+        <location filename="../mainwindow.cpp" line="1463"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Introduzca un número de WhatsApp válido con prefijo de país (ej. +34XXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1441"/>
+        <location filename="../mainwindow.cpp" line="1493"/>
         <source>Rate Application</source>
         <translation>Valorar la aplicación</translation>
     </message>
@@ -773,99 +770,99 @@ Configure primero la contraseña en los ajustes.
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="196"/>
-        <location filename="../mainwindow_accounts.cpp" line="1087"/>
+        <location filename="../mainwindow_accounts.cpp" line="214"/>
+        <location filename="../mainwindow_accounts.cpp" line="1213"/>
         <source>Rename…</source>
         <translation>Renombrar…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="197"/>
-        <location filename="../mainwindow_accounts.cpp" line="1088"/>
+        <location filename="../mainwindow_accounts.cpp" line="215"/>
+        <location filename="../mainwindow_accounts.cpp" line="1214"/>
         <source>Open in own window</source>
         <translation>Abrir en ventana propia</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="201"/>
-        <location filename="../mainwindow_accounts.cpp" line="1091"/>
+        <location filename="../mainwindow_accounts.cpp" line="219"/>
+        <location filename="../mainwindow_accounts.cpp" line="1217"/>
         <source>Remove account</source>
         <translation>Eliminar cuenta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="278"/>
+        <location filename="../mainwindow_accounts.cpp" line="296"/>
         <source>Switch to account: %1</source>
         <translation>Cambiar a la cuenta: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="281"/>
+        <location filename="../mainwindow_accounts.cpp" line="299"/>
         <location filename="../mainwindow_tray.cpp" line="143"/>
         <source>Add account…</source>
         <translation>Añadir cuenta…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="286"/>
+        <location filename="../mainwindow_accounts.cpp" line="304"/>
         <source>Insert: %1</source>
         <translation>Insertar: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="564"/>
+        <location filename="../mainwindow_accounts.cpp" line="582"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 sin leer</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="864"/>
+        <location filename="../mainwindow_accounts.cpp" line="989"/>
         <source>Add another account</source>
         <translation>Añadir otra cuenta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="890"/>
-        <location filename="../mainwindow_accounts.cpp" line="895"/>
+        <location filename="../mainwindow_accounts.cpp" line="1016"/>
+        <location filename="../mainwindow_accounts.cpp" line="1021"/>
         <source>Restore</source>
         <translation>Restaurar</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="891"/>
+        <location filename="../mainwindow_accounts.cpp" line="1017"/>
         <source>messages</source>
         <translation>mensajes</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="891"/>
+        <location filename="../mainwindow_accounts.cpp" line="1017"/>
         <source>message</source>
         <translation>mensaje</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="936"/>
+        <location filename="../mainwindow_accounts.cpp" line="1062"/>
         <source>Add account</source>
         <translation>Añadir cuenta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="937"/>
+        <location filename="../mainwindow_accounts.cpp" line="1063"/>
         <source>Name for the new account:</source>
         <translation>Nombre de la nueva cuenta:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="938"/>
-        <location filename="../mainwindow_accounts.cpp" line="1784"/>
-        <location filename="../mainwindow_accounts.cpp" line="1789"/>
+        <location filename="../mainwindow_accounts.cpp" line="1064"/>
+        <location filename="../mainwindow_accounts.cpp" line="1911"/>
+        <location filename="../mainwindow_accounts.cpp" line="1916"/>
         <source>Account %1</source>
         <translation>Cuenta %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="965"/>
+        <location filename="../mainwindow_accounts.cpp" line="1091"/>
         <source>Rename account</source>
         <translation>Renombrar cuenta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="965"/>
+        <location filename="../mainwindow_accounts.cpp" line="1091"/>
         <source>Account name:</source>
         <translation>Nombre de la cuenta:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1472"/>
+        <location filename="../mainwindow_accounts.cpp" line="1599"/>
         <source>Tip: give an account its own window</source>
         <translation>Consejo: da a una cuenta su propia ventana</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1473"/>
+        <location filename="../mainwindow_accounts.cpp" line="1600"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -874,8 +871,8 @@ You can pull any account out into its own window: right-click its tab and choose
 Puedes sacar cualquier cuenta a su propia ventana: haz clic derecho en su pestaña y elige «Abrir en ventana propia». Cierra esa ventana para volver a acoplar la cuenta como pestaña.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1778"/>
-        <location filename="../mainwindow_accounts.cpp" line="1782"/>
+        <location filename="../mainwindow_accounts.cpp" line="1905"/>
+        <location filename="../mainwindow_accounts.cpp" line="1909"/>
         <source>Account 1</source>
         <translation>Cuenta 1</translation>
     </message>
@@ -885,22 +882,14 @@ Puedes sacar cualquier cuenta a su propia ventana: haz clic derecho en su pesta�
         <translation>Desbloquee para recargar la aplicación.</translation>
     </message>
     <message>
-        <source>Sending through the Cloud API is not available yet.</source>
-        <translation type="vanished">El envío a través de la Cloud API aún no está disponible.</translation>
-    </message>
-    <message>
-        <source>Only phone-number recipients are supported so far (got: %1).</source>
-        <translation type="vanished">Por ahora solo se admiten destinatarios con número de teléfono (recibido: %1).</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1132"/>
-        <location filename="../mainwindow.cpp" line="1213"/>
+        <location filename="../mainwindow.cpp" line="1144"/>
+        <location filename="../mainwindow.cpp" line="1225"/>
         <source>Could not read the file to send: %1</source>
         <translation>No se pudo leer el fichero a enviar: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1141"/>
-        <location filename="../mainwindow.cpp" line="1223"/>
+        <location filename="../mainwindow.cpp" line="1153"/>
+        <location filename="../mainwindow.cpp" line="1235"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>El fichero es demasiado grande para enviarse por el backend web.</translation>
     </message>
@@ -1003,12 +992,12 @@ Puedes sacar cualquier cuenta a su propia ventana: haz clic derecho en su pesta�
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../common.cpp" line="31"/>
+        <location filename="../common.cpp" line="32"/>
         <source>WhatsApp Web %1</source>
         <translation>WhatsApp Web %1</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="33"/>
+        <location filename="../common.cpp" line="34"/>
         <source>Build token: %1</source>
         <translation>Token de compilación: %1</translation>
     </message>
@@ -1052,77 +1041,77 @@ Puedes sacar cualquier cuenta a su propia ventana: haz clic derecho en su pesta�
         <translation>Ejecútalo de nuevo sin --dry-run para realizar la copia.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="531"/>
+        <location filename="../main.cpp" line="536"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Cliente de WhatsApp Web con múltiples funciones, basado en Qt WebEngine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="538"/>
+        <location filename="../main.cpp" line="543"/>
         <source>Displays help on commandline options</source>
         <translation>Muestra la ayuda de las opciones de línea de comandos</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="543"/>
+        <location filename="../main.cpp" line="548"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>Abre los ajustes en una instancia en ejecución de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="548"/>
+        <location filename="../main.cpp" line="553"/>
         <source>Locks a running instance of </source>
         <translation>Bloquea una instancia en ejecución de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="554"/>
+        <location filename="../main.cpp" line="559"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>Abre el diálogo «Acerca de» en una instancia en ejecución de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="559"/>
+        <location filename="../main.cpp" line="564"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>Abre el diálogo de mensajes programados en una instancia en ejecución de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="566"/>
+        <location filename="../main.cpp" line="571"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>Alterna entre tema claro y oscuro en una instancia en ejecución de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="573"/>
+        <location filename="../main.cpp" line="578"/>
         <source>Reload the app in a running instance of </source>
         <translation>Recarga la aplicación en una instancia en ejecución de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="579"/>
+        <location filename="../main.cpp" line="584"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>Abre el diálogo de chat nuevo en una instancia en ejecución de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="592"/>
+        <location filename="../main.cpp" line="597"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ejecutar como una cuenta separada con su propia sesión y ajustes, en su propia ventana&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="609"/>
+        <location filename="../main.cpp" line="614"/>
         <source>Show main window of running instance of </source>
         <translation>Muestra la ventana principal de la instancia en ejecución de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="616"/>
+        <location filename="../main.cpp" line="621"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>Copia los ajustes y la sesión iniciada de una instalación anterior (p. ej. la versión «whatsie» antigua) a esta y luego sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="623"/>
+        <location filename="../main.cpp" line="628"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>Con --migrate-from, solo informa de lo que se copiaría</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="641"/>
+        <location filename="../main.cpp" line="646"/>
         <source>Print the current unread message count and exit</source>
         <translation>Muestra el número actual de mensajes sin leer y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1161"/>
+        <location filename="../main.cpp" line="1166"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>El bloqueo de la aplicación no está configurado.
@@ -1205,11 +1194,11 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>No hay nada que copiar</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>No se puede crear %1</translation>
     </message>
@@ -1289,174 +1278,184 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>Mostrar la lista de chats</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1259"/>
+        <location filename="../main.cpp" line="1264"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Se recuperó de un fallo de inicio cambiando a renderizado seguro. Puedes ajustarlo en Ajustes → Rendimiento.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="647"/>
+        <location filename="../main.cpp" line="652"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>Envía un mensaje a través de la instancia en ejecución y sale (necesita --to y --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="651"/>
+        <location filename="../main.cpp" line="656"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>Destinatario para --send: un número de teléfono (internacional), un id de grupo o un nombre de contacto</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="656"/>
+        <location filename="../main.cpp" line="661"/>
         <source>Message text for --send</source>
         <translation>Texto del mensaje para --send</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="668"/>
+        <location filename="../main.cpp" line="673"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>Cómo entrega --send: &apos;web&apos; (la sesión de WhatsApp Web en ejecución) o &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="659"/>
+        <location filename="../main.cpp" line="664"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>Adjunta un fichero para --send (su --message, si lo hay, será el pie de foto)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="602"/>
+        <location filename="../main.cpp" line="607"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>Interno: espera a que finalice el proceso con este id antes de iniciar; lo usa &quot;Reiniciar ahora&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="664"/>
+        <location filename="../main.cpp" line="669"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Pie de foto para el adjunto --file (alias de --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="674"/>
+        <location filename="../main.cpp" line="679"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>Usa la plantilla guardada con este nombre como mensaje de --send (rellena sus {{campos}} con --var)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="679"/>
+        <location filename="../main.cpp" line="684"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>Rellena un campo de la plantilla: key=value (repetible)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="683"/>
+        <location filename="../main.cpp" line="688"/>
         <source>List the saved message templates and exit</source>
         <translation>Lista las plantillas de mensaje guardadas y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="686"/>
+        <location filename="../main.cpp" line="691"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>Guarda (o reemplaza) una plantilla de mensaje y sale: name=body</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="690"/>
+        <location filename="../main.cpp" line="695"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Elimina la plantilla de mensaje con este nombre y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="695"/>
+        <location filename="../main.cpp" line="700"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>Activa la auto-respuesta a mensajes entrantes y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="698"/>
+        <location filename="../main.cpp" line="703"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>Desactiva la auto-respuesta y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="701"/>
+        <location filename="../main.cpp" line="706"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>Lista las reglas de auto-respuesta activas (con su estado) y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="704"/>
+        <location filename="../main.cpp" line="709"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Usa este fichero JSON como fuente de reglas de auto-respuesta y sale (vacío para quitarlo)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="710"/>
+        <location filename="../main.cpp" line="715"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>Establece el id del número de teléfono de la Cloud API y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="714"/>
+        <location filename="../main.cpp" line="719"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>Establece el token de acceso de la Cloud API y sale (se guarda en la configuración de la cuenta)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="719"/>
+        <location filename="../main.cpp" line="724"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>Establece la versión de graph de la Cloud API (p. ej. v21.0) y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="723"/>
+        <location filename="../main.cpp" line="728"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>Muestra si la Cloud API está configurada y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="726"/>
+        <location filename="../main.cpp" line="731"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>Para --send --backend cloud: envía esta plantilla aprobada por Meta</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="730"/>
+        <location filename="../main.cpp" line="735"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>Código de idioma para --cloud-template (p. ej. es, en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="734"/>
+        <location filename="../main.cpp" line="739"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Un parámetro posicional del cuerpo para --cloud-template (repetible)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="739"/>
+        <location filename="../main.cpp" line="744"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>Activa la API HTTP local y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="742"/>
+        <location filename="../main.cpp" line="747"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>Desactiva la API HTTP local y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="745"/>
+        <location filename="../main.cpp" line="750"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>Establece el puerto de la API HTTP local (por defecto 8590) y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="749"/>
+        <location filename="../main.cpp" line="754"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>Establece el token Bearer de la API HTTP local y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="753"/>
+        <location filename="../main.cpp" line="758"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>Muestra la configuración de la API HTTP local y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="757"/>
+        <location filename="../main.cpp" line="762"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>Activa la recepción de webhooks de la Cloud API y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="760"/>
+        <location filename="../main.cpp" line="765"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>Desactiva la recepción de webhooks de la Cloud API y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="763"/>
+        <location filename="../main.cpp" line="768"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>Establece el token de verificación del webhook de la Cloud API y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="767"/>
+        <location filename="../main.cpp" line="772"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>Establece el secreto de app de Meta para comprobar la firma del webhook y sale</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="771"/>
+        <location filename="../main.cpp" line="776"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>Muestra la configuración del webhook de la Cloud API y sale</translation>
+    </message>
+    <message>
+        <location filename="../undosend.cpp" line="129"/>
+        <source>Undo</source>
+        <translation>Deshacer</translation>
+    </message>
+    <message>
+        <location filename="../undosend.cpp" line="131"/>
+        <source>Sending in</source>
+        <translation>Enviando en</translation>
     </message>
 </context>
 <context>
@@ -1677,85 +1676,102 @@ Configure primero la contraseña en los ajustes.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <location filename="../settingswidget.ui" line="406"/>
         <source>VIP contacts</source>
         <translation>Contactos VIP</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="423"/>
         <source>Muted contacts</source>
         <translation>Contactos silenciados</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="413"/>
         <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
         <translation>Nombres de contactos o grupos, separados por comas, que siempre notifican, incluso durante No molestar (sin distinguir mayúsculas).</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="430"/>
         <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
         <translation>Nombres de contactos o grupos, separados por comas, cuyas notificaciones nunca se muestran (su contador de no leídos sigue actualizándose).</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="416"/>
         <source>e.g. Alice, Work group</source>
         <translation>p. ej. Alicia, Grupo de trabajo</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="433"/>
         <source>e.g. Noisy group</source>
         <translation>p. ej. Grupo ruidoso</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1782"/>
         <source>Suspend inactive accounts</source>
         <translation>Suspender cuentas inactivas</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1779"/>
         <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
         <translation>Libera memoria suspendiendo las cuentas que no estás viendo. Una cuenta suspendida no recibe mensajes hasta que vuelves a ella. Las configuraciones de una sola cuenta no se ven afectadas.</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1789"/>
         <source>after</source>
         <translation>tras</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1796"/>
         <source> min</source>
         <translation> min</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1761"/>
         <source>Font hinting</source>
         <translation>Hinting de fuentes</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="1768"/>
         <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
         <translation>Cómo se ajustan los bordes de los glifos a los píxeles. Automático sigue tu sistema; un nivel más ligero puede corregir texto pesado o irregular.</translation>
     </message>
     <message>
+        <location filename="../settingswidget.cpp" line="1304"/>
         <source>Slight</source>
         <translation>Ligero</translation>
     </message>
     <message>
+        <location filename="../settingswidget.cpp" line="1305"/>
         <source>Medium</source>
         <translation>Mediano</translation>
     </message>
     <message>
+        <location filename="../settingswidget.cpp" line="1306"/>
         <source>Full</source>
         <translation>Completo</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="327"/>
         <source>Play sound</source>
         <translation>Reproducir sonido</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="324"/>
         <source>Ask the notification service to play a sound for new messages.</source>
         <translation>Pide al servicio de notificaciones que reproduzca un sonido para los mensajes nuevos.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="647"/>
+        <location filename="../settingswidget.ui" line="691"/>
         <source>Interface font size</source>
         <translation>Tamaño de fuente de la interfaz</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="657"/>
+        <location filename="../settingswidget.ui" line="701"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="654"/>
+        <location filename="../settingswidget.ui" line="698"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tamaño en puntos de la interfaz de la aplicación: menús, ajustes y diálogos. No afecta al texto de WhatsApp Web; para eso usa el zoom.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -1765,12 +1781,12 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>Tema de pantalla</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="673"/>
+        <location filename="../settingswidget.ui" line="717"/>
         <source>Reload automatically after a crash</source>
         <translation>Recargar automáticamente tras un fallo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="670"/>
+        <location filename="../settingswidget.ui" line="714"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si el proceso de la página de WhatsApp Web falla, recargarlo automáticamente en lugar de preguntar primero.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -1795,20 +1811,17 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>Estilo de los widgets</translation>
     </message>
     <message>
-        <source>Widget Theme</source>
-        <translation type="vanished">Tema de los widgets</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="166"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Based on your system timezone and location.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Según la zona horaria y la ubicación de su sistema.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="169"/>
-        <location filename="../settingswidget.ui" line="1623"/>
-        <location filename="../settingswidget.ui" line="1667"/>
-        <location filename="../settingswidget.ui" line="1772"/>
-        <location filename="../settingswidget.cpp" line="1422"/>
+        <location filename="../settingswidget.ui" line="1697"/>
+        <location filename="../settingswidget.ui" line="1741"/>
+        <location filename="../settingswidget.ui" line="1898"/>
+        <location filename="../settingswidget.cpp" line="1302"/>
+        <location filename="../settingswidget.cpp" line="1477"/>
         <source>Automatic</source>
         <translation>Automático</translation>
     </message>
@@ -1864,7 +1877,7 @@ Configure primero la contraseña en los ajustes.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="297"/>
-        <location filename="../settingswidget.ui" line="1196"/>
+        <location filename="../settingswidget.ui" line="1240"/>
         <source> Secs</source>
         <translation> s</translation>
     </message>
@@ -1879,1229 +1892,1238 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>Cómo se envían las notificaciones nativas en Linux. El modo automático usa el portal de escritorio dentro de un espacio aislado de Flatpak y el servicio del sistema en los demás casos.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="324"/>
+        <location filename="../settingswidget.ui" line="334"/>
         <source>Suppress notification popups during a daily quiet period. Unread badges still update; only the popup is held back.</source>
         <translation>Silencia las notificaciones emergentes durante un periodo de silencio diario. Los distintivos de mensajes sin leer siguen actualizándose; solo se retiene la ventana emergente.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="327"/>
+        <location filename="../settingswidget.ui" line="337"/>
         <source>Do Not Disturb</source>
         <translation>No molestar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="336"/>
+        <location filename="../settingswidget.ui" line="346"/>
         <source>From</source>
         <translation>Desde</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="343"/>
-        <location filename="../settingswidget.ui" line="357"/>
+        <location filename="../settingswidget.ui" line="353"/>
+        <location filename="../settingswidget.ui" line="367"/>
         <source>HH:mm</source>
         <translation>HH:mm</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="350"/>
+        <location filename="../settingswidget.ui" line="360"/>
         <source>to</source>
         <translation>hasta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="379"/>
+        <location filename="../settingswidget.ui" line="389"/>
         <source>Highlight keywords</source>
         <translation>Resaltar palabras clave</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="386"/>
+        <location filename="../settingswidget.ui" line="396"/>
         <source>Comma-separated words that always notify, even during Do Not Disturb (case-insensitive).</source>
         <translation>Palabras separadas por comas que siempre notifican, incluso durante «No molestar» (no distingue mayúsculas de minúsculas).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="389"/>
+        <location filename="../settingswidget.ui" line="399"/>
         <source>e.g. urgent, boss, invoice</source>
         <translation>p. ej. urgente, jefe, factura</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="425"/>
+        <location filename="../settingswidget.ui" line="469"/>
         <source>Use Native File Dialog</source>
         <translation>Usar el diálogo de archivos nativo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="432"/>
+        <location filename="../settingswidget.ui" line="476"/>
         <source>Mute Audio from Page</source>
         <translation>Silenciar el audio de la página</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="439"/>
+        <location filename="../settingswidget.ui" line="483"/>
         <source>Disable Auto Playback of Media</source>
         <translation>Desactivar la reproducción automática de medios</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="446"/>
+        <location filename="../settingswidget.ui" line="490"/>
         <source>Minimize in tray on start</source>
         <translation>Iniciar minimizado en la bandeja</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="453"/>
+        <location filename="../settingswidget.ui" line="497"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window&apos;s position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cuando usas más de una ventana de cuenta, se recuerda la posición, el tamaño y las pestañas de cada ventana y se restauran la próxima vez. Desactivado por defecto: la aplicación vuelve como una sola ventana con todas las cuentas.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="456"/>
+        <location filename="../settingswidget.ui" line="500"/>
         <source>Remember multiple window positions on restart</source>
         <translation>Recordar la posición de varias ventanas al reiniciar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="463"/>
+        <location filename="../settingswidget.ui" line="507"/>
         <source>Show/Hide on clicking tray Icon (if supported)</source>
         <translation>Mostrar/ocultar al pulsar el icono de la bandeja (si se admite)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="470"/>
+        <location filename="../settingswidget.ui" line="514"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close the emoji, GIF &amp;amp; sticker panel when you click elsewhere. WhatsApp Web otherwise keeps it open until the button is pressed again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cierra el panel de emojis, GIF y stickers al pulsar en otro sitio. De lo contrario, WhatsApp Web lo mantiene abierto hasta que se pulsa el botón de nuevo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="473"/>
+        <location filename="../settingswidget.ui" line="517"/>
         <source>Close emoji/sticker panel when clicking outside</source>
         <translation>Cerrar el panel de emojis/stickers al pulsar fuera</translation>
     </message>
     <message>
-        <source>Interface language</source>
-        <translation type="vanished">Idioma de la interfaz</translation>
-    </message>
-    <message>
-        <location filename="../settingswidget.ui" line="487"/>
+        <location filename="../settingswidget.ui" line="531"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of Whatly&apos;s own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Idioma de la interfaz de Whatly. Se aplica al reiniciar la app. El idioma de los chats viene de WhatsApp Web y no se cambia aquí.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="494"/>
+        <location filename="../settingswidget.ui" line="538"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a light/dark button to WhatsApp&apos;s own sidebar, just above your profile picture.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Añade un botón claro/oscuro a la barra lateral de WhatsApp, justo encima de tu foto de perfil.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="497"/>
+        <location filename="../settingswidget.ui" line="541"/>
         <source>Theme button in WhatsApp&apos;s sidebar</source>
         <translation>Botón de tema en la barra lateral de WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="504"/>
+        <location filename="../settingswidget.ui" line="548"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that blurs and unblurs your chats in one click, without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Añade a la barra lateral de WhatsApp un botón que desenfoca y revela tus chats con un clic, sin abrir Ajustes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="507"/>
+        <location filename="../settingswidget.ui" line="551"/>
         <source>Blur button in WhatsApp&apos;s sidebar</source>
         <translation>Botón de desenfoque en la barra lateral de WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="524"/>
+        <location filename="../settingswidget.ui" line="568"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Añade un botón a la propia barra lateral de WhatsApp que contrae la lista de chats a una franja de fotos de perfil, dando a la conversación el ancho que estaba ocupando.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="527"/>
+        <location filename="../settingswidget.ui" line="571"/>
         <source>Chat-list collapse button in WhatsApp&apos;s sidebar</source>
         <translation>Botón para contraer la lista de chats en la barra lateral de WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="534"/>
+        <location filename="../settingswidget.ui" line="578"/>
         <source>Collapsed chat preview</source>
         <translation>Vista previa del chat contraído</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="541"/>
+        <location filename="../settingswidget.ui" line="585"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform&apos;s font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El tamaño con que se dibuja la vista previa que aparece al pasar el cursor sobre una foto en la lista de chats contraída. El valor predeterminado se adapta a la representación de fuentes de esta plataforma; elige otro si se ve pequeño o grande en tu pantalla.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="548"/>
+        <location filename="../settingswidget.ui" line="592"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Usa un icono de bandeja de un solo color que combine con el resto de tu panel, en lugar del verde de WhatsApp. El icono también se atenúa cuando WhatsApp no está conectado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="551"/>
+        <location filename="../settingswidget.ui" line="595"/>
         <source>Monochrome tray icon</source>
         <translation>Icono de bandeja monocromo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="558"/>
+        <location filename="../settingswidget.ui" line="602"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anima el desplazamiento en lugar de saltar línea por línea.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="561"/>
+        <location filename="../settingswidget.ui" line="605"/>
         <source>Smooth scrolling</source>
         <translation>Desplazamiento suave</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="568"/>
-        <location filename="../settingswidget.cpp" line="1210"/>
+        <location filename="../settingswidget.ui" line="612"/>
+        <location filename="../settingswidget.cpp" line="1219"/>
         <source>Custom CSS</source>
         <translation>CSS personalizado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="577"/>
+        <location filename="../settingswidget.ui" line="621"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Carga un archivo .css para reestilizar WhatsApp Web; las hojas de estilo de la comunidad (catppuccin y similares) funcionan aquí. Se aplica sobre el tema del chat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="580"/>
+        <location filename="../settingswidget.ui" line="624"/>
         <source>Choose file…</source>
         <translation>Elegir archivo…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="587"/>
-        <location filename="../settingswidget.ui" line="727"/>
+        <location filename="../settingswidget.ui" line="631"/>
+        <location filename="../settingswidget.ui" line="771"/>
         <source>Clear</source>
         <translation>Borrar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="596"/>
+        <location filename="../settingswidget.ui" line="640"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Elimina por completo el icono de la bandeja del sistema. Sin bandeja desde la que restaurar, al cerrar la ventana la app se cierra en lugar de ocultarse.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="599"/>
+        <location filename="../settingswidget.ui" line="643"/>
         <source>Hide tray icon</source>
         <translation>Ocultar icono de bandeja</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="606"/>
+        <location filename="../settingswidget.ui" line="650"/>
         <source>Font family</source>
         <translation>Familia de fuente</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="613"/>
+        <location filename="../settingswidget.ui" line="657"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Render WhatsApp Web&apos;s text in a font installed on your system. Emoji, icons and monospaced message formatting are left untouched.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Muestra el texto de WhatsApp Web con una fuente instalada en tu sistema. Los emojis, los iconos y el formato monoespaciado de los mensajes no se modifican.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="620"/>
+        <location filename="../settingswidget.ui" line="664"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Oculta la sección «Estados silenciados» del panel de Estados/Novedades, de modo que los estados de los contactos que has silenciado no aparezcan en absoluto.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="623"/>
+        <location filename="../settingswidget.ui" line="667"/>
         <source>Hide muted status updates</source>
         <translation>Ocultar estados silenciados</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="630"/>
+        <location filename="../settingswidget.ui" line="674"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Subraya las palabras mal escritas mientras escribes y ofrece correcciones en el menú del clic derecho.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="633"/>
-        <location filename="../settingswidget.cpp" line="1817"/>
+        <location filename="../settingswidget.ui" line="677"/>
+        <location filename="../settingswidget.cpp" line="1888"/>
         <source>Check spelling as I type</source>
         <translation>Corregir ortografía mientras escribo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="640"/>
+        <location filename="../settingswidget.ui" line="684"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;El idioma con el que se comprueba.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="680"/>
+        <location filename="../settingswidget.ui" line="724"/>
         <source>Privacy blur</source>
         <translation>Desenfoque de privacidad</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="687"/>
+        <location filename="../settingswidget.ui" line="731"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Desenfoca tus chats hasta que pasas el ratón por encima, para que nadie que mire la pantalla pueda leerlos. Al pasar sobre una fila se revela solo esa fila.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Chat theme</source>
-        <translation type="vanished">Tema del chat</translation>
-    </message>
-    <message>
-        <location filename="../settingswidget.ui" line="694"/>
+        <location filename="../settingswidget.ui" line="738"/>
         <source>Chat colour Tint</source>
         <translation>Tinte de color del chat</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="701"/>
+        <location filename="../settingswidget.ui" line="745"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolorea WhatsApp Web en sí. Las fotos, los avatares y los stickers mantienen sus colores. Funciona sobre el tema claro u oscuro, el que esté activo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="708"/>
-        <location filename="../settingswidget.cpp" line="1186"/>
+        <location filename="../settingswidget.ui" line="752"/>
+        <location filename="../settingswidget.cpp" line="1195"/>
         <source>Chat wallpaper</source>
         <translation>Fondo de chat</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="717"/>
+        <location filename="../settingswidget.ui" line="761"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Usa una de tus propias imágenes como fondo del panel de chat, como hace WhatsApp en Android. La imagen se guarda dentro de Whatly, no se sube a ningún sitio y solo la ves tú.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="720"/>
+        <location filename="../settingswidget.ui" line="764"/>
         <source>Choose image…</source>
         <translation>Elegir imagen…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="736"/>
+        <location filename="../settingswidget.ui" line="780"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Los inicios de sesión nuevos aparecerán como «Whatly para Linux» (o la plataforma correspondiente) en la lista de dispositivos vinculados de su teléfono, en lugar de «Google Chrome (Linux)». El nombre se guarda en el teléfono al vincular un dispositivo, así que cambiar esto solo afecta a vinculaciones futuras: cierre la sesión y vuelva a vincularla para renombrar una sesión existente.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="739"/>
+        <location filename="../settingswidget.ui" line="783"/>
         <source>Identify as Whatly in linked devices</source>
         <translation>Identificarse como Whatly en los dispositivos vinculados</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="753"/>
+        <location filename="../settingswidget.ui" line="797"/>
         <source>User Agent</source>
         <translation>Agente de usuario</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="756"/>
+        <location filename="../settingswidget.ui" line="800"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Avanzado — no cambie esto a menos que sepa exactamente lo que hace. Un user agent no estándar puede impedir que WhatsApp cargue, y los valores inusuales pueden hacer que su cuenta de WhatsApp sea marcada o incluida en listas negras.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="766"/>
+        <location filename="../settingswidget.ui" line="810"/>
         <source>  Set</source>
         <translation>  Aplicar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="777"/>
+        <location filename="../settingswidget.ui" line="821"/>
         <source>Reset to default</source>
         <translation>Restablecer valores por defecto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="800"/>
+        <location filename="../settingswidget.ui" line="844"/>
         <source>Zoom factor when normal</source>
         <translation>Factor de zoom en ventana normal</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="828"/>
-        <location filename="../settingswidget.ui" line="963"/>
+        <location filename="../settingswidget.ui" line="872"/>
+        <location filename="../settingswidget.ui" line="1007"/>
         <source>Zoom Out</source>
         <translation>Reducir</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="867"/>
-        <location filename="../settingswidget.ui" line="1002"/>
+        <location filename="../settingswidget.ui" line="911"/>
+        <location filename="../settingswidget.ui" line="1046"/>
         <source>Zoom In</source>
         <translation>Ampliar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="912"/>
-        <location filename="../settingswidget.ui" line="1047"/>
+        <location filename="../settingswidget.ui" line="956"/>
+        <location filename="../settingswidget.ui" line="1091"/>
         <source>reset</source>
         <translation>restablecer</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="935"/>
+        <location filename="../settingswidget.ui" line="979"/>
         <source>Zoom factor when maximized/fullscreen</source>
         <translation>Factor de zoom en maximizado/pantalla completa</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1070"/>
+        <location filename="../settingswidget.ui" line="1114"/>
         <source>Minimize to tray</source>
         <translation>Minimizar a la bandeja</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1079"/>
+        <location filename="../settingswidget.ui" line="1123"/>
         <source>Quit</source>
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1091"/>
+        <location filename="../settingswidget.ui" line="1135"/>
         <source>Global shortcuts</source>
         <translation>Atajos globales</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1098"/>
+        <location filename="../settingswidget.ui" line="1142"/>
         <source>Close button action</source>
         <translation>Acción del botón de cerrar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1105"/>
+        <location filename="../settingswidget.ui" line="1149"/>
         <source>  Show shortcuts</source>
         <translation>  Mostrar atajos</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1116"/>
+        <location filename="../settingswidget.ui" line="1160"/>
         <source>Permissions</source>
         <translation>Permisos</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1123"/>
+        <location filename="../settingswidget.ui" line="1167"/>
         <source>  Show permissions</source>
         <translation>  Mostrar permisos</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1138"/>
+        <location filename="../settingswidget.ui" line="1182"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Activar la pantalla de bloqueo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1141"/>
+        <location filename="../settingswidget.ui" line="1185"/>
         <source>Enable App lock on start</source>
         <translation>Activar el bloqueo al iniciar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1148"/>
+        <location filename="../settingswidget.ui" line="1192"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cuando la ventana se oculta en la bandeja del sistema, bloquéala tras el código. Requiere tener una contraseña configurada.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1151"/>
+        <location filename="../settingswidget.ui" line="1195"/>
         <source>Lock when hidden to tray</source>
         <translation>Bloquear al ocultar en la bandeja</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1158"/>
+        <location filename="../settingswidget.ui" line="1202"/>
         <source>Also lock Whatly when the desktop session locks. Requires a password to be set. (Linux)</source>
         <translation>Bloquear también Whatly cuando se bloquee la sesión del escritorio. Requiere tener una contraseña configurada. (Linux)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1161"/>
+        <location filename="../settingswidget.ui" line="1205"/>
         <source>Lock when the screen locks</source>
         <translation>Bloquear cuando se bloquee la pantalla</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1168"/>
+        <location filename="../settingswidget.ui" line="1212"/>
         <source>Current Password</source>
         <translation>Contraseña actual</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1175"/>
-        <location filename="../settingswidget.ui" line="1209"/>
+        <location filename="../settingswidget.ui" line="1219"/>
+        <location filename="../settingswidget.ui" line="1253"/>
         <source>Change password</source>
         <translation>Cambiar contraseña</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1178"/>
-        <location filename="../settingswidget.ui" line="1287"/>
+        <location filename="../settingswidget.ui" line="1222"/>
+        <location filename="../settingswidget.ui" line="1331"/>
         <source>Change</source>
         <translation>Cambiar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1189"/>
+        <location filename="../settingswidget.ui" line="1233"/>
         <source>Enable auto locking after</source>
         <translation>Activar el bloqueo automático tras</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1212"/>
+        <location filename="../settingswidget.ui" line="1256"/>
         <source>Reset</source>
         <translation>Restablecer</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1244"/>
+        <location filename="../settingswidget.ui" line="1288"/>
         <source>View password</source>
         <translation>Ver contraseña</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1271"/>
+        <location filename="../settingswidget.ui" line="1315"/>
         <source>Default Download location</source>
         <translation>Carpeta de descargas por defecto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1284"/>
+        <location filename="../settingswidget.ui" line="1328"/>
         <source>Change Download Location</source>
         <translation>Cambiar la carpeta de descargas</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1303"/>
+        <location filename="../settingswidget.ui" line="1347"/>
         <source>Storage </source>
         <translation>Almacenamiento </translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1323"/>
+        <location filename="../settingswidget.ui" line="1367"/>
         <source>Property</source>
         <translation>Propiedad</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1330"/>
+        <location filename="../settingswidget.ui" line="1374"/>
         <source>  Clear (requires restart)</source>
         <translation>  Vaciar (requiere reiniciar)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1341"/>
+        <location filename="../settingswidget.ui" line="1385"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Los datos persistentes incluyen cookies persistentes, almacenamiento local HTML5 y enlaces visitados.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1344"/>
+        <location filename="../settingswidget.ui" line="1388"/>
         <source>Persistent data</source>
         <translation>Datos persistentes</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1351"/>
-        <location filename="../settingswidget.ui" line="1371"/>
+        <location filename="../settingswidget.ui" line="1395"/>
+        <location filename="../settingswidget.ui" line="1415"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1361"/>
+        <location filename="../settingswidget.ui" line="1405"/>
         <source>The HTTP/media cache. Clearing it is safe — it is re-downloaded as needed.</source>
         <translation>La caché HTTP y de contenido multimedia. Borrarla es seguro — se vuelve a descargar cuando sea necesario.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1364"/>
+        <location filename="../settingswidget.ui" line="1408"/>
         <source>Cache</source>
         <translation>Caché</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1381"/>
+        <location filename="../settingswidget.ui" line="1425"/>
         <source>  Clear cache</source>
         <translation>  Borrar caché</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1404"/>
+        <location filename="../settingswidget.ui" line="1448"/>
         <source>Size</source>
         <translation>Tamaño</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1426"/>
+        <location filename="../settingswidget.ui" line="1470"/>
         <source>Action</source>
         <translation>Acción</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1440"/>
+        <location filename="../settingswidget.ui" line="1484"/>
         <source>Backup</source>
         <translation>Copia de seguridad</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1447"/>
+        <location filename="../settingswidget.ui" line="1491"/>
         <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
         <translation>Guarda esta cuenta (ajustes, sesión y complementos) en un archivo .tar.gz. El archivo contiene tu sesión iniciada — mantenlo privado.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1450"/>
+        <location filename="../settingswidget.ui" line="1494"/>
         <source>Export profile…</source>
         <translation>Exportar perfil…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1457"/>
+        <location filename="../settingswidget.ui" line="1501"/>
         <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
         <translation>Restaura una cuenta desde un archivo .tar.gz. Esto sobrescribe los datos actuales y requiere reiniciar.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1460"/>
+        <location filename="../settingswidget.ui" line="1504"/>
         <source>Import profile…</source>
         <translation>Importar perfil…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1485"/>
+        <location filename="../settingswidget.ui" line="1529"/>
         <source>Performance &amp; Privacy</source>
         <translation>Rendimiento y privacidad</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1491"/>
+        <location filename="../settingswidget.ui" line="1535"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
         <translation>Ajusta con precisión el motor de renderizado. Los valores predeterminados son seguros en la mayoría de los sistemas; si la ventana aparece en blanco, la aplicación se bloquea al arrancar o va a tirones, prueba a cambiarlos. Los cambios se aplican tras reiniciar.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1501"/>
+        <location filename="../settingswidget.ui" line="1545"/>
         <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
         <translation>Renderiza por completo en la CPU (--disable-gpu). Corrige ventanas en blanco y bloqueos al arrancar en algunas configuraciones de GPU/controlador. Predeterminado en Linux.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1504"/>
+        <location filename="../settingswidget.ui" line="1548"/>
         <source>Disable GPU acceleration</source>
         <translation>Desactivar la aceleración por GPU</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1511"/>
+        <location filename="../settingswidget.ui" line="1555"/>
         <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
         <translation>Compone la página en la CPU (--disable-gpu-compositing). Evita el parpadeo de fotogramas obsoletos en algunos controladores.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1514"/>
+        <location filename="../settingswidget.ui" line="1558"/>
         <source>Disable GPU compositing</source>
         <translation>Desactivar la composición por GPU</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1521"/>
+        <location filename="../settingswidget.ui" line="1565"/>
         <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
         <translation>Desactiva el VSync de la GPU (--disable-gpu-vsync). Puede reducir la latencia de entrada a costa de tearing.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1524"/>
+        <location filename="../settingswidget.ui" line="1568"/>
         <source>Disable GPU VSync</source>
         <translation>Desactivar VSync de la GPU</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1531"/>
+        <location filename="../settingswidget.ui" line="1575"/>
         <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
         <translation>Ejecuta el proceso de la GPU dentro del proceso principal (--in-process-gpu). Una solución alternativa para algunas configuraciones con espacio aislado.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1534"/>
+        <location filename="../settingswidget.ui" line="1578"/>
         <source>Run GPU in-process</source>
         <translation>Ejecutar la GPU en el mismo proceso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1541"/>
+        <location filename="../settingswidget.ui" line="1585"/>
         <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
         <translation>Fuerza la aceleración incluso cuando el controlador está en la lista de bloqueo (--ignore-gpu-blocklist). Prueba esto para volver a activar la GPU.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1544"/>
+        <location filename="../settingswidget.ui" line="1588"/>
         <source>Ignore GPU blocklist</source>
         <translation>Ignorar la lista de bloqueo de la GPU</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1551"/>
+        <location filename="../settingswidget.ui" line="1595"/>
         <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
         <translation>Ejecuta todo en un único proceso (--single-process). Usa menos memoria, pero es menos estable.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1554"/>
+        <location filename="../settingswidget.ui" line="1598"/>
         <source>Single-process mode (lower memory)</source>
         <translation>Modo de proceso único (menos memoria)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1561"/>
+        <location filename="../settingswidget.ui" line="1605"/>
         <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
         <translation>Comparte un proceso de renderizado por sitio (--process-per-site). Reduce el uso de memoria.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1564"/>
+        <location filename="../settingswidget.ui" line="1608"/>
         <source>One process per site (lower memory)</source>
         <translation>Un proceso por sitio (menos memoria)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1571"/>
+        <location filename="../settingswidget.ui" line="1615"/>
         <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
         <translation>Pide al motor de JavaScript que use menos memoria a costa de algo de velocidad (V8 --optimize-for-size). Recomendado para una app que permanece en la bandeja. Se ignora si se fija un límite de memoria de JavaScript más abajo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1574"/>
+        <location filename="../settingswidget.ui" line="1618"/>
         <source>Optimize memory over speed (lower memory)</source>
         <translation>Optimizar memoria sobre velocidad (menos memoria)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1581"/>
+        <location filename="../settingswidget.ui" line="1625"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>Oculta los nombres de contacto y las vistas previas de mensajes en la lista de chats (pasa el ratón para revelar uno). Útil al compartir pantalla. La conversación abierta no se altera.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1584"/>
+        <location filename="../settingswidget.ui" line="1628"/>
         <source>Focus mode (hide chat-list previews)</source>
         <translation>Modo concentración (ocultar vistas previas)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1591"/>
+        <location filename="../settingswidget.ui" line="1635"/>
         <source>Default photos and videos to HD quality in the media editor. Depends on WhatsApp Web&apos;s layout; if a WhatsApp update breaks it, turn it off.</source>
         <translation>Usar la calidad HD de forma predeterminada para fotos y vídeos en el editor multimedia. Depende del diseño de WhatsApp Web; si una actualización de WhatsApp lo estropea, desactívalo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1594"/>
+        <location filename="../settingswidget.ui" line="1638"/>
         <source>Send photos and videos in HD by default</source>
         <translation>Enviar fotos y vídeos en HD de forma predeterminada</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1601"/>
+        <location filename="../settingswidget.ui" line="1647"/>
+        <source>Hold a message for a few seconds after you press Enter, showing an &quot;Undo&quot; button before it is actually sent. Press Enter again to send at once.</source>
+        <translation>Retiene un mensaje unos segundos tras pulsar Intro, mostrando un botón &quot;Deshacer&quot; antes de enviarlo de verdad. Pulsa Intro de nuevo para enviarlo al instante.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1650"/>
+        <source>Undo send (hold Enter-sent messages briefly)</source>
+        <translation>Deshacer envío (retener brevemente los mensajes enviados con Intro)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1657"/>
+        <source>How long to hold a message before it is sent.</source>
+        <translation>Cuánto tiempo retener un mensaje antes de enviarlo.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1660"/>
+        <source> s</source>
+        <translation> s</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1675"/>
         <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
         <translation>Impide que WebRTC revele tu dirección IP local en conexiones sin proxy.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1604"/>
+        <location filename="../settingswidget.ui" line="1678"/>
         <source>Prevent WebRTC IP leak</source>
         <translation>Evitar la fuga de IP de WebRTC</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1613"/>
+        <location filename="../settingswidget.ui" line="1687"/>
         <source>JavaScript memory limit</source>
         <translation>Límite de memoria de JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1620"/>
+        <location filename="../settingswidget.ui" line="1694"/>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
         <translation>Limita el montículo de JavaScript (V8 --max-old-space-size). 0 = automático. Redúcelo si la aplicación usa demasiada RAM.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1626"/>
-        <location filename="../settingswidget.ui" line="1670"/>
+        <location filename="../settingswidget.ui" line="1700"/>
+        <location filename="../settingswidget.ui" line="1744"/>
         <source> MB</source>
         <translation> MB</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1643"/>
+        <location filename="../settingswidget.ui" line="1717"/>
         <source>HTTP cache</source>
         <translation>Caché HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1650"/>
+        <location filename="../settingswidget.ui" line="1724"/>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
         <translation>Dónde guardar la caché HTTP. La memoria se borra al salir; «Ninguna» desactiva la caché.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1657"/>
+        <location filename="../settingswidget.ui" line="1731"/>
         <source>Max size</source>
         <translation>Tamaño máximo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1664"/>
+        <location filename="../settingswidget.ui" line="1738"/>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>Tamaño máximo de la caché en disco. 0 = automático.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1688"/>
+        <location filename="../settingswidget.ui" line="1814"/>
         <source>Network &amp; Startup</source>
         <translation>Red e inicio</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1694"/>
+        <location filename="../settingswidget.ui" line="1820"/>
         <source>Launch Whatly automatically when you log in to your desktop session.</source>
         <translation>Iniciar Whatly automáticamente al iniciar sesión en tu escritorio.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1697"/>
+        <location filename="../settingswidget.ui" line="1823"/>
         <source>Start Whatly when I log in</source>
         <translation>Iniciar Whatly al iniciar sesión</translation>
     </message>
     <message>
-        <source>Replace the system window border with Whatly&apos;s own slim title bar. Applies after a restart.</source>
-        <translation type="vanished">Sustituir el borde de ventana del sistema por la barra de título fina de Whatly. Se aplica tras reiniciar.</translation>
-    </message>
-    <message>
-        <location filename="../settingswidget.ui" line="1707"/>
+        <location filename="../settingswidget.ui" line="1833"/>
         <source>Use a custom window frame (requires restart)</source>
         <translation>Usar un marco de ventana personalizado (requiere reiniciar)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1720"/>
+        <location filename="../settingswidget.ui" line="1846"/>
         <source>Restart Whatly now so the settings above take effect. The windows, and this page with it, come back exactly as they are.</source>
         <translation>Reinicia Whatly ahora para que la configuración anterior surta efecto. Las ventanas, y esta página con ellas, volverán exactamente como están.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1723"/>
+        <location filename="../settingswidget.ui" line="1849"/>
         <source>Restart now</source>
         <translation>Reiniciar ahora</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1730"/>
+        <location filename="../settingswidget.ui" line="1856"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
         <translation>Mantén siempre visible la barra de pestañas de cuentas aunque solo haya una cuenta, para tener su &quot;+&quot; siempre a mano. Si está desactivada, la barra aparece cuando existe una segunda cuenta; aun así puedes añadir una con Ctrl+K.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1733"/>
+        <location filename="../settingswidget.ui" line="1859"/>
         <source>Show the account tabs even with a single account</source>
         <translation>Mostrar las pestañas de cuentas incluso con una sola cuenta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1740"/>
+        <location filename="../settingswidget.ui" line="1866"/>
         <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
         <translation>Elimina la barra de título y coloca sus botones al final de la barra de pestañas de cuentas, como hace un navegador, en lugar de darles una fila propia. Activa el marco de ventana personalizado, que necesita. Se aplica tras reiniciar.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1743"/>
+        <location filename="../settingswidget.ui" line="1869"/>
         <source>Hide the title bar (requires restart)</source>
         <translation>Ocultar la barra de título (requiere reiniciar)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1750"/>
+        <location filename="../settingswidget.ui" line="1876"/>
         <source>Check GitHub once a day for a newer release and let you know. Whatly never downloads or installs anything on its own.</source>
         <translation>Comprueba GitHub una vez al día para ver si hay una versión más reciente y te avisa. Whatly nunca descarga ni instala nada por su cuenta.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1753"/>
+        <location filename="../settingswidget.ui" line="1879"/>
         <source>Check for updates automatically</source>
         <translation>Buscar actualizaciones automáticamente</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1762"/>
+        <location filename="../settingswidget.ui" line="1888"/>
         <source>Interface scale</source>
         <translation>Escala de la interfaz</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1769"/>
+        <location filename="../settingswidget.ui" line="1895"/>
         <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
         <translation>Escala toda la ventana y la página (QT_SCALE_FACTOR). Automático sigue la configuración del escritorio. La variable de entorno QT_SCALE_FACTOR, si está definida, tiene prioridad sobre esta opción. Se aplica tras reiniciar.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1805"/>
+        <location filename="../settingswidget.ui" line="1931"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1812"/>
+        <location filename="../settingswidget.ui" line="1938"/>
         <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
         <translation>Cómo se conecta Whatly a la red. Sistema sigue la configuración del sistema operativo; Ninguno se conecta directamente.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1837"/>
+        <location filename="../settingswidget.ui" line="1963"/>
         <source>Host</source>
         <translation>Host</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1844"/>
+        <location filename="../settingswidget.ui" line="1970"/>
         <source>127.0.0.1</source>
         <translation>127.0.0.1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1851"/>
-        <location filename="../settingswidget.ui" line="2131"/>
+        <location filename="../settingswidget.ui" line="1977"/>
+        <location filename="../settingswidget.ui" line="2257"/>
         <source>Port</source>
         <translation>Puerto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1865"/>
+        <location filename="../settingswidget.ui" line="1991"/>
         <source>Username</source>
         <translation>Nombre de usuario</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1872"/>
-        <location filename="../settingswidget.ui" line="1889"/>
+        <location filename="../settingswidget.ui" line="1998"/>
+        <location filename="../settingswidget.ui" line="2015"/>
         <source>Optional</source>
         <translation>Opcional</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1879"/>
+        <location filename="../settingswidget.ui" line="2005"/>
         <source>Password</source>
         <translation>Contraseña</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1902"/>
+        <location filename="../settingswidget.ui" line="2028"/>
         <source>Custom JavaScript addons</source>
         <translation>Complementos de JavaScript personalizados</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1908"/>
+        <location filename="../settingswidget.ui" line="2034"/>
         <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
         <translation>Carga archivos .js para ejecutarlos en WhatsApp Web. Cada complemento se ejecuta en su propio entorno aislado, de modo que uno defectuoso no puede afectar a los demás ni a la página. Desmarca un complemento para desactivarlo sin eliminarlo. Los cambios se aplican tras reiniciar.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1930"/>
+        <location filename="../settingswidget.ui" line="2056"/>
         <source>Add addon…</source>
         <translation>Añadir complemento…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1937"/>
-        <location filename="../settingswidget.ui" line="1997"/>
+        <location filename="../settingswidget.ui" line="2063"/>
+        <location filename="../settingswidget.ui" line="2123"/>
         <source>Remove</source>
         <translation>Eliminar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1962"/>
+        <location filename="../settingswidget.ui" line="2088"/>
         <source>Saved replies</source>
         <translation>Respuestas guardadas</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1968"/>
+        <location filename="../settingswidget.ui" line="2094"/>
         <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
         <translation>Textos breves que envías a menudo. Inserta uno desde la paleta de comandos (Ctrl+K) — escribe &quot;Insertar&quot; y elígelo; el texto se escribe en el cuadro de mensaje.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1990"/>
+        <location filename="../settingswidget.ui" line="2116"/>
         <source>Add reply…</source>
         <translation>Añadir respuesta…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2022"/>
+        <location filename="../settingswidget.ui" line="2148"/>
         <source>Keyboard shortcuts</source>
         <translation>Atajos de teclado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="517"/>
+        <location filename="../settingswidget.ui" line="561"/>
         <source>Zoom buttons in WhatsApp&apos;s sidebar</source>
         <translation>Botones de zoom en la barra lateral de WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="480"/>
+        <location filename="../settingswidget.ui" line="524"/>
         <source>Interface language (requires restart)</source>
         <translation>Idioma de la interfaz (requiere reinicio)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="514"/>
+        <location filename="../settingswidget.ui" line="558"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp&apos;s own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Añade botones de alejar / restablecer / acercar a la barra lateral de WhatsApp, para escalar la página en vivo sin abrir Ajustes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1704"/>
+        <location filename="../settingswidget.ui" line="1830"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>Deja que Whatly dibuje el borde y la barra de título de la ventana en lugar del sistema, para que sigan el propio tema de Whatly. Por sí solo, esto solo cambia su aspecto; marca también &quot;Ocultar la barra de título&quot; para eliminar por completo la fila del título. Se aplica tras reiniciar.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2108"/>
+        <location filename="../settingswidget.ui" line="2234"/>
         <source>Local API &amp; Cloud webhooks</source>
         <translation>API local y webhooks de la Cloud</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2114"/>
+        <location filename="../settingswidget.ui" line="2240"/>
         <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
         <translation>Un pequeño punto de acceso HTTP en la interfaz de loopback (127.0.0.1) permite que otros programas de este equipo envíen a través de Whatly, y que Meta entregue webhooks de la Cloud API (mensajes entrantes) para que el auto-reply funcione sin navegador. Nunca se expone a la red; para recibir webhooks de Meta, redirige el puerto con un túnel o proxy inverso (p. ej. cloudflared o ngrok).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2124"/>
+        <location filename="../settingswidget.ui" line="2250"/>
         <source>Enable the local HTTP API (send over HTTP)</source>
         <translation>Activar la API HTTP local (enviar por HTTP)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2148"/>
+        <location filename="../settingswidget.ui" line="2274"/>
         <source>Bearer token</source>
         <translation>Token Bearer</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2158"/>
+        <location filename="../settingswidget.ui" line="2284"/>
         <source>required to authorise requests</source>
         <translation>necesario para autorizar las peticiones</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2165"/>
+        <location filename="../settingswidget.ui" line="2291"/>
         <source>Receive Cloud API webhooks (incoming messages)</source>
         <translation>Recibir webhooks de la Cloud API (mensajes entrantes)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2172"/>
+        <location filename="../settingswidget.ui" line="2298"/>
         <source>Webhook verify token</source>
         <translation>Token de verificación del webhook</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2182"/>
+        <location filename="../settingswidget.ui" line="2308"/>
         <source>echoed to Meta during setup</source>
         <translation>se envía a Meta durante la configuración</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2189"/>
+        <location filename="../settingswidget.ui" line="2315"/>
         <source>Meta app secret</source>
         <translation>Secreto de app de Meta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2199"/>
+        <location filename="../settingswidget.ui" line="2325"/>
         <source>verifies the webhook signature</source>
         <translation>verifica la firma del webhook</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2044"/>
+        <location filename="../settingswidget.ui" line="2170"/>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API (enviar sin sesión de navegador)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2050"/>
+        <location filename="../settingswidget.ui" line="2176"/>
         <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account&apos;s config and Whatly never obtains it itself.</source>
         <translation>Envía con `--send --backend cloud` a través de la Meta WhatsApp Business Cloud API — sin necesidad de una sesión de WhatsApp Web abierta. El token de acceso es uno que proporcionas tú desde Meta; se guarda en la configuración de esta cuenta y Whatly nunca lo obtiene por sí mismo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2060"/>
+        <location filename="../settingswidget.ui" line="2186"/>
         <source>Phone-number ID</source>
         <translation>ID del número de teléfono</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2074"/>
+        <location filename="../settingswidget.ui" line="2200"/>
         <source>Access token</source>
         <translation>Token de acceso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2084"/>
+        <location filename="../settingswidget.ui" line="2210"/>
         <source>your Meta access token</source>
         <translation>tu token de acceso de Meta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2091"/>
+        <location filename="../settingswidget.ui" line="2217"/>
         <source>Graph API version</source>
         <translation>Versión de la Graph API</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2028"/>
+        <location filename="../settingswidget.ui" line="2154"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Haz clic en un campo y pulsa la combinación de teclas. Borra un campo para eliminar el atajo. Los cambios se aplican tras reiniciar.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="854"/>
+        <location filename="../settingswidget.cpp" line="859"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Esto eliminará los datos persistentes (incluidas las cookies persistentes y la caché) y cerrará la aplicación.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="859"/>
+        <location filename="../settingswidget.cpp" line="864"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>¿Eliminar las cookies y cerrar la aplicación?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="961"/>
+        <location filename="../settingswidget.cpp" line="970"/>
         <source>| Error</source>
         <translation>| Error</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="962"/>
+        <location filename="../settingswidget.cpp" line="971"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>No se puede establecer una cadena de User-Agent vacía.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1013"/>
+        <location filename="../settingswidget.cpp" line="1022"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>El cambio automático de tema se desactivó al cambiar el tema manualmente.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1052"/>
+        <location filename="../settingswidget.cpp" line="1061"/>
         <source>App lock is not configured.</source>
         <translation>El bloqueo de la aplicación no está configurado.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1056"/>
+        <location filename="../settingswidget.cpp" line="1065"/>
         <source>Do you want to setup App lock now?</source>
         <translation>¿Quieres configurar el bloqueo de la aplicación ahora?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1098"/>
+        <location filename="../settingswidget.cpp" line="1107"/>
         <source>Feature permissions</source>
         <translation>Permisos de funciones</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1177"/>
+        <location filename="../settingswidget.cpp" line="1186"/>
         <source>Choose a chat wallpaper</source>
         <translation>Elegir un fondo de chat</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1179"/>
+        <location filename="../settingswidget.cpp" line="1188"/>
         <source>Images (%1)</source>
         <translation>Imágenes (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1187"/>
+        <location filename="../settingswidget.cpp" line="1196"/>
         <source>Could not use that image: %1</source>
         <translation>No se pudo usar esa imagen: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1202"/>
+        <location filename="../settingswidget.cpp" line="1211"/>
         <source>Choose a CSS file</source>
         <translation>Elegir un archivo CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1204"/>
+        <location filename="../settingswidget.cpp" line="1213"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Hojas de estilo (*.css);;Todos los archivos (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1211"/>
+        <location filename="../settingswidget.cpp" line="1220"/>
         <source>Could not read that file: %1</source>
         <translation>No se pudo leer ese archivo: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1284"/>
+        <location filename="../settingswidget.cpp" line="1293"/>
         <source>Disk</source>
         <translation>Disco</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1285"/>
+        <location filename="../settingswidget.cpp" line="1294"/>
         <source>Memory</source>
         <translation>Memoria</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1395"/>
+        <location filename="../settingswidget.cpp" line="1450"/>
         <source>System</source>
         <translation>Sistema</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1396"/>
+        <location filename="../settingswidget.cpp" line="1451"/>
         <source>None (direct)</source>
         <translation>Ninguno (directo)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1397"/>
+        <location filename="../settingswidget.cpp" line="1452"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1398"/>
+        <location filename="../settingswidget.cpp" line="1453"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1424"/>
+        <location filename="../settingswidget.cpp" line="1479"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Portal de escritorio (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1426"/>
+        <location filename="../settingswidget.cpp" line="1481"/>
         <source>System service (libnotify)</source>
         <translation>Servicio del sistema (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1587"/>
-        <location filename="../settingswidget.cpp" line="1591"/>
+        <location filename="../settingswidget.cpp" line="1658"/>
+        <location filename="../settingswidget.cpp" line="1662"/>
         <source>Add reply</source>
         <translation>Añadir respuesta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1587"/>
+        <location filename="../settingswidget.cpp" line="1658"/>
         <source>Name</source>
         <translation>Nombre</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1591"/>
+        <location filename="../settingswidget.cpp" line="1662"/>
         <source>Text to insert</source>
         <translation>Texto a insertar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1608"/>
+        <location filename="../settingswidget.cpp" line="1679"/>
         <source>Choose a JavaScript file</source>
         <translation>Elegir un archivo JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1609"/>
+        <location filename="../settingswidget.cpp" line="1680"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Todos los archivos (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1614"/>
+        <location filename="../settingswidget.cpp" line="1685"/>
         <source>Could not add addon</source>
         <translation>No se pudo añadir el complemento</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1627"/>
+        <location filename="../settingswidget.cpp" line="1698"/>
         <source>Remove addon</source>
         <translation>Eliminar complemento</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1628"/>
+        <location filename="../settingswidget.cpp" line="1699"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>¿Eliminar el complemento &quot;%1&quot;? Esto borra su archivo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1816"/>
+        <location filename="../settingswidget.cpp" line="1887"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Corrector ortográfico (sin diccionarios instalados)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1286"/>
-        <location filename="../settingswidget.cpp" line="1867"/>
+        <location filename="../settingswidget.cpp" line="1295"/>
+        <location filename="../settingswidget.cpp" line="1303"/>
+        <location filename="../settingswidget.cpp" line="1938"/>
         <source>None</source>
         <translation>Ninguno</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="457"/>
+        <location filename="../settingswidget.cpp" line="462"/>
         <source>Basics</source>
         <translation>Básico</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="465"/>
+        <location filename="../settingswidget.cpp" line="470"/>
         <source>Appearance</source>
         <translation>Apariencia</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="484"/>
+        <location filename="../settingswidget.cpp" line="489"/>
         <source>Notifications</source>
         <translation>Notificaciones</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="488"/>
+        <location filename="../settingswidget.cpp" line="493"/>
         <source>Chatting</source>
         <translation>Mensajería</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="497"/>
+        <location filename="../settingswidget.cpp" line="502"/>
         <source>Privacy &amp; Lock</source>
         <translation>Privacidad y bloqueo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="503"/>
+        <location filename="../settingswidget.cpp" line="508"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>Ventana y zoom</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="520"/>
+        <location filename="../settingswidget.cpp" line="525"/>
         <source>Advanced</source>
         <translation>Avanzado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="771"/>
+        <location filename="../settingswidget.cpp" line="776"/>
         <source>Shortcut in use</source>
         <translation>Atajo en uso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="772"/>
+        <location filename="../settingswidget.cpp" line="777"/>
         <source>That shortcut is already used by another action.</source>
         <translation>Ese atajo ya lo utiliza otra acción.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="784"/>
+        <location filename="../settingswidget.cpp" line="789"/>
         <source>Clear cache</source>
         <translation>Borrar caché</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="785"/>
+        <location filename="../settingswidget.cpp" line="790"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>¿Borrar la caché ahora? Se volverá a descargar cuando sea necesario.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="795"/>
-        <location filename="../settingswidget.cpp" line="801"/>
-        <location filename="../settingswidget.cpp" line="810"/>
-        <location filename="../settingswidget.cpp" line="813"/>
+        <location filename="../settingswidget.cpp" line="800"/>
+        <location filename="../settingswidget.cpp" line="806"/>
+        <location filename="../settingswidget.cpp" line="815"/>
+        <location filename="../settingswidget.cpp" line="818"/>
         <source>Export profile</source>
         <translation>Exportar perfil</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="796"/>
+        <location filename="../settingswidget.cpp" line="801"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>El archivo contendrá tu sesión de WhatsApp iniciada. Mantenlo privado. ¿Continuar?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="803"/>
-        <location filename="../settingswidget.cpp" line="818"/>
+        <location filename="../settingswidget.cpp" line="808"/>
+        <location filename="../settingswidget.cpp" line="823"/>
         <source>Archives (*.tar.gz)</source>
         <translation>Archivos comprimidos (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="811"/>
+        <location filename="../settingswidget.cpp" line="816"/>
         <source>Profile exported.</source>
         <translation>Perfil exportado.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="818"/>
-        <location filename="../settingswidget.cpp" line="822"/>
-        <location filename="../settingswidget.cpp" line="830"/>
-        <location filename="../settingswidget.cpp" line="833"/>
+        <location filename="../settingswidget.cpp" line="823"/>
+        <location filename="../settingswidget.cpp" line="827"/>
+        <location filename="../settingswidget.cpp" line="835"/>
+        <location filename="../settingswidget.cpp" line="838"/>
         <source>Import profile</source>
         <translation>Importar perfil</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="823"/>
+        <location filename="../settingswidget.cpp" line="828"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>Esto sobrescribe los datos de la cuenta actual con el archivo y luego habrá que reiniciar Whatly. ¿Continuar?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="831"/>
+        <location filename="../settingswidget.cpp" line="836"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>Perfil importado. Reinicia Whatly.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1871"/>
+        <location filename="../settingswidget.cpp" line="1942"/>
         <source>%1 languages</source>
         <translation>%1 idiomas</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1969"/>
+        <location filename="../settingswidget.cpp" line="2040"/>
         <source>WhatsApp default</source>
         <translation>Predeterminada de WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2008"/>
+        <location filename="../settingswidget.cpp" line="2079"/>
         <source>System default</source>
         <translation>Predeterminado del sistema</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2043"/>
+        <location filename="../settingswidget.cpp" line="2114"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>El idioma de la interfaz cambiará cuando reinicies %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2057"/>
+        <location filename="../settingswidget.cpp" line="2128"/>
         <source>App Lock Setup</source>
         <translation>Configuración del bloqueo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2058"/>
+        <location filename="../settingswidget.cpp" line="2129"/>
         <source>Please setup the App lock password first.</source>
         <translation>Configura primero la contraseña del bloqueo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2169"/>
-        <location filename="../settingswidget.cpp" line="2180"/>
+        <location filename="../settingswidget.cpp" line="2240"/>
+        <location filename="../settingswidget.cpp" line="2251"/>
         <source>Select download directory</source>
         <translation>Seleccionar la carpeta de descargas</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2220"/>
+        <location filename="../settingswidget.cpp" line="2291"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3112,7 +3134,7 @@ Esto cerrará tu sesión actual.
 ¡También podría requerir reiniciar por completo la aplicación!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2226"/>
+        <location filename="../settingswidget.cpp" line="2297"/>
         <source>Do you want to proceed?</source>
         <translation>¿Quieres continuar?</translation>
     </message>
@@ -3202,104 +3224,104 @@ Esto cerrará tu sesión actual.
 <context>
     <name>WebEnginePage</name>
     <message>
-        <location filename="../webenginepage.cpp" line="51"/>
+        <location filename="../webenginepage.cpp" line="54"/>
         <source>Share your screen</source>
         <translation>Compartir pantalla</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="53"/>
+        <location filename="../webenginepage.cpp" line="56"/>
         <source>Choose what to share:</source>
         <translation>Elige qué compartir:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="65"/>
+        <location filename="../webenginepage.cpp" line="68"/>
         <source>Untitled</source>
         <translation>Sin título</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="69"/>
+        <location filename="../webenginepage.cpp" line="72"/>
         <source>Screen: </source>
         <translation>Pantalla: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="70"/>
+        <location filename="../webenginepage.cpp" line="73"/>
         <source>Window: </source>
         <translation>Ventana: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="149"/>
+        <location filename="../webenginepage.cpp" line="180"/>
         <source>Allow %1 to access your location information?</source>
         <translation>¿Permitir que %1 acceda a su información de ubicación?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="151"/>
+        <location filename="../webenginepage.cpp" line="182"/>
         <source>Allow %1 to access your microphone?</source>
         <translation>¿Permitir que %1 acceda a su micrófono?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="153"/>
+        <location filename="../webenginepage.cpp" line="184"/>
         <source>Allow %1 to access your webcam?</source>
         <translation>¿Permitir que %1 acceda a su cámara?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="155"/>
+        <location filename="../webenginepage.cpp" line="186"/>
         <source>Allow %1 to access your microphone and webcam?</source>
         <translation>¿Permitir que %1 acceda a su micrófono y su cámara?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="157"/>
+        <location filename="../webenginepage.cpp" line="188"/>
         <source>Allow %1 to lock your mouse cursor?</source>
         <translation>¿Permitir que %1 capture el cursor del ratón?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="159"/>
+        <location filename="../webenginepage.cpp" line="190"/>
         <source>Allow %1 to capture video of your desktop?</source>
         <translation>¿Permitir que %1 grabe el vídeo de su escritorio?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="161"/>
+        <location filename="../webenginepage.cpp" line="192"/>
         <source>Allow %1 to capture audio and video of your desktop?</source>
         <translation>¿Permitir que %1 grabe el audio y el vídeo de su escritorio?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="164"/>
+        <location filename="../webenginepage.cpp" line="195"/>
         <source>Allow %1 to show notification on your desktop?</source>
         <translation>¿Permitir que %1 muestre notificaciones en su escritorio?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="166"/>
+        <location filename="../webenginepage.cpp" line="197"/>
         <source>Allow %1 to read your clipboard? This is needed to paste images into a chat.</source>
         <translation>¿Permitir que %1 lea su portapapeles? Es necesario para pegar imágenes en un chat.</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="169"/>
+        <location filename="../webenginepage.cpp" line="200"/>
         <source>Allow %1 to see the fonts installed on your system?</source>
         <translation>¿Permitir que %1 vea las fuentes instaladas en su sistema?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="189"/>
-        <location filename="../webenginepage.cpp" line="403"/>
+        <location filename="../webenginepage.cpp" line="220"/>
+        <location filename="../webenginepage.cpp" line="434"/>
         <source>Permission Request</source>
         <translation>Solicitud de permiso</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="326"/>
-        <location filename="../webenginepage.cpp" line="335"/>
+        <location filename="../webenginepage.cpp" line="357"/>
+        <location filename="../webenginepage.cpp" line="366"/>
         <source>Certificate Error</source>
         <translation>Error de certificado</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="355"/>
+        <location filename="../webenginepage.cpp" line="386"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
         <translation>Introduzca el usuario y la contraseña de «%1» en %2</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="385"/>
+        <location filename="../webenginepage.cpp" line="416"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
         <translation>Conectar al proxy «%1» usando:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="404"/>
+        <location filename="../webenginepage.cpp" line="435"/>
         <source>Allow %1 to open all %2 links?</source>
         <translation>¿Permitir que %1 abra todos los enlaces %2?</translation>
     </message>
@@ -3307,32 +3329,32 @@ Esto cerrará tu sesión actual.
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="54"/>
+        <location filename="../webview.cpp" line="55"/>
         <source>Render process normal exit</source>
         <translation>El proceso de renderizado terminó con normalidad</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="57"/>
+        <location filename="../webview.cpp" line="58"/>
         <source>Render process abnormal exit</source>
         <translation>El proceso de renderizado terminó de forma anómala</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="60"/>
+        <location filename="../webview.cpp" line="61"/>
         <source>Render process crashed</source>
         <translation>El proceso de renderizado se bloqueó</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="63"/>
+        <location filename="../webview.cpp" line="64"/>
         <source>Render process killed</source>
         <translation>El proceso de renderizado fue terminado</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="99"/>
+        <location filename="../webview.cpp" line="100"/>
         <source>WhatsApp Web keeps closing</source>
         <translation>WhatsApp Web se cierra continuamente</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="100"/>
+        <location filename="../webview.cpp" line="101"/>
         <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
 
 This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
@@ -3341,7 +3363,7 @@ This is often a GPU or sandbox problem. Try turning off GPU acceleration in Sett
 Esto suele ser un problema de la GPU o del sandbox. Prueba a desactivar la aceleración por GPU en Ajustes → Rendimiento y luego recarga.</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="126"/>
+        <location filename="../webview.cpp" line="127"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>El proceso de renderizado terminó con el código: %1

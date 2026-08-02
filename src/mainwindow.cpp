@@ -43,6 +43,7 @@
 #include "quickreply.h"
 #include "focusmode.h"
 #include "hdmedia.h"
+#include "undosend.h"
 
 #include <QTimer>
 #include <QDesktopServices>
@@ -749,6 +750,17 @@ void MainWindow::initSettingWidget() {
             for (const Account &account : m_accounts)
               if (account.view && account.view->page())
                 account.view->page()->runJavaScript(HdMedia::scriptSource());
+          });
+
+  connect(m_settingsWidget, &SettingsWidget::undoSendChanged, m_settingsWidget,
+          [=]() {
+            UndoSend::install(WebEngineProfileManager::instance().profile());
+            // The live script self-retunes from its own state when re-run, so
+            // enabling/disabling or changing the delay takes effect without a
+            // reload.
+            for (const Account &account : m_accounts)
+              if (account.view && account.view->page())
+                account.view->page()->runJavaScript(UndoSend::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::customJsChanged, m_settingsWidget,

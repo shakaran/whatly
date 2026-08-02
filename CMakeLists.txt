@@ -206,6 +206,7 @@ set(SOURCES
     src/quickreply.cpp
     src/focusmode.cpp
     src/hdmedia.cpp
+    src/undosend.cpp
     src/cannedresponses.cpp
     src/globalshortcut.cpp
     src/privacyblur.cpp
@@ -279,6 +280,7 @@ set(HEADERS
     src/quickreply.h
     src/focusmode.h
     src/hdmedia.h
+    src/undosend.h
     src/cannedresponses.h
     src/privacyblur.h
     src/chatliststrip.h

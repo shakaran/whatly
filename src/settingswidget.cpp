@@ -53,6 +53,7 @@
 #include "screenlock.h"
 #include "focusmode.h"
 #include "hdmedia.h"
+#include "undosend.h"
 #include "cannedresponses.h"
 
 #include <QListWidget>
@@ -1329,6 +1330,10 @@ void SettingsWidget::loadPerformanceSettings() {
   set(ui->webrtcShieldCheckBox, Performance::webrtcShield());
   set(ui->focusModeCheckBox, FocusMode::isEnabled());
   set(ui->hdMediaCheckBox, HdMedia::isEnabled());
+  set(ui->undoSendCheckBox, UndoSend::isEnabled());
+  ui->undoSendSecondsSpinBox->blockSignals(true);
+  ui->undoSendSecondsSpinBox->setValue(UndoSend::seconds());
+  ui->undoSendSecondsSpinBox->blockSignals(false);
   set(ui->suspendInactiveAccountsCheckBox,
       Performance::suspendInactiveAccounts());
   ui->suspendAfterSpinBox->blockSignals(true);
@@ -1385,6 +1390,14 @@ void SettingsWidget::on_focusModeCheckBox_toggled(bool checked) {
 void SettingsWidget::on_hdMediaCheckBox_toggled(bool checked) {
   HdMedia::setEnabled(checked);
   emit hdMediaChanged();
+}
+void SettingsWidget::on_undoSendCheckBox_toggled(bool checked) {
+  UndoSend::setEnabled(checked);
+  emit undoSendChanged();
+}
+void SettingsWidget::on_undoSendSecondsSpinBox_valueChanged(int arg1) {
+  UndoSend::setSeconds(arg1);
+  emit undoSendChanged();
 }
 void SettingsWidget::on_jsMemoryLimitSpinBox_valueChanged(int arg1) {
   Performance::setJsMemoryLimitMb(arg1);

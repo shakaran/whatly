@@ -16,6 +16,7 @@
 #include "mutedstatus.h"
 #include "webtweaks.h"
 #include "performance.h"
+#include "undosend.h"
 
 #include <QDebug>
 #include <QStandardPaths>
@@ -255,6 +256,7 @@ void WebEngineProfileManager::applyUserSettingsTo(QWebEngineProfile *profile,
     FocusMode::install(profile);
     HdMedia::install(profile);
     ChatTheme::install(profile);
+    UndoSend::install(profile);
     PrivacyBlur::install(profile);
     ChatListStrip::install(profile);
     WebFont::install(profile);

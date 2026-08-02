@@ -1,5 +1,11 @@
 ## Unreleased
 
+**Undo send.** A new Settings → Performance option holds a message for a few
+seconds after you press Enter, showing an "Undo" button before it is actually
+sent, so a mistaken Enter no longer sends instantly. Pressing Enter again sends
+at once, and clicking Undo keeps the text in the composer to edit. The delay is
+configurable (default 5 s) and the whole feature is off by default.
+
 **VIP and muted contacts for notifications.** Settings → Notifications now takes
 a list of VIP contacts, which always notify even during Do Not Disturb, and a
 list of muted contacts, whose popups are never shown (their unread badge still

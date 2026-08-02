@@ -44,6 +44,7 @@
 #include "quickreply.h"
 #include "focusmode.h"
 #include "hdmedia.h"
+#include "undosend.h"
 #include "cannedresponses.h"
 #include "webtweaks.h"
 #include "chatliststrip.h"
@@ -2222,6 +2223,50 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// UndoSend (#7): the injected Enter-hold script tracks the setting and delay.
+class TstUndoSend : public QObject {
+  Q_OBJECT
+private slots:
+  void defaultsAndClamp() {
+    // Opt-in: off until the user turns it on.
+    UndoSend::setEnabled(false);
+    QVERIFY(!UndoSend::isEnabled());
+    UndoSend::setEnabled(true);
+    QVERIFY(UndoSend::isEnabled());
+    UndoSend::setSeconds(0);              // clamped to a sane minimum
+    QVERIFY(UndoSend::seconds() >= 1);
+    UndoSend::setSeconds(8);
+    QCOMPARE(UndoSend::seconds(), 8);
+  }
+  void scriptReflectsState() {
+    UndoSend::setEnabled(false);
+    QVERIFY(UndoSend::scriptSource().contains(QLatin1String("enabled: false")));
+    UndoSend::setEnabled(true);
+    UndoSend::setSeconds(6);
+    const QString js = UndoSend::scriptSource();
+    QVERIFY(js.contains(QLatin1String("enabled: true")));
+    QVERIFY(js.contains(QLatin1String("secs: 6")));
+    // Capture-phase Enter interceptor that can hold and then re-send.
+    QVERIFY(js.contains(QLatin1String("keydown")));
+    QVERIFY(js.contains(QLatin1String("preventDefault")));
+    QVERIFY(js.contains(QLatin1String("stopImmediatePropagation")));
+    QVERIFY(js.contains(QLatin1String("bypass")));       // avoids a resend loop
+    QVERIFY(js.contains(QLatin1String("catch")));        // never breaks the page
+    UndoSend::setEnabled(false);
+  }
+  void installOnProfile() {
+    UndoSend::setEnabled(true);
+    QWebEngineProfile profile(QStringLiteral("tst_undo"));
+    UndoSend::install(&profile);
+    QCOMPARE(profile.scripts()->find(QStringLiteral("whatly-undo-send")).size(), 1);
+    // Re-installing replaces rather than stacks the script.
+    UndoSend::install(&profile);
+    QCOMPARE(profile.scripts()->find(QStringLiteral("whatly-undo-send")).size(), 1);
+    UndoSend::setEnabled(false);
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CannedResponses: CRUD round-trip and the escaped insert snippet.
 class TstCannedResponses : public QObject {
   Q_OBJECT
@@ -2898,6 +2943,7 @@ int main(int argc, char *argv[]) {
   { TstFocusMode t;           run(&t); }
   { TstCannedResponses t;     run(&t); }
   { TstHdMedia t;             run(&t); }
+  { TstUndoSend t;            run(&t); }
   { TstStorageInfo t;         run(&t); }
   { TstUpdateCheck t;         run(&t); }
   { TstFuzzy t;               run(&t); }

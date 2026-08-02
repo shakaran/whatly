@@ -33,6 +33,7 @@ signals:
   void customJsChanged();
   void focusModeChanged();
   void hdMediaChanged();
+  void undoSendChanged();
   void trayIconChanged();
   void followSystemThemeChanged();
   void chatThemeChanged();
@@ -139,6 +140,8 @@ private slots:
   void on_webrtcShieldCheckBox_toggled(bool checked);
   void on_focusModeCheckBox_toggled(bool checked);
   void on_hdMediaCheckBox_toggled(bool checked);
+  void on_undoSendCheckBox_toggled(bool checked);
+  void on_undoSendSecondsSpinBox_valueChanged(int arg1);
   void on_jsMemoryLimitSpinBox_valueChanged(int arg1);
   void on_cacheTypeComboBox_currentIndexChanged(int index);
   void on_fontHintingComboBox_currentIndexChanged(int index);
