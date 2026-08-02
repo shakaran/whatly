@@ -38,11 +38,44 @@ QStringList keywords() {
   return out;
 }
 
+static QStringList cleanList(const QStringList &raw) {
+  QStringList out;
+  for (const QString &w : raw) {
+    const QString t = w.trimmed();
+    if (!t.isEmpty())
+      out << t;
+  }
+  return out;
+}
+QStringList vipContacts() {
+  return cleanList(
+      settings().value(QStringLiteral("notif/vipContacts")).toStringList());
+}
+QStringList mutedContacts() {
+  return cleanList(
+      settings().value(QStringLiteral("notif/mutedContacts")).toStringList());
+}
+
 void setDndEnabled(bool e) { settings().setValue(QStringLiteral("notif/dndEnabled"), e); }
 void setDndStart(const QString &s) { settings().setValue(QStringLiteral("notif/dndStart"), s); }
 void setDndEnd(const QString &s) { settings().setValue(QStringLiteral("notif/dndEnd"), s); }
 void setKeywords(const QStringList &w) {
   settings().setValue(QStringLiteral("notif/keywords"), w);
+}
+void setVipContacts(const QStringList &n) {
+  settings().setValue(QStringLiteral("notif/vipContacts"), cleanList(n));
+}
+void setMutedContacts(const QStringList &n) {
+  settings().setValue(QStringLiteral("notif/mutedContacts"), cleanList(n));
+}
+
+bool matchesContact(const QStringList &names, const QString &title) {
+  for (const QString &n : names) {
+    const QString t = n.trimmed();
+    if (!t.isEmpty() && title.contains(t, Qt::CaseInsensitive))
+      return true;
+  }
+  return false;
 }
 
 bool matchesKeyword(const QString &title, const QString &body) {
@@ -70,6 +103,13 @@ bool inDndWindow(const QDateTime &now) {
 
 bool shouldNotify(const QDateTime &now, const QString &title,
                   const QString &body) {
+  // A muted contact is always silenced (badge still updates elsewhere); it wins
+  // over everything, including a keyword hit.
+  if (matchesContact(mutedContacts(), title))
+    return false;
+  // A VIP contact always breaks through, even during Do Not Disturb.
+  if (matchesContact(vipContacts(), title))
+    return true;
   // A keyword hit always breaks through, even during Do Not Disturb.
   if (matchesKeyword(title, body))
     return true;

@@ -1677,6 +1677,30 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>VIP 联系人</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>已静音联系人</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>以逗号分隔的联系人或群组名称，即使在勿扰模式下也始终通知（不区分大小写）。</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>以逗号分隔的联系人或群组名称，其通知从不显示（未读计数仍会更新）。</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>例如 Alice、工作群</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>例如 吵闹的群</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>挂起非活动账户</translation>
     </message>

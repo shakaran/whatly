@@ -1677,6 +1677,30 @@ Définissez d&apos;abord le mot de passe dans les paramètres.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>Contacts VIP</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>Contacts en sourdine</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>Noms de contacts ou groupes, séparés par des virgules, qui notifient toujours, même en mode Ne pas déranger (insensible à la casse).</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>Noms de contacts ou groupes, séparés par des virgules, dont les notifications ne s'affichent jamais (leur compteur de non-lus continue).</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>p. ex. Alice, Groupe de travail</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>p. ex. Groupe bruyant</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>Suspendre les comptes inactifs</translation>
     </message>

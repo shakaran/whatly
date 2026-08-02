@@ -1673,6 +1673,30 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>VIP-kontaktoj</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>Silentigitaj kontaktoj</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>Perkome disigitaj kontaktaj aŭ grupaj nomoj kiuj ĉiam sciigas, eĉ dum Ne ĝeni (sendistinge pri usklo).</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>Perkome disigitaj kontaktaj aŭ grupaj nomoj kies sciigoj neniam montriĝas (ilia nelegita insigno plu ĝisdatiĝas).</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>ekz. Alice, Labora grupo</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>ekz. Brua grupo</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>Prokrasti neaktivajn kontojn</translation>
     </message>

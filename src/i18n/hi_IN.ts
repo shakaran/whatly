@@ -1677,6 +1677,30 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>वीआईपी संपर्क</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>म्यूट किए संपर्क</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>अल्पविराम से अलग संपर्क या समूह नाम जो हमेशा सूचित करते हैं, 'परेशान न करें' के दौरान भी (केस-असंवेदनशील)।</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>अल्पविराम से अलग संपर्क या समूह नाम जिनकी सूचनाएँ कभी नहीं दिखतीं (उनका अपठित बैज फिर भी अपडेट होता है)।</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>उदा. Alice, कार्य समूह</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>उदा. शोरगुल वाला समूह</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>निष्क्रिय खाते निलंबित करें</translation>
     </message>

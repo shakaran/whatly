@@ -1677,6 +1677,30 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>Kontak VIP</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>Kontak dibisukan</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>Nama kontak atau grup dipisahkan koma yang selalu memberi notifikasi, bahkan saat Jangan Ganggu (tidak peka huruf).</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>Nama kontak atau grup dipisahkan koma yang notifikasinya tidak pernah ditampilkan (lencana belum dibaca tetap diperbarui).</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>mis. Alice, Grup kerja</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>mis. Grup berisik</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>Tangguhkan akun tidak aktif</translation>
     </message>

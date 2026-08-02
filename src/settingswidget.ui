@@ -400,6 +400,40 @@ background:transparent;
               </property>
              </widget>
             </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="vipContactsLabel">
+              <property name="text">
+               <string>VIP contacts</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="vipContactsLineEdit">
+              <property name="toolTip">
+               <string>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</string>
+              </property>
+              <property name="placeholderText">
+               <string>e.g. Alice, Work group</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="mutedContactsLabel">
+              <property name="text">
+               <string>Muted contacts</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="mutedContactsLineEdit">
+              <property name="toolTip">
+               <string>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</string>
+              </property>
+              <property name="placeholderText">
+               <string>e.g. Noisy group</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
           <item row="7" column="0">

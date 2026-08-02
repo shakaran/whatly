@@ -1,5 +1,10 @@
 ## Unreleased
 
+**VIP and muted contacts for notifications.** Settings → Notifications now takes
+a list of VIP contacts, which always notify even during Do Not Disturb, and a
+list of muted contacts, whose popups are never shown (their unread badge still
+updates). Names are matched case-insensitively against the sender.
+
 **Recent unread chats in the tray menu.** The tray menu now has a "Recent
 unread" submenu listing conversations with unread messages (name and count);
 picking one brings the window up and opens that chat. It hides itself when

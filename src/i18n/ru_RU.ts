@@ -1677,6 +1677,30 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>VIP-контакты</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>Заглушённые контакты</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>Разделённые запятыми имена контактов или групп, которые всегда уведомляют, даже в режиме «Не беспокоить» (без учёта регистра).</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>Разделённые запятыми имена контактов или групп, чьи уведомления никогда не показываются (счётчик непрочитанных всё равно обновляется).</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>напр. Алиса, Рабочая группа</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>напр. Шумная группа</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>Приостанавливать неактивные аккаунты</translation>
     </message>

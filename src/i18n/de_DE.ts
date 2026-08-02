@@ -1677,6 +1677,30 @@ Bitte legen Sie zuerst das Passwort in den Einstellungen fest.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>VIP-Kontakte</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>Stummgeschaltete Kontakte</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>Durch Kommas getrennte Kontakt- oder Gruppennamen, die immer benachrichtigen, auch bei „Nicht stören“ (Groß-/Kleinschreibung egal).</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>Durch Kommas getrennte Kontakt- oder Gruppennamen, deren Benachrichtigungen nie erscheinen (ihr Ungelesen-Zähler aktualisiert sich weiter).</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>z. B. Alice, Arbeitsgruppe</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>z. B. Lärmige Gruppe</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>Inaktive Konten aussetzen</translation>
     </message>

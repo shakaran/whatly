@@ -1677,6 +1677,30 @@ Configure primero la contraseña en los ajustes.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>Contactos VIP</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>Contactos silenciados</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>Nombres de contactos o grupos, separados por comas, que siempre notifican, incluso durante No molestar (sin distinguir mayúsculas).</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>Nombres de contactos o grupos, separados por comas, cuyas notificaciones nunca se muestran (su contador de no leídos sigue actualizándose).</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>p. ej. Alicia, Grupo de trabajo</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>p. ej. Grupo ruidoso</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>Suspender cuentas inactivas</translation>
     </message>

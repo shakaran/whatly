@@ -1677,6 +1677,30 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>جهات اتصال VIP</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>جهات اتصال مكتومة</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>أسماء جهات اتصال أو مجموعات مفصولة بفواصل تُنبّه دائمًا، حتى أثناء عدم الإزعاج (غير حساسة لحالة الأحرف).</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>أسماء جهات اتصال أو مجموعات مفصولة بفواصل لا تظهر إشعاراتها أبدًا (يظل عدّاد غير المقروء يتحدث).</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>مثل: Alice، مجموعة العمل</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>مثل: مجموعة صاخبة</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>تعليق الحسابات غير النشطة</translation>
     </message>

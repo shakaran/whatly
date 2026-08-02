@@ -1677,6 +1677,30 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>VIP 연락처</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>음소거된 연락처</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>쉼표로 구분한 연락처 또는 그룹 이름. 방해 금지 중에도 항상 알립니다(대소문자 구분 안 함).</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>쉼표로 구분한 연락처 또는 그룹 이름. 알림이 표시되지 않습니다(안 읽음 배지는 계속 갱신됨).</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>예: Alice, 업무 그룹</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>예: 시끄러운 그룹</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>비활성 계정 일시 중단</translation>
     </message>

@@ -1677,6 +1677,30 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>VIP kişiler</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>Sessize alınan kişiler</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>Rahatsız Etme sırasında bile her zaman bildirim gönderen, virgülle ayrılmış kişi veya grup adları (büyük/küçük harfe duyarsız).</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>Bildirimleri hiç gösterilmeyen, virgülle ayrılmış kişi veya grup adları (okunmamış sayacı yine de güncellenir).</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>örn. Alice, İş grubu</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>örn. Gürültülü grup</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>Etkin olmayan hesapları askıya al</translation>
     </message>

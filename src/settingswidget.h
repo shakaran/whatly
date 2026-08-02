@@ -174,6 +174,8 @@ private slots:
   void on_dndStartTimeEdit_timeChanged(const QTime &t);
   void on_dndEndTimeEdit_timeChanged(const QTime &t);
   void on_keywordsLineEdit_editingFinished();
+  void on_vipContactsLineEdit_editingFinished();
+  void on_mutedContactsLineEdit_editingFinished();
   void on_addCannedButton_clicked();
   void on_removeCannedButton_clicked();
   void on_addJsAddonButton_clicked();

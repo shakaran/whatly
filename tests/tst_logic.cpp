@@ -2521,6 +2521,38 @@ private slots:
     NotificationRules::setDndStart(QStringLiteral("22:00"));
     NotificationRules::setDndEnd(QStringLiteral("08:00"));
     NotificationRules::setKeywords({});
+    NotificationRules::setVipContacts({});
+    NotificationRules::setMutedContacts({});
+  }
+
+  // Per-contact profiles (#10): VIP breaks DND, muted is always silenced and
+  // wins over VIP/keywords.
+  void contactProfiles() {
+    const QDateTime night(QDate(2026, 1, 1), QTime(23, 0)); // inside DND
+    NotificationRules::setDndEnabled(true);
+
+    // VIP notifies even during DND.
+    NotificationRules::setVipContacts({QStringLiteral("Alice")});
+    QVERIFY(NotificationRules::shouldNotify(night, QStringLiteral("Alice"),
+                                            QStringLiteral("hi")));
+    // A non-VIP is suppressed during DND.
+    QVERIFY(!NotificationRules::shouldNotify(night, QStringLiteral("Bob"),
+                                             QStringLiteral("hi")));
+
+    // Muted is always silenced, even outside DND and even if also VIP/keyword.
+    NotificationRules::setDndEnabled(false);
+    NotificationRules::setMutedContacts({QStringLiteral("Noisy group")});
+    NotificationRules::setKeywords({QStringLiteral("hi")});
+    NotificationRules::setVipContacts({QStringLiteral("Noisy group")});
+    const QDateTime day(QDate(2026, 1, 1), QTime(12, 0));
+    QVERIFY(!NotificationRules::shouldNotify(
+        day, QStringLiteral("Noisy group"), QStringLiteral("hi")));
+
+    // Case-insensitive contains match.
+    QVERIFY(NotificationRules::matchesContact({QStringLiteral("alice")},
+                                              QStringLiteral("Alice (2)")));
+    QVERIFY(!NotificationRules::matchesContact({QStringLiteral("Carol")},
+                                               QStringLiteral("Alice")));
   }
 
   QDateTime at(int h, int m) {

@@ -1570,6 +1570,10 @@ void SettingsWidget::loadNotificationRules() {
   ui->dndEndTimeEdit->blockSignals(false);
 
   ui->keywordsLineEdit->setText(NotificationRules::keywords().join(QStringLiteral(", ")));
+  ui->vipContactsLineEdit->setText(
+      NotificationRules::vipContacts().join(QStringLiteral(", ")));
+  ui->mutedContactsLineEdit->setText(
+      NotificationRules::mutedContacts().join(QStringLiteral(", ")));
 
   const bool on = NotificationRules::dndEnabled();
   ui->dndStartTimeEdit->setEnabled(on);
@@ -1600,6 +1604,18 @@ void SettingsWidget::on_keywordsLineEdit_editingFinished() {
       cleaned << t;
   }
   NotificationRules::setKeywords(cleaned);
+}
+
+void SettingsWidget::on_vipContactsLineEdit_editingFinished() {
+  NotificationRules::setVipContacts(
+      ui->vipContactsLineEdit->text().split(QLatin1Char(','),
+                                            Qt::SkipEmptyParts));
+}
+
+void SettingsWidget::on_mutedContactsLineEdit_editingFinished() {
+  NotificationRules::setMutedContacts(
+      ui->mutedContactsLineEdit->text().split(QLatin1Char(','),
+                                              Qt::SkipEmptyParts));
 }
 
 void SettingsWidget::refreshJsAddonsList() {

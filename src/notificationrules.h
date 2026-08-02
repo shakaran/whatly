@@ -26,10 +26,21 @@ QString dndStart();      // "HH:mm"
 QString dndEnd();        // "HH:mm"
 QStringList keywords();  // highlight words (may be empty)
 
+// Per-contact profiles (idea #10): a VIP contact always notifies even during Do
+// Not Disturb; a muted contact never pops up (its badge still updates). Matched
+// case-insensitively against the notification title (the sender name).
+QStringList vipContacts();
+QStringList mutedContacts();
+
 void setDndEnabled(bool enabled);
 void setDndStart(const QString &hhmm);
 void setDndEnd(const QString &hhmm);
 void setKeywords(const QStringList &words);
+void setVipContacts(const QStringList &names);
+void setMutedContacts(const QStringList &names);
+
+// True when any entry in `names` is contained (case-insensitive) in `title`.
+bool matchesContact(const QStringList &names, const QString &title);
 
 // True when a notification with this title/body should pop up at `now`.
 bool shouldNotify(const QDateTime &now, const QString &title,

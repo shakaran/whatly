@@ -1677,6 +1677,30 @@ Najpierw ustaw hasło w ustawieniach.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>Kontakty VIP</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>Wyciszone kontakty</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>Rozdzielone przecinkami nazwy kontaktów lub grup, które zawsze powiadamiają, nawet podczas trybu Nie przeszkadzać (bez rozróżniania wielkości liter).</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>Rozdzielone przecinkami nazwy kontaktów lub grup, których powiadomienia nigdy się nie pojawiają (licznik nieprzeczytanych nadal działa).</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>np. Alice, Grupa robocza</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>np. Hałaśliwa grupa</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>Wstrzymaj nieaktywne konta</translation>
     </message>

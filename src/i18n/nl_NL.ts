@@ -1677,6 +1677,30 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>VIP-contacten</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>Gedempte contacten</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>Door komma's gescheiden contact- of groepsnamen die altijd melden, ook tijdens Niet storen (hoofdletterongevoelig).</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>Door komma's gescheiden contact- of groepsnamen waarvan meldingen nooit worden getoond (hun ongelezen-teller blijft bijwerken).</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>bijv. Alice, Werkgroep</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>bijv. Luidruchtige groep</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>Inactieve accounts opschorten</translation>
     </message>

@@ -1677,6 +1677,30 @@ Please setup the password in the Settings first.</source>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>VIP連絡先</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>ミュートした連絡先</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>カンマ区切りの連絡先またはグループ名。応答不可中でも常に通知します（大文字小文字を区別しません）。</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>カンマ区切りの連絡先またはグループ名。通知は表示されません（未読バッジは更新されます）。</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>例: Alice、仕事グループ</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>例: うるさいグループ</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>非アクティブなアカウントを一時停止</translation>
     </message>

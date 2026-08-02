@@ -1677,6 +1677,30 @@ Defina primeiro a senha nas configurações.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
+        <source>VIP contacts</source>
+        <translation>Contatos VIP</translation>
+    </message>
+    <message>
+        <source>Muted contacts</source>
+        <translation>Contatos silenciados</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>Nomes de contatos ou grupos separados por vírgulas que sempre notificam, mesmo durante Não perturbe (sem diferenciar maiúsculas).</translation>
+    </message>
+    <message>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>Nomes de contatos ou grupos separados por vírgulas cujas notificações nunca aparecem (o contador de não lidos continua atualizando).</translation>
+    </message>
+    <message>
+        <source>e.g. Alice, Work group</source>
+        <translation>ex. Alice, Grupo de trabalho</translation>
+    </message>
+    <message>
+        <source>e.g. Noisy group</source>
+        <translation>ex. Grupo barulhento</translation>
+    </message>
+    <message>
         <source>Suspend inactive accounts</source>
         <translation>Suspender contas inativas</translation>
     </message>
