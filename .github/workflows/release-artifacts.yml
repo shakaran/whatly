@@ -321,13 +321,18 @@ jobs:
           if git clone --depth 1 --branch "v$qtver" \
                https://github.com/qt/qtwayland.git qtwayland-src; then
             # Client only: FEATURE_wayland_server=OFF skips the compositor side
-            # (the flag is "wayland-server"; there is no "wayland_compositor"),
-            # which also avoids its extra dma-buf/DRM/EGL build deps.
+            # (the feature is "wayland-server"; there is no "wayland_compositor"),
+            # which also avoids its extra dma-buf/DRM/EGL build deps. For a
+            # standalone module build the plain FEATURE_ input is not honoured
+            # (it warns "not used" and the compositor still configures, failing
+            # on its dmabuf-server plugin); forcing the computed QT_FEATURE_ var
+            # is what actually skips it.
             if cmake -S qtwayland-src -B qtwayland-build -G Ninja \
                  -DCMAKE_BUILD_TYPE=Release \
                  -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR" \
                  -DCMAKE_INSTALL_PREFIX="$QT_ROOT_DIR" \
                  -DFEATURE_wayland_server=OFF \
+                 -DQT_FEATURE_wayland_server=OFF \
                && cmake --build qtwayland-build --parallel \
                && cmake --install qtwayland-build; then
               ok=1
