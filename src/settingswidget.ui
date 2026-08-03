@@ -1816,6 +1816,100 @@ background:transparent;
                </property>
               </widget>
              </item>
+             <item row="4" column="0" colspan="2">
+              <widget class="Line" name="aiLine">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="aiLocalLabel">
+               <property name="text">
+                <string>Local models (Ollama)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <layout class="QHBoxLayout" name="aiDetectLayout">
+               <item>
+                <widget class="QPushButton" name="aiDetectButton">
+                 <property name="toolTip">
+                  <string>Check for a local Ollama and list its installed models.</string>
+                 </property>
+                 <property name="text">
+                  <string>Detect Ollama</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="aiOllamaStatusLabel">
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="aiInstalledLabel">
+               <property name="text">
+                <string>Installed model</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QComboBox" name="aiInstalledModelsCombo">
+               <property name="toolTip">
+                <string>Pick one of the models already installed in Ollama; it becomes the model above.</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="aiDownloadLabel">
+               <property name="text">
+                <string>Download a light model</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <layout class="QHBoxLayout" name="aiDownloadLayout">
+               <item>
+                <widget class="QComboBox" name="aiRecommendedCombo">
+                 <property name="toolTip">
+                  <string>Light, fast models that run well on modest hardware.</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="aiDownloadButton">
+                 <property name="text">
+                  <string>Download</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="8" column="0" colspan="2">
+              <widget class="QProgressBar" name="aiPullProgressBar">
+               <property name="visible">
+                <bool>false</bool>
+               </property>
+               <property name="value">
+                <number>0</number>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="0" colspan="2">
+              <widget class="QLabel" name="aiPullStatusLabel">
+               <property name="text">
+                <string/>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
             </layout>
            </widget>
           </item>

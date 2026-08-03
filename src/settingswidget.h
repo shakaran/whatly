@@ -150,6 +150,9 @@ private slots:
   void on_aiEndpointLineEdit_editingFinished();
   void on_aiModelLineEdit_editingFinished();
   void on_aiApiKeyLineEdit_editingFinished();
+  void on_aiDetectButton_clicked();
+  void on_aiInstalledModelsCombo_activated(int index);
+  void on_aiDownloadButton_clicked();
   void on_jsMemoryLimitSpinBox_valueChanged(int arg1);
   void on_cacheTypeComboBox_currentIndexChanged(int index);
   void on_fontHintingComboBox_currentIndexChanged(int index);
@@ -242,6 +245,7 @@ private:
   Ui::SettingsWidget *ui;
   QString engineCachePath, enginePersistentStoragePath;
   QTimer *themeSwitchTimer;
+  class OllamaManager *m_ollama = nullptr; // lazy; local-model detect/download
 };
 
 #endif // SETTINGSWIDGET_H

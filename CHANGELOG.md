@@ -16,6 +16,13 @@ now on the message view's right-click menu (composer actions in the message box,
 selection actions when text is selected), so they no longer need the command
 palette or a shortcut. They remain in the command palette and Shortcuts too.
 
+**Local AI made easy (Ollama helper).** Settings → AI assistant can now detect a
+local Ollama, list its installed models to pick from a dropdown (no typing), and
+download a recommended light model (qwen2.5:3b, llama3.2, gemma2:2b, phi3) with a
+button and a progress bar. This makes a private, on-device assistant approachable
+without touching a terminal. A light model is recommended: large models can
+exhaust memory and slow the app.
+
 **Reply from notifications.** On desktops whose notification service supports it
 (KDE Plasma, and others that advertise the freedesktop `inline-reply`
 capability), message notifications now carry a reply field: type an answer and it

@@ -56,6 +56,7 @@
 #include "undosend.h"
 #include "translator.h"
 #include "aiassistant.h"
+#include "ollama.h"
 #include "cannedresponses.h"
 
 #include <QListWidget>
@@ -1344,6 +1345,11 @@ void SettingsWidget::loadPerformanceSettings() {
   ui->aiEndpointLineEdit->setText(Ai::endpoint());
   ui->aiModelLineEdit->setText(Ai::model());
   ui->aiApiKeyLineEdit->setText(Ai::apiKey());
+  if (ui->aiRecommendedCombo->count() == 0) {
+    for (const Ollama::RecModel &m : Ollama::recommendedModels())
+      ui->aiRecommendedCombo->addItem(
+          QStringLiteral("%1  (%2): %3").arg(m.name, m.size, m.note), m.name);
+  }
   set(ui->suspendInactiveAccountsCheckBox,
       Performance::suspendInactiveAccounts());
   ui->suspendAfterSpinBox->blockSignals(true);
@@ -1432,6 +1438,86 @@ void SettingsWidget::on_aiModelLineEdit_editingFinished() {
 }
 void SettingsWidget::on_aiApiKeyLineEdit_editingFinished() {
   Ai::setApiKey(ui->aiApiKeyLineEdit->text());
+}
+
+void SettingsWidget::on_aiDetectButton_clicked() {
+  if (!m_ollama) {
+    m_ollama = new OllamaManager(this);
+    connect(m_ollama, &OllamaManager::checked, this,
+            [this](bool available, const QStringList &models) {
+              if (!available) {
+                ui->aiOllamaStatusLabel->setText(
+                    tr("Ollama not found at this address."));
+                ui->aiInstalledModelsCombo->clear();
+                return;
+              }
+              ui->aiOllamaStatusLabel->setText(
+                  tr("Ollama found (%1 models installed).")
+                      .arg(models.size()));
+              ui->aiInstalledModelsCombo->clear();
+              ui->aiInstalledModelsCombo->addItems(models);
+              const int i = ui->aiInstalledModelsCombo->findText(Ai::model());
+              if (i >= 0)
+                ui->aiInstalledModelsCombo->setCurrentIndex(i);
+            });
+    connect(m_ollama, &OllamaManager::pullProgress, this,
+            [this](int percent, const QString &status) {
+              ui->aiPullProgressBar->setVisible(true);
+              if (percent >= 0) {
+                ui->aiPullProgressBar->setRange(0, 100);
+                ui->aiPullProgressBar->setValue(percent);
+              } else {
+                ui->aiPullProgressBar->setRange(0, 0); // busy/indeterminate
+              }
+              if (!status.isEmpty())
+                ui->aiPullStatusLabel->setText(status);
+            });
+    connect(m_ollama, &OllamaManager::pullFinished, this,
+            [this](bool ok, const QString &error) {
+              ui->aiDownloadButton->setEnabled(true);
+              ui->aiPullProgressBar->setVisible(false);
+              if (ok) {
+                ui->aiPullStatusLabel->setText(tr("Download complete."));
+                on_aiDetectButton_clicked(); // refresh the installed list
+              } else {
+                ui->aiPullStatusLabel->setText(tr("Download failed: %1").arg(error));
+              }
+            });
+  }
+  // If the endpoint is empty, default it to a local Ollama so detection (and
+  // later use) works out of the box.
+  if (ui->aiEndpointLineEdit->text().trimmed().isEmpty()) {
+    ui->aiEndpointLineEdit->setText(
+        QStringLiteral("http://localhost:11434/v1/chat/completions"));
+    Ai::setEndpoint(ui->aiEndpointLineEdit->text());
+  }
+  ui->aiOllamaStatusLabel->setText(tr("Checking…"));
+  m_ollama->check(Ollama::baseUrl(ui->aiEndpointLineEdit->text()));
+}
+
+void SettingsWidget::on_aiInstalledModelsCombo_activated(int index) {
+  const QString name = ui->aiInstalledModelsCombo->itemText(index);
+  if (name.isEmpty())
+    return;
+  ui->aiModelLineEdit->setText(name);
+  Ai::setModel(name);
+}
+
+void SettingsWidget::on_aiDownloadButton_clicked() {
+  const QString model =
+      ui->aiRecommendedCombo->currentData().toString();
+  if (model.isEmpty() || !m_ollama) {
+    // Make sure the manager exists (its signals are wired in the detect slot).
+    on_aiDetectButton_clicked();
+  }
+  if (ui->aiRecommendedCombo->currentData().toString().isEmpty())
+    return;
+  const QString chosen = ui->aiRecommendedCombo->currentData().toString();
+  ui->aiDownloadButton->setEnabled(false);
+  ui->aiPullProgressBar->setVisible(true);
+  ui->aiPullProgressBar->setRange(0, 0);
+  ui->aiPullStatusLabel->setText(tr("Starting download of %1…").arg(chosen));
+  m_ollama->pull(Ollama::baseUrl(ui->aiEndpointLineEdit->text()), chosen);
 }
 void SettingsWidget::on_jsMemoryLimitSpinBox_valueChanged(int arg1) {
   Performance::setJsMemoryLimitMb(arg1);

@@ -49,6 +49,7 @@
 #include "chatexport.h"
 #include "notificationreply.h"
 #include "aiassistant.h"
+#include "ollama.h"
 #include "cannedresponses.h"
 #include "webtweaks.h"
 #include "chatliststrip.h"
@@ -2505,6 +2506,57 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Ollama helper (#5 ease-of-use): URL derivation, tag/progress parsing, list.
+class TstOllama : public QObject {
+  Q_OBJECT
+private slots:
+  void baseUrlDerivation() {
+    QCOMPARE(Ollama::baseUrl(
+                 QStringLiteral("http://localhost:11434/v1/chat/completions")),
+             QStringLiteral("http://localhost:11434"));
+    QCOMPARE(Ollama::baseUrl(QStringLiteral("https://api.openai.com/v1/chat/completions")),
+             QStringLiteral("https://api.openai.com"));
+    // Empty / unparseable falls back to the default local Ollama.
+    QCOMPARE(Ollama::baseUrl(QString()),
+             QStringLiteral("http://localhost:11434"));
+  }
+  void localDetection() {
+    QVERIFY(Ollama::isLocalEndpoint(
+        QStringLiteral("http://localhost:11434/v1/chat/completions")));
+    QVERIFY(Ollama::isLocalEndpoint(
+        QStringLiteral("http://127.0.0.1:11434/v1")));
+    QVERIFY(!Ollama::isLocalEndpoint(
+        QStringLiteral("https://api.openai.com/v1/chat/completions")));
+  }
+  void installedModelsParsing() {
+    const QByteArray json =
+        "{\"models\":[{\"name\":\"qwen2.5:3b\"},{\"name\":\"llama3.2:1b\"}]}";
+    const QStringList m = Ollama::parseInstalledModels(json);
+    QCOMPARE(m.size(), 2);
+    QCOMPARE(m.first(), QStringLiteral("qwen2.5:3b"));
+    QVERIFY(Ollama::parseInstalledModels("not json").isEmpty());
+  }
+  void pullProgressParsing() {
+    QString status;
+    QCOMPARE(Ollama::parsePullProgress(
+                 "{\"status\":\"pulling\",\"total\":100,\"completed\":25}",
+                 &status),
+             25);
+    QCOMPARE(status, QStringLiteral("pulling"));
+    // No total yet -> unknown percent, but status still surfaces.
+    QCOMPARE(Ollama::parsePullProgress("{\"status\":\"verifying\"}", &status),
+             -1);
+    QCOMPARE(status, QStringLiteral("verifying"));
+  }
+  void recommendedListIsLight() {
+    const auto list = Ollama::recommendedModels();
+    QVERIFY(list.size() >= 3);
+    for (const auto &m : list)
+      QVERIFY(!m.name.isEmpty());
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CannedResponses: CRUD round-trip and the escaped insert snippet.
 class TstCannedResponses : public QObject {
   Q_OBJECT
@@ -3204,6 +3256,7 @@ int main(int argc, char *argv[]) {
   { TstTranslator t;          run(&t); }
   { TstChatExport t;          run(&t); }
   { TstAiAssistant t;         run(&t); }
+  { TstOllama t;              run(&t); }
   { TstStorageInfo t;         run(&t); }
   { TstUpdateCheck t;         run(&t); }
   { TstFuzzy t;               run(&t); }
