@@ -1,4 +1,5 @@
 #include "notificationreply.h"
+#include "common.h"
 
 #include <QImage>
 
@@ -113,7 +114,10 @@ quint32 NotificationReply::notify(const QString &appName, const QString &title,
           << QStringLiteral("default") << QStringLiteral("Open");
 
   QVariantMap hints;
-  hints.insert(QStringLiteral("desktop-entry"), QStringLiteral("whatly"));
+  // The app id / icon name, so KDE shows the Whatly logo and groups the
+  // notification with the app (issue #38): it must be net.shakaran.whatly, the
+  // installed icon/.desktop name, not "whatly".
+  hints.insert(QStringLiteral("desktop-entry"), kAppId);
   if (!replyPlaceholder.isEmpty())
     hints.insert(QStringLiteral("x-kde-reply-placeholder-text"),
                  replyPlaceholder);
@@ -121,9 +125,11 @@ quint32 NotificationReply::notify(const QString &appName, const QString &title,
     hints.insert(QStringLiteral("image-data"),
                  QVariant::fromValue(toImageData(icon)));
 
-  const QDBusReply<uint> reply = iface.call(
-      QStringLiteral("Notify"), appName, uint(0), QStringLiteral("whatly"),
-      title, body, actions, hints, timeoutMs);
+  // 4th arg is app_icon: the themed icon name, which must be the installed
+  // net.shakaran.whatly (not "whatly") so KDE shows the logo (issue #38).
+  const QDBusReply<uint> reply =
+      iface.call(QStringLiteral("Notify"), appName, uint(0), kAppId, title, body,
+                 actions, hints, timeoutMs);
   return reply.isValid() ? reply.value() : 0;
 #else
   Q_UNUSED(appName) Q_UNUSED(title) Q_UNUSED(body) Q_UNUSED(icon)

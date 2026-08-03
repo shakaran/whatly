@@ -1443,13 +1443,21 @@ QVariant MainWindow::notificationImageHint(const QPixmap &pixmap) {
 }
 
 Notification::EventPtr MainWindow::notify(const QString& title, const QString& body, qint32 timeout) {
-  Notification::EventPtr ntf = m_notifier.createNotification(title, body, "whatly");
+  // The icon must be named after the installed icon / desktop id
+  // (net.shakaran.whatly), not "whatly": the notification daemon resolves it
+  // from the icon theme, and "whatly" does not exist there — especially in a
+  // Flatpak, where only net.shakaran.whatly is present — so KDE showed a broken
+  // "unknown app" logo (issue #38).
+  Notification::EventPtr ntf = m_notifier.createNotification(title, body, kAppId);
 
   ntf->setTimeout(timeout);
   ntf->setCategory("im.received");
   ntf->addAction("open", tr("Open"));
   ntf->setHint("action-icons", false);
-  ntf->setHintString("image-path", "whatly");
+  ntf->setHintString("image-path", kAppId);
+  // Ties the notification to the app's .desktop entry, so KDE labels it with the
+  // app name and icon (and groups it correctly).
+  ntf->setHintString("desktop-entry", kAppId);
   // Ask the notification service to play a sound for the message (issue #120).
   // "message-new-instant" is the freedesktop sound-naming-spec event for a new
   // instant message; the daemon (KDE, GNOME, ...) maps it to its own sound. Some

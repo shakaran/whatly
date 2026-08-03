@@ -1,5 +1,12 @@
 ## Unreleased
 
+**Fixed: notifications showed a broken/unknown app logo on KDE (#38).** Desktop
+notifications asked the notification daemon for an icon named "whatly", which is
+not the installed icon name (net.shakaran.whatly), so KDE (and Flatpak in
+particular, where only that icon exists) drew a generic "unknown app" logo. They
+now use the correct icon name and set the desktop-entry hint, so the Whatly logo
+appears and the notification is attributed to the app.
+
 **Four more interface languages.** Persian/Farsi (fa), Ukrainian (uk),
 Vietnamese (vi) and Traditional Chinese (zh_TW) join the interface translations,
 bringing the total to 20. Pick one in Settings → Interface, or leave it on the

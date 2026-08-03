@@ -462,7 +462,7 @@ int main(int argc, char *argv[]) {
   // the About box, is set separately so those read "Whatly", not "whatly".
   QApplication::setApplicationName("whatly");
   QApplication::setApplicationDisplayName("Whatly");
-  QApplication::setDesktopFileName("net.shakaran.whatly");
+  QApplication::setDesktopFileName(kAppId);
   QApplication::setOrganizationDomain("net.shakaran");
   QApplication::setOrganizationName("shakaran");
   QApplication::setApplicationVersion(VERSIONSTR);

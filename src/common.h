@@ -11,6 +11,10 @@ extern QString defaultUserAgentStr;
 // The origin every page permission belongs to.
 extern const QString whatsAppOrigin;
 
+// The application id (the installed .desktop / icon name, net.shakaran.whatly).
+// Notification icons and the desktop-file name key off it.
+extern const QString kAppId;
+
 // appAutoLock
 extern int defaultAppAutoLockDuration;
 extern bool defaultAppAutoLock;

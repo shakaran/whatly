@@ -14,6 +14,11 @@ QString defaultUserAgentStr = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.3
 
 const QString whatsAppOrigin = QStringLiteral("https://web.whatsapp.com");
 
+// The application id: the name of the installed .desktop file and icon
+// (net.shakaran.whatly). Notification icons, the desktop-file name and launcher
+// entries all key off it, so it lives in one place.
+const QString kAppId = QStringLiteral("net.shakaran.whatly");
+
 int defaultAppAutoLockDuration = 30;
 bool defaultAppAutoLock = false;
 double defaultZoomFactorMaximized = 1.00;
