@@ -38,7 +38,15 @@ document.createElement('video').canPlayType('video/mp4; codecs="avc1.42E01E"')
 
 `"probably"`/`"maybe"` = H.264 present; `""` = missing (MP4 will be rejected).
 
-## Producing a codec-enabled build locally
+## Enabling the codecs on your own machine
+
+> **Project stance.** Whatly's official releases deliberately **do not ship the
+> H.264/AAC codecs**, to keep the maintainer clear of the MPEG-LA patent
+> licensing that redistributing them would involve (see *Licensing note* below).
+> The steps here are for **building/enabling the codecs on your own machine for
+> your own use**, where that licensing situation does not apply the same way. If
+> you rebuild and then *redistribute* the result, the licensing responsibility
+> becomes yours.
 
 ### Option A — package against a system Qt that has the codecs (recommended, light)
 
@@ -88,8 +96,14 @@ Then bundle that Qt WebEngine as in Option A.
 
 ## Licensing note
 
-H.264 and AAC are covered by patents (MPEG-LA pools). This is why the official Qt
-binaries and most distributions ship without them, and why the CI portable builds
-do too. **Enabling and redistributing these codecs is a decision for the
-maintainer/packager**, who may need an appropriate licence. Shipping WebM/VP9
-(royalty-free) and leaving MP4 to a codec-enabled system Qt avoids that.
+H.264 and AAC are covered by patents (MPEG-LA / Via LA pools). This is why the
+official Qt binaries and most distributions ship without them, and why Whatly's
+CI portable builds do too — and why the project does **not** distribute
+codec-enabled binaries: as the *distributor*, the maintainer would take on the
+licensing obligations. Building or enabling the codecs **for your own use** is a
+different matter; **redistributing** a codec-enabled binary makes those
+obligations yours. Whatly ships WebM/VP9 support (royalty-free) out of the box and
+leaves MP4 to a codec-enabled system Qt.
+
+*This document is engineering guidance, not legal advice; consult the actual
+licence terms (or a lawyer) before redistributing.*
