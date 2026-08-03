@@ -68,6 +68,7 @@
 #include "trayicon.h"
 #include "chatnav.h"
 #include "dropattach.h"
+#include "dropreader.h"
 #include "dropresolve.h"
 #include "networkproxy.h"
 #include "notificationrules.h"
@@ -2046,6 +2047,80 @@ private slots:
   }
 };
 
+// DropReader::plan: what a drop will read, worked out from the sizes before any
+// reading starts. It sizes the progress bar and names the files left out, which
+// used to be a terminal-only warning.
+class TstDropReader : public QObject {
+  Q_OBJECT
+
+  // A file of exactly the requested size.
+  static QString makeFile(const QTemporaryDir &dir, const QString &name,
+                          qint64 bytes) {
+    const QString path = dir.filePath(name);
+    QFile f(path);
+    if (!f.open(QIODevice::WriteOnly))
+      return QString();
+    if (bytes > 0)
+      f.write(QByteArray(static_cast<int>(bytes), 'x'));
+    f.close();
+    return path;
+  }
+
+private slots:
+  void emptyPathsPlanNothing() {
+    const DropReader::Plan p = DropReader::plan({});
+    QVERIFY(p.accepted.isEmpty());
+    QVERIFY(p.tooLarge.isEmpty());
+    QCOMPARE(p.totalBytes, 0);
+  }
+
+  // Normal files are accepted and their bytes summed, so the bar has a total.
+  void acceptsAndSumsSizes() {
+    QTemporaryDir dir;
+    QVERIFY(dir.isValid());
+    const QString a = makeFile(dir, QStringLiteral("a.bin"), 100);
+    const QString b = makeFile(dir, QStringLiteral("b.bin"), 250);
+
+    const DropReader::Plan p = DropReader::plan({a, b});
+    QCOMPARE(p.accepted.size(), 2);
+    QCOMPARE(p.totalBytes, 350);
+    QVERIFY(p.tooLarge.isEmpty());
+  }
+
+  // Empty files and directories have nothing to attach, and are not reported as
+  // too large either.
+  void skipsEmptyAndDirectories() {
+    QTemporaryDir dir;
+    QVERIFY(dir.isValid());
+    const QString empty = makeFile(dir, QStringLiteral("empty.bin"), 0);
+
+    const DropReader::Plan p = DropReader::plan({empty, dir.path()});
+    QVERIFY(p.accepted.isEmpty());
+    QVERIFY(p.tooLarge.isEmpty());
+    QCOMPARE(p.totalBytes, 0);
+  }
+
+  // Over the cap the file is named rather than silently dropped, and a file that
+  // still fits is kept.
+  void oversizeIsReportedNotSilent() {
+    QTemporaryDir dir;
+    QVERIFY(dir.isValid());
+    const QString small = makeFile(dir, QStringLiteral("small.bin"), 10);
+    // Sparse, so the test does not write 64 MB to disk.
+    const QString huge = dir.filePath(QStringLiteral("huge.bin"));
+    QFile f(huge);
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    QVERIFY(f.resize(DropReader::kMaxTotalBytes + 1));
+    f.close();
+
+    const DropReader::Plan p = DropReader::plan({small, huge});
+    QCOMPARE(p.accepted.size(), 1);
+    QVERIFY(p.accepted.first().endsWith(QStringLiteral("small.bin")));
+    QCOMPARE(p.tooLarge, QStringList{QStringLiteral("huge.bin")});
+    QCOMPARE(p.totalBytes, 10);
+  }
+};
+
 // ─────────────────────────────────────────────────────────────────────────────
 // The Flatpak manifests must grant read access to the standard media folders so
 // files dragged from a host file manager can be attached (#32), while staying
@@ -3243,6 +3318,7 @@ int main(int argc, char *argv[]) {
   { TstTrayIcon t;            run(&t); }
   { TstDropAttach t;          run(&t); }
   { TstDropResolve t;         run(&t); }
+  { TstDropReader t;          run(&t); }
   { TstFlatpakManifest t;     run(&t); }
   { TstChatNav t;             run(&t); }
   { TstShortcuts t;           run(&t); }

@@ -222,6 +222,8 @@ set(SOURCES
     src/dropattach.cpp
     src/chatnav.cpp
     src/dropresolve.cpp
+    src/dropreader.cpp
+    src/dropprogress.cpp
     src/notificationrules.cpp
     src/networkproxy.cpp
     src/autostart.cpp
@@ -299,6 +301,8 @@ set(HEADERS
     src/performance.h
     src/trayicon.h
     src/dropattach.h
+    src/dropreader.h
+    src/dropprogress.h
     src/notificationrules.h
     src/networkproxy.h
     src/autostart.h

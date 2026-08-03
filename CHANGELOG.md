@@ -79,6 +79,17 @@ sent, so a mistaken Enter no longer sends instantly. Pressing Enter again sends
 at once, and clicking Undo keeps the text in the composer to edit. The delay is
 configurable (default 5 s) and the whole feature is off by default.
 
+**A progress bar for dropped attachments.** Dropping a file read it, base64-encoded
+it and built the injected script all in the drop handler, so the window froze for
+several seconds (on a video, long enough to look like a hang), with nothing on
+screen to explain it. The reading now happens on a worker thread with a small
+progress bar over the bottom of the chat, so the window stays responsive and the
+wait is visible. The bar waits a moment before appearing, so a quick drop does
+not flash one up and away. Files that do not fit the 64 MB drop buffer were
+skipped with only a terminal warning; they are now named on screen as well. A
+file dropped while another is still being read is queued and attached after it,
+rather than being ignored.
+
 **VIP and muted contacts for notifications.** Settings → Notifications now takes
 a list of VIP contacts, which always notify even during Do Not Disturb, and a
 list of muted contacts, whose popups are never shown (their unread badge still

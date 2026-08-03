@@ -1,4 +1,6 @@
 #include "webview.h"
+#include "dropprogress.h"
+#include "dropreader.h"
 #include "dropresolve.h"
 
 #include <QBuffer>
@@ -16,6 +18,7 @@
 #include <QMenu>
 #include <QMimeData>
 #include <QMimeDatabase>
+#include <QThread>
 #include <QUrl>
 #ifdef Q_OS_LINUX
 #include <QDBusConnection>
@@ -271,46 +274,95 @@ bool WebView::dropFiles(const QMimeData *mime) {
 
   const QStringList paths = DropResolve::droppedFilePaths(mime);
 
-  // Cap the total read into memory: the files are base64-encoded and handed to
-  // the page as a JS string, so a huge drop would balloon the renderer.
-  constexpr qint64 kMaxTotalBytes = 64LL * 1024 * 1024;
-
-  QList<DropAttach::File> files;
-  QMimeDatabase mimeDb;
-  qint64 total = 0;
-  for (const QString &path : paths) {
-    const QFileInfo info(path);
-    if (!info.isFile())
-      continue;
-    if (info.size() <= 0 || total + info.size() > kMaxTotalBytes) {
-      qWarning() << "whatly: skipping dropped file (too large for the drop"
-                    " buffer):"
-                 << info.fileName();
-      continue;
-    }
-    QFile file(info.absoluteFilePath());
-    if (!file.open(QIODevice::ReadOnly))
-      continue;
-    const QByteArray data = file.readAll();
-    total += data.size();
-    const QString type =
-        mimeDb.mimeTypeForFileNameAndData(info.fileName(), data).name();
-    files.append({info.fileName(), type, QString::fromLatin1(data.toBase64())});
+  // A drop while one is still being read is queued rather than refused: the
+  // page's composer takes a second paste as another attachment, so the files
+  // join the ones already there instead of replacing them.
+  if (m_dropReading && !paths.isEmpty()) {
+    m_queuedDropPaths += paths;
+    return true;
   }
 
-  if (files.isEmpty()) {
+  return startDropRead(paths, mime);
+}
+
+QString WebView::takeTooLargeMessage() {
+  if (m_dropTooLarge.isEmpty())
+    return QString();
+  const QString names = m_dropTooLarge.join(QStringLiteral(", "));
+  m_dropTooLarge.clear();
+  return tr("Too large to attach (limit %1 MB): %2")
+      .arg(DropReader::kMaxTotalBytes / (1024 * 1024))
+      .arg(names);
+}
+
+bool WebView::startDropRead(const QStringList &paths, const QMimeData *mime) {
+  const DropReader::Plan plan = DropReader::plan(paths);
+
+  for (const QString &name : plan.tooLarge)
+    qWarning() << "whatly: skipping dropped file (too large for the drop"
+                  " buffer):"
+               << name;
+  // Collected across the whole run of drops, not just this batch: with a queued
+  // batch still to read, reporting now would be overwritten by its progress.
+  m_dropTooLarge += plan.tooLarge;
+
+  if (plan.accepted.isEmpty()) {
+    // Everything was over the cap: say so on screen rather than only in a
+    // terminal nobody sees.
+    if (!m_dropTooLarge.isEmpty()) {
+      if (!m_dropProgress)
+        m_dropProgress = new DropProgress(this);
+      m_dropProgress->finish(takeTooLargeMessage());
+      return false;
+    }
     // Fail loudly: the drag was accepted but nothing could be read. In a Flatpak
     // this is the sandbox hiding the host path when the portal route did not
-    // apply (issue #32); elsewhere it is an unreadable or empty file.
-    if (mime->hasUrls() ||
-        mime->hasFormat(QStringLiteral("application/vnd.portal.filetransfer")))
+    // apply (issue #32); elsewhere it is an unreadable or empty file. Only for a
+    // real drop; a queued batch has no mime data to inspect.
+    if (mime && (mime->hasUrls() ||
+                 mime->hasFormat(
+                     QStringLiteral("application/vnd.portal.filetransfer"))))
       qWarning() << "whatly: a file was dropped but none could be read; in a "
                     "Flatpak, files outside the granted folders are not visible "
                     "unless delivered through the FileTransfer portal (issue #32)";
     return false;
   }
 
-  page()->runJavaScript(DropAttach::scriptSource(files));
+  if (!m_dropProgress)
+    m_dropProgress = new DropProgress(this);
+  m_dropProgress->begin();
+  m_dropReading = true;
+
+  // Read and encode on a worker thread: for a video this is seconds of work,
+  // and on the UI thread it froze the window with nothing to show for it.
+  auto *thread = new QThread(this);
+  auto *reader = new DropReader(plan.accepted, plan.totalBytes);
+  reader->moveToThread(thread);
+  connect(thread, &QThread::started, reader, &DropReader::run);
+  connect(reader, &DropReader::progress, this,
+          [this](qint64 read, qint64 total) {
+            m_dropProgress->setProgress(read, total);
+          });
+  connect(reader, &DropReader::finished, this,
+          [this, reader, thread]() {
+            const QString script = reader->script();
+            if (!script.isEmpty())
+              page()->runJavaScript(script);
+            m_dropReading = false;
+            thread->quit();
+            // Anything dropped while this was reading goes next, so the bar
+            // carries straight on instead of leaving files unattached.
+            if (!m_queuedDropPaths.isEmpty()) {
+              const QStringList next = m_queuedDropPaths;
+              m_queuedDropPaths.clear();
+              startDropRead(next, nullptr);
+              return;
+            }
+            m_dropProgress->finish(takeTooLargeMessage());
+          });
+  connect(thread, &QThread::finished, reader, &QObject::deleteLater);
+  connect(thread, &QThread::finished, thread, &QObject::deleteLater);
+  thread->start();
   return true;
 }
 
