@@ -54,6 +54,12 @@ DropProgress::DropProgress(QWidget *host)
     raise();
   });
 
+  // Takes a closing message down after a while. Owned (not an anonymous
+  // singleShot) so a new drop can cancel a pending hide from the previous one.
+  m_hideTimer = new QTimer(this);
+  m_hideTimer->setSingleShot(true);
+  connect(m_hideTimer, &QTimer::timeout, this, [this]() { hide(); });
+
   if (m_host) {
     m_host->installEventFilter(this);
     if (m_host->window() != m_host)
@@ -63,6 +69,10 @@ DropProgress::DropProgress(QWidget *host)
 }
 
 void DropProgress::begin() {
+  // Cancel a pending hide from a previous closing message: without this, that
+  // stale timer would take this new read's bar down mid-way (issue raised in
+  // review), leaving the user with no feedback.
+  m_hideTimer->stop();
   m_label->setText(tr("Attaching…"));
   m_bar->setRange(0, 100);
   m_bar->setValue(0);
@@ -94,7 +104,7 @@ void DropProgress::finish(const QString &message) {
   reposition();
   show();
   raise();
-  QTimer::singleShot(kMessageMs, this, [this]() { hide(); });
+  m_hideTimer->start(kMessageMs);
 }
 
 bool DropProgress::eventFilter(QObject *watched, QEvent *event) {

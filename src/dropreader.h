@@ -1,6 +1,7 @@
 #ifndef DROPREADER_H
 #define DROPREADER_H
 
+#include <QAtomicInteger>
 #include <QObject>
 #include <QString>
 #include <QStringList>
@@ -39,6 +40,11 @@ public:
   // nothing could be read.
   QString script() const { return m_script; }
 
+  // Ask the read to stop as soon as possible (checked between chunks). Safe to
+  // call from another thread; used when the view is torn down mid-read so the
+  // worker returns promptly instead of the destructor blocking on a full read.
+  void cancel() { m_cancelled.storeRelaxed(1); }
+
 signals:
   void progress(qint64 bytesRead, qint64 bytesTotal);
   void finished();
@@ -51,6 +57,7 @@ private:
   QStringList m_paths;
   qint64 m_totalBytes;
   QString m_script;
+  QAtomicInteger<int> m_cancelled = 0;
 };
 
 #endif // DROPREADER_H

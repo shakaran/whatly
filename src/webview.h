@@ -2,17 +2,21 @@
 #define WEBVIEW_H
 
 #include <QKeyEvent>
+#include <QPointer>
 #include <QWebEngineView>
 
 #include "settingsmanager.h"
 
 class QAction;
+class QThread;
+class DropReader;
 
 class WebView : public QWebEngineView {
   Q_OBJECT
 
 public:
   WebView(QWidget *parent = nullptr);
+  ~WebView() override;
 
   // Which account this view belongs to ("" for the default account). Lets the
   // one title/load handler in MainWindow tell the accounts apart.
@@ -56,6 +60,11 @@ private:
   bool m_dropReading = false;
   QStringList m_queuedDropPaths;
   QStringList m_dropTooLarge;
+  // The in-flight worker thread and reader, tracked so the destructor can stop
+  // and wait for them: the thread is parented to this view, so destroying the
+  // view while a read runs would otherwise destroy a running QThread (crash).
+  QPointer<QThread> m_dropThread;
+  QPointer<DropReader> m_dropReader;
 
   // Break a runaway render-process crash loop (issue #28): when the renderer
   // keeps terminating (e.g. repeatedly SIGTERM'd in a Flatpak), stop reloading

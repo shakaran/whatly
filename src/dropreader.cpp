@@ -37,21 +37,30 @@ void DropReader::run() {
   qint64 done = 0;
 
   for (const QString &path : m_paths) {
+    if (m_cancelled.loadRelaxed())
+      return; // torn down mid-read: drop everything and let the thread end
     QFile file(path);
     if (!file.open(QIODevice::ReadOnly))
       continue;
 
     QByteArray data;
     data.reserve(static_cast<int>(file.size()));
+    bool readOk = true;
     while (!file.atEnd()) {
+      if (m_cancelled.loadRelaxed())
+        return;
       const QByteArray chunk = file.read(kChunkBytes);
-      if (chunk.isEmpty())
-        break; // read error part-way through; keep what we have
+      if (chunk.isEmpty()) {
+        readOk = false; // read error part-way through
+        break;
+      }
       data.append(chunk);
       done += chunk.size();
       emit progress(done, m_totalBytes);
     }
-    if (data.isEmpty())
+    // Skip an unreadable or partially-read file entirely rather than sending a
+    // truncated attachment that looks complete (e.g. a video cut off mid-way).
+    if (!readOk || data.isEmpty())
       continue;
 
     const QFileInfo info(path);

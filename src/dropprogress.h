@@ -1,6 +1,7 @@
 #ifndef DROPPROGRESS_H
 #define DROPPROGRESS_H
 
+#include <QPointer>
 #include <QWidget>
 
 class QLabel;
@@ -35,10 +36,13 @@ protected:
 private:
   void reposition();
 
-  QWidget *m_host;
+  // Guarded: the bar is parented to the top-level window, so it can outlive the
+  // view it covers; a raw pointer would dangle. reposition() null-checks it.
+  QPointer<QWidget> m_host;
   QLabel *m_label;
   QProgressBar *m_bar;
   QTimer *m_showTimer; // delays the panel so a fast drop never flashes it
+  QTimer *m_hideTimer; // takes a closing message down; cancelled by begin()
 };
 
 #endif // DROPPROGRESS_H

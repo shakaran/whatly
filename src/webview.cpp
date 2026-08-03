@@ -136,6 +136,22 @@ WebView::WebView(QWidget *parent)
           });
 }
 
+WebView::~WebView() {
+  // A drop read may still be running on the worker thread, which is parented to
+  // this view — destroying the view would otherwise destroy a running QThread
+  // and crash. Ask the reader to stop (cancel() makes the wait return promptly
+  // rather than blocking on a full read), then wait for the thread to end.
+  if (m_dropReader)
+    m_dropReader->cancel();
+  if (m_dropThread) {
+    m_dropThread->quit();
+    m_dropThread->wait();
+  }
+  // The progress bar is parented to the top-level window, not to this view, so
+  // it would outlive the view with a dangling host unless removed here.
+  delete m_dropProgress;
+}
+
 void WebView::wheelEvent(QWheelEvent *event) {
   bool controlKeyIsHeld =
       QGuiApplication::keyboardModifiers().testFlag(Qt::ControlModifier);
@@ -338,6 +354,8 @@ bool WebView::startDropRead(const QStringList &paths, const QMimeData *mime) {
   auto *thread = new QThread(this);
   auto *reader = new DropReader(plan.accepted, plan.totalBytes);
   reader->moveToThread(thread);
+  m_dropThread = thread;
+  m_dropReader = reader;
   connect(thread, &QThread::started, reader, &DropReader::run);
   connect(reader, &DropReader::progress, this,
           [this](qint64 read, qint64 total) {
