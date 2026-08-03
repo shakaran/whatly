@@ -579,6 +579,7 @@ sudo cmake --install build
 | Ninja not found | `sudo apt install ninja-build` |
 | `notify-qt` submodule missing | `git submodule update --init --recursive` |
 | Permission denied on install | Reconfigure with `-DCMAKE_INSTALL_PREFIX=$HOME/.local` (no sudo) |
+| Can't send MP4 videos ("not supported") | The portable AppImage/`.deb` use a Qt WebEngine without the proprietary H.264/AAC codecs. Photos and WebM/VP9 work; for MP4, build against a codec-enabled system Qt. See [`docs/MEDIA_CODECS.md`](docs/MEDIA_CODECS.md). |
 
 For detailed build instructions, see [`docs/BUILD_QUICK_REFERENCE.md`](docs/BUILD_QUICK_REFERENCE.md)
 and [`docs/CMAKE_MIGRATION.md`](docs/CMAKE_MIGRATION.md).
