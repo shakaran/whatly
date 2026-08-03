@@ -375,6 +375,7 @@ if (Qt${QT_VERSION_MAJOR}LinguistTools_FOUND)
             src/i18n/de_DE.ts
             src/i18n/eo.ts
             src/i18n/es_ES.ts
+            src/i18n/fa_IR.ts
             src/i18n/fr_FR.ts
             src/i18n/hi_IN.ts
             src/i18n/id_ID.ts
@@ -386,7 +387,10 @@ if (Qt${QT_VERSION_MAJOR}LinguistTools_FOUND)
             src/i18n/pt_BR.ts
             src/i18n/ru_RU.ts
             src/i18n/tr_TR.ts
+            src/i18n/uk_UA.ts
+            src/i18n/vi_VN.ts
             src/i18n/zh_CN.ts
+            src/i18n/zh_TW.ts
         RESOURCE_PREFIX "/i18n"
     )
 else()

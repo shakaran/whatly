@@ -1,0 +1,3845 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1">
+<context>
+    <name>About</name>
+    <message>
+        <location filename="../about.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="117"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Whatly&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;WhatsApp Web Client for Linux Desktop.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="135"/>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="142"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Designed &amp;amp; Developed by:&lt;/span&gt; Keshav Bhatt &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Email: &lt;/span&gt;keshavnrj@gmail.com&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Website:&lt;/span&gt; http://ktechpit.com&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="171"/>
+        <source>Donate PayPal</source>
+        <translation>Пожертвувати через PayPal</translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="178"/>
+        <source>Ko-fi</source>
+        <translation>Ko-fi</translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="185"/>
+        <source>Wise</source>
+        <translation>Wise</translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="192"/>
+        <source>Rate in Store</source>
+        <translation>Оцінити в магазині</translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="203"/>
+        <source>More Applications</source>
+        <translation>Інші застосунки</translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="210"/>
+        <source>Source Code</source>
+        <translation>Вихідний код</translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="217"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copies the debug information below to the clipboard and opens the issue tracker, so it can be pasted straight into the report.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
+        <source>Report a Bug</source>
+        <translation>Повідомити про помилку</translation>
+    </message>
+    <message>
+        <location filename="../about.ui" line="229"/>
+        <source>Debug Info</source>
+        <translation>Налагоджувальна інформація</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="88"/>
+        <source>Version: </source>
+        <translation>Версія: </translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="145"/>
+        <source>The debug information was too long for the browser to carry, so it has been copied to your clipboard instead. Paste it into the issue.</source>
+        <translation>Налагоджувальна інформація завелика для передавання через браузер, тож її скопійовано в буфер обміну. Вставте її у звіт про помилку.</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="152"/>
+        <source> | About</source>
+        <translation> | Про програму</translation>
+    </message>
+</context>
+<context>
+    <name>AiClient</name>
+    <message>
+        <location filename="../aiassistant.cpp" line="190"/>
+        <source>No AI endpoint is configured (Settings → AI assistant).</source>
+        <translation>Не налаштовано кінцеву точку ШІ (Налаштування → Асистент ШІ).</translation>
+    </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="194"/>
+        <source>No AI model is configured (Settings → AI assistant).</source>
+        <translation>Не налаштовано модель ШІ (Налаштування → Асистент ШІ).</translation>
+    </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="198"/>
+        <source>There is nothing to send to the assistant.</source>
+        <translation>Немає що надсилати асистенту.</translation>
+    </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="238"/>
+        <source>The assistant took too long and was cancelled.</source>
+        <translation>Асистент працював надто довго, тож запит скасовано.</translation>
+    </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="241"/>
+        <source>The assistant request failed.</source>
+        <translation>Запит до асистента не вдався.</translation>
+    </message>
+</context>
+<context>
+    <name>AutomaticTheme</name>
+    <message>
+        <location filename="../automatictheme.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../automatictheme.ui" line="27"/>
+        <source>Sunrise</source>
+        <translation>Схід сонця</translation>
+    </message>
+    <message>
+        <location filename="../automatictheme.ui" line="34"/>
+        <source>Sunset</source>
+        <translation>Захід сонця</translation>
+    </message>
+    <message>
+        <location filename="../automatictheme.ui" line="55"/>
+        <source>  Refresh </source>
+        <translation>  Оновити </translation>
+    </message>
+    <message>
+        <location filename="../automatictheme.ui" line="70"/>
+        <source>Disable and Close</source>
+        <translation>Вимкнути та закрити</translation>
+    </message>
+    <message>
+        <location filename="../automatictheme.ui" line="94"/>
+        <source>  Enable and Close</source>
+        <translation>  Увімкнути та закрити</translation>
+    </message>
+    <message>
+        <location filename="../automatictheme.cpp" line="27"/>
+        <location filename="../automatictheme.cpp" line="62"/>
+        <location filename="../automatictheme.cpp" line="94"/>
+        <location filename="../automatictheme.cpp" line="103"/>
+        <source>Error</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <location filename="../automatictheme.cpp" line="95"/>
+        <source>Invalid Geo-Coordinates.
+
+Please try again.</source>
+        <translation>Неправильні географічні координати.
+
+Спробуйте ще раз.</translation>
+    </message>
+    <message>
+        <location filename="../automatictheme.cpp" line="104"/>
+        <source>Invalid configuration.
+
+Sunrise and Sunset time cannot have similar values.
+
+Please try again.</source>
+        <translation>Неправильна конфігурація.
+
+Час сходу та заходу сонця не можуть збігатися.
+
+Спробуйте ще раз.</translation>
+    </message>
+</context>
+<context>
+    <name>CertificateErrorDialog</name>
+    <message>
+        <location filename="../certificateerrordialog.ui" line="14"/>
+        <source>Dialog</source>
+        <translation>Діалог</translation>
+    </message>
+    <message>
+        <location filename="../certificateerrordialog.ui" line="26"/>
+        <source>Icon</source>
+        <translation>Піктограма</translation>
+    </message>
+    <message>
+        <location filename="../certificateerrordialog.ui" line="42"/>
+        <source>Error</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <location filename="../certificateerrordialog.ui" line="61"/>
+        <source>If you wish so, you may continue with an unverified certificate. Accepting an unverified certificate mean you may not be connected with the host you tried to connect to.
+
+Do you wish to override the security check and continue ?   </source>
+        <translation>За бажання можна продовжити з неперевіреним сертифікатом. Прийняття неперевіреного сертифіката означає, що ви можете бути з'єднані не з тим вузлом, до якого намагалися підключитися.
+
+Бажаєте обійти перевірку безпеки та продовжити?   </translation>
+    </message>
+</context>
+<context>
+    <name>ChatListStrip</name>
+    <message>
+        <location filename="../chatliststrip.cpp" line="611"/>
+        <source>Small</source>
+        <translation>Малий</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="613"/>
+        <source>Medium</source>
+        <translation>Середній</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="615"/>
+        <source>Large</source>
+        <translation>Великий</translation>
+    </message>
+</context>
+<context>
+    <name>ChatTheme</name>
+    <message>
+        <location filename="../chattheme.cpp" line="184"/>
+        <source>WhatsApp (default)</source>
+        <translation>WhatsApp (типовий)</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="186"/>
+        <source>Barbie pink</source>
+        <translation>Барбі-рожевий</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="188"/>
+        <source>Dusty rose</source>
+        <translation>Пилянисто-рожевий</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="190"/>
+        <source>Lavender</source>
+        <translation>Лаванда</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="192"/>
+        <source>Violet</source>
+        <translation>Фіолетовий</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="194"/>
+        <source>Sky blue</source>
+        <translation>Небесно-блакитний</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="196"/>
+        <source>Deep ocean</source>
+        <translation>Глибокий океан</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="198"/>
+        <source>Teal</source>
+        <translation>Бірюзовий</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="200"/>
+        <source>Mint</source>
+        <translation>М'ятний</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="202"/>
+        <source>Coral</source>
+        <translation>Кораловий</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="204"/>
+        <source>Peach</source>
+        <translation>Персиковий</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="206"/>
+        <source>Gold</source>
+        <translation>Золотий</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="208"/>
+        <source>Crimson</source>
+        <translation>Малиновий</translation>
+    </message>
+    <message>
+        <location filename="../chattheme.cpp" line="210"/>
+        <source>Graphite</source>
+        <translation>Графітовий</translation>
+    </message>
+</context>
+<context>
+    <name>CommandPalette</name>
+    <message>
+        <location filename="../commandpalette.cpp" line="46"/>
+        <source>Command palette</source>
+        <translation>Палітра команд</translation>
+    </message>
+    <message>
+        <location filename="../commandpalette.cpp" line="57"/>
+        <source>Type a command…</source>
+        <translation>Введіть команду…</translation>
+    </message>
+    <message>
+        <location filename="../commandpalette.cpp" line="59"/>
+        <source>Command search</source>
+        <translation>Пошук команд</translation>
+    </message>
+    <message>
+        <location filename="../commandpalette.cpp" line="62"/>
+        <source>Matching commands</source>
+        <translation>Відповідні команди</translation>
+    </message>
+</context>
+<context>
+    <name>CustomTitleBar</name>
+    <message>
+        <location filename="../customtitlebar.cpp" line="58"/>
+        <source>Minimise</source>
+        <translation>Згорнути</translation>
+    </message>
+    <message>
+        <location filename="../customtitlebar.cpp" line="62"/>
+        <source>Maximise</source>
+        <translation>Розгорнути</translation>
+    </message>
+    <message>
+        <location filename="../customtitlebar.cpp" line="66"/>
+        <source>Close</source>
+        <translation>Закрити</translation>
+    </message>
+</context>
+<context>
+    <name>DownloadManagerWidget</name>
+    <message>
+        <location filename="../downloadmanagerwidget.ui" line="20"/>
+        <source>Downloads</source>
+        <translation>Завантаження</translation>
+    </message>
+    <message>
+        <location filename="../downloadmanagerwidget.ui" line="80"/>
+        <source>No downloads</source>
+        <translation>Немає завантажень</translation>
+    </message>
+    <message>
+        <location filename="../downloadmanagerwidget.ui" line="125"/>
+        <source>Clear download list</source>
+        <translation>Очистити список завантажень</translation>
+    </message>
+    <message>
+        <location filename="../downloadmanagerwidget.ui" line="128"/>
+        <source>Clear all</source>
+        <translation>Очистити все</translation>
+    </message>
+    <message>
+        <location filename="../downloadmanagerwidget.ui" line="139"/>
+        <source>Open download directory in file manager</source>
+        <translation>Відкрити теку завантажень у файловому менеджері</translation>
+    </message>
+    <message>
+        <location filename="../downloadmanagerwidget.ui" line="142"/>
+        <source>Open Download directory</source>
+        <translation>Відкрити теку завантажень</translation>
+    </message>
+    <message>
+        <location filename="../downloadmanagerwidget.cpp" line="36"/>
+        <source>File with same name already exist!</source>
+        <translation>Файл з такою назвою вже існує!</translation>
+    </message>
+    <message>
+        <location filename="../downloadmanagerwidget.cpp" line="37"/>
+        <source>Save file with a new name?</source>
+        <translation>Зберегти файл під новою назвою?</translation>
+    </message>
+</context>
+<context>
+    <name>DownloadWidget</name>
+    <message>
+        <location filename="../downloadwidget.ui" line="26"/>
+        <location filename="../downloadwidget.ui" line="48"/>
+        <source>TextLabel</source>
+        <translation>Текстова мітка</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.ui" line="63"/>
+        <source>Open file using system application</source>
+        <translation>Відкрити файл системним застосунком</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="58"/>
+        <source>%L1 B</source>
+        <translation>%L1 Б</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="60"/>
+        <source>%L1 KiB</source>
+        <translation>%L1 КіБ</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="62"/>
+        <source>%L1 MiB</source>
+        <translation>%L1 МіБ</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="64"/>
+        <source>%L1 GiB</source>
+        <translation>%L1 ГіБ</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="86"/>
+        <source>%p% - %1 of %2 downloaded - %3/s</source>
+        <translation>%p% - завантажено %1 з %2 - %3/с</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="94"/>
+        <source>unknown size - %1 downloaded - %2/s</source>
+        <translation>невідомий розмір - завантажено %1 - %2/с</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="103"/>
+        <source>completed - %1 downloaded - %2/s</source>
+        <translation>завершено - завантажено %1 - %2/с</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="111"/>
+        <source>cancelled - %1 downloaded - %2/s</source>
+        <translation>скасовано - завантажено %1 - %2/с</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="119"/>
+        <source>interrupted: %1</source>
+        <translation>перервано: %1</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="127"/>
+        <source>Stop downloading</source>
+        <translation>Зупинити завантаження</translation>
+    </message>
+    <message>
+        <location filename="../downloadwidget.cpp" line="131"/>
+        <source>Remove from list</source>
+        <translation>Вилучити зі списку</translation>
+    </message>
+</context>
+<context>
+    <name>Lock</name>
+    <message>
+        <location filename="../lock.ui" line="20"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lock.ui" line="199"/>
+        <source>Set lock passcode</source>
+        <translation>Встановити код блокування</translation>
+    </message>
+    <message>
+        <location filename="../lock.ui" line="224"/>
+        <source>enter passcode</source>
+        <translation>введіть код доступу</translation>
+    </message>
+    <message>
+        <location filename="../lock.ui" line="243"/>
+        <source>enter passcode again</source>
+        <translation>введіть код доступу ще раз</translation>
+    </message>
+    <message>
+        <location filename="../lock.ui" line="256"/>
+        <source>Set Pass Code</source>
+        <translation>Встановити код доступу</translation>
+    </message>
+    <message>
+        <location filename="../lock.ui" line="269"/>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <location filename="../lock.ui" line="276"/>
+        <location filename="../lock.ui" line="629"/>
+        <source>Warning: Caps Lock is On</source>
+        <translation>Увага: увімкнено Caps Lock</translation>
+    </message>
+    <message>
+        <location filename="../lock.ui" line="346"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Note: Passcode must be more then 3 characters and must match in both fields.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../lock.ui" line="597"/>
+        <source>Enter your passcode to get access</source>
+        <translation>Введіть код доступу, щоб отримати доступ</translation>
+    </message>
+    <message>
+        <location filename="../lock.ui" line="622"/>
+        <source>enter your passcode</source>
+        <translation>введіть код доступу</translation>
+    </message>
+    <message>
+        <location filename="../lock.ui" line="639"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wrong Passcode, Please try again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <location filename="../mainwindow.cpp" line="106"/>
+        <location filename="../mainwindow.cpp" line="1130"/>
+        <location filename="../mainwindow.cpp" line="1226"/>
+        <source>No WhatsApp window is open</source>
+        <translation>Немає відкритого вікна WhatsApp</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="111"/>
+        <source>Reminder</source>
+        <translation>Нагадування</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="111"/>
+        <source>Reminder: %1</source>
+        <translation>Нагадування: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="196"/>
+        <source>Update available</source>
+        <translation>Доступне оновлення</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="197"/>
+        <source>Whatly %1 is available. Click to open the download page.</source>
+        <translation>Доступна версія Whatly %1. Натисніть, щоб відкрити сторінку завантаження.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="872"/>
+        <location filename="../mainwindow.cpp" line="878"/>
+        <location filename="../mainwindow_webengine.cpp" line="954"/>
+        <location filename="../mainwindow_webengine.cpp" line="957"/>
+        <source>| Error</source>
+        <translation>| Помилка</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="873"/>
+        <source>Unlock to access Settings.</source>
+        <translation>Розблокуйте, щоб отримати доступ до налаштувань.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="879"/>
+        <source>Unable to initialize settings module.
+Webengine is not initialized.</source>
+        <translation>Не вдалося ініціалізувати модуль налаштувань.
+WebEngine не ініціалізовано.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="900"/>
+        <source> | Action required</source>
+        <translation> | Потрібна дія</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="901"/>
+        <source>Page needs to be reloaded to continue.</source>
+        <translation>Щоб продовжити, потрібно перезавантажити сторінку.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1083"/>
+        <source>The Cloud API needs a phone number as the recipient.</source>
+        <translation>Cloud API потребує номер телефону як отримувача.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1088"/>
+        <source>The Cloud API is not configured.</source>
+        <translation>Cloud API не налаштовано.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1097"/>
+        <source>Cloud API send failed: %1</source>
+        <translation>Не вдалося надіслати через Cloud API: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1122"/>
+        <source>Could not understand the recipient: %1</source>
+        <translation>Не вдалося розпізнати отримувача: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1151"/>
+        <location filename="../mainwindow.cpp" line="1232"/>
+        <source>Could not read the file to send: %1</source>
+        <translation>Не вдалося прочитати файл для надсилання: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1160"/>
+        <location filename="../mainwindow.cpp" line="1242"/>
+        <source>The file is too large to send over the web backend.</source>
+        <translation>Файл завеликий для надсилання через веб-бекенд.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1185"/>
+        <source>Opening the group and sending…</source>
+        <translation>Відкриваємо групу та надсилаємо…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1186"/>
+        <source>Opening the chat with &quot;%1&quot; and sending…</source>
+        <translation>Відкриваємо чат з &quot;%1&quot; та надсилаємо…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1217"/>
+        <source>The local API could not start: %1</source>
+        <translation>Не вдалося запустити локальний API: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1306"/>
+        <source>Restart</source>
+        <translation>Перезапустити</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1307"/>
+        <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
+        <translation>Whatly не вдалося запустити новий екземпляр, тож цей не було закрито. Будь ласка, закрийте програму та відкрийте її знову.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1352"/>
+        <source>Expand the chat list</source>
+        <translation>Розгорнути список чатів</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1353"/>
+        <location filename="../mainwindow_tray.cpp" line="237"/>
+        <source>Collapse the chat list</source>
+        <translation>Згорнути список чатів</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1450"/>
+        <source>Open</source>
+        <translation>Відкрити</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1486"/>
+        <location filename="../mainwindow_tray.cpp" line="22"/>
+        <source>New Chat</source>
+        <translation>Новий чат</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1487"/>
+        <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
+        <translation>Введіть дійсний номер WhatsApp з кодом країни (напр. +91XXXXXXXXXX)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1517"/>
+        <source>Rate Application</source>
+        <translation>Оцінити застосунок</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="214"/>
+        <location filename="../mainwindow_accounts.cpp" line="1225"/>
+        <source>Rename…</source>
+        <translation>Перейменувати…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="215"/>
+        <location filename="../mainwindow_accounts.cpp" line="1226"/>
+        <source>Open in own window</source>
+        <translation>Відкрити в окремому вікні</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="219"/>
+        <location filename="../mainwindow_accounts.cpp" line="1229"/>
+        <source>Remove account</source>
+        <translation>Вилучити обліковий запис</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="299"/>
+        <source>Switch to account: %1</source>
+        <translation>Перейти до облікового запису: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="302"/>
+        <location filename="../mainwindow_tray.cpp" line="192"/>
+        <source>Add account…</source>
+        <translation>Додати обліковий запис…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="303"/>
+        <source>Quick message…</source>
+        <translation>Швидке повідомлення…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="308"/>
+        <source>Insert: %1</source>
+        <translation>Вставити: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="586"/>
+        <source>%1 — %2 unread</source>
+        <translation>%1 — %2 непрочитаних</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1001"/>
+        <source>Add another account</source>
+        <translation>Додати ще один обліковий запис</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1033"/>
+        <source>Restore</source>
+        <translation>Відновити</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1029"/>
+        <source>messages</source>
+        <translation>повідомлень</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1029"/>
+        <source>message</source>
+        <translation>повідомлення</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1074"/>
+        <source>Add account</source>
+        <translation>Додати обліковий запис</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1075"/>
+        <source>Name for the new account:</source>
+        <translation>Назва нового облікового запису:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1076"/>
+        <location filename="../mainwindow_accounts.cpp" line="1923"/>
+        <location filename="../mainwindow_accounts.cpp" line="1928"/>
+        <source>Account %1</source>
+        <translation>Обліковий запис %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1103"/>
+        <source>Rename account</source>
+        <translation>Перейменувати обліковий запис</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1103"/>
+        <source>Account name:</source>
+        <translation>Назва облікового запису:</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1611"/>
+        <source>Tip: give an account its own window</source>
+        <translation>Порада: надайте обліковому запису власне вікно</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1612"/>
+        <source>You now have more than one account, shown as tabs along the top.
+
+You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
+        <translation>Тепер у вас декілька облікових записів, показаних як вкладки зверху.
+
+Ви можете витягнути будь-який обліковий запис в окреме вікно: клацніть правою кнопкою на його вкладці та виберіть «Відкрити в окремому вікні». Закрийте це вікно, щоб знову закріпити обліковий запис як вкладку.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="1917"/>
+        <location filename="../mainwindow_accounts.cpp" line="1921"/>
+        <source>Account 1</source>
+        <translation>Обліковий запис 1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_lock.cpp" line="136"/>
+        <source>App lock is not configured, 
+Please setup the password in the Settings first.
+
+Open Settings now?</source>
+        <translation>Блокування застосунку не налаштовано, 
+спочатку встановіть пароль у налаштуваннях.
+
+Відкрити налаштування зараз?</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="27"/>
+        <location filename="../mainwindow_tray.cpp" line="232"/>
+        <source>Fullscreen</source>
+        <translation>Повноекранний режим</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="33"/>
+        <source>Mi&amp;nimize to tray</source>
+        <translation>Згор&amp;нути в трей</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="52"/>
+        <source>&amp;Restore</source>
+        <translation>&amp;Відновити</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="56"/>
+        <source>Re&amp;load</source>
+        <translation>Пере&amp;завантажити</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="62"/>
+        <source>Loc&amp;k</source>
+        <translation>Забло&amp;кувати</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="67"/>
+        <source>&amp;Mute audio</source>
+        <translation>&amp;Вимкнути звук</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="76"/>
+        <source>Zoom in</source>
+        <translation>Збільшити</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="82"/>
+        <source>Zoom out</source>
+        <translation>Зменшити</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="87"/>
+        <location filename="../mainwindow_tray.cpp" line="234"/>
+        <source>Reset zoom</source>
+        <translation>Скинути масштаб</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="102"/>
+        <source>&amp;Settings</source>
+        <translation>&amp;Налаштування</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="108"/>
+        <source>Scheduled &amp;messages…</source>
+        <translation>Заплановані &amp;повідомлення…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="115"/>
+        <location filename="../mainwindow_tray.cpp" line="239"/>
+        <source>Translate selection</source>
+        <translation>Перекласти виділене</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="122"/>
+        <location filename="../mainwindow_tray.cpp" line="241"/>
+        <source>Translate message box</source>
+        <translation>Перекласти поле повідомлення</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="131"/>
+        <source>Export chat…</source>
+        <translation>Експортувати чат…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="140"/>
+        <location filename="../mainwindow_tray.cpp" line="243"/>
+        <source>AI: Summarise chat</source>
+        <translation>ШІ: Підсумувати чат</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="147"/>
+        <location filename="../mainwindow_tray.cpp" line="244"/>
+        <source>AI: Improve message</source>
+        <translation>ШІ: Покращити повідомлення</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="154"/>
+        <location filename="../mainwindow_tray.cpp" line="245"/>
+        <source>AI: Suggest a reply</source>
+        <translation>ШІ: Запропонувати відповідь</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="161"/>
+        <source>&amp;Toggle theme</source>
+        <translation>&amp;Перемкнути тему</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="172"/>
+        <source>Tabbed view</source>
+        <translation>Перегляд вкладками</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="179"/>
+        <location filename="../mainwindow_tray.cpp" line="248"/>
+        <source>Grid view</source>
+        <translation>Перегляд сіткою</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="197"/>
+        <location filename="../mainwindow_tray.cpp" line="249"/>
+        <source>Command palette</source>
+        <translation>Палітра команд</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="206"/>
+        <source>&amp;About</source>
+        <translation>&amp;Про програму</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="215"/>
+        <source>&amp;Quit</source>
+        <translation>&amp;Вийти</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="228"/>
+        <source>Reload</source>
+        <translation>Перезавантажити</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="229"/>
+        <source>Minimise to tray</source>
+        <translation>Згорнути в трей</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="230"/>
+        <source>Lock</source>
+        <translation>Заблокувати</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="231"/>
+        <source>Mute audio</source>
+        <translation>Вимкнути звук</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="233"/>
+        <source>New chat / open URL</source>
+        <translation>Новий чат / відкрити URL</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="242"/>
+        <location filename="../mainwindow_webengine.cpp" line="1379"/>
+        <location filename="../mainwindow_webengine.cpp" line="1383"/>
+        <location filename="../mainwindow_webengine.cpp" line="1396"/>
+        <location filename="../mainwindow_webengine.cpp" line="1447"/>
+        <location filename="../mainwindow_webengine.cpp" line="1483"/>
+        <location filename="../mainwindow_webengine.cpp" line="1513"/>
+        <location filename="../mainwindow_webengine.cpp" line="1517"/>
+        <source>Export chat</source>
+        <translation>Експортувати чат</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="246"/>
+        <source>Settings</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="247"/>
+        <source>Toggle theme</source>
+        <translation>Перемкнути тему</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="250"/>
+        <source>Quit</source>
+        <translation>Вийти</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="271"/>
+        <source>Recent unread</source>
+        <translation>Останні непрочитані</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="846"/>
+        <source>Reply</source>
+        <translation>Відповісти</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="847"/>
+        <source>Reply to %1…</source>
+        <translation>Відповісти %1…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="952"/>
+        <source>Unlock to Reload the App.</source>
+        <translation>Розблокуйте, щоб перезавантажити застосунок.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="995"/>
+        <source>Waiting for network…</source>
+        <translation>Очікування мережі…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1336"/>
+        <source>Inline translation is off (enable it in Settings → Translation).</source>
+        <translation>Вбудований переклад вимкнено (увімкніть його в Налаштування → Переклад).</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1340"/>
+        <source>The message box is empty.</source>
+        <translation>Поле повідомлення порожнє.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1341"/>
+        <source>Select some text to translate first.</source>
+        <translation>Спочатку виділіть текст для перекладу.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1379"/>
+        <source>No conversation is open.</source>
+        <translation>Немає відкритої розмови.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1383"/>
+        <source>An export is already running.</source>
+        <translation>Експорт вже виконується.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1388"/>
+        <source>Choose a folder for the exported chat</source>
+        <translation>Виберіть теку для експортованого чату</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1394"/>
+        <source>Collecting messages… scrolling through the conversation.</source>
+        <translation>Збирання повідомлень… прокручування розмови.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1395"/>
+        <source>Cancel</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1442"/>
+        <source>Collecting messages… (%1 so far)</source>
+        <translation>Збирання повідомлень… (наразі %1)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1448"/>
+        <source>Could not read the conversation: %1</source>
+        <translation>Не вдалося прочитати розмову: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1472"/>
+        <source>chat</source>
+        <translation>чат</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1484"/>
+        <source>Could not create the export folder.</source>
+        <translation>Не вдалося створити теку експорту.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1514"/>
+        <source>The export could not be fully written.</source>
+        <translation>Не вдалося повністю записати експорт.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1518"/>
+        <source>Saved %1 messages and %2 media files to %3</source>
+        <translation>Збережено %1 повідомлень та %2 медіафайлів до %3</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1599"/>
+        <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
+        <translation>Асистент ШІ вимкнено (увімкніть його в Налаштування → Асистент ШІ).</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1604"/>
+        <source>There is nothing for the assistant to work on.</source>
+        <translation>Асистенту немає з чим працювати.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1616"/>
+        <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
+        <translation>Запит до асистента… (мало пам'яті: вільно %1 МБ; локальна модель може дати збій або сповільнити застосунок)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1621"/>
+        <source>Asking the assistant…</source>
+        <translation>Запит до асистента…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1642"/>
+        <source>AI assistant</source>
+        <translation>Асистент ШІ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1657"/>
+        <source>Close</source>
+        <translation>Закрити</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1667"/>
+        <location filename="../mainwindow_webengine.cpp" line="1681"/>
+        <location filename="../mainwindow_webengine.cpp" line="1704"/>
+        <source>AI result</source>
+        <translation>Результат ШІ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1701"/>
+        <source>Message updated.</source>
+        <translation>Повідомлення оновлено.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1717"/>
+        <source>Chat summary</source>
+        <translation>Підсумок чату</translation>
+    </message>
+</context>
+<context>
+    <name>MoreApps</name>
+    <message>
+        <location filename="../widgets/MoreApps/moreapps.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../widgets/MoreApps/moreapps.ui" line="33"/>
+        <source>... ... ... ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NotificationPopup</name>
+    <message>
+        <location filename="../notificationpopup.h" line="53"/>
+        <source>Close</source>
+        <translation>Закрити</translation>
+    </message>
+</context>
+<context>
+    <name>PasswordDialog</name>
+    <message>
+        <location filename="../passworddialog.ui" line="14"/>
+        <source>Authentication Required</source>
+        <translation>Потрібна автентифікація</translation>
+    </message>
+    <message>
+        <location filename="../passworddialog.ui" line="20"/>
+        <source>Icon</source>
+        <translation>Піктограма</translation>
+    </message>
+    <message>
+        <location filename="../passworddialog.ui" line="36"/>
+        <source>Info</source>
+        <translation>Інформація</translation>
+    </message>
+    <message>
+        <location filename="../passworddialog.ui" line="46"/>
+        <source>Username:</source>
+        <translation>Ім'я користувача:</translation>
+    </message>
+    <message>
+        <location filename="../passworddialog.ui" line="56"/>
+        <source>Password:</source>
+        <translation>Пароль:</translation>
+    </message>
+</context>
+<context>
+    <name>PermissionDialog</name>
+    <message>
+        <location filename="../permissiondialog.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../permissiondialog.ui" line="24"/>
+        <source>Feature</source>
+        <translation>Функція</translation>
+    </message>
+    <message>
+        <location filename="../permissiondialog.ui" line="29"/>
+        <source>Status</source>
+        <translation>Стан</translation>
+    </message>
+</context>
+<context>
+    <name>PrivacyBlur</name>
+    <message>
+        <location filename="../privacyblur.cpp" line="85"/>
+        <source>Off</source>
+        <translation>Вимк.</translation>
+    </message>
+    <message>
+        <location filename="../privacyblur.cpp" line="87"/>
+        <source>Chat list</source>
+        <translation>Список чатів</translation>
+    </message>
+    <message>
+        <location filename="../privacyblur.cpp" line="89"/>
+        <source>Open conversation</source>
+        <translation>Відкрита розмова</translation>
+    </message>
+    <message>
+        <location filename="../privacyblur.cpp" line="91"/>
+        <source>Chat list and conversation</source>
+        <translation>Список чатів і розмова</translation>
+    </message>
+    <message>
+        <location filename="../privacyblur.cpp" line="94"/>
+        <source>Everything, photos included</source>
+        <translation>Все, включно з фотографіями</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../about.cpp" line="94"/>
+        <location filename="../about.cpp" line="172"/>
+        <source>Show Debug Info</source>
+        <translation>Показати налагоджувальну інформацію</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="129"/>
+        <source>&lt;!-- What did you do, what did you expect, and what happened instead? --&gt;
+
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="177"/>
+        <source>Hide Debug Info</source>
+        <translation>Приховати налагоджувальну інформацію</translation>
+    </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="86"/>
+        <source>Unexpected response from the AI service.</source>
+        <translation>Неочікувана відповідь від служби ШІ.</translation>
+    </message>
+    <message>
+        <location filename="../aiassistant.cpp" line="108"/>
+        <source>The AI service returned no text.</source>
+        <translation>Служба ШІ не повернула текст.</translation>
+    </message>
+    <message>
+        <location filename="../backup.cpp" line="17"/>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>Не вдалося запустити 'tar'</translation>
+    </message>
+    <message>
+        <location filename="../backup.cpp" line="36"/>
+        <source>Nothing to back up</source>
+        <translation>Немає чого резервувати</translation>
+    </message>
+    <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
+        <location filename="../chatwallpaper.cpp" line="150"/>
+        <location filename="../customcss.cpp" line="88"/>
+        <location filename="../customjs.cpp" line="84"/>
+        <source>Cannot create %1</source>
+        <translation>Не вдалося створити %1</translation>
+    </message>
+    <message>
+        <location filename="../backup.cpp" line="74"/>
+        <source>Cannot copy %1</source>
+        <translation>Не вдалося скопіювати %1</translation>
+    </message>
+    <message>
+        <location filename="../backup.cpp" line="86"/>
+        <location filename="../backup.cpp" line="107"/>
+        <source>Cannot create a temporary directory</source>
+        <translation>Не вдалося створити тимчасову теку</translation>
+    </message>
+    <message>
+        <location filename="../backup.cpp" line="119"/>
+        <source>Could not restore the settings file</source>
+        <translation>Не вдалося відновити файл налаштувань</translation>
+    </message>
+    <message>
+        <location filename="../chatwallpaper.cpp" line="156"/>
+        <source>Cannot write %1</source>
+        <translation>Не вдалося записати %1</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="32"/>
+        <source>WhatsApp Web %1</source>
+        <translation>WhatsApp Web %1</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="34"/>
+        <source>Build token: %1</source>
+        <translation>Токен збірки: %1</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="193"/>
+        <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
+        <translation>Немає чого переносити з &quot;%1&quot; — вже перенесено, або дані там не знайдено.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="198"/>
+        <source>Would copy:</source>
+        <translation>Буде скопійовано:</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="198"/>
+        <source>Copied:</source>
+        <translation>Скопійовано:</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="202"/>
+        <source>Run again without --dry-run to perform the copy.</source>
+        <translation>Запустіть знову без --dry-run, щоб виконати копіювання.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="536"/>
+        <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
+        <translation>Багатофункціональний клієнт WhatsApp Web на основі Qt WebEngine</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="543"/>
+        <source>Displays help on commandline options</source>
+        <translation>Показує довідку щодо параметрів командного рядка</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="548"/>
+        <source>Opens Settings dialog in a running instance of </source>
+        <translation>Відкриває діалог налаштувань у запущеному екземплярі </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="553"/>
+        <source>Locks a running instance of </source>
+        <translation>Блокує запущений екземпляр </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="559"/>
+        <source>Opens About dialog in a running instance of </source>
+        <translation>Відкриває діалог &quot;Про програму&quot; у запущеному екземплярі </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="564"/>
+        <source>Opens the scheduled messages dialog in a running instance of </source>
+        <translation>Відкриває діалог запланованих повідомлень у запущеному екземплярі </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="571"/>
+        <source>Toggle between dark &amp; light theme in a running instance of </source>
+        <translation>Перемикає між темною та світлою темою у запущеному екземплярі </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="578"/>
+        <source>Reload the app in a running instance of </source>
+        <translation>Перезавантажує застосунок у запущеному екземплярі </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="584"/>
+        <source>Open new chat prompt in a running instance of </source>
+        <translation>Відкриває запит нового чату у запущеному екземплярі </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="597"/>
+        <source>Run as a separate account with its own session and settings, in its own window</source>
+        <translation>Запустити як окремий обліковий запис з власною сесією та налаштуваннями, у власному вікні</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="607"/>
+        <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
+        <translation>Внутрішнє: зачекати завершення процесу з цим ідентифікатором перед запуском, використовується &quot;Перезапустити зараз&quot;</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="614"/>
+        <source>Show main window of running instance of </source>
+        <translation>Показати головне вікно запущеного екземпляра </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="621"/>
+        <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
+        <translation>Скопіювати налаштування та активну сесію з попереднього встановлення (напр. старішої збірки &quot;whatsie&quot;) в поточне, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="628"/>
+        <source>With --migrate-from, only report what would be copied</source>
+        <translation>З --migrate-from лише повідомити, що було б скопійовано</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="646"/>
+        <source>Print the current unread message count and exit</source>
+        <translation>Вивести поточну кількість непрочитаних повідомлень та вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="652"/>
+        <source>Send a message via the running instance, then exit (needs --to and --message)</source>
+        <translation>Надіслати повідомлення через запущений екземпляр, потім вийти (потрібні --to та --message)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="656"/>
+        <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
+        <translation>Отримувач для --send: номер телефону (міжнародний), ідентифікатор групи або ім'я контакту</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="661"/>
+        <source>Message text for --send</source>
+        <translation>Текст повідомлення для --send</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="664"/>
+        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
+        <translation>Прикріпити файл для --send (його --message, якщо є, стає підписом)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="669"/>
+        <source>Caption for the --file attachment (alias of --message)</source>
+        <translation>Підпис для вкладення --file (псевдонім --message)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="673"/>
+        <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
+        <translation>Як --send доставляє: 'web' (запущена сесія WhatsApp Web) або 'cloud' (Meta WhatsApp Business Cloud API)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="679"/>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>Використати збережений шаблон з цією назвою як повідомлення --send (заповнити його {{fields}} за допомогою --var)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="684"/>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>Заповнити поле шаблону: key=value (можна повторювати)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="688"/>
+        <source>List the saved message templates and exit</source>
+        <translation>Показати список збережених шаблонів повідомлень та вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="691"/>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>Зберегти (або замінити) шаблон повідомлення, потім вийти: name=body</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="695"/>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>Видалити збережений шаблон повідомлення з цією назвою, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="700"/>
+        <source>Turn auto-reply to incoming messages on, then exit</source>
+        <translation>Увімкнути автовідповідь на вхідні повідомлення, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="703"/>
+        <source>Turn auto-reply off, then exit</source>
+        <translation>Вимкнути автовідповідь, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="706"/>
+        <source>List the active auto-reply rules (status included) and exit</source>
+        <translation>Показати список активних правил автовідповіді (зі станом) та вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="709"/>
+        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
+        <translation>Використати цей файл JSON як джерело правил автовідповіді, потім вийти (порожньо, щоб очистити)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="715"/>
+        <source>Set the Cloud API phone-number id, then exit</source>
+        <translation>Встановити ідентифікатор номера телефону Cloud API, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="719"/>
+        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
+        <translation>Встановити токен доступу Cloud API, потім вийти (зберігається в конфігурації облікового запису)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="724"/>
+        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
+        <translation>Встановити версію Graph API для Cloud API (напр. v21.0), потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="728"/>
+        <source>Show whether the Cloud API is configured, then exit</source>
+        <translation>Показати, чи налаштовано Cloud API, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="731"/>
+        <source>For --send --backend cloud: send this Meta-approved template</source>
+        <translation>Для --send --backend cloud: надіслати цей затверджений Meta шаблон</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="735"/>
+        <source>Language code for --cloud-template (e.g. es, en_US)</source>
+        <translation>Код мови для --cloud-template (напр. es, en_US)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="739"/>
+        <source>A positional body parameter for --cloud-template (repeatable)</source>
+        <translation>Позиційний параметр тіла для --cloud-template (можна повторювати)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="744"/>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>Увімкнути локальний HTTP API, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="747"/>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>Вимкнути локальний HTTP API, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="750"/>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>Встановити порт локального HTTP API (типово 8590), потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="754"/>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>Встановити токен Bearer для локального HTTP API, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="758"/>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>Показати конфігурацію локального HTTP API, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="762"/>
+        <source>Enable receiving Cloud API webhooks, then exit</source>
+        <translation>Увімкнути отримання вебхуків Cloud API, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="765"/>
+        <source>Disable receiving Cloud API webhooks, then exit</source>
+        <translation>Вимкнути отримання вебхуків Cloud API, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="768"/>
+        <source>Set the Cloud API webhook verify token, then exit</source>
+        <translation>Встановити токен перевірки вебхука Cloud API, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="772"/>
+        <source>Set the Meta app secret for webhook signature checks, then exit</source>
+        <translation>Встановити секрет застосунку Meta для перевірки підпису вебхука, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="776"/>
+        <source>Show the Cloud API webhook configuration, then exit</source>
+        <translation>Показати конфігурацію вебхука Cloud API, потім вийти</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="1166"/>
+        <source>App lock is not configured, 
+Please setup the password in the Settings first.</source>
+        <translation>Блокування застосунку не налаштовано, 
+спочатку встановіть пароль у налаштуваннях.</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="1264"/>
+        <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
+        <translation>Відновлено після збою запуску шляхом перемикання на безпечний рендеринг. Це можна налаштувати в Налаштування → Продуктивність.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="949"/>
+        <source>Reloading...</source>
+        <translation>Перезавантаження...</translation>
+    </message>
+    <message>
+        <location filename="../ollama.cpp" line="17"/>
+        <source>Good quality, light and fast. Recommended.</source>
+        <translation>Хороша якість, легка та швидка. Рекомендовано.</translation>
+    </message>
+    <message>
+        <location filename="../ollama.cpp" line="19"/>
+        <source>Meta Llama, balanced and multilingual.</source>
+        <translation>Meta Llama, збалансована та багатомовна.</translation>
+    </message>
+    <message>
+        <location filename="../ollama.cpp" line="21"/>
+        <source>Google Gemma, very small.</source>
+        <translation>Google Gemma, дуже маленька.</translation>
+    </message>
+    <message>
+        <location filename="../ollama.cpp" line="23"/>
+        <source>Tiny and fastest; lower quality.</source>
+        <translation>Крихітна та найшвидша; нижча якість.</translation>
+    </message>
+    <message>
+        <location filename="../ollama.cpp" line="25"/>
+        <source>Microsoft Phi-3, strong for its size.</source>
+        <translation>Microsoft Phi-3, потужна для свого розміру.</translation>
+    </message>
+    <message>
+        <location filename="../translator.cpp" line="109"/>
+        <source>Unexpected response from the translation service.</source>
+        <translation>Неочікувана відповідь від служби перекладу.</translation>
+    </message>
+    <message>
+        <location filename="../translator.cpp" line="126"/>
+        <source>The translation service returned no text.</source>
+        <translation>Служба перекладу не повернула текст.</translation>
+    </message>
+    <message>
+        <location filename="../translator.cpp" line="230"/>
+        <source>No translation endpoint is configured (Settings → Translation).</source>
+        <translation>Не налаштовано кінцеву точку перекладу (Налаштування → Переклад).</translation>
+    </message>
+    <message>
+        <location filename="../translator.cpp" line="236"/>
+        <source>Nothing to translate.</source>
+        <translation>Немає що перекладати.</translation>
+    </message>
+    <message>
+        <location filename="../translator.cpp" line="262"/>
+        <source>Translation failed.</source>
+        <translation>Не вдалося перекласти.</translation>
+    </message>
+    <message>
+        <location filename="../undosend.cpp" line="129"/>
+        <source>Undo</source>
+        <translation>Скасувати</translation>
+    </message>
+    <message>
+        <location filename="../undosend.cpp" line="131"/>
+        <source>Sending in</source>
+        <translation>Надсилання через</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="315"/>
+        <location filename="../utils.cpp" line="349"/>
+        <source>Install mode</source>
+        <translation>Режим встановлення</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="333"/>
+        <source>Version</source>
+        <translation>Версія</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="335"/>
+        <source>Source Branch</source>
+        <translation>Гілка джерела</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="337"/>
+        <source>Commit Hash</source>
+        <translation>Хеш коміту</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="339"/>
+        <source>Build Datetime</source>
+        <translation>Дата й час збірки</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="341"/>
+        <source>Qt Runtime Version</source>
+        <translation>Версія середовища виконання Qt</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="343"/>
+        <source>Qt Compiled Version</source>
+        <translation>Версія компіляції Qt</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="345"/>
+        <source>System</source>
+        <translation>Система</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="347"/>
+        <source>Architecture</source>
+        <translation>Архітектура</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="490"/>
+        <source>Exception</source>
+        <translation>Виняток</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="493"/>
+        <source> has encountered a problem.</source>
+        <translation> зіткнувся з проблемою.</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="496"/>
+        <source> may need to Restart. Please report the error to developer.</source>
+        <translation> можливо потребує перезапуску. Будь ласка, повідомте про помилку розробнику.</translation>
+    </message>
+    <message>
+        <location filename="../webtweaks.cpp" line="418"/>
+        <source>Switch to light theme</source>
+        <comment>WebTweaks</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../webtweaks.cpp" line="419"/>
+        <source>Switch to dark theme</source>
+        <comment>WebTweaks</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../webtweaks.cpp" line="420"/>
+        <source>Show the chats</source>
+        <comment>WebTweaks</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../webtweaks.cpp" line="421"/>
+        <source>Blur the chats</source>
+        <comment>WebTweaks</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../webtweaks.cpp" line="422"/>
+        <source>Zoom in</source>
+        <comment>WebTweaks</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../webtweaks.cpp" line="423"/>
+        <source>Zoom out</source>
+        <comment>WebTweaks</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../webtweaks.cpp" line="424"/>
+        <source>Reset zoom</source>
+        <comment>WebTweaks</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../webtweaks.cpp" line="425"/>
+        <source>Collapse the chat list</source>
+        <comment>WebTweaks</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../webtweaks.cpp" line="426"/>
+        <source>Show the chat list</source>
+        <comment>WebTweaks</comment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>QuickCompose</name>
+    <message>
+        <location filename="../quickcompose.cpp" line="24"/>
+        <source>Quick message</source>
+        <translation>Швидке повідомлення</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="31"/>
+        <source>Contact name or phone number</source>
+        <translation>Ім'я контакту або номер телефону</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="36"/>
+        <source>Message (press Enter to send)</source>
+        <translation>Повідомлення (натисніть Enter, щоб надіслати)</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="40"/>
+        <source>Send</source>
+        <translation>Надіслати</translation>
+    </message>
+</context>
+<context>
+    <name>RateApp</name>
+    <message>
+        <location filename="../rateapp.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../rateapp.ui" line="43"/>
+        <source>Rate this app</source>
+        <translation>Оцінити цей застосунок</translation>
+    </message>
+    <message>
+        <location filename="../rateapp.ui" line="56"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If you enjoy using this app, would you mind taking a moment to rate it?&lt;/p&gt;&lt;p&gt;It won&apos;t take more than a minute. Thanks you for your support!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../rateapp.ui" line="73"/>
+        <source>  Rate in Store</source>
+        <translation>  Оцінити в магазині</translation>
+    </message>
+    <message>
+        <location filename="../rateapp.ui" line="99"/>
+        <location filename="../rateapp.ui" line="156"/>
+        <source>Or</source>
+        <translation>Або</translation>
+    </message>
+    <message>
+        <location filename="../rateapp.ui" line="119"/>
+        <source>Star rate Github repo</source>
+        <translation>Поставте зірку репозиторію на GitHub</translation>
+    </message>
+    <message>
+        <location filename="../rateapp.ui" line="130"/>
+        <source>Donate via PayPal </source>
+        <translation>Пожертвувати через PayPal </translation>
+    </message>
+    <message>
+        <location filename="../rateapp.ui" line="176"/>
+        <source>Donate via OpenCollective</source>
+        <translation>Пожертвувати через OpenCollective</translation>
+    </message>
+    <message>
+        <location filename="../rateapp.ui" line="187"/>
+        <source>Later</source>
+        <translation>Пізніше</translation>
+    </message>
+    <message>
+        <location filename="../rateapp.ui" line="210"/>
+        <source>  Already Done  </source>
+        <translation>  Вже зроблено  </translation>
+    </message>
+</context>
+<context>
+    <name>ScheduledMessages</name>
+    <message>
+        <location filename="../scheduledmessages.cpp" line="245"/>
+        <source>Timed out waiting for the message to send</source>
+        <translation>Тайм-аут очікування надсилання повідомлення</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessages.cpp" line="325"/>
+        <source>Daily</source>
+        <translation>Щодня</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessages.cpp" line="327"/>
+        <source>Weekdays</source>
+        <translation>Будні дні</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessages.cpp" line="329"/>
+        <source>Weekly</source>
+        <translation>Щотижня</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessages.cpp" line="333"/>
+        <source>Once</source>
+        <translation>Одноразово</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessages.cpp" line="339"/>
+        <source>Sent</source>
+        <translation>Надіслано</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessages.cpp" line="341"/>
+        <source>Failed</source>
+        <translation>Не вдалося</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessages.cpp" line="345"/>
+        <source>Pending</source>
+        <translation>Очікується</translation>
+    </message>
+</context>
+<context>
+    <name>ScheduledMessagesDialog</name>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="22"/>
+        <location filename="../scheduledmessagesdialog.cpp" line="114"/>
+        <location filename="../scheduledmessagesdialog.cpp" line="120"/>
+        <source>Scheduled messages</source>
+        <translation>Заплановані повідомлення</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="30"/>
+        <location filename="../scheduledmessagesdialog.cpp" line="42"/>
+        <source>To</source>
+        <translation>Кому</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="30"/>
+        <location filename="../scheduledmessagesdialog.cpp" line="51"/>
+        <source>When</source>
+        <translation>Коли</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="30"/>
+        <location filename="../scheduledmessagesdialog.cpp" line="71"/>
+        <source>Message</source>
+        <translation>Повідомлення</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="30"/>
+        <source>Status</source>
+        <translation>Стан</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="41"/>
+        <source>Phone number, international format e.g. 447700900000</source>
+        <translation>Номер телефону в міжнародному форматі, напр. 447700900000</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="45"/>
+        <source>Optional label</source>
+        <translation>Необов'язкова мітка</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="46"/>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="54"/>
+        <source>Once</source>
+        <translation>Одноразово</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="56"/>
+        <source>Daily</source>
+        <translation>Щодня</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="58"/>
+        <source>Weekdays</source>
+        <translation>Будні дні</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="60"/>
+        <source>Weekly</source>
+        <translation>Щотижня</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="62"/>
+        <source>Repeat</source>
+        <translation>Повторення</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="65"/>
+        <source>Remind me instead of sending (notify, don&apos;t message)</source>
+        <translation>Нагадати мені замість надсилання (сповіщення, без повідомлення)</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="69"/>
+        <source>Message to send</source>
+        <translation>Повідомлення для надсилання</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="75"/>
+        <source>The app must be running and WhatsApp logged in at the scheduled time. If it is closed, the message is sent the next time you open the app. Sending opens the recipient&apos;s chat.</source>
+        <translation>У запланований час застосунок має бути запущений, а WhatsApp - авторизований. Якщо застосунок закрито, повідомлення буде надіслано наступного разу, коли ви його відкриєте. Надсилання відкриває чат отримувача.</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="85"/>
+        <source>Schedule</source>
+        <translation>Запланувати</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="86"/>
+        <source>Remove selected</source>
+        <translation>Вилучити вибране</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="87"/>
+        <source>Clear sent/failed</source>
+        <translation>Очистити надіслані/невдалі</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="88"/>
+        <source>Close</source>
+        <translation>Закрити</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="115"/>
+        <source>Enter a phone number and a message.</source>
+        <translation>Введіть номер телефону та повідомлення.</translation>
+    </message>
+    <message>
+        <location filename="../scheduledmessagesdialog.cpp" line="121"/>
+        <source>The time is in the past — send this message now?</source>
+        <translation>Час у минулому — надіслати це повідомлення зараз?</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsWidget</name>
+    <message>
+        <location filename="../settingswidget.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="78"/>
+        <source>Settings</source>
+        <translation>Налаштування</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="106"/>
+        <source>General settings</source>
+        <translation>Загальні налаштування</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="114"/>
+        <source>Widget Style</source>
+        <translation>Стиль віджетів</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="153"/>
+        <source>Display theme</source>
+        <translation>Тема відображення</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="166"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Based on your system timezone and location.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="169"/>
+        <location filename="../settingswidget.ui" line="1941"/>
+        <location filename="../settingswidget.ui" line="1985"/>
+        <location filename="../settingswidget.ui" line="2142"/>
+        <location filename="../settingswidget.cpp" line="1321"/>
+        <location filename="../settingswidget.cpp" line="1613"/>
+        <source>Automatic</source>
+        <translation>Автоматично</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="177"/>
+        <source>Dark</source>
+        <translation>Темна</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="186"/>
+        <source>Light</source>
+        <translation>Світла</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="198"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Match the desktop&apos;s own light/dark preference, and change with it. Overrides the manual theme and the automatic sunrise/sunset switch.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="201"/>
+        <source>Follow system light/dark theme</source>
+        <translation>Слідувати системній світлій/темній темі</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="238"/>
+        <source>Native notification</source>
+        <translation>Нативне сповіщення</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="247"/>
+        <source>Customized notification</source>
+        <translation>Налаштоване сповіщення</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="265"/>
+        <source>  Try</source>
+        <translation>  Спробувати</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="276"/>
+        <source>Notification type</source>
+        <translation>Тип сповіщення</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="283"/>
+        <source>Disable Notifications Popup</source>
+        <translation>Вимкнути спливаючі сповіщення</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="290"/>
+        <source>Popup timeout</source>
+        <translation>Тайм-аут спливаючого вікна</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="297"/>
+        <location filename="../settingswidget.ui" line="1250"/>
+        <source> Secs</source>
+        <translation> с</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="310"/>
+        <source>Notification delivery</source>
+        <translation>Доставка сповіщень</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="317"/>
+        <source>How native notifications are sent on Linux. Automatic uses the desktop portal inside a Flatpak sandbox and the system service otherwise.</source>
+        <translation>Як надсилаються нативні сповіщення в Linux. Автоматичний режим використовує портал стільниці всередині пісочниці Flatpak, а інакше - системну службу.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="324"/>
+        <source>Ask the notification service to play a sound for new messages.</source>
+        <translation>Попросити службу сповіщень відтворювати звук для нових повідомлень.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="327"/>
+        <source>Play sound</source>
+        <translation>Відтворювати звук</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="334"/>
+        <source>Suppress notification popups during a daily quiet period. Unread badges still update; only the popup is held back.</source>
+        <translation>Придушувати спливаючі сповіщення протягом щоденного періоду тиші. Значки непрочитаних все одно оновлюються; блокується лише спливаюче вікно.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="337"/>
+        <source>Do Not Disturb</source>
+        <translation>Не турбувати</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="346"/>
+        <source>From</source>
+        <translation>Від</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="353"/>
+        <location filename="../settingswidget.ui" line="367"/>
+        <source>HH:mm</source>
+        <translation>ГГ:хх</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="360"/>
+        <source>to</source>
+        <translation>до</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="389"/>
+        <source>Highlight keywords</source>
+        <translation>Ключові слова для виділення</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="396"/>
+        <source>Comma-separated words that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>Слова через кому, що завжди сповіщають, навіть у режимі &quot;Не турбувати&quot; (без урахування регістру).</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="399"/>
+        <source>e.g. urgent, boss, invoice</source>
+        <translation>напр. терміново, начальник, рахунок</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="406"/>
+        <source>VIP contacts</source>
+        <translation>VIP-контакти</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="413"/>
+        <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
+        <translation>Імена контактів або груп через кому, що завжди сповіщають, навіть у режимі &quot;Не турбувати&quot; (без урахування регістру).</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="416"/>
+        <source>e.g. Alice, Work group</source>
+        <translation>напр. Аліса, Робоча група</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="423"/>
+        <source>Muted contacts</source>
+        <translation>Заглушені контакти</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="430"/>
+        <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
+        <translation>Імена контактів або груп через кому, чиї сповіщення ніколи не показуються (їхній значок непрочитаних все одно оновлюється).</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="433"/>
+        <source>e.g. Noisy group</source>
+        <translation>напр. Галаслива група</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="440"/>
+        <source>Add a reply field to desktop notifications so you can answer a message without opening the window. Only works where the notification service supports it (e.g. KDE Plasma); elsewhere notifications behave as before.</source>
+        <translation>Додати поле відповіді до сповіщень стільниці, щоб відповідати на повідомлення без відкриття вікна. Працює лише там, де це підтримує служба сповіщень (напр. KDE Plasma); в інших випадках сповіщення поводяться як раніше.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="443"/>
+        <source>Reply directly from notifications (where supported)</source>
+        <translation>Відповідати безпосередньо зі сповіщень (де підтримується)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="479"/>
+        <source>Use Native File Dialog</source>
+        <translation>Використовувати нативний діалог файлів</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="486"/>
+        <source>Mute Audio from Page</source>
+        <translation>Вимкнути звук зі сторінки</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="493"/>
+        <source>Disable Auto Playback of Media</source>
+        <translation>Вимкнути автовідтворення медіа</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="500"/>
+        <source>Minimize in tray on start</source>
+        <translation>Згортати в трей при запуску</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="507"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window&apos;s position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="510"/>
+        <source>Remember multiple window positions on restart</source>
+        <translation>Пам'ятати позиції декількох вікон при перезапуску</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="517"/>
+        <source>Show/Hide on clicking tray Icon (if supported)</source>
+        <translation>Показати/приховати при клацанні на піктограму трею (якщо підтримується)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="524"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close the emoji, GIF &amp;amp; sticker panel when you click elsewhere. WhatsApp Web otherwise keeps it open until the button is pressed again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="527"/>
+        <source>Close emoji/sticker panel when clicking outside</source>
+        <translation>Закривати панель емодзі/стікерів при клацанні поза нею</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="534"/>
+        <source>Interface language (requires restart)</source>
+        <translation>Мова інтерфейсу (потрібен перезапуск)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="541"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of Whatly&apos;s own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="548"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a light/dark button to WhatsApp&apos;s own sidebar, just above your profile picture.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="551"/>
+        <source>Theme button in WhatsApp&apos;s sidebar</source>
+        <translation>Кнопка теми на бічній панелі WhatsApp</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="558"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that blurs and unblurs your chats in one click, without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="561"/>
+        <source>Blur button in WhatsApp&apos;s sidebar</source>
+        <translation>Кнопка розмиття на бічній панелі WhatsApp</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="568"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp&apos;s own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="571"/>
+        <source>Zoom buttons in WhatsApp&apos;s sidebar</source>
+        <translation>Кнопки масштабування на бічній панелі WhatsApp</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="578"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="581"/>
+        <source>Chat-list collapse button in WhatsApp&apos;s sidebar</source>
+        <translation>Кнопка згортання списку чатів на бічній панелі WhatsApp</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="588"/>
+        <source>Collapsed chat preview</source>
+        <translation>Попередній перегляд згорнутого чату</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="595"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform&apos;s font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="602"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="605"/>
+        <source>Monochrome tray icon</source>
+        <translation>Монохромна піктограма трею</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="612"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="615"/>
+        <source>Smooth scrolling</source>
+        <translation>Плавна прокрутка</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="622"/>
+        <location filename="../settingswidget.cpp" line="1238"/>
+        <source>Custom CSS</source>
+        <translation>Власний CSS</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="631"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="634"/>
+        <source>Choose file…</source>
+        <translation>Вибрати файл…</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="641"/>
+        <location filename="../settingswidget.ui" line="781"/>
+        <source>Clear</source>
+        <translation>Очистити</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="650"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="653"/>
+        <source>Hide tray icon</source>
+        <translation>Приховати піктограму трею</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="660"/>
+        <source>Font family</source>
+        <translation>Гарнітура шрифту</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="667"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Render WhatsApp Web&apos;s text in a font installed on your system. Emoji, icons and monospaced message formatting are left untouched.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="674"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="677"/>
+        <source>Hide muted status updates</source>
+        <translation>Приховати оновлення статусу заглушених</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="684"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="687"/>
+        <location filename="../settingswidget.cpp" line="2032"/>
+        <source>Check spelling as I type</source>
+        <translation>Перевіряти правопис під час набору</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="694"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="701"/>
+        <source>Interface font size</source>
+        <translation>Розмір шрифту інтерфейсу</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="708"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="711"/>
+        <source> pt</source>
+        <translation> пт</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="724"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="727"/>
+        <source>Reload automatically after a crash</source>
+        <translation>Автоматично перезавантажувати після збою</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="734"/>
+        <source>Privacy blur</source>
+        <translation>Розмиття конфіденційності</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="741"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="748"/>
+        <source>Chat colour Tint</source>
+        <translation>Кольоровий відтінок чату</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="755"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="762"/>
+        <location filename="../settingswidget.cpp" line="1214"/>
+        <source>Chat wallpaper</source>
+        <translation>Шпалери чату</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="771"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="774"/>
+        <source>Choose image…</source>
+        <translation>Вибрати зображення…</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="790"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="793"/>
+        <source>Identify as Whatly in linked devices</source>
+        <translation>Ідентифікувати себе як Whatly в пов'язаних пристроях</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="807"/>
+        <source>User Agent</source>
+        <translation>User Agent</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="810"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="820"/>
+        <source>  Set</source>
+        <translation>  Встановити</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="831"/>
+        <source>Reset to default</source>
+        <translation>Скинути до типового</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="854"/>
+        <source>Zoom factor when normal</source>
+        <translation>Коефіцієнт масштабування у звичайному режимі</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="882"/>
+        <location filename="../settingswidget.ui" line="1017"/>
+        <source>Zoom Out</source>
+        <translation>Зменшити</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="921"/>
+        <location filename="../settingswidget.ui" line="1056"/>
+        <source>Zoom In</source>
+        <translation>Збільшити</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="966"/>
+        <location filename="../settingswidget.ui" line="1101"/>
+        <source>reset</source>
+        <translation>скинути</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="989"/>
+        <source>Zoom factor when maximized/fullscreen</source>
+        <translation>Коефіцієнт масштабування при розгорнутому/повноекранному режимі</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1124"/>
+        <source>Minimize to tray</source>
+        <translation>Згорнути в трей</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1133"/>
+        <source>Quit</source>
+        <translation>Вийти</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1145"/>
+        <source>Global shortcuts</source>
+        <translation>Глобальні клавіатурні скорочення</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1152"/>
+        <source>Close button action</source>
+        <translation>Дія кнопки закриття</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1159"/>
+        <source>  Show shortcuts</source>
+        <translation>  Показати скорочення</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1170"/>
+        <source>Permissions</source>
+        <translation>Дозволи</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1177"/>
+        <source>  Show permissions</source>
+        <translation>  Показати дозволи</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1192"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1195"/>
+        <source>Enable App lock on start</source>
+        <translation>Увімкнути блокування застосунку при запуску</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1202"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1205"/>
+        <source>Lock when hidden to tray</source>
+        <translation>Блокувати при згортанні в трей</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1212"/>
+        <source>Also lock Whatly when the desktop session locks. Requires a password to be set. (Linux)</source>
+        <translation>Також блокувати Whatly при блокуванні сеансу стільниці. Потрібно встановити пароль. (Linux)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1215"/>
+        <source>Lock when the screen locks</source>
+        <translation>Блокувати при блокуванні екрана</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1222"/>
+        <source>Current Password</source>
+        <translation>Поточний пароль</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1229"/>
+        <location filename="../settingswidget.ui" line="1263"/>
+        <source>Change password</source>
+        <translation>Змінити пароль</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1232"/>
+        <location filename="../settingswidget.ui" line="1341"/>
+        <source>Change</source>
+        <translation>Змінити</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1243"/>
+        <source>Enable auto locking after</source>
+        <translation>Увімкнути автоматичне блокування через</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1266"/>
+        <source>Reset</source>
+        <translation>Скинути</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1298"/>
+        <source>View password</source>
+        <translation>Переглянути пароль</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1325"/>
+        <source>Default Download location</source>
+        <translation>Типове місце завантаження</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1338"/>
+        <source>Change Download Location</source>
+        <translation>Змінити місце завантаження</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1357"/>
+        <source>Storage </source>
+        <translation>Сховище </translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1377"/>
+        <source>Property</source>
+        <translation>Властивість</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1384"/>
+        <source>  Clear (requires restart)</source>
+        <translation>  Очистити (потрібен перезапуск)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1395"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1398"/>
+        <source>Persistent data</source>
+        <translation>Постійні дані</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1405"/>
+        <location filename="../settingswidget.ui" line="1425"/>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1415"/>
+        <source>The HTTP/media cache. Clearing it is safe — it is re-downloaded as needed.</source>
+        <translation>Кеш HTTP/медіа. Очищення безпечне — він буде завантажений повторно за потреби.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1418"/>
+        <source>Cache</source>
+        <translation>Кеш</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1435"/>
+        <source>  Clear cache</source>
+        <translation>  Очистити кеш</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1458"/>
+        <source>Size</source>
+        <translation>Розмір</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1480"/>
+        <source>Action</source>
+        <translation>Дія</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1494"/>
+        <source>Backup</source>
+        <translation>Резервна копія</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1501"/>
+        <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
+        <translation>Зберегти цей обліковий запис (налаштування, сесію та додатки) в архів .tar.gz. Архів містить вашу активну сесію — тримайте його в таємниці.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1504"/>
+        <source>Export profile…</source>
+        <translation>Експортувати профіль…</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1511"/>
+        <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
+        <translation>Відновити обліковий запис з архіву .tar.gz. Це перезапише поточні дані та потребуватиме перезапуску.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1514"/>
+        <source>Import profile…</source>
+        <translation>Імпортувати профіль…</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1539"/>
+        <source>Performance &amp; Privacy (requires restart)</source>
+        <translation>Продуктивність і конфіденційність (потрібен перезапуск)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1545"/>
+        <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
+        <translation>Тонке налаштування рушія рендерингу. Типові значення безпечні для більшості систем; якщо вікно порожнє, застосунок падає при запуску або зависає, спробуйте змінити ці параметри. Зміни застосовуються після перезапуску.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1555"/>
+        <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
+        <translation>Рендерити повністю на CPU (--disable-gpu). Виправляє порожні вікна та збої при запуску на деяких конфігураціях GPU/драйверів. Типово на Linux.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1558"/>
+        <source>Disable GPU acceleration</source>
+        <translation>Вимкнути апаратне прискорення GPU</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1565"/>
+        <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
+        <translation>Компонувати сторінку на CPU (--disable-gpu-compositing). Уникає мерехтіння застарілих кадрів на деяких драйверах.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1568"/>
+        <source>Disable GPU compositing</source>
+        <translation>Вимкнути композитинг GPU</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1575"/>
+        <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
+        <translation>Вимкнути вертикальну синхронізацію GPU (--disable-gpu-vsync). Може зменшити затримку введення ціною розривів зображення.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1578"/>
+        <source>Disable GPU VSync</source>
+        <translation>Вимкнути VSync GPU</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1585"/>
+        <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
+        <translation>Запускати процес GPU всередині основного процесу (--in-process-gpu). Обхідне рішення для деяких пісочниць.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1588"/>
+        <source>Run GPU in-process</source>
+        <translation>Запускати GPU в основному процесі</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1595"/>
+        <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
+        <translation>Примусово вмикати прискорення, навіть якщо драйвер у чорному списку (--ignore-gpu-blocklist). Спробуйте це, щоб знову увімкнути GPU.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1598"/>
+        <source>Ignore GPU blocklist</source>
+        <translation>Ігнорувати чорний список GPU</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1605"/>
+        <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
+        <translation>Запускати все в одному процесі (--single-process). Використовує менше пам'яті, але менш стабільне.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1608"/>
+        <source>Single-process mode (lower memory)</source>
+        <translation>Режим одного процесу (менше пам'яті)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1615"/>
+        <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
+        <translation>Спільно використовувати один процес рендерингу на сайт (--process-per-site). Зменшує використання пам'яті.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1618"/>
+        <source>One process per site (lower memory)</source>
+        <translation>Один процес на сайт (менше пам'яті)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1625"/>
+        <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
+        <translation>Попросити рушій JavaScript використовувати менше пам'яті ціною невеликого зниження швидкості (V8 --optimize-for-size). Рекомендовано для застосунку, що залишається в треї. Ігнорується, якщо нижче встановлено обмеження пам'яті JavaScript.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1628"/>
+        <source>Optimize memory over speed (lower memory)</source>
+        <translation>Оптимізувати пам'ять замість швидкості (менше пам'яті)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1635"/>
+        <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
+        <translation>Приховати імена контактів і попередній перегляд повідомлень у списку чатів (наведіть курсор, щоб показати). Корисно при демонстрації екрана. Відкрита розмова не зачіпається.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1638"/>
+        <source>Focus mode (hide chat-list previews)</source>
+        <translation>Режим фокусування (приховати перегляд списку чатів)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1645"/>
+        <source>Default photos and videos to HD quality in the media editor. Depends on WhatsApp Web&apos;s layout; if a WhatsApp update breaks it, turn it off.</source>
+        <translation>Типово встановлювати якість HD для фото та відео в редакторі медіа. Залежить від макета WhatsApp Web; якщо оновлення WhatsApp порушить це, вимкніть цей параметр.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1648"/>
+        <source>Send photos and videos in HD by default</source>
+        <translation>Типово надсилати фото та відео в HD</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1657"/>
+        <source>Hold a message for a few seconds after you press Enter, showing an &quot;Undo&quot; button before it is actually sent. Press Enter again to send at once.</source>
+        <translation>Затримувати повідомлення на декілька секунд після натискання Enter, показуючи кнопку &quot;Скасувати&quot; до фактичного надсилання. Натисніть Enter ще раз, щоб надіслати негайно.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1660"/>
+        <source>Undo send (hold Enter-sent messages briefly)</source>
+        <translation>Скасування надсилання (коротка затримка повідомлень, надісланих через Enter)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1667"/>
+        <source>How long to hold a message before it is sent.</source>
+        <translation>Як довго затримувати повідомлення перед надсиланням.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1670"/>
+        <source> s</source>
+        <translation> с</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1685"/>
+        <source>Inline translation</source>
+        <translation>Вбудований переклад</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1691"/>
+        <source>Translate selected text or your message box through a LibreTranslate-compatible service. The request is made by the app, so the endpoint and key never reach WhatsApp Web. Bind keys to &quot;Translate selection&quot; / &quot;Translate message box&quot; in Shortcuts, or use the command palette.</source>
+        <translation>Перекладати виділений текст або поле повідомлення через сумісну з LibreTranslate службу. Запит виконує застосунок, тож кінцева точка та ключ ніколи не потрапляють до WhatsApp Web. Прив'яжіть клавіші до &quot;Перекласти виділене&quot; / &quot;Перекласти поле повідомлення&quot; у розділі Скорочення, або скористайтеся палітрою команд.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1694"/>
+        <source>Enable inline translation</source>
+        <translation>Увімкнути вбудований переклад</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1701"/>
+        <location filename="../settingswidget.ui" line="1771"/>
+        <source>Endpoint</source>
+        <translation>Кінцева точка</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1708"/>
+        <source>A LibreTranslate-compatible &quot;/translate&quot; URL, e.g. http://localhost:5000/translate for a self-hosted instance.</source>
+        <translation>URL-адреса &quot;/translate&quot;, сумісна з LibreTranslate, напр. http://localhost:5000/translate для власного розгортання.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1711"/>
+        <source>https://your-libretranslate/translate</source>
+        <translation>https://your-libretranslate/translate</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1718"/>
+        <location filename="../settingswidget.ui" line="1805"/>
+        <source>API key (optional)</source>
+        <translation>Ключ API (необов'язково)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1725"/>
+        <source>Only needed by endpoints that require one. Stored locally.</source>
+        <translation>Потрібен лише для кінцевих точок, що його вимагають. Зберігається локально.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1735"/>
+        <source>Target language</source>
+        <translation>Мова перекладу</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1742"/>
+        <source>Two-letter code to translate into (e.g. en, es, fr). Leave empty to use the app&apos;s language. The source language is detected automatically.</source>
+        <translation>Двобуквений код для перекладу (напр. en, es, fr). Залиште порожнім, щоб використовувати мову застосунку. Мова джерела визначається автоматично.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1745"/>
+        <source>app language</source>
+        <translation>мова застосунку</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1755"/>
+        <source>AI assistant</source>
+        <translation>Асистент ШІ</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1761"/>
+        <source>Summarise a chat, improve your draft or suggest a reply through an OpenAI-compatible service. The chat text is sent to that service, so use one you trust (a local runner keeps it on your machine). The request is made by the app, so the endpoint and key never reach WhatsApp Web. Actions live in the command palette and Shortcuts.</source>
+        <translation>Підсумовувати чат, покращувати чернетку або пропонувати відповідь через сумісну з OpenAI службу. Текст чату надсилається цій службі, тож користуйтеся тією, якій довіряєте (локальний запуск залишає дані на вашому пристрої). Запит виконує застосунок, тож кінцева точка та ключ ніколи не потрапляють до WhatsApp Web. Дії доступні в палітрі команд і розділі Скорочення.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1764"/>
+        <source>Enable AI assistant</source>
+        <translation>Увімкнути асистента ШІ</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1778"/>
+        <source>An OpenAI-compatible /chat/completions URL, e.g. https://api.openai.com/v1/chat/completions or http://localhost:11434/v1/chat/completions for a local Ollama.</source>
+        <translation>URL-адреса /chat/completions, сумісна з OpenAI, напр. https://api.openai.com/v1/chat/completions або http://localhost:11434/v1/chat/completions для локального Ollama.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1781"/>
+        <source>https://api.openai.com/v1/chat/completions</source>
+        <translation>https://api.openai.com/v1/chat/completions</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1788"/>
+        <source>Model</source>
+        <translation>Модель</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1795"/>
+        <source>The model name the endpoint expects, e.g. gpt-4o-mini or llama3.</source>
+        <translation>Назва моделі, яку очікує кінцева точка, напр. gpt-4o-mini або llama3.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1798"/>
+        <source>e.g. gpt-4o-mini</source>
+        <translation>напр. gpt-4o-mini</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1812"/>
+        <source>Sent as a Bearer token. Not needed by most local runners. Stored locally.</source>
+        <translation>Надсилається як токен Bearer. Не потрібен більшості локальних запусків. Зберігається локально.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1829"/>
+        <source>Local models (Ollama)</source>
+        <translation>Локальні моделі (Ollama)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1838"/>
+        <source>Check for a local Ollama and list its installed models.</source>
+        <translation>Перевірити наявність локального Ollama та вивести список встановлених моделей.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1841"/>
+        <source>Detect Ollama</source>
+        <translation>Виявити Ollama</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1857"/>
+        <source>Installed model</source>
+        <translation>Встановлена модель</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1864"/>
+        <source>Pick one of the models already installed in Ollama; it becomes the model above.</source>
+        <translation>Виберіть одну з моделей, вже встановлених в Ollama; вона стане моделлю вище.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1871"/>
+        <source>Download a light model</source>
+        <translation>Завантажити легку модель</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1880"/>
+        <source>Light, fast models that run well on modest hardware.</source>
+        <translation>Легкі, швидкі моделі, що добре працюють на скромному обладнанні.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1887"/>
+        <source>Download</source>
+        <translation>Завантажити</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1919"/>
+        <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
+        <translation>Заборонити WebRTC розкривати вашу локальну IP-адресу через з'єднання без проксі.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1922"/>
+        <source>Prevent WebRTC IP leak</source>
+        <translation>Запобігти витоку IP через WebRTC</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1931"/>
+        <source>JavaScript memory limit</source>
+        <translation>Обмеження пам'яті JavaScript</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1938"/>
+        <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
+        <translation>Обмежити купу JavaScript (V8 --max-old-space-size). 0 = автоматично. Зменшіть, якщо застосунок використовує забагато оперативної пам'яті.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1944"/>
+        <location filename="../settingswidget.ui" line="1988"/>
+        <source> MB</source>
+        <translation> МБ</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1961"/>
+        <source>HTTP cache</source>
+        <translation>Кеш HTTP</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1968"/>
+        <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
+        <translation>Де зберігати кеш HTTP. Пам'ять очищується при виході; &quot;Немає&quot; вимикає кешування.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1975"/>
+        <source>Max size</source>
+        <translation>Максимальний розмір</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1982"/>
+        <source>Maximum on-disk cache size. 0 = automatic.</source>
+        <translation>Максимальний розмір кешу на диску. 0 = автоматично.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2005"/>
+        <source>Font hinting</source>
+        <translation>Хінтинг шрифтів</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2012"/>
+        <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
+        <translation>Як краї гліфів прив'язуються до пікселів. Автоматичний режим слідує вашій системі; легший рівень може виправити важкий або нерівний текст.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2023"/>
+        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
+        <translation>Звільняти пам'ять, призупиняючи облікові записи, які ви не переглядаєте. Призупинений обліковий запис не отримує повідомлень, доки ви не повернетеся до нього. Налаштування з одним обліковим записом не зачіпаються.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2026"/>
+        <source>Suspend inactive accounts</source>
+        <translation>Призупиняти неактивні облікові записи</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2033"/>
+        <source>after</source>
+        <translation>через</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2040"/>
+        <source> min</source>
+        <translation> хв</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2058"/>
+        <source>Network &amp; Startup</source>
+        <translation>Мережа та запуск</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2064"/>
+        <source>Launch Whatly automatically when you log in to your desktop session.</source>
+        <translation>Автоматично запускати Whatly при вході в сеанс стільниці.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2067"/>
+        <source>Start Whatly when I log in</source>
+        <translation>Запускати Whatly при вході в систему</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2074"/>
+        <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
+        <translation>Дозволити Whatly малювати межу та панель заголовка вікна замість системи, щоб вони відповідали власній темі Whatly. Сам по собі цей параметр лише змінює їхній вигляд; позначте також &quot;Приховати панель заголовка&quot;, щоб повністю позбутися рядка заголовка. Застосовується після перезапуску.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2077"/>
+        <source>Use a custom window frame (requires restart)</source>
+        <translation>Використовувати власну рамку вікна (потрібен перезапуск)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2090"/>
+        <source>Restart Whatly now so the settings above take effect. The windows, and this page with it, come back exactly as they are.</source>
+        <translation>Перезапустіть Whatly зараз, щоб застосувати налаштування вище. Вікна, і ця сторінка разом з ними, повернуться точно такими, як були.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2093"/>
+        <source>Restart now</source>
+        <translation>Перезапустити зараз</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2100"/>
+        <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
+        <translation>Тримати смугу вкладок облікових записів навіть коли є лише один обліковий запис, щоб &quot;+&quot; завжди був під рукою. Якщо вимкнено, смуга з'являється, коли з'являється другий обліковий запис; ви все одно можете додати його через Ctrl+K.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2103"/>
+        <source>Show the account tabs even with a single account</source>
+        <translation>Показувати вкладки облікових записів навіть з одним обліковим записом</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2110"/>
+        <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
+        <translation>Прибрати панель заголовка та розмістити її кнопки в кінці смуги вкладок облікових записів, як це роблять браузери, замість окремого рядка. Вмикає власну рамку вікна, яка для цього потрібна. Застосовується після перезапуску.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2113"/>
+        <source>Hide the title bar (requires restart)</source>
+        <translation>Приховати панель заголовка (потрібен перезапуск)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2120"/>
+        <source>Check GitHub once a day for a newer release and let you know. Whatly never downloads or installs anything on its own.</source>
+        <translation>Перевіряти GitHub раз на день на наявність нового випуску та повідомляти вас. Whatly ніколи самостійно нічого не завантажує та не встановлює.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2123"/>
+        <source>Check for updates automatically</source>
+        <translation>Автоматично перевіряти оновлення</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2132"/>
+        <source>Interface scale (requires restart)</source>
+        <translation>Масштаб інтерфейсу (потрібен перезапуск)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2139"/>
+        <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
+        <translation>Масштабувати все вікно та сторінку (QT_SCALE_FACTOR). Автоматичний режим слідує стільниці. Змінна середовища QT_SCALE_FACTOR, якщо встановлена, має пріоритет над цим. Застосовується після перезапуску.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2175"/>
+        <source>Proxy</source>
+        <translation>Проксі</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2182"/>
+        <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
+        <translation>Як Whatly підключається до мережі. &quot;Система&quot; слідує операційній системі; &quot;Немає&quot; підключається напряму.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2207"/>
+        <source>Host</source>
+        <translation>Хост</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2214"/>
+        <source>127.0.0.1</source>
+        <translation>127.0.0.1</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2221"/>
+        <location filename="../settingswidget.ui" line="2501"/>
+        <source>Port</source>
+        <translation>Порт</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2235"/>
+        <source>Username</source>
+        <translation>Ім'я користувача</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2242"/>
+        <location filename="../settingswidget.ui" line="2259"/>
+        <source>Optional</source>
+        <translation>Необов'язково</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2249"/>
+        <source>Password</source>
+        <translation>Пароль</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2272"/>
+        <source>Custom JavaScript addons (requires restart)</source>
+        <translation>Власні додатки JavaScript (потрібен перезапуск)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2278"/>
+        <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
+        <translation>Завантажувати файли .js для виконання на WhatsApp Web. Кожен додаток працює у власній пісочниці, тож пошкоджений додаток не може вивести з ладу інші або сторінку. Зніміть позначку з додатка, щоб вимкнути його без вилучення. Зміни застосовуються після перезапуску.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2300"/>
+        <source>Add addon…</source>
+        <translation>Додати додаток…</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2307"/>
+        <location filename="../settingswidget.ui" line="2367"/>
+        <source>Remove</source>
+        <translation>Вилучити</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2332"/>
+        <source>Saved replies</source>
+        <translation>Збережені відповіді</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2338"/>
+        <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
+        <translation>Короткі тексти, які ви часто надсилаєте. Вставте один з палітри команд (Ctrl+K) — введіть &quot;Insert&quot; та виберіть його; текст буде надруковано в полі повідомлення.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2360"/>
+        <source>Add reply…</source>
+        <translation>Додати відповідь…</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2392"/>
+        <source>Keyboard shortcuts (requires restart)</source>
+        <translation>Клавіатурні скорочення (потрібен перезапуск)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2398"/>
+        <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
+        <translation>Клацніть на поле та натисніть комбінацію клавіш. Очистіть поле, щоб вилучити скорочення. Зміни застосовуються після перезапуску.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2414"/>
+        <source>Cloud API (send without a browser session)</source>
+        <translation>Cloud API (надсилання без сеансу браузера)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2420"/>
+        <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account&apos;s config and Whatly never obtains it itself.</source>
+        <translation>Надсилати за допомогою `--send --backend cloud` через Meta WhatsApp Business Cloud API — не потрібен запущений сеанс WhatsApp Web. Токен доступу надаєте ви з Meta; він зберігається в конфігурації цього облікового запису, і Whatly ніколи не отримує його самостійно.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2430"/>
+        <source>Phone-number ID</source>
+        <translation>Ідентифікатор номера телефону</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2444"/>
+        <source>Access token</source>
+        <translation>Токен доступу</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2454"/>
+        <source>your Meta access token</source>
+        <translation>ваш токен доступу Meta</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2461"/>
+        <source>Graph API version</source>
+        <translation>Версія Graph API</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2478"/>
+        <source>Local API &amp; Cloud webhooks</source>
+        <translation>Локальний API та вебхуки Cloud</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2484"/>
+        <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
+        <translation>Невелика кінцева точка HTTP на зворотному інтерфейсі (127.0.0.1) дозволяє іншим програмам на цій машині надсилати повідомлення через Whatly, а Meta - доставляти вебхуки Cloud API (вхідні повідомлення), тож автовідповідь працює без браузера. Вона ніколи не відкрита в мережу; щоб отримувати вебхуки від Meta, перенаправте порт через тунель або зворотний проксі (напр. cloudflared або ngrok).</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2494"/>
+        <source>Enable the local HTTP API (send over HTTP)</source>
+        <translation>Увімкнути локальний HTTP API (надсилання через HTTP)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2518"/>
+        <source>Bearer token</source>
+        <translation>Токен Bearer</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2528"/>
+        <source>required to authorise requests</source>
+        <translation>потрібен для авторизації запитів</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2535"/>
+        <source>Receive Cloud API webhooks (incoming messages)</source>
+        <translation>Отримувати вебхуки Cloud API (вхідні повідомлення)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2542"/>
+        <source>Webhook verify token</source>
+        <translation>Токен перевірки вебхука</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2552"/>
+        <source>echoed to Meta during setup</source>
+        <translation>надсилається у відповідь Meta під час налаштування</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2559"/>
+        <source>Meta app secret</source>
+        <translation>Секрет застосунку Meta</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2569"/>
+        <source>verifies the webhook signature</source>
+        <translation>перевіряє підпис вебхука</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="465"/>
+        <source>Basics</source>
+        <translation>Основи</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="473"/>
+        <source>Appearance</source>
+        <translation>Зовнішній вигляд</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="492"/>
+        <source>Notifications</source>
+        <translation>Сповіщення</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="496"/>
+        <source>Chatting</source>
+        <translation>Спілкування</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="505"/>
+        <source>Privacy &amp; Lock</source>
+        <translation>Конфіденційність і блокування</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="511"/>
+        <source>Window &amp;&amp; zoom</source>
+        <translation>Вікно та масштаб</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="528"/>
+        <source>Advanced</source>
+        <translation>Розширені</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="795"/>
+        <source>Shortcut in use</source>
+        <translation>Скорочення вже використовується</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="796"/>
+        <source>That shortcut is already used by another action.</source>
+        <translation>Це скорочення вже використовується іншою дією.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="808"/>
+        <source>Clear cache</source>
+        <translation>Очистити кеш</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="809"/>
+        <source>Clear the cache now? It will be re-downloaded as needed.</source>
+        <translation>Очистити кеш зараз? Він буде завантажений повторно за потреби.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="819"/>
+        <location filename="../settingswidget.cpp" line="825"/>
+        <location filename="../settingswidget.cpp" line="834"/>
+        <location filename="../settingswidget.cpp" line="837"/>
+        <source>Export profile</source>
+        <translation>Експортувати профіль</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="820"/>
+        <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
+        <translation>Архів міститиме вашу активну сесію WhatsApp. Тримайте його в таємниці. Продовжити?</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="827"/>
+        <location filename="../settingswidget.cpp" line="842"/>
+        <source>Archives (*.tar.gz)</source>
+        <translation>Архіви (*.tar.gz)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="835"/>
+        <source>Profile exported.</source>
+        <translation>Профіль експортовано.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="842"/>
+        <location filename="../settingswidget.cpp" line="846"/>
+        <location filename="../settingswidget.cpp" line="854"/>
+        <location filename="../settingswidget.cpp" line="857"/>
+        <source>Import profile</source>
+        <translation>Імпортувати профіль</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="847"/>
+        <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
+        <translation>Це перезапише дані поточного облікового запису вмістом архіву, після чого Whatly потрібно буде перезапустити. Продовжити?</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="855"/>
+        <source>Profile imported. Please restart Whatly.</source>
+        <translation>Профіль імпортовано. Будь ласка, перезапустіть Whatly.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="878"/>
+        <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
+        <translation>Це видалить постійні дані! Постійні дані включають постійні файли cookie та кеш, і завершить роботу застосунку.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="883"/>
+        <source>Delete Cookies and Quit Application?</source>
+        <translation>Видалити файли cookie та завершити роботу застосунку?</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="989"/>
+        <source>| Error</source>
+        <translation>| Помилка</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="990"/>
+        <source>Cannot set an empty UserAgent String.</source>
+        <translation>Неможливо встановити порожній рядок User Agent.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1041"/>
+        <source>Automatic theme switching was disabled due to manual theme toggle.</source>
+        <translation>Автоматичне перемикання теми вимкнено через ручну зміну теми.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1080"/>
+        <source>App lock is not configured.</source>
+        <translation>Блокування застосунку не налаштовано.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1084"/>
+        <source>Do you want to setup App lock now?</source>
+        <translation>Бажаєте налаштувати блокування застосунку зараз?</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1126"/>
+        <source>Feature permissions</source>
+        <translation>Дозволи функцій</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1205"/>
+        <source>Choose a chat wallpaper</source>
+        <translation>Виберіть шпалери чату</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1207"/>
+        <source>Images (%1)</source>
+        <translation>Зображення (%1)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1215"/>
+        <source>Could not use that image: %1</source>
+        <translation>Не вдалося використати це зображення: %1</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1230"/>
+        <source>Choose a CSS file</source>
+        <translation>Виберіть файл CSS</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1232"/>
+        <source>Stylesheets (*.css);;All files (*)</source>
+        <translation>Таблиці стилів (*.css);;Усі файли (*)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1239"/>
+        <source>Could not read that file: %1</source>
+        <translation>Не вдалося прочитати цей файл: %1</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1312"/>
+        <source>Disk</source>
+        <translation>Диск</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1313"/>
+        <source>Memory</source>
+        <translation>Пам'ять</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1314"/>
+        <location filename="../settingswidget.cpp" line="1322"/>
+        <location filename="../settingswidget.cpp" line="2082"/>
+        <source>None</source>
+        <translation>Немає</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1323"/>
+        <source>Slight</source>
+        <translation>Легкий</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1324"/>
+        <source>Medium</source>
+        <translation>Середній</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1325"/>
+        <source>Full</source>
+        <translation>Повний</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1466"/>
+        <source>Ollama not found at this address.</source>
+        <translation>Ollama не знайдено за цією адресою.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1471"/>
+        <source>Ollama found (%1 models installed).</source>
+        <translation>Ollama знайдено (встановлено моделей: %1).</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1496"/>
+        <source>Download complete.</source>
+        <translation>Завантаження завершено.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1499"/>
+        <source>Download failed: %1</source>
+        <translation>Не вдалося завантажити: %1</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1510"/>
+        <source>Checking…</source>
+        <translation>Перевірка…</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1535"/>
+        <source>Starting download of %1…</source>
+        <translation>Починається завантаження %1…</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1586"/>
+        <source>System</source>
+        <translation>Система</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1587"/>
+        <source>None (direct)</source>
+        <translation>Немає (напряму)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1588"/>
+        <source>SOCKS5</source>
+        <translation>SOCKS5</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1589"/>
+        <source>HTTP</source>
+        <translation>HTTP</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1615"/>
+        <source>Desktop portal (Flatpak)</source>
+        <translation>Портал стільниці (Flatpak)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1617"/>
+        <source>System service (libnotify)</source>
+        <translation>Системна служба (libnotify)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1802"/>
+        <location filename="../settingswidget.cpp" line="1806"/>
+        <source>Add reply</source>
+        <translation>Додати відповідь</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1802"/>
+        <source>Name</source>
+        <translation>Назва</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1806"/>
+        <source>Text to insert</source>
+        <translation>Текст для вставки</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1823"/>
+        <source>Choose a JavaScript file</source>
+        <translation>Виберіть файл JavaScript</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1824"/>
+        <source>JavaScript (*.js);;All files (*)</source>
+        <translation>JavaScript (*.js);;Усі файли (*)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1829"/>
+        <source>Could not add addon</source>
+        <translation>Не вдалося додати додаток</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1842"/>
+        <source>Remove addon</source>
+        <translation>Вилучити додаток</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1843"/>
+        <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
+        <translation>Вилучити додаток &quot;%1&quot;? Це видалить його файл.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2031"/>
+        <source>Spell checker (no dictionaries installed)</source>
+        <translation>Перевірка правопису (словники не встановлено)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2086"/>
+        <source>%1 languages</source>
+        <translation>%1 мов</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2184"/>
+        <source>WhatsApp default</source>
+        <translation>Типово для WhatsApp</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2223"/>
+        <source>System default</source>
+        <translation>Типово для системи</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2258"/>
+        <source>The interface language will change when you restart %1.</source>
+        <translation>Мова інтерфейсу зміниться після перезапуску %1.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2272"/>
+        <source>App Lock Setup</source>
+        <translation>Налаштування блокування застосунку</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2273"/>
+        <source>Please setup the App lock password first.</source>
+        <translation>Спочатку налаштуйте пароль блокування застосунку.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2384"/>
+        <location filename="../settingswidget.cpp" line="2395"/>
+        <source>Select download directory</source>
+        <translation>Виберіть теку завантаження</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2435"/>
+        <source>You are about to change your current app lock password!
+
+This will LogOut your current session.
+You may also require a complete restart of Application!</source>
+        <translation>Ви збираєтеся змінити поточний пароль блокування застосунку!
+
+Це призведе до виходу з поточного сеансу.
+Може також знадобитися повний перезапуск застосунку!</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2441"/>
+        <source>Do you want to proceed?</source>
+        <translation>Бажаєте продовжити?</translation>
+    </message>
+</context>
+<context>
+    <name>SetupWizard</name>
+    <message>
+        <location filename="../setupwizard.cpp" line="24"/>
+        <location filename="../setupwizard.cpp" line="30"/>
+        <source>Welcome to Whatly</source>
+        <translation>Вітаємо в Whatly</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="31"/>
+        <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
+        <translation>Швидкий, нативний клієнт WhatsApp Web для стільниці. Налаштуймо декілька речей — усе це можна змінити пізніше в Налаштуваннях.</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="36"/>
+        <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
+        <translation>Whatly тримає ваші чати у справжньому вікні стільниці, з піктограмою трею, сповіщеннями, темами та декількома обліковими записами.</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="46"/>
+        <source>A few preferences</source>
+        <translation>Декілька налаштувань</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="47"/>
+        <source>Sensible defaults; tweak to taste.</source>
+        <translation>Розумні типові значення; налаштуйте за смаком.</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="50"/>
+        <source>Match the system light/dark theme</source>
+        <translation>Відповідати системній світлій/темній темі</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="55"/>
+        <source>Start Whatly when I log in</source>
+        <translation>Запускати Whatly при вході в систему</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="61"/>
+        <source>Notification delivery:</source>
+        <translation>Доставка сповіщень:</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="64"/>
+        <source>Automatic</source>
+        <translation>Автоматично</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="65"/>
+        <source>Desktop portal (Flatpak)</source>
+        <translation>Портал стільниці (Flatpak)</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="67"/>
+        <source>System service (libnotify)</source>
+        <translation>Системна служба (libnotify)</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="77"/>
+        <source>All set</source>
+        <translation>Все готово</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="78"/>
+        <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
+        <translation>Ви готові почати. Відскануйте QR-код телефоном, щоб увійти.</translation>
+    </message>
+    <message>
+        <location filename="../setupwizard.cpp" line="82"/>
+        <source>Everything here lives in Settings if you change your mind.</source>
+        <translation>Все це знаходиться в Налаштуваннях, якщо ви передумаєте.</translation>
+    </message>
+</context>
+<context>
+    <name>UpdateChecker</name>
+    <message>
+        <location filename="../updatechecker.cpp" line="111"/>
+        <source>Could not read the latest release</source>
+        <translation>Не вдалося отримати інформацію про останній випуск</translation>
+    </message>
+</context>
+<context>
+    <name>WebEnginePage</name>
+    <message>
+        <location filename="../webenginepage.cpp" line="54"/>
+        <source>Share your screen</source>
+        <translation>Поділитися екраном</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="56"/>
+        <source>Choose what to share:</source>
+        <translation>Виберіть, чим поділитися:</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="68"/>
+        <source>Untitled</source>
+        <translation>Без назви</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="72"/>
+        <source>Screen: </source>
+        <translation>Екран: </translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="73"/>
+        <source>Window: </source>
+        <translation>Вікно: </translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="180"/>
+        <source>Allow %1 to access your location information?</source>
+        <translation>Дозволити %1 доступ до інформації про ваше місцезнаходження?</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="182"/>
+        <source>Allow %1 to access your microphone?</source>
+        <translation>Дозволити %1 доступ до вашого мікрофона?</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="184"/>
+        <source>Allow %1 to access your webcam?</source>
+        <translation>Дозволити %1 доступ до вашої вебкамери?</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="186"/>
+        <source>Allow %1 to access your microphone and webcam?</source>
+        <translation>Дозволити %1 доступ до вашого мікрофона та вебкамери?</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="188"/>
+        <source>Allow %1 to lock your mouse cursor?</source>
+        <translation>Дозволити %1 блокувати курсор миші?</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="190"/>
+        <source>Allow %1 to capture video of your desktop?</source>
+        <translation>Дозволити %1 записувати відео вашої стільниці?</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="192"/>
+        <source>Allow %1 to capture audio and video of your desktop?</source>
+        <translation>Дозволити %1 записувати аудіо та відео вашої стільниці?</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="195"/>
+        <source>Allow %1 to show notification on your desktop?</source>
+        <translation>Дозволити %1 показувати сповіщення на вашій стільниці?</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="197"/>
+        <source>Allow %1 to read your clipboard? This is needed to paste images into a chat.</source>
+        <translation>Дозволити %1 читати ваш буфер обміну? Це потрібно для вставки зображень у чат.</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="200"/>
+        <source>Allow %1 to see the fonts installed on your system?</source>
+        <translation>Дозволити %1 бачити шрифти, встановлені у вашій системі?</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="220"/>
+        <location filename="../webenginepage.cpp" line="434"/>
+        <source>Permission Request</source>
+        <translation>Запит дозволу</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="357"/>
+        <location filename="../webenginepage.cpp" line="366"/>
+        <source>Certificate Error</source>
+        <translation>Помилка сертифіката</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="386"/>
+        <source>Enter username and password for &quot;%1&quot; at %2</source>
+        <translation>Введіть ім'я користувача та пароль для &quot;%1&quot; на %2</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="416"/>
+        <source>Connect to proxy &quot;%1&quot; using:</source>
+        <translation>Підключитися до проксі &quot;%1&quot; за допомогою:</translation>
+    </message>
+    <message>
+        <location filename="../webenginepage.cpp" line="435"/>
+        <source>Allow %1 to open all %2 links?</source>
+        <translation>Дозволити %1 відкривати всі посилання %2?</translation>
+    </message>
+</context>
+<context>
+    <name>WebView</name>
+    <message>
+        <location filename="../webview.cpp" line="55"/>
+        <source>Render process normal exit</source>
+        <translation>Звичайне завершення процесу рендерингу</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="58"/>
+        <source>Render process abnormal exit</source>
+        <translation>Аварійне завершення процесу рендерингу</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="61"/>
+        <source>Render process crashed</source>
+        <translation>Процес рендерингу зазнав збою</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="64"/>
+        <source>Render process killed</source>
+        <translation>Процес рендерингу примусово завершено</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="100"/>
+        <source>WhatsApp Web keeps closing</source>
+        <translation>WhatsApp Web постійно закривається</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="101"/>
+        <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
+
+This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
+        <translation>Рушій рендерингу WhatsApp Web постійно завершується (код %1), тож Whatly припинив його перезавантажувати, щоб уникнути циклу.
+
+Це часто пов'язано з проблемою GPU або пісочниці. Спробуйте вимкнути апаратне прискорення GPU в Налаштування → Продуктивність, а потім перезавантажте.</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="127"/>
+        <source>Render process exited with code: %1
+Do you want to reload the page ?</source>
+        <translation>Процес рендерингу завершився з кодом: %1
+Бажаєте перезавантажити сторінку?</translation>
+    </message>
+</context>
+</TS>

@@ -1,5 +1,10 @@
 ## Unreleased
 
+**Four more interface languages.** Persian/Farsi (fa), Ukrainian (uk),
+Vietnamese (vi) and Traditional Chinese (zh_TW) join the interface translations,
+bringing the total to 20. Pick one in Settings → Interface, or leave it on the
+system default.
+
 **Quick-compose overlay (#4).** A small always-on-top box, summoned by a global
 hotkey (Ctrl+Alt+N) or from the command palette ("Quick message…"), lets you send
 a message without opening the window: type a contact name or phone number, type
