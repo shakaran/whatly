@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="fa_IR">
 <context>
     <name>About</name>
     <message>
@@ -61,7 +61,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../about.ui" line="217"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copies the debug information below to the clipboard and opens the issue tracker, so it can be pasted straight into the report.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اطلاعات اشکال‌زدایی زیر را در کلیپ‌بورد کپی می‌کند و ردیاب مشکلات (issue tracker) را باز می‌کند تا مستقیماً در گزارش جای‌گذاری شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../about.ui" line="220"/>
@@ -453,6 +453,14 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>DropProgress</name>
+    <message>
+        <location filename="../dropprogress.cpp" line="76"/>
+        <source>Attaching…</source>
+        <translation>در حال پیوست…</translation>
+    </message>
+</context>
+<context>
     <name>Lock</name>
     <message>
         <location filename="../lock.ui" line="20"/>
@@ -493,7 +501,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../lock.ui" line="346"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Note: Passcode must be more then 3 characters and must match in both fields.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;توجه: رمز عبور باید بیش از 3 نویسه باشد و در هر دو فیلد یکسان باشد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../lock.ui" line="597"/>
@@ -508,7 +516,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../lock.ui" line="639"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wrong Passcode, Please try again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;رمز عبور اشتباه است، لطفاً دوباره تلاش کنید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1230,7 +1238,7 @@ Open Settings now?</source>
     <message>
         <location filename="../backup.cpp" line="17"/>
         <source>Could not run &apos;tar&apos;</source>
-        <translation>اجرای 'tar' ممکن نشد</translation>
+        <translation>اجرای &apos;tar&apos; ممکن نشد</translation>
     </message>
     <message>
         <location filename="../backup.cpp" line="36"/>
@@ -1400,7 +1408,7 @@ Open Settings now?</source>
     <message>
         <location filename="../main.cpp" line="673"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
-        <translation>نحوه ارسال --send: 'web' (نشست در حال اجرای WhatsApp Web) یا 'cloud' (Meta WhatsApp Business Cloud API)</translation>
+        <translation>نحوه ارسال --send: &apos;web&apos; (نشست در حال اجرای WhatsApp Web) یا &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="679"/>
@@ -1698,25 +1706,25 @@ Please setup the password in the Settings first.</source>
         <location filename="../webtweaks.cpp" line="422"/>
         <source>Zoom in</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بزرگ‌نمایی</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="423"/>
         <source>Zoom out</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">کوچک‌نمایی</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="424"/>
         <source>Reset zoom</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">بازنشانی بزرگ‌نمایی</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="425"/>
         <source>Collapse the chat list</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">جمع کردن فهرست گفتگوها</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="426"/>
@@ -1763,7 +1771,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../rateapp.ui" line="56"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If you enjoy using this app, would you mind taking a moment to rate it?&lt;/p&gt;&lt;p&gt;It won&apos;t take more than a minute. Thanks you for your support!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اگر از استفاده از این برنامه لذت می‌برید، آیا مایلید کمی وقت بگذارید و به آن امتیاز دهید؟&lt;/p&gt;&lt;p&gt;بیش از یک دقیقه زمان نمی‌برد. از حمایت شما سپاسگزاریم!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../rateapp.ui" line="73"/>
@@ -1993,7 +2001,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="166"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Based on your system timezone and location.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;بر اساس منطقه زمانی و موقعیت مکانی سیستم شما.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="169"/>
@@ -2018,7 +2026,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="198"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Match the desktop&apos;s own light/dark preference, and change with it. Overrides the manual theme and the automatic sunrise/sunset switch.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;با تنظیم روشن/تاریک خود دسکتاپ هماهنگ می‌شود و همراه با آن تغییر می‌کند. این گزینه بر تم دستی و سوئیچ خودکار طلوع/غروب آفتاب اولویت دارد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="201"/>
@@ -2185,7 +2193,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window&apos;s position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;وقتی از بیش از یک پنجره حساب کاربری استفاده می‌کنید، موقعیت، اندازه و برگه‌های هر پنجره را به خاطر بسپار و دفعه بعد آن‌ها را بازیابی کن. به‌طور پیش‌فرض غیرفعال است: برنامه به‌صورت یک پنجره واحد که همه حساب‌ها را در خود دارد بازمی‌گردد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="510"/>
@@ -2200,7 +2208,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="524"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close the emoji, GIF &amp;amp; sticker panel when you click elsewhere. WhatsApp Web otherwise keeps it open until the button is pressed again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;با کلیک در جای دیگر، پنل ایموجی، GIF &amp;amp; استیکر بسته می‌شود. در غیر این صورت، WhatsApp Web آن را باز نگه می‌دارد تا زمانی که دکمه دوباره فشرده شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="527"/>
@@ -2215,12 +2223,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="541"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of Whatly&apos;s own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;زبان رابط کاربری خود Whatly. پس از راه‌اندازی مجدد برنامه اعمال می‌شود. زبان خود چت‌ها از WhatsApp Web می‌آید و در اینجا قابل تغییر نیست.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="548"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a light/dark button to WhatsApp&apos;s own sidebar, just above your profile picture.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;دکمه‌ای برای حالت روشن/تاریک به نوار کناری خود واتس‌اپ، درست بالای عکس پروفایل شما اضافه می‌کند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="551"/>
@@ -2230,7 +2238,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="558"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that blurs and unblurs your chats in one click, without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;دکمه‌ای به نوار کناری خود واتس‌اپ اضافه می‌کند که با یک کلیک، چت‌های شما را تار یا واضح می‌کند، بدون نیاز به باز کردن تنظیمات.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="561"/>
@@ -2240,7 +2248,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="568"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp&apos;s own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;دکمه‌های بزرگ‌نمایی کاهشی / بازنشانی / بزرگ‌نمایی افزایشی را به نوار کناری خود واتس‌اپ اضافه می‌کند تا مقیاس صفحه را به‌صورت زنده و بدون باز کردن تنظیمات تغییر دهید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="571"/>
@@ -2250,7 +2258,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="578"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;دکمه‌ای به نوار کناری خود واتس‌اپ اضافه می‌کند که فهرست چت‌ها را به نواری از عکس‌های پروفایل جمع می‌کند و عرض استفاده‌شده را به مکالمه واگذار می‌کند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="581"/>
@@ -2265,12 +2273,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="595"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform&apos;s font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اندازه پیش‌نمایشی که هنگام بردن نشانگر روی یک عکس در فهرست جمع‌شده چت‌ها ظاهر می‌شود. مقدار پیش‌فرض با نمایش فونت این پلتفرم هماهنگ است؛ اگر در صفحه شما کوچک یا بزرگ به نظر می‌رسد، مقدار دیگری انتخاب کنید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="602"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;به‌جای نماد سبزرنگ واتس‌اپ، از یک نماد سینی تک‌رنگ که با بقیه پنل شما هماهنگ است استفاده کنید. این نماد همچنین زمانی که واتس‌اپ متصل نیست کم‌رنگ می‌شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="605"/>
@@ -2280,7 +2288,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="612"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;پیمایش را به‌صورت متحرک نمایش بده، به‌جای پرش خط به خط.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="615"/>
@@ -2296,7 +2304,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="631"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;یک فایل .css بارگذاری کنید تا ظاهر WhatsApp Web تغییر کند — شیوه‌نامه‌های جامعه کاربری (مانند catppuccin و مشابه آن) در اینجا کار می‌کنند. این روی تم چت اعمال می‌شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="634"/>
@@ -2312,7 +2320,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="650"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;نماد سینی سیستم را به‌طور کامل حذف می‌کند. از آنجا که سینی‌ای برای بازگرداندن برنامه وجود ندارد، بستن پنجره به‌جای پنهان کردن، برنامه را می‌بندد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="653"/>
@@ -2327,12 +2335,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="667"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Render WhatsApp Web&apos;s text in a font installed on your system. Emoji, icons and monospaced message formatting are left untouched.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;متن WhatsApp Web را با فونتی که روی سیستم شما نصب شده نمایش می‌دهد. ایموجی‌ها، نمادها و قالب‌بندی پیام با فونت تک‌عرض بدون تغییر باقی می‌مانند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="674"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;بخش «به‌روزرسانی‌های بی‌صدا» را در پنل وضعیت/به‌روزرسانی‌ها پنهان می‌کند، به‌طوری که وضعیت‌های مخاطبینی که بی‌صدا کرده‌اید اصلاً نمایش داده نشوند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="677"/>
@@ -2342,7 +2350,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="684"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;هنگام تایپ، زیر کلمات غلط املایی خط می‌کشد و پیشنهادهای اصلاحی را در منوی کلیک راست ارائه می‌دهد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="687"/>
@@ -2353,7 +2361,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="694"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;زبانی که باید بر اساس آن بررسی انجام شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="701"/>
@@ -2363,7 +2371,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="708"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اندازه قلم رابط کاربری خود برنامه — منوها، تنظیمات و کادرهای گفتگو. این روی متن WhatsApp Web تأثیری ندارد؛ برای آن از بزرگ‌نمایی استفاده کنید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="711"/>
@@ -2373,7 +2381,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="724"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اگر فرآیند صفحه WhatsApp Web از کار بیفتد، به‌جای پرسیدن ابتدا، آن را به‌صورت خودکار بازخوانی کن.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="727"/>
@@ -2388,7 +2396,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="741"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;چت‌های شما را تار می‌کند تا زمانی که نشانگر ماوس را روی آن‌ها ببرید، به‌طوری که کسی که نگاهی گذرا به صفحه می‌اندازد نتواند آن‌ها را بخواند. بردن نشانگر روی یک ردیف فقط همان ردیف را آشکار می‌کند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="748"/>
@@ -2398,7 +2406,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="755"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;رنگ خود WhatsApp Web را تغییر می‌دهد. عکس‌ها، آواتارها و استیکرها رنگ اصلی خود را حفظ می‌کنند. این روی تم روشن یا تاریک، هرکدام که فعال باشد، اعمال می‌شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="762"/>
@@ -2409,7 +2417,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="771"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;از یکی از تصاویر خودتان به‌عنوان پس‌زمینه پنل چت استفاده کنید، درست همان‌طور که واتس‌اپ در اندروید انجام می‌دهد. این تصویر درون Whatly ذخیره می‌شود، در هیچ‌جا آپلود نمی‌شود و فقط برای شما قابل مشاهده است.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="774"/>
@@ -2419,7 +2427,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="790"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ورودهای جدید به‌جای &amp;quot;Google Chrome (Linux)&amp;quot;، در فهرست دستگاه‌های متصلِ گوشی شما به‌صورت &amp;quot;Whatly for Linux&amp;quot; (یا پلتفرم متناظر) نمایش داده می‌شوند. این نام هنگام اتصال یک دستگاه روی گوشی ذخیره می‌شود، بنابراین تغییر این گزینه فقط روی اتصال‌های آینده تأثیر می‌گذارد — برای تغییر نام یک نشست موجود، ابتدا خارج شوید و سپس دوباره متصل شوید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="793"/>
@@ -2434,7 +2442,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;پیشرفته — مگر اینکه دقیقاً بدانید در حال انجام چه کاری هستید، این گزینه را دست نزنید. یک عامل کاربر (user agent) غیراستاندارد می‌تواند باعث شود واتس‌اپ از بارگذاری خودداری کند، و مقادیر غیرمعمول این خطر را دارند که حساب واتس‌اپ شما علامت‌گذاری یا مسدود شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="820"/>
@@ -2512,7 +2520,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1192"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;فعال‌سازی صفحه قفل.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1195"/>
@@ -2522,7 +2530,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1202"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;وقتی پنجره به سینی سیستم پنهان می‌شود، آن را پشت رمز عبور قفل کن. نیازمند تنظیم یک گذرواژه است.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1205"/>
@@ -2599,7 +2607,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1395"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;داده‌های پایدار شامل کوکی‌های پایدار، حافظه محلی HTML5 و پیوندهای بازدیدشده است.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1398"/>
@@ -3801,32 +3809,32 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="55"/>
+        <location filename="../webview.cpp" line="58"/>
         <source>Render process normal exit</source>
         <translation>خروج عادی فرآیند رندر</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="58"/>
+        <location filename="../webview.cpp" line="61"/>
         <source>Render process abnormal exit</source>
         <translation>خروج غیرعادی فرآیند رندر</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="61"/>
+        <location filename="../webview.cpp" line="64"/>
         <source>Render process crashed</source>
         <translation>فرآیند رندر خراب شد</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="64"/>
+        <location filename="../webview.cpp" line="67"/>
         <source>Render process killed</source>
         <translation>فرآیند رندر متوقف شد</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="100"/>
+        <location filename="../webview.cpp" line="103"/>
         <source>WhatsApp Web keeps closing</source>
         <translation>WhatsApp Web پیوسته بسته می‌شود</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="101"/>
+        <location filename="../webview.cpp" line="104"/>
         <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
 
 This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
@@ -3835,11 +3843,16 @@ This is often a GPU or sandbox problem. Try turning off GPU acceleration in Sett
 این اغلب یک مشکل GPU یا سندباکس است. سعی کنید شتاب‌دهی GPU را در تنظیمات ← عملکرد خاموش کنید، سپس دوباره بارگذاری کنید.</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="127"/>
+        <location filename="../webview.cpp" line="130"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>فرآیند رندر با کد خارج شد: %1
 آیا می‌خواهید صفحه را دوباره بارگذاری کنید؟</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="309"/>
+        <source>Too large to attach (limit %1 MB): %2</source>
+        <translation>برای پیوست بیش از حد بزرگ است (حد %1 مگابایت): %2</translation>
     </message>
 </context>
 </TS>

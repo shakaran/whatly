@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>About</name>
     <message>
@@ -61,7 +61,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../about.ui" line="217"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copies the debug information below to the clipboard and opens the issue tracker, so it can be pasted straight into the report.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Копіює наведену нижче налагоджувальну інформацію в буфер обміну та відкриває трекер задач, щоб її можна було одразу вставити у звіт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../about.ui" line="220"/>
@@ -203,7 +203,7 @@ Please try again.</source>
         <source>If you wish so, you may continue with an unverified certificate. Accepting an unverified certificate mean you may not be connected with the host you tried to connect to.
 
 Do you wish to override the security check and continue ?   </source>
-        <translation>За бажання можна продовжити з неперевіреним сертифікатом. Прийняття неперевіреного сертифіката означає, що ви можете бути з'єднані не з тим вузлом, до якого намагалися підключитися.
+        <translation>За бажання можна продовжити з неперевіреним сертифікатом. Прийняття неперевіреного сертифіката означає, що ви можете бути з&apos;єднані не з тим вузлом, до якого намагалися підключитися.
 
 Бажаєте обійти перевірку безпеки та продовжити?   </translation>
     </message>
@@ -271,7 +271,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../chattheme.cpp" line="200"/>
         <source>Mint</source>
-        <translation>М'ятний</translation>
+        <translation>М&apos;ятний</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="202"/>
@@ -453,6 +453,14 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>DropProgress</name>
+    <message>
+        <location filename="../dropprogress.cpp" line="76"/>
+        <source>Attaching…</source>
+        <translation>Прикріплення…</translation>
+    </message>
+</context>
+<context>
     <name>Lock</name>
     <message>
         <location filename="../lock.ui" line="20"/>
@@ -493,7 +501,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../lock.ui" line="346"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Note: Passcode must be more then 3 characters and must match in both fields.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Примітка: код доступу має містити більше ніж 3 символи та збігатися в обох полях.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../lock.ui" line="597"/>
@@ -508,7 +516,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../lock.ui" line="639"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wrong Passcode, Please try again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Неправильний код доступу. Спробуйте ще раз.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1066,7 +1074,7 @@ Open Settings now?</source>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1616"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
-        <translation>Запит до асистента… (мало пам'яті: вільно %1 МБ; локальна модель може дати збій або сповільнити застосунок)</translation>
+        <translation>Запит до асистента… (мало пам&apos;яті: вільно %1 МБ; локальна модель може дати збій або сповільнити застосунок)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1621"/>
@@ -1142,7 +1150,7 @@ Open Settings now?</source>
     <message>
         <location filename="../passworddialog.ui" line="46"/>
         <source>Username:</source>
-        <translation>Ім'я користувача:</translation>
+        <translation>Ім&apos;я користувача:</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="56"/>
@@ -1230,7 +1238,7 @@ Open Settings now?</source>
     <message>
         <location filename="../backup.cpp" line="17"/>
         <source>Could not run &apos;tar&apos;</source>
-        <translation>Не вдалося запустити 'tar'</translation>
+        <translation>Не вдалося запустити &apos;tar&apos;</translation>
     </message>
     <message>
         <location filename="../backup.cpp" line="36"/>
@@ -1380,7 +1388,7 @@ Open Settings now?</source>
     <message>
         <location filename="../main.cpp" line="656"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
-        <translation>Отримувач для --send: номер телефону (міжнародний), ідентифікатор групи або ім'я контакту</translation>
+        <translation>Отримувач для --send: номер телефону (міжнародний), ідентифікатор групи або ім&apos;я контакту</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="661"/>
@@ -1400,7 +1408,7 @@ Open Settings now?</source>
     <message>
         <location filename="../main.cpp" line="673"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
-        <translation>Як --send доставляє: 'web' (запущена сесія WhatsApp Web) або 'cloud' (Meta WhatsApp Business Cloud API)</translation>
+        <translation>Як --send доставляє: &apos;web&apos; (запущена сесія WhatsApp Web) або &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="679"/>
@@ -1698,25 +1706,25 @@ Please setup the password in the Settings first.</source>
         <location filename="../webtweaks.cpp" line="422"/>
         <source>Zoom in</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Збільшити</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="423"/>
         <source>Zoom out</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Зменшити</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="424"/>
         <source>Reset zoom</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Скинути масштаб</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="425"/>
         <source>Collapse the chat list</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Згорнути список чатів</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="426"/>
@@ -1735,7 +1743,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../quickcompose.cpp" line="31"/>
         <source>Contact name or phone number</source>
-        <translation>Ім'я контакту або номер телефону</translation>
+        <translation>Ім&apos;я контакту або номер телефону</translation>
     </message>
     <message>
         <location filename="../quickcompose.cpp" line="36"/>
@@ -1763,7 +1771,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../rateapp.ui" line="56"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If you enjoy using this app, would you mind taking a moment to rate it?&lt;/p&gt;&lt;p&gt;It won&apos;t take more than a minute. Thanks you for your support!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Якщо вам подобається користуватися цим додатком, чи не могли б ви приділити хвилинку, щоб оцінити його?&lt;/p&gt;&lt;p&gt;Це займе не більше хвилини. Дякуємо за вашу підтримку!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../rateapp.ui" line="73"/>
@@ -1885,7 +1893,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="45"/>
         <source>Optional label</source>
-        <translation>Необов'язкова мітка</translation>
+        <translation>Необов&apos;язкова мітка</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="46"/>
@@ -1993,7 +2001,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="166"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Based on your system timezone and location.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;На основі часового поясу та розташування вашої системи.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="169"/>
@@ -2018,7 +2026,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="198"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Match the desktop&apos;s own light/dark preference, and change with it. Overrides the manual theme and the automatic sunrise/sunset switch.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Відповідати власним налаштуванням світлої/темної теми стільниці та змінюватися разом з ними. Перевизначає ручну тему та автоматичне перемикання за сходом/заходом сонця.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="201"/>
@@ -2185,12 +2193,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window&apos;s position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Якщо ви використовуєте кілька вікон облікових записів, запам'ятовувати позицію, розмір і вкладки кожного вікна та відновлювати їх наступного разу. Вимкнено за замовчуванням: додаток відкривається як одне вікно з усіма обліковими записами.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="510"/>
         <source>Remember multiple window positions on restart</source>
-        <translation>Пам'ятати позиції декількох вікон при перезапуску</translation>
+        <translation>Пам&apos;ятати позиції декількох вікон при перезапуску</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="517"/>
@@ -2200,7 +2208,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="524"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close the emoji, GIF &amp;amp; sticker panel when you click elsewhere. WhatsApp Web otherwise keeps it open until the button is pressed again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Закривати панель емодзі, GIF &amp;amp; стікерів під час клацання в іншому місці. Інакше WhatsApp Web залишає її відкритою, доки кнопку не натиснуть знову.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="527"/>
@@ -2215,12 +2223,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="541"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of Whatly&apos;s own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Мова власного інтерфейсу Whatly. Набуває чинності після перезапуску додатка. Мова самих чатів визначається WhatsApp Web і не може бути змінена тут.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="548"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a light/dark button to WhatsApp&apos;s own sidebar, just above your profile picture.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Додає кнопку світлої/темної теми на бічну панель WhatsApp, одразу над вашим фото профілю.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="551"/>
@@ -2230,7 +2238,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="558"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that blurs and unblurs your chats in one click, without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Додає кнопку на бічну панель WhatsApp, яка розмиває й знімає розмиття з ваших чатів одним клацанням, без відкриття Налаштувань.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="561"/>
@@ -2240,7 +2248,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="568"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp&apos;s own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Додає кнопки зменшення / скидання / збільшення масштабу на бічну панель WhatsApp, щоб масштабувати сторінку наживо без відкриття Налаштувань.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="571"/>
@@ -2250,7 +2258,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="578"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Додає кнопку на бічну панель WhatsApp, яка згортає список чатів у смужку фотографій профілів, надаючи розмові ширину, яку вона займала.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="581"/>
@@ -2265,12 +2273,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="595"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform&apos;s font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Наскільки великим малювати попередній перегляд, що з'являється при наведенні на фото в згорнутому списку чатів. Типове значення підходить для рендерингу шрифтів цієї платформи; виберіть інше, якщо на вашому екрані воно виглядає занадто малим або великим.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="602"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Використовувати одноколірний значок лотка, що відповідає решті вашої панелі, замість зеленого значка WhatsApp. Значок також тьмяніє, коли WhatsApp не підключено.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="605"/>
@@ -2280,7 +2288,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="612"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Анімувати прокручування замість стрибків рядок за рядком.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="615"/>
@@ -2296,7 +2304,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="631"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Завантажте файл .css, щоб змінити стиль WhatsApp Web — тут працюють таблиці стилів спільноти (catppuccin і подібні). Застосовується поверх теми чату.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="634"/>
@@ -2312,7 +2320,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="650"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Повністю прибрати значок з системного лотка. Без лотка для відновлення закриття вікна завершує роботу додатка замість того, щоб приховати його.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="653"/>
@@ -2327,12 +2335,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="667"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Render WhatsApp Web&apos;s text in a font installed on your system. Emoji, icons and monospaced message formatting are left untouched.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Відображати текст WhatsApp Web шрифтом, встановленим у вашій системі. Емодзі, значки та моноширинне форматування повідомлень залишаються без змін.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="674"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Приховати розділ &quot;Вимкнені оновлення&quot; на панелі Статус/Оновлення, щоб статуси контактів, які ви вимкнули, взагалі не показувалися.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="677"/>
@@ -2342,7 +2350,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="684"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Підкреслює слова з помилками під час набору тексту та пропонує виправлення в контекстному меню.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="687"/>
@@ -2353,7 +2361,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="694"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Мова для перевірки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="701"/>
@@ -2363,7 +2371,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="708"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Розмір шрифту власного інтерфейсу додатка — меню, налаштувань і діалогових вікон. Це не впливає на текст WhatsApp Web; для цього використовуйте масштабування.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="711"/>
@@ -2373,7 +2381,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="724"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Якщо процес сторінки WhatsApp Web аварійно завершується, перезавантажувати її автоматично, а не запитувати спочатку.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="727"/>
@@ -2388,7 +2396,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="741"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Розмиває ваші чати, доки ви не наведете на них курсор, тому той, хто побіжно погляне на екран, не зможе їх прочитати. Наведення на рядок відкриває лише цей рядок.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="748"/>
@@ -2398,7 +2406,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="755"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Перефарбовує сам WhatsApp Web. Фото, аватари та стікери зберігають власні кольори. Працює поверх світлої або темної теми, залежно від того, яка активна.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="762"/>
@@ -2409,7 +2417,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="771"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Використовуйте одне з власних зображень як фон панелі чату, як це робить WhatsApp на Android. Зображення зберігається всередині Whatly, нікуди не завантажується і видиме лише вам.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="774"/>
@@ -2419,12 +2427,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="790"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Нові входи в систему відображаються як &amp;quot;Whatly for Linux&amp;quot; (або відповідна платформа) у списку прив'язаних пристроїв вашого телефону замість &amp;quot;Google Chrome (Linux)&amp;quot;. Назва зберігається на телефоні під час прив'язки пристрою, тому ця зміна впливає лише на майбутні прив'язки — вийдіть і прив'яжіть пристрій знову, щоб перейменувати наявний сеанс.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="793"/>
         <source>Identify as Whatly in linked devices</source>
-        <translation>Ідентифікувати себе як Whatly в пов'язаних пристроях</translation>
+        <translation>Ідентифікувати себе як Whatly в пов&apos;язаних пристроях</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="807"/>
@@ -2434,7 +2442,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Розширені налаштування — не змінюйте це, якщо не знаєте точно, що робите. Нестандартний user agent може призвести до відмови WhatsApp завантажуватися, а незвичні значення ризикують позначенням або блокуванням вашого облікового запису WhatsApp.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="820"/>
@@ -2512,7 +2520,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1192"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Увімкнути екран блокування.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1195"/>
@@ -2522,7 +2530,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1202"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Коли вікно ховається в системний лоток, блокувати його кодом доступу. Потребує встановленого пароля.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1205"/>
@@ -2599,7 +2607,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1395"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Постійні дані включають постійні файли cookie, локальне сховище HTML5 та відвідані посилання.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1398"/>
@@ -2725,32 +2733,32 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1605"/>
         <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
-        <translation>Запускати все в одному процесі (--single-process). Використовує менше пам'яті, але менш стабільне.</translation>
+        <translation>Запускати все в одному процесі (--single-process). Використовує менше пам&apos;яті, але менш стабільне.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1608"/>
         <source>Single-process mode (lower memory)</source>
-        <translation>Режим одного процесу (менше пам'яті)</translation>
+        <translation>Режим одного процесу (менше пам&apos;яті)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1615"/>
         <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
-        <translation>Спільно використовувати один процес рендерингу на сайт (--process-per-site). Зменшує використання пам'яті.</translation>
+        <translation>Спільно використовувати один процес рендерингу на сайт (--process-per-site). Зменшує використання пам&apos;яті.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1618"/>
         <source>One process per site (lower memory)</source>
-        <translation>Один процес на сайт (менше пам'яті)</translation>
+        <translation>Один процес на сайт (менше пам&apos;яті)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1625"/>
         <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
-        <translation>Попросити рушій JavaScript використовувати менше пам'яті ціною невеликого зниження швидкості (V8 --optimize-for-size). Рекомендовано для застосунку, що залишається в треї. Ігнорується, якщо нижче встановлено обмеження пам'яті JavaScript.</translation>
+        <translation>Попросити рушій JavaScript використовувати менше пам&apos;яті ціною невеликого зниження швидкості (V8 --optimize-for-size). Рекомендовано для застосунку, що залишається в треї. Ігнорується, якщо нижче встановлено обмеження пам&apos;яті JavaScript.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1628"/>
         <source>Optimize memory over speed (lower memory)</source>
-        <translation>Оптимізувати пам'ять замість швидкості (менше пам'яті)</translation>
+        <translation>Оптимізувати пам&apos;ять замість швидкості (менше пам&apos;яті)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1635"/>
@@ -2800,7 +2808,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1691"/>
         <source>Translate selected text or your message box through a LibreTranslate-compatible service. The request is made by the app, so the endpoint and key never reach WhatsApp Web. Bind keys to &quot;Translate selection&quot; / &quot;Translate message box&quot; in Shortcuts, or use the command palette.</source>
-        <translation>Перекладати виділений текст або поле повідомлення через сумісну з LibreTranslate службу. Запит виконує застосунок, тож кінцева точка та ключ ніколи не потрапляють до WhatsApp Web. Прив'яжіть клавіші до &quot;Перекласти виділене&quot; / &quot;Перекласти поле повідомлення&quot; у розділі Скорочення, або скористайтеся палітрою команд.</translation>
+        <translation>Перекладати виділений текст або поле повідомлення через сумісну з LibreTranslate службу. Запит виконує застосунок, тож кінцева точка та ключ ніколи не потрапляють до WhatsApp Web. Прив&apos;яжіть клавіші до &quot;Перекласти виділене&quot; / &quot;Перекласти поле повідомлення&quot; у розділі Скорочення, або скористайтеся палітрою команд.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1694"/>
@@ -2827,7 +2835,7 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="1718"/>
         <location filename="../settingswidget.ui" line="1805"/>
         <source>API key (optional)</source>
-        <translation>Ключ API (необов'язково)</translation>
+        <translation>Ключ API (необов&apos;язково)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1725"/>
@@ -2937,7 +2945,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1919"/>
         <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
-        <translation>Заборонити WebRTC розкривати вашу локальну IP-адресу через з'єднання без проксі.</translation>
+        <translation>Заборонити WebRTC розкривати вашу локальну IP-адресу через з&apos;єднання без проксі.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1922"/>
@@ -2947,12 +2955,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1931"/>
         <source>JavaScript memory limit</source>
-        <translation>Обмеження пам'яті JavaScript</translation>
+        <translation>Обмеження пам&apos;яті JavaScript</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1938"/>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
-        <translation>Обмежити купу JavaScript (V8 --max-old-space-size). 0 = автоматично. Зменшіть, якщо застосунок використовує забагато оперативної пам'яті.</translation>
+        <translation>Обмежити купу JavaScript (V8 --max-old-space-size). 0 = автоматично. Зменшіть, якщо застосунок використовує забагато оперативної пам&apos;яті.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1944"/>
@@ -2968,7 +2976,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1968"/>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
-        <translation>Де зберігати кеш HTTP. Пам'ять очищується при виході; &quot;Немає&quot; вимикає кешування.</translation>
+        <translation>Де зберігати кеш HTTP. Пам&apos;ять очищується при виході; &quot;Немає&quot; вимикає кешування.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1975"/>
@@ -2988,12 +2996,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2012"/>
         <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
-        <translation>Як краї гліфів прив'язуються до пікселів. Автоматичний режим слідує вашій системі; легший рівень може виправити важкий або нерівний текст.</translation>
+        <translation>Як краї гліфів прив&apos;язуються до пікселів. Автоматичний режим слідує вашій системі; легший рівень може виправити важкий або нерівний текст.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2023"/>
         <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation>Звільняти пам'ять, призупиняючи облікові записи, які ви не переглядаєте. Призупинений обліковий запис не отримує повідомлень, доки ви не повернетеся до нього. Налаштування з одним обліковим записом не зачіпаються.</translation>
+        <translation>Звільняти пам&apos;ять, призупиняючи облікові записи, які ви не переглядаєте. Призупинений обліковий запис не отримує повідомлень, доки ви не повернетеся до нього. Налаштування з одним обліковим записом не зачіпаються.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2026"/>
@@ -3048,7 +3056,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2100"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>Тримати смугу вкладок облікових записів навіть коли є лише один обліковий запис, щоб &quot;+&quot; завжди був під рукою. Якщо вимкнено, смуга з'являється, коли з'являється другий обліковий запис; ви все одно можете додати його через Ctrl+K.</translation>
+        <translation>Тримати смугу вкладок облікових записів навіть коли є лише один обліковий запис, щоб &quot;+&quot; завжди був під рукою. Якщо вимкнено, смуга з&apos;являється, коли з&apos;являється другий обліковий запис; ви все одно можете додати його через Ctrl+K.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2103"/>
@@ -3114,13 +3122,13 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2235"/>
         <source>Username</source>
-        <translation>Ім'я користувача</translation>
+        <translation>Ім&apos;я користувача</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2242"/>
         <location filename="../settingswidget.ui" line="2259"/>
         <source>Optional</source>
-        <translation>Необов'язково</translation>
+        <translation>Необов&apos;язково</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2249"/>
@@ -3428,7 +3436,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1313"/>
         <source>Memory</source>
-        <translation>Пам'ять</translation>
+        <translation>Пам&apos;ять</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1314"/>
@@ -3785,7 +3793,7 @@ You may also require a complete restart of Application!</source>
     <message>
         <location filename="../webenginepage.cpp" line="386"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
-        <translation>Введіть ім'я користувача та пароль для &quot;%1&quot; на %2</translation>
+        <translation>Введіть ім&apos;я користувача та пароль для &quot;%1&quot; на %2</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="416"/>
@@ -3801,45 +3809,50 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="55"/>
+        <location filename="../webview.cpp" line="58"/>
         <source>Render process normal exit</source>
         <translation>Звичайне завершення процесу рендерингу</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="58"/>
+        <location filename="../webview.cpp" line="61"/>
         <source>Render process abnormal exit</source>
         <translation>Аварійне завершення процесу рендерингу</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="61"/>
+        <location filename="../webview.cpp" line="64"/>
         <source>Render process crashed</source>
         <translation>Процес рендерингу зазнав збою</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="64"/>
+        <location filename="../webview.cpp" line="67"/>
         <source>Render process killed</source>
         <translation>Процес рендерингу примусово завершено</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="100"/>
+        <location filename="../webview.cpp" line="103"/>
         <source>WhatsApp Web keeps closing</source>
         <translation>WhatsApp Web постійно закривається</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="101"/>
+        <location filename="../webview.cpp" line="104"/>
         <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
 
 This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
         <translation>Рушій рендерингу WhatsApp Web постійно завершується (код %1), тож Whatly припинив його перезавантажувати, щоб уникнути циклу.
 
-Це часто пов'язано з проблемою GPU або пісочниці. Спробуйте вимкнути апаратне прискорення GPU в Налаштування → Продуктивність, а потім перезавантажте.</translation>
+Це часто пов&apos;язано з проблемою GPU або пісочниці. Спробуйте вимкнути апаратне прискорення GPU в Налаштування → Продуктивність, а потім перезавантажте.</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="127"/>
+        <location filename="../webview.cpp" line="130"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>Процес рендерингу завершився з кодом: %1
 Бажаєте перезавантажити сторінку?</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="309"/>
+        <source>Too large to attach (limit %1 MB): %2</source>
+        <translation>Завеликий для прикріплення (ліміт %1 МБ): %2</translation>
     </message>
 </context>
 </TS>

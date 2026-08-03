@@ -453,6 +453,14 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>DropProgress</name>
+    <message>
+        <location filename="../dropprogress.cpp" line="76"/>
+        <source>Attaching…</source>
+        <translation>جارٍ الإرفاق…</translation>
+    </message>
+</context>
+<context>
     <name>Lock</name>
     <message>
         <location filename="../lock.ui" line="20"/>
@@ -3801,32 +3809,32 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="55"/>
+        <location filename="../webview.cpp" line="58"/>
         <source>Render process normal exit</source>
         <translation>انتهت عملية العرض بشكل طبيعي</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="58"/>
+        <location filename="../webview.cpp" line="61"/>
         <source>Render process abnormal exit</source>
         <translation>انتهت عملية العرض بشكل غير طبيعي</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="61"/>
+        <location filename="../webview.cpp" line="64"/>
         <source>Render process crashed</source>
         <translation>تعطّلت عملية العرض</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="64"/>
+        <location filename="../webview.cpp" line="67"/>
         <source>Render process killed</source>
         <translation>أُنهيت عملية العرض</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="100"/>
+        <location filename="../webview.cpp" line="103"/>
         <source>WhatsApp Web keeps closing</source>
         <translation>يستمر WhatsApp Web في الإغلاق</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="101"/>
+        <location filename="../webview.cpp" line="104"/>
         <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
 
 This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
@@ -3835,11 +3843,16 @@ This is often a GPU or sandbox problem. Try turning off GPU acceleration in Sett
 غالبًا ما تكون هذه مشكلة في GPU أو في بيئة العزل (sandbox). حاول إيقاف تسريع GPU من الإعدادات → الأداء، ثم أعد التحميل.</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="127"/>
+        <location filename="../webview.cpp" line="130"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>انتهت عملية العرض بالرمز: %1
 هل تريد إعادة تحميل الصفحة؟</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="309"/>
+        <source>Too large to attach (limit %1 MB): %2</source>
+        <translation>أكبر من أن يُرفق (الحد %1 ميغابايت): %2</translation>
     </message>
 </context>
 </TS>

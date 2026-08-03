@@ -453,6 +453,14 @@ Güvenlik denetimini atlayıp devam etmek istiyor musunuz?   </translation>
     </message>
 </context>
 <context>
+    <name>DropProgress</name>
+    <message>
+        <location filename="../dropprogress.cpp" line="76"/>
+        <source>Attaching…</source>
+        <translation>Ekleniyor…</translation>
+    </message>
+</context>
+<context>
     <name>Lock</name>
     <message>
         <location filename="../lock.ui" line="20"/>
@@ -3801,32 +3809,32 @@ Uygulamanın tamamen yeniden başlatılması da gerekebilir!</translation>
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="55"/>
+        <location filename="../webview.cpp" line="58"/>
         <source>Render process normal exit</source>
         <translation>Oluşturma süreci normal şekilde sonlandı</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="58"/>
+        <location filename="../webview.cpp" line="61"/>
         <source>Render process abnormal exit</source>
         <translation>Oluşturma süreci anormal şekilde sonlandı</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="61"/>
+        <location filename="../webview.cpp" line="64"/>
         <source>Render process crashed</source>
         <translation>Oluşturma süreci çöktü</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="64"/>
+        <location filename="../webview.cpp" line="67"/>
         <source>Render process killed</source>
         <translation>Oluşturma süreci sonlandırıldı</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="100"/>
+        <location filename="../webview.cpp" line="103"/>
         <source>WhatsApp Web keeps closing</source>
         <translation>WhatsApp Web sürekli kapanıyor</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="101"/>
+        <location filename="../webview.cpp" line="104"/>
         <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
 
 This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
@@ -3835,11 +3843,16 @@ This is often a GPU or sandbox problem. Try turning off GPU acceleration in Sett
 Bu genellikle bir GPU veya sandbox sorunudur. Ayarlar → Performans bölümünden GPU hızlandırmayı kapatmayı deneyin ve ardından yeniden yükleyin.</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="127"/>
+        <location filename="../webview.cpp" line="130"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>Oluşturma süreci şu kodla sonlandı: %1
 Sayfayı yeniden yüklemek ister misiniz?</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="309"/>
+        <source>Too large to attach (limit %1 MB): %2</source>
+        <translation>Eklenemeyecek kadar büyük (sınır %1 MB): %2</translation>
     </message>
 </context>
 </TS>

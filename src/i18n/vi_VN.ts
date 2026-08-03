@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="vi_VN">
 <context>
     <name>About</name>
     <message>
@@ -61,7 +61,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../about.ui" line="217"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copies the debug information below to the clipboard and opens the issue tracker, so it can be pasted straight into the report.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sao chép thông tin gỡ lỗi bên dưới vào bộ nhớ tạm và mở trình theo dõi lỗi (issue tracker), để bạn có thể dán trực tiếp vào báo cáo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../about.ui" line="220"/>
@@ -453,6 +453,14 @@ Bạn có muốn bỏ qua kiểm tra bảo mật và tiếp tục không?   </tr
     </message>
 </context>
 <context>
+    <name>DropProgress</name>
+    <message>
+        <location filename="../dropprogress.cpp" line="76"/>
+        <source>Attaching…</source>
+        <translation>Đang đính kèm…</translation>
+    </message>
+</context>
+<context>
     <name>Lock</name>
     <message>
         <location filename="../lock.ui" line="20"/>
@@ -493,7 +501,7 @@ Bạn có muốn bỏ qua kiểm tra bảo mật và tiếp tục không?   </tr
     <message>
         <location filename="../lock.ui" line="346"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Note: Passcode must be more then 3 characters and must match in both fields.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lưu ý: Mã bảo vệ phải có nhiều hơn 3 ký tự và phải khớp ở cả hai trường.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../lock.ui" line="597"/>
@@ -508,7 +516,7 @@ Bạn có muốn bỏ qua kiểm tra bảo mật và tiếp tục không?   </tr
     <message>
         <location filename="../lock.ui" line="639"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wrong Passcode, Please try again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sai mã bảo vệ, vui lòng thử lại.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1230,7 +1238,7 @@ Mở Cài đặt ngay bây giờ?</translation>
     <message>
         <location filename="../backup.cpp" line="17"/>
         <source>Could not run &apos;tar&apos;</source>
-        <translation>Không thể chạy 'tar'</translation>
+        <translation>Không thể chạy &apos;tar&apos;</translation>
     </message>
     <message>
         <location filename="../backup.cpp" line="36"/>
@@ -1400,7 +1408,7 @@ Mở Cài đặt ngay bây giờ?</translation>
     <message>
         <location filename="../main.cpp" line="673"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
-        <translation>Cách --send gửi: 'web' (phiên WhatsApp Web đang chạy) hoặc 'cloud' (Meta WhatsApp Business Cloud API)</translation>
+        <translation>Cách --send gửi: &apos;web&apos; (phiên WhatsApp Web đang chạy) hoặc &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="679"/>
@@ -1698,25 +1706,25 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <location filename="../webtweaks.cpp" line="422"/>
         <source>Zoom in</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Phóng to</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="423"/>
         <source>Zoom out</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Thu nhỏ</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="424"/>
         <source>Reset zoom</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Đặt lại thu phóng</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="425"/>
         <source>Collapse the chat list</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Thu gọn danh sách trò chuyện</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="426"/>
@@ -1763,7 +1771,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../rateapp.ui" line="56"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If you enjoy using this app, would you mind taking a moment to rate it?&lt;/p&gt;&lt;p&gt;It won&apos;t take more than a minute. Thanks you for your support!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nếu bạn thích sử dụng ứng dụng này, bạn có thể dành chút thời gian để đánh giá nó không?&lt;/p&gt;&lt;p&gt;Việc này sẽ không mất quá một phút. Cảm ơn bạn đã ủng hộ!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../rateapp.ui" line="73"/>
@@ -1993,7 +2001,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="166"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Based on your system timezone and location.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dựa trên múi giờ và vị trí của hệ thống bạn.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="169"/>
@@ -2018,7 +2026,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="198"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Match the desktop&apos;s own light/dark preference, and change with it. Overrides the manual theme and the automatic sunrise/sunset switch.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Khớp với tùy chọn sáng/tối của hệ điều hành và thay đổi theo đó. Ghi đè lên giao diện thủ công và chế độ chuyển đổi tự động theo bình minh/hoàng hôn.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="201"/>
@@ -2185,7 +2193,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="507"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window&apos;s position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Khi bạn sử dụng nhiều hơn một cửa sổ tài khoản, ghi nhớ vị trí, kích thước và các tab của từng cửa sổ để khôi phục vào lần sau. Mặc định tắt: ứng dụng sẽ mở lại dưới dạng một cửa sổ duy nhất chứa tất cả tài khoản.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="510"/>
@@ -2200,7 +2208,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="524"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close the emoji, GIF &amp;amp; sticker panel when you click elsewhere. WhatsApp Web otherwise keeps it open until the button is pressed again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Đóng bảng emoji, GIF &amp;amp; nhãn dán khi bạn nhấp vào nơi khác. Nếu không, WhatsApp Web sẽ giữ bảng này mở cho đến khi nút đó được nhấn lại.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="527"/>
@@ -2215,12 +2223,12 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="541"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of Whatly&apos;s own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ngôn ngữ của giao diện Whatly. Có hiệu lực sau khi khởi động lại ứng dụng. Ngôn ngữ của các cuộc trò chuyện đến từ WhatsApp Web và không thể thay đổi tại đây.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="548"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a light/dark button to WhatsApp&apos;s own sidebar, just above your profile picture.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Thêm một nút chuyển sáng/tối vào thanh bên của WhatsApp, ngay phía trên ảnh đại diện của bạn.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="551"/>
@@ -2230,7 +2238,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="558"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that blurs and unblurs your chats in one click, without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Thêm một nút vào thanh bên của WhatsApp giúp làm mờ và bỏ làm mờ các cuộc trò chuyện của bạn chỉ bằng một cú nhấp chuột, mà không cần mở Cài đặt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="561"/>
@@ -2240,7 +2248,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="568"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp&apos;s own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Thêm các nút thu nhỏ / đặt lại / phóng to vào thanh bên của WhatsApp, để thay đổi tỷ lệ trang ngay lập tức mà không cần mở Cài đặt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="571"/>
@@ -2250,7 +2258,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="578"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Thêm một nút vào thanh bên của WhatsApp giúp thu gọn danh sách trò chuyện thành một dải ảnh đại diện, nhường lại phần chiều rộng đó cho cuộc trò chuyện.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="581"/>
@@ -2265,12 +2273,12 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="595"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform&apos;s font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kích thước để vẽ bản xem trước xuất hiện khi bạn di chuột qua một ảnh trong danh sách trò chuyện đã thu gọn. Giá trị mặc định phù hợp với cách hiển thị phông chữ của nền tảng này; hãy chọn giá trị khác nếu nó hiển thị quá nhỏ hoặc quá lớn trên màn hình của bạn.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="602"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sử dụng biểu tượng khay đơn sắc phù hợp với phần còn lại của thanh panel, thay vì biểu tượng WhatsApp màu xanh lá. Biểu tượng cũng sẽ mờ đi khi WhatsApp không được kết nối.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="605"/>
@@ -2280,7 +2288,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="612"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cuộn có hiệu ứng chuyển động thay vì nhảy từng dòng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="615"/>
@@ -2296,7 +2304,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="631"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tải một tệp .css để tạo kiểu lại cho WhatsApp Web: các bảng định kiểu cộng đồng (như catppuccin) hoạt động tốt ở đây. Được áp dụng chồng lên giao diện trò chuyện.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="634"/>
@@ -2312,7 +2320,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="650"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Loại bỏ hoàn toàn biểu tượng khay hệ thống. Khi không còn khay để khôi phục, đóng cửa sổ sẽ thoát ứng dụng thay vì ẩn nó.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="653"/>
@@ -2327,12 +2335,12 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="667"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Render WhatsApp Web&apos;s text in a font installed on your system. Emoji, icons and monospaced message formatting are left untouched.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hiển thị văn bản của WhatsApp Web bằng một phông chữ đã cài đặt trên hệ thống của bạn. Emoji, biểu tượng và định dạng tin nhắn đơn cách (monospace) không bị ảnh hưởng.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="674"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ẩn phần &quot;Cập nhật đã tắt tiếng&quot; trong bảng Trạng thái/Cập nhật, để tin trạng thái từ các liên hệ bạn đã tắt tiếng không hiển thị chút nào.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="677"/>
@@ -2342,7 +2350,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="684"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gạch chân các từ sai chính tả khi bạn gõ, và đề xuất sửa lỗi trong menu chuột phải.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="687"/>
@@ -2353,7 +2361,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="694"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ngôn ngữ dùng để đối chiếu kiểm tra chính tả.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="701"/>
@@ -2363,7 +2371,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="708"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cỡ chữ (point size) của giao diện ứng dụng: menu, cài đặt và hộp thoại. Điều này không ảnh hưởng đến văn bản của WhatsApp Web; hãy dùng chức năng thu phóng cho việc đó.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="711"/>
@@ -2373,7 +2381,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="724"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nếu tiến trình trang của WhatsApp Web bị lỗi, tự động tải lại thay vì hỏi trước.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="727"/>
@@ -2388,7 +2396,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="741"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Làm mờ các cuộc trò chuyện của bạn cho đến khi bạn di chuột qua, để người khác liếc qua màn hình không thể đọc được. Di chuột qua một dòng sẽ chỉ hiển thị dòng đó.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="748"/>
@@ -2398,7 +2406,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="755"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Đổi màu cho chính WhatsApp Web. Ảnh, ảnh đại diện và nhãn dán vẫn giữ nguyên màu sắc riêng. Hoạt động chồng lên giao diện sáng hoặc tối, tùy vào giao diện nào đang bật.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="762"/>
@@ -2409,7 +2417,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="771"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sử dụng một trong các hình ảnh của riêng bạn làm nền cho khung trò chuyện, giống như WhatsApp trên Android. Hình ảnh được lưu trữ bên trong Whatly, không được tải lên bất kỳ đâu, và chỉ mình bạn có thể xem được.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="774"/>
@@ -2419,7 +2427,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="790"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Các lượt đăng nhập mới sẽ hiển thị là &amp;quot;Whatly for Linux&amp;quot; (hoặc nền tảng tương ứng) trong danh sách thiết bị liên kết trên điện thoại của bạn, thay vì &amp;quot;Google Chrome (Linux)&amp;quot;. Tên này được lưu trên điện thoại khi một thiết bị được liên kết, vì vậy thay đổi này chỉ ảnh hưởng đến các lần liên kết trong tương lai: hãy đăng xuất và liên kết lại để đổi tên một phiên hiện có.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="793"/>
@@ -2434,7 +2442,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nâng cao: đừng thay đổi mục này trừ khi bạn biết chính xác mình đang làm gì. Một user agent không chuẩn có thể khiến WhatsApp từ chối tải, và các giá trị bất thường có thể khiến tài khoản WhatsApp của bạn bị gắn cờ hoặc đưa vào danh sách đen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="820"/>
@@ -2512,7 +2520,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1192"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bật khóa màn hình.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1195"/>
@@ -2522,7 +2530,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1202"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Khi cửa sổ ẩn vào khay hệ thống, khóa nó bằng mã bảo vệ. Yêu cầu phải thiết lập mật khẩu trước.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1205"/>
@@ -2599,7 +2607,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1395"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dữ liệu lưu trữ bao gồm cookie lâu dài, bộ nhớ cục bộ HTML5 và các liên kết đã truy cập.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1398"/>
@@ -3801,32 +3809,32 @@ Bạn cũng có thể cần khởi động lại hoàn toàn ứng dụng!</tran
 <context>
     <name>WebView</name>
     <message>
-        <location filename="../webview.cpp" line="55"/>
+        <location filename="../webview.cpp" line="58"/>
         <source>Render process normal exit</source>
         <translation>Tiến trình kết xuất thoát bình thường</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="58"/>
+        <location filename="../webview.cpp" line="61"/>
         <source>Render process abnormal exit</source>
         <translation>Tiến trình kết xuất thoát bất thường</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="61"/>
+        <location filename="../webview.cpp" line="64"/>
         <source>Render process crashed</source>
         <translation>Tiến trình kết xuất gặp sự cố</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="64"/>
+        <location filename="../webview.cpp" line="67"/>
         <source>Render process killed</source>
         <translation>Tiến trình kết xuất bị chấm dứt</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="100"/>
+        <location filename="../webview.cpp" line="103"/>
         <source>WhatsApp Web keeps closing</source>
         <translation>WhatsApp Web liên tục đóng</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="101"/>
+        <location filename="../webview.cpp" line="104"/>
         <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
 
 This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
@@ -3835,11 +3843,16 @@ This is often a GPU or sandbox problem. Try turning off GPU acceleration in Sett
 Đây thường là sự cố về GPU hoặc sandbox. Hãy thử tắt tăng tốc GPU trong Cài đặt → Hiệu năng, sau đó tải lại.</translation>
     </message>
     <message>
-        <location filename="../webview.cpp" line="127"/>
+        <location filename="../webview.cpp" line="130"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
         <translation>Tiến trình kết xuất đã thoát với mã: %1
 Bạn có muốn tải lại trang không?</translation>
+    </message>
+    <message>
+        <location filename="../webview.cpp" line="309"/>
+        <source>Too large to attach (limit %1 MB): %2</source>
+        <translation>Quá lớn để đính kèm (giới hạn %1 MB): %2</translation>
     </message>
 </context>
 </TS>
