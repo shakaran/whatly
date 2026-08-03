@@ -300,6 +300,7 @@ void MainWindow::showCommandPalette() {
                  [this, i]() { setActiveAccount(i); }});
   }
   cmds.append({tr("Add account…"), [this]() { promptAddAccount(); }});
+  cmds.append({tr("Quick message…"), [this]() { showQuickCompose(); }});
 
   // Saved replies: insert the text straight into the message box.
   for (const CannedResponses::Response &r : CannedResponses::all()) {

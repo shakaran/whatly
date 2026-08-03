@@ -11,7 +11,9 @@
 #include <QDialog>
 #include <QDoubleSpinBox>
 #include <QGroupBox>
+#include <QLineEdit>
 #include <QPointer>
+#include <QSignalSpy>
 #include <QPushButton>
 #include <QSlider>
 #include <QSpinBox>
@@ -21,6 +23,7 @@
 #include <QToolButton>
 
 #include "customtitlebar.h"
+#include "quickcompose.h"
 #include "settingswidget.h"
 
 class TstSettings : public QObject {
@@ -223,6 +226,30 @@ private slots:
     collapsed->setChecked(false);
     QVERIFY(!box->isVisibleTo(section));
     QCOMPARE(collapsed->arrowType(), Qt::RightArrow);
+  }
+
+  // Quick-compose overlay (#4): emits submitted() with trimmed values only when
+  // both fields have content, and stays put (no signal) otherwise.
+  void quickComposeSubmit() {
+    QuickCompose qc;
+    auto *recipient = qc.findChildren<QLineEdit *>().value(0);
+    auto *message = qc.findChildren<QLineEdit *>().value(1);
+    QVERIFY(recipient && message);
+
+    QSignalSpy spy(&qc, &QuickCompose::submitted);
+
+    // Missing message: no send.
+    recipient->setText(QStringLiteral("  Alice  "));
+    message->clear();
+    QMetaObject::invokeMethod(&qc, "trySend");
+    QCOMPARE(spy.count(), 0);
+
+    // Both present: one send, with trimmed values.
+    message->setText(QStringLiteral("  hola  "));
+    QMetaObject::invokeMethod(&qc, "trySend");
+    QCOMPARE(spy.count(), 1);
+    QCOMPARE(spy.first().at(0).toString(), QStringLiteral("Alice"));
+    QCOMPARE(spy.first().at(1).toString(), QStringLiteral("hola"));
   }
 };
 

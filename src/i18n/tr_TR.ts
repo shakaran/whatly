@@ -651,136 +651,136 @@ Güvenlik denetimini atlayıp devam etmek istiyor musunuz?   </translation>
         <translation type="unfinished">Kapat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="105"/>
-        <location filename="../mainwindow.cpp" line="1123"/>
-        <location filename="../mainwindow.cpp" line="1219"/>
+        <location filename="../mainwindow.cpp" line="106"/>
+        <location filename="../mainwindow.cpp" line="1130"/>
+        <location filename="../mainwindow.cpp" line="1226"/>
         <source>No WhatsApp window is open</source>
         <translation>Açık bir WhatsApp penceresi yok</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1115"/>
+        <location filename="../mainwindow.cpp" line="1122"/>
         <source>Could not understand the recipient: %1</source>
         <translation>Alıcı anlaşılamadı: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1178"/>
+        <location filename="../mainwindow.cpp" line="1185"/>
         <source>Opening the group and sending…</source>
         <translation>Grup açılıyor ve gönderiliyor…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1210"/>
+        <location filename="../mainwindow.cpp" line="1217"/>
         <source>The local API could not start: %1</source>
         <translation>Yerel API başlatılamadı: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1090"/>
+        <location filename="../mainwindow.cpp" line="1097"/>
         <source>Cloud API send failed: %1</source>
         <translation>Cloud API ile gönderme başarısız: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1081"/>
+        <location filename="../mainwindow.cpp" line="1088"/>
         <source>The Cloud API is not configured.</source>
         <translation>Cloud API yapılandırılmamış.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1076"/>
+        <location filename="../mainwindow.cpp" line="1083"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>Cloud API, alıcı olarak bir telefon numarası gerektirir.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1179"/>
+        <location filename="../mainwindow.cpp" line="1186"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>&quot;%1&quot; ile sohbet açılıyor ve gönderiliyor…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Reminder</source>
         <translation>Hatırlatıcı</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Reminder: %1</source>
         <translation>Hatırlatıcı: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="189"/>
+        <location filename="../mainwindow.cpp" line="196"/>
         <source>Update available</source>
         <translation>Güncelleme mevcut</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="190"/>
+        <location filename="../mainwindow.cpp" line="197"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Whatly %1 kullanılabilir. İndirme sayfasını açmak için tıklayın.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="865"/>
-        <location filename="../mainwindow.cpp" line="871"/>
+        <location filename="../mainwindow.cpp" line="872"/>
+        <location filename="../mainwindow.cpp" line="878"/>
         <location filename="../mainwindow_webengine.cpp" line="954"/>
         <location filename="../mainwindow_webengine.cpp" line="957"/>
         <source>| Error</source>
         <translation>| Hata</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="866"/>
+        <location filename="../mainwindow.cpp" line="873"/>
         <source>Unlock to access Settings.</source>
         <translation>Ayarlara erişmek için kilidi açın.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="872"/>
+        <location filename="../mainwindow.cpp" line="879"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>Ayarlar modülü başlatılamıyor.
 WebEngine başlatılmadı.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="893"/>
+        <location filename="../mainwindow.cpp" line="900"/>
         <source> | Action required</source>
         <translation> | İşlem gerekli</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="894"/>
+        <location filename="../mainwindow.cpp" line="901"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>Devam etmek için sayfanın yeniden yüklenmesi gerekiyor.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1299"/>
+        <location filename="../mainwindow.cpp" line="1306"/>
         <source>Restart</source>
         <translation>Yeniden başlat</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1300"/>
+        <location filename="../mainwindow.cpp" line="1307"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly yeni bir örnek başlatamadığı için bunu kapatmadı. Lütfen çıkıp yeniden açın.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1345"/>
+        <location filename="../mainwindow.cpp" line="1352"/>
         <source>Expand the chat list</source>
         <translation>Sohbet listesini genişlet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1346"/>
+        <location filename="../mainwindow.cpp" line="1353"/>
         <location filename="../mainwindow_tray.cpp" line="237"/>
         <source>Collapse the chat list</source>
         <translation>Sohbet listesini daralt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1443"/>
+        <location filename="../mainwindow.cpp" line="1450"/>
         <source>Open</source>
         <translation>Aç</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1462"/>
+        <location filename="../mainwindow.cpp" line="1486"/>
         <location filename="../mainwindow_tray.cpp" line="22"/>
         <source>New Chat</source>
         <translation>Yeni sohbet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1463"/>
+        <location filename="../mainwindow.cpp" line="1487"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Ülke kodu ile geçerli bir WhatsApp numarası girin (örn. +90XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1493"/>
+        <location filename="../mainwindow.cpp" line="1517"/>
         <source>Rate Application</source>
         <translation>Uygulamayı değerlendir</translation>
     </message>
@@ -973,19 +973,19 @@ Ayarlar şimdi açılsın mı?</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="214"/>
-        <location filename="../mainwindow_accounts.cpp" line="1224"/>
+        <location filename="../mainwindow_accounts.cpp" line="1225"/>
         <source>Rename…</source>
         <translation>Yeniden adlandır…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="215"/>
-        <location filename="../mainwindow_accounts.cpp" line="1225"/>
+        <location filename="../mainwindow_accounts.cpp" line="1226"/>
         <source>Open in own window</source>
         <translation>Kendi penceresinde aç</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="219"/>
-        <location filename="../mainwindow_accounts.cpp" line="1228"/>
+        <location filename="../mainwindow_accounts.cpp" line="1229"/>
         <source>Remove account</source>
         <translation>Hesabı kaldır</translation>
     </message>
@@ -1001,70 +1001,75 @@ Ayarlar şimdi açılsın mı?</translation>
         <translation>Hesap ekle…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="307"/>
+        <location filename="../mainwindow_accounts.cpp" line="303"/>
+        <source>Quick message…</source>
+        <translation>Hızlı mesaj…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="308"/>
         <source>Insert: %1</source>
         <translation>Ekle: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="585"/>
+        <location filename="../mainwindow_accounts.cpp" line="586"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 okunmamış</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1000"/>
+        <location filename="../mainwindow_accounts.cpp" line="1001"/>
         <source>Add another account</source>
         <translation>Başka hesap ekle</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1027"/>
-        <location filename="../mainwindow_accounts.cpp" line="1032"/>
+        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1033"/>
         <source>Restore</source>
         <translation>Geri yükle</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1029"/>
         <source>messages</source>
         <translation>mesaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1029"/>
         <source>message</source>
         <translation>mesaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1073"/>
+        <location filename="../mainwindow_accounts.cpp" line="1074"/>
         <source>Add account</source>
         <translation>Hesap ekle</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1074"/>
+        <location filename="../mainwindow_accounts.cpp" line="1075"/>
         <source>Name for the new account:</source>
         <translation>Yeni hesabın adı:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1075"/>
-        <location filename="../mainwindow_accounts.cpp" line="1922"/>
-        <location filename="../mainwindow_accounts.cpp" line="1927"/>
+        <location filename="../mainwindow_accounts.cpp" line="1076"/>
+        <location filename="../mainwindow_accounts.cpp" line="1923"/>
+        <location filename="../mainwindow_accounts.cpp" line="1928"/>
         <source>Account %1</source>
         <translation>Hesap %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1102"/>
+        <location filename="../mainwindow_accounts.cpp" line="1103"/>
         <source>Rename account</source>
         <translation>Hesabı yeniden adlandır</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1102"/>
+        <location filename="../mainwindow_accounts.cpp" line="1103"/>
         <source>Account name:</source>
         <translation>Hesap adı:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1610"/>
+        <location filename="../mainwindow_accounts.cpp" line="1611"/>
         <source>Tip: give an account its own window</source>
         <translation>İpucu: bir hesaba kendi penceresini verin</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1611"/>
+        <location filename="../mainwindow_accounts.cpp" line="1612"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1073,8 +1078,8 @@ You can pull any account out into its own window: right-click its tab and choose
 Herhangi bir hesabı kendi penceresine çıkarabilirsiniz: sekmesine sağ tıklayın ve “Kendi penceresinde aç” seçeneğini seçin. O pencereyi kapatarak hesabı tekrar sekme olarak yerleştirin.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1916"/>
-        <location filename="../mainwindow_accounts.cpp" line="1920"/>
+        <location filename="../mainwindow_accounts.cpp" line="1917"/>
+        <location filename="../mainwindow_accounts.cpp" line="1921"/>
         <source>Account 1</source>
         <translation>Hesap 1</translation>
     </message>
@@ -1084,14 +1089,14 @@ Herhangi bir hesabı kendi penceresine çıkarabilirsiniz: sekmesine sağ tıkla
         <translation>Uygulamayı yeniden yüklemek için kilidi açın.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1144"/>
-        <location filename="../mainwindow.cpp" line="1225"/>
+        <location filename="../mainwindow.cpp" line="1151"/>
+        <location filename="../mainwindow.cpp" line="1232"/>
         <source>Could not read the file to send: %1</source>
         <translation>Gönderilecek dosya okunamadı: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1153"/>
-        <location filename="../mainwindow.cpp" line="1235"/>
+        <location filename="../mainwindow.cpp" line="1160"/>
+        <location filename="../mainwindow.cpp" line="1242"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>Dosya, web arka ucu üzerinden gönderilemeyecek kadar büyük.</translation>
     </message>
@@ -1718,6 +1723,29 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <location filename="../ollama.cpp" line="25"/>
         <source>Microsoft Phi-3, strong for its size.</source>
         <translation>Microsoft Phi-3, boyutuna göre güçlü.</translation>
+    </message>
+</context>
+<context>
+    <name>QuickCompose</name>
+    <message>
+        <location filename="../quickcompose.cpp" line="24"/>
+        <source>Quick message</source>
+        <translation>Hızlı mesaj</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="31"/>
+        <source>Contact name or phone number</source>
+        <translation>Kişi adı veya telefon numarası</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="36"/>
+        <source>Message (press Enter to send)</source>
+        <translation>Mesaj (göndermek için Enter'a basın)</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="40"/>
+        <source>Send</source>
+        <translation>Gönder</translation>
     </message>
 </context>
 <context>
@@ -2909,7 +2937,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1841"/>
         <source>Detect Ollama</source>
-        <translation>Ollama'yı algıla</translation>
+        <translation>Ollama&apos;yı algıla</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1857"/>
@@ -2919,7 +2947,7 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
     <message>
         <location filename="../settingswidget.ui" line="1864"/>
         <source>Pick one of the models already installed in Ollama; it becomes the model above.</source>
-        <translation>Ollama'da zaten kurulu modellerden birini seçin; yukarıdaki model olur.</translation>
+        <translation>Ollama&apos;da zaten kurulu modellerden birini seçin; yukarıdaki model olur.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1871"/>

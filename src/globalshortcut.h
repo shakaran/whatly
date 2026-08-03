@@ -2,7 +2,9 @@
 #define GLOBALSHORTCUT_H
 
 #include <QAbstractNativeEventFilter>
+#include <QList>
 #include <QObject>
+#include <QString>
 
 #if defined(Q_OS_LINUX)
 #include <QDBusObjectPath>
@@ -32,7 +34,9 @@ public:
                          qintptr *result) override;
 
 signals:
-  void activated();
+  // Fires with the id of the pressed shortcut ("raise-window" or
+  // "quick-compose"). See the bindings set up in the constructor.
+  void activated(const QString &id);
 
 #if defined(Q_OS_LINUX)
 private slots:
@@ -51,7 +55,16 @@ private:
 #if defined(Q_OS_LINUX)
   QString m_sessionHandle;  // portal session object path, once created
 #endif
-  quint32 m_keycode = 0;    // X11 fallback: keycode of 'W'
+  // The shortcuts we register. `keysym` is an X11 KeySym (XK_*, filled in the
+  // constructor); `keycode` is resolved from it for the X11 fallback grab.
+  struct Binding {
+    QString id;
+    QString trigger; // portal preferred_trigger, e.g. "CTRL+ALT+w"
+    QString description;
+    unsigned long keysym = 0;
+    quint32 keycode = 0;
+  };
+  QList<Binding> m_bindings;
   quint32 m_modifiers = 0;  // X11 fallback: Control + Alt
   bool m_x11Registered = false;
 };

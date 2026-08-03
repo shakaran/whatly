@@ -1,5 +1,13 @@
 ## Unreleased
 
+**Quick-compose overlay (#4).** A small always-on-top box, summoned by a global
+hotkey (Ctrl+Alt+N) or from the command palette ("Quick message…"), lets you send
+a message without opening the window: type a contact name or phone number, type
+the message, press Enter. It sends through the running session (so the window can
+stay hidden) and closes itself on send, Escape, or losing focus. The global
+hotkey is registered via the same desktop-portal/X11 path as Ctrl+Alt+W; where
+the portal cannot bind it, the command palette entry still works.
+
 **Native Wayland in the portable builds (#8/#36).** The AppImage and .deb/.rpm
 previously ran through Xwayland (stuttery scroll, blurrier fonts) because the Qt
 used in CI ships no Wayland client platform plugin. The build now compiles that

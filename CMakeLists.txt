@@ -212,6 +212,7 @@ set(SOURCES
     src/notificationreply.cpp
     src/aiassistant.cpp
     src/ollama.cpp
+    src/quickcompose.cpp
     src/cannedresponses.cpp
     src/globalshortcut.cpp
     src/privacyblur.cpp
@@ -291,6 +292,7 @@ set(HEADERS
     src/notificationreply.h
     src/aiassistant.h
     src/ollama.h
+    src/quickcompose.h
     src/cannedresponses.h
     src/privacyblur.h
     src/chatliststrip.h

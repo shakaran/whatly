@@ -651,136 +651,136 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished">閉じる</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="105"/>
-        <location filename="../mainwindow.cpp" line="1123"/>
-        <location filename="../mainwindow.cpp" line="1219"/>
+        <location filename="../mainwindow.cpp" line="106"/>
+        <location filename="../mainwindow.cpp" line="1130"/>
+        <location filename="../mainwindow.cpp" line="1226"/>
         <source>No WhatsApp window is open</source>
         <translation>WhatsApp のウィンドウが開いていません</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1115"/>
+        <location filename="../mainwindow.cpp" line="1122"/>
         <source>Could not understand the recipient: %1</source>
         <translation>宛先を認識できませんでした: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1178"/>
+        <location filename="../mainwindow.cpp" line="1185"/>
         <source>Opening the group and sending…</source>
         <translation>グループを開いて送信しています…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1210"/>
+        <location filename="../mainwindow.cpp" line="1217"/>
         <source>The local API could not start: %1</source>
         <translation>ローカル API を開始できませんでした: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1090"/>
+        <location filename="../mainwindow.cpp" line="1097"/>
         <source>Cloud API send failed: %1</source>
         <translation>Cloud API での送信に失敗しました: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1081"/>
+        <location filename="../mainwindow.cpp" line="1088"/>
         <source>The Cloud API is not configured.</source>
         <translation>Cloud API が設定されていません。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1076"/>
+        <location filename="../mainwindow.cpp" line="1083"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>Cloud API には宛先として電話番号が必要です。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1179"/>
+        <location filename="../mainwindow.cpp" line="1186"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>&quot;%1&quot; とのチャットを開いて送信しています…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Reminder</source>
         <translation>リマインダー</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Reminder: %1</source>
         <translation>リマインダー: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="189"/>
+        <location filename="../mainwindow.cpp" line="196"/>
         <source>Update available</source>
         <translation>更新があります</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="190"/>
+        <location filename="../mainwindow.cpp" line="197"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Whatly %1 が利用可能です。クリックしてダウンロードページを開きます。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="865"/>
-        <location filename="../mainwindow.cpp" line="871"/>
+        <location filename="../mainwindow.cpp" line="872"/>
+        <location filename="../mainwindow.cpp" line="878"/>
         <location filename="../mainwindow_webengine.cpp" line="954"/>
         <location filename="../mainwindow_webengine.cpp" line="957"/>
         <source>| Error</source>
         <translation>| エラー</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="866"/>
+        <location filename="../mainwindow.cpp" line="873"/>
         <source>Unlock to access Settings.</source>
         <translation>設定にアクセスするにはロックを解除してください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="872"/>
+        <location filename="../mainwindow.cpp" line="879"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>設定モジュールを初期化できません。
 WebEngine が初期化されていません。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="893"/>
+        <location filename="../mainwindow.cpp" line="900"/>
         <source> | Action required</source>
         <translation> | 操作が必要です</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="894"/>
+        <location filename="../mainwindow.cpp" line="901"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>続行するにはページを再読み込みする必要があります。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1299"/>
+        <location filename="../mainwindow.cpp" line="1306"/>
         <source>Restart</source>
         <translation>再起動</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1300"/>
+        <location filename="../mainwindow.cpp" line="1307"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly は新しいインスタンスを起動できなかったため、このインスタンスを閉じませんでした。アプリを終了して開き直してください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1345"/>
+        <location filename="../mainwindow.cpp" line="1352"/>
         <source>Expand the chat list</source>
         <translation>チャット一覧を展開する</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1346"/>
+        <location filename="../mainwindow.cpp" line="1353"/>
         <location filename="../mainwindow_tray.cpp" line="237"/>
         <source>Collapse the chat list</source>
         <translation>チャット一覧を折りたたむ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1443"/>
+        <location filename="../mainwindow.cpp" line="1450"/>
         <source>Open</source>
         <translation>開く</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1462"/>
+        <location filename="../mainwindow.cpp" line="1486"/>
         <location filename="../mainwindow_tray.cpp" line="22"/>
         <source>New Chat</source>
         <translation>新規チャット</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1463"/>
+        <location filename="../mainwindow.cpp" line="1487"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>国番号付きの有効な WhatsApp 番号を入力してください（例: +81XXXXXXXXXX）</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1493"/>
+        <location filename="../mainwindow.cpp" line="1517"/>
         <source>Rate Application</source>
         <translation>アプリを評価</translation>
     </message>
@@ -973,19 +973,19 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="214"/>
-        <location filename="../mainwindow_accounts.cpp" line="1224"/>
+        <location filename="../mainwindow_accounts.cpp" line="1225"/>
         <source>Rename…</source>
         <translation>名前を変更…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="215"/>
-        <location filename="../mainwindow_accounts.cpp" line="1225"/>
+        <location filename="../mainwindow_accounts.cpp" line="1226"/>
         <source>Open in own window</source>
         <translation>独立したウィンドウで開く</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="219"/>
-        <location filename="../mainwindow_accounts.cpp" line="1228"/>
+        <location filename="../mainwindow_accounts.cpp" line="1229"/>
         <source>Remove account</source>
         <translation>アカウントを削除</translation>
     </message>
@@ -1001,70 +1001,75 @@ Open Settings now?</source>
         <translation>アカウントを追加…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="307"/>
+        <location filename="../mainwindow_accounts.cpp" line="303"/>
+        <source>Quick message…</source>
+        <translation>クイックメッセージ…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="308"/>
         <source>Insert: %1</source>
         <translation>挿入: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="585"/>
+        <location filename="../mainwindow_accounts.cpp" line="586"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — 未読 %2 件</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1000"/>
+        <location filename="../mainwindow_accounts.cpp" line="1001"/>
         <source>Add another account</source>
         <translation>別のアカウントを追加</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1027"/>
-        <location filename="../mainwindow_accounts.cpp" line="1032"/>
+        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1033"/>
         <source>Restore</source>
         <translation>元に戻す</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1029"/>
         <source>messages</source>
         <translation>件のメッセージ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1029"/>
         <source>message</source>
         <translation>件のメッセージ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1073"/>
+        <location filename="../mainwindow_accounts.cpp" line="1074"/>
         <source>Add account</source>
         <translation>アカウントを追加</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1074"/>
+        <location filename="../mainwindow_accounts.cpp" line="1075"/>
         <source>Name for the new account:</source>
         <translation>新しいアカウントの名前:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1075"/>
-        <location filename="../mainwindow_accounts.cpp" line="1922"/>
-        <location filename="../mainwindow_accounts.cpp" line="1927"/>
+        <location filename="../mainwindow_accounts.cpp" line="1076"/>
+        <location filename="../mainwindow_accounts.cpp" line="1923"/>
+        <location filename="../mainwindow_accounts.cpp" line="1928"/>
         <source>Account %1</source>
         <translation>アカウント %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1102"/>
+        <location filename="../mainwindow_accounts.cpp" line="1103"/>
         <source>Rename account</source>
         <translation>アカウント名を変更</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1102"/>
+        <location filename="../mainwindow_accounts.cpp" line="1103"/>
         <source>Account name:</source>
         <translation>アカウント名:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1610"/>
+        <location filename="../mainwindow_accounts.cpp" line="1611"/>
         <source>Tip: give an account its own window</source>
         <translation>ヒント: アカウントに専用のウィンドウを与える</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1611"/>
+        <location filename="../mainwindow_accounts.cpp" line="1612"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1073,8 +1078,8 @@ You can pull any account out into its own window: right-click its tab and choose
 任意のアカウントを独立したウィンドウに引き出せます。タブを右クリックして「独立したウィンドウで開く」を選択してください。そのウィンドウを閉じると、アカウントは再びタブとして戻ります。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1916"/>
-        <location filename="../mainwindow_accounts.cpp" line="1920"/>
+        <location filename="../mainwindow_accounts.cpp" line="1917"/>
+        <location filename="../mainwindow_accounts.cpp" line="1921"/>
         <source>Account 1</source>
         <translation>アカウント 1</translation>
     </message>
@@ -1084,14 +1089,14 @@ You can pull any account out into its own window: right-click its tab and choose
         <translation>アプリを再読み込みするにはロックを解除してください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1144"/>
-        <location filename="../mainwindow.cpp" line="1225"/>
+        <location filename="../mainwindow.cpp" line="1151"/>
+        <location filename="../mainwindow.cpp" line="1232"/>
         <source>Could not read the file to send: %1</source>
         <translation>送信するファイルを読み取れませんでした: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1153"/>
-        <location filename="../mainwindow.cpp" line="1235"/>
+        <location filename="../mainwindow.cpp" line="1160"/>
+        <location filename="../mainwindow.cpp" line="1242"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>このファイルは web バックエンドで送信するには大きすぎます。</translation>
     </message>
@@ -1718,6 +1723,29 @@ Please setup the password in the Settings first.</source>
         <location filename="../ollama.cpp" line="25"/>
         <source>Microsoft Phi-3, strong for its size.</source>
         <translation>Microsoft Phi-3、サイズの割に高性能。</translation>
+    </message>
+</context>
+<context>
+    <name>QuickCompose</name>
+    <message>
+        <location filename="../quickcompose.cpp" line="24"/>
+        <source>Quick message</source>
+        <translation>クイックメッセージ</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="31"/>
+        <source>Contact name or phone number</source>
+        <translation>連絡先の名前または電話番号</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="36"/>
+        <source>Message (press Enter to send)</source>
+        <translation>メッセージ（Enter で送信）</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="40"/>
+        <source>Send</source>
+        <translation>送信</translation>
     </message>
 </context>
 <context>

@@ -39,7 +39,6 @@ namespace {
 constexpr char kPortalService[] = "org.freedesktop.portal.Desktop";
 constexpr char kPortalPath[] = "/org/freedesktop/portal/desktop";
 constexpr char kPortalIface[] = "org.freedesktop.portal.GlobalShortcuts";
-constexpr char kShortcutId[] = "raise-window";
 } // namespace
 
 // ── X11 fallback (raw key grab) ─────────────────────────────────────────────
@@ -66,7 +65,23 @@ int ignoreXError(Display *, XErrorEvent *) { return 0; }
 } // namespace
 #endif // Q_OS_LINUX
 
-GlobalShortcut::GlobalShortcut(QObject *parent) : QObject(parent) {}
+GlobalShortcut::GlobalShortcut(QObject *parent) : QObject(parent) {
+  // The system-wide shortcuts Whatly registers. Ctrl+Alt+W raises the window;
+  // Ctrl+Alt+N opens the quick-compose box (idea #4) without raising it.
+  Binding raise;
+  raise.id = QStringLiteral("raise-window");
+  raise.trigger = QStringLiteral("CTRL+ALT+w");
+  raise.description = QStringLiteral("Bring the Whatly window to the front");
+  Binding compose;
+  compose.id = QStringLiteral("quick-compose");
+  compose.trigger = QStringLiteral("CTRL+ALT+n");
+  compose.description = QStringLiteral("Open the Whatly quick-compose box");
+#if defined(Q_OS_LINUX)
+  raise.keysym = XK_w;
+  compose.keysym = XK_n;
+#endif
+  m_bindings << raise << compose;
+}
 
 GlobalShortcut::~GlobalShortcut() { ungrabX11(); }
 
@@ -118,11 +133,14 @@ void GlobalShortcut::onCreateSessionResponse(uint response,
   if (m_sessionHandle.isEmpty())
     return;
 
-  PortalShortcut sc;
-  sc.id = QLatin1String(kShortcutId);
-  sc.meta["description"] = QStringLiteral("Bring the Whatly window to the front");
-  sc.meta["preferred_trigger"] = QStringLiteral("CTRL+ALT+w");
-  QList<PortalShortcut> shortcuts{sc};
+  QList<PortalShortcut> shortcuts;
+  for (const Binding &b : m_bindings) {
+    PortalShortcut sc;
+    sc.id = b.id;
+    sc.meta["description"] = b.description;
+    sc.meta["preferred_trigger"] = b.trigger;
+    shortcuts << sc;
+  }
 
   QVariantMap bindOpts;
   bindOpts["handle_token"] = QStringLiteral("whatly_gs_bind");
@@ -143,17 +161,20 @@ void GlobalShortcut::onCreateSessionResponse(uint response,
 
 void GlobalShortcut::onBindResponse(uint response, const QVariantMap &) {
   if (response == 0)
-    qInfo() << "Global shortcut Ctrl+Alt+W bound via the desktop portal.";
+    qInfo() << "Global shortcuts bound via the desktop portal.";
   else
-    qInfo() << "The desktop portal declined the global shortcut (response"
+    qInfo() << "The desktop portal declined the global shortcuts (response"
             << response << ").";
 }
 
 void GlobalShortcut::onPortalActivated(const QDBusObjectPath &,
                                        const QString &shortcutId, qulonglong,
                                        const QVariantMap &) {
-  if (shortcutId == QLatin1String(kShortcutId))
-    emit activated();
+  for (const Binding &b : m_bindings)
+    if (shortcutId == b.id) {
+      emit activated(b.id);
+      return;
+    }
 }
 #endif
 
@@ -165,20 +186,26 @@ bool GlobalShortcut::tryX11() {
   Display *dpy = x11Display();
   if (!dpy)
     return false;
-  m_keycode = XKeysymToKeycode(dpy, XK_w);
-  if (m_keycode == 0)
-    return false;
   m_modifiers = ControlMask | Mod1Mask;
   const Window root = DefaultRootWindow(dpy);
   XErrorHandler prev = XSetErrorHandler(ignoreXError);
-  for (unsigned int lock : kLockMasks)
-    XGrabKey(dpy, m_keycode, m_modifiers | lock, root, 1, GrabModeAsync,
-             GrabModeAsync);
+  bool any = false;
+  for (Binding &b : m_bindings) {
+    b.keycode = XKeysymToKeycode(dpy, b.keysym);
+    if (b.keycode == 0)
+      continue;
+    for (unsigned int lock : kLockMasks)
+      XGrabKey(dpy, b.keycode, m_modifiers | lock, root, 1, GrabModeAsync,
+               GrabModeAsync);
+    any = true;
+  }
   XSync(dpy, 0);
   XSetErrorHandler(prev);
+  if (!any)
+    return false;
   qApp->installNativeEventFilter(this);
   m_x11Registered = true;
-  qInfo() << "Global shortcut Ctrl+Alt+W registered via an X11 key grab.";
+  qInfo() << "Global shortcuts registered via X11 key grabs.";
   return true;
 #else
   return false;
@@ -191,8 +218,10 @@ void GlobalShortcut::ungrabX11() {
     return;
   if (Display *dpy = x11Display()) {
     const Window root = DefaultRootWindow(dpy);
-    for (unsigned int lock : kLockMasks)
-      XUngrabKey(dpy, m_keycode, m_modifiers | lock, root);
+    for (const Binding &b : m_bindings)
+      if (b.keycode)
+        for (unsigned int lock : kLockMasks)
+          XUngrabKey(dpy, b.keycode, m_modifiers | lock, root);
     XSync(dpy, 0);
   }
   qApp->removeNativeEventFilter(this);
@@ -210,8 +239,12 @@ bool GlobalShortcut::nativeEventFilter(const QByteArray &eventType,
   if ((ev->response_type & ~0x80) == XCB_KEY_PRESS) {
     auto *ke = reinterpret_cast<xcb_key_press_event_t *>(ev);
     const unsigned int mask = ControlMask | Mod1Mask | ShiftMask | Mod4Mask;
-    if (ke->detail == m_keycode && (ke->state & mask) == m_modifiers)
-      emit activated();
+    if ((ke->state & mask) == m_modifiers)
+      for (const Binding &b : m_bindings)
+        if (b.keycode && ke->detail == b.keycode) {
+          emit activated(b.id);
+          break;
+        }
   }
 #else
   Q_UNUSED(eventType);

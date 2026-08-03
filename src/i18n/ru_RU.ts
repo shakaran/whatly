@@ -651,136 +651,136 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished">Закрыть</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="105"/>
-        <location filename="../mainwindow.cpp" line="1123"/>
-        <location filename="../mainwindow.cpp" line="1219"/>
+        <location filename="../mainwindow.cpp" line="106"/>
+        <location filename="../mainwindow.cpp" line="1130"/>
+        <location filename="../mainwindow.cpp" line="1226"/>
         <source>No WhatsApp window is open</source>
         <translation>Нет открытого окна WhatsApp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1115"/>
+        <location filename="../mainwindow.cpp" line="1122"/>
         <source>Could not understand the recipient: %1</source>
         <translation>Не удалось распознать получателя: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1178"/>
+        <location filename="../mainwindow.cpp" line="1185"/>
         <source>Opening the group and sending…</source>
         <translation>Открытие группы и отправка…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1210"/>
+        <location filename="../mainwindow.cpp" line="1217"/>
         <source>The local API could not start: %1</source>
         <translation>Не удалось запустить локальный API: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1090"/>
+        <location filename="../mainwindow.cpp" line="1097"/>
         <source>Cloud API send failed: %1</source>
         <translation>Не удалось отправить через Cloud API: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1081"/>
+        <location filename="../mainwindow.cpp" line="1088"/>
         <source>The Cloud API is not configured.</source>
         <translation>Cloud API не настроен.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1076"/>
+        <location filename="../mainwindow.cpp" line="1083"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>Для Cloud API нужен номер телефона в качестве получателя.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1179"/>
+        <location filename="../mainwindow.cpp" line="1186"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>Открытие чата с &quot;%1&quot; и отправка…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Reminder</source>
         <translation>Напоминание</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Reminder: %1</source>
         <translation>Напоминание: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="189"/>
+        <location filename="../mainwindow.cpp" line="196"/>
         <source>Update available</source>
         <translation>Доступно обновление</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="190"/>
+        <location filename="../mainwindow.cpp" line="197"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Доступна версия Whatly %1. Нажмите, чтобы открыть страницу загрузки.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="865"/>
-        <location filename="../mainwindow.cpp" line="871"/>
+        <location filename="../mainwindow.cpp" line="872"/>
+        <location filename="../mainwindow.cpp" line="878"/>
         <location filename="../mainwindow_webengine.cpp" line="954"/>
         <location filename="../mainwindow_webengine.cpp" line="957"/>
         <source>| Error</source>
         <translation>| Ошибка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="866"/>
+        <location filename="../mainwindow.cpp" line="873"/>
         <source>Unlock to access Settings.</source>
         <translation>Разблокируйте, чтобы открыть настройки.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="872"/>
+        <location filename="../mainwindow.cpp" line="879"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>Не удаётся инициализировать модуль настроек.
 WebEngine не инициализирован.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="893"/>
+        <location filename="../mainwindow.cpp" line="900"/>
         <source> | Action required</source>
         <translation> | Требуется действие</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="894"/>
+        <location filename="../mainwindow.cpp" line="901"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>Чтобы продолжить, страницу нужно перезагрузить.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1299"/>
+        <location filename="../mainwindow.cpp" line="1306"/>
         <source>Restart</source>
         <translation>Перезапустить</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1300"/>
+        <location filename="../mainwindow.cpp" line="1307"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly не удалось запустить новый экземпляр, поэтому текущий не был закрыт. Закройте приложение и откройте его снова.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1345"/>
+        <location filename="../mainwindow.cpp" line="1352"/>
         <source>Expand the chat list</source>
         <translation>Развернуть список чатов</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1346"/>
+        <location filename="../mainwindow.cpp" line="1353"/>
         <location filename="../mainwindow_tray.cpp" line="237"/>
         <source>Collapse the chat list</source>
         <translation>Свернуть список чатов</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1443"/>
+        <location filename="../mainwindow.cpp" line="1450"/>
         <source>Open</source>
         <translation>Открыть</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1462"/>
+        <location filename="../mainwindow.cpp" line="1486"/>
         <location filename="../mainwindow_tray.cpp" line="22"/>
         <source>New Chat</source>
         <translation>Новый чат</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1463"/>
+        <location filename="../mainwindow.cpp" line="1487"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Введите корректный номер WhatsApp с кодом страны (напр. +7XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1493"/>
+        <location filename="../mainwindow.cpp" line="1517"/>
         <source>Rate Application</source>
         <translation>Оценить приложение</translation>
     </message>
@@ -973,19 +973,19 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="214"/>
-        <location filename="../mainwindow_accounts.cpp" line="1224"/>
+        <location filename="../mainwindow_accounts.cpp" line="1225"/>
         <source>Rename…</source>
         <translation>Переименовать…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="215"/>
-        <location filename="../mainwindow_accounts.cpp" line="1225"/>
+        <location filename="../mainwindow_accounts.cpp" line="1226"/>
         <source>Open in own window</source>
         <translation>Открыть в отдельном окне</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="219"/>
-        <location filename="../mainwindow_accounts.cpp" line="1228"/>
+        <location filename="../mainwindow_accounts.cpp" line="1229"/>
         <source>Remove account</source>
         <translation>Удалить аккаунт</translation>
     </message>
@@ -1001,70 +1001,75 @@ Open Settings now?</source>
         <translation>Добавить аккаунт…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="307"/>
+        <location filename="../mainwindow_accounts.cpp" line="303"/>
+        <source>Quick message…</source>
+        <translation>Быстрое сообщение…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="308"/>
         <source>Insert: %1</source>
         <translation>Вставить: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="585"/>
+        <location filename="../mainwindow_accounts.cpp" line="586"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 непрочитанных</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1000"/>
+        <location filename="../mainwindow_accounts.cpp" line="1001"/>
         <source>Add another account</source>
         <translation>Добавить ещё аккаунт</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1027"/>
-        <location filename="../mainwindow_accounts.cpp" line="1032"/>
+        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1033"/>
         <source>Restore</source>
         <translation>Восстановить</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1029"/>
         <source>messages</source>
         <translation>сообщений</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1029"/>
         <source>message</source>
         <translation>сообщение</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1073"/>
+        <location filename="../mainwindow_accounts.cpp" line="1074"/>
         <source>Add account</source>
         <translation>Добавить аккаунт</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1074"/>
+        <location filename="../mainwindow_accounts.cpp" line="1075"/>
         <source>Name for the new account:</source>
         <translation>Имя нового аккаунта:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1075"/>
-        <location filename="../mainwindow_accounts.cpp" line="1922"/>
-        <location filename="../mainwindow_accounts.cpp" line="1927"/>
+        <location filename="../mainwindow_accounts.cpp" line="1076"/>
+        <location filename="../mainwindow_accounts.cpp" line="1923"/>
+        <location filename="../mainwindow_accounts.cpp" line="1928"/>
         <source>Account %1</source>
         <translation>Аккаунт %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1102"/>
+        <location filename="../mainwindow_accounts.cpp" line="1103"/>
         <source>Rename account</source>
         <translation>Переименовать аккаунт</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1102"/>
+        <location filename="../mainwindow_accounts.cpp" line="1103"/>
         <source>Account name:</source>
         <translation>Имя аккаунта:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1610"/>
+        <location filename="../mainwindow_accounts.cpp" line="1611"/>
         <source>Tip: give an account its own window</source>
         <translation>Совет: выделите учётной записи отдельное окно</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1611"/>
+        <location filename="../mainwindow_accounts.cpp" line="1612"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1073,8 +1078,8 @@ You can pull any account out into its own window: right-click its tab and choose
 Любую учётную запись можно вынести в отдельное окно: щёлкните её вкладку правой кнопкой мыши и выберите «Открыть в отдельном окне». Закройте это окно, чтобы вернуть учётную запись обратно в виде вкладки.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1916"/>
-        <location filename="../mainwindow_accounts.cpp" line="1920"/>
+        <location filename="../mainwindow_accounts.cpp" line="1917"/>
+        <location filename="../mainwindow_accounts.cpp" line="1921"/>
         <source>Account 1</source>
         <translation>Аккаунт 1</translation>
     </message>
@@ -1084,14 +1089,14 @@ You can pull any account out into its own window: right-click its tab and choose
         <translation>Разблокируйте, чтобы перезагрузить приложение.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1144"/>
-        <location filename="../mainwindow.cpp" line="1225"/>
+        <location filename="../mainwindow.cpp" line="1151"/>
+        <location filename="../mainwindow.cpp" line="1232"/>
         <source>Could not read the file to send: %1</source>
         <translation>Не удалось прочитать файл для отправки: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1153"/>
-        <location filename="../mainwindow.cpp" line="1235"/>
+        <location filename="../mainwindow.cpp" line="1160"/>
+        <location filename="../mainwindow.cpp" line="1242"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>Файл слишком большой для отправки через веб-бэкенд.</translation>
     </message>
@@ -1718,6 +1723,29 @@ Please setup the password in the Settings first.</source>
         <location filename="../ollama.cpp" line="25"/>
         <source>Microsoft Phi-3, strong for its size.</source>
         <translation>Microsoft Phi-3, мощный для своего размера.</translation>
+    </message>
+</context>
+<context>
+    <name>QuickCompose</name>
+    <message>
+        <location filename="../quickcompose.cpp" line="24"/>
+        <source>Quick message</source>
+        <translation>Быстрое сообщение</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="31"/>
+        <source>Contact name or phone number</source>
+        <translation>Имя контакта или номер телефона</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="36"/>
+        <source>Message (press Enter to send)</source>
+        <translation>Сообщение (нажмите Enter для отправки)</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="40"/>
+        <source>Send</source>
+        <translation>Отправить</translation>
     </message>
 </context>
 <context>

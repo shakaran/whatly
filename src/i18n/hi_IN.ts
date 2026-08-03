@@ -651,136 +651,136 @@ Do you wish to override the security check and continue ?   </source>
         <translation type="unfinished">बंद करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="105"/>
-        <location filename="../mainwindow.cpp" line="1123"/>
-        <location filename="../mainwindow.cpp" line="1219"/>
+        <location filename="../mainwindow.cpp" line="106"/>
+        <location filename="../mainwindow.cpp" line="1130"/>
+        <location filename="../mainwindow.cpp" line="1226"/>
         <source>No WhatsApp window is open</source>
         <translation>कोई WhatsApp विंडो खुली नहीं है</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1115"/>
+        <location filename="../mainwindow.cpp" line="1122"/>
         <source>Could not understand the recipient: %1</source>
         <translation>प्राप्तकर्ता को समझा नहीं जा सका: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1178"/>
+        <location filename="../mainwindow.cpp" line="1185"/>
         <source>Opening the group and sending…</source>
         <translation>समूह खोलकर भेजा जा रहा है…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1210"/>
+        <location filename="../mainwindow.cpp" line="1217"/>
         <source>The local API could not start: %1</source>
         <translation>स्थानीय API प्रारंभ नहीं हो सका: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1090"/>
+        <location filename="../mainwindow.cpp" line="1097"/>
         <source>Cloud API send failed: %1</source>
         <translation>Cloud API से भेजना विफल: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1081"/>
+        <location filename="../mainwindow.cpp" line="1088"/>
         <source>The Cloud API is not configured.</source>
         <translation>Cloud API कॉन्फ़िगर नहीं है।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1076"/>
+        <location filename="../mainwindow.cpp" line="1083"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>Cloud API को प्राप्तकर्ता के रूप में एक फ़ोन नंबर चाहिए।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1179"/>
+        <location filename="../mainwindow.cpp" line="1186"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>&quot;%1&quot; के साथ चैट खोलकर भेजा जा रहा है…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Reminder</source>
         <translation>अनुस्मारक</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="110"/>
+        <location filename="../mainwindow.cpp" line="111"/>
         <source>Reminder: %1</source>
         <translation>अनुस्मारक: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="189"/>
+        <location filename="../mainwindow.cpp" line="196"/>
         <source>Update available</source>
         <translation>अपडेट उपलब्ध है</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="190"/>
+        <location filename="../mainwindow.cpp" line="197"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Whatly %1 उपलब्ध है। डाउनलोड पेज खोलने के लिए क्लिक करें।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="865"/>
-        <location filename="../mainwindow.cpp" line="871"/>
+        <location filename="../mainwindow.cpp" line="872"/>
+        <location filename="../mainwindow.cpp" line="878"/>
         <location filename="../mainwindow_webengine.cpp" line="954"/>
         <location filename="../mainwindow_webengine.cpp" line="957"/>
         <source>| Error</source>
         <translation>| त्रुटि</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="866"/>
+        <location filename="../mainwindow.cpp" line="873"/>
         <source>Unlock to access Settings.</source>
         <translation>सेटिंग्स तक पहुँचने के लिए अनलॉक करें।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="872"/>
+        <location filename="../mainwindow.cpp" line="879"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>सेटिंग्स मॉड्यूल आरंभ नहीं किया जा सका।
 WebEngine आरंभ नहीं हुआ है।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="893"/>
+        <location filename="../mainwindow.cpp" line="900"/>
         <source> | Action required</source>
         <translation> | कार्रवाई आवश्यक</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="894"/>
+        <location filename="../mainwindow.cpp" line="901"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>जारी रखने के लिए पृष्ठ को पुनः लोड करना होगा।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1299"/>
+        <location filename="../mainwindow.cpp" line="1306"/>
         <source>Restart</source>
         <translation>पुनः आरंभ करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1300"/>
+        <location filename="../mainwindow.cpp" line="1307"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly नई इंस्टेंस शुरू नहीं कर सका, इसलिए इसने इसे बंद नहीं किया है। कृपया इसे बंद करके फिर से खोलें।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1345"/>
+        <location filename="../mainwindow.cpp" line="1352"/>
         <source>Expand the chat list</source>
         <translation>चैट सूची विस्तृत करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1346"/>
+        <location filename="../mainwindow.cpp" line="1353"/>
         <location filename="../mainwindow_tray.cpp" line="237"/>
         <source>Collapse the chat list</source>
         <translation>चैट सूची समेटें</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1443"/>
+        <location filename="../mainwindow.cpp" line="1450"/>
         <source>Open</source>
         <translation>खोलें</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1462"/>
+        <location filename="../mainwindow.cpp" line="1486"/>
         <location filename="../mainwindow_tray.cpp" line="22"/>
         <source>New Chat</source>
         <translation>नई चैट</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1463"/>
+        <location filename="../mainwindow.cpp" line="1487"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>देश कोड सहित मान्य WhatsApp नंबर दर्ज करें (उदा॰ +91XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1493"/>
+        <location filename="../mainwindow.cpp" line="1517"/>
         <source>Rate Application</source>
         <translation>ऐप्लिकेशन को रेटिंग दें</translation>
     </message>
@@ -973,19 +973,19 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="214"/>
-        <location filename="../mainwindow_accounts.cpp" line="1224"/>
+        <location filename="../mainwindow_accounts.cpp" line="1225"/>
         <source>Rename…</source>
         <translation>नाम बदलें…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="215"/>
-        <location filename="../mainwindow_accounts.cpp" line="1225"/>
+        <location filename="../mainwindow_accounts.cpp" line="1226"/>
         <source>Open in own window</source>
         <translation>अपनी विंडो में खोलें</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="219"/>
-        <location filename="../mainwindow_accounts.cpp" line="1228"/>
+        <location filename="../mainwindow_accounts.cpp" line="1229"/>
         <source>Remove account</source>
         <translation>खाता हटाएँ</translation>
     </message>
@@ -1001,70 +1001,75 @@ Open Settings now?</source>
         <translation>खाता जोड़ें…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="307"/>
+        <location filename="../mainwindow_accounts.cpp" line="303"/>
+        <source>Quick message…</source>
+        <translation>त्वरित संदेश…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_accounts.cpp" line="308"/>
         <source>Insert: %1</source>
         <translation>सम्मिलित करें: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="585"/>
+        <location filename="../mainwindow_accounts.cpp" line="586"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 अपठित</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1000"/>
+        <location filename="../mainwindow_accounts.cpp" line="1001"/>
         <source>Add another account</source>
         <translation>एक और खाता जोड़ें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1027"/>
-        <location filename="../mainwindow_accounts.cpp" line="1032"/>
+        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1033"/>
         <source>Restore</source>
         <translation>पुनर्स्थापित करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1029"/>
         <source>messages</source>
         <translation>संदेश</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1028"/>
+        <location filename="../mainwindow_accounts.cpp" line="1029"/>
         <source>message</source>
         <translation>संदेश</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1073"/>
+        <location filename="../mainwindow_accounts.cpp" line="1074"/>
         <source>Add account</source>
         <translation>खाता जोड़ें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1074"/>
+        <location filename="../mainwindow_accounts.cpp" line="1075"/>
         <source>Name for the new account:</source>
         <translation>नए खाते का नाम:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1075"/>
-        <location filename="../mainwindow_accounts.cpp" line="1922"/>
-        <location filename="../mainwindow_accounts.cpp" line="1927"/>
+        <location filename="../mainwindow_accounts.cpp" line="1076"/>
+        <location filename="../mainwindow_accounts.cpp" line="1923"/>
+        <location filename="../mainwindow_accounts.cpp" line="1928"/>
         <source>Account %1</source>
         <translation>खाता %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1102"/>
+        <location filename="../mainwindow_accounts.cpp" line="1103"/>
         <source>Rename account</source>
         <translation>खाते का नाम बदलें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1102"/>
+        <location filename="../mainwindow_accounts.cpp" line="1103"/>
         <source>Account name:</source>
         <translation>खाते का नाम:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1610"/>
+        <location filename="../mainwindow_accounts.cpp" line="1611"/>
         <source>Tip: give an account its own window</source>
         <translation>सुझाव: किसी खाते को उसकी अपनी विंडो दें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1611"/>
+        <location filename="../mainwindow_accounts.cpp" line="1612"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1073,8 +1078,8 @@ You can pull any account out into its own window: right-click its tab and choose
 आप किसी भी खाते को उसकी अपनी विंडो में खींच सकते हैं: उसके टैब पर राइट-क्लिक करें और “अपनी विंडो में खोलें” चुनें। उस विंडो को बंद करके खाते को फिर से टैब के रूप में जोड़ें।</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1916"/>
-        <location filename="../mainwindow_accounts.cpp" line="1920"/>
+        <location filename="../mainwindow_accounts.cpp" line="1917"/>
+        <location filename="../mainwindow_accounts.cpp" line="1921"/>
         <source>Account 1</source>
         <translation>खाता 1</translation>
     </message>
@@ -1084,14 +1089,14 @@ You can pull any account out into its own window: right-click its tab and choose
         <translation>ऐप्लिकेशन पुनः लोड करने के लिए अनलॉक करें।</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1144"/>
-        <location filename="../mainwindow.cpp" line="1225"/>
+        <location filename="../mainwindow.cpp" line="1151"/>
+        <location filename="../mainwindow.cpp" line="1232"/>
         <source>Could not read the file to send: %1</source>
         <translation>भेजी जाने वाली फ़ाइल पढ़ी नहीं जा सकी: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1153"/>
-        <location filename="../mainwindow.cpp" line="1235"/>
+        <location filename="../mainwindow.cpp" line="1160"/>
+        <location filename="../mainwindow.cpp" line="1242"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>फ़ाइल web बैकएंड से भेजने के लिए बहुत बड़ी है।</translation>
     </message>
@@ -1718,6 +1723,29 @@ Please setup the password in the Settings first.</source>
         <location filename="../ollama.cpp" line="25"/>
         <source>Microsoft Phi-3, strong for its size.</source>
         <translation>Microsoft Phi-3, अपने आकार के हिसाब से दमदार।</translation>
+    </message>
+</context>
+<context>
+    <name>QuickCompose</name>
+    <message>
+        <location filename="../quickcompose.cpp" line="24"/>
+        <source>Quick message</source>
+        <translation>त्वरित संदेश</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="31"/>
+        <source>Contact name or phone number</source>
+        <translation>संपर्क नाम या फ़ोन नंबर</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="36"/>
+        <source>Message (press Enter to send)</source>
+        <translation>संदेश (भेजने के लिए Enter दबाएँ)</translation>
+    </message>
+    <message>
+        <location filename="../quickcompose.cpp" line="40"/>
+        <source>Send</source>
+        <translation>भेजें</translation>
     </message>
 </context>
 <context>

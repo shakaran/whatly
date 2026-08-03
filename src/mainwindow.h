@@ -423,6 +423,11 @@ private:
   // on Wayland, where a `whatly -w` desktop shortcut is the alternative.
   GlobalShortcut *m_globalShortcut = nullptr;
 
+  // Quick-compose overlay (idea #4), summoned by Ctrl+Alt+N or the tray/command
+  // palette. Sends through the existing web path without opening the window.
+  class QuickCompose *m_quickCompose = nullptr;
+  void showQuickCompose();
+
   // Connection watchdog: polls the injected WebSocket health probe and reloads
   // the page when WhatsApp's socket has died or gone silent (aggressive mode).
   QTimer *m_connectionWatchdog = nullptr;

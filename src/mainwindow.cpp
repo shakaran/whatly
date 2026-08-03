@@ -30,6 +30,7 @@
 #include "about.h"
 #include "common.h"
 #include "globalshortcut.h"
+#include "quickcompose.h"
 #include "linkeddevicename.h"
 #include "rateapp.h"
 #include "theme.h"
@@ -168,12 +169,18 @@ MainWindow::MainWindow(QWidget *parent)
   // shortcut is the alternative.
   m_globalShortcut = new GlobalShortcut(this);
   if (m_globalShortcut->tryRegister()) {
-    connect(m_globalShortcut, &GlobalShortcut::activated, this, [this]() {
-      setWindowState((windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
-      show();
-      raise();
-      activateWindow();
-    });
+    connect(m_globalShortcut, &GlobalShortcut::activated, this,
+            [this](const QString &id) {
+              if (id == QLatin1String("quick-compose")) {
+                showQuickCompose();
+                return;
+              }
+              setWindowState((windowState() & ~Qt::WindowMinimized) |
+                             Qt::WindowActive);
+              show();
+              raise();
+              activateWindow();
+            });
   } else {
     qInfo() << "No global-shortcut backend available; bind a desktop shortcut "
                "to `whatly -w` to raise the window.";
@@ -1455,6 +1462,23 @@ Notification::EventPtr MainWindow::notify(const QString& title, const QString& b
   return ntf;
 }
 #endif
+
+void MainWindow::showQuickCompose() {
+  if (!m_quickCompose) {
+    m_quickCompose = new QuickCompose(nullptr);
+    connect(m_quickCompose, &QuickCompose::submitted, this,
+            [this](const QString &recipient, const QString &message) {
+              // Reuse the web-send path: it parses a number vs a name and injects
+              // into the running session, so it works with the window hidden.
+              Messaging::SendCommand cmd;
+              cmd.backend = Messaging::Backend::Web;
+              cmd.to = recipient;
+              cmd.message = message;
+              commandSend(cmd);
+            });
+  }
+  m_quickCompose->popUp();
+}
 
 void MainWindow::newChat() {
   bool ok;
