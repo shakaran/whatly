@@ -151,9 +151,15 @@ QString replaceComposerScript(const QString &text) {
               document.querySelector('div[data-tab="10"][contenteditable="true"]');
     if (!box) return;
     box.focus();
-    // Select the whole draft, then overwrite it through execCommand so
-    // WhatsApp keeps tracking the input (Send button, drafts) as if typed.
-    document.execCommand('selectAll', false, null);
+    // Select the whole draft explicitly (execCommand('selectAll') does not
+    // reliably target WhatsApp's editor, which left the new text appended after
+    // the old), then overwrite the selection through execCommand so WhatsApp
+    // keeps tracking the input (Send button, drafts) as if typed.
+    var sel = window.getSelection();
+    var range = document.createRange();
+    range.selectNodeContents(box);
+    sel.removeAllRanges();
+    sel.addRange(range);
     document.execCommand('insertText', false, TEXT);
   } catch (e) { /* never break the page */ }
 })();
