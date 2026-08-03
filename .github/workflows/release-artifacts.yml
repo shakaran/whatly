@@ -515,8 +515,13 @@ jobs:
             --exclude=./.git --exclude=./build --exclude=./pkgroot .
           sed "s/^Version:.*/Version:        $ver/" \
             packaging/obs/whatly.spec > ~/rpmbuild/SPECS/whatly.spec
-          # debug_package off: no OBS debuginfo machinery in a bare container.
-          rpmbuild -ba --define "debug_package %{nil}" ~/rpmbuild/SPECS/whatly.spec
+          # _topdir: openSUSE's rpmbuild defaults to /usr/src/packages, not
+          # ~/rpmbuild (that's the Fedora layout), so point it at where we put
+          # SOURCES/SPECS. debug_package off: no OBS debuginfo machinery here.
+          rpmbuild -ba \
+            --define "_topdir $HOME/rpmbuild" \
+            --define "debug_package %{nil}" \
+            ~/rpmbuild/SPECS/whatly.spec
           cp ~/rpmbuild/RPMS/*/whatly-*.rpm .
           ls -la whatly-*.rpm
 
