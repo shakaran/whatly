@@ -327,6 +327,16 @@ yay -S whatly        # build from source
 yay -S whatly-bin    # prebuilt
 ```
 
+**openSUSE Tumbleweed** — a native `.rpm` (built against the distro's Qt, no
+bundling) is attached to each [release](https://github.com/shakaran/whatly/releases).
+There is also an Open Build Service recipe to publish it from your own OBS
+project; see [packaging/obs/README.md](packaging/obs/README.md). Tumbleweed only:
+Leap's Qt WebEngine is too old.
+
+**Gentoo** — an ebuild (`net-im/whatly`) builds from source and can enable the
+proprietary video codecs via the `qtwebengine` USE flag; see
+[packaging/gentoo/README.md](packaging/gentoo/README.md).
+
 Prebuilt binaries are attached to each [release](https://github.com/shakaran/whatly/releases);
 otherwise [build from source](#build-from-source-linux).
 

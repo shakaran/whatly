@@ -467,3 +467,54 @@ jobs:
           gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
             || gh release create "$tag" --repo "$GITHUB_REPOSITORY" --title "$tag" --generate-notes || true
           gh release upload "$tag" whatly_*_amd64.deb whatly-*.x86_64.rpm --clobber --repo "$GITHUB_REPOSITORY"
+
+  # ── Native openSUSE Tumbleweed rpm (distro Qt, no bundling) ──────────────────
+  # Tumbleweed ships Qt 6.10+, so we build against the system Qt inside a
+  # Tumbleweed container and produce a small native rpm that depends on the
+  # distro's Qt packages (no bundled Qt). This complements the portable bundled
+  # rpm from the `packages` job, which targets older distros. It also proves the
+  # OBS spec (packaging/obs/whatly.spec) still builds. Standalone/best-effort: a
+  # failure here never blocks the other artifacts.
+  opensuse:
+    needs: create-release
+    runs-on: ubuntu-latest
+    container: opensuse/tumbleweed:latest
+    steps:
+      # git must exist before checkout so it can fetch submodules (libnotify-qt).
+      - name: Install toolchain and build dependencies
+        run: |
+          zypper --non-interactive refresh
+          zypper --non-interactive install --no-recommends \
+            git tar gzip rpm-build cmake ninja gcc-c++ \
+            'cmake(Qt6Core)' 'cmake(Qt6Widgets)' 'cmake(Qt6WebEngineWidgets)' \
+            'cmake(Qt6WebChannel)' 'cmake(Qt6Positioning)' 'cmake(Qt6DBus)' \
+            'cmake(Qt6Svg)' 'cmake(Qt6LinguistTools)' \
+            'pkgconfig(x11)' 'pkgconfig(xcb)'
+
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+
+      - name: Build the native rpm with the OBS spec
+        run: |
+          tag="${{ github.event.inputs.tag || github.ref_name }}"
+          ver="${tag#v}"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          mkdir -p ~/rpmbuild/{SOURCES,SPECS}
+          # Tarball of the checked-out tree (submodules included, .git excluded)
+          # with a whatly-<ver>/ top dir, matching the spec's %autosetup.
+          tar czf ~/rpmbuild/SOURCES/whatly-"$ver".tar.gz \
+            --transform "s,^\./,whatly-$ver/," \
+            --exclude=./.git --exclude=./build --exclude=./pkgroot .
+          sed "s/^Version:.*/Version:        $ver/" \
+            packaging/obs/whatly.spec > ~/rpmbuild/SPECS/whatly.spec
+          # debug_package off: no OBS debuginfo machinery in a bare container.
+          rpmbuild -ba --define "debug_package %{nil}" ~/rpmbuild/SPECS/whatly.spec
+          cp ~/rpmbuild/RPMS/*/whatly-*.rpm .
+          ls -la whatly-*.rpm
+
+      - name: Attach to release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.tag || github.ref_name }}
+          files: whatly-*.rpm

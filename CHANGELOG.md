@@ -1,5 +1,12 @@
 ## Unreleased
 
+**New packaging: openSUSE and Gentoo.** openSUSE Tumbleweed gets a native `.rpm`
+(built against the distro's Qt 6.10, no bundling) attached to every release, plus
+an Open Build Service recipe (`packaging/obs/`) to publish it from your own OBS
+project. Gentoo gets an overlay with the `net-im/whatly` ebuild
+(`packaging/gentoo/`), versioned and `-9999` live, which can enable the
+proprietary video codecs via `dev-qt/qtwebengine[proprietary-codecs]`.
+
 **Security: App Lock now blocks sending while locked (#41).** Sending a message
 did not check the lock, so while Whatly was locked a message could still be sent
 via Quick Compose (Ctrl+Alt+N), an inline notification reply, the CLI `--send` or

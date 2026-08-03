@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>angel@guzmanmaeso.com</email>
+		<name>Ángel Guzmán Maeso</name>
+	</maintainer>
+	<longdescription lang="en">
+		Whatly gives WhatsApp Web a native desktop window with system-tray
+		integration, desktop notifications, chat themes, a privacy blur, an
+		app lock, a multi-language spell checker and multiple accounts. It is
+		an MIT-licensed fork of WhatSie and is not affiliated with WhatsApp
+		or Meta.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">shakaran/whatly</remote-id>
+		<bugs-to>https://github.com/shakaran/whatly/issues</bugs-to>
+	</upstream>
+</pkgmetadata>

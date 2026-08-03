@@ -20,6 +20,8 @@ the **Release Artifacts** workflow and attached to the GitHub release.
 | AppImage + zsync | `packaging/appimage/` | ✅ attaches `.AppImage` + `.zsync` | `packaging/appimage/build-appimage.sh` |
 | Debian `.deb` | `debian/` | — | `dpkg-buildpackage -b -us -uc` |
 | Fedora / COPR | `packaging/rpm/whatly.spec` | — | `rpmbuild` / COPR |
+| openSUSE Tumbleweed | `packaging/obs/` | ✅ attaches native `.rpm` | `rpmbuild` / OBS |
+| Gentoo | `packaging/gentoo/` | — | `emerge` (overlay) |
 
 ## Two shared gotchas
 
@@ -76,3 +78,20 @@ Not built in CI: the ubuntu runners ship Qt 6.4, too old for the system build.
 rpmbuild -ba packaging/rpm/whatly.spec      # local
 # or add the spec + a submodule-bundled tarball to a COPR project and let it build
 ```
+
+## openSUSE Tumbleweed
+
+Tumbleweed ships Qt 6.10+, so it builds against the distro Qt with no bundling.
+The Release Artifacts workflow builds a native `.rpm` in an
+`opensuse/tumbleweed` container and attaches it to each release. To publish it
+continuously from your own Open Build Service project, use the spec + source
+service in `packaging/obs/` (see that directory's README). Leap is not
+supported (its Qt WebEngine is too old).
+
+## Gentoo
+
+An overlay with the `net-im/whatly` ebuild (versioned + `-9999` live) lives in
+`packaging/gentoo/`. It builds from source against the system Qt and can enable
+the proprietary H.264/AAC codecs via `dev-qt/qtwebengine[proprietary-codecs]`.
+See that directory's README for adding it as a local overlay or submitting to
+GURU.
