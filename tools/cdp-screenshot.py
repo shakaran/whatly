@@ -16,11 +16,21 @@ already blurred.
 Requires: websockets, Pillow.
 """
 import sys, json, base64, argparse, urllib.request
+from urllib.parse import urlparse
+
+
+def _is_whatsapp(url):
+    # Match on the URL host, not a substring: "whatsapp.com" in the raw URL
+    # would also match e.g. evil.com/whatsapp.com (CodeQL
+    # py/incomplete-url-substring-sanitization).
+    host = (urlparse(url or "").hostname or "").lower()
+    return host == "whatsapp.com" or host.endswith(".whatsapp.com")
+
 
 def capture(port):
     data = json.load(urllib.request.urlopen("http://127.0.0.1:%d/json" % port))
     ws_url = next(t["webSocketDebuggerUrl"] for t in data
-                  if t.get("type") == "page" and "whatsapp.com" in t.get("url", ""))
+                  if t.get("type") == "page" and _is_whatsapp(t.get("url")))
     from websockets.sync.client import connect
     with connect(ws_url, max_size=None) as ws:
         def cmd(i, method, params=None):

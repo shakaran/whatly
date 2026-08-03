@@ -1,5 +1,10 @@
 name: Snap
 
+# Least-privilege default; publishing uses the Snap Store credentials secret,
+# not the GITHUB_TOKEN, so read access to the repo is all the job needs.
+permissions:
+  contents: read
+
 # Build the snap on every push to main and publish it to the store's edge
 # channel, so edge always tracks the latest commit. A version tag (a release)
 # publishes to stable instead, so `snap install whatly` tracks releases.

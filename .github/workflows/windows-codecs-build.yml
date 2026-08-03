@@ -1,5 +1,8 @@
 name: Windows QtWebEngine codecs (build phase)
 
+permissions:
+  contents: read
+
 # Reusable build. phase = probe | warm | finish.
 #   probe  : configure + ~15 min of build, then report whether Chromium's GN
 #            args.gn got cc_wrapper (i.e. sccache is really in the loop) and the

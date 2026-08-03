@@ -1,5 +1,9 @@
 name: Windows Qt WebEngine (proprietary codecs)
 
+# Least-privilege default, also capping the reusable build workflow this calls.
+permissions:
+  contents: read
+
 # EXPERIMENTAL / manual. Rebuilds Qt WebEngine with proprietary codecs
 # (H.264/AAC) so WhatsApp video/voice work on Windows. A cold Chromium build
 # (~7-8h) does not fit GitHub's 6h job limit, so a warm+finish pair shares an

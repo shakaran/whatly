@@ -1,5 +1,10 @@
 name: AUR
 
+# Least-privilege default; the publish job authenticates to the AUR with an SSH
+# key, not the GITHUB_TOKEN, so read access to the repo is all any job needs.
+permissions:
+  contents: read
+
 # Build-test the AUR PKGBUILDs, and publish them to the AUR. The publish job runs
 # on a version tag push (every release) or a manual dispatch, and authenticates
 # with the AUR_SSH_PRIVATE_KEY repo secret. Build-test also runs on PRs that

@@ -1,5 +1,8 @@
 name: Unit Tests
 
+permissions:
+  contents: read
+
 # Builds and runs the QtTest suite (headless) on every push and PR, so an icon,
 # logo or resource regression like the blank About buttons is caught in CI.
 on:
