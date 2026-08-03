@@ -59,12 +59,8 @@ void MainWindow::initLock() {
 
     connect(m_lockWidget, &Lock::passwordSet, m_settingsWidget, [=]() {
       if (SettingsManager::instance().settings().value("asdfg").isValid()) {
-        m_settingsWidget->setCurrentPasswordText(
-            QByteArray::fromBase64(SettingsManager::instance()
-                                       .settings()
-                                       .value("asdfg")
-                                       .toString()
-                                       .toUtf8()));
+        // Passcode is stored hashed (issue #42): show a mask, not the value.
+        m_settingsWidget->setCurrentPasswordText(QString());
       } else {
         m_settingsWidget->setCurrentPasswordText("Require setup");
       }

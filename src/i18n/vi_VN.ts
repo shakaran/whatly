@@ -780,7 +780,7 @@ Bạn có thể kéo bất kỳ tài khoản nào ra cửa sổ riêng: nhấp c
         <translation>Tài khoản 1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_lock.cpp" line="136"/>
+        <location filename="../mainwindow_lock.cpp" line="132"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.
 
@@ -2013,8 +2013,8 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <location filename="../settingswidget.ui" line="1941"/>
         <location filename="../settingswidget.ui" line="1985"/>
         <location filename="../settingswidget.ui" line="2142"/>
-        <location filename="../settingswidget.cpp" line="1321"/>
-        <location filename="../settingswidget.cpp" line="1613"/>
+        <location filename="../settingswidget.cpp" line="1328"/>
+        <location filename="../settingswidget.cpp" line="1620"/>
         <source>Automatic</source>
         <translation>Tự động</translation>
     </message>
@@ -2302,7 +2302,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="622"/>
-        <location filename="../settingswidget.cpp" line="1238"/>
+        <location filename="../settingswidget.cpp" line="1245"/>
         <source>Custom CSS</source>
         <translation>CSS tùy chỉnh</translation>
     </message>
@@ -2359,7 +2359,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="687"/>
-        <location filename="../settingswidget.cpp" line="2032"/>
+        <location filename="../settingswidget.cpp" line="2039"/>
         <source>Check spelling as I type</source>
         <translation>Kiểm tra chính tả khi gõ</translation>
     </message>
@@ -2415,7 +2415,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="762"/>
-        <location filename="../settingswidget.cpp" line="1214"/>
+        <location filename="../settingswidget.cpp" line="1221"/>
         <source>Chat wallpaper</source>
         <translation>Hình nền trò chuyện</translation>
     </message>
@@ -3389,226 +3389,231 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <translation>Tự động chuyển đổi giao diện đã bị tắt do bạn đã chuyển đổi giao diện thủ công.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1080"/>
+        <location filename="../settingswidget.cpp" line="1058"/>
+        <source>Require setup</source>
+        <translation>Cần thiết lập</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1087"/>
         <source>App lock is not configured.</source>
         <translation>Khóa ứng dụng chưa được cấu hình.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1084"/>
+        <location filename="../settingswidget.cpp" line="1091"/>
         <source>Do you want to setup App lock now?</source>
         <translation>Bạn có muốn thiết lập khóa ứng dụng ngay bây giờ không?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1126"/>
+        <location filename="../settingswidget.cpp" line="1133"/>
         <source>Feature permissions</source>
         <translation>Quyền tính năng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1205"/>
+        <location filename="../settingswidget.cpp" line="1212"/>
         <source>Choose a chat wallpaper</source>
         <translation>Chọn hình nền trò chuyện</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1207"/>
+        <location filename="../settingswidget.cpp" line="1214"/>
         <source>Images (%1)</source>
         <translation>Hình ảnh (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1215"/>
+        <location filename="../settingswidget.cpp" line="1222"/>
         <source>Could not use that image: %1</source>
         <translation>Không thể dùng hình ảnh đó: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1230"/>
+        <location filename="../settingswidget.cpp" line="1237"/>
         <source>Choose a CSS file</source>
         <translation>Chọn tệp CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1232"/>
+        <location filename="../settingswidget.cpp" line="1239"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Stylesheet (*.css);;Tất cả tệp (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1239"/>
+        <location filename="../settingswidget.cpp" line="1246"/>
         <source>Could not read that file: %1</source>
         <translation>Không thể đọc tệp đó: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1312"/>
+        <location filename="../settingswidget.cpp" line="1319"/>
         <source>Disk</source>
         <translation>Đĩa</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1313"/>
+        <location filename="../settingswidget.cpp" line="1320"/>
         <source>Memory</source>
         <translation>Bộ nhớ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1314"/>
-        <location filename="../settingswidget.cpp" line="1322"/>
-        <location filename="../settingswidget.cpp" line="2082"/>
+        <location filename="../settingswidget.cpp" line="1321"/>
+        <location filename="../settingswidget.cpp" line="1329"/>
+        <location filename="../settingswidget.cpp" line="2089"/>
         <source>None</source>
         <translation>Không</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1323"/>
+        <location filename="../settingswidget.cpp" line="1330"/>
         <source>Slight</source>
         <translation>Nhẹ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1324"/>
+        <location filename="../settingswidget.cpp" line="1331"/>
         <source>Medium</source>
         <translation>Vừa</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1325"/>
+        <location filename="../settingswidget.cpp" line="1332"/>
         <source>Full</source>
         <translation>Đầy đủ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1466"/>
+        <location filename="../settingswidget.cpp" line="1473"/>
         <source>Ollama not found at this address.</source>
         <translation>Không tìm thấy Ollama tại địa chỉ này.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1471"/>
+        <location filename="../settingswidget.cpp" line="1478"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Đã tìm thấy Ollama (%1 mô hình đã cài đặt).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1496"/>
+        <location filename="../settingswidget.cpp" line="1503"/>
         <source>Download complete.</source>
         <translation>Đã tải xong.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1499"/>
+        <location filename="../settingswidget.cpp" line="1506"/>
         <source>Download failed: %1</source>
         <translation>Tải xuống thất bại: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1510"/>
+        <location filename="../settingswidget.cpp" line="1517"/>
         <source>Checking…</source>
         <translation>Đang kiểm tra…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1535"/>
+        <location filename="../settingswidget.cpp" line="1542"/>
         <source>Starting download of %1…</source>
         <translation>Đang bắt đầu tải %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1586"/>
+        <location filename="../settingswidget.cpp" line="1593"/>
         <source>System</source>
         <translation>Hệ thống</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1587"/>
+        <location filename="../settingswidget.cpp" line="1594"/>
         <source>None (direct)</source>
         <translation>Không (trực tiếp)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1588"/>
+        <location filename="../settingswidget.cpp" line="1595"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1589"/>
+        <location filename="../settingswidget.cpp" line="1596"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1615"/>
+        <location filename="../settingswidget.cpp" line="1622"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Desktop portal (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1617"/>
+        <location filename="../settingswidget.cpp" line="1624"/>
         <source>System service (libnotify)</source>
         <translation>Dịch vụ hệ thống (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1802"/>
-        <location filename="../settingswidget.cpp" line="1806"/>
+        <location filename="../settingswidget.cpp" line="1809"/>
+        <location filename="../settingswidget.cpp" line="1813"/>
         <source>Add reply</source>
         <translation>Thêm trả lời</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1802"/>
+        <location filename="../settingswidget.cpp" line="1809"/>
         <source>Name</source>
         <translation>Tên</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1806"/>
+        <location filename="../settingswidget.cpp" line="1813"/>
         <source>Text to insert</source>
         <translation>Văn bản cần chèn</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1823"/>
+        <location filename="../settingswidget.cpp" line="1830"/>
         <source>Choose a JavaScript file</source>
         <translation>Chọn tệp JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1824"/>
+        <location filename="../settingswidget.cpp" line="1831"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Tất cả tệp (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1829"/>
+        <location filename="../settingswidget.cpp" line="1836"/>
         <source>Could not add addon</source>
         <translation>Không thể thêm tiện ích mở rộng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1842"/>
+        <location filename="../settingswidget.cpp" line="1849"/>
         <source>Remove addon</source>
         <translation>Xóa tiện ích mở rộng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1843"/>
+        <location filename="../settingswidget.cpp" line="1850"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>Xóa tiện ích mở rộng &quot;%1&quot;? Việc này sẽ xóa tệp của nó.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2031"/>
+        <location filename="../settingswidget.cpp" line="2038"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Kiểm tra chính tả (chưa cài đặt từ điển nào)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2086"/>
+        <location filename="../settingswidget.cpp" line="2093"/>
         <source>%1 languages</source>
         <translation>%1 ngôn ngữ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2184"/>
+        <location filename="../settingswidget.cpp" line="2191"/>
         <source>WhatsApp default</source>
         <translation>Mặc định của WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2223"/>
+        <location filename="../settingswidget.cpp" line="2230"/>
         <source>System default</source>
         <translation>Mặc định hệ thống</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2258"/>
+        <location filename="../settingswidget.cpp" line="2265"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>Ngôn ngữ giao diện sẽ thay đổi khi bạn khởi động lại %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2272"/>
+        <location filename="../settingswidget.cpp" line="2279"/>
         <source>App Lock Setup</source>
         <translation>Thiết lập khóa ứng dụng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2273"/>
+        <location filename="../settingswidget.cpp" line="2280"/>
         <source>Please setup the App lock password first.</source>
         <translation>Vui lòng thiết lập mật khẩu khóa ứng dụng trước.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2384"/>
-        <location filename="../settingswidget.cpp" line="2395"/>
+        <location filename="../settingswidget.cpp" line="2391"/>
+        <location filename="../settingswidget.cpp" line="2402"/>
         <source>Select download directory</source>
         <translation>Chọn thư mục tải xuống</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2435"/>
+        <location filename="../settingswidget.cpp" line="2442"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3619,7 +3624,7 @@ Thao tác này sẽ đăng xuất phiên hiện tại của bạn.
 Bạn cũng có thể cần khởi động lại hoàn toàn ứng dụng!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2441"/>
+        <location filename="../settingswidget.cpp" line="2448"/>
         <source>Do you want to proceed?</source>
         <translation>Bạn có muốn tiếp tục không?</translation>
     </message>

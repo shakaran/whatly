@@ -798,7 +798,7 @@ WebEngine не инициализирован.</translation>
         <translation>Оценить приложение</translation>
     </message>
     <message>
-        <location filename="../mainwindow_lock.cpp" line="136"/>
+        <location filename="../mainwindow_lock.cpp" line="132"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.
 
@@ -2039,17 +2039,17 @@ Please setup the password in the Settings first.</source>
         <translation>Как края глифов привязываются к пикселям. «Автоматически» следует системе; более лёгкий уровень может исправить тяжёлый или неровный текст.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1323"/>
+        <location filename="../settingswidget.cpp" line="1330"/>
         <source>Slight</source>
         <translation>Слабый</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1324"/>
+        <location filename="../settingswidget.cpp" line="1331"/>
         <source>Medium</source>
         <translation>Средний</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1325"/>
+        <location filename="../settingswidget.cpp" line="1332"/>
         <source>Full</source>
         <translation>Полный</translation>
     </message>
@@ -2123,8 +2123,8 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="1941"/>
         <location filename="../settingswidget.ui" line="1985"/>
         <location filename="../settingswidget.ui" line="2142"/>
-        <location filename="../settingswidget.cpp" line="1321"/>
-        <location filename="../settingswidget.cpp" line="1613"/>
+        <location filename="../settingswidget.cpp" line="1328"/>
+        <location filename="../settingswidget.cpp" line="1620"/>
         <source>Automatic</source>
         <translation>Автоматически</translation>
     </message>
@@ -2357,7 +2357,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="622"/>
-        <location filename="../settingswidget.cpp" line="1238"/>
+        <location filename="../settingswidget.cpp" line="1245"/>
         <source>Custom CSS</source>
         <translation>Пользовательский CSS</translation>
     </message>
@@ -2414,7 +2414,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="687"/>
-        <location filename="../settingswidget.cpp" line="2032"/>
+        <location filename="../settingswidget.cpp" line="2039"/>
         <source>Check spelling as I type</source>
         <translation>Проверять орфографию при вводе</translation>
     </message>
@@ -2445,7 +2445,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="762"/>
-        <location filename="../settingswidget.cpp" line="1214"/>
+        <location filename="../settingswidget.cpp" line="1221"/>
         <source>Chat wallpaper</source>
         <translation>Обои чата</translation>
     </message>
@@ -3307,165 +3307,170 @@ Please setup the password in the Settings first.</source>
         <translation>Автоматическое переключение темы отключено из-за ручной смены темы.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1080"/>
+        <location filename="../settingswidget.cpp" line="1058"/>
+        <source>Require setup</source>
+        <translation>Требуется настройка</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1087"/>
         <source>App lock is not configured.</source>
         <translation>Блокировка приложения не настроена.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1084"/>
+        <location filename="../settingswidget.cpp" line="1091"/>
         <source>Do you want to setup App lock now?</source>
         <translation>Настроить блокировку приложения сейчас?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1126"/>
+        <location filename="../settingswidget.cpp" line="1133"/>
         <source>Feature permissions</source>
         <translation>Разрешения функций</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1205"/>
+        <location filename="../settingswidget.cpp" line="1212"/>
         <source>Choose a chat wallpaper</source>
         <translation>Выберите обои чата</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1207"/>
+        <location filename="../settingswidget.cpp" line="1214"/>
         <source>Images (%1)</source>
         <translation>Изображения (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1215"/>
+        <location filename="../settingswidget.cpp" line="1222"/>
         <source>Could not use that image: %1</source>
         <translation>Не удалось использовать это изображение: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1230"/>
+        <location filename="../settingswidget.cpp" line="1237"/>
         <source>Choose a CSS file</source>
         <translation>Выберите файл CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1232"/>
+        <location filename="../settingswidget.cpp" line="1239"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Таблицы стилей (*.css);;Все файлы (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1239"/>
+        <location filename="../settingswidget.cpp" line="1246"/>
         <source>Could not read that file: %1</source>
         <translation>Не удалось прочитать этот файл: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1312"/>
+        <location filename="../settingswidget.cpp" line="1319"/>
         <source>Disk</source>
         <translation>Диск</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1313"/>
+        <location filename="../settingswidget.cpp" line="1320"/>
         <source>Memory</source>
         <translation>Память</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1466"/>
+        <location filename="../settingswidget.cpp" line="1473"/>
         <source>Ollama not found at this address.</source>
         <translation>Ollama не найден по этому адресу.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1496"/>
+        <location filename="../settingswidget.cpp" line="1503"/>
         <source>Download complete.</source>
         <translation>Загрузка завершена.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1499"/>
+        <location filename="../settingswidget.cpp" line="1506"/>
         <source>Download failed: %1</source>
         <translation>Не удалось скачать: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1510"/>
+        <location filename="../settingswidget.cpp" line="1517"/>
         <source>Checking…</source>
         <translation>Проверка…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1535"/>
+        <location filename="../settingswidget.cpp" line="1542"/>
         <source>Starting download of %1…</source>
         <translation>Начинается загрузка %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1586"/>
+        <location filename="../settingswidget.cpp" line="1593"/>
         <source>System</source>
         <translation>Система</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1587"/>
+        <location filename="../settingswidget.cpp" line="1594"/>
         <source>None (direct)</source>
         <translation>Без прокси (напрямую)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1588"/>
+        <location filename="../settingswidget.cpp" line="1595"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1589"/>
+        <location filename="../settingswidget.cpp" line="1596"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1615"/>
+        <location filename="../settingswidget.cpp" line="1622"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Портал рабочего стола (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1617"/>
+        <location filename="../settingswidget.cpp" line="1624"/>
         <source>System service (libnotify)</source>
         <translation>Системная служба (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1802"/>
-        <location filename="../settingswidget.cpp" line="1806"/>
+        <location filename="../settingswidget.cpp" line="1809"/>
+        <location filename="../settingswidget.cpp" line="1813"/>
         <source>Add reply</source>
         <translation>Добавить ответ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1802"/>
+        <location filename="../settingswidget.cpp" line="1809"/>
         <source>Name</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1806"/>
+        <location filename="../settingswidget.cpp" line="1813"/>
         <source>Text to insert</source>
         <translation>Текст для вставки</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1823"/>
+        <location filename="../settingswidget.cpp" line="1830"/>
         <source>Choose a JavaScript file</source>
         <translation>Выберите файл JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1824"/>
+        <location filename="../settingswidget.cpp" line="1831"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Все файлы (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1829"/>
+        <location filename="../settingswidget.cpp" line="1836"/>
         <source>Could not add addon</source>
         <translation>Не удалось добавить дополнение</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1842"/>
+        <location filename="../settingswidget.cpp" line="1849"/>
         <source>Remove addon</source>
         <translation>Удалить дополнение</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1843"/>
+        <location filename="../settingswidget.cpp" line="1850"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>Удалить дополнение &quot;%1&quot;? Его файл будет удалён.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2031"/>
+        <location filename="../settingswidget.cpp" line="2038"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Проверка орфографии (словари не установлены)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1314"/>
-        <location filename="../settingswidget.cpp" line="1322"/>
-        <location filename="../settingswidget.cpp" line="2082"/>
+        <location filename="../settingswidget.cpp" line="1321"/>
+        <location filename="../settingswidget.cpp" line="1329"/>
+        <location filename="../settingswidget.cpp" line="2089"/>
         <source>None</source>
         <translation>Нет</translation>
     </message>
@@ -3567,48 +3572,48 @@ Please setup the password in the Settings first.</source>
         <translation>Профиль импортирован. Перезапустите Whatly.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1471"/>
+        <location filename="../settingswidget.cpp" line="1478"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama найден (установлено моделей: %1).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2086"/>
+        <location filename="../settingswidget.cpp" line="2093"/>
         <source>%1 languages</source>
         <translation>Языков: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2184"/>
+        <location filename="../settingswidget.cpp" line="2191"/>
         <source>WhatsApp default</source>
         <translation>По умолчанию WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2223"/>
+        <location filename="../settingswidget.cpp" line="2230"/>
         <source>System default</source>
         <translation>Системный по умолчанию</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2258"/>
+        <location filename="../settingswidget.cpp" line="2265"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>Язык интерфейса изменится после перезапуска %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2272"/>
+        <location filename="../settingswidget.cpp" line="2279"/>
         <source>App Lock Setup</source>
         <translation>Настройка блокировки</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2273"/>
+        <location filename="../settingswidget.cpp" line="2280"/>
         <source>Please setup the App lock password first.</source>
         <translation>Сначала задайте пароль блокировки приложения.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2384"/>
-        <location filename="../settingswidget.cpp" line="2395"/>
+        <location filename="../settingswidget.cpp" line="2391"/>
+        <location filename="../settingswidget.cpp" line="2402"/>
         <source>Select download directory</source>
         <translation>Выберите папку загрузок</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2435"/>
+        <location filename="../settingswidget.cpp" line="2442"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3619,7 +3624,7 @@ You may also require a complete restart of Application!</source>
 Может также потребоваться полный перезапуск приложения!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2441"/>
+        <location filename="../settingswidget.cpp" line="2448"/>
         <source>Do you want to proceed?</source>
         <translation>Хотите продолжить?</translation>
     </message>

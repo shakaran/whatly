@@ -311,12 +311,12 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
   // start regular timer to update theme
   updateAutomaticTheme();
 
+  // The passcode is stored hashed (issue #42) and must never be shown; the
+  // viewer only reflects whether one is set.
   this->setCurrentPasswordText(
-      QByteArray::fromBase64(SettingsManager::instance()
-                                 .settings()
-                                 .value("asdfg")
-                                 .toString()
-                                 .toUtf8()));
+      SettingsManager::instance().settings().value("asdfg").isValid()
+          ? QString()
+          : QStringLiteral("Require setup"));
 
   applyThemeQuirks();
 
@@ -1006,12 +1006,12 @@ void SettingsWidget::autoAppLockSetChecked(bool checked) {
 }
 
 void SettingsWidget::updateAppLockPasswordViewer() {
+  // Never reconstruct/show the passcode (stored hashed, issue #42); only show
+  // whether one is set.
   this->setCurrentPasswordText(
-      QByteArray::fromBase64(SettingsManager::instance()
-                                 .settings()
-                                 .value("asdfg")
-                                 .toString()
-                                 .toUtf8()));
+      SettingsManager::instance().settings().value("asdfg").isValid()
+          ? QString()
+          : QStringLiteral("Require setup"));
 }
 
 void SettingsWidget::muteAudioSetChecked(bool checked) {
@@ -1052,11 +1052,18 @@ void SettingsWidget::toggleTheme() {
 void SettingsWidget::setCurrentPasswordText(QString str) {
   ui->current_password->setStyleSheet(
       "QLineEdit[echoMode=\"2\"]{lineedit-password-character: 9899}");
+  ui->current_password->setReadOnly(true);
   if (str == "Require setup") {
     ui->current_password->setEchoMode(QLineEdit::Normal);
+    ui->current_password->setText(tr("Require setup"));
+    ui->viewPassword->setVisible(false);
   } else {
+    // The passcode is stored hashed and cannot (and must not) be shown, so the
+    // field is only a fixed mask indicating one is set, and the reveal button is
+    // gone (issue #42).
     ui->current_password->setEchoMode(QLineEdit::Password);
-    ui->current_password->setText(str);
+    ui->current_password->setText(QStringLiteral("passwordset"));
+    ui->viewPassword->setVisible(false);
   }
 }
 

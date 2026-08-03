@@ -174,6 +174,7 @@ set(SOURCES
     src/downloadwidget.cpp
     src/linkeddevicename.cpp
     src/lock.cpp
+    src/passlock.cpp
     src/main.cpp
     src/identicons.cpp
     src/mainwindow.cpp
@@ -259,6 +260,7 @@ set(HEADERS
     src/downloadwidget.h
     src/linkeddevicename.h
     src/lock.h
+    src/passlock.h
     src/identicons.h
     src/mainwindow.h
     src/detachedaccountwindow.h

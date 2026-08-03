@@ -50,6 +50,7 @@
 #include "notificationreply.h"
 #include "aiassistant.h"
 #include "ollama.h"
+#include "passlock.h"
 #include "cannedresponses.h"
 #include "webtweaks.h"
 #include "chatliststrip.h"
@@ -2632,6 +2633,46 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// PassLock (#42): App Lock passcode is stored as a salted hash, verified by
+// hashing, and legacy Base64 values still verify (then get upgraded).
+class TstPassLock : public QObject {
+  Q_OBJECT
+private slots:
+  void hashIsSaltedAndNotReversible() {
+    const QString h = PassLock::hash(QStringLiteral("s3cret!"));
+    QVERIFY(PassLock::isHashed(h));
+    QVERIFY(h.startsWith(QLatin1String("pbkdf2_sha256$")));
+    // The plaintext must not appear anywhere in the stored value.
+    QVERIFY(!h.contains(QLatin1String("s3cret!")));
+    // A different call uses a fresh salt, so the stored strings differ...
+    const QString h2 = PassLock::hash(QStringLiteral("s3cret!"));
+    QVERIFY(h != h2);
+    // ...yet both verify the same passcode.
+    QVERIFY(PassLock::verify(QStringLiteral("s3cret!"), h));
+    QVERIFY(PassLock::verify(QStringLiteral("s3cret!"), h2));
+  }
+  void verifyRejectsWrong() {
+    const QString h = PassLock::hash(QStringLiteral("correct horse"));
+    QVERIFY(!PassLock::verify(QStringLiteral("wrong"), h));
+    QVERIFY(!PassLock::verify(QString(), h));
+    QVERIFY(!PassLock::verify(QStringLiteral("correct horse "), h)); // exact
+  }
+  void legacyBase64StillVerifies() {
+    // Old format: Base64 of the plaintext.
+    const QString legacy =
+        QString::fromLatin1(QByteArray("1234").toBase64());
+    QVERIFY(!PassLock::isHashed(legacy)); // so the caller upgrades it
+    QVERIFY(PassLock::verify(QStringLiteral("1234"), legacy));
+    QVERIFY(!PassLock::verify(QStringLiteral("0000"), legacy));
+  }
+  void malformedHashDoesNotVerify() {
+    QVERIFY(!PassLock::verify(QStringLiteral("x"),
+                             QStringLiteral("pbkdf2_sha256$bad")));
+    QVERIFY(!PassLock::verify(QStringLiteral("x"), QString()));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CannedResponses: CRUD round-trip and the escaped insert snippet.
 class TstCannedResponses : public QObject {
   Q_OBJECT
@@ -3333,6 +3374,7 @@ int main(int argc, char *argv[]) {
   { TstChatExport t;          run(&t); }
   { TstAiAssistant t;         run(&t); }
   { TstOllama t;              run(&t); }
+  { TstPassLock t;            run(&t); }
   { TstStorageInfo t;         run(&t); }
   { TstUpdateCheck t;         run(&t); }
   { TstFuzzy t;               run(&t); }

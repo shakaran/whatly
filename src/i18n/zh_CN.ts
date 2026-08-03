@@ -798,7 +798,7 @@ WebEngine 未初始化。</translation>
         <translation>为应用评分</translation>
     </message>
     <message>
-        <location filename="../mainwindow_lock.cpp" line="136"/>
+        <location filename="../mainwindow_lock.cpp" line="132"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.
 
@@ -2039,17 +2039,17 @@ Please setup the password in the Settings first.</source>
         <translation>字形边缘如何对齐到像素。自动跟随系统；较轻的级别可以修复过重或不均匀的文字。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1323"/>
+        <location filename="../settingswidget.cpp" line="1330"/>
         <source>Slight</source>
         <translation>轻微</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1324"/>
+        <location filename="../settingswidget.cpp" line="1331"/>
         <source>Medium</source>
         <translation>中等</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1325"/>
+        <location filename="../settingswidget.cpp" line="1332"/>
         <source>Full</source>
         <translation>完全</translation>
     </message>
@@ -2123,8 +2123,8 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="1941"/>
         <location filename="../settingswidget.ui" line="1985"/>
         <location filename="../settingswidget.ui" line="2142"/>
-        <location filename="../settingswidget.cpp" line="1321"/>
-        <location filename="../settingswidget.cpp" line="1613"/>
+        <location filename="../settingswidget.cpp" line="1328"/>
+        <location filename="../settingswidget.cpp" line="1620"/>
         <source>Automatic</source>
         <translation>自动</translation>
     </message>
@@ -2357,7 +2357,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="622"/>
-        <location filename="../settingswidget.cpp" line="1238"/>
+        <location filename="../settingswidget.cpp" line="1245"/>
         <source>Custom CSS</source>
         <translation>自定义 CSS</translation>
     </message>
@@ -2414,7 +2414,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="687"/>
-        <location filename="../settingswidget.cpp" line="2032"/>
+        <location filename="../settingswidget.cpp" line="2039"/>
         <source>Check spelling as I type</source>
         <translation>输入时检查拼写</translation>
     </message>
@@ -2445,7 +2445,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="762"/>
-        <location filename="../settingswidget.cpp" line="1214"/>
+        <location filename="../settingswidget.cpp" line="1221"/>
         <source>Chat wallpaper</source>
         <translation>聊天壁纸</translation>
     </message>
@@ -3307,165 +3307,170 @@ Please setup the password in the Settings first.</source>
         <translation>由于手动切换了主题，自动主题切换已被禁用。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1080"/>
+        <location filename="../settingswidget.cpp" line="1058"/>
+        <source>Require setup</source>
+        <translation>需要设置</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="1087"/>
         <source>App lock is not configured.</source>
         <translation>未配置应用锁。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1084"/>
+        <location filename="../settingswidget.cpp" line="1091"/>
         <source>Do you want to setup App lock now?</source>
         <translation>现在设置应用锁吗？</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1126"/>
+        <location filename="../settingswidget.cpp" line="1133"/>
         <source>Feature permissions</source>
         <translation>功能权限</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1205"/>
+        <location filename="../settingswidget.cpp" line="1212"/>
         <source>Choose a chat wallpaper</source>
         <translation>选择聊天壁纸</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1207"/>
+        <location filename="../settingswidget.cpp" line="1214"/>
         <source>Images (%1)</source>
         <translation>图片 (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1215"/>
+        <location filename="../settingswidget.cpp" line="1222"/>
         <source>Could not use that image: %1</source>
         <translation>无法使用该图片：%1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1230"/>
+        <location filename="../settingswidget.cpp" line="1237"/>
         <source>Choose a CSS file</source>
         <translation>选择 CSS 文件</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1232"/>
+        <location filename="../settingswidget.cpp" line="1239"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>样式表 (*.css);;所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1239"/>
+        <location filename="../settingswidget.cpp" line="1246"/>
         <source>Could not read that file: %1</source>
         <translation>无法读取该文件：%1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1312"/>
+        <location filename="../settingswidget.cpp" line="1319"/>
         <source>Disk</source>
         <translation>磁盘</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1313"/>
+        <location filename="../settingswidget.cpp" line="1320"/>
         <source>Memory</source>
         <translation>内存</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1466"/>
+        <location filename="../settingswidget.cpp" line="1473"/>
         <source>Ollama not found at this address.</source>
         <translation>在此地址未找到 Ollama。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1496"/>
+        <location filename="../settingswidget.cpp" line="1503"/>
         <source>Download complete.</source>
         <translation>下载完成。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1499"/>
+        <location filename="../settingswidget.cpp" line="1506"/>
         <source>Download failed: %1</source>
         <translation>下载失败：%1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1510"/>
+        <location filename="../settingswidget.cpp" line="1517"/>
         <source>Checking…</source>
         <translation>正在检查……</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1535"/>
+        <location filename="../settingswidget.cpp" line="1542"/>
         <source>Starting download of %1…</source>
         <translation>开始下载 %1……</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1586"/>
+        <location filename="../settingswidget.cpp" line="1593"/>
         <source>System</source>
         <translation>系统</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1587"/>
+        <location filename="../settingswidget.cpp" line="1594"/>
         <source>None (direct)</source>
         <translation>无（直接连接）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1588"/>
+        <location filename="../settingswidget.cpp" line="1595"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1589"/>
+        <location filename="../settingswidget.cpp" line="1596"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1615"/>
+        <location filename="../settingswidget.cpp" line="1622"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>桌面门户 (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1617"/>
+        <location filename="../settingswidget.cpp" line="1624"/>
         <source>System service (libnotify)</source>
         <translation>系统服务 (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1802"/>
-        <location filename="../settingswidget.cpp" line="1806"/>
+        <location filename="../settingswidget.cpp" line="1809"/>
+        <location filename="../settingswidget.cpp" line="1813"/>
         <source>Add reply</source>
         <translation>添加回复</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1802"/>
+        <location filename="../settingswidget.cpp" line="1809"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1806"/>
+        <location filename="../settingswidget.cpp" line="1813"/>
         <source>Text to insert</source>
         <translation>要插入的文本</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1823"/>
+        <location filename="../settingswidget.cpp" line="1830"/>
         <source>Choose a JavaScript file</source>
         <translation>选择一个 JavaScript 文件</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1824"/>
+        <location filename="../settingswidget.cpp" line="1831"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1829"/>
+        <location filename="../settingswidget.cpp" line="1836"/>
         <source>Could not add addon</source>
         <translation>无法添加插件</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1842"/>
+        <location filename="../settingswidget.cpp" line="1849"/>
         <source>Remove addon</source>
         <translation>移除插件</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1843"/>
+        <location filename="../settingswidget.cpp" line="1850"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>移除插件 &quot;%1&quot;？这将删除其文件。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2031"/>
+        <location filename="../settingswidget.cpp" line="2038"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>拼写检查器（未安装词典）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1314"/>
-        <location filename="../settingswidget.cpp" line="1322"/>
-        <location filename="../settingswidget.cpp" line="2082"/>
+        <location filename="../settingswidget.cpp" line="1321"/>
+        <location filename="../settingswidget.cpp" line="1329"/>
+        <location filename="../settingswidget.cpp" line="2089"/>
         <source>None</source>
         <translation>无</translation>
     </message>
@@ -3567,48 +3572,48 @@ Please setup the password in the Settings first.</source>
         <translation>配置文件已导入。请重新启动 Whatly。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1471"/>
+        <location filename="../settingswidget.cpp" line="1478"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>已找到 Ollama（已安装 %1 个模型）。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2086"/>
+        <location filename="../settingswidget.cpp" line="2093"/>
         <source>%1 languages</source>
         <translation>%1 种语言</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2184"/>
+        <location filename="../settingswidget.cpp" line="2191"/>
         <source>WhatsApp default</source>
         <translation>WhatsApp 默认</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2223"/>
+        <location filename="../settingswidget.cpp" line="2230"/>
         <source>System default</source>
         <translation>系统默认</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2258"/>
+        <location filename="../settingswidget.cpp" line="2265"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>重启 %1 后界面语言将会更改。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2272"/>
+        <location filename="../settingswidget.cpp" line="2279"/>
         <source>App Lock Setup</source>
         <translation>应用锁设置</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2273"/>
+        <location filename="../settingswidget.cpp" line="2280"/>
         <source>Please setup the App lock password first.</source>
         <translation>请先设置应用锁密码。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2384"/>
-        <location filename="../settingswidget.cpp" line="2395"/>
+        <location filename="../settingswidget.cpp" line="2391"/>
+        <location filename="../settingswidget.cpp" line="2402"/>
         <source>Select download directory</source>
         <translation>选择下载目录</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2435"/>
+        <location filename="../settingswidget.cpp" line="2442"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3619,7 +3624,7 @@ You may also require a complete restart of Application!</source>
 您可能还需要完全重启应用程序！</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2441"/>
+        <location filename="../settingswidget.cpp" line="2448"/>
         <source>Do you want to proceed?</source>
         <translation>要继续吗？</translation>
     </message>

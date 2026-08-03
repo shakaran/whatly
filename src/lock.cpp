@@ -1,5 +1,6 @@
 #include "lock.h"
 #include "ui_lock.h"
+#include "passlock.h"
 
 #ifdef Q_OS_WIN
 #define WIN32_LEAN_AND_MEAN
@@ -24,11 +25,17 @@ Lock::Lock(QWidget *parent) : QWidget(parent), ui(new Ui::Lock) {
   passcodeLoginAction->setEnabled(false);
   connect(
       passcodeLoginAction, &QAction::triggered, passcodeLoginAction, [this]() {
-        QString password = QByteArray::fromBase64(SettingsManager::instance()
-                                                      .settings()
-                                                      .value("asdfg")
-                                                      .toByteArray());
-        if (ui->passcodeLogin->text() == password && check_password_set()) {
+        const QString stored = SettingsManager::instance()
+                                   .settings()
+                                   .value("asdfg")
+                                   .toString();
+        const QString entered = ui->passcodeLogin->text();
+        if (check_password_set() && PassLock::verify(entered, stored)) {
+          // Transparently upgrade an old (reversible Base64) passcode to a
+          // salted hash on the first successful unlock (issue #42).
+          if (!PassLock::isHashed(stored))
+            SettingsManager::instance().settings().setValue(
+                "asdfg", PassLock::hash(entered));
           isLocked = false;
           this->animateOut();
           emit unLocked();
@@ -197,8 +204,9 @@ void Lock::on_setPass_clicked() {
   pass1 = ui->passcode1->text().trimmed();
   pass2 = ui->passcode2->text().trimmed();
   if (pass1 == pass2) {
-    SettingsManager::instance().settings().setValue(
-        "asdfg", QByteArray(pass1.toUtf8()).toBase64());
+    // Store a salted hash, never the recoverable passcode (issue #42).
+    SettingsManager::instance().settings().setValue("asdfg",
+                                                    PassLock::hash(pass1));
     SettingsManager::instance().settings().setValue("lockscreen", true);
     ui->passcode1->clear();
     ui->passcode2->clear();

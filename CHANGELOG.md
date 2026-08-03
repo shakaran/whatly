@@ -1,5 +1,12 @@
 ## Unreleased
 
+**Security: App Lock passcode is now hashed, not reversible (#42).** The App Lock
+passcode was stored as Base64 of the plaintext (recoverable with `base64 -d` from
+the config file) and was even shown in Settings. It is now stored as a salted
+PBKDF2-SHA256 hash and verified by hashing, so the stored value cannot be turned
+back into the passcode; the Settings view no longer displays it. Existing
+passcodes keep working and are upgraded to the hashed form on the next unlock.
+
 **Heads-up when the build lacks video codecs (#34).** The portable builds
 (AppImage/.deb) use a Qt WebEngine without the proprietary H.264/AAC codecs, so
 WhatsApp cannot process MP4 videos and rejects them as "not supported" (photos
