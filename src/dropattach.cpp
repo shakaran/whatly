@@ -38,10 +38,33 @@ QString scriptSource(const QList<File> &files) {
       for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
       dt.items.add(new File([bytes], f.name, { type: f.type }));
     });
-    var box = document.querySelector("#main footer [contenteditable='true']") ||
-              document.querySelector("[contenteditable='true']");
-    if (box) box.focus();
-    var target = box || document.activeElement || document.body;
+    // The paste only lands on a box that has the focus, exactly as when you click
+    // into a caption before pressing Ctrl+V, so whichever box is chosen has to be
+    // focused here.
+    //
+    // Which box: with no attachment open there is just the chat composer, in the
+    // footer. Opening the media preview adds its caption box OUTSIDE the footer
+    // and does NOT hide the composer, which stays visible and even keeps the
+    // focus — so preferring the composer sent every extra file to the chat that
+    // was not accepting it, and the file vanished. A visible editable box outside
+    // the footer therefore means the preview is open and is the one to paste into.
+    var visible = function (el) { return el && el.offsetParent !== null; };
+    var inFooter = function (el) {
+      return !!(el && el.closest && el.closest("#main footer"));
+    };
+    var boxes = document.querySelectorAll("[contenteditable='true']");
+    var caption = null, composer = null;
+    for (var b = 0; b < boxes.length; b++) {
+      if (!visible(boxes[b]))
+        continue;
+      if (inFooter(boxes[b])) {
+        if (!composer) composer = boxes[b];
+      } else if (!caption) {
+        caption = boxes[b];
+      }
+    }
+    var target = caption || composer || document.activeElement || document.body;
+    if (target.focus) target.focus();
     target.dispatchEvent(new ClipboardEvent("paste", {
       clipboardData: dt, bubbles: true, cancelable: true
     }));

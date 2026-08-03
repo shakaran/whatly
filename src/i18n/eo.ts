@@ -3293,7 +3293,20 @@ Eble vi ankaŭ bezonos kompletan restartigon de la aplikaĵo!</translation>
     </message>
 </context>
 <context>
+    <name>DropProgress</name>
+    <message>
+        <location filename="../dropprogress.cpp" line="47"/>
+        <source>Attaching…</source>
+        <translation>Kunsendante…</translation>
+    </message>
+</context>
+<context>
     <name>WebView</name>
+    <message>
+        <location filename="../webview.cpp" line="261"/>
+        <source>Too large to attach (limit %1 MB): %2</source>
+        <translation>Tro granda por kunsendi (limo %1 MB): %2</translation>
+    </message>
     <message>
         <location filename="../webview.cpp" line="54"/>
         <source>Render process normal exit</source>
