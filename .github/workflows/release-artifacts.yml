@@ -483,7 +483,14 @@ jobs:
       # git must exist before checkout so it can fetch submodules (libnotify-qt).
       - name: Install toolchain and build dependencies
         run: |
-          zypper --non-interactive refresh
+          zypper --non-interactive --gpg-auto-import-keys refresh
+          # The Tumbleweed base image usually lags the current snapshot. That
+          # version skew makes the solver reach for bootstrap '-stage1-devel'
+          # packages (which carry an intentionally unsatisfiable
+          # 'this-is-only-for-build-envs' dep) and fail. A full dup first brings
+          # the container to a single consistent snapshot so the normal -devel
+          # packages resolve cleanly.
+          zypper --non-interactive dup --no-recommends --allow-vendor-change
           zypper --non-interactive install --no-recommends \
             git tar gzip rpm-build cmake ninja gcc-c++ \
             'cmake(Qt6Core)' 'cmake(Qt6Widgets)' 'cmake(Qt6WebEngineWidgets)' \
