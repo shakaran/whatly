@@ -1,5 +1,14 @@
 ## Unreleased
 
+**Native Wayland in the portable builds (#8/#36).** The AppImage and .deb/.rpm
+previously ran through Xwayland (stuttery scroll, blurrier fonts) because the Qt
+used in CI ships no Wayland client platform plugin. The build now compiles that
+plugin from the matching Qt source and bundles it, so the app runs natively on
+Wayland where available. This is a packaging change only; it is best-effort in
+CI (if the plugin cannot be built the AppImage still ships with the previous
+Xwayland fallback rather than failing), so it wants a real artifact build to
+confirm before relying on it.
+
 **AI assistant.** A new Settings → AI assistant section connects Whatly to any
 OpenAI-compatible `/chat/completions` endpoint (OpenAI, OpenRouter, Groq, or a
 local runner like Ollama or LM Studio, which keeps everything on your machine).
