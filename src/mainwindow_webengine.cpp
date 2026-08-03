@@ -1376,11 +1376,11 @@ void MainWindow::runTranslation(const QString &text, bool intoComposer) {
 
 void MainWindow::exportCurrentChat() {
   if (!m_webEngine || !m_webEngine->page()) {
-    notify(tr("Export chat"), tr("No conversation is open."), 5000);
+    showNotification(tr("Export chat"), tr("No conversation is open."));
     return;
   }
   if (m_exportPollTimer && m_exportPollTimer->isActive()) {
-    notify(tr("Export chat"), tr("An export is already running."), 5000);
+    showNotification(tr("Export chat"), tr("An export is already running."));
     return;
   }
 
@@ -1444,10 +1444,9 @@ void MainWindow::exportCurrentChat() {
                   }
                   if (status == QLatin1String("error")) {
                     finish();
-                    notify(tr("Export chat"),
-                           tr("Could not read the conversation: %1")
-                               .arg(st.value("error").toString()),
-                           6000);
+                    showNotification(tr("Export chat"),
+                                     tr("Could not read the conversation: %1")
+                                         .arg(st.value("error").toString()));
                     return;
                   }
                   if (status != QLatin1String("done"))
@@ -1480,8 +1479,8 @@ void MainWindow::writeChatExport(const QString &baseDir) {
             QDateTime::currentDateTime().toString(QStringLiteral("yyyy-MM-dd")));
         QDir dir(baseDir);
         if (!dir.mkpath(folderName)) {
-          notify(tr("Export chat"),
-                 tr("Could not create the export folder."), 6000);
+          showNotification(tr("Export chat"),
+                           tr("Could not create the export folder."));
           return;
         }
         dir.cd(folderName);
@@ -1510,16 +1509,15 @@ void MainWindow::writeChatExport(const QString &baseDir) {
         }
 
         if (!ok) {
-          notify(tr("Export chat"),
-                 tr("The export could not be fully written."), 6000);
+          showNotification(tr("Export chat"),
+                           tr("The export could not be fully written."));
           return;
         }
-        notify(tr("Export chat"),
-               tr("Saved %1 messages and %2 media files to %3")
-                   .arg(msgs.size())
-                   .arg(savedMedia)
-                   .arg(dir.absolutePath()),
-               8000);
+        showNotification(tr("Export chat"),
+                         tr("Saved %1 messages and %2 media files to %3")
+                             .arg(msgs.size())
+                             .arg(savedMedia)
+                             .arg(dir.absolutePath()));
       });
 }
 
@@ -1639,7 +1637,7 @@ void MainWindow::runAssistant(const QString &systemPrompt,
                           // Also a desktop notification: the in-page toast is
                           // easy to miss (or gone) if the window lost focus
                           // during a slow request.
-                          notify(tr("AI assistant"), err, 6000);
+                          showNotification(tr("AI assistant"), err);
                         }));
   m_aiClient->complete(systemPrompt, userPrompt);
 }
