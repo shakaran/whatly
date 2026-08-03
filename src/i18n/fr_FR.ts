@@ -542,119 +542,124 @@ Voulez-vous ignorer le contrôle de sécurité et continuer ?   </translation>
         <translation>En attente du réseau…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1336"/>
+        <location filename="../mainwindow_webengine.cpp" line="1097"/>
+        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
+        <translation>Cette version ne peut pas envoyer de vidéos H.264/MP4 : son moteur de navigateur a été compilé sans les codecs propriétaires. Les photos et les vidéos WebM/VP9 fonctionnent ; pour le MP4, utilisez un paquet de distribution/natif compilé avec les codecs. (Cliquez pour fermer.)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1372"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>La traduction en ligne est désactivée (activez-la dans Paramètres → Traduction).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1340"/>
+        <location filename="../mainwindow_webengine.cpp" line="1376"/>
         <source>The message box is empty.</source>
         <translation>La zone de message est vide.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1341"/>
+        <location filename="../mainwindow_webengine.cpp" line="1377"/>
         <source>Select some text to translate first.</source>
         <translation>Sélectionnez d&apos;abord du texte à traduire.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1379"/>
+        <location filename="../mainwindow_webengine.cpp" line="1415"/>
         <source>No conversation is open.</source>
         <translation>Aucune conversation n&apos;est ouverte.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1383"/>
+        <location filename="../mainwindow_webengine.cpp" line="1419"/>
         <source>An export is already running.</source>
         <translation>Une exportation est déjà en cours.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1388"/>
+        <location filename="../mainwindow_webengine.cpp" line="1424"/>
         <source>Choose a folder for the exported chat</source>
         <translation>Choisissez un dossier pour la conversation exportée</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1394"/>
+        <location filename="../mainwindow_webengine.cpp" line="1430"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>Collecte des messages… parcours de la conversation.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1395"/>
+        <location filename="../mainwindow_webengine.cpp" line="1431"/>
         <source>Cancel</source>
         <translation type="unfinished">Annuler</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1442"/>
+        <location filename="../mainwindow_webengine.cpp" line="1478"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>Collecte des messages… (%1 jusqu&apos;à présent)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1448"/>
+        <location filename="../mainwindow_webengine.cpp" line="1484"/>
         <source>Could not read the conversation: %1</source>
         <translation>Impossible de lire la conversation : %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1472"/>
+        <location filename="../mainwindow_webengine.cpp" line="1507"/>
         <source>chat</source>
         <translation>conversation</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1484"/>
+        <location filename="../mainwindow_webengine.cpp" line="1519"/>
         <source>Could not create the export folder.</source>
         <translation>Impossible de créer le dossier d&apos;exportation.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1514"/>
+        <location filename="../mainwindow_webengine.cpp" line="1549"/>
         <source>The export could not be fully written.</source>
         <translation>L&apos;exportation n&apos;a pas pu être entièrement écrite.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1518"/>
+        <location filename="../mainwindow_webengine.cpp" line="1553"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>%1 messages et %2 fichiers multimédias enregistrés dans %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1599"/>
+        <location filename="../mainwindow_webengine.cpp" line="1633"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>L&apos;assistant IA est désactivé (activez-le dans Paramètres → Assistant IA).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1604"/>
+        <location filename="../mainwindow_webengine.cpp" line="1638"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>L&apos;assistant n&apos;a rien sur quoi travailler.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1616"/>
+        <location filename="../mainwindow_webengine.cpp" line="1650"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>Consultation de l&apos;assistant… (mémoire faible : %1 Mo libres ; un modèle local peut échouer ou ralentir l&apos;application)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1621"/>
+        <location filename="../mainwindow_webengine.cpp" line="1655"/>
         <source>Asking the assistant…</source>
         <translation>Consultation de l&apos;assistant…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1642"/>
+        <location filename="../mainwindow_webengine.cpp" line="1676"/>
         <source>AI assistant</source>
         <translation type="unfinished">Assistant IA</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1701"/>
+        <location filename="../mainwindow_webengine.cpp" line="1735"/>
         <source>Message updated.</source>
         <translation>Message mis à jour.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1667"/>
-        <location filename="../mainwindow_webengine.cpp" line="1681"/>
-        <location filename="../mainwindow_webengine.cpp" line="1704"/>
+        <location filename="../mainwindow_webengine.cpp" line="1701"/>
+        <location filename="../mainwindow_webengine.cpp" line="1715"/>
+        <location filename="../mainwindow_webengine.cpp" line="1738"/>
         <source>AI result</source>
         <translation>Résultat de l&apos;IA</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1717"/>
+        <location filename="../mainwindow_webengine.cpp" line="1751"/>
         <source>Chat summary</source>
         <translation>Résumé de la conversation</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1657"/>
+        <location filename="../mainwindow_webengine.cpp" line="1691"/>
         <source>Close</source>
         <translation type="unfinished">Fermer</translation>
     </message>
@@ -772,23 +777,23 @@ WebEngine n&apos;est pas initialisé.</translation>
         <translation>Réduire la liste des discussions</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1450"/>
+        <location filename="../mainwindow.cpp" line="1455"/>
         <source>Open</source>
         <translation>Ouvrir</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1486"/>
+        <location filename="../mainwindow.cpp" line="1494"/>
         <location filename="../mainwindow_tray.cpp" line="22"/>
         <source>New Chat</source>
         <translation>Nouvelle discussion</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1487"/>
+        <location filename="../mainwindow.cpp" line="1495"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Saisissez un numéro WhatsApp valide avec l&apos;indicatif du pays (ex. +33XXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1517"/>
+        <location filename="../mainwindow.cpp" line="1525"/>
         <source>Rate Application</source>
         <translation>Noter l&apos;application</translation>
     </message>
@@ -954,13 +959,13 @@ Ouvrir les paramètres maintenant ?</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="242"/>
-        <location filename="../mainwindow_webengine.cpp" line="1379"/>
-        <location filename="../mainwindow_webengine.cpp" line="1383"/>
-        <location filename="../mainwindow_webengine.cpp" line="1396"/>
-        <location filename="../mainwindow_webengine.cpp" line="1447"/>
+        <location filename="../mainwindow_webengine.cpp" line="1415"/>
+        <location filename="../mainwindow_webengine.cpp" line="1419"/>
+        <location filename="../mainwindow_webengine.cpp" line="1432"/>
         <location filename="../mainwindow_webengine.cpp" line="1483"/>
-        <location filename="../mainwindow_webengine.cpp" line="1513"/>
-        <location filename="../mainwindow_webengine.cpp" line="1517"/>
+        <location filename="../mainwindow_webengine.cpp" line="1518"/>
+        <location filename="../mainwindow_webengine.cpp" line="1548"/>
+        <location filename="../mainwindow_webengine.cpp" line="1552"/>
         <source>Export chat</source>
         <translation>Exporter la conversation</translation>
     </message>
@@ -1207,12 +1212,12 @@ Vous pouvez extraire n&apos;importe quel compte dans sa propre fenêtre : faites
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../common.cpp" line="32"/>
+        <location filename="../common.cpp" line="46"/>
         <source>WhatsApp Web %1</source>
         <translation>WhatsApp Web %1</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="34"/>
+        <location filename="../common.cpp" line="48"/>
         <source>Build token: %1</source>
         <translation>Jeton de compilation : %1</translation>
     </message>

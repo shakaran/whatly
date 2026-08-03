@@ -542,119 +542,124 @@ Do you wish to override the security check and continue ?   </source>
         <translation>正在等待网络…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1336"/>
+        <location filename="../mainwindow_webengine.cpp" line="1097"/>
+        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
+        <translation>此版本无法发送 H.264/MP4 视频：其浏览器引擎在构建时未包含专有编解码器。照片和 WebM/VP9 视频可用；如需 MP4，请使用带编解码器构建的发行版/原生软件包。（点击关闭。）</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1372"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>内联翻译已关闭（在设置 → 翻译中启用）。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1340"/>
+        <location filename="../mainwindow_webengine.cpp" line="1376"/>
         <source>The message box is empty.</source>
         <translation>消息框为空。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1341"/>
+        <location filename="../mainwindow_webengine.cpp" line="1377"/>
         <source>Select some text to translate first.</source>
         <translation>请先选择要翻译的文本。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1379"/>
+        <location filename="../mainwindow_webengine.cpp" line="1415"/>
         <source>No conversation is open.</source>
         <translation>没有打开的对话。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1383"/>
+        <location filename="../mainwindow_webengine.cpp" line="1419"/>
         <source>An export is already running.</source>
         <translation>已有一个导出正在进行。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1388"/>
+        <location filename="../mainwindow_webengine.cpp" line="1424"/>
         <source>Choose a folder for the exported chat</source>
         <translation>为导出的聊天选择一个文件夹</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1394"/>
+        <location filename="../mainwindow_webengine.cpp" line="1430"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>正在收集消息……滚动浏览对话。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1395"/>
+        <location filename="../mainwindow_webengine.cpp" line="1431"/>
         <source>Cancel</source>
         <translation type="unfinished">取消</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1442"/>
+        <location filename="../mainwindow_webengine.cpp" line="1478"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>正在收集消息……（目前 %1 条）</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1448"/>
+        <location filename="../mainwindow_webengine.cpp" line="1484"/>
         <source>Could not read the conversation: %1</source>
         <translation>无法读取对话：%1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1472"/>
+        <location filename="../mainwindow_webengine.cpp" line="1507"/>
         <source>chat</source>
         <translation>聊天</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1484"/>
+        <location filename="../mainwindow_webengine.cpp" line="1519"/>
         <source>Could not create the export folder.</source>
         <translation>无法创建导出文件夹。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1514"/>
+        <location filename="../mainwindow_webengine.cpp" line="1549"/>
         <source>The export could not be fully written.</source>
         <translation>导出未能完整写入。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1518"/>
+        <location filename="../mainwindow_webengine.cpp" line="1553"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>已将 %1 条消息和 %2 个媒体文件保存到 %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1599"/>
+        <location filename="../mainwindow_webengine.cpp" line="1633"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>AI 助手已关闭（在设置 → AI 助手中启用）。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1604"/>
+        <location filename="../mainwindow_webengine.cpp" line="1638"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>没有可供助手处理的内容。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1616"/>
+        <location filename="../mainwindow_webengine.cpp" line="1650"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>正在询问助手……（内存不足：剩余 %1 MB；本地模型可能失败或拖慢应用）</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1621"/>
+        <location filename="../mainwindow_webengine.cpp" line="1655"/>
         <source>Asking the assistant…</source>
         <translation>正在询问助手……</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1642"/>
+        <location filename="../mainwindow_webengine.cpp" line="1676"/>
         <source>AI assistant</source>
         <translation type="unfinished">AI 助手</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1701"/>
+        <location filename="../mainwindow_webengine.cpp" line="1735"/>
         <source>Message updated.</source>
         <translation>消息已更新。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1667"/>
-        <location filename="../mainwindow_webengine.cpp" line="1681"/>
-        <location filename="../mainwindow_webengine.cpp" line="1704"/>
+        <location filename="../mainwindow_webengine.cpp" line="1701"/>
+        <location filename="../mainwindow_webengine.cpp" line="1715"/>
+        <location filename="../mainwindow_webengine.cpp" line="1738"/>
         <source>AI result</source>
         <translation>AI 结果</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1717"/>
+        <location filename="../mainwindow_webengine.cpp" line="1751"/>
         <source>Chat summary</source>
         <translation>聊天摘要</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1657"/>
+        <location filename="../mainwindow_webengine.cpp" line="1691"/>
         <source>Close</source>
         <translation type="unfinished">关闭</translation>
     </message>
@@ -772,23 +777,23 @@ WebEngine 未初始化。</translation>
         <translation>折叠聊天列表</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1450"/>
+        <location filename="../mainwindow.cpp" line="1455"/>
         <source>Open</source>
         <translation>打开</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1486"/>
+        <location filename="../mainwindow.cpp" line="1494"/>
         <location filename="../mainwindow_tray.cpp" line="22"/>
         <source>New Chat</source>
         <translation>新建聊天</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1487"/>
+        <location filename="../mainwindow.cpp" line="1495"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>请输入带国家代码的有效 WhatsApp 号码（例如 +86XXXXXXXXXXX）</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1517"/>
+        <location filename="../mainwindow.cpp" line="1525"/>
         <source>Rate Application</source>
         <translation>为应用评分</translation>
     </message>
@@ -954,13 +959,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="242"/>
-        <location filename="../mainwindow_webengine.cpp" line="1379"/>
-        <location filename="../mainwindow_webengine.cpp" line="1383"/>
-        <location filename="../mainwindow_webengine.cpp" line="1396"/>
-        <location filename="../mainwindow_webengine.cpp" line="1447"/>
+        <location filename="../mainwindow_webengine.cpp" line="1415"/>
+        <location filename="../mainwindow_webengine.cpp" line="1419"/>
+        <location filename="../mainwindow_webengine.cpp" line="1432"/>
         <location filename="../mainwindow_webengine.cpp" line="1483"/>
-        <location filename="../mainwindow_webengine.cpp" line="1513"/>
-        <location filename="../mainwindow_webengine.cpp" line="1517"/>
+        <location filename="../mainwindow_webengine.cpp" line="1518"/>
+        <location filename="../mainwindow_webengine.cpp" line="1548"/>
+        <location filename="../mainwindow_webengine.cpp" line="1552"/>
         <source>Export chat</source>
         <translation>导出聊天</translation>
     </message>
@@ -1207,12 +1212,12 @@ You can pull any account out into its own window: right-click its tab and choose
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../common.cpp" line="32"/>
+        <location filename="../common.cpp" line="46"/>
         <source>WhatsApp Web %1</source>
         <translation>WhatsApp Web %1</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="34"/>
+        <location filename="../common.cpp" line="48"/>
         <source>Build token: %1</source>
         <translation>构建令牌：%1</translation>
     </message>

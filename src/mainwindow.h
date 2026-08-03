@@ -339,6 +339,10 @@ private:
   void tryLock();
   void ensureLockVisible();
   void checkLoadedCorrectly();
+  // One-time notice when the engine lacks H.264/MP4 codecs (issue #34), so a
+  // failed video attach is explained. Probed once per session via canPlayType.
+  void checkMediaCodecs();
+  bool m_codecCheckDone = false;
   void loadingQuirk(const QString &test);
   // Send a local file as an attachment to `number` through WhatsApp Web (used
   // by commandSend for `--send --file`). Best-effort page automation.

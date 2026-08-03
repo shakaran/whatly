@@ -1,5 +1,13 @@
 ## Unreleased
 
+**Heads-up when the build lacks video codecs (#34).** The portable builds
+(AppImage/.deb) use a Qt WebEngine without the proprietary H.264/AAC codecs, so
+WhatsApp cannot process MP4 videos and rejects them as "not supported" (photos
+and WebM/VP9 videos are fine). Whatly now detects this at runtime and shows a
+one-time notice explaining it and the workaround, instead of leaving the failure
+unexplained. Distro/native packages built with the codecs (system Qt) are
+unaffected.
+
 **Fixed: notifications showed a broken/unknown app logo on KDE (#38).** Desktop
 notifications asked the notification daemon for an icon named "whatly", which is
 not the installed icon name (net.shakaran.whatly), so KDE (and Flatpak in

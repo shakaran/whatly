@@ -1063,7 +1063,43 @@ void MainWindow::handleLoadFinished(bool loaded) {
       captureAccountVersion(loadedView);
     else if (auto *active = qobject_cast<WebView *>(m_webEngine))
       captureAccountVersion(active);
+    // Warn once if this build's Qt WebEngine cannot handle H.264/MP4 (the
+    // official/aqt Qt used by the portable builds ships no proprietary codecs),
+    // so a failed video attach is explained rather than mysterious (issue #34).
+    checkMediaCodecs();
   }
+}
+
+void MainWindow::checkMediaCodecs() {
+  if (m_codecCheckDone || !m_webEngine || !m_webEngine->page())
+    return;
+  m_codecCheckDone = true; // run the probe at most once per session
+  if (SettingsManager::instance()
+          .settings()
+          .value("mediaCodecNoticeShown", false)
+          .toBool())
+    return; // already told the user once
+
+  // Ask the engine whether it can play H.264 (what WhatsApp needs for MP4).
+  m_webEngine->page()->runJavaScript(
+      QStringLiteral(
+          "(function(){try{var v=document.createElement('video');"
+          "return v.canPlayType('video/mp4; codecs=\"avc1.42E01E\"')||'';}"
+          "catch(e){return 'err';}})();"),
+      [this](const QVariant &v) {
+        const QString r = v.toString();
+        if (r != QLatin1String("")) // supported (or probe failed): no notice
+          return;
+        SettingsManager::instance().settings().setValue("mediaCodecNoticeShown",
+                                                        true);
+        if (m_webEngine && m_webEngine->page())
+          m_webEngine->page()->runJavaScript(Translate::toastScript(
+              tr("This build cannot send H.264/MP4 videos: its browser engine "
+                 "was built without the proprietary codecs. Photos and WebM/VP9 "
+                 "videos work; for MP4, use a distro/native package built with "
+                 "the codecs. (Click to dismiss.)"),
+              /*persistent=*/true));
+      });
 }
 
 void MainWindow::checkLoadedCorrectly() {
