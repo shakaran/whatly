@@ -1578,6 +1578,15 @@ bool MainWindow::ensureInlineReply() {
               const QString body = text.trimmed();
               if (body.isEmpty())
                 return;
+              // App Lock gate (issue #41): a locked app must not send an
+              // inline-reply from the notification. (This path calls
+              // sendByNameViaWeb directly, not commandSend.)
+              if (m_lockWidget && m_lockWidget->getIsLocked()) {
+                showNotification(QApplication::applicationDisplayName(),
+                                 tr("Whatly is locked. Unlock it to send "
+                                    "messages."));
+                return;
+              }
               Messaging::Recipient r;
               r.kind = Messaging::RecipientKind::ContactName;
               r.value = chat;

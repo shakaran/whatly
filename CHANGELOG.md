@@ -1,5 +1,12 @@
 ## Unreleased
 
+**Security: App Lock now blocks sending while locked (#41).** Sending a message
+did not check the lock, so while Whatly was locked a message could still be sent
+via Quick Compose (Ctrl+Alt+N), an inline notification reply, the CLI `--send` or
+the local HTTP API. All of these now refuse while locked and tell you to unlock
+first; Quick Compose no longer even opens. Scheduled messages have their own
+delivery path and still fire while locked, as intended.
+
 **Security: App Lock passcode is now hashed, not reversible (#42).** The App Lock
 passcode was stored as Base64 of the plaintext (recoverable with `base64 -d` from
 the config file) and was even shown in Settings. It is now stored as a salted

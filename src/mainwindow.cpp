@@ -1073,6 +1073,16 @@ void MainWindow::showScheduledMessages() {
 void MainWindow::commandSend(const Messaging::SendCommand &cmd) {
   using namespace Messaging;
 
+  // App Lock gate (issue #41): while the app is locked, refuse to send. This is
+  // the single choke point for the interactive Quick Compose box, the CLI
+  // `--send` and the local HTTP API. Scheduled messages have their own delivery
+  // path (not this one), so they still fire while locked, as intended.
+  if (m_lockWidget && m_lockWidget->getIsLocked()) {
+    showNotification(QApplication::applicationDisplayName(),
+                     tr("Whatly is locked. Unlock it to send messages."));
+    return;
+  }
+
   if (cmd.backend == Backend::Cloud) {
     // The Cloud API needs no page. The CLI sends cloud headlessly before this
     // IPC handler is reached, but the local HTTP API routes cloud sends here, so
@@ -1472,6 +1482,13 @@ Notification::EventPtr MainWindow::notify(const QString& title, const QString& b
 #endif
 
 void MainWindow::showQuickCompose() {
+  // Don't even open the quick-compose box while locked (issue #41): the send
+  // would be refused anyway, and the box should not appear over the lock screen.
+  if (m_lockWidget && m_lockWidget->getIsLocked()) {
+    showNotification(QApplication::applicationDisplayName(),
+                     tr("Whatly is locked. Unlock it to send messages."));
+    return;
+  }
   if (!m_quickCompose) {
     m_quickCompose = new QuickCompose(nullptr);
     connect(m_quickCompose, &QuickCompose::submitted, this,

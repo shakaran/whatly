@@ -523,8 +523,8 @@ Do you wish to override the security check and continue ?   </source>
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.cpp" line="106"/>
-        <location filename="../mainwindow.cpp" line="1130"/>
-        <location filename="../mainwindow.cpp" line="1226"/>
+        <location filename="../mainwindow.cpp" line="1140"/>
+        <location filename="../mainwindow.cpp" line="1236"/>
         <source>No WhatsApp window is open</source>
         <translation>هیچ پنجره WhatsApp باز نیست</translation>
     </message>
@@ -579,91 +579,98 @@ WebEngine مقداردهی اولیه نشده است.</translation>
         <translation>برای ادامه باید صفحه دوباره بارگذاری شود.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1083"/>
+        <location filename="../mainwindow.cpp" line="1082"/>
+        <location filename="../mainwindow.cpp" line="1489"/>
+        <location filename="../mainwindow_webengine.cpp" line="1586"/>
+        <source>Whatly is locked. Unlock it to send messages.</source>
+        <translation>Whatly قفل است. برای ارسال پیام آن را باز کنید.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1093"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>Cloud API به یک شماره تلفن به‌عنوان گیرنده نیاز دارد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1088"/>
+        <location filename="../mainwindow.cpp" line="1098"/>
         <source>The Cloud API is not configured.</source>
         <translation>Cloud API پیکربندی نشده است.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1097"/>
+        <location filename="../mainwindow.cpp" line="1107"/>
         <source>Cloud API send failed: %1</source>
         <translation>ارسال Cloud API ناموفق بود: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1122"/>
+        <location filename="../mainwindow.cpp" line="1132"/>
         <source>Could not understand the recipient: %1</source>
         <translation>گیرنده قابل تشخیص نبود: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1151"/>
-        <location filename="../mainwindow.cpp" line="1232"/>
+        <location filename="../mainwindow.cpp" line="1161"/>
+        <location filename="../mainwindow.cpp" line="1242"/>
         <source>Could not read the file to send: %1</source>
         <translation>فایل برای ارسال قابل خواندن نبود: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1160"/>
-        <location filename="../mainwindow.cpp" line="1242"/>
+        <location filename="../mainwindow.cpp" line="1170"/>
+        <location filename="../mainwindow.cpp" line="1252"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>فایل برای ارسال از طریق بک‌اند وب بیش از حد بزرگ است.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1185"/>
+        <location filename="../mainwindow.cpp" line="1195"/>
         <source>Opening the group and sending…</source>
         <translation>در حال باز کردن گروه و ارسال…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1186"/>
+        <location filename="../mainwindow.cpp" line="1196"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>در حال باز کردن گفتگو با «%1» و ارسال…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1217"/>
+        <location filename="../mainwindow.cpp" line="1227"/>
         <source>The local API could not start: %1</source>
         <translation>API محلی راه‌اندازی نشد: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1306"/>
+        <location filename="../mainwindow.cpp" line="1316"/>
         <source>Restart</source>
         <translation>راه‌اندازی مجدد</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1307"/>
+        <location filename="../mainwindow.cpp" line="1317"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly نتوانست نمونه جدیدی را راه‌اندازی کند، بنابراین این نمونه بسته نشد. لطفاً آن را ببندید و دوباره باز کنید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1352"/>
+        <location filename="../mainwindow.cpp" line="1362"/>
         <source>Expand the chat list</source>
         <translation>گسترش فهرست گفتگوها</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1353"/>
+        <location filename="../mainwindow.cpp" line="1363"/>
         <location filename="../mainwindow_tray.cpp" line="237"/>
         <source>Collapse the chat list</source>
         <translation>جمع کردن فهرست گفتگوها</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1455"/>
+        <location filename="../mainwindow.cpp" line="1465"/>
         <source>Open</source>
         <translation>باز کردن</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1494"/>
+        <location filename="../mainwindow.cpp" line="1511"/>
         <location filename="../mainwindow_tray.cpp" line="22"/>
         <source>New Chat</source>
         <translation>گفتگوی جدید</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1495"/>
+        <location filename="../mainwindow.cpp" line="1512"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>یک شماره WhatsApp معتبر همراه با کد کشور وارد کنید (مثلاً +91XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1525"/>
+        <location filename="../mainwindow.cpp" line="1542"/>
         <source>Rate Application</source>
         <translation>امتیاز دادن به برنامه</translation>
     </message>
@@ -1067,49 +1074,49 @@ Open Settings now?</source>
         <translation>%1 پیام و %2 فایل رسانه‌ای در %3 ذخیره شد</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1633"/>
+        <location filename="../mainwindow_webengine.cpp" line="1642"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>دستیار هوش مصنوعی خاموش است (آن را در تنظیمات ← دستیار هوش مصنوعی فعال کنید).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1638"/>
+        <location filename="../mainwindow_webengine.cpp" line="1647"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>چیزی برای پردازش دستیار وجود ندارد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1650"/>
+        <location filename="../mainwindow_webengine.cpp" line="1659"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>در حال پرسش از دستیار… (حافظه کم: %1 مگابایت آزاد؛ مدل محلی ممکن است ناموفق باشد یا برنامه را کند کند)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1655"/>
+        <location filename="../mainwindow_webengine.cpp" line="1664"/>
         <source>Asking the assistant…</source>
         <translation>در حال پرسش از دستیار…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1676"/>
+        <location filename="../mainwindow_webengine.cpp" line="1685"/>
         <source>AI assistant</source>
         <translation>دستیار هوش مصنوعی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1691"/>
+        <location filename="../mainwindow_webengine.cpp" line="1700"/>
         <source>Close</source>
         <translation>بستن</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1701"/>
-        <location filename="../mainwindow_webengine.cpp" line="1715"/>
-        <location filename="../mainwindow_webengine.cpp" line="1738"/>
+        <location filename="../mainwindow_webengine.cpp" line="1710"/>
+        <location filename="../mainwindow_webengine.cpp" line="1724"/>
+        <location filename="../mainwindow_webengine.cpp" line="1747"/>
         <source>AI result</source>
         <translation>نتیجه هوش مصنوعی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1735"/>
+        <location filename="../mainwindow_webengine.cpp" line="1744"/>
         <source>Message updated.</source>
         <translation>پیام به‌روزرسانی شد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1751"/>
+        <location filename="../mainwindow_webengine.cpp" line="1760"/>
         <source>Chat summary</source>
         <translation>خلاصه گفتگو</translation>
     </message>

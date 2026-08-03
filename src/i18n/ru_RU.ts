@@ -617,91 +617,91 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Сохранено %1 сообщений и %2 медиафайлов в %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1633"/>
+        <location filename="../mainwindow_webengine.cpp" line="1642"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>ИИ-ассистент выключен (включите его в Настройки → ИИ-ассистент).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1638"/>
+        <location filename="../mainwindow_webengine.cpp" line="1647"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>Ассистенту не над чем работать.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1650"/>
+        <location filename="../mainwindow_webengine.cpp" line="1659"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>Запрос к ассистенту… (мало памяти: свободно %1 МБ; локальная модель может дать сбой или замедлить приложение)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1655"/>
+        <location filename="../mainwindow_webengine.cpp" line="1664"/>
         <source>Asking the assistant…</source>
         <translation>Запрос к ассистенту…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1676"/>
+        <location filename="../mainwindow_webengine.cpp" line="1685"/>
         <source>AI assistant</source>
         <translation type="unfinished">ИИ-ассистент</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1735"/>
+        <location filename="../mainwindow_webengine.cpp" line="1744"/>
         <source>Message updated.</source>
         <translation>Сообщение обновлено.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1701"/>
-        <location filename="../mainwindow_webengine.cpp" line="1715"/>
-        <location filename="../mainwindow_webengine.cpp" line="1738"/>
+        <location filename="../mainwindow_webengine.cpp" line="1710"/>
+        <location filename="../mainwindow_webengine.cpp" line="1724"/>
+        <location filename="../mainwindow_webengine.cpp" line="1747"/>
         <source>AI result</source>
         <translation>Результат ИИ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1751"/>
+        <location filename="../mainwindow_webengine.cpp" line="1760"/>
         <source>Chat summary</source>
         <translation>Сводка чата</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1691"/>
+        <location filename="../mainwindow_webengine.cpp" line="1700"/>
         <source>Close</source>
         <translation type="unfinished">Закрыть</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="106"/>
-        <location filename="../mainwindow.cpp" line="1130"/>
-        <location filename="../mainwindow.cpp" line="1226"/>
+        <location filename="../mainwindow.cpp" line="1140"/>
+        <location filename="../mainwindow.cpp" line="1236"/>
         <source>No WhatsApp window is open</source>
         <translation>Нет открытого окна WhatsApp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1122"/>
+        <location filename="../mainwindow.cpp" line="1132"/>
         <source>Could not understand the recipient: %1</source>
         <translation>Не удалось распознать получателя: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1185"/>
+        <location filename="../mainwindow.cpp" line="1195"/>
         <source>Opening the group and sending…</source>
         <translation>Открытие группы и отправка…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1217"/>
+        <location filename="../mainwindow.cpp" line="1227"/>
         <source>The local API could not start: %1</source>
         <translation>Не удалось запустить локальный API: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1097"/>
+        <location filename="../mainwindow.cpp" line="1107"/>
         <source>Cloud API send failed: %1</source>
         <translation>Не удалось отправить через Cloud API: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1088"/>
+        <location filename="../mainwindow.cpp" line="1098"/>
         <source>The Cloud API is not configured.</source>
         <translation>Cloud API не настроен.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1083"/>
+        <location filename="../mainwindow.cpp" line="1093"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>Для Cloud API нужен номер телефона в качестве получателя.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1186"/>
+        <location filename="../mainwindow.cpp" line="1196"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>Открытие чата с &quot;%1&quot; и отправка…</translation>
     </message>
@@ -756,44 +756,51 @@ WebEngine не инициализирован.</translation>
         <translation>Чтобы продолжить, страницу нужно перезагрузить.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1306"/>
+        <location filename="../mainwindow.cpp" line="1082"/>
+        <location filename="../mainwindow.cpp" line="1489"/>
+        <location filename="../mainwindow_webengine.cpp" line="1586"/>
+        <source>Whatly is locked. Unlock it to send messages.</source>
+        <translation>Whatly заблокирован. Разблокируйте его, чтобы отправлять сообщения.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1316"/>
         <source>Restart</source>
         <translation>Перезапустить</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1307"/>
+        <location filename="../mainwindow.cpp" line="1317"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly не удалось запустить новый экземпляр, поэтому текущий не был закрыт. Закройте приложение и откройте его снова.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1352"/>
+        <location filename="../mainwindow.cpp" line="1362"/>
         <source>Expand the chat list</source>
         <translation>Развернуть список чатов</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1353"/>
+        <location filename="../mainwindow.cpp" line="1363"/>
         <location filename="../mainwindow_tray.cpp" line="237"/>
         <source>Collapse the chat list</source>
         <translation>Свернуть список чатов</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1455"/>
+        <location filename="../mainwindow.cpp" line="1465"/>
         <source>Open</source>
         <translation>Открыть</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1494"/>
+        <location filename="../mainwindow.cpp" line="1511"/>
         <location filename="../mainwindow_tray.cpp" line="22"/>
         <source>New Chat</source>
         <translation>Новый чат</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1495"/>
+        <location filename="../mainwindow.cpp" line="1512"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Введите корректный номер WhatsApp с кодом страны (напр. +7XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1525"/>
+        <location filename="../mainwindow.cpp" line="1542"/>
         <source>Rate Application</source>
         <translation>Оценить приложение</translation>
     </message>
@@ -1102,14 +1109,14 @@ You can pull any account out into its own window: right-click its tab and choose
         <translation>Разблокируйте, чтобы перезагрузить приложение.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1151"/>
-        <location filename="../mainwindow.cpp" line="1232"/>
+        <location filename="../mainwindow.cpp" line="1161"/>
+        <location filename="../mainwindow.cpp" line="1242"/>
         <source>Could not read the file to send: %1</source>
         <translation>Не удалось прочитать файл для отправки: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1160"/>
-        <location filename="../mainwindow.cpp" line="1242"/>
+        <location filename="../mainwindow.cpp" line="1170"/>
+        <location filename="../mainwindow.cpp" line="1252"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>Файл слишком большой для отправки через веб-бэкенд.</translation>
     </message>
