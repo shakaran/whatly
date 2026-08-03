@@ -73,7 +73,7 @@ extern bool   defaultAppAutoLock;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
 #ifdef Q_OS_LINUX
-      m_notifier("Whatly", this),
+      m_notifier(kAppDisplayName, this),
 #endif
       m_trayIconNormal(themeIcon("whatly-tray", ":/icons/app/notification/whatly-notify.png")),
       m_notificationsTitleRegExp("^\\([1-9]\\d*\\).*"),

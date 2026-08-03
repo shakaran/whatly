@@ -1,4 +1,5 @@
 #include "performance.h"
+#include "common.h"
 
 #include <QSettings>
 #include <QStringList>
@@ -35,10 +36,9 @@ QSettings &settings() {
   // them. That also means setting an application name cannot redirect it — so
   // without the escape hatch below, running the test suite rewrites the
   // developer's own settings (see tests/CMakeLists.txt).
-  static QSettings s(QSettings::NativeFormat, QSettings::UserScope,
-                     QStringLiteral("shakaran"),
+  static QSettings s(QSettings::NativeFormat, QSettings::UserScope, kOrgName,
                      qEnvironmentVariableIsEmpty("WHATLY_SETTINGS_APP")
-                         ? QStringLiteral("whatly")
+                         ? kAppName
                          : qEnvironmentVariable("WHATLY_SETTINGS_APP"));
   return s;
 }

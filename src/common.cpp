@@ -19,6 +19,15 @@ const QString whatsAppOrigin = QStringLiteral("https://web.whatsapp.com");
 // entries all key off it, so it lives in one place.
 const QString kAppId = QStringLiteral("net.shakaran.whatly");
 
+// The core identity strings, in one place because they are reused across the
+// QSettings stores (including the machine-wide ones read before QApplication
+// exists), the desktop integration and the About box. These are plain globals so
+// they are usable before main(), like the literals they replace.
+const QString kAppName = QStringLiteral("whatly");        // QSettings/app name
+const QString kAppDisplayName = QStringLiteral("Whatly"); // shown to the user
+const QString kOrgName = QStringLiteral("shakaran");
+const QString kOrgDomain = QStringLiteral("net.shakaran");
+
 int defaultAppAutoLockDuration = 30;
 bool defaultAppAutoLock = false;
 double defaultZoomFactorMaximized = 1.00;

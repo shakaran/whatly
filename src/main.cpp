@@ -460,11 +460,11 @@ int main(int argc, char *argv[]) {
   // location (~/.local/share/shakaran/whatly, ~/.config/shakaran/whatly.conf)
   // and of the settings file. The human-facing name, shown in window titles and
   // the About box, is set separately so those read "Whatly", not "whatly".
-  QApplication::setApplicationName("whatly");
-  QApplication::setApplicationDisplayName("Whatly");
+  QApplication::setApplicationName(kAppName);
+  QApplication::setApplicationDisplayName(kAppDisplayName);
   QApplication::setDesktopFileName(kAppId);
-  QApplication::setOrganizationDomain("net.shakaran");
-  QApplication::setOrganizationName("shakaran");
+  QApplication::setOrganizationDomain(kOrgDomain);
+  QApplication::setOrganizationName(kOrgName);
   QApplication::setApplicationVersion(VERSIONSTR);
 
   // Now that the app/org names (and thus the data path) are set, persist

@@ -15,6 +15,14 @@ extern const QString whatsAppOrigin;
 // Notification icons and the desktop-file name key off it.
 extern const QString kAppId;
 
+// Core identity strings, shared so the QSettings stores, desktop integration and
+// About box agree. Usable before main() (the machine-wide settings read them
+// early), like the literals they replace.
+extern const QString kAppName;        // QSettings application name ("whatly")
+extern const QString kAppDisplayName; // user-facing name ("Whatly")
+extern const QString kOrgName;        // organization name ("shakaran")
+extern const QString kOrgDomain;      // organization domain ("net.shakaran")
+
 // appAutoLock
 extern int defaultAppAutoLockDuration;
 extern bool defaultAppAutoLock;
