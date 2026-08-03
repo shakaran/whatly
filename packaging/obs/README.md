@@ -31,7 +31,7 @@ cp /path/to/whatly/packaging/obs/_service .
 # Fetch the source tarball (with submodules) via the service, then commit:
 osc service manualrun
 osc addremove
-osc commit -m "whatly 6.8.4"
+osc commit -m "whatly 7.0.0"
 ```
 
 OBS then builds the rpm for the repositories you enable on the package

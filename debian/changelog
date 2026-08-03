@@ -1,3 +1,21 @@
+whatly (7.0.0) unstable; urgency=medium
+
+  * Major feature release: built-in AI assistant (any OpenAI-compatible
+    endpoint, with a one-click local-Ollama helper), inline translation, chat
+    and media export, undo-send, reply from notifications, a quick-compose
+    overlay, VIP/muted notification contacts, a recent-unread tray submenu, and
+    suspend-inactive-accounts to save memory.
+  * Native Wayland in the portable builds (#8/#36); a progress bar for dropped
+    attachments; Flatpak drag-and-drop from the Pictures/Videos/Documents/Music
+    folders (#32); the correct app logo on KDE notifications (#38); a runtime
+    notice when the build lacks proprietary video codecs (#34).
+  * Security: App Lock now blocks sending while locked (#41) and stores the
+    passcode as a salted PBKDF2-SHA256 hash instead of reversible Base64 (#42).
+  * Four more interface languages (fa, uk, vi, zh_TW), for 20 total; new
+    openSUSE and Gentoo packages. See CHANGELOG.md.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Mon, 03 Aug 2026 20:00:00 +0200
+
 whatly (6.8.4) unstable; urgency=medium
 
   * New "Font hinting" option under Settings → Performance

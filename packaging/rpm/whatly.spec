@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        6.8.4
+Version:        7.0.0
 Release:        1%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
@@ -53,6 +53,20 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Mon Aug 03 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.0.0-1
+- Major feature release: built-in AI assistant (any OpenAI-compatible endpoint,
+  with a one-click local-Ollama helper), inline translation, chat/media export,
+  undo-send, reply from notifications, a quick-compose overlay, VIP/muted
+  notification contacts, a recent-unread tray submenu, suspend-inactive-accounts.
+- Native Wayland in the portable builds (#8/#36); progress bar for dropped
+  attachments; Flatpak drag-and-drop from Pictures/Videos/Documents/Music (#32);
+  correct app logo on KDE notifications (#38); runtime notice when the build
+  lacks proprietary codecs (#34).
+- Security: App Lock blocks sending while locked (#41); passcode stored as a
+  salted PBKDF2-SHA256 hash, not reversible Base64 (#42).
+- Four more languages (fa, uk, vi, zh_TW), 20 total; openSUSE and Gentoo
+  packages. See CHANGELOG.md.
+
 * Fri Jul 31 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 6.8.4-1
 - New "Font hinting" option under Settings > Performance
   (Automatic/None/Slight/Medium/Full), mapped to Chromium's

@@ -1,4 +1,11 @@
-## Unreleased
+## 7.0.0 (2026-08-03)
+
+Whatly 7.0.0 is a major feature release. Highlights: a built-in AI assistant
+(any OpenAI-compatible endpoint, with a one-click local-Ollama helper), inline
+translation, chat and media export, undo-send, reply straight from
+notifications, a quick-compose overlay, native Wayland in the portable builds,
+and new openSUSE and Gentoo packages, plus two App Lock security fixes. The full
+list follows.
 
 **New packaging: openSUSE and Gentoo.** openSUSE Tumbleweed gets a native `.rpm`
 (built against the distro's Qt 6.10, no bundling) attached to every release, plus

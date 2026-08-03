@@ -108,6 +108,20 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.0.0" date="2026-08-03">
+      <description>
+        <p>A major feature release:</p>
+        <ul>
+          <li>Built-in AI assistant using any OpenAI-compatible endpoint, with a one-click helper to set up a private local model via Ollama</li>
+          <li>Inline translation, chat and media export, and undo-send</li>
+          <li>Reply straight from notifications, and a quick-compose overlay to send without opening the window</li>
+          <li>Native Wayland in the portable builds, and a progress bar for dropped attachments</li>
+          <li>Flatpak drag-and-drop now works from the Pictures, Videos, Documents and Music folders</li>
+          <li>Security: App Lock blocks sending while locked and stores the passcode as a salted hash instead of reversible Base64</li>
+          <li>Four more interface languages (Persian, Ukrainian, Vietnamese, Traditional Chinese), for 20 in total, plus new openSUSE and Gentoo packages</li>
+        </ul>
+      </description>
+    </release>
     <release version="6.8.4" date="2026-07-31">
       <description>
         <p>A maintenance release:</p>

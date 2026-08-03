@@ -1,3 +1,162 @@
+## 7.0.0 (2026-08-03)
+
+Whatly 7.0.0 is a major feature release. Highlights: a built-in AI assistant
+(any OpenAI-compatible endpoint, with a one-click local-Ollama helper), inline
+translation, chat and media export, undo-send, reply straight from
+notifications, a quick-compose overlay, native Wayland in the portable builds,
+and new openSUSE and Gentoo packages, plus two App Lock security fixes. The full
+list follows.
+
+**New packaging: openSUSE and Gentoo.** openSUSE Tumbleweed gets a native `.rpm`
+(built against the distro's Qt 6.10, no bundling) attached to every release, plus
+an Open Build Service recipe (`packaging/obs/`) to publish it from your own OBS
+project. Gentoo gets an overlay with the `net-im/whatly` ebuild
+(`packaging/gentoo/`), versioned and `-9999` live, which can enable the
+proprietary video codecs via `dev-qt/qtwebengine[proprietary-codecs]`.
+
+**Security: App Lock now blocks sending while locked (#41).** Sending a message
+did not check the lock, so while Whatly was locked a message could still be sent
+via Quick Compose (Ctrl+Alt+N), an inline notification reply, the CLI `--send` or
+the local HTTP API. All of these now refuse while locked and tell you to unlock
+first; Quick Compose no longer even opens. Scheduled messages have their own
+delivery path and still fire while locked, as intended.
+
+**Security: App Lock passcode is now hashed, not reversible (#42).** The App Lock
+passcode was stored as Base64 of the plaintext (recoverable with `base64 -d` from
+the config file) and was even shown in Settings. It is now stored as a salted
+PBKDF2-SHA256 hash and verified by hashing, so the stored value cannot be turned
+back into the passcode; the Settings view no longer displays it. Existing
+passcodes keep working and are upgraded to the hashed form on the next unlock.
+
+**Heads-up when the build lacks video codecs (#34).** The portable builds
+(AppImage/.deb) use a Qt WebEngine without the proprietary H.264/AAC codecs, so
+WhatsApp cannot process MP4 videos and rejects them as "not supported" (photos
+and WebM/VP9 videos are fine). Whatly now detects this at runtime and shows a
+one-time notice explaining it and the workaround, instead of leaving the failure
+unexplained. Distro/native packages built with the codecs (system Qt) are
+unaffected.
+
+**Fixed: notifications showed a broken/unknown app logo on KDE (#38).** Desktop
+notifications asked the notification daemon for an icon named "whatly", which is
+not the installed icon name (net.shakaran.whatly), so KDE (and Flatpak in
+particular, where only that icon exists) drew a generic "unknown app" logo. They
+now use the correct icon name and set the desktop-entry hint, so the Whatly logo
+appears and the notification is attributed to the app.
+
+**Four more interface languages.** Persian/Farsi (fa), Ukrainian (uk),
+Vietnamese (vi) and Traditional Chinese (zh_TW) join the interface translations,
+bringing the total to 20. Pick one in Settings → Interface, or leave it on the
+system default.
+
+**Quick-compose overlay (#4).** A small always-on-top box, summoned by a global
+hotkey (Ctrl+Alt+N) or from the command palette ("Quick message…"), lets you send
+a message without opening the window: type a contact name or phone number, type
+the message, press Enter. It sends through the running session (so the window can
+stay hidden) and closes itself on send, Escape, or losing focus. The global
+hotkey is registered via the same desktop-portal/X11 path as Ctrl+Alt+W; where
+the portal cannot bind it, the command palette entry still works.
+
+**Native Wayland in the portable builds (#8/#36).** The AppImage and .deb/.rpm
+previously ran through Xwayland (stuttery scroll, blurrier fonts) because the Qt
+used in CI ships no Wayland client platform plugin. The build now compiles that
+plugin from the matching Qt source and bundles it, so the app runs natively on
+Wayland where available. This is a packaging change only; it is best-effort in
+CI (if the plugin cannot be built the AppImage still ships with the previous
+Xwayland fallback rather than failing), so it wants a real artifact build to
+confirm before relying on it.
+
+**AI assistant.** A new Settings → AI assistant section connects Whatly to any
+OpenAI-compatible `/chat/completions` endpoint (OpenAI, OpenRouter, Groq, or a
+local runner like Ollama or LM Studio, which keeps everything on your machine).
+Three actions: "AI: Summarise chat" shows a summary of the open conversation,
+"AI: Improve message" rewrites your draft in the message box, and "AI: Suggest a
+reply" proposes a response and puts it in the box to review before sending. The
+chat text is sent to the endpoint you choose, so pick one you trust; the request
+is made by the app, so the endpoint and optional API key never reach WhatsApp
+Web. Off by default. A persistent toast shows while the model works, and a
+warning is shown when free memory is low (a local model can need several GB).
+
+**Right-click menu for text actions.** The AI, translation and export actions are
+now on the message view's right-click menu (composer actions in the message box,
+selection actions when text is selected), so they no longer need the command
+palette or a shortcut. They remain in the command palette and Shortcuts too.
+
+**Local AI made easy (Ollama helper).** Settings → AI assistant can now detect a
+local Ollama, list its installed models to pick from a dropdown (no typing), and
+download a recommended light model (qwen2.5:3b, llama3.2, gemma2:2b, phi3) with a
+button and a progress bar. This makes a private, on-device assistant approachable
+without touching a terminal. A light model is recommended: large models can
+exhaust memory and slow the app.
+
+**Reply from notifications.** On desktops whose notification service supports it
+(KDE Plasma, and others that advertise the freedesktop `inline-reply`
+capability), message notifications now carry a reply field: type an answer and it
+is sent straight to that chat, no window needed. Whatly posts these through
+`org.freedesktop.Notifications` itself, so the reply text stays local and the
+per-contact icon is preserved. Where the service does not support it, or when the
+option is turned off (Settings → Notifications), notifications behave exactly as
+before.
+
+**Export chat.** A new "Export chat" action (command palette and Shortcuts)
+saves the open conversation to a folder you pick: a WhatsApp-style `chat.txt`
+transcript, a structured `chat.json`, and a `media/` folder with the images,
+videos and audio that were loaded. It scrolls the whole conversation to pull in
+history first (WhatsApp Web only keeps a small window of messages in memory at a
+time), and downloads each attachment while it is on screen. Media that never
+finished loading is noted in the transcript rather than saved. All local; no
+data leaves the machine.
+
+**Inline translation.** A new Settings → Performance section connects Whatly to
+a LibreTranslate-compatible endpoint (self-hosted or otherwise). Two actions,
+"Translate selection" and "Translate message box", are in the command palette
+and can be bound to keys in Shortcuts: the first shows the translation of the
+selected text in a toast, the second translates what you have typed and puts it
+back in the message box before you send. The target language follows the app's
+language by default (configurable); the source is detected automatically. The
+request is made by the app itself, so the endpoint and optional API key never
+reach WhatsApp Web. Off by default.
+
+**Undo send.** A new Settings → Performance option holds a message for a few
+seconds after you press Enter, showing an "Undo" button before it is actually
+sent, so a mistaken Enter no longer sends instantly. Pressing Enter again sends
+at once, and clicking Undo keeps the text in the composer to edit. The delay is
+configurable (default 5 s) and the whole feature is off by default.
+
+**A progress bar for dropped attachments.** Dropping a file read it, base64-encoded
+it and built the injected script all in the drop handler, so the window froze for
+several seconds (on a video, long enough to look like a hang), with nothing on
+screen to explain it. The reading now happens on a worker thread with a small
+progress bar over the bottom of the chat, so the window stays responsive and the
+wait is visible. The bar waits a moment before appearing, so a quick drop does
+not flash one up and away. Files that do not fit the 64 MB drop buffer were
+skipped with only a terminal warning; they are now named on screen as well. A
+file dropped while another is still being read is queued and attached after it,
+rather than being ignored.
+
+**VIP and muted contacts for notifications.** Settings → Notifications now takes
+a list of VIP contacts, which always notify even during Do Not Disturb, and a
+list of muted contacts, whose popups are never shown (their unread badge still
+updates). Names are matched case-insensitively against the sender.
+
+**Recent unread chats in the tray menu.** The tray menu now has a "Recent
+unread" submenu listing conversations with unread messages (name and count);
+picking one brings the window up and opens that chat. It hides itself when
+nothing is unread.
+
+**Suspend inactive accounts to save memory.** With more than one account, each is
+a full page holding hundreds of MB. A new Settings → Performance option freezes
+the pages of accounts you are not viewing after an idle timeout, giving that
+memory back, and wakes them when you switch. Off by default; a suspended account
+does not receive messages until you switch back to it, and single-account setups
+are never affected.
+
+**Flatpak drag-and-drop from media folders (#32).** Files dragged from a host
+file manager arrive as a plain `file://` path with no portal token, which the
+sandbox could not read outside `~/Downloads`. The Flatpak now also gets
+read-only access to the standard Pictures, Videos, Documents and Music folders,
+so dragging media and documents from those works. It stays scoped to those
+folders (no whole-home access); files elsewhere still need a portal-aware source.
+
 ## 6.8.4 (2026-07-31)
 
 **Font hinting option (#37).** WhatsApp Web glyphs could render with heavier
