@@ -1,3 +1,14 @@
+## Unreleased
+
+**The build identifies itself at startup.** The first line of output is now the
+version, the commit, the branch and the build time. A bug report, or a tester
+saying a fix did not work, is only worth as much as the certainty about what was
+running: an install that silently did not replace the previous one, and a build
+from the wrong branch, both look exactly like a fix that failed. It goes through
+the normal log, so it is included in the output a bug report carries. Packagers
+can set `-DWHATLY_BUILD_LABEL=" (…)"` to mark a one-off build; a normal build
+prints nothing extra.
+
 ## 7.0.0 (2026-08-03)
 
 Whatly 7.0.0 is a major feature release. Highlights: a built-in AI assistant
