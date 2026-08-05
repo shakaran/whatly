@@ -151,6 +151,10 @@ private:
     QString waVersion;
     // When this account was last the active/visible one; drives idle suspension.
     QDateTime lastActive;
+    // Whether this account currently has a page. A dormant account has none at
+    // all: not a frozen one, not an empty one. It gets a page the first time it
+    // is opened, and loses it again once it has been idle long enough.
+    bool loaded = false;
     // Non-null while the account has been torn off into its own window; its
     // view then lives in that window rather than in the tab stack/grid.
     QPointer<DetachedAccountWindow> window = nullptr;
@@ -167,6 +171,14 @@ private:
   void clearGridCells();
   void updateGridCaptions();
   WebView *addAccount(const QString &id, const QString &name, bool load);
+  // The account's live page, or nullptr while it is dormant. Everything that
+  // walks the account list must go through this rather than view->page():
+  // QWebEngineView hands out a page on demand, so asking a dormant account for
+  // one would build it — on the default profile, and defeating the point.
+  static QWebEnginePage *pageOf(const Account &a);
+  // Throw an idle account's page away, back to the dormant state it started in.
+  // Reopening the account builds it again from scratch.
+  void unloadAccount(int index);
   void setActiveAccount(int index);
   void promptAddAccount();
   void renameAccount(int index);

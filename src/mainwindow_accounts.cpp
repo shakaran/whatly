@@ -692,10 +692,12 @@ void MainWindow::setActiveAccount(int index) {
   m_activeAccount = index;
   m_webEngine = m_accounts[index].view;   // everything current-account flows through this
   m_accounts[index].lastActive = QDateTime::currentDateTime();
-  // Wake the account we are switching to (no-op if it was never suspended).
-  if (m_accounts[index].view && m_accounts[index].view->page())
-    m_accounts[index].view->page()->setLifecycleState(
-        QWebEnginePage::LifecycleState::Active);
+  // Opening a dormant account is when it comes into existence: build its page
+  // now, exactly as if the app had just started on it. This is the whole point of
+  // the dormant state — a tab the user has not asked for costs nothing until they
+  // click it, and one they stopped using goes back to costing nothing.
+  if (!m_accounts[index].loaded && m_accounts[index].view)
+    createPageFor(m_accounts[index].view, m_accounts[index].id);
   m_accountStack->setCurrentWidget(m_accounts[index].view);
   // Point the strip at the tab carrying this account's id.
   QSignalBlocker block(m_accountBar);
@@ -853,10 +855,12 @@ void MainWindow::reorderWindowFromStrip(DetachedAccountWindow *win) {
 }
 
 void MainWindow::captureAccountVersion(WebView *view) {
-  if (!view || !view->page())
+  const int idx = view ? accountIndexForView(view) : -1;
+  QWebEnginePage *page = idx >= 0 ? pageOf(m_accounts[idx]) : nullptr;
+  if (!page)
     return;
   QPointer<WebView> guarded(view);
-  view->page()->runJavaScript(
+  page->runJavaScript(
       QStringLiteral("(window.Debug && window.Debug.VERSION) || ''"),
       [this, guarded](const QVariant &result) {
         if (!guarded)
@@ -872,29 +876,48 @@ void MainWindow::captureAccountVersion(WebView *view) {
       });
 }
 
+QWebEnginePage *MainWindow::pageOf(const Account &a) {
+  // Deliberately does not fall back to a.view->page(): QWebEngineView builds a
+  // page on demand when asked for one it does not have, so a single stray call
+  // on a dormant account would silently create a renderer bound to the default
+  // profile — the opposite of what dormancy is for, and a session mix-up.
+  return a.loaded && a.view ? a.view->page() : nullptr;
+}
+
+void MainWindow::unloadAccount(int index) {
+  if (index < 0 || index >= m_accounts.size())
+    return;
+  Account &a = m_accounts[index];
+  if (!a.loaded || !a.view)
+    return;
+  QWebEnginePage *page = a.view->page();
+  // Cleared before the page goes, so anything reached during teardown sees a
+  // dormant account and cannot ask for the page being destroyed.
+  a.loaded = false;
+  // Detach first, then delete: the view holds a plain pointer to its page, and
+  // deleting it without detaching would leave that pointer dangling for the next
+  // caller. Detaching also drops the renderer, which is the memory we are after —
+  // freezing the page would have kept every byte of it.
+  a.view->setPage(nullptr);
+  delete page;
+}
+
 void MainWindow::suspendIdleAccounts() {
   const bool enabled = Performance::suspendInactiveAccounts();
   const int threshold = Performance::suspendAfterMinutes() * 60;
   const QDateTime now = QDateTime::currentDateTime();
   for (int i = 0; i < m_accounts.size(); ++i) {
     Account &a = m_accounts[i];
-    if (!a.view || !a.view->page())
-      continue;
+    if (!a.view || !a.loaded)
+      continue; // already dormant, nothing left to give back
     const bool isActive = (i == m_activeAccount);
     const bool isVisible = a.view->isVisible(); // grid tiles / detached windows
     const int idle = a.lastActive.isValid()
                          ? int(a.lastActive.secsTo(now))
                          : 0;
-    auto *page = a.view->page();
     if (Performance::shouldSuspendAccount(enabled, isActive, isVisible, idle,
-                                          threshold)) {
-      if (page->lifecycleState() == QWebEnginePage::LifecycleState::Active)
-        page->setLifecycleState(QWebEnginePage::LifecycleState::Frozen);
-    } else if (!enabled &&
-               page->lifecycleState() != QWebEnginePage::LifecycleState::Active) {
-      // Feature turned off: wake anything we had frozen.
-      page->setLifecycleState(QWebEnginePage::LifecycleState::Active);
-    }
+                                          threshold))
+      unloadAccount(i);
   }
 }
 
@@ -945,8 +968,8 @@ void MainWindow::openChatByName(const QString &accountId, const QString &name) {
 
 QString MainWindow::accountTabTooltip(const Account &acc) const {
   QString token;
-  if (acc.view && acc.view->page())
-    token = QUrlQuery(acc.view->page()->url()).queryItemValue(QStringLiteral("v"));
+  if (pageOf(acc))
+    token = QUrlQuery(pageOf(acc)->url()).queryItemValue(QStringLiteral("v"));
   return accountTabTooltipText(acc.waVersion, token);
 }
 
@@ -1912,20 +1935,27 @@ void MainWindow::loadAccounts() {
       s.value(QStringLiteral("accounts/names")).toStringList();
   const QString kDefault = QStringLiteral("__default__");
 
+  // With winding down enabled, accounts start dormant — no page, no renderer, no
+  // download — and the one that ends up active is built by setActiveAccount()
+  // below. The rest come into existence when the user first clicks them, which is
+  // the same bargain the setting already makes for accounts that go idle later.
+  // Off (the default), every account is built at startup exactly as before.
+  const bool load = !Performance::suspendInactiveAccounts();
+
   if (ids.isEmpty()) {
     // Fresh install: just the default account.
-    addAccount(QString(), tr("Account 1"), true);
+    addAccount(QString(), tr("Account 1"), load);
   } else if (!ids.contains(kDefault)) {
     // Legacy save (before order-with-default): default implicit and first, then
     // the saved non-default accounts in order.
-    addAccount(QString(), tr("Account 1"), true);
+    addAccount(QString(), tr("Account 1"), load);
     for (int i = 0; i < ids.size(); ++i)
-      addAccount(ids[i], names.value(i, tr("Account %1").arg(i + 2)), true);
+      addAccount(ids[i], names.value(i, tr("Account %1").arg(i + 2)), load);
   } else {
     // Recreate the saved order exactly, including where the default sits.
     for (int i = 0; i < ids.size(); ++i) {
       const QString id = (ids[i] == kDefault) ? QString() : ids[i];
-      addAccount(id, names.value(i, tr("Account %1").arg(i + 1)), true);
+      addAccount(id, names.value(i, tr("Account %1").arg(i + 1)), load);
     }
   }
 
