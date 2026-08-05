@@ -707,6 +707,15 @@ void MainWindow::setActiveAccount(int index) {
       break;
     }
   }
+  // Remember the account, so the next start reopens here instead of always
+  // falling back to the first tab. Guarded exactly like saveAccounts(): a layout
+  // restore or the quit-time collapse of detached windows both drive this
+  // function, and neither is the user choosing an account. Stored as a token
+  // when it is the default account, whose real id is the empty string.
+  if (!m_loadingLayout && !m_isQuitting)
+    SettingsManager::instance().settings().setValue(
+        QStringLiteral("accounts/active"),
+        id.isEmpty() ? QStringLiteral("__default__") : id);
   // Re-point the lock overlay and refresh the title to the now-active account.
   if (m_webEngine && m_webEngine->page())
     setWindowTitle(QApplication::applicationDisplayName() + AppProfile::label() +
@@ -1930,5 +1939,16 @@ void MainWindow::loadAccounts() {
   }
 
   refreshAccountTabs();
-  setActiveAccount(0);
+  // Reopen on whichever account was active when the app last closed. Falls back
+  // to the first tab when nothing is stored yet, or when that account has since
+  // been removed.
+  int active = 0;
+  const QString wantedActive = s.value(QStringLiteral("accounts/active")).toString();
+  if (!wantedActive.isEmpty()) {
+    const int found =
+        accountIndexForId(wantedActive == kDefault ? QString() : wantedActive);
+    if (found >= 0)
+      active = found;
+  }
+  setActiveAccount(active);
 }

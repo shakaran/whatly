@@ -1,3 +1,12 @@
+## Unreleased
+
+**Whatly reopens on the account you were last using.** With more than one
+account, the app always started on the first tab, so anyone whose main number was
+not first had to switch accounts by hand on every launch. The active account is
+now remembered and restored. It is stored by account id rather than by position,
+so reordering the tabs does not send the next start to the wrong account, and if
+that account has since been removed the first tab is used as before.
+
 ## 7.0.0 (2026-08-03)
 
 Whatly 7.0.0 is a major feature release. Highlights: a built-in AI assistant
