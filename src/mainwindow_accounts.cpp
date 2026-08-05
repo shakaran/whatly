@@ -454,6 +454,17 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event) {
   if (m_gridScroll && watched == m_gridScroll->viewport() &&
       event->type() == QEvent::Resize)
     syncGridContainerSize();
+  // About to be drawn is the real trigger for building a dormant account, and it
+  // is the only one that catches every case. Switching tabs is not enough: a
+  // detached window shows its own account without touching setActiveAccount(),
+  // and grid mode draws every account at once, so both would otherwise paint a
+  // blank view. Hooking the view's own visibility covers all of them, including
+  // any future path that puts an account on screen.
+  if (event->type() == QEvent::Show) {
+    const int idx = accountIndexForView(watched);
+    if (idx >= 0)
+      ensureAccountLoaded(idx);
+  }
   return QMainWindow::eventFilter(watched, event);
 }
 
@@ -662,6 +673,9 @@ WebView *MainWindow::addAccount(const QString &id, const QString &name,
       {m_translateSelectionAction},
       {m_aiSummarizeAction, m_exportChatAction});
 
+  // Watched so that whatever eventually puts this view on screen — a tab switch,
+  // grid mode, a detached window — builds the account first. See eventFilter().
+  view->installEventFilter(this);
   m_accountStack->addWidget(view);
   m_accounts.append({id, name, view, 0});
   m_accounts.last().lastActive = QDateTime::currentDateTime();
@@ -692,12 +706,8 @@ void MainWindow::setActiveAccount(int index) {
   m_activeAccount = index;
   m_webEngine = m_accounts[index].view;   // everything current-account flows through this
   m_accounts[index].lastActive = QDateTime::currentDateTime();
-  // Opening a dormant account is when it comes into existence: build its page
-  // now, exactly as if the app had just started on it. This is the whole point of
-  // the dormant state — a tab the user has not asked for costs nothing until they
-  // click it, and one they stopped using goes back to costing nothing.
-  if (!m_accounts[index].loaded && m_accounts[index].view)
-    createPageFor(m_accounts[index].view, m_accounts[index].id);
+  // Opening a dormant account is when it comes into existence.
+  ensureAccountLoaded(index);
   m_accountStack->setCurrentWidget(m_accounts[index].view);
   // Point the strip at the tab carrying this account's id.
   QSignalBlocker block(m_accountBar);
@@ -882,6 +892,19 @@ QWebEnginePage *MainWindow::pageOf(const Account &a) {
   // on a dormant account would silently create a renderer bound to the default
   // profile — the opposite of what dormancy is for, and a session mix-up.
   return a.loaded && a.view ? a.view->page() : nullptr;
+}
+
+void MainWindow::ensureAccountLoaded(int index) {
+  if (index < 0 || index >= m_accounts.size())
+    return;
+  Account &a = m_accounts[index];
+  if (a.loaded || !a.view)
+    return;
+  // Marked before building, not after. createPageFor() attaches a page to the
+  // view, and that can emit a show event, which comes straight back here through
+  // eventFilter() — with the flag set afterwards, that would recurse forever.
+  a.loaded = true;
+  createPageFor(a.view, a.id);
 }
 
 void MainWindow::unloadAccount(int index) {

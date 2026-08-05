@@ -179,6 +179,11 @@ private:
   // Throw an idle account's page away, back to the dormant state it started in.
   // Reopening the account builds it again from scratch.
   void unloadAccount(int index);
+  // Build a dormant account's page because it is about to be shown. Every path
+  // that puts an account on screen has to call this, not just the tab switch in
+  // the main window — a detached window shows its own account without going
+  // anywhere near setActiveAccount().
+  void ensureAccountLoaded(int index);
   void setActiveAccount(int index);
   void promptAddAccount();
   void renameAccount(int index);
