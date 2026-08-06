@@ -2025,13 +2025,13 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2026"/>
-        <source>Suspend inactive accounts</source>
-        <translation>Prokrasti neaktivajn kontojn</translation>
+        <source>Unload inactive accounts from memory</source>
+        <translation>Malŝarĝi neaktivajn kontojn el la memoro</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2023"/>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation>Liberigas memoron prokrastante kontojn kiujn vi ne rigardas. Prokrastita konto ne ricevas mesaĝojn ĝis vi reiras al ĝi. Unukontaj agordoj ne estas influataj.</translation>
+        <source>Free memory by unloading accounts you are not viewing. An unloaded account does not receive messages, and reloads to where it was when you switch back to it. Single-account setups are unaffected.</source>
+        <translation>Malŝarĝi neaktivajn kontojn el la memoro post X minutoj. Ĉi tio ŝparas spacon, kaj la konto aŭtomate reŝarĝiĝos al sia antaŭa stato kiam vi revenos al la langeto. Unukontaj agordoj ne estas influataj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2033"/>
