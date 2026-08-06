@@ -44,7 +44,7 @@ void AccountTabBar::refreshSelectionTint() {
   // that reads as "raised" either way.
   const QColor base = palette().color(QPalette::Window);
   const bool dark = base.lightness() < 128;
-  const QColor tint = dark ? base.lighter(145) : base.darker(112);
+  const QColor tint = dark ? base.lighter(190) : base.darker(125);
   // Only the selected tab is styled. Naming one property keeps Qt from falling
   // back to drawing the whole strip itself, which would lose the platform look.
   setStyleSheet(
