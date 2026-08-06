@@ -3262,6 +3262,10 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>Privateco kaj ŝloso</translation>
     </message>
     <message>
+        <source>AI &amp;&amp; translation</source>
+        <translation>AI kaj tradukado</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.cpp" line="511"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>Fenestro &amp;&amp; zomo</translation>
@@ -3605,8 +3609,8 @@ Eble vi ankaŭ bezonos kompletan restartigon de la aplikaĵo!</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1539"/>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation>Rendimento kaj privateco (postulas restartigon)</translation>
+        <source>Performance (requires restart)</source>
+        <translation>Rendimento (postulas restartigon)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2074"/>
