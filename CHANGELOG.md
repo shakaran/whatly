@@ -36,6 +36,18 @@ accounts, which stops their timers and scripts but keeps every byte of the
 renderer, so the memory it was meant to save stayed allocated. The trade is
 unchanged and still opt-in: an account with no page cannot notify you, so with
 this off — the default — every account loads at startup exactly as before.
+**Settings: the things in "Performance & Privacy" are now where you would look for
+them.** That one section had grown into a grab-bag holding, besides the GPU and
+memory options its name suggests, the entire AI assistant and inline translation
+panels, whether photos are sent in HD, whether Enter holds a message briefly, the
+chat-list preview blanking and the WebRTC privacy shield — so the thing you wanted
+was almost never under the heading you would have guessed. **AI & translation** is
+now a section of its own, the two privacy settings have joined **Privacy & Lock**,
+the two messaging ones have joined **Chatting**, and what remains is genuinely
+performance, so the section is simply called that. **Interface scale** has also
+moved from "Network & Startup", where it sat beside the autostart checkbox, to
+**Window & zoom** beside the other zoom controls. No setting changed its meaning and
+nothing was renamed; they are only in sensible places now.
 
 ## 7.0.0 (2026-08-03)
 

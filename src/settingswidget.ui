@@ -1536,7 +1536,7 @@ background:transparent;
        <item>
         <widget class="QGroupBox" name="groupBoxPerformance">
          <property name="title">
-          <string>Performance &amp; Privacy (requires restart)</string>
+          <string>Performance (requires restart)</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayoutPerformance">
           <item>
