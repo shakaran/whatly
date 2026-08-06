@@ -63,7 +63,13 @@ public:
 public slots:
   void updateWindowTheme();
   void applySystemThemeIfEnabled();
+  // Push the chosen theme into EVERY account's page. WhatsApp Web keeps its own
+  // theme preference per profile, so a page nobody has told is left on whatever
+  // it last stored — light, for a profile that has never been told anything.
   void updatePageTheme();
+  // One page, for the paths that know which one they mean: the account that has
+  // just finished loading, rather than whichever one happens to be on screen.
+  void applyPageTheme(QWebEnginePage *page);
   void handleWebViewTitleChanged(const QString &title);
   void handleLoadFinished(bool loaded);
   void showSettings(bool isAskedByCLI = false);
