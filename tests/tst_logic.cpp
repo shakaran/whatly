@@ -65,6 +65,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include "linkeddevicename.h"
+#include "accounttabbar.h"
 #include "performance.h"
 #include "trayicon.h"
 #include "chatnav.h"
@@ -1822,6 +1823,38 @@ private slots:
         QLatin1String("--font-render-hinting")));
 
     Performance::setFontHinting(QString()); // restore the isolated baseline
+  }
+
+  // The selected-tab tint follows the palette rather than being a fixed colour,
+  // so a light theme and a dark one get different tints and a theme switch is
+  // picked up.
+  //
+  // NOTE what this does NOT cover: the re-entrancy guard in refreshSelectionTint().
+  // Setting a stylesheet on a widget that has never been shown does not make Qt
+  // re-resolve its style under the offscreen platform, so the event that would
+  // re-enter the handler is never sent and this test passes either way — verified
+  // by removing the guard and watching it still pass. The guard is there because
+  // the recursion is evident from the code, not because this test proves it.
+  void tabTintFollowsPalette() {
+    AccountTabBar bar;
+    bar.addTab(QStringLiteral("one"));
+    bar.addTab(QStringLiteral("two"));
+
+    QPalette dark = bar.palette();
+    dark.setColor(QPalette::Window, QColor(30, 30, 30));
+    bar.setPalette(dark);
+    const QString darkSheet = bar.styleSheet();
+    QVERIFY(darkSheet.contains(QLatin1String("QTabBar::tab:selected")));
+
+    QPalette light = bar.palette();
+    light.setColor(QPalette::Window, QColor(240, 240, 240));
+    bar.setPalette(light);
+    const QString lightSheet = bar.styleSheet();
+    QVERIFY(lightSheet.contains(QLatin1String("QTabBar::tab:selected")));
+
+    // The tint follows the palette rather than being fixed, so a light theme and
+    // a dark one must not end up with the same colour.
+    QVERIFY(darkSheet != lightSheet);
   }
 
   // Idle account suspension (#1): only a background, off-screen, idle account is

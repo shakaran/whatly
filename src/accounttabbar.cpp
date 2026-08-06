@@ -28,6 +28,16 @@ AccountTabBar::AccountTabBar(QWidget *parent) : QTabBar(parent) {
 }
 
 void AccountTabBar::refreshSelectionTint() {
+  // setStyleSheet() below makes Qt re-resolve this widget's style, which sends it
+  // a StyleChange and can send a PaletteChange too — both of which land back in
+  // changeEvent() and would come straight back here. Without this guard that is
+  // unbounded recursion, and it crashed the app on start-up rather than
+  // misbehaving quietly, because the stack ran out inside Qt's own style
+  // machinery. Re-entrancy has to be blocked here rather than by picking "safe"
+  // event types: which events a style re-resolve sends is Qt's business, not ours.
+  if (m_tinting)
+    return;
+  m_tinting = true;
   // Derived from the palette rather than hard-coded, so it follows whatever the
   // theme is doing and stays right in both light and dark. Lighter than the strip
   // when the strip is dark, darker when it is light — a shift in the direction
@@ -39,12 +49,16 @@ void AccountTabBar::refreshSelectionTint() {
   // back to drawing the whole strip itself, which would lose the platform look.
   setStyleSheet(
       QStringLiteral("QTabBar::tab:selected{background:%1;}").arg(tint.name()));
+  m_tinting = false;
 }
 
 void AccountTabBar::changeEvent(QEvent *event) {
   QTabBar::changeEvent(event);
-  if (event->type() == QEvent::PaletteChange ||
-      event->type() == QEvent::StyleChange)
+  // Only the palette, and not StyleChange: a StyleChange is what our own
+  // setStyleSheet() causes, so acting on it would be chasing our own tail. The
+  // palette is what the tint is actually derived from, so a theme switch is
+  // followed, and the guard above covers the rest.
+  if (event->type() == QEvent::PaletteChange)
     refreshSelectionTint();
 }
 

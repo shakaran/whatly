@@ -53,6 +53,9 @@ private:
   // the rest, which on a strip that doubles as the window's title bar leaves
   // nothing to say which account is on screen.
   void refreshSelectionTint();
+  // Guards refreshSelectionTint against re-entering itself: the setStyleSheet it
+  // does makes Qt re-resolve the style, which sends events that come back here.
+  bool m_tinting = false;
 
 private:
   void startDrag(int index);
