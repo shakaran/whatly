@@ -12,6 +12,8 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QPolygon>
+#include <QEvent>
+#include <QPalette>
 
 // The dragged account's id travels as the mime payload; the distinct type lets
 // a strip recognise an account-tab drag (single process, so no cross-app risk).
@@ -22,6 +24,28 @@ AccountTabBar::AccountTabBar(QWidget *parent) : QTabBar(parent) {
   // Live within-strip reordering: the tabs slide as you drag. Leaving the strip
   // vertically hands off to a QDrag (tear-off / cross-window) in mouseMove.
   setMovable(true);
+  refreshSelectionTint();
+}
+
+void AccountTabBar::refreshSelectionTint() {
+  // Derived from the palette rather than hard-coded, so it follows whatever the
+  // theme is doing and stays right in both light and dark. Lighter than the strip
+  // when the strip is dark, darker when it is light — a shift in the direction
+  // that reads as "raised" either way.
+  const QColor base = palette().color(QPalette::Window);
+  const bool dark = base.lightness() < 128;
+  const QColor tint = dark ? base.lighter(145) : base.darker(112);
+  // Only the selected tab is styled. Naming one property keeps Qt from falling
+  // back to drawing the whole strip itself, which would lose the platform look.
+  setStyleSheet(
+      QStringLiteral("QTabBar::tab:selected{background:%1;}").arg(tint.name()));
+}
+
+void AccountTabBar::changeEvent(QEvent *event) {
+  QTabBar::changeEvent(event);
+  if (event->type() == QEvent::PaletteChange ||
+      event->type() == QEvent::StyleChange)
+    refreshSelectionTint();
 }
 
 int AccountTabBar::accountTabCount() const {
