@@ -9,6 +9,10 @@ the normal log, so it is included in the output a bug report carries. Packagers
 can set `-DWHATLY_BUILD_LABEL=" (…)"` to mark a one-off build; a normal build
 prints nothing extra.
 
+**Smaller Flatpak.** The Flatpak image no longer ships `webenginedriver`, the
+WebDriver server the app never launches and no user can reach, trimming about
+17 MB from every install (down to ~320 MB).
+
 ## 7.0.0 (2026-08-03)
 
 Whatly 7.0.0 is a major feature release. Highlights: a built-in AI assistant
