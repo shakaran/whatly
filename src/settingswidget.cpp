@@ -743,10 +743,19 @@ void SettingsWidget::wrapLongTooltips() {
       w->setProperty("whatlyPlainTip", plain);
     // A width on a one-cell table is the reliable way to constrain wrapping in
     // Qt's rich text; a width on a div is not honoured consistently.
-    w->setToolTip(QStringLiteral(
-                      "<qt><table width=\"%1\"><tr><td>%2</td></tr></table></qt>")
-                      .arg(wrapAt)
-                      .arg(plain.toHtmlEscaped()));
+    //
+    // cellpadding is the clearance. Qt places a tooltip that will not fit below
+    // the pointer above it instead, and clamps it to the screen — so it is never
+    // cut off, but it does end up flush against the edge. Padding inside the box
+    // cannot move the box, and does keep the text itself off the screen edge,
+    // which is the part that reads as cramped. Replacing Qt's tooltip outright to
+    // gain a few pixels of outer margin is not worth it.
+    w->setToolTip(
+        QStringLiteral("<qt><table width=\"%1\" cellpadding=\"6\" "
+                       "cellspacing=\"0\" border=\"0\">"
+                       "<tr><td>%2</td></tr></table></qt>")
+            .arg(wrapAt)
+            .arg(plain.toHtmlEscaped()));
   }
 }
 
