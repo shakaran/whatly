@@ -712,10 +712,11 @@ void MainWindow::setActiveAccount(int index) {
   // restore or the quit-time collapse of detached windows both drive this
   // function, and neither is the user choosing an account. Stored as a token
   // when it is the default account, whose real id is the empty string.
-  if (!m_loadingLayout && !m_isQuitting)
+  if (!m_loadingLayout && !m_isQuitting) {
+    const QString kDefault = QStringLiteral("__default__");
     SettingsManager::instance().settings().setValue(
-        QStringLiteral("accounts/active"),
-        id.isEmpty() ? QStringLiteral("__default__") : id);
+        QStringLiteral("accounts/active"), id.isEmpty() ? kDefault : id);
+  }
   // Re-point the lock overlay and refresh the title to the now-active account.
   if (m_webEngine && m_webEngine->page())
     setWindowTitle(QApplication::applicationDisplayName() + AppProfile::label() +

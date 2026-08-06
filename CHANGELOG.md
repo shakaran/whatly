@@ -1,5 +1,18 @@
 ## Unreleased
 
+**The build identifies itself at startup.** The first line of output is now the
+version, the commit, the branch and the build time. A bug report, or a tester
+saying a fix did not work, is only worth as much as the certainty about what was
+running: an install that silently did not replace the previous one, and a build
+from the wrong branch, both look exactly like a fix that failed. It goes through
+the normal log, so it is included in the output a bug report carries. Packagers
+can set `-DWHATLY_BUILD_LABEL=" (…)"` to mark a one-off build; a normal build
+prints nothing extra.
+
+**Smaller Flatpak.** The Flatpak image no longer ships `webenginedriver`, the
+WebDriver server the app never launches and no user can reach, trimming about
+17 MB from every install (down to ~320 MB).
+
 **Whatly reopens on the account you were last using.** With more than one
 account, the app always started on the first tab, so anyone whose main number was
 not first had to switch accounts by hand on every launch. The active account is
