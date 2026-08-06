@@ -63,6 +63,22 @@ static const char kCollapseCss[] =
     "min-width:%1!important;max-width:%1!important}"
     "#side,#pane-side{overflow-x:hidden!important}"
     "#pane-side [role=\"row\"]{overflow:hidden!important}"
+    // The unread count, put back. WhatsApp's own badge sits at the right-hand end
+    // of a full-width row, so a 97px column cuts it off — and losing it is losing
+    // the one thing the collapsed list most needs to tell you. Redrawn as a pill
+    // in the row's top-right corner from the count that markUnread() reads into
+    // the attribute, so there is no extra element to create, keep in step or leak
+    // when WhatsApp recycles the row. `position:relative` on the row is what the
+    // corner is measured against; rows carrying no attribute draw nothing, which
+    // is how "absent if zero" falls out for free.
+    "#pane-side [role=\"row\"]{position:relative!important}"
+    "#pane-side [role=\"row\"][data-whatly-unread]::after{"
+    "content:attr(data-whatly-unread);position:absolute!important;"
+    "top:2px;right:2px;z-index:5;"
+    "min-width:16px;height:16px;padding:0 4px;box-sizing:border-box;"
+    "border-radius:8px;background:#25d366;color:#fff;"
+    "font-size:11px;font-weight:600;line-height:16px;text-align:center;"
+    "pointer-events:none}"
     // The filter pills (All / Unread / Favourites / more) are a horizontal row
     // that a 97px column simply guillotines. Fold them into a 2x2 grid of round
     // buttons instead, each labelled with the first letter of its own caption —
@@ -134,6 +150,33 @@ static const char kScriptTemplate[] = R"JS(
     window.__whatlyStripCss = __CSS__;
     window.__whatlyStripZoom = __ZOOM__;
     var el = document.getElementById('whatly-chatlist-strip');
+
+    // Read each visible row's unread count into an attribute, which the
+    // stylesheet above draws as a corner pill.
+    //
+    // Cheap enough to run on the same one-second tick as everything else,
+    // because WhatsApp virtualises the list: #pane-side holds only the couple of
+    // dozen rows actually rendered, never the whole chat list. Re-running is also
+    // what makes it correct across row recycling — a row reused for a different
+    // chat gets its attribute rewritten on the next tick rather than keeping the
+    // previous chat's number.
+    //
+    // The count is found the way chatnav.cpp already finds it: a leaf span whose
+    // entire text is the number. Timestamps contain ":" and so are excluded, and
+    // it needs no knowledge of WhatsApp's class names or any localised string.
+    var markUnread = function () {
+      var rows = document.querySelectorAll('#pane-side [role="row"]');
+      for (var i = 0; i < rows.length; i++) {
+        var spans = rows[i].querySelectorAll('span');
+        var count = '';
+        for (var j = 0; j < spans.length; j++) {
+          var t = (spans[j].textContent || '').trim();
+          if (spans[j].children.length === 0 && /^\d{1,4}$/.test(t)) count = t;
+        }
+        if (count) rows[i].setAttribute('data-whatly-unread', count);
+        else rows[i].removeAttribute('data-whatly-unread');
+      }
+    };
 
     var untag = function (attr) {
       document.querySelectorAll('[' + attr + ']').forEach(function (e) {
@@ -338,9 +381,15 @@ R"JS(
         untag('data-whatly-filters');
         untag('data-whatly-cell');
         untag('data-whatly-hide');
+        // The uncollapsed list shows WhatsApp's own badge again, so ours must not
+        // linger beside it.
+        untag('data-whatly-unread');
         return false;
       }
       prepare();
+      // Straight away rather than on the next tick, so collapsing does not show a
+      // list with no counts on it for up to a second.
+      markUnread();
       // A fresh pane gets a fresh budget of catch-up attempts; see the timer.
       window.__whatlyStripTries = 0;
       if (!style) {
@@ -396,6 +445,9 @@ R"JS(
           window.__whatlyStripTries = (window.__whatlyStripTries || 0) + 1;
           prepare();
         }
+        // Only while collapsed, and only over the rows WhatsApp has rendered.
+        if (applied)
+          markUnread();
         // A net under the click handler: the panel can also be opened from the
         // keyboard, and this costs one querySelector on a node that is empty
         // whenever no panel is open.

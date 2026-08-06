@@ -48,6 +48,14 @@ performance, so the section is simply called that. **Interface scale** has also
 moved from "Network & Startup", where it sat beside the autostart checkbox, to
 **Window & zoom** beside the other zoom controls. No setting changed its meaning and
 nothing was renamed; they are only in sensible places now.
+**The collapsed chat list shows unread counts again.** Collapsing the list to a
+strip of avatars cut WhatsApp's own unread badge off the right-hand edge, so the one
+thing the narrow list most needs to tell you — which conversations are waiting — was
+only visible by hovering each row in turn. Each collapsed row now carries a small
+green count in its top-right corner, and no badge at all when there is nothing
+unread. The number is WhatsApp's own, read from the row rather than tracked
+separately, so it cannot drift out of step, and it is drawn without adding anything
+to the page.
 
 ## 7.0.0 (2026-08-03)
 
