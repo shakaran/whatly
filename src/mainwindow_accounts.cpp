@@ -941,12 +941,14 @@ void MainWindow::refreshRecentUnread() {
 }
 
 void MainWindow::openChatByName(const QString &accountId, const QString &name) {
-  // A tray pick is a request to use Whatly: raise the window first.
-  setWindowState((windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
-  show();
-  raise();
-  activateWindow();
+  // A tray pick is a request to use Whatly, so raise a window first — but the one
+  // that actually holds this account, not this one. Picking a chat belonging to a
+  // detached account used to bring this window forward and then switch the chat
+  // in a window the user could not see.
   const int idx = accountIndexForId(accountId);
+  bringForward(idx >= 0 && m_accounts[idx].window
+                   ? static_cast<QWidget *>(m_accounts[idx].window)
+                   : static_cast<QWidget *>(this));
   if (idx >= 0)
     setActiveAccount(idx);
   if (m_webEngine && m_webEngine->page())

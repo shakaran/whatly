@@ -88,6 +88,17 @@ public slots:
   // Bring the window up and give it focus. The tray menu uses it: an action
   // picked from there used to run with the window still behind everything.
   void raiseWindow();
+  // The window the user should be brought to, which is simply the last one they
+  // touched. There is deliberately no "main" window from the user's side: this
+  // one owns the tray icon and the account list, but that is an implementation
+  // detail, and a tray click, a notification or a global shortcut must never haul
+  // it out from behind the window actually being worked in.
+  QWidget *frontWindow() const;
+  // Show, unminimise, raise and activate one window — and nothing else.
+  static void bringForward(QWidget *w);
+  // Every Whatly window, so "hide to tray" takes the whole app away rather than
+  // just this one, which would be another way of showing which is special.
+  QList<QWidget *> allWindows() const;
   void newChat();
   // Whether the account strip stays up with only one account, where it is a row
   // of chrome carrying a single tab. Off by default; the "+" it holds is also

@@ -388,9 +388,14 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason) {
 #else
   constexpr int kFrontmostGraceMs = 0;
 #endif
+  // Act on the window the user last touched, not on this one. This window owns
+  // the tray icon, but nothing about the icon says so, and hauling it out from
+  // behind the window actually being worked in is the clearest way of telling the
+  // user that one of their windows is secretly special.
+  QWidget *front = frontWindow();
   const bool frontmost =
-      isVisible() && !isMinimized() &&
-      Utils::wasFrontmostRecently(isActiveWindow(), m_lastDeactivationMs,
+      front->isVisible() && !front->isMinimized() &&
+      Utils::wasFrontmostRecently(front->isActiveWindow(), m_lastDeactivationMs,
                                   QDateTime::currentMSecsSinceEpoch(),
                                   kFrontmostGraceMs);
   const bool minimizeOnClick = SettingsManager::instance()
@@ -400,14 +405,14 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason) {
   if (frontmost) {
     if (minimizeOnClick) {
       lockOnHideIfEnabled();
-      hide();
+      // Every window, not just this one: hiding one and leaving the others is
+      // itself a statement about which window matters.
+      for (QWidget *w : allWindows())
+        w->hide();
     }
     return;
   }
-  setWindowState((windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
-  show();
-  raise();
-  activateWindow();
+  bringForward(front);
 }
 
 // The tray icon in three independent dimensions: monochrome vs the colourful
