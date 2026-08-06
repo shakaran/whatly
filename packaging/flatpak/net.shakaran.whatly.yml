@@ -45,6 +45,11 @@ finish-args:
 
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
+  # webenginedriver is the WebDriver server, for automating a browser from a test
+  # harness. Nothing in the app launches it and no user can reach it, but it is a
+  # 16 MB binary in every install. QtWebEngineProcess, beside it, is the renderer
+  # helper and must stay.
+  - rm -f /app/lib/libexec/webenginedriver
 
 modules:
   - name: whatly
