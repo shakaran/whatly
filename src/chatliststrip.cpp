@@ -104,7 +104,16 @@ static const char kCollapseCss[] =
     // line. In a preview there is room to read, so let the text wrap instead of
     // ending in an ellipsis.
     "#whatly-chatlist-tip *{white-space:normal!important;"
-    "text-overflow:clip!important}";
+    "text-overflow:clip!important}"
+    // Keep the picture in the top-left corner. Letting the text wrap (just above)
+    // is what moved it: the row centres the avatar against its text column, and a
+    // wrapped message makes that column several lines tall, so the avatar drifts
+    // down — far enough with a long message to leave the panel altogether, which
+    // is why it sometimes vanished. Pinning the row's items to the start keeps it
+    // put whatever the text does. Applied one level in as well, because the
+    // picture and the text sit inside a wrapper rather than directly in the row.
+    "#whatly-chatlist-tip>*,#whatly-chatlist-tip>*>*{"
+    "align-items:flex-start!important}";
 
 // __CSS__ empty removes the stylesheet, so the same script both collapses and
 // restores. The scripting below does three things the CSS cannot: it finds the
