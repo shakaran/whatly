@@ -68,16 +68,28 @@ static const char kCollapseCss[] =
     // the one thing the collapsed list most needs to tell you. Redrawn as a pill
     // in the row's top-right corner from the count that markUnread() reads into
     // the attribute, so there is no extra element to create, keep in step or leak
-    // when WhatsApp recycles the row. `position:relative` on the row is what the
-    // corner is measured against; rows carrying no attribute draw nothing, which
-    // is how "absent if zero" falls out for free.
-    "#pane-side [role=\"row\"]{position:relative!important}"
+    // when WhatsApp recycles the row. Rows carrying no attribute draw nothing,
+    // which is how "absent if zero" falls out for free.
+    //
+    // NOTE what this must NOT do: give the row `position:relative`. A row here is
+    // a virtual-list item, absolutely positioned and translated into place (see
+    // the preview note below). Making it relative returns it to normal flow while
+    // it keeps its transform, so the rows drift apart down the list and the
+    // filtered views appear to lose entries. It is also unnecessary — an
+    // absolutely positioned element is already the containing block its own
+    // absolutely positioned children are measured against.
+    //
+    // The colour comes from WhatsApp's own badge, published by markUnread() as a
+    // custom property, so it matches whatever the current theme paints rather than
+    // being a hard-coded green that only suits one of them.
     "#pane-side [role=\"row\"][data-whatly-unread]::after{"
     "content:attr(data-whatly-unread);position:absolute!important;"
     "top:2px;right:2px;z-index:5;"
-    "min-width:16px;height:16px;padding:0 4px;box-sizing:border-box;"
-    "border-radius:8px;background:#25d366;color:#fff;"
-    "font-size:11px;font-weight:600;line-height:16px;text-align:center;"
+    "min-width:24px;height:24px;padding:0 6px;box-sizing:border-box;"
+    "border-radius:12px;"
+    "background:var(--whatly-unread-bg,#25d366);"
+    "color:var(--whatly-unread-fg,#fff);"
+    "font-size:15px;font-weight:600;line-height:24px;text-align:center;"
     "pointer-events:none}"
     // The filter pills (All / Unread / Favourites / more) are a horizontal row
     // that a 97px column simply guillotines. Fold them into a 2x2 grid of round
@@ -168,14 +180,45 @@ static const char kScriptTemplate[] = R"JS(
       var rows = document.querySelectorAll('#pane-side [role="row"]');
       for (var i = 0; i < rows.length; i++) {
         var spans = rows[i].querySelectorAll('span');
-        var count = '';
+        var count = '', source = null;
         for (var j = 0; j < spans.length; j++) {
           var t = (spans[j].textContent || '').trim();
-          if (spans[j].children.length === 0 && /^\d{1,4}$/.test(t)) count = t;
+          if (spans[j].children.length === 0 && /^\d{1,4}$/.test(t)) {
+            count = t;
+            source = spans[j];
+          }
         }
-        if (count) rows[i].setAttribute('data-whatly-unread', count);
-        else rows[i].removeAttribute('data-whatly-unread');
+        if (count) {
+          rows[i].setAttribute('data-whatly-unread', count);
+          // Take the badge's own colours from WhatsApp's, once, so ours matches
+          // whatever the theme paints instead of being a fixed green that is only
+          // right in one of them. The digits sit in a leaf span, but the fill is
+          // usually on an ancestor, so walk up until a real colour appears.
+          if (!window.__whatlyUnreadPainted) adoptBadgeColours(source);
+        } else {
+          rows[i].removeAttribute('data-whatly-unread');
+        }
       }
+    };
+
+    // Read the live badge's background and text colour and publish them as custom
+    // properties for the stylesheet above. Runs once per page: WhatsApp does not
+    // change these while it is open, and a theme switch reloads the page.
+    var adoptBadgeColours = function (el) {
+      try {
+        for (var n = el, up = 0; n && up < 4; n = n.parentElement, up++) {
+          var cs = getComputedStyle(n);
+          var bg = cs.backgroundColor;
+          // Anything transparent means the fill is further up.
+          if (!bg || bg === 'transparent' || /rgba\([^)]*,\s*0\s*\)$/.test(bg))
+            continue;
+          var root = document.documentElement;
+          root.style.setProperty('--whatly-unread-bg', bg);
+          if (cs.color) root.style.setProperty('--whatly-unread-fg', cs.color);
+          window.__whatlyUnreadPainted = true;
+          return;
+        }
+      } catch (e) { /* keep the built-in green */ }
     };
 
     var untag = function (attr) {
