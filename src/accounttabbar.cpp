@@ -40,9 +40,21 @@ int AccountTabBar::dropSlotAt(int x) const {
   return n;
 }
 
+int AccountTabBar::indexOfAccount(const QString &id) const {
+  if (id.isEmpty())
+    return -1;
+  for (int i = 0; i < count(); ++i)
+    if (tabData(i).toString() == id)
+      return i;
+  return -1;
+}
+
 void AccountTabBar::mousePressEvent(QMouseEvent *event) {
   if (event->button() == Qt::LeftButton) {
-    m_pressIndex = tabAt(event->position().toPoint());
+    // Remember the account, not the slot. An empty id covers both "the + tab"
+    // (no tab data) and "no tab here at all", which is what the slot number used
+    // to be checked for.
+    m_pressId = tabData(tabAt(event->position().toPoint())).toString();
     m_pressPos = event->position().toPoint();
   }
   QTabBar::mousePressEvent(event);
@@ -52,18 +64,24 @@ void AccountTabBar::mouseMoveEvent(QMouseEvent *event) {
   // While the cursor stays within the strip, QTabBar reorders tabs live. Once
   // it leaves the strip vertically, hand off to a QDrag that tears the tab off
   // or docks it into another window.
-  if (m_pressIndex >= 0 && (event->buttons() & Qt::LeftButton) &&
-      tabData(m_pressIndex).isValid()) { // a real account tab, not the "+"
+  if (!m_pressId.isEmpty() && (event->buttons() & Qt::LeftButton)) {
     const QPoint p = event->position().toPoint();
     if (p.y() < -kDetachMargin || p.y() > height() + kDetachMargin) {
-      const int index = m_pressIndex;
-      m_pressIndex = -1;
+      const QString id = m_pressId;
+      m_pressId.clear();
       // End QTabBar's in-progress move before starting the drag.
       QMouseEvent release(QEvent::MouseButtonRelease, event->position(),
                           event->globalPosition(), Qt::LeftButton,
                           Qt::NoButton, event->modifiers());
       QTabBar::mouseReleaseEvent(&release);
-      startDrag(index);
+      // Only now ask where that account sits. Taking the slot from the press
+      // instead was the bug: drag a tab out on a path that slid it past its
+      // neighbours first, and the slot pressed had come to hold one of THEM, so
+      // the wrong account was torn into the new window. Resolving after the
+      // release also means the tabs have settled into the order on screen.
+      const int index = indexOfAccount(id);
+      if (index >= 0)
+        startDrag(index);
       return;
     }
   }

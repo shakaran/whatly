@@ -26,6 +26,12 @@ class AccountTabBar : public QTabBar {
 public:
   explicit AccountTabBar(QWidget *parent = nullptr);
 
+  // Which slot currently holds the account `id`, or -1. Public because it is the
+  // whole point of storing the id: a tab's slot is not stable for as long as a
+  // drag lasts, so anything that has to name a tab later must ask this rather
+  // than remember a number.
+  int indexOfAccount(const QString &id) const;
+
 signals:
   // The drag for account `id` ended at `globalPos`. Fired for EVERY drag,
   // whatever exec() reported — a QWebEngineView under the cursor may "accept"
@@ -52,7 +58,10 @@ private:
   // How far outside the strip (px) the cursor must go before a within-strip
   // reorder becomes a tear-off / cross-window drag.
   static constexpr int kDetachMargin = 24;
-  int m_pressIndex = -1;
+  // The account pressed, not the slot it was pressed in. QTabBar reorders tabs
+  // live under the cursor while the button is down, so a slot number captured on
+  // press stops meaning that account the moment the drag moves sideways.
+  QString m_pressId;
   QPoint m_pressPos;
   int m_dropSlot = -1; // insertion slot to paint while a drag hovers, or -1
 };

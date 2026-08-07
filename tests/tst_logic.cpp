@@ -67,6 +67,7 @@
 #include "linkeddevicename.h"
 #include "performance.h"
 #include "trayicon.h"
+#include "accounttabbar.h"
 #include "chatnav.h"
 #include "dropattach.h"
 #include "dropreader.h"
@@ -2184,6 +2185,37 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// AccountTabBar: a tab being dragged has to be identified by its account, never
+// by the slot it was pressed in. QTabBar reorders tabs live under the cursor, so
+// a slot number captured on press stops meaning that account as soon as the drag
+// moves sideways — and tearing off read that slot, so the neighbour was torn out
+// instead. The mouse path itself ends in QDrag::exec(), which blocks and cannot
+// be driven from a test; what is checked here is the identity it now relies on.
+class TstAccountTabBar : public QObject {
+  Q_OBJECT
+private slots:
+  void accountFollowsItsTabThroughAReorder() {
+    AccountTabBar bar;
+    for (const QString &id : {QStringLiteral("a1"), QStringLiteral("a2"),
+                              QStringLiteral("a3"), QStringLiteral("a4")})
+      bar.setTabData(bar.addTab(id), id);
+    bar.addTab(QStringLiteral("+")); // the affordance, deliberately without data
+
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("a3")), 2);
+    // moveTab is exactly what QTabBar's live reorder does while a tab is dragged
+    // past its neighbour, which is the trajectory that produced the wrong window.
+    bar.moveTab(2, 1);
+    // The slot that was pressed now holds a different account …
+    QCOMPARE(bar.tabData(2).toString(), QStringLiteral("a2"));
+    // … while the account pressed is still found, one slot to the left.
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("a3")), 1);
+    // The "+" tab is not an account, and neither is anything unknown.
+    QCOMPARE(bar.indexOfAccount(QString()), -1);
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("nope")), -1);
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CustomJs: the addon manager stores files, tracks per-addon enabled state, and
 // builds a combined guarded script. Runs in QStandardPaths test mode.
 class TstCustomJs : public QObject {
@@ -3362,6 +3394,7 @@ int main(int argc, char *argv[]) {
   { TstDropReader t;          run(&t); }
   { TstFlatpakManifest t;     run(&t); }
   { TstChatNav t;             run(&t); }
+  { TstAccountTabBar t;       run(&t); }
   { TstShortcuts t;           run(&t); }
   { TstBackup t;              run(&t); }
   { TstScreenLock t;          run(&t); }
