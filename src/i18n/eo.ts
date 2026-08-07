@@ -532,6 +532,31 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Lastaj nelegitaj</translation>
     </message>
     <message>
+        <location filename="../mainwindow_tray.cpp" line="130"/>
+        <source>&amp;Find in chats</source>
+        <translation>&amp;Serĉi en babiloj</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="275"/>
+        <source>Find in chats</source>
+        <translation>Serĉi en babiloj</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="311"/>
+        <source>Windows</source>
+        <translation>Fenestroj</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="481"/>
+        <source>hidden</source>
+        <translation>kaŝita</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="483"/>
+        <source>minimised</source>
+        <translation>minimumigita</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="106"/>
         <location filename="../mainwindow.cpp" line="1140"/>
         <location filename="../mainwindow.cpp" line="1236"/>
@@ -2264,6 +2289,16 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <location filename="../settingswidget.ui" line="510"/>
         <source>Remember multiple window positions on restart</source>
         <translation>Memori la poziciojn de pluraj fenestroj ĉe restarto</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="517"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Off by default, so &amp;quot;Minimise to tray&amp;quot; puts the whole app away: with several windows open, leaving the others on screen while the tray reports Whatly as away is the same confusion as one window being treated as the real one. Tick this to have it put away only the window you are in. Follows whatever key &amp;quot;Minimise to tray&amp;quot; is bound to.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defaŭlte malŝaltita, do &amp;quot;Minimumigi al la sistempleto&amp;quot; kaŝas la tutan aplikaĵon: kiam pluraj fenestroj estas malfermitaj, lasi la aliajn sur la ekrano dum la sistempleto montras Whatly kiel forestantan estas la sama konfuzo kiel trakti unu fenestron kiel la veran. Marku ĉi tion por ke ĝi kaŝu nur la fenestron en kiu vi estas. Ĝi sekvas kiun ajn klavon vi asignis al &amp;quot;Minimumigi al la sistempleto&amp;quot;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="520"/>
+        <source>Ctrl+W hides only the focused window.</source>
+        <translation>Ctrl+W kaŝas nur la fokusitan fenestron.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="517"/>
