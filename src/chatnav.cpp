@@ -76,4 +76,47 @@ QString openChatByNameScript(const QString &name) {
 )JS").arg(jsonString(name));
 }
 
+QString focusSearchScript() {
+  return QStringLiteral(R"JS(
+(function(){
+  var tries = 0;
+  function box() {
+    // Named first, because it is unambiguous — but only in the languages we can
+    // name, so the structural fallbacks below carry every other locale: the
+    // search field is the one text input inside #side and above the chat list.
+    return document.querySelector('input[aria-label*="Search" i]')
+      || document.querySelector('input[aria-label*="Buscar" i]')
+      || document.querySelector('input[data-tab="3"]')
+      || document.querySelector('#side [contenteditable="true"]')
+      || document.querySelector('#side [role="textbox"]')
+      || document.querySelector('#side input');
+  }
+  function attempt() {
+    var b = box();
+    if (b) {
+      b.focus();
+      // Select what is already there, so typing replaces the old term instead of
+      // appending to it. Not every element type has select().
+      if (typeof b.select === 'function') { try { b.select(); } catch (e) {} }
+      else {
+        try {
+          var r = document.createRange();
+          r.selectNodeContents(b);
+          var s = window.getSelection();
+          s.removeAllRanges();
+          s.addRange(r);
+        } catch (e) {}
+      }
+      return 'ok';
+    }
+    // The page may still be building, and the chat list may have just been
+    // expanded on our own account, which is a round trip through the app.
+    if (++tries < 12) { setTimeout(attempt, 150); return 'waiting'; }
+    return 'not-found';
+  }
+  return attempt();
+})()
+)JS");
+}
+
 } // namespace ChatNav

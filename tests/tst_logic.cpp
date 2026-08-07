@@ -2205,6 +2205,16 @@ private slots:
     QVERIFY(js.contains(QLatin1String("a\\\"b")));
     QVERIFY(js.contains(QLatin1String("\\n")));
   }
+  void focusSearchScriptShape() {
+    const QString js = ChatNav::focusSearchScript();
+    QVERIFY(js.contains(QLatin1String(".focus()")));
+    // A locale-independent fallback is required: naming the English (or Spanish)
+    // aria-label alone would leave the key dead on every other language.
+    QVERIFY(js.contains(QLatin1String("#side input")));
+    // Retries, because expanding a collapsed chat list is a round trip through
+    // the app and the box does not exist yet when the script first runs.
+    QVERIFY(js.contains(QLatin1String("setTimeout")));
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────

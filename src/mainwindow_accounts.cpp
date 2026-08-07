@@ -8,6 +8,7 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QStandardPaths>
+#include <QApplication>
 #include <QMenu>
 #include <QStackedWidget>
 #include <QPointer>
@@ -737,6 +738,24 @@ int MainWindow::accountIndexForId(const QString &id) const {
   return -1;
 }
 
+int MainWindow::focusedAccountIndex() const {
+  // A detached window shows whatever its own stack is on. Its tab strip swaps
+  // that stack directly and never sets m_activeAccount, so for any window other
+  // than this one the app-wide "active" account is simply the wrong answer.
+  if (auto *win =
+          qobject_cast<DetachedAccountWindow *>(QApplication::activeWindow())) {
+    const QWidget *shown = win->stack()->currentWidget();
+    for (int i = 0; i < m_accounts.size(); ++i)
+      if (m_accounts[i].view == shown)
+        return i;
+  }
+  // The main window, or a key that arrived with no active window at all (a tray
+  // menu item, say) — then the account this window is on is the best answer.
+  if (m_activeAccount >= 0 && m_activeAccount < m_accounts.size())
+    return m_activeAccount;
+  return -1;
+}
+
 // A tab was dropped onto the main strip. Move that account into the main window
 // at slot `insertSlot` among the docked tabs — either reordering a tab already
 // here, or bringing a detached account back in. The just-dropped tab takes
@@ -1263,10 +1282,15 @@ DetachedAccountWindow *MainWindow::createDetachedWindow() {
   // current account" are deliberately left out: reload, zoom and fullscreen would
   // silently mean the main window's account rather than the one being looked at,
   // which is worse than the shortcut not working.
+  // Find is the one account action that is safe to share, because it asks
+  // focusedAccountIndex() which account the window with the keyboard is showing
+  // instead of assuming the app-wide one. Reload, zoom and fullscreen have no
+  // such answer yet, so they stay out.
   for (QAction *shared :
        {m_settingsAction, m_commandPaletteAction, m_aboutAction, m_quitAction,
         m_toggleThemeAction, m_muteAction, m_lockAction,
-        m_scheduledMessagesAction, m_addAccountAction, m_chatListStripAction})
+        m_scheduledMessagesAction, m_addAccountAction, m_chatListStripAction,
+        m_findChatAction})
     if (shared)
       win->addAction(shared);
   // Moving/resizing the window updates the saved arrangement (debounced).

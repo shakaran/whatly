@@ -51,6 +51,7 @@
 #include <QMessageBox>
 #include <QProcess>
 #include "chatliststrip.h"
+#include "chatnav.h"
 #include "privacyblur.h"
 #include "localapi.h"
 #include "cloudapi.h"
@@ -1430,6 +1431,25 @@ void MainWindow::toggleChatListStrip() {
     if (account.view && account.view->page())
       account.view->page()->runJavaScript(ChatListStrip::scriptSource());
   refreshChatListStripAction();
+}
+
+void MainWindow::focusChatSearch() {
+  // The account in the window being typed into, not the app-wide "active" one:
+  // with a detached window in front, those are different accounts, and searching
+  // the wrong one is worse than doing nothing.
+  const int idx = focusedAccountIndex();
+  if (idx < 0)
+    return;
+  // Collapsed, the search box is clipped to a sliver above the chat list — the
+  // same reason a click up there expands the list instead of typing into it.
+  // Expanding is a round trip through the app, which is why the script retries
+  // rather than assuming the box is there the moment it runs.
+  if (ChatListStrip::isCollapsed())
+    toggleChatListStrip();
+  // Safe to ask the view for its page here, unlike a loop over every account:
+  // this account is the one on screen, so its page already exists.
+  if (m_accounts[idx].view && m_accounts[idx].view->page())
+    m_accounts[idx].view->page()->runJavaScript(ChatNav::focusSearchScript());
 }
 
 // ── Chat / URL helpers ────────────────────────────────────────────────────────

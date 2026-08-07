@@ -80,6 +80,11 @@ public slots:
   void toggleChatListStrip();
   // Keep that action's text saying what it will do next, for the palette.
   void refreshChatListStripAction();
+  // Put the keyboard into WhatsApp Web's own chat search, in the account the
+  // window in front is showing. Expands the chat list first when it is
+  // collapsed, since the search box is clipped to a sliver there and focusing
+  // something invisible is not a usable answer to the key.
+  void focusChatSearch();
   // Relaunch this same executable with this same command line, so the settings
   // that only apply at startup take effect without the user having to quit and
   // find Whatly again. Everything about how the desk looks is saved first and
@@ -223,6 +228,12 @@ private:
   // Rebuild every detached window's tab strip from m_accounts.
   void refreshDetachedStrips();
   int accountIndexForId(const QString &id) const;
+  // The account the user is actually looking at: the one shown by whichever
+  // window has the keyboard, which is not m_activeAccount — switching tabs in a
+  // detached window swaps that window's stack without touching the app-wide
+  // "active" account. Any shared action triggered by a key has to ask this, or it
+  // acts on whatever was last clicked in the main window. -1 if there is none.
+  int focusedAccountIndex() const;
   // Most-recently-focused-first list of windows (nullptr = the main window). The
   // front is the "main" window: it receives newly-added accounts, and a closed
   // window's tabs dock into the front-most surviving window.
@@ -488,6 +499,7 @@ private:
   QAction *m_zoomOutAction = nullptr;
   QAction *m_zoomResetAction = nullptr;
   QAction *m_chatListStripAction = nullptr;
+  QAction *m_findChatAction = nullptr;
   QAction *m_translateSelectionAction = nullptr;
   QAction *m_translateComposerAction = nullptr;
 

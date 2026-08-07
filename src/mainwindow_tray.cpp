@@ -107,6 +107,20 @@ void MainWindow::createActions() {
           &MainWindow::toggleChatListStrip);
   addAction(m_chatListStripAction);
 
+  // Ctrl+F. WhatsApp Web binds nothing to it: in a browser that key opens the
+  // browser's own find bar, and Qt WebEngine has no find bar, so pressing it in
+  // Whatly did nothing whatsoever. An app whose whole content is a chat list has
+  // to answer Ctrl+F, so we answer it ourselves, with the search box the list
+  // already has.
+  m_findChatAction = new QAction(tr("&Find in chats"), this);
+  m_findChatAction->setShortcut(QKeySequence(Qt::Modifier::CTRL | Qt::Key_F));
+  // Reaches whichever window has the keyboard, like the palette: the search box
+  // wanted is the one in the window being typed into.
+  m_findChatAction->setShortcutContext(Qt::ApplicationShortcut);
+  connect(m_findChatAction, &QAction::triggered, this,
+          &MainWindow::focusChatSearch);
+  addAction(m_findChatAction);
+
   m_settingsAction = new QAction(tr("&Settings"), this);
   m_settingsAction->setShortcut(QKeySequence(Qt::Modifier::CTRL | Qt::Key_P));
   connect(m_settingsAction, &QAction::triggered, this,
@@ -243,6 +257,7 @@ void MainWindow::createActions() {
       // Registered with no default so it appears in the shortcut sheet and can
       // be bound to whatever the user likes.
       {m_chatListStripAction, "chatListStrip", tr("Collapse the chat list")},
+      {m_findChatAction, "findChat", tr("Find in chats")},
       {m_translateSelectionAction, "translateSelection",
        tr("Translate selection")},
       {m_translateComposerAction, "translateComposer",
