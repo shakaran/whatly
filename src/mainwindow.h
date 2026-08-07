@@ -188,6 +188,15 @@ private:
     // all: not a frozen one, not an empty one. It gets a page the first time it
     // is opened, and loses it again once it has been idle long enough.
     bool loaded = false;
+    // Whether that page has finished loading WhatsApp Web. `loaded` says a page
+    // exists; this says there is something on it to act on. A page built for a
+    // tray pick has neither a chat list nor the chat being asked for until this
+    // is true.
+    bool ready = false;
+    // The unread chats this account last reported, kept so the tray can still
+    // offer them once the account has no page. A dormant account is the one that
+    // most needs a way back into it, and dropping its chats takes that away.
+    QList<QPair<QString, int>> recentUnread;
     // Non-null while the account has been torn off into its own window; its
     // view then lives in that window rather than in the tab stack/grid.
     QPointer<DetachedAccountWindow> window = nullptr;
@@ -318,6 +327,13 @@ private:
   // the active account and jump to one on click.
   QMenu *m_recentUnreadMenu = nullptr;
   void refreshRecentUnread();
+  // Fill that menu in from what every account last reported, dormant ones
+  // included. Separate from the scan above, which is rate-limited.
+  void rebuildRecentUnreadMenu();
+  QElapsedTimer m_recentUnreadScan;
+  // What each entry in that menu points at (account id, chat name), in the same
+  // order — the entries are reused, so this is how a click finds its chat.
+  QList<QPair<QString, QString>> m_recentUnreadTargets;
   void openChatByName(const QString &accountId, const QString &name);
   // Every window in the tray menu, numbered by how recently it was used, so none
   // can be left with nothing pointing at it.
@@ -328,6 +344,11 @@ private:
   QList<QPointer<QWidget>> m_windowsMenuTargets;
   void refreshWindowsMenu();
   QString windowLabel(const QWidget *w) const;
+  // A chat asked for before its account had a page: run it once that page
+  // reports itself loaded. The name is the presence flag — the account id cannot
+  // be, since the default account's id is the empty string.
+  QString m_pendingChatAccount;
+  QString m_pendingChatName;
   // The tab tooltip for an account: its WhatsApp Web version (once known) and
   // the build token from the page URL. Empty while neither is available.
   QString accountTabTooltip(const Account &acc) const;

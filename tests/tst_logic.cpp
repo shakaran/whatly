@@ -2272,6 +2272,10 @@ private slots:
     // so no raw quote/newline can break out of the string literal.
     QVERIFY(js.contains(QLatin1String("a\\\"b")));
     QVERIFY(js.contains(QLatin1String("\\n")));
+    // It waits for the chat list instead of deciding on the first look: this also
+    // runs against a page built moments earlier, for an account that had none
+    // until its chat was picked out of the tray.
+    QVERIFY(js.contains(QLatin1String("setTimeout")));
   }
   void focusSearchScriptShape() {
     const QString js = ChatNav::focusSearchScript();

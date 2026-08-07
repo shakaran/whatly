@@ -52,26 +52,36 @@ QString openChatByNameScript(const QString &name) {
   return QStringLiteral(R"JS(
 (function(){
   var NAME = %1;
-  var pane = document.querySelector('#pane-side');
-  if (!pane) return 'no-pane';
-  var rows = pane.querySelectorAll('[role="row"]');
-  var el = null;
-  for (var i = 0; i < rows.length; i++) {
-    var n = rows[i].querySelector('span[title]');
-    if (n && n.getAttribute('title') === NAME) { el = n; break; }
-  }
-  if (!el) return 'not-found';
-  var r = el.getBoundingClientRect();
-  var cx = r.x + r.width / 2, cy = r.y + r.height / 2;
-  var opts = { bubbles: true, cancelable: true, view: window,
-               clientX: cx, clientY: cy, button: 0,
-               pointerId: 1, pointerType: 'mouse', isPrimary: true };
-  el.dispatchEvent(new PointerEvent('pointerdown', opts));
-  el.dispatchEvent(new MouseEvent('mousedown', opts));
-  el.dispatchEvent(new PointerEvent('pointerup', opts));
-  el.dispatchEvent(new MouseEvent('mouseup', opts));
-  el.dispatchEvent(new MouseEvent('click', opts));
-  return 'ok';
+  var tries = 0;
+  var attempt = function () {
+    var pane = document.querySelector('#pane-side');
+    var rows = pane ? pane.querySelectorAll('[role="row"]') : [];
+    var el = null;
+    for (var i = 0; i < rows.length; i++) {
+      var n = rows[i].querySelector('span[title]');
+      if (n && n.getAttribute('title') === NAME) { el = n; break; }
+    }
+    if (!el) {
+      // Keep asking for a few seconds rather than deciding on the first look.
+      // This also runs against a page that has only just been built — for an
+      // account that had none until its chat was picked out of the tray — and
+      // such a page has no chat list yet, then fills it in progressively.
+      if (++tries < 20) { setTimeout(attempt, 250); return 'waiting'; }
+      return pane ? 'not-found' : 'no-pane';
+    }
+    var r = el.getBoundingClientRect();
+    var cx = r.x + r.width / 2, cy = r.y + r.height / 2;
+    var opts = { bubbles: true, cancelable: true, view: window,
+                 clientX: cx, clientY: cy, button: 0,
+                 pointerId: 1, pointerType: 'mouse', isPrimary: true };
+    el.dispatchEvent(new PointerEvent('pointerdown', opts));
+    el.dispatchEvent(new MouseEvent('mousedown', opts));
+    el.dispatchEvent(new PointerEvent('pointerup', opts));
+    el.dispatchEvent(new MouseEvent('mouseup', opts));
+    el.dispatchEvent(new MouseEvent('click', opts));
+    return 'ok';
+  };
+  return attempt();
 })()
 )JS").arg(jsonString(name));
 }

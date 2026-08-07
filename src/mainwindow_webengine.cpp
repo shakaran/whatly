@@ -7,6 +7,7 @@
 #include <QRandomGenerator>
 #include <QScreen>
 
+#include "chatnav.h" // a chat picked from the tray, opened once its page is up
 #include "common.h"
 #include "scheduledmessages.h"
 #include "webenginenotifproxy.h"
@@ -155,8 +156,10 @@ void MainWindow::createPageFor(WebView *view, const QString &accountId) {
   // reach it. Recorded here rather than at each call site, because this is the
   // only place a page is ever built.
   const int idx = accountIndexForView(view);
-  if (idx >= 0)
+  if (idx >= 0) {
     m_accounts[idx].loaded = true;
+    m_accounts[idx].ready = false; // a page, but nothing on it yet
+  }
 }
 
 // Buttons Whatly injects into WhatsApp's own UI need a way back into the app.
@@ -1058,10 +1061,21 @@ void MainWindow::handleLoadFinished(bool loaded) {
     // The page that just loaded, which is not necessarily the one on screen —
     // see updatePageTheme(). Falling back to all of them keeps a load that
     // arrives without an identifiable sender behaving as it used to.
-    if (const int idx = accountIndexForView(sender()); idx >= 0)
+    if (const int idx = accountIndexForView(sender()); idx >= 0) {
+      m_accounts[idx].ready = true;
       applyPageTheme(pageOf(m_accounts[idx]));
-    else
+      // A chat picked from the tray while this account had no page: this is the
+      // moment there is a chat list to find it in.
+      if (!m_pendingChatName.isEmpty() &&
+          m_pendingChatAccount == m_accounts[idx].id) {
+        const QString chat = m_pendingChatName;
+        m_pendingChatName.clear();
+        if (QWebEnginePage *page = pageOf(m_accounts[idx]))
+          page->runJavaScript(ChatNav::openChatByNameScript(chat));
+      }
+    } else {
       updatePageTheme();
+    }
     handleZoom();
     if (m_settingsWidget != nullptr)
       m_settingsWidget->refresh();

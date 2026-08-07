@@ -1025,6 +1025,7 @@ void MainWindow::unloadAccount(int index) {
   // Cleared before the page goes, so anything reached during teardown sees a
   // dormant account and cannot ask for the page being destroyed.
   a.loaded = false;
+  a.ready = false; // nothing loaded on a page that no longer exists
   // Detach first, then delete: the view holds a plain pointer to its page, and
   // deleting it without detaching would leave that pointer dangling for the next
   // caller. Detaching also drops the renderer, which is the memory we are after —
@@ -1052,51 +1053,133 @@ void MainWindow::suspendIdleAccounts() {
   }
 }
 
+// Every account that has a page, and the last answer is kept for the ones that
+// do not. An account with no page is exactly the account you need a way back
+// into: its window may be behind everything or put away, and dropping its chats
+// from this menu removes the one handle that would have brought it back. The
+// entries go stale, which is the honest state of a list nobody is reading — a
+// week-old chat name still opens the right conversation, and opening it is the
+// point.
+//
+// Driven by every title change, and WhatsApp changes the title whenever a message
+// arrives anywhere, so the scan itself is rate-limited; the menu is rebuilt from
+// what is already known every time.
 void MainWindow::refreshRecentUnread() {
-  if (!m_recentUnreadMenu || !m_webEngine || !m_webEngine->page())
+  if (!m_recentUnreadMenu)
     return;
-  const QString accountId =
-      (m_activeAccount >= 0 && m_activeAccount < m_accounts.size())
-          ? m_accounts[m_activeAccount].id
-          : QString();
-  m_webEngine->page()->runJavaScript(
-      ChatNav::unreadChatsScript(6), [this, accountId](const QVariant &result) {
-        if (!m_recentUnreadMenu)
-          return;
-        const QJsonArray arr =
-            QJsonDocument::fromJson(result.toString().toUtf8()).array();
-        m_recentUnreadMenu->clear();
-        for (const QJsonValue &v : arr) {
-          const QString name = v.toObject().value(QStringLiteral("name")).toString();
-          const int count = v.toObject().value(QStringLiteral("count")).toInt();
-          if (name.isEmpty())
-            continue;
-          QString label = name;
-          if (label.size() > 32)
-            label = label.left(31) + QChar(0x2026);
-          QAction *a = m_recentUnreadMenu->addAction(
-              QStringLiteral("%1  (%2)").arg(label).arg(count));
-          connect(a, &QAction::triggered, this,
-                  [this, accountId, name]() { openChatByName(accountId, name); });
-        }
-        m_recentUnreadMenu->menuAction()->setVisible(
-            !m_recentUnreadMenu->isEmpty());
-      });
+  if (!m_recentUnreadScan.isValid() || m_recentUnreadScan.elapsed() > 3000) {
+    m_recentUnreadScan.restart();
+    for (const Account &account : m_accounts) {
+      QWebEnginePage *page = pageOf(account);
+      if (!page)
+        continue; // dormant: keep whatever it last reported
+      const QString accountId = account.id;
+      page->runJavaScript(
+          ChatNav::unreadChatsScript(6),
+          [this, accountId](const QVariant &result) {
+            const int idx = accountIndexForId(accountId);
+            if (idx < 0)
+              return;
+            QList<QPair<QString, int>> found;
+            const QJsonArray arr =
+                QJsonDocument::fromJson(result.toString().toUtf8()).array();
+            for (const QJsonValue &v : arr) {
+              const QString name =
+                  v.toObject().value(QStringLiteral("name")).toString();
+              if (name.isEmpty())
+                continue;
+              found << qMakePair(
+                  name, v.toObject().value(QStringLiteral("count")).toInt());
+            }
+            m_accounts[idx].recentUnread = found;
+            rebuildRecentUnreadMenu();
+          });
+    }
+  }
+  rebuildRecentUnreadMenu();
+}
+
+// Entries are REUSED rather than cleared and rebuilt. Picking one switches
+// account, which reaches the tray unread count, which comes back here — and
+// deleting the action whose signal is still being delivered is a crash, not an
+// inefficiency. So the pool only grows, spare entries are hidden, and what each
+// entry points at is remembered beside it.
+void MainWindow::rebuildRecentUnreadMenu() {
+  if (!m_recentUnreadMenu)
+    return;
+  // Which account each chat belongs to is only worth saying when more than one
+  // account has anything to show.
+  int contributing = 0;
+  for (const Account &account : m_accounts)
+    if (!account.recentUnread.isEmpty())
+      ++contributing;
+
+  QList<QAction *> entries = m_recentUnreadMenu->actions();
+  m_recentUnreadTargets.clear();
+  QStringList labels;
+  for (const Account &account : m_accounts) {
+    for (const QPair<QString, int> &chat : account.recentUnread) {
+      QString label = chat.first;
+      if (label.size() > 32)
+        label = label.left(31) + QChar(0x2026);
+      label = QStringLiteral("%1  (%2)").arg(label).arg(chat.second);
+      if (contributing > 1)
+        label = account.name + QStringLiteral(" · ") + label;
+      labels << label;
+      m_recentUnreadTargets << qMakePair(account.id, chat.first);
+    }
+  }
+
+  while (entries.size() < labels.size()) {
+    const int slot = entries.size();
+    QAction *entry = m_recentUnreadMenu->addAction(QString());
+    connect(entry, &QAction::triggered, this, [this, slot]() {
+      if (slot < m_recentUnreadTargets.size())
+        openChatByName(m_recentUnreadTargets[slot].first,
+                       m_recentUnreadTargets[slot].second);
+    });
+    entries << entry;
+  }
+  for (int i = 0; i < entries.size(); ++i) {
+    entries[i]->setVisible(i < labels.size());
+    if (i < labels.size())
+      entries[i]->setText(labels[i]);
+  }
+  m_recentUnreadMenu->menuAction()->setVisible(!labels.isEmpty());
 }
 
 void MainWindow::openChatByName(const QString &accountId, const QString &name) {
-  // A tray pick is a request to use Whatly, so raise a window first — but the one
-  // that actually holds this account, not this one. Picking a chat belonging to a
-  // detached account used to bring this window forward and then switch the chat
-  // in a window the user could not see.
   const int idx = accountIndexForId(accountId);
-  bringForward(idx >= 0 && m_accounts[idx].window
-                   ? static_cast<QWidget *>(m_accounts[idx].window)
-                   : static_cast<QWidget *>(this));
-  if (idx >= 0)
-    setActiveAccount(idx);
-  if (m_webEngine && m_webEngine->page())
-    m_webEngine->page()->runJavaScript(ChatNav::openChatByNameScript(name));
+  if (idx < 0)
+    return;
+  // A tray pick is a request to use Whatly, so a window has to come up — the one
+  // that actually holds this account. Raising this one and then switching a chat
+  // in a window the user cannot see is worse than doing nothing.
+  QWidget *host = m_accounts[idx].window
+                      ? static_cast<QWidget *>(m_accounts[idx].window)
+                      : static_cast<QWidget *>(this);
+  // bringForward() is #55's, and it is the same four calls with the ordering
+  // that survives a hidden window; using it here keeps one way of raising a
+  // window in the app rather than two that can drift apart.
+  bringForward(host);
+  // A detached account is already the one its own window shows, so this is a
+  // no-op there and a tab switch here.
+  setActiveAccount(idx);
+  // And it may have had no page at all until a moment ago.
+  ensureAccountLoaded(idx);
+  QWebEnginePage *page = pageOf(m_accounts[idx]);
+  if (!page)
+    return;
+  // A page built for this pick has not loaded WhatsApp yet, so the chat it is
+  // being asked for does not exist on it. Remember the request and run it when
+  // the page reports itself loaded; only one is ever pending, because a second
+  // pick replaces what the user asked for.
+  if (!m_accounts[idx].ready) {
+    m_pendingChatAccount = accountId;
+    m_pendingChatName = name;
+    return;
+  }
+  page->runJavaScript(ChatNav::openChatByNameScript(name));
 }
 
 QString MainWindow::accountTabTooltip(const Account &acc) const {
