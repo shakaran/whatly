@@ -276,12 +276,34 @@ R"JS(
     }
     return null;
   };
+  // The container our entries were inserted into, remembered so that "is the
+  // button still there?" can be answered without measuring anything.
+  var railParent = null;
   // Is every button that should be there, there — and none that should not be?
-  // Two getElementById calls. This runs on a timer, so it must not touch layout.
+  // Getting this wrong in the lenient direction is unrecoverable, because it is
+  // also the stop condition for the retry timer below: anything it calls settled
+  // is never looked at again for the life of the page.
+  //
+  // It used to ask only whether an element with the id existed and was connected
+  // to the document. That is not the same question. WhatsApp rebuilds this rail,
+  // and when it re-parents the container our entry is sitting in, the entry stays
+  // in the document — connected, findable by id, and nowhere near the sidebar. So
+  // the buttons vanished, the timer concluded there was nothing to do, and they
+  // stayed gone until the page was destroyed: a restart was the only cure, and
+  // toggling the setting did not help either, because that path calls install()
+  // too. Verified live over the debugging protocol: entries moved out of the rail
+  // but left in the document were never restored, through four ticks and an
+  // explicit reinstall.
+  //
+  // So require the entry to still be a child of the container we put it in. Both
+  // tests are pointer comparisons against a remembered node — no queries, and
+  // still nothing that forces layout, which is what this being on a timer demands.
   var settled = function () {
     for (var n = 0; n < BUTTONS.length; n++) {
       var entry = document.getElementById(BUTTONS[n].id);
-      if (BUTTONS[n].enabled() !== !!(entry && entry.isConnected)) return false;
+      var placed = !!(entry && entry.isConnected && railParent &&
+                      railParent.isConnected && entry.parentElement === railParent);
+      if (BUTTONS[n].enabled() !== placed) return false;
     }
     return true;
   };
@@ -299,7 +321,14 @@ R"JS(
           if (existing) existing.remove();
           continue;
         }
-        if (existing && existing.isConnected) continue;
+        // In place: nothing to do. Present but no longer in the rail: it is the
+        // stranded entry described above, and skipping it here was the second half
+        // of the same bug — the id was taken, so a replacement could never be
+        // built. Destroy it and fall through to make a new one.
+        if (existing && existing.isConnected && railParent &&
+            railParent.isConnected && existing.parentElement === railParent)
+          continue;
+        if (existing) existing.remove();
 
         var rail = railButtons();
         var avatar = null, template = null;
@@ -338,6 +367,9 @@ R"JS(
         })(spec), true);
 
         avatarWrapper.parentElement.insertBefore(entry, avatarWrapper);
+        // Remember where they went, so settled() can tell "still in the rail"
+        // from "still in the document".
+        railParent = avatarWrapper.parentElement;
       }
     } catch (e) { /* never break the page */ }
   };
