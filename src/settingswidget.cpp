@@ -275,6 +275,13 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
           .value("minimizeOnTrayIconClick", false)
           .toBool());
   ui->minimizeOnTrayIconClick->blockSignals(false);
+  ui->minimizeOnlyFocusedWindowCheckBox->blockSignals(true);
+  ui->minimizeOnlyFocusedWindowCheckBox->setChecked(
+      SettingsManager::instance()
+          .settings()
+          .value("minimizeOnlyFocusedWindow", false)
+          .toBool());
+  ui->minimizeOnlyFocusedWindowCheckBox->blockSignals(false);
   ui->defaultDownloadLocation->setText(QDir::toNativeSeparators(
       SettingsManager::instance()
           .settings()
@@ -523,6 +530,9 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
                ui->restartNowButton);
     moveWidget(body(window), ui->tabsInTitleBarCheckBox, G);
     moveLayout(body(window), ui->gridLayout_9); // zoom block
+    // Last in the section: it qualifies how the windows this section configures
+    // are put away, rather than being one more of the tray checkboxes above.
+    moveWidget(body(window), ui->minimizeOnlyFocusedWindowCheckBox, G);
 
     // ── Advanced ────────────────────────────────────────────
     auto *advanced = newSection(tr("Advanced"));
@@ -2303,6 +2313,11 @@ void SettingsWidget::on_minimizeOnTrayIconClick_toggled(bool checked) {
                                                   checked);
   if (checked) // needs a tray icon — see on_hideTrayIconCheckBox_toggled
     ui->hideTrayIconCheckBox->setChecked(false);
+}
+
+void SettingsWidget::on_minimizeOnlyFocusedWindowCheckBox_toggled(bool checked) {
+  SettingsManager::instance().settings().setValue("minimizeOnlyFocusedWindow",
+                                                  checked);
 }
 
 void SettingsWidget::on_styleComboBox_currentTextChanged(const QString &arg1) {

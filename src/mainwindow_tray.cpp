@@ -42,15 +42,30 @@ void MainWindow::createActions() {
   // window, so fall back to an ordinary minimise to the taskbar. This also
   // covers the "minimize in tray on start" setting, which triggers this action.
   //
-  // Every window, not just this one — this action IS the tray's own "put Whatly
-  // away", and leaving the other windows up while the tray shows the app as away
-  // is the same "one window is the real one" that the rest of this PR removes.
+  // Every window by default, not just this one — this action IS the tray's own
+  // "put Whatly away", and leaving the other windows up while the tray shows the
+  // app as away is the same "one window is the real one" that the rest of this
+  // branch removes. Which of the two is wanted is taste rather than correctness,
+  // though, so "minimizeOnlyFocusedWindow" takes it back to one window.
   connect(m_minimizeAction, &QAction::triggered, this, [this]() {
+    const bool onlyFront = SettingsManager::instance()
+                               .settings()
+                               .value("minimizeOnlyFocusedWindow", false)
+                               .toBool();
     if (QSystemTrayIcon::isSystemTrayAvailable() && m_systemTrayIcon &&
-        m_systemTrayIcon->isVisible())
-      hideAllWindows();
-    else
-      showMinimized();
+        m_systemTrayIcon->isVisible()) {
+      if (onlyFront)
+        frontWindow()->hide();
+      else
+        hideAllWindows();
+      return;
+    }
+    // No tray to bring anything back from, so minimise to the taskbar instead —
+    // and the window in front rather than this one, which is the same assumption
+    // again: with a detached window being worked in, Ctrl+W used to minimise the
+    // main window sitting behind it and appear to do nothing.
+    QWidget *w = frontWindow();
+    w->setWindowState(w->windowState() | Qt::WindowMinimized);
   });
   addAction(m_minimizeAction);
 
