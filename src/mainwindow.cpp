@@ -1293,6 +1293,36 @@ QList<QWidget *> MainWindow::allWindows() const {
   return out;
 }
 
+QList<QWidget *> MainWindow::windowsByFocus() const {
+  // m_focusOrder is most-recently-focused first, with a null entry standing for
+  // this window (see frontWindow()). Translate that, then let the pure helper do
+  // the ordering — it is the part with the rules in it (repeats, windows since
+  // closed, windows never focused) and the part worth testing.
+  QList<QWidget *> history;
+  for (DetachedAccountWindow *win : m_focusOrder)
+    history << (win ? static_cast<QWidget *>(win)
+                    : static_cast<QWidget *>(const_cast<MainWindow *>(this)));
+  return Utils::orderedByHistory(history, allWindows());
+}
+
+void MainWindow::hideAllWindows() {
+  for (QWidget *w : allWindows())
+    w->hide();
+}
+
+void MainWindow::restoreAllWindows() {
+  // Least-recently-used first, so what comes back is stacked the way it was
+  // left, and the window the user was actually in ends up on top.
+  const QList<QWidget *> order = windowsByFocus();
+  for (int i = order.size() - 1; i > 0; --i) {
+    QWidget *w = order[i];
+    w->setWindowState(w->windowState() & ~Qt::WindowMinimized);
+    w->show();
+    w->raise();
+  }
+  bringForward(order.isEmpty() ? this : order.first());
+}
+
 void MainWindow::bringForward(QWidget *w) {
   if (!w)
     return;

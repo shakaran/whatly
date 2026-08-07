@@ -99,6 +99,17 @@ public slots:
   // Every Whatly window, so "hide to tray" takes the whole app away rather than
   // just this one, which would be another way of showing which is special.
   QList<QWidget *> allWindows() const;
+  // The same windows, most-recently-used first. Hiding is what makes the order
+  // matter: it takes the whole app away, so bringing it back has to bring all of
+  // it back, and in the order the user left it.
+  QList<QWidget *> windowsByFocus() const;
+  // Bring the whole app back: every window that is hidden or minimised, with the
+  // one last used raised on top. Showing only that one is what stranded the
+  // others — hidden, with no window left to click and no entry pointing at them.
+  void restoreAllWindows();
+  // Put the whole app in the tray: every window, for the same reason hiding one
+  // and leaving the rest would say one of them is the real one.
+  void hideAllWindows();
   void newChat();
   // Whether the account strip stays up with only one account, where it is a row
   // of chrome carrying a single tab. Off by default; the "+" it holds is also
@@ -257,6 +268,15 @@ private:
   QMenu *m_recentUnreadMenu = nullptr;
   void refreshRecentUnread();
   void openChatByName(const QString &accountId, const QString &name);
+  // Every window in the tray menu, numbered by how recently it was used, so none
+  // can be left with nothing pointing at it.
+  QMenu *m_windowsMenu = nullptr;
+  // What each entry in that menu points at, in the same order — so a click goes
+  // to the window whose label was read, and to nothing at all if that window has
+  // since closed.
+  QList<QPointer<QWidget>> m_windowsMenuTargets;
+  void refreshWindowsMenu();
+  QString windowLabel(const QWidget *w) const;
   // The tab tooltip for an account: its WhatsApp Web version (once known) and
   // the build token from the page URL. Empty while neither is available.
   QString accountTabTooltip(const Account &acc) const;

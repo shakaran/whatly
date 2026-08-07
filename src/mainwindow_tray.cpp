@@ -3,6 +3,7 @@
 #include "utils.h"
 #include "appprofile.h"
 #include "common.h"
+#include "detachedaccountwindow.h" // windowLabel() compares against a real window
 #include "trayicon.h"
 
 #include <algorithm>
@@ -40,17 +41,24 @@ void MainWindow::createActions() {
   // Ctrl+W — which reads as "close tab" in a tabbed app — would strand the
   // window, so fall back to an ordinary minimise to the taskbar. This also
   // covers the "minimize in tray on start" setting, which triggers this action.
+  //
+  // Every window, not just this one — this action IS the tray's own "put Whatly
+  // away", and leaving the other windows up while the tray shows the app as away
+  // is the same "one window is the real one" that the rest of this PR removes.
   connect(m_minimizeAction, &QAction::triggered, this, [this]() {
     if (QSystemTrayIcon::isSystemTrayAvailable() && m_systemTrayIcon &&
         m_systemTrayIcon->isVisible())
-      hide();
+      hideAllWindows();
     else
       showMinimized();
   });
   addAction(m_minimizeAction);
 
   m_restoreAction = new QAction(tr("&Restore"), this);
-  connect(m_restoreAction, &QAction::triggered, this, &QMainWindow::show);
+  // Restores the whole app, for the same reason: it is the counterpart of the
+  // action above, and it used to show this window alone.
+  connect(m_restoreAction, &QAction::triggered, this,
+          &MainWindow::restoreAllWindows);
   addAction(m_restoreAction);
 
   m_reloadAction = new QAction(tr("Re&load"), this);
@@ -265,6 +273,13 @@ void MainWindow::createTrayIcon() {
   m_trayIconMenu->setObjectName("trayIconMenu");
   m_trayIconMenu->addAction(m_minimizeAction);
   m_trayIconMenu->addAction(m_restoreAction);
+  // Every window, numbered by how recently it was used, so each one can be
+  // reached directly. With no "main" window there is no window the tray is
+  // guaranteed to bring up, and a window can end up behind everything else or
+  // minimised with nothing pointing at it; a list of them is the handle. It hides
+  // itself while there is only one window, which is a list of nothing useful.
+  m_windowsMenu = m_trayIconMenu->addMenu(tr("Windows"));
+  m_windowsMenu->menuAction()->setVisible(false);
   m_trayIconMenu->addSeparator();
   // Recent unread chats (idea #3): populated live from the active account; the
   // submenu hides itself when there is nothing unread.
@@ -296,6 +311,11 @@ void MainWindow::createTrayIcon() {
   connect(m_trayIconMenu, &QMenu::triggered, this, [this](QAction *action) {
     if (action == m_quitAction || action == m_minimizeAction ||
         action == m_toggleThemeAction)
+      return;
+    // The window list names the window to come up, and this signal reaches
+    // submenu entries too — so without this the front window would be hauled up
+    // first and the chosen one only afterwards.
+    if (m_windowsMenu && m_windowsMenu->actions().contains(action))
       return;
     raiseWindow();
     // Settings opens a window of its own, and raising the main window above it
@@ -357,13 +377,85 @@ void MainWindow::createTrayIcon() {
 // harmless: it just raises it. Enabling it unconditionally removes the trap
 // rather than relying on the refresh always happening.
 void MainWindow::checkWindowState() {
-  const bool visible = isVisible();
+  // Any window, not this one: with this window hidden and another in front,
+  // "Minimise to tray" was greyed out while there was plainly something to put
+  // away, and putting it away is exactly what it now does.
+  bool visible = false;
+  for (QWidget *w : allWindows())
+    if (w->isVisible()) {
+      visible = true;
+      break;
+    }
   if (m_minimizeAction)
     m_minimizeAction->setEnabled(visible);
   if (m_restoreAction)
     m_restoreAction->setEnabled(true);
   if (m_lockAction)
     m_lockAction->setEnabled(!(m_lockWidget && m_lockWidget->getIsLocked()));
+  refreshWindowsMenu();
+}
+
+// What a window is called in that list: the accounts it holds. A title would be
+// the WhatsApp page title, which is the chat being read and changes under the
+// user; the accounts are what they arranged the windows BY.
+QString MainWindow::windowLabel(const QWidget *w) const {
+  QStringList names;
+  for (const Account &a : m_accounts) {
+    const bool here = a.window
+                          ? static_cast<const QWidget *>(a.window.data()) == w
+                          : w == this;
+    if (here && !a.name.isEmpty())
+      names << a.name;
+  }
+  if (names.isEmpty())
+    return QApplication::applicationDisplayName();
+  QString label = names.join(QStringLiteral(", "));
+  if (label.size() > 40)
+    label = label.left(39) + QChar(0x2026);
+  return label;
+}
+
+// Entries are REUSED, never cleared and rebuilt, and that is a correctness
+// requirement rather than an economy: picking one brings a window forward, which
+// makes it the most recently used, which comes straight back here — and deleting
+// the action whose signal is still being delivered is a crash. So the pool only
+// grows, spare entries are hidden, and each entry's target is remembered
+// alongside it so a click goes to the window the label described.
+void MainWindow::refreshWindowsMenu() {
+  if (!m_windowsMenu)
+    return;
+  const QList<QWidget *> order = windowsByFocus();
+  QList<QAction *> entries = m_windowsMenu->actions();
+  while (entries.size() < order.size()) {
+    const int slot = entries.size();
+    QAction *entry = m_windowsMenu->addAction(QString());
+    connect(entry, &QAction::triggered, this, [this, slot]() {
+      // Weakly held: a detached window can be closed between the menu being
+      // filled in and an entry being picked, and closing one hands its accounts
+      // back rather than taking them with it — so a stale entry does nothing.
+      if (QWidget *target = m_windowsMenuTargets.value(slot))
+        bringForward(target);
+    });
+    entries << entry;
+  }
+  m_windowsMenuTargets.clear();
+  for (int i = 0; i < entries.size(); ++i) {
+    if (i >= order.size()) {
+      entries[i]->setVisible(false);
+      continue;
+    }
+    QString text = QStringLiteral("%1. %2").arg(i + 1).arg(windowLabel(order[i]));
+    // Hidden and minimised windows are the case this list exists for, so say
+    // which ones those are rather than leaving the user to guess.
+    if (!order[i]->isVisible())
+      text += QStringLiteral("  (") + tr("hidden") + QStringLiteral(")");
+    else if (order[i]->isMinimized())
+      text += QStringLiteral("  (") + tr("minimised") + QStringLiteral(")");
+    entries[i]->setText(text);
+    entries[i]->setVisible(true);
+    m_windowsMenuTargets << QPointer<QWidget>(order[i]);
+  }
+  m_windowsMenu->menuAction()->setVisible(order.size() > 1);
 }
 
 void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason) {
@@ -407,12 +499,15 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason) {
       lockOnHideIfEnabled();
       // Every window, not just this one: hiding one and leaving the others is
       // itself a statement about which window matters.
-      for (QWidget *w : allWindows())
-        w->hide();
+      hideAllWindows();
     }
     return;
   }
-  bringForward(front);
+  // All of it, not just the front one. The click above hides every window, so
+  // this has to show every window: bringing back only the one last used left the
+  // rest hidden, with no window to click and nothing in the tray pointing at
+  // them, so they stayed buried until the app was restarted.
+  restoreAllWindows();
 }
 
 // The tray icon in three independent dimensions: monochrome vs the colourful

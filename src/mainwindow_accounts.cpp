@@ -1252,6 +1252,23 @@ DetachedAccountWindow *MainWindow::createDetachedWindow() {
   // Becoming active makes this window "main" (front of the focus order).
   connect(win, &DetachedAccountWindow::activated, this,
           [this, win]() { noteWindowFocused(win); });
+  // The application-wide actions are carried by the main window, and Qt only
+  // fires a shortcut while a window carrying it is up and active — so with the
+  // main window hidden in the tray and this window in front, Ctrl+P and the rest
+  // did nothing at all, which is the "one window is special" this PR is about.
+  // Attaching the same actions here fixes that: a shortcut fires if ANY window
+  // holding the action qualifies.
+  //
+  // Only the actions that are about the application. The ones that act on "the
+  // current account" are deliberately left out: reload, zoom and fullscreen would
+  // silently mean the main window's account rather than the one being looked at,
+  // which is worse than the shortcut not working.
+  for (QAction *shared :
+       {m_settingsAction, m_commandPaletteAction, m_aboutAction, m_quitAction,
+        m_toggleThemeAction, m_muteAction, m_lockAction,
+        m_scheduledMessagesAction, m_addAccountAction, m_chatListStripAction})
+    if (shared)
+      win->addAction(shared);
   // Moving/resizing the window updates the saved arrangement (debounced).
   connect(win, &DetachedAccountWindow::geometryChanged, this, [this]() {
     if (m_layoutSaveTimer)
@@ -1266,12 +1283,14 @@ DetachedAccountWindow *MainWindow::createDetachedWindow() {
 void MainWindow::noteWindowFocused(DetachedAccountWindow *win) {
   m_focusOrder.removeAll(win);
   m_focusOrder.prepend(win); // most-recently-focused first; front is "main"
+  refreshWindowsMenu();      // the numbering IS this order
 }
 
 void MainWindow::destroyDetachedWindow(DetachedAccountWindow *win) {
   if (!win)
     return;
   m_focusOrder.removeAll(win);
+  refreshWindowsMenu(); // one window fewer to offer
   win->disconnect(this);
   win->deleteLater();
 }

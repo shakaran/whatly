@@ -714,6 +714,30 @@ private slots:
     // the behaviour is exactly the pre-change isActiveWindow() check.
     QVERIFY(!Utils::wasFrontmostRecently(false, 100000, 100010, 0));
   }
+
+  // The order the tray offers the windows in, and the order they are brought back
+  // in. Strings stand in for windows: the rule is about the two lists, not about
+  // anything a window does.
+  void windowsOrderedByUse() {
+    using L = QList<QString>;
+    const L all{"main", "a", "b", "c"};
+
+    // Most-recently-used first, and the history repeats itself — every window is
+    // re-recorded each time it is activated, so "b, a, b" is the normal shape.
+    QCOMPARE(Utils::orderedByHistory(L{"b", "a", "b"}, all),
+             (L{"b", "a", "main", "c"}));
+
+    // A window never activated is still offered, on the end: leaving it out is
+    // how a window ends up with nothing pointing at it, which is the whole bug.
+    QCOMPARE(Utils::orderedByHistory(L{"c"}, all), (L{"c", "main", "a", "b"}));
+
+    // A history naming a window that has since closed does not resurrect it.
+    QCOMPARE(Utils::orderedByHistory(L{"gone", "a"}, all),
+             (L{"a", "main", "b", "c"}));
+
+    // No history at all: the list as it stands, which is what a fresh start has.
+    QCOMPARE(Utils::orderedByHistory(L{}, all), all);
+  }
   void installTypeFromEnv() {
     qputenv("INSTALL_TYPE", "snap");
     QCOMPARE(Utils::getInstallType(), QStringLiteral("snap"));
