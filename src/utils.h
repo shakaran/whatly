@@ -28,12 +28,12 @@ public:
   // whichever bar the app draws itself — the custom title bar, or the tab strip
   // when the tabs stand in for one — so which build is running can be read off
   // the window instead of dug out of About, the question every dogfooding round
-  // starts with. Deliberately NOT in the window title: with the system's own
-  // title bar the text is the window manager's to draw, and a build label there
-  // is a long shout in a place we cannot make quiet.
+  // starts with. There it can be small and faint; in a title bar the system
+  // draws, nothing about it would be ours to make quiet.
   static QString versionLabel();
-  // The application's display name followed by that. The long form, for the
-  // tooltip that spells out what the small text in the bar is.
+  // The application's display name followed by that. The long form: the tooltip
+  // that spells out what the small text in the bar is, and the window title of a
+  // window whose frame the system draws, where there is no bar to put it in.
   static QString appNameWithVersion();
   static QString refreshCacheSize(const QString cache_dir);
   static bool delete_cache(const QString cache_dir);

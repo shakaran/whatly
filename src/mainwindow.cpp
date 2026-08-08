@@ -80,7 +80,7 @@ MainWindow::MainWindow(QWidget *parent)
       m_unreadMessageCountRegExp("\\([^\\d]*(\\d+)[^\\d]*\\)") {
 
   setObjectName("MainWindow");
-  setWindowTitle(QApplication::applicationDisplayName() + AppProfile::label());
+  setWindowTitle(titlePrefix() + AppProfile::label());
   setWindowIcon(themeIcon("whatly", ":/icons/app/icon-64.png"));
   // Optional client-side decoration: drop the native frame so buildAccountArea
   // can add its own title bar. Off by default, so nothing changes for anyone who
@@ -1295,6 +1295,11 @@ void MainWindow::raiseWindow() {
 // It is handed the current process id instead and waits for it to go before
 // claiming the key. Nothing is killed: this window closes through the ordinary
 // quit path, which is also what writes the window layout out.
+QString MainWindow::titlePrefix() {
+  return CustomTitleBar::isEnabled() ? QApplication::applicationDisplayName()
+                                     : Utils::appNameWithVersion();
+}
+
 void MainWindow::restartApp() {
   QStringList args = QCoreApplication::arguments();
   if (!args.isEmpty())
