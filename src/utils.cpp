@@ -281,6 +281,23 @@ QString Utils::decodeXML(const QString &decodeMe) {
  * @return The installation type as a QString. It can be "snap", "flatpak", or
  * an empty string if the installation type could not be determined.
  */
+QString Utils::versionLabel() {
+  QString s = QString::fromLatin1(VERSIONSTR);
+  // Defined by the build system, and empty for an ordinary build. Guarded rather
+  // than assumed: the test binaries compile this file without it.
+#ifdef WHATLY_BUILD_LABEL
+  const QString label = QString::fromLatin1(WHATLY_BUILD_LABEL).trimmed();
+  if (!label.isEmpty())
+    s += QLatin1Char(' ') + label;
+#endif
+  return s;
+}
+
+QString Utils::appNameWithVersion() {
+  return QApplication::applicationDisplayName() + QLatin1Char(' ') +
+         versionLabel();
+}
+
 QString Utils::getInstallType() {
   QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
 

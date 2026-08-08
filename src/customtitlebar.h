@@ -47,6 +47,8 @@ private:
   QWidget *m_window = nullptr;
   QLabel *m_icon = nullptr;
   QLabel *m_title = nullptr;
+  // Merged mode only: the version, in the strip space the tabs leave.
+  QLabel *m_version = nullptr;
   QToolButton *m_maxButton = nullptr;
 };
 

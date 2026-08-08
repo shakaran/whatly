@@ -110,6 +110,17 @@ private slots:
     const QString s = Utils::convertSectoDay(3661); // 1h 1m 1s
     QVERIFY(!s.isEmpty());
   }
+  // The version shown in the window title and beside the tabs. This binary is
+  // compiled with VERSIONSTR="test" and WITHOUT a build label, which is the case
+  // the #ifdef in versionLabel() exists for — an unguarded use of the macro would
+  // not compile here at all.
+  void versionLabelForTheTitle() {
+    QCOMPARE(Utils::versionLabel(), QStringLiteral("test"));
+    // The name leads and the version follows, so shortening a title in a narrow
+    // title bar takes the version rather than the app's name.
+    QVERIFY(Utils::appNameWithVersion().endsWith(QStringLiteral(" test")));
+    QVERIFY(!Utils::appNameWithVersion().startsWith(QStringLiteral("test")));
+  }
   void xmlRoundTrip() {
     const QString raw = QStringLiteral("a<b>&\"'c");
     const QString enc = Utils::encodeXML(raw);

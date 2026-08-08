@@ -80,7 +80,7 @@ MainWindow::MainWindow(QWidget *parent)
       m_unreadMessageCountRegExp("\\([^\\d]*(\\d+)[^\\d]*\\)") {
 
   setObjectName("MainWindow");
-  setWindowTitle(QApplication::applicationDisplayName() + AppProfile::label());
+  setWindowTitle(Utils::appNameWithVersion() + AppProfile::label());
   setWindowIcon(themeIcon("whatly", ":/icons/app/icon-64.png"));
   // Optional client-side decoration: drop the native frame so buildAccountArea
   // can add its own title bar. Off by default, so nothing changes for anyone who

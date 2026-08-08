@@ -24,6 +24,14 @@ public:
   Utils(QObject *parent = 0);
   virtual ~Utils();
   static QString getInstallType();
+  // The version, with the build label appended when a build sets one. Shown in
+  // the window title, and beside the tabs when they stand in for the title bar,
+  // so which build is running can be read off the window instead of dug out of
+  // About — the question every dogfooding round starts with.
+  static QString versionLabel();
+  // The application's display name followed by that: what a window title starts
+  // with. One place, so the title bar and every window agree.
+  static QString appNameWithVersion();
   static QString refreshCacheSize(const QString cache_dir);
   static bool delete_cache(const QString cache_dir);
   static QString toCamelCase(const QString &s);
