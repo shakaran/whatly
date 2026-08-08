@@ -2297,8 +2297,8 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="520"/>
-        <source>Ctrl+W hides only the focused window.</source>
-        <translation>Ctrl+W kaŝas nur la fokusitan fenestron.</translation>
+        <source>Ctrl+W hides only the last focused window.</source>
+        <translation>Ctrl+W kaŝas nur la laste fokusitan fenestron.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="517"/>

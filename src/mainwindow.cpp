@@ -1440,12 +1440,11 @@ void MainWindow::focusChatSearch() {
   const int idx = focusedAccountIndex();
   if (idx < 0)
     return;
-  // Collapsed, the search box is clipped to a sliver above the chat list — the
-  // same reason a click up there expands the list instead of typing into it.
-  // Expanding is a round trip through the app, which is why the script retries
-  // rather than assuming the box is there the moment it runs.
-  if (ChatListStrip::isCollapsed())
-    toggleChatListStrip();
+  // Which search to open is the page's decision, not ours: with a conversation
+  // open the answer is the search within it, and only with none open is it the
+  // chat list's box — which the script also has to expand the list for when it is
+  // collapsed. All three of those are questions only the DOM can answer.
+  //
   // Safe to ask the view for its page here, unlike a loop over every account:
   // this account is the one on screen, so its page already exists.
   if (m_accounts[idx].view && m_accounts[idx].view->page())

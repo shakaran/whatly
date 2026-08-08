@@ -2479,8 +2479,16 @@ void SettingsWidget::on_chnageCurrentPasswordPushButton_clicked() {
 }
 
 void SettingsWidget::keyPressEvent(QKeyEvent *e) {
-  if (e->key() == Qt::Key_Escape)
+  // Ctrl+W closes this page, exactly as Escape does. Everywhere else in Whatly
+  // that key means "put the window away", and reading it as "put the app in the
+  // tray" while Settings is the window in front is not what anyone pressing it
+  // here means — this is a page you close, and it is the only window that is.
+  if (e->key() == Qt::Key_Escape ||
+      (e->key() == Qt::Key_W && e->modifiers().testFlag(Qt::ControlModifier))) {
     this->close();
+    e->accept();
+    return;
+  }
 
   QWidget::keyPressEvent(e);
 }

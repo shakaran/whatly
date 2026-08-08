@@ -79,11 +79,90 @@ QString openChatByNameScript(const QString &name) {
 QString focusSearchScript() {
   return QStringLiteral(R"JS(
 (function(){
+  // Ctrl+F means "find in what I am looking at". With a conversation open, that
+  // is the conversation — WhatsApp's own search-within-chat, the magnifier in the
+  // chat header — and not the chat list's search box, which is a different
+  // question entirely. The list search is what it falls back to when there is no
+  // conversation open to search.
   var tries = 0;
-  function box() {
-    // Named first, because it is unambiguous — but only in the languages we can
-    // name, so the structural fallbacks below carry every other locale: the
-    // search field is the one text input inside #side and above the chat list.
+  function vis(e) {
+    var r = e.getBoundingClientRect();
+    return r.width > 0 && r.height > 0;
+  }
+  function focusIn(el) {
+    el.focus();
+    // Select what is already there, so typing replaces the old term rather than
+    // appending to it. Not every element type has select().
+    if (typeof el.select === 'function') { try { el.select(); } catch (e) {} }
+    else {
+      try {
+        var r = document.createRange();
+        r.selectNodeContents(el);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+      } catch (e) {}
+    }
+  }
+  // The magnifier in the open conversation's header. data-icon is WhatsApp's own
+  // attribute and survives their builds; every class around it is obfuscated and
+  // does not. The aria-label pass is for builds that drop the attribute, and it
+  // can only cover the languages it names, which is why it is second.
+  function headerSearch() {
+    var main = document.querySelector('#main');
+    var header = main && main.querySelector('header');
+    if (!header) return null;
+    var icon = header.querySelector('[data-icon^="search"]');
+    if (icon) return icon.closest('button') || icon;
+    var btns = header.querySelectorAll('button');
+    for (var i = 0; i < btns.length; i++) {
+      var l = (btns[i].getAttribute('aria-label') || '').toLowerCase();
+      if (/search|buscar|recherch|such|cerca|procur|ricerc|zoek|поиск|szukaj|serĉ/.test(l))
+        return btns[i];
+    }
+    return null;
+  }
+  // The field the search panel opens with: it is in neither the chat list
+  // (#side) nor the conversation (#main), because WhatsApp puts the panel in its
+  // own pane beside them. That places it without naming a single class, and it
+  // is also what keeps this off the message composer, which lives inside #main.
+  function panelBox() {
+    var all = document.querySelectorAll(
+      'input,[contenteditable="true"],[role="textbox"]');
+    for (var i = 0; i < all.length; i++) {
+      var e = all[i];
+      if (e.closest('#side') || e.closest('#main')) continue;
+      if (vis(e)) return e;
+    }
+    return null;
+  }
+  // A plain click is ignored by parts of this UI, so send the sequence it does
+  // react to, the same one the chat-opening script uses.
+  function press(el) {
+    var r = el.getBoundingClientRect();
+    var o = { bubbles: true, cancelable: true, view: window,
+              clientX: r.x + r.width / 2, clientY: r.y + r.height / 2,
+              button: 0, pointerId: 1, pointerType: 'mouse', isPrimary: true };
+    el.dispatchEvent(new PointerEvent('pointerdown', o));
+    el.dispatchEvent(new MouseEvent('mousedown', o));
+    el.dispatchEvent(new PointerEvent('pointerup', o));
+    el.dispatchEvent(new MouseEvent('mouseup', o));
+    el.dispatchEvent(new MouseEvent('click', o));
+  }
+  function waitForPanel() {
+    var b = panelBox();
+    if (b) { focusIn(b); return 'chat-search'; }
+    if (++tries < 15) { setTimeout(waitForPanel, 100); return 'waiting'; }
+    return 'chat-search-no-field';
+  }
+
+  var btn = headerSearch();
+  if (btn) { press(btn); return waitForPanel(); }
+
+  // No conversation open. The chat list's own search box is the sensible answer,
+  // named by aria-label in the languages we can name and found structurally
+  // otherwise — the one input inside #side — so the key is not dead elsewhere.
+  function listBox() {
     return document.querySelector('input[aria-label*="Search" i]')
       || document.querySelector('input[aria-label*="Buscar" i]')
       || document.querySelector('input[data-tab="3"]')
@@ -91,30 +170,21 @@ QString focusSearchScript() {
       || document.querySelector('#side [role="textbox"]')
       || document.querySelector('#side input');
   }
-  function attempt() {
-    var b = box();
-    if (b) {
-      b.focus();
-      // Select what is already there, so typing replaces the old term instead of
-      // appending to it. Not every element type has select().
-      if (typeof b.select === 'function') { try { b.select(); } catch (e) {} }
-      else {
-        try {
-          var r = document.createRange();
-          r.selectNodeContents(b);
-          var s = window.getSelection();
-          s.removeAllRanges();
-          s.addRange(r);
-        } catch (e) {}
-      }
-      return 'ok';
-    }
-    // The page may still be building, and the chat list may have just been
-    // expanded on our own account, which is a round trip through the app.
-    if (++tries < 12) { setTimeout(attempt, 150); return 'waiting'; }
+  function attemptList() {
+    var b = listBox();
+    if (b && vis(b)) { focusIn(b); return 'list-search'; }
+    if (++tries < 15) { setTimeout(attemptList, 150); return 'waiting'; }
     return 'not-found';
   }
-  return attempt();
+  // Collapsed, that box is clipped to a sliver, so focusing it is no use: open
+  // the list first, which is what a click up there does. Same test the sidebar
+  // buttons use for the collapsed state. Expanding is a round trip through the
+  // app, hence the retry.
+  var strip = document.getElementById('whatly-chatlist-strip');
+  if (strip && strip.textContent && window.__whatlyBridge &&
+      window.__whatlyBridge.toggleChatListStrip)
+    window.__whatlyBridge.toggleChatListStrip();
+  return attemptList();
 })()
 )JS");
 }

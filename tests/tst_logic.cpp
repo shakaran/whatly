@@ -2208,8 +2208,16 @@ private slots:
   void focusSearchScriptShape() {
     const QString js = ChatNav::focusSearchScript();
     QVERIFY(js.contains(QLatin1String(".focus()")));
-    // A locale-independent fallback is required: naming the English (or Spanish)
-    // aria-label alone would leave the key dead on every other language.
+    // With a conversation open, Ctrl+F must mean the search WITHIN it — the
+    // magnifier in the chat header — not the chat list's box. data-icon is
+    // WhatsApp's own attribute; the classes around it are obfuscated.
+    QVERIFY(js.contains(QLatin1String("[data-icon^=\"search\"]")));
+    QVERIFY(js.contains(QLatin1String("#main")));
+    // The panel's field is identified by being in neither pane, which is also
+    // what keeps this off the message composer — that lives inside #main.
+    QVERIFY(js.contains(QLatin1String("e.closest('#main')")));
+    // A locale-independent fallback is required for the list search: naming the
+    // English (or Spanish) aria-label alone would leave the key dead elsewhere.
     QVERIFY(js.contains(QLatin1String("#side input")));
     // Retries, because expanding a collapsed chat list is a round trip through
     // the app and the box does not exist yet when the script first runs.
