@@ -517,21 +517,25 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event) {
   if (event->type() == QEvent::Show) {
     const int idx = accountIndexForView(watched);
     if (idx >= 0) {
-      const bool wasLoaded = m_accounts[idx].loaded;
       ensureAccountLoaded(idx);
-      // A view that was ALREADY loaded gets nothing from the call above — it
-      // returns at once — and that is the case where an account torn into a new
-      // window came up black. Moving a QWebEngineView between top-level windows
-      // can leave its native surface behind, and nothing else in the app is
-      // watching for that, so the window stayed black until the account was
-      // docked and torn out a second time.
+      // Then rebuild the surface, whether or not the call above had anything to
+      // do. Moving a QWebEngineView between top-level windows can leave its
+      // native surface behind, and nothing else in the app is watching for that,
+      // so an account torn into a new window came up black and stayed black
+      // until it was docked and torn out again.
+      //
+      // It used to run only for an account that was already loaded, on the
+      // reasoning that a page built right here would come up fresh anyway. A
+      // second account then came up black too, and the window was pure black to
+      // the pixel with "Compositor returned null texture" logged as it opened:
+      // the view had no picture at all, which is a fact about the surface and
+      // not about the page. Nothing in that says the load state should decide.
       //
       // The nudge is a hide/show on the next turn of the event loop, which makes
       // Qt build the surface again. It is one-shot per view: it causes another
       // Show, which lands back here, and without the guard that is an endless
       // loop — the same shape as the tint recursion.
-      if (wasLoaded)
-        nudgeReparentedView(idx);
+      nudgeReparentedView(idx);
     }
   }
   return QMainWindow::eventFilter(watched, event);
