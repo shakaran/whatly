@@ -1,6 +1,7 @@
 #ifndef ACCOUNTTABBAR_H
 #define ACCOUNTTABBAR_H
 
+#include <QPixmap>
 #include <QPoint>
 #include <QString>
 #include <QTabBar>
@@ -70,6 +71,10 @@ private:
   // "there is no account here". Validity is the question being asked; the "+"
   // affordance is the one carrying no data at all.
   QVariant m_pressData;
+  // The tab's pixels, taken at press time. Grabbing them when the drag starts
+  // catches QTabBar's reorder animation in flight, which draws halves of two
+  // different tabs into the sprite; at press the strip is stationary.
+  QPixmap m_pressSprite;
   int m_dropSlot = -1; // insertion slot to paint while a drag hovers, or -1
 };
 

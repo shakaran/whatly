@@ -56,7 +56,12 @@ void AccountTabBar::mousePressEvent(QMouseEvent *event) {
     // holds: the default account's id is "", so an id alone cannot be told from
     // "no account here" — and treating it as nothing left the one account most
     // people have as the one account that could not be torn off.
-    m_pressData = tabData(tabAt(event->position().toPoint()));
+    const int pressed = tabAt(event->position().toPoint());
+    m_pressData = tabData(pressed);
+    // Take the sprite now, while the strip is still. By the time a drag starts,
+    // QTabBar has slid the tabs around and is animating them, so a grab there
+    // catches two tabs mid-swap and draws halves of both.
+    m_pressSprite = pressed >= 0 ? grab(tabRect(pressed)) : QPixmap();
   }
   QTabBar::mousePressEvent(event);
 }
@@ -92,7 +97,11 @@ void AccountTabBar::mouseMoveEvent(QMouseEvent *event) {
 void AccountTabBar::startDrag(int index, const QPoint &cursorPos) {
   const QString id = tabData(index).toString();
   const QRect r = tabRect(index);
-  const QPixmap sprite = grab(r); // the tab's own pixels, as the drag cursor
+  // The tab's own pixels, as the drag cursor — taken at press time, because
+  // grabbing here would catch the reorder animation. Falling back to a live grab
+  // only covers a drag that somehow began without a press.
+  const QPixmap sprite = m_pressSprite.isNull() ? grab(r) : m_pressSprite;
+  m_pressSprite = QPixmap();
 
   auto *drag = new QDrag(this);
   auto *mime = new QMimeData;
