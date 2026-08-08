@@ -29,6 +29,7 @@ class LocalApiServer;
 #include "webenginenotifproxy.h"
 
 #include <QHash>
+#include <QSet>
 #include <QPointer>
 #include <functional>
 
@@ -226,6 +227,13 @@ private:
   // the main window — a detached window shows its own account without going
   // anywhere near setActiveAccount().
   void ensureAccountLoaded(int index);
+  // Rebuild the native surface of a view that has just been moved into another
+  // window. Qt can leave it behind, which is what made an account torn into its
+  // own window come up black, with docking and tearing out again the only cure.
+  // One-shot per view: the hide/show it does causes another Show event, which
+  // arrives back in eventFilter().
+  void nudgeReparentedView(int index);
+  QSet<QWidget *> m_nudgedViews;
   void setActiveAccount(int index);
   void promptAddAccount();
   void renameAccount(int index);
