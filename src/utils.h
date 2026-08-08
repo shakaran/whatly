@@ -25,12 +25,15 @@ public:
   virtual ~Utils();
   static QString getInstallType();
   // The version, with the build label appended when a build sets one. Shown in
-  // the window title, and beside the tabs when they stand in for the title bar,
-  // so which build is running can be read off the window instead of dug out of
-  // About — the question every dogfooding round starts with.
+  // whichever bar the app draws itself — the custom title bar, or the tab strip
+  // when the tabs stand in for one — so which build is running can be read off
+  // the window instead of dug out of About, the question every dogfooding round
+  // starts with. Deliberately NOT in the window title: with the system's own
+  // title bar the text is the window manager's to draw, and a build label there
+  // is a long shout in a place we cannot make quiet.
   static QString versionLabel();
-  // The application's display name followed by that: what a window title starts
-  // with. One place, so the title bar and every window agree.
+  // The application's display name followed by that. The long form, for the
+  // tooltip that spells out what the small text in the bar is.
   static QString appNameWithVersion();
   static QString refreshCacheSize(const QString cache_dir);
   static bool delete_cache(const QString cache_dir);

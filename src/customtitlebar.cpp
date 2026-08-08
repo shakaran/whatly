@@ -35,6 +35,14 @@ CustomTitleBar::CustomTitleBar(QWidget *window, QWidget *parent, Mode mode)
 
     m_title = new QLabel(window->windowTitle(), this);
     layout->addWidget(m_title, 1);
+
+    // The version goes at the far end of the row, so the title keeps the whole
+    // left-hand side it has always had and the two never fight for the middle.
+    // Same watermark treatment as the merged strip, so the answer to "which
+    // build is this?" looks the same wherever it is read.
+    m_version = new QLabel(Utils::versionLabel(), this);
+    m_version->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+    layout->addWidget(m_version);
   } else {
     // No fixed height and no background of its own: the tab strip beside it
     // sets the row's height and draws the row's background, and anything else
@@ -43,36 +51,53 @@ CustomTitleBar::CustomTitleBar(QWidget *window, QWidget *parent, Mode mode)
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     // With the title bar gone there is nowhere else the version could be shown,
     // so it goes in the space the tabs do not use — the same run of empty strip
-    // that the window is dragged by. Three things make that work:
-    //   * Ignored horizontally with no minimum, so the layout may shrink it to
-    //     nothing. The text is then simply cut off, which is the right answer
-    //     here: the tabs are what the row is for, and this must never push them.
-    //   * Transparent to mouse events, or it would swallow the presses that drag
-    //     the window and this area would stop working.
-    //   * Dimmed, because it is a label and not a control.
+    // that the window is dragged by. Ignored horizontally with no minimum, so
+    // the layout may shrink it to nothing: the text is then simply cut off,
+    // which is the right answer here. The tabs are what the row is for, and this
+    // must never push them.
     m_version = new QLabel(Utils::versionLabel(), this);
-    m_version->setAttribute(Qt::WA_TransparentForMouseEvents, true);
     m_version->setMinimumWidth(0);
     m_version->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
     m_version->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    m_version->setToolTip(Utils::appNameWithVersion());
-    // Small and faint on purpose: it sits in the same row as the tabs, so it has
-    // to read as a watermark rather than as another label competing with them.
-    // Being small is also what lets a long build label fit before the space runs
-    // out. Point and pixel sizes both handled — a font set in pixels reports -1
-    // for its point size, and scaling that would make the text vanish.
+    layout->addWidget(m_version, 1);
+  }
+
+  if (m_version) {
+    // Transparent to mouse events, or it would swallow the presses that drag the
+    // window and the strip it sits in would stop working. That costs it its own
+    // tooltip, so the tooltip goes on the bar instead — see below, where it also
+    // answers a hover anywhere in the empty run, which is where a hand goes
+    // looking.
+    m_version->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    // Small and faint on purpose: it shares a row with the tabs or the title, so
+    // it has to read as a watermark rather than as another label competing with
+    // them. Being small is also what lets a long build label fit before the
+    // space runs out. Point and pixel sizes both handled — a font set in pixels
+    // reports -1 for its point size, and scaling that would make the text
+    // vanish.
     QFont vf = m_version->font();
     if (vf.pointSizeF() > 0)
       vf.setPointSizeF(qMax(6.0, vf.pointSizeF() * 0.78));
     else if (vf.pixelSize() > 0)
       vf.setPixelSize(qMax(8, int(vf.pixelSize() * 0.78)));
     m_version->setFont(vf);
+    // The colour is the background nudged a fifth of the way towards the text
+    // colour. Dimming the text colour instead was still too loud, and it also
+    // needs no light/dark special case: whichever way round the theme is, this
+    // lands just off the background.
     QPalette vp = m_version->palette();
-    QColor dim = vp.color(QPalette::WindowText);
-    dim.setAlphaF(0.45);
-    vp.setColor(QPalette::WindowText, dim);
+    const QColor bg = vp.color(QPalette::Window);
+    const QColor fg = vp.color(QPalette::WindowText);
+    const auto toward = [](int from, int to) {
+      return from + int(0.2 * (to - from));
+    };
+    vp.setColor(QPalette::WindowText,
+                QColor(toward(bg.red(), fg.red()), toward(bg.green(), fg.green()),
+                       toward(bg.blue(), fg.blue())));
     m_version->setPalette(vp);
-    layout->addWidget(m_version, 1);
+    // The whole bar answers the hover: the label is transparent to the mouse,
+    // and the version is the only thing in this row anyone would hover for.
+    setToolTip(Utils::appNameWithVersion());
   }
 
   const QStyle *st = style();
