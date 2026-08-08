@@ -52,6 +52,7 @@
 #include <QProcess>
 #include <QVarLengthArray>
 #ifdef Q_OS_UNIX
+#include <sys/syscall.h>
 #include <sys/wait.h>
 #include <unistd.h>
 #endif
@@ -1355,8 +1356,9 @@ void MainWindow::restartApp() {
   // session and process group, and does not survive it here: the new process got
   // as far as printing its start-up line and was then taken down with the old
   // one. It has to leave that session (setsid) and be orphaned onto init (the
-  // second fork) to outlive the instance that started it. Descriptors survive
-  // both forks untouched, which is the whole point of doing this at all.
+  // second fork) to outlive the instance that started it. stdout and stderr
+  // survive both forks untouched, which is the whole point of doing this at all;
+  // every other descriptor is closed just before exec, below.
   const pid_t child = ::fork();
   if (child < 0) {
     failed();
@@ -1369,6 +1371,23 @@ void MainWindow::restartApp() {
     if (grandchild < 0)
       ::_exit(127);
     if (grandchild == 0) {
+      // Keep 0, 1 and 2 — they are the log, and the reason for all of this —
+      // and close everything above them. QProcess::startDetached used to do
+      // that for us, and dropping it cost the remote-debugging port: the old
+      // process's listening socket came through exec, so the new process could
+      // not bind it ("bind() failed: Address already in use", in the log of the
+      // session that found this) and the inherited socket sat there listening
+      // with nobody left to accept on it. Any other descriptor the old process
+      // held — profile locks among them — would travel the same way.
+      bool closed = false;
+#ifdef SYS_close_range
+      closed = ::syscall(SYS_close_range, 3, ~0U, 0) == 0;
+#endif
+      if (!closed) {
+        const long maxFd = ::sysconf(_SC_OPEN_MAX);
+        for (int fd = 3; fd < int(maxFd > 0 ? maxFd : 4096); ++fd)
+          ::close(fd);
+      }
       ::execv(argStore.first().constData(), argv.data());
       // Only reachable if exec failed. Nobody is left to tell by now — the
       // executable was checked before the first fork for exactly that reason.
