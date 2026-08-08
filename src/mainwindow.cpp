@@ -52,6 +52,7 @@
 #include <QProcess>
 #include <QVarLengthArray>
 #ifdef Q_OS_UNIX
+#include <sys/wait.h>
 #include <unistd.h>
 #endif
 #include "chatliststrip.h"
@@ -1349,18 +1350,37 @@ void MainWindow::restartApp() {
     argv.append(a.data());
   argv.append(nullptr);
 
+  // fork, setsid, fork again — the dance startDetached does, and the part of it
+  // that a bare fork was missing. A plain child stays in the dying parent's
+  // session and process group, and does not survive it here: the new process got
+  // as far as printing its start-up line and was then taken down with the old
+  // one. It has to leave that session (setsid) and be orphaned onto init (the
+  // second fork) to outlive the instance that started it. Descriptors survive
+  // both forks untouched, which is the whole point of doing this at all.
   const pid_t child = ::fork();
   if (child < 0) {
     failed();
     return;
   }
   if (child == 0) {
-    ::execv(argStore.first().constData(), argv.data());
-    // Only reachable if exec failed. The parent is already committed by now, so
-    // there is nobody left to tell; dying quietly at least leaves no half-started
-    // process behind, and the executable was checked above.
-    ::_exit(127);
+    if (::setsid() < 0)
+      ::_exit(127);
+    const pid_t grandchild = ::fork();
+    if (grandchild < 0)
+      ::_exit(127);
+    if (grandchild == 0) {
+      ::execv(argStore.first().constData(), argv.data());
+      // Only reachable if exec failed. Nobody is left to tell by now — the
+      // executable was checked before the first fork for exactly that reason.
+      ::_exit(127);
+    }
+    ::_exit(0); // the middle process has done its job; init adopts the grandchild
   }
+  // Reap the middle process, which exits immediately. Without this it lingers as
+  // a zombie for as long as this instance takes to quit, and --restart-wait
+  // watches for a pid to disappear.
+  int status = 0;
+  ::waitpid(child, &status, 0);
 #else
   if (!QProcess::startDetached(exePath, args)) {
     failed();
