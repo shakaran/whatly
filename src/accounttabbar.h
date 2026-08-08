@@ -4,6 +4,7 @@
 #include <QPoint>
 #include <QString>
 #include <QTabBar>
+#include <QVariant>
 
 class QMouseEvent;
 class QDragEnterEvent;
@@ -51,7 +52,9 @@ protected:
   void paintEvent(QPaintEvent *event) override;
 
 private:
-  void startDrag(int index);
+  // `cursorPos` is where the pointer was when the drag began, in strip
+  // coordinates; it sets where the sprite hangs off the cursor.
+  void startDrag(int index, const QPoint &cursorPos);
   int accountTabCount() const;   // tabs backing a real account (valid tab data)
   int dropSlotAt(int x) const;   // insertion slot for a cursor x position
 
@@ -61,8 +64,12 @@ private:
   // The account pressed, not the slot it was pressed in. QTabBar reorders tabs
   // live under the cursor while the button is down, so a slot number captured on
   // press stops meaning that account the moment the drag moves sideways.
-  QString m_pressId;
-  QPoint m_pressPos;
+  //
+  // Held as the tab data itself rather than as a QString, because the DEFAULT
+  // account's id is the empty string and a bare id cannot tell it apart from
+  // "there is no account here". Validity is the question being asked; the "+"
+  // affordance is the one carrying no data at all.
+  QVariant m_pressData;
   int m_dropSlot = -1; // insertion slot to paint while a drag hovers, or -1
 };
 

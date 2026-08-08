@@ -2213,6 +2213,29 @@ private slots:
     QCOMPARE(bar.indexOfAccount(QString()), -1);
     QCOMPARE(bar.indexOfAccount(QStringLiteral("nope")), -1);
   }
+
+  // The DEFAULT account's id is the empty string (MainWindow::Account::id), and
+  // the "+" affordance is the tab with no data at all. Telling those two apart by
+  // asking whether the id is empty makes the default account — the only account
+  // most people have — the one account that cannot be dragged out of the strip.
+  // It is the validity of the tab data that separates them, not the id.
+  void defaultAccountIsATabLikeAnyOther() {
+    AccountTabBar bar;
+    bar.setTabData(bar.addTab(QStringLiteral("Default")), QString()); // id ""
+    bar.setTabData(bar.addTab(QStringLiteral("Work")), QStringLiteral("w1"));
+    bar.addTab(QStringLiteral("+"));  // no data: not an account
+
+    QCOMPARE(bar.indexOfAccount(QString()), 0);
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("w1")), 1);
+    // The affordance is never an account, and its slot must not be reachable by
+    // asking for an id that no tab holds.
+    QVERIFY(!bar.tabData(2).isValid());
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("nope")), -1);
+    // And it still follows the default account through a reorder.
+    bar.moveTab(0, 1);
+    QCOMPARE(bar.indexOfAccount(QString()), 1);
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("w1")), 0);
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────

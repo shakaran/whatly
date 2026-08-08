@@ -41,21 +41,22 @@ int AccountTabBar::dropSlotAt(int x) const {
 }
 
 int AccountTabBar::indexOfAccount(const QString &id) const {
-  if (id.isEmpty())
-    return -1;
   for (int i = 0; i < count(); ++i)
-    if (tabData(i).toString() == id)
+    // Validity first: the "+" affordance carries no tab data, and the default
+    // account's id is the empty string, so comparing ids alone would either
+    // match the affordance or refuse to find the default account.
+    if (tabData(i).isValid() && tabData(i).toString() == id)
       return i;
   return -1;
 }
 
 void AccountTabBar::mousePressEvent(QMouseEvent *event) {
   if (event->button() == Qt::LeftButton) {
-    // Remember the account, not the slot. An empty id covers both "the + tab"
-    // (no tab data) and "no tab here at all", which is what the slot number used
-    // to be checked for.
-    m_pressId = tabData(tabAt(event->position().toPoint())).toString();
-    m_pressPos = event->position().toPoint();
+    // Remember the account, not the slot. The tab data itself, not the id it
+    // holds: the default account's id is "", so an id alone cannot be told from
+    // "no account here" — and treating it as nothing left the one account most
+    // people have as the one account that could not be torn off.
+    m_pressData = tabData(tabAt(event->position().toPoint()));
   }
   QTabBar::mousePressEvent(event);
 }
@@ -64,11 +65,11 @@ void AccountTabBar::mouseMoveEvent(QMouseEvent *event) {
   // While the cursor stays within the strip, QTabBar reorders tabs live. Once
   // it leaves the strip vertically, hand off to a QDrag that tears the tab off
   // or docks it into another window.
-  if (!m_pressId.isEmpty() && (event->buttons() & Qt::LeftButton)) {
+  if (m_pressData.isValid() && (event->buttons() & Qt::LeftButton)) {
     const QPoint p = event->position().toPoint();
     if (p.y() < -kDetachMargin || p.y() > height() + kDetachMargin) {
-      const QString id = m_pressId;
-      m_pressId.clear();
+      const QString id = m_pressData.toString();
+      m_pressData.clear();
       // End QTabBar's in-progress move before starting the drag.
       QMouseEvent release(QEvent::MouseButtonRelease, event->position(),
                           event->globalPosition(), Qt::LeftButton,
@@ -81,14 +82,14 @@ void AccountTabBar::mouseMoveEvent(QMouseEvent *event) {
       // release also means the tabs have settled into the order on screen.
       const int index = indexOfAccount(id);
       if (index >= 0)
-        startDrag(index);
+        startDrag(index, p);
       return;
     }
   }
   QTabBar::mouseMoveEvent(event);
 }
 
-void AccountTabBar::startDrag(int index) {
+void AccountTabBar::startDrag(int index, const QPoint &cursorPos) {
   const QString id = tabData(index).toString();
   const QRect r = tabRect(index);
   const QPixmap sprite = grab(r); // the tab's own pixels, as the drag cursor
@@ -98,7 +99,14 @@ void AccountTabBar::startDrag(int index) {
   mime->setData(kAccountTabMime, id.toUtf8());
   drag->setMimeData(mime);
   drag->setPixmap(sprite);
-  drag->setHotSpot(m_pressPos - r.topLeft());
+  // Hold the sprite where the cursor actually is. The press position cannot be
+  // used for this any more: a drag that slid the tab past its neighbours on the
+  // way out ends with the tab somewhere else entirely, so an offset measured from
+  // where it was first grabbed leaves the sprite hanging at a distance from the
+  // pointer. Vertically the cursor is by definition outside the strip — that is
+  // what started the drag — so the grip goes to the middle of the tab.
+  drag->setHotSpot(QPoint(qBound(0, cursorPos.x() - r.left(), r.width()),
+                          r.height() / 2));
 
   // Over the desktop or another app nothing accepts our private mime, so the
   // platform would show the "forbidden" cursor — misleading, since we always
