@@ -408,6 +408,19 @@ static void waitForPreviousInstance(int argc, char *argv[]) {
 int main(int argc, char *argv[]) {
   DebugLog::install();   // before anything can log
 
+  // Which build this is, as the first thing logged. A bug report, or a tester
+  // saying a fix did not work, is only worth as much as the certainty about what
+  // was actually running: an install that did not replace the previous one, or a
+  // build from the wrong branch, otherwise looks exactly like a fix that failed.
+  // The branch is included for that second case. qWarning, not qInfo, so a
+  // release build prints it too, and it lands in the log the bug reporter sends.
+  // WHATLY_BUILD_LABEL is empty unless a build sets it, to mark a test build.
+  qWarning().noquote()
+      << QStringLiteral("whatly: starting %1 (%2 on %3, built %4)%5")
+             .arg(QLatin1String(VERSIONSTR), QLatin1String(GIT_HASH),
+                  QLatin1String(GIT_BRANCH), QLatin1String(BUILD_TIMESTAMP),
+                  QLatin1String(WHATLY_BUILD_LABEL));
+
   waitForPreviousInstance(argc, argv);
 
   // Which account this is has to be settled before anything else: it feeds the

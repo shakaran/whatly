@@ -475,6 +475,12 @@ if(APPLE)
 endif()
 
 # Define compiler definitions
+# Appended to the startup line, to tell a one-off build apart from a release at a
+# glance — e.g. -DWHATLY_BUILD_LABEL=" (drag-drop test 3)" while asking someone to
+# retest something. Empty for a normal build, which then prints nothing extra.
+set(WHATLY_BUILD_LABEL "" CACHE STRING
+    "Text appended to the startup version line, to identify a test build")
+
 target_compile_definitions(whatly PRIVATE
     QAPPLICATION_CLASS=QApplication
     QT_DEPRECATED_WARNINGS
@@ -482,6 +488,7 @@ target_compile_definitions(whatly PRIVATE
     GIT_BRANCH="${GIT_BRANCH}"
     BUILD_TIMESTAMP="${BUILD_TIMESTAMP}"
     VERSIONSTR="${PROJECT_VERSION}"
+    WHATLY_BUILD_LABEL="${WHATLY_BUILD_LABEL}"
 )
 
 # Check for WebEngine spellchecker support
