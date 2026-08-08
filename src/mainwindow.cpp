@@ -50,6 +50,10 @@
 #include <QDesktopServices>
 #include <QMessageBox>
 #include <QProcess>
+#include <QVarLengthArray>
+#ifdef Q_OS_UNIX
+#include <unistd.h>
+#endif
 #include "chatliststrip.h"
 #include "privacyblur.h"
 #include "localapi.h"
@@ -1310,14 +1314,59 @@ void MainWindow::restartApp() {
   saveWindowLayout();
   SettingsManager::instance().settings().sync(); // the new process reads these
 
-  if (!QProcess::startDetached(QCoreApplication::applicationFilePath(), args)) {
+  const QString exePath = QCoreApplication::applicationFilePath();
+  const auto failed = [this]() {
     // Nothing has been closed yet, so a failure here costs the user nothing
     // beyond the message.
     QMessageBox::warning(this, tr("Restart"),
                          tr("Whatly could not start a new instance, so it has "
                             "not closed this one. Please quit and reopen it."));
+  };
+
+#ifdef Q_OS_UNIX
+  // Hand the new process the SAME stdout and stderr this one has.
+  // QProcess::startDetached deliberately does not — the child ends up on the
+  // controlling terminal — so a launch whose output was being piped into a log
+  // file stopped being logged the instant anything called this. "Restart now" is
+  // a button we put in Settings, and one press of it silently ended the log
+  // people are asked to attach to bug reports. Losing the log at the exact moment
+  // someone is reproducing a problem is the worst possible time to lose it.
+  //
+  // fork+exec keeps the descriptors, and that is the whole difference: the
+  // --restart-wait handshake, the arguments and the ordering are unchanged.
+  if (!QFileInfo(exePath).isExecutable()) {
+    failed();
     return;
   }
+  // Everything the child needs is built HERE, before the fork: between fork and
+  // exec only async-signal-safe calls are allowed, and allocating is not one.
+  QList<QByteArray> argStore;
+  argStore << exePath.toLocal8Bit();
+  for (const QString &a : args)
+    argStore << a.toLocal8Bit();
+  QVarLengthArray<char *, 16> argv;
+  for (QByteArray &a : argStore)
+    argv.append(a.data());
+  argv.append(nullptr);
+
+  const pid_t child = ::fork();
+  if (child < 0) {
+    failed();
+    return;
+  }
+  if (child == 0) {
+    ::execv(argStore.first().constData(), argv.data());
+    // Only reachable if exec failed. The parent is already committed by now, so
+    // there is nobody left to tell; dying quietly at least leaves no half-started
+    // process behind, and the executable was checked above.
+    ::_exit(127);
+  }
+#else
+  if (!QProcess::startDetached(exePath, args)) {
+    failed();
+    return;
+  }
+#endif
   quitApp();
 }
 
