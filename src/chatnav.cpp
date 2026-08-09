@@ -152,9 +152,14 @@ QString unreadSummaryScript() {
   }
 
   var W = window.__whatlyUnread ||
-          (window.__whatlyUnread = { known: null, busy: false });
-  if (!W.busy) {
+          (window.__whatlyUnread = { known: null, busy: false, at: 0 });
+  // Asked often — a title change is not the only way an unread count moves, and
+  // marking a chat read or unread by hand moves it without one — so the read
+  // itself is throttled here rather than at the call site. Calls in between are
+  // free: they hand back the number already worked out.
+  if (!W.busy && Date.now() - (W.at || 0) > 2500) {
     W.busy = true;
+    W.at = Date.now();
     fromDatabase()
       .then(function(r){ if (r) W.known = r; })
       .catch(function(){})

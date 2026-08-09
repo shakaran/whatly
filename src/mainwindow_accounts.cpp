@@ -76,6 +76,34 @@ void MainWindow::setAlwaysShowAccountTabs(bool enabled) {
       QStringLiteral("alwaysShowAccountTabs"), enabled);
 }
 
+void MainWindow::countUnread(int idx) {
+  if (idx < 0 || idx >= m_accounts.size())
+    return;
+  QWebEnginePage *page = pageOf(m_accounts[idx]);
+  if (!page)
+    return; // dormant: it has nothing to count with
+  const QString id = m_accounts[idx].id;
+  page->runJavaScript(
+      ChatNav::unreadSummaryScript(), [this, id](const QVariant &result) {
+        const int i = accountIndexForId(id);
+        if (i < 0)
+          return;
+        const QJsonObject o =
+            QJsonDocument::fromJson(result.toString().toUtf8()).object();
+        const int chats = o.value(QStringLiteral("chats")).toInt();
+        if (m_accounts[i].unread == chats)
+          return; // nothing to redraw
+        m_accounts[i].unread = chats;
+        refreshAccountTabs();
+        updateTrayUnread();
+      });
+}
+
+void MainWindow::countUnreadEverywhere() {
+  for (int i = 0; i < m_accounts.size(); ++i)
+    countUnread(i);
+}
+
 void MainWindow::refreshAccountStrip() { refreshAccountTabs(); }
 
 void MainWindow::buildAccountArea() {
@@ -96,6 +124,17 @@ void MainWindow::buildAccountArea() {
   connect(m_suspendTimer, &QTimer::timeout, this,
           [this]() { suspendIdleAccounts(); });
   m_suspendTimer->start();
+
+  // A title change is not the only way an unread count moves: marking a chat
+  // read or unread by hand moves it without one, and so does reading a chat on
+  // the phone. The page throttles the work — a call between reads simply hands
+  // back the last number — so this costs a function call and a string per
+  // account every few seconds.
+  m_unreadTimer = new QTimer(this);
+  m_unreadTimer->setInterval(3 * 1000);
+  connect(m_unreadTimer, &QTimer::timeout, this,
+          [this]() { countUnreadEverywhere(); });
+  m_unreadTimer->start();
   auto *central = new QWidget(this);
   auto *layout = new QVBoxLayout(central);
   layout->setContentsMargins(0, 0, 0, 0);

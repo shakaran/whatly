@@ -446,23 +446,7 @@ void MainWindow::handleWebViewTitleChanged(const QString &title) {
   // the list, so a total repeats what is on screen, and a sum is dominated by
   // whichever group is busiest — which stops it answering "how many
   // conversations need me", the only question a badge is for.
-  if (QWebEnginePage *page = pageOf(m_accounts[idx])) {
-    const QString id = m_accounts[idx].id;
-    page->runJavaScript(
-        ChatNav::unreadSummaryScript(), [this, id](const QVariant &result) {
-          const int i = accountIndexForId(id);
-          if (i < 0)
-            return;
-          const QJsonObject o =
-              QJsonDocument::fromJson(result.toString().toUtf8()).object();
-          const int chats = o.value(QStringLiteral("chats")).toInt();
-          if (m_accounts[i].unread == chats)
-            return; // nothing to redraw
-          m_accounts[i].unread = chats;
-          refreshAccountTabs();
-          updateTrayUnread();
-        });
-  }
+  countUnread(idx);
 
   // The window title follows the active account only.
   if (idx == m_activeAccount)
