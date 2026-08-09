@@ -232,6 +232,18 @@ private:
   void collapseToOrdinalOrder(const QStringList &assign);
   bool m_loadingLayout = false; // guards saveAccounts while a layout is restored
   QTimer *m_layoutSaveTimer = nullptr; // debounces layout saves on window moves
+  // How every window is titled: the account it is showing, with its unread count
+  // when it has one — the same string that account's tab carries. Which window
+  // is which is the only question a title has to answer, and it is the same
+  // question whether the window holds one account or a strip of them. No
+  // application name in it: Qt appends that itself for the system's title bar,
+  // the task list and Alt-Tab, and CustomTitleBar puts it in front where the
+  // frame is ours to draw.
+  QString accountTitle(int idx) const;
+  // The window in which this account is the one on screen, or nothing — which
+  // is the question a title change has to ask, since an account sitting behind
+  // another account's tab must not retitle the window in front of it.
+  QWidget *windowShowingAccount(int idx) const;
   int accountIndexForView(const QObject *view) const;
   void refreshAccountTabs();
   // Ask a freshly loaded account's page for its WhatsApp Web version and cache

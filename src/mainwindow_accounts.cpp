@@ -718,8 +718,35 @@ void MainWindow::setActiveAccount(int index) {
         QStringLiteral("accounts/active"), id.isEmpty() ? kDefault : id);
   }
   // Re-point the lock overlay and refresh the title to the now-active account.
-  if (m_webEngine && m_webEngine->page())
-    setWindowTitle(m_webEngine->page()->title() + AppProfile::label());
+  setWindowTitle(accountTitle(m_activeAccount));
+}
+
+QString MainWindow::accountTitle(int idx) const {
+  if (idx < 0 || idx >= m_accounts.size())
+    return AppProfile::label().trimmed();
+  const Account &a = m_accounts[idx];
+  QString title = a.name;
+  if (a.unread > 0)
+    title += QStringLiteral(" (%1)").arg(a.unread);
+  return title + AppProfile::label();
+}
+
+QWidget *MainWindow::windowShowingAccount(int idx) const {
+  if (idx < 0 || idx >= m_accounts.size())
+    return nullptr;
+  const Account &a = m_accounts[idx];
+  if (!a.window)
+    return idx == m_activeAccount ? const_cast<MainWindow *>(this) : nullptr;
+  AccountTabBar *bar = a.window->bar();
+  if (!bar)
+    return nullptr;
+  // Validity first, as everywhere the strip is asked about an account: the "+"
+  // affordance carries no tab data and the default account's id is the empty
+  // string, so comparing ids alone would answer yes for the affordance.
+  const QVariant data = bar->tabData(bar->currentIndex());
+  return data.isValid() && data.toString() == a.id
+             ? static_cast<QWidget *>(a.window.data())
+             : nullptr;
 }
 
 int MainWindow::accountIndexForView(const QObject *view) const {
@@ -1190,7 +1217,7 @@ DetachedAccountWindow *MainWindow::createDetachedWindow() {
     const int idx = accountIndexForId(d.toString());
     if (idx >= 0 && m_accounts[idx].view) {
       win->stack()->setCurrentWidget(m_accounts[idx].view);
-      win->setWindowTitle(m_accounts[idx].name);
+      win->setWindowTitle(accountTitle(idx));
     }
   });
   // A tab dropped onto this window's strip -> move that account in here.
@@ -1441,7 +1468,7 @@ void MainWindow::moveAccountToWindow(const QString &id,
       }
   }
   if (const int mi = accountIndexForId(id); mi >= 0)
-    targetWin->setWindowTitle(m_accounts[mi].name);
+    targetWin->setWindowTitle(accountTitle(mi));
   targetWin->show();
   targetWin->raise();
   targetWin->activateWindow();
@@ -1600,7 +1627,7 @@ void MainWindow::refreshDetachedStrips() {
       bar->setCurrentIndex(activeTab);
       const int i = members[qBound(0, activeTab, members.size() - 1)];
       win->stack()->setCurrentWidget(m_accounts[i].view);
-      win->setWindowTitle(m_accounts[i].name);
+      win->setWindowTitle(accountTitle(i));
     }
   }
 }
