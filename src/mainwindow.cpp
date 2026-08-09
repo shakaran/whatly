@@ -75,9 +75,7 @@ MainWindow::MainWindow(QWidget *parent)
 #ifdef Q_OS_LINUX
       m_notifier(kAppDisplayName, this),
 #endif
-      m_trayIconNormal(themeIcon("whatly-tray", ":/icons/app/notification/whatly-notify.png")),
-      m_notificationsTitleRegExp("^\\([1-9]\\d*\\).*"),
-      m_unreadMessageCountRegExp("\\([^\\d]*(\\d+)[^\\d]*\\)") {
+      m_trayIconNormal(themeIcon("whatly-tray", ":/icons/app/notification/whatly-notify.png")) {
 
   setObjectName("MainWindow");
   setWindowTitle(QApplication::applicationDisplayName() + AppProfile::label());

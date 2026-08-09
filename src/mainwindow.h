@@ -430,8 +430,6 @@ private:
   QMetaObject::Connection m_trayNotificationClickConnection;
 #endif
   QIcon m_trayIconNormal;
-  QRegularExpression m_notificationsTitleRegExp;
-  QRegularExpression m_unreadMessageCountRegExp;
   DownloadManagerWidget m_downloadManagerWidget;
   QScopedPointer<QWebEngineProfile> m_otrProfile;
   int m_correctlyLoadedRetries = 4;

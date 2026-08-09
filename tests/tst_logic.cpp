@@ -2171,6 +2171,21 @@ private slots:
     QVERIFY(js.contains(QLatin1String(">= 6"))); // the limit was substituted
     QVERIFY(!ChatNav::unreadChatsScript(0).isEmpty()); // clamped, still valid
   }
+  void unreadSummaryReadsTheDatabaseAndFallsBackToTheList() {
+    const QString js = ChatNav::unreadSummaryScript();
+    // WhatsApp's own store, which is what makes the count independent of how
+    // much of the virtualised list happens to be drawn.
+    QVERIFY(js.contains(QLatin1String("model-storage")));
+    QVERIFY(js.contains(QLatin1String("unreadCount")));
+    // Archived chats are not counted; muted ones are.
+    QVERIFY(js.contains(QLatin1String("!c.archive")));
+    QVERIFY(!js.contains(QLatin1String("muteExpiration")));
+    // And the list is still there to answer while the first read is in flight,
+    // since runJavaScript cannot await a promise.
+    QVERIFY(js.contains(QLatin1String("#pane-side")));
+    QVERIFY(js.contains(QLatin1String("__whatlyUnread")));
+    QVERIFY(js.contains(QLatin1String("JSON.stringify")));
+  }
   void openScriptEscapesName() {
     const QString js =
         ChatNav::openChatByNameScript(QStringLiteral("a\"b'c\n<x>"));
