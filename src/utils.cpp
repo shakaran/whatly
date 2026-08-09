@@ -1,6 +1,9 @@
 #include "utils.h"
 #include "debuglog.h"
 #include "def.h"
+#include <QFont>
+#include <QGraphicsOpacityEffect>
+#include <QLabel>
 #include <QStandardPaths>
 #include <QHash>
 #include <time.h>
@@ -296,6 +299,28 @@ QString Utils::versionLabel() {
 QString Utils::appNameWithVersion() {
   return QApplication::applicationDisplayName() + QLatin1Char(' ') +
          versionLabel();
+}
+
+void Utils::makeWatermark(QLabel *label) {
+  if (!label)
+    return;
+  // Point and pixel sizes both handled — a font set in pixels reports -1 for its
+  // point size, and scaling that would make the text vanish.
+  QFont f = label->font();
+  if (f.pointSizeF() > 0)
+    f.setPointSizeF(qMax(6.0, f.pointSizeF() * 0.78));
+  else if (f.pixelSize() > 0)
+    f.setPixelSize(qMax(8, int(f.pixelSize() * 0.78)));
+  label->setFont(f);
+
+  // A fifth of the way from the background to the text colour, which needs no
+  // light/dark case: whichever way round the theme is, this lands just off the
+  // background. Opacity rather than a colour worked out here and set, because a
+  // colour does not survive — updateWindowTheme() hands the application palette
+  // back to every child of the main window, and these labels are children.
+  auto *fade = new QGraphicsOpacityEffect(label);
+  fade->setOpacity(0.2);
+  label->setGraphicsEffect(fade);
 }
 
 QString Utils::getInstallType() {

@@ -184,6 +184,7 @@ set(SOURCES
     src/mainwindow_webengine.cpp
     src/detachedaccountwindow.cpp
     src/accounttabbar.cpp
+    src/lingertip.cpp
     src/permissiondialog.cpp
     src/rateapp.cpp
     src/settingswidget.cpp
@@ -265,6 +266,7 @@ set(HEADERS
     src/mainwindow.h
     src/detachedaccountwindow.h
     src/accounttabbar.h
+    src/lingertip.h
     src/notificationpopup.h
     src/permissiondialog.h
     src/rateapp.h

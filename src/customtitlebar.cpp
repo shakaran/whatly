@@ -1,18 +1,14 @@
 #include "customtitlebar.h"
+#include "lingertip.h"
 #include "settingsmanager.h"
 #include "utils.h"
 
 #include <QApplication>
-#include <QCursor>
-#include <QFont>
-#include <QGraphicsOpacityEffect>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QMouseEvent>
 #include <QStyle>
-#include <QTimer>
 #include <QToolButton>
-#include <QToolTip>
 #include <QWindow>
 
 namespace {
@@ -50,69 +46,32 @@ CustomTitleBar::CustomTitleBar(QWidget *window, QWidget *parent, Mode mode)
     // here would either clip the tabs or paint a band that does not match them.
     // The empty space left of the buttons is what the window is dragged by.
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    // With the title bar gone there is nowhere else the version could be shown,
-    // so it goes in the space the tabs do not use — the same run of empty strip
-    // that the window is dragged by. Ignored horizontally with no minimum, so
-    // the layout may shrink it to nothing: the text is then simply cut off,
-    // which is the right answer here. The tabs are what the row is for, and this
-    // must never push them.
-    m_version = new QLabel(Utils::versionLabel(), this);
-    m_version->setMinimumWidth(0);
-    m_version->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
-    m_version->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    layout->addWidget(m_version, 1);
-  }
+    // The same title a standalone bar shows, in the space the tabs do not use —
+    // this row is the title bar, so it should say what a title bar says. Small
+    // and faint: the tabs are what the row is for, and this must not read as
+    // another label competing with them. Ignored horizontally with no minimum,
+    // so the layout may shrink it to nothing and the text is simply cut off,
+    // which is the right answer here — it must never push the tabs.
+    m_title = new QLabel(window->windowTitle(), this);
+    m_title->setMinimumWidth(0);
+    m_title->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
+    m_title->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    Utils::makeWatermark(m_title);
+    layout->addWidget(m_title, 1);
 
-  if (m_version) {
     // Transparent to mouse events, or it would swallow the presses that drag the
-    // window and the strip it sits in would stop working. That costs it its own
-    // tooltip, so the tooltip goes on the bar instead — see below, where it also
-    // answers a hover anywhere in the empty run, which is where a hand goes
-    // looking.
-    m_version->setAttribute(Qt::WA_TransparentForMouseEvents, true);
-    // Small and faint on purpose: it shares a row with the tabs or the title, so
-    // it has to read as a watermark rather than as another label competing with
-    // them. Being small is also what lets a long build label fit before the
-    // space runs out. Point and pixel sizes both handled — a font set in pixels
-    // reports -1 for its point size, and scaling that would make the text
-    // vanish.
-    QFont vf = m_version->font();
-    if (vf.pointSizeF() > 0)
-      vf.setPointSizeF(qMax(6.0, vf.pointSizeF() * 0.78));
-    else if (vf.pixelSize() > 0)
-      vf.setPixelSize(qMax(8, int(vf.pixelSize() * 0.78)));
-    m_version->setFont(vf);
-    // A fifth of the way from the background towards the text colour, which
-    // needs no light/dark special case: whichever way round the theme is, this
-    // lands just off the background. Done with opacity rather than by working
-    // the colour out and setting it, because a colour here does not survive:
-    // updateWindowTheme() hands the application palette to every child of the
-    // main window, and this is one of them, so the main window's copy came out
-    // at full strength while a detached window's — which that loop never
-    // reaches — was the quiet one this is meant to be. Opacity is not a
-    // palette, and it blends against whatever is really painted behind.
-    auto *fade = new QGraphicsOpacityEffect(m_version);
-    fade->setOpacity(0.2);
-    m_version->setGraphicsEffect(fade);
+    // window and the run of strip it sits in would stop working. That costs it
+    // its own tooltip, which is no loss: the one worth having here belongs to
+    // the whole run, not to wherever the text happens to reach.
+    m_title->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    // Which build this is, for the one person in a hundred who wants to know.
+    // Only in this mode: a bar the system draws has no such run and no tooltip
+    // either, so putting it on a bar of ours as well would make it an answer
+    // that appears and disappears with a setting.
+    LingerTip::install(this, Utils::appNameWithVersion(),
+                       // Not over the window buttons; they have their own tips.
+                       [this](const QPoint &p) { return childAt(p) == nullptr; });
   }
-
-  // Which build this is, on demand. The bar answers the hover in both modes:
-  // merged, because the label is transparent to the mouse and cannot; and
-  // standalone, because there the version is not on show at all. Five seconds
-  // of stillness rather than the usual fraction of one — nobody rests a hand
-  // here by accident, and a tip that appeared every time one crossed the strip
-  // on its way to the tabs would be worse than the loud label it replaced.
-  setMouseTracking(true);
-  m_tipTimer = new QTimer(this);
-  m_tipTimer->setSingleShot(true);
-  m_tipTimer->setInterval(5000);
-  connect(m_tipTimer, &QTimer::timeout, this, [this]() {
-    const QPoint p = mapFromGlobal(QCursor::pos());
-    // Not over a button: those have tooltips of their own, and childAt() passes
-    // straight through the version label, which is transparent to the mouse.
-    if (rect().contains(p) && !childAt(p))
-      QToolTip::showText(QCursor::pos(), Utils::appNameWithVersion(), this);
-  });
 
   const QStyle *st = style();
   auto makeButton = [&](QStyle::StandardPixmap pm, const QString &tip) {
@@ -191,25 +150,6 @@ void CustomTitleBar::mouseDoubleClickEvent(QMouseEvent *event) {
   QWidget::mouseDoubleClickEvent(event);
 }
 
-void CustomTitleBar::enterEvent(QEnterEvent *event) {
-  m_tipTimer->start();
-  QWidget::enterEvent(event);
-}
-
-void CustomTitleBar::mouseMoveEvent(QMouseEvent *event) {
-  // Every move puts the wait back to the beginning, so the tip answers a hand
-  // that has stopped here rather than one on its way somewhere else.
-  QToolTip::hideText();
-  m_tipTimer->start();
-  QWidget::mouseMoveEvent(event);
-}
-
-void CustomTitleBar::leaveEvent(QEvent *event) {
-  m_tipTimer->stop();
-  QToolTip::hideText();
-  QWidget::leaveEvent(event);
-}
-
 void CustomTitleBar::toggleMaximized() {
   if (m_window->isMaximized())
     m_window->showNormal();
@@ -228,7 +168,7 @@ void CustomTitleBar::refreshMaximizeIcon() {
 
 bool CustomTitleBar::eventFilter(QObject *watched, QEvent *event) {
   if (watched == m_window) {
-    // Merged mode has neither label — the tabs say which window this is.
+    // Both modes have a title; only a standalone bar has the icon beside it.
     if (event->type() == QEvent::WindowTitleChange && m_title)
       m_title->setText(m_window->windowTitle());
     else if (event->type() == QEvent::WindowIconChange && m_icon)

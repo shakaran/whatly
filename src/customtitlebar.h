@@ -4,7 +4,6 @@
 #include <QWidget>
 
 class QLabel;
-class QTimer;
 class QToolButton;
 
 // A slim client-side title bar for the optional frameless-window mode. It is only
@@ -17,9 +16,9 @@ class CustomTitleBar : public QWidget {
   Q_OBJECT
 public:
   // Standalone is the bar described above: its own row, with the icon and the
-  // window title. Merged drops both and keeps only the window buttons, so it
-  // can sit at the right-hand end of the account tab strip and let the tabs
-  // themselves be the title bar — Chrome-style, one row instead of two.
+  // window title. Merged drops the icon and shrinks the title to a watermark,
+  // so it can sit at the right-hand end of the account tab strip and let the
+  // tabs themselves be the title bar — Chrome-style, one row instead of two.
   enum class Mode { Standalone, Merged };
 
   // `window` is the top-level window this bar decorates.
@@ -39,9 +38,6 @@ public:
 protected:
   void mousePressEvent(QMouseEvent *event) override;
   void mouseDoubleClickEvent(QMouseEvent *event) override;
-  void mouseMoveEvent(QMouseEvent *event) override;
-  void enterEvent(QEnterEvent *event) override;
-  void leaveEvent(QEvent *event) override;
   bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
@@ -50,14 +46,11 @@ private:
 
   QWidget *m_window = nullptr;
   QLabel *m_icon = nullptr;
+  // The window title. Its own row in a standalone bar, beside the app icon; in
+  // the run of strip the tabs leave in a merged one, small and faint, because
+  // there it is sharing a row that has a job already.
   QLabel *m_title = nullptr;
-  // The version, in the strip space the tabs leave in a merged bar. A standalone
-  // one has a title to show instead, and shows only that: the version there was
-  // a second thing in a row that already had a job, and it read as one.
-  QLabel *m_version = nullptr;
   QToolButton *m_maxButton = nullptr;
-  // Counts out the stillness a hover has to hold before the tooltip appears.
-  QTimer *m_tipTimer = nullptr;
 };
 
 #endif // CUSTOMTITLEBAR_H
