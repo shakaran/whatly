@@ -1022,6 +1022,20 @@ QWebEnginePage *MainWindow::pageOf(const Account &a) {
 }
 
 void MainWindow::nudgeReparentedView(int index) {
+#ifdef Q_OS_WIN
+  // Windows rebuilds the surface by itself when a view is reparented, so the
+  // hide/show below has nothing to repair — it throws away a picture that was
+  // already good, and the view then stays black until WhatsApp happens to repaint
+  // of its own accord, which is tens of seconds on a quiet chat.
+  //
+  // Measured rather than reasoned, one binary run both ways with nothing else
+  // differing: nudging, an account docked back out of a detached window was black
+  // for 35 seconds and one entering grid view for 12; skipping it, neither
+  // blacked at all, in the same four paths. Linux is the other way round — there
+  // a live view moved between top-levels comes up black and stays black without
+  // this — so it is a platform difference, not dead code.
+  Q_UNUSED(index);
+#else
   if (index < 0 || index >= m_accounts.size())
     return;
   WebView *view = m_accounts[index].view;
@@ -1044,6 +1058,7 @@ void MainWindow::nudgeReparentedView(int index) {
     // through eventFilter() and must find this view still marked.
     m_nudgedViews.remove(raw);
   });
+#endif
 }
 
 void MainWindow::ensureAccountLoaded(int index) {
