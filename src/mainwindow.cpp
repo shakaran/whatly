@@ -597,8 +597,8 @@ void MainWindow::updateWindowTheme() {
     if (!account.view || account.view == m_webEngine)
       continue;
     account.view->setStyleSheet(viewStyle);
-    if (account.view->page())
-      account.view->page()->setBackgroundColor(pageBg);
+    if (pageOf(account))
+      pageOf(account)->setBackgroundColor(pageBg);
   }
 
   for (QWidget *w : findChildren<QWidget *>())
@@ -718,8 +718,8 @@ void MainWindow::initSettingWidget() {
             // and in grid view they are all on screen at once.
             WebEngineProfileManager::instance().applyUserSettings();
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(WebTweaks::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(WebTweaks::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::followSystemThemeChanged,
@@ -739,24 +739,24 @@ void MainWindow::initSettingWidget() {
           [=]() {
             CustomCss::install(WebEngineProfileManager::instance().profile());
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(CustomCss::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(CustomCss::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::focusModeChanged, m_settingsWidget,
           [=]() {
             FocusMode::install(WebEngineProfileManager::instance().profile());
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(FocusMode::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(FocusMode::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::hdMediaChanged, m_settingsWidget,
           [=]() {
             HdMedia::install(WebEngineProfileManager::instance().profile());
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(HdMedia::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(HdMedia::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::undoSendChanged, m_settingsWidget,
@@ -766,8 +766,8 @@ void MainWindow::initSettingWidget() {
             // enabling/disabling or changing the delay takes effect without a
             // reload.
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(UndoSend::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(UndoSend::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::customJsChanged, m_settingsWidget,
@@ -804,8 +804,8 @@ void MainWindow::initSettingWidget() {
           m_settingsWidget, [=]() {
             WebEngineProfileManager::instance().applyUserSettings();
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(
                     PrivacyBlur::scriptSource());
           });
 
@@ -813,8 +813,8 @@ void MainWindow::initSettingWidget() {
           m_settingsWidget, [=]() {
             WebEngineProfileManager::instance().applyUserSettings();
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(
                     ChatListStrip::scriptSource());
           });
 
@@ -822,16 +822,16 @@ void MainWindow::initSettingWidget() {
           [=]() {
             WebFont::install(WebEngineProfileManager::instance().profile());
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(WebFont::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(WebFont::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::mutedStatusChanged,
           m_settingsWidget, [=]() {
             MutedStatus::install(WebEngineProfileManager::instance().profile());
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(MutedStatus::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(MutedStatus::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::spellCheckChanged, m_settingsWidget,
@@ -847,8 +847,8 @@ void MainWindow::initSettingWidget() {
             // existing page). Each account keeps its own label.
             WebEngineProfileManager::instance().applyUserSettings();
             for (const Account &account : m_accounts) {
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(
                     LinkedDeviceName::scriptSource(account.name.isEmpty() ||
                                                            account.id.isEmpty()
                                                        ? QString()
@@ -1348,8 +1348,8 @@ void MainWindow::togglePrivacyBlur() {
   // grid view they are all on screen at once. See toggleChatListStrip().
   WebEngineProfileManager::instance().applyUserSettings();
   for (const Account &account : m_accounts)
-    if (account.view && account.view->page())
-      account.view->page()->runJavaScript(PrivacyBlur::scriptSource());
+    if (pageOf(account))
+      pageOf(account)->runJavaScript(PrivacyBlur::scriptSource());
   if (m_settingsWidget)
     m_settingsWidget->refresh();   // keep the combo box telling the truth
 }
@@ -1376,8 +1376,8 @@ void MainWindow::toggleChatListStrip() {
   // a profile's script changes to them.
   WebEngineProfileManager::instance().applyUserSettings();
   for (const Account &account : m_accounts)
-    if (account.view && account.view->page())
-      account.view->page()->runJavaScript(ChatListStrip::scriptSource());
+    if (pageOf(account))
+      pageOf(account)->runJavaScript(ChatListStrip::scriptSource());
   refreshChatListStripAction();
 }
 
