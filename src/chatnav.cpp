@@ -132,7 +132,16 @@ QString unreadSummaryScript() {
         if (!cur) { resolve(); return; }
         var c = cur.value || {};
         var n = c.unreadCount | 0;
-        if (n > 0 && !c.archive) { chats++; messages += n; }
+        // A chat marked unread by hand has no messages to count, and WhatsApp
+        // records it as a negative count or as a flag depending on the build.
+        // It belongs in the total either way: it carries a pill in the list and
+        // it appears under the list's own "unread" filter, which is the set this
+        // number is meant to be the size of.
+        var marked = n < 0 || !!c.markedUnread;
+        if ((n > 0 || marked) && !c.archive) {
+          chats++;
+          messages += (n > 0 ? n : 0);
+        }
         cur.continue();
       };
       req.onerror = function(){ resolve(); };
