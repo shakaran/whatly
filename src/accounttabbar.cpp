@@ -39,16 +39,21 @@ void AccountTabBar::refreshSelectionTint() {
     return;
   m_tinting = true;
   // Derived from the palette rather than hard-coded, so it follows whatever the
-  // theme is doing and stays right in both light and dark. Lighter than the strip
-  // when the strip is dark, darker when it is light — a shift in the direction
-  // that reads as "raised" either way.
+  // theme is doing and stays right in both light and dark: a step away from the
+  // strip, lighter when the strip is dark and darker when it is light.
   const QColor base = palette().color(QPalette::Window);
   const bool dark = base.lightness() < 128;
   const QColor tint = dark ? base.lighter(190) : base.darker(125);
-  // Only the selected tab is styled. Naming one property keeps Qt from falling
-  // back to drawing the whole strip itself, which would lose the platform look.
+  // And it goes on the tabs that are NOT on screen. With it on the selected one
+  // instead, that tab was the only one the stylesheet drew and the others kept
+  // the platform's own bordered look — which read as the wrong way round, the
+  // bordered ones looking live and the flat one looking like background. Now the
+  // ones you are not in are the flat crowd and the odd one out is the account you
+  // are in, which keeps the point of tinting anything: the selected tab stays
+  // visible on the styles that would otherwise draw it much like the rest.
+  // Naming one state also keeps Qt from taking over the whole strip's drawing.
   setStyleSheet(
-      QStringLiteral("QTabBar::tab:selected{background:%1;}").arg(tint.name()));
+      QStringLiteral("QTabBar::tab:!selected{background:%1;}").arg(tint.name()));
   m_tinting = false;
 }
 

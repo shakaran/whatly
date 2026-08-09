@@ -1844,13 +1844,15 @@ private slots:
     dark.setColor(QPalette::Window, QColor(30, 30, 30));
     bar.setPalette(dark);
     const QString darkSheet = bar.styleSheet();
-    QVERIFY(darkSheet.contains(QLatin1String("QTabBar::tab:selected")));
+    // The tabs that are NOT on screen carry the tint; the one that is stays as
+    // the platform draws it, and is told apart by being the only untinted one.
+    QVERIFY(darkSheet.contains(QLatin1String("QTabBar::tab:!selected")));
 
     QPalette light = bar.palette();
     light.setColor(QPalette::Window, QColor(240, 240, 240));
     bar.setPalette(light);
     const QString lightSheet = bar.styleSheet();
-    QVERIFY(lightSheet.contains(QLatin1String("QTabBar::tab:selected")));
+    QVERIFY(lightSheet.contains(QLatin1String("QTabBar::tab:!selected")));
 
     // The tint follows the palette rather than being fixed, so a light theme and
     // a dark one must not end up with the same colour.
