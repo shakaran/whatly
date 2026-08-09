@@ -80,7 +80,12 @@ MainWindow::MainWindow(QWidget *parent)
       m_unreadMessageCountRegExp("\\([^\\d]*(\\d+)[^\\d]*\\)") {
 
   setObjectName("MainWindow");
-  setWindowTitle(QApplication::applicationDisplayName() + AppProfile::label());
+  // No application name in here: Qt appends it to every window title at the
+  // platform layer, so a title that carried one too would read "Whatly … Whatly"
+  // in the system's title bar, the task list and Alt-Tab alike. What a bar of
+  // ours writes is CustomTitleBar::barTitle(), which puts the name back exactly
+  // once, because there no platform is going to.
+  setWindowTitle(AppProfile::label().trimmed());
   setWindowIcon(themeIcon("whatly", ":/icons/app/icon-64.png"));
   // Optional client-side decoration: drop the native frame so buildAccountArea
   // can add its own title bar. Off by default, so nothing changes for anyone who

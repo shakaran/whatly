@@ -448,8 +448,7 @@ void MainWindow::handleWebViewTitleChanged(const QString &title) {
 
   // The window title follows the active account only.
   if (idx == m_activeAccount)
-    setWindowTitle(QApplication::applicationDisplayName() + AppProfile::label() +
-                   ": " + title);
+    setWindowTitle(title + AppProfile::label());
 
   refreshAccountTabs();   // per-account badge on each tab
   updateTrayUnread();     // summed badge on the single tray icon

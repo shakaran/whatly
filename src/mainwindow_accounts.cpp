@@ -719,8 +719,7 @@ void MainWindow::setActiveAccount(int index) {
   }
   // Re-point the lock overlay and refresh the title to the now-active account.
   if (m_webEngine && m_webEngine->page())
-    setWindowTitle(QApplication::applicationDisplayName() + AppProfile::label() +
-                   ": " + m_webEngine->page()->title());
+    setWindowTitle(m_webEngine->page()->title() + AppProfile::label());
 }
 
 int MainWindow::accountIndexForView(const QObject *view) const {
@@ -1191,8 +1190,7 @@ DetachedAccountWindow *MainWindow::createDetachedWindow() {
     const int idx = accountIndexForId(d.toString());
     if (idx >= 0 && m_accounts[idx].view) {
       win->stack()->setCurrentWidget(m_accounts[idx].view);
-      win->setWindowTitle(m_accounts[idx].name + QStringLiteral(" — ") +
-                          QApplication::applicationDisplayName());
+      win->setWindowTitle(m_accounts[idx].name);
     }
   });
   // A tab dropped onto this window's strip -> move that account in here.
@@ -1443,8 +1441,7 @@ void MainWindow::moveAccountToWindow(const QString &id,
       }
   }
   if (const int mi = accountIndexForId(id); mi >= 0)
-    targetWin->setWindowTitle(m_accounts[mi].name + QStringLiteral(" — ") +
-                              QApplication::applicationDisplayName());
+    targetWin->setWindowTitle(m_accounts[mi].name);
   targetWin->show();
   targetWin->raise();
   targetWin->activateWindow();
@@ -1603,8 +1600,7 @@ void MainWindow::refreshDetachedStrips() {
       bar->setCurrentIndex(activeTab);
       const int i = members[qBound(0, activeTab, members.size() - 1)];
       win->stack()->setCurrentWidget(m_accounts[i].view);
-      win->setWindowTitle(m_accounts[i].name + QStringLiteral(" — ") +
-                          QApplication::applicationDisplayName());
+      win->setWindowTitle(m_accounts[i].name);
     }
   }
 }

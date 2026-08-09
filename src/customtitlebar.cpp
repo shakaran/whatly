@@ -32,7 +32,7 @@ CustomTitleBar::CustomTitleBar(QWidget *window, QWidget *parent, Mode mode)
     m_icon->setPixmap(window->windowIcon().pixmap(18, 18));
     layout->addWidget(m_icon);
 
-    m_title = new QLabel(window->windowTitle(), this);
+    m_title = new QLabel(barTitle(), this);
     layout->addWidget(m_title, 1);
 
     // Neither of them takes the mouse. The whole row left of the buttons is what
@@ -52,7 +52,7 @@ CustomTitleBar::CustomTitleBar(QWidget *window, QWidget *parent, Mode mode)
     // another label competing with them. Ignored horizontally with no minimum,
     // so the layout may shrink it to nothing and the text is simply cut off,
     // which is the right answer here — it must never push the tabs.
-    m_title = new QLabel(window->windowTitle(), this);
+    m_title = new QLabel(barTitle(), this);
     m_title->setMinimumWidth(0);
     m_title->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
     m_title->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
@@ -102,6 +102,18 @@ CustomTitleBar::CustomTitleBar(QWidget *window, QWidget *parent, Mode mode)
   // Keep the icon/title/maximise glyph in sync with the window.
   m_window->installEventFilter(this);
   refreshMaximizeIcon();
+}
+
+QString CustomTitleBar::barTitle() const {
+  // What the platform writes on a frame it draws, written here because on this
+  // one nothing else will: the application's name and the window's own title,
+  // once each. Qt appends the name to every window title at the platform layer,
+  // so the title itself must not carry one — that is what made the system's own
+  // title bar read "Whatly: WhatsApp — Whatly", and a detached window's read the
+  // name twice with a dash on either side of it.
+  const QString title = m_window->windowTitle();
+  const QString name = QApplication::applicationDisplayName();
+  return title.isEmpty() ? name : name + QStringLiteral(": ") + title;
 }
 
 bool CustomTitleBar::isEnabled() {
@@ -170,7 +182,7 @@ bool CustomTitleBar::eventFilter(QObject *watched, QEvent *event) {
   if (watched == m_window) {
     // Both modes have a title; only a standalone bar has the icon beside it.
     if (event->type() == QEvent::WindowTitleChange && m_title)
-      m_title->setText(m_window->windowTitle());
+      m_title->setText(barTitle());
     else if (event->type() == QEvent::WindowIconChange && m_icon)
       m_icon->setPixmap(m_window->windowIcon().pixmap(18, 18));
     else if (event->type() == QEvent::WindowStateChange)

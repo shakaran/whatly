@@ -41,6 +41,11 @@ protected:
   bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
+  // The window's title with the application's name in front of it. Window titles
+  // themselves no longer carry the name, because Qt appends it to every one of
+  // them for the system's title bar, the task list and Alt-Tab; a bar we draw
+  // has no such platform behind it, so it puts the name back itself.
+  QString barTitle() const;
   void toggleMaximized();
   void refreshMaximizeIcon();
 
