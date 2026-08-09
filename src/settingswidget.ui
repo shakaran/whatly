@@ -557,6 +557,36 @@ background:transparent;
               </property>
              </widget>
             </item>
+            <item row="40" column="1">
+             <widget class="QCheckBox" name="unreadCountMutedCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A muted chat still shows its own count in the list. Off, it stops adding to the badge on the account tab and to the tray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Count muted chats as unread</string>
+              </property>
+             </widget>
+            </item>
+            <item row="41" column="1">
+             <widget class="QCheckBox" name="unreadCountArchivedCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Archived chats are kept out of the main list. On, unread messages in them add to the badge as well.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Count archived chats as unread</string>
+              </property>
+             </widget>
+            </item>
+            <item row="42" column="1">
+             <widget class="QCheckBox" name="unreadCountMessagesCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Off, the badge is the number of conversations waiting. On, it is the number of messages in them &amp;mdash; and the collapsed chat list&amp;apos;s unread filter then carries the number of conversations.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Count unread messages instead of chats</string>
+              </property>
+             </widget>
+            </item>
             <item row="4" column="1">
              <widget class="QCheckBox" name="dismissEmojiPanelCheckBox">
               <property name="toolTip">

@@ -121,6 +121,22 @@ public slots:
   // on Ctrl+K, the command palette and the Add-account action.
   static bool alwaysShowAccountTabs();
   static void setAlwaysShowAccountTabs(bool enabled);
+  // What the unread badge counts. Three answers, because the right one is a
+  // matter of how someone uses WhatsApp rather than of fact: muted chats still
+  // show a pill in the list (so they are counted by default), archived ones are
+  // the pile deliberately put away (so they are not), and the badge counts
+  // conversations rather than messages unless asked otherwise — a sum is
+  // dominated by whichever group is busiest, and every chat already shows its
+  // own number.
+  static bool unreadCountIncludesMuted();
+  static void setUnreadCountIncludesMuted(bool enabled);
+  static bool unreadCountIncludesArchived();
+  static void setUnreadCountIncludesArchived(bool enabled);
+  static bool unreadCountCountsMessages();
+  static void setUnreadCountCountsMessages(bool enabled);
+  // Count again everywhere, now — for when one of those three changes and the
+  // number on screen means something different from the moment it is ticked.
+  void countUnreadEverywhere();
   int accountCount() const { return m_accounts.size(); }
   // Re-run the strip's visibility and labels after that setting changes.
   void refreshAccountStrip();
@@ -297,7 +313,6 @@ private:
   // Ask one account's page how much is unread and put it on the badges. The
   // page throttles the reading; this can be called as often as is useful.
   void countUnread(int idx);
-  void countUnreadEverywhere();
   QTimer *m_unreadTimer = nullptr;
   int accountIndexForView(const QObject *view) const;
   void refreshAccountTabs();

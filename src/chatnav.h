@@ -29,7 +29,10 @@ QString unreadChatsScript(int limit);
 //
 // Falls back to counting the drawn rows if the database is not readable, which
 // is the honest degradation: WhatsApp's schema is theirs to change.
-QString unreadSummaryScript();
+// `includeMuted` and `includeArchived` are the user's answers to what the badge
+// should count; the list fallback cannot honour either, since a drawn row says
+// nothing about muting and the archived pile is not in that list at all.
+QString unreadSummaryScript(bool includeMuted, bool includeArchived);
 
 // JS that opens the chat whose row title matches `name` exactly, by dispatching
 // the pointer/mouse sequence WhatsApp Web's list rows react to (a plain click is
