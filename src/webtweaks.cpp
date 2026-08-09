@@ -235,6 +235,11 @@ static const char kScriptTemplate[] = R"JS(
     },
   ];
 
+)JS"
+// MSVC caps a single string literal at 16380 bytes and this script is past it.
+// Adjacent literals are concatenated by the compiler, so this split is a build
+// constraint only — it changes nothing about the script.
+R"JS(
   // Idempotent, and that is not an optimisation but a correctness requirement:
   // writing innerHTML is a DOM mutation, and this used to be called from a
   // MutationObserver watching the DOM. Every repaint retriggered the observer,
