@@ -4,6 +4,7 @@
 #include <QWidget>
 
 class QLabel;
+class QTimer;
 class QToolButton;
 
 // A slim client-side title bar for the optional frameless-window mode. It is only
@@ -38,6 +39,9 @@ public:
 protected:
   void mousePressEvent(QMouseEvent *event) override;
   void mouseDoubleClickEvent(QMouseEvent *event) override;
+  void mouseMoveEvent(QMouseEvent *event) override;
+  void enterEvent(QEnterEvent *event) override;
+  void leaveEvent(QEvent *event) override;
   bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
@@ -47,10 +51,13 @@ private:
   QWidget *m_window = nullptr;
   QLabel *m_icon = nullptr;
   QLabel *m_title = nullptr;
-  // The version: at the right-hand end of a standalone bar, and in the strip
-  // space the tabs leave in a merged one.
+  // The version, in the strip space the tabs leave in a merged bar. A standalone
+  // one has a title to show instead, and shows only that: the version there was
+  // a second thing in a row that already had a job, and it read as one.
   QLabel *m_version = nullptr;
   QToolButton *m_maxButton = nullptr;
+  // Counts out the stillness a hover has to hold before the tooltip appears.
+  QTimer *m_tipTimer = nullptr;
 };
 
 #endif // CUSTOMTITLEBAR_H

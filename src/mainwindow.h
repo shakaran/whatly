@@ -234,11 +234,11 @@ private:
   QTimer *m_layoutSaveTimer = nullptr; // debounces layout saves on window moves
   int accountIndexForView(const QObject *view) const;
   void refreshAccountTabs();
-  // What a window title starts with. The version belongs wherever the app draws
-  // its own chrome — the title bar it draws itself, or the tab strip standing in
-  // for one — because there it can be small and faint. With the system's frame
-  // there is no such place and the title is the only one left, so it goes there
-  // instead of nowhere.
+  // What a window title starts with. Where the app draws its own chrome the
+  // version has somewhere quieter to be — the tab strip, or the tooltip the bar
+  // answers a settled hover with — so the title is left as the plain name. With
+  // the system's frame there is no bar of ours and no tooltip either, and the
+  // title is the only place left, so it goes there instead of nowhere.
   static QString titlePrefix();
   // Ask a freshly loaded account's page for its WhatsApp Web version and cache
   // it on the Account, then refresh the tab tooltips.

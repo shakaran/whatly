@@ -3,13 +3,16 @@
 #include "utils.h"
 
 #include <QApplication>
+#include <QCursor>
 #include <QFont>
+#include <QGraphicsOpacityEffect>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QPalette>
 #include <QMouseEvent>
 #include <QStyle>
+#include <QTimer>
 #include <QToolButton>
+#include <QToolTip>
 #include <QWindow>
 
 namespace {
@@ -36,13 +39,11 @@ CustomTitleBar::CustomTitleBar(QWidget *window, QWidget *parent, Mode mode)
     m_title = new QLabel(window->windowTitle(), this);
     layout->addWidget(m_title, 1);
 
-    // The version goes at the far end of the row, so the title keeps the whole
-    // left-hand side it has always had and the two never fight for the middle.
-    // Same watermark treatment as the merged strip, so the answer to "which
-    // build is this?" looks the same wherever it is read.
-    m_version = new QLabel(Utils::versionLabel(), this);
-    m_version->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
-    layout->addWidget(m_version);
+    // Neither of them takes the mouse. The whole row left of the buttons is what
+    // the window is dragged by, and a label that answered a press would put a
+    // dead patch in the middle of it — and swallow the hover the bar answers.
+    m_icon->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    m_title->setAttribute(Qt::WA_TransparentForMouseEvents, true);
   } else {
     // No fixed height and no background of its own: the tab strip beside it
     // sets the row's height and draws the row's background, and anything else
@@ -81,24 +82,37 @@ CustomTitleBar::CustomTitleBar(QWidget *window, QWidget *parent, Mode mode)
     else if (vf.pixelSize() > 0)
       vf.setPixelSize(qMax(8, int(vf.pixelSize() * 0.78)));
     m_version->setFont(vf);
-    // The colour is the background nudged a fifth of the way towards the text
-    // colour. Dimming the text colour instead was still too loud, and it also
+    // A fifth of the way from the background towards the text colour, which
     // needs no light/dark special case: whichever way round the theme is, this
-    // lands just off the background.
-    QPalette vp = m_version->palette();
-    const QColor bg = vp.color(QPalette::Window);
-    const QColor fg = vp.color(QPalette::WindowText);
-    const auto toward = [](int from, int to) {
-      return from + int(0.2 * (to - from));
-    };
-    vp.setColor(QPalette::WindowText,
-                QColor(toward(bg.red(), fg.red()), toward(bg.green(), fg.green()),
-                       toward(bg.blue(), fg.blue())));
-    m_version->setPalette(vp);
-    // The whole bar answers the hover: the label is transparent to the mouse,
-    // and the version is the only thing in this row anyone would hover for.
-    setToolTip(Utils::appNameWithVersion());
+    // lands just off the background. Done with opacity rather than by working
+    // the colour out and setting it, because a colour here does not survive:
+    // updateWindowTheme() hands the application palette to every child of the
+    // main window, and this is one of them, so the main window's copy came out
+    // at full strength while a detached window's — which that loop never
+    // reaches — was the quiet one this is meant to be. Opacity is not a
+    // palette, and it blends against whatever is really painted behind.
+    auto *fade = new QGraphicsOpacityEffect(m_version);
+    fade->setOpacity(0.2);
+    m_version->setGraphicsEffect(fade);
   }
+
+  // Which build this is, on demand. The bar answers the hover in both modes:
+  // merged, because the label is transparent to the mouse and cannot; and
+  // standalone, because there the version is not on show at all. Five seconds
+  // of stillness rather than the usual fraction of one — nobody rests a hand
+  // here by accident, and a tip that appeared every time one crossed the strip
+  // on its way to the tabs would be worse than the loud label it replaced.
+  setMouseTracking(true);
+  m_tipTimer = new QTimer(this);
+  m_tipTimer->setSingleShot(true);
+  m_tipTimer->setInterval(5000);
+  connect(m_tipTimer, &QTimer::timeout, this, [this]() {
+    const QPoint p = mapFromGlobal(QCursor::pos());
+    // Not over a button: those have tooltips of their own, and childAt() passes
+    // straight through the version label, which is transparent to the mouse.
+    if (rect().contains(p) && !childAt(p))
+      QToolTip::showText(QCursor::pos(), Utils::appNameWithVersion(), this);
+  });
 
   const QStyle *st = style();
   auto makeButton = [&](QStyle::StandardPixmap pm, const QString &tip) {
@@ -175,6 +189,25 @@ void CustomTitleBar::mouseDoubleClickEvent(QMouseEvent *event) {
     return;
   }
   QWidget::mouseDoubleClickEvent(event);
+}
+
+void CustomTitleBar::enterEvent(QEnterEvent *event) {
+  m_tipTimer->start();
+  QWidget::enterEvent(event);
+}
+
+void CustomTitleBar::mouseMoveEvent(QMouseEvent *event) {
+  // Every move puts the wait back to the beginning, so the tip answers a hand
+  // that has stopped here rather than one on its way somewhere else.
+  QToolTip::hideText();
+  m_tipTimer->start();
+  QWidget::mouseMoveEvent(event);
+}
+
+void CustomTitleBar::leaveEvent(QEvent *event) {
+  m_tipTimer->stop();
+  QToolTip::hideText();
+  QWidget::leaveEvent(event);
 }
 
 void CustomTitleBar::toggleMaximized() {
