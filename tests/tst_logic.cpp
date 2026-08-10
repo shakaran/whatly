@@ -17,6 +17,8 @@
 #include <QTemporaryFile>
 #include <QWebEngineProfile>
 #include <QWebEngineScriptCollection>
+#include <QDirIterator>
+#include <QRegularExpression>
 
 #include "utils.h"
 #include "common.h"
@@ -3305,6 +3307,66 @@ private slots:
   }
 };
 
+// Guards the MSVC single-string-literal cap (C2026, 16380 bytes). The injected
+// scripts are large raw string literals; MSVC — unlike GCC/Clang — rejects any
+// single literal past the cap, which silently breaks only the Windows build. This
+// walks the source and fails if any raw string literal has grown past it, so the
+// regression is caught in the suite everyone runs rather than at Windows
+// packaging time. The fix is always to split the literal into adjacent literals
+// at a statement boundary; the compiler concatenates them, so the string is
+// unchanged (see #64).
+class TstScriptLiterals : public QObject {
+  Q_OBJECT
+private slots:
+  void rawLiteralsUnderMsvcCap() {
+    static constexpr int kMsvcCap = 16380;
+    const QString root = QStringLiteral(WHATLY_SOURCE_DIR);
+    const QString srcDir = root + QStringLiteral("/src");
+    QVERIFY2(QDir(srcDir).exists(), qPrintable(srcDir));
+
+    // R"delim( ... )delim": the backreference \1 ties the closing delimiter to
+    // the opening one, and DotMatchesEverything lets a literal span many lines.
+    // Group 2 is the literal's content, whose byte length is what MSVC limits.
+    QRegularExpression rx(QStringLiteral(R"(R"([A-Za-z0-9_]*)\((.*?)\)\1")"),
+                          QRegularExpression::DotMatchesEverythingOption);
+    QVERIFY(rx.isValid());
+
+    int filesScanned = 0, literalsChecked = 0;
+    QDirIterator it(srcDir,
+                    {QStringLiteral("*.cpp"), QStringLiteral("*.h")},
+                    QDir::Files, QDirIterator::Subdirectories);
+    while (it.hasNext()) {
+      const QString path = it.next();
+      // Skip vendored third-party sources: not ours to reshape.
+      if (path.contains(QStringLiteral("/libnotify-qt/")) ||
+          path.contains(QStringLiteral("/singleapplication/")))
+        continue;
+      QFile f(path);
+      QVERIFY2(f.open(QIODevice::ReadOnly), qPrintable(path));
+      const QString text = QString::fromUtf8(f.readAll());
+      ++filesScanned;
+      auto matches = rx.globalMatch(text);
+      while (matches.hasNext()) {
+        const int len = matches.next().captured(2).toUtf8().size();
+        ++literalsChecked;
+        QVERIFY2(len < kMsvcCap,
+                 qPrintable(
+                     QStringLiteral("%1: a raw string literal is %2 bytes, over "
+                                    "the MSVC %3-byte cap (C2026). Split it into "
+                                    "adjacent literals at a statement boundary "
+                                    "(see #64).")
+                         .arg(QDir(root).relativeFilePath(path))
+                         .arg(len)
+                         .arg(kMsvcCap)));
+      }
+    }
+    // Sanity: the scan must actually reach the source and find literals, or a
+    // wrong path would make this test silently vacuous.
+    QVERIFY(filesScanned > 0);
+    QVERIFY(literalsChecked > 0);
+  }
+};
+
 int main(int argc, char *argv[]) {
   // Keep the (headless) QWebEngineProfile used by the install() test happy on CI
   // runners: no sandbox, no GPU. Must be set before QApplication.
@@ -3335,6 +3397,7 @@ int main(int argc, char *argv[]) {
     status |= failed;
   };
   { TstUtils t;               run(&t); }
+  { TstScriptLiterals t;      run(&t); }
   { TstUtilsMore t;           run(&t); }
   { TstCommon t;              run(&t); }
   { TstDebugLog t;            run(&t); }
