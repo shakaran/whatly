@@ -2184,6 +2184,10 @@ private slots:
     // since runJavaScript cannot await a promise.
     QVERIFY(js.contains(QLatin1String("#pane-side")));
     QVERIFY(js.contains(QLatin1String("__whatlyUnread")));
+    // A read that did not finish must not be reported as a confident zero: the
+    // cursor sets `walked` only when it reaches the end of the store.
+    QVERIFY(js.contains(QLatin1String("walked = true")));
+    QVERIFY(js.contains(QLatin1String("return walked ?")));
     QVERIFY(js.contains(QLatin1String("JSON.stringify")));
   }
   void openScriptEscapesName() {

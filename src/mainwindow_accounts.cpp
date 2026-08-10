@@ -88,9 +88,23 @@ void MainWindow::countUnread(int idx) {
         const int i = accountIndexForId(id);
         if (i < 0)
           return;
-        const QJsonObject o =
-            QJsonDocument::fromJson(result.toString().toUtf8()).object();
-        const int chats = o.value(QStringLiteral("chats")).toInt();
+        // A count that could not be taken must leave the badge as it is. Zero is
+        // an answer — nothing is unread — and it has to be told apart from a
+        // page that was reloading, a store that would not open and a script that
+        // returned something unexpected, or the badge clears itself every time
+        // one of those happens, which during a reload is every time.
+        QJsonParseError parse{};
+        const QJsonDocument doc =
+            QJsonDocument::fromJson(result.toString().toUtf8(), &parse);
+        if (parse.error != QJsonParseError::NoError || !doc.isObject())
+          return;
+        const QJsonObject o = doc.object();
+        const QJsonValue counted = o.value(QStringLiteral("chats"));
+        if (o.value(QStringLiteral("source")).toString() ==
+                QLatin1String("none") ||
+            !counted.isDouble() || counted.toInt() < 0)
+          return;
+        const int chats = counted.toInt();
         if (m_accounts[i].unread == chats)
           return; // nothing to redraw
         m_accounts[i].unread = chats;
@@ -1120,8 +1134,10 @@ void MainWindow::updateTrayUnread() {
   }
 
   if (total > 0) {
+    // Chats, not messages: what is summed here is one per conversation with
+    // something unread in it.
     m_restoreAction->setText(tr("Restore") + " | " + QString::number(total) +
-                             " " + (total > 1 ? tr("messages") : tr("message")));
+                             " " + (total > 1 ? tr("chats") : tr("chat")));
     m_systemTrayIcon->setIcon(getTrayIcon(total));
     setWindowIcon(getTrayIcon(total));
   } else {

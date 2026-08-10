@@ -123,13 +123,16 @@ QString unreadSummaryScript() {
     // A cursor rather than getAll(): this runs every few seconds, and getAll on
     // a chat store of several hundred records deserialises every field of every
     // one of them to read two.
-    var chats = 0, messages = 0;
+    // `walked` is the difference between "nothing is unread" and "the read did
+    // not finish". Resolving the error paths with the counters as they stand
+    // would report a confident zero and clear every badge.
+    var chats = 0, messages = 0, walked = false;
     await new Promise(function(resolve){
       var tx = db.transaction('chat', 'readonly');
       var req = tx.objectStore('chat').openCursor();
       req.onsuccess = function(){
         var cur = req.result;
-        if (!cur) { resolve(); return; }
+        if (!cur) { walked = true; resolve(); return; }
         var c = cur.value || {};
         var n = c.unreadCount | 0;
         // A chat marked unread by hand has no messages to count, and WhatsApp
@@ -148,7 +151,7 @@ QString unreadSummaryScript() {
       tx.onabort = function(){ resolve(); };
     });
     db.close();
-    return { chats: chats, messages: messages, source: 'db' };
+    return walked ? { chats: chats, messages: messages, source: 'db' } : null;
   }
 
   var W = window.__whatlyUnread ||
