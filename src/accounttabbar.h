@@ -1,9 +1,11 @@
 #ifndef ACCOUNTTABBAR_H
 #define ACCOUNTTABBAR_H
 
+#include <QPixmap>
 #include <QPoint>
 #include <QString>
 #include <QTabBar>
+#include <QVariant>
 
 class QMouseEvent;
 class QDragEnterEvent;
@@ -25,6 +27,12 @@ class AccountTabBar : public QTabBar {
   Q_OBJECT
 public:
   explicit AccountTabBar(QWidget *parent = nullptr);
+
+  // Which slot currently holds the account `id`, or -1. Public because it is the
+  // whole point of storing the id: a tab's slot is not stable for as long as a
+  // drag lasts, so anything that has to name a tab later must ask this rather
+  // than remember a number.
+  int indexOfAccount(const QString &id) const;
 
 signals:
   // The drag for account `id` ended at `globalPos`. Fired for EVERY drag,
@@ -60,15 +68,28 @@ private:
   bool m_tinting = false;
 
 private:
-  void startDrag(int index);
+  // `cursorPos` is where the pointer was when the drag began, in strip
+  // coordinates; it sets where the sprite hangs off the cursor.
+  void startDrag(int index, const QPoint &cursorPos);
   int accountTabCount() const;   // tabs backing a real account (valid tab data)
   int dropSlotAt(int x) const;   // insertion slot for a cursor x position
 
   // How far outside the strip (px) the cursor must go before a within-strip
   // reorder becomes a tear-off / cross-window drag.
   static constexpr int kDetachMargin = 24;
-  int m_pressIndex = -1;
-  QPoint m_pressPos;
+  // The account pressed, not the slot it was pressed in. QTabBar reorders tabs
+  // live under the cursor while the button is down, so a slot number captured on
+  // press stops meaning that account the moment the drag moves sideways.
+  //
+  // Held as the tab data itself rather than as a QString, because the DEFAULT
+  // account's id is the empty string and a bare id cannot tell it apart from
+  // "there is no account here". Validity is the question being asked; the "+"
+  // affordance is the one carrying no data at all.
+  QVariant m_pressData;
+  // The tab's pixels, taken at press time. Grabbing them when the drag starts
+  // catches QTabBar's reorder animation in flight, which draws halves of two
+  // different tabs into the sprite; at press the strip is stationary.
+  QPixmap m_pressSprite;
   int m_dropSlot = -1; // insertion slot to paint while a drag hovers, or -1
 };
 

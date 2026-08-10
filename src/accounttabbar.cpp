@@ -83,10 +83,28 @@ int AccountTabBar::dropSlotAt(int x) const {
   return n;
 }
 
+int AccountTabBar::indexOfAccount(const QString &id) const {
+  for (int i = 0; i < count(); ++i)
+    // Validity first: the "+" affordance carries no tab data, and the default
+    // account's id is the empty string, so comparing ids alone would either
+    // match the affordance or refuse to find the default account.
+    if (tabData(i).isValid() && tabData(i).toString() == id)
+      return i;
+  return -1;
+}
+
 void AccountTabBar::mousePressEvent(QMouseEvent *event) {
   if (event->button() == Qt::LeftButton) {
-    m_pressIndex = tabAt(event->position().toPoint());
-    m_pressPos = event->position().toPoint();
+    // Remember the account, not the slot. The tab data itself, not the id it
+    // holds: the default account's id is "", so an id alone cannot be told from
+    // "no account here" — and treating it as nothing left the one account most
+    // people have as the one account that could not be torn off.
+    const int pressed = tabAt(event->position().toPoint());
+    m_pressData = tabData(pressed);
+    // Take the sprite now, while the strip is still. By the time a drag starts,
+    // QTabBar has slid the tabs around and is animating them, so a grab there
+    // catches two tabs mid-swap and draws halves of both.
+    m_pressSprite = pressed >= 0 ? grab(tabRect(pressed)) : QPixmap();
   }
   QTabBar::mousePressEvent(event);
 }
@@ -95,35 +113,52 @@ void AccountTabBar::mouseMoveEvent(QMouseEvent *event) {
   // While the cursor stays within the strip, QTabBar reorders tabs live. Once
   // it leaves the strip vertically, hand off to a QDrag that tears the tab off
   // or docks it into another window.
-  if (m_pressIndex >= 0 && (event->buttons() & Qt::LeftButton) &&
-      tabData(m_pressIndex).isValid()) { // a real account tab, not the "+"
+  if (m_pressData.isValid() && (event->buttons() & Qt::LeftButton)) {
     const QPoint p = event->position().toPoint();
     if (p.y() < -kDetachMargin || p.y() > height() + kDetachMargin) {
-      const int index = m_pressIndex;
-      m_pressIndex = -1;
+      const QString id = m_pressData.toString();
+      m_pressData.clear();
       // End QTabBar's in-progress move before starting the drag.
       QMouseEvent release(QEvent::MouseButtonRelease, event->position(),
                           event->globalPosition(), Qt::LeftButton,
                           Qt::NoButton, event->modifiers());
       QTabBar::mouseReleaseEvent(&release);
-      startDrag(index);
+      // Only now ask where that account sits. Taking the slot from the press
+      // instead was the bug: drag a tab out on a path that slid it past its
+      // neighbours first, and the slot pressed had come to hold one of THEM, so
+      // the wrong account was torn into the new window. Resolving after the
+      // release also means the tabs have settled into the order on screen.
+      const int index = indexOfAccount(id);
+      if (index >= 0)
+        startDrag(index, p);
       return;
     }
   }
   QTabBar::mouseMoveEvent(event);
 }
 
-void AccountTabBar::startDrag(int index) {
+void AccountTabBar::startDrag(int index, const QPoint &cursorPos) {
   const QString id = tabData(index).toString();
   const QRect r = tabRect(index);
-  const QPixmap sprite = grab(r); // the tab's own pixels, as the drag cursor
+  // The tab's own pixels, as the drag cursor — taken at press time, because
+  // grabbing here would catch the reorder animation. Falling back to a live grab
+  // only covers a drag that somehow began without a press.
+  const QPixmap sprite = m_pressSprite.isNull() ? grab(r) : m_pressSprite;
+  m_pressSprite = QPixmap();
 
   auto *drag = new QDrag(this);
   auto *mime = new QMimeData;
   mime->setData(kAccountTabMime, id.toUtf8());
   drag->setMimeData(mime);
   drag->setPixmap(sprite);
-  drag->setHotSpot(m_pressPos - r.topLeft());
+  // Hold the sprite where the cursor actually is. The press position cannot be
+  // used for this any more: a drag that slid the tab past its neighbours on the
+  // way out ends with the tab somewhere else entirely, so an offset measured from
+  // where it was first grabbed leaves the sprite hanging at a distance from the
+  // pointer. Vertically the cursor is by definition outside the strip — that is
+  // what started the drag — so the grip goes to the middle of the tab.
+  drag->setHotSpot(QPoint(qBound(0, cursorPos.x() - r.left(), r.width()),
+                          r.height() / 2));
 
   // Over the desktop or another app nothing accepts our private mime, so the
   // platform would show the "forbidden" cursor — misleading, since we always

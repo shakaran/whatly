@@ -70,6 +70,7 @@
 #include "accounttabbar.h"
 #include "performance.h"
 #include "trayicon.h"
+#include "accounttabbar.h"
 #include "chatnav.h"
 #include "dropattach.h"
 #include "dropreader.h"
@@ -2221,6 +2222,60 @@ private slots:
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// AccountTabBar: a tab being dragged has to be identified by its account, never
+// by the slot it was pressed in. QTabBar reorders tabs live under the cursor, so
+// a slot number captured on press stops meaning that account as soon as the drag
+// moves sideways — and tearing off read that slot, so the neighbour was torn out
+// instead. The mouse path itself ends in QDrag::exec(), which blocks and cannot
+// be driven from a test; what is checked here is the identity it now relies on.
+class TstAccountTabBar : public QObject {
+  Q_OBJECT
+private slots:
+  void accountFollowsItsTabThroughAReorder() {
+    AccountTabBar bar;
+    for (const QString &id : {QStringLiteral("a1"), QStringLiteral("a2"),
+                              QStringLiteral("a3"), QStringLiteral("a4")})
+      bar.setTabData(bar.addTab(id), id);
+    bar.addTab(QStringLiteral("+")); // the affordance, deliberately without data
+
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("a3")), 2);
+    // moveTab is exactly what QTabBar's live reorder does while a tab is dragged
+    // past its neighbour, which is the trajectory that produced the wrong window.
+    bar.moveTab(2, 1);
+    // The slot that was pressed now holds a different account …
+    QCOMPARE(bar.tabData(2).toString(), QStringLiteral("a2"));
+    // … while the account pressed is still found, one slot to the left.
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("a3")), 1);
+    // The "+" tab is not an account, and neither is anything unknown.
+    QCOMPARE(bar.indexOfAccount(QString()), -1);
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("nope")), -1);
+  }
+
+  // The DEFAULT account's id is the empty string (MainWindow::Account::id), and
+  // the "+" affordance is the tab with no data at all. Telling those two apart by
+  // asking whether the id is empty makes the default account — the only account
+  // most people have — the one account that cannot be dragged out of the strip.
+  // It is the validity of the tab data that separates them, not the id.
+  void defaultAccountIsATabLikeAnyOther() {
+    AccountTabBar bar;
+    bar.setTabData(bar.addTab(QStringLiteral("Default")), QString()); // id ""
+    bar.setTabData(bar.addTab(QStringLiteral("Work")), QStringLiteral("w1"));
+    bar.addTab(QStringLiteral("+"));  // no data: not an account
+
+    QCOMPARE(bar.indexOfAccount(QString()), 0);
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("w1")), 1);
+    // The affordance is never an account, and its slot must not be reachable by
+    // asking for an id that no tab holds.
+    QVERIFY(!bar.tabData(2).isValid());
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("nope")), -1);
+    // And it still follows the default account through a reorder.
+    bar.moveTab(0, 1);
+    QCOMPARE(bar.indexOfAccount(QString()), 1);
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("w1")), 0);
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // CustomJs: the addon manager stores files, tracks per-addon enabled state, and
 // builds a combined guarded script. Runs in QStandardPaths test mode.
 class TstCustomJs : public QObject {
@@ -3460,6 +3515,7 @@ int main(int argc, char *argv[]) {
   { TstDropReader t;          run(&t); }
   { TstFlatpakManifest t;     run(&t); }
   { TstChatNav t;             run(&t); }
+  { TstAccountTabBar t;       run(&t); }
   { TstShortcuts t;           run(&t); }
   { TstBackup t;              run(&t); }
   { TstScreenLock t;          run(&t); }
