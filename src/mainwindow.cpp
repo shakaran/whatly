@@ -50,6 +50,12 @@
 #include <QDesktopServices>
 #include <QMessageBox>
 #include <QProcess>
+#include <QVarLengthArray>
+#ifdef Q_OS_UNIX
+#include <sys/syscall.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#endif
 #include "chatliststrip.h"
 #include "privacyblur.h"
 #include "localapi.h"
@@ -1310,14 +1316,96 @@ void MainWindow::restartApp() {
   saveWindowLayout();
   SettingsManager::instance().settings().sync(); // the new process reads these
 
-  if (!QProcess::startDetached(QCoreApplication::applicationFilePath(), args)) {
+  const QString exePath = QCoreApplication::applicationFilePath();
+  const auto failed = [this]() {
     // Nothing has been closed yet, so a failure here costs the user nothing
     // beyond the message.
     QMessageBox::warning(this, tr("Restart"),
                          tr("Whatly could not start a new instance, so it has "
                             "not closed this one. Please quit and reopen it."));
+  };
+
+#ifdef Q_OS_UNIX
+  // Hand the new process the SAME stdout and stderr this one has.
+  // QProcess::startDetached deliberately does not — the child ends up on the
+  // controlling terminal — so a launch whose output was being piped into a log
+  // file stopped being logged the instant anything called this. "Restart now" is
+  // a button we put in Settings, and one press of it silently ended the log
+  // people are asked to attach to bug reports. Losing the log at the exact moment
+  // someone is reproducing a problem is the worst possible time to lose it.
+  //
+  // fork+exec keeps the descriptors, and that is the whole difference: the
+  // --restart-wait handshake, the arguments and the ordering are unchanged.
+  if (!QFileInfo(exePath).isExecutable()) {
+    failed();
     return;
   }
+  // Everything the child needs is built HERE, before the fork: between fork and
+  // exec only async-signal-safe calls are allowed, and allocating is not one.
+  QList<QByteArray> argStore;
+  argStore << exePath.toLocal8Bit();
+  for (const QString &a : args)
+    argStore << a.toLocal8Bit();
+  QVarLengthArray<char *, 16> argv;
+  for (QByteArray &a : argStore)
+    argv.append(a.data());
+  argv.append(nullptr);
+
+  // fork, setsid, fork again — the dance startDetached does, and the part of it
+  // that a bare fork was missing. A plain child stays in the dying parent's
+  // session and process group, and does not survive it here: the new process got
+  // as far as printing its start-up line and was then taken down with the old
+  // one. It has to leave that session (setsid) and be orphaned onto init (the
+  // second fork) to outlive the instance that started it. stdout and stderr
+  // survive both forks untouched, which is the whole point of doing this at all;
+  // every other descriptor is closed just before exec, below.
+  const pid_t child = ::fork();
+  if (child < 0) {
+    failed();
+    return;
+  }
+  if (child == 0) {
+    if (::setsid() < 0)
+      ::_exit(127);
+    const pid_t grandchild = ::fork();
+    if (grandchild < 0)
+      ::_exit(127);
+    if (grandchild == 0) {
+      // Keep 0, 1 and 2 — they are the log, and the reason for all of this —
+      // and close everything above them. QProcess::startDetached used to do
+      // that for us, and dropping it cost the remote-debugging port: the old
+      // process's listening socket came through exec, so the new process could
+      // not bind it ("bind() failed: Address already in use", in the log of the
+      // session that found this) and the inherited socket sat there listening
+      // with nobody left to accept on it. Any other descriptor the old process
+      // held — profile locks among them — would travel the same way.
+      bool closed = false;
+#ifdef SYS_close_range
+      closed = ::syscall(SYS_close_range, 3, ~0U, 0) == 0;
+#endif
+      if (!closed) {
+        const long maxFd = ::sysconf(_SC_OPEN_MAX);
+        for (int fd = 3; fd < int(maxFd > 0 ? maxFd : 4096); ++fd)
+          ::close(fd);
+      }
+      ::execv(argStore.first().constData(), argv.data());
+      // Only reachable if exec failed. Nobody is left to tell by now — the
+      // executable was checked before the first fork for exactly that reason.
+      ::_exit(127);
+    }
+    ::_exit(0); // the middle process has done its job; init adopts the grandchild
+  }
+  // Reap the middle process, which exits immediately. Without this it lingers as
+  // a zombie for as long as this instance takes to quit, and --restart-wait
+  // watches for a pid to disappear.
+  int status = 0;
+  ::waitpid(child, &status, 0);
+#else
+  if (!QProcess::startDetached(exePath, args)) {
+    failed();
+    return;
+  }
+#endif
   quitApp();
 }
 
