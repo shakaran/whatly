@@ -43,6 +43,21 @@ protected:
   void dragLeaveEvent(QDragLeaveEvent *event) override;
   void dropEvent(QDropEvent *event) override;
   void paintEvent(QPaintEvent *event) override;
+  // Re-tints on a palette change, so switching light/dark theme is followed.
+  void changeEvent(QEvent *event) override;
+
+private:
+  // Tint the tabs that are NOT on screen, derived from the current palette:
+  // lighter than the strip in a dark theme, darker in a light one. Some platform
+  // style and GTK theme combinations draw the selected tab almost identically to
+  // the rest, which on a strip that doubles as the window's title bar leaves
+  // nothing to say which account is on screen. Tinting the crowd rather than the
+  // one answers that the same way round, and leaves the selected tab as the
+  // platform draws it — one flat colour and one odd one out.
+  void refreshSelectionTint();
+  // Guards refreshSelectionTint against re-entering itself: the setStyleSheet it
+  // does makes Qt re-resolve the style, which sends events that come back here.
+  bool m_tinting = false;
 
 private:
   void startDrag(int index);
