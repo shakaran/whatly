@@ -1011,6 +1011,11 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation>Ĉi tiu muntaĵo ne povas sendi H.264/MP4-videojn: ĝia retumila motoro estis muntita sen la proprietaj kodekoj. Fotoj kaj WebM/VP9-videoj funkcias; por MP4 uzu distribuan/denaskan pakon muntitan kun la kodekoj. (Alklaku por forigi.)</translation>
     </message>
     <message>
+        <location filename="../mainwindow_webengine.cpp" line="1104"/>
+        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
+        <translation>Ĉi tiu muntaĵo ne povas sendi H.264/MP4-videojn: ĝia retumila motoro estis muntita sen la proprietaj kodekoj. Fotoj kaj WebM/VP9-videoj funkcias. Por MP4 uzu la Flatpak-version, kies motoro estas muntita kun ili. (Alklaku por forigi.)</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="1379"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>Enteksta traduko estas malŝaltita (ŝaltu ĝin en Agordoj → Traduko).</translation>
