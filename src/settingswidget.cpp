@@ -500,12 +500,27 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     moveWidget(body(chatting), ui->autoPlayMediaCheckBox, G);
     moveWidget(body(chatting), ui->dismissEmojiPanelCheckBox, G);
     moveWidget(body(chatting), ui->hideMutedStatusCheckBox, G);
+    // Two everyday messaging preferences that were filed under "Performance &
+    // Privacy", where nobody would think to look for them: how photos are sent,
+    // and whether Enter holds a message briefly before it goes. Neither has
+    // anything to do with performance.
+    moveWidget(body(chatting), ui->hdMediaCheckBox,
+               ui->verticalLayoutPerformance);
+    moveLayout(body(chatting), ui->horizontalLayoutUndoSend);
 
     // ── Privacy & Lock ──────────────────────────────────────
     auto *privacy = newSection(tr("Privacy & Lock"));
     moveRow(body(privacy), ui->privacyBlurLabel, ui->privacyBlurComboBox, G);
     moveWidget(body(privacy), ui->privacyBlurButtonCheckBox, G);
     moveLayout(body(privacy), ui->gridLayout_3); // app-lock block
+    // The two genuinely privacy settings out of the old "Performance & Privacy"
+    // group — which is what the "& Privacy" in its name was promising. Focus mode
+    // hides chat-list previews from anyone looking at the screen, and the WebRTC
+    // shield stops calls leaking the local address.
+    moveWidget(body(privacy), ui->focusModeCheckBox,
+               ui->verticalLayoutPerformance);
+    moveWidget(body(privacy), ui->webrtcShieldCheckBox,
+               ui->verticalLayoutPerformance);
 
     // ── Window & zoom ───────────────────────────────────────
     auto *window = newSection(tr("Window && zoom"));
@@ -523,6 +538,22 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
                ui->restartNowButton);
     moveWidget(body(window), ui->tabsInTitleBarCheckBox, G);
     moveLayout(body(window), ui->gridLayout_9); // zoom block
+    // Interface scale belongs beside the zoom controls, not under "Network &
+    // Startup" where it sat next to the autostart checkbox — the same mistake the
+    // frame checkbox made, and this section already carries the Restart-now
+    // button its label asks for.
+    moveLayout(body(window), ui->horizontalLayoutScale);
+
+    // ── AI & translation ────────────────────────────────────
+    // The largest thing in the old "Performance & Privacy" group by far: two
+    // whole feature panels, each with an endpoint, a model or target language and
+    // an API key. They are neither performance nor privacy, and burying them
+    // there is most of why that group was impossible to navigate.
+    auto *aiTranslation = newSection(tr("AI && translation"));
+    moveWidget(body(aiTranslation), ui->aiGroupBox,
+               ui->verticalLayoutPerformance);
+    moveWidget(body(aiTranslation), ui->translationGroupBox,
+               ui->verticalLayoutPerformance);
 
     // ── Advanced ────────────────────────────────────────────
     auto *advanced = newSection(tr("Advanced"));
@@ -542,8 +573,9 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     outer->insertWidget(1, appearance);
     outer->insertWidget(2, notifications);
     outer->insertWidget(3, chatting);
-    outer->insertWidget(4, privacy);
-    outer->insertWidget(5, window);
+    outer->insertWidget(4, aiTranslation);
+    outer->insertWidget(5, privacy);
+    outer->insertWidget(6, window);
     outer->addWidget(advanced);
 
     QScrollArea *scrollArea = ui->scrollArea;
@@ -630,6 +662,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     makeCollapsible(appearance, false);
     makeCollapsible(notifications, false);
     makeCollapsible(chatting, false);
+    makeCollapsible(aiTranslation, false);
     makeCollapsible(privacy, false);
     makeCollapsible(window, false);
     makeCollapsible(advanced, false);
@@ -650,7 +683,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     addGroupRestart(ui->verticalLayoutShortcuts);
 
     makeCollapsible(ui->groupBox_7, false);          // Storage
-    makeCollapsible(ui->groupBoxPerformance, false); // Performance & Privacy
+    makeCollapsible(ui->groupBoxPerformance, false); // Performance
     makeCollapsible(ui->groupBoxNetwork, false);     // Network & Startup
     makeCollapsible(ui->groupBoxJsAddons, false);    // JS Addons
     makeCollapsible(ui->groupBoxCanned, false);      // Canned responses
