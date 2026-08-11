@@ -351,7 +351,7 @@ Desideri ignorare il controllo di sicurezza e continuare?</translation>
     <message>
         <location filename="../dictionariessection.cpp" line="49"/>
         <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation>Impossibile recuperare l'elenco dei dizionari scaricabili: %1</translation>
+        <translation>Impossibile recuperare l&apos;elenco dei dizionari scaricabili: %1</translation>
     </message>
     <message>
         <location filename="../dictionariessection.cpp" line="55"/>
@@ -3637,7 +3637,6 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <location filename="../settingswidget.cpp" line="1507"/>
         <location filename="../settingswidget.cpp" line="1515"/>
-        <location filename="../settingswidget.cpp" line="2307"/>
         <source>None</source>
         <translation>Nessuna</translation>
     </message>
@@ -3759,43 +3758,53 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>scarica</translation>
     </message>
     <message>
+        <location filename="../settingswidget.cpp" line="2300"/>
+        <source>Tick one or more languages to check spelling against.</source>
+        <translation>Seleziona una o più lingue per il controllo ortografico.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.cpp" line="2311"/>
+        <source>Choose languages…</source>
+        <translation>Scegli le lingue…</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2315"/>
         <source>%1 languages</source>
         <translation>%1 lingue</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2409"/>
+        <location filename="../settingswidget.cpp" line="2413"/>
         <source>WhatsApp default</source>
         <translation>Predefinito di WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2448"/>
+        <location filename="../settingswidget.cpp" line="2452"/>
         <source>System default</source>
         <translation>Predefinito di sistema</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2483"/>
+        <location filename="../settingswidget.cpp" line="2487"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>La lingua dell&apos;interfaccia cambierà al riavvio di %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2497"/>
+        <location filename="../settingswidget.cpp" line="2501"/>
         <source>App Lock Setup</source>
         <translation>Configurazione blocco app</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2498"/>
+        <location filename="../settingswidget.cpp" line="2502"/>
         <source>Please setup the App lock password first.</source>
         <translation>Configura prima la password del blocco app.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2614"/>
-        <location filename="../settingswidget.cpp" line="2625"/>
+        <location filename="../settingswidget.cpp" line="2618"/>
+        <location filename="../settingswidget.cpp" line="2629"/>
         <source>Select download directory</source>
         <translation>Seleziona cartella scaricati</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2665"/>
+        <location filename="../settingswidget.cpp" line="2669"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3806,7 +3815,7 @@ Questo disconnetterà la sessione corrente.
 Potrebbe essere necessario anche un riavvio completo dell&apos;applicazione!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2671"/>
+        <location filename="../settingswidget.cpp" line="2675"/>
         <source>Do you want to proceed?</source>
         <translation>Vuoi procedere?</translation>
     </message>

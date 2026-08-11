@@ -2294,6 +2294,10 @@ void SettingsWidget::populateSpellCheck() {
     combo->view()->viewport()->installEventFilter(this);
     combo->view()->viewport()->setProperty("whatlyFilter", true);
   }
+  // Reads as single-choice at a glance, but it is a multi-select: say so, since
+  // the checkboxes only appear once the popup is open (issue #46).
+  combo->setToolTip(
+      tr("Tick one or more languages to check spelling against."));
   combo->setEnabled(!available.isEmpty() && ui->spellCheckCheckBox->isChecked());
   combo->blockSignals(false);
   updateSpellCheckSummary();
@@ -2304,7 +2308,7 @@ void SettingsWidget::updateSpellCheckSummary() {
   const QStringList selected = Dictionaries::selectedDictionaries();
   QString text;
   if (selected.isEmpty())
-    text = tr("None");
+    text = tr("Choose languages\u2026"); // hints the picker takes several
   else if (selected.size() == 1)
     text = selected.first();
   else

@@ -3630,7 +3630,6 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     <message>
         <location filename="../settingswidget.cpp" line="1507"/>
         <location filename="../settingswidget.cpp" line="1515"/>
-        <location filename="../settingswidget.cpp" line="2307"/>
         <source>None</source>
         <translation>Geen</translation>
     </message>
@@ -3752,43 +3751,53 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>downloaden</translation>
     </message>
     <message>
+        <location filename="../settingswidget.cpp" line="2300"/>
+        <source>Tick one or more languages to check spelling against.</source>
+        <translation>Vink een of meer talen aan voor de spellingcontrole.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.cpp" line="2311"/>
+        <source>Choose languages…</source>
+        <translation>Talen kiezen…</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2315"/>
         <source>%1 languages</source>
         <translation>%1 talen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2409"/>
+        <location filename="../settingswidget.cpp" line="2413"/>
         <source>WhatsApp default</source>
         <translation>WhatsApp-standaard</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2448"/>
+        <location filename="../settingswidget.cpp" line="2452"/>
         <source>System default</source>
         <translation>Systeemstandaard</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2483"/>
+        <location filename="../settingswidget.cpp" line="2487"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>De interfacetaal verandert wanneer u %1 opnieuw start.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2497"/>
+        <location filename="../settingswidget.cpp" line="2501"/>
         <source>App Lock Setup</source>
         <translation>App-vergrendeling instellen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2498"/>
+        <location filename="../settingswidget.cpp" line="2502"/>
         <source>Please setup the App lock password first.</source>
         <translation>Stel eerst het wachtwoord voor de app-vergrendeling in.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2614"/>
-        <location filename="../settingswidget.cpp" line="2625"/>
+        <location filename="../settingswidget.cpp" line="2618"/>
+        <location filename="../settingswidget.cpp" line="2629"/>
         <source>Select download directory</source>
         <translation>Downloadmap selecteren</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2665"/>
+        <location filename="../settingswidget.cpp" line="2669"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3799,7 +3808,7 @@ Hierdoor wordt uw huidige sessie afgemeld.
 Mogelijk is ook een volledige herstart van de toepassing vereist!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2671"/>
+        <location filename="../settingswidget.cpp" line="2675"/>
         <source>Do you want to proceed?</source>
         <translation>Wilt u doorgaan?</translation>
     </message>

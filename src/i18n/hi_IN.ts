@@ -3630,7 +3630,6 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1507"/>
         <location filename="../settingswidget.cpp" line="1515"/>
-        <location filename="../settingswidget.cpp" line="2307"/>
         <source>None</source>
         <translation>कोई नहीं</translation>
     </message>
@@ -3752,43 +3751,53 @@ Please setup the password in the Settings first.</source>
         <translation>डाउनलोड करें</translation>
     </message>
     <message>
+        <location filename="../settingswidget.cpp" line="2300"/>
+        <source>Tick one or more languages to check spelling against.</source>
+        <translation>वर्तनी जाँच के लिए एक या अधिक भाषाएँ चुनें।</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.cpp" line="2311"/>
+        <source>Choose languages…</source>
+        <translation>भाषाएँ चुनें…</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2315"/>
         <source>%1 languages</source>
         <translation>%1 भाषाएँ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2409"/>
+        <location filename="../settingswidget.cpp" line="2413"/>
         <source>WhatsApp default</source>
         <translation>WhatsApp डिफ़ॉल्ट</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2448"/>
+        <location filename="../settingswidget.cpp" line="2452"/>
         <source>System default</source>
         <translation>सिस्टम डिफ़ॉल्ट</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2483"/>
+        <location filename="../settingswidget.cpp" line="2487"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>%1 को पुनः आरंभ करने पर इंटरफ़ेस भाषा बदल जाएगी।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2497"/>
+        <location filename="../settingswidget.cpp" line="2501"/>
         <source>App Lock Setup</source>
         <translation>ऐप लॉक सेटअप</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2498"/>
+        <location filename="../settingswidget.cpp" line="2502"/>
         <source>Please setup the App lock password first.</source>
         <translation>कृपया पहले ऐप लॉक पासवर्ड सेट करें।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2614"/>
-        <location filename="../settingswidget.cpp" line="2625"/>
+        <location filename="../settingswidget.cpp" line="2618"/>
+        <location filename="../settingswidget.cpp" line="2629"/>
         <source>Select download directory</source>
         <translation>डाउनलोड फ़ोल्डर चुनें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2665"/>
+        <location filename="../settingswidget.cpp" line="2669"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3799,7 +3808,7 @@ You may also require a complete restart of Application!</source>
 आपको एप्लिकेशन को पूरी तरह पुनः आरंभ करने की भी आवश्यकता हो सकती है!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2671"/>
+        <location filename="../settingswidget.cpp" line="2675"/>
         <source>Do you want to proceed?</source>
         <translation>क्या आप आगे बढ़ना चाहते हैं?</translation>
     </message>
