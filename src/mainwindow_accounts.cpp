@@ -17,7 +17,6 @@
 #include <QVBoxLayout>
 #include <QGridLayout>
 #include <QHBoxLayout>
-#include <QSizeGrip>
 #include <QLabel>
 #include <QScreen>
 #include <QScrollArea>
@@ -28,6 +27,7 @@
 
 #include "settingsmanager.h"
 #include "customtitlebar.h"
+#include "windowresizer.h"
 #include "commandpalette.h"
 #include "cannedresponses.h"
 
@@ -221,14 +221,15 @@ void MainWindow::buildAccountArea() {
   }
   layout->addWidget(m_displayStack);
 
-  // In frameless mode there is no native resize edge, so give the window a
-  // corner size grip to drag.
+  // In frameless mode there is no native resize edge. This used to be a single
+  // QSizeGrip in the bottom-right corner — one grab region out of the eight a
+  // normal window has. WindowResizer restores all eight; the margin below is the
+  // border strip it watches, and it has to belong to `central` rather than to any
+  // child, or the web view would swallow the mouse events.
   if (CustomTitleBar::isEnabled()) {
-    auto *gripRow = new QHBoxLayout;
-    gripRow->setContentsMargins(0, 0, 0, 0);
-    gripRow->addStretch();
-    gripRow->addWidget(new QSizeGrip(central), 0, Qt::AlignBottom | Qt::AlignRight);
-    layout->addLayout(gripRow);
+    layout->setContentsMargins(WindowResizer::kBorder, WindowResizer::kBorder,
+                               WindowResizer::kBorder, WindowResizer::kBorder);
+    WindowResizer::install(central, this);
   }
 
   setCentralWidget(central);
@@ -1222,10 +1223,14 @@ void MainWindow::updateLauncherBadge(int count) {
 #endif
 }
 
-void MainWindow::promptAddAccount() {
-  // Put the strip back on the active account: the click landed on "+", which is
-  // not a real page.
-  setActiveAccount(m_activeAccount);
+void MainWindow::promptAddAccount(DetachedAccountWindow *target) {
+  // Put the strip that was clicked back onto a real account: the click landed on
+  // "+", which is not a page, and it must not be left selected if the dialog is
+  // cancelled.
+  if (target)
+    refreshDetachedStrips();
+  else
+    setActiveAccount(m_activeAccount);
 
   bool ok = false;
   const QString name =
@@ -1240,10 +1245,12 @@ void MainWindow::promptAddAccount() {
   const QString id = Utils::generateRandomId(8);
   addAccount(id, name.trimmed(), true);
   saveAccounts();
-  // The new account joins the focused ("main") window — which may be a detached
-  // window if that is where the user was last working.
+  // The new account joins the window it was asked for. An explicit target is the
+  // strip whose "+" was clicked; without one, fall back to the focused window,
+  // which is what the tray action and the command palette go through.
   DetachedAccountWindow *focused =
-      m_focusOrder.isEmpty() ? nullptr : m_focusOrder.first();
+      target ? target
+             : (m_focusOrder.isEmpty() ? nullptr : m_focusOrder.first());
   if (focused) {
     moveAccountToWindow(id, focused, 1 << 20); // append into that window
   } else {
@@ -1334,8 +1341,10 @@ DetachedAccountWindow *MainWindow::createDetachedWindow() {
     if (t < 0)
       return;
     const QVariant d = win->bar()->tabData(t);
-    if (!d.isValid())
+    if (!d.isValid()) { // the "+" affordance, same as on the main strip
+      promptAddAccount(win);
       return;
+    }
     const int idx = accountIndexForId(d.toString());
     if (idx >= 0 && m_accounts[idx].view) {
       win->stack()->setCurrentWidget(m_accounts[idx].view);
@@ -1752,9 +1761,13 @@ void MainWindow::refreshDetachedStrips() {
     for (int i = 0; i < m_accounts.size(); ++i)
       if (m_accounts[i].window == win)
         members.append(i);
-    while (bar->count() > members.size())
+    // Mirror the main strip: one tab per member plus a trailing "+", so adding
+    // an account is reachable from a detached window too rather than only from
+    // the main one.
+    const int wanted = members.size() + 1;
+    while (bar->count() > wanted)
       bar->removeTab(bar->count() - 1);
-    while (bar->count() < members.size())
+    while (bar->count() < wanted)
       bar->addTab(QString());
     QWidget *current = win->stack()->currentWidget();
     int activeTab = 0;
@@ -1769,6 +1782,10 @@ void MainWindow::refreshDetachedStrips() {
       if (m_accounts[i].view == current)
         activeTab = t;
     }
+    const int plus = members.size();
+    bar->setTabText(plus, QStringLiteral("  +  "));
+    bar->setTabData(plus, QVariant()); // no data marks the "+" tab
+    bar->setTabToolTip(plus, tr("Add another account"));
     if (!members.isEmpty()) {
       bar->setCurrentIndex(activeTab);
       const int i = members[qBound(0, activeTab, members.size() - 1)];

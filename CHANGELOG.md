@@ -48,6 +48,17 @@ performance, so the section is simply called that. **Interface scale** has also
 moved from "Network & Startup", where it sat beside the autostart checkbox, to
 **Window & zoom** beside the other zoom controls. No setting changed its meaning and
 nothing was renamed; they are only in sensible places now.
+**The custom window frame can be resized from any edge or corner, and detached
+windows get the same frame.** With the custom frame on, the only way to resize was
+a single grip in the bottom-right corner — one of the eight places a normal window
+can be grabbed — because dropping the native decoration drops the native resize
+border with it. All four edges and all four corners now work, with the right cursor
+on each, and the drag is handed to the window manager so it behaves exactly as a
+normal window's does. Detached account windows now wear the custom frame too rather
+than being the one window left with the system's, which is why they needed the
+resize borders first. They also gain the trailing "+" tab the main strip has, and
+an account added from a detached window's "+" now appears in that window instead of
+jumping to the main one.
 
 ## 7.0.0 (2026-08-03)
 
