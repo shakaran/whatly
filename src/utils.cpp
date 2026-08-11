@@ -664,3 +664,8 @@ bool Utils::wasFrontmostRecently(bool active, qint64 lastDeactivationMs,
     return true;
   return graceMs > 0 && (nowMs - lastDeactivationMs) < graceMs;
 }
+
+bool Utils::isWhatsAppLoadFailure(const QString &consoleMessage) {
+  return consoleMessage.contains(QLatin1String("unresolved dependencies")) &&
+         consoleMessage.contains(QLatin1String("is not defined"));
+}

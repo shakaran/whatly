@@ -96,6 +96,22 @@
 class TstUtils : public QObject {
   Q_OBJECT
 private slots:
+  void whatsAppLoadFailure() {
+    // The real cascade from issue #43 carries both markers -> detected.
+    const QString blob = QStringLiteral(
+        "Requiring module \"WAWebMiscBrowserUtils\" with unresolved "
+        "dependencies:\nWAWebUserPrefsGeneral is waiting for ...\n"
+        "cr:34987 is not defined");
+    QVERIFY(Utils::isWhatsAppLoadFailure(blob));
+    // Ordinary page errors, or only one marker, must not trip it.
+    QVERIFY(!Utils::isWhatsAppLoadFailure(
+        QStringLiteral("Uncaught TypeError: foo is not a function")));
+    QVERIFY(!Utils::isWhatsAppLoadFailure(
+        QStringLiteral("bar is not defined")));
+    QVERIFY(!Utils::isWhatsAppLoadFailure(
+        QStringLiteral("module has unresolved dependencies")));
+    QVERIFY(!Utils::isWhatsAppLoadFailure(QString()));
+  }
   void toCamelCase() {
     QCOMPARE(Utils::toCamelCase(QStringLiteral("hello world")),
              QStringLiteral("Hello World"));

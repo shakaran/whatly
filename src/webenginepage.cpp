@@ -7,6 +7,7 @@
 #include <QAbstractItemModel>
 #include "common.h"
 #include "debuglog.h"
+#include "utils.h"
 #include "webengineprofilemanager.h"
 #include <QApplication>
 #include <QDesktopServices>
@@ -468,6 +469,24 @@ void WebEnginePage::javaScriptConsoleMessage(
   // Into the ring buffer regardless of level: the line that explains a bug is
   // routinely the one nobody thought worth printing.
   DebugLog::append(QStringLiteral("[js] %1 %2").arg(where, message));
+
+  // WhatsApp Web's module loader can collapse ("… unresolved dependencies …
+  // cr:NNNN is not defined"), which leaves it unable to finish loading and looks
+  // to the user like login is broken. Whatly does not implement login, so tell
+  // the user what it actually is and how to recover. Once per page: the failure
+  // prints many lines. See issue #43.
+  if (level == QWebEnginePage::ErrorMessageLevel && !m_reportedWaLoadFailure &&
+      Utils::isWhatsAppLoadFailure(message)) {
+    m_reportedWaLoadFailure = true;
+    qWarning().noquote()
+        << "whatly: WhatsApp Web did not finish loading \u2014 its module loader "
+           "reported unresolved dependencies. This is not a login problem "
+           "(Whatly does not implement login; it just loads web.whatsapp.com); "
+           "it is usually a corrupt/locked profile or a partial cached bundle. "
+           "Try reloading (Ctrl+R); if it persists, clear the data from Settings "
+           "\u203a Storage (or delete the QtWebEngine cache and storage folders) "
+           "and relaunch. Details: https://github.com/shakaran/whatly/issues/43";
+  }
 
   switch (level) {
   case QWebEnginePage::ErrorMessageLevel:

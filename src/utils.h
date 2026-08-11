@@ -37,6 +37,13 @@ public:
   // tooltip the account strip answers a settled hover with — a tip floats free
   // of anything that would say which application it belongs to.
   static QString appNameWithVersion();
+  // True when a JS console message is WhatsApp Web's own module loader reporting
+  // unresolved dependencies (the "… with unresolved dependencies … cr:NNNN is
+  // not defined" cascade). That means the web app never finished initialising —
+  // usually a corrupt/locked profile or a partial cached bundle, not a login
+  // problem. Matches conservatively (both markers) so ordinary page errors do
+  // not trip it. See issue #43.
+  static bool isWhatsAppLoadFailure(const QString &consoleMessage);
   // Small and faint: a label that has to sit beside something with a job to do
   // without competing with it. Used for both of the above.
   static void makeWatermark(QLabel *label);

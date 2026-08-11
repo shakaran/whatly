@@ -1,5 +1,13 @@
 ## Unreleased
 
+**A clearer message when WhatsApp Web fails to load.** When WhatsApp Web's own
+module loader collapses (its "unresolved dependencies / cr:NNNN is not defined"
+cascade), the web app never finishes initialising and it looks as if login is
+broken. Whatly now prints a single plain-language line saying it is not a login
+problem (Whatly does not implement login) and how to recover \u2014 reload, or
+clear the cache/data and relaunch \u2014 instead of leaving only WhatsApp's
+cryptic error. It is captured in the log a bug report carries (#43).
+
 **Noto Sans is now pulled in by the packages.** Qt logged
 `qt.text.font.db: OpenType support missing for "Noto Sans", script …` when the
 system had no Noto font with OpenType tables for a given script. Text still

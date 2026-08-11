@@ -73,6 +73,11 @@ private slots:
   void fullScreenRequestedByPage(QWebEngineFullScreenRequest request);
   void injectPreventScrollWheelZoomHelper();
   void injectNewChatJavaScript();
+
+private:
+  // The WhatsApp-Web-loader-failure hint (issue #43) is emitted at most once per
+  // page; the failure itself prints a long cascade of console errors.
+  bool m_reportedWaLoadFailure = false;
 };
 
 #endif // WEBENGINEPAGE_H
