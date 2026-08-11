@@ -243,6 +243,7 @@ set(SOURCES
     src/scheduledmessages.cpp
     src/scheduledmessagesdialog.cpp
     src/webtweaks.cpp
+    src/windowresizer.cpp
     src/webview.cpp
     src/widgets/elidedlabel/elidedlabel.cpp
     src/widgets/scrolltext/scrolltext.cpp
@@ -325,6 +326,7 @@ set(HEADERS
     src/scheduledmessagesdialog.h
     src/pagebridge.h
     src/webtweaks.h
+    src/windowresizer.h
     src/webview.h
     src/webenginenotifproxy.h
     src/widgets/elidedlabel/elidedlabel.h

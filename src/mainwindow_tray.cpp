@@ -230,8 +230,12 @@ void MainWindow::createActions() {
   // A visible way to add another account (the "+" tab only shows once the
   // account strip is up); mirrors the command palette's "Add account…".
   m_addAccountAction = new QAction(tr("Add account…"), this);
+  // Through a lambda rather than a direct member pointer: promptAddAccount takes
+  // an optional target window, and triggered(bool) cannot bind past a default
+  // argument. No target here means "the focused window", which is what this
+  // action wants anyway.
   connect(m_addAccountAction, &QAction::triggered, this,
-          &MainWindow::promptAddAccount);
+          [this]() { promptAddAccount(); });
   addAction(m_addAccountAction);
 
   m_commandPaletteAction = new QAction(tr("Command palette"), this);

@@ -212,7 +212,10 @@ private:
   // anywhere near setActiveAccount().
   void ensureAccountLoaded(int index);
   void setActiveAccount(int index);
-  void promptAddAccount();
+  // `target` is the detached window whose "+" was clicked, so the new account
+  // lands where it was asked for. Null means the main strip, which falls back to
+  // the focused window for the tray and palette paths.
+  void promptAddAccount(DetachedAccountWindow *target = nullptr);
   void renameAccount(int index);
   void removeAccount(int index);
   // Tear an account off into its own top-level window. An account's `window`
