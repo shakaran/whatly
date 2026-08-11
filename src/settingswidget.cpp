@@ -91,6 +91,13 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     : QWidget(parent), ui(new Ui::SettingsWidget) {
   ui->setupUi(this);
 
+  // Which build this is, under the window's own title, where someone who wants
+  // it knows to look and nobody else has to see it. This is the one place it is
+  // written out: a window with messages in it says nothing about builds, and
+  // almost nobody reading messages has ever wanted to know.
+  ui->buildLabel->setText(Utils::versionLabel());
+  Utils::makeWatermark(ui->buildLabel);
+
 #ifdef Q_OS_WIN
   // The Qt "widget style" chooser is a Linux desktop-theming nicety; on Windows
   // the native style is expected, so the control is hidden there.

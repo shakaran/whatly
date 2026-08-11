@@ -1,5 +1,7 @@
 #include "customtitlebar.h"
+#include "lingertip.h"
 #include "settingsmanager.h"
+#include "utils.h"
 
 #include <QApplication>
 #include <QHBoxLayout>
@@ -30,15 +32,45 @@ CustomTitleBar::CustomTitleBar(QWidget *window, QWidget *parent, Mode mode)
     m_icon->setPixmap(window->windowIcon().pixmap(18, 18));
     layout->addWidget(m_icon);
 
-    m_title = new QLabel(window->windowTitle(), this);
+    m_title = new QLabel(barTitle(), this);
     layout->addWidget(m_title, 1);
+
+    // Neither of them takes the mouse. The whole row left of the buttons is what
+    // the window is dragged by, and a label that answered a press would put a
+    // dead patch in the middle of it — and swallow the hover the bar answers.
+    m_icon->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    m_title->setAttribute(Qt::WA_TransparentForMouseEvents, true);
   } else {
     // No fixed height and no background of its own: the tab strip beside it
     // sets the row's height and draws the row's background, and anything else
     // here would either clip the tabs or paint a band that does not match them.
     // The empty space left of the buttons is what the window is dragged by.
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    layout->addStretch(1);
+    // The same title a standalone bar shows, in the space the tabs do not use —
+    // this row is the title bar, so it should say what a title bar says. Small
+    // and faint: the tabs are what the row is for, and this must not read as
+    // another label competing with them. Ignored horizontally with no minimum,
+    // so the layout may shrink it to nothing and the text is simply cut off,
+    // which is the right answer here — it must never push the tabs.
+    m_title = new QLabel(barTitle(), this);
+    m_title->setMinimumWidth(0);
+    m_title->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Preferred);
+    m_title->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    Utils::makeWatermark(m_title);
+    layout->addWidget(m_title, 1);
+
+    // Transparent to mouse events, or it would swallow the presses that drag the
+    // window and the run of strip it sits in would stop working. That costs it
+    // its own tooltip, which is no loss: the one worth having here belongs to
+    // the whole run, not to wherever the text happens to reach.
+    m_title->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+    // Which build this is, for the one person in a hundred who wants to know.
+    // Only in this mode: a bar the system draws has no such run and no tooltip
+    // either, so putting it on a bar of ours as well would make it an answer
+    // that appears and disappears with a setting.
+    LingerTip::install(this, Utils::appNameWithVersion(),
+                       // Not over the window buttons; they have their own tips.
+                       [this](const QPoint &p) { return childAt(p) == nullptr; });
   }
 
   const QStyle *st = style();
@@ -70,6 +102,18 @@ CustomTitleBar::CustomTitleBar(QWidget *window, QWidget *parent, Mode mode)
   // Keep the icon/title/maximise glyph in sync with the window.
   m_window->installEventFilter(this);
   refreshMaximizeIcon();
+}
+
+QString CustomTitleBar::barTitle() const {
+  // What the platform writes on a frame it draws, written here because on this
+  // one nothing else will: the application's name and the window's own title,
+  // once each. Qt appends the name to every window title at the platform layer,
+  // so the title itself must not carry one — that is what made the system's own
+  // title bar read "Whatly: WhatsApp — Whatly", and a detached window's read the
+  // name twice with a dash on either side of it.
+  const QString title = m_window->windowTitle();
+  const QString name = QApplication::applicationDisplayName();
+  return title.isEmpty() ? name : name + QStringLiteral(": ") + title;
 }
 
 bool CustomTitleBar::isEnabled() {
@@ -136,9 +180,9 @@ void CustomTitleBar::refreshMaximizeIcon() {
 
 bool CustomTitleBar::eventFilter(QObject *watched, QEvent *event) {
   if (watched == m_window) {
-    // Merged mode has neither label — the tabs say which window this is.
+    // Both modes have a title; only a standalone bar has the icon beside it.
     if (event->type() == QEvent::WindowTitleChange && m_title)
-      m_title->setText(m_window->windowTitle());
+      m_title->setText(barTitle());
     else if (event->type() == QEvent::WindowIconChange && m_icon)
       m_icon->setPixmap(m_window->windowIcon().pixmap(18, 18));
     else if (event->type() == QEvent::WindowStateChange)

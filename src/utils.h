@@ -17,6 +17,8 @@
 #include <QTextDocument>
 #include <QUuid>
 
+class QLabel;
+
 class Utils : public QObject {
   Q_OBJECT
 
@@ -24,6 +26,20 @@ public:
   Utils(QObject *parent = 0);
   virtual ~Utils();
   static QString getInstallType();
+  // The version, with the build label appended when a build sets one. Under the
+  // Settings window's title, small and faint, where the app's own icon and name
+  // are already saying whose version it is — so which build is running can be
+  // read off the app instead of dug out of About, the question every test round
+  // starts with. Nowhere in a window anyone is reading messages in: nearly
+  // nobody wants this, and there it would be in front of them always.
+  static QString versionLabel();
+  // The application's display name followed by that. The long form, for the
+  // tooltip the account strip answers a settled hover with — a tip floats free
+  // of anything that would say which application it belongs to.
+  static QString appNameWithVersion();
+  // Small and faint: a label that has to sit beside something with a job to do
+  // without competing with it. Used for both of the above.
+  static void makeWatermark(QLabel *label);
   static QString refreshCacheSize(const QString cache_dir);
   static bool delete_cache(const QString cache_dir);
   static QString toCamelCase(const QString &s);

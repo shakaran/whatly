@@ -1,5 +1,8 @@
 #include "accounttabbar.h"
 
+#include "lingertip.h"
+#include "utils.h"
+
 #include <QApplication>
 #include <QCursor>
 #include <QDrag>
@@ -24,6 +27,13 @@ AccountTabBar::AccountTabBar(QWidget *parent) : QTabBar(parent) {
   // Live within-strip reordering: the tabs slide as you drag. Leaving the strip
   // vertically hands off to a QDrag (tear-off / cross-window) in mouseMove.
   setMovable(true);
+  // Which build this is, for whoever asks. This strip is where it lives because
+  // it is the one piece of chrome that is ours in every window: the title bar
+  // above may be the system's, and then nothing on it could carry an answer.
+  // Off the tabs themselves, which have their own names to show, and only for a
+  // pointer that has stopped — see LingerTip for why five seconds.
+  LingerTip::install(this, Utils::appNameWithVersion(),
+                     [this](const QPoint &p) { return tabAt(p) < 0; });
   refreshSelectionTint();
 }
 

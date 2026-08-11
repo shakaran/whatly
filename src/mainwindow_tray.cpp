@@ -578,10 +578,11 @@ void MainWindow::handleWebViewTitleChanged(const QString &title) {
   // conversations need me", the only question a badge is for.
   countUnread(idx);
 
-  // The window title follows the active account only.
-  if (idx == m_activeAccount)
-    setWindowTitle(QApplication::applicationDisplayName() + AppProfile::label() +
-                   ": " + title);
+  // Every window's title follows the account that window is showing, and a
+  // detached window is not a lesser kind of window: it gets the same treatment
+  // as this one, from the same string.
+  if (QWidget *win = windowShowingAccount(idx))
+    win->setWindowTitle(accountTitle(idx));
 
   refreshAccountTabs();   // per-account badge on each tab
   updateTrayUnread();     // summed badge on the single tray icon

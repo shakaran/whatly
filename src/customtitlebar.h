@@ -16,9 +16,9 @@ class CustomTitleBar : public QWidget {
   Q_OBJECT
 public:
   // Standalone is the bar described above: its own row, with the icon and the
-  // window title. Merged drops both and keeps only the window buttons, so it
-  // can sit at the right-hand end of the account tab strip and let the tabs
-  // themselves be the title bar — Chrome-style, one row instead of two.
+  // window title. Merged drops the icon and shrinks the title to a watermark,
+  // so it can sit at the right-hand end of the account tab strip and let the
+  // tabs themselves be the title bar — Chrome-style, one row instead of two.
   enum class Mode { Standalone, Merged };
 
   // `window` is the top-level window this bar decorates.
@@ -41,11 +41,19 @@ protected:
   bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
+  // The window's title with the application's name in front of it. Window titles
+  // themselves no longer carry the name, because Qt appends it to every one of
+  // them for the system's title bar, the task list and Alt-Tab; a bar we draw
+  // has no such platform behind it, so it puts the name back itself.
+  QString barTitle() const;
   void toggleMaximized();
   void refreshMaximizeIcon();
 
   QWidget *m_window = nullptr;
   QLabel *m_icon = nullptr;
+  // The window title. Its own row in a standalone bar, beside the app icon; in
+  // the run of strip the tabs leave in a merged one, small and faint, because
+  // there it is sharing a row that has a job already.
   QLabel *m_title = nullptr;
   QToolButton *m_maxButton = nullptr;
 };
