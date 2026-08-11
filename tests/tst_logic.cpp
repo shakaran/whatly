@@ -113,6 +113,34 @@ private slots:
         QStringLiteral("module has unresolved dependencies")));
     QVERIFY(!Utils::isWhatsAppLoadFailure(QString()));
   }
+  void benignWebConsoleNoise() {
+    // WhatsApp's telemetry beacon, CORS-blocked -> noise.
+    QVERIFY(Utils::isBenignWebConsoleNoise(QStringLiteral(
+        "Access to fetch at 'https://dit.whatsapp.net/deidentified_telemetry' "
+        "from origin 'https://web.whatsapp.com' has been blocked by CORS "
+        "policy: No 'Access-Control-Allow-Origin' header is present")));
+    // Permissions-Policy naming a feature this Chromium lacks -> noise.
+    QVERIFY(Utils::isBenignWebConsoleNoise(QStringLiteral(
+        "Error with Permissions-Policy header: Unrecognized feature: "
+        "'bluetooth'.")));
+    // A real CORS failure to some other endpoint must still surface.
+    QVERIFY(!Utils::isBenignWebConsoleNoise(QStringLiteral(
+        "Access to fetch at 'https://api.example.com/data' has been blocked "
+        "by CORS policy")));
+    QVERIFY(!Utils::isBenignWebConsoleNoise(QString()));
+  }
+  void serviceWorkerRegistrationFailure() {
+    QVERIFY(Utils::isServiceWorkerRegistrationFailure(QStringLiteral(
+        "Failed to register a ServiceWorker for scope "
+        "('https://web.whatsapp.com/') with script ...: ServiceWorker script "
+        "evaluation failed")));
+    QVERIFY(Utils::isServiceWorkerRegistrationFailure(QStringLiteral(
+        "[Caught in: service-worker-registration-failure "
+        "(service-worker-registration-failure)]")));
+    QVERIFY(!Utils::isServiceWorkerRegistrationFailure(
+        QStringLiteral("Uncaught TypeError: foo is not a function")));
+    QVERIFY(!Utils::isServiceWorkerRegistrationFailure(QString()));
+  }
   void toCamelCase() {
     QCOMPARE(Utils::toCamelCase(QStringLiteral("hello world")),
              QStringLiteral("Hello World"));

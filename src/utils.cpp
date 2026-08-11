@@ -669,3 +669,23 @@ bool Utils::isWhatsAppLoadFailure(const QString &consoleMessage) {
   return consoleMessage.contains(QLatin1String("unresolved dependencies")) &&
          consoleMessage.contains(QLatin1String("is not defined"));
 }
+
+bool Utils::isBenignWebConsoleNoise(const QString &consoleMessage) {
+  // WhatsApp's telemetry beacon, blocked by CORS because dit.whatsapp.net sends
+  // no ACAO header. Keyed on the endpoint so any other CORS failure still shows.
+  if (consoleMessage.contains(QLatin1String("deidentified_telemetry")))
+    return true;
+  // Permissions-Policy header listing features this Chromium build does not know
+  // (bluetooth, otp-credentials, payment, usb): informational, never actionable.
+  if (consoleMessage.contains(
+          QLatin1String("Permissions-Policy header: Unrecognized feature")))
+    return true;
+  return false;
+}
+
+bool Utils::isServiceWorkerRegistrationFailure(const QString &consoleMessage) {
+  return consoleMessage.contains(
+             QLatin1String("Failed to register a ServiceWorker")) ||
+         consoleMessage.contains(
+             QLatin1String("service-worker-registration-failure"));
+}

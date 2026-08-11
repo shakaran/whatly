@@ -1,3 +1,21 @@
+## Unreleased
+
+**A corrupt Service Worker cache no longer leaves WhatsApp Web stuck.** When the
+Service Worker's on-disk cache is corrupt it fails to register, and that helps
+stall WhatsApp Web's bootstrap into the "unresolved dependencies" cascade (#43).
+Chromium self-heals a corrupt IndexedDB but not this cache, so the failure used
+to persist across reloads. Whatly now notices the registration failure and, once
+per page, clears the page's caches and service workers with the browser's own
+APIs and reloads, so the Service Worker installs clean. Nothing is deleted from
+disk by the app, and only the current origin is touched.
+
+**Quieter, more useful console log.** WhatsApp's de-identified-telemetry beacon
+is blocked by CORS (its endpoint sends no `Access-Control-Allow-Origin` header,
+the same in a plain browser) and its Permissions-Policy header names features
+this Chromium build does not implement; both repeat by the hundred and neither
+means anything is wrong. They are now filtered out, so the one line a bug report
+needs is no longer buried under identical noise.
+
 ## 7.1.0 (2026-08-11)
 
 Whatly 7.1.0 builds on 7.0.0. Highlights: spell-check dictionaries are now

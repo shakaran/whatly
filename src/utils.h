@@ -44,6 +44,21 @@ public:
   // problem. Matches conservatively (both markers) so ordinary page errors do
   // not trip it. See issue #43.
   static bool isWhatsAppLoadFailure(const QString &consoleMessage);
+  // True when a JS console message is well-understood, harmless noise that only
+  // drowns the lines a bug report needs: WhatsApp's own de-identified-telemetry
+  // fetch being blocked by CORS (its endpoint sends no ACAO header — the same in
+  // a plain browser), and the Permissions-Policy header naming features this
+  // Chromium build does not implement (bluetooth, otp-credentials, payment, usb).
+  // Both repeat by the hundred and neither means anything is wrong. Matched
+  // conservatively so real CORS or policy errors still surface.
+  static bool isBenignWebConsoleNoise(const QString &consoleMessage);
+  // True when a JS console message is the Service Worker failing to register
+  // because its on-disk CacheStorage is corrupt ("wrong file structure on disk"
+  // surfaces to the page as a registration failure). Chromium self-heals a
+  // corrupt IndexedDB but not this cache, so the failure sticks across reloads
+  // and helps stall WhatsApp Web's bootstrap (see isWhatsAppLoadFailure). The
+  // page can clear it with its own caches/serviceWorker APIs. See issue #43.
+  static bool isServiceWorkerRegistrationFailure(const QString &consoleMessage);
   // Small and faint: a label that has to sit beside something with a job to do
   // without competing with it. Used for both of the above.
   static void makeWatermark(QLabel *label);

@@ -466,9 +466,28 @@ void WebEnginePage::javaScriptConsoleMessage(
   // levels are compiled out of release builds by QT_NO_DEBUG_OUTPUT.
   const QString where = QStringLiteral("%1:%2").arg(sourceId).arg(lineId);
 
+  // Well-understood, harmless lines (WhatsApp's CORS-blocked telemetry beacon,
+  // Permissions-Policy features this Chromium build lacks) arrive by the hundred
+  // and bury the one line a bug report needs. Drop them before they reach the
+  // log or the console.
+  if (Utils::isBenignWebConsoleNoise(message))
+    return;
+
   // Into the ring buffer regardless of level: the line that explains a bug is
   // routinely the one nobody thought worth printing.
   DebugLog::append(QStringLiteral("[js] %1 %2").arg(where, message));
+
+  // A Service Worker that cannot register because its on-disk cache is corrupt
+  // helps stall WhatsApp Web's bootstrap, and Chromium does not self-heal that
+  // cache. The page can, though, with its own caches/serviceWorker APIs — so
+  // clear them and reload, once, before the user is left staring at a page that
+  // never finishes loading. See issue #43.
+  if (level == QWebEnginePage::ErrorMessageLevel && !m_attemptedSwRecovery &&
+      Utils::isServiceWorkerRegistrationFailure(message) &&
+      url().host().endsWith(QLatin1String("whatsapp.com"))) {
+    m_attemptedSwRecovery = true;
+    recoverFromCorruptServiceWorker();
+  }
 
   // WhatsApp Web's module loader can collapse ("… unresolved dependencies …
   // cr:NNNN is not defined"), which leaves it unable to finish loading and looks
@@ -499,6 +518,32 @@ void WebEnginePage::javaScriptConsoleMessage(
     qDebug().noquote() << "[js]" << where << message;
     break;
   }
+}
+
+void WebEnginePage::recoverFromCorruptServiceWorker() {
+  qWarning().noquote()
+      << "whatly: WhatsApp Web's Service Worker failed to register (its on-disk "
+         "cache is corrupt). Clearing the page's caches and service workers and "
+         "reloading once. If it recurs, clear the data from Settings › "
+         "Storage and relaunch. Details: "
+         "https://github.com/shakaran/whatly/issues/43";
+  // Runs in the page: the browser's own APIs empty the corrupt CacheStorage and
+  // drop the stuck registrations, then reload so the Service Worker installs
+  // clean. Nothing is deleted from disk by us, and it only touches this origin.
+  static const QString js = QStringLiteral(R"((async () => {
+    try {
+      if (window.caches) {
+        const keys = await caches.keys();
+        await Promise.all(keys.map(k => caches.delete(k)));
+      }
+      if (navigator.serviceWorker) {
+        const regs = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(regs.map(r => r.unregister()));
+      }
+    } catch (e) { /* reload regardless: a clean load is the goal */ }
+    location.reload();
+  })();)");
+  this->runJavaScript(js);
 }
 
 void WebEnginePage::injectPreventScrollWheelZoomHelper() {

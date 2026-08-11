@@ -78,6 +78,12 @@ private:
   // The WhatsApp-Web-loader-failure hint (issue #43) is emitted at most once per
   // page; the failure itself prints a long cascade of console errors.
   bool m_reportedWaLoadFailure = false;
+
+  // The Service-Worker-cache recovery (clear caches + unregister + reload) is
+  // attempted at most once per page, so a reload that fails the same way cannot
+  // put us in a reload loop. See issue #43.
+  bool m_attemptedSwRecovery = false;
+  void recoverFromCorruptServiceWorker();
 };
 
 #endif // WEBENGINEPAGE_H
