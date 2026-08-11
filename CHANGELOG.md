@@ -1,5 +1,14 @@
 ## Unreleased
 
+**The Windows packages carry the MSVC runtime they need (#68).** `whatly.exe`
+imports `MSVCP140.dll`, `VCRUNTIME140.dll` and `VCRUNTIME140_1.dll`, and neither
+the installer nor the portable archive contained them, so on a machine without
+the Visual C++ redistributable both died before starting — a bare "the code
+execution cannot proceed" box, with nothing the application could do about it,
+because the loader fails before its first line runs. The runtime is now deployed
+beside the executable, which fixes the installer and the archive together, and
+the release build fails loudly if it is ever missing again.
+
 **A warning before a full disk corrupts your session.** When the data folder's
 disk drops below 1 GB free, Whatly now warns at startup that WhatsApp Web's
 local database can be corrupted by a truncated write (which forces you to link
