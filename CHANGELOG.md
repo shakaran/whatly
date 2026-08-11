@@ -1,5 +1,16 @@
 ## Unreleased
 
+**Spell-check dictionaries can be downloaded per language (#46).** Every install
+carried all ~45 MB of dictionaries even though almost nobody needs more than a
+few. A new folding **Spell-check dictionaries** section in Settings now lists
+each language with its size and a Download/Delete button, and the language picker
+offers not-yet-installed languages too — ticking one downloads it. Each `.bdic`
+is verified by SHA-256 before it is used, and on first run the dictionary for
+your system language is fetched automatically. This lets the packages ship only a
+small set and pull the rest on demand (from a dedicated `dictionaries` release),
+which also means languages that were never bundled — Esperanto among them — can
+finally be installed from the UI.
+
 **Spell-check dictionary cleanup.** The bundled set carried a duplicate `en-US` (identical to `en_US` bar the separator, and never selectable) and an invalid `vi_VI` region code; both are gone, keeping `en_US` and `vi_VN`. Groundwork for making dictionaries downloadable per language (#46).
 
 **A clearer message when WhatsApp Web fails to load.** When WhatsApp Web's own

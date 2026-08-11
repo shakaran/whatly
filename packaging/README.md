@@ -95,3 +95,23 @@ An overlay with the `net-im/whatly` ebuild (versioned + `-9999` live) lives in
 the proprietary H.264/AAC codecs via `dev-qt/qtwebengine[proprietary-codecs]`.
 See that directory's README for adding it as a local overlay or submitting to
 GURU.
+
+## Spell-check dictionaries (downloadable)
+
+The spell-check `.bdic` dictionaries are ~45 MB in total. They can be published
+once to a dedicated **`dictionaries`** GitHub release (assets + a `manifest.json`)
+so the app downloads them on demand, and the packages then bundle only a minimum:
+
+1. Publish/refresh the assets: run the **Publish dictionaries** workflow
+   (`.github/workflows/dictionaries.yml`, manual dispatch). It builds every
+   `.bdic`, generates `manifest.json` (code, size, SHA-256, via
+   `tools/gen-dictionary-manifest.py`) and uploads both to the `dictionaries`
+   release. Re-run it whenever `src/dictionaries` changes.
+2. Once that release exists, build packages with a minimum bundled set, e.g.
+   `-DWHATLY_BUNDLE_DICTIONARIES="en_US"` (empty = bundle all, the default). The
+   rest are fetched at runtime into the user's writable dictionary directory and
+   verified before use.
+
+Do not flip a package to the minimum before the `dictionaries` release is
+published, or non-bundled languages would have no dictionary and nowhere to get
+one.
