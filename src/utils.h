@@ -71,6 +71,26 @@ public:
   // Pure, so it is unit-tested (#8).
   static bool wasFrontmostRecently(bool active, qint64 lastDeactivationMs,
                                    qint64 nowMs, int graceMs);
+
+  // Put `all` in most-recently-used order, given a `history` that is also
+  // most-recent-first and may repeat itself, name things no longer in `all`, and
+  // miss things that have never been used. Anything the history does not mention
+  // goes on the end in `all`'s own order — being unmentioned must not mean being
+  // left out, since this order is what offers the windows to the user, and a
+  // window nothing offers is a window with no way back to it. Pure and a
+  // template, so it is unit-tested without a window in sight.
+  template <typename T>
+  static QList<T> orderedByHistory(const QList<T> &history,
+                                   const QList<T> &all) {
+    QList<T> out;
+    for (const T &item : history)
+      if (all.contains(item) && !out.contains(item))
+        out << item;
+    for (const T &item : all)
+      if (!out.contains(item))
+        out << item;
+    return out;
+  }
 };
 
 #endif // UTILS_H

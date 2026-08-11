@@ -511,6 +511,16 @@ background:transparent;
               </property>
              </widget>
             </item>
+            <item row="51" column="0">
+             <widget class="QCheckBox" name="minimizeOnlyFocusedWindowCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Off by default, so &amp;quot;Minimise to tray&amp;quot; puts the whole app away: with several windows open, leaving the others on screen while the tray reports Whatly as away is the same confusion as one window being treated as the real one. Tick this to have it put away only the window you are in. Follows whatever key &amp;quot;Minimise to tray&amp;quot; is bound to.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Ctrl+W hides only the last focused window.</string>
+              </property>
+             </widget>
+            </item>
             <item row="4" column="0">
              <widget class="QCheckBox" name="minimizeOnTrayIconClick">
               <property name="text">

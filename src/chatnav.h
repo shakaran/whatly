@@ -37,6 +37,13 @@ QString unreadSummaryScript();
 // any characters are safe.
 QString openChatByNameScript(const QString &name);
 
+// JS that puts the keyboard into WhatsApp Web's own chat-list search box and
+// selects whatever is in it, so typing replaces it — what Ctrl+F does in a
+// browser. WhatsApp Web itself binds no key for this: in a browser Ctrl+F is the
+// browser's find bar, and Qt WebEngine has none, so the key did nothing at all.
+// Returns "ok" / "not-found".
+QString focusSearchScript();
+
 } // namespace ChatNav
 
 #endif // CHATNAV_H

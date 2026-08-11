@@ -57,6 +57,7 @@
 #include <unistd.h>
 #endif
 #include "chatliststrip.h"
+#include "chatnav.h"
 #include "privacyblur.h"
 #include "localapi.h"
 #include "cloudapi.h"
@@ -179,11 +180,10 @@ MainWindow::MainWindow(QWidget *parent)
                 showQuickCompose();
                 return;
               }
-              setWindowState((windowState() & ~Qt::WindowMinimized) |
-                             Qt::WindowActive);
-              show();
-              raise();
-              activateWindow();
+              // The last window used, not this one: the shortcut means "show me
+              // Whatly", and which window happens to own the tray icon is not
+              // something the user should be made aware of.
+              bringForward(frontWindow());
             });
   } else {
     qInfo() << "No global-shortcut backend available; bind a desktop shortcut "
@@ -979,12 +979,10 @@ void MainWindow::showNotification(QString title, QString message) {
 }
 
 void MainWindow::notificationClicked() {
-  show();
+  QWidget *w = frontWindow();
+  w->show();
   QCoreApplication::processEvents();
-  if (windowState().testFlag(Qt::WindowMinimized))
-    setWindowState(windowState() & ~Qt::WindowMinimized);
-  raise();
-  activateWindow();
+  bringForward(w);
   // Quick reply: put the caret in the message box so the user can just type.
   if (m_webEngine && m_webEngine->page())
     m_webEngine->page()->runJavaScript(QuickReply::focusComposerScript());
@@ -1281,12 +1279,66 @@ void MainWindow::sendAttachmentViaWeb(const QString &number,
   m_webEngine->page()->runJavaScript(js);
 }
 
-void MainWindow::raiseWindow() {
-  setWindowState((windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
-  show();
-  raise();
-  activateWindow();
+QWidget *MainWindow::frontWindow() const {
+  // m_focusOrder is most-recently-focused first, with a null entry standing for
+  // this window. Both this window and every detached one record their own
+  // activation, so the front entry is the last window the user touched.
+  DetachedAccountWindow *front =
+      m_focusOrder.isEmpty() ? nullptr : m_focusOrder.first();
+  return front ? static_cast<QWidget *>(front)
+               : static_cast<QWidget *>(const_cast<MainWindow *>(this));
 }
+
+QList<QWidget *> MainWindow::allWindows() const {
+  QList<QWidget *> out;
+  out << const_cast<MainWindow *>(this);
+  for (const Account &a : m_accounts)
+    if (a.window && !out.contains(a.window))
+      out << a.window;
+  return out;
+}
+
+QList<QWidget *> MainWindow::windowsByFocus() const {
+  // m_focusOrder is most-recently-focused first, with a null entry standing for
+  // this window (see frontWindow()). Translate that, then let the pure helper do
+  // the ordering — it is the part with the rules in it (repeats, windows since
+  // closed, windows never focused) and the part worth testing.
+  QList<QWidget *> history;
+  for (DetachedAccountWindow *win : m_focusOrder)
+    history << (win ? static_cast<QWidget *>(win)
+                    : static_cast<QWidget *>(const_cast<MainWindow *>(this)));
+  return Utils::orderedByHistory(history, allWindows());
+}
+
+void MainWindow::hideAllWindows() {
+  for (QWidget *w : allWindows())
+    w->hide();
+}
+
+void MainWindow::restoreAllWindows() {
+  // Least-recently-used first, so what comes back is stacked the way it was
+  // left, and the window the user was actually in ends up on top.
+  const QList<QWidget *> order = windowsByFocus();
+  for (int i = order.size() - 1; i > 0; --i) {
+    QWidget *w = order[i];
+    w->setWindowState(w->windowState() & ~Qt::WindowMinimized);
+    w->show();
+    w->raise();
+  }
+  bringForward(order.isEmpty() ? this : order.first());
+}
+
+void MainWindow::bringForward(QWidget *w) {
+  if (!w)
+    return;
+  w->setWindowState((w->windowState() & ~Qt::WindowMinimized) |
+                    Qt::WindowActive);
+  w->show();
+  w->raise();
+  w->activateWindow();
+}
+
+void MainWindow::raiseWindow() { bringForward(frontWindow()); }
 
 // Come back as the SAME program, launched the SAME way. applicationFilePath()
 // rather than argv[0] (which can be a bare name found on PATH), and the real
@@ -1465,6 +1517,24 @@ void MainWindow::toggleChatListStrip() {
     if (pageOf(account))
       pageOf(account)->runJavaScript(ChatListStrip::scriptSource());
   refreshChatListStripAction();
+}
+
+void MainWindow::focusChatSearch() {
+  // The account in the window being typed into, not the app-wide "active" one:
+  // with a detached window in front, those are different accounts, and searching
+  // the wrong one is worse than doing nothing.
+  const int idx = focusedAccountIndex();
+  if (idx < 0)
+    return;
+  // Which search to open is the page's decision, not ours: with a conversation
+  // open the answer is the search within it, and only with none open is it the
+  // chat list's box — which the script also has to expand the list for when it is
+  // collapsed. All three of those are questions only the DOM can answer.
+  //
+  // Safe to ask the view for its page here, unlike a loop over every account:
+  // this account is the one on screen, so its page already exists.
+  if (m_accounts[idx].view && m_accounts[idx].view->page())
+    m_accounts[idx].view->page()->runJavaScript(ChatNav::focusSearchScript());
 }
 
 // ── Chat / URL helpers ────────────────────────────────────────────────────────

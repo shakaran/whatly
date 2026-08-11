@@ -718,6 +718,30 @@ private slots:
     // the behaviour is exactly the pre-change isActiveWindow() check.
     QVERIFY(!Utils::wasFrontmostRecently(false, 100000, 100010, 0));
   }
+
+  // The order the tray offers the windows in, and the order they are brought back
+  // in. Strings stand in for windows: the rule is about the two lists, not about
+  // anything a window does.
+  void windowsOrderedByUse() {
+    using L = QList<QString>;
+    const L all{"main", "a", "b", "c"};
+
+    // Most-recently-used first, and the history repeats itself — every window is
+    // re-recorded each time it is activated, so "b, a, b" is the normal shape.
+    QCOMPARE(Utils::orderedByHistory(L{"b", "a", "b"}, all),
+             (L{"b", "a", "main", "c"}));
+
+    // A window never activated is still offered, on the end: leaving it out is
+    // how a window ends up with nothing pointing at it, which is the whole bug.
+    QCOMPARE(Utils::orderedByHistory(L{"c"}, all), (L{"c", "main", "a", "b"}));
+
+    // A history naming a window that has since closed does not resurrect it.
+    QCOMPARE(Utils::orderedByHistory(L{"gone", "a"}, all),
+             (L{"a", "main", "b", "c"}));
+
+    // No history at all: the list as it stands, which is what a fresh start has.
+    QCOMPARE(Utils::orderedByHistory(L{}, all), all);
+  }
   void installTypeFromEnv() {
     qputenv("INSTALL_TYPE", "snap");
     QCOMPARE(Utils::getInstallType(), QStringLiteral("snap"));
@@ -2237,6 +2261,24 @@ private slots:
     // so no raw quote/newline can break out of the string literal.
     QVERIFY(js.contains(QLatin1String("a\\\"b")));
     QVERIFY(js.contains(QLatin1String("\\n")));
+  }
+  void focusSearchScriptShape() {
+    const QString js = ChatNav::focusSearchScript();
+    QVERIFY(js.contains(QLatin1String(".focus()")));
+    // With a conversation open, Ctrl+F must mean the search WITHIN it — the
+    // magnifier in the chat header — not the chat list's box. data-icon is
+    // WhatsApp's own attribute; the classes around it are obfuscated.
+    QVERIFY(js.contains(QLatin1String("[data-icon^=\"search\"]")));
+    QVERIFY(js.contains(QLatin1String("#main")));
+    // The panel's field is identified by being in neither pane, which is also
+    // what keeps this off the message composer — that lives inside #main.
+    QVERIFY(js.contains(QLatin1String("e.closest('#main')")));
+    // A locale-independent fallback is required for the list search: naming the
+    // English (or Spanish) aria-label alone would leave the key dead elsewhere.
+    QVERIFY(js.contains(QLatin1String("#side input")));
+    // Retries, because expanding a collapsed chat list is a round trip through
+    // the app and the box does not exist yet when the script first runs.
+    QVERIFY(js.contains(QLatin1String("setTimeout")));
   }
 };
 

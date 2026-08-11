@@ -80,6 +80,11 @@ public slots:
   void toggleChatListStrip();
   // Keep that action's text saying what it will do next, for the palette.
   void refreshChatListStripAction();
+  // Put the keyboard into WhatsApp Web's own chat search, in the account the
+  // window in front is showing. Expands the chat list first when it is
+  // collapsed, since the search box is clipped to a sliver there and focusing
+  // something invisible is not a usable answer to the key.
+  void focusChatSearch();
   // Relaunch this same executable with this same command line, so the settings
   // that only apply at startup take effect without the user having to quit and
   // find Whatly again. Everything about how the desk looks is saved first and
@@ -88,6 +93,28 @@ public slots:
   // Bring the window up and give it focus. The tray menu uses it: an action
   // picked from there used to run with the window still behind everything.
   void raiseWindow();
+  // The window the user should be brought to, which is simply the last one they
+  // touched. There is deliberately no "main" window from the user's side: this
+  // one owns the tray icon and the account list, but that is an implementation
+  // detail, and a tray click, a notification or a global shortcut must never haul
+  // it out from behind the window actually being worked in.
+  QWidget *frontWindow() const;
+  // Show, unminimise, raise and activate one window — and nothing else.
+  static void bringForward(QWidget *w);
+  // Every Whatly window, so "hide to tray" takes the whole app away rather than
+  // just this one, which would be another way of showing which is special.
+  QList<QWidget *> allWindows() const;
+  // The same windows, most-recently-used first. Hiding is what makes the order
+  // matter: it takes the whole app away, so bringing it back has to bring all of
+  // it back, and in the order the user left it.
+  QList<QWidget *> windowsByFocus() const;
+  // Bring the whole app back: every window that is hidden or minimised, with the
+  // one last used raised on top. Showing only that one is what stranded the
+  // others — hidden, with no window left to click and no entry pointing at them.
+  void restoreAllWindows();
+  // Put the whole app in the tray: every window, for the same reason hiding one
+  // and leaving the rest would say one of them is the real one.
+  void hideAllWindows();
   void newChat();
   // Whether the account strip stays up with only one account, where it is a row
   // of chrome carrying a single tab. Off by default; the "+" it holds is also
@@ -218,6 +245,12 @@ private:
   // Rebuild every detached window's tab strip from m_accounts.
   void refreshDetachedStrips();
   int accountIndexForId(const QString &id) const;
+  // The account the user is actually looking at: the one shown by whichever
+  // window has the keyboard, which is not m_activeAccount — switching tabs in a
+  // detached window swaps that window's stack without touching the app-wide
+  // "active" account. Any shared action triggered by a key has to ask this, or it
+  // acts on whatever was last clicked in the main window. -1 if there is none.
+  int focusedAccountIndex() const;
   // Most-recently-focused-first list of windows (nullptr = the main window). The
   // front is the "main" window: it receives newly-added accounts, and a closed
   // window's tabs dock into the front-most surviving window.
@@ -268,6 +301,15 @@ private:
   QMenu *m_recentUnreadMenu = nullptr;
   void refreshRecentUnread();
   void openChatByName(const QString &accountId, const QString &name);
+  // Every window in the tray menu, numbered by how recently it was used, so none
+  // can be left with nothing pointing at it.
+  QMenu *m_windowsMenu = nullptr;
+  // What each entry in that menu points at, in the same order — so a click goes
+  // to the window whose label was read, and to nothing at all if that window has
+  // since closed.
+  QList<QPointer<QWidget>> m_windowsMenuTargets;
+  void refreshWindowsMenu();
+  QString windowLabel(const QWidget *w) const;
   // The tab tooltip for an account: its WhatsApp Web version (once known) and
   // the build token from the page URL. Empty while neither is available.
   QString accountTabTooltip(const Account &acc) const;
@@ -477,6 +519,7 @@ private:
   QAction *m_zoomOutAction = nullptr;
   QAction *m_zoomResetAction = nullptr;
   QAction *m_chatListStripAction = nullptr;
+  QAction *m_findChatAction = nullptr;
   QAction *m_translateSelectionAction = nullptr;
   QAction *m_translateComposerAction = nullptr;
 

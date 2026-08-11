@@ -275,6 +275,13 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
           .value("minimizeOnTrayIconClick", false)
           .toBool());
   ui->minimizeOnTrayIconClick->blockSignals(false);
+  ui->minimizeOnlyFocusedWindowCheckBox->blockSignals(true);
+  ui->minimizeOnlyFocusedWindowCheckBox->setChecked(
+      SettingsManager::instance()
+          .settings()
+          .value("minimizeOnlyFocusedWindow", false)
+          .toBool());
+  ui->minimizeOnlyFocusedWindowCheckBox->blockSignals(false);
   ui->defaultDownloadLocation->setText(QDir::toNativeSeparators(
       SettingsManager::instance()
           .settings()
@@ -543,6 +550,9 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     // frame checkbox made, and this section already carries the Restart-now
     // button its label asks for.
     moveLayout(body(window), ui->horizontalLayoutScale);
+    // Last in the section: it qualifies how the windows this section configures
+    // are put away, rather than being one more of the tray checkboxes above.
+    moveWidget(body(window), ui->minimizeOnlyFocusedWindowCheckBox, G);
 
     // ── AI & translation ────────────────────────────────────
     // The largest thing in the old "Performance & Privacy" group by far: two
@@ -2394,6 +2404,11 @@ void SettingsWidget::on_minimizeOnTrayIconClick_toggled(bool checked) {
     ui->hideTrayIconCheckBox->setChecked(false);
 }
 
+void SettingsWidget::on_minimizeOnlyFocusedWindowCheckBox_toggled(bool checked) {
+  SettingsManager::instance().settings().setValue("minimizeOnlyFocusedWindow",
+                                                  checked);
+}
+
 void SettingsWidget::on_styleComboBox_currentTextChanged(const QString &arg1) {
   applyThemeQuirks();
   SettingsManager::instance().settings().setValue("widgetStyle", arg1);
@@ -2553,8 +2568,16 @@ void SettingsWidget::on_chnageCurrentPasswordPushButton_clicked() {
 }
 
 void SettingsWidget::keyPressEvent(QKeyEvent *e) {
-  if (e->key() == Qt::Key_Escape)
+  // Ctrl+W closes this page, exactly as Escape does. Everywhere else in Whatly
+  // that key means "put the window away", and reading it as "put the app in the
+  // tray" while Settings is the window in front is not what anyone pressing it
+  // here means — this is a page you close, and it is the only window that is.
+  if (e->key() == Qt::Key_Escape ||
+      (e->key() == Qt::Key_W && e->modifiers().testFlag(Qt::ControlModifier))) {
     this->close();
+    e->accept();
+    return;
+  }
 
   QWidget::keyPressEvent(e);
 }

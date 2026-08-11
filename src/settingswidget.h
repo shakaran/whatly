@@ -103,6 +103,7 @@ private slots:
   void on_defaultUserAgentButton_clicked();
   void on_identifyInLinkedDevicesCheckBox_toggled(bool checked);
   void on_minimizeOnTrayIconClick_toggled(bool checked);
+  void on_minimizeOnlyFocusedWindowCheckBox_toggled(bool checked);
   void on_muteAudioCheckBox_toggled(bool checked);
   void on_dismissEmojiPanelCheckBox_toggled(bool checked);
   void on_languageComboBox_currentIndexChanged(int index);
