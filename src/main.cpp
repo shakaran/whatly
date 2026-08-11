@@ -39,6 +39,7 @@
 #include "messaging.h"
 #include "messagetemplates.h"
 #include "settingsmanager.h"
+#include "sessionbackup.h"
 #include "webengineprofilemanager.h"
 #include <singleapplication.h>
 
@@ -1127,6 +1128,11 @@ int main(int argc, char *argv[]) {
                       << instance.primaryUser();
     return 0;
   }
+
+  // Recover a linked session from its snapshot if the profile was wiped by a
+  // corrupt IndexedDB, and refresh the snapshot of any healthy one. Must run
+  // before the first profile is created, while no database is open. See #43.
+  SessionBackup::runStartupRecovery();
 
   // Initialise the single persistent WebEngine profile before any page is created.
   WebEngineProfileManager::instance();

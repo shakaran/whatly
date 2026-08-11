@@ -43,6 +43,7 @@
 #include "storageinfo.h"
 #include "shortcuts.h"
 #include "backup.h"
+#include "sessionbackup.h"
 #include "screenlock.h"
 #include "quickreply.h"
 #include "focusmode.h"
@@ -3659,6 +3660,90 @@ private slots:
   }
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+// SessionBackup: snapshot/restore of a linked session so a wiped IndexedDB does
+// not force a re-link (#43). Pure helpers plus a round trip against a temp root.
+class TstSessionBackup : public QObject {
+  Q_OBJECT
+  // Write `bytes` bytes into <dir>/IndexedDB/db so its directory size crosses
+  // (or stays under) the "session present" threshold.
+  static void writeIndexedDb(const QString &profileDir, qint64 bytes) {
+    const QString idb = profileDir + QStringLiteral("/IndexedDB");
+    QDir().mkpath(idb);
+    QFile f(idb + QStringLiteral("/db.ldb"));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write(QByteArray(int(bytes), 'x'));
+    f.close();
+  }
+private slots:
+  void cleanup() { SessionBackup::setPathsForTesting(QString(), QString()); }
+
+  void engineSubdirMatchesProfileManager() {
+    QCOMPARE(SessionBackup::engineSubdir(QString(), QString()),
+             QStringLiteral("/QtWebEngine"));
+    QCOMPARE(SessionBackup::engineSubdir(QString(), QStringLiteral("work")),
+             QStringLiteral("/QtWebEngine-work"));
+    QCOMPARE(SessionBackup::engineSubdir(QStringLiteral("-alt"), QString()),
+             QStringLiteral("/QtWebEngine-alt"));
+    QCOMPARE(SessionBackup::engineSubdir(QStringLiteral("-alt"),
+                                         QStringLiteral("work")),
+             QStringLiteral("/QtWebEngine-alt-work"));
+  }
+  void snapshotKeyAndThreshold() {
+    QCOMPARE(SessionBackup::snapshotKey(QString()),
+             QStringLiteral("default"));
+    QCOMPARE(SessionBackup::snapshotKey(QStringLiteral("work")),
+             QStringLiteral("work"));
+    QVERIFY(!SessionBackup::sessionLooksPresent(0));
+    QVERIFY(!SessionBackup::sessionLooksPresent(1024));
+    QVERIFY(SessionBackup::sessionLooksPresent(2 * 1024 * 1024));
+  }
+  void roundTripRestoresWipedSession() {
+    QTemporaryDir root;
+    QVERIFY(root.isValid());
+    SessionBackup::setPathsForTesting(root.path(), QString());
+    const QString live = root.path() + QStringLiteral("/QtWebEngine");
+
+    // A healthy live session snapshots successfully.
+    writeIndexedDb(live, 512 * 1024);
+    QVERIFY(SessionBackup::snapshot(QString()));
+
+    // Chromium wipes the DB: the live session now looks absent.
+    QDir(live + QStringLiteral("/IndexedDB")).removeRecursively();
+    QVERIFY(!SessionBackup::sessionLooksPresent(
+        StorageInfo::directorySize(live + QStringLiteral("/IndexedDB"))));
+
+    // Restore brings it back above the threshold.
+    QVERIFY(SessionBackup::restore(QString()));
+    QVERIFY(SessionBackup::sessionLooksPresent(
+        StorageInfo::directorySize(live + QStringLiteral("/IndexedDB"))));
+  }
+  void wipedLiveNeverOverwritesGoodSnapshot() {
+    QTemporaryDir root;
+    QVERIFY(root.isValid());
+    SessionBackup::setPathsForTesting(root.path(), QString());
+    const QString live = root.path() + QStringLiteral("/QtWebEngine");
+
+    writeIndexedDb(live, 512 * 1024);
+    QVERIFY(SessionBackup::snapshot(QString()));
+
+    // With the live session gone, snapshot() must refuse rather than clobber
+    // the good copy with an empty one.
+    QDir(live + QStringLiteral("/IndexedDB")).removeRecursively();
+    QVERIFY(!SessionBackup::snapshot(QString()));
+    // The good snapshot still restores.
+    QVERIFY(SessionBackup::restore(QString()));
+    QVERIFY(SessionBackup::sessionLooksPresent(
+        StorageInfo::directorySize(live + QStringLiteral("/IndexedDB"))));
+  }
+  void restoreWithoutSnapshotIsANoOp() {
+    QTemporaryDir root;
+    QVERIFY(root.isValid());
+    SessionBackup::setPathsForTesting(root.path(), QString());
+    QVERIFY(!SessionBackup::restore(QString()));
+  }
+};
+
 int main(int argc, char *argv[]) {
   // Keep the (headless) QWebEngineProfile used by the install() test happy on CI
   // runners: no sandbox, no GPU. Must be set before QApplication.
@@ -3721,6 +3806,7 @@ int main(int argc, char *argv[]) {
   { TstAccountTabBar t;       run(&t); }
   { TstShortcuts t;           run(&t); }
   { TstBackup t;              run(&t); }
+  { TstSessionBackup t;       run(&t); }
   { TstScreenLock t;          run(&t); }
   { TstQuickReply t;          run(&t); }
   { TstFocusMode t;           run(&t); }

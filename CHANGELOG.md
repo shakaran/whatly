@@ -1,5 +1,16 @@
 ## Unreleased
 
+**A corrupt profile no longer costs you the link to your phone.** When
+QtWebEngine's IndexedDB goes corrupt, Chromium recovers by deleting the
+database — which throws away WhatsApp Web's multi-device session keys, so the
+next launch shows a QR code and you have to re-link the phone. Whatly now keeps
+a small, recent snapshot of each account's session storage (only the parts that
+carry the session, not the caches) and, when it starts up to find a wiped
+session with a good snapshot behind it, restores it automatically — no re-link.
+The snapshot is refreshed at startup while nothing has the database open, so it
+is always consistent and never the cause of corruption. It can be turned off
+with the `sessionBackup/enabled` setting.
+
 **A corrupt Service Worker cache no longer leaves WhatsApp Web stuck.** When the
 Service Worker's on-disk cache is corrupt it fails to register, and that helps
 stall WhatsApp Web's bootstrap into the "unresolved dependencies" cascade (#43).

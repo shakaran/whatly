@@ -206,6 +206,7 @@ set(SOURCES
     src/storageinfo.cpp
     src/shortcuts.cpp
     src/backup.cpp
+    src/sessionbackup.cpp
     src/screenlock.cpp
     src/quickreply.cpp
     src/focusmode.cpp
@@ -293,6 +294,7 @@ set(HEADERS
     src/storageinfo.h
     src/shortcuts.h
     src/backup.h
+    src/sessionbackup.h
     src/screenlock.h
     src/quickreply.h
     src/focusmode.h
