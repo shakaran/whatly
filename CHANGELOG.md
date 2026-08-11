@@ -1,4 +1,16 @@
-## Unreleased
+## 7.1.0 (2026-08-11)
+
+Whatly 7.1.0 builds on 7.0.0. Highlights: spell-check dictionaries are now
+downloadable per language, so a fresh install ships only `en_US` (~45 MB
+smaller) and fetches the rest on demand, each verified by SHA-256, including
+Esperanto and other languages that were never bundled. The custom window frame
+resizes from
+every edge and corner, the unread badge is configurable and read from
+WhatsApp's own store, the collapsed chat strip shows unread counts, no window
+is treated as "the main one", and the running build identifies itself in the
+window and the log. Plus a clearer notice when WhatsApp Web fails to load, Noto
+Sans pulled in by the packages, a lighter Flatpak, and many account and window
+fixes.
 
 **Spell-check dictionaries can be downloaded per language (#46).** Every install
 carried all ~45 MB of dictionaries even though almost nobody needs more than a
@@ -18,8 +30,8 @@ with `-DWHATLY_BUNDLE_DICTIONARIES=""`.)
 module loader collapses (its "unresolved dependencies / cr:NNNN is not defined"
 cascade), the web app never finishes initialising and it looks as if login is
 broken. Whatly now prints a single plain-language line saying it is not a login
-problem (Whatly does not implement login) and how to recover \u2014 reload, or
-clear the cache/data and relaunch \u2014 instead of leaving only WhatsApp's
+problem (Whatly does not implement login) and how to recover (reload, or
+clear the cache/data and relaunch) instead of leaving only WhatsApp's
 cryptic error. It is captured in the log a bug report carries (#43).
 
 **Noto Sans is now pulled in by the packages.** Qt logged

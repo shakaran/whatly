@@ -1,3 +1,117 @@
+## 7.1.0 (2026-08-11)
+
+Whatly 7.1.0 builds on 7.0.0. Highlights: spell-check dictionaries are now
+downloadable per language, so a fresh install ships only `en_US` (~45 MB
+smaller) and fetches the rest on demand, each verified by SHA-256, including
+Esperanto and other languages that were never bundled. The custom window frame
+resizes from
+every edge and corner, the unread badge is configurable and read from
+WhatsApp's own store, the collapsed chat strip shows unread counts, no window
+is treated as "the main one", and the running build identifies itself in the
+window and the log. Plus a clearer notice when WhatsApp Web fails to load, Noto
+Sans pulled in by the packages, a lighter Flatpak, and many account and window
+fixes.
+
+**Spell-check dictionaries can be downloaded per language (#46).** Every install
+carried all ~45 MB of dictionaries even though almost nobody needs more than a
+few. A new folding **Spell-check dictionaries** section in Settings now lists
+each language with its size and a Download/Delete button, and the language picker
+offers not-yet-installed languages too — ticking one downloads it. Each `.bdic`
+is verified by SHA-256 before it is used, and on first run the dictionary for
+your system language is fetched automatically. Fresh installs now bundle only
+`en_US` and pull the rest on demand from a dedicated `dictionaries` release,
+down from ~45 MB; languages that were never bundled — Esperanto among them — can
+finally be installed from the UI. (Offline builds can still bundle everything
+with `-DWHATLY_BUNDLE_DICTIONARIES=""`.)
+
+**Spell-check dictionary cleanup.** The bundled set carried a duplicate `en-US` (identical to `en_US` bar the separator, and never selectable) and an invalid `vi_VI` region code; both are gone, keeping `en_US` and `vi_VN`. Groundwork for making dictionaries downloadable per language (#46).
+
+**A clearer message when WhatsApp Web fails to load.** When WhatsApp Web's own
+module loader collapses (its "unresolved dependencies / cr:NNNN is not defined"
+cascade), the web app never finishes initialising and it looks as if login is
+broken. Whatly now prints a single plain-language line saying it is not a login
+problem (Whatly does not implement login) and how to recover (reload, or
+clear the cache/data and relaunch) instead of leaving only WhatsApp's
+cryptic error. It is captured in the log a bug report carries (#43).
+
+**Noto Sans is now pulled in by the packages.** Qt logged
+`qt.text.font.db: OpenType support missing for "Noto Sans", script …` when the
+system had no Noto font with OpenType tables for a given script. Text still
+rendered via fallback, but to fix it at the source the packages now bring Noto
+Sans in: a Recommends on the `.deb`/RPM (Debian `fonts-noto-core`, Fedora
+`google-noto-sans-fonts`, openSUSE `noto-sans-fonts`), a depends on the AUR
+packages (`noto-fonts`), `media-fonts/noto` in the Gentoo ebuild, and it is
+bundled into the snap. The Flatpak already ships Noto via its KDE runtime.
+
+**The build identifies itself at startup.** The first line of output is now the
+version, the commit, the branch and the build time. A bug report, or a tester
+saying a fix did not work, is only worth as much as the certainty about what was
+running: an install that silently did not replace the previous one, and a build
+from the wrong branch, both look exactly like a fix that failed. It goes through
+the normal log, so it is included in the output a bug report carries. Packagers
+can set `-DWHATLY_BUILD_LABEL=" (…)"` to mark a one-off build; a normal build
+prints nothing extra.
+
+**Smaller Flatpak.** The Flatpak image no longer ships `webenginedriver`, the
+WebDriver server the app never launches and no user can reach, trimming about
+17 MB from every install (down to ~320 MB).
+
+**Whatly reopens on the account you were last using.** With more than one
+account, the app always started on the first tab, so anyone whose main number was
+not first had to switch accounts by hand on every launch. The active account is
+now remembered and restored. It is stored by account id rather than by position,
+so reordering the tabs does not send the next start to the wrong account, and if
+that account has since been removed the first tab is used as before.
+
+**An account you are not using now costs nothing at all.** Every account built a
+full WhatsApp Web page at startup and kept it for the whole session, so a
+four-account setup downloaded the web app four times and paid for four renderer
+processes before you had looked at any of them. Measured on a four-account setup
+where three of the accounts were sitting on a QR screen doing nothing, those three
+held about 720 MB — roughly a third of the entire application. With "suspend
+inactive accounts" enabled, an account you have not opened has no page: not a
+frozen one, not an empty one, none. It is built the moment something needs to draw
+it — clicking its tab, switching to grid view, tearing it out into its own window
+— and thrown away again once you have left it alone for the configured time, so it
+goes back to costing nothing. Startup is also markedly quicker, because only the
+account you land on is loaded. Previously this option only froze background
+accounts, which stops their timers and scripts but keeps every byte of the
+renderer, so the memory it was meant to save stayed allocated. The trade is
+unchanged and still opt-in: an account with no page cannot notify you, so with
+this off — the default — every account loads at startup exactly as before.
+**Settings: the things in "Performance & Privacy" are now where you would look for
+them.** That one section had grown into a grab-bag holding, besides the GPU and
+memory options its name suggests, the entire AI assistant and inline translation
+panels, whether photos are sent in HD, whether Enter holds a message briefly, the
+chat-list preview blanking and the WebRTC privacy shield — so the thing you wanted
+was almost never under the heading you would have guessed. **AI & translation** is
+now a section of its own, the two privacy settings have joined **Privacy & Lock**,
+the two messaging ones have joined **Chatting**, and what remains is genuinely
+performance, so the section is simply called that. **Interface scale** has also
+moved from "Network & Startup", where it sat beside the autostart checkbox, to
+**Window & zoom** beside the other zoom controls. No setting changed its meaning and
+nothing was renamed; they are only in sensible places now.
+**The custom window frame can be resized from any edge or corner, and detached
+windows get the same frame.** With the custom frame on, the only way to resize was
+a single grip in the bottom-right corner — one of the eight places a normal window
+can be grabbed — because dropping the native decoration drops the native resize
+border with it. All four edges and all four corners now work, with the right cursor
+on each, and the drag is handed to the window manager so it behaves exactly as a
+normal window's does. Detached account windows now wear the custom frame too rather
+than being the one window left with the system's, which is why they needed the
+resize borders first. They also gain the trailing "+" tab the main strip has, and
+an account added from a detached window's "+" now appears in that window instead of
+jumping to the main one.
+
+**The collapsed chat list shows unread counts again.** Collapsing the list to a
+strip of avatars cut WhatsApp's own unread badge off the right-hand edge, so the one
+thing the narrow list most needs to tell you — which conversations are waiting — was
+only visible by hovering each row in turn. Each collapsed row now carries a small
+green count in its top-right corner, and no badge at all when there is nothing
+unread. The number is WhatsApp's own, read from the row rather than tracked
+separately, so it cannot drift out of step, and it is drawn without adding anything
+to the page.
+
 ## 7.0.0 (2026-08-03)
 
 Whatly 7.0.0 is a major feature release. Highlights: a built-in AI assistant
