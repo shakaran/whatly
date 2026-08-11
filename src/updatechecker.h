@@ -18,6 +18,25 @@ int compareVersions(const QString &a, const QString &b);
 // Extract the latest release tag from the GitHub releases-latest JSON, and its
 // html_url via *url. Returns an empty string if the JSON has no tag.
 QString latestFromJson(const QByteArray &json, QString *url);
+
+// How this copy of Whatly was installed. It decides whether "go and fetch the
+// new build" is useful advice or actively wrong: with a Flatpak or a distribution
+// package the package manager owns the update, and a sandboxed application
+// cannot replace itself in any case.
+enum class Install {
+  Unknown,       // Windows, macOS, a portable archive: the user fetches the build
+  DistroPackage, // under /usr, so AUR / OBS / Gentoo / a distro repo owns it
+  Flatpak,
+  AppImage, // carries its own update information, so it can patch in place
+};
+
+// The decision as a pure function of the three facts that separate the cases, so
+// the whole table is unit-testable without touching the real environment.
+Install installFrom(bool flatpakInfoExists, const QString &appImagePath,
+                    const QString &executablePath);
+
+// The same decision, taken from the environment this process is running in.
+Install currentInstall();
 } // namespace UpdateCheck
 
 class UpdateChecker : public QObject {

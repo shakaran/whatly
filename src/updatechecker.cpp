@@ -1,7 +1,9 @@
 #include "updatechecker.h"
 #include "settingsmanager.h"
 
+#include <QCoreApplication>
 #include <QDateTime>
+#include <QFileInfo>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QNetworkAccessManager>
@@ -59,6 +61,31 @@ QString latestFromJson(const QByteArray &json, QString *url) {
   if (url)
     *url = o.value(QStringLiteral("html_url")).toString();
   return tag;
+}
+
+Install installFrom(bool flatpakInfoExists, const QString &appImagePath,
+                    const QString &executablePath) {
+  // Order matters. Inside a Flatpak everything lives under /app, and the sandbox
+  // sets neither APPIMAGE nor a /usr path that means what it appears to mean, so
+  // it has to be recognised before the others.
+  if (flatpakInfoExists)
+    return Install::Flatpak;
+  if (!appImagePath.isEmpty())
+    return Install::AppImage;
+  // /usr is what actually marks a package the distribution will update itself.
+  // Our own .deb and .rpm unpack to /opt/whatly precisely because they bundle
+  // their Qt, and their user does fetch the next build by hand — so they belong
+  // with Unknown, not here.
+  if (executablePath.startsWith(QLatin1String("/usr/")))
+    return Install::DistroPackage;
+  return Install::Unknown;
+}
+
+Install currentInstall() {
+  const bool flatpak = QFileInfo::exists(QStringLiteral("/.flatpak-info")) ||
+                       !qEnvironmentVariableIsEmpty("FLATPAK_ID");
+  return installFrom(flatpak, qEnvironmentVariable("APPIMAGE"),
+                     QCoreApplication::applicationFilePath());
 }
 
 } // namespace UpdateCheck

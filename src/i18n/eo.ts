@@ -650,8 +650,24 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Whatly %1 estas disponebla. Alklaku por malfermi la elŝutan paĝon.</translation>
     </message>
     <message>
+        <location filename="../mainwindow.cpp" line="217"/>
+        <source>Whatly %1 is available. Update it through Flathub or your software centre.</source>
+        <translation>Whatly %1 estas disponebla. Ĝisdatigu ĝin per Flathub aŭ via programarcentro.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="222"/>
+        <source>Whatly %1 is available. Update it with your package manager.</source>
+        <translation>Whatly %1 estas disponebla. Ĝisdatigu ĝin per via pakaĵadministrilo.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="227"/>
+        <source>Whatly %1 is available. This AppImage can update itself in place with AppImageUpdate, fetching only the parts that changed.</source>
+        <translation>Whatly %1 estas disponebla. Ĉi tiu AppImage povas ĝisdatigi sin surloke per AppImageUpdate, elŝutante nur la partojn kiuj ŝanĝiĝis.</translation>
+    </message>
+    <message>
         <location filename="../mainwindow.cpp" line="891"/>
         <location filename="../mainwindow.cpp" line="897"/>
+        <location filename="../mainwindow_webengine.cpp" line="964"/>
         <location filename="../mainwindow_webengine.cpp" line="967"/>
         <location filename="../mainwindow_webengine.cpp" line="970"/>
         <source>| Error</source>
