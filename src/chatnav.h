@@ -14,6 +14,13 @@ namespace ChatNav {
 // the numeric count pill on the row, which is locale-independent.
 QString unreadChatsScript(int limit);
 
+// JS that returns a JSON array of the currently-listed unread chats with a short
+// preview of their latest message, most recent first, capped at `limit`:
+// [{"name": "...", "count": N, "preview": "..."}]. Same locale-independent badge
+// detection as unreadChatsScript; the preview is the row's own text minus the
+// name, so it needs no obfuscated class. Feeds the AI "unread digest" (idea #5).
+QString unreadDigestScript(int limit);
+
 // JS that answers how much is unread, as JSON: {"chats": N, "messages": M}.
 //
 // It reads WhatsApp Web's own IndexedDB (`model-storage`, store `chat`) rather

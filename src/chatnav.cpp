@@ -48,6 +48,48 @@ QString unreadChatsScript(int limit) {
 )JS").arg(limit);
 }
 
+QString unreadDigestScript(int limit) {
+  if (limit < 1)
+    limit = 1;
+  return QStringLiteral(R"JS(
+(function(){
+  var pane = document.querySelector('#pane-side');
+  if (!pane) return '[]';
+  var rows = pane.querySelectorAll('[role="row"]');
+  var out = [];
+  for (var i = 0; i < rows.length; i++) {
+    var row = rows[i];
+    var titled = row.querySelectorAll('span[title]');
+    if (!titled.length) continue;
+    var name = titled[0].getAttribute('title');
+    // Same badge detection as unreadChatsScript: a leaf span that is all digits.
+    var count = 0;
+    var spans = row.querySelectorAll('span');
+    for (var j = 0; j < spans.length; j++) {
+      var t = (spans[j].textContent || '').trim();
+      if (spans[j].children.length === 0 && /^\d{1,4}$/.test(t)) count = parseInt(t, 10);
+    }
+    if (count <= 0) continue;
+    // Prefer a second titled span (WhatsApp gives the preview one a title too);
+    // otherwise take the row's own text with the name removed, so no obfuscated
+    // class is relied on.
+    var preview = '';
+    for (var k = 1; k < titled.length; k++) {
+      var p = (titled[k].getAttribute('title') || '').trim();
+      if (p && p !== name) { preview = p; break; }
+    }
+    if (!preview) {
+      var full = (row.innerText || '').replace(/\s+/g, ' ').trim();
+      preview = full.split(name).join(' ').trim();
+    }
+    out.push({ name: name, count: count, preview: preview.slice(0, 300) });
+    if (out.length >= %1) break;
+  }
+  return JSON.stringify(out);
+})()
+)JS").arg(limit);
+}
+
 QString openChatByNameScript(const QString &name) {
   return QStringLiteral(R"JS(
 (function(){

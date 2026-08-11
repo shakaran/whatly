@@ -1,5 +1,15 @@
 ## Unreleased
 
+**Summarise your unread chats with the local AI (idea #5).** A new
+**AI: Summarise unread chats** action (right-click menu, Ctrl+K command palette,
+Shortcuts) reads your unread conversations — who, how many, and a preview of the
+latest message — and asks the assistant for one short, prioritised digest of
+what needs a reply, in the conversation's own language. It never opens a chat
+(so nothing is marked read) and, like every AI action, the request is made from
+C++ against your configured endpoint, so it can run entirely on a local model
+(Ollama) and never touches WhatsApp Web. Joins the existing summarise-chat,
+improve-message and suggest-reply actions.
+
 **A corrupt profile no longer costs you the link to your phone.** When
 QtWebEngine's IndexedDB goes corrupt, Chromium recovers by deleting the
 database — which throws away WhatsApp Web's multi-device session keys, so the

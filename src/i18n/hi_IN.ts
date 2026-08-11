@@ -93,27 +93,27 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AiClient</name>
     <message>
-        <location filename="../aiassistant.cpp" line="190"/>
+        <location filename="../aiassistant.cpp" line="222"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
         <translation>कोई AI एंडपॉइंट कॉन्फ़िगर नहीं है (सेटिंग्स → AI सहायक)।</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="194"/>
+        <location filename="../aiassistant.cpp" line="226"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
         <translation>कोई AI मॉडल कॉन्फ़िगर नहीं है (सेटिंग्स → AI सहायक)।</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="198"/>
+        <location filename="../aiassistant.cpp" line="230"/>
         <source>There is nothing to send to the assistant.</source>
         <translation>सहायक को भेजने के लिए कुछ नहीं है।</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="238"/>
+        <location filename="../aiassistant.cpp" line="270"/>
         <source>The assistant took too long and was cancelled.</source>
         <translation>सहायक ने बहुत समय लिया और रद्द कर दिया गया।</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="241"/>
+        <location filename="../aiassistant.cpp" line="273"/>
         <source>The assistant request failed.</source>
         <translation>सहायक अनुरोध विफल रहा।</translation>
     </message>
@@ -588,7 +588,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="323"/>
+        <location filename="../mainwindow_tray.cpp" line="332"/>
         <source>Recent unread</source>
         <translation>हाल के अपठित</translation>
     </message>
@@ -666,6 +666,16 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../mainwindow_webengine.cpp" line="1543"/>
         <source>Could not read the conversation: %1</source>
         <translation>बातचीत नहीं पढ़ी जा सकी: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1857"/>
+        <source>No unread chats to summarise.</source>
+        <translation>सारांश बनाने के लिए कोई अपठित चैट नहीं।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1862"/>
+        <source>Unread digest</source>
+        <translation>अपठित सारांश</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1370"/>
@@ -856,7 +866,7 @@ WebEngine आरंभ नहीं हुआ है।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1506"/>
-        <location filename="../mainwindow_tray.cpp" line="281"/>
+        <location filename="../mainwindow_tray.cpp" line="288"/>
         <source>Collapse the chat list</source>
         <translation>चैट सूची समेटें</translation>
     </message>
@@ -894,7 +904,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="31"/>
-        <location filename="../mainwindow_tray.cpp" line="276"/>
+        <location filename="../mainwindow_tray.cpp" line="283"/>
         <source>Fullscreen</source>
         <translation>पूर्ण स्क्रीन</translation>
     </message>
@@ -935,7 +945,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="113"/>
-        <location filename="../mainwindow_tray.cpp" line="278"/>
+        <location filename="../mainwindow_tray.cpp" line="285"/>
         <source>Reset zoom</source>
         <translation>ज़ूम रीसेट करें</translation>
     </message>
@@ -956,13 +966,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="155"/>
-        <location filename="../mainwindow_tray.cpp" line="284"/>
+        <location filename="../mainwindow_tray.cpp" line="291"/>
         <source>Translate selection</source>
         <translation>चयन का अनुवाद करें</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="162"/>
-        <location filename="../mainwindow_tray.cpp" line="286"/>
+        <location filename="../mainwindow_tray.cpp" line="293"/>
         <source>Translate message box</source>
         <translation>संदेश बॉक्स का अनुवाद करें</translation>
     </message>
@@ -973,86 +983,92 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="180"/>
-        <location filename="../mainwindow_tray.cpp" line="288"/>
+        <location filename="../mainwindow_tray.cpp" line="295"/>
         <source>AI: Summarise chat</source>
         <translation>AI: चैट सारांश बनाएँ</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="187"/>
-        <location filename="../mainwindow_tray.cpp" line="289"/>
+        <location filename="../mainwindow_tray.cpp" line="296"/>
         <source>AI: Improve message</source>
         <translation>AI: संदेश सुधारें</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="194"/>
-        <location filename="../mainwindow_tray.cpp" line="290"/>
+        <location filename="../mainwindow_tray.cpp" line="297"/>
         <source>AI: Suggest a reply</source>
         <translation>AI: उत्तर सुझाएँ</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="201"/>
+        <location filename="../mainwindow_tray.cpp" line="299"/>
+        <source>AI: Summarise unread chats</source>
+        <translation>AI: अपठित चैट सारांश बनाएँ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="208"/>
         <source>&amp;Toggle theme</source>
         <translation>थीम बदलें (&amp;T)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="212"/>
+        <location filename="../mainwindow_tray.cpp" line="219"/>
         <source>Tabbed view</source>
         <translation>टैब दृश्य</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="219"/>
-        <location filename="../mainwindow_tray.cpp" line="293"/>
+        <location filename="../mainwindow_tray.cpp" line="226"/>
+        <location filename="../mainwindow_tray.cpp" line="302"/>
         <source>Grid view</source>
         <translation>ग्रिड दृश्य</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="241"/>
-        <location filename="../mainwindow_tray.cpp" line="294"/>
+        <location filename="../mainwindow_tray.cpp" line="248"/>
+        <location filename="../mainwindow_tray.cpp" line="303"/>
         <source>Command palette</source>
         <translation>कमांड पैलेट</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="250"/>
+        <location filename="../mainwindow_tray.cpp" line="257"/>
         <source>&amp;About</source>
         <translation>परिचय (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="259"/>
+        <location filename="../mainwindow_tray.cpp" line="266"/>
         <source>&amp;Quit</source>
         <translation>बाहर निकलें (&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="272"/>
+        <location filename="../mainwindow_tray.cpp" line="279"/>
         <source>Reload</source>
         <translation>पुनः लोड करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="273"/>
+        <location filename="../mainwindow_tray.cpp" line="280"/>
         <source>Minimise to tray</source>
         <translation>ट्रे में छोटा करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="274"/>
+        <location filename="../mainwindow_tray.cpp" line="281"/>
         <source>Lock</source>
         <translation>लॉक करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="275"/>
+        <location filename="../mainwindow_tray.cpp" line="282"/>
         <source>Mute audio</source>
         <translation>ऑडियो म्यूट करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="277"/>
+        <location filename="../mainwindow_tray.cpp" line="284"/>
         <source>New chat / open URL</source>
         <translation>नई चैट / URL खोलें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="282"/>
+        <location filename="../mainwindow_tray.cpp" line="289"/>
         <source>Find in chats</source>
         <translation>चैट में खोजें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="287"/>
+        <location filename="../mainwindow_tray.cpp" line="294"/>
         <location filename="../mainwindow_webengine.cpp" line="1474"/>
         <location filename="../mainwindow_webengine.cpp" line="1478"/>
         <location filename="../mainwindow_webengine.cpp" line="1491"/>
@@ -1064,32 +1080,32 @@ Open Settings now?</source>
         <translation>चैट निर्यात करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="291"/>
+        <location filename="../mainwindow_tray.cpp" line="300"/>
         <source>Settings</source>
         <translation>सेटिंग्स</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="292"/>
+        <location filename="../mainwindow_tray.cpp" line="301"/>
         <source>Toggle theme</source>
         <translation>थीम टॉगल करें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="295"/>
+        <location filename="../mainwindow_tray.cpp" line="304"/>
         <source>Quit</source>
         <translation>बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="318"/>
+        <location filename="../mainwindow_tray.cpp" line="327"/>
         <source>Windows</source>
         <translation>विंडो</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="488"/>
+        <location filename="../mainwindow_tray.cpp" line="497"/>
         <source>hidden</source>
         <translation>छिपी हुई</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="490"/>
+        <location filename="../mainwindow_tray.cpp" line="499"/>
         <source>minimised</source>
         <translation>न्यूनतम</translation>
     </message>
@@ -1118,7 +1134,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="397"/>
-        <location filename="../mainwindow_tray.cpp" line="232"/>
+        <location filename="../mainwindow_tray.cpp" line="239"/>
         <source>Add account…</source>
         <translation>खाता जोड़ें…</translation>
     </message>
@@ -1349,97 +1365,97 @@ You can pull any account out into its own window: right-click its tab and choose
         <translation>डीबग जानकारी छिपाएँ</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="193"/>
+        <location filename="../main.cpp" line="194"/>
         <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
         <translation>&quot;%1&quot; से माइग्रेट करने के लिए कुछ नहीं — पहले ही माइग्रेट हो चुका, या कोई डेटा नहीं मिला।</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="198"/>
+        <location filename="../main.cpp" line="199"/>
         <source>Would copy:</source>
         <translation>कॉपी करेगा:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="198"/>
+        <location filename="../main.cpp" line="199"/>
         <source>Copied:</source>
         <translation>कॉपी किया गया:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="202"/>
+        <location filename="../main.cpp" line="203"/>
         <source>Run again without --dry-run to perform the copy.</source>
         <translation>कॉपी करने के लिए --dry-run के बिना फिर से चलाएँ।</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="549"/>
+        <location filename="../main.cpp" line="550"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Qt WebEngine पर आधारित सुविधा-संपन्न WhatsApp Web क्लाइंट</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="556"/>
+        <location filename="../main.cpp" line="557"/>
         <source>Displays help on commandline options</source>
         <translation>कमांड-लाइन विकल्पों की सहायता दिखाता है</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="561"/>
+        <location filename="../main.cpp" line="562"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>चल रहे इंस्टेंस में सेटिंग्स खोलता है: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="566"/>
+        <location filename="../main.cpp" line="567"/>
         <source>Locks a running instance of </source>
         <translation>चल रहे इंस्टेंस को लॉक करता है: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="572"/>
+        <location filename="../main.cpp" line="573"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>चल रहे इंस्टेंस में «परिचय» विंडो खोलता है: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="577"/>
+        <location filename="../main.cpp" line="578"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>चल रहे इंस्टेंस में शेड्यूल किए गए संदेश संवाद खोलता है </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="584"/>
+        <location filename="../main.cpp" line="585"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>चल रहे इंस्टेंस में हल्की और गहरी थीम के बीच बदलता है: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="591"/>
+        <location filename="../main.cpp" line="592"/>
         <source>Reload the app in a running instance of </source>
         <translation>चल रहे इंस्टेंस में ऐप्लिकेशन पुनः लोड करता है: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="597"/>
+        <location filename="../main.cpp" line="598"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>चल रहे इंस्टेंस में नई चैट विंडो खोलता है: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="610"/>
+        <location filename="../main.cpp" line="611"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;अपने स्वयं के सत्र और सेटिंग्स के साथ, अपनी अलग विंडो में एक अलग खाते के रूप में चलाएँ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="627"/>
+        <location filename="../main.cpp" line="628"/>
         <source>Show main window of running instance of </source>
         <translation>चल रहे इंस्टेंस की मुख्य विंडो दिखाता है: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="634"/>
+        <location filename="../main.cpp" line="635"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>पिछली इंस्टॉल (उदा. पुराना &quot;whatsie&quot; बिल्ड) से सेटिंग्स और लॉग-इन सत्र को इसमें कॉपी करें, फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="641"/>
+        <location filename="../main.cpp" line="642"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>--migrate-from के साथ, केवल यह बताएँ कि क्या कॉपी किया जाएगा</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="659"/>
+        <location filename="../main.cpp" line="660"/>
         <source>Print the current unread message count and exit</source>
         <translation>मौजूदा अपठित संदेशों की संख्या दिखाकर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1179"/>
+        <location filename="../main.cpp" line="1185"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>ऐप लॉक कॉन्फ़िगर नहीं है।
@@ -1606,172 +1622,172 @@ Please setup the password in the Settings first.</source>
         <translation>चैट सूची दिखाएँ</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1277"/>
+        <location filename="../main.cpp" line="1283"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>स्टार्ट-अप क्रैश से सुरक्षित रेंडरिंग पर स्विच करके पुनर्प्राप्त किया गया। आप इसे सेटिंग्स → प्रदर्शन में समायोजित कर सकते हैं।</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="665"/>
+        <location filename="../main.cpp" line="666"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>चालू इंस्टेंस के ज़रिए संदेश भेजता है, फिर बाहर निकल जाता है (--to और --message ज़रूरी)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="669"/>
+        <location filename="../main.cpp" line="670"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>--send के लिए प्राप्तकर्ता: फ़ोन नंबर (अंतरराष्ट्रीय), समूह आईडी, या संपर्क नाम</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="674"/>
+        <location filename="../main.cpp" line="675"/>
         <source>Message text for --send</source>
         <translation>--send के लिए संदेश पाठ</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="686"/>
+        <location filename="../main.cpp" line="687"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>--send कैसे भेजता है: &apos;web&apos; (चालू WhatsApp Web सत्र) या &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="677"/>
+        <location filename="../main.cpp" line="678"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>--send के लिए फ़ाइल संलग्न करें (--message, यदि हो, कैप्शन बन जाता है)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="620"/>
+        <location filename="../main.cpp" line="621"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>आंतरिक: शुरू करने से पहले इस id वाली प्रक्रिया के समाप्त होने की प्रतीक्षा करता है, &quot;अभी पुनः आरंभ करें&quot; द्वारा उपयोग किया जाता है</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="682"/>
+        <location filename="../main.cpp" line="683"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>--file अनुलग्नक के लिए कैप्शन (--message का उपनाम)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="692"/>
+        <location filename="../main.cpp" line="693"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>इस नाम के सहेजे गए टेम्पलेट को --send संदेश के रूप में उपयोग करें (--var से इसके {{fields}} भरें)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="697"/>
+        <location filename="../main.cpp" line="698"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>टेम्पलेट का एक फ़ील्ड भरें: key=value (दोहराने योग्य)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="701"/>
+        <location filename="../main.cpp" line="702"/>
         <source>List the saved message templates and exit</source>
         <translation>सहेजे गए संदेश टेम्पलेट सूचीबद्ध करें और बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="704"/>
+        <location filename="../main.cpp" line="705"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>संदेश टेम्पलेट सहेजें (या बदलें), फिर बाहर निकलें: name=body</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="708"/>
+        <location filename="../main.cpp" line="709"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>इस नाम का सहेजा गया संदेश टेम्पलेट हटाएँ और बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="713"/>
+        <location filename="../main.cpp" line="714"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>आने वाले संदेशों पर स्वतः-उत्तर चालू करें और बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="716"/>
+        <location filename="../main.cpp" line="717"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>स्वतः-उत्तर बंद करें और बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="719"/>
+        <location filename="../main.cpp" line="720"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>सक्रिय स्वतः-उत्तर नियम (स्थिति सहित) सूचीबद्ध करें और बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="722"/>
+        <location filename="../main.cpp" line="723"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>इस JSON फ़ाइल को स्वतः-उत्तर नियमों के स्रोत के रूप में उपयोग करें और बाहर निकलें (हटाने के लिए खाली)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="728"/>
+        <location filename="../main.cpp" line="729"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>Cloud API फ़ोन-नंबर आईडी सेट करें, फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="732"/>
+        <location filename="../main.cpp" line="733"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>Cloud API एक्सेस टोकन सेट करें, फिर बाहर निकलें (खाता कॉन्फ़िगरेशन में संग्रहीत)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="737"/>
+        <location filename="../main.cpp" line="738"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>Cloud API ग्राफ़ संस्करण सेट करें (उदा. v21.0), फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="741"/>
+        <location filename="../main.cpp" line="742"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>दिखाएँ कि Cloud API कॉन्फ़िगर है या नहीं, फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="744"/>
+        <location filename="../main.cpp" line="745"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>--send --backend cloud के लिए: Meta द्वारा अनुमोदित यह टेम्पलेट भेजें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="748"/>
+        <location filename="../main.cpp" line="749"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>--cloud-template के लिए भाषा कोड (उदा. es, en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="752"/>
+        <location filename="../main.cpp" line="753"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>--cloud-template के लिए एक स्थानिक बॉडी पैरामीटर (दोहराने योग्य)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="757"/>
+        <location filename="../main.cpp" line="758"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>स्थानीय HTTP API सक्षम करें, फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="760"/>
+        <location filename="../main.cpp" line="761"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>स्थानीय HTTP API अक्षम करें, फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="763"/>
+        <location filename="../main.cpp" line="764"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>स्थानीय HTTP API पोर्ट सेट करें (डिफ़ॉल्ट 8590), फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="767"/>
+        <location filename="../main.cpp" line="768"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>स्थानीय HTTP API बियरर टोकन सेट करें, फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="771"/>
+        <location filename="../main.cpp" line="772"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>स्थानीय HTTP API कॉन्फ़िगरेशन दिखाएँ, फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="775"/>
+        <location filename="../main.cpp" line="776"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>Cloud API वेबहुक प्राप्त करना सक्षम करें, फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="778"/>
+        <location filename="../main.cpp" line="779"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>Cloud API वेबहुक प्राप्त करना अक्षम करें, फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="781"/>
+        <location filename="../main.cpp" line="782"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>Cloud API वेबहुक सत्यापन टोकन सेट करें, फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="785"/>
+        <location filename="../main.cpp" line="786"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>वेबहुक हस्ताक्षर जाँच के लिए Meta ऐप सीक्रेट सेट करें, फिर बाहर निकलें</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="789"/>
+        <location filename="../main.cpp" line="790"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>Cloud API वेबहुक कॉन्फ़िगरेशन दिखाएँ, फिर बाहर निकलें</translation>
     </message>

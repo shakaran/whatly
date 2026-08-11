@@ -448,9 +448,13 @@ private:
   QAction *m_aiSummarizeAction = nullptr;
   QAction *m_aiImproveAction = nullptr;
   QAction *m_aiSuggestAction = nullptr;
+  QAction *m_aiUnreadDigestAction = nullptr;
   void aiSummarizeChat();
   void aiImproveComposer();
   void aiSuggestReply();
+  // Triage every unread chat into one prioritised digest, shown in a dialog.
+  // Reads the unread rows (name + count + preview) without opening any chat.
+  void aiSummarizeUnread();
   // Send system+user prompts and hand the result to `onResult`; progress and
   // errors are shown as an in-page toast (and a desktop notification on error,
   // so feedback is not lost if the window is unfocused). Guards on AI enabled.

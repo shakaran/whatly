@@ -131,6 +131,38 @@ QString suggestReplySystemPrompt() {
       "only the suggested reply text, with no quotes or explanation.");
 }
 
+QString unreadDigestSystemPrompt() {
+  return QStringLiteral(
+      "You help the user triage their unread WhatsApp chats. You are given a "
+      "list of chats, each with its unread count and a short preview of the "
+      "latest message. Reply in the language of the messages. Write a brief, "
+      "prioritised digest: one line per chat with who it is, how many unread, "
+      "and what it seems to be about, ordered by apparent urgency. End with a "
+      "single line suggesting which to answer first. Return only the digest.");
+}
+
+QString buildUnreadDigestInput(const QString &unreadJson) {
+  const QJsonDocument doc = QJsonDocument::fromJson(unreadJson.toUtf8());
+  if (!doc.isArray())
+    return QString();
+  QStringList lines;
+  const QJsonArray arr = doc.array();
+  for (const QJsonValue &v : arr) {
+    const QJsonObject o = v.toObject();
+    const QString name = o.value(QStringLiteral("name")).toString().trimmed();
+    if (name.isEmpty())
+      continue;
+    const int count = o.value(QStringLiteral("count")).toInt();
+    const QString preview =
+        o.value(QStringLiteral("preview")).toString().simplified();
+    QString line = QStringLiteral("%1 (%2 unread)").arg(name).arg(count);
+    if (!preview.isEmpty())
+      line += QStringLiteral(": ") + preview;
+    lines << line;
+  }
+  return lines.join(QLatin1Char('\n'));
+}
+
 QString readContextScript(int maxMessages) {
   const int n = maxMessages < 1 ? 1 : maxMessages;
   return QStringLiteral(

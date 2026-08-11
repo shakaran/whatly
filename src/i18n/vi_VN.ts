@@ -93,27 +93,27 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AiClient</name>
     <message>
-        <location filename="../aiassistant.cpp" line="190"/>
+        <location filename="../aiassistant.cpp" line="222"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
         <translation>Chưa cấu hình điểm cuối AI (Cài đặt → Trợ lý AI).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="194"/>
+        <location filename="../aiassistant.cpp" line="226"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
         <translation>Chưa cấu hình mô hình AI (Cài đặt → Trợ lý AI).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="198"/>
+        <location filename="../aiassistant.cpp" line="230"/>
         <source>There is nothing to send to the assistant.</source>
         <translation>Không có gì để gửi cho trợ lý.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="238"/>
+        <location filename="../aiassistant.cpp" line="270"/>
         <source>The assistant took too long and was cancelled.</source>
         <translation>Trợ lý mất quá nhiều thời gian nên đã bị hủy.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="241"/>
+        <location filename="../aiassistant.cpp" line="273"/>
         <source>The assistant request failed.</source>
         <translation>Yêu cầu gửi tới trợ lý thất bại.</translation>
     </message>
@@ -715,7 +715,7 @@ Webengine chưa được khởi tạo.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1506"/>
-        <location filename="../mainwindow_tray.cpp" line="281"/>
+        <location filename="../mainwindow_tray.cpp" line="288"/>
         <source>Collapse the chat list</source>
         <translation>Thu gọn danh sách trò chuyện</translation>
     </message>
@@ -765,7 +765,7 @@ Webengine chưa được khởi tạo.</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="397"/>
-        <location filename="../mainwindow_tray.cpp" line="232"/>
+        <location filename="../mainwindow_tray.cpp" line="239"/>
         <source>Add account…</source>
         <translation>Thêm tài khoản…</translation>
     </message>
@@ -864,7 +864,7 @@ Mở Cài đặt ngay bây giờ?</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="31"/>
-        <location filename="../mainwindow_tray.cpp" line="276"/>
+        <location filename="../mainwindow_tray.cpp" line="283"/>
         <source>Fullscreen</source>
         <translation>Toàn màn hình</translation>
     </message>
@@ -905,7 +905,7 @@ Mở Cài đặt ngay bây giờ?</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="113"/>
-        <location filename="../mainwindow_tray.cpp" line="278"/>
+        <location filename="../mainwindow_tray.cpp" line="285"/>
         <source>Reset zoom</source>
         <translation>Đặt lại thu phóng</translation>
     </message>
@@ -926,13 +926,13 @@ Mở Cài đặt ngay bây giờ?</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="155"/>
-        <location filename="../mainwindow_tray.cpp" line="284"/>
+        <location filename="../mainwindow_tray.cpp" line="291"/>
         <source>Translate selection</source>
         <translation>Dịch phần được chọn</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="162"/>
-        <location filename="../mainwindow_tray.cpp" line="286"/>
+        <location filename="../mainwindow_tray.cpp" line="293"/>
         <source>Translate message box</source>
         <translation>Dịch ô nhập tin nhắn</translation>
     </message>
@@ -943,86 +943,92 @@ Mở Cài đặt ngay bây giờ?</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="180"/>
-        <location filename="../mainwindow_tray.cpp" line="288"/>
+        <location filename="../mainwindow_tray.cpp" line="295"/>
         <source>AI: Summarise chat</source>
         <translation>AI: Tóm tắt cuộc trò chuyện</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="187"/>
-        <location filename="../mainwindow_tray.cpp" line="289"/>
+        <location filename="../mainwindow_tray.cpp" line="296"/>
         <source>AI: Improve message</source>
         <translation>AI: Cải thiện tin nhắn</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="194"/>
-        <location filename="../mainwindow_tray.cpp" line="290"/>
+        <location filename="../mainwindow_tray.cpp" line="297"/>
         <source>AI: Suggest a reply</source>
         <translation>AI: Gợi ý trả lời</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="201"/>
+        <location filename="../mainwindow_tray.cpp" line="299"/>
+        <source>AI: Summarise unread chats</source>
+        <translation>AI: Tóm tắt trò chuyện chưa đọc</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="208"/>
         <source>&amp;Toggle theme</source>
         <translation>&amp;Chuyển đổi giao diện</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="212"/>
+        <location filename="../mainwindow_tray.cpp" line="219"/>
         <source>Tabbed view</source>
         <translation>Chế độ xem theo thẻ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="219"/>
-        <location filename="../mainwindow_tray.cpp" line="293"/>
+        <location filename="../mainwindow_tray.cpp" line="226"/>
+        <location filename="../mainwindow_tray.cpp" line="302"/>
         <source>Grid view</source>
         <translation>Chế độ xem lưới</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="241"/>
-        <location filename="../mainwindow_tray.cpp" line="294"/>
+        <location filename="../mainwindow_tray.cpp" line="248"/>
+        <location filename="../mainwindow_tray.cpp" line="303"/>
         <source>Command palette</source>
         <translation>Bảng lệnh</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="250"/>
+        <location filename="../mainwindow_tray.cpp" line="257"/>
         <source>&amp;About</source>
         <translation>&amp;Giới thiệu</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="259"/>
+        <location filename="../mainwindow_tray.cpp" line="266"/>
         <source>&amp;Quit</source>
         <translation>&amp;Thoát</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="272"/>
+        <location filename="../mainwindow_tray.cpp" line="279"/>
         <source>Reload</source>
         <translation>Tải lại</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="273"/>
+        <location filename="../mainwindow_tray.cpp" line="280"/>
         <source>Minimise to tray</source>
         <translation>Thu nhỏ vào khay hệ thống</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="274"/>
+        <location filename="../mainwindow_tray.cpp" line="281"/>
         <source>Lock</source>
         <translation>Khóa</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="275"/>
+        <location filename="../mainwindow_tray.cpp" line="282"/>
         <source>Mute audio</source>
         <translation>Tắt tiếng</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="277"/>
+        <location filename="../mainwindow_tray.cpp" line="284"/>
         <source>New chat / open URL</source>
         <translation>Cuộc trò chuyện mới / mở URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="282"/>
+        <location filename="../mainwindow_tray.cpp" line="289"/>
         <source>Find in chats</source>
         <translation>Tìm trong cuộc trò chuyện</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="287"/>
+        <location filename="../mainwindow_tray.cpp" line="294"/>
         <location filename="../mainwindow_webengine.cpp" line="1474"/>
         <location filename="../mainwindow_webengine.cpp" line="1478"/>
         <location filename="../mainwindow_webengine.cpp" line="1491"/>
@@ -1034,37 +1040,37 @@ Mở Cài đặt ngay bây giờ?</translation>
         <translation>Xuất cuộc trò chuyện</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="291"/>
+        <location filename="../mainwindow_tray.cpp" line="300"/>
         <source>Settings</source>
         <translation>Cài đặt</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="292"/>
+        <location filename="../mainwindow_tray.cpp" line="301"/>
         <source>Toggle theme</source>
         <translation>Chuyển đổi giao diện</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="295"/>
+        <location filename="../mainwindow_tray.cpp" line="304"/>
         <source>Quit</source>
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="318"/>
+        <location filename="../mainwindow_tray.cpp" line="327"/>
         <source>Windows</source>
         <translation>Cửa sổ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="323"/>
+        <location filename="../mainwindow_tray.cpp" line="332"/>
         <source>Recent unread</source>
         <translation>Chưa đọc gần đây</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="488"/>
+        <location filename="../mainwindow_tray.cpp" line="497"/>
         <source>hidden</source>
         <translation>đã ẩn</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="490"/>
+        <location filename="../mainwindow_tray.cpp" line="499"/>
         <source>minimised</source>
         <translation>đã thu nhỏ</translation>
     </message>
@@ -1147,6 +1153,16 @@ Mở Cài đặt ngay bây giờ?</translation>
         <location filename="../mainwindow_webengine.cpp" line="1543"/>
         <source>Could not read the conversation: %1</source>
         <translation>Không thể đọc cuộc trò chuyện: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1857"/>
+        <source>No unread chats to summarise.</source>
+        <translation>Không có trò chuyện chưa đọc để tóm tắt.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1862"/>
+        <source>Unread digest</source>
+        <translation>Tóm tắt chưa đọc</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1370"/>
@@ -1399,269 +1415,269 @@ Mở Cài đặt ngay bây giờ?</translation>
         <translation>Mã build: %1</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="193"/>
+        <location filename="../main.cpp" line="194"/>
         <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
         <translation>Không có gì để di chuyển từ &quot;%1&quot; — đã di chuyển rồi, hoặc không tìm thấy dữ liệu ở đó.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="198"/>
+        <location filename="../main.cpp" line="199"/>
         <source>Would copy:</source>
         <translation>Sẽ sao chép:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="198"/>
+        <location filename="../main.cpp" line="199"/>
         <source>Copied:</source>
         <translation>Đã sao chép:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="202"/>
+        <location filename="../main.cpp" line="203"/>
         <source>Run again without --dry-run to perform the copy.</source>
         <translation>Chạy lại mà không có --dry-run để thực hiện sao chép.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="549"/>
+        <location filename="../main.cpp" line="550"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Ứng dụng WhatsApp Web đầy đủ tính năng dựa trên Qt WebEngine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="556"/>
+        <location filename="../main.cpp" line="557"/>
         <source>Displays help on commandline options</source>
         <translation>Hiển thị trợ giúp về các tùy chọn dòng lệnh</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="561"/>
+        <location filename="../main.cpp" line="562"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>Mở hộp thoại Cài đặt trong một phiên bản đang chạy của </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="566"/>
+        <location filename="../main.cpp" line="567"/>
         <source>Locks a running instance of </source>
         <translation>Khóa một phiên bản đang chạy của </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="572"/>
+        <location filename="../main.cpp" line="573"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>Mở hộp thoại Giới thiệu trong một phiên bản đang chạy của </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="577"/>
+        <location filename="../main.cpp" line="578"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>Mở hộp thoại tin nhắn đã lên lịch trong một phiên bản đang chạy của </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="584"/>
+        <location filename="../main.cpp" line="585"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>Chuyển đổi giữa giao diện tối và sáng trong một phiên bản đang chạy của </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="591"/>
+        <location filename="../main.cpp" line="592"/>
         <source>Reload the app in a running instance of </source>
         <translation>Tải lại ứng dụng trong một phiên bản đang chạy của </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="597"/>
+        <location filename="../main.cpp" line="598"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>Mở hộp thoại trò chuyện mới trong một phiên bản đang chạy của </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="610"/>
+        <location filename="../main.cpp" line="611"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>Chạy như một tài khoản riêng với phiên và cài đặt riêng, trong cửa sổ riêng</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="620"/>
+        <location filename="../main.cpp" line="621"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>Nội bộ: chờ tiến trình có id này thoát trước khi khởi động, dùng bởi &quot;Khởi động lại ngay&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="627"/>
+        <location filename="../main.cpp" line="628"/>
         <source>Show main window of running instance of </source>
         <translation>Hiện cửa sổ chính của phiên bản đang chạy của </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="634"/>
+        <location filename="../main.cpp" line="635"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>Sao chép cài đặt và phiên đã đăng nhập từ bản cài đặt trước (vd: bản &quot;whatsie&quot; cũ hơn) vào bản này, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="641"/>
+        <location filename="../main.cpp" line="642"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>Với --migrate-from, chỉ báo cáo những gì sẽ được sao chép</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="659"/>
+        <location filename="../main.cpp" line="660"/>
         <source>Print the current unread message count and exit</source>
         <translation>In số tin nhắn chưa đọc hiện tại rồi thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="665"/>
+        <location filename="../main.cpp" line="666"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>Gửi tin nhắn qua phiên bản đang chạy, sau đó thoát (cần --to và --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="669"/>
+        <location filename="../main.cpp" line="670"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>Người nhận cho --send: một số điện thoại (quốc tế), id nhóm, hoặc tên liên hệ</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="674"/>
+        <location filename="../main.cpp" line="675"/>
         <source>Message text for --send</source>
         <translation>Nội dung tin nhắn cho --send</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="677"/>
+        <location filename="../main.cpp" line="678"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>Đính kèm tệp cho --send (--message nếu có sẽ trở thành chú thích)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="682"/>
+        <location filename="../main.cpp" line="683"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Chú thích cho tệp đính kèm --file (bí danh của --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="686"/>
+        <location filename="../main.cpp" line="687"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>Cách --send gửi: &apos;web&apos; (phiên WhatsApp Web đang chạy) hoặc &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="692"/>
+        <location filename="../main.cpp" line="693"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>Dùng mẫu đã lưu với tên này làm tin nhắn --send (điền các {{fields}} bằng --var)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="697"/>
+        <location filename="../main.cpp" line="698"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>Điền một trường mẫu: key=value (có thể lặp lại)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="701"/>
+        <location filename="../main.cpp" line="702"/>
         <source>List the saved message templates and exit</source>
         <translation>Liệt kê các mẫu tin nhắn đã lưu rồi thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="704"/>
+        <location filename="../main.cpp" line="705"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>Lưu (hoặc thay thế) một mẫu tin nhắn, sau đó thoát: name=body</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="708"/>
+        <location filename="../main.cpp" line="709"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Xóa mẫu tin nhắn đã lưu có tên này, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="713"/>
+        <location filename="../main.cpp" line="714"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>Bật tự động trả lời tin nhắn đến, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="716"/>
+        <location filename="../main.cpp" line="717"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>Tắt tự động trả lời, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="719"/>
+        <location filename="../main.cpp" line="720"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>Liệt kê các quy tắc tự động trả lời đang hoạt động (kèm trạng thái) rồi thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="722"/>
+        <location filename="../main.cpp" line="723"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Dùng tệp JSON này làm nguồn quy tắc tự động trả lời, sau đó thoát (để trống để xóa)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="728"/>
+        <location filename="../main.cpp" line="729"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>Đặt id số điện thoại Cloud API, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="732"/>
+        <location filename="../main.cpp" line="733"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>Đặt access token Cloud API, sau đó thoát (lưu trong cấu hình tài khoản)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="737"/>
+        <location filename="../main.cpp" line="738"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>Đặt phiên bản graph Cloud API (vd: v21.0), sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="741"/>
+        <location filename="../main.cpp" line="742"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>Hiện Cloud API đã được cấu hình hay chưa, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="744"/>
+        <location filename="../main.cpp" line="745"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>Cho --send --backend cloud: gửi mẫu đã được Meta phê duyệt này</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="748"/>
+        <location filename="../main.cpp" line="749"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>Mã ngôn ngữ cho --cloud-template (vd: es, en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="752"/>
+        <location filename="../main.cpp" line="753"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Tham số nội dung theo vị trí cho --cloud-template (có thể lặp lại)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="757"/>
+        <location filename="../main.cpp" line="758"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>Bật API HTTP cục bộ, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="760"/>
+        <location filename="../main.cpp" line="761"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>Tắt API HTTP cục bộ, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="763"/>
+        <location filename="../main.cpp" line="764"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>Đặt cổng API HTTP cục bộ (mặc định 8590), sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="767"/>
+        <location filename="../main.cpp" line="768"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>Đặt bearer token cho API HTTP cục bộ, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="771"/>
+        <location filename="../main.cpp" line="772"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>Hiện cấu hình API HTTP cục bộ, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="775"/>
+        <location filename="../main.cpp" line="776"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>Bật nhận webhook Cloud API, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="778"/>
+        <location filename="../main.cpp" line="779"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>Tắt nhận webhook Cloud API, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="781"/>
+        <location filename="../main.cpp" line="782"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>Đặt token xác minh webhook Cloud API, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="785"/>
+        <location filename="../main.cpp" line="786"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>Đặt Meta app secret để kiểm tra chữ ký webhook, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="789"/>
+        <location filename="../main.cpp" line="790"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>Hiện cấu hình webhook Cloud API, sau đó thoát</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1179"/>
+        <location filename="../main.cpp" line="1185"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>Khóa ứng dụng chưa được cấu hình, 
 Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1277"/>
+        <location filename="../main.cpp" line="1283"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Đã phục hồi sau sự cố khởi động bằng cách chuyển sang chế độ kết xuất an toàn. Bạn có thể điều chỉnh trong Cài đặt → Hiệu năng.</translation>
     </message>

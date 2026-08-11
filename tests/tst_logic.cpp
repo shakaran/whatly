@@ -2312,6 +2312,14 @@ private slots:
     QVERIFY(js.contains(QLatin1String(">= 6"))); // the limit was substituted
     QVERIFY(!ChatNav::unreadChatsScript(0).isEmpty()); // clamped, still valid
   }
+  void unreadDigestScript() {
+    const QString js = ChatNav::unreadDigestScript(20);
+    QVERIFY(js.contains(QLatin1String("#pane-side")));
+    QVERIFY(js.contains(QLatin1String("JSON.stringify")));
+    QVERIFY(js.contains(QLatin1String("preview")));   // carries a preview
+    QVERIFY(js.contains(QLatin1String(">= 20")));      // the limit substituted
+    QVERIFY(!ChatNav::unreadDigestScript(0).isEmpty()); // clamped, still valid
+  }
   void unreadSummaryReadsTheDatabaseAndFallsBackToTheList() {
     const QString js = ChatNav::unreadSummaryScript(true, false);
     // WhatsApp's own store, which is what makes the count independent of how
@@ -2803,11 +2811,26 @@ private slots:
     QVERIFY(!Ai::summarizeSystemPrompt().isEmpty());
     QVERIFY(!Ai::improveSystemPrompt().isEmpty());
     QVERIFY(!Ai::suggestReplySystemPrompt().isEmpty());
+    QVERIFY(!Ai::unreadDigestSystemPrompt().isEmpty());
     const QString js = Ai::readContextScript(50);
     QVERIFY(js.contains(QLatin1String("data-pre-plain-text")));
     QVERIFY(js.contains(QLatin1String("selectable-text")));
     QVERIFY(js.contains(QLatin1String("slice(-50)")));
     QVERIFY(js.contains(QLatin1String("catch")));
+  }
+  void unreadDigestInput() {
+    const QString in = Ai::buildUnreadDigestInput(QStringLiteral(
+        "[{\"name\":\"Ana\",\"count\":3,\"preview\":\"dinner tonight?\"},"
+        "{\"name\":\"Work\",\"count\":12,\"preview\":\"\"},"
+        "{\"name\":\"\",\"count\":1,\"preview\":\"skip me\"}]"));
+    const QStringList lines = in.split(QLatin1Char('\n'));
+    QCOMPARE(lines.size(), 2); // the nameless entry is dropped
+    QCOMPARE(lines.at(0), QStringLiteral("Ana (3 unread): dinner tonight?"));
+    QCOMPARE(lines.at(1), QStringLiteral("Work (12 unread)")); // no preview
+    // Empty / unparseable input yields nothing rather than crashing.
+    QVERIFY(Ai::buildUnreadDigestInput(QStringLiteral("[]")).isEmpty());
+    QVERIFY(Ai::buildUnreadDigestInput(QStringLiteral("not json")).isEmpty());
+    QVERIFY(Ai::buildUnreadDigestInput(QString()).isEmpty());
   }
   void settingsRoundTrip() {
     Ai::setEnabled(true);

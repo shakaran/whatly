@@ -198,6 +198,13 @@ void MainWindow::createActions() {
           &MainWindow::aiSuggestReply);
   addAction(m_aiSuggestAction);
 
+  m_aiUnreadDigestAction = new QAction(tr("AI: Summarise unread chats"), this);
+  m_aiUnreadDigestAction->setIcon(
+      QIcon::fromTheme(QStringLiteral("mail-mark-unread")));
+  connect(m_aiUnreadDigestAction, &QAction::triggered, this,
+          &MainWindow::aiSummarizeUnread);
+  addAction(m_aiUnreadDigestAction);
+
   m_toggleThemeAction = new QAction(tr("&Toggle theme"), this);
   m_toggleThemeAction->setShortcut(
       QKeySequence(Qt::Modifier::CTRL | Qt::Key_T));
@@ -288,6 +295,8 @@ void MainWindow::createActions() {
       {m_aiSummarizeAction, "aiSummarize", tr("AI: Summarise chat")},
       {m_aiImproveAction, "aiImprove", tr("AI: Improve message")},
       {m_aiSuggestAction, "aiSuggest", tr("AI: Suggest a reply")},
+      {m_aiUnreadDigestAction, "aiUnreadDigest",
+       tr("AI: Summarise unread chats")},
       {m_settingsAction, "settings", tr("Settings")},
       {m_toggleThemeAction, "toggleTheme", tr("Toggle theme")},
       {m_viewGridAction, "gridView", tr("Grid view")},

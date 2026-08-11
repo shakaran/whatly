@@ -1842,3 +1842,24 @@ void MainWindow::aiSuggestReply() {
                      });
       });
 }
+
+void MainWindow::aiSummarizeUnread() {
+  if (!m_webEngine || !m_webEngine->page())
+    return;
+  // The unread rows carry name, count and a preview — enough for a digest
+  // without opening any chat (which would mark it read and disturb the user).
+  m_webEngine->page()->runJavaScript(
+      ChatNav::unreadDigestScript(20), [this](const QVariant &v) {
+        const QString input = Ai::buildUnreadDigestInput(v.toString());
+        if (input.trimmed().isEmpty()) {
+          if (m_webEngine && m_webEngine->page())
+            m_webEngine->page()->runJavaScript(Translate::toastScript(
+                tr("No unread chats to summarise."), false));
+          return;
+        }
+        runAssistant(Ai::unreadDigestSystemPrompt(), input,
+                     [this](const QString &digest) {
+                       showTextDialog(tr("Unread digest"), digest);
+                     });
+      });
+}

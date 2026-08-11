@@ -378,7 +378,7 @@ void MainWindow::showCommandPalette() {
       m_chatListStripAction, m_settingsAction, m_aboutAction,
       m_translateSelectionAction, m_translateComposerAction,
       m_exportChatAction, m_aiSummarizeAction, m_aiImproveAction,
-      m_aiSuggestAction,
+      m_aiSuggestAction,   m_aiUnreadDigestAction,
       m_viewTabsAction,    m_viewGridAction,  m_quitAction};
   for (QAction *a : actions) {
     if (!a)
@@ -785,7 +785,7 @@ WebView *MainWindow::addAccount(const QString &id, const QString &name,
   view->setContextActions(
       {m_aiImproveAction, m_aiSuggestAction, m_translateComposerAction},
       {m_translateSelectionAction},
-      {m_aiSummarizeAction, m_exportChatAction});
+      {m_aiSummarizeAction, m_aiUnreadDigestAction, m_exportChatAction});
 
   // Watched so that whatever eventually puts this view on screen — a tab switch,
   // grid mode, a detached window — builds the account first. See eventFilter().

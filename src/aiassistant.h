@@ -35,6 +35,14 @@ QString parseChatResponse(const QByteArray &json, QString *error);
 QString summarizeSystemPrompt();
 QString improveSystemPrompt();
 QString suggestReplySystemPrompt();
+// System prompt for the "unread digest": triage the unread chats into a short,
+// prioritised summary in the conversation's language.
+QString unreadDigestSystemPrompt();
+
+// Turn the JSON array from ChatNav::unreadDigestScript
+// ([{name,count,preview},…]) into a compact "Name (N unread): preview" text for
+// the digest prompt. Empty when the array is empty or unparseable. Pure.
+QString buildUnreadDigestInput(const QString &unreadJson);
 
 // JS returning a compact "Sender: text" transcript of the last `maxMessages`
 // loaded messages of the open chat (no scrolling, no media), for context.
