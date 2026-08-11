@@ -1,5 +1,15 @@
 ## Unreleased
 
+**Switch spell-check language mid-sentence (request #41).** Ticking three
+languages in Settings means Chromium accepts any word that any of the three
+knows, so most typos in the language you are actually writing go unmarked. A new
+**Spelling** submenu in the tray icon — and **Ctrl+Alt+S**, rebindable in
+Settings like every other shortcut — now switches between the languages you
+chose, checking against one at a time, and comes back round to all of them at
+once for a message that mixes two. The switch takes effect on the page you are
+typing on, with no reload, and says which language it landed on; what you ticked
+in Settings is left alone, since that is the set being switched between.
+
 **The update notice now says the right thing for the way you installed Whatly.**
 It told everyone alike to click through to the download page, which is wrong
 advice for most installations: a Flatpak cannot replace itself from inside its

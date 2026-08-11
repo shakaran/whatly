@@ -370,6 +370,16 @@ private:
   QList<QPointer<QWidget>> m_windowsMenuTargets;
   void refreshWindowsMenu();
   QString windowLabel(const QWidget *w) const;
+  // Which language spelling is checked against, in the tray menu: one entry per
+  // language chosen in Settings, plus all of them at once. Rebuilt each time it
+  // opens, since one can be added or downloaded while the app runs.
+  QMenu *m_spellingMenu = nullptr;
+  void rebuildSpellingMenu();
+  // Move to the next chosen language and say which it is, so the key can be
+  // pressed mid-sentence and trusted without a look at Settings.
+  void cycleSpellCheckLanguage();
+  // Check against this language alone, or against all of them when it is empty.
+  void applySpellCheckFocus(const QString &code);
   // A chat asked for before its account had a page: run it once that page
   // reports itself loaded. The name is the presence flag — the account id cannot
   // be, since the default account's id is the empty string.
@@ -623,6 +633,7 @@ private:
   QAction *m_zoomResetAction = nullptr;
   QAction *m_chatListStripAction = nullptr;
   QAction *m_findChatAction = nullptr;
+  QAction *m_spellNextAction = nullptr;
   QAction *m_translateSelectionAction = nullptr;
   QAction *m_translateComposerAction = nullptr;
 

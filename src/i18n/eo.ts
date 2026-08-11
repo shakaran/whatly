@@ -593,6 +593,34 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
+        <source>Spelling</source>
+        <translation>Literumado</translation>
+    </message>
+    <message>
+        <source>Spelling: next language</source>
+        <translation>Literumado: sekva lingvo</translation>
+    </message>
+    <message>
+        <source>All of them</source>
+        <translation>Ĉiuj elektitaj</translation>
+    </message>
+    <message>
+        <source>Spelling: %1</source>
+        <translation>Literumado: %1</translation>
+    </message>
+    <message>
+        <source>Spelling: every chosen language</source>
+        <translation>Literumado: ĉiuj elektitaj lingvoj</translation>
+    </message>
+    <message>
+        <source>No spell-check language is installed.</source>
+        <translation>Neniu literuma lingvo estas instalita.</translation>
+    </message>
+    <message>
+        <source>Only one spell-check language is chosen. Pick more in Settings to switch between them.</source>
+        <translation>Nur unu literuma lingvo estas elektita. Elektu pliajn en Agordoj por ŝalti inter ili.</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_tray.cpp" line="411"/>
         <source>Recent unread</source>
         <translation>Lastaj nelegitaj</translation>
@@ -2262,6 +2290,10 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
 </context>
 <context>
     <name>SettingsWidget</name>
+    <message>
+        <source>%1 of %2 chosen</source>
+        <translation>%1 el %2 elektitaj</translation>
+    </message>
     <message>
         <location filename="../settingswidget.ui" line="435"/>
         <source>VIP contacts</source>

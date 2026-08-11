@@ -194,4 +194,41 @@ QStringList selectedDictionaries() {
   return chosen;
 }
 
+QString focusedDictionary() {
+  const QString stored = SettingsManager::instance()
+                             .settings()
+                             .value(QStringLiteral("spellCheckFocus"))
+                             .toString();
+  // A language dropped from the picker (or uninstalled) leaves no focus behind,
+  // rather than silently checking against nothing.
+  return selectedDictionaries().contains(stored) ? stored : QString();
+}
+
+void setFocusedDictionary(const QString &code) {
+  SettingsManager::instance().settings().setValue(
+      QStringLiteral("spellCheckFocus"), code);
+}
+
+QStringList activeDictionaries() {
+  const QString focus = focusedDictionary();
+  return focus.isEmpty() ? selectedDictionaries() : QStringList{focus};
+}
+
+QString languageLabel(const QString &code) {
+  const QLocale locale(code);
+  if (locale.language() == QLocale::C)
+    return code;
+  return QLocale(locale.language()).nativeLanguageName() +
+         QStringLiteral(" (") + code + QStringLiteral(")");
+}
+
+QString nextFocus(const QStringList &chosen, const QString &current) {
+  if (chosen.size() < 2)
+    return QString(); // nothing to switch between: all of them is the only stop
+  const int at = chosen.indexOf(current);
+  if (at < 0)
+    return chosen.first(); // came from all of them, or from one since removed
+  return at + 1 < chosen.size() ? chosen.at(at + 1) : QString();
+}
+
 } // namespace Dictionaries

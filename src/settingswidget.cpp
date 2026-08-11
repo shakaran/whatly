@@ -2291,15 +2291,7 @@ void SettingsWidget::populateSpellCheck() {
   }
   auto *model = new QStandardItemModel(combo);
   for (const QString &dictionary : available) {
-    // Build from the language alone so "es_ES" reads "Español", not "Español
-    // de España" — the code in parentheses already disambiguates the territory.
-    const QLocale locale(dictionary);
-    const QString name = locale.language() == QLocale::C
-                             ? dictionary
-                             : QLocale(locale.language()).nativeLanguageName() +
-                                   QStringLiteral(" (") + dictionary +
-                                   QStringLiteral(")");
-    auto *item = new QStandardItem(name);
+    auto *item = new QStandardItem(Dictionaries::languageLabel(dictionary));
     item->setData(dictionary, Qt::UserRole);
     item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
     item->setCheckState(selected.contains(dictionary) ? Qt::Checked
@@ -2311,14 +2303,9 @@ void SettingsWidget::populateSpellCheck() {
   for (const DictionaryEntry &entry : m_dictCatalog) {
     if (available.contains(entry.code))
       continue;
-    const QLocale locale(entry.code);
-    const QString name =
-        locale.language() == QLocale::C
-            ? entry.code
-            : QLocale(locale.language()).nativeLanguageName() +
-                  QStringLiteral(" (") + entry.code + QStringLiteral(")");
-    auto *item = new QStandardItem(name + QStringLiteral("  \u2014 ") +
-                                   tr("download"));
+    auto *item =
+        new QStandardItem(Dictionaries::languageLabel(entry.code) +
+                          QStringLiteral("  \u2014 ") + tr("download"));
     item->setData(entry.code, Qt::UserRole);
     item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
     item->setCheckState(selected.contains(entry.code) ? Qt::Checked
@@ -2359,10 +2346,15 @@ void SettingsWidget::populateSpellCheck() {
 void SettingsWidget::updateSpellCheckSummary() {
   const QStringList selected = Dictionaries::selectedDictionaries();
   QString text;
+  const QString focus = Dictionaries::focusedDictionary();
   if (selected.isEmpty())
     text = tr("Choose languages\u2026"); // hints the picker takes several
   else if (selected.size() == 1)
     text = selected.first();
+  else if (!focus.isEmpty())
+    // Ticked three and checking against one of them: saying "3 languages" here
+    // would be a half-truth, and the checker's behaviour the puzzling half.
+    text = tr("%1 of %2 chosen").arg(focus).arg(selected.size());
   else
     text = tr("%1 languages").arg(selected.size());
   ui->spellCheckLanguageComboBox->setCurrentText(text);
