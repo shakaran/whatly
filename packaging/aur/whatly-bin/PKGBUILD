@@ -8,7 +8,7 @@ url="https://github.com/shakaran/whatly"
 license=('MIT')
 # The release AppImage bundles its own Qt, so there is little to depend on; the
 # few bits AppImages expect from the host are listed for a clean launch.
-depends=('fuse2' 'hicolor-icon-theme')
+depends=('fuse2' 'hicolor-icon-theme' 'noto-fonts')
 provides=('whatly')
 conflicts=('whatly' 'whatly-git')
 options=('!strip')

@@ -26,6 +26,9 @@ BuildRequires:  qt6-qtwebengine-devel
 BuildRequires:  libX11-devel
 BuildRequires:  libxcb-devel
 Requires:       qt6-qtwebengine
+# Noto Sans covers the scripts Qt otherwise warns about (qt.text.font.db). Weak
+# dep: the app runs without it, and dnf pulls it in by default.
+Recommends:     google-noto-sans-fonts
 
 %description
 Whatly gives WhatsApp Web a native desktop window with system-tray integration,

@@ -79,6 +79,9 @@ parts:
       - libdrm2
       # libqxcb links against it, and without it the snap does not start at all.
       - libxcb-shape0
+      # Noto Sans so confined Qt has OpenType coverage for every script
+      # (silences qt.text.font.db warnings); the snap ships no host fonts.
+      - fonts-noto-core
 
     cmake-parameters:
       - -DCMAKE_BUILD_TYPE=Release

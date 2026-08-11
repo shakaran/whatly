@@ -453,6 +453,7 @@ jobs:
           fpm "${common[@]}" -t deb \
             -d libglib2.0-0 -d libnss3 -d libxcomposite1 -d libxdamage1 \
             -d libxrandr2 -d libxkbcommon0 -d libasound2 \
+            -d fonts-noto-core \
             -p "whatly_${ver}_amd64.deb" opt usr
           fpm "${common[@]}" -t rpm \
             -d glib2 -d nss -d libXcomposite -d libXdamage -d libXrandr \

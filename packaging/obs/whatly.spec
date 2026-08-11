@@ -29,6 +29,9 @@ BuildRequires:  cmake(Qt6Svg)
 BuildRequires:  cmake(Qt6LinguistTools)
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xcb)
+# Noto Sans so Qt has OpenType coverage for every script (silences qt.text.font.db
+# warnings). Weak dep: zypper installs it by default; the app runs without it.
+Recommends:     noto-sans-fonts
 
 %description
 Whatly gives WhatsApp Web a native desktop window with system-tray integration,

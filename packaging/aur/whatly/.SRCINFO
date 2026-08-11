@@ -13,6 +13,7 @@ pkgbase = whatly
 	depends = qt6-svg
 	depends = qt6-positioning
 	depends = qt6-webchannel
+	depends = noto-fonts
 	provides = whatly
 	conflicts = whatly-bin
 	conflicts = whatly-git

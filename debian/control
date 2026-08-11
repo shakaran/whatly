@@ -23,6 +23,8 @@ Architecture: any
 Depends:
  ${shlibs:Depends},
  ${misc:Depends},
+Recommends:
+ fonts-noto-core,
 Description: Feature-rich WhatsApp Web client based on Qt WebEngine
  Whatly gives WhatsApp Web a native desktop window with system-tray
  integration, desktop notifications, chat themes, a chat wallpaper, a privacy

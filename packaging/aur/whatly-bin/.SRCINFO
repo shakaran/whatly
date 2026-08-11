@@ -7,6 +7,7 @@ pkgbase = whatly-bin
 	license = MIT
 	depends = fuse2
 	depends = hicolor-icon-theme
+	depends = noto-fonts
 	provides = whatly
 	conflicts = whatly
 	conflicts = whatly-git

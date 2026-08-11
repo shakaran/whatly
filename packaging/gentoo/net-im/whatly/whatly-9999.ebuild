@@ -35,6 +35,7 @@ RDEPEND="
 	>=dev-qt/qtsvg-6.10:6
 	x11-libs/libX11
 	x11-libs/libxcb
+	media-fonts/noto
 "
 DEPEND="${RDEPEND}
 	>=dev-qt/qttools-6.10:6[linguist]

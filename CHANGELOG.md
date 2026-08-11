@@ -1,5 +1,14 @@
 ## Unreleased
 
+**Noto Sans is now pulled in by the packages.** Qt logged
+`qt.text.font.db: OpenType support missing for "Noto Sans", script …` when the
+system had no Noto font with OpenType tables for a given script. Text still
+rendered via fallback, but to fix it at the source the packages now bring Noto
+Sans in: a Recommends on the `.deb`/RPM (Debian `fonts-noto-core`, Fedora
+`google-noto-sans-fonts`, openSUSE `noto-sans-fonts`), a depends on the AUR
+packages (`noto-fonts`), `media-fonts/noto` in the Gentoo ebuild, and it is
+bundled into the snap. The Flatpak already ships Noto via its KDE runtime.
+
 **The build identifies itself at startup.** The first line of output is now the
 version, the commit, the branch and the build time. A bug report, or a tester
 saying a fix did not work, is only worth as much as the certainty about what was
