@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اطلاعات اشکال‌زدایی زیر را در کلیپ‌بورد کپی می‌کند و ردیاب مشکلات (issue tracker) را باز می‌کند تا مستقیماً در گزارش جای‌گذاری شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="220"/>
         <location filename="../about.cpp" line="144"/>
+        <location filename="../about.ui" line="220"/>
         <source>Report a Bug</source>
         <translation>گزارش اشکال</translation>
     </message>
@@ -211,17 +211,17 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="611"/>
+        <location filename="../chatliststrip.cpp" line="616"/>
         <source>Small</source>
         <translation>کوچک</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="613"/>
+        <location filename="../chatliststrip.cpp" line="618"/>
         <source>Medium</source>
         <translation>متوسط</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="615"/>
+        <location filename="../chatliststrip.cpp" line="620"/>
         <source>Large</source>
         <translation>بزرگ</translation>
     </message>
@@ -325,17 +325,17 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>CustomTitleBar</name>
     <message>
-        <location filename="../customtitlebar.cpp" line="58"/>
+        <location filename="../customtitlebar.cpp" line="90"/>
         <source>Minimise</source>
         <translation>کوچک کردن</translation>
     </message>
     <message>
-        <location filename="../customtitlebar.cpp" line="62"/>
+        <location filename="../customtitlebar.cpp" line="94"/>
         <source>Maximise</source>
         <translation>بزرگ کردن</translation>
     </message>
     <message>
-        <location filename="../customtitlebar.cpp" line="66"/>
+        <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>بستن</translation>
     </message>
@@ -522,257 +522,255 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="106"/>
-        <location filename="../mainwindow.cpp" line="1140"/>
-        <location filename="../mainwindow.cpp" line="1236"/>
+        <location filename="../mainwindow.cpp" line="116"/>
+        <location filename="../mainwindow.cpp" line="1147"/>
+        <location filename="../mainwindow.cpp" line="1243"/>
         <source>No WhatsApp window is open</source>
         <translation>هیچ پنجره WhatsApp باز نیست</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="111"/>
+        <location filename="../mainwindow.cpp" line="121"/>
         <source>Reminder</source>
         <translation>یادآوری</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="111"/>
+        <location filename="../mainwindow.cpp" line="121"/>
         <source>Reminder: %1</source>
         <translation>یادآوری: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="196"/>
+        <location filename="../mainwindow.cpp" line="205"/>
         <source>Update available</source>
         <translation>به‌روزرسانی موجود است</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="197"/>
+        <location filename="../mainwindow.cpp" line="206"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Whatly %1 در دسترس است. برای باز کردن صفحه دانلود کلیک کنید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="872"/>
-        <location filename="../mainwindow.cpp" line="878"/>
-        <location filename="../mainwindow_webengine.cpp" line="954"/>
-        <location filename="../mainwindow_webengine.cpp" line="957"/>
+        <location filename="../mainwindow.cpp" line="881"/>
+        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="../mainwindow_webengine.cpp" line="961"/>
+        <location filename="../mainwindow_webengine.cpp" line="964"/>
         <source>| Error</source>
         <translation>| خطا</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="873"/>
+        <location filename="../mainwindow.cpp" line="882"/>
         <source>Unlock to access Settings.</source>
         <translation>برای دسترسی به تنظیمات، قفل را باز کنید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="879"/>
+        <location filename="../mainwindow.cpp" line="888"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>امکان مقداردهی اولیه ماژول تنظیمات وجود ندارد.
 WebEngine مقداردهی اولیه نشده است.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="900"/>
+        <location filename="../mainwindow.cpp" line="909"/>
         <source> | Action required</source>
         <translation> | نیاز به اقدام</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="901"/>
+        <location filename="../mainwindow.cpp" line="910"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>برای ادامه باید صفحه دوباره بارگذاری شود.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1082"/>
-        <location filename="../mainwindow.cpp" line="1489"/>
-        <location filename="../mainwindow_webengine.cpp" line="1586"/>
+        <location filename="../mainwindow.cpp" line="1089"/>
+        <location filename="../mainwindow.cpp" line="1650"/>
+        <location filename="../mainwindow_webengine.cpp" line="1593"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly قفل است. برای ارسال پیام آن را باز کنید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1093"/>
+        <location filename="../mainwindow.cpp" line="1100"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>Cloud API به یک شماره تلفن به‌عنوان گیرنده نیاز دارد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1098"/>
+        <location filename="../mainwindow.cpp" line="1105"/>
         <source>The Cloud API is not configured.</source>
         <translation>Cloud API پیکربندی نشده است.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1107"/>
+        <location filename="../mainwindow.cpp" line="1114"/>
         <source>Cloud API send failed: %1</source>
         <translation>ارسال Cloud API ناموفق بود: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1132"/>
+        <location filename="../mainwindow.cpp" line="1139"/>
         <source>Could not understand the recipient: %1</source>
         <translation>گیرنده قابل تشخیص نبود: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1161"/>
-        <location filename="../mainwindow.cpp" line="1242"/>
+        <location filename="../mainwindow.cpp" line="1168"/>
+        <location filename="../mainwindow.cpp" line="1249"/>
         <source>Could not read the file to send: %1</source>
         <translation>فایل برای ارسال قابل خواندن نبود: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1170"/>
-        <location filename="../mainwindow.cpp" line="1252"/>
+        <location filename="../mainwindow.cpp" line="1177"/>
+        <location filename="../mainwindow.cpp" line="1259"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>فایل برای ارسال از طریق بک‌اند وب بیش از حد بزرگ است.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1195"/>
+        <location filename="../mainwindow.cpp" line="1202"/>
         <source>Opening the group and sending…</source>
         <translation>در حال باز کردن گروه و ارسال…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1196"/>
+        <location filename="../mainwindow.cpp" line="1203"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>در حال باز کردن گفتگو با «%1» و ارسال…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1227"/>
+        <location filename="../mainwindow.cpp" line="1234"/>
         <source>The local API could not start: %1</source>
         <translation>API محلی راه‌اندازی نشد: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1316"/>
+        <location filename="../mainwindow.cpp" line="1378"/>
         <source>Restart</source>
         <translation>راه‌اندازی مجدد</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1317"/>
+        <location filename="../mainwindow.cpp" line="1379"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly نتوانست نمونه جدیدی را راه‌اندازی کند، بنابراین این نمونه بسته نشد. لطفاً آن را ببندید و دوباره باز کنید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1362"/>
+        <location filename="../mainwindow.cpp" line="1505"/>
         <source>Expand the chat list</source>
         <translation>گسترش فهرست گفتگوها</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1363"/>
-        <location filename="../mainwindow_tray.cpp" line="237"/>
+        <location filename="../mainwindow.cpp" line="1506"/>
+        <location filename="../mainwindow_tray.cpp" line="277"/>
         <source>Collapse the chat list</source>
         <translation>جمع کردن فهرست گفتگوها</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1465"/>
+        <location filename="../mainwindow.cpp" line="1626"/>
         <source>Open</source>
         <translation>باز کردن</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1511"/>
-        <location filename="../mainwindow_tray.cpp" line="22"/>
+        <location filename="../mainwindow.cpp" line="1672"/>
+        <location filename="../mainwindow_tray.cpp" line="26"/>
         <source>New Chat</source>
         <translation>گفتگوی جدید</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1512"/>
+        <location filename="../mainwindow.cpp" line="1673"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>یک شماره WhatsApp معتبر همراه با کد کشور وارد کنید (مثلاً +91XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1542"/>
+        <location filename="../mainwindow.cpp" line="1703"/>
         <source>Rate Application</source>
         <translation>امتیاز دادن به برنامه</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="214"/>
-        <location filename="../mainwindow_accounts.cpp" line="1225"/>
+        <location filename="../mainwindow_accounts.cpp" line="268"/>
+        <location filename="../mainwindow_accounts.cpp" line="1382"/>
         <source>Rename…</source>
         <translation>تغییر نام…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="215"/>
-        <location filename="../mainwindow_accounts.cpp" line="1226"/>
+        <location filename="../mainwindow_accounts.cpp" line="269"/>
+        <location filename="../mainwindow_accounts.cpp" line="1383"/>
         <source>Open in own window</source>
         <translation>باز کردن در پنجره مستقل</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="219"/>
-        <location filename="../mainwindow_accounts.cpp" line="1229"/>
+        <location filename="../mainwindow_accounts.cpp" line="273"/>
+        <location filename="../mainwindow_accounts.cpp" line="1386"/>
         <source>Remove account</source>
         <translation>حذف حساب</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="299"/>
+        <location filename="../mainwindow_accounts.cpp" line="353"/>
         <source>Switch to account: %1</source>
         <translation>تغییر به حساب: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="302"/>
-        <location filename="../mainwindow_tray.cpp" line="192"/>
+        <location filename="../mainwindow_accounts.cpp" line="356"/>
+        <location filename="../mainwindow_tray.cpp" line="232"/>
         <source>Add account…</source>
         <translation>افزودن حساب…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="303"/>
+        <location filename="../mainwindow_accounts.cpp" line="357"/>
         <source>Quick message…</source>
         <translation>پیام سریع…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="308"/>
+        <location filename="../mainwindow_accounts.cpp" line="362"/>
         <source>Insert: %1</source>
         <translation>درج: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="586"/>
+        <location filename="../mainwindow_accounts.cpp" line="651"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 خوانده‌نشده</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1001"/>
+        <location filename="../mainwindow_accounts.cpp" line="1157"/>
         <source>Add another account</source>
         <translation>افزودن حساب دیگر</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1028"/>
-        <location filename="../mainwindow_accounts.cpp" line="1033"/>
+        <location filename="../mainwindow_accounts.cpp" line="1186"/>
+        <location filename="../mainwindow_accounts.cpp" line="1191"/>
         <source>Restore</source>
         <translation>بازگردانی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1029"/>
         <source>messages</source>
-        <translation>پیام</translation>
+        <translation type="vanished">پیام</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1029"/>
         <source>message</source>
-        <translation>پیام</translation>
+        <translation type="vanished">پیام</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1074"/>
+        <location filename="../mainwindow_accounts.cpp" line="1232"/>
         <source>Add account</source>
         <translation>افزودن حساب</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1075"/>
+        <location filename="../mainwindow_accounts.cpp" line="1233"/>
         <source>Name for the new account:</source>
         <translation>نام برای حساب جدید:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1076"/>
-        <location filename="../mainwindow_accounts.cpp" line="1923"/>
-        <location filename="../mainwindow_accounts.cpp" line="1928"/>
+        <location filename="../mainwindow_accounts.cpp" line="1234"/>
+        <location filename="../mainwindow_accounts.cpp" line="2109"/>
+        <location filename="../mainwindow_accounts.cpp" line="2114"/>
         <source>Account %1</source>
         <translation>حساب %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1103"/>
+        <location filename="../mainwindow_accounts.cpp" line="1261"/>
         <source>Rename account</source>
         <translation>تغییر نام حساب</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1103"/>
+        <location filename="../mainwindow_accounts.cpp" line="1261"/>
         <source>Account name:</source>
         <translation>نام حساب:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1611"/>
+        <location filename="../mainwindow_accounts.cpp" line="1790"/>
         <source>Tip: give an account its own window</source>
         <translation>نکته: به هر حساب پنجره مستقل خودش را بدهید</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1612"/>
+        <location filename="../mainwindow_accounts.cpp" line="1791"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -781,8 +779,8 @@ You can pull any account out into its own window: right-click its tab and choose
 می‌توانید هر حساب را به پنجره مستقل خودش بکشید: روی زبانه آن راست‌کلیک کرده و «باز کردن در پنجره مستقل» را انتخاب کنید. برای اتصال دوباره حساب به‌عنوان زبانه، آن پنجره را ببندید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1917"/>
-        <location filename="../mainwindow_accounts.cpp" line="1921"/>
+        <location filename="../mainwindow_accounts.cpp" line="2103"/>
+        <location filename="../mainwindow_accounts.cpp" line="2107"/>
         <source>Account 1</source>
         <translation>حساب 1</translation>
     </message>
@@ -798,330 +796,356 @@ Open Settings now?</source>
 اکنون تنظیمات باز شود؟</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="27"/>
-        <location filename="../mainwindow_tray.cpp" line="232"/>
+        <location filename="../mainwindow_tray.cpp" line="31"/>
+        <location filename="../mainwindow_tray.cpp" line="272"/>
         <source>Fullscreen</source>
         <translation>تمام‌صفحه</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="33"/>
+        <location filename="../mainwindow_tray.cpp" line="37"/>
         <source>Mi&amp;nimize to tray</source>
         <translation>&amp;کوچک کردن به سینی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="52"/>
+        <location filename="../mainwindow_tray.cpp" line="75"/>
         <source>&amp;Restore</source>
         <translation>&amp;بازگردانی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="56"/>
+        <location filename="../mainwindow_tray.cpp" line="82"/>
         <source>Re&amp;load</source>
         <translation>&amp;بارگذاری مجدد</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="62"/>
+        <location filename="../mainwindow_tray.cpp" line="88"/>
         <source>Loc&amp;k</source>
         <translation>&amp;قفل</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="67"/>
+        <location filename="../mainwindow_tray.cpp" line="93"/>
         <source>&amp;Mute audio</source>
         <translation>&amp;بی‌صدا کردن صدا</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="76"/>
+        <location filename="../mainwindow_tray.cpp" line="102"/>
         <source>Zoom in</source>
         <translation>بزرگ‌نمایی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="82"/>
+        <location filename="../mainwindow_tray.cpp" line="108"/>
         <source>Zoom out</source>
         <translation>کوچک‌نمایی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="87"/>
-        <location filename="../mainwindow_tray.cpp" line="234"/>
+        <location filename="../mainwindow_tray.cpp" line="113"/>
+        <location filename="../mainwindow_tray.cpp" line="274"/>
         <source>Reset zoom</source>
         <translation>بازنشانی بزرگ‌نمایی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="102"/>
+        <location filename="../mainwindow_tray.cpp" line="133"/>
+        <source>&amp;Find in chats</source>
+        <translation>&amp;جستجو در گفتگوها</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="142"/>
         <source>&amp;Settings</source>
         <translation>&amp;تنظیمات</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="108"/>
+        <location filename="../mainwindow_tray.cpp" line="148"/>
         <source>Scheduled &amp;messages…</source>
         <translation>پیام‌های &amp;زمان‌بندی‌شده…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="115"/>
-        <location filename="../mainwindow_tray.cpp" line="239"/>
+        <location filename="../mainwindow_tray.cpp" line="155"/>
+        <location filename="../mainwindow_tray.cpp" line="280"/>
         <source>Translate selection</source>
         <translation>ترجمه متن انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="122"/>
-        <location filename="../mainwindow_tray.cpp" line="241"/>
+        <location filename="../mainwindow_tray.cpp" line="162"/>
+        <location filename="../mainwindow_tray.cpp" line="282"/>
         <source>Translate message box</source>
         <translation>ترجمه کادر پیام</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="131"/>
+        <location filename="../mainwindow_tray.cpp" line="171"/>
         <source>Export chat…</source>
         <translation>خروجی گرفتن از گفتگو…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="140"/>
-        <location filename="../mainwindow_tray.cpp" line="243"/>
+        <location filename="../mainwindow_tray.cpp" line="180"/>
+        <location filename="../mainwindow_tray.cpp" line="284"/>
         <source>AI: Summarise chat</source>
         <translation>هوش مصنوعی: خلاصه‌سازی گفتگو</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="147"/>
-        <location filename="../mainwindow_tray.cpp" line="244"/>
+        <location filename="../mainwindow_tray.cpp" line="187"/>
+        <location filename="../mainwindow_tray.cpp" line="285"/>
         <source>AI: Improve message</source>
         <translation>هوش مصنوعی: بهبود پیام</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="154"/>
-        <location filename="../mainwindow_tray.cpp" line="245"/>
+        <location filename="../mainwindow_tray.cpp" line="194"/>
+        <location filename="../mainwindow_tray.cpp" line="286"/>
         <source>AI: Suggest a reply</source>
         <translation>هوش مصنوعی: پیشنهاد پاسخ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="161"/>
+        <location filename="../mainwindow_tray.cpp" line="201"/>
         <source>&amp;Toggle theme</source>
         <translation>&amp;تغییر پوسته</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="172"/>
+        <location filename="../mainwindow_tray.cpp" line="212"/>
         <source>Tabbed view</source>
         <translation>نمای زبانه‌ای</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="179"/>
-        <location filename="../mainwindow_tray.cpp" line="248"/>
+        <location filename="../mainwindow_tray.cpp" line="219"/>
+        <location filename="../mainwindow_tray.cpp" line="289"/>
         <source>Grid view</source>
         <translation>نمای شبکه‌ای</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="197"/>
-        <location filename="../mainwindow_tray.cpp" line="249"/>
+        <location filename="../mainwindow_tray.cpp" line="237"/>
+        <location filename="../mainwindow_tray.cpp" line="290"/>
         <source>Command palette</source>
         <translation>پالت فرمان</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="206"/>
+        <location filename="../mainwindow_tray.cpp" line="246"/>
         <source>&amp;About</source>
         <translation>&amp;درباره</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="215"/>
+        <location filename="../mainwindow_tray.cpp" line="255"/>
         <source>&amp;Quit</source>
         <translation>&amp;خروج</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="228"/>
+        <location filename="../mainwindow_tray.cpp" line="268"/>
         <source>Reload</source>
         <translation>بارگذاری مجدد</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="229"/>
+        <location filename="../mainwindow_tray.cpp" line="269"/>
         <source>Minimise to tray</source>
         <translation>کوچک کردن به سینی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="230"/>
+        <location filename="../mainwindow_tray.cpp" line="270"/>
         <source>Lock</source>
         <translation>قفل</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="231"/>
+        <location filename="../mainwindow_tray.cpp" line="271"/>
         <source>Mute audio</source>
         <translation>بی‌صدا کردن صدا</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="233"/>
+        <location filename="../mainwindow_tray.cpp" line="273"/>
         <source>New chat / open URL</source>
         <translation>گفتگوی جدید / باز کردن URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="242"/>
-        <location filename="../mainwindow_webengine.cpp" line="1415"/>
-        <location filename="../mainwindow_webengine.cpp" line="1419"/>
-        <location filename="../mainwindow_webengine.cpp" line="1432"/>
-        <location filename="../mainwindow_webengine.cpp" line="1483"/>
-        <location filename="../mainwindow_webengine.cpp" line="1518"/>
-        <location filename="../mainwindow_webengine.cpp" line="1548"/>
-        <location filename="../mainwindow_webengine.cpp" line="1552"/>
+        <location filename="../mainwindow_tray.cpp" line="278"/>
+        <source>Find in chats</source>
+        <translation>جستجو در گفتگوها</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="283"/>
+        <location filename="../mainwindow_webengine.cpp" line="1422"/>
+        <location filename="../mainwindow_webengine.cpp" line="1426"/>
+        <location filename="../mainwindow_webengine.cpp" line="1439"/>
+        <location filename="../mainwindow_webengine.cpp" line="1490"/>
+        <location filename="../mainwindow_webengine.cpp" line="1525"/>
+        <location filename="../mainwindow_webengine.cpp" line="1555"/>
+        <location filename="../mainwindow_webengine.cpp" line="1559"/>
         <source>Export chat</source>
         <translation>خروجی گرفتن از گفتگو</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="246"/>
+        <location filename="../mainwindow_tray.cpp" line="287"/>
         <source>Settings</source>
         <translation>تنظیمات</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="247"/>
+        <location filename="../mainwindow_tray.cpp" line="288"/>
         <source>Toggle theme</source>
         <translation>تغییر پوسته</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="250"/>
+        <location filename="../mainwindow_tray.cpp" line="291"/>
         <source>Quit</source>
         <translation>خروج</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="271"/>
+        <location filename="../mainwindow_tray.cpp" line="314"/>
+        <source>Windows</source>
+        <translation>پنجره‌ها</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="319"/>
         <source>Recent unread</source>
         <translation>خوانده‌نشده‌های اخیر</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="846"/>
+        <location filename="../mainwindow_tray.cpp" line="484"/>
+        <source>hidden</source>
+        <translation>پنهان</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="486"/>
+        <source>minimised</source>
+        <translation>کوچک‌شده</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="853"/>
         <source>Reply</source>
         <translation>پاسخ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="847"/>
+        <location filename="../mainwindow_webengine.cpp" line="854"/>
         <source>Reply to %1…</source>
         <translation>پاسخ به %1…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="952"/>
+        <location filename="../mainwindow_webengine.cpp" line="959"/>
         <source>Unlock to Reload the App.</source>
         <translation>برای بارگذاری مجدد برنامه، قفل را باز کنید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="995"/>
+        <location filename="../mainwindow_webengine.cpp" line="1002"/>
         <source>Waiting for network…</source>
         <translation>در انتظار شبکه…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1097"/>
+        <location filename="../mainwindow_webengine.cpp" line="1104"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
         <translation>این نسخه نمی‌تواند ویدیوهای H.264/MP4 ارسال کند: موتور مرورگرش بدون کدک‌های اختصاصی ساخته شده است. عکس‌ها و ویدیوهای WebM/VP9 کار می‌کنند؛ برای MP4 از بسته توزیع/بومی ساخته‌شده با کدک‌ها استفاده کنید. (برای بستن کلیک کنید.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1372"/>
+        <location filename="../mainwindow_webengine.cpp" line="1379"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>ترجمه درون‌خطی خاموش است (آن را در تنظیمات ← ترجمه فعال کنید).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1376"/>
+        <location filename="../mainwindow_webengine.cpp" line="1383"/>
         <source>The message box is empty.</source>
         <translation>کادر پیام خالی است.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1377"/>
+        <location filename="../mainwindow_webengine.cpp" line="1384"/>
         <source>Select some text to translate first.</source>
         <translation>ابتدا متنی را برای ترجمه انتخاب کنید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1415"/>
+        <location filename="../mainwindow_webengine.cpp" line="1422"/>
         <source>No conversation is open.</source>
         <translation>هیچ گفتگویی باز نیست.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1419"/>
+        <location filename="../mainwindow_webengine.cpp" line="1426"/>
         <source>An export is already running.</source>
         <translation>یک خروجی‌گیری در حال حاضر در حال اجراست.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1424"/>
+        <location filename="../mainwindow_webengine.cpp" line="1431"/>
         <source>Choose a folder for the exported chat</source>
         <translation>پوشه‌ای برای گفتگوی خروجی‌گرفته‌شده انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1430"/>
+        <location filename="../mainwindow_webengine.cpp" line="1437"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>در حال جمع‌آوری پیام‌ها… در حال پیمایش در گفتگو.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1431"/>
+        <location filename="../mainwindow_webengine.cpp" line="1438"/>
         <source>Cancel</source>
         <translation>لغو</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1478"/>
+        <location filename="../mainwindow_webengine.cpp" line="1485"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>در حال جمع‌آوری پیام‌ها… (تاکنون %1)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1484"/>
+        <location filename="../mainwindow_webengine.cpp" line="1491"/>
         <source>Could not read the conversation: %1</source>
         <translation>گفتگو قابل خواندن نبود: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1507"/>
+        <location filename="../mainwindow_accounts.cpp" line="1187"/>
+        <location filename="../mainwindow_webengine.cpp" line="1514"/>
         <source>chat</source>
         <translation>گفتگو</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1140"/>
+        <location filename="../mainwindow_accounts.cpp" line="1187"/>
         <source>chats</source>
         <translation>گفتگوها</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1519"/>
+        <location filename="../mainwindow_webengine.cpp" line="1526"/>
         <source>Could not create the export folder.</source>
         <translation>پوشه خروجی ایجاد نشد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1549"/>
+        <location filename="../mainwindow_webengine.cpp" line="1556"/>
         <source>The export could not be fully written.</source>
         <translation>خروجی به‌طور کامل نوشته نشد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1553"/>
+        <location filename="../mainwindow_webengine.cpp" line="1560"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>%1 پیام و %2 فایل رسانه‌ای در %3 ذخیره شد</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1642"/>
+        <location filename="../mainwindow_webengine.cpp" line="1649"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>دستیار هوش مصنوعی خاموش است (آن را در تنظیمات ← دستیار هوش مصنوعی فعال کنید).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1647"/>
+        <location filename="../mainwindow_webengine.cpp" line="1654"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>چیزی برای پردازش دستیار وجود ندارد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1659"/>
+        <location filename="../mainwindow_webengine.cpp" line="1666"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>در حال پرسش از دستیار… (حافظه کم: %1 مگابایت آزاد؛ مدل محلی ممکن است ناموفق باشد یا برنامه را کند کند)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1664"/>
+        <location filename="../mainwindow_webengine.cpp" line="1671"/>
         <source>Asking the assistant…</source>
         <translation>در حال پرسش از دستیار…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1685"/>
+        <location filename="../mainwindow_webengine.cpp" line="1692"/>
         <source>AI assistant</source>
         <translation>دستیار هوش مصنوعی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1700"/>
+        <location filename="../mainwindow_webengine.cpp" line="1707"/>
         <source>Close</source>
         <translation>بستن</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1710"/>
-        <location filename="../mainwindow_webengine.cpp" line="1724"/>
-        <location filename="../mainwindow_webengine.cpp" line="1747"/>
+        <location filename="../mainwindow_webengine.cpp" line="1717"/>
+        <location filename="../mainwindow_webengine.cpp" line="1731"/>
+        <location filename="../mainwindow_webengine.cpp" line="1754"/>
         <source>AI result</source>
         <translation>نتیجه هوش مصنوعی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1744"/>
+        <location filename="../mainwindow_webengine.cpp" line="1751"/>
         <source>Message updated.</source>
         <translation>پیام به‌روزرسانی شد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1760"/>
+        <location filename="../mainwindow_webengine.cpp" line="1767"/>
         <source>Chat summary</source>
         <translation>خلاصه گفتگو</translation>
     </message>
@@ -1263,11 +1287,11 @@ Open Settings now?</source>
         <translation>چیزی برای پشتیبان‌گیری وجود ندارد</translation>
     </message>
     <message>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>ایجاد %1 ممکن نیست</translation>
     </message>
@@ -1323,254 +1347,254 @@ Open Settings now?</source>
         <translation>برای انجام کپی، دوباره بدون --dry-run اجرا کنید.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="536"/>
+        <location filename="../main.cpp" line="549"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>کلاینت وب WhatsApp با امکانات کامل، مبتنی بر Qt WebEngine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="543"/>
+        <location filename="../main.cpp" line="556"/>
         <source>Displays help on commandline options</source>
         <translation>راهنمای گزینه‌های خط فرمان را نمایش می‌دهد</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="548"/>
+        <location filename="../main.cpp" line="561"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>باز کردن کادر تنظیمات در نمونه در حال اجرای </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="553"/>
+        <location filename="../main.cpp" line="566"/>
         <source>Locks a running instance of </source>
         <translation>قفل کردن نمونه در حال اجرای </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="559"/>
+        <location filename="../main.cpp" line="572"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>باز کردن کادر درباره در نمونه در حال اجرای </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="564"/>
+        <location filename="../main.cpp" line="577"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>باز کردن کادر پیام‌های زمان‌بندی‌شده در نمونه در حال اجرای </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="571"/>
+        <location filename="../main.cpp" line="584"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>تغییر بین پوسته تیره و روشن در نمونه در حال اجرای </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="578"/>
+        <location filename="../main.cpp" line="591"/>
         <source>Reload the app in a running instance of </source>
         <translation>بارگذاری مجدد برنامه در نمونه در حال اجرای </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="584"/>
+        <location filename="../main.cpp" line="597"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>باز کردن پنجره گفتگوی جدید در نمونه در حال اجرای </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="597"/>
+        <location filename="../main.cpp" line="610"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>اجرا به‌عنوان حساب جداگانه با نشست و تنظیمات مستقل، در پنجره مستقل خودش</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="607"/>
+        <location filename="../main.cpp" line="620"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>داخلی: قبل از شروع منتظر خروج فرآیند با این شناسه بماند، استفاده‌شده توسط «راه‌اندازی مجدد اکنون»</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="614"/>
+        <location filename="../main.cpp" line="627"/>
         <source>Show main window of running instance of </source>
         <translation>نمایش پنجره اصلی نمونه در حال اجرای </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="621"/>
+        <location filename="../main.cpp" line="634"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>کپی تنظیمات و نشست واردشده از یک نصب قبلی (مثلاً نسخه قدیمی‌تر «whatsie») به این نصب، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="628"/>
+        <location filename="../main.cpp" line="641"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>با --migrate-from، فقط گزارش آنچه کپی خواهد شد</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="646"/>
+        <location filename="../main.cpp" line="659"/>
         <source>Print the current unread message count and exit</source>
         <translation>چاپ تعداد پیام‌های خوانده‌نشده فعلی و خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="652"/>
+        <location filename="../main.cpp" line="665"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>ارسال پیام از طریق نمونه در حال اجرا، سپس خروج (نیاز به --to و --message دارد)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="656"/>
+        <location filename="../main.cpp" line="669"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>گیرنده برای --send: یک شماره تلفن (بین‌المللی)، شناسه گروه یا نام مخاطب</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="661"/>
+        <location filename="../main.cpp" line="674"/>
         <source>Message text for --send</source>
         <translation>متن پیام برای --send</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="664"/>
+        <location filename="../main.cpp" line="677"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>پیوست فایل برای --send (در صورت وجود، --message آن به‌عنوان توضیح می‌شود)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="669"/>
+        <location filename="../main.cpp" line="682"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>توضیح برای پیوست --file (نام مستعار --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="673"/>
+        <location filename="../main.cpp" line="686"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>نحوه ارسال --send: &apos;web&apos; (نشست در حال اجرای WhatsApp Web) یا &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="679"/>
+        <location filename="../main.cpp" line="692"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>استفاده از قالب ذخیره‌شده با این نام به‌عنوان پیام --send (پر کردن {{fields}} آن با --var)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="684"/>
+        <location filename="../main.cpp" line="697"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>پر کردن یک فیلد قالب: key=value (قابل تکرار)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="688"/>
+        <location filename="../main.cpp" line="701"/>
         <source>List the saved message templates and exit</source>
         <translation>فهرست قالب‌های پیام ذخیره‌شده و خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="691"/>
+        <location filename="../main.cpp" line="704"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>ذخیره (یا جایگزینی) یک قالب پیام، سپس خروج: name=body</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="695"/>
+        <location filename="../main.cpp" line="708"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>حذف قالب پیام ذخیره‌شده با این نام، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="700"/>
+        <location filename="../main.cpp" line="713"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>روشن کردن پاسخ خودکار به پیام‌های ورودی، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="703"/>
+        <location filename="../main.cpp" line="716"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>خاموش کردن پاسخ خودکار، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="706"/>
+        <location filename="../main.cpp" line="719"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>فهرست قوانین فعال پاسخ خودکار (شامل وضعیت) و خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="709"/>
+        <location filename="../main.cpp" line="722"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>استفاده از این فایل JSON به‌عنوان منبع قوانین پاسخ خودکار، سپس خروج (خالی برای پاک کردن)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="715"/>
+        <location filename="../main.cpp" line="728"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>تنظیم شناسه شماره تلفن Cloud API، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="719"/>
+        <location filename="../main.cpp" line="732"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>تنظیم توکن دسترسی Cloud API، سپس خروج (در پیکربندی حساب ذخیره می‌شود)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="724"/>
+        <location filename="../main.cpp" line="737"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>تنظیم نسخه Graph API برای Cloud API (مثلاً v21.0)، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="728"/>
+        <location filename="../main.cpp" line="741"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>نمایش اینکه آیا Cloud API پیکربندی شده است، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="731"/>
+        <location filename="../main.cpp" line="744"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>برای --send --backend cloud: ارسال این قالب تأییدشده توسط Meta</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="735"/>
+        <location filename="../main.cpp" line="748"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>کد زبان برای --cloud-template (مثلاً es، en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="739"/>
+        <location filename="../main.cpp" line="752"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>یک پارامتر موقعیتی بدنه برای --cloud-template (قابل تکرار)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="744"/>
+        <location filename="../main.cpp" line="757"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>فعال کردن API محلی HTTP، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="747"/>
+        <location filename="../main.cpp" line="760"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>غیرفعال کردن API محلی HTTP، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="750"/>
+        <location filename="../main.cpp" line="763"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>تنظیم پورت API محلی HTTP (پیش‌فرض 8590)، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="754"/>
+        <location filename="../main.cpp" line="767"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>تنظیم توکن Bearer برای API محلی HTTP، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="758"/>
+        <location filename="../main.cpp" line="771"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>نمایش پیکربندی API محلی HTTP، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="762"/>
+        <location filename="../main.cpp" line="775"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>فعال کردن دریافت وب‌هوک‌های Cloud API، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="765"/>
+        <location filename="../main.cpp" line="778"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>غیرفعال کردن دریافت وب‌هوک‌های Cloud API، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="768"/>
+        <location filename="../main.cpp" line="781"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>تنظیم توکن تأیید وب‌هوک Cloud API، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="772"/>
+        <location filename="../main.cpp" line="785"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>تنظیم رمز مخفی برنامه Meta برای بررسی امضای وب‌هوک، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="776"/>
+        <location filename="../main.cpp" line="789"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>نمایش پیکربندی وب‌هوک Cloud API، سپس خروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1166"/>
+        <location filename="../main.cpp" line="1179"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>قفل برنامه پیکربندی نشده است، 
 لطفاً ابتدا رمز عبور را در تنظیمات تنظیم کنید.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1264"/>
+        <location filename="../main.cpp" line="1277"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>با تغییر به رندر ایمن، از خرابی هنگام راه‌اندازی بازیابی شد. می‌توانید این را در تنظیمات ← عملکرد تنظیم کنید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="949"/>
+        <location filename="../mainwindow_webengine.cpp" line="956"/>
         <source>Reloading...</source>
         <translation>در حال بارگذاری مجدد...</translation>
     </message>
@@ -1635,116 +1659,116 @@ Please setup the password in the Settings first.</source>
         <translation>ارسال در</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="315"/>
-        <location filename="../utils.cpp" line="349"/>
+        <location filename="../utils.cpp" line="357"/>
+        <location filename="../utils.cpp" line="391"/>
         <source>Install mode</source>
         <translation>حالت نصب</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="333"/>
+        <location filename="../utils.cpp" line="375"/>
         <source>Version</source>
         <translation>نسخه</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="335"/>
+        <location filename="../utils.cpp" line="377"/>
         <source>Source Branch</source>
         <translation>شاخه منبع</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="337"/>
+        <location filename="../utils.cpp" line="379"/>
         <source>Commit Hash</source>
         <translation>هش کامیت</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="339"/>
+        <location filename="../utils.cpp" line="381"/>
         <source>Build Datetime</source>
         <translation>تاریخ و زمان بیلد</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="341"/>
+        <location filename="../utils.cpp" line="383"/>
         <source>Qt Runtime Version</source>
         <translation>نسخه زمان اجرای Qt</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="343"/>
+        <location filename="../utils.cpp" line="385"/>
         <source>Qt Compiled Version</source>
         <translation>نسخه کامپایل‌شده Qt</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="345"/>
+        <location filename="../utils.cpp" line="387"/>
         <source>System</source>
         <translation>سیستم</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="347"/>
+        <location filename="../utils.cpp" line="389"/>
         <source>Architecture</source>
         <translation>معماری</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="490"/>
+        <location filename="../utils.cpp" line="532"/>
         <source>Exception</source>
         <translation>استثنا</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="493"/>
+        <location filename="../utils.cpp" line="535"/>
         <source> has encountered a problem.</source>
         <translation> با یک مشکل مواجه شد.</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="496"/>
+        <location filename="../utils.cpp" line="538"/>
         <source> may need to Restart. Please report the error to developer.</source>
         <translation> ممکن است نیاز به راه‌اندازی مجدد داشته باشد. لطفاً خطا را به توسعه‌دهنده گزارش دهید.</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="418"/>
+        <location filename="../webtweaks.cpp" line="423"/>
         <source>Switch to light theme</source>
         <comment>WebTweaks</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="419"/>
+        <location filename="../webtweaks.cpp" line="424"/>
         <source>Switch to dark theme</source>
         <comment>WebTweaks</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="420"/>
+        <location filename="../webtweaks.cpp" line="425"/>
         <source>Show the chats</source>
         <comment>WebTweaks</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="421"/>
+        <location filename="../webtweaks.cpp" line="426"/>
         <source>Blur the chats</source>
         <comment>WebTweaks</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="422"/>
+        <location filename="../webtweaks.cpp" line="427"/>
         <source>Zoom in</source>
         <comment>WebTweaks</comment>
         <translation type="unfinished">بزرگ‌نمایی</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="423"/>
+        <location filename="../webtweaks.cpp" line="428"/>
         <source>Zoom out</source>
         <comment>WebTweaks</comment>
         <translation type="unfinished">کوچک‌نمایی</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="424"/>
+        <location filename="../webtweaks.cpp" line="429"/>
         <source>Reset zoom</source>
         <comment>WebTweaks</comment>
         <translation type="unfinished">بازنشانی بزرگ‌نمایی</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="425"/>
+        <location filename="../webtweaks.cpp" line="430"/>
         <source>Collapse the chat list</source>
         <comment>WebTweaks</comment>
         <translation type="unfinished">جمع کردن فهرست گفتگوها</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="426"/>
+        <location filename="../webtweaks.cpp" line="431"/>
         <source>Show the chat list</source>
         <comment>WebTweaks</comment>
         <translation type="unfinished"></translation>
@@ -1996,1636 +2020,1663 @@ Please setup the password in the Settings first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="78"/>
+        <location filename="../settingswidget.ui" line="83"/>
         <source>Settings</source>
         <translation>تنظیمات</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="106"/>
+        <location filename="../settingswidget.ui" line="135"/>
         <source>General settings</source>
         <translation>تنظیمات عمومی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="114"/>
+        <location filename="../settingswidget.ui" line="143"/>
         <source>Widget Style</source>
         <translation>سبک ابزارک</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="153"/>
+        <location filename="../settingswidget.ui" line="182"/>
         <source>Display theme</source>
         <translation>پوسته نمایش</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="166"/>
+        <location filename="../settingswidget.ui" line="195"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Based on your system timezone and location.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;بر اساس منطقه زمانی و موقعیت مکانی سیستم شما.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="169"/>
-        <location filename="../settingswidget.ui" line="1941"/>
-        <location filename="../settingswidget.ui" line="1985"/>
-        <location filename="../settingswidget.ui" line="2142"/>
-        <location filename="../settingswidget.cpp" line="1328"/>
-        <location filename="../settingswidget.cpp" line="1620"/>
+        <location filename="../settingswidget.ui" line="198"/>
+        <location filename="../settingswidget.ui" line="1980"/>
+        <location filename="../settingswidget.ui" line="2024"/>
+        <location filename="../settingswidget.ui" line="2181"/>
+        <location filename="../settingswidget.cpp" line="1434"/>
+        <location filename="../settingswidget.cpp" line="1726"/>
         <source>Automatic</source>
         <translation>خودکار</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="177"/>
+        <location filename="../settingswidget.ui" line="206"/>
         <source>Dark</source>
         <translation>تیره</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="186"/>
+        <location filename="../settingswidget.ui" line="215"/>
         <source>Light</source>
         <translation>روشن</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="198"/>
+        <location filename="../settingswidget.ui" line="227"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Match the desktop&apos;s own light/dark preference, and change with it. Overrides the manual theme and the automatic sunrise/sunset switch.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;با تنظیم روشن/تاریک خود دسکتاپ هماهنگ می‌شود و همراه با آن تغییر می‌کند. این گزینه بر تم دستی و سوئیچ خودکار طلوع/غروب آفتاب اولویت دارد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="201"/>
+        <location filename="../settingswidget.ui" line="230"/>
         <source>Follow system light/dark theme</source>
         <translation>پیروی از پوسته روشن/تیره سیستم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="238"/>
+        <location filename="../settingswidget.ui" line="267"/>
         <source>Native notification</source>
         <translation>اعلان بومی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="247"/>
+        <location filename="../settingswidget.ui" line="276"/>
         <source>Customized notification</source>
         <translation>اعلان سفارشی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="265"/>
+        <location filename="../settingswidget.ui" line="294"/>
         <source>  Try</source>
         <translation>  آزمایش</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="276"/>
+        <location filename="../settingswidget.ui" line="305"/>
         <source>Notification type</source>
         <translation>نوع اعلان</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="283"/>
+        <location filename="../settingswidget.ui" line="312"/>
         <source>Disable Notifications Popup</source>
         <translation>غیرفعال کردن پنجره بازشوی اعلان‌ها</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="290"/>
+        <location filename="../settingswidget.ui" line="319"/>
         <source>Popup timeout</source>
         <translation>زمان محو شدن پنجره بازشو</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="297"/>
-        <location filename="../settingswidget.ui" line="1250"/>
+        <location filename="../settingswidget.ui" line="326"/>
+        <location filename="../settingswidget.ui" line="1289"/>
         <source> Secs</source>
         <translation> ثانیه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="310"/>
+        <location filename="../settingswidget.ui" line="339"/>
         <source>Notification delivery</source>
         <translation>روش تحویل اعلان</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="317"/>
+        <location filename="../settingswidget.ui" line="346"/>
         <source>How native notifications are sent on Linux. Automatic uses the desktop portal inside a Flatpak sandbox and the system service otherwise.</source>
         <translation>نحوه ارسال اعلان‌های بومی در لینوکس. حالت خودکار در Flatpak از پورتال دسکتاپ و در غیر این صورت از سرویس سیستم استفاده می‌کند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="324"/>
+        <location filename="../settingswidget.ui" line="353"/>
         <source>Ask the notification service to play a sound for new messages.</source>
         <translation>درخواست از سرویس اعلان برای پخش صدا هنگام پیام‌های جدید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="327"/>
+        <location filename="../settingswidget.ui" line="356"/>
         <source>Play sound</source>
         <translation>پخش صدا</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="334"/>
+        <location filename="../settingswidget.ui" line="363"/>
         <source>Suppress notification popups during a daily quiet period. Unread badges still update; only the popup is held back.</source>
         <translation>جلوگیری از نمایش پنجره‌های بازشوی اعلان در یک بازه آرام روزانه. نشان‌های خوانده‌نشده همچنان به‌روز می‌شوند؛ فقط پنجره بازشو نمایش داده نمی‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="337"/>
+        <location filename="../settingswidget.ui" line="366"/>
         <source>Do Not Disturb</source>
         <translation>مزاحم نشوید</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="346"/>
+        <location filename="../settingswidget.ui" line="375"/>
         <source>From</source>
         <translation>از</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="353"/>
-        <location filename="../settingswidget.ui" line="367"/>
+        <location filename="../settingswidget.ui" line="382"/>
+        <location filename="../settingswidget.ui" line="396"/>
         <source>HH:mm</source>
         <translation>HH:mm</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="360"/>
+        <location filename="../settingswidget.ui" line="389"/>
         <source>to</source>
         <translation>تا</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="389"/>
+        <location filename="../settingswidget.ui" line="418"/>
         <source>Highlight keywords</source>
         <translation>برجسته کردن کلمات کلیدی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="396"/>
+        <location filename="../settingswidget.ui" line="425"/>
         <source>Comma-separated words that always notify, even during Do Not Disturb (case-insensitive).</source>
         <translation>کلماتی که با کاما جدا شده‌اند و همیشه اعلان می‌دهند، حتی در حالت مزاحم نشوید (بدون حساسیت به حروف بزرگ و کوچک).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="399"/>
+        <location filename="../settingswidget.ui" line="428"/>
         <source>e.g. urgent, boss, invoice</source>
         <translation>مثلاً urgent، boss، invoice</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="406"/>
+        <location filename="../settingswidget.ui" line="435"/>
         <source>VIP contacts</source>
         <translation>مخاطبان VIP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="413"/>
+        <location filename="../settingswidget.ui" line="442"/>
         <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
         <translation>نام مخاطبان یا گروه‌هایی که با کاما جدا شده‌اند و همیشه اعلان می‌دهند، حتی در حالت مزاحم نشوید (بدون حساسیت به حروف بزرگ و کوچک).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="416"/>
+        <location filename="../settingswidget.ui" line="445"/>
         <source>e.g. Alice, Work group</source>
         <translation>مثلاً Alice، Work group</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="423"/>
+        <location filename="../settingswidget.ui" line="452"/>
         <source>Muted contacts</source>
         <translation>مخاطبان بی‌صدا شده</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="430"/>
+        <location filename="../settingswidget.ui" line="459"/>
         <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
         <translation>نام مخاطبان یا گروه‌هایی که با کاما جدا شده‌اند و اعلان‌های آن‌ها هرگز نمایش داده نمی‌شود (نشان خوانده‌نشده آن‌ها همچنان به‌روز می‌شود).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="433"/>
+        <location filename="../settingswidget.ui" line="462"/>
         <source>e.g. Noisy group</source>
         <translation>مثلاً Noisy group</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="440"/>
+        <location filename="../settingswidget.ui" line="469"/>
         <source>Add a reply field to desktop notifications so you can answer a message without opening the window. Only works where the notification service supports it (e.g. KDE Plasma); elsewhere notifications behave as before.</source>
         <translation>افزودن فیلد پاسخ به اعلان‌های دسکتاپ تا بتوانید بدون باز کردن پنجره به یک پیام پاسخ دهید. فقط در جایی کار می‌کند که سرویس اعلان از آن پشتیبانی کند (مثلاً KDE Plasma)؛ در غیر این صورت اعلان‌ها مانند قبل رفتار می‌کنند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="443"/>
+        <location filename="../settingswidget.ui" line="472"/>
         <source>Reply directly from notifications (where supported)</source>
         <translation>پاسخ مستقیم از اعلان‌ها (در جایی که پشتیبانی می‌شود)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="479"/>
+        <location filename="../settingswidget.ui" line="508"/>
         <source>Use Native File Dialog</source>
         <translation>استفاده از کادر فایل بومی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="486"/>
+        <location filename="../settingswidget.ui" line="515"/>
         <source>Mute Audio from Page</source>
         <translation>بی‌صدا کردن صدای صفحه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="493"/>
+        <location filename="../settingswidget.ui" line="522"/>
         <source>Disable Auto Playback of Media</source>
         <translation>غیرفعال کردن پخش خودکار رسانه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="500"/>
+        <location filename="../settingswidget.ui" line="529"/>
         <source>Minimize in tray on start</source>
         <translation>کوچک کردن به سینی هنگام شروع</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="507"/>
+        <location filename="../settingswidget.ui" line="536"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window&apos;s position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;وقتی از بیش از یک پنجره حساب کاربری استفاده می‌کنید، موقعیت، اندازه و برگه‌های هر پنجره را به خاطر بسپار و دفعه بعد آن‌ها را بازیابی کن. به‌طور پیش‌فرض غیرفعال است: برنامه به‌صورت یک پنجره واحد که همه حساب‌ها را در خود دارد بازمی‌گردد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="510"/>
+        <location filename="../settingswidget.ui" line="539"/>
         <source>Remember multiple window positions on restart</source>
         <translation>به خاطر سپردن موقعیت چند پنجره هنگام راه‌اندازی مجدد</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="517"/>
+        <location filename="../settingswidget.ui" line="546"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Off by default, so &amp;quot;Minimise to tray&amp;quot; puts the whole app away: with several windows open, leaving the others on screen while the tray reports Whatly as away is the same confusion as one window being treated as the real one. Tick this to have it put away only the window you are in. Follows whatever key &amp;quot;Minimise to tray&amp;quot; is bound to.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;به‌طور پیش‌فرض غیرفعال است، بنابراین "کوچک‌کردن به سینی" کل برنامه را کنار می‌گذارد: با چند پنجره باز، رها کردن بقیه روی صفحه در حالی که سینی Whatly را به‌عنوان غایب نشان می‌دهد، همان سردرگمی است که یک پنجره به‌عنوان پنجره واقعی در نظر گرفته شود. این گزینه را علامت بزنید تا فقط پنجره‌ای که در آن هستید کنار گذاشته شود. از هر کلیدی که به "کوچک‌کردن به سینی" اختصاص یافته پیروی می‌کند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="549"/>
+        <source>Ctrl+W hides only the last focused window.</source>
+        <translation>Ctrl+W فقط آخرین پنجره فعال را پنهان می‌کند.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="556"/>
         <source>Show/Hide on clicking tray Icon (if supported)</source>
         <translation>نمایش/پنهان کردن با کلیک روی نماد سینی (در صورت پشتیبانی)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="524"/>
+        <location filename="../settingswidget.ui" line="563"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close the emoji, GIF &amp;amp; sticker panel when you click elsewhere. WhatsApp Web otherwise keeps it open until the button is pressed again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;با کلیک در جای دیگر، پنل ایموجی، GIF &amp;amp; استیکر بسته می‌شود. در غیر این صورت، WhatsApp Web آن را باز نگه می‌دارد تا زمانی که دکمه دوباره فشرده شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="527"/>
+        <location filename="../settingswidget.ui" line="566"/>
         <source>Close emoji/sticker panel when clicking outside</source>
         <translation>بستن پنل شکلک/استیکر با کلیک بیرون از آن</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="534"/>
+        <location filename="../settingswidget.ui" line="573"/>
         <source>Interface language (requires restart)</source>
         <translation>زبان رابط کاربری (نیاز به راه‌اندازی مجدد)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="541"/>
+        <location filename="../settingswidget.ui" line="580"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of Whatly&apos;s own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;زبان رابط کاربری خود Whatly. پس از راه‌اندازی مجدد برنامه اعمال می‌شود. زبان خود چت‌ها از WhatsApp Web می‌آید و در اینجا قابل تغییر نیست.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="548"/>
+        <location filename="../settingswidget.ui" line="587"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a light/dark button to WhatsApp&apos;s own sidebar, just above your profile picture.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;دکمه‌ای برای حالت روشن/تاریک به نوار کناری خود واتس‌اپ، درست بالای عکس پروفایل شما اضافه می‌کند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="551"/>
+        <location filename="../settingswidget.ui" line="590"/>
         <source>Theme button in WhatsApp&apos;s sidebar</source>
         <translation>دکمه پوسته در نوار کناری WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="558"/>
+        <location filename="../settingswidget.ui" line="597"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that blurs and unblurs your chats in one click, without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;دکمه‌ای به نوار کناری خود واتس‌اپ اضافه می‌کند که با یک کلیک، چت‌های شما را تار یا واضح می‌کند، بدون نیاز به باز کردن تنظیمات.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="561"/>
+        <location filename="../settingswidget.ui" line="600"/>
         <source>Blur button in WhatsApp&apos;s sidebar</source>
         <translation>دکمه تاری در نوار کناری WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="568"/>
+        <location filename="../settingswidget.ui" line="607"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp&apos;s own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;دکمه‌های بزرگ‌نمایی کاهشی / بازنشانی / بزرگ‌نمایی افزایشی را به نوار کناری خود واتس‌اپ اضافه می‌کند تا مقیاس صفحه را به‌صورت زنده و بدون باز کردن تنظیمات تغییر دهید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="571"/>
+        <location filename="../settingswidget.ui" line="610"/>
         <source>Zoom buttons in WhatsApp&apos;s sidebar</source>
         <translation>دکمه‌های بزرگ‌نمایی در نوار کناری WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="578"/>
+        <location filename="../settingswidget.ui" line="617"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;دکمه‌ای به نوار کناری خود واتس‌اپ اضافه می‌کند که فهرست چت‌ها را به نواری از عکس‌های پروفایل جمع می‌کند و عرض استفاده‌شده را به مکالمه واگذار می‌کند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="581"/>
+        <location filename="../settingswidget.ui" line="620"/>
         <source>Chat-list collapse button in WhatsApp&apos;s sidebar</source>
         <translation>دکمه جمع کردن فهرست گفتگوها در نوار کناری WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="588"/>
+        <location filename="../settingswidget.ui" line="627"/>
         <source>Collapsed chat preview</source>
         <translation>پیش‌نمایش گفتگوی جمع‌شده</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="595"/>
+        <location filename="../settingswidget.ui" line="634"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform&apos;s font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اندازه پیش‌نمایشی که هنگام بردن نشانگر روی یک عکس در فهرست جمع‌شده چت‌ها ظاهر می‌شود. مقدار پیش‌فرض با نمایش فونت این پلتفرم هماهنگ است؛ اگر در صفحه شما کوچک یا بزرگ به نظر می‌رسد، مقدار دیگری انتخاب کنید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="602"/>
+        <location filename="../settingswidget.ui" line="641"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;به‌جای نماد سبزرنگ واتس‌اپ، از یک نماد سینی تک‌رنگ که با بقیه پنل شما هماهنگ است استفاده کنید. این نماد همچنین زمانی که واتس‌اپ متصل نیست کم‌رنگ می‌شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="605"/>
+        <location filename="../settingswidget.ui" line="644"/>
         <source>Monochrome tray icon</source>
         <translation>نماد تک‌رنگ سینی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="612"/>
+        <location filename="../settingswidget.ui" line="651"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;پیمایش را به‌صورت متحرک نمایش بده، به‌جای پرش خط به خط.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="615"/>
+        <location filename="../settingswidget.ui" line="654"/>
         <source>Smooth scrolling</source>
         <translation>پیمایش نرم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="622"/>
-        <location filename="../settingswidget.cpp" line="1245"/>
+        <location filename="../settingswidget.ui" line="661"/>
+        <location filename="../settingswidget.cpp" line="1351"/>
         <source>Custom CSS</source>
         <translation>CSS سفارشی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="631"/>
+        <location filename="../settingswidget.ui" line="670"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;یک فایل .css بارگذاری کنید تا ظاهر WhatsApp Web تغییر کند — شیوه‌نامه‌های جامعه کاربری (مانند catppuccin و مشابه آن) در اینجا کار می‌کنند. این روی تم چت اعمال می‌شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="634"/>
+        <location filename="../settingswidget.ui" line="673"/>
         <source>Choose file…</source>
         <translation>انتخاب فایل…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="641"/>
-        <location filename="../settingswidget.ui" line="781"/>
+        <location filename="../settingswidget.ui" line="680"/>
+        <location filename="../settingswidget.ui" line="820"/>
         <source>Clear</source>
         <translation>پاک کردن</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="650"/>
+        <location filename="../settingswidget.ui" line="689"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;نماد سینی سیستم را به‌طور کامل حذف می‌کند. از آنجا که سینی‌ای برای بازگرداندن برنامه وجود ندارد، بستن پنجره به‌جای پنهان کردن، برنامه را می‌بندد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="653"/>
+        <location filename="../settingswidget.ui" line="692"/>
         <source>Hide tray icon</source>
         <translation>پنهان کردن نماد سینی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="660"/>
+        <location filename="../settingswidget.ui" line="699"/>
         <source>Font family</source>
         <translation>خانواده قلم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="667"/>
+        <location filename="../settingswidget.ui" line="706"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Render WhatsApp Web&apos;s text in a font installed on your system. Emoji, icons and monospaced message formatting are left untouched.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;متن WhatsApp Web را با فونتی که روی سیستم شما نصب شده نمایش می‌دهد. ایموجی‌ها، نمادها و قالب‌بندی پیام با فونت تک‌عرض بدون تغییر باقی می‌مانند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="674"/>
+        <location filename="../settingswidget.ui" line="713"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;بخش «به‌روزرسانی‌های بی‌صدا» را در پنل وضعیت/به‌روزرسانی‌ها پنهان می‌کند، به‌طوری که وضعیت‌های مخاطبینی که بی‌صدا کرده‌اید اصلاً نمایش داده نشوند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="677"/>
+        <location filename="../settingswidget.ui" line="716"/>
         <source>Hide muted status updates</source>
         <translation>پنهان کردن به‌روزرسانی‌های وضعیت بی‌صدا شده</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="684"/>
+        <location filename="../settingswidget.ui" line="723"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;هنگام تایپ، زیر کلمات غلط املایی خط می‌کشد و پیشنهادهای اصلاحی را در منوی کلیک راست ارائه می‌دهد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="687"/>
-        <location filename="../settingswidget.cpp" line="2039"/>
+        <location filename="../settingswidget.ui" line="726"/>
+        <location filename="../settingswidget.cpp" line="2145"/>
         <source>Check spelling as I type</source>
         <translation>بررسی املا هنگام تایپ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="694"/>
+        <location filename="../settingswidget.ui" line="733"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;زبانی که باید بر اساس آن بررسی انجام شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="701"/>
+        <location filename="../settingswidget.ui" line="740"/>
         <source>Interface font size</source>
         <translation>اندازه قلم رابط کاربری</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="708"/>
+        <location filename="../settingswidget.ui" line="747"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اندازه قلم رابط کاربری خود برنامه — منوها، تنظیمات و کادرهای گفتگو. این روی متن WhatsApp Web تأثیری ندارد؛ برای آن از بزرگ‌نمایی استفاده کنید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="711"/>
+        <location filename="../settingswidget.ui" line="750"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="724"/>
+        <location filename="../settingswidget.ui" line="763"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اگر فرآیند صفحه WhatsApp Web از کار بیفتد، به‌جای پرسیدن ابتدا، آن را به‌صورت خودکار بازخوانی کن.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="727"/>
+        <location filename="../settingswidget.ui" line="766"/>
         <source>Reload automatically after a crash</source>
         <translation>بارگذاری مجدد خودکار پس از خرابی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="734"/>
+        <location filename="../settingswidget.ui" line="773"/>
         <source>Privacy blur</source>
         <translation>تاری حریم خصوصی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="741"/>
+        <location filename="../settingswidget.ui" line="780"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;چت‌های شما را تار می‌کند تا زمانی که نشانگر ماوس را روی آن‌ها ببرید، به‌طوری که کسی که نگاهی گذرا به صفحه می‌اندازد نتواند آن‌ها را بخواند. بردن نشانگر روی یک ردیف فقط همان ردیف را آشکار می‌کند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="748"/>
+        <location filename="../settingswidget.ui" line="787"/>
         <source>Chat colour Tint</source>
         <translation>طیف رنگی گفتگو</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="755"/>
+        <location filename="../settingswidget.ui" line="794"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;رنگ خود WhatsApp Web را تغییر می‌دهد. عکس‌ها، آواتارها و استیکرها رنگ اصلی خود را حفظ می‌کنند. این روی تم روشن یا تاریک، هرکدام که فعال باشد، اعمال می‌شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="762"/>
-        <location filename="../settingswidget.cpp" line="1221"/>
+        <location filename="../settingswidget.ui" line="801"/>
+        <location filename="../settingswidget.cpp" line="1327"/>
         <source>Chat wallpaper</source>
         <translation>تصویر زمینه گفتگو</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="771"/>
+        <location filename="../settingswidget.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;از یکی از تصاویر خودتان به‌عنوان پس‌زمینه پنل چت استفاده کنید، درست همان‌طور که واتس‌اپ در اندروید انجام می‌دهد. این تصویر درون Whatly ذخیره می‌شود، در هیچ‌جا آپلود نمی‌شود و فقط برای شما قابل مشاهده است.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="774"/>
+        <location filename="../settingswidget.ui" line="813"/>
         <source>Choose image…</source>
         <translation>انتخاب تصویر…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="790"/>
+        <location filename="../settingswidget.ui" line="829"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ورودهای جدید به‌جای &amp;quot;Google Chrome (Linux)&amp;quot;، در فهرست دستگاه‌های متصلِ گوشی شما به‌صورت &amp;quot;Whatly for Linux&amp;quot; (یا پلتفرم متناظر) نمایش داده می‌شوند. این نام هنگام اتصال یک دستگاه روی گوشی ذخیره می‌شود، بنابراین تغییر این گزینه فقط روی اتصال‌های آینده تأثیر می‌گذارد — برای تغییر نام یک نشست موجود، ابتدا خارج شوید و سپس دوباره متصل شوید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="793"/>
+        <location filename="../settingswidget.ui" line="832"/>
         <source>Identify as Whatly in linked devices</source>
         <translation>معرفی به‌عنوان Whatly در دستگاه‌های متصل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="807"/>
+        <location filename="../settingswidget.ui" line="846"/>
         <source>User Agent</source>
         <translation>User Agent</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="810"/>
+        <location filename="../settingswidget.ui" line="849"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;پیشرفته — مگر اینکه دقیقاً بدانید در حال انجام چه کاری هستید، این گزینه را دست نزنید. یک عامل کاربر (user agent) غیراستاندارد می‌تواند باعث شود واتس‌اپ از بارگذاری خودداری کند، و مقادیر غیرمعمول این خطر را دارند که حساب واتس‌اپ شما علامت‌گذاری یا مسدود شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="820"/>
+        <location filename="../settingswidget.ui" line="859"/>
         <source>  Set</source>
         <translation>  تنظیم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="831"/>
+        <location filename="../settingswidget.ui" line="870"/>
         <source>Reset to default</source>
         <translation>بازنشانی به پیش‌فرض</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="854"/>
+        <location filename="../settingswidget.ui" line="893"/>
         <source>Zoom factor when normal</source>
         <translation>ضریب بزرگ‌نمایی در حالت عادی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="882"/>
-        <location filename="../settingswidget.ui" line="1017"/>
+        <location filename="../settingswidget.ui" line="921"/>
+        <location filename="../settingswidget.ui" line="1056"/>
         <source>Zoom Out</source>
         <translation>کوچک‌نمایی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="921"/>
-        <location filename="../settingswidget.ui" line="1056"/>
+        <location filename="../settingswidget.ui" line="960"/>
+        <location filename="../settingswidget.ui" line="1095"/>
         <source>Zoom In</source>
         <translation>بزرگ‌نمایی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="966"/>
-        <location filename="../settingswidget.ui" line="1101"/>
+        <location filename="../settingswidget.ui" line="1005"/>
+        <location filename="../settingswidget.ui" line="1140"/>
         <source>reset</source>
         <translation>بازنشانی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="989"/>
+        <location filename="../settingswidget.ui" line="1028"/>
         <source>Zoom factor when maximized/fullscreen</source>
         <translation>ضریب بزرگ‌نمایی در حالت بزرگ‌شده/تمام‌صفحه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1124"/>
+        <location filename="../settingswidget.ui" line="1163"/>
         <source>Minimize to tray</source>
         <translation>کوچک کردن به سینی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1133"/>
+        <location filename="../settingswidget.ui" line="1172"/>
         <source>Quit</source>
         <translation>خروج</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1145"/>
+        <location filename="../settingswidget.ui" line="1184"/>
         <source>Global shortcuts</source>
         <translation>میان‌برهای عمومی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1152"/>
+        <location filename="../settingswidget.ui" line="1191"/>
         <source>Close button action</source>
         <translation>عملکرد دکمه بستن</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1159"/>
+        <location filename="../settingswidget.ui" line="1198"/>
         <source>  Show shortcuts</source>
         <translation>  نمایش میان‌برها</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1170"/>
+        <location filename="../settingswidget.ui" line="1209"/>
         <source>Permissions</source>
         <translation>مجوزها</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1177"/>
+        <location filename="../settingswidget.ui" line="1216"/>
         <source>  Show permissions</source>
         <translation>  نمایش مجوزها</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1192"/>
+        <location filename="../settingswidget.ui" line="1231"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;فعال‌سازی صفحه قفل.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1195"/>
+        <location filename="../settingswidget.ui" line="1234"/>
         <source>Enable App lock on start</source>
         <translation>فعال کردن قفل برنامه هنگام شروع</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1202"/>
+        <location filename="../settingswidget.ui" line="1241"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;وقتی پنجره به سینی سیستم پنهان می‌شود، آن را پشت رمز عبور قفل کن. نیازمند تنظیم یک گذرواژه است.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1205"/>
+        <location filename="../settingswidget.ui" line="1244"/>
         <source>Lock when hidden to tray</source>
         <translation>قفل هنگام پنهان شدن به سینی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1212"/>
+        <location filename="../settingswidget.ui" line="1251"/>
         <source>Also lock Whatly when the desktop session locks. Requires a password to be set. (Linux)</source>
         <translation>همچنین Whatly را هنگام قفل شدن نشست دسکتاپ قفل کن. نیاز به تنظیم رمز عبور دارد. (لینوکس)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1215"/>
+        <location filename="../settingswidget.ui" line="1254"/>
         <source>Lock when the screen locks</source>
         <translation>قفل هنگام قفل شدن صفحه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1222"/>
+        <location filename="../settingswidget.ui" line="1261"/>
         <source>Current Password</source>
         <translation>رمز عبور فعلی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1229"/>
-        <location filename="../settingswidget.ui" line="1263"/>
+        <location filename="../settingswidget.ui" line="1268"/>
+        <location filename="../settingswidget.ui" line="1302"/>
         <source>Change password</source>
         <translation>تغییر رمز عبور</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1232"/>
-        <location filename="../settingswidget.ui" line="1341"/>
+        <location filename="../settingswidget.ui" line="1271"/>
+        <location filename="../settingswidget.ui" line="1380"/>
         <source>Change</source>
         <translation>تغییر</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1243"/>
+        <location filename="../settingswidget.ui" line="1282"/>
         <source>Enable auto locking after</source>
         <translation>فعال کردن قفل خودکار پس از</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1266"/>
+        <location filename="../settingswidget.ui" line="1305"/>
         <source>Reset</source>
         <translation>بازنشانی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1298"/>
+        <location filename="../settingswidget.ui" line="1337"/>
         <source>View password</source>
         <translation>نمایش رمز عبور</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1325"/>
+        <location filename="../settingswidget.ui" line="1364"/>
         <source>Default Download location</source>
         <translation>محل پیش‌فرض دانلود</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1338"/>
+        <location filename="../settingswidget.ui" line="1377"/>
         <source>Change Download Location</source>
         <translation>تغییر محل دانلود</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1357"/>
+        <location filename="../settingswidget.ui" line="1396"/>
         <source>Storage </source>
         <translation>فضای ذخیره‌سازی </translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1377"/>
+        <location filename="../settingswidget.ui" line="1416"/>
         <source>Property</source>
         <translation>ویژگی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1384"/>
+        <location filename="../settingswidget.ui" line="1423"/>
         <source>  Clear (requires restart)</source>
         <translation>  پاک کردن (نیاز به راه‌اندازی مجدد)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1395"/>
+        <location filename="../settingswidget.ui" line="1434"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;داده‌های پایدار شامل کوکی‌های پایدار، حافظه محلی HTML5 و پیوندهای بازدیدشده است.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1398"/>
+        <location filename="../settingswidget.ui" line="1437"/>
         <source>Persistent data</source>
         <translation>داده‌های پایدار</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1405"/>
-        <location filename="../settingswidget.ui" line="1425"/>
+        <location filename="../settingswidget.ui" line="1444"/>
+        <location filename="../settingswidget.ui" line="1464"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1415"/>
+        <location filename="../settingswidget.ui" line="1454"/>
         <source>The HTTP/media cache. Clearing it is safe — it is re-downloaded as needed.</source>
         <translation>حافظه پنهان HTTP/رسانه. پاک کردن آن بی‌خطر است — در صورت نیاز دوباره دانلود می‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1418"/>
+        <location filename="../settingswidget.ui" line="1457"/>
         <source>Cache</source>
         <translation>حافظه پنهان</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1435"/>
+        <location filename="../settingswidget.ui" line="1474"/>
         <source>  Clear cache</source>
         <translation>  پاک کردن حافظه پنهان</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1458"/>
+        <location filename="../settingswidget.ui" line="1497"/>
         <source>Size</source>
         <translation>اندازه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1480"/>
+        <location filename="../settingswidget.ui" line="1519"/>
         <source>Action</source>
         <translation>عملیات</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1494"/>
+        <location filename="../settingswidget.ui" line="1533"/>
         <source>Backup</source>
         <translation>پشتیبان</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1501"/>
+        <location filename="../settingswidget.ui" line="1540"/>
         <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
         <translation>ذخیره این حساب (تنظیمات، نشست و افزونه‌ها) در یک بایگانی .tar.gz. این بایگانی شامل نشست واردشده شماست — آن را خصوصی نگه دارید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1504"/>
+        <location filename="../settingswidget.ui" line="1543"/>
         <source>Export profile…</source>
         <translation>خروجی گرفتن از پروفایل…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1511"/>
+        <location filename="../settingswidget.ui" line="1550"/>
         <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
         <translation>بازگردانی یک حساب از بایگانی .tar.gz. این کار داده‌های فعلی را رونویسی می‌کند و نیاز به راه‌اندازی مجدد دارد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1514"/>
+        <location filename="../settingswidget.ui" line="1553"/>
         <source>Import profile…</source>
         <translation>وارد کردن پروفایل…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1539"/>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation>عملکرد و حریم خصوصی (نیاز به راه‌اندازی مجدد)</translation>
+        <location filename="../settingswidget.ui" line="1578"/>
+        <source>Performance (requires restart)</source>
+        <translation>کارایی (نیازمند راه‌اندازی مجدد)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1545"/>
+        <location filename="../settingswidget.ui" line="2062"/>
+        <source>Free memory by unloading accounts you are not viewing. An unloaded account does not receive messages, and reloads to where it was when you switch back to it. Single-account setups are unaffected.</source>
+        <translation>با تخلیه حساب‌هایی که مشاهده نمی‌کنید، حافظه را آزاد کنید. حساب تخلیه‌شده پیامی دریافت نمی‌کند و هنگام بازگشت به آن، به همان جایی که بود بارگذاری می‌شود. تنظیمات تک‌حسابی تحت تأثیر قرار نمی‌گیرند.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2065"/>
+        <source>Unload inactive accounts from memory</source>
+        <translation>تخلیه حساب‌های غیرفعال از حافظه</translation>
+    </message>
+    <message>
+        <source>Performance &amp; Privacy (requires restart)</source>
+        <translation type="vanished">عملکرد و حریم خصوصی (نیاز به راه‌اندازی مجدد)</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="1584"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
         <translation>تنظیم دقیق موتور رندر. پیش‌فرض‌ها در بیشتر سیستم‌ها ایمن هستند؛ اگر پنجره خالی است یا برنامه هنگام شروع خراب می‌شود، یا لگ دارد، این موارد را تغییر دهید. تغییرات پس از راه‌اندازی مجدد اعمال می‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1555"/>
+        <location filename="../settingswidget.ui" line="1594"/>
         <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
         <translation>رندر کاملاً روی CPU (--disable-gpu). خرابی پنجره خالی و خرابی هنگام شروع را در برخی تنظیمات GPU/درایور برطرف می‌کند. پیش‌فرض در لینوکس.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1558"/>
+        <location filename="../settingswidget.ui" line="1597"/>
         <source>Disable GPU acceleration</source>
         <translation>غیرفعال کردن شتاب‌دهی GPU</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1565"/>
+        <location filename="../settingswidget.ui" line="1604"/>
         <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
         <translation>ترکیب صفحه روی CPU (--disable-gpu-compositing). از پرش فریم قدیمی در برخی درایورها جلوگیری می‌کند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1568"/>
+        <location filename="../settingswidget.ui" line="1607"/>
         <source>Disable GPU compositing</source>
         <translation>غیرفعال کردن ترکیب GPU</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1575"/>
+        <location filename="../settingswidget.ui" line="1614"/>
         <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
         <translation>غیرفعال کردن VSync در GPU (--disable-gpu-vsync). ممکن است تأخیر ورودی را کاهش دهد اما باعث پارگی تصویر شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1578"/>
+        <location filename="../settingswidget.ui" line="1617"/>
         <source>Disable GPU VSync</source>
         <translation>غیرفعال کردن VSync در GPU</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1585"/>
+        <location filename="../settingswidget.ui" line="1624"/>
         <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
         <translation>اجرای فرآیند GPU درون فرآیند اصلی (--in-process-gpu). راه‌حلی برای برخی تنظیمات سندباکس‌شده.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1588"/>
+        <location filename="../settingswidget.ui" line="1627"/>
         <source>Run GPU in-process</source>
         <translation>اجرای GPU درون فرآیند</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1595"/>
+        <location filename="../settingswidget.ui" line="1634"/>
         <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
         <translation>اجبار شتاب‌دهی حتی زمانی که درایور در فهرست مسدود است (--ignore-gpu-blocklist). برای روشن کردن دوباره GPU این را امتحان کنید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1598"/>
+        <location filename="../settingswidget.ui" line="1637"/>
         <source>Ignore GPU blocklist</source>
         <translation>نادیده گرفتن فهرست مسدود GPU</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1605"/>
+        <location filename="../settingswidget.ui" line="1644"/>
         <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
         <translation>اجرای همه چیز در یک فرآیند واحد (--single-process). حافظه کمتری استفاده می‌کند اما پایداری کمتری دارد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1608"/>
+        <location filename="../settingswidget.ui" line="1647"/>
         <source>Single-process mode (lower memory)</source>
         <translation>حالت تک‌فرآیندی (حافظه کمتر)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1615"/>
+        <location filename="../settingswidget.ui" line="1654"/>
         <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
         <translation>اشتراک یک فرآیند رندر به ازای هر سایت (--process-per-site). مصرف حافظه را کاهش می‌دهد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1618"/>
+        <location filename="../settingswidget.ui" line="1657"/>
         <source>One process per site (lower memory)</source>
         <translation>یک فرآیند به ازای هر سایت (حافظه کمتر)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1625"/>
+        <location filename="../settingswidget.ui" line="1664"/>
         <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
         <translation>درخواست از موتور جاوااسکریپت برای استفاده از حافظه کمتر با هزینه‌ای اندک در سرعت (V8 --optimize-for-size). برای برنامه‌ای که در سینی می‌ماند توصیه می‌شود. زمانی که محدودیت حافظه جاوااسکریپت در زیر تنظیم شده باشد نادیده گرفته می‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1628"/>
+        <location filename="../settingswidget.ui" line="1667"/>
         <source>Optimize memory over speed (lower memory)</source>
         <translation>بهینه‌سازی حافظه به‌جای سرعت (حافظه کمتر)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1635"/>
+        <location filename="../settingswidget.ui" line="1674"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>پنهان کردن نام مخاطبان و پیش‌نمایش پیام‌ها در فهرست گفتگوها (با نگه‌داشتن نشانگر روی آن نمایش داده می‌شود). هنگام اشتراک‌گذاری صفحه مفید است. گفتگوی باز دست‌نخورده باقی می‌ماند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1638"/>
+        <location filename="../settingswidget.ui" line="1677"/>
         <source>Focus mode (hide chat-list previews)</source>
         <translation>حالت تمرکز (پنهان کردن پیش‌نمایش فهرست گفتگوها)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1645"/>
+        <location filename="../settingswidget.ui" line="1684"/>
         <source>Default photos and videos to HD quality in the media editor. Depends on WhatsApp Web&apos;s layout; if a WhatsApp update breaks it, turn it off.</source>
         <translation>پیش‌فرض کردن کیفیت HD برای عکس‌ها و ویدیوها در ویرایشگر رسانه. به چیدمان WhatsApp Web بستگی دارد؛ اگر به‌روزرسانی WhatsApp آن را خراب کند، آن را خاموش کنید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1648"/>
+        <location filename="../settingswidget.ui" line="1687"/>
         <source>Send photos and videos in HD by default</source>
         <translation>ارسال عکس‌ها و ویدیوها با کیفیت HD به‌طور پیش‌فرض</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1657"/>
+        <location filename="../settingswidget.ui" line="1696"/>
         <source>Hold a message for a few seconds after you press Enter, showing an &quot;Undo&quot; button before it is actually sent. Press Enter again to send at once.</source>
         <translation>نگه‌داشتن پیام برای چند ثانیه پس از فشار Enter، با نمایش دکمه «واگرد» پیش از ارسال واقعی. برای ارسال فوری دوباره Enter را فشار دهید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1660"/>
+        <location filename="../settingswidget.ui" line="1699"/>
         <source>Undo send (hold Enter-sent messages briefly)</source>
         <translation>واگرد ارسال (نگه‌داشتن کوتاه پیام‌های ارسالی با Enter)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1667"/>
+        <location filename="../settingswidget.ui" line="1706"/>
         <source>How long to hold a message before it is sent.</source>
         <translation>مدت نگه‌داشتن پیام پیش از ارسال.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1670"/>
+        <location filename="../settingswidget.ui" line="1709"/>
         <source> s</source>
         <translation> ثانیه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1685"/>
+        <location filename="../settingswidget.ui" line="1724"/>
         <source>Inline translation</source>
         <translation>ترجمه درون‌خطی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1691"/>
+        <location filename="../settingswidget.ui" line="1730"/>
         <source>Translate selected text or your message box through a LibreTranslate-compatible service. The request is made by the app, so the endpoint and key never reach WhatsApp Web. Bind keys to &quot;Translate selection&quot; / &quot;Translate message box&quot; in Shortcuts, or use the command palette.</source>
         <translation>ترجمه متن انتخاب‌شده یا کادر پیام شما از طریق یک سرویس سازگار با LibreTranslate. درخواست توسط برنامه انجام می‌شود، بنابراین نقطه پایانی و کلید هرگز به WhatsApp Web نمی‌رسند. کلیدها را در بخش میان‌برها به «ترجمه متن انتخاب‌شده» / «ترجمه کادر پیام» متصل کنید، یا از پالت فرمان استفاده کنید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1694"/>
+        <location filename="../settingswidget.ui" line="1733"/>
         <source>Enable inline translation</source>
         <translation>فعال کردن ترجمه درون‌خطی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1701"/>
-        <location filename="../settingswidget.ui" line="1771"/>
+        <location filename="../settingswidget.ui" line="1740"/>
+        <location filename="../settingswidget.ui" line="1810"/>
         <source>Endpoint</source>
         <translation>نقطه پایانی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1708"/>
+        <location filename="../settingswidget.ui" line="1747"/>
         <source>A LibreTranslate-compatible &quot;/translate&quot; URL, e.g. http://localhost:5000/translate for a self-hosted instance.</source>
         <translation>یک آدرس «/translate» سازگار با LibreTranslate، مثلاً http://localhost:5000/translate برای یک نمونه خودمیزبان.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1711"/>
+        <location filename="../settingswidget.ui" line="1750"/>
         <source>https://your-libretranslate/translate</source>
         <translation>https://your-libretranslate/translate</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1718"/>
-        <location filename="../settingswidget.ui" line="1805"/>
+        <location filename="../settingswidget.ui" line="1757"/>
+        <location filename="../settingswidget.ui" line="1844"/>
         <source>API key (optional)</source>
         <translation>کلید API (اختیاری)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1725"/>
+        <location filename="../settingswidget.ui" line="1764"/>
         <source>Only needed by endpoints that require one. Stored locally.</source>
         <translation>فقط برای نقاط پایانی که به آن نیاز دارند لازم است. به‌صورت محلی ذخیره می‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1735"/>
+        <location filename="../settingswidget.ui" line="1774"/>
         <source>Target language</source>
         <translation>زبان مقصد</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1742"/>
+        <location filename="../settingswidget.ui" line="1781"/>
         <source>Two-letter code to translate into (e.g. en, es, fr). Leave empty to use the app&apos;s language. The source language is detected automatically.</source>
         <translation>کد دو حرفی برای ترجمه (مثلاً en، es، fr). برای استفاده از زبان برنامه، خالی بگذارید. زبان مبدأ به‌طور خودکار تشخیص داده می‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1745"/>
+        <location filename="../settingswidget.ui" line="1784"/>
         <source>app language</source>
         <translation>زبان برنامه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1755"/>
+        <location filename="../settingswidget.ui" line="1794"/>
         <source>AI assistant</source>
         <translation>دستیار هوش مصنوعی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1761"/>
+        <location filename="../settingswidget.ui" line="1800"/>
         <source>Summarise a chat, improve your draft or suggest a reply through an OpenAI-compatible service. The chat text is sent to that service, so use one you trust (a local runner keeps it on your machine). The request is made by the app, so the endpoint and key never reach WhatsApp Web. Actions live in the command palette and Shortcuts.</source>
         <translation>خلاصه‌سازی یک گفتگو، بهبود پیش‌نویس شما یا پیشنهاد پاسخ از طریق یک سرویس سازگار با OpenAI. متن گفتگو به آن سرویس ارسال می‌شود، پس از سرویسی استفاده کنید که به آن اعتماد دارید (یک اجراکننده محلی آن را روی دستگاه شما نگه می‌دارد). درخواست توسط برنامه انجام می‌شود، بنابراین نقطه پایانی و کلید هرگز به WhatsApp Web نمی‌رسند. عملیات‌ها در پالت فرمان و میان‌برها موجود هستند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1764"/>
+        <location filename="../settingswidget.ui" line="1803"/>
         <source>Enable AI assistant</source>
         <translation>فعال کردن دستیار هوش مصنوعی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1778"/>
+        <location filename="../settingswidget.ui" line="1817"/>
         <source>An OpenAI-compatible /chat/completions URL, e.g. https://api.openai.com/v1/chat/completions or http://localhost:11434/v1/chat/completions for a local Ollama.</source>
         <translation>یک آدرس «/chat/completions» سازگار با OpenAI، مثلاً https://api.openai.com/v1/chat/completions یا http://localhost:11434/v1/chat/completions برای یک Ollama محلی.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1781"/>
+        <location filename="../settingswidget.ui" line="1820"/>
         <source>https://api.openai.com/v1/chat/completions</source>
         <translation>https://api.openai.com/v1/chat/completions</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1788"/>
+        <location filename="../settingswidget.ui" line="1827"/>
         <source>Model</source>
         <translation>مدل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1795"/>
+        <location filename="../settingswidget.ui" line="1834"/>
         <source>The model name the endpoint expects, e.g. gpt-4o-mini or llama3.</source>
         <translation>نام مدلی که نقطه پایانی انتظار دارد، مثلاً gpt-4o-mini یا llama3.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1798"/>
+        <location filename="../settingswidget.ui" line="1837"/>
         <source>e.g. gpt-4o-mini</source>
         <translation>مثلاً gpt-4o-mini</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1812"/>
+        <location filename="../settingswidget.ui" line="1851"/>
         <source>Sent as a Bearer token. Not needed by most local runners. Stored locally.</source>
         <translation>به‌عنوان توکن Bearer ارسال می‌شود. برای بیشتر اجراکننده‌های محلی لازم نیست. به‌صورت محلی ذخیره می‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1829"/>
+        <location filename="../settingswidget.ui" line="1868"/>
         <source>Local models (Ollama)</source>
         <translation>مدل‌های محلی (Ollama)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1838"/>
+        <location filename="../settingswidget.ui" line="1877"/>
         <source>Check for a local Ollama and list its installed models.</source>
         <translation>بررسی وجود Ollama محلی و فهرست مدل‌های نصب‌شده آن.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1841"/>
+        <location filename="../settingswidget.ui" line="1880"/>
         <source>Detect Ollama</source>
         <translation>شناسایی Ollama</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1857"/>
+        <location filename="../settingswidget.ui" line="1896"/>
         <source>Installed model</source>
         <translation>مدل نصب‌شده</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1864"/>
+        <location filename="../settingswidget.ui" line="1903"/>
         <source>Pick one of the models already installed in Ollama; it becomes the model above.</source>
         <translation>یکی از مدل‌های نصب‌شده در Ollama را انتخاب کنید؛ این مدل به مدل بالا تبدیل می‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1871"/>
+        <location filename="../settingswidget.ui" line="1910"/>
         <source>Download a light model</source>
         <translation>دانلود یک مدل سبک</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1880"/>
+        <location filename="../settingswidget.ui" line="1919"/>
         <source>Light, fast models that run well on modest hardware.</source>
         <translation>مدل‌های سبک و سریع که روی سخت‌افزار معمولی به‌خوبی اجرا می‌شوند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1887"/>
+        <location filename="../settingswidget.ui" line="1926"/>
         <source>Download</source>
         <translation>دانلود</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1919"/>
+        <location filename="../settingswidget.ui" line="1958"/>
         <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
         <translation>جلوگیری از فاش شدن آدرس IP محلی شما توسط WebRTC روی اتصالات بدون پروکسی.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1922"/>
+        <location filename="../settingswidget.ui" line="1961"/>
         <source>Prevent WebRTC IP leak</source>
         <translation>جلوگیری از افشای IP توسط WebRTC</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1931"/>
+        <location filename="../settingswidget.ui" line="1970"/>
         <source>JavaScript memory limit</source>
         <translation>محدودیت حافظه جاوااسکریپت</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1938"/>
+        <location filename="../settingswidget.ui" line="1977"/>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
         <translation>محدود کردن heap جاوااسکریپت (V8 --max-old-space-size). 0 = خودکار. اگر برنامه رم زیادی مصرف می‌کند، آن را کاهش دهید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1944"/>
-        <location filename="../settingswidget.ui" line="1988"/>
+        <location filename="../settingswidget.ui" line="1983"/>
+        <location filename="../settingswidget.ui" line="2027"/>
         <source> MB</source>
         <translation> مگابایت</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1961"/>
+        <location filename="../settingswidget.ui" line="2000"/>
         <source>HTTP cache</source>
         <translation>حافظه پنهان HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1968"/>
+        <location filename="../settingswidget.ui" line="2007"/>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
         <translation>محل نگه‌داری حافظه پنهان HTTP. حافظه هنگام خروج پاک می‌شود؛ هیچ‌کدام حافظه پنهان را غیرفعال می‌کند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1975"/>
+        <location filename="../settingswidget.ui" line="2014"/>
         <source>Max size</source>
         <translation>حداکثر اندازه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1982"/>
+        <location filename="../settingswidget.ui" line="2021"/>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>حداکثر اندازه حافظه پنهان روی دیسک. 0 = خودکار.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2005"/>
+        <location filename="../settingswidget.ui" line="2044"/>
         <source>Font hinting</source>
         <translation>هینتینگ قلم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2012"/>
+        <location filename="../settingswidget.ui" line="2051"/>
         <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
         <translation>نحوه تنظیم لبه‌های حروف روی پیکسل‌ها. حالت خودکار از سیستم شما پیروی می‌کند؛ سطح سبک‌تر می‌تواند متن سنگین یا ناهموار را اصلاح کند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2023"/>
         <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation>آزادسازی حافظه با معلق کردن حساب‌هایی که مشاهده نمی‌کنید. حساب معلق‌شده تا زمانی که به آن برنگردید پیامی دریافت نمی‌کند. تنظیمات تک‌حسابی تحت تأثیر قرار نمی‌گیرند.</translation>
+        <translation type="vanished">آزادسازی حافظه با معلق کردن حساب‌هایی که مشاهده نمی‌کنید. حساب معلق‌شده تا زمانی که به آن برنگردید پیامی دریافت نمی‌کند. تنظیمات تک‌حسابی تحت تأثیر قرار نمی‌گیرند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2026"/>
         <source>Suspend inactive accounts</source>
-        <translation>معلق کردن حساب‌های غیرفعال</translation>
+        <translation type="vanished">معلق کردن حساب‌های غیرفعال</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2033"/>
+        <location filename="../settingswidget.ui" line="2072"/>
         <source>after</source>
         <translation>پس از</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2040"/>
+        <location filename="../settingswidget.ui" line="2079"/>
         <source> min</source>
         <translation> دقیقه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2058"/>
+        <location filename="../settingswidget.ui" line="2097"/>
         <source>Network &amp; Startup</source>
         <translation>شبکه و راه‌اندازی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2064"/>
+        <location filename="../settingswidget.ui" line="2103"/>
         <source>Launch Whatly automatically when you log in to your desktop session.</source>
         <translation>راه‌اندازی خودکار Whatly هنگام ورود به نشست دسکتاپ.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2067"/>
+        <location filename="../settingswidget.ui" line="2106"/>
         <source>Start Whatly when I log in</source>
         <translation>راه‌اندازی Whatly هنگام ورود من</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2074"/>
+        <location filename="../settingswidget.ui" line="2113"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>به Whatly اجازه بده حاشیه و نوار عنوان پنجره را به‌جای سیستم رسم کند، تا از پوسته خود Whatly پیروی کنند. به‌تنهایی فقط ظاهر آن‌ها را تغییر می‌دهد؛ گزینه «پنهان کردن نوار عنوان» را نیز علامت بزنید تا ردیف عنوان کاملاً حذف شود. پس از راه‌اندازی مجدد اعمال می‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2077"/>
+        <location filename="../settingswidget.ui" line="2116"/>
         <source>Use a custom window frame (requires restart)</source>
         <translation>استفاده از قاب پنجره سفارشی (نیاز به راه‌اندازی مجدد)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2090"/>
+        <location filename="../settingswidget.ui" line="2129"/>
         <source>Restart Whatly now so the settings above take effect. The windows, and this page with it, come back exactly as they are.</source>
         <translation>اکنون Whatly را راه‌اندازی مجدد کنید تا تنظیمات بالا اعمال شوند. پنجره‌ها و این صفحه دقیقاً همان‌طور که هستند بازمی‌گردند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2093"/>
+        <location filename="../settingswidget.ui" line="2132"/>
         <source>Restart now</source>
         <translation>راه‌اندازی مجدد اکنون</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2100"/>
+        <location filename="../settingswidget.ui" line="2139"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
         <translation>نگه‌داشتن نوار زبانه حساب‌ها حتی زمانی که فقط یک حساب وجود دارد، تا «+» آن همیشه در دسترس باشد. با خاموش بودن آن، نوار زمانی ظاهر می‌شود که حساب دومی وجود داشته باشد؛ همچنان می‌توانید با Ctrl+K یکی اضافه کنید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2103"/>
+        <location filename="../settingswidget.ui" line="2142"/>
         <source>Show the account tabs even with a single account</source>
         <translation>نمایش زبانه‌های حساب حتی با یک حساب</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2110"/>
+        <location filename="../settingswidget.ui" line="2149"/>
         <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
         <translation>حذف نوار عنوان و قرار دادن دکمه‌های آن در انتهای نوار زبانه حساب‌ها، مانند مرورگرها، به‌جای اختصاص یک ردیف مستقل به آن‌ها. این کار قاب پنجره سفارشی را که به آن نیاز دارد روشن می‌کند. پس از راه‌اندازی مجدد اعمال می‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2113"/>
+        <location filename="../settingswidget.ui" line="2152"/>
         <source>Hide the title bar (requires restart)</source>
         <translation>پنهان کردن نوار عنوان (نیاز به راه‌اندازی مجدد)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2120"/>
+        <location filename="../settingswidget.ui" line="2159"/>
         <source>Check GitHub once a day for a newer release and let you know. Whatly never downloads or installs anything on its own.</source>
         <translation>بررسی روزانه GitHub برای نسخه جدیدتر و اطلاع‌رسانی به شما. Whatly هرگز چیزی را خودش دانلود یا نصب نمی‌کند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2123"/>
+        <location filename="../settingswidget.ui" line="2162"/>
         <source>Check for updates automatically</source>
         <translation>بررسی خودکار به‌روزرسانی‌ها</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2132"/>
+        <location filename="../settingswidget.ui" line="2171"/>
         <source>Interface scale (requires restart)</source>
         <translation>مقیاس رابط کاربری (نیاز به راه‌اندازی مجدد)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2139"/>
+        <location filename="../settingswidget.ui" line="2178"/>
         <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
         <translation>مقیاس‌دهی به کل پنجره و صفحه (QT_SCALE_FACTOR). حالت خودکار از دسکتاپ پیروی می‌کند. متغیر محیطی QT_SCALE_FACTOR، در صورت تنظیم، این را نادیده می‌گیرد. پس از راه‌اندازی مجدد اعمال می‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2175"/>
+        <location filename="../settingswidget.ui" line="2214"/>
         <source>Proxy</source>
         <translation>پروکسی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2182"/>
+        <location filename="../settingswidget.ui" line="2221"/>
         <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
         <translation>نحوه اتصال Whatly به شبکه. حالت سیستم از سیستم‌عامل پیروی می‌کند؛ هیچ‌کدام مستقیم متصل می‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2207"/>
+        <location filename="../settingswidget.ui" line="2246"/>
         <source>Host</source>
         <translation>میزبان</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2214"/>
+        <location filename="../settingswidget.ui" line="2253"/>
         <source>127.0.0.1</source>
         <translation>127.0.0.1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2221"/>
-        <location filename="../settingswidget.ui" line="2501"/>
+        <location filename="../settingswidget.ui" line="2260"/>
+        <location filename="../settingswidget.ui" line="2540"/>
         <source>Port</source>
         <translation>پورت</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2235"/>
+        <location filename="../settingswidget.ui" line="2274"/>
         <source>Username</source>
         <translation>نام کاربری</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2242"/>
-        <location filename="../settingswidget.ui" line="2259"/>
+        <location filename="../settingswidget.ui" line="2281"/>
+        <location filename="../settingswidget.ui" line="2298"/>
         <source>Optional</source>
         <translation>اختیاری</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2249"/>
+        <location filename="../settingswidget.ui" line="2288"/>
         <source>Password</source>
         <translation>رمز عبور</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2272"/>
+        <location filename="../settingswidget.ui" line="2311"/>
         <source>Custom JavaScript addons (requires restart)</source>
         <translation>افزونه‌های جاوااسکریپت سفارشی (نیاز به راه‌اندازی مجدد)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2278"/>
+        <location filename="../settingswidget.ui" line="2317"/>
         <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
         <translation>بارگذاری فایل‌های .js برای اجرا روی WhatsApp Web. هر افزونه در سندباکس مستقل خودش اجرا می‌شود، بنابراین یک افزونه خراب نمی‌تواند بقیه یا صفحه را از کار بیندازد. علامت یک افزونه را بردارید تا بدون حذف آن غیرفعال شود. تغییرات پس از راه‌اندازی مجدد اعمال می‌شوند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2300"/>
+        <location filename="../settingswidget.ui" line="2339"/>
         <source>Add addon…</source>
         <translation>افزودن افزونه…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2307"/>
-        <location filename="../settingswidget.ui" line="2367"/>
+        <location filename="../settingswidget.ui" line="2346"/>
+        <location filename="../settingswidget.ui" line="2406"/>
         <source>Remove</source>
         <translation>حذف</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2332"/>
+        <location filename="../settingswidget.ui" line="2371"/>
         <source>Saved replies</source>
         <translation>پاسخ‌های ذخیره‌شده</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2338"/>
+        <location filename="../settingswidget.ui" line="2377"/>
         <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
         <translation>متن‌های کوتاهی که اغلب ارسال می‌کنید. یکی را از پالت فرمان (Ctrl+K) درج کنید — «Insert» را تایپ کرده و آن را انتخاب کنید؛ متن در کادر پیام تایپ می‌شود.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2360"/>
+        <location filename="../settingswidget.ui" line="2399"/>
         <source>Add reply…</source>
         <translation>افزودن پاسخ…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2392"/>
+        <location filename="../settingswidget.ui" line="2431"/>
         <source>Keyboard shortcuts (requires restart)</source>
         <translation>میان‌برهای صفحه‌کلید (نیاز به راه‌اندازی مجدد)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2398"/>
+        <location filename="../settingswidget.ui" line="2437"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>روی یک فیلد کلیک کرده و ترکیب کلیدها را فشار دهید. برای حذف میان‌بر، فیلد را پاک کنید. تغییرات پس از راه‌اندازی مجدد اعمال می‌شوند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2414"/>
+        <location filename="../settingswidget.ui" line="2453"/>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API (ارسال بدون نشست مرورگر)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2420"/>
+        <location filename="../settingswidget.ui" line="2459"/>
         <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account&apos;s config and Whatly never obtains it itself.</source>
         <translation>ارسال با `--send --backend cloud` از طریق Meta WhatsApp Business Cloud API — نیازی به نشست در حال اجرای WhatsApp Web نیست. توکن دسترسی چیزی است که شما از Meta تهیه می‌کنید؛ در پیکربندی این حساب ذخیره می‌شود و Whatly هرگز خودش آن را به دست نمی‌آورد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2430"/>
+        <location filename="../settingswidget.ui" line="2469"/>
         <source>Phone-number ID</source>
         <translation>شناسه شماره تلفن</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2444"/>
+        <location filename="../settingswidget.ui" line="2483"/>
         <source>Access token</source>
         <translation>توکن دسترسی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2454"/>
+        <location filename="../settingswidget.ui" line="2493"/>
         <source>your Meta access token</source>
         <translation>توکن دسترسی Meta شما</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2461"/>
+        <location filename="../settingswidget.ui" line="2500"/>
         <source>Graph API version</source>
         <translation>نسخه Graph API</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2478"/>
+        <location filename="../settingswidget.ui" line="2517"/>
         <source>Local API &amp; Cloud webhooks</source>
         <translation>API محلی و وب‌هوک‌های Cloud</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2484"/>
+        <location filename="../settingswidget.ui" line="2523"/>
         <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
         <translation>یک نقطه پایانی کوچک HTTP روی رابط loopback (127.0.0.1) به سایر برنامه‌های این دستگاه اجازه می‌دهد از طریق Whatly ارسال کنند، و به Meta اجازه می‌دهد وب‌هوک‌های Cloud API (پیام‌های ورودی) را تحویل دهد تا پاسخ خودکار بدون مرورگر کار کند. این هرگز روی شبکه در معرض دید قرار نمی‌گیرد؛ برای دریافت وب‌هوک از Meta، پورت را با یک تونل یا پروکسی معکوس (مثلاً cloudflared یا ngrok) هدایت کنید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2494"/>
+        <location filename="../settingswidget.ui" line="2533"/>
         <source>Enable the local HTTP API (send over HTTP)</source>
         <translation>فعال کردن API محلی HTTP (ارسال از طریق HTTP)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2518"/>
+        <location filename="../settingswidget.ui" line="2557"/>
         <source>Bearer token</source>
         <translation>توکن Bearer</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2528"/>
+        <location filename="../settingswidget.ui" line="2567"/>
         <source>required to authorise requests</source>
         <translation>برای مجاز کردن درخواست‌ها لازم است</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2535"/>
+        <location filename="../settingswidget.ui" line="2574"/>
         <source>Receive Cloud API webhooks (incoming messages)</source>
         <translation>دریافت وب‌هوک‌های Cloud API (پیام‌های ورودی)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2542"/>
+        <location filename="../settingswidget.ui" line="2581"/>
         <source>Webhook verify token</source>
         <translation>توکن تأیید وب‌هوک</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2552"/>
+        <location filename="../settingswidget.ui" line="2591"/>
         <source>echoed to Meta during setup</source>
         <translation>در هنگام راه‌اندازی به Meta بازگردانده می‌شود</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2559"/>
+        <location filename="../settingswidget.ui" line="2598"/>
         <source>Meta app secret</source>
         <translation>رمز مخفی برنامه Meta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2569"/>
+        <location filename="../settingswidget.ui" line="2608"/>
         <source>verifies the webhook signature</source>
         <translation>امضای وب‌هوک را تأیید می‌کند</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="465"/>
+        <location filename="../settingswidget.cpp" line="479"/>
         <source>Basics</source>
         <translation>اصول</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="473"/>
+        <location filename="../settingswidget.cpp" line="487"/>
         <source>Appearance</source>
         <translation>ظاهر</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="492"/>
+        <location filename="../settingswidget.cpp" line="506"/>
         <source>Notifications</source>
         <translation>اعلان‌ها</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="496"/>
+        <location filename="../settingswidget.cpp" line="510"/>
         <source>Chatting</source>
         <translation>گفتگو</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="505"/>
+        <location filename="../settingswidget.cpp" line="526"/>
         <source>Privacy &amp; Lock</source>
         <translation>حریم خصوصی و قفل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="511"/>
+        <location filename="../settingswidget.cpp" line="540"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>پنجره &amp;&amp; بزرگ‌نمایی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="528"/>
+        <location filename="../settingswidget.cpp" line="569"/>
+        <source>AI &amp;&amp; translation</source>
+        <translation>هوش مصنوعی &amp;&amp; ترجمه</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="576"/>
         <source>Advanced</source>
         <translation>پیشرفته</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="795"/>
+        <location filename="../settingswidget.cpp" line="901"/>
         <source>Shortcut in use</source>
         <translation>میان‌بر در حال استفاده</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="796"/>
+        <location filename="../settingswidget.cpp" line="902"/>
         <source>That shortcut is already used by another action.</source>
         <translation>آن میان‌بر قبلاً توسط عملیات دیگری استفاده شده است.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="808"/>
+        <location filename="../settingswidget.cpp" line="914"/>
         <source>Clear cache</source>
         <translation>پاک کردن حافظه پنهان</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="809"/>
+        <location filename="../settingswidget.cpp" line="915"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>حافظه پنهان اکنون پاک شود؟ در صورت نیاز دوباره دانلود خواهد شد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="819"/>
-        <location filename="../settingswidget.cpp" line="825"/>
-        <location filename="../settingswidget.cpp" line="834"/>
-        <location filename="../settingswidget.cpp" line="837"/>
+        <location filename="../settingswidget.cpp" line="925"/>
+        <location filename="../settingswidget.cpp" line="931"/>
+        <location filename="../settingswidget.cpp" line="940"/>
+        <location filename="../settingswidget.cpp" line="943"/>
         <source>Export profile</source>
         <translation>خروجی گرفتن از پروفایل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="820"/>
+        <location filename="../settingswidget.cpp" line="926"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>این بایگانی شامل نشست واردشده WhatsApp شما خواهد بود. آن را خصوصی نگه دارید. ادامه می‌دهید؟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="827"/>
-        <location filename="../settingswidget.cpp" line="842"/>
+        <location filename="../settingswidget.cpp" line="933"/>
+        <location filename="../settingswidget.cpp" line="948"/>
         <source>Archives (*.tar.gz)</source>
         <translation>بایگانی‌ها (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="835"/>
+        <location filename="../settingswidget.cpp" line="941"/>
         <source>Profile exported.</source>
         <translation>پروفایل خروجی گرفته شد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="842"/>
-        <location filename="../settingswidget.cpp" line="846"/>
-        <location filename="../settingswidget.cpp" line="854"/>
-        <location filename="../settingswidget.cpp" line="857"/>
+        <location filename="../settingswidget.cpp" line="948"/>
+        <location filename="../settingswidget.cpp" line="952"/>
+        <location filename="../settingswidget.cpp" line="960"/>
+        <location filename="../settingswidget.cpp" line="963"/>
         <source>Import profile</source>
         <translation>وارد کردن پروفایل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="847"/>
+        <location filename="../settingswidget.cpp" line="953"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>این کار داده‌های حساب فعلی را با بایگانی رونویسی می‌کند، سپس Whatly باید راه‌اندازی مجدد شود. ادامه می‌دهید؟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="855"/>
+        <location filename="../settingswidget.cpp" line="961"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>پروفایل وارد شد. لطفاً Whatly را راه‌اندازی مجدد کنید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="878"/>
+        <location filename="../settingswidget.cpp" line="984"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>این کار داده‌های پایدار را حذف خواهد کرد! داده‌های پایدار شامل کوکی‌های پایدار و حافظه پنهان است، و برنامه را خواهد بست.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="883"/>
+        <location filename="../settingswidget.cpp" line="989"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>کوکی‌ها حذف و برنامه بسته شود؟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="989"/>
+        <location filename="../settingswidget.cpp" line="1095"/>
         <source>| Error</source>
         <translation>| خطا</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="990"/>
+        <location filename="../settingswidget.cpp" line="1096"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>نمی‌توان رشته UserAgent خالی تنظیم کرد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1041"/>
+        <location filename="../settingswidget.cpp" line="1147"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>تعویض خودکار پوسته به دلیل تغییر دستی پوسته غیرفعال شد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1058"/>
+        <location filename="../settingswidget.cpp" line="1164"/>
         <source>Require setup</source>
         <translation>نیاز به تنظیم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1087"/>
+        <location filename="../settingswidget.cpp" line="1193"/>
         <source>App lock is not configured.</source>
         <translation>قفل برنامه پیکربندی نشده است.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1091"/>
+        <location filename="../settingswidget.cpp" line="1197"/>
         <source>Do you want to setup App lock now?</source>
         <translation>آیا می‌خواهید اکنون قفل برنامه را تنظیم کنید؟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1133"/>
+        <location filename="../settingswidget.cpp" line="1239"/>
         <source>Feature permissions</source>
         <translation>مجوزهای ویژگی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1212"/>
+        <location filename="../settingswidget.cpp" line="1318"/>
         <source>Choose a chat wallpaper</source>
         <translation>یک تصویر زمینه گفتگو انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1214"/>
+        <location filename="../settingswidget.cpp" line="1320"/>
         <source>Images (%1)</source>
         <translation>تصاویر (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1222"/>
+        <location filename="../settingswidget.cpp" line="1328"/>
         <source>Could not use that image: %1</source>
         <translation>استفاده از آن تصویر ممکن نشد: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1237"/>
+        <location filename="../settingswidget.cpp" line="1343"/>
         <source>Choose a CSS file</source>
         <translation>یک فایل CSS انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1239"/>
+        <location filename="../settingswidget.cpp" line="1345"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>شیوه‌نامه‌ها (*.css);;همه فایل‌ها (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1246"/>
+        <location filename="../settingswidget.cpp" line="1352"/>
         <source>Could not read that file: %1</source>
         <translation>آن فایل قابل خواندن نبود: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1319"/>
+        <location filename="../settingswidget.cpp" line="1425"/>
         <source>Disk</source>
         <translation>دیسک</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1320"/>
+        <location filename="../settingswidget.cpp" line="1426"/>
         <source>Memory</source>
         <translation>حافظه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1321"/>
-        <location filename="../settingswidget.cpp" line="1329"/>
-        <location filename="../settingswidget.cpp" line="2089"/>
+        <location filename="../settingswidget.cpp" line="1427"/>
+        <location filename="../settingswidget.cpp" line="1435"/>
+        <location filename="../settingswidget.cpp" line="2195"/>
         <source>None</source>
         <translation>هیچ‌کدام</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1330"/>
+        <location filename="../settingswidget.cpp" line="1436"/>
         <source>Slight</source>
         <translation>کم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1331"/>
+        <location filename="../settingswidget.cpp" line="1437"/>
         <source>Medium</source>
         <translation>متوسط</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1332"/>
+        <location filename="../settingswidget.cpp" line="1438"/>
         <source>Full</source>
         <translation>کامل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1473"/>
+        <location filename="../settingswidget.cpp" line="1579"/>
         <source>Ollama not found at this address.</source>
         <translation>Ollama در این آدرس یافت نشد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1478"/>
+        <location filename="../settingswidget.cpp" line="1584"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama یافت شد (%1 مدل نصب‌شده).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1503"/>
+        <location filename="../settingswidget.cpp" line="1609"/>
         <source>Download complete.</source>
         <translation>دانلود کامل شد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1506"/>
+        <location filename="../settingswidget.cpp" line="1612"/>
         <source>Download failed: %1</source>
         <translation>دانلود ناموفق بود: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1517"/>
+        <location filename="../settingswidget.cpp" line="1623"/>
         <source>Checking…</source>
         <translation>در حال بررسی…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1542"/>
+        <location filename="../settingswidget.cpp" line="1648"/>
         <source>Starting download of %1…</source>
         <translation>در حال شروع دانلود %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1593"/>
+        <location filename="../settingswidget.cpp" line="1699"/>
         <source>System</source>
         <translation>سیستم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1594"/>
+        <location filename="../settingswidget.cpp" line="1700"/>
         <source>None (direct)</source>
         <translation>هیچ‌کدام (مستقیم)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1595"/>
+        <location filename="../settingswidget.cpp" line="1701"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1596"/>
+        <location filename="../settingswidget.cpp" line="1702"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1622"/>
+        <location filename="../settingswidget.cpp" line="1728"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>پورتال دسکتاپ (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1624"/>
+        <location filename="../settingswidget.cpp" line="1730"/>
         <source>System service (libnotify)</source>
         <translation>سرویس سیستم (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1809"/>
-        <location filename="../settingswidget.cpp" line="1813"/>
+        <location filename="../settingswidget.cpp" line="1915"/>
+        <location filename="../settingswidget.cpp" line="1919"/>
         <source>Add reply</source>
         <translation>افزودن پاسخ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1809"/>
+        <location filename="../settingswidget.cpp" line="1915"/>
         <source>Name</source>
         <translation>نام</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1813"/>
+        <location filename="../settingswidget.cpp" line="1919"/>
         <source>Text to insert</source>
         <translation>متن برای درج</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1830"/>
+        <location filename="../settingswidget.cpp" line="1936"/>
         <source>Choose a JavaScript file</source>
         <translation>یک فایل جاوااسکریپت انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1831"/>
+        <location filename="../settingswidget.cpp" line="1937"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>جاوااسکریپت (*.js);;همه فایل‌ها (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1836"/>
+        <location filename="../settingswidget.cpp" line="1942"/>
         <source>Could not add addon</source>
         <translation>افزودن افزونه ممکن نشد</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1849"/>
+        <location filename="../settingswidget.cpp" line="1955"/>
         <source>Remove addon</source>
         <translation>حذف افزونه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1850"/>
+        <location filename="../settingswidget.cpp" line="1956"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>افزونه «%1» حذف شود؟ این کار فایل آن را حذف می‌کند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2038"/>
+        <location filename="../settingswidget.cpp" line="2144"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>بررسی‌کننده املا (هیچ فرهنگ لغتی نصب نشده)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2093"/>
+        <location filename="../settingswidget.cpp" line="2199"/>
         <source>%1 languages</source>
         <translation>%1 زبان</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2191"/>
+        <location filename="../settingswidget.cpp" line="2297"/>
         <source>WhatsApp default</source>
         <translation>پیش‌فرض WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2230"/>
+        <location filename="../settingswidget.cpp" line="2336"/>
         <source>System default</source>
         <translation>پیش‌فرض سیستم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2265"/>
+        <location filename="../settingswidget.cpp" line="2371"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>زبان رابط کاربری هنگام راه‌اندازی مجدد %1 تغییر خواهد کرد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2279"/>
+        <location filename="../settingswidget.cpp" line="2385"/>
         <source>App Lock Setup</source>
         <translation>تنظیم قفل برنامه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2280"/>
+        <location filename="../settingswidget.cpp" line="2386"/>
         <source>Please setup the App lock password first.</source>
         <translation>لطفاً ابتدا رمز عبور قفل برنامه را تنظیم کنید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2391"/>
-        <location filename="../settingswidget.cpp" line="2402"/>
+        <location filename="../settingswidget.cpp" line="2502"/>
+        <location filename="../settingswidget.cpp" line="2513"/>
         <source>Select download directory</source>
         <translation>پوشه دانلود را انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2442"/>
+        <location filename="../settingswidget.cpp" line="2553"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3636,7 +3687,7 @@ You may also require a complete restart of Application!</source>
 ممکن است نیاز به راه‌اندازی مجدد کامل برنامه نیز داشته باشید!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2448"/>
+        <location filename="../settingswidget.cpp" line="2559"/>
         <source>Do you want to proceed?</source>
         <translation>آیا می‌خواهید ادامه دهید؟</translation>
     </message>

@@ -69,8 +69,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kopias la sencimigan informon sube al la tondujo kaj malfermas la cimlistigilon, por ke vi povu rekte alglui ĝin en la raporton.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.ui" line="220"/>
         <location filename="../about.cpp" line="144"/>
+        <location filename="../about.ui" line="220"/>
         <source>Report a Bug</source>
         <translation>Raporti cimon</translation>
     </message>
@@ -216,17 +216,17 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="611"/>
+        <location filename="../chatliststrip.cpp" line="616"/>
         <source>Small</source>
         <translation>Malgranda</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="613"/>
+        <location filename="../chatliststrip.cpp" line="618"/>
         <source>Medium</source>
         <translation>Meza</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="615"/>
+        <location filename="../chatliststrip.cpp" line="620"/>
         <source>Large</source>
         <translation>Granda</translation>
     </message>
@@ -330,17 +330,17 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>CustomTitleBar</name>
     <message>
-        <location filename="../customtitlebar.cpp" line="58"/>
+        <location filename="../customtitlebar.cpp" line="90"/>
         <source>Minimise</source>
         <translation>Minimumigi</translation>
     </message>
     <message>
-        <location filename="../customtitlebar.cpp" line="62"/>
+        <location filename="../customtitlebar.cpp" line="94"/>
         <source>Maximise</source>
         <translation>Maksimumigi</translation>
     </message>
     <message>
-        <location filename="../customtitlebar.cpp" line="66"/>
+        <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>Fermi</translation>
     </message>
@@ -527,266 +527,264 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="271"/>
+        <location filename="../mainwindow_tray.cpp" line="319"/>
         <source>Recent unread</source>
         <translation>Lastaj nelegitaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="130"/>
+        <location filename="../mainwindow_tray.cpp" line="133"/>
         <source>&amp;Find in chats</source>
         <translation>&amp;Serĉi en babiloj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="275"/>
+        <location filename="../mainwindow_tray.cpp" line="278"/>
         <source>Find in chats</source>
         <translation>Serĉi en babiloj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="311"/>
+        <location filename="../mainwindow_tray.cpp" line="314"/>
         <source>Windows</source>
         <translation>Fenestroj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="481"/>
+        <location filename="../mainwindow_tray.cpp" line="484"/>
         <source>hidden</source>
         <translation>kaŝita</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="483"/>
+        <location filename="../mainwindow_tray.cpp" line="486"/>
         <source>minimised</source>
         <translation>minimumigita</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="106"/>
-        <location filename="../mainwindow.cpp" line="1140"/>
-        <location filename="../mainwindow.cpp" line="1236"/>
+        <location filename="../mainwindow.cpp" line="116"/>
+        <location filename="../mainwindow.cpp" line="1147"/>
+        <location filename="../mainwindow.cpp" line="1243"/>
         <source>No WhatsApp window is open</source>
         <translation>Neniu fenestro de Vacapo estas malfermita</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="111"/>
+        <location filename="../mainwindow.cpp" line="121"/>
         <source>Reminder</source>
         <translation>Memorigilo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="111"/>
+        <location filename="../mainwindow.cpp" line="121"/>
         <source>Reminder: %1</source>
         <translation>Memorigilo: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="196"/>
+        <location filename="../mainwindow.cpp" line="205"/>
         <source>Update available</source>
         <translation>Ĝisdatigo disponebla</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="197"/>
+        <location filename="../mainwindow.cpp" line="206"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Whatly %1 estas disponebla. Alklaku por malfermi la elŝutan paĝon.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="872"/>
-        <location filename="../mainwindow.cpp" line="878"/>
-        <location filename="../mainwindow_webengine.cpp" line="954"/>
-        <location filename="../mainwindow_webengine.cpp" line="957"/>
+        <location filename="../mainwindow.cpp" line="881"/>
+        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="../mainwindow_webengine.cpp" line="961"/>
+        <location filename="../mainwindow_webengine.cpp" line="964"/>
         <source>| Error</source>
         <translation>| Eraro</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="873"/>
+        <location filename="../mainwindow.cpp" line="882"/>
         <source>Unlock to access Settings.</source>
         <translation>Malŝlosu por atingi la agordojn.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="879"/>
+        <location filename="../mainwindow.cpp" line="888"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>Ne eblas pravalorizi la agordan modulon.
 La retmotoro ne estas pravalorizita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="900"/>
+        <location filename="../mainwindow.cpp" line="909"/>
         <source> | Action required</source>
         <translation> | Ago necesa</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="901"/>
+        <location filename="../mainwindow.cpp" line="910"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>La paĝo devas esti reŝargita por daŭrigi.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1082"/>
-        <location filename="../mainwindow.cpp" line="1489"/>
-        <location filename="../mainwindow_webengine.cpp" line="1586"/>
+        <location filename="../mainwindow.cpp" line="1089"/>
+        <location filename="../mainwindow.cpp" line="1650"/>
+        <location filename="../mainwindow_webengine.cpp" line="1593"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly estas ŝlosita. Malŝlosu ĝin por sendi mesaĝojn.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1093"/>
+        <location filename="../mainwindow.cpp" line="1100"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>La Nuba API bezonas telefonnumeron kiel ricevanton.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1098"/>
+        <location filename="../mainwindow.cpp" line="1105"/>
         <source>The Cloud API is not configured.</source>
         <translation>La Nuba API ne estas agordita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1107"/>
+        <location filename="../mainwindow.cpp" line="1114"/>
         <source>Cloud API send failed: %1</source>
         <translation>Sendo per la Nuba API malsukcesis: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1132"/>
+        <location filename="../mainwindow.cpp" line="1139"/>
         <source>Could not understand the recipient: %1</source>
         <translation>Ne eblis kompreni la ricevanton: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1161"/>
-        <location filename="../mainwindow.cpp" line="1242"/>
+        <location filename="../mainwindow.cpp" line="1168"/>
+        <location filename="../mainwindow.cpp" line="1249"/>
         <source>Could not read the file to send: %1</source>
         <translation>Ne eblis legi la sendotan dosieron: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1170"/>
-        <location filename="../mainwindow.cpp" line="1252"/>
+        <location filename="../mainwindow.cpp" line="1177"/>
+        <location filename="../mainwindow.cpp" line="1259"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>La dosiero estas tro granda por sendi tra la reta internaĵo.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1195"/>
+        <location filename="../mainwindow.cpp" line="1202"/>
         <source>Opening the group and sending…</source>
         <translation>Malfermado de la grupo kaj sendado…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1196"/>
+        <location filename="../mainwindow.cpp" line="1203"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>Malfermado de la babilo kun &quot;%1&quot; kaj sendado…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1227"/>
+        <location filename="../mainwindow.cpp" line="1234"/>
         <source>The local API could not start: %1</source>
         <translation>La loka API ne povis startiĝi: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1465"/>
+        <location filename="../mainwindow.cpp" line="1626"/>
         <source>Open</source>
         <translation>Malfermi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1511"/>
-        <location filename="../mainwindow_tray.cpp" line="22"/>
+        <location filename="../mainwindow.cpp" line="1672"/>
+        <location filename="../mainwindow_tray.cpp" line="26"/>
         <source>New Chat</source>
         <translation>Nova babilo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1512"/>
+        <location filename="../mainwindow.cpp" line="1673"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Enigu validan numeron de Vacapo kun landokodo (ekz. +91XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1542"/>
+        <location filename="../mainwindow.cpp" line="1703"/>
         <source>Rate Application</source>
         <translation>Taksi la aplikaĵon</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="214"/>
-        <location filename="../mainwindow_accounts.cpp" line="1225"/>
+        <location filename="../mainwindow_accounts.cpp" line="268"/>
+        <location filename="../mainwindow_accounts.cpp" line="1382"/>
         <source>Rename…</source>
         <translation>Alinomi…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="215"/>
-        <location filename="../mainwindow_accounts.cpp" line="1226"/>
+        <location filename="../mainwindow_accounts.cpp" line="269"/>
+        <location filename="../mainwindow_accounts.cpp" line="1383"/>
         <source>Open in own window</source>
         <translation>Malfermi en propra fenestro</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="219"/>
-        <location filename="../mainwindow_accounts.cpp" line="1229"/>
+        <location filename="../mainwindow_accounts.cpp" line="273"/>
+        <location filename="../mainwindow_accounts.cpp" line="1386"/>
         <source>Remove account</source>
         <translation>Forigi la konton</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="299"/>
+        <location filename="../mainwindow_accounts.cpp" line="353"/>
         <source>Switch to account: %1</source>
         <translation>Ŝalti al la konto: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="302"/>
-        <location filename="../mainwindow_tray.cpp" line="192"/>
+        <location filename="../mainwindow_accounts.cpp" line="356"/>
+        <location filename="../mainwindow_tray.cpp" line="232"/>
         <source>Add account…</source>
         <translation>Aldoni konton…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="303"/>
+        <location filename="../mainwindow_accounts.cpp" line="357"/>
         <source>Quick message…</source>
         <translation>Rapida mesaĝo…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="308"/>
+        <location filename="../mainwindow_accounts.cpp" line="362"/>
         <source>Insert: %1</source>
         <translation>Enmeti: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="586"/>
+        <location filename="../mainwindow_accounts.cpp" line="651"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 nelegitaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1001"/>
+        <location filename="../mainwindow_accounts.cpp" line="1157"/>
         <source>Add another account</source>
         <translation>Aldoni alian konton</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1028"/>
-        <location filename="../mainwindow_accounts.cpp" line="1033"/>
+        <location filename="../mainwindow_accounts.cpp" line="1186"/>
+        <location filename="../mainwindow_accounts.cpp" line="1191"/>
         <source>Restore</source>
         <translation>Restarigi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1029"/>
         <source>messages</source>
-        <translation>mesaĝoj</translation>
+        <translation type="vanished">mesaĝoj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1029"/>
         <source>message</source>
-        <translation>mesaĝo</translation>
+        <translation type="vanished">mesaĝo</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1074"/>
+        <location filename="../mainwindow_accounts.cpp" line="1232"/>
         <source>Add account</source>
         <translation>Aldoni konton</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1075"/>
+        <location filename="../mainwindow_accounts.cpp" line="1233"/>
         <source>Name for the new account:</source>
         <translation>Nomo por la nova konto:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1076"/>
-        <location filename="../mainwindow_accounts.cpp" line="1923"/>
-        <location filename="../mainwindow_accounts.cpp" line="1928"/>
+        <location filename="../mainwindow_accounts.cpp" line="1234"/>
+        <location filename="../mainwindow_accounts.cpp" line="2109"/>
+        <location filename="../mainwindow_accounts.cpp" line="2114"/>
         <source>Account %1</source>
         <translation>Konto %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1103"/>
+        <location filename="../mainwindow_accounts.cpp" line="1261"/>
         <source>Rename account</source>
         <translation>Alinomi la konton</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1103"/>
+        <location filename="../mainwindow_accounts.cpp" line="1261"/>
         <source>Account name:</source>
         <translation>Nomo de la konto:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1611"/>
+        <location filename="../mainwindow_accounts.cpp" line="1790"/>
         <source>Tip: give an account its own window</source>
         <translation>Konsileto: donu al konto ĝian propran fenestron</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1612"/>
+        <location filename="../mainwindow_accounts.cpp" line="1791"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -795,8 +793,8 @@ You can pull any account out into its own window: right-click its tab and choose
 Vi povas eltiri iun ajn konton en propran fenestron: dekstre alklaku ĝian langeton kaj elektu “Malfermi en propra fenestro”. Fermu tiun fenestron por redoki la konton kiel langeton.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1917"/>
-        <location filename="../mainwindow_accounts.cpp" line="1921"/>
+        <location filename="../mainwindow_accounts.cpp" line="2103"/>
+        <location filename="../mainwindow_accounts.cpp" line="2107"/>
         <source>Account 1</source>
         <translation>Konto 1</translation>
     </message>
@@ -812,346 +810,347 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
 Ĉu malfermi la Agordojn nun?</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="27"/>
-        <location filename="../mainwindow_tray.cpp" line="232"/>
+        <location filename="../mainwindow_tray.cpp" line="31"/>
+        <location filename="../mainwindow_tray.cpp" line="272"/>
         <source>Fullscreen</source>
         <translation>Plenekrane</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="33"/>
+        <location filename="../mainwindow_tray.cpp" line="37"/>
         <source>Mi&amp;nimize to tray</source>
         <translation>Mi&amp;nimumigi al la sistempleto</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="52"/>
+        <location filename="../mainwindow_tray.cpp" line="75"/>
         <source>&amp;Restore</source>
         <translation>&amp;Restarigi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="56"/>
+        <location filename="../mainwindow_tray.cpp" line="82"/>
         <source>Re&amp;load</source>
         <translation>Reŝar&amp;gi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="62"/>
+        <location filename="../mainwindow_tray.cpp" line="88"/>
         <source>Loc&amp;k</source>
         <translation>Ŝ&amp;losi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="67"/>
+        <location filename="../mainwindow_tray.cpp" line="93"/>
         <source>&amp;Mute audio</source>
         <translation>&amp;Silentigi la sonon</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="76"/>
+        <location filename="../mainwindow_tray.cpp" line="102"/>
         <source>Zoom in</source>
         <translation>Enzomi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="82"/>
+        <location filename="../mainwindow_tray.cpp" line="108"/>
         <source>Zoom out</source>
         <translation>Elzomi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="87"/>
-        <location filename="../mainwindow_tray.cpp" line="234"/>
+        <location filename="../mainwindow_tray.cpp" line="113"/>
+        <location filename="../mainwindow_tray.cpp" line="274"/>
         <source>Reset zoom</source>
         <translation>Restarigi la zomon</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="102"/>
+        <location filename="../mainwindow_tray.cpp" line="142"/>
         <source>&amp;Settings</source>
         <translation>&amp;Agordoj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="108"/>
+        <location filename="../mainwindow_tray.cpp" line="148"/>
         <source>Scheduled &amp;messages…</source>
         <translation>Planitaj &amp;mesaĝoj…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="115"/>
-        <location filename="../mainwindow_tray.cpp" line="239"/>
+        <location filename="../mainwindow_tray.cpp" line="155"/>
+        <location filename="../mainwindow_tray.cpp" line="280"/>
         <source>Translate selection</source>
         <translation>Traduki elekton</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="122"/>
-        <location filename="../mainwindow_tray.cpp" line="241"/>
+        <location filename="../mainwindow_tray.cpp" line="162"/>
+        <location filename="../mainwindow_tray.cpp" line="282"/>
         <source>Translate message box</source>
         <translation>Traduki mesaĝkeston</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="131"/>
+        <location filename="../mainwindow_tray.cpp" line="171"/>
         <source>Export chat…</source>
         <translation>Eksporti babilon…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="140"/>
-        <location filename="../mainwindow_tray.cpp" line="243"/>
+        <location filename="../mainwindow_tray.cpp" line="180"/>
+        <location filename="../mainwindow_tray.cpp" line="284"/>
         <source>AI: Summarise chat</source>
         <translation>AI: Resumi babilon</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="147"/>
-        <location filename="../mainwindow_tray.cpp" line="244"/>
+        <location filename="../mainwindow_tray.cpp" line="187"/>
+        <location filename="../mainwindow_tray.cpp" line="285"/>
         <source>AI: Improve message</source>
         <translation>AI: Plibonigi mesaĝon</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="154"/>
-        <location filename="../mainwindow_tray.cpp" line="245"/>
+        <location filename="../mainwindow_tray.cpp" line="194"/>
+        <location filename="../mainwindow_tray.cpp" line="286"/>
         <source>AI: Suggest a reply</source>
         <translation>AI: Sugesti respondon</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="161"/>
+        <location filename="../mainwindow_tray.cpp" line="201"/>
         <source>&amp;Toggle theme</source>
         <translation>&amp;Baskuligi la etoson</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="172"/>
+        <location filename="../mainwindow_tray.cpp" line="212"/>
         <source>Tabbed view</source>
         <translation>Langeta vido</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="179"/>
-        <location filename="../mainwindow_tray.cpp" line="248"/>
+        <location filename="../mainwindow_tray.cpp" line="219"/>
+        <location filename="../mainwindow_tray.cpp" line="289"/>
         <source>Grid view</source>
         <translation>Krada vido</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="197"/>
-        <location filename="../mainwindow_tray.cpp" line="249"/>
+        <location filename="../mainwindow_tray.cpp" line="237"/>
+        <location filename="../mainwindow_tray.cpp" line="290"/>
         <source>Command palette</source>
         <translation>Komandpaletro</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="206"/>
+        <location filename="../mainwindow_tray.cpp" line="246"/>
         <source>&amp;About</source>
         <translation>&amp;Pri</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="215"/>
+        <location filename="../mainwindow_tray.cpp" line="255"/>
         <source>&amp;Quit</source>
         <translation>&amp;Eliri</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="228"/>
+        <location filename="../mainwindow_tray.cpp" line="268"/>
         <source>Reload</source>
         <translation>Reŝargi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="229"/>
+        <location filename="../mainwindow_tray.cpp" line="269"/>
         <source>Minimise to tray</source>
         <translation>Minimumigi al la sistempleto</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="230"/>
+        <location filename="../mainwindow_tray.cpp" line="270"/>
         <source>Lock</source>
         <translation>Ŝlosi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="231"/>
+        <location filename="../mainwindow_tray.cpp" line="271"/>
         <source>Mute audio</source>
         <translation>Silentigi la sonon</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="233"/>
+        <location filename="../mainwindow_tray.cpp" line="273"/>
         <source>New chat / open URL</source>
         <translation>Nova babilo / malfermi URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="242"/>
-        <location filename="../mainwindow_webengine.cpp" line="1415"/>
-        <location filename="../mainwindow_webengine.cpp" line="1419"/>
-        <location filename="../mainwindow_webengine.cpp" line="1432"/>
-        <location filename="../mainwindow_webengine.cpp" line="1483"/>
-        <location filename="../mainwindow_webengine.cpp" line="1518"/>
-        <location filename="../mainwindow_webengine.cpp" line="1548"/>
-        <location filename="../mainwindow_webengine.cpp" line="1552"/>
+        <location filename="../mainwindow_tray.cpp" line="283"/>
+        <location filename="../mainwindow_webengine.cpp" line="1422"/>
+        <location filename="../mainwindow_webengine.cpp" line="1426"/>
+        <location filename="../mainwindow_webengine.cpp" line="1439"/>
+        <location filename="../mainwindow_webengine.cpp" line="1490"/>
+        <location filename="../mainwindow_webengine.cpp" line="1525"/>
+        <location filename="../mainwindow_webengine.cpp" line="1555"/>
+        <location filename="../mainwindow_webengine.cpp" line="1559"/>
         <source>Export chat</source>
         <translation>Eksporti babilon</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="246"/>
+        <location filename="../mainwindow_tray.cpp" line="287"/>
         <source>Settings</source>
         <translation>Agordoj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="247"/>
+        <location filename="../mainwindow_tray.cpp" line="288"/>
         <source>Toggle theme</source>
         <translation>Baskuligi la etoson</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="250"/>
+        <location filename="../mainwindow_tray.cpp" line="291"/>
         <source>Quit</source>
         <translation>Eliri</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="846"/>
+        <location filename="../mainwindow_webengine.cpp" line="853"/>
         <source>Reply</source>
         <translation>Respondi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="847"/>
+        <location filename="../mainwindow_webengine.cpp" line="854"/>
         <source>Reply to %1…</source>
         <translation>Respondi al %1…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="952"/>
+        <location filename="../mainwindow_webengine.cpp" line="959"/>
         <source>Unlock to Reload the App.</source>
         <translation>Malŝlosu por reŝargi la aplikaĵon.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="995"/>
+        <location filename="../mainwindow_webengine.cpp" line="1002"/>
         <source>Waiting for network…</source>
         <translation>Atendado de la reto…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1097"/>
+        <location filename="../mainwindow_webengine.cpp" line="1104"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
         <translation>Ĉi tiu muntaĵo ne povas sendi H.264/MP4-videojn: ĝia retumila motoro estis muntita sen la proprietaj kodekoj. Fotoj kaj WebM/VP9-videoj funkcias; por MP4 uzu distribuan/denaskan pakon muntitan kun la kodekoj. (Alklaku por forigi.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1372"/>
+        <location filename="../mainwindow_webengine.cpp" line="1379"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>Enteksta traduko estas malŝaltita (ŝaltu ĝin en Agordoj → Traduko).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1376"/>
+        <location filename="../mainwindow_webengine.cpp" line="1383"/>
         <source>The message box is empty.</source>
         <translation>La mesaĝkesto estas malplena.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1377"/>
+        <location filename="../mainwindow_webengine.cpp" line="1384"/>
         <source>Select some text to translate first.</source>
         <translation>Unue elektu tekston por traduki.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1415"/>
+        <location filename="../mainwindow_webengine.cpp" line="1422"/>
         <source>No conversation is open.</source>
         <translation>Neniu konversacio estas malfermita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1419"/>
+        <location filename="../mainwindow_webengine.cpp" line="1426"/>
         <source>An export is already running.</source>
         <translation>Eksporto jam funkcias.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1424"/>
+        <location filename="../mainwindow_webengine.cpp" line="1431"/>
         <source>Choose a folder for the exported chat</source>
         <translation>Elektu dosierujon por la eksportita babilo</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1430"/>
+        <location filename="../mainwindow_webengine.cpp" line="1437"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>Kolektante mesaĝojn… trarulumante la konversacion.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1431"/>
+        <location filename="../mainwindow_webengine.cpp" line="1438"/>
         <source>Cancel</source>
         <translation type="unfinished">Nuligi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1478"/>
+        <location filename="../mainwindow_webengine.cpp" line="1485"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>Kolektante mesaĝojn… (%1 ĝis nun)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1484"/>
+        <location filename="../mainwindow_webengine.cpp" line="1491"/>
         <source>Could not read the conversation: %1</source>
         <translation>Ne eblis legi la konversacion: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1507"/>
+        <location filename="../mainwindow_accounts.cpp" line="1187"/>
+        <location filename="../mainwindow_webengine.cpp" line="1514"/>
         <source>chat</source>
         <translation>babilo</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1140"/>
+        <location filename="../mainwindow_accounts.cpp" line="1187"/>
         <source>chats</source>
         <translation>babiloj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1519"/>
+        <location filename="../mainwindow_webengine.cpp" line="1526"/>
         <source>Could not create the export folder.</source>
         <translation>Ne eblis krei la eksportan dosierujon.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1549"/>
+        <location filename="../mainwindow_webengine.cpp" line="1556"/>
         <source>The export could not be fully written.</source>
         <translation>La eksporto ne povis esti plene skribita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1553"/>
+        <location filename="../mainwindow_webengine.cpp" line="1560"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>Konservis %1 mesaĝojn kaj %2 aŭdvidajn dosierojn al %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1642"/>
+        <location filename="../mainwindow_webengine.cpp" line="1649"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>La AI-asistanto estas malŝaltita (ŝaltu ĝin en Agordoj → AI-asistanto).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1647"/>
+        <location filename="../mainwindow_webengine.cpp" line="1654"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>Estas nenio pri kio la asistanto povus labori.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1659"/>
+        <location filename="../mainwindow_webengine.cpp" line="1666"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>Demandante la asistanton… (malmulte da memoro: %1 MB liberaj; loka modelo povus malsukcesi aŭ malrapidigi la aplikaĵon)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1664"/>
+        <location filename="../mainwindow_webengine.cpp" line="1671"/>
         <source>Asking the assistant…</source>
         <translation>Demandante la asistanton…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1685"/>
+        <location filename="../mainwindow_webengine.cpp" line="1692"/>
         <source>AI assistant</source>
         <translation type="unfinished">AI-asistanto</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1744"/>
+        <location filename="../mainwindow_webengine.cpp" line="1751"/>
         <source>Message updated.</source>
         <translation>Mesaĝo ĝisdatigita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1710"/>
-        <location filename="../mainwindow_webengine.cpp" line="1724"/>
-        <location filename="../mainwindow_webengine.cpp" line="1747"/>
+        <location filename="../mainwindow_webengine.cpp" line="1717"/>
+        <location filename="../mainwindow_webengine.cpp" line="1731"/>
+        <location filename="../mainwindow_webengine.cpp" line="1754"/>
         <source>AI result</source>
         <translation>AI-rezulto</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1760"/>
+        <location filename="../mainwindow_webengine.cpp" line="1767"/>
         <source>Chat summary</source>
         <translation>Resumo de la babilo</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1700"/>
+        <location filename="../mainwindow_webengine.cpp" line="1707"/>
         <source>Close</source>
         <translation type="unfinished">Fermi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1316"/>
+        <location filename="../mainwindow.cpp" line="1378"/>
         <source>Restart</source>
         <translation>Restartigo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1317"/>
+        <location filename="../mainwindow.cpp" line="1379"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly ne povis lanĉi novan instancon, do ĝi ne fermis ĉi tiun. Bonvolu eliri kaj remalfermi ĝin.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1362"/>
+        <location filename="../mainwindow.cpp" line="1505"/>
         <source>Expand the chat list</source>
         <translation>Malfaldi la liston de babiloj</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1363"/>
-        <location filename="../mainwindow_tray.cpp" line="237"/>
+        <location filename="../mainwindow.cpp" line="1506"/>
+        <location filename="../mainwindow_tray.cpp" line="277"/>
         <source>Collapse the chat list</source>
         <translation>Faldi la liston de babiloj</translation>
     </message>
@@ -1296,11 +1295,11 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation>Nenio por sekurkopii</translation>
     </message>
     <message>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>Ne eblas krei %1</translation>
     </message>
@@ -1346,368 +1345,368 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation>Rulu denove sen --dry-run por efektive kopii.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="536"/>
+        <location filename="../main.cpp" line="549"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Funkcioriĉa klientprogramo de Vacapo Reto bazita sur Qt WebEngine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="543"/>
+        <location filename="../main.cpp" line="556"/>
         <source>Displays help on commandline options</source>
         <translation>Montras helpon pri la komandliniaj opcioj</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="548"/>
+        <location filename="../main.cpp" line="561"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>Malfermas la agordan dialogon en ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="553"/>
+        <location filename="../main.cpp" line="566"/>
         <source>Locks a running instance of </source>
         <translation>Ŝlosas ruliĝantan ekzempleron de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="559"/>
+        <location filename="../main.cpp" line="572"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>Malfermas la dialogon Pri en ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="564"/>
+        <location filename="../main.cpp" line="577"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>Malfermas la dialogon de planitaj mesaĝoj en ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="571"/>
+        <location filename="../main.cpp" line="584"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>Baskuligas inter malhela kaj hela etoso en ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="578"/>
+        <location filename="../main.cpp" line="591"/>
         <source>Reload the app in a running instance of </source>
         <translation>Reŝargas la aplikaĵon en ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="584"/>
+        <location filename="../main.cpp" line="597"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>Malfermas la inviton por nova babilo en ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="597"/>
+        <location filename="../main.cpp" line="610"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>Ruli kiel apartan konton kun propra seanco kaj propraj agordoj, en propra fenestro</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="614"/>
+        <location filename="../main.cpp" line="627"/>
         <source>Show main window of running instance of </source>
         <translation>Montras la ĉefan fenestron de ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="621"/>
+        <location filename="../main.cpp" line="634"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>Kopias la agordojn kaj la ensalutitan seancon el antaŭa instalo (ekz. la pli malnova muntaĵo &quot;whatsie&quot;) en ĉi tiun, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="628"/>
+        <location filename="../main.cpp" line="641"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>Kun --migrate-from, nur raportas kio estus kopiita</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="646"/>
+        <location filename="../main.cpp" line="659"/>
         <source>Print the current unread message count and exit</source>
         <translation>Presas la nunan nombron de nelegitaj mesaĝoj kaj eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="652"/>
+        <location filename="../main.cpp" line="665"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>Sendas mesaĝon per la ruliĝanta ekzemplero, poste eliras (bezonas --to kaj --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="656"/>
+        <location filename="../main.cpp" line="669"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>Ricevanto por --send: telefonnumero (internacia), grupa identigilo, aŭ nomo de kontakto</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="661"/>
+        <location filename="../main.cpp" line="674"/>
         <source>Message text for --send</source>
         <translation>Teksto de la mesaĝo por --send</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="664"/>
+        <location filename="../main.cpp" line="677"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>Alkroĉas dosieron por --send (ĝia --message, se ekzistas, iĝas la apudskribo)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="669"/>
+        <location filename="../main.cpp" line="682"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Apudskribo por la alkroĉaĵo --file (alinomo de --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="673"/>
+        <location filename="../main.cpp" line="686"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>Kiel --send liveras: &apos;web&apos; (la ruliĝanta seanco de Vacapo Reto) aŭ &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="679"/>
+        <location filename="../main.cpp" line="692"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>Uzas la konservitan ŝablonon kun ĉi tiu nomo kiel la mesaĝon de --send (plenigu ĝiajn {{kampojn}} per --var)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="684"/>
+        <location filename="../main.cpp" line="697"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>Plenigas kampon de ŝablono: ŝlosilo=valoro (ripetebla)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="688"/>
+        <location filename="../main.cpp" line="701"/>
         <source>List the saved message templates and exit</source>
         <translation>Listigas la konservitajn mesaĝŝablonojn kaj eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="691"/>
+        <location filename="../main.cpp" line="704"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>Konservas (aŭ anstataŭigas) mesaĝŝablonon, poste eliras: nomo=korpo</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="695"/>
+        <location filename="../main.cpp" line="708"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Forigas la konservitan mesaĝŝablonon kun ĉi tiu nomo, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="700"/>
+        <location filename="../main.cpp" line="713"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>Ŝaltas aŭtomatan respondon al alvenantaj mesaĝoj, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="703"/>
+        <location filename="../main.cpp" line="716"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>Malŝaltas la aŭtomatan respondon, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="706"/>
+        <location filename="../main.cpp" line="719"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>Listigas la aktivajn regulojn de aŭtomata respondo (kun la stato) kaj eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="709"/>
+        <location filename="../main.cpp" line="722"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Uzas ĉi tiun JSON-dosieron kiel fonton de reguloj de aŭtomata respondo, poste eliras (malplena por forigi)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="715"/>
+        <location filename="../main.cpp" line="728"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>Agordas la identigilon de la telefonnumero de la Nuba API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="719"/>
+        <location filename="../main.cpp" line="732"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>Agordas la alirĵetonon de la Nuba API, poste eliras (konservita en la agordo de la konto)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="724"/>
+        <location filename="../main.cpp" line="737"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>Agordas la version de la Graph-API (ekz. v21.0), poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="728"/>
+        <location filename="../main.cpp" line="741"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>Montras ĉu la Nuba API estas agordita, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="731"/>
+        <location filename="../main.cpp" line="744"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>Por --send --backend cloud: sendas ĉi tiun ŝablonon aprobitan de Meta</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="735"/>
+        <location filename="../main.cpp" line="748"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>Lingvokodo por --cloud-template (ekz. es, en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="739"/>
+        <location filename="../main.cpp" line="752"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Pozicia parametro de la korpo por --cloud-template (ripetebla)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="744"/>
+        <location filename="../main.cpp" line="757"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>Ŝaltas la lokan HTTP-API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="747"/>
+        <location filename="../main.cpp" line="760"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>Malŝaltas la lokan HTTP-API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="750"/>
+        <location filename="../main.cpp" line="763"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>Agordas la pordon de la loka HTTP-API (defaŭlte 8590), poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="754"/>
+        <location filename="../main.cpp" line="767"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>Agordas la Bearer-ĵetonon de la loka HTTP-API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="758"/>
+        <location filename="../main.cpp" line="771"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>Montras la agordon de la loka HTTP-API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="762"/>
+        <location filename="../main.cpp" line="775"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>Ŝaltas la ricevadon de webhook-oj de la Nuba API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="765"/>
+        <location filename="../main.cpp" line="778"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>Malŝaltas la ricevadon de webhook-oj de la Nuba API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="768"/>
+        <location filename="../main.cpp" line="781"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>Agordas la kontrolĵetonon de la webhook de la Nuba API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="772"/>
+        <location filename="../main.cpp" line="785"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>Agordas la sekreton de la Meta-aplikaĵo por kontroli la subskribon de la webhook, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="776"/>
+        <location filename="../main.cpp" line="789"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>Montras la agordon de la webhook de la Nuba API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1166"/>
+        <location filename="../main.cpp" line="1179"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>La aplikaĵa ŝloso ne estas agordita.
 Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1264"/>
+        <location filename="../main.cpp" line="1277"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Restariĝis post starta kolapso per ŝalto al sekura bildigo. Vi povas ŝanĝi tion en Agordoj → Rendimento.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="949"/>
+        <location filename="../mainwindow_webengine.cpp" line="956"/>
         <source>Reloading...</source>
         <translation>Reŝargado...</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="315"/>
-        <location filename="../utils.cpp" line="349"/>
+        <location filename="../utils.cpp" line="357"/>
+        <location filename="../utils.cpp" line="391"/>
         <source>Install mode</source>
         <translation>Instala reĝimo</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="333"/>
+        <location filename="../utils.cpp" line="375"/>
         <source>Version</source>
         <translation>Versio</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="335"/>
+        <location filename="../utils.cpp" line="377"/>
         <source>Source Branch</source>
         <translation>Fontbranĉo</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="337"/>
+        <location filename="../utils.cpp" line="379"/>
         <source>Commit Hash</source>
         <translation>Kommit-haŝo</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="339"/>
+        <location filename="../utils.cpp" line="381"/>
         <source>Build Datetime</source>
         <translation>Dato kaj horo de la muntado</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="341"/>
+        <location filename="../utils.cpp" line="383"/>
         <source>Qt Runtime Version</source>
         <translation>Rultempa versio de Qt</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="343"/>
+        <location filename="../utils.cpp" line="385"/>
         <source>Qt Compiled Version</source>
         <translation>Kompilita versio de Qt</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="345"/>
+        <location filename="../utils.cpp" line="387"/>
         <source>System</source>
         <translation>Sistemo</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="347"/>
+        <location filename="../utils.cpp" line="389"/>
         <source>Architecture</source>
         <translation>Arkitekturo</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="490"/>
+        <location filename="../utils.cpp" line="532"/>
         <source>Exception</source>
         <translation>Escepto</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="493"/>
+        <location filename="../utils.cpp" line="535"/>
         <source> has encountered a problem.</source>
         <translation> renkontis problemon.</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="496"/>
+        <location filename="../utils.cpp" line="538"/>
         <source> may need to Restart. Please report the error to developer.</source>
         <translation> eble bezonas restartiĝi. Bonvolu raporti la eraron al la programisto.</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="418"/>
+        <location filename="../webtweaks.cpp" line="423"/>
         <source>Switch to light theme</source>
         <comment>WebTweaks</comment>
         <translation>Ŝalti al la hela etoso</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="419"/>
+        <location filename="../webtweaks.cpp" line="424"/>
         <source>Switch to dark theme</source>
         <comment>WebTweaks</comment>
         <translation>Ŝalti al la malhela etoso</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="420"/>
+        <location filename="../webtweaks.cpp" line="425"/>
         <source>Show the chats</source>
         <comment>WebTweaks</comment>
         <translation>Montri la babilojn</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="421"/>
+        <location filename="../webtweaks.cpp" line="426"/>
         <source>Blur the chats</source>
         <comment>WebTweaks</comment>
         <translation>Nebuligi la babilojn</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="422"/>
+        <location filename="../webtweaks.cpp" line="427"/>
         <source>Zoom in</source>
         <comment>WebTweaks</comment>
         <translation>Enzomi</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="423"/>
+        <location filename="../webtweaks.cpp" line="428"/>
         <source>Zoom out</source>
         <comment>WebTweaks</comment>
         <translation>Elzomi</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="424"/>
+        <location filename="../webtweaks.cpp" line="429"/>
         <source>Reset zoom</source>
         <comment>WebTweaks</comment>
         <translation>Restarigi la zomon</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="607"/>
+        <location filename="../main.cpp" line="620"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>Interna: atendi la finiĝon de la procezo kun ĉi tiu identigilo antaŭ ol lanĉiĝi; uzata de “Restartigi nun”</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="425"/>
+        <location filename="../webtweaks.cpp" line="430"/>
         <source>Collapse the chat list</source>
         <comment>WebTweaks</comment>
         <translation>Faldi la liston de babiloj</translation>
     </message>
     <message>
-        <location filename="../webtweaks.cpp" line="426"/>
+        <location filename="../webtweaks.cpp" line="431"/>
         <source>Show the chat list</source>
         <comment>WebTweaks</comment>
         <translation>Montri la liston de babiloj</translation>
@@ -2024,87 +2023,87 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
-        <location filename="../settingswidget.ui" line="406"/>
+        <location filename="../settingswidget.ui" line="435"/>
         <source>VIP contacts</source>
         <translation>VIP-kontaktoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="423"/>
+        <location filename="../settingswidget.ui" line="452"/>
         <source>Muted contacts</source>
         <translation>Silentigitaj kontaktoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="413"/>
+        <location filename="../settingswidget.ui" line="442"/>
         <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
         <translation>Perkome disigitaj kontaktaj aŭ grupaj nomoj kiuj ĉiam sciigas, eĉ dum Ne ĝeni (sendistinge pri usklo).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="430"/>
+        <location filename="../settingswidget.ui" line="459"/>
         <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
         <translation>Perkome disigitaj kontaktaj aŭ grupaj nomoj kies sciigoj neniam montriĝas (ilia nelegita insigno plu ĝisdatiĝas).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="416"/>
+        <location filename="../settingswidget.ui" line="445"/>
         <source>e.g. Alice, Work group</source>
         <translation>ekz. Alice, Labora grupo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="433"/>
+        <location filename="../settingswidget.ui" line="462"/>
         <source>e.g. Noisy group</source>
         <translation>ekz. Brua grupo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2026"/>
+        <location filename="../settingswidget.ui" line="2065"/>
         <source>Unload inactive accounts from memory</source>
         <translation>Malŝarĝi neaktivajn kontojn el la memoro</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2023"/>
+        <location filename="../settingswidget.ui" line="2062"/>
         <source>Free memory by unloading accounts you are not viewing. An unloaded account does not receive messages, and reloads to where it was when you switch back to it. Single-account setups are unaffected.</source>
         <translation>Malŝarĝi neaktivajn kontojn el la memoro post X minutoj. Ĉi tio ŝparas spacon, kaj la konto aŭtomate reŝarĝiĝos al sia antaŭa stato kiam vi revenos al la langeto. Unukontaj agordoj ne estas influataj.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2033"/>
+        <location filename="../settingswidget.ui" line="2072"/>
         <source>after</source>
         <translation>post</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2040"/>
+        <location filename="../settingswidget.ui" line="2079"/>
         <source> min</source>
         <translation> min</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2005"/>
+        <location filename="../settingswidget.ui" line="2044"/>
         <source>Font hinting</source>
         <translation>Tiparo-hintado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2012"/>
+        <location filename="../settingswidget.ui" line="2051"/>
         <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
         <translation>Kiel glifaj randoj alĝustiĝas al bilderoj. Aŭtomata sekvas vian sistemon; pli malpeza nivelo povas ripari pezan aŭ neregulan tekston.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1330"/>
+        <location filename="../settingswidget.cpp" line="1436"/>
         <source>Slight</source>
         <translation>Malpeza</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1331"/>
+        <location filename="../settingswidget.cpp" line="1437"/>
         <source>Medium</source>
         <translation>Meza</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1332"/>
+        <location filename="../settingswidget.cpp" line="1438"/>
         <source>Full</source>
         <translation>Plena</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="327"/>
+        <location filename="../settingswidget.ui" line="356"/>
         <source>Play sound</source>
         <translation>Ludi sonon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="324"/>
+        <location filename="../settingswidget.ui" line="353"/>
         <source>Ask the notification service to play a sound for new messages.</source>
         <translation>Peti la sciigan servon ludi sonon por novaj mesaĝoj.</translation>
     </message>
@@ -2114,1505 +2113,1506 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>Formularo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="78"/>
+        <location filename="../settingswidget.ui" line="83"/>
         <source>Settings</source>
         <translation>Agordoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="106"/>
+        <location filename="../settingswidget.ui" line="135"/>
         <source>General settings</source>
         <translation>Ĝeneralaj agordoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="114"/>
+        <location filename="../settingswidget.ui" line="143"/>
         <source>Widget Style</source>
         <translation>Stilo de la fenestraĵoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="153"/>
+        <location filename="../settingswidget.ui" line="182"/>
         <source>Display theme</source>
         <translation>Vidiga etoso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="166"/>
+        <location filename="../settingswidget.ui" line="195"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Based on your system timezone and location.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Laŭ la horzono kaj la loko de via sistemo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="169"/>
-        <location filename="../settingswidget.ui" line="1941"/>
-        <location filename="../settingswidget.ui" line="1985"/>
-        <location filename="../settingswidget.ui" line="2142"/>
-        <location filename="../settingswidget.cpp" line="1328"/>
-        <location filename="../settingswidget.cpp" line="1620"/>
+        <location filename="../settingswidget.ui" line="198"/>
+        <location filename="../settingswidget.ui" line="1980"/>
+        <location filename="../settingswidget.ui" line="2024"/>
+        <location filename="../settingswidget.ui" line="2181"/>
+        <location filename="../settingswidget.cpp" line="1434"/>
+        <location filename="../settingswidget.cpp" line="1726"/>
         <source>Automatic</source>
         <translation>Aŭtomata</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="177"/>
+        <location filename="../settingswidget.ui" line="206"/>
         <source>Dark</source>
         <translation>Malhela</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="186"/>
+        <location filename="../settingswidget.ui" line="215"/>
         <source>Light</source>
         <translation>Hela</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="198"/>
+        <location filename="../settingswidget.ui" line="227"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Match the desktop&apos;s own light/dark preference, and change with it. Overrides the manual theme and the automatic sunrise/sunset switch.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sekvi la helan/malhelan preferon de la labortablo mem, kaj ŝanĝiĝi kun ĝi. Superregas la permanan etoson kaj la aŭtomatan ŝaltilon laŭ sunleviĝo/sunsubiro.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="201"/>
+        <location filename="../settingswidget.ui" line="230"/>
         <source>Follow system light/dark theme</source>
         <translation>Sekvi la helan/malhelan etoson de la sistemo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="238"/>
+        <location filename="../settingswidget.ui" line="267"/>
         <source>Native notification</source>
         <translation>Indiĝena sciigo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="247"/>
+        <location filename="../settingswidget.ui" line="276"/>
         <source>Customized notification</source>
         <translation>Propra sciigo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="265"/>
+        <location filename="../settingswidget.ui" line="294"/>
         <source>  Try</source>
         <translation>  Provi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="276"/>
+        <location filename="../settingswidget.ui" line="305"/>
         <source>Notification type</source>
         <translation>Tipo de sciigo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="283"/>
+        <location filename="../settingswidget.ui" line="312"/>
         <source>Disable Notifications Popup</source>
         <translation>Malŝalti la ŝprucfenestron de sciigoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="290"/>
+        <location filename="../settingswidget.ui" line="319"/>
         <source>Popup timeout</source>
         <translation>Daŭro de la ŝprucfenestro</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="297"/>
-        <location filename="../settingswidget.ui" line="1250"/>
+        <location filename="../settingswidget.ui" line="326"/>
+        <location filename="../settingswidget.ui" line="1289"/>
         <source> Secs</source>
         <translation> sek.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="310"/>
+        <location filename="../settingswidget.ui" line="339"/>
         <source>Notification delivery</source>
         <translation>Livero de sciigoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="317"/>
+        <location filename="../settingswidget.ui" line="346"/>
         <source>How native notifications are sent on Linux. Automatic uses the desktop portal inside a Flatpak sandbox and the system service otherwise.</source>
         <translation>Kiel indiĝenaj sciigoj estas senditaj en Linukso. Aŭtomata uzas la labortablan portalon ene de Flatpak-sablujo, kaj alie la sisteman servon.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="334"/>
+        <location filename="../settingswidget.ui" line="363"/>
         <source>Suppress notification popups during a daily quiet period. Unread badges still update; only the popup is held back.</source>
         <translation>Subpremas la ŝprucfenestrojn de sciigoj dum ĉiutaga silenta periodo. La insignoj de nelegitaj mesaĝoj plu ĝisdatiĝas; nur la ŝprucfenestro estas retenata.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="337"/>
+        <location filename="../settingswidget.ui" line="366"/>
         <source>Do Not Disturb</source>
         <translation>Ne ĝeni</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="346"/>
+        <location filename="../settingswidget.ui" line="375"/>
         <source>From</source>
         <translation>De</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="353"/>
-        <location filename="../settingswidget.ui" line="367"/>
+        <location filename="../settingswidget.ui" line="382"/>
+        <location filename="../settingswidget.ui" line="396"/>
         <source>HH:mm</source>
         <translation>HH:mm</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="360"/>
+        <location filename="../settingswidget.ui" line="389"/>
         <source>to</source>
         <translation>ĝis</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="389"/>
+        <location filename="../settingswidget.ui" line="418"/>
         <source>Highlight keywords</source>
         <translation>Emfazaj ŝlosilvortoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="396"/>
+        <location filename="../settingswidget.ui" line="425"/>
         <source>Comma-separated words that always notify, even during Do Not Disturb (case-insensitive).</source>
         <translation>Vortoj disigitaj per komoj, kiuj ĉiam sciigas, eĉ dum Ne ĝeni (sen distingo inter majuskloj kaj minuskloj).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="399"/>
+        <location filename="../settingswidget.ui" line="428"/>
         <source>e.g. urgent, boss, invoice</source>
         <translation>ekz. urĝa, estro, fakturo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="440"/>
+        <location filename="../settingswidget.ui" line="469"/>
         <source>Add a reply field to desktop notifications so you can answer a message without opening the window. Only works where the notification service supports it (e.g. KDE Plasma); elsewhere notifications behave as before.</source>
         <translation>Aldonas respondkampon al labortablaj sciigoj por respondi mesaĝon sen malfermi la fenestron. Funkcias nur kie la sciigservo subtenas ĝin (ekz. KDE Plasma); aliloke sciigoj kondutas kiel antaŭe.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="443"/>
+        <location filename="../settingswidget.ui" line="472"/>
         <source>Reply directly from notifications (where supported)</source>
         <translation>Respondi rekte el sciigoj (kie subtenata)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="479"/>
+        <location filename="../settingswidget.ui" line="508"/>
         <source>Use Native File Dialog</source>
         <translation>Uzi la indiĝenan dosierdialogon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="486"/>
+        <location filename="../settingswidget.ui" line="515"/>
         <source>Mute Audio from Page</source>
         <translation>Silentigi la sonon de la paĝo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="493"/>
+        <location filename="../settingswidget.ui" line="522"/>
         <source>Disable Auto Playback of Media</source>
         <translation>Malŝalti la aŭtomatan ludadon de aŭdvidaĵoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="500"/>
+        <location filename="../settingswidget.ui" line="529"/>
         <source>Minimize in tray on start</source>
         <translation>Minimumigi al la sistempleto ĉe la starto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="507"/>
+        <location filename="../settingswidget.ui" line="536"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window&apos;s position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kiam vi uzas pli ol unu kontofenestron, memori la pozicion, la grandon kaj la langetojn de ĉiu fenestro kaj restarigi ilin venontfoje. Defaŭlte malŝaltita: la aplikaĵo revenas kiel unu sola fenestro entenanta ĉiujn kontojn.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="510"/>
+        <location filename="../settingswidget.ui" line="539"/>
         <source>Remember multiple window positions on restart</source>
         <translation>Memori la poziciojn de pluraj fenestroj ĉe restarto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="517"/>
+        <location filename="../settingswidget.ui" line="546"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Off by default, so &amp;quot;Minimise to tray&amp;quot; puts the whole app away: with several windows open, leaving the others on screen while the tray reports Whatly as away is the same confusion as one window being treated as the real one. Tick this to have it put away only the window you are in. Follows whatever key &amp;quot;Minimise to tray&amp;quot; is bound to.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Defaŭlte malŝaltita, do &amp;quot;Minimumigi al la sistempleto&amp;quot; kaŝas la tutan aplikaĵon: kiam pluraj fenestroj estas malfermitaj, lasi la aliajn sur la ekrano dum la sistempleto montras Whatly kiel forestantan estas la sama konfuzo kiel trakti unu fenestron kiel la veran. Marku ĉi tion por ke ĝi kaŝu nur la fenestron en kiu vi estas. Ĝi sekvas kiun ajn klavon vi asignis al &amp;quot;Minimumigi al la sistempleto&amp;quot;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="520"/>
+        <location filename="../settingswidget.ui" line="549"/>
         <source>Ctrl+W hides only the last focused window.</source>
         <translation>Ctrl+W kaŝas nur la laste fokusitan fenestron.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="517"/>
+        <location filename="../settingswidget.ui" line="556"/>
         <source>Show/Hide on clicking tray Icon (if supported)</source>
         <translation>Montri/kaŝi per alklako de la pletopiktogramo (se subtenata)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="524"/>
+        <location filename="../settingswidget.ui" line="563"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close the emoji, GIF &amp;amp; sticker panel when you click elsewhere. WhatsApp Web otherwise keeps it open until the button is pressed again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fermi la panelon de emoĝioj, GIF-oj kaj glumarkoj kiam vi alklakas aliloke. Alikaze Vacapo Reto tenas ĝin malfermita ĝis la butono estas repremita.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="527"/>
+        <location filename="../settingswidget.ui" line="566"/>
         <source>Close emoji/sticker panel when clicking outside</source>
         <translation>Fermi la panelon de emoĝioj/glumarkoj ĉe alklako ekstere</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="534"/>
+        <location filename="../settingswidget.ui" line="573"/>
         <source>Interface language (requires restart)</source>
         <translation>Lingvo de la interfaco (postulas restartigon)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="541"/>
+        <location filename="../settingswidget.ui" line="580"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of Whatly&apos;s own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lingvo de la propra interfaco de Whatly. Efektiviĝas post restartigo de la aplikaĵo. La lingvo de la babiloj mem venas de Vacapo Reto kaj ne ŝanĝeblas ĉi tie.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="548"/>
+        <location filename="../settingswidget.ui" line="587"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a light/dark button to WhatsApp&apos;s own sidebar, just above your profile picture.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aldonas helan/malhelan butonon al la propra flanka breto de Vacapo, ĝuste super via profilbildo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="551"/>
+        <location filename="../settingswidget.ui" line="590"/>
         <source>Theme button in WhatsApp&apos;s sidebar</source>
         <translation>Etosa butono en la flanka breto de Vacapo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="558"/>
+        <location filename="../settingswidget.ui" line="597"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that blurs and unblurs your chats in one click, without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aldonas butonon al la propra flanka breto de Vacapo, kiu nebuligas kaj malnebuligas viajn babilojn per unu alklako, sen malfermi la Agordojn.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="561"/>
+        <location filename="../settingswidget.ui" line="600"/>
         <source>Blur button in WhatsApp&apos;s sidebar</source>
         <translation>Nebuliga butono en la flanka breto de Vacapo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="568"/>
+        <location filename="../settingswidget.ui" line="607"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp&apos;s own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aldonas butonojn elzomi / restarigi / enzomi al la propra flanka breto de Vacapo, por skali la paĝon tuj sen malfermi la Agordojn.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="571"/>
+        <location filename="../settingswidget.ui" line="610"/>
         <source>Zoom buttons in WhatsApp&apos;s sidebar</source>
         <translation>Zomaj butonoj en la flanka breto de Vacapo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="602"/>
+        <location filename="../settingswidget.ui" line="641"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Uzi unukoloran pletopiktogramon, kiu kongruas kun la cetero de via panelo, anstataŭ la verdan de Vacapo. La piktogramo ankaŭ paliĝas kiam Vacapo ne estas konektita.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="605"/>
+        <location filename="../settingswidget.ui" line="644"/>
         <source>Monochrome tray icon</source>
         <translation>Unukolora pletopiktogramo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="612"/>
+        <location filename="../settingswidget.ui" line="651"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animacii la rulumadon anstataŭ salti linion post linio.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="615"/>
+        <location filename="../settingswidget.ui" line="654"/>
         <source>Smooth scrolling</source>
         <translation>Glata rulumado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="622"/>
-        <location filename="../settingswidget.cpp" line="1245"/>
+        <location filename="../settingswidget.ui" line="661"/>
+        <location filename="../settingswidget.cpp" line="1351"/>
         <source>Custom CSS</source>
         <translation>Propra CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="631"/>
+        <location filename="../settingswidget.ui" line="670"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ŝargi .css-dosieron por restilizi Vacapon Reton — la komunumaj stilfolioj (catppuccin kaj similaj) funkcias ĉi tie. Aplikata super la babila etoso.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="634"/>
+        <location filename="../settingswidget.ui" line="673"/>
         <source>Choose file…</source>
         <translation>Elekti dosieron…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="641"/>
-        <location filename="../settingswidget.ui" line="781"/>
+        <location filename="../settingswidget.ui" line="680"/>
+        <location filename="../settingswidget.ui" line="820"/>
         <source>Clear</source>
         <translation>Forigi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="650"/>
+        <location filename="../settingswidget.ui" line="689"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Forigi la pletopiktogramon tute. Sen pleto el kiu restarigi, fermi la fenestron tiam ĉesigas la aplikaĵon anstataŭ kaŝi ĝin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="653"/>
+        <location filename="../settingswidget.ui" line="692"/>
         <source>Hide tray icon</source>
         <translation>Kaŝi la pletopiktogramon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="660"/>
+        <location filename="../settingswidget.ui" line="699"/>
         <source>Font family</source>
         <translation>Tiparo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="667"/>
+        <location filename="../settingswidget.ui" line="706"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Render WhatsApp Web&apos;s text in a font installed on your system. Emoji, icons and monospaced message formatting are left untouched.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bildigi la tekston de Vacapo Reto per tiparo instalita en via sistemo. Emoĝioj, piktogramoj kaj egallarĝa formatado de mesaĝoj restas netuŝitaj.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="674"/>
+        <location filename="../settingswidget.ui" line="713"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kaŝi la sekcion &quot;Silentigitaj ĝisdatigoj&quot; en la panelo Stato/Ĝisdatigoj, por ke statoj de kontaktoj, kiujn vi silentigis, tute ne aperu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="677"/>
+        <location filename="../settingswidget.ui" line="716"/>
         <source>Hide muted status updates</source>
         <translation>Kaŝi la silentigitajn statajn ĝisdatigojn</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="684"/>
+        <location filename="../settingswidget.ui" line="723"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Substrekas misliterumitajn vortojn dum vi tajpas, kaj proponas korektojn en la dekstroklaka menuo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="687"/>
-        <location filename="../settingswidget.cpp" line="2039"/>
+        <location filename="../settingswidget.ui" line="726"/>
+        <location filename="../settingswidget.cpp" line="2145"/>
         <source>Check spelling as I type</source>
         <translation>Kontroli la literumadon dum mi tajpas</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="694"/>
+        <location filename="../settingswidget.ui" line="733"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;La lingvo laŭ kiu kontroli.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="701"/>
+        <location filename="../settingswidget.ui" line="740"/>
         <source>Interface font size</source>
         <translation>Tipargrando de la interfaco</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="708"/>
+        <location filename="../settingswidget.ui" line="747"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Punktogrando de la propra interfaco de la aplikaĵo — menuoj, agordoj kaj dialogoj. Tio ne influas la tekston de Vacapo Reto; uzu la zomon por tio.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="711"/>
+        <location filename="../settingswidget.ui" line="750"/>
         <source> pt</source>
         <translation> pt</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="724"/>
+        <location filename="../settingswidget.ui" line="763"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Se la paĝa procezo de Vacapo Reto kolapsas, reŝargi ĝin aŭtomate anstataŭ unue demandi.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="727"/>
+        <location filename="../settingswidget.ui" line="766"/>
         <source>Reload automatically after a crash</source>
         <translation>Reŝargi aŭtomate post kolapso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="734"/>
+        <location filename="../settingswidget.ui" line="773"/>
         <source>Privacy blur</source>
         <translation>Privateca nebulo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="741"/>
+        <location filename="../settingswidget.ui" line="780"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nebuligas viajn babilojn ĝis vi ŝvebas super ili, por ke iu ekrigardanta la ekranon ne povu legi ilin. Ŝvebi super vico malkaŝas nur tiun vicon.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="748"/>
+        <location filename="../settingswidget.ui" line="787"/>
         <source>Chat colour Tint</source>
         <translation>Kolornuanco de la babilo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="755"/>
+        <location filename="../settingswidget.ui" line="794"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rekoloras Vacapon Reton mem. Fotoj, avataroj kaj glumarkoj konservas siajn proprajn kolorojn. Funkcias super la hela aŭ malhela etoso, kiu ajn estas aktiva.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="762"/>
-        <location filename="../settingswidget.cpp" line="1221"/>
+        <location filename="../settingswidget.ui" line="801"/>
+        <location filename="../settingswidget.cpp" line="1327"/>
         <source>Chat wallpaper</source>
         <translation>Tapeto de la babilo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="771"/>
+        <location filename="../settingswidget.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Uzi unu el viaj propraj bildoj kiel fonon de la babila panelo, kiel Vacapo faras en Androido. La bildo estas konservita ene de Whatly, ne alŝutita ien ajn, kaj videbla nur al vi.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="774"/>
+        <location filename="../settingswidget.ui" line="813"/>
         <source>Choose image…</source>
         <translation>Elekti bildon…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="790"/>
+        <location filename="../settingswidget.ui" line="829"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Novaj ensalutoj aperas kiel &amp;quot;Whatly for Linux&amp;quot; (aŭ la kongrua platformo) en la listo de ligitaj aparatoj de via telefono anstataŭ &amp;quot;Google Chrome (Linux)&amp;quot;. La nomo estas konservita en la telefono kiam aparato estas ligata, do ŝanĝi tion influas nur estontajn ligojn — elsalutu kaj religu por alinomi ekzistantan seancon.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="793"/>
+        <location filename="../settingswidget.ui" line="832"/>
         <source>Identify as Whatly in linked devices</source>
         <translation>Identiĝi kiel Whatly en la ligitaj aparatoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="807"/>
+        <location filename="../settingswidget.ui" line="846"/>
         <source>User Agent</source>
         <translation>Uzantagento</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="810"/>
+        <location filename="../settingswidget.ui" line="849"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fakula — ne tuŝu tion krom se vi scias precize kion vi faras. Nenorma uzantagento povas igi Vacapon rifuzi ŝargiĝi, kaj nekutimaj valoroj riskas, ke via konto ĉe Vacapo estu markita aŭ nigralistigita.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="820"/>
+        <location filename="../settingswidget.ui" line="859"/>
         <source>  Set</source>
         <translation>  Agordi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="831"/>
+        <location filename="../settingswidget.ui" line="870"/>
         <source>Reset to default</source>
         <translation>Restarigi al la defaŭlto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="854"/>
+        <location filename="../settingswidget.ui" line="893"/>
         <source>Zoom factor when normal</source>
         <translation>Zomfaktoro en normala stato</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="882"/>
-        <location filename="../settingswidget.ui" line="1017"/>
+        <location filename="../settingswidget.ui" line="921"/>
+        <location filename="../settingswidget.ui" line="1056"/>
         <source>Zoom Out</source>
         <translation>Elzomi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="921"/>
-        <location filename="../settingswidget.ui" line="1056"/>
+        <location filename="../settingswidget.ui" line="960"/>
+        <location filename="../settingswidget.ui" line="1095"/>
         <source>Zoom In</source>
         <translation>Enzomi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="966"/>
-        <location filename="../settingswidget.ui" line="1101"/>
+        <location filename="../settingswidget.ui" line="1005"/>
+        <location filename="../settingswidget.ui" line="1140"/>
         <source>reset</source>
         <translation>restarigi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="989"/>
+        <location filename="../settingswidget.ui" line="1028"/>
         <source>Zoom factor when maximized/fullscreen</source>
         <translation>Zomfaktoro en maksimumigita/plenekrana stato</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1124"/>
+        <location filename="../settingswidget.ui" line="1163"/>
         <source>Minimize to tray</source>
         <translation>Minimumigi al la sistempleto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1133"/>
+        <location filename="../settingswidget.ui" line="1172"/>
         <source>Quit</source>
         <translation>Eliri</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1145"/>
+        <location filename="../settingswidget.ui" line="1184"/>
         <source>Global shortcuts</source>
         <translation>Ĉieaj fulmoklavoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1152"/>
+        <location filename="../settingswidget.ui" line="1191"/>
         <source>Close button action</source>
         <translation>Ago de la ferma butono</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1159"/>
+        <location filename="../settingswidget.ui" line="1198"/>
         <source>  Show shortcuts</source>
         <translation>  Montri la fulmoklavojn</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1170"/>
+        <location filename="../settingswidget.ui" line="1209"/>
         <source>Permissions</source>
         <translation>Permesoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1177"/>
+        <location filename="../settingswidget.ui" line="1216"/>
         <source>  Show permissions</source>
         <translation>  Montri la permesojn</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1192"/>
+        <location filename="../settingswidget.ui" line="1231"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ŝalti la ŝlosekranon.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1195"/>
+        <location filename="../settingswidget.ui" line="1234"/>
         <source>Enable App lock on start</source>
         <translation>Ŝalti la aplikaĵan ŝloson ĉe la starto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1202"/>
+        <location filename="../settingswidget.ui" line="1241"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kiam la fenestro kaŝiĝas al la sistempleto, ŝlosi ĝin malantaŭ la paskodo. Postulas, ke pasvorto estu agordita.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1205"/>
+        <location filename="../settingswidget.ui" line="1244"/>
         <source>Lock when hidden to tray</source>
         <translation>Ŝlosi kiam kaŝita al la pleto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1212"/>
+        <location filename="../settingswidget.ui" line="1251"/>
         <source>Also lock Whatly when the desktop session locks. Requires a password to be set. (Linux)</source>
         <translation>Ankaŭ ŝlosi Whatly kiam la labortabla seanco ŝlosiĝas. Postulas, ke pasvorto estu agordita. (Linukso)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1215"/>
+        <location filename="../settingswidget.ui" line="1254"/>
         <source>Lock when the screen locks</source>
         <translation>Ŝlosi kiam la ekrano ŝlosiĝas</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1222"/>
+        <location filename="../settingswidget.ui" line="1261"/>
         <source>Current Password</source>
         <translation>Nuna pasvorto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1229"/>
-        <location filename="../settingswidget.ui" line="1263"/>
+        <location filename="../settingswidget.ui" line="1268"/>
+        <location filename="../settingswidget.ui" line="1302"/>
         <source>Change password</source>
         <translation>Ŝanĝi la pasvorton</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1232"/>
-        <location filename="../settingswidget.ui" line="1341"/>
+        <location filename="../settingswidget.ui" line="1271"/>
+        <location filename="../settingswidget.ui" line="1380"/>
         <source>Change</source>
         <translation>Ŝanĝi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1243"/>
+        <location filename="../settingswidget.ui" line="1282"/>
         <source>Enable auto locking after</source>
         <translation>Ŝalti aŭtomatan ŝlosadon post</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1266"/>
+        <location filename="../settingswidget.ui" line="1305"/>
         <source>Reset</source>
         <translation>Restarigi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1298"/>
+        <location filename="../settingswidget.ui" line="1337"/>
         <source>View password</source>
         <translation>Montri la pasvorton</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1325"/>
+        <location filename="../settingswidget.ui" line="1364"/>
         <source>Default Download location</source>
         <translation>Defaŭlta elŝuta loko</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1338"/>
+        <location filename="../settingswidget.ui" line="1377"/>
         <source>Change Download Location</source>
         <translation>Ŝanĝi la elŝutan lokon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1357"/>
+        <location filename="../settingswidget.ui" line="1396"/>
         <source>Storage </source>
         <translation>Konservejo </translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1377"/>
+        <location filename="../settingswidget.ui" line="1416"/>
         <source>Property</source>
         <translation>Atributo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1384"/>
+        <location filename="../settingswidget.ui" line="1423"/>
         <source>  Clear (requires restart)</source>
         <translation>  Forigi (postulas restartigon)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1395"/>
+        <location filename="../settingswidget.ui" line="1434"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Daŭraj datumoj inkluzivas daŭrajn kuketojn, lokan konservejon de HTML5, kaj vizititajn ligilojn.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1398"/>
+        <location filename="../settingswidget.ui" line="1437"/>
         <source>Persistent data</source>
         <translation>Daŭraj datumoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1405"/>
-        <location filename="../settingswidget.ui" line="1425"/>
+        <location filename="../settingswidget.ui" line="1444"/>
+        <location filename="../settingswidget.ui" line="1464"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1415"/>
+        <location filename="../settingswidget.ui" line="1454"/>
         <source>The HTTP/media cache. Clearing it is safe — it is re-downloaded as needed.</source>
         <translation>La kaŝmemoro de HTTP kaj aŭdvidaĵoj. Forigi ĝin estas sendanĝere — ĝi estas reelŝutata laŭbezone.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1418"/>
+        <location filename="../settingswidget.ui" line="1457"/>
         <source>Cache</source>
         <translation>Kaŝmemoro</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1435"/>
+        <location filename="../settingswidget.ui" line="1474"/>
         <source>  Clear cache</source>
         <translation>  Malplenigi la kaŝmemoron</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1458"/>
+        <location filename="../settingswidget.ui" line="1497"/>
         <source>Size</source>
         <translation>Grando</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1480"/>
+        <location filename="../settingswidget.ui" line="1519"/>
         <source>Action</source>
         <translation>Ago</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1494"/>
+        <location filename="../settingswidget.ui" line="1533"/>
         <source>Backup</source>
         <translation>Sekurkopio</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1501"/>
+        <location filename="../settingswidget.ui" line="1540"/>
         <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
         <translation>Konservi ĉi tiun konton (agordojn, seancon kaj aldonaĵojn) en .tar.gz-arkivon. La arkivo enhavas vian ensalutitan seancon — tenu ĝin privata.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1504"/>
+        <location filename="../settingswidget.ui" line="1543"/>
         <source>Export profile…</source>
         <translation>Eksporti la profilon…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1511"/>
+        <location filename="../settingswidget.ui" line="1550"/>
         <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
         <translation>Restarigi konton el .tar.gz-arkivo. Tio anstataŭigas la nunajn datumojn kaj postulas restartigon.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1514"/>
+        <location filename="../settingswidget.ui" line="1553"/>
         <source>Import profile…</source>
         <translation>Importi profilon…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2132"/>
+        <location filename="../settingswidget.ui" line="2171"/>
         <source>Interface scale (requires restart)</source>
         <translation>Skalo de la interfaco (postulas restartigon)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2272"/>
+        <location filename="../settingswidget.ui" line="2311"/>
         <source>Custom JavaScript addons (requires restart)</source>
         <translation>Propraj JavaScript-aldonaĵoj (postulas restartigon)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2392"/>
+        <location filename="../settingswidget.ui" line="2431"/>
         <source>Keyboard shortcuts (requires restart)</source>
         <translation>Fulmoklavoj (postulas restartigon)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1545"/>
+        <location filename="../settingswidget.ui" line="1584"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
         <translation>Fajnagordi la bildigan motoron. La defaŭltoj estas sendanĝeraj en la plimulto de la sistemoj; se la fenestro estas malplena aŭ la aplikaĵo kolapsas ĉe la starto, aŭ se ĝi saltetas, provu ŝanĝi ĉi tiujn. La ŝanĝoj efektiviĝas post restartigo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1555"/>
+        <location filename="../settingswidget.ui" line="1594"/>
         <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
         <translation>Bildigi tute per la ĉefprocesoro (--disable-gpu). Riparas malplenajn fenestrojn kaj startajn kolapsojn ĉe iuj GPU-aj/pelilaj agordoj. Defaŭlta en Linukso.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1558"/>
+        <location filename="../settingswidget.ui" line="1597"/>
         <source>Disable GPU acceleration</source>
         <translation>Malŝalti la GPU-akceladon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1565"/>
+        <location filename="../settingswidget.ui" line="1604"/>
         <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
         <translation>Kunmeti la paĝon per la ĉefprocesoro (--disable-gpu-compositing). Evitas flagradon pro malfreŝaj kadroj ĉe iuj peliloj.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1568"/>
+        <location filename="../settingswidget.ui" line="1607"/>
         <source>Disable GPU compositing</source>
         <translation>Malŝalti la GPU-kunmetadon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1575"/>
+        <location filename="../settingswidget.ui" line="1614"/>
         <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
         <translation>Malŝalti GPU-VSync (--disable-gpu-vsync). Povas redukti la enigan malfruon je la kosto de bildoŝiriĝo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1578"/>
+        <location filename="../settingswidget.ui" line="1617"/>
         <source>Disable GPU VSync</source>
         <translation>Malŝalti GPU-VSync</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1585"/>
+        <location filename="../settingswidget.ui" line="1624"/>
         <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
         <translation>Ruli la GPU-procezon ene de la ĉefa procezo (--in-process-gpu). Provizora solvo por iuj sablujaj agordoj.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1588"/>
+        <location filename="../settingswidget.ui" line="1627"/>
         <source>Run GPU in-process</source>
         <translation>Ruli la GPU-on ene de la procezo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1595"/>
+        <location filename="../settingswidget.ui" line="1634"/>
         <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
         <translation>Devigi la akceladon eĉ kiam la pelilo estas nigralistigita (--ignore-gpu-blocklist). Provu tion por reŝalti la GPU-on.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1598"/>
+        <location filename="../settingswidget.ui" line="1637"/>
         <source>Ignore GPU blocklist</source>
         <translation>Ignori la nigran liston de GPU-oj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1605"/>
+        <location filename="../settingswidget.ui" line="1644"/>
         <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
         <translation>Ruli ĉion en unu sola procezo (--single-process). Uzas malpli da memoro sed estas malpli stabila.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1608"/>
+        <location filename="../settingswidget.ui" line="1647"/>
         <source>Single-process mode (lower memory)</source>
         <translation>Unuproceza reĝimo (malpli da memoro)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1615"/>
+        <location filename="../settingswidget.ui" line="1654"/>
         <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
         <translation>Kunhavigi unu bildigan procezon por ĉiu retejo (--process-per-site). Reduktas la memoruzon.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1618"/>
+        <location filename="../settingswidget.ui" line="1657"/>
         <source>One process per site (lower memory)</source>
         <translation>Unu procezo por ĉiu retejo (malpli da memoro)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1625"/>
+        <location filename="../settingswidget.ui" line="1664"/>
         <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
         <translation>Peti al la JavaScript-motoro uzi malpli da memoro je malgranda kosto en rapideco (V8 --optimize-for-size). Rekomendata por aplikaĵo, kiu restas en la pleto. Ignorata kiam JavaScript-memorlimo estas agordita sube.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1628"/>
+        <location filename="../settingswidget.ui" line="1667"/>
         <source>Optimize memory over speed (lower memory)</source>
         <translation>Optimumigi memoron anstataŭ rapidecon (malpli da memoro)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1635"/>
+        <location filename="../settingswidget.ui" line="1674"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>Kaŝi la nomojn de kontaktoj kaj la antaŭrigardojn de mesaĝoj en la listo de babiloj (ŝvebu por malkaŝi unu). Utila kiam vi kunhavigas vian ekranon. La malfermita konversacio restas netuŝita.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1638"/>
+        <location filename="../settingswidget.ui" line="1677"/>
         <source>Focus mode (hide chat-list previews)</source>
         <translation>Fokusa reĝimo (kaŝi la antaŭrigardojn en la listo de babiloj)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1645"/>
+        <location filename="../settingswidget.ui" line="1684"/>
         <source>Default photos and videos to HD quality in the media editor. Depends on WhatsApp Web&apos;s layout; if a WhatsApp update breaks it, turn it off.</source>
         <translation>Defaŭlte uzi HD-kvaliton por fotoj kaj filmetoj en la aŭdvidaĵa redaktilo. Dependas de la aranĝo de Vacapo Reto; se ĝisdatigo de Vacapo rompas ĝin, malŝaltu ĝin.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1648"/>
+        <location filename="../settingswidget.ui" line="1687"/>
         <source>Send photos and videos in HD by default</source>
         <translation>Sendi fotojn kaj filmetojn en HD defaŭlte</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1657"/>
+        <location filename="../settingswidget.ui" line="1696"/>
         <source>Hold a message for a few seconds after you press Enter, showing an &quot;Undo&quot; button before it is actually sent. Press Enter again to send at once.</source>
         <translation>Retenas mesaĝon dum kelkaj sekundoj post premo de Enter, montrante butonon &quot;Malfari&quot; antaŭ ol ĝi vere sendiĝas. Premu Enter denove por sendi tuj.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1660"/>
+        <location filename="../settingswidget.ui" line="1699"/>
         <source>Undo send (hold Enter-sent messages briefly)</source>
         <translation>Malfari sendon (mallonge reteni mesaĝojn senditajn per Enter)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1667"/>
+        <location filename="../settingswidget.ui" line="1706"/>
         <source>How long to hold a message before it is sent.</source>
         <translation>Kiom longe reteni mesaĝon antaŭ ol sendi ĝin.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1670"/>
+        <location filename="../settingswidget.ui" line="1709"/>
         <source> s</source>
         <translation> s</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1685"/>
+        <location filename="../settingswidget.ui" line="1724"/>
         <source>Inline translation</source>
         <translation>Enteksta traduko</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1691"/>
+        <location filename="../settingswidget.ui" line="1730"/>
         <source>Translate selected text or your message box through a LibreTranslate-compatible service. The request is made by the app, so the endpoint and key never reach WhatsApp Web. Bind keys to &quot;Translate selection&quot; / &quot;Translate message box&quot; in Shortcuts, or use the command palette.</source>
         <translation>Tradukas la elektitan tekston aŭ vian mesaĝkeston per servo kongrua kun LibreTranslate. La peton faras la aplikaĵo, do la finpunkto kaj ŝlosilo neniam atingas WhatsApp Web. Agordu klavojn al &quot;Traduki elekton&quot; / &quot;Traduki mesaĝkeston&quot; en Fulmoklavoj, aŭ uzu la komandpaletron.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1694"/>
+        <location filename="../settingswidget.ui" line="1733"/>
         <source>Enable inline translation</source>
         <translation>Ŝalti entekstan tradukon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1701"/>
-        <location filename="../settingswidget.ui" line="1771"/>
+        <location filename="../settingswidget.ui" line="1740"/>
+        <location filename="../settingswidget.ui" line="1810"/>
         <source>Endpoint</source>
         <translation>Finpunkto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1708"/>
+        <location filename="../settingswidget.ui" line="1747"/>
         <source>A LibreTranslate-compatible &quot;/translate&quot; URL, e.g. http://localhost:5000/translate for a self-hosted instance.</source>
         <translation>&quot;/translate&quot; URL kongrua kun LibreTranslate, ekz. http://localhost:5000/translate por memgastigita instanco.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1711"/>
+        <location filename="../settingswidget.ui" line="1750"/>
         <source>https://your-libretranslate/translate</source>
         <translation>https://your-libretranslate/translate</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1718"/>
-        <location filename="../settingswidget.ui" line="1805"/>
+        <location filename="../settingswidget.ui" line="1757"/>
+        <location filename="../settingswidget.ui" line="1844"/>
         <source>API key (optional)</source>
         <translation>API-ŝlosilo (nedeviga)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1725"/>
+        <location filename="../settingswidget.ui" line="1764"/>
         <source>Only needed by endpoints that require one. Stored locally.</source>
         <translation>Bezonata nur de finpunktoj kiuj postulas ĝin. Konservata loke.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1735"/>
+        <location filename="../settingswidget.ui" line="1774"/>
         <source>Target language</source>
         <translation>Cellingvo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1742"/>
+        <location filename="../settingswidget.ui" line="1781"/>
         <source>Two-letter code to translate into (e.g. en, es, fr). Leave empty to use the app&apos;s language. The source language is detected automatically.</source>
         <translation>Dulitera kodo por traduki al (ekz. en, es, fr). Lasu malplena por uzi la lingvon de la aplikaĵo. La fontlingvo estas aŭtomate detektata.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1745"/>
+        <location filename="../settingswidget.ui" line="1784"/>
         <source>app language</source>
         <translation>lingvo de la aplikaĵo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1755"/>
+        <location filename="../settingswidget.ui" line="1794"/>
         <source>AI assistant</source>
         <translation>AI-asistanto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1761"/>
+        <location filename="../settingswidget.ui" line="1800"/>
         <source>Summarise a chat, improve your draft or suggest a reply through an OpenAI-compatible service. The chat text is sent to that service, so use one you trust (a local runner keeps it on your machine). The request is made by the app, so the endpoint and key never reach WhatsApp Web. Actions live in the command palette and Shortcuts.</source>
         <translation>Resumas babilon, plibonigas vian malneton aŭ sugestas respondon per servo kongrua kun OpenAI. La babilteksto estas sendata al tiu servo, do uzu fidindan (loka rulilo tenas ĝin en via komputilo). La peton faras la aplikaĵo, do la finpunkto kaj ŝlosilo neniam atingas WhatsApp Web. La agoj troviĝas en la komandpaletro kaj en Fulmoklavoj.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1764"/>
+        <location filename="../settingswidget.ui" line="1803"/>
         <source>Enable AI assistant</source>
         <translation>Ŝalti AI-asistanton</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1778"/>
+        <location filename="../settingswidget.ui" line="1817"/>
         <source>An OpenAI-compatible /chat/completions URL, e.g. https://api.openai.com/v1/chat/completions or http://localhost:11434/v1/chat/completions for a local Ollama.</source>
         <translation>OpenAI-kongrua /chat/completions URL, ekz. https://api.openai.com/v1/chat/completions aŭ http://localhost:11434/v1/chat/completions por loka Ollama.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1781"/>
+        <location filename="../settingswidget.ui" line="1820"/>
         <source>https://api.openai.com/v1/chat/completions</source>
         <translation>https://api.openai.com/v1/chat/completions</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1788"/>
+        <location filename="../settingswidget.ui" line="1827"/>
         <source>Model</source>
         <translation>Modelo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1795"/>
+        <location filename="../settingswidget.ui" line="1834"/>
         <source>The model name the endpoint expects, e.g. gpt-4o-mini or llama3.</source>
         <translation>La modelnomo kiun la finpunkto atendas, ekz. gpt-4o-mini aŭ llama3.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1798"/>
+        <location filename="../settingswidget.ui" line="1837"/>
         <source>e.g. gpt-4o-mini</source>
         <translation>ekz. gpt-4o-mini</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1812"/>
+        <location filename="../settingswidget.ui" line="1851"/>
         <source>Sent as a Bearer token. Not needed by most local runners. Stored locally.</source>
         <translation>Sendata kiel Bearer-ĵetono. Ne bezonata de plej multaj lokaj ruliloj. Konservata loke.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1829"/>
+        <location filename="../settingswidget.ui" line="1868"/>
         <source>Local models (Ollama)</source>
         <translation>Lokaj modeloj (Ollama)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1838"/>
+        <location filename="../settingswidget.ui" line="1877"/>
         <source>Check for a local Ollama and list its installed models.</source>
         <translation>Serĉas lokan Ollama kaj listigas ĝiajn instalitajn modelojn.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1841"/>
+        <location filename="../settingswidget.ui" line="1880"/>
         <source>Detect Ollama</source>
         <translation>Detekti Ollama</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1857"/>
+        <location filename="../settingswidget.ui" line="1896"/>
         <source>Installed model</source>
         <translation>Instalita modelo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1864"/>
+        <location filename="../settingswidget.ui" line="1903"/>
         <source>Pick one of the models already installed in Ollama; it becomes the model above.</source>
         <translation>Elektu unu el la modeloj jam instalitaj en Ollama; ĝi iĝas la supra modelo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1871"/>
+        <location filename="../settingswidget.ui" line="1910"/>
         <source>Download a light model</source>
         <translation>Elŝuti malpezan modelon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1880"/>
+        <location filename="../settingswidget.ui" line="1919"/>
         <source>Light, fast models that run well on modest hardware.</source>
         <translation>Malpezaj, rapidaj modeloj kiuj bone funkcias sur modesta aparataro.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1887"/>
+        <location filename="../settingswidget.ui" line="1926"/>
         <source>Download</source>
         <translation>Elŝuti</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1919"/>
+        <location filename="../settingswidget.ui" line="1958"/>
         <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
         <translation>Malebligi al WebRTC malkaŝi vian lokan IP-adreson tra konektoj sen prokurilo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1922"/>
+        <location filename="../settingswidget.ui" line="1961"/>
         <source>Prevent WebRTC IP leak</source>
         <translation>Malhelpi la IP-liKon de WebRTC</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1931"/>
+        <location filename="../settingswidget.ui" line="1970"/>
         <source>JavaScript memory limit</source>
         <translation>Memorlimo de JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1938"/>
+        <location filename="../settingswidget.ui" line="1977"/>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
         <translation>Limigi la JavaScript-amason (V8 --max-old-space-size). 0 = aŭtomate. Malaltigu ĝin se la aplikaĵo uzas tro da RAM.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1944"/>
-        <location filename="../settingswidget.ui" line="1988"/>
+        <location filename="../settingswidget.ui" line="1983"/>
+        <location filename="../settingswidget.ui" line="2027"/>
         <source> MB</source>
         <translation> MB</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1961"/>
+        <location filename="../settingswidget.ui" line="2000"/>
         <source>HTTP cache</source>
         <translation>HTTP-kaŝmemoro</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1968"/>
+        <location filename="../settingswidget.ui" line="2007"/>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
         <translation>Kie teni la HTTP-kaŝmemoron. Memoro malpleniĝas ĉe la eliro; Neniu malŝaltas la kaŝmemoradon.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1975"/>
+        <location filename="../settingswidget.ui" line="2014"/>
         <source>Max size</source>
         <translation>Maksimuma grando</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1982"/>
+        <location filename="../settingswidget.ui" line="2021"/>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>Maksimuma grando de la kaŝmemoro sur la disko. 0 = aŭtomate.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2058"/>
+        <location filename="../settingswidget.ui" line="2097"/>
         <source>Network &amp; Startup</source>
         <translation>Reto kaj starto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2064"/>
+        <location filename="../settingswidget.ui" line="2103"/>
         <source>Launch Whatly automatically when you log in to your desktop session.</source>
         <translation>Lanĉi Whatly aŭtomate kiam vi ensalutas en vian labortablan seancon.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2067"/>
+        <location filename="../settingswidget.ui" line="2106"/>
         <source>Start Whatly when I log in</source>
         <translation>Startigi Whatly kiam mi ensalutas</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2077"/>
+        <location filename="../settingswidget.ui" line="2116"/>
         <source>Use a custom window frame (requires restart)</source>
         <translation>Uzi propran fenestran kadron (postulas restartigon)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2120"/>
+        <location filename="../settingswidget.ui" line="2159"/>
         <source>Check GitHub once a day for a newer release and let you know. Whatly never downloads or installs anything on its own.</source>
         <translation>Kontroli GitHub unufoje tage pri pli nova eldono kaj sciigi vin. Whatly neniam elŝutas aŭ instalas ion ajn per si mem.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2123"/>
+        <location filename="../settingswidget.ui" line="2162"/>
         <source>Check for updates automatically</source>
         <translation>Kontroli ĝisdatigojn aŭtomate</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2139"/>
+        <location filename="../settingswidget.ui" line="2178"/>
         <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
         <translation>Skali la tutan fenestron kaj la paĝon (QT_SCALE_FACTOR). Aŭtomata sekvas la labortablon. Media variablo QT_SCALE_FACTOR, se agordita, superregas tion. Efektiviĝas post restartigo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2175"/>
+        <location filename="../settingswidget.ui" line="2214"/>
         <source>Proxy</source>
         <translation>Prokurilo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2182"/>
+        <location filename="../settingswidget.ui" line="2221"/>
         <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
         <translation>Kiel Whatly konektiĝas al la reto. Sistemo sekvas la mastruman sistemon; Neniu konektiĝas rekte.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2207"/>
+        <location filename="../settingswidget.ui" line="2246"/>
         <source>Host</source>
         <translation>Gastiganto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2214"/>
+        <location filename="../settingswidget.ui" line="2253"/>
         <source>127.0.0.1</source>
         <translation>127.0.0.1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2221"/>
-        <location filename="../settingswidget.ui" line="2501"/>
+        <location filename="../settingswidget.ui" line="2260"/>
+        <location filename="../settingswidget.ui" line="2540"/>
         <source>Port</source>
         <translation>Pordo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2235"/>
+        <location filename="../settingswidget.ui" line="2274"/>
         <source>Username</source>
         <translation>Uzantnomo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2242"/>
-        <location filename="../settingswidget.ui" line="2259"/>
+        <location filename="../settingswidget.ui" line="2281"/>
+        <location filename="../settingswidget.ui" line="2298"/>
         <source>Optional</source>
         <translation>Nedeviga</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2249"/>
+        <location filename="../settingswidget.ui" line="2288"/>
         <source>Password</source>
         <translation>Pasvorto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2278"/>
+        <location filename="../settingswidget.ui" line="2317"/>
         <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
         <translation>Ŝargi .js-dosierojn por ruli en Vacapo Reto. Ĉiu aldonaĵo ruliĝas en propra sablujo, do difektita ne povas faligi la aliajn nek la paĝon. Malmarku aldonaĵon por malŝalti ĝin sen forigi ĝin. La ŝanĝoj efektiviĝas post restartigo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2300"/>
+        <location filename="../settingswidget.ui" line="2339"/>
         <source>Add addon…</source>
         <translation>Aldoni aldonaĵon…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2307"/>
-        <location filename="../settingswidget.ui" line="2367"/>
+        <location filename="../settingswidget.ui" line="2346"/>
+        <location filename="../settingswidget.ui" line="2406"/>
         <source>Remove</source>
         <translation>Forigi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2332"/>
+        <location filename="../settingswidget.ui" line="2371"/>
         <source>Saved replies</source>
         <translation>Konservitaj respondoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2338"/>
+        <location filename="../settingswidget.ui" line="2377"/>
         <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
         <translation>Mallongaj tekstoj, kiujn vi ofte sendas. Enmetu unu el la komandpaletro (Stir+K) — tajpu &quot;Enmeti&quot; kaj elektu ĝin; la teksto estas tajpata en la mesaĝkampon.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2360"/>
+        <location filename="../settingswidget.ui" line="2399"/>
         <source>Add reply…</source>
         <translation>Aldoni respondon…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2398"/>
+        <location filename="../settingswidget.ui" line="2437"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Alklaku kampon kaj premu la klavkombinon. Malplenigu kampon por forigi la fulmoklavon. La ŝanĝoj efektiviĝas post restartigo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2414"/>
+        <location filename="../settingswidget.ui" line="2453"/>
         <source>Cloud API (send without a browser session)</source>
         <translation>Nuba API (sendi sen retumila seanco)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2420"/>
+        <location filename="../settingswidget.ui" line="2459"/>
         <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account&apos;s config and Whatly never obtains it itself.</source>
         <translation>Sendi per `--send --backend cloud` tra la Meta WhatsApp Business Cloud API — neniu ruliĝanta seanco de Vacapo Reto necesas. La alirĵetonon vi mem provizas de Meta; ĝi estas konservita en la agordo de ĉi tiu konto kaj Whatly neniam akiras ĝin mem.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2430"/>
+        <location filename="../settingswidget.ui" line="2469"/>
         <source>Phone-number ID</source>
         <translation>Identigilo de la telefonnumero</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2444"/>
+        <location filename="../settingswidget.ui" line="2483"/>
         <source>Access token</source>
         <translation>Alirĵetono</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2454"/>
+        <location filename="../settingswidget.ui" line="2493"/>
         <source>your Meta access token</source>
         <translation>via alirĵetono de Meta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2461"/>
+        <location filename="../settingswidget.ui" line="2500"/>
         <source>Graph API version</source>
         <translation>Versio de la Graph-API</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2478"/>
+        <location filename="../settingswidget.ui" line="2517"/>
         <source>Local API &amp; Cloud webhooks</source>
         <translation>Loka API kaj nubaj webhook-oj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2484"/>
+        <location filename="../settingswidget.ui" line="2523"/>
         <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
         <translation>Malgranda HTTP-finpunkto en la retrocirkla interfaco (127.0.0.1) permesas al aliaj programoj en ĉi tiu komputilo sendi tra Whatly, kaj permesas al Meta liveri webhook-ojn de la Nuba API (alvenantajn mesaĝojn), por ke la aŭtomata respondo funkciu sen retumilo. Ĝi neniam estas elmetita al la reto; por ricevi webhook-ojn de Meta, plusendu la pordon per tunelo aŭ inversa prokurilo (ekz. cloudflared aŭ ngrok).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2494"/>
+        <location filename="../settingswidget.ui" line="2533"/>
         <source>Enable the local HTTP API (send over HTTP)</source>
         <translation>Ŝalti la lokan HTTP-API (sendi tra HTTP)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2518"/>
+        <location filename="../settingswidget.ui" line="2557"/>
         <source>Bearer token</source>
         <translation>Bearer-ĵetono</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2528"/>
+        <location filename="../settingswidget.ui" line="2567"/>
         <source>required to authorise requests</source>
         <translation>necesa por rajtigi la petojn</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2535"/>
+        <location filename="../settingswidget.ui" line="2574"/>
         <source>Receive Cloud API webhooks (incoming messages)</source>
         <translation>Ricevi webhook-ojn de la Nuba API (alvenantajn mesaĝojn)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2542"/>
+        <location filename="../settingswidget.ui" line="2581"/>
         <source>Webhook verify token</source>
         <translation>Kontrolĵetono de la webhook</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2552"/>
+        <location filename="../settingswidget.ui" line="2591"/>
         <source>echoed to Meta during setup</source>
         <translation>resendata al Meta dum la agordado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2559"/>
+        <location filename="../settingswidget.ui" line="2598"/>
         <source>Meta app secret</source>
         <translation>Sekreto de la Meta-aplikaĵo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2569"/>
+        <location filename="../settingswidget.ui" line="2608"/>
         <source>verifies the webhook signature</source>
         <translation>kontrolas la subskribon de la webhook</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="465"/>
+        <location filename="../settingswidget.cpp" line="479"/>
         <source>Basics</source>
         <translation>Bazaĵoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="473"/>
+        <location filename="../settingswidget.cpp" line="487"/>
         <source>Appearance</source>
         <translation>Aspekto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="492"/>
+        <location filename="../settingswidget.cpp" line="506"/>
         <source>Notifications</source>
         <translation>Sciigoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="496"/>
+        <location filename="../settingswidget.cpp" line="510"/>
         <source>Chatting</source>
         <translation>Babilado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="505"/>
+        <location filename="../settingswidget.cpp" line="526"/>
         <source>Privacy &amp; Lock</source>
         <translation>Privateco kaj ŝloso</translation>
     </message>
     <message>
+        <location filename="../settingswidget.cpp" line="569"/>
         <source>AI &amp;&amp; translation</source>
         <translation>AI kaj tradukado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="511"/>
+        <location filename="../settingswidget.cpp" line="540"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>Fenestro &amp;&amp; zomo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="528"/>
+        <location filename="../settingswidget.cpp" line="576"/>
         <source>Advanced</source>
         <translation>Fakula</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="795"/>
+        <location filename="../settingswidget.cpp" line="901"/>
         <source>Shortcut in use</source>
         <translation>Fulmoklavo jam uzata</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="796"/>
+        <location filename="../settingswidget.cpp" line="902"/>
         <source>That shortcut is already used by another action.</source>
         <translation>Tiu fulmoklavo jam estas uzata de alia ago.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="808"/>
+        <location filename="../settingswidget.cpp" line="914"/>
         <source>Clear cache</source>
         <translation>Malplenigi la kaŝmemoron</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="809"/>
+        <location filename="../settingswidget.cpp" line="915"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Ĉu malplenigi la kaŝmemoron nun? Ĝi estos reelŝutita laŭbezone.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="819"/>
-        <location filename="../settingswidget.cpp" line="825"/>
-        <location filename="../settingswidget.cpp" line="834"/>
-        <location filename="../settingswidget.cpp" line="837"/>
+        <location filename="../settingswidget.cpp" line="925"/>
+        <location filename="../settingswidget.cpp" line="931"/>
+        <location filename="../settingswidget.cpp" line="940"/>
+        <location filename="../settingswidget.cpp" line="943"/>
         <source>Export profile</source>
         <translation>Eksporti la profilon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="820"/>
+        <location filename="../settingswidget.cpp" line="926"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>La arkivo enhavos vian ensalutitan seancon de Vacapo. Tenu ĝin privata. Ĉu daŭrigi?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="827"/>
-        <location filename="../settingswidget.cpp" line="842"/>
+        <location filename="../settingswidget.cpp" line="933"/>
+        <location filename="../settingswidget.cpp" line="948"/>
         <source>Archives (*.tar.gz)</source>
         <translation>Arkivoj (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="835"/>
+        <location filename="../settingswidget.cpp" line="941"/>
         <source>Profile exported.</source>
         <translation>La profilo estas eksportita.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="842"/>
-        <location filename="../settingswidget.cpp" line="846"/>
-        <location filename="../settingswidget.cpp" line="854"/>
-        <location filename="../settingswidget.cpp" line="857"/>
+        <location filename="../settingswidget.cpp" line="948"/>
+        <location filename="../settingswidget.cpp" line="952"/>
+        <location filename="../settingswidget.cpp" line="960"/>
+        <location filename="../settingswidget.cpp" line="963"/>
         <source>Import profile</source>
         <translation>Importi profilon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="847"/>
+        <location filename="../settingswidget.cpp" line="953"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>Tio anstataŭigas la datumojn de la nuna konto per la arkivo, poste Whatly devas esti restartigita. Ĉu daŭrigi?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="855"/>
+        <location filename="../settingswidget.cpp" line="961"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>La profilo estas importita. Bonvolu restartigi Whatly.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="878"/>
+        <location filename="../settingswidget.cpp" line="984"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Tio forigos la daŭrajn datumojn ! Daŭraj datumoj inkluzivas daŭrajn kuketojn kaj la kaŝmemoron, kaj ĉesigos la aplikaĵon.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="883"/>
+        <location filename="../settingswidget.cpp" line="989"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>Ĉu forigi la kuketojn kaj ĉesigi la aplikaĵon?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="989"/>
+        <location filename="../settingswidget.cpp" line="1095"/>
         <source>| Error</source>
         <translation>| Eraro</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="990"/>
+        <location filename="../settingswidget.cpp" line="1096"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>Ne eblas agordi malplenan ĉenon de uzantagento.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1041"/>
+        <location filename="../settingswidget.cpp" line="1147"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>La aŭtomata ŝanĝo de etoso estis malŝaltita pro permana baskuligo de la etoso.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1058"/>
+        <location filename="../settingswidget.cpp" line="1164"/>
         <source>Require setup</source>
         <translation>Bezonas agordon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1087"/>
+        <location filename="../settingswidget.cpp" line="1193"/>
         <source>App lock is not configured.</source>
         <translation>La aplikaĵa ŝloso ne estas agordita.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1091"/>
+        <location filename="../settingswidget.cpp" line="1197"/>
         <source>Do you want to setup App lock now?</source>
         <translation>Ĉu vi volas agordi la aplikaĵan ŝloson nun?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1133"/>
+        <location filename="../settingswidget.cpp" line="1239"/>
         <source>Feature permissions</source>
         <translation>Permesoj de la funkcioj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1212"/>
+        <location filename="../settingswidget.cpp" line="1318"/>
         <source>Choose a chat wallpaper</source>
         <translation>Elekti tapeton por la babilo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1214"/>
+        <location filename="../settingswidget.cpp" line="1320"/>
         <source>Images (%1)</source>
         <translation>Bildoj (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1222"/>
+        <location filename="../settingswidget.cpp" line="1328"/>
         <source>Could not use that image: %1</source>
         <translation>Ne eblis uzi tiun bildon: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1237"/>
+        <location filename="../settingswidget.cpp" line="1343"/>
         <source>Choose a CSS file</source>
         <translation>Elekti CSS-dosieron</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1239"/>
+        <location filename="../settingswidget.cpp" line="1345"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Stilfolioj (*.css);;Ĉiuj dosieroj (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1246"/>
+        <location filename="../settingswidget.cpp" line="1352"/>
         <source>Could not read that file: %1</source>
         <translation>Ne eblis legi tiun dosieron: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1319"/>
+        <location filename="../settingswidget.cpp" line="1425"/>
         <source>Disk</source>
         <translation>Disko</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1320"/>
+        <location filename="../settingswidget.cpp" line="1426"/>
         <source>Memory</source>
         <translation>Memoro</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1321"/>
-        <location filename="../settingswidget.cpp" line="1329"/>
-        <location filename="../settingswidget.cpp" line="2089"/>
+        <location filename="../settingswidget.cpp" line="1427"/>
+        <location filename="../settingswidget.cpp" line="1435"/>
+        <location filename="../settingswidget.cpp" line="2195"/>
         <source>None</source>
         <translation>Neniu</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1473"/>
+        <location filename="../settingswidget.cpp" line="1579"/>
         <source>Ollama not found at this address.</source>
         <translation>Ollama ne trovita ĉe ĉi tiu adreso.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1478"/>
+        <location filename="../settingswidget.cpp" line="1584"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama trovita (%1 modeloj instalitaj).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1503"/>
+        <location filename="../settingswidget.cpp" line="1609"/>
         <source>Download complete.</source>
         <translation>Elŝuto finita.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1506"/>
+        <location filename="../settingswidget.cpp" line="1612"/>
         <source>Download failed: %1</source>
         <translation>Elŝuto malsukcesis: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1517"/>
+        <location filename="../settingswidget.cpp" line="1623"/>
         <source>Checking…</source>
         <translation>Kontrolante…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1542"/>
+        <location filename="../settingswidget.cpp" line="1648"/>
         <source>Starting download of %1…</source>
         <translation>Komencante elŝuton de %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1593"/>
+        <location filename="../settingswidget.cpp" line="1699"/>
         <source>System</source>
         <translation>Sistemo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1594"/>
+        <location filename="../settingswidget.cpp" line="1700"/>
         <source>None (direct)</source>
         <translation>Neniu (rekta)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1595"/>
+        <location filename="../settingswidget.cpp" line="1701"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1596"/>
+        <location filename="../settingswidget.cpp" line="1702"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1622"/>
+        <location filename="../settingswidget.cpp" line="1728"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Labortabla portalo (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1624"/>
+        <location filename="../settingswidget.cpp" line="1730"/>
         <source>System service (libnotify)</source>
         <translation>Sistema servo (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1809"/>
-        <location filename="../settingswidget.cpp" line="1813"/>
+        <location filename="../settingswidget.cpp" line="1915"/>
+        <location filename="../settingswidget.cpp" line="1919"/>
         <source>Add reply</source>
         <translation>Aldoni respondon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1809"/>
+        <location filename="../settingswidget.cpp" line="1915"/>
         <source>Name</source>
         <translation>Nomo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1813"/>
+        <location filename="../settingswidget.cpp" line="1919"/>
         <source>Text to insert</source>
         <translation>Enmetota teksto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1830"/>
+        <location filename="../settingswidget.cpp" line="1936"/>
         <source>Choose a JavaScript file</source>
         <translation>Elekti JavaScript-dosieron</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1831"/>
+        <location filename="../settingswidget.cpp" line="1937"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Ĉiuj dosieroj (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1836"/>
+        <location filename="../settingswidget.cpp" line="1942"/>
         <source>Could not add addon</source>
         <translation>Ne eblis aldoni la aldonaĵon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1849"/>
+        <location filename="../settingswidget.cpp" line="1955"/>
         <source>Remove addon</source>
         <translation>Forigi la aldonaĵon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1850"/>
+        <location filename="../settingswidget.cpp" line="1956"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>Ĉu forigi la aldonaĵon &quot;%1&quot;? Tio forigas ĝian dosieron.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2038"/>
+        <location filename="../settingswidget.cpp" line="2144"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Literumkontrolilo (neniu vortaro instalita)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2093"/>
+        <location filename="../settingswidget.cpp" line="2199"/>
         <source>%1 languages</source>
         <translation>%1 lingvoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2191"/>
+        <location filename="../settingswidget.cpp" line="2297"/>
         <source>WhatsApp default</source>
         <translation>Defaŭlto de Vacapo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2230"/>
+        <location filename="../settingswidget.cpp" line="2336"/>
         <source>System default</source>
         <translation>Defaŭlto de la sistemo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2265"/>
+        <location filename="../settingswidget.cpp" line="2371"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>La lingvo de la interfaco ŝanĝiĝos kiam vi restartigos %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2279"/>
+        <location filename="../settingswidget.cpp" line="2385"/>
         <source>App Lock Setup</source>
         <translation>Agordo de la aplikaĵa ŝloso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2280"/>
+        <location filename="../settingswidget.cpp" line="2386"/>
         <source>Please setup the App lock password first.</source>
         <translation>Bonvolu unue agordi la pasvorton de la aplikaĵa ŝloso.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2391"/>
-        <location filename="../settingswidget.cpp" line="2402"/>
+        <location filename="../settingswidget.cpp" line="2502"/>
+        <location filename="../settingswidget.cpp" line="2513"/>
         <source>Select download directory</source>
         <translation>Elekti la elŝutan dosierujon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2442"/>
+        <location filename="../settingswidget.cpp" line="2553"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3623,67 +3623,67 @@ Tio elsalutigos vian nunan seancon.
 Eble vi ankaŭ bezonos kompletan restartigon de la aplikaĵo!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2448"/>
+        <location filename="../settingswidget.cpp" line="2559"/>
         <source>Do you want to proceed?</source>
         <translation>Ĉu vi volas daŭrigi?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="578"/>
+        <location filename="../settingswidget.ui" line="617"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aldonas butonon al la propra flanka breto de Vacapo, kiu faldas la liston de babiloj en strion de profilbildoj, donante al la konversacio la larĝon kiun ĝi uzis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="581"/>
+        <location filename="../settingswidget.ui" line="620"/>
         <source>Chat-list collapse button in WhatsApp&apos;s sidebar</source>
         <translation>Falda butono de la listo de babiloj en la flanka breto de Vacapo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="588"/>
+        <location filename="../settingswidget.ui" line="627"/>
         <source>Collapsed chat preview</source>
         <translation>Antaŭrigardo en la faldita listo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="595"/>
+        <location filename="../settingswidget.ui" line="634"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform&apos;s font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kiom grande desegni la antaŭrigardon kiu aperas kiam vi ŝvebas super bildo en la faldita listo de babiloj. La defaŭlta valoro konvenas al la tiparbildigo de ĉi tiu platformo; elektu alian se ĝi legiĝas tro malgranda aŭ tro granda sur via ekrano.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1539"/>
+        <location filename="../settingswidget.ui" line="1578"/>
         <source>Performance (requires restart)</source>
         <translation>Rendimento (postulas restartigon)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2074"/>
+        <location filename="../settingswidget.ui" line="2113"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>Lasi Whatly desegni la randon kaj la titolbreton de la fenestro anstataŭ la sistemon, por ke ili sekvu la propran etoson de Whatly. Per si mem tio ŝanĝas nur ilian aspekton; marku ankaŭ “Kaŝi la titolbreton” por tute forigi la titolan vicon. Efektiviĝas post restartigo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2100"/>
+        <location filename="../settingswidget.ui" line="2139"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
         <translation>Teni la strion de kontolangetoj videbla eĉ kiam ekzistas nur unu konto, por ke ĝia “+” ĉiam estu ĉemane. Kiam ĝi estas malŝaltita, la strio aperas post kiam ekzistas dua konto; vi tamen povas aldoni konton per Ctrl+K.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2103"/>
+        <location filename="../settingswidget.ui" line="2142"/>
         <source>Show the account tabs even with a single account</source>
         <translation>Montri la kontolangetojn eĉ kun unu sola konto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2090"/>
+        <location filename="../settingswidget.ui" line="2129"/>
         <source>Restart Whatly now so the settings above take effect. The windows, and this page with it, come back exactly as they are.</source>
         <translation>Restartigi Whatly nun por ke la supraj agordoj efektiviĝu. La fenestroj, kaj ĉi tiu paĝo kun ili, revenos ĝuste tiaj, kiaj ili estas.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2093"/>
+        <location filename="../settingswidget.ui" line="2132"/>
         <source>Restart now</source>
         <translation>Restartigi nun</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2110"/>
+        <location filename="../settingswidget.ui" line="2149"/>
         <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
         <translation>Forigi la titolbreton kaj meti ĝiajn butonojn ĉe la fino de la strio de kontolangetoj, kiel faras retumilo, anstataŭ doni al ili propran vicon. Ŝaltas la propran fenestran kadron, kiun ĝi bezonas. Efektiviĝas post restartigo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2113"/>
+        <location filename="../settingswidget.ui" line="2152"/>
         <source>Hide the title bar (requires restart)</source>
         <translation>Kaŝi la titolbreton (postulas restartigon)</translation>
     </message>
