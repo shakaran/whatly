@@ -6,10 +6,11 @@ few. A new folding **Spell-check dictionaries** section in Settings now lists
 each language with its size and a Download/Delete button, and the language picker
 offers not-yet-installed languages too — ticking one downloads it. Each `.bdic`
 is verified by SHA-256 before it is used, and on first run the dictionary for
-your system language is fetched automatically. This lets the packages ship only a
-small set and pull the rest on demand (from a dedicated `dictionaries` release),
-which also means languages that were never bundled — Esperanto among them — can
-finally be installed from the UI.
+your system language is fetched automatically. Fresh installs now bundle only
+`en_US` and pull the rest on demand from a dedicated `dictionaries` release,
+down from ~45 MB; languages that were never bundled — Esperanto among them — can
+finally be installed from the UI. (Offline builds can still bundle everything
+with `-DWHATLY_BUNDLE_DICTIONARIES=""`.)
 
 **Spell-check dictionary cleanup.** The bundled set carried a duplicate `en-US` (identical to `en_US` bar the separator, and never selectable) and an invalid `vi_VI` region code; both are gone, keeping `en_US` and `vi_VN`. Groundwork for making dictionaries downloadable per language (#46).
 
