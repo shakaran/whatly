@@ -3757,6 +3757,13 @@ private slots:
     QVERIFY(!SessionBackup::sessionLooksPresent(1024));
     QVERIFY(SessionBackup::sessionLooksPresent(2 * 1024 * 1024));
   }
+  void freeSpaceGuard() {
+    // Backing up on a nearly-full disk is what corrupts the copy, so it backs
+    // off below the threshold (512 MB) and proceeds with ample space.
+    QVERIFY(!SessionBackup::hasEnoughFreeSpace(0));
+    QVERIFY(!SessionBackup::hasEnoughFreeSpace(64LL * 1024 * 1024));  // 64 MB
+    QVERIFY(SessionBackup::hasEnoughFreeSpace(4LL * 1024 * 1024 * 1024)); // 4 GB
+  }
   void roundTripRestoresWipedSession() {
     QTemporaryDir root;
     QVERIFY(root.isValid());

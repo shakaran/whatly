@@ -9,12 +9,19 @@
 #include <QDir>
 #include <QFileInfo>
 #include <QStandardPaths>
+#include <QStorageInfo>
 
 namespace {
 // A linked session's IndexedDB is comfortably over a megabyte; a fresh or
 // Chromium-wiped one is a handful of metadata files. 256 KB sits well clear of
 // both, so neither a real session reads as wiped nor an empty one as present.
 constexpr qint64 kSessionMinBytes = 256 * 1024;
+
+// Below this much free disk, don't snapshot or restore. On a nearly-full volume
+// a copy is what truncates the very LevelDB it duplicates ("partial record"
+// corruption), so the backup would spend the last free bytes saving garbage.
+// 512 MB leaves room for a large session copy plus the app's own writes.
+constexpr qint64 kMinFreeBytes = 512LL * 1024 * 1024;
 
 // Overridable roots for testing. Empty means "use the real QStandardPaths".
 QString g_dataRootOverride;
@@ -80,6 +87,10 @@ QString snapshotKey(const QString &accountId) {
 
 bool sessionLooksPresent(qint64 indexedDbBytes) {
   return indexedDbBytes >= kSessionMinBytes;
+}
+
+bool hasEnoughFreeSpace(qint64 freeBytes) {
+  return freeBytes >= kMinFreeBytes;
 }
 
 bool snapshot(const QString &accountId) {
@@ -152,6 +163,19 @@ void runStartupRecovery() {
   QSettings &s = SettingsManager::instance().settings();
   if (!s.value(QStringLiteral("sessionBackup/enabled"), true).toBool())
     return;
+
+  // On a nearly-full disk, copying a session is what corrupts it, so back off
+  // entirely and say why — the fix is free space, not a backup.
+  const QStorageInfo vol(dataRoot());
+  if (vol.isValid() && vol.bytesAvailable() >= 0 &&
+      !hasEnoughFreeSpace(vol.bytesAvailable())) {
+    qWarning().noquote()
+        << "session-backup: skipped — low disk space ("
+        << (vol.bytesAvailable() / (1024 * 1024))
+        << "MB free). Free up space; a backup on a full disk would only save "
+           "corrupt data.";
+    return;
+  }
 
   QStringList accounts;
   accounts << QString(); // the default account

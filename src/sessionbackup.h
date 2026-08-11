@@ -35,6 +35,11 @@ QString snapshotKey(const QString &accountId);
 // Chromium-wiped profile); at or above it a session is present. Pure.
 bool sessionLooksPresent(qint64 indexedDbBytes);
 
+// Whether there is enough free disk to snapshot/restore safely. On a nearly-full
+// volume a copy truncates the LevelDB it duplicates ("partial record"
+// corruption), so backup backs off below the threshold. Pure. See #43.
+bool hasEnoughFreeSpace(qint64 freeBytes);
+
 // Copy an account's session subdirs into its snapshot, keeping the previous
 // generation as a fallback. No-op (returns false) when the live session is
 // absent, so a wiped profile never overwrites a good snapshot. Skips the copy
