@@ -602,6 +602,11 @@ Apakah Anda ingin melewati pemeriksaan keamanan dan melanjutkan?   </translation
         <translation>obrolan</translation>
     </message>
     <message>
+        <location filename="../mainwindow_accounts.cpp" line="1140"/>
+        <source>chats</source>
+        <translation>obrolan</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="1519"/>
         <source>Could not create the export folder.</source>
         <translation>Tidak dapat membuat folder ekspor.</translation>

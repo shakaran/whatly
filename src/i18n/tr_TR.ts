@@ -602,6 +602,11 @@ Güvenlik denetimini atlayıp devam etmek istiyor musunuz?   </translation>
         <translation>sohbet</translation>
     </message>
     <message>
+        <location filename="../mainwindow_accounts.cpp" line="1140"/>
+        <source>chats</source>
+        <translation>sohbetler</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="1519"/>
         <source>Could not create the export folder.</source>
         <translation>Dışa aktarma klasörü oluşturulamadı.</translation>

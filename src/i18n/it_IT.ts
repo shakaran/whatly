@@ -608,6 +608,11 @@ Desideri ignorare il controllo di sicurezza e continuare?</translation>
         <translation>chat</translation>
     </message>
     <message>
+        <location filename="../mainwindow_accounts.cpp" line="1140"/>
+        <source>chats</source>
+        <translation>chat</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="1519"/>
         <source>Could not create the export folder.</source>
         <translation>Impossibile creare la cartella di esportazione.</translation>

@@ -602,6 +602,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation>chat</translation>
     </message>
     <message>
+        <location filename="../mainwindow_accounts.cpp" line="1140"/>
+        <source>chats</source>
+        <translation>chats</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="1519"/>
         <source>Could not create the export folder.</source>
         <translation>No se pudo crear la carpeta de exportación.</translation>

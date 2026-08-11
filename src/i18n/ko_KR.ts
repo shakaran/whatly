@@ -602,6 +602,11 @@ Do you wish to override the security check and continue ?   </source>
         <translation>채팅</translation>
     </message>
     <message>
+        <location filename="../mainwindow_accounts.cpp" line="1140"/>
+        <source>chats</source>
+        <translation>채팅</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="1519"/>
         <source>Could not create the export folder.</source>
         <translation>내보내기 폴더를 만들 수 없습니다.</translation>

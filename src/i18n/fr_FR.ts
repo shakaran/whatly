@@ -602,6 +602,11 @@ Voulez-vous ignorer le contrôle de sécurité et continuer ?   </translation>
         <translation>conversation</translation>
     </message>
     <message>
+        <location filename="../mainwindow_accounts.cpp" line="1140"/>
+        <source>chats</source>
+        <translation>conversations</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="1519"/>
         <source>Could not create the export folder.</source>
         <translation>Impossible de créer le dossier d&apos;exportation.</translation>

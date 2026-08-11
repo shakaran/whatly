@@ -602,6 +602,11 @@ Czy chcesz pominąć kontrolę bezpieczeństwa i kontynuować?   </translation>
         <translation>czat</translation>
     </message>
     <message>
+        <location filename="../mainwindow_accounts.cpp" line="1140"/>
+        <source>chats</source>
+        <translation>czaty</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="1519"/>
         <source>Could not create the export folder.</source>
         <translation>Nie udało się utworzyć folderu eksportu.</translation>
