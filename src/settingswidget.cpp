@@ -555,8 +555,42 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     // ── Spell-check dictionaries ─────────────────────────────
     // A list with a Download/Delete button per language (issue #46): the full
     // set is ~45 MB, so packages bundle a minimum and the rest are fetched here.
+    // One manager is shared with the language picker below, so ticking a not-yet
+    // installed language there downloads it too — one catalogue fetch for both.
+    if (!m_dictManager)
+      m_dictManager = new DictionaryManager(this);
+    connect(m_dictManager, &DictionaryManager::catalogReady, this,
+            [this](const QList<DictionaryEntry> &entries) {
+              m_dictCatalog = entries;
+              populateSpellCheck(); // offer the downloadable languages in the picker
+
+              // One-time: if nothing is chosen yet and the system locale's
+              // dictionary is downloadable but not installed, fetch it so the
+              // user's own language works out of the box (issue #46).
+              auto &s = SettingsManager::instance().settings();
+              if (s.value(QStringLiteral("dictLocaleFetched"), false).toBool())
+                return;
+              s.setValue(QStringLiteral("dictLocaleFetched"), true);
+              if (!s.value(QStringLiteral("spellCheckLanguages"))
+                       .toStringList()
+                       .isEmpty())
+                return;
+              const QStringList have = Dictionaries::availableDictionaries();
+              const QString loc = QLocale::system().name();
+              const QString lang = loc.section(QLatin1Char('_'), 0, 0);
+              for (const DictionaryEntry &e : m_dictCatalog) {
+                if (have.contains(e.code))
+                  continue;
+                if (e.code == loc || e.code == lang ||
+                    e.code.startsWith(lang + QLatin1Char('_'))) {
+                  m_dictManager->download(e);
+                  break;
+                }
+              }
+            });
+
     auto *dictionaries = newSection(tr("Spell-check dictionaries"));
-    auto *dictionariesWidget = new DictionariesSection(dictionaries);
+    auto *dictionariesWidget = new DictionariesSection(m_dictManager, dictionaries);
     body(dictionaries)->addWidget(dictionariesWidget);
     connect(dictionariesWidget, &DictionariesSection::installedChanged, this,
             [this]() {
@@ -566,6 +600,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
               populateSpellCheck();
               emit spellCheckChanged();
             });
+    m_dictManager->fetchCatalog(); // one fetch, feeds both the section and picker
 
     // ── Privacy & Lock ──────────────────────────────────────
     auto *privacy = newSection(tr("Privacy & Lock"));
@@ -2219,9 +2254,41 @@ void SettingsWidget::populateSpellCheck() {
                                                        : Qt::Unchecked);
     model->appendRow(item);
   }
+  // Downloadable languages not yet installed: ticking one fetches it (#46). Only
+  // when the catalogue was fetched; otherwise the picker is just what is present.
+  for (const DictionaryEntry &entry : m_dictCatalog) {
+    if (available.contains(entry.code))
+      continue;
+    const QLocale locale(entry.code);
+    const QString name =
+        locale.language() == QLocale::C
+            ? entry.code
+            : QLocale(locale.language()).nativeLanguageName() +
+                  QStringLiteral(" (") + entry.code + QStringLiteral(")");
+    auto *item = new QStandardItem(name + QStringLiteral("  \u2014 ") +
+                                   tr("download"));
+    item->setData(entry.code, Qt::UserRole);
+    item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
+    item->setCheckState(selected.contains(entry.code) ? Qt::Checked
+                                                      : Qt::Unchecked);
+    model->appendRow(item);
+  }
   combo->setModel(model);
   connect(model, &QStandardItemModel::itemChanged, this,
-          [this](QStandardItem *) { saveSpellCheckLanguages(); });
+          [this](QStandardItem *item) {
+            // Ticking a listed-but-not-installed language downloads it; it takes
+            // effect once the .bdic lands (installedChanged -> re-apply).
+            const QString code = item->data(Qt::UserRole).toString();
+            if (item->checkState() == Qt::Checked && m_dictManager &&
+                !Dictionaries::availableDictionaries().contains(code)) {
+              for (const DictionaryEntry &e : m_dictCatalog)
+                if (e.code == code) {
+                  m_dictManager->download(e);
+                  break;
+                }
+            }
+            saveSpellCheckLanguages();
+          });
   // The view's items are toggled by a click that must not dismiss the popup.
   if (combo->view() && !combo->view()->viewport()->property("whatlyFilter").toBool()) {
     combo->view()->viewport()->installEventFilter(this);

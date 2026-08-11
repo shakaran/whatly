@@ -18,7 +18,9 @@ QString humanSize(qint64 bytes) {
 }
 } // namespace
 
-DictionariesSection::DictionariesSection(QWidget *parent) : QWidget(parent) {
+DictionariesSection::DictionariesSection(DictionaryManager *manager,
+                                         QWidget *parent)
+    : QWidget(parent), m_manager(manager) {
   auto *outer = new QVBoxLayout(this);
   outer->setContentsMargins(0, 0, 0, 0);
   outer->setSpacing(6);
@@ -32,7 +34,6 @@ DictionariesSection::DictionariesSection(QWidget *parent) : QWidget(parent) {
   m_rows->setSpacing(4);
   outer->addLayout(m_rows);
 
-  m_manager = new DictionaryManager(this);
   connect(m_manager, &DictionaryManager::catalogReady, this,
           [this](const QList<DictionaryEntry> &entries) {
             m_catalog = entries;
@@ -64,7 +65,8 @@ DictionariesSection::DictionariesSection(QWidget *parent) : QWidget(parent) {
           });
 
   setStatus(tr("Loading available dictionaries…"));
-  m_manager->fetchCatalog();
+  // The owner (SettingsWidget) triggers the shared fetch once both this section
+  // and the language picker are wired to the manager.
 }
 
 void DictionariesSection::setStatus(const QString &text) {

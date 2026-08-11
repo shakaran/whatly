@@ -9,6 +9,7 @@ class QTime;
 #include "permissiondialog.h"
 #include "settingsmanager.h"
 #include "utils.h"
+#include "dictionarymanager.h"
 
 namespace Ui {
 class SettingsWidget;
@@ -254,6 +255,10 @@ private:
   QString engineCachePath, enginePersistentStoragePath;
   QTimer *themeSwitchTimer;
   class OllamaManager *m_ollama = nullptr; // lazy; local-model detect/download
+  // Downloadable spell-check dictionaries (#46), shared with DictionariesSection
+  // so there is a single catalogue fetch and one set of download signals.
+  DictionaryManager *m_dictManager = nullptr;
+  QList<DictionaryEntry> m_dictCatalog;
 };
 
 #endif // SETTINGSWIDGET_H

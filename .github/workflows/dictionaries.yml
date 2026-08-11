@@ -1,0 +1,62 @@
+name: Publish dictionaries
+
+permissions:
+  contents: write
+
+# Build every spell-check .bdic and publish them, plus a manifest, as assets on a
+# dedicated "dictionaries" release (issue #46). The app downloads from there, so
+# the packages can bundle only a minimum and fetch the rest on demand.
+#
+# Manual, and decoupled from app version tags on purpose: the dictionaries change
+# far less often than the app, and their URLs must not move when the app is
+# re-tagged. Re-run this whenever src/dictionaries changes.
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install Qt (for qwebengine_convert_dict)
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.10.*'
+          modules: 'qtwebengine'
+          cache: true
+
+      - name: Build dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y cmake ninja-build
+
+      - name: Convert the hunspell sources to .bdic
+        run: |
+          # Only the dictionaries target is needed, not the whole app.
+          cmake -S . -B build -G Ninja \
+            -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR" -DWHATLY_TESTS=OFF
+          cmake --build build --target whatly_dictionaries
+          ls -la build/qtwebengine_dictionaries/*.bdic | wc -l
+
+      - name: Generate the manifest
+        run: |
+          python3 tools/gen-dictionary-manifest.py build/qtwebengine_dictionaries \
+            > build/qtwebengine_dictionaries/manifest.json
+          echo "=== manifest ==="; cat build/qtwebengine_dictionaries/manifest.json | head -20
+
+      - name: Publish to the 'dictionaries' release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # A fixed, non-version tag so the asset URLs are stable across app
+          # releases. Create it once; re-runs just re-upload with --clobber.
+          gh release view dictionaries --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
+            || gh release create dictionaries --repo "$GITHUB_REPOSITORY" \
+                 --title "Spell-check dictionaries" \
+                 --notes "Downloadable spell-check dictionaries for Whatly (issue #46). Managed by the Publish dictionaries workflow; do not delete." \
+                 --latest=false
+          gh release upload dictionaries \
+            build/qtwebengine_dictionaries/*.bdic \
+            build/qtwebengine_dictionaries/manifest.json \
+            --clobber --repo "$GITHUB_REPOSITORY"

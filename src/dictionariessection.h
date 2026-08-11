@@ -19,7 +19,11 @@ class QVBoxLayout;
 class DictionariesSection : public QWidget {
   Q_OBJECT
 public:
-  explicit DictionariesSection(QWidget *parent = nullptr);
+  // `manager` is shared with the settings' language picker (one catalogue fetch,
+  // one set of download signals) and is not owned by this widget. The caller
+  // triggers the catalogue fetch after wiring, so both sides receive it.
+  explicit DictionariesSection(DictionaryManager *manager,
+                               QWidget *parent = nullptr);
 
 signals:
   // The installed set changed (a download finished, or a delete): whoever owns

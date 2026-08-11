@@ -568,6 +568,15 @@ option(WHATLY_SPELLCHECK "Build the spell-check dictionaries" ON)
 set(WHATLY_DICTIONARIES "" CACHE STRING
     "Semicolon-separated list of dictionary basenames to build (empty = all)")
 
+# Which of the built dictionaries to actually INSTALL into the package, as
+# opposed to build. Empty = all of them (today's behaviour). Set to a small set,
+# e.g. -DWHATLY_BUNDLE_DICTIONARIES="en_US", to ship a minimum and let the rest
+# be fetched at runtime (issue #46). Only switch a package to the minimum once
+# the 'dictionaries' release that serves the others exists, or non-bundled
+# languages would have no dictionary and nowhere to download it from.
+set(WHATLY_BUNDLE_DICTIONARIES "" CACHE STRING
+    "Dictionary basenames to install (empty = all built)")
+
 if(WHATLY_SPELLCHECK)
 
 find_program(QWEBENGINE_CONVERT_DICT
@@ -641,7 +650,21 @@ add_dependencies(whatly whatly_dictionaries)
 list(LENGTH WHATLY_BDICS WHATLY_DICT_COUNT)
 
 if(UNIX AND NOT APPLE)
-    install(FILES ${WHATLY_BDICS}
+    if(WHATLY_BUNDLE_DICTIONARIES STREQUAL "")
+        set(WHATLY_INSTALL_BDICS ${WHATLY_BDICS})   # all of them
+    else()
+        set(WHATLY_INSTALL_BDICS "")
+        foreach(code ${WHATLY_BUNDLE_DICTIONARIES})
+            set(_bdic "${WHATLY_DICT_DIR}/${code}.bdic")
+            if(_bdic IN_LIST WHATLY_BDICS)
+                list(APPEND WHATLY_INSTALL_BDICS "${_bdic}")
+            else()
+                message(WARNING "WHATLY_BUNDLE_DICTIONARIES: '${code}' is not among "
+                                "the built dictionaries and will not be installed")
+            endif()
+        endforeach()
+    endif()
+    install(FILES ${WHATLY_INSTALL_BDICS}
         DESTINATION ${DATADIR}/whatly/qtwebengine_dictionaries
     )
 endif()
