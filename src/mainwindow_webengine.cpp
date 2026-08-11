@@ -36,6 +36,9 @@
 #include <QFileDialog>
 #include <QProgressDialog>
 #include <QStandardPaths>
+#include <QStorageInfo>
+
+#include "storageinfo.h"
 #include <QTimer>
 
 #include <QDateTime>
@@ -1933,6 +1936,74 @@ void MainWindow::scheduleChatReminder(const QDateTime &when) {
         dndToast(tr("Reply reminder set for %1.")
                      .arg(QLocale().toString(when, QLocale::ShortFormat)));
       });
+}
+
+// ── Data-folder space (avoid the full-disk LevelDB corruption, #43) ─────────
+QString MainWindow::currentDataDir() const {
+  const QString override = SettingsManager::instance()
+                               .settings()
+                               .value(QStringLiteral("storage/dataDir"))
+                               .toString();
+  return override.isEmpty()
+             ? QStandardPaths::writableLocation(
+                   QStandardPaths::AppLocalDataLocation)
+             : override;
+}
+
+void MainWindow::checkStorageSpace() {
+  const QString dir = currentDataDir();
+  QDir().mkpath(dir);
+  const QStorageInfo vol(dir);
+  if (!vol.isValid())
+    return;
+  const qint64 freeBytes = vol.bytesAvailable();
+  // A truncated LevelDB write on a full volume corrupts WhatsApp Web's storage
+  // and forces a re-link, so warn while there is still room to act. 1 GB.
+  if (freeBytes < 0 || freeBytes >= 1024LL * 1024 * 1024)
+    return;
+
+  QMessageBox box(this);
+  box.setIcon(QMessageBox::Warning);
+  box.setWindowTitle(tr("Low disk space"));
+  box.setText(tr("Whatly's data folder has only %1 free.")
+                  .arg(StorageInfo::humanReadable(freeBytes)));
+  box.setInformativeText(
+      tr("With so little space, WhatsApp Web's local database can be corrupted "
+         "by a truncated write, which forces you to link your phone again. Move "
+         "Whatly's data folder to a disk with more room, or free up space."));
+  QPushButton *change =
+      box.addButton(tr("Change folder…"), QMessageBox::AcceptRole);
+  box.addButton(tr("Later"), QMessageBox::RejectRole);
+  box.exec();
+  if (box.clickedButton() == change)
+    promptChangeDataDir();
+}
+
+void MainWindow::promptChangeDataDir() {
+  const QString dir = QFileDialog::getExistingDirectory(
+      this, tr("Choose a data folder for Whatly"), QDir::homePath());
+  if (dir.isEmpty())
+    return;
+  const QStorageInfo vol(dir);
+  if (vol.isValid() && vol.bytesAvailable() >= 0 &&
+      vol.bytesAvailable() < 1024LL * 1024 * 1024) {
+    QMessageBox::warning(
+        this, tr("Low disk space"),
+        tr("That folder is also low on space (%1 free). Please pick another.")
+            .arg(StorageInfo::humanReadable(vol.bytesAvailable())));
+    return;
+  }
+  SettingsManager::instance().settings().setValue(
+      QStringLiteral("storage/dataDir"), dir);
+  const auto answer = QMessageBox::question(
+      this, tr("Restart Whatly"),
+      tr("Whatly will use \"%1\" as its data folder after a restart. Your "
+         "current data stays where it is (you can move it there yourself). "
+         "Restart now?")
+          .arg(dir),
+      QMessageBox::Yes | QMessageBox::No);
+  if (answer == QMessageBox::Yes)
+    restartApp();
 }
 
 void MainWindow::aiSummarizeUnread() {

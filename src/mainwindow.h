@@ -481,6 +481,14 @@ private:
   QAction *m_remind3hAction = nullptr;
   QAction *m_remindTomorrowAction = nullptr;
   void scheduleChatReminder(const QDateTime &when);
+
+  // Warn once at startup when the data folder's volume is nearly full (WhatsApp
+  // Web's LevelDB corrupts on truncated writes), and offer to move the folder to
+  // a roomier disk. Applied on the next launch via the storage/dataDir setting.
+  void checkStorageSpace();
+  void promptChangeDataDir();
+  // The current WebEngine data folder: the storage/dataDir override, or default.
+  QString currentDataDir() const;
   // Send system+user prompts and hand the result to `onResult`; progress and
   // errors are shown as an in-page toast (and a desktop notification on error,
   // so feedback is not lost if the window is unfocused). Guards on AI enabled.

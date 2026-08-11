@@ -1,5 +1,14 @@
 ## Unreleased
 
+**A warning before a full disk corrupts your session.** When the data folder's
+disk drops below 1 GB free, Whatly now warns at startup that WhatsApp Web's
+local database can be corrupted by a truncated write (which forces you to link
+your phone again) and offers to **move the data folder to a roomier disk** right
+from the warning; the new location applies after a restart. Relatedly, Whatly's
+automatic session backup now backs off when free space is under 512 MB instead
+of spending the last bytes on a copy that would itself be corrupt, and each
+`--profile` instance keeps its own snapshot namespace.
+
 **Settings sections styled correctly in every language.** The collapsible
 Settings sections were named after their translated titles, and a name with an
 accent or a slash — "Básico", "IA/traducción" — is not a valid Qt style-sheet

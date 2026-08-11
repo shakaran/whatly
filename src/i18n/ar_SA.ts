@@ -593,124 +593,170 @@ Do you wish to override the security check and continue ?   </source>
         <translation>غير المقروءة الأخيرة</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="856"/>
+        <location filename="../mainwindow_webengine.cpp" line="859"/>
         <source>Reply</source>
         <translation>رد</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="857"/>
+        <location filename="../mainwindow_webengine.cpp" line="860"/>
         <source>Reply to %1…</source>
         <translation>الرد على %1…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1005"/>
+        <location filename="../mainwindow_webengine.cpp" line="1008"/>
         <source>Waiting for network…</source>
         <translation>في انتظار الشبكة…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1131"/>
+        <location filename="../mainwindow_webengine.cpp" line="1134"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>لا يستطيع هذا الإصدار إرسال مقاطع فيديو H.264/MP4: فقد بُني محرك المتصفح فيه بدون البرامج المرمّزة الاحتكارية. أما الصور ومقاطع فيديو WebM/VP9 فتعمل. لإرسال MP4، استخدم إصدار Flatpak الذي بُني محركه مزوّدًا بها. (انقر للإغلاق.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1140"/>
+        <location filename="../mainwindow_webengine.cpp" line="1143"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
         <translation>هذه النسخة لا يمكنها إرسال مقاطع H.264/MP4: بُني محرك المتصفح دون الترميزات المملوكة. الصور ومقاطع WebM/VP9 تعمل؛ لـ MP4 استخدم حزمة توزيعة/أصلية مبنية بالترميزات. (انقر للإغلاق.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1431"/>
+        <location filename="../mainwindow_webengine.cpp" line="1434"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>الترجمة المضمّنة معطّلة (فعّلها من الإعدادات → الترجمة).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1435"/>
+        <location filename="../mainwindow_webengine.cpp" line="1438"/>
         <source>The message box is empty.</source>
         <translation>مربع الرسالة فارغ.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1436"/>
+        <location filename="../mainwindow_webengine.cpp" line="1439"/>
         <source>Select some text to translate first.</source>
         <translation>حدد أولًا نصًا لترجمته.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1474"/>
+        <location filename="../mainwindow_webengine.cpp" line="1477"/>
         <source>No conversation is open.</source>
         <translation>لا توجد محادثة مفتوحة.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1478"/>
+        <location filename="../mainwindow_webengine.cpp" line="1481"/>
         <source>An export is already running.</source>
         <translation>هناك عملية تصدير قيد التشغيل بالفعل.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1483"/>
+        <location filename="../mainwindow_webengine.cpp" line="1486"/>
         <source>Choose a folder for the exported chat</source>
         <translation>اختر مجلدًا للمحادثة المُصدَّرة</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1489"/>
+        <location filename="../mainwindow_webengine.cpp" line="1492"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>يجري جمع الرسائل… يتم تصفح المحادثة.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1490"/>
+        <location filename="../mainwindow_webengine.cpp" line="1493"/>
         <source>Cancel</source>
         <translation type="unfinished">إلغاء</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1537"/>
+        <location filename="../mainwindow_webengine.cpp" line="1540"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>يجري جمع الرسائل… (%1 حتى الآن)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1543"/>
+        <location filename="../mainwindow_webengine.cpp" line="1546"/>
         <source>Could not read the conversation: %1</source>
         <translation>تعذّرت قراءة المحادثة: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1889"/>
+        <location filename="../mainwindow_webengine.cpp" line="1892"/>
         <source>Do Not Disturb on.</source>
         <translation>تم تفعيل عدم الإزعاج.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1889"/>
+        <location filename="../mainwindow_webengine.cpp" line="1892"/>
         <source>Do Not Disturb off.</source>
         <translation>تم إيقاف عدم الإزعاج.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1897"/>
-        <location filename="../mainwindow_webengine.cpp" line="1913"/>
+        <location filename="../mainwindow_webengine.cpp" line="1900"/>
+        <location filename="../mainwindow_webengine.cpp" line="1916"/>
         <source>Do Not Disturb on until %1.</source>
         <translation>تم تفعيل عدم الإزعاج حتى %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1924"/>
+        <location filename="../mainwindow_webengine.cpp" line="1927"/>
         <source>Open a chat to set a reply reminder.</source>
         <translation>افتح محادثة لضبط تذكير بالرد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1930"/>
+        <location filename="../mainwindow_webengine.cpp" line="1933"/>
         <source>Time to reply to this chat.</source>
         <translation>حان وقت الرد على هذه المحادثة.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1933"/>
+        <location filename="../mainwindow_webengine.cpp" line="1936"/>
         <source>Reply reminder set for %1.</source>
         <translation>تم ضبط تذكير بالرد في %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1949"/>
+        <location filename="../mainwindow_webengine.cpp" line="1967"/>
+        <location filename="../mainwindow_webengine.cpp" line="1991"/>
+        <source>Low disk space</source>
+        <translation>مساحة القرص منخفضة</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1968"/>
+        <source>Whatly&apos;s data folder has only %1 free.</source>
+        <translation>لم يتبقَّ في مجلد بيانات Whatly سوى %1.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1971"/>
+        <source>With so little space, WhatsApp Web&apos;s local database can be corrupted by a truncated write, which forces you to link your phone again. Move Whatly&apos;s data folder to a disk with more room, or free up space.</source>
+        <translation>مع هذه المساحة الضئيلة، قد تتلف قاعدة بيانات WhatsApp Web المحلية بسبب كتابة مبتورة، مما يضطرك إلى ربط هاتفك من جديد. انقل مجلد بيانات Whatly إلى قرص أكبر مساحة، أو حرِّر مساحة.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1975"/>
+        <source>Change folder…</source>
+        <translation>تغيير المجلد…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1976"/>
+        <source>Later</source>
+        <translation type="unfinished">لاحقًا</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1984"/>
+        <source>Choose a data folder for Whatly</source>
+        <translation>اختر مجلد بيانات لـ Whatly</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1992"/>
+        <source>That folder is also low on space (%1 free). Please pick another.</source>
+        <translation>هذا المجلد أيضًا مساحته منخفضة (%1 متبقٍّ). الرجاء اختيار مجلد آخر.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1999"/>
+        <source>Restart Whatly</source>
+        <translation>إعادة تشغيل Whatly</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="2000"/>
+        <source>Whatly will use &quot;%1&quot; as its data folder after a restart. Your current data stays where it is (you can move it there yourself). Restart now?</source>
+        <translation>سيستخدم Whatly المجلد "%1" لبياناته بعد إعادة التشغيل. تبقى بياناتك الحالية في مكانها (يمكنك نقلها بنفسك). إعادة التشغيل الآن؟</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="2020"/>
         <source>No unread chats to summarise.</source>
         <translation>لا توجد محادثات غير مقروءة لتلخيصها.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1954"/>
+        <location filename="../mainwindow_webengine.cpp" line="2025"/>
         <source>Unread digest</source>
         <translation>ملخّص غير المقروء</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1376"/>
-        <location filename="../mainwindow_webengine.cpp" line="1566"/>
+        <location filename="../mainwindow_webengine.cpp" line="1569"/>
         <source>chat</source>
         <translation>محادثة</translation>
     </message>
@@ -720,106 +766,106 @@ Do you wish to override the security check and continue ?   </source>
         <translation>محادثات</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1578"/>
+        <location filename="../mainwindow_webengine.cpp" line="1581"/>
         <source>Could not create the export folder.</source>
         <translation>تعذّر إنشاء مجلد التصدير.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1608"/>
+        <location filename="../mainwindow_webengine.cpp" line="1611"/>
         <source>The export could not be fully written.</source>
         <translation>تعذّرت كتابة التصدير بالكامل.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1612"/>
+        <location filename="../mainwindow_webengine.cpp" line="1615"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>تم حفظ %1 رسالة و%2 ملف وسائط في %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1701"/>
+        <location filename="../mainwindow_webengine.cpp" line="1704"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>مساعد الذكاء الاصطناعي معطّل (فعّله من الإعدادات → مساعد الذكاء الاصطناعي).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1706"/>
+        <location filename="../mainwindow_webengine.cpp" line="1709"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>لا يوجد شيء ليعمل عليه المساعد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1718"/>
+        <location filename="../mainwindow_webengine.cpp" line="1721"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>يجري سؤال المساعد… (ذاكرة منخفضة: %1 ميغابايت متاحة؛ قد يفشل نموذج محلي أو يُبطئ التطبيق)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1723"/>
+        <location filename="../mainwindow_webengine.cpp" line="1726"/>
         <source>Asking the assistant…</source>
         <translation>يجري سؤال المساعد…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1744"/>
+        <location filename="../mainwindow_webengine.cpp" line="1747"/>
         <source>AI assistant</source>
         <translation type="unfinished">مساعد الذكاء الاصطناعي</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1803"/>
+        <location filename="../mainwindow_webengine.cpp" line="1806"/>
         <source>Message updated.</source>
         <translation>تم تحديث الرسالة.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1769"/>
-        <location filename="../mainwindow_webengine.cpp" line="1783"/>
-        <location filename="../mainwindow_webengine.cpp" line="1806"/>
+        <location filename="../mainwindow_webengine.cpp" line="1772"/>
+        <location filename="../mainwindow_webengine.cpp" line="1786"/>
+        <location filename="../mainwindow_webengine.cpp" line="1809"/>
         <source>AI result</source>
         <translation>نتيجة الذكاء الاصطناعي</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1819"/>
+        <location filename="../mainwindow_webengine.cpp" line="1822"/>
         <source>Chat summary</source>
         <translation>ملخص المحادثة</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1759"/>
+        <location filename="../mainwindow_webengine.cpp" line="1762"/>
         <source>Close</source>
         <translation type="unfinished">إغلاق</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="116"/>
-        <location filename="../mainwindow.cpp" line="1152"/>
-        <location filename="../mainwindow.cpp" line="1248"/>
+        <location filename="../mainwindow.cpp" line="1157"/>
+        <location filename="../mainwindow.cpp" line="1253"/>
         <source>No WhatsApp window is open</source>
         <translation>لا توجد نافذة واتساب مفتوحة</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1144"/>
+        <location filename="../mainwindow.cpp" line="1149"/>
         <source>Could not understand the recipient: %1</source>
         <translation>تعذّر فهم المستلم: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1207"/>
+        <location filename="../mainwindow.cpp" line="1212"/>
         <source>Opening the group and sending…</source>
         <translation>جارٍ فتح المجموعة والإرسال…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1239"/>
+        <location filename="../mainwindow.cpp" line="1244"/>
         <source>The local API could not start: %1</source>
         <translation>تعذّر بدء تشغيل الواجهة المحلية: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1119"/>
+        <location filename="../mainwindow.cpp" line="1124"/>
         <source>Cloud API send failed: %1</source>
         <translation>فشل الإرسال عبر Cloud API: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1110"/>
+        <location filename="../mainwindow.cpp" line="1115"/>
         <source>The Cloud API is not configured.</source>
         <translation>لم يتم تهيئة Cloud API.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1105"/>
+        <location filename="../mainwindow.cpp" line="1110"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>يتطلب Cloud API رقم هاتف كمستلم.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1208"/>
+        <location filename="../mainwindow.cpp" line="1213"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>جارٍ فتح المحادثة مع &quot;%1&quot; والإرسال…</translation>
     </message>
@@ -834,91 +880,91 @@ Do you wish to override the security check and continue ?   </source>
         <translation>تذكير: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="210"/>
+        <location filename="../mainwindow.cpp" line="215"/>
         <source>Update available</source>
         <translation>يتوفر تحديث</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="211"/>
+        <location filename="../mainwindow.cpp" line="216"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>الإصدار %1 من Whatly متوفر. انقر لفتح صفحة التنزيل.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="886"/>
-        <location filename="../mainwindow.cpp" line="892"/>
-        <location filename="../mainwindow_webengine.cpp" line="964"/>
+        <location filename="../mainwindow.cpp" line="891"/>
+        <location filename="../mainwindow.cpp" line="897"/>
         <location filename="../mainwindow_webengine.cpp" line="967"/>
+        <location filename="../mainwindow_webengine.cpp" line="970"/>
         <source>| Error</source>
         <translation>| خطأ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="892"/>
         <source>Unlock to access Settings.</source>
         <translation>افتح القفل للوصول إلى الإعدادات.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="893"/>
+        <location filename="../mainwindow.cpp" line="898"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>تعذّر تهيئة وحدة الإعدادات.
 لم تتم تهيئة WebEngine.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="914"/>
+        <location filename="../mainwindow.cpp" line="919"/>
         <source> | Action required</source>
         <translation> | إجراء مطلوب</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="915"/>
+        <location filename="../mainwindow.cpp" line="920"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>يجب إعادة تحميل الصفحة للمتابعة.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1094"/>
-        <location filename="../mainwindow.cpp" line="1655"/>
-        <location filename="../mainwindow_webengine.cpp" line="1645"/>
+        <location filename="../mainwindow.cpp" line="1099"/>
+        <location filename="../mainwindow.cpp" line="1660"/>
+        <location filename="../mainwindow_webengine.cpp" line="1648"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly مقفل. ألغِ القفل لإرسال الرسائل.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1383"/>
+        <location filename="../mainwindow.cpp" line="1388"/>
         <source>Restart</source>
         <translation>إعادة التشغيل</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1384"/>
+        <location filename="../mainwindow.cpp" line="1389"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>تعذّر على Whatly بدء نسخة جديدة، لذلك لم يُغلق هذه النسخة. يُرجى إنهاء التطبيق ثم إعادة فتحه.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1510"/>
+        <location filename="../mainwindow.cpp" line="1515"/>
         <source>Expand the chat list</source>
         <translation>توسيع قائمة الدردشات</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1511"/>
+        <location filename="../mainwindow.cpp" line="1516"/>
         <location filename="../mainwindow_tray.cpp" line="356"/>
         <source>Collapse the chat list</source>
         <translation>طي قائمة الدردشات</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1631"/>
+        <location filename="../mainwindow.cpp" line="1636"/>
         <source>Open</source>
         <translation>فتح</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1677"/>
+        <location filename="../mainwindow.cpp" line="1682"/>
         <location filename="../mainwindow_tray.cpp" line="27"/>
         <source>New Chat</source>
         <translation>محادثة جديدة</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1678"/>
+        <location filename="../mainwindow.cpp" line="1683"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>أدخل رقم WhatsApp صالحًا مع رمز الدولة (مثال: ‎+966XXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1708"/>
+        <location filename="../mainwindow.cpp" line="1713"/>
         <source>Rate Application</source>
         <translation>تقييم التطبيق</translation>
     </message>
@@ -1160,13 +1206,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="362"/>
-        <location filename="../mainwindow_webengine.cpp" line="1474"/>
-        <location filename="../mainwindow_webengine.cpp" line="1478"/>
-        <location filename="../mainwindow_webengine.cpp" line="1491"/>
-        <location filename="../mainwindow_webengine.cpp" line="1542"/>
-        <location filename="../mainwindow_webengine.cpp" line="1577"/>
-        <location filename="../mainwindow_webengine.cpp" line="1607"/>
-        <location filename="../mainwindow_webengine.cpp" line="1611"/>
+        <location filename="../mainwindow_webengine.cpp" line="1477"/>
+        <location filename="../mainwindow_webengine.cpp" line="1481"/>
+        <location filename="../mainwindow_webengine.cpp" line="1494"/>
+        <location filename="../mainwindow_webengine.cpp" line="1545"/>
+        <location filename="../mainwindow_webengine.cpp" line="1580"/>
+        <location filename="../mainwindow_webengine.cpp" line="1610"/>
+        <location filename="../mainwindow_webengine.cpp" line="1614"/>
         <source>Export chat</source>
         <translation>تصدير المحادثة</translation>
     </message>
@@ -1312,19 +1358,19 @@ You can pull any account out into its own window: right-click its tab and choose
         <translation>الحساب 1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="962"/>
+        <location filename="../mainwindow_webengine.cpp" line="965"/>
         <source>Unlock to Reload the App.</source>
         <translation>افتح القفل لإعادة تحميل التطبيق.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1173"/>
-        <location filename="../mainwindow.cpp" line="1254"/>
+        <location filename="../mainwindow.cpp" line="1178"/>
+        <location filename="../mainwindow.cpp" line="1259"/>
         <source>Could not read the file to send: %1</source>
         <translation>تعذّر قراءة الملف المراد إرساله: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1182"/>
-        <location filename="../mainwindow.cpp" line="1264"/>
+        <location filename="../mainwindow.cpp" line="1187"/>
+        <location filename="../mainwindow.cpp" line="1269"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>الملف كبير جدًا على الإرسال عبر واجهة الويب الخلفية.</translation>
     </message>
@@ -1553,7 +1599,7 @@ Please setup the password in the Settings first.</source>
 يُرجى ضبط كلمة المرور في الإعدادات أولاً.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="959"/>
+        <location filename="../mainwindow_webengine.cpp" line="962"/>
         <source>Reloading...</source>
         <translation>جارٍ إعادة التحميل...</translation>
     </message>
@@ -2252,17 +2298,17 @@ Please setup the password in the Settings first.</source>
         <translation>كيفية محاذاة حواف المحارف مع البكسل. «تلقائي» يتبع نظامك؛ قد يُصلح المستوى الأخف النص الثقيل أو غير المنتظم.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1516"/>
+        <location filename="../settingswidget.cpp" line="1520"/>
         <source>Slight</source>
         <translation>خفيف</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1517"/>
+        <location filename="../settingswidget.cpp" line="1521"/>
         <source>Medium</source>
         <translation>متوسط</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1518"/>
+        <location filename="../settingswidget.cpp" line="1522"/>
         <source>Full</source>
         <translation>كامل</translation>
     </message>
@@ -2336,8 +2382,8 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="2010"/>
         <location filename="../settingswidget.ui" line="2054"/>
         <location filename="../settingswidget.ui" line="2211"/>
-        <location filename="../settingswidget.cpp" line="1514"/>
-        <location filename="../settingswidget.cpp" line="1806"/>
+        <location filename="../settingswidget.cpp" line="1518"/>
+        <location filename="../settingswidget.cpp" line="1810"/>
         <source>Automatic</source>
         <translation>تلقائي</translation>
     </message>
@@ -2610,7 +2656,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="691"/>
-        <location filename="../settingswidget.cpp" line="1431"/>
+        <location filename="../settingswidget.cpp" line="1435"/>
         <source>Custom CSS</source>
         <translation>CSS مخصص</translation>
     </message>
@@ -2667,7 +2713,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2225"/>
+        <location filename="../settingswidget.cpp" line="2229"/>
         <source>Check spelling as I type</source>
         <translation>تدقيق الإملاء أثناء الكتابة</translation>
     </message>
@@ -2698,7 +2744,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
-        <location filename="../settingswidget.cpp" line="1407"/>
+        <location filename="../settingswidget.cpp" line="1411"/>
         <source>Chat wallpaper</source>
         <translation>خلفية المحادثة</translation>
     </message>
@@ -3549,362 +3595,362 @@ Please setup the password in the Settings first.</source>
         <translation>انقر فوق حقل واضغط على تركيبة المفاتيح. امسح الحقل لإزالة الاختصار. تُطبَّق التغييرات بعد إعادة التشغيل.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1064"/>
+        <location filename="../settingswidget.cpp" line="1068"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>سيؤدي هذا إلى حذف البيانات الدائمة (بما في ذلك ملفات تعريف الارتباط الدائمة وذاكرة التخزين المؤقت) وإغلاق التطبيق.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1069"/>
+        <location filename="../settingswidget.cpp" line="1073"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>حذف ملفات تعريف الارتباط وإغلاق التطبيق؟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1175"/>
+        <location filename="../settingswidget.cpp" line="1179"/>
         <source>| Error</source>
         <translation>| خطأ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1176"/>
+        <location filename="../settingswidget.cpp" line="1180"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>لا يمكن تعيين سلسلة User-Agent فارغة.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1227"/>
+        <location filename="../settingswidget.cpp" line="1231"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>عُطّل التبديل التلقائي للسمة بسبب تغيير السمة يدويًا.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1244"/>
+        <location filename="../settingswidget.cpp" line="1248"/>
         <source>Require setup</source>
         <translation>يتطلب الإعداد</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1273"/>
+        <location filename="../settingswidget.cpp" line="1277"/>
         <source>App lock is not configured.</source>
         <translation>لم يتم تكوين قفل التطبيق.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1277"/>
+        <location filename="../settingswidget.cpp" line="1281"/>
         <source>Do you want to setup App lock now?</source>
         <translation>هل تريد إعداد قفل التطبيق الآن؟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1319"/>
+        <location filename="../settingswidget.cpp" line="1323"/>
         <source>Feature permissions</source>
         <translation>أذونات الميزات</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1398"/>
+        <location filename="../settingswidget.cpp" line="1402"/>
         <source>Choose a chat wallpaper</source>
         <translation>اختر خلفية للمحادثة</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1400"/>
+        <location filename="../settingswidget.cpp" line="1404"/>
         <source>Images (%1)</source>
         <translation>صور (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1408"/>
+        <location filename="../settingswidget.cpp" line="1412"/>
         <source>Could not use that image: %1</source>
         <translation>تعذّر استخدام تلك الصورة: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1423"/>
+        <location filename="../settingswidget.cpp" line="1427"/>
         <source>Choose a CSS file</source>
         <translation>اختر ملف CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1425"/>
+        <location filename="../settingswidget.cpp" line="1429"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>أوراق الأنماط (*.css);;كل الملفات (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1432"/>
+        <location filename="../settingswidget.cpp" line="1436"/>
         <source>Could not read that file: %1</source>
         <translation>تعذّرت قراءة ذلك الملف: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1505"/>
+        <location filename="../settingswidget.cpp" line="1509"/>
         <source>Disk</source>
         <translation>القرص</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1506"/>
+        <location filename="../settingswidget.cpp" line="1510"/>
         <source>Memory</source>
         <translation>الذاكرة</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1659"/>
+        <location filename="../settingswidget.cpp" line="1663"/>
         <source>Ollama not found at this address.</source>
         <translation>لم يُعثر على Ollama على هذا العنوان.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1689"/>
+        <location filename="../settingswidget.cpp" line="1693"/>
         <source>Download complete.</source>
         <translation>اكتمل التنزيل.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1692"/>
+        <location filename="../settingswidget.cpp" line="1696"/>
         <source>Download failed: %1</source>
         <translation>فشل التنزيل: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1703"/>
+        <location filename="../settingswidget.cpp" line="1707"/>
         <source>Checking…</source>
         <translation>يجري التحقق…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1728"/>
+        <location filename="../settingswidget.cpp" line="1732"/>
         <source>Starting download of %1…</source>
         <translation>بدء تنزيل %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1779"/>
+        <location filename="../settingswidget.cpp" line="1783"/>
         <source>System</source>
         <translation>النظام</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1780"/>
+        <location filename="../settingswidget.cpp" line="1784"/>
         <source>None (direct)</source>
         <translation>بلا (مباشر)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1781"/>
+        <location filename="../settingswidget.cpp" line="1785"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1782"/>
+        <location filename="../settingswidget.cpp" line="1786"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1808"/>
+        <location filename="../settingswidget.cpp" line="1812"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>بوابة سطح المكتب (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1810"/>
+        <location filename="../settingswidget.cpp" line="1814"/>
         <source>System service (libnotify)</source>
         <translation>خدمة النظام (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1995"/>
         <location filename="../settingswidget.cpp" line="1999"/>
+        <location filename="../settingswidget.cpp" line="2003"/>
         <source>Add reply</source>
         <translation>إضافة رد</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1995"/>
+        <location filename="../settingswidget.cpp" line="1999"/>
         <source>Name</source>
         <translation>الاسم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1999"/>
+        <location filename="../settingswidget.cpp" line="2003"/>
         <source>Text to insert</source>
         <translation>النص المراد إدراجه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2016"/>
+        <location filename="../settingswidget.cpp" line="2020"/>
         <source>Choose a JavaScript file</source>
         <translation>اختر ملف JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2017"/>
+        <location filename="../settingswidget.cpp" line="2021"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;كل الملفات (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2022"/>
+        <location filename="../settingswidget.cpp" line="2026"/>
         <source>Could not add addon</source>
         <translation>تعذّرت إضافة المُلحق</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2035"/>
+        <location filename="../settingswidget.cpp" line="2039"/>
         <source>Remove addon</source>
         <translation>إزالة المُلحق</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2036"/>
+        <location filename="../settingswidget.cpp" line="2040"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>إزالة المُلحق &quot;%1&quot;؟ سيؤدّي ذلك إلى حذف ملفه.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2224"/>
+        <location filename="../settingswidget.cpp" line="2228"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>المدقق الإملائي (لا توجد قواميس مثبتة)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1507"/>
-        <location filename="../settingswidget.cpp" line="1515"/>
+        <location filename="../settingswidget.cpp" line="1511"/>
+        <location filename="../settingswidget.cpp" line="1519"/>
         <source>None</source>
         <translation>لا شيء</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="506"/>
+        <location filename="../settingswidget.cpp" line="510"/>
         <source>Basics</source>
         <translation>الأساسيات</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="514"/>
+        <location filename="../settingswidget.cpp" line="518"/>
         <source>Appearance</source>
         <translation>المظهر</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="533"/>
+        <location filename="../settingswidget.cpp" line="537"/>
         <source>Notifications</source>
         <translation>الإشعارات</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="537"/>
+        <location filename="../settingswidget.cpp" line="541"/>
         <source>Chatting</source>
         <translation>المحادثة</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="592"/>
+        <location filename="../settingswidget.cpp" line="596"/>
         <source>Spell-check dictionaries</source>
         <translation>قواميس التدقيق الإملائي</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="606"/>
+        <location filename="../settingswidget.cpp" line="610"/>
         <source>Privacy &amp; Lock</source>
         <translation>الخصوصية والقفل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="620"/>
+        <location filename="../settingswidget.cpp" line="624"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>النافذة والتكبير</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="649"/>
+        <location filename="../settingswidget.cpp" line="653"/>
         <source>AI &amp;&amp; translation</source>
         <translation>الذكاء الاصطناعي &amp;&amp; الترجمة</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="656"/>
+        <location filename="../settingswidget.cpp" line="660"/>
         <source>Advanced</source>
         <translation>متقدم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="981"/>
+        <location filename="../settingswidget.cpp" line="985"/>
         <source>Shortcut in use</source>
         <translation>الاختصار قيد الاستخدام</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="982"/>
+        <location filename="../settingswidget.cpp" line="986"/>
         <source>That shortcut is already used by another action.</source>
         <translation>هذا الاختصار مستخدَم بالفعل من قِبل إجراء آخر.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="994"/>
+        <location filename="../settingswidget.cpp" line="998"/>
         <source>Clear cache</source>
         <translation>مسح ذاكرة التخزين المؤقت</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="995"/>
+        <location filename="../settingswidget.cpp" line="999"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>هل تريد مسح ذاكرة التخزين المؤقت الآن؟ سيُعاد تنزيلها عند الحاجة.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1005"/>
-        <location filename="../settingswidget.cpp" line="1011"/>
-        <location filename="../settingswidget.cpp" line="1020"/>
-        <location filename="../settingswidget.cpp" line="1023"/>
+        <location filename="../settingswidget.cpp" line="1009"/>
+        <location filename="../settingswidget.cpp" line="1015"/>
+        <location filename="../settingswidget.cpp" line="1024"/>
+        <location filename="../settingswidget.cpp" line="1027"/>
         <source>Export profile</source>
         <translation>تصدير الملف الشخصي</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1006"/>
+        <location filename="../settingswidget.cpp" line="1010"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>سيحتوي الأرشيف على جلسة WhatsApp المسجَّلة الدخول. حافظ على خصوصيته. هل تريد المتابعة؟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1013"/>
-        <location filename="../settingswidget.cpp" line="1028"/>
+        <location filename="../settingswidget.cpp" line="1017"/>
+        <location filename="../settingswidget.cpp" line="1032"/>
         <source>Archives (*.tar.gz)</source>
         <translation>الأرشيفات (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1021"/>
+        <location filename="../settingswidget.cpp" line="1025"/>
         <source>Profile exported.</source>
         <translation>تم تصدير الملف الشخصي.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1028"/>
         <location filename="../settingswidget.cpp" line="1032"/>
-        <location filename="../settingswidget.cpp" line="1040"/>
-        <location filename="../settingswidget.cpp" line="1043"/>
+        <location filename="../settingswidget.cpp" line="1036"/>
+        <location filename="../settingswidget.cpp" line="1044"/>
+        <location filename="../settingswidget.cpp" line="1047"/>
         <source>Import profile</source>
         <translation>استيراد الملف الشخصي</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1033"/>
+        <location filename="../settingswidget.cpp" line="1037"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>سيؤدي هذا إلى استبدال بيانات الحساب الحالي بمحتوى الأرشيف، ثم يجب إعادة تشغيل Whatly. هل تريد المتابعة؟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1041"/>
+        <location filename="../settingswidget.cpp" line="1045"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>تم استيراد الملف الشخصي. يُرجى إعادة تشغيل Whatly.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1664"/>
+        <location filename="../settingswidget.cpp" line="1668"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>تم العثور على Ollama (%1 نماذج مثبّتة).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2269"/>
+        <location filename="../settingswidget.cpp" line="2273"/>
         <source>download</source>
         <translation>تنزيل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2300"/>
+        <location filename="../settingswidget.cpp" line="2304"/>
         <source>Tick one or more languages to check spelling against.</source>
         <translation>حدّد لغة واحدة أو أكثر للتحقق من التدقيق الإملائي بها.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2311"/>
+        <location filename="../settingswidget.cpp" line="2315"/>
         <source>Choose languages…</source>
         <translation>اختر اللغات…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2315"/>
+        <location filename="../settingswidget.cpp" line="2319"/>
         <source>%1 languages</source>
         <translation>%1 لغات</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2413"/>
+        <location filename="../settingswidget.cpp" line="2417"/>
         <source>WhatsApp default</source>
         <translation>افتراضي واتساب</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2452"/>
+        <location filename="../settingswidget.cpp" line="2456"/>
         <source>System default</source>
         <translation>إعداد النظام الافتراضي</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2487"/>
+        <location filename="../settingswidget.cpp" line="2491"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>ستتغيّر لغة الواجهة عند إعادة تشغيل %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2501"/>
+        <location filename="../settingswidget.cpp" line="2505"/>
         <source>App Lock Setup</source>
         <translation>إعداد قفل التطبيق</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2502"/>
+        <location filename="../settingswidget.cpp" line="2506"/>
         <source>Please setup the App lock password first.</source>
         <translation>يرجى إعداد كلمة مرور قفل التطبيق أولاً.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2618"/>
-        <location filename="../settingswidget.cpp" line="2629"/>
+        <location filename="../settingswidget.cpp" line="2622"/>
+        <location filename="../settingswidget.cpp" line="2633"/>
         <source>Select download directory</source>
         <translation>اختر مجلد التنزيل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2669"/>
+        <location filename="../settingswidget.cpp" line="2673"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3915,7 +3961,7 @@ You may also require a complete restart of Application!</source>
 قد تحتاج أيضًا إلى إعادة تشغيل التطبيق بالكامل!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2675"/>
+        <location filename="../settingswidget.cpp" line="2679"/>
         <source>Do you want to proceed?</source>
         <translation>هل تريد المتابعة؟</translation>
     </message>

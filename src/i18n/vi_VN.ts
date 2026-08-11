@@ -589,8 +589,8 @@ Bạn có muốn bỏ qua kiểm tra bảo mật và tiếp tục không?   </tr
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.cpp" line="116"/>
-        <location filename="../mainwindow.cpp" line="1152"/>
-        <location filename="../mainwindow.cpp" line="1248"/>
+        <location filename="../mainwindow.cpp" line="1157"/>
+        <location filename="../mainwindow.cpp" line="1253"/>
         <source>No WhatsApp window is open</source>
         <translation>Không có cửa sổ WhatsApp nào đang mở</translation>
     </message>
@@ -605,138 +605,138 @@ Bạn có muốn bỏ qua kiểm tra bảo mật và tiếp tục không?   </tr
         <translation>Nhắc nhở: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="210"/>
+        <location filename="../mainwindow.cpp" line="215"/>
         <source>Update available</source>
         <translation>Có bản cập nhật mới</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="211"/>
+        <location filename="../mainwindow.cpp" line="216"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Whatly %1 đã có sẵn. Nhấn để mở trang tải xuống.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="886"/>
-        <location filename="../mainwindow.cpp" line="892"/>
-        <location filename="../mainwindow_webengine.cpp" line="964"/>
+        <location filename="../mainwindow.cpp" line="891"/>
+        <location filename="../mainwindow.cpp" line="897"/>
         <location filename="../mainwindow_webengine.cpp" line="967"/>
+        <location filename="../mainwindow_webengine.cpp" line="970"/>
         <source>| Error</source>
         <translation>| Lỗi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="892"/>
         <source>Unlock to access Settings.</source>
         <translation>Mở khóa để truy cập Cài đặt.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="893"/>
+        <location filename="../mainwindow.cpp" line="898"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>Không thể khởi tạo mô-đun cài đặt.
 Webengine chưa được khởi tạo.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="914"/>
+        <location filename="../mainwindow.cpp" line="919"/>
         <source> | Action required</source>
         <translation> | Cần thao tác</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="915"/>
+        <location filename="../mainwindow.cpp" line="920"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>Cần tải lại trang để tiếp tục.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1094"/>
-        <location filename="../mainwindow.cpp" line="1655"/>
-        <location filename="../mainwindow_webengine.cpp" line="1645"/>
+        <location filename="../mainwindow.cpp" line="1099"/>
+        <location filename="../mainwindow.cpp" line="1660"/>
+        <location filename="../mainwindow_webengine.cpp" line="1648"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly đang bị khóa. Mở khóa để gửi tin nhắn.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1105"/>
+        <location filename="../mainwindow.cpp" line="1110"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>Cloud API cần một số điện thoại làm người nhận.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1110"/>
+        <location filename="../mainwindow.cpp" line="1115"/>
         <source>The Cloud API is not configured.</source>
         <translation>Cloud API chưa được cấu hình.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1119"/>
+        <location filename="../mainwindow.cpp" line="1124"/>
         <source>Cloud API send failed: %1</source>
         <translation>Gửi qua Cloud API thất bại: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1144"/>
+        <location filename="../mainwindow.cpp" line="1149"/>
         <source>Could not understand the recipient: %1</source>
         <translation>Không nhận dạng được người nhận: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1173"/>
-        <location filename="../mainwindow.cpp" line="1254"/>
+        <location filename="../mainwindow.cpp" line="1178"/>
+        <location filename="../mainwindow.cpp" line="1259"/>
         <source>Could not read the file to send: %1</source>
         <translation>Không thể đọc tệp cần gửi: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1182"/>
-        <location filename="../mainwindow.cpp" line="1264"/>
+        <location filename="../mainwindow.cpp" line="1187"/>
+        <location filename="../mainwindow.cpp" line="1269"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>Tệp quá lớn để gửi qua backend web.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1207"/>
+        <location filename="../mainwindow.cpp" line="1212"/>
         <source>Opening the group and sending…</source>
         <translation>Đang mở nhóm và gửi…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1208"/>
+        <location filename="../mainwindow.cpp" line="1213"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>Đang mở cuộc trò chuyện với &quot;%1&quot; và gửi…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1239"/>
+        <location filename="../mainwindow.cpp" line="1244"/>
         <source>The local API could not start: %1</source>
         <translation>Không thể khởi động API cục bộ: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1383"/>
+        <location filename="../mainwindow.cpp" line="1388"/>
         <source>Restart</source>
         <translation>Khởi động lại</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1384"/>
+        <location filename="../mainwindow.cpp" line="1389"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly không thể khởi động một phiên bản mới nên phiên bản này chưa đóng. Vui lòng thoát và mở lại.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1510"/>
+        <location filename="../mainwindow.cpp" line="1515"/>
         <source>Expand the chat list</source>
         <translation>Mở rộng danh sách trò chuyện</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1511"/>
+        <location filename="../mainwindow.cpp" line="1516"/>
         <location filename="../mainwindow_tray.cpp" line="356"/>
         <source>Collapse the chat list</source>
         <translation>Thu gọn danh sách trò chuyện</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1631"/>
+        <location filename="../mainwindow.cpp" line="1636"/>
         <source>Open</source>
         <translation>Mở</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1677"/>
+        <location filename="../mainwindow.cpp" line="1682"/>
         <location filename="../mainwindow_tray.cpp" line="27"/>
         <source>New Chat</source>
         <translation>Cuộc trò chuyện mới</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1678"/>
+        <location filename="../mainwindow.cpp" line="1683"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Nhập số WhatsApp hợp lệ kèm mã quốc gia (vd: +91XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1708"/>
+        <location filename="../mainwindow.cpp" line="1713"/>
         <source>Rate Application</source>
         <translation>Đánh giá ứng dụng</translation>
     </message>
@@ -1089,13 +1089,13 @@ Mở Cài đặt ngay bây giờ?</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="362"/>
-        <location filename="../mainwindow_webengine.cpp" line="1474"/>
-        <location filename="../mainwindow_webengine.cpp" line="1478"/>
-        <location filename="../mainwindow_webengine.cpp" line="1491"/>
-        <location filename="../mainwindow_webengine.cpp" line="1542"/>
-        <location filename="../mainwindow_webengine.cpp" line="1577"/>
-        <location filename="../mainwindow_webengine.cpp" line="1607"/>
-        <location filename="../mainwindow_webengine.cpp" line="1611"/>
+        <location filename="../mainwindow_webengine.cpp" line="1477"/>
+        <location filename="../mainwindow_webengine.cpp" line="1481"/>
+        <location filename="../mainwindow_webengine.cpp" line="1494"/>
+        <location filename="../mainwindow_webengine.cpp" line="1545"/>
+        <location filename="../mainwindow_webengine.cpp" line="1580"/>
+        <location filename="../mainwindow_webengine.cpp" line="1610"/>
+        <location filename="../mainwindow_webengine.cpp" line="1614"/>
         <source>Export chat</source>
         <translation>Xuất cuộc trò chuyện</translation>
     </message>
@@ -1135,129 +1135,175 @@ Mở Cài đặt ngay bây giờ?</translation>
         <translation>đã thu nhỏ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="856"/>
+        <location filename="../mainwindow_webengine.cpp" line="859"/>
         <source>Reply</source>
         <translation>Trả lời</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="857"/>
+        <location filename="../mainwindow_webengine.cpp" line="860"/>
         <source>Reply to %1…</source>
         <translation>Trả lời %1…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="962"/>
+        <location filename="../mainwindow_webengine.cpp" line="965"/>
         <source>Unlock to Reload the App.</source>
         <translation>Mở khóa để tải lại ứng dụng.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1005"/>
+        <location filename="../mainwindow_webengine.cpp" line="1008"/>
         <source>Waiting for network…</source>
         <translation>Đang chờ mạng…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1131"/>
+        <location filename="../mainwindow_webengine.cpp" line="1134"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>Bản dựng này không thể gửi video H.264/MP4: công cụ trình duyệt của nó được biên dịch mà không có các codec độc quyền. Ảnh và video WebM/VP9 vẫn hoạt động. Với MP4, hãy dùng bản Flatpak, có công cụ được biên dịch kèm các codec đó. (Nhấp để đóng.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1140"/>
+        <location filename="../mainwindow_webengine.cpp" line="1143"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
         <translation>Bản dựng này không thể gửi video H.264/MP4: engine trình duyệt của nó được biên dịch không kèm codec độc quyền. Ảnh và video WebM/VP9 vẫn hoạt động; với MP4, hãy dùng gói bản phân phối/gốc được biên dịch kèm codec. (Nhấp để đóng.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1431"/>
+        <location filename="../mainwindow_webengine.cpp" line="1434"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>Dịch nhanh đang tắt (bật trong Cài đặt → Dịch thuật).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1435"/>
+        <location filename="../mainwindow_webengine.cpp" line="1438"/>
         <source>The message box is empty.</source>
         <translation>Ô nhập tin nhắn đang trống.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1436"/>
+        <location filename="../mainwindow_webengine.cpp" line="1439"/>
         <source>Select some text to translate first.</source>
         <translation>Hãy chọn một đoạn văn bản để dịch trước.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1474"/>
+        <location filename="../mainwindow_webengine.cpp" line="1477"/>
         <source>No conversation is open.</source>
         <translation>Không có cuộc trò chuyện nào đang mở.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1478"/>
+        <location filename="../mainwindow_webengine.cpp" line="1481"/>
         <source>An export is already running.</source>
         <translation>Một tiến trình xuất đang chạy.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1483"/>
+        <location filename="../mainwindow_webengine.cpp" line="1486"/>
         <source>Choose a folder for the exported chat</source>
         <translation>Chọn thư mục để lưu cuộc trò chuyện đã xuất</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1489"/>
+        <location filename="../mainwindow_webengine.cpp" line="1492"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>Đang thu thập tin nhắn… cuộn qua cuộc trò chuyện.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1490"/>
+        <location filename="../mainwindow_webengine.cpp" line="1493"/>
         <source>Cancel</source>
         <translation>Hủy</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1537"/>
+        <location filename="../mainwindow_webengine.cpp" line="1540"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>Đang thu thập tin nhắn… (%1 cho đến nay)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1543"/>
+        <location filename="../mainwindow_webengine.cpp" line="1546"/>
         <source>Could not read the conversation: %1</source>
         <translation>Không thể đọc cuộc trò chuyện: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1889"/>
+        <location filename="../mainwindow_webengine.cpp" line="1892"/>
         <source>Do Not Disturb on.</source>
         <translation>Không làm phiền đang bật.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1889"/>
+        <location filename="../mainwindow_webengine.cpp" line="1892"/>
         <source>Do Not Disturb off.</source>
         <translation>Không làm phiền đã tắt.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1897"/>
-        <location filename="../mainwindow_webengine.cpp" line="1913"/>
+        <location filename="../mainwindow_webengine.cpp" line="1900"/>
+        <location filename="../mainwindow_webengine.cpp" line="1916"/>
         <source>Do Not Disturb on until %1.</source>
         <translation>Không làm phiền bật đến %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1924"/>
+        <location filename="../mainwindow_webengine.cpp" line="1927"/>
         <source>Open a chat to set a reply reminder.</source>
         <translation>Mở một cuộc trò chuyện để đặt nhắc trả lời.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1930"/>
+        <location filename="../mainwindow_webengine.cpp" line="1933"/>
         <source>Time to reply to this chat.</source>
         <translation>Đã đến lúc trả lời cuộc trò chuyện này.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1933"/>
+        <location filename="../mainwindow_webengine.cpp" line="1936"/>
         <source>Reply reminder set for %1.</source>
         <translation>Đã đặt nhắc trả lời lúc %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1949"/>
+        <location filename="../mainwindow_webengine.cpp" line="1967"/>
+        <location filename="../mainwindow_webengine.cpp" line="1991"/>
+        <source>Low disk space</source>
+        <translation>Sắp hết dung lượng đĩa</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1968"/>
+        <source>Whatly&apos;s data folder has only %1 free.</source>
+        <translation>Thư mục dữ liệu của Whatly chỉ còn trống %1.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1971"/>
+        <source>With so little space, WhatsApp Web&apos;s local database can be corrupted by a truncated write, which forces you to link your phone again. Move Whatly&apos;s data folder to a disk with more room, or free up space.</source>
+        <translation>Với dung lượng ít như vậy, cơ sở dữ liệu cục bộ của WhatsApp Web có thể bị hỏng do ghi bị cắt ngang, buộc bạn phải liên kết lại điện thoại. Hãy chuyển thư mục dữ liệu của Whatly sang ổ đĩa rộng hơn, hoặc giải phóng dung lượng.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1975"/>
+        <source>Change folder…</source>
+        <translation>Đổi thư mục…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1976"/>
+        <source>Later</source>
+        <translation type="unfinished">Để sau</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1984"/>
+        <source>Choose a data folder for Whatly</source>
+        <translation>Chọn thư mục dữ liệu cho Whatly</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1992"/>
+        <source>That folder is also low on space (%1 free). Please pick another.</source>
+        <translation>Thư mục đó cũng sắp hết dung lượng (còn trống %1). Vui lòng chọn thư mục khác.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1999"/>
+        <source>Restart Whatly</source>
+        <translation>Khởi động lại Whatly</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="2000"/>
+        <source>Whatly will use &quot;%1&quot; as its data folder after a restart. Your current data stays where it is (you can move it there yourself). Restart now?</source>
+        <translation>Sau khi khởi động lại, Whatly sẽ dùng "%1" làm thư mục dữ liệu. Dữ liệu hiện tại của bạn vẫn ở nguyên chỗ (bạn có thể tự chuyển). Khởi động lại ngay?</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="2020"/>
         <source>No unread chats to summarise.</source>
         <translation>Không có trò chuyện chưa đọc để tóm tắt.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1954"/>
+        <location filename="../mainwindow_webengine.cpp" line="2025"/>
         <source>Unread digest</source>
         <translation>Tóm tắt chưa đọc</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1376"/>
-        <location filename="../mainwindow_webengine.cpp" line="1566"/>
+        <location filename="../mainwindow_webengine.cpp" line="1569"/>
         <source>chat</source>
         <translation>cuộc trò chuyện</translation>
     </message>
@@ -1267,64 +1313,64 @@ Mở Cài đặt ngay bây giờ?</translation>
         <translation>cuộc trò chuyện</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1578"/>
+        <location filename="../mainwindow_webengine.cpp" line="1581"/>
         <source>Could not create the export folder.</source>
         <translation>Không thể tạo thư mục xuất.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1608"/>
+        <location filename="../mainwindow_webengine.cpp" line="1611"/>
         <source>The export could not be fully written.</source>
         <translation>Không thể ghi đầy đủ dữ liệu xuất.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1612"/>
+        <location filename="../mainwindow_webengine.cpp" line="1615"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>Đã lưu %1 tin nhắn và %2 tệp phương tiện vào %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1701"/>
+        <location filename="../mainwindow_webengine.cpp" line="1704"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>Trợ lý AI đang tắt (bật trong Cài đặt → Trợ lý AI).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1706"/>
+        <location filename="../mainwindow_webengine.cpp" line="1709"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>Không có gì để trợ lý xử lý.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1718"/>
+        <location filename="../mainwindow_webengine.cpp" line="1721"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>Đang hỏi trợ lý… (bộ nhớ thấp: còn %1 MB trống; mô hình cục bộ có thể lỗi hoặc làm chậm ứng dụng)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1723"/>
+        <location filename="../mainwindow_webengine.cpp" line="1726"/>
         <source>Asking the assistant…</source>
         <translation>Đang hỏi trợ lý…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1744"/>
+        <location filename="../mainwindow_webengine.cpp" line="1747"/>
         <source>AI assistant</source>
         <translation>Trợ lý AI</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1759"/>
+        <location filename="../mainwindow_webengine.cpp" line="1762"/>
         <source>Close</source>
         <translation>Đóng</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1769"/>
-        <location filename="../mainwindow_webengine.cpp" line="1783"/>
-        <location filename="../mainwindow_webengine.cpp" line="1806"/>
+        <location filename="../mainwindow_webengine.cpp" line="1772"/>
+        <location filename="../mainwindow_webengine.cpp" line="1786"/>
+        <location filename="../mainwindow_webengine.cpp" line="1809"/>
         <source>AI result</source>
         <translation>Kết quả AI</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1803"/>
+        <location filename="../mainwindow_webengine.cpp" line="1806"/>
         <source>Message updated.</source>
         <translation>Đã cập nhật tin nhắn.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1819"/>
+        <location filename="../mainwindow_webengine.cpp" line="1822"/>
         <source>Chat summary</source>
         <translation>Tóm tắt cuộc trò chuyện</translation>
     </message>
@@ -1773,7 +1819,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <translation>Đã phục hồi sau sự cố khởi động bằng cách chuyển sang chế độ kết xuất an toàn. Bạn có thể điều chỉnh trong Cài đặt → Hiệu năng.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="959"/>
+        <location filename="../mainwindow_webengine.cpp" line="962"/>
         <source>Reloading...</source>
         <translation>Đang tải lại...</translation>
     </message>
@@ -2228,8 +2274,8 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <location filename="../settingswidget.ui" line="2010"/>
         <location filename="../settingswidget.ui" line="2054"/>
         <location filename="../settingswidget.ui" line="2211"/>
-        <location filename="../settingswidget.cpp" line="1514"/>
-        <location filename="../settingswidget.cpp" line="1806"/>
+        <location filename="../settingswidget.cpp" line="1518"/>
+        <location filename="../settingswidget.cpp" line="1810"/>
         <source>Automatic</source>
         <translation>Tự động</translation>
     </message>
@@ -2557,7 +2603,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="691"/>
-        <location filename="../settingswidget.cpp" line="1431"/>
+        <location filename="../settingswidget.cpp" line="1435"/>
         <source>Custom CSS</source>
         <translation>CSS tùy chỉnh</translation>
     </message>
@@ -2614,7 +2660,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2225"/>
+        <location filename="../settingswidget.cpp" line="2229"/>
         <source>Check spelling as I type</source>
         <translation>Kiểm tra chính tả khi gõ</translation>
     </message>
@@ -2670,7 +2716,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
-        <location filename="../settingswidget.cpp" line="1407"/>
+        <location filename="../settingswidget.cpp" line="1411"/>
         <source>Chat wallpaper</source>
         <translation>Hình nền trò chuyện</translation>
     </message>
@@ -3534,377 +3580,377 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <translation>xác minh chữ ký webhook</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="506"/>
+        <location filename="../settingswidget.cpp" line="510"/>
         <source>Basics</source>
         <translation>Cơ bản</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="514"/>
+        <location filename="../settingswidget.cpp" line="518"/>
         <source>Appearance</source>
         <translation>Giao diện</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="533"/>
+        <location filename="../settingswidget.cpp" line="537"/>
         <source>Notifications</source>
         <translation>Thông báo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="537"/>
+        <location filename="../settingswidget.cpp" line="541"/>
         <source>Chatting</source>
         <translation>Trò chuyện</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="592"/>
+        <location filename="../settingswidget.cpp" line="596"/>
         <source>Spell-check dictionaries</source>
         <translation>Từ điển kiểm tra chính tả</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="606"/>
+        <location filename="../settingswidget.cpp" line="610"/>
         <source>Privacy &amp; Lock</source>
         <translation>Quyền riêng tư &amp; Khóa</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="620"/>
+        <location filename="../settingswidget.cpp" line="624"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>Cửa sổ &amp;&amp; thu phóng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="649"/>
+        <location filename="../settingswidget.cpp" line="653"/>
         <source>AI &amp;&amp; translation</source>
         <translation>AI &amp;&amp; dịch thuật</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="656"/>
+        <location filename="../settingswidget.cpp" line="660"/>
         <source>Advanced</source>
         <translation>Nâng cao</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="981"/>
+        <location filename="../settingswidget.cpp" line="985"/>
         <source>Shortcut in use</source>
         <translation>Phím tắt đang được dùng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="982"/>
+        <location filename="../settingswidget.cpp" line="986"/>
         <source>That shortcut is already used by another action.</source>
         <translation>Phím tắt đó đã được dùng bởi một thao tác khác.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="994"/>
+        <location filename="../settingswidget.cpp" line="998"/>
         <source>Clear cache</source>
         <translation>Xóa bộ nhớ đệm</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="995"/>
+        <location filename="../settingswidget.cpp" line="999"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Xóa bộ nhớ đệm ngay bây giờ? Dữ liệu sẽ được tải lại khi cần.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1005"/>
-        <location filename="../settingswidget.cpp" line="1011"/>
-        <location filename="../settingswidget.cpp" line="1020"/>
-        <location filename="../settingswidget.cpp" line="1023"/>
+        <location filename="../settingswidget.cpp" line="1009"/>
+        <location filename="../settingswidget.cpp" line="1015"/>
+        <location filename="../settingswidget.cpp" line="1024"/>
+        <location filename="../settingswidget.cpp" line="1027"/>
         <source>Export profile</source>
         <translation>Xuất hồ sơ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1006"/>
+        <location filename="../settingswidget.cpp" line="1010"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>Tệp nén sẽ chứa phiên WhatsApp đã đăng nhập của bạn. Hãy giữ bí mật. Tiếp tục?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1013"/>
-        <location filename="../settingswidget.cpp" line="1028"/>
+        <location filename="../settingswidget.cpp" line="1017"/>
+        <location filename="../settingswidget.cpp" line="1032"/>
         <source>Archives (*.tar.gz)</source>
         <translation>Tệp nén (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1021"/>
+        <location filename="../settingswidget.cpp" line="1025"/>
         <source>Profile exported.</source>
         <translation>Đã xuất hồ sơ.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1028"/>
         <location filename="../settingswidget.cpp" line="1032"/>
-        <location filename="../settingswidget.cpp" line="1040"/>
-        <location filename="../settingswidget.cpp" line="1043"/>
+        <location filename="../settingswidget.cpp" line="1036"/>
+        <location filename="../settingswidget.cpp" line="1044"/>
+        <location filename="../settingswidget.cpp" line="1047"/>
         <source>Import profile</source>
         <translation>Nhập hồ sơ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1033"/>
+        <location filename="../settingswidget.cpp" line="1037"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>Thao tác này sẽ ghi đè dữ liệu của tài khoản hiện tại bằng tệp nén, sau đó Whatly cần được khởi động lại. Tiếp tục?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1041"/>
+        <location filename="../settingswidget.cpp" line="1045"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>Đã nhập hồ sơ. Vui lòng khởi động lại Whatly.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1064"/>
+        <location filename="../settingswidget.cpp" line="1068"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Thao tác này sẽ xóa Dữ liệu bền vững! Dữ liệu bền vững bao gồm cookie bền vững và Bộ nhớ đệm, và sẽ thoát ứng dụng.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1069"/>
+        <location filename="../settingswidget.cpp" line="1073"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>Xóa cookie và thoát ứng dụng?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1175"/>
+        <location filename="../settingswidget.cpp" line="1179"/>
         <source>| Error</source>
         <translation>| Lỗi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1176"/>
+        <location filename="../settingswidget.cpp" line="1180"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>Không thể đặt chuỗi UserAgent trống.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1227"/>
+        <location filename="../settingswidget.cpp" line="1231"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>Tự động chuyển đổi giao diện đã bị tắt do bạn đã chuyển đổi giao diện thủ công.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1244"/>
+        <location filename="../settingswidget.cpp" line="1248"/>
         <source>Require setup</source>
         <translation>Cần thiết lập</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1273"/>
+        <location filename="../settingswidget.cpp" line="1277"/>
         <source>App lock is not configured.</source>
         <translation>Khóa ứng dụng chưa được cấu hình.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1277"/>
+        <location filename="../settingswidget.cpp" line="1281"/>
         <source>Do you want to setup App lock now?</source>
         <translation>Bạn có muốn thiết lập khóa ứng dụng ngay bây giờ không?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1319"/>
+        <location filename="../settingswidget.cpp" line="1323"/>
         <source>Feature permissions</source>
         <translation>Quyền tính năng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1398"/>
+        <location filename="../settingswidget.cpp" line="1402"/>
         <source>Choose a chat wallpaper</source>
         <translation>Chọn hình nền trò chuyện</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1400"/>
+        <location filename="../settingswidget.cpp" line="1404"/>
         <source>Images (%1)</source>
         <translation>Hình ảnh (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1408"/>
+        <location filename="../settingswidget.cpp" line="1412"/>
         <source>Could not use that image: %1</source>
         <translation>Không thể dùng hình ảnh đó: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1423"/>
+        <location filename="../settingswidget.cpp" line="1427"/>
         <source>Choose a CSS file</source>
         <translation>Chọn tệp CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1425"/>
+        <location filename="../settingswidget.cpp" line="1429"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Stylesheet (*.css);;Tất cả tệp (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1432"/>
+        <location filename="../settingswidget.cpp" line="1436"/>
         <source>Could not read that file: %1</source>
         <translation>Không thể đọc tệp đó: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1505"/>
+        <location filename="../settingswidget.cpp" line="1509"/>
         <source>Disk</source>
         <translation>Đĩa</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1506"/>
+        <location filename="../settingswidget.cpp" line="1510"/>
         <source>Memory</source>
         <translation>Bộ nhớ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1507"/>
-        <location filename="../settingswidget.cpp" line="1515"/>
+        <location filename="../settingswidget.cpp" line="1511"/>
+        <location filename="../settingswidget.cpp" line="1519"/>
         <source>None</source>
         <translation>Không</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1516"/>
+        <location filename="../settingswidget.cpp" line="1520"/>
         <source>Slight</source>
         <translation>Nhẹ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1517"/>
+        <location filename="../settingswidget.cpp" line="1521"/>
         <source>Medium</source>
         <translation>Vừa</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1518"/>
+        <location filename="../settingswidget.cpp" line="1522"/>
         <source>Full</source>
         <translation>Đầy đủ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1659"/>
+        <location filename="../settingswidget.cpp" line="1663"/>
         <source>Ollama not found at this address.</source>
         <translation>Không tìm thấy Ollama tại địa chỉ này.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1664"/>
+        <location filename="../settingswidget.cpp" line="1668"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Đã tìm thấy Ollama (%1 mô hình đã cài đặt).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1689"/>
+        <location filename="../settingswidget.cpp" line="1693"/>
         <source>Download complete.</source>
         <translation>Đã tải xong.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1692"/>
+        <location filename="../settingswidget.cpp" line="1696"/>
         <source>Download failed: %1</source>
         <translation>Tải xuống thất bại: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1703"/>
+        <location filename="../settingswidget.cpp" line="1707"/>
         <source>Checking…</source>
         <translation>Đang kiểm tra…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1728"/>
+        <location filename="../settingswidget.cpp" line="1732"/>
         <source>Starting download of %1…</source>
         <translation>Đang bắt đầu tải %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1779"/>
+        <location filename="../settingswidget.cpp" line="1783"/>
         <source>System</source>
         <translation>Hệ thống</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1780"/>
+        <location filename="../settingswidget.cpp" line="1784"/>
         <source>None (direct)</source>
         <translation>Không (trực tiếp)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1781"/>
+        <location filename="../settingswidget.cpp" line="1785"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1782"/>
+        <location filename="../settingswidget.cpp" line="1786"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1808"/>
+        <location filename="../settingswidget.cpp" line="1812"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Desktop portal (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1810"/>
+        <location filename="../settingswidget.cpp" line="1814"/>
         <source>System service (libnotify)</source>
         <translation>Dịch vụ hệ thống (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1995"/>
         <location filename="../settingswidget.cpp" line="1999"/>
+        <location filename="../settingswidget.cpp" line="2003"/>
         <source>Add reply</source>
         <translation>Thêm trả lời</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1995"/>
+        <location filename="../settingswidget.cpp" line="1999"/>
         <source>Name</source>
         <translation>Tên</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1999"/>
+        <location filename="../settingswidget.cpp" line="2003"/>
         <source>Text to insert</source>
         <translation>Văn bản cần chèn</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2016"/>
+        <location filename="../settingswidget.cpp" line="2020"/>
         <source>Choose a JavaScript file</source>
         <translation>Chọn tệp JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2017"/>
+        <location filename="../settingswidget.cpp" line="2021"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Tất cả tệp (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2022"/>
+        <location filename="../settingswidget.cpp" line="2026"/>
         <source>Could not add addon</source>
         <translation>Không thể thêm tiện ích mở rộng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2035"/>
+        <location filename="../settingswidget.cpp" line="2039"/>
         <source>Remove addon</source>
         <translation>Xóa tiện ích mở rộng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2036"/>
+        <location filename="../settingswidget.cpp" line="2040"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>Xóa tiện ích mở rộng &quot;%1&quot;? Việc này sẽ xóa tệp của nó.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2224"/>
+        <location filename="../settingswidget.cpp" line="2228"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Kiểm tra chính tả (chưa cài đặt từ điển nào)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2269"/>
+        <location filename="../settingswidget.cpp" line="2273"/>
         <source>download</source>
         <translation>tải xuống</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2300"/>
+        <location filename="../settingswidget.cpp" line="2304"/>
         <source>Tick one or more languages to check spelling against.</source>
         <translation>Chọn một hoặc nhiều ngôn ngữ để kiểm tra chính tả.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2311"/>
+        <location filename="../settingswidget.cpp" line="2315"/>
         <source>Choose languages…</source>
         <translation>Chọn ngôn ngữ…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2315"/>
+        <location filename="../settingswidget.cpp" line="2319"/>
         <source>%1 languages</source>
         <translation>%1 ngôn ngữ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2413"/>
+        <location filename="../settingswidget.cpp" line="2417"/>
         <source>WhatsApp default</source>
         <translation>Mặc định của WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2452"/>
+        <location filename="../settingswidget.cpp" line="2456"/>
         <source>System default</source>
         <translation>Mặc định hệ thống</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2487"/>
+        <location filename="../settingswidget.cpp" line="2491"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>Ngôn ngữ giao diện sẽ thay đổi khi bạn khởi động lại %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2501"/>
+        <location filename="../settingswidget.cpp" line="2505"/>
         <source>App Lock Setup</source>
         <translation>Thiết lập khóa ứng dụng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2502"/>
+        <location filename="../settingswidget.cpp" line="2506"/>
         <source>Please setup the App lock password first.</source>
         <translation>Vui lòng thiết lập mật khẩu khóa ứng dụng trước.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2618"/>
-        <location filename="../settingswidget.cpp" line="2629"/>
+        <location filename="../settingswidget.cpp" line="2622"/>
+        <location filename="../settingswidget.cpp" line="2633"/>
         <source>Select download directory</source>
         <translation>Chọn thư mục tải xuống</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2669"/>
+        <location filename="../settingswidget.cpp" line="2673"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3915,7 +3961,7 @@ Thao tác này sẽ đăng xuất phiên hiện tại của bạn.
 Bạn cũng có thể cần khởi động lại hoàn toàn ứng dụng!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2675"/>
+        <location filename="../settingswidget.cpp" line="2679"/>
         <source>Do you want to proceed?</source>
         <translation>Bạn có muốn tiếp tục không?</translation>
     </message>

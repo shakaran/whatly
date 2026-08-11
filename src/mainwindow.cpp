@@ -136,6 +136,11 @@ MainWindow::MainWindow(QWidget *parent)
   updateWindowTheme();
   initAutoLock();
 
+  // Warn (once, shortly after the window is up) if the data folder's disk is
+  // nearly full — a truncated LevelDB write there corrupts WhatsApp Web's
+  // storage and forces a re-link. The warning offers to move the folder.
+  QTimer::singleShot(2000, this, &MainWindow::checkStorageSpace);
+
   // Local HTTP API (opt-in, loopback only): lets other programs on this machine
   // send through the running instance, the HTTP counterpart of `whatly --send`.
   m_localApi = new LocalApiServer(this);

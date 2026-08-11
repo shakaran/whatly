@@ -84,8 +84,18 @@ void WebEngineProfileManager::configureProfile(QWebEngineProfile *profile,
         qDebug() << "Engine-derived default UserAgent:" << defaultUserAgentStr;
     }
 
-    const QString dataPath  = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
-    const QString cachePath = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+    // A user-chosen data folder (offered by the low-disk warning) overrides the
+    // default location, so the heavy WebEngine storage and cache can live on a
+    // roomier disk and stop corrupting on a full one. Empty = the default.
+    const QString dataDirOverride =
+        SettingsManager::instance().settings()
+            .value(QStringLiteral("storage/dataDir")).toString();
+    const QString dataPath = dataDirOverride.isEmpty()
+        ? QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation)
+        : dataDirOverride;
+    const QString cachePath = dataDirOverride.isEmpty()
+        ? QStandardPaths::writableLocation(QStandardPaths::CacheLocation)
+        : dataDirOverride + QStringLiteral("/cache");
 
     // Default account keeps ".../QtWebEngine"; a named one gets its own sibling
     // directory, so the sessions never touch.

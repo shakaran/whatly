@@ -31,7 +31,16 @@ bool g_suffixOverridden = false;
 QString dataRoot() {
   if (!g_dataRootOverride.isEmpty())
     return g_dataRootOverride;
-  return QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
+  // Follow the user's data-folder override so snapshots live beside the profile
+  // (on the roomier disk), not back on the full default one.
+  const QString override = SettingsManager::instance()
+                               .settings()
+                               .value(QStringLiteral("storage/dataDir"))
+                               .toString();
+  return override.isEmpty()
+             ? QStandardPaths::writableLocation(
+                   QStandardPaths::AppLocalDataLocation)
+             : override;
 }
 
 QString profileSuffix() {
