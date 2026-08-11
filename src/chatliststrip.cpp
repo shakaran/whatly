@@ -132,7 +132,21 @@ static const char kCollapseCss[] =
     // line. In a preview there is room to read, so let the text wrap instead of
     // ending in an ellipsis.
     "#whatly-chatlist-tip *{white-space:normal!important;"
-    "text-overflow:clip!important}";
+    "text-overflow:clip!important}"
+    // Keep the picture in the top-left corner. Letting the text wrap (just above)
+    // is what moved it: the row centres the avatar against its text column, and a
+    // wrapped message makes that column several lines tall, so the avatar drifts
+    // down — far enough with a long message to leave the panel altogether, which
+    // is why it sometimes vanished. Pinning the row's items to the start keeps it
+    // put whatever the text does.
+    //
+    // A selector can only name the levels it knows about, and this one reaches
+    // the cloned row and its children. That was not enough: the container that
+    // does the centring sits deeper than that, and how deep is WhatsApp's
+    // business and changes with its markup. So this rule covers the row itself,
+    // and the clone walk in show() carries the same anchoring the whole way down
+    // by asking each element what it actually computes to.
+    "#whatly-chatlist-tip>*{align-items:flex-start!important}";
 
 // __CSS__ empty removes the stylesheet, so the same script both collapses and
 // restores. The scripting below does three things the CSS cannot: it finds the
@@ -545,8 +559,19 @@ R"JS(
       // blocks have fixed heights and centre what is in them. Let the message
       // wrap inside that and it grows both ways, pushing itself up over the
       // name — which is what a long message did here. Release those heights and
-      // anchor every COLUMN of the row to its top, so extra lines can only ever
+      // anchor every part of the row to its top, so extra lines can only ever
       // grow downwards, into the space below, and are clipped there.
+      //
+      // Columns are anchored with justify-content and rows with align-items —
+      // they are the same instruction along each axis. The rows are the ones that
+      // move the avatar: a row that centres what it holds measures its tallest
+      // item, so a message wrapped to six lines drops the picture three lines
+      // down, and in a panel two rows tall that puts it outside altogether.
+      //
+      // Asking each element what it computes to, rather than naming a container,
+      // is deliberate: every class here is obfuscated and the nesting is
+      // WhatsApp's to change. A stylesheet can only reach the levels it names,
+      // and the level that does the centring turned out to be below them.
       //
       // The clone is detached, so getComputedStyle would tell us nothing about
       // it; the original is walked alongside instead. cloneNode preserves order,
@@ -557,8 +582,11 @@ R"JS(
         var cs = getComputedStyle(src[i]);
         dst[i].style.setProperty('height', 'auto', 'important');
         dst[i].style.setProperty('min-height', '0', 'important');
-        if (cs.display === 'flex' && cs.flexDirection === 'column')
+        if (cs.display.indexOf('flex') === -1) continue;
+        if (cs.flexDirection === 'column')
           dst[i].style.setProperty('justify-content', 'flex-start', 'important');
+        else if (cs.alignItems === 'center' || cs.alignItems === 'flex-end')
+          dst[i].style.setProperty('align-items', 'flex-start', 'important');
       }
       t.textContent = '';
       t.appendChild(clone);
