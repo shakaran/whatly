@@ -588,7 +588,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="332"/>
+        <location filename="../mainwindow_tray.cpp" line="362"/>
         <source>Recent unread</source>
         <translation>最近未读</translation>
     </message>
@@ -668,23 +668,39 @@ Do you wish to override the security check and continue ?   </source>
         <translation>无法读取对话：%1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1857"/>
+        <location filename="../mainwindow_webengine.cpp" line="1883"/>
+        <source>Do Not Disturb on.</source>
+        <translation>勿扰模式已开启。</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1883"/>
+        <source>Do Not Disturb off.</source>
+        <translation>勿扰模式已关闭。</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1891"/>
+        <location filename="../mainwindow_webengine.cpp" line="1907"/>
+        <source>Do Not Disturb on until %1.</source>
+        <translation>勿扰模式已开启，直到 %1。</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1922"/>
         <source>No unread chats to summarise.</source>
         <translation>没有未读聊天可总结。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1862"/>
+        <location filename="../mainwindow_webengine.cpp" line="1927"/>
         <source>Unread digest</source>
         <translation>未读摘要</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1370"/>
+        <location filename="../mainwindow_accounts.cpp" line="1372"/>
         <location filename="../mainwindow_webengine.cpp" line="1566"/>
         <source>chat</source>
         <translation>聊天</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1370"/>
+        <location filename="../mainwindow_accounts.cpp" line="1372"/>
         <source>chats</source>
         <translation>聊天</translation>
     </message>
@@ -866,7 +882,7 @@ WebEngine 未初始化。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1506"/>
-        <location filename="../mainwindow_tray.cpp" line="288"/>
+        <location filename="../mainwindow_tray.cpp" line="314"/>
         <source>Collapse the chat list</source>
         <translation>折叠聊天列表</translation>
     </message>
@@ -904,7 +920,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="31"/>
-        <location filename="../mainwindow_tray.cpp" line="283"/>
+        <location filename="../mainwindow_tray.cpp" line="309"/>
         <source>Fullscreen</source>
         <translation>全屏</translation>
     </message>
@@ -945,7 +961,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="113"/>
-        <location filename="../mainwindow_tray.cpp" line="285"/>
+        <location filename="../mainwindow_tray.cpp" line="311"/>
         <source>Reset zoom</source>
         <translation>重置缩放</translation>
     </message>
@@ -966,13 +982,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="155"/>
-        <location filename="../mainwindow_tray.cpp" line="291"/>
+        <location filename="../mainwindow_tray.cpp" line="317"/>
         <source>Translate selection</source>
         <translation>翻译所选内容</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="162"/>
-        <location filename="../mainwindow_tray.cpp" line="293"/>
+        <location filename="../mainwindow_tray.cpp" line="319"/>
         <source>Translate message box</source>
         <translation>翻译消息框</translation>
     </message>
@@ -983,92 +999,116 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="180"/>
-        <location filename="../mainwindow_tray.cpp" line="295"/>
+        <location filename="../mainwindow_tray.cpp" line="321"/>
         <source>AI: Summarise chat</source>
         <translation>AI：总结聊天</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="187"/>
-        <location filename="../mainwindow_tray.cpp" line="296"/>
+        <location filename="../mainwindow_tray.cpp" line="322"/>
         <source>AI: Improve message</source>
         <translation>AI：改进消息</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="194"/>
-        <location filename="../mainwindow_tray.cpp" line="297"/>
+        <location filename="../mainwindow_tray.cpp" line="323"/>
         <source>AI: Suggest a reply</source>
         <translation>AI：建议回复</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="201"/>
-        <location filename="../mainwindow_tray.cpp" line="299"/>
+        <location filename="../mainwindow_tray.cpp" line="325"/>
         <source>AI: Summarise unread chats</source>
         <translation>AI：总结未读聊天</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="208"/>
+        <location filename="../mainwindow_tray.cpp" line="210"/>
+        <location filename="../mainwindow_tray.cpp" line="326"/>
+        <source>Do Not Disturb</source>
+        <translation type="unfinished">勿扰模式</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="216"/>
+        <location filename="../mainwindow_tray.cpp" line="327"/>
+        <source>Do Not Disturb: 1 hour</source>
+        <translation>勿扰模式：1 小时</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="221"/>
+        <location filename="../mainwindow_tray.cpp" line="328"/>
+        <source>Do Not Disturb: 2 hours</source>
+        <translation>勿扰模式：2 小时</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="226"/>
+        <location filename="../mainwindow_tray.cpp" line="329"/>
+        <source>Do Not Disturb: until morning</source>
+        <translation>勿扰模式：直到早晨</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="234"/>
         <source>&amp;Toggle theme</source>
         <translation>切换主题(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="219"/>
+        <location filename="../mainwindow_tray.cpp" line="245"/>
         <source>Tabbed view</source>
         <translation>标签页视图</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="226"/>
-        <location filename="../mainwindow_tray.cpp" line="302"/>
+        <location filename="../mainwindow_tray.cpp" line="252"/>
+        <location filename="../mainwindow_tray.cpp" line="332"/>
         <source>Grid view</source>
         <translation>网格视图</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="248"/>
-        <location filename="../mainwindow_tray.cpp" line="303"/>
+        <location filename="../mainwindow_tray.cpp" line="274"/>
+        <location filename="../mainwindow_tray.cpp" line="333"/>
         <source>Command palette</source>
         <translation>命令面板</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="257"/>
+        <location filename="../mainwindow_tray.cpp" line="283"/>
         <source>&amp;About</source>
         <translation>关于(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="266"/>
+        <location filename="../mainwindow_tray.cpp" line="292"/>
         <source>&amp;Quit</source>
         <translation>退出(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="279"/>
+        <location filename="../mainwindow_tray.cpp" line="305"/>
         <source>Reload</source>
         <translation>重新加载</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="280"/>
+        <location filename="../mainwindow_tray.cpp" line="306"/>
         <source>Minimise to tray</source>
         <translation>最小化到托盘</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="281"/>
+        <location filename="../mainwindow_tray.cpp" line="307"/>
         <source>Lock</source>
         <translation>锁定</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="282"/>
+        <location filename="../mainwindow_tray.cpp" line="308"/>
         <source>Mute audio</source>
         <translation>静音</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="284"/>
+        <location filename="../mainwindow_tray.cpp" line="310"/>
         <source>New chat / open URL</source>
         <translation>新建聊天 / 打开 URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="289"/>
+        <location filename="../mainwindow_tray.cpp" line="315"/>
         <source>Find in chats</source>
         <translation>在聊天中查找</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="294"/>
+        <location filename="../mainwindow_tray.cpp" line="320"/>
         <location filename="../mainwindow_webengine.cpp" line="1474"/>
         <location filename="../mainwindow_webengine.cpp" line="1478"/>
         <location filename="../mainwindow_webengine.cpp" line="1491"/>
@@ -1080,88 +1120,88 @@ Open Settings now?</source>
         <translation>导出聊天</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="300"/>
+        <location filename="../mainwindow_tray.cpp" line="330"/>
         <source>Settings</source>
         <translation>设置</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="301"/>
+        <location filename="../mainwindow_tray.cpp" line="331"/>
         <source>Toggle theme</source>
         <translation>切换主题</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="304"/>
+        <location filename="../mainwindow_tray.cpp" line="334"/>
         <source>Quit</source>
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="327"/>
+        <location filename="../mainwindow_tray.cpp" line="357"/>
         <source>Windows</source>
         <translation>窗口</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="497"/>
+        <location filename="../mainwindow_tray.cpp" line="527"/>
         <source>hidden</source>
         <translation>已隐藏</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="499"/>
+        <location filename="../mainwindow_tray.cpp" line="529"/>
         <source>minimised</source>
         <translation>已最小化</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="309"/>
-        <location filename="../mainwindow_accounts.cpp" line="1573"/>
+        <location filename="../mainwindow_accounts.cpp" line="1575"/>
         <source>Rename…</source>
         <translation>重命名…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="310"/>
-        <location filename="../mainwindow_accounts.cpp" line="1574"/>
+        <location filename="../mainwindow_accounts.cpp" line="1576"/>
         <source>Open in own window</source>
         <translation>在独立窗口中打开</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="314"/>
-        <location filename="../mainwindow_accounts.cpp" line="1577"/>
+        <location filename="../mainwindow_accounts.cpp" line="1579"/>
         <source>Remove account</source>
         <translation>移除账号</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="394"/>
+        <location filename="../mainwindow_accounts.cpp" line="396"/>
         <source>Switch to account: %1</source>
         <translation>切换到账户：%1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="397"/>
-        <location filename="../mainwindow_tray.cpp" line="239"/>
+        <location filename="../mainwindow_accounts.cpp" line="399"/>
+        <location filename="../mainwindow_tray.cpp" line="265"/>
         <source>Add account…</source>
         <translation>添加账户…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="398"/>
+        <location filename="../mainwindow_accounts.cpp" line="400"/>
         <source>Quick message…</source>
         <translation>快速消息……</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="403"/>
+        <location filename="../mainwindow_accounts.cpp" line="405"/>
         <source>Insert: %1</source>
         <translation>插入：%1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="711"/>
+        <location filename="../mainwindow_accounts.cpp" line="713"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 条未读</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1340"/>
-        <location filename="../mainwindow_accounts.cpp" line="1970"/>
+        <location filename="../mainwindow_accounts.cpp" line="1342"/>
+        <location filename="../mainwindow_accounts.cpp" line="1972"/>
         <source>Add another account</source>
         <translation>添加另一个账号</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1369"/>
-        <location filename="../mainwindow_accounts.cpp" line="1374"/>
+        <location filename="../mainwindow_accounts.cpp" line="1371"/>
+        <location filename="../mainwindow_accounts.cpp" line="1376"/>
         <source>Restore</source>
         <translation>还原</translation>
     </message>
@@ -1174,39 +1214,39 @@ Open Settings now?</source>
         <translation type="vanished">条消息</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1419"/>
+        <location filename="../mainwindow_accounts.cpp" line="1421"/>
         <source>Add account</source>
         <translation>添加账号</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1420"/>
+        <location filename="../mainwindow_accounts.cpp" line="1422"/>
         <source>Name for the new account:</source>
         <translation>新账号的名称：</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1421"/>
-        <location filename="../mainwindow_accounts.cpp" line="2308"/>
-        <location filename="../mainwindow_accounts.cpp" line="2313"/>
+        <location filename="../mainwindow_accounts.cpp" line="1423"/>
+        <location filename="../mainwindow_accounts.cpp" line="2310"/>
+        <location filename="../mainwindow_accounts.cpp" line="2315"/>
         <source>Account %1</source>
         <translation>账号 %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1450"/>
+        <location filename="../mainwindow_accounts.cpp" line="1452"/>
         <source>Rename account</source>
         <translation>重命名账号</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1450"/>
+        <location filename="../mainwindow_accounts.cpp" line="1452"/>
         <source>Account name:</source>
         <translation>账号名称：</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1989"/>
+        <location filename="../mainwindow_accounts.cpp" line="1991"/>
         <source>Tip: give an account its own window</source>
         <translation>提示：让账户拥有自己的窗口</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1990"/>
+        <location filename="../mainwindow_accounts.cpp" line="1992"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1215,8 +1255,8 @@ You can pull any account out into its own window: right-click its tab and choose
 您可以将任意账户拖到独立窗口中：右键单击其标签页并选择“在独立窗口中打开”。关闭该窗口即可将账户重新停靠为标签页。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2302"/>
-        <location filename="../mainwindow_accounts.cpp" line="2306"/>
+        <location filename="../mainwindow_accounts.cpp" line="2304"/>
+        <location filename="../mainwindow_accounts.cpp" line="2308"/>
         <source>Account 1</source>
         <translation>账号 1</translation>
     </message>

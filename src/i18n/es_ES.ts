@@ -588,7 +588,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="332"/>
+        <location filename="../mainwindow_tray.cpp" line="362"/>
         <source>Recent unread</source>
         <translation>No leídos recientes</translation>
     </message>
@@ -668,23 +668,39 @@ Do you wish to override the security check and continue ?   </source>
         <translation>No se pudo leer la conversación: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1857"/>
+        <location filename="../mainwindow_webengine.cpp" line="1883"/>
+        <source>Do Not Disturb on.</source>
+        <translation>No molestar activado.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1883"/>
+        <source>Do Not Disturb off.</source>
+        <translation>No molestar desactivado.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1891"/>
+        <location filename="../mainwindow_webengine.cpp" line="1907"/>
+        <source>Do Not Disturb on until %1.</source>
+        <translation>No molestar activado hasta %1.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1922"/>
         <source>No unread chats to summarise.</source>
         <translation>No hay chats no leídos que resumir.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1862"/>
+        <location filename="../mainwindow_webengine.cpp" line="1927"/>
         <source>Unread digest</source>
         <translation>Resumen de no leídos</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1370"/>
+        <location filename="../mainwindow_accounts.cpp" line="1372"/>
         <location filename="../mainwindow_webengine.cpp" line="1566"/>
         <source>chat</source>
         <translation>chat</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1370"/>
+        <location filename="../mainwindow_accounts.cpp" line="1372"/>
         <source>chats</source>
         <translation>chats</translation>
     </message>
@@ -866,7 +882,7 @@ WebEngine no está inicializado.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1506"/>
-        <location filename="../mainwindow_tray.cpp" line="288"/>
+        <location filename="../mainwindow_tray.cpp" line="314"/>
         <source>Collapse the chat list</source>
         <translation>Contraer la lista de chats</translation>
     </message>
@@ -904,7 +920,7 @@ Configure primero la contraseña en los ajustes.
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="31"/>
-        <location filename="../mainwindow_tray.cpp" line="283"/>
+        <location filename="../mainwindow_tray.cpp" line="309"/>
         <source>Fullscreen</source>
         <translation>Pantalla completa</translation>
     </message>
@@ -945,7 +961,7 @@ Configure primero la contraseña en los ajustes.
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="113"/>
-        <location filename="../mainwindow_tray.cpp" line="285"/>
+        <location filename="../mainwindow_tray.cpp" line="311"/>
         <source>Reset zoom</source>
         <translation>Restablecer zoom</translation>
     </message>
@@ -966,13 +982,13 @@ Configure primero la contraseña en los ajustes.
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="155"/>
-        <location filename="../mainwindow_tray.cpp" line="291"/>
+        <location filename="../mainwindow_tray.cpp" line="317"/>
         <source>Translate selection</source>
         <translation>Traducir selección</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="162"/>
-        <location filename="../mainwindow_tray.cpp" line="293"/>
+        <location filename="../mainwindow_tray.cpp" line="319"/>
         <source>Translate message box</source>
         <translation>Traducir cuadro de mensaje</translation>
     </message>
@@ -983,92 +999,116 @@ Configure primero la contraseña en los ajustes.
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="180"/>
-        <location filename="../mainwindow_tray.cpp" line="295"/>
+        <location filename="../mainwindow_tray.cpp" line="321"/>
         <source>AI: Summarise chat</source>
         <translation>IA: Resumir chat</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="187"/>
-        <location filename="../mainwindow_tray.cpp" line="296"/>
+        <location filename="../mainwindow_tray.cpp" line="322"/>
         <source>AI: Improve message</source>
         <translation>IA: Mejorar mensaje</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="194"/>
-        <location filename="../mainwindow_tray.cpp" line="297"/>
+        <location filename="../mainwindow_tray.cpp" line="323"/>
         <source>AI: Suggest a reply</source>
         <translation>IA: Sugerir respuesta</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="201"/>
-        <location filename="../mainwindow_tray.cpp" line="299"/>
+        <location filename="../mainwindow_tray.cpp" line="325"/>
         <source>AI: Summarise unread chats</source>
         <translation>IA: Resumir chats no leídos</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="208"/>
+        <location filename="../mainwindow_tray.cpp" line="210"/>
+        <location filename="../mainwindow_tray.cpp" line="326"/>
+        <source>Do Not Disturb</source>
+        <translation type="unfinished">No molestar</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="216"/>
+        <location filename="../mainwindow_tray.cpp" line="327"/>
+        <source>Do Not Disturb: 1 hour</source>
+        <translation>No molestar: 1 hora</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="221"/>
+        <location filename="../mainwindow_tray.cpp" line="328"/>
+        <source>Do Not Disturb: 2 hours</source>
+        <translation>No molestar: 2 horas</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="226"/>
+        <location filename="../mainwindow_tray.cpp" line="329"/>
+        <source>Do Not Disturb: until morning</source>
+        <translation>No molestar: hasta la mañana</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="234"/>
         <source>&amp;Toggle theme</source>
         <translation>Cambiar &amp;tema</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="219"/>
+        <location filename="../mainwindow_tray.cpp" line="245"/>
         <source>Tabbed view</source>
         <translation>Vista por pestañas</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="226"/>
-        <location filename="../mainwindow_tray.cpp" line="302"/>
+        <location filename="../mainwindow_tray.cpp" line="252"/>
+        <location filename="../mainwindow_tray.cpp" line="332"/>
         <source>Grid view</source>
         <translation>Vista en cuadrícula</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="248"/>
-        <location filename="../mainwindow_tray.cpp" line="303"/>
+        <location filename="../mainwindow_tray.cpp" line="274"/>
+        <location filename="../mainwindow_tray.cpp" line="333"/>
         <source>Command palette</source>
         <translation>Paleta de comandos</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="257"/>
+        <location filename="../mainwindow_tray.cpp" line="283"/>
         <source>&amp;About</source>
         <translation>&amp;Acerca de</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="266"/>
+        <location filename="../mainwindow_tray.cpp" line="292"/>
         <source>&amp;Quit</source>
         <translation>&amp;Salir</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="279"/>
+        <location filename="../mainwindow_tray.cpp" line="305"/>
         <source>Reload</source>
         <translation>Recargar</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="280"/>
+        <location filename="../mainwindow_tray.cpp" line="306"/>
         <source>Minimise to tray</source>
         <translation>Minimizar a la bandeja</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="281"/>
+        <location filename="../mainwindow_tray.cpp" line="307"/>
         <source>Lock</source>
         <translation>Bloquear</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="282"/>
+        <location filename="../mainwindow_tray.cpp" line="308"/>
         <source>Mute audio</source>
         <translation>Silenciar audio</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="284"/>
+        <location filename="../mainwindow_tray.cpp" line="310"/>
         <source>New chat / open URL</source>
         <translation>Nuevo chat / abrir URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="289"/>
+        <location filename="../mainwindow_tray.cpp" line="315"/>
         <source>Find in chats</source>
         <translation>Buscar en chats</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="294"/>
+        <location filename="../mainwindow_tray.cpp" line="320"/>
         <location filename="../mainwindow_webengine.cpp" line="1474"/>
         <location filename="../mainwindow_webengine.cpp" line="1478"/>
         <location filename="../mainwindow_webengine.cpp" line="1491"/>
@@ -1080,88 +1120,88 @@ Configure primero la contraseña en los ajustes.
         <translation>Exportar chat</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="300"/>
+        <location filename="../mainwindow_tray.cpp" line="330"/>
         <source>Settings</source>
         <translation>Ajustes</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="301"/>
+        <location filename="../mainwindow_tray.cpp" line="331"/>
         <source>Toggle theme</source>
         <translation>Cambiar tema</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="304"/>
+        <location filename="../mainwindow_tray.cpp" line="334"/>
         <source>Quit</source>
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="327"/>
+        <location filename="../mainwindow_tray.cpp" line="357"/>
         <source>Windows</source>
         <translation>Ventanas</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="497"/>
+        <location filename="../mainwindow_tray.cpp" line="527"/>
         <source>hidden</source>
         <translation>oculta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="499"/>
+        <location filename="../mainwindow_tray.cpp" line="529"/>
         <source>minimised</source>
         <translation>minimizada</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="309"/>
-        <location filename="../mainwindow_accounts.cpp" line="1573"/>
+        <location filename="../mainwindow_accounts.cpp" line="1575"/>
         <source>Rename…</source>
         <translation>Renombrar…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="310"/>
-        <location filename="../mainwindow_accounts.cpp" line="1574"/>
+        <location filename="../mainwindow_accounts.cpp" line="1576"/>
         <source>Open in own window</source>
         <translation>Abrir en ventana propia</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="314"/>
-        <location filename="../mainwindow_accounts.cpp" line="1577"/>
+        <location filename="../mainwindow_accounts.cpp" line="1579"/>
         <source>Remove account</source>
         <translation>Eliminar cuenta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="394"/>
+        <location filename="../mainwindow_accounts.cpp" line="396"/>
         <source>Switch to account: %1</source>
         <translation>Cambiar a la cuenta: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="397"/>
-        <location filename="../mainwindow_tray.cpp" line="239"/>
+        <location filename="../mainwindow_accounts.cpp" line="399"/>
+        <location filename="../mainwindow_tray.cpp" line="265"/>
         <source>Add account…</source>
         <translation>Añadir cuenta…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="398"/>
+        <location filename="../mainwindow_accounts.cpp" line="400"/>
         <source>Quick message…</source>
         <translation>Mensaje rápido…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="403"/>
+        <location filename="../mainwindow_accounts.cpp" line="405"/>
         <source>Insert: %1</source>
         <translation>Insertar: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="711"/>
+        <location filename="../mainwindow_accounts.cpp" line="713"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 sin leer</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1340"/>
-        <location filename="../mainwindow_accounts.cpp" line="1970"/>
+        <location filename="../mainwindow_accounts.cpp" line="1342"/>
+        <location filename="../mainwindow_accounts.cpp" line="1972"/>
         <source>Add another account</source>
         <translation>Añadir otra cuenta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1369"/>
-        <location filename="../mainwindow_accounts.cpp" line="1374"/>
+        <location filename="../mainwindow_accounts.cpp" line="1371"/>
+        <location filename="../mainwindow_accounts.cpp" line="1376"/>
         <source>Restore</source>
         <translation>Restaurar</translation>
     </message>
@@ -1174,39 +1214,39 @@ Configure primero la contraseña en los ajustes.
         <translation type="vanished">mensaje</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1419"/>
+        <location filename="../mainwindow_accounts.cpp" line="1421"/>
         <source>Add account</source>
         <translation>Añadir cuenta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1420"/>
+        <location filename="../mainwindow_accounts.cpp" line="1422"/>
         <source>Name for the new account:</source>
         <translation>Nombre de la nueva cuenta:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1421"/>
-        <location filename="../mainwindow_accounts.cpp" line="2308"/>
-        <location filename="../mainwindow_accounts.cpp" line="2313"/>
+        <location filename="../mainwindow_accounts.cpp" line="1423"/>
+        <location filename="../mainwindow_accounts.cpp" line="2310"/>
+        <location filename="../mainwindow_accounts.cpp" line="2315"/>
         <source>Account %1</source>
         <translation>Cuenta %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1450"/>
+        <location filename="../mainwindow_accounts.cpp" line="1452"/>
         <source>Rename account</source>
         <translation>Renombrar cuenta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1450"/>
+        <location filename="../mainwindow_accounts.cpp" line="1452"/>
         <source>Account name:</source>
         <translation>Nombre de la cuenta:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1989"/>
+        <location filename="../mainwindow_accounts.cpp" line="1991"/>
         <source>Tip: give an account its own window</source>
         <translation>Consejo: da a una cuenta su propia ventana</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1990"/>
+        <location filename="../mainwindow_accounts.cpp" line="1992"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1215,8 +1255,8 @@ You can pull any account out into its own window: right-click its tab and choose
 Puedes sacar cualquier cuenta a su propia ventana: haz clic derecho en su pestaña y elige «Abrir en ventana propia». Cierra esa ventana para volver a acoplar la cuenta como pestaña.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2302"/>
-        <location filename="../mainwindow_accounts.cpp" line="2306"/>
+        <location filename="../mainwindow_accounts.cpp" line="2304"/>
+        <location filename="../mainwindow_accounts.cpp" line="2308"/>
         <source>Account 1</source>
         <translation>Cuenta 1</translation>
     </message>

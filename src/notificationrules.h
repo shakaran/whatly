@@ -59,6 +59,20 @@ bool matchesKeyword(const QString &title, const QString &body);
 // Whether `now`'s time-of-day falls inside the DND window (handles wrap-around).
 bool inDndWindow(const QDateTime &now);
 
+// Manual "Do Not Disturb" (idea #10), on demand and independent of the daily
+// schedule: on until a chosen time, or until turned back off. VIP contacts and
+// keyword hits still break through, exactly as during the scheduled window.
+bool manualDndIndefinite();
+QDateTime manualDndUntil();  // invalid when off or indefinite
+void dndSnoozeUntil(const QDateTime &until); // timed: on until `until`
+void dndOnIndefinite();                      // on until turned off
+void dndOff();                               // clear any manual DND
+
+// Whether manual DND is in force at `now`. Pure core (indefinite flag + until +
+// now) is `manualActive`, so it is unit-tested without touching settings.
+bool manualDndActive(const QDateTime &now);
+bool manualActive(bool indefinite, const QDateTime &until, const QDateTime &now);
+
 } // namespace NotificationRules
 
 #endif // NOTIFICATIONRULES_H

@@ -715,7 +715,7 @@ Webengine chưa được khởi tạo.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1506"/>
-        <location filename="../mainwindow_tray.cpp" line="288"/>
+        <location filename="../mainwindow_tray.cpp" line="314"/>
         <source>Collapse the chat list</source>
         <translation>Thu gọn danh sách trò chuyện</translation>
     </message>
@@ -742,57 +742,57 @@ Webengine chưa được khởi tạo.</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="309"/>
-        <location filename="../mainwindow_accounts.cpp" line="1573"/>
+        <location filename="../mainwindow_accounts.cpp" line="1575"/>
         <source>Rename…</source>
         <translation>Đổi tên…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="310"/>
-        <location filename="../mainwindow_accounts.cpp" line="1574"/>
+        <location filename="../mainwindow_accounts.cpp" line="1576"/>
         <source>Open in own window</source>
         <translation>Mở trong cửa sổ riêng</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="314"/>
-        <location filename="../mainwindow_accounts.cpp" line="1577"/>
+        <location filename="../mainwindow_accounts.cpp" line="1579"/>
         <source>Remove account</source>
         <translation>Xóa tài khoản</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="394"/>
+        <location filename="../mainwindow_accounts.cpp" line="396"/>
         <source>Switch to account: %1</source>
         <translation>Chuyển sang tài khoản: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="397"/>
-        <location filename="../mainwindow_tray.cpp" line="239"/>
+        <location filename="../mainwindow_accounts.cpp" line="399"/>
+        <location filename="../mainwindow_tray.cpp" line="265"/>
         <source>Add account…</source>
         <translation>Thêm tài khoản…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="398"/>
+        <location filename="../mainwindow_accounts.cpp" line="400"/>
         <source>Quick message…</source>
         <translation>Tin nhắn nhanh…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="403"/>
+        <location filename="../mainwindow_accounts.cpp" line="405"/>
         <source>Insert: %1</source>
         <translation>Chèn: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="711"/>
+        <location filename="../mainwindow_accounts.cpp" line="713"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 chưa đọc</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1340"/>
-        <location filename="../mainwindow_accounts.cpp" line="1970"/>
+        <location filename="../mainwindow_accounts.cpp" line="1342"/>
+        <location filename="../mainwindow_accounts.cpp" line="1972"/>
         <source>Add another account</source>
         <translation>Thêm tài khoản khác</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1369"/>
-        <location filename="../mainwindow_accounts.cpp" line="1374"/>
+        <location filename="../mainwindow_accounts.cpp" line="1371"/>
+        <location filename="../mainwindow_accounts.cpp" line="1376"/>
         <source>Restore</source>
         <translation>Khôi phục</translation>
     </message>
@@ -805,39 +805,39 @@ Webengine chưa được khởi tạo.</translation>
         <translation type="vanished">tin nhắn</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1419"/>
+        <location filename="../mainwindow_accounts.cpp" line="1421"/>
         <source>Add account</source>
         <translation>Thêm tài khoản</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1420"/>
+        <location filename="../mainwindow_accounts.cpp" line="1422"/>
         <source>Name for the new account:</source>
         <translation>Tên cho tài khoản mới:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1421"/>
-        <location filename="../mainwindow_accounts.cpp" line="2308"/>
-        <location filename="../mainwindow_accounts.cpp" line="2313"/>
+        <location filename="../mainwindow_accounts.cpp" line="1423"/>
+        <location filename="../mainwindow_accounts.cpp" line="2310"/>
+        <location filename="../mainwindow_accounts.cpp" line="2315"/>
         <source>Account %1</source>
         <translation>Tài khoản %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1450"/>
+        <location filename="../mainwindow_accounts.cpp" line="1452"/>
         <source>Rename account</source>
         <translation>Đổi tên tài khoản</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1450"/>
+        <location filename="../mainwindow_accounts.cpp" line="1452"/>
         <source>Account name:</source>
         <translation>Tên tài khoản:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1989"/>
+        <location filename="../mainwindow_accounts.cpp" line="1991"/>
         <source>Tip: give an account its own window</source>
         <translation>Mẹo: cho tài khoản một cửa sổ riêng</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1990"/>
+        <location filename="../mainwindow_accounts.cpp" line="1992"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -846,8 +846,8 @@ You can pull any account out into its own window: right-click its tab and choose
 Bạn có thể kéo bất kỳ tài khoản nào ra cửa sổ riêng: nhấp chuột phải vào thẻ và chọn &quot;Mở trong cửa sổ riêng&quot;. Đóng cửa sổ đó để gắn tài khoản trở lại thành thẻ.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2302"/>
-        <location filename="../mainwindow_accounts.cpp" line="2306"/>
+        <location filename="../mainwindow_accounts.cpp" line="2304"/>
+        <location filename="../mainwindow_accounts.cpp" line="2308"/>
         <source>Account 1</source>
         <translation>Tài khoản 1</translation>
     </message>
@@ -864,7 +864,7 @@ Mở Cài đặt ngay bây giờ?</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="31"/>
-        <location filename="../mainwindow_tray.cpp" line="283"/>
+        <location filename="../mainwindow_tray.cpp" line="309"/>
         <source>Fullscreen</source>
         <translation>Toàn màn hình</translation>
     </message>
@@ -905,7 +905,7 @@ Mở Cài đặt ngay bây giờ?</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="113"/>
-        <location filename="../mainwindow_tray.cpp" line="285"/>
+        <location filename="../mainwindow_tray.cpp" line="311"/>
         <source>Reset zoom</source>
         <translation>Đặt lại thu phóng</translation>
     </message>
@@ -926,13 +926,13 @@ Mở Cài đặt ngay bây giờ?</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="155"/>
-        <location filename="../mainwindow_tray.cpp" line="291"/>
+        <location filename="../mainwindow_tray.cpp" line="317"/>
         <source>Translate selection</source>
         <translation>Dịch phần được chọn</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="162"/>
-        <location filename="../mainwindow_tray.cpp" line="293"/>
+        <location filename="../mainwindow_tray.cpp" line="319"/>
         <source>Translate message box</source>
         <translation>Dịch ô nhập tin nhắn</translation>
     </message>
@@ -943,92 +943,116 @@ Mở Cài đặt ngay bây giờ?</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="180"/>
-        <location filename="../mainwindow_tray.cpp" line="295"/>
+        <location filename="../mainwindow_tray.cpp" line="321"/>
         <source>AI: Summarise chat</source>
         <translation>AI: Tóm tắt cuộc trò chuyện</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="187"/>
-        <location filename="../mainwindow_tray.cpp" line="296"/>
+        <location filename="../mainwindow_tray.cpp" line="322"/>
         <source>AI: Improve message</source>
         <translation>AI: Cải thiện tin nhắn</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="194"/>
-        <location filename="../mainwindow_tray.cpp" line="297"/>
+        <location filename="../mainwindow_tray.cpp" line="323"/>
         <source>AI: Suggest a reply</source>
         <translation>AI: Gợi ý trả lời</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="201"/>
-        <location filename="../mainwindow_tray.cpp" line="299"/>
+        <location filename="../mainwindow_tray.cpp" line="325"/>
         <source>AI: Summarise unread chats</source>
         <translation>AI: Tóm tắt trò chuyện chưa đọc</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="208"/>
+        <location filename="../mainwindow_tray.cpp" line="210"/>
+        <location filename="../mainwindow_tray.cpp" line="326"/>
+        <source>Do Not Disturb</source>
+        <translation type="unfinished">Không làm phiền</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="216"/>
+        <location filename="../mainwindow_tray.cpp" line="327"/>
+        <source>Do Not Disturb: 1 hour</source>
+        <translation>Không làm phiền: 1 giờ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="221"/>
+        <location filename="../mainwindow_tray.cpp" line="328"/>
+        <source>Do Not Disturb: 2 hours</source>
+        <translation>Không làm phiền: 2 giờ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="226"/>
+        <location filename="../mainwindow_tray.cpp" line="329"/>
+        <source>Do Not Disturb: until morning</source>
+        <translation>Không làm phiền: đến sáng</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="234"/>
         <source>&amp;Toggle theme</source>
         <translation>&amp;Chuyển đổi giao diện</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="219"/>
+        <location filename="../mainwindow_tray.cpp" line="245"/>
         <source>Tabbed view</source>
         <translation>Chế độ xem theo thẻ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="226"/>
-        <location filename="../mainwindow_tray.cpp" line="302"/>
+        <location filename="../mainwindow_tray.cpp" line="252"/>
+        <location filename="../mainwindow_tray.cpp" line="332"/>
         <source>Grid view</source>
         <translation>Chế độ xem lưới</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="248"/>
-        <location filename="../mainwindow_tray.cpp" line="303"/>
+        <location filename="../mainwindow_tray.cpp" line="274"/>
+        <location filename="../mainwindow_tray.cpp" line="333"/>
         <source>Command palette</source>
         <translation>Bảng lệnh</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="257"/>
+        <location filename="../mainwindow_tray.cpp" line="283"/>
         <source>&amp;About</source>
         <translation>&amp;Giới thiệu</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="266"/>
+        <location filename="../mainwindow_tray.cpp" line="292"/>
         <source>&amp;Quit</source>
         <translation>&amp;Thoát</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="279"/>
+        <location filename="../mainwindow_tray.cpp" line="305"/>
         <source>Reload</source>
         <translation>Tải lại</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="280"/>
+        <location filename="../mainwindow_tray.cpp" line="306"/>
         <source>Minimise to tray</source>
         <translation>Thu nhỏ vào khay hệ thống</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="281"/>
+        <location filename="../mainwindow_tray.cpp" line="307"/>
         <source>Lock</source>
         <translation>Khóa</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="282"/>
+        <location filename="../mainwindow_tray.cpp" line="308"/>
         <source>Mute audio</source>
         <translation>Tắt tiếng</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="284"/>
+        <location filename="../mainwindow_tray.cpp" line="310"/>
         <source>New chat / open URL</source>
         <translation>Cuộc trò chuyện mới / mở URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="289"/>
+        <location filename="../mainwindow_tray.cpp" line="315"/>
         <source>Find in chats</source>
         <translation>Tìm trong cuộc trò chuyện</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="294"/>
+        <location filename="../mainwindow_tray.cpp" line="320"/>
         <location filename="../mainwindow_webengine.cpp" line="1474"/>
         <location filename="../mainwindow_webengine.cpp" line="1478"/>
         <location filename="../mainwindow_webengine.cpp" line="1491"/>
@@ -1040,37 +1064,37 @@ Mở Cài đặt ngay bây giờ?</translation>
         <translation>Xuất cuộc trò chuyện</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="300"/>
+        <location filename="../mainwindow_tray.cpp" line="330"/>
         <source>Settings</source>
         <translation>Cài đặt</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="301"/>
+        <location filename="../mainwindow_tray.cpp" line="331"/>
         <source>Toggle theme</source>
         <translation>Chuyển đổi giao diện</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="304"/>
+        <location filename="../mainwindow_tray.cpp" line="334"/>
         <source>Quit</source>
         <translation>Thoát</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="327"/>
+        <location filename="../mainwindow_tray.cpp" line="357"/>
         <source>Windows</source>
         <translation>Cửa sổ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="332"/>
+        <location filename="../mainwindow_tray.cpp" line="362"/>
         <source>Recent unread</source>
         <translation>Chưa đọc gần đây</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="497"/>
+        <location filename="../mainwindow_tray.cpp" line="527"/>
         <source>hidden</source>
         <translation>đã ẩn</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="499"/>
+        <location filename="../mainwindow_tray.cpp" line="529"/>
         <source>minimised</source>
         <translation>đã thu nhỏ</translation>
     </message>
@@ -1155,23 +1179,39 @@ Mở Cài đặt ngay bây giờ?</translation>
         <translation>Không thể đọc cuộc trò chuyện: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1857"/>
+        <location filename="../mainwindow_webengine.cpp" line="1883"/>
+        <source>Do Not Disturb on.</source>
+        <translation>Không làm phiền đang bật.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1883"/>
+        <source>Do Not Disturb off.</source>
+        <translation>Không làm phiền đã tắt.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1891"/>
+        <location filename="../mainwindow_webengine.cpp" line="1907"/>
+        <source>Do Not Disturb on until %1.</source>
+        <translation>Không làm phiền bật đến %1.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1922"/>
         <source>No unread chats to summarise.</source>
         <translation>Không có trò chuyện chưa đọc để tóm tắt.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1862"/>
+        <location filename="../mainwindow_webengine.cpp" line="1927"/>
         <source>Unread digest</source>
         <translation>Tóm tắt chưa đọc</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1370"/>
+        <location filename="../mainwindow_accounts.cpp" line="1372"/>
         <location filename="../mainwindow_webengine.cpp" line="1566"/>
         <source>chat</source>
         <translation>cuộc trò chuyện</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1370"/>
+        <location filename="../mainwindow_accounts.cpp" line="1372"/>
         <source>chats</source>
         <translation>cuộc trò chuyện</translation>
     </message>

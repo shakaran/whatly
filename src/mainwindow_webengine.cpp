@@ -1843,6 +1843,71 @@ void MainWindow::aiSuggestReply() {
       });
 }
 
+// ── Manual Do Not Disturb (idea #10) ────────────────────────────────────────
+void MainWindow::refreshDndUi() {
+  const QDateTime now = QDateTime::currentDateTime();
+  const bool active = NotificationRules::manualDndActive(now);
+  if (m_dndAction) {
+    // Set programmatically without re-entering setDndManual().
+    const QSignalBlocker block(m_dndAction);
+    m_dndAction->setChecked(active);
+  }
+  if (!m_dndExpiryTimer) {
+    m_dndExpiryTimer = new QTimer(this);
+    m_dndExpiryTimer->setSingleShot(true);
+    connect(m_dndExpiryTimer, &QTimer::timeout, this,
+            &MainWindow::refreshDndUi);
+  }
+  m_dndExpiryTimer->stop();
+  // Uncheck the action the moment a timed snooze runs out (gating is already
+  // live via shouldNotify; this just keeps the visible state honest).
+  const QDateTime until = NotificationRules::manualDndUntil();
+  if (active && !NotificationRules::manualDndIndefinite() && until.isValid()) {
+    const qint64 ms = now.msecsTo(until);
+    if (ms > 0)
+      m_dndExpiryTimer->start(int(qMin<qint64>(ms, 24LL * 60 * 60 * 1000)));
+  }
+}
+
+void MainWindow::dndToast(const QString &message) {
+  if (m_webEngine && m_webEngine->page())
+    m_webEngine->page()->runJavaScript(Translate::toastScript(message, false));
+}
+
+void MainWindow::setDndManual(bool on) {
+  if (on)
+    NotificationRules::dndOnIndefinite();
+  else
+    NotificationRules::dndOff();
+  refreshDndUi();
+  dndToast(on ? tr("Do Not Disturb on.") : tr("Do Not Disturb off."));
+}
+
+void MainWindow::dndSnoozeFor(int minutes) {
+  const QDateTime until =
+      QDateTime::currentDateTime().addSecs(qint64(minutes) * 60);
+  NotificationRules::dndSnoozeUntil(until);
+  refreshDndUi();
+  dndToast(tr("Do Not Disturb on until %1.")
+               .arg(QLocale().toString(until, QLocale::ShortFormat)));
+}
+
+void MainWindow::dndSnoozeUntilMorning() {
+  const QDateTime now = QDateTime::currentDateTime();
+  // Reuse the scheduled "end of quiet hours" as morning, falling back to 08:00.
+  QTime morning = QTime::fromString(NotificationRules::dndEnd(),
+                                    QStringLiteral("HH:mm"));
+  if (!morning.isValid())
+    morning = QTime(8, 0);
+  QDateTime until(now.date(), morning);
+  if (until <= now)
+    until = until.addDays(1);
+  NotificationRules::dndSnoozeUntil(until);
+  refreshDndUi();
+  dndToast(tr("Do Not Disturb on until %1.")
+               .arg(QLocale().toString(until, QLocale::ShortFormat)));
+}
+
 void MainWindow::aiSummarizeUnread() {
   if (!m_webEngine || !m_webEngine->page())
     return;

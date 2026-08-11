@@ -455,6 +455,20 @@ private:
   // Triage every unread chat into one prioritised digest, shown in a dialog.
   // Reads the unread rows (name + count + preview) without opening any chat.
   void aiSummarizeUnread();
+
+  // Manual Do Not Disturb (idea #10): silence popups on demand, on top of the
+  // scheduled window. The checkable action reflects "manual DND on"; the timed
+  // ones snooze for a while. VIP/keyword still break through (see shouldNotify).
+  QAction *m_dndAction = nullptr;      // checkable: on until turned off
+  QAction *m_dnd1hAction = nullptr;
+  QAction *m_dnd2hAction = nullptr;
+  QAction *m_dndMorningAction = nullptr;
+  QTimer *m_dndExpiryTimer = nullptr;
+  void setDndManual(bool on);          // toggled by m_dndAction
+  void dndSnoozeFor(int minutes);      // timed snooze
+  void dndSnoozeUntilMorning();
+  void refreshDndUi();                 // sync the checkable state + expiry timer
+  void dndToast(const QString &message);
   // Send system+user prompts and hand the result to `onResult`; progress and
   // errors are shown as an in-page toast (and a desktop notification on error,
   // so feedback is not lost if the window is unfocused). Guards on AI enabled.

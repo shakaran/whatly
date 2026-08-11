@@ -3247,6 +3247,7 @@ private slots:
     NotificationRules::setKeywords({});
     NotificationRules::setVipContacts({});
     NotificationRules::setMutedContacts({});
+    NotificationRules::dndOff();
   }
 
   // Per-contact profiles (#10): VIP breaks DND, muted is always silenced and
@@ -3336,6 +3337,32 @@ private slots:
     NotificationRules::setDndStart(QStringLiteral("10:00"));
     NotificationRules::setDndEnd(QStringLiteral("10:00"));
     QVERIFY(!NotificationRules::inDndWindow(at(10, 0)));
+  }
+
+  // Manual DND (#10): on demand, independent of the schedule, VIP still breaks.
+  void manualDndOnDemand() {
+    const QDateTime now(QDate(2026, 1, 1), QTime(12, 0)); // midday, no schedule
+    // Pure core.
+    QVERIFY(NotificationRules::manualActive(true, QDateTime(), now));       // indefinite
+    QVERIFY(NotificationRules::manualActive(false, now.addSecs(60), now));  // until future
+    QVERIFY(!NotificationRules::manualActive(false, now.addSecs(-60), now));// expired
+    QVERIFY(!NotificationRules::manualActive(false, QDateTime(), now));     // off
+    // Indefinite, through settings + shouldNotify.
+    NotificationRules::dndOnIndefinite();
+    QVERIFY(NotificationRules::manualDndActive(now));
+    QVERIFY(!NotificationRules::shouldNotify(now, "Ana", "hi"));
+    // VIP still breaks through manual DND.
+    NotificationRules::setVipContacts({QStringLiteral("Ana")});
+    QVERIFY(NotificationRules::shouldNotify(now, "Ana", "hi"));
+    NotificationRules::setVipContacts({});
+    // A timed snooze already in the past is not active.
+    NotificationRules::dndSnoozeUntil(now.addSecs(-1));
+    QVERIFY(!NotificationRules::manualDndActive(now));
+    QVERIFY(NotificationRules::shouldNotify(now, "Ana", "hi"));
+    // Turning it off clears both.
+    NotificationRules::dndOnIndefinite();
+    NotificationRules::dndOff();
+    QVERIFY(!NotificationRules::manualDndActive(now));
   }
 };
 

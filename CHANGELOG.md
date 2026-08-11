@@ -1,5 +1,13 @@
 ## Unreleased
 
+**Do Not Disturb on demand (idea #10).** Beyond the scheduled quiet-hours
+window, you can now silence notification popups right now: a checkable **Do Not
+Disturb** action plus quick durations — **1 hour**, **2 hours**, **until
+morning** — from the tray, the Ctrl+K command palette and the Shortcuts. VIP
+contacts and keyword highlights still break through, exactly as during the
+schedule, and unread badges keep updating; only the popup is held back. A timed
+snooze clears itself when it runs out.
+
 **Summarise your unread chats with the local AI (idea #5).** A new
 **AI: Summarise unread chats** action (right-click menu, Ctrl+K command palette,
 Shortcuts) reads your unread conversations — who, how many, and a preview of the

@@ -205,6 +205,32 @@ void MainWindow::createActions() {
           &MainWindow::aiSummarizeUnread);
   addAction(m_aiUnreadDigestAction);
 
+  // Manual Do Not Disturb (idea #10): a checkable toggle plus quick durations,
+  // on top of the scheduled window. VIP/keyword still break through.
+  m_dndAction = new QAction(tr("Do Not Disturb"), this);
+  m_dndAction->setCheckable(true);
+  m_dndAction->setIcon(QIcon::fromTheme(QStringLiteral("notifications-disabled")));
+  connect(m_dndAction, &QAction::toggled, this, &MainWindow::setDndManual);
+  addAction(m_dndAction);
+
+  m_dnd1hAction = new QAction(tr("Do Not Disturb: 1 hour"), this);
+  connect(m_dnd1hAction, &QAction::triggered, this,
+          [this]() { dndSnoozeFor(60); });
+  addAction(m_dnd1hAction);
+
+  m_dnd2hAction = new QAction(tr("Do Not Disturb: 2 hours"), this);
+  connect(m_dnd2hAction, &QAction::triggered, this,
+          [this]() { dndSnoozeFor(120); });
+  addAction(m_dnd2hAction);
+
+  m_dndMorningAction = new QAction(tr("Do Not Disturb: until morning"), this);
+  connect(m_dndMorningAction, &QAction::triggered, this,
+          &MainWindow::dndSnoozeUntilMorning);
+  addAction(m_dndMorningAction);
+
+  // Reflect any manual DND still in force from a previous run.
+  refreshDndUi();
+
   m_toggleThemeAction = new QAction(tr("&Toggle theme"), this);
   m_toggleThemeAction->setShortcut(
       QKeySequence(Qt::Modifier::CTRL | Qt::Key_T));
@@ -297,6 +323,10 @@ void MainWindow::createActions() {
       {m_aiSuggestAction, "aiSuggest", tr("AI: Suggest a reply")},
       {m_aiUnreadDigestAction, "aiUnreadDigest",
        tr("AI: Summarise unread chats")},
+      {m_dndAction, "dnd", tr("Do Not Disturb")},
+      {m_dnd1hAction, "dnd1h", tr("Do Not Disturb: 1 hour")},
+      {m_dnd2hAction, "dnd2h", tr("Do Not Disturb: 2 hours")},
+      {m_dndMorningAction, "dndMorning", tr("Do Not Disturb: until morning")},
       {m_settingsAction, "settings", tr("Settings")},
       {m_toggleThemeAction, "toggleTheme", tr("Toggle theme")},
       {m_viewGridAction, "gridView", tr("Grid view")},

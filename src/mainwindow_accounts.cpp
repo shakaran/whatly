@@ -379,6 +379,8 @@ void MainWindow::showCommandPalette() {
       m_translateSelectionAction, m_translateComposerAction,
       m_exportChatAction, m_aiSummarizeAction, m_aiImproveAction,
       m_aiSuggestAction,   m_aiUnreadDigestAction,
+      m_dndAction,         m_dnd1hAction,     m_dnd2hAction,
+      m_dndMorningAction,
       m_viewTabsAction,    m_viewGridAction,  m_quitAction};
   for (QAction *a : actions) {
     if (!a)

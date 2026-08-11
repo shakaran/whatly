@@ -108,6 +108,40 @@ bool inDndWindow(const QDateTime &now) {
   return t >= start || t < end;
 }
 
+bool manualActive(bool indefinite, const QDateTime &until,
+                  const QDateTime &now) {
+  if (indefinite)
+    return true;
+  return until.isValid() && now < until;
+}
+
+bool manualDndIndefinite() {
+  return settings()
+      .value(QStringLiteral("notif/manualDndIndefinite"), false)
+      .toBool();
+}
+QDateTime manualDndUntil() {
+  return QDateTime::fromString(
+      settings().value(QStringLiteral("notif/manualDndUntil")).toString(),
+      Qt::ISODate);
+}
+void dndSnoozeUntil(const QDateTime &until) {
+  settings().setValue(QStringLiteral("notif/manualDndIndefinite"), false);
+  settings().setValue(QStringLiteral("notif/manualDndUntil"),
+                      until.toString(Qt::ISODate));
+}
+void dndOnIndefinite() {
+  settings().setValue(QStringLiteral("notif/manualDndIndefinite"), true);
+  settings().remove(QStringLiteral("notif/manualDndUntil"));
+}
+void dndOff() {
+  settings().setValue(QStringLiteral("notif/manualDndIndefinite"), false);
+  settings().remove(QStringLiteral("notif/manualDndUntil"));
+}
+bool manualDndActive(const QDateTime &now) {
+  return manualActive(manualDndIndefinite(), manualDndUntil(), now);
+}
+
 bool shouldNotify(const QDateTime &now, const QString &title,
                   const QString &body) {
   // A muted contact is always silenced (badge still updates elsewhere); it wins
@@ -120,6 +154,9 @@ bool shouldNotify(const QDateTime &now, const QString &title,
   // A keyword hit always breaks through, even during Do Not Disturb.
   if (matchesKeyword(title, body))
     return true;
+  // Manual DND (on demand) and the daily schedule both suppress the popup.
+  if (manualDndActive(now))
+    return false;
   if (dndEnabled() && inDndWindow(now))
     return false;
   return true;
