@@ -341,6 +341,72 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>DictionariesSection</name>
+    <message>
+        <location filename="../dictionariessection.cpp" line="49"/>
+        <source>Could not fetch the list of downloadable dictionaries: %1</source>
+        <translation>دریافت فهرست واژه‌نامه‌های قابل دانلود ممکن نشد: %1</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="55"/>
+        <source>%1%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="63"/>
+        <source>Downloading %1 failed: %2</source>
+        <translation>دانلود %1 ناموفق بود: %2</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="67"/>
+        <source>Loading available dictionaries…</source>
+        <translation>در حال بارگذاری واژه‌نامه‌های موجود…</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="111"/>
+        <source>No dictionaries are available.</source>
+        <translation>هیچ واژه‌نامه‌ای در دسترس نیست.</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="134"/>
+        <source>installed</source>
+        <translation>نصب‌شده</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="135"/>
+        <source>Delete</source>
+        <translation>حذف</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="145"/>
+        <source>installed (bundled)</source>
+        <translation>نصب‌شده (همراه برنامه)</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="150"/>
+        <source>Download</source>
+        <translation type="unfinished">دانلود</translation>
+    </message>
+</context>
+<context>
+    <name>DictionaryManager</name>
+    <message>
+        <location filename="../dictionarymanager.cpp" line="112"/>
+        <source>No writable dictionary directory.</source>
+        <translation>هیچ پوشه‌ی واژه‌نامه‌ی قابل نوشتنی وجود ندارد.</translation>
+    </message>
+    <message>
+        <location filename="../dictionarymanager.cpp" line="142"/>
+        <source>The downloaded dictionary failed verification.</source>
+        <translation>واژه‌نامه‌ی دانلودشده در بررسی صحت ناموفق بود.</translation>
+    </message>
+    <message>
+        <location filename="../dictionarymanager.cpp" line="152"/>
+        <source>Could not save the dictionary.</source>
+        <translation>ذخیره‌ی واژه‌نامه ممکن نشد.</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <location filename="../downloadmanagerwidget.ui" line="20"/>
@@ -2055,8 +2121,8 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="2010"/>
         <location filename="../settingswidget.ui" line="2054"/>
         <location filename="../settingswidget.ui" line="2211"/>
-        <location filename="../settingswidget.cpp" line="1463"/>
-        <location filename="../settingswidget.cpp" line="1755"/>
+        <location filename="../settingswidget.cpp" line="1514"/>
+        <location filename="../settingswidget.cpp" line="1806"/>
         <source>Automatic</source>
         <translation>خودکار</translation>
     </message>
@@ -2384,7 +2450,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="691"/>
-        <location filename="../settingswidget.cpp" line="1380"/>
+        <location filename="../settingswidget.cpp" line="1431"/>
         <source>Custom CSS</source>
         <translation>CSS سفارشی</translation>
     </message>
@@ -2441,7 +2507,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2174"/>
+        <location filename="../settingswidget.cpp" line="2225"/>
         <source>Check spelling as I type</source>
         <translation>بررسی املا هنگام تایپ</translation>
     </message>
@@ -2497,7 +2563,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
-        <location filename="../settingswidget.cpp" line="1356"/>
+        <location filename="../settingswidget.cpp" line="1407"/>
         <source>Chat wallpaper</source>
         <translation>تصویر زمینه گفتگو</translation>
     </message>
@@ -3361,358 +3427,368 @@ Please setup the password in the Settings first.</source>
         <translation>امضای وب‌هوک را تأیید می‌کند</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="505"/>
+        <location filename="../settingswidget.cpp" line="506"/>
         <source>Basics</source>
         <translation>اصول</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="513"/>
+        <location filename="../settingswidget.cpp" line="514"/>
         <source>Appearance</source>
         <translation>ظاهر</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="532"/>
+        <location filename="../settingswidget.cpp" line="533"/>
         <source>Notifications</source>
         <translation>اعلان‌ها</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="536"/>
+        <location filename="../settingswidget.cpp" line="537"/>
         <source>Chatting</source>
         <translation>گفتگو</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="555"/>
+        <location filename="../settingswidget.cpp" line="592"/>
+        <source>Spell-check dictionaries</source>
+        <translation>واژه‌نامه‌های غلط‌یاب املایی</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="606"/>
         <source>Privacy &amp; Lock</source>
         <translation>حریم خصوصی و قفل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="569"/>
+        <location filename="../settingswidget.cpp" line="620"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>پنجره &amp;&amp; بزرگ‌نمایی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="598"/>
+        <location filename="../settingswidget.cpp" line="649"/>
         <source>AI &amp;&amp; translation</source>
         <translation>هوش مصنوعی &amp;&amp; ترجمه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="605"/>
+        <location filename="../settingswidget.cpp" line="656"/>
         <source>Advanced</source>
         <translation>پیشرفته</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="930"/>
+        <location filename="../settingswidget.cpp" line="981"/>
         <source>Shortcut in use</source>
         <translation>میان‌بر در حال استفاده</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="931"/>
+        <location filename="../settingswidget.cpp" line="982"/>
         <source>That shortcut is already used by another action.</source>
         <translation>آن میان‌بر قبلاً توسط عملیات دیگری استفاده شده است.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="943"/>
+        <location filename="../settingswidget.cpp" line="994"/>
         <source>Clear cache</source>
         <translation>پاک کردن حافظه پنهان</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="944"/>
+        <location filename="../settingswidget.cpp" line="995"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>حافظه پنهان اکنون پاک شود؟ در صورت نیاز دوباره دانلود خواهد شد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="954"/>
-        <location filename="../settingswidget.cpp" line="960"/>
-        <location filename="../settingswidget.cpp" line="969"/>
-        <location filename="../settingswidget.cpp" line="972"/>
+        <location filename="../settingswidget.cpp" line="1005"/>
+        <location filename="../settingswidget.cpp" line="1011"/>
+        <location filename="../settingswidget.cpp" line="1020"/>
+        <location filename="../settingswidget.cpp" line="1023"/>
         <source>Export profile</source>
         <translation>خروجی گرفتن از پروفایل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="955"/>
+        <location filename="../settingswidget.cpp" line="1006"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>این بایگانی شامل نشست واردشده WhatsApp شما خواهد بود. آن را خصوصی نگه دارید. ادامه می‌دهید؟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="962"/>
-        <location filename="../settingswidget.cpp" line="977"/>
+        <location filename="../settingswidget.cpp" line="1013"/>
+        <location filename="../settingswidget.cpp" line="1028"/>
         <source>Archives (*.tar.gz)</source>
         <translation>بایگانی‌ها (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="970"/>
+        <location filename="../settingswidget.cpp" line="1021"/>
         <source>Profile exported.</source>
         <translation>پروفایل خروجی گرفته شد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="977"/>
-        <location filename="../settingswidget.cpp" line="981"/>
-        <location filename="../settingswidget.cpp" line="989"/>
-        <location filename="../settingswidget.cpp" line="992"/>
+        <location filename="../settingswidget.cpp" line="1028"/>
+        <location filename="../settingswidget.cpp" line="1032"/>
+        <location filename="../settingswidget.cpp" line="1040"/>
+        <location filename="../settingswidget.cpp" line="1043"/>
         <source>Import profile</source>
         <translation>وارد کردن پروفایل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="982"/>
+        <location filename="../settingswidget.cpp" line="1033"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>این کار داده‌های حساب فعلی را با بایگانی رونویسی می‌کند، سپس Whatly باید راه‌اندازی مجدد شود. ادامه می‌دهید؟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="990"/>
+        <location filename="../settingswidget.cpp" line="1041"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>پروفایل وارد شد. لطفاً Whatly را راه‌اندازی مجدد کنید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1013"/>
+        <location filename="../settingswidget.cpp" line="1064"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>این کار داده‌های پایدار را حذف خواهد کرد! داده‌های پایدار شامل کوکی‌های پایدار و حافظه پنهان است، و برنامه را خواهد بست.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1018"/>
+        <location filename="../settingswidget.cpp" line="1069"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>کوکی‌ها حذف و برنامه بسته شود؟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1124"/>
+        <location filename="../settingswidget.cpp" line="1175"/>
         <source>| Error</source>
         <translation>| خطا</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1125"/>
+        <location filename="../settingswidget.cpp" line="1176"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>نمی‌توان رشته UserAgent خالی تنظیم کرد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1176"/>
+        <location filename="../settingswidget.cpp" line="1227"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>تعویض خودکار پوسته به دلیل تغییر دستی پوسته غیرفعال شد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1193"/>
+        <location filename="../settingswidget.cpp" line="1244"/>
         <source>Require setup</source>
         <translation>نیاز به تنظیم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1222"/>
+        <location filename="../settingswidget.cpp" line="1273"/>
         <source>App lock is not configured.</source>
         <translation>قفل برنامه پیکربندی نشده است.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1226"/>
+        <location filename="../settingswidget.cpp" line="1277"/>
         <source>Do you want to setup App lock now?</source>
         <translation>آیا می‌خواهید اکنون قفل برنامه را تنظیم کنید؟</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1268"/>
+        <location filename="../settingswidget.cpp" line="1319"/>
         <source>Feature permissions</source>
         <translation>مجوزهای ویژگی</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1347"/>
+        <location filename="../settingswidget.cpp" line="1398"/>
         <source>Choose a chat wallpaper</source>
         <translation>یک تصویر زمینه گفتگو انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1349"/>
+        <location filename="../settingswidget.cpp" line="1400"/>
         <source>Images (%1)</source>
         <translation>تصاویر (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1357"/>
+        <location filename="../settingswidget.cpp" line="1408"/>
         <source>Could not use that image: %1</source>
         <translation>استفاده از آن تصویر ممکن نشد: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1372"/>
+        <location filename="../settingswidget.cpp" line="1423"/>
         <source>Choose a CSS file</source>
         <translation>یک فایل CSS انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1374"/>
+        <location filename="../settingswidget.cpp" line="1425"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>شیوه‌نامه‌ها (*.css);;همه فایل‌ها (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1381"/>
+        <location filename="../settingswidget.cpp" line="1432"/>
         <source>Could not read that file: %1</source>
         <translation>آن فایل قابل خواندن نبود: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1454"/>
+        <location filename="../settingswidget.cpp" line="1505"/>
         <source>Disk</source>
         <translation>دیسک</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1455"/>
+        <location filename="../settingswidget.cpp" line="1506"/>
         <source>Memory</source>
         <translation>حافظه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1456"/>
-        <location filename="../settingswidget.cpp" line="1464"/>
-        <location filename="../settingswidget.cpp" line="2224"/>
+        <location filename="../settingswidget.cpp" line="1507"/>
+        <location filename="../settingswidget.cpp" line="1515"/>
+        <location filename="../settingswidget.cpp" line="2307"/>
         <source>None</source>
         <translation>هیچ‌کدام</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1465"/>
+        <location filename="../settingswidget.cpp" line="1516"/>
         <source>Slight</source>
         <translation>کم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1466"/>
+        <location filename="../settingswidget.cpp" line="1517"/>
         <source>Medium</source>
         <translation>متوسط</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1467"/>
+        <location filename="../settingswidget.cpp" line="1518"/>
         <source>Full</source>
         <translation>کامل</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1608"/>
+        <location filename="../settingswidget.cpp" line="1659"/>
         <source>Ollama not found at this address.</source>
         <translation>Ollama در این آدرس یافت نشد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1613"/>
+        <location filename="../settingswidget.cpp" line="1664"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama یافت شد (%1 مدل نصب‌شده).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1638"/>
+        <location filename="../settingswidget.cpp" line="1689"/>
         <source>Download complete.</source>
         <translation>دانلود کامل شد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1641"/>
+        <location filename="../settingswidget.cpp" line="1692"/>
         <source>Download failed: %1</source>
         <translation>دانلود ناموفق بود: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1652"/>
+        <location filename="../settingswidget.cpp" line="1703"/>
         <source>Checking…</source>
         <translation>در حال بررسی…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1677"/>
+        <location filename="../settingswidget.cpp" line="1728"/>
         <source>Starting download of %1…</source>
         <translation>در حال شروع دانلود %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1728"/>
+        <location filename="../settingswidget.cpp" line="1779"/>
         <source>System</source>
         <translation>سیستم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1729"/>
+        <location filename="../settingswidget.cpp" line="1780"/>
         <source>None (direct)</source>
         <translation>هیچ‌کدام (مستقیم)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1730"/>
+        <location filename="../settingswidget.cpp" line="1781"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1731"/>
+        <location filename="../settingswidget.cpp" line="1782"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1757"/>
+        <location filename="../settingswidget.cpp" line="1808"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>پورتال دسکتاپ (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1759"/>
+        <location filename="../settingswidget.cpp" line="1810"/>
         <source>System service (libnotify)</source>
         <translation>سرویس سیستم (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1944"/>
-        <location filename="../settingswidget.cpp" line="1948"/>
+        <location filename="../settingswidget.cpp" line="1995"/>
+        <location filename="../settingswidget.cpp" line="1999"/>
         <source>Add reply</source>
         <translation>افزودن پاسخ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1944"/>
+        <location filename="../settingswidget.cpp" line="1995"/>
         <source>Name</source>
         <translation>نام</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1948"/>
+        <location filename="../settingswidget.cpp" line="1999"/>
         <source>Text to insert</source>
         <translation>متن برای درج</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1965"/>
+        <location filename="../settingswidget.cpp" line="2016"/>
         <source>Choose a JavaScript file</source>
         <translation>یک فایل جاوااسکریپت انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1966"/>
+        <location filename="../settingswidget.cpp" line="2017"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>جاوااسکریپت (*.js);;همه فایل‌ها (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1971"/>
+        <location filename="../settingswidget.cpp" line="2022"/>
         <source>Could not add addon</source>
         <translation>افزودن افزونه ممکن نشد</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1984"/>
+        <location filename="../settingswidget.cpp" line="2035"/>
         <source>Remove addon</source>
         <translation>حذف افزونه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1985"/>
+        <location filename="../settingswidget.cpp" line="2036"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>افزونه «%1» حذف شود؟ این کار فایل آن را حذف می‌کند.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2173"/>
+        <location filename="../settingswidget.cpp" line="2224"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>بررسی‌کننده املا (هیچ فرهنگ لغتی نصب نشده)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2228"/>
+        <location filename="../settingswidget.cpp" line="2269"/>
+        <source>download</source>
+        <translation>دانلود</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2311"/>
         <source>%1 languages</source>
         <translation>%1 زبان</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2326"/>
+        <location filename="../settingswidget.cpp" line="2409"/>
         <source>WhatsApp default</source>
         <translation>پیش‌فرض WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2365"/>
+        <location filename="../settingswidget.cpp" line="2448"/>
         <source>System default</source>
         <translation>پیش‌فرض سیستم</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2400"/>
+        <location filename="../settingswidget.cpp" line="2483"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>زبان رابط کاربری هنگام راه‌اندازی مجدد %1 تغییر خواهد کرد.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2414"/>
+        <location filename="../settingswidget.cpp" line="2497"/>
         <source>App Lock Setup</source>
         <translation>تنظیم قفل برنامه</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2415"/>
+        <location filename="../settingswidget.cpp" line="2498"/>
         <source>Please setup the App lock password first.</source>
         <translation>لطفاً ابتدا رمز عبور قفل برنامه را تنظیم کنید.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2531"/>
-        <location filename="../settingswidget.cpp" line="2542"/>
+        <location filename="../settingswidget.cpp" line="2614"/>
+        <location filename="../settingswidget.cpp" line="2625"/>
         <source>Select download directory</source>
         <translation>پوشه دانلود را انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2582"/>
+        <location filename="../settingswidget.cpp" line="2665"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3723,7 +3799,7 @@ You may also require a complete restart of Application!</source>
 ممکن است نیاز به راه‌اندازی مجدد کامل برنامه نیز داشته باشید!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2588"/>
+        <location filename="../settingswidget.cpp" line="2671"/>
         <source>Do you want to proceed?</source>
         <translation>آیا می‌خواهید ادامه دهید؟</translation>
     </message>
@@ -3813,104 +3889,104 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>WebEnginePage</name>
     <message>
-        <location filename="../webenginepage.cpp" line="54"/>
+        <location filename="../webenginepage.cpp" line="55"/>
         <source>Share your screen</source>
         <translation>اشتراک‌گذاری صفحه شما</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="56"/>
+        <location filename="../webenginepage.cpp" line="57"/>
         <source>Choose what to share:</source>
         <translation>انتخاب کنید چه چیزی به اشتراک گذاشته شود:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="68"/>
+        <location filename="../webenginepage.cpp" line="69"/>
         <source>Untitled</source>
         <translation>بدون عنوان</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="72"/>
+        <location filename="../webenginepage.cpp" line="73"/>
         <source>Screen: </source>
         <translation>صفحه‌نمایش: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="73"/>
+        <location filename="../webenginepage.cpp" line="74"/>
         <source>Window: </source>
         <translation>پنجره: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="180"/>
+        <location filename="../webenginepage.cpp" line="181"/>
         <source>Allow %1 to access your location information?</source>
         <translation>به %1 اجازه داده شود به اطلاعات مکان شما دسترسی داشته باشد؟</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="182"/>
+        <location filename="../webenginepage.cpp" line="183"/>
         <source>Allow %1 to access your microphone?</source>
         <translation>به %1 اجازه داده شود به میکروفون شما دسترسی داشته باشد؟</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="184"/>
+        <location filename="../webenginepage.cpp" line="185"/>
         <source>Allow %1 to access your webcam?</source>
         <translation>به %1 اجازه داده شود به وب‌کم شما دسترسی داشته باشد؟</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="186"/>
+        <location filename="../webenginepage.cpp" line="187"/>
         <source>Allow %1 to access your microphone and webcam?</source>
         <translation>به %1 اجازه داده شود به میکروفون و وب‌کم شما دسترسی داشته باشد؟</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="188"/>
+        <location filename="../webenginepage.cpp" line="189"/>
         <source>Allow %1 to lock your mouse cursor?</source>
         <translation>به %1 اجازه داده شود نشانگر ماوس شما را قفل کند؟</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="190"/>
+        <location filename="../webenginepage.cpp" line="191"/>
         <source>Allow %1 to capture video of your desktop?</source>
         <translation>به %1 اجازه داده شود از دسکتاپ شما ویدیو ضبط کند؟</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="192"/>
+        <location filename="../webenginepage.cpp" line="193"/>
         <source>Allow %1 to capture audio and video of your desktop?</source>
         <translation>به %1 اجازه داده شود از دسکتاپ شما صدا و ویدیو ضبط کند؟</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="195"/>
+        <location filename="../webenginepage.cpp" line="196"/>
         <source>Allow %1 to show notification on your desktop?</source>
         <translation>به %1 اجازه داده شود روی دسکتاپ شما اعلان نمایش دهد؟</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="197"/>
+        <location filename="../webenginepage.cpp" line="198"/>
         <source>Allow %1 to read your clipboard? This is needed to paste images into a chat.</source>
         <translation>به %1 اجازه داده شود کلیپ‌بورد شما را بخواند؟ این برای جای‌گذاری تصاویر در گفتگو لازم است.</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="200"/>
+        <location filename="../webenginepage.cpp" line="201"/>
         <source>Allow %1 to see the fonts installed on your system?</source>
         <translation>به %1 اجازه داده شود قلم‌های نصب‌شده روی سیستم شما را ببیند؟</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="220"/>
-        <location filename="../webenginepage.cpp" line="434"/>
+        <location filename="../webenginepage.cpp" line="221"/>
+        <location filename="../webenginepage.cpp" line="435"/>
         <source>Permission Request</source>
         <translation>درخواست مجوز</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="357"/>
-        <location filename="../webenginepage.cpp" line="366"/>
+        <location filename="../webenginepage.cpp" line="358"/>
+        <location filename="../webenginepage.cpp" line="367"/>
         <source>Certificate Error</source>
         <translation>خطای گواهی</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="386"/>
+        <location filename="../webenginepage.cpp" line="387"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
         <translation>نام کاربری و رمز عبور برای «%1» در %2 را وارد کنید</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="416"/>
+        <location filename="../webenginepage.cpp" line="417"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
         <translation>اتصال به پروکسی «%1» با استفاده از:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="435"/>
+        <location filename="../webenginepage.cpp" line="436"/>
         <source>Allow %1 to open all %2 links?</source>
         <translation>به %1 اجازه داده شود همه پیوندهای %2 را باز کند؟</translation>
     </message>

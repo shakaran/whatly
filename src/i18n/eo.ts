@@ -346,6 +346,72 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>DictionariesSection</name>
+    <message>
+        <location filename="../dictionariessection.cpp" line="49"/>
+        <source>Could not fetch the list of downloadable dictionaries: %1</source>
+        <translation>Ne eblis akiri la liston de elŝuteblaj vortaroj: %1</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="55"/>
+        <source>%1%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="63"/>
+        <source>Downloading %1 failed: %2</source>
+        <translation>Elŝuto de %1 malsukcesis: %2</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="67"/>
+        <source>Loading available dictionaries…</source>
+        <translation>Ŝargado de disponeblaj vortaroj…</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="111"/>
+        <source>No dictionaries are available.</source>
+        <translation>Neniuj vortaroj disponeblas.</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="134"/>
+        <source>installed</source>
+        <translation>instalita</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="135"/>
+        <source>Delete</source>
+        <translation>Forigi</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="145"/>
+        <source>installed (bundled)</source>
+        <translation>instalita (kunpakita)</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="150"/>
+        <source>Download</source>
+        <translation type="unfinished">Elŝuti</translation>
+    </message>
+</context>
+<context>
+    <name>DictionaryManager</name>
+    <message>
+        <location filename="../dictionarymanager.cpp" line="112"/>
+        <source>No writable dictionary directory.</source>
+        <translation>Neniu skribebla vortara dosierujo.</translation>
+    </message>
+    <message>
+        <location filename="../dictionarymanager.cpp" line="142"/>
+        <source>The downloaded dictionary failed verification.</source>
+        <translation>La elŝutita vortaro malsukcesis la kontrolon.</translation>
+    </message>
+    <message>
+        <location filename="../dictionarymanager.cpp" line="152"/>
+        <source>Could not save the dictionary.</source>
+        <translation>Ne eblis konservi la vortaron.</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <location filename="../downloadmanagerwidget.ui" line="20"/>
@@ -2089,17 +2155,17 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>Kiel glifaj randoj alĝustiĝas al bilderoj. Aŭtomata sekvas vian sistemon; pli malpeza nivelo povas ripari pezan aŭ neregulan tekston.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1465"/>
+        <location filename="../settingswidget.cpp" line="1516"/>
         <source>Slight</source>
         <translation>Malpeza</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1466"/>
+        <location filename="../settingswidget.cpp" line="1517"/>
         <source>Medium</source>
         <translation>Meza</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1467"/>
+        <location filename="../settingswidget.cpp" line="1518"/>
         <source>Full</source>
         <translation>Plena</translation>
     </message>
@@ -2148,8 +2214,8 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <location filename="../settingswidget.ui" line="2010"/>
         <location filename="../settingswidget.ui" line="2054"/>
         <location filename="../settingswidget.ui" line="2211"/>
-        <location filename="../settingswidget.cpp" line="1463"/>
-        <location filename="../settingswidget.cpp" line="1755"/>
+        <location filename="../settingswidget.cpp" line="1514"/>
+        <location filename="../settingswidget.cpp" line="1806"/>
         <source>Automatic</source>
         <translation>Aŭtomata</translation>
     </message>
@@ -2417,7 +2483,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="691"/>
-        <location filename="../settingswidget.cpp" line="1380"/>
+        <location filename="../settingswidget.cpp" line="1431"/>
         <source>Custom CSS</source>
         <translation>Propra CSS</translation>
     </message>
@@ -2474,7 +2540,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2174"/>
+        <location filename="../settingswidget.cpp" line="2225"/>
         <source>Check spelling as I type</source>
         <translation>Kontroli la literumadon dum mi tajpas</translation>
     </message>
@@ -2530,7 +2596,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
-        <location filename="../settingswidget.cpp" line="1356"/>
+        <location filename="../settingswidget.cpp" line="1407"/>
         <source>Chat wallpaper</source>
         <translation>Tapeto de la babilo</translation>
     </message>
@@ -3312,343 +3378,353 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>kontrolas la subskribon de la webhook</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="505"/>
+        <location filename="../settingswidget.cpp" line="506"/>
         <source>Basics</source>
         <translation>Bazaĵoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="513"/>
+        <location filename="../settingswidget.cpp" line="514"/>
         <source>Appearance</source>
         <translation>Aspekto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="532"/>
+        <location filename="../settingswidget.cpp" line="533"/>
         <source>Notifications</source>
         <translation>Sciigoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="536"/>
+        <location filename="../settingswidget.cpp" line="537"/>
         <source>Chatting</source>
         <translation>Babilado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="555"/>
+        <location filename="../settingswidget.cpp" line="606"/>
         <source>Privacy &amp; Lock</source>
         <translation>Privateco kaj ŝloso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="598"/>
+        <location filename="../settingswidget.cpp" line="649"/>
         <source>AI &amp;&amp; translation</source>
         <translation>AI kaj tradukado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="569"/>
+        <location filename="../settingswidget.cpp" line="620"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>Fenestro &amp;&amp; zomo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="605"/>
+        <location filename="../settingswidget.cpp" line="592"/>
+        <source>Spell-check dictionaries</source>
+        <translation>Literumkontrolaj vortaroj</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="656"/>
         <source>Advanced</source>
         <translation>Fakula</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="930"/>
+        <location filename="../settingswidget.cpp" line="981"/>
         <source>Shortcut in use</source>
         <translation>Fulmoklavo jam uzata</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="931"/>
+        <location filename="../settingswidget.cpp" line="982"/>
         <source>That shortcut is already used by another action.</source>
         <translation>Tiu fulmoklavo jam estas uzata de alia ago.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="943"/>
+        <location filename="../settingswidget.cpp" line="994"/>
         <source>Clear cache</source>
         <translation>Malplenigi la kaŝmemoron</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="944"/>
+        <location filename="../settingswidget.cpp" line="995"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Ĉu malplenigi la kaŝmemoron nun? Ĝi estos reelŝutita laŭbezone.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="954"/>
-        <location filename="../settingswidget.cpp" line="960"/>
-        <location filename="../settingswidget.cpp" line="969"/>
-        <location filename="../settingswidget.cpp" line="972"/>
+        <location filename="../settingswidget.cpp" line="1005"/>
+        <location filename="../settingswidget.cpp" line="1011"/>
+        <location filename="../settingswidget.cpp" line="1020"/>
+        <location filename="../settingswidget.cpp" line="1023"/>
         <source>Export profile</source>
         <translation>Eksporti la profilon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="955"/>
+        <location filename="../settingswidget.cpp" line="1006"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>La arkivo enhavos vian ensalutitan seancon de Vacapo. Tenu ĝin privata. Ĉu daŭrigi?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="962"/>
-        <location filename="../settingswidget.cpp" line="977"/>
+        <location filename="../settingswidget.cpp" line="1013"/>
+        <location filename="../settingswidget.cpp" line="1028"/>
         <source>Archives (*.tar.gz)</source>
         <translation>Arkivoj (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="970"/>
+        <location filename="../settingswidget.cpp" line="1021"/>
         <source>Profile exported.</source>
         <translation>La profilo estas eksportita.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="977"/>
-        <location filename="../settingswidget.cpp" line="981"/>
-        <location filename="../settingswidget.cpp" line="989"/>
-        <location filename="../settingswidget.cpp" line="992"/>
+        <location filename="../settingswidget.cpp" line="1028"/>
+        <location filename="../settingswidget.cpp" line="1032"/>
+        <location filename="../settingswidget.cpp" line="1040"/>
+        <location filename="../settingswidget.cpp" line="1043"/>
         <source>Import profile</source>
         <translation>Importi profilon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="982"/>
+        <location filename="../settingswidget.cpp" line="1033"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>Tio anstataŭigas la datumojn de la nuna konto per la arkivo, poste Whatly devas esti restartigita. Ĉu daŭrigi?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="990"/>
+        <location filename="../settingswidget.cpp" line="1041"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>La profilo estas importita. Bonvolu restartigi Whatly.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1013"/>
+        <location filename="../settingswidget.cpp" line="1064"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Tio forigos la daŭrajn datumojn ! Daŭraj datumoj inkluzivas daŭrajn kuketojn kaj la kaŝmemoron, kaj ĉesigos la aplikaĵon.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1018"/>
+        <location filename="../settingswidget.cpp" line="1069"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>Ĉu forigi la kuketojn kaj ĉesigi la aplikaĵon?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1124"/>
+        <location filename="../settingswidget.cpp" line="1175"/>
         <source>| Error</source>
         <translation>| Eraro</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1125"/>
+        <location filename="../settingswidget.cpp" line="1176"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>Ne eblas agordi malplenan ĉenon de uzantagento.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1176"/>
+        <location filename="../settingswidget.cpp" line="1227"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>La aŭtomata ŝanĝo de etoso estis malŝaltita pro permana baskuligo de la etoso.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1193"/>
+        <location filename="../settingswidget.cpp" line="1244"/>
         <source>Require setup</source>
         <translation>Bezonas agordon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1222"/>
+        <location filename="../settingswidget.cpp" line="1273"/>
         <source>App lock is not configured.</source>
         <translation>La aplikaĵa ŝloso ne estas agordita.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1226"/>
+        <location filename="../settingswidget.cpp" line="1277"/>
         <source>Do you want to setup App lock now?</source>
         <translation>Ĉu vi volas agordi la aplikaĵan ŝloson nun?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1268"/>
+        <location filename="../settingswidget.cpp" line="1319"/>
         <source>Feature permissions</source>
         <translation>Permesoj de la funkcioj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1347"/>
+        <location filename="../settingswidget.cpp" line="1398"/>
         <source>Choose a chat wallpaper</source>
         <translation>Elekti tapeton por la babilo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1349"/>
+        <location filename="../settingswidget.cpp" line="1400"/>
         <source>Images (%1)</source>
         <translation>Bildoj (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1357"/>
+        <location filename="../settingswidget.cpp" line="1408"/>
         <source>Could not use that image: %1</source>
         <translation>Ne eblis uzi tiun bildon: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1372"/>
+        <location filename="../settingswidget.cpp" line="1423"/>
         <source>Choose a CSS file</source>
         <translation>Elekti CSS-dosieron</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1374"/>
+        <location filename="../settingswidget.cpp" line="1425"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Stilfolioj (*.css);;Ĉiuj dosieroj (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1381"/>
+        <location filename="../settingswidget.cpp" line="1432"/>
         <source>Could not read that file: %1</source>
         <translation>Ne eblis legi tiun dosieron: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1454"/>
+        <location filename="../settingswidget.cpp" line="1505"/>
         <source>Disk</source>
         <translation>Disko</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1455"/>
+        <location filename="../settingswidget.cpp" line="1506"/>
         <source>Memory</source>
         <translation>Memoro</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1456"/>
-        <location filename="../settingswidget.cpp" line="1464"/>
-        <location filename="../settingswidget.cpp" line="2224"/>
+        <location filename="../settingswidget.cpp" line="1507"/>
+        <location filename="../settingswidget.cpp" line="1515"/>
+        <location filename="../settingswidget.cpp" line="2307"/>
         <source>None</source>
         <translation>Neniu</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1608"/>
+        <location filename="../settingswidget.cpp" line="1659"/>
         <source>Ollama not found at this address.</source>
         <translation>Ollama ne trovita ĉe ĉi tiu adreso.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1613"/>
+        <location filename="../settingswidget.cpp" line="1664"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama trovita (%1 modeloj instalitaj).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1638"/>
+        <location filename="../settingswidget.cpp" line="1689"/>
         <source>Download complete.</source>
         <translation>Elŝuto finita.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1641"/>
+        <location filename="../settingswidget.cpp" line="1692"/>
         <source>Download failed: %1</source>
         <translation>Elŝuto malsukcesis: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1652"/>
+        <location filename="../settingswidget.cpp" line="1703"/>
         <source>Checking…</source>
         <translation>Kontrolante…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1677"/>
+        <location filename="../settingswidget.cpp" line="1728"/>
         <source>Starting download of %1…</source>
         <translation>Komencante elŝuton de %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1728"/>
+        <location filename="../settingswidget.cpp" line="1779"/>
         <source>System</source>
         <translation>Sistemo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1729"/>
+        <location filename="../settingswidget.cpp" line="1780"/>
         <source>None (direct)</source>
         <translation>Neniu (rekta)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1730"/>
+        <location filename="../settingswidget.cpp" line="1781"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1731"/>
+        <location filename="../settingswidget.cpp" line="1782"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1757"/>
+        <location filename="../settingswidget.cpp" line="1808"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Labortabla portalo (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1759"/>
+        <location filename="../settingswidget.cpp" line="1810"/>
         <source>System service (libnotify)</source>
         <translation>Sistema servo (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1944"/>
-        <location filename="../settingswidget.cpp" line="1948"/>
+        <location filename="../settingswidget.cpp" line="1995"/>
+        <location filename="../settingswidget.cpp" line="1999"/>
         <source>Add reply</source>
         <translation>Aldoni respondon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1944"/>
+        <location filename="../settingswidget.cpp" line="1995"/>
         <source>Name</source>
         <translation>Nomo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1948"/>
+        <location filename="../settingswidget.cpp" line="1999"/>
         <source>Text to insert</source>
         <translation>Enmetota teksto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1965"/>
+        <location filename="../settingswidget.cpp" line="2016"/>
         <source>Choose a JavaScript file</source>
         <translation>Elekti JavaScript-dosieron</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1966"/>
+        <location filename="../settingswidget.cpp" line="2017"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Ĉiuj dosieroj (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1971"/>
+        <location filename="../settingswidget.cpp" line="2022"/>
         <source>Could not add addon</source>
         <translation>Ne eblis aldoni la aldonaĵon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1984"/>
+        <location filename="../settingswidget.cpp" line="2035"/>
         <source>Remove addon</source>
         <translation>Forigi la aldonaĵon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1985"/>
+        <location filename="../settingswidget.cpp" line="2036"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>Ĉu forigi la aldonaĵon &quot;%1&quot;? Tio forigas ĝian dosieron.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2173"/>
+        <location filename="../settingswidget.cpp" line="2224"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Literumkontrolilo (neniu vortaro instalita)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2228"/>
+        <location filename="../settingswidget.cpp" line="2269"/>
+        <source>download</source>
+        <translation>elŝuti</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2311"/>
         <source>%1 languages</source>
         <translation>%1 lingvoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2326"/>
+        <location filename="../settingswidget.cpp" line="2409"/>
         <source>WhatsApp default</source>
         <translation>Defaŭlto de Vacapo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2365"/>
+        <location filename="../settingswidget.cpp" line="2448"/>
         <source>System default</source>
         <translation>Defaŭlto de la sistemo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2400"/>
+        <location filename="../settingswidget.cpp" line="2483"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>La lingvo de la interfaco ŝanĝiĝos kiam vi restartigos %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2414"/>
+        <location filename="../settingswidget.cpp" line="2497"/>
         <source>App Lock Setup</source>
         <translation>Agordo de la aplikaĵa ŝloso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2415"/>
+        <location filename="../settingswidget.cpp" line="2498"/>
         <source>Please setup the App lock password first.</source>
         <translation>Bonvolu unue agordi la pasvorton de la aplikaĵa ŝloso.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2531"/>
-        <location filename="../settingswidget.cpp" line="2542"/>
+        <location filename="../settingswidget.cpp" line="2614"/>
+        <location filename="../settingswidget.cpp" line="2625"/>
         <source>Select download directory</source>
         <translation>Elekti la elŝutan dosierujon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2582"/>
+        <location filename="../settingswidget.cpp" line="2665"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3659,7 +3735,7 @@ Tio elsalutigos vian nunan seancon.
 Eble vi ankaŭ bezonos kompletan restartigon de la aplikaĵo!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2588"/>
+        <location filename="../settingswidget.cpp" line="2671"/>
         <source>Do you want to proceed?</source>
         <translation>Ĉu vi volas daŭrigi?</translation>
     </message>
@@ -3809,104 +3885,104 @@ Eble vi ankaŭ bezonos kompletan restartigon de la aplikaĵo!</translation>
 <context>
     <name>WebEnginePage</name>
     <message>
-        <location filename="../webenginepage.cpp" line="54"/>
+        <location filename="../webenginepage.cpp" line="55"/>
         <source>Share your screen</source>
         <translation>Kunhavigi vian ekranon</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="56"/>
+        <location filename="../webenginepage.cpp" line="57"/>
         <source>Choose what to share:</source>
         <translation>Elektu kion kunhavigi:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="68"/>
+        <location filename="../webenginepage.cpp" line="69"/>
         <source>Untitled</source>
         <translation>Sentitola</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="72"/>
+        <location filename="../webenginepage.cpp" line="73"/>
         <source>Screen: </source>
         <translation>Ekrano: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="73"/>
+        <location filename="../webenginepage.cpp" line="74"/>
         <source>Window: </source>
         <translation>Fenestro: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="180"/>
+        <location filename="../webenginepage.cpp" line="181"/>
         <source>Allow %1 to access your location information?</source>
         <translation>Ĉu permesi al %1 aliri vian lokan informon?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="182"/>
+        <location filename="../webenginepage.cpp" line="183"/>
         <source>Allow %1 to access your microphone?</source>
         <translation>Ĉu permesi al %1 aliri vian mikrofonon?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="184"/>
+        <location filename="../webenginepage.cpp" line="185"/>
         <source>Allow %1 to access your webcam?</source>
         <translation>Ĉu permesi al %1 aliri vian retkameraon?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="186"/>
+        <location filename="../webenginepage.cpp" line="187"/>
         <source>Allow %1 to access your microphone and webcam?</source>
         <translation>Ĉu permesi al %1 aliri vian mikrofonon kaj retkameraon?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="188"/>
+        <location filename="../webenginepage.cpp" line="189"/>
         <source>Allow %1 to lock your mouse cursor?</source>
         <translation>Ĉu permesi al %1 ŝlosi vian musmontrilon?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="190"/>
+        <location filename="../webenginepage.cpp" line="191"/>
         <source>Allow %1 to capture video of your desktop?</source>
         <translation>Ĉu permesi al %1 kapti videon de via labortablo?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="192"/>
+        <location filename="../webenginepage.cpp" line="193"/>
         <source>Allow %1 to capture audio and video of your desktop?</source>
         <translation>Ĉu permesi al %1 kapti sonon kaj videon de via labortablo?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="195"/>
+        <location filename="../webenginepage.cpp" line="196"/>
         <source>Allow %1 to show notification on your desktop?</source>
         <translation>Ĉu permesi al %1 montri sciigojn en via labortablo?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="197"/>
+        <location filename="../webenginepage.cpp" line="198"/>
         <source>Allow %1 to read your clipboard? This is needed to paste images into a chat.</source>
         <translation>Ĉu permesi al %1 legi vian tondujon? Tio necesas por alglui bildojn en babilon.</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="200"/>
+        <location filename="../webenginepage.cpp" line="201"/>
         <source>Allow %1 to see the fonts installed on your system?</source>
         <translation>Ĉu permesi al %1 vidi la tiparojn instalitajn en via sistemo?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="220"/>
-        <location filename="../webenginepage.cpp" line="434"/>
+        <location filename="../webenginepage.cpp" line="221"/>
+        <location filename="../webenginepage.cpp" line="435"/>
         <source>Permission Request</source>
         <translation>Peto de permeso</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="357"/>
-        <location filename="../webenginepage.cpp" line="366"/>
+        <location filename="../webenginepage.cpp" line="358"/>
+        <location filename="../webenginepage.cpp" line="367"/>
         <source>Certificate Error</source>
         <translation>Eraro de atestilo</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="386"/>
+        <location filename="../webenginepage.cpp" line="387"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
         <translation>Enigu uzantnomon kaj pasvorton por &quot;%1&quot; ĉe %2</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="416"/>
+        <location filename="../webenginepage.cpp" line="417"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
         <translation>Konektiĝi al la prokurilo &quot;%1&quot; per:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="435"/>
+        <location filename="../webenginepage.cpp" line="436"/>
         <source>Allow %1 to open all %2 links?</source>
         <translation>Ĉu permesi al %1 malfermi ĉiujn ligilojn %2?</translation>
     </message>

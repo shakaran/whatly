@@ -347,6 +347,72 @@ Desideri ignorare il controllo di sicurezza e continuare?</translation>
     </message>
 </context>
 <context>
+    <name>DictionariesSection</name>
+    <message>
+        <location filename="../dictionariessection.cpp" line="49"/>
+        <source>Could not fetch the list of downloadable dictionaries: %1</source>
+        <translation>Impossibile recuperare l'elenco dei dizionari scaricabili: %1</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="55"/>
+        <source>%1%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="63"/>
+        <source>Downloading %1 failed: %2</source>
+        <translation>Download di %1 non riuscito: %2</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="67"/>
+        <source>Loading available dictionaries…</source>
+        <translation>Caricamento dei dizionari disponibili…</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="111"/>
+        <source>No dictionaries are available.</source>
+        <translation>Nessun dizionario disponibile.</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="134"/>
+        <source>installed</source>
+        <translation>installato</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="135"/>
+        <source>Delete</source>
+        <translation>Elimina</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="145"/>
+        <source>installed (bundled)</source>
+        <translation>installato (incluso)</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="150"/>
+        <source>Download</source>
+        <translation type="unfinished">Scarica</translation>
+    </message>
+</context>
+<context>
+    <name>DictionaryManager</name>
+    <message>
+        <location filename="../dictionarymanager.cpp" line="112"/>
+        <source>No writable dictionary directory.</source>
+        <translation>Nessuna cartella di dizionari scrivibile.</translation>
+    </message>
+    <message>
+        <location filename="../dictionarymanager.cpp" line="142"/>
+        <source>The downloaded dictionary failed verification.</source>
+        <translation>La verifica del dizionario scaricato non è riuscita.</translation>
+    </message>
+    <message>
+        <location filename="../dictionarymanager.cpp" line="152"/>
+        <source>Could not save the dictionary.</source>
+        <translation>Impossibile salvare il dizionario.</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <location filename="../downloadmanagerwidget.ui" line="20"/>
@@ -2085,17 +2151,17 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Come i bordi dei glifi vengono allineati ai pixel. Automatico segue il sistema; un livello più leggero può correggere testo pesante o irregolare.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1465"/>
+        <location filename="../settingswidget.cpp" line="1516"/>
         <source>Slight</source>
         <translation>Leggero</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1466"/>
+        <location filename="../settingswidget.cpp" line="1517"/>
         <source>Medium</source>
         <translation>Medio</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1467"/>
+        <location filename="../settingswidget.cpp" line="1518"/>
         <source>Full</source>
         <translation>Completo</translation>
     </message>
@@ -2165,8 +2231,8 @@ Imposta la password nelle Impostazioni.</translation>
         <location filename="../settingswidget.ui" line="2010"/>
         <location filename="../settingswidget.ui" line="2054"/>
         <location filename="../settingswidget.ui" line="2211"/>
-        <location filename="../settingswidget.cpp" line="1463"/>
-        <location filename="../settingswidget.cpp" line="1755"/>
+        <location filename="../settingswidget.cpp" line="1514"/>
+        <location filename="../settingswidget.cpp" line="1806"/>
         <source>Automatic</source>
         <translation>Automatico</translation>
     </message>
@@ -2335,7 +2401,7 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <location filename="../settingswidget.ui" line="563"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A muted chat still shows its own count in the list. Off, it stops adding to the badge on the account tab and to the tray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Una chat silenziata continua a mostrare il proprio conteggio nell'elenco. Disattivato, smette di sommarsi al badge sulla scheda dell'account e all'area di notifica.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Una chat silenziata continua a mostrare il proprio conteggio nell&apos;elenco. Disattivato, smette di sommarsi al badge sulla scheda dell&apos;account e all&apos;area di notifica.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="566"/>
@@ -2345,7 +2411,7 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <location filename="../settingswidget.ui" line="573"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Archived chats are kept out of the main list. On, unread messages in them add to the badge as well.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Le chat archiviate restano fuori dall'elenco principale. Attivato, anche i messaggi non letti al loro interno si sommano al badge.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Le chat archiviate restano fuori dall&apos;elenco principale. Attivato, anche i messaggi non letti al loro interno si sommano al badge.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="576"/>
@@ -2355,7 +2421,7 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <location filename="../settingswidget.ui" line="583"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Off, the badge is the number of conversations waiting. On, it is the number of messages in them &amp;mdash; and the collapsed chat list&amp;apos;s unread filter then carries the number of conversations.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disattivato, il badge è il numero di conversazioni in attesa. Attivato, è il numero di messaggi al loro interno &amp;mdash; e il filtro dei non letti dell'elenco chat compresso mostra allora il numero di conversazioni.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disattivato, il badge è il numero di conversazioni in attesa. Attivato, è il numero di messaggi al loro interno &amp;mdash; e il filtro dei non letti dell&apos;elenco chat compresso mostra allora il numero di conversazioni.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="586"/>
@@ -2429,7 +2495,7 @@ Imposta la password nelle Impostazioni.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="691"/>
-        <location filename="../settingswidget.cpp" line="1380"/>
+        <location filename="../settingswidget.cpp" line="1431"/>
         <source>Custom CSS</source>
         <translation>CSS personalizzato</translation>
     </message>
@@ -2486,7 +2552,7 @@ Imposta la password nelle Impostazioni.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2174"/>
+        <location filename="../settingswidget.cpp" line="2225"/>
         <source>Check spelling as I type</source>
         <translation>Controlla l&apos;ortografia durante la digitazione</translation>
     </message>
@@ -2512,7 +2578,7 @@ Imposta la password nelle Impostazioni.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
-        <location filename="../settingswidget.cpp" line="1356"/>
+        <location filename="../settingswidget.cpp" line="1407"/>
         <source>Chat wallpaper</source>
         <translation>Sfondo chat</translation>
     </message>
@@ -3383,343 +3449,353 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Dati persistenti</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1013"/>
+        <location filename="../settingswidget.cpp" line="1064"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Questa operazione eliminerà i dati persistenti (inclusi cookie persistenti e cache) e chiuderà l&apos;applicazione.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1018"/>
+        <location filename="../settingswidget.cpp" line="1069"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>Eliminare i cookie e chiudere l&apos;applicazione?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1124"/>
+        <location filename="../settingswidget.cpp" line="1175"/>
         <source>| Error</source>
         <translation>| Errore</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1125"/>
+        <location filename="../settingswidget.cpp" line="1176"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>Impossibile impostare una stringa User-Agent vuota.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1176"/>
+        <location filename="../settingswidget.cpp" line="1227"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>Il cambio automatico del tema è stato disabilitato.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1193"/>
+        <location filename="../settingswidget.cpp" line="1244"/>
         <source>Require setup</source>
         <translation>Configurazione richiesta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1222"/>
+        <location filename="../settingswidget.cpp" line="1273"/>
         <source>App lock is not configured.</source>
         <translation>Il blocco dell&apos;app non è configurato.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1226"/>
+        <location filename="../settingswidget.cpp" line="1277"/>
         <source>Do you want to setup App lock now?</source>
         <translation>Vuoi configurare il blocco dell&apos;app ora?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1268"/>
+        <location filename="../settingswidget.cpp" line="1319"/>
         <source>Feature permissions</source>
         <translation>Permessi funzionalità</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1347"/>
+        <location filename="../settingswidget.cpp" line="1398"/>
         <source>Choose a chat wallpaper</source>
         <translation>Scegli uno sfondo per la chat</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1349"/>
+        <location filename="../settingswidget.cpp" line="1400"/>
         <source>Images (%1)</source>
         <translation>Immagini (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1357"/>
+        <location filename="../settingswidget.cpp" line="1408"/>
         <source>Could not use that image: %1</source>
         <translation>Impossibile usare quell&apos;immagine: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1372"/>
+        <location filename="../settingswidget.cpp" line="1423"/>
         <source>Choose a CSS file</source>
         <translation>Scegli un file CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1374"/>
+        <location filename="../settingswidget.cpp" line="1425"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Fogli di stile (*.css);;Tutti i file (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1381"/>
+        <location filename="../settingswidget.cpp" line="1432"/>
         <source>Could not read that file: %1</source>
         <translation>Impossibile leggere quel file: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1454"/>
+        <location filename="../settingswidget.cpp" line="1505"/>
         <source>Disk</source>
         <translation>Disco</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1455"/>
+        <location filename="../settingswidget.cpp" line="1506"/>
         <source>Memory</source>
         <translation>Memoria</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1608"/>
+        <location filename="../settingswidget.cpp" line="1659"/>
         <source>Ollama not found at this address.</source>
         <translation>Ollama non trovato a questo indirizzo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1638"/>
+        <location filename="../settingswidget.cpp" line="1689"/>
         <source>Download complete.</source>
         <translation>Download completato.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1641"/>
+        <location filename="../settingswidget.cpp" line="1692"/>
         <source>Download failed: %1</source>
         <translation>Download non riuscito: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1652"/>
+        <location filename="../settingswidget.cpp" line="1703"/>
         <source>Checking…</source>
         <translation>Verifica in corso…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1677"/>
+        <location filename="../settingswidget.cpp" line="1728"/>
         <source>Starting download of %1…</source>
         <translation>Avvio del download di %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1728"/>
+        <location filename="../settingswidget.cpp" line="1779"/>
         <source>System</source>
         <translation>Sistema</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1729"/>
+        <location filename="../settingswidget.cpp" line="1780"/>
         <source>None (direct)</source>
         <translation>Nessuno (diretto)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1730"/>
+        <location filename="../settingswidget.cpp" line="1781"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1731"/>
+        <location filename="../settingswidget.cpp" line="1782"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1757"/>
+        <location filename="../settingswidget.cpp" line="1808"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Portale desktop (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1759"/>
+        <location filename="../settingswidget.cpp" line="1810"/>
         <source>System service (libnotify)</source>
         <translation>Servizio di sistema (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1944"/>
-        <location filename="../settingswidget.cpp" line="1948"/>
+        <location filename="../settingswidget.cpp" line="1995"/>
+        <location filename="../settingswidget.cpp" line="1999"/>
         <source>Add reply</source>
         <translation>Aggiungi risposta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1944"/>
+        <location filename="../settingswidget.cpp" line="1995"/>
         <source>Name</source>
         <translation>Nome</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1948"/>
+        <location filename="../settingswidget.cpp" line="1999"/>
         <source>Text to insert</source>
         <translation>Testo da inserire</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1965"/>
+        <location filename="../settingswidget.cpp" line="2016"/>
         <source>Choose a JavaScript file</source>
         <translation>Scegli un file JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1966"/>
+        <location filename="../settingswidget.cpp" line="2017"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Tutti i file (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1971"/>
+        <location filename="../settingswidget.cpp" line="2022"/>
         <source>Could not add addon</source>
         <translation>Impossibile aggiungere il componente aggiuntivo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1984"/>
+        <location filename="../settingswidget.cpp" line="2035"/>
         <source>Remove addon</source>
         <translation>Rimuovi componente aggiuntivo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1985"/>
+        <location filename="../settingswidget.cpp" line="2036"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>Rimuovere il componente aggiuntivo &quot;%1&quot;? Questo ne elimina il file.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2173"/>
+        <location filename="../settingswidget.cpp" line="2224"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Correttore ortografico (nessun dizionario installato)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1456"/>
-        <location filename="../settingswidget.cpp" line="1464"/>
-        <location filename="../settingswidget.cpp" line="2224"/>
+        <location filename="../settingswidget.cpp" line="1507"/>
+        <location filename="../settingswidget.cpp" line="1515"/>
+        <location filename="../settingswidget.cpp" line="2307"/>
         <source>None</source>
         <translation>Nessuna</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="505"/>
+        <location filename="../settingswidget.cpp" line="506"/>
         <source>Basics</source>
         <translation>Generali</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="513"/>
+        <location filename="../settingswidget.cpp" line="514"/>
         <source>Appearance</source>
         <translation>Aspetto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="532"/>
+        <location filename="../settingswidget.cpp" line="533"/>
         <source>Notifications</source>
         <translation>Notifiche</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="536"/>
+        <location filename="../settingswidget.cpp" line="537"/>
         <source>Chatting</source>
         <translation>Messaggistica</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="555"/>
+        <location filename="../settingswidget.cpp" line="592"/>
+        <source>Spell-check dictionaries</source>
+        <translation>Dizionari di controllo ortografico</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="606"/>
         <source>Privacy &amp; Lock</source>
         <translation>Privacy e blocco</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="569"/>
+        <location filename="../settingswidget.cpp" line="620"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>Finestra e zoom</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="598"/>
+        <location filename="../settingswidget.cpp" line="649"/>
         <source>AI &amp;&amp; translation</source>
         <translation>IA &amp;&amp; traduzione</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="605"/>
+        <location filename="../settingswidget.cpp" line="656"/>
         <source>Advanced</source>
         <translation>Avanzate</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="930"/>
+        <location filename="../settingswidget.cpp" line="981"/>
         <source>Shortcut in use</source>
         <translation>Scorciatoia in uso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="931"/>
+        <location filename="../settingswidget.cpp" line="982"/>
         <source>That shortcut is already used by another action.</source>
         <translation>Questa scorciatoia è già usata da un&apos;altra azione.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="943"/>
+        <location filename="../settingswidget.cpp" line="994"/>
         <source>Clear cache</source>
         <translation>Svuota cache</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="944"/>
+        <location filename="../settingswidget.cpp" line="995"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Svuotare la cache adesso? Verrà scaricata di nuovo quando necessario.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="954"/>
-        <location filename="../settingswidget.cpp" line="960"/>
-        <location filename="../settingswidget.cpp" line="969"/>
-        <location filename="../settingswidget.cpp" line="972"/>
+        <location filename="../settingswidget.cpp" line="1005"/>
+        <location filename="../settingswidget.cpp" line="1011"/>
+        <location filename="../settingswidget.cpp" line="1020"/>
+        <location filename="../settingswidget.cpp" line="1023"/>
         <source>Export profile</source>
         <translation>Esporta profilo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="955"/>
+        <location filename="../settingswidget.cpp" line="1006"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>L&apos;archivio conterrà la tua sessione WhatsApp con accesso effettuato. Tienilo privato. Continuare?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="962"/>
-        <location filename="../settingswidget.cpp" line="977"/>
+        <location filename="../settingswidget.cpp" line="1013"/>
+        <location filename="../settingswidget.cpp" line="1028"/>
         <source>Archives (*.tar.gz)</source>
         <translation>Archivi (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="970"/>
+        <location filename="../settingswidget.cpp" line="1021"/>
         <source>Profile exported.</source>
         <translation>Profilo esportato.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="977"/>
-        <location filename="../settingswidget.cpp" line="981"/>
-        <location filename="../settingswidget.cpp" line="989"/>
-        <location filename="../settingswidget.cpp" line="992"/>
+        <location filename="../settingswidget.cpp" line="1028"/>
+        <location filename="../settingswidget.cpp" line="1032"/>
+        <location filename="../settingswidget.cpp" line="1040"/>
+        <location filename="../settingswidget.cpp" line="1043"/>
         <source>Import profile</source>
         <translation>Importa profilo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="982"/>
+        <location filename="../settingswidget.cpp" line="1033"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>Questa operazione sovrascrive i dati dell&apos;account attuale con l&apos;archivio, quindi Whatly deve essere riavviato. Continuare?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="990"/>
+        <location filename="../settingswidget.cpp" line="1041"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>Profilo importato. Riavvia Whatly.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1613"/>
+        <location filename="../settingswidget.cpp" line="1664"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama trovato (%1 modelli installati).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2228"/>
+        <location filename="../settingswidget.cpp" line="2269"/>
+        <source>download</source>
+        <translation>scarica</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2311"/>
         <source>%1 languages</source>
         <translation>%1 lingue</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2326"/>
+        <location filename="../settingswidget.cpp" line="2409"/>
         <source>WhatsApp default</source>
         <translation>Predefinito di WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2365"/>
+        <location filename="../settingswidget.cpp" line="2448"/>
         <source>System default</source>
         <translation>Predefinito di sistema</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2400"/>
+        <location filename="../settingswidget.cpp" line="2483"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>La lingua dell&apos;interfaccia cambierà al riavvio di %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2414"/>
+        <location filename="../settingswidget.cpp" line="2497"/>
         <source>App Lock Setup</source>
         <translation>Configurazione blocco app</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2415"/>
+        <location filename="../settingswidget.cpp" line="2498"/>
         <source>Please setup the App lock password first.</source>
         <translation>Configura prima la password del blocco app.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2531"/>
-        <location filename="../settingswidget.cpp" line="2542"/>
+        <location filename="../settingswidget.cpp" line="2614"/>
+        <location filename="../settingswidget.cpp" line="2625"/>
         <source>Select download directory</source>
         <translation>Seleziona cartella scaricati</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2582"/>
+        <location filename="../settingswidget.cpp" line="2665"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3730,7 +3806,7 @@ Questo disconnetterà la sessione corrente.
 Potrebbe essere necessario anche un riavvio completo dell&apos;applicazione!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2588"/>
+        <location filename="../settingswidget.cpp" line="2671"/>
         <source>Do you want to proceed?</source>
         <translation>Vuoi procedere?</translation>
     </message>
@@ -3820,104 +3896,104 @@ Potrebbe essere necessario anche un riavvio completo dell&apos;applicazione!</tr
 <context>
     <name>WebEnginePage</name>
     <message>
-        <location filename="../webenginepage.cpp" line="54"/>
+        <location filename="../webenginepage.cpp" line="55"/>
         <source>Share your screen</source>
         <translation>Condividi lo schermo</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="56"/>
+        <location filename="../webenginepage.cpp" line="57"/>
         <source>Choose what to share:</source>
         <translation>Scegli cosa condividere:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="68"/>
+        <location filename="../webenginepage.cpp" line="69"/>
         <source>Untitled</source>
         <translation>Senza titolo</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="72"/>
+        <location filename="../webenginepage.cpp" line="73"/>
         <source>Screen: </source>
         <translation>Schermo: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="73"/>
+        <location filename="../webenginepage.cpp" line="74"/>
         <source>Window: </source>
         <translation>Finestra: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="180"/>
+        <location filename="../webenginepage.cpp" line="181"/>
         <source>Allow %1 to access your location information?</source>
         <translation>Consenti a %1 di accedere alle informazioni sulla tua posizione?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="182"/>
+        <location filename="../webenginepage.cpp" line="183"/>
         <source>Allow %1 to access your microphone?</source>
         <translation>Consenti a %1 di accedere al tuo microfono?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="184"/>
+        <location filename="../webenginepage.cpp" line="185"/>
         <source>Allow %1 to access your webcam?</source>
         <translation>Consenti a %1 di accedere alla tua webcam?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="186"/>
+        <location filename="../webenginepage.cpp" line="187"/>
         <source>Allow %1 to access your microphone and webcam?</source>
         <translation>Consenti a %1 di accedere a microfono e webcam?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="188"/>
+        <location filename="../webenginepage.cpp" line="189"/>
         <source>Allow %1 to lock your mouse cursor?</source>
         <translation>Consenti a %1 di bloccare il cursore del mouse?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="190"/>
+        <location filename="../webenginepage.cpp" line="191"/>
         <source>Allow %1 to capture video of your desktop?</source>
         <translation>Consenti a %1 di acquisire video dal tuo desktop?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="192"/>
+        <location filename="../webenginepage.cpp" line="193"/>
         <source>Allow %1 to capture audio and video of your desktop?</source>
         <translation>Consenti a %1 di acquisire audio e video dal tuo desktop?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="195"/>
+        <location filename="../webenginepage.cpp" line="196"/>
         <source>Allow %1 to show notification on your desktop?</source>
         <translation>Consenti a %1 di mostrare la notifica sul desktop?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="197"/>
+        <location filename="../webenginepage.cpp" line="198"/>
         <source>Allow %1 to read your clipboard? This is needed to paste images into a chat.</source>
         <translation>Consentire a %1 di leggere gli appunti? È necessario per incollare immagini in una chat.</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="200"/>
+        <location filename="../webenginepage.cpp" line="201"/>
         <source>Allow %1 to see the fonts installed on your system?</source>
         <translation>Consentire a %1 di vedere i caratteri installati nel sistema?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="220"/>
-        <location filename="../webenginepage.cpp" line="434"/>
+        <location filename="../webenginepage.cpp" line="221"/>
+        <location filename="../webenginepage.cpp" line="435"/>
         <source>Permission Request</source>
         <translation>Richiesta di Permesso</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="357"/>
-        <location filename="../webenginepage.cpp" line="366"/>
+        <location filename="../webenginepage.cpp" line="358"/>
+        <location filename="../webenginepage.cpp" line="367"/>
         <source>Certificate Error</source>
         <translation>Errore Certificato</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="386"/>
+        <location filename="../webenginepage.cpp" line="387"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
         <translation>Inserisci nome utente e password per &quot;%1&quot; in %2</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="416"/>
+        <location filename="../webenginepage.cpp" line="417"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
         <translation>Connettiti al proxy &quot;%1&quot; utilizzando:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="435"/>
+        <location filename="../webenginepage.cpp" line="436"/>
         <source>Allow %1 to open all %2 links?</source>
         <translation>Consenti a %1 di aprire tutti i %2 collegamenti?</translation>
     </message>

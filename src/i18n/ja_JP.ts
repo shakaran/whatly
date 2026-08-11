@@ -341,6 +341,72 @@ Do you wish to override the security check and continue ?   </source>
     </message>
 </context>
 <context>
+    <name>DictionariesSection</name>
+    <message>
+        <location filename="../dictionariessection.cpp" line="49"/>
+        <source>Could not fetch the list of downloadable dictionaries: %1</source>
+        <translation>ダウンロード可能な辞書の一覧を取得できませんでした: %1</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="55"/>
+        <source>%1%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="63"/>
+        <source>Downloading %1 failed: %2</source>
+        <translation>%1 のダウンロードに失敗しました: %2</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="67"/>
+        <source>Loading available dictionaries…</source>
+        <translation>利用可能な辞書を読み込み中…</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="111"/>
+        <source>No dictionaries are available.</source>
+        <translation>利用可能な辞書はありません。</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="134"/>
+        <source>installed</source>
+        <translation>インストール済み</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="135"/>
+        <source>Delete</source>
+        <translation>削除</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="145"/>
+        <source>installed (bundled)</source>
+        <translation>インストール済み（同梱）</translation>
+    </message>
+    <message>
+        <location filename="../dictionariessection.cpp" line="150"/>
+        <source>Download</source>
+        <translation type="unfinished">ダウンロード</translation>
+    </message>
+</context>
+<context>
+    <name>DictionaryManager</name>
+    <message>
+        <location filename="../dictionarymanager.cpp" line="112"/>
+        <source>No writable dictionary directory.</source>
+        <translation>書き込み可能な辞書ディレクトリがありません。</translation>
+    </message>
+    <message>
+        <location filename="../dictionarymanager.cpp" line="142"/>
+        <source>The downloaded dictionary failed verification.</source>
+        <translation>ダウンロードした辞書の検証に失敗しました。</translation>
+    </message>
+    <message>
+        <location filename="../dictionarymanager.cpp" line="152"/>
+        <source>Could not save the dictionary.</source>
+        <translation>辞書を保存できませんでした。</translation>
+    </message>
+</context>
+<context>
     <name>DownloadManagerWidget</name>
     <message>
         <location filename="../downloadmanagerwidget.ui" line="20"/>
@@ -2079,17 +2145,17 @@ Please setup the password in the Settings first.</source>
         <translation>グリフの輪郭をピクセルにどう合わせるか。自動はシステムに従います。軽いレベルは重い・不均一な文字を改善できます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1465"/>
+        <location filename="../settingswidget.cpp" line="1516"/>
         <source>Slight</source>
         <translation>弱</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1466"/>
+        <location filename="../settingswidget.cpp" line="1517"/>
         <source>Medium</source>
         <translation>中</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1467"/>
+        <location filename="../settingswidget.cpp" line="1518"/>
         <source>Full</source>
         <translation>完全</translation>
     </message>
@@ -2163,8 +2229,8 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="2010"/>
         <location filename="../settingswidget.ui" line="2054"/>
         <location filename="../settingswidget.ui" line="2211"/>
-        <location filename="../settingswidget.cpp" line="1463"/>
-        <location filename="../settingswidget.cpp" line="1755"/>
+        <location filename="../settingswidget.cpp" line="1514"/>
+        <location filename="../settingswidget.cpp" line="1806"/>
         <source>Automatic</source>
         <translation>自動</translation>
     </message>
@@ -2437,7 +2503,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="691"/>
-        <location filename="../settingswidget.cpp" line="1380"/>
+        <location filename="../settingswidget.cpp" line="1431"/>
         <source>Custom CSS</source>
         <translation>カスタム CSS</translation>
     </message>
@@ -2494,7 +2560,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2174"/>
+        <location filename="../settingswidget.cpp" line="2225"/>
         <source>Check spelling as I type</source>
         <translation>入力中にスペルチェック</translation>
     </message>
@@ -2525,7 +2591,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
-        <location filename="../settingswidget.cpp" line="1356"/>
+        <location filename="../settingswidget.cpp" line="1407"/>
         <source>Chat wallpaper</source>
         <translation>チャットの壁紙</translation>
     </message>
@@ -3376,343 +3442,353 @@ Please setup the password in the Settings first.</source>
         <translation>フィールドをクリックしてキーの組み合わせを押します。ショートカットを削除するにはフィールドを空にします。変更は再起動後に適用されます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1013"/>
+        <location filename="../settingswidget.cpp" line="1064"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>永続データ（永続的な Cookie とキャッシュを含む）を削除し、アプリケーションを終了します。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1018"/>
+        <location filename="../settingswidget.cpp" line="1069"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>Cookie を削除してアプリケーションを終了しますか？</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1124"/>
+        <location filename="../settingswidget.cpp" line="1175"/>
         <source>| Error</source>
         <translation>| エラー</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1125"/>
+        <location filename="../settingswidget.cpp" line="1176"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>空の User-Agent 文字列は設定できません。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1176"/>
+        <location filename="../settingswidget.cpp" line="1227"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>テーマを手動で切り替えたため、自動テーマ切り替えは無効になりました。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1193"/>
+        <location filename="../settingswidget.cpp" line="1244"/>
         <source>Require setup</source>
         <translation>設定が必要</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1222"/>
+        <location filename="../settingswidget.cpp" line="1273"/>
         <source>App lock is not configured.</source>
         <translation>アプリロックが設定されていません。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1226"/>
+        <location filename="../settingswidget.cpp" line="1277"/>
         <source>Do you want to setup App lock now?</source>
         <translation>今すぐアプリロックを設定しますか？</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1268"/>
+        <location filename="../settingswidget.cpp" line="1319"/>
         <source>Feature permissions</source>
         <translation>機能の権限</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1347"/>
+        <location filename="../settingswidget.cpp" line="1398"/>
         <source>Choose a chat wallpaper</source>
         <translation>チャットの壁紙を選択</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1349"/>
+        <location filename="../settingswidget.cpp" line="1400"/>
         <source>Images (%1)</source>
         <translation>画像 (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1357"/>
+        <location filename="../settingswidget.cpp" line="1408"/>
         <source>Could not use that image: %1</source>
         <translation>その画像を使用できませんでした: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1372"/>
+        <location filename="../settingswidget.cpp" line="1423"/>
         <source>Choose a CSS file</source>
         <translation>CSS ファイルを選択</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1374"/>
+        <location filename="../settingswidget.cpp" line="1425"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>スタイルシート (*.css);;すべてのファイル (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1381"/>
+        <location filename="../settingswidget.cpp" line="1432"/>
         <source>Could not read that file: %1</source>
         <translation>そのファイルを読み込めませんでした: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1454"/>
+        <location filename="../settingswidget.cpp" line="1505"/>
         <source>Disk</source>
         <translation>ディスク</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1455"/>
+        <location filename="../settingswidget.cpp" line="1506"/>
         <source>Memory</source>
         <translation>メモリ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1608"/>
+        <location filename="../settingswidget.cpp" line="1659"/>
         <source>Ollama not found at this address.</source>
         <translation>このアドレスに Ollama が見つかりません。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1638"/>
+        <location filename="../settingswidget.cpp" line="1689"/>
         <source>Download complete.</source>
         <translation>ダウンロードが完了しました。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1641"/>
+        <location filename="../settingswidget.cpp" line="1692"/>
         <source>Download failed: %1</source>
         <translation>ダウンロードに失敗しました: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1652"/>
+        <location filename="../settingswidget.cpp" line="1703"/>
         <source>Checking…</source>
         <translation>確認中…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1677"/>
+        <location filename="../settingswidget.cpp" line="1728"/>
         <source>Starting download of %1…</source>
         <translation>%1 のダウンロードを開始…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1728"/>
+        <location filename="../settingswidget.cpp" line="1779"/>
         <source>System</source>
         <translation>システム</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1729"/>
+        <location filename="../settingswidget.cpp" line="1780"/>
         <source>None (direct)</source>
         <translation>なし（直接）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1730"/>
+        <location filename="../settingswidget.cpp" line="1781"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1731"/>
+        <location filename="../settingswidget.cpp" line="1782"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1757"/>
+        <location filename="../settingswidget.cpp" line="1808"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>デスクトップポータル (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1759"/>
+        <location filename="../settingswidget.cpp" line="1810"/>
         <source>System service (libnotify)</source>
         <translation>システムサービス (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1944"/>
-        <location filename="../settingswidget.cpp" line="1948"/>
+        <location filename="../settingswidget.cpp" line="1995"/>
+        <location filename="../settingswidget.cpp" line="1999"/>
         <source>Add reply</source>
         <translation>返信を追加</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1944"/>
+        <location filename="../settingswidget.cpp" line="1995"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1948"/>
+        <location filename="../settingswidget.cpp" line="1999"/>
         <source>Text to insert</source>
         <translation>挿入するテキスト</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1965"/>
+        <location filename="../settingswidget.cpp" line="2016"/>
         <source>Choose a JavaScript file</source>
         <translation>JavaScriptファイルを選択</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1966"/>
+        <location filename="../settingswidget.cpp" line="2017"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;すべてのファイル (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1971"/>
+        <location filename="../settingswidget.cpp" line="2022"/>
         <source>Could not add addon</source>
         <translation>アドオンを追加できませんでした</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1984"/>
+        <location filename="../settingswidget.cpp" line="2035"/>
         <source>Remove addon</source>
         <translation>アドオンを削除</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1985"/>
+        <location filename="../settingswidget.cpp" line="2036"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>アドオン &quot;%1&quot; を削除しますか？ファイルも削除されます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2173"/>
+        <location filename="../settingswidget.cpp" line="2224"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>スペルチェッカー（辞書がインストールされていません）</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1456"/>
-        <location filename="../settingswidget.cpp" line="1464"/>
-        <location filename="../settingswidget.cpp" line="2224"/>
+        <location filename="../settingswidget.cpp" line="1507"/>
+        <location filename="../settingswidget.cpp" line="1515"/>
+        <location filename="../settingswidget.cpp" line="2307"/>
         <source>None</source>
         <translation>なし</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="505"/>
+        <location filename="../settingswidget.cpp" line="506"/>
         <source>Basics</source>
         <translation>基本</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="513"/>
+        <location filename="../settingswidget.cpp" line="514"/>
         <source>Appearance</source>
         <translation>外観</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="532"/>
+        <location filename="../settingswidget.cpp" line="533"/>
         <source>Notifications</source>
         <translation>通知</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="536"/>
+        <location filename="../settingswidget.cpp" line="537"/>
         <source>Chatting</source>
         <translation>チャット</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="555"/>
+        <location filename="../settingswidget.cpp" line="592"/>
+        <source>Spell-check dictionaries</source>
+        <translation>スペルチェック辞書</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="606"/>
         <source>Privacy &amp; Lock</source>
         <translation>プライバシーとロック</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="569"/>
+        <location filename="../settingswidget.cpp" line="620"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>ウィンドウとズーム</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="598"/>
+        <location filename="../settingswidget.cpp" line="649"/>
         <source>AI &amp;&amp; translation</source>
         <translation>AI &amp;&amp; 翻訳</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="605"/>
+        <location filename="../settingswidget.cpp" line="656"/>
         <source>Advanced</source>
         <translation>詳細設定</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="930"/>
+        <location filename="../settingswidget.cpp" line="981"/>
         <source>Shortcut in use</source>
         <translation>ショートカットは使用中です</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="931"/>
+        <location filename="../settingswidget.cpp" line="982"/>
         <source>That shortcut is already used by another action.</source>
         <translation>そのショートカットは既に別の操作で使用されています。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="943"/>
+        <location filename="../settingswidget.cpp" line="994"/>
         <source>Clear cache</source>
         <translation>キャッシュを消去</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="944"/>
+        <location filename="../settingswidget.cpp" line="995"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>今すぐキャッシュを消去しますか？必要に応じて再ダウンロードされます。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="954"/>
-        <location filename="../settingswidget.cpp" line="960"/>
-        <location filename="../settingswidget.cpp" line="969"/>
-        <location filename="../settingswidget.cpp" line="972"/>
+        <location filename="../settingswidget.cpp" line="1005"/>
+        <location filename="../settingswidget.cpp" line="1011"/>
+        <location filename="../settingswidget.cpp" line="1020"/>
+        <location filename="../settingswidget.cpp" line="1023"/>
         <source>Export profile</source>
         <translation>プロファイルをエクスポート</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="955"/>
+        <location filename="../settingswidget.cpp" line="1006"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>アーカイブにはログイン済みの WhatsApp セッションが含まれます。他人に渡さないでください。続行しますか？</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="962"/>
-        <location filename="../settingswidget.cpp" line="977"/>
+        <location filename="../settingswidget.cpp" line="1013"/>
+        <location filename="../settingswidget.cpp" line="1028"/>
         <source>Archives (*.tar.gz)</source>
         <translation>アーカイブ (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="970"/>
+        <location filename="../settingswidget.cpp" line="1021"/>
         <source>Profile exported.</source>
         <translation>プロファイルをエクスポートしました。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="977"/>
-        <location filename="../settingswidget.cpp" line="981"/>
-        <location filename="../settingswidget.cpp" line="989"/>
-        <location filename="../settingswidget.cpp" line="992"/>
+        <location filename="../settingswidget.cpp" line="1028"/>
+        <location filename="../settingswidget.cpp" line="1032"/>
+        <location filename="../settingswidget.cpp" line="1040"/>
+        <location filename="../settingswidget.cpp" line="1043"/>
         <source>Import profile</source>
         <translation>プロファイルをインポート</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="982"/>
+        <location filename="../settingswidget.cpp" line="1033"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>現在のアカウントのデータをアーカイブで上書きし、その後 Whatly を再起動する必要があります。続行しますか？</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="990"/>
+        <location filename="../settingswidget.cpp" line="1041"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>プロファイルをインポートしました。Whatly を再起動してください。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1613"/>
+        <location filename="../settingswidget.cpp" line="1664"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama を検出（%1 個のモデルがインストール済み）。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2228"/>
+        <location filename="../settingswidget.cpp" line="2269"/>
+        <source>download</source>
+        <translation>ダウンロード</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2311"/>
         <source>%1 languages</source>
         <translation>%1 言語</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2326"/>
+        <location filename="../settingswidget.cpp" line="2409"/>
         <source>WhatsApp default</source>
         <translation>WhatsApp のデフォルト</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2365"/>
+        <location filename="../settingswidget.cpp" line="2448"/>
         <source>System default</source>
         <translation>システムの既定</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2400"/>
+        <location filename="../settingswidget.cpp" line="2483"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>%1 を再起動するとインターフェースの言語が変わります。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2414"/>
+        <location filename="../settingswidget.cpp" line="2497"/>
         <source>App Lock Setup</source>
         <translation>アプリロックの設定</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2415"/>
+        <location filename="../settingswidget.cpp" line="2498"/>
         <source>Please setup the App lock password first.</source>
         <translation>先にアプリロックのパスワードを設定してください。</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2531"/>
-        <location filename="../settingswidget.cpp" line="2542"/>
+        <location filename="../settingswidget.cpp" line="2614"/>
+        <location filename="../settingswidget.cpp" line="2625"/>
         <source>Select download directory</source>
         <translation>ダウンロードフォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2582"/>
+        <location filename="../settingswidget.cpp" line="2665"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3723,7 +3799,7 @@ You may also require a complete restart of Application!</source>
 アプリケーションの完全な再起動が必要になる場合もあります！</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2588"/>
+        <location filename="../settingswidget.cpp" line="2671"/>
         <source>Do you want to proceed?</source>
         <translation>続行しますか？</translation>
     </message>
@@ -3813,104 +3889,104 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>WebEnginePage</name>
     <message>
-        <location filename="../webenginepage.cpp" line="54"/>
+        <location filename="../webenginepage.cpp" line="55"/>
         <source>Share your screen</source>
         <translation>画面を共有</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="56"/>
+        <location filename="../webenginepage.cpp" line="57"/>
         <source>Choose what to share:</source>
         <translation>共有する対象を選択してください:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="68"/>
+        <location filename="../webenginepage.cpp" line="69"/>
         <source>Untitled</source>
         <translation>無題</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="72"/>
+        <location filename="../webenginepage.cpp" line="73"/>
         <source>Screen: </source>
         <translation>画面: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="73"/>
+        <location filename="../webenginepage.cpp" line="74"/>
         <source>Window: </source>
         <translation>ウィンドウ: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="180"/>
+        <location filename="../webenginepage.cpp" line="181"/>
         <source>Allow %1 to access your location information?</source>
         <translation>%1 による位置情報へのアクセスを許可しますか？</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="182"/>
+        <location filename="../webenginepage.cpp" line="183"/>
         <source>Allow %1 to access your microphone?</source>
         <translation>%1 によるマイクへのアクセスを許可しますか？</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="184"/>
+        <location filename="../webenginepage.cpp" line="185"/>
         <source>Allow %1 to access your webcam?</source>
         <translation>%1 によるカメラへのアクセスを許可しますか？</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="186"/>
+        <location filename="../webenginepage.cpp" line="187"/>
         <source>Allow %1 to access your microphone and webcam?</source>
         <translation>%1 によるマイクとカメラへのアクセスを許可しますか？</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="188"/>
+        <location filename="../webenginepage.cpp" line="189"/>
         <source>Allow %1 to lock your mouse cursor?</source>
         <translation>%1 によるマウスカーソルのロックを許可しますか？</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="190"/>
+        <location filename="../webenginepage.cpp" line="191"/>
         <source>Allow %1 to capture video of your desktop?</source>
         <translation>%1 によるデスクトップの映像の記録を許可しますか？</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="192"/>
+        <location filename="../webenginepage.cpp" line="193"/>
         <source>Allow %1 to capture audio and video of your desktop?</source>
         <translation>%1 によるデスクトップの音声と映像の記録を許可しますか？</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="195"/>
+        <location filename="../webenginepage.cpp" line="196"/>
         <source>Allow %1 to show notification on your desktop?</source>
         <translation>%1 がデスクトップに通知を表示することを許可しますか？</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="197"/>
+        <location filename="../webenginepage.cpp" line="198"/>
         <source>Allow %1 to read your clipboard? This is needed to paste images into a chat.</source>
         <translation>%1 によるクリップボードの読み取りを許可しますか？チャットに画像を貼り付けるために必要です。</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="200"/>
+        <location filename="../webenginepage.cpp" line="201"/>
         <source>Allow %1 to see the fonts installed on your system?</source>
         <translation>%1 がシステムにインストールされたフォントを参照することを許可しますか？</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="220"/>
-        <location filename="../webenginepage.cpp" line="434"/>
+        <location filename="../webenginepage.cpp" line="221"/>
+        <location filename="../webenginepage.cpp" line="435"/>
         <source>Permission Request</source>
         <translation>権限の要求</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="357"/>
-        <location filename="../webenginepage.cpp" line="366"/>
+        <location filename="../webenginepage.cpp" line="358"/>
+        <location filename="../webenginepage.cpp" line="367"/>
         <source>Certificate Error</source>
         <translation>証明書エラー</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="386"/>
+        <location filename="../webenginepage.cpp" line="387"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
         <translation>%2 の「%1」のユーザー名とパスワードを入力してください</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="416"/>
+        <location filename="../webenginepage.cpp" line="417"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
         <translation>次を使ってプロキシ「%1」に接続:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="435"/>
+        <location filename="../webenginepage.cpp" line="436"/>
         <source>Allow %1 to open all %2 links?</source>
         <translation>%1 がすべての %2 リンクを開くことを許可しますか？</translation>
     </message>
