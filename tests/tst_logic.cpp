@@ -3801,6 +3801,20 @@ private slots:
     SessionBackup::setPathsForTesting(root.path(), QString());
     QVERIFY(!SessionBackup::restore(QString()));
   }
+  void profilesDoNotShareSnapshots() {
+    QTemporaryDir root;
+    QVERIFY(root.isValid());
+    // The main instance (empty suffix) snapshots its default account.
+    SessionBackup::setPathsForTesting(root.path(), QString());
+    writeIndexedDb(root.path() + QStringLiteral("/QtWebEngine"), 512 * 1024);
+    QVERIFY(SessionBackup::snapshot(QString()));
+    // A `--profile x` instance (suffix "-x") whose own session is empty must NOT
+    // find — and restore — the main instance's snapshot: that cross-profile leak
+    // is the bug. Its snapshot namespace is separate, so there is nothing to
+    // restore.
+    SessionBackup::setPathsForTesting(root.path(), QStringLiteral("-x"));
+    QVERIFY(!SessionBackup::restore(QString()));
+  }
 };
 
 int main(int argc, char *argv[]) {

@@ -36,8 +36,13 @@ QString profileDir(const QString &accountId) {
 }
 
 QString snapshotAccountDir(const QString &accountId) {
-  return dataRoot() + QStringLiteral("/session-snapshots/") +
-         SessionBackup::snapshotKey(accountId);
+  // The snapshot root carries the --profile suffix, exactly as the engine
+  // storage dir does (QtWebEngine<suffix>). Without it a `--profile x` instance
+  // and the main instance both key the default account to "session-snapshots/
+  // default" and would restore each other's session across profiles. The suffix
+  // is empty for the main instance, so its existing snapshots keep their path.
+  return dataRoot() + QStringLiteral("/session-snapshots") + profileSuffix() +
+         QLatin1Char('/') + SessionBackup::snapshotKey(accountId);
 }
 
 qint64 indexedDbBytes(const QString &root) {
