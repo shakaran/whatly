@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        7.0.0
+Version:        7.1.0
 Release:        1%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
@@ -56,6 +56,16 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Mon Aug 11 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.1.0-1
+- Spell-check dictionaries are downloadable per language (#46): packages bundle a
+  minimum and fetch the rest on demand, verified by SHA-256; Esperanto included.
+- Resize the custom window frame from every edge/corner (#49); unread badge is
+  configurable and read from WhatsApp's own store (#65/#66); collapsed chat list
+  shows unread counts (#50); no window is treated as the main one (#55); the
+  running version is shown in the window (#61); many account/window fixes.
+- Noto Sans pulled in by the packages; clearer message when WhatsApp Web fails to
+  load (#43); codec notice points at the Flatpak (#59). See CHANGELOG.md.
+
 * Mon Aug 03 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.0.0-1
 - Major feature release: built-in AI assistant (any OpenAI-compatible endpoint,
   with a one-click local-Ollama helper), inline translation, chat/media export,

@@ -38,7 +38,8 @@ jobs:
       - name: Install build dependencies
         run: |
           pacman -Syu --noconfirm --needed cmake ninja \
-            qt6-webengine qt6-svg qt6-positioning qt6-webchannel qt6-tools
+            qt6-webengine qt6-svg qt6-positioning qt6-webchannel qt6-tools \
+            noto-fonts
       - name: makepkg (source package)
         run: |
           # makepkg refuses to run as root, so build as an unprivileged user.

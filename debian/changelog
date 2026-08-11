@@ -1,3 +1,21 @@
+whatly (7.1.0) unstable; urgency=medium
+
+  * Spell-check dictionaries are downloadable per language (#46): a fresh
+    install ships only en_US (~45 MB smaller) and fetches the rest on demand,
+    each verified by SHA-256; never-bundled languages such as Esperanto can now
+    be installed from the UI. Offline builds can still bundle everything with
+    -DWHATLY_BUNDLE_DICTIONARIES="".
+  * Resize the custom window frame from every edge and corner (#49); the unread
+    badge is configurable and read from WhatsApp's own store (#65/#66); the
+    collapsed chat strip shows unread counts (#50); no window is treated as the
+    main one (#55); the running build identifies itself in the window (#61) and
+    at startup; plus many account and window fixes.
+  * A clearer notice when WhatsApp Web fails to load (#43); Noto Sans pulled in
+    by the packages so text renders correctly out of the box; the codec notice
+    points at the Flatpak (#59); a lighter Flatpak (-17 MB, #45).
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Tue, 11 Aug 2026 13:06:29 +0200
+
 whatly (7.0.0) unstable; urgency=medium
 
   * Major feature release: built-in AI assistant (any OpenAI-compatible

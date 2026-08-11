@@ -108,6 +108,18 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.1.0" date="2026-08-11">
+      <description>
+        <p>A feature release on top of 7.0.0:</p>
+        <ul>
+          <li>Spell-check dictionaries are downloadable per language: a fresh install ships only en_US (about 45 MB smaller) and fetches the rest on demand, each verified by SHA-256; never-bundled languages such as Esperanto can now be installed from the UI</li>
+          <li>Resize the custom window frame from every edge and corner</li>
+          <li>The unread badge is configurable and read from WhatsApp's own store, and the collapsed chat strip shows unread counts</li>
+          <li>No window is treated as the main one, and the running build identifies itself in the window and at startup</li>
+          <li>A clearer notice when WhatsApp Web fails to load, Noto Sans pulled in by the packages, a lighter Flatpak, and many account and window fixes</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.0.0" date="2026-08-03">
       <description>
         <p>A major feature release:</p>
