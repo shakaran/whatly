@@ -20,6 +20,35 @@ now remembered and restored. It is stored by account id rather than by position,
 so reordering the tabs does not send the next start to the wrong account, and if
 that account has since been removed the first tab is used as before.
 
+**An account you are not using now costs nothing at all.** Every account built a
+full WhatsApp Web page at startup and kept it for the whole session, so a
+four-account setup downloaded the web app four times and paid for four renderer
+processes before you had looked at any of them. Measured on a four-account setup
+where three of the accounts were sitting on a QR screen doing nothing, those three
+held about 720 MB — roughly a third of the entire application. With "suspend
+inactive accounts" enabled, an account you have not opened has no page: not a
+frozen one, not an empty one, none. It is built the moment something needs to draw
+it — clicking its tab, switching to grid view, tearing it out into its own window
+— and thrown away again once you have left it alone for the configured time, so it
+goes back to costing nothing. Startup is also markedly quicker, because only the
+account you land on is loaded. Previously this option only froze background
+accounts, which stops their timers and scripts but keeps every byte of the
+renderer, so the memory it was meant to save stayed allocated. The trade is
+unchanged and still opt-in: an account with no page cannot notify you, so with
+this off — the default — every account loads at startup exactly as before.
+**Settings: the things in "Performance & Privacy" are now where you would look for
+them.** That one section had grown into a grab-bag holding, besides the GPU and
+memory options its name suggests, the entire AI assistant and inline translation
+panels, whether photos are sent in HD, whether Enter holds a message briefly, the
+chat-list preview blanking and the WebRTC privacy shield — so the thing you wanted
+was almost never under the heading you would have guessed. **AI & translation** is
+now a section of its own, the two privacy settings have joined **Privacy & Lock**,
+the two messaging ones have joined **Chatting**, and what remains is genuinely
+performance, so the section is simply called that. **Interface scale** has also
+moved from "Network & Startup", where it sat beside the autostart checkbox, to
+**Window & zoom** beside the other zoom controls. No setting changed its meaning and
+nothing was renamed; they are only in sensible places now.
+
 ## 7.0.0 (2026-08-03)
 
 Whatly 7.0.0 is a major feature release. Highlights: a built-in AI assistant

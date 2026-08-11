@@ -50,6 +50,12 @@
 #include <QDesktopServices>
 #include <QMessageBox>
 #include <QProcess>
+#include <QVarLengthArray>
+#ifdef Q_OS_UNIX
+#include <sys/syscall.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#endif
 #include "chatliststrip.h"
 #include "chatnav.h"
 #include "privacyblur.h"
@@ -76,9 +82,7 @@ MainWindow::MainWindow(QWidget *parent)
 #ifdef Q_OS_LINUX
       m_notifier(kAppDisplayName, this),
 #endif
-      m_trayIconNormal(themeIcon("whatly-tray", ":/icons/app/notification/whatly-notify.png")),
-      m_notificationsTitleRegExp("^\\([1-9]\\d*\\).*"),
-      m_unreadMessageCountRegExp("\\([^\\d]*(\\d+)[^\\d]*\\)") {
+      m_trayIconNormal(themeIcon("whatly-tray", ":/icons/app/notification/whatly-notify.png")) {
 
   setObjectName("MainWindow");
   setWindowTitle(QApplication::applicationDisplayName() + AppProfile::label());
@@ -597,8 +601,8 @@ void MainWindow::updateWindowTheme() {
     if (!account.view || account.view == m_webEngine)
       continue;
     account.view->setStyleSheet(viewStyle);
-    if (account.view->page())
-      account.view->page()->setBackgroundColor(pageBg);
+    if (pageOf(account))
+      pageOf(account)->setBackgroundColor(pageBg);
   }
 
   for (QWidget *w : findChildren<QWidget *>())
@@ -718,8 +722,8 @@ void MainWindow::initSettingWidget() {
             // and in grid view they are all on screen at once.
             WebEngineProfileManager::instance().applyUserSettings();
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(WebTweaks::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(WebTweaks::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::followSystemThemeChanged,
@@ -739,24 +743,24 @@ void MainWindow::initSettingWidget() {
           [=]() {
             CustomCss::install(WebEngineProfileManager::instance().profile());
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(CustomCss::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(CustomCss::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::focusModeChanged, m_settingsWidget,
           [=]() {
             FocusMode::install(WebEngineProfileManager::instance().profile());
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(FocusMode::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(FocusMode::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::hdMediaChanged, m_settingsWidget,
           [=]() {
             HdMedia::install(WebEngineProfileManager::instance().profile());
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(HdMedia::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(HdMedia::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::undoSendChanged, m_settingsWidget,
@@ -766,8 +770,8 @@ void MainWindow::initSettingWidget() {
             // enabling/disabling or changing the delay takes effect without a
             // reload.
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(UndoSend::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(UndoSend::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::customJsChanged, m_settingsWidget,
@@ -804,8 +808,8 @@ void MainWindow::initSettingWidget() {
           m_settingsWidget, [=]() {
             WebEngineProfileManager::instance().applyUserSettings();
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(
                     PrivacyBlur::scriptSource());
           });
 
@@ -813,8 +817,8 @@ void MainWindow::initSettingWidget() {
           m_settingsWidget, [=]() {
             WebEngineProfileManager::instance().applyUserSettings();
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(
                     ChatListStrip::scriptSource());
           });
 
@@ -822,16 +826,16 @@ void MainWindow::initSettingWidget() {
           [=]() {
             WebFont::install(WebEngineProfileManager::instance().profile());
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(WebFont::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(WebFont::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::mutedStatusChanged,
           m_settingsWidget, [=]() {
             MutedStatus::install(WebEngineProfileManager::instance().profile());
             for (const Account &account : m_accounts)
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(MutedStatus::scriptSource());
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(MutedStatus::scriptSource());
           });
 
   connect(m_settingsWidget, &SettingsWidget::spellCheckChanged, m_settingsWidget,
@@ -847,8 +851,8 @@ void MainWindow::initSettingWidget() {
             // existing page). Each account keeps its own label.
             WebEngineProfileManager::instance().applyUserSettings();
             for (const Account &account : m_accounts) {
-              if (account.view && account.view->page())
-                account.view->page()->runJavaScript(
+              if (pageOf(account))
+                pageOf(account)->runJavaScript(
                     LinkedDeviceName::scriptSource(account.name.isEmpty() ||
                                                            account.id.isEmpty()
                                                        ? QString()
@@ -1362,14 +1366,96 @@ void MainWindow::restartApp() {
   saveWindowLayout();
   SettingsManager::instance().settings().sync(); // the new process reads these
 
-  if (!QProcess::startDetached(QCoreApplication::applicationFilePath(), args)) {
+  const QString exePath = QCoreApplication::applicationFilePath();
+  const auto failed = [this]() {
     // Nothing has been closed yet, so a failure here costs the user nothing
     // beyond the message.
     QMessageBox::warning(this, tr("Restart"),
                          tr("Whatly could not start a new instance, so it has "
                             "not closed this one. Please quit and reopen it."));
+  };
+
+#ifdef Q_OS_UNIX
+  // Hand the new process the SAME stdout and stderr this one has.
+  // QProcess::startDetached deliberately does not — the child ends up on the
+  // controlling terminal — so a launch whose output was being piped into a log
+  // file stopped being logged the instant anything called this. "Restart now" is
+  // a button we put in Settings, and one press of it silently ended the log
+  // people are asked to attach to bug reports. Losing the log at the exact moment
+  // someone is reproducing a problem is the worst possible time to lose it.
+  //
+  // fork+exec keeps the descriptors, and that is the whole difference: the
+  // --restart-wait handshake, the arguments and the ordering are unchanged.
+  if (!QFileInfo(exePath).isExecutable()) {
+    failed();
     return;
   }
+  // Everything the child needs is built HERE, before the fork: between fork and
+  // exec only async-signal-safe calls are allowed, and allocating is not one.
+  QList<QByteArray> argStore;
+  argStore << exePath.toLocal8Bit();
+  for (const QString &a : args)
+    argStore << a.toLocal8Bit();
+  QVarLengthArray<char *, 16> argv;
+  for (QByteArray &a : argStore)
+    argv.append(a.data());
+  argv.append(nullptr);
+
+  // fork, setsid, fork again — the dance startDetached does, and the part of it
+  // that a bare fork was missing. A plain child stays in the dying parent's
+  // session and process group, and does not survive it here: the new process got
+  // as far as printing its start-up line and was then taken down with the old
+  // one. It has to leave that session (setsid) and be orphaned onto init (the
+  // second fork) to outlive the instance that started it. stdout and stderr
+  // survive both forks untouched, which is the whole point of doing this at all;
+  // every other descriptor is closed just before exec, below.
+  const pid_t child = ::fork();
+  if (child < 0) {
+    failed();
+    return;
+  }
+  if (child == 0) {
+    if (::setsid() < 0)
+      ::_exit(127);
+    const pid_t grandchild = ::fork();
+    if (grandchild < 0)
+      ::_exit(127);
+    if (grandchild == 0) {
+      // Keep 0, 1 and 2 — they are the log, and the reason for all of this —
+      // and close everything above them. QProcess::startDetached used to do
+      // that for us, and dropping it cost the remote-debugging port: the old
+      // process's listening socket came through exec, so the new process could
+      // not bind it ("bind() failed: Address already in use", in the log of the
+      // session that found this) and the inherited socket sat there listening
+      // with nobody left to accept on it. Any other descriptor the old process
+      // held — profile locks among them — would travel the same way.
+      bool closed = false;
+#ifdef SYS_close_range
+      closed = ::syscall(SYS_close_range, 3, ~0U, 0) == 0;
+#endif
+      if (!closed) {
+        const long maxFd = ::sysconf(_SC_OPEN_MAX);
+        for (int fd = 3; fd < int(maxFd > 0 ? maxFd : 4096); ++fd)
+          ::close(fd);
+      }
+      ::execv(argStore.first().constData(), argv.data());
+      // Only reachable if exec failed. Nobody is left to tell by now — the
+      // executable was checked before the first fork for exactly that reason.
+      ::_exit(127);
+    }
+    ::_exit(0); // the middle process has done its job; init adopts the grandchild
+  }
+  // Reap the middle process, which exits immediately. Without this it lingers as
+  // a zombie for as long as this instance takes to quit, and --restart-wait
+  // watches for a pid to disappear.
+  int status = 0;
+  ::waitpid(child, &status, 0);
+#else
+  if (!QProcess::startDetached(exePath, args)) {
+    failed();
+    return;
+  }
+#endif
   quitApp();
 }
 
@@ -1400,8 +1486,8 @@ void MainWindow::togglePrivacyBlur() {
   // grid view they are all on screen at once. See toggleChatListStrip().
   WebEngineProfileManager::instance().applyUserSettings();
   for (const Account &account : m_accounts)
-    if (account.view && account.view->page())
-      account.view->page()->runJavaScript(PrivacyBlur::scriptSource());
+    if (pageOf(account))
+      pageOf(account)->runJavaScript(PrivacyBlur::scriptSource());
   if (m_settingsWidget)
     m_settingsWidget->refresh();   // keep the combo box telling the truth
 }
@@ -1428,8 +1514,8 @@ void MainWindow::toggleChatListStrip() {
   // a profile's script changes to them.
   WebEngineProfileManager::instance().applyUserSettings();
   for (const Account &account : m_accounts)
-    if (account.view && account.view->page())
-      account.view->page()->runJavaScript(ChatListStrip::scriptSource());
+    if (pageOf(account))
+      pageOf(account)->runJavaScript(ChatListStrip::scriptSource());
   refreshChatListStripAction();
 }
 

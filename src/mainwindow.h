@@ -178,6 +178,10 @@ private:
     QString waVersion;
     // When this account was last the active/visible one; drives idle suspension.
     QDateTime lastActive;
+    // Whether this account currently has a page. A dormant account has none at
+    // all: not a frozen one, not an empty one. It gets a page the first time it
+    // is opened, and loses it again once it has been idle long enough.
+    bool loaded = false;
     // Non-null while the account has been torn off into its own window; its
     // view then lives in that window rather than in the tab stack/grid.
     QPointer<DetachedAccountWindow> window = nullptr;
@@ -194,6 +198,19 @@ private:
   void clearGridCells();
   void updateGridCaptions();
   WebView *addAccount(const QString &id, const QString &name, bool load);
+  // The account's live page, or nullptr while it is dormant. Everything that
+  // walks the account list must go through this rather than view->page():
+  // QWebEngineView hands out a page on demand, so asking a dormant account for
+  // one would build it — on the default profile, and defeating the point.
+  static QWebEnginePage *pageOf(const Account &a);
+  // Throw an idle account's page away, back to the dormant state it started in.
+  // Reopening the account builds it again from scratch.
+  void unloadAccount(int index);
+  // Build a dormant account's page because it is about to be shown. Every path
+  // that puts an account on screen has to call this, not just the tab switch in
+  // the main window — a detached window shows its own account without going
+  // anywhere near setActiveAccount().
+  void ensureAccountLoaded(int index);
   void setActiveAccount(int index);
   void promptAddAccount();
   void renameAccount(int index);
@@ -265,6 +282,11 @@ private:
   void collapseToOrdinalOrder(const QStringList &assign);
   bool m_loadingLayout = false; // guards saveAccounts while a layout is restored
   QTimer *m_layoutSaveTimer = nullptr; // debounces layout saves on window moves
+  // Ask one account's page how much is unread and put it on the badges. The
+  // page throttles the reading; this can be called as often as is useful.
+  void countUnread(int idx);
+  void countUnreadEverywhere();
+  QTimer *m_unreadTimer = nullptr;
   int accountIndexForView(const QObject *view) const;
   void refreshAccountTabs();
   // Ask a freshly loaded account's page for its WhatsApp Web version and cache
@@ -455,8 +477,6 @@ private:
   QMetaObject::Connection m_trayNotificationClickConnection;
 #endif
   QIcon m_trayIconNormal;
-  QRegularExpression m_notificationsTitleRegExp;
-  QRegularExpression m_unreadMessageCountRegExp;
   DownloadManagerWidget m_downloadManagerWidget;
   QScopedPointer<QWebEngineProfile> m_otrProfile;
   int m_correctlyLoadedRetries = 4;

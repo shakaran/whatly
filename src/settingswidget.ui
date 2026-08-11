@@ -1546,7 +1546,7 @@ background:transparent;
        <item>
         <widget class="QGroupBox" name="groupBoxPerformance">
          <property name="title">
-          <string>Performance &amp; Privacy (requires restart)</string>
+          <string>Performance (requires restart)</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayoutPerformance">
           <item>
@@ -2030,10 +2030,10 @@ background:transparent;
             <item>
              <widget class="QCheckBox" name="suspendInactiveAccountsCheckBox">
               <property name="toolTip">
-               <string>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</string>
+               <string>Free memory by unloading accounts you are not viewing. An unloaded account does not receive messages, and reloads to where it was when you switch back to it. Single-account setups are unaffected.</string>
               </property>
               <property name="text">
-               <string>Suspend inactive accounts</string>
+               <string>Unload inactive accounts from memory</string>
               </property>
              </widget>
             </item>

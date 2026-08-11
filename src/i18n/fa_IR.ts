@@ -1059,6 +1059,11 @@ Open Settings now?</source>
         <translation>گفتگو</translation>
     </message>
     <message>
+        <location filename="../mainwindow_accounts.cpp" line="1140"/>
+        <source>chats</source>
+        <translation>گفتگوها</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="1519"/>
         <source>Could not create the export folder.</source>
         <translation>پوشه خروجی ایجاد نشد.</translation>

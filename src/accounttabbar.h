@@ -1,9 +1,12 @@
 #ifndef ACCOUNTTABBAR_H
 #define ACCOUNTTABBAR_H
 
+#include <QPixmap>
 #include <QPoint>
+#include <QRect>
 #include <QString>
 #include <QTabBar>
+#include <QVariant>
 
 class QMouseEvent;
 class QDragEnterEvent;
@@ -26,6 +29,12 @@ class AccountTabBar : public QTabBar {
 public:
   explicit AccountTabBar(QWidget *parent = nullptr);
 
+  // Which slot currently holds the account `id`, or -1. Public because it is the
+  // whole point of storing the id: a tab's slot is not stable for as long as a
+  // drag lasts, so anything that has to name a tab later must ask this rather
+  // than remember a number.
+  int indexOfAccount(const QString &id) const;
+
 signals:
   // The drag for account `id` ended at `globalPos`. Fired for EVERY drag,
   // whatever exec() reported — a QWebEngineView under the cursor may "accept"
@@ -37,23 +46,60 @@ signals:
 
 protected:
   void mousePressEvent(QMouseEvent *event) override;
+  void mouseReleaseEvent(QMouseEvent *event) override;
   void mouseMoveEvent(QMouseEvent *event) override;
   void dragEnterEvent(QDragEnterEvent *event) override;
   void dragMoveEvent(QDragMoveEvent *event) override;
   void dragLeaveEvent(QDragLeaveEvent *event) override;
   void dropEvent(QDropEvent *event) override;
   void paintEvent(QPaintEvent *event) override;
+  // Re-tints on a palette change, so switching light/dark theme is followed.
+  void changeEvent(QEvent *event) override;
 
 private:
-  void startDrag(int index);
+  // Tint the tabs that are NOT on screen, derived from the current palette:
+  // lighter than the strip in a dark theme, darker in a light one. Some platform
+  // style and GTK theme combinations draw the selected tab almost identically to
+  // the rest, which on a strip that doubles as the window's title bar leaves
+  // nothing to say which account is on screen. Tinting the crowd rather than the
+  // one answers that the same way round, and leaves the selected tab as the
+  // platform draws it — one flat colour and one odd one out.
+  void refreshSelectionTint();
+  // Guards refreshSelectionTint against re-entering itself: the setStyleSheet it
+  // does makes Qt re-resolve the style, which sends events that come back here.
+  bool m_tinting = false;
+
+private:
+  // `cursorPos` is where the pointer was when the drag began, in strip
+  // coordinates; it sets where the sprite hangs off the cursor.
+  void startDrag(int index, const QPoint &cursorPos);
   int accountTabCount() const;   // tabs backing a real account (valid tab data)
   int dropSlotAt(int x) const;   // insertion slot for a cursor x position
 
   // How far outside the strip (px) the cursor must go before a within-strip
   // reorder becomes a tear-off / cross-window drag.
   static constexpr int kDetachMargin = 24;
-  int m_pressIndex = -1;
-  QPoint m_pressPos;
+  // The account pressed, not the slot it was pressed in. QTabBar reorders tabs
+  // live under the cursor while the button is down, so a slot number captured on
+  // press stops meaning that account the moment the drag moves sideways.
+  //
+  // Held as the tab data itself rather than as a QString, because the DEFAULT
+  // account's id is the empty string and a bare id cannot tell it apart from
+  // "there is no account here". Validity is the question being asked; the "+"
+  // affordance is the one carrying no data at all.
+  QVariant m_pressData;
+  // Whether the press landed on a tab at all. The data alone cannot say: the
+  // "+" affordance carries none, and neither does the empty run of strip beside
+  // the tabs, so without this a press on the empty strip and a release on "+"
+  // would look like a click on "+" and ask for a new account.
+  bool m_pressedTab = false;
+  // That tab's rectangle at the moment of the press. Leaving it ends the click,
+  // and coming back does not revive it: the rest of the gesture is a drag.
+  QRect m_pressRect;
+  // The tab's pixels, taken at press time. Grabbing them when the drag starts
+  // catches QTabBar's reorder animation in flight, which draws halves of two
+  // different tabs into the sprite; at press the strip is stationary.
+  QPixmap m_pressSprite;
   int m_dropSlot = -1; // insertion slot to paint while a drag hovers, or -1
 };
 

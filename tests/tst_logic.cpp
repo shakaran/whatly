@@ -17,6 +17,8 @@
 #include <QTemporaryFile>
 #include <QWebEngineProfile>
 #include <QWebEngineScriptCollection>
+#include <QDirIterator>
+#include <QRegularExpression>
 
 #include "utils.h"
 #include "common.h"
@@ -65,8 +67,10 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include "linkeddevicename.h"
+#include "accounttabbar.h"
 #include "performance.h"
 #include "trayicon.h"
+#include "accounttabbar.h"
 #include "chatnav.h"
 #include "dropattach.h"
 #include "dropreader.h"
@@ -1848,6 +1852,40 @@ private slots:
     Performance::setFontHinting(QString()); // restore the isolated baseline
   }
 
+  // The selected-tab tint follows the palette rather than being a fixed colour,
+  // so a light theme and a dark one get different tints and a theme switch is
+  // picked up.
+  //
+  // NOTE what this does NOT cover: the re-entrancy guard in refreshSelectionTint().
+  // Setting a stylesheet on a widget that has never been shown does not make Qt
+  // re-resolve its style under the offscreen platform, so the event that would
+  // re-enter the handler is never sent and this test passes either way — verified
+  // by removing the guard and watching it still pass. The guard is there because
+  // the recursion is evident from the code, not because this test proves it.
+  void tabTintFollowsPalette() {
+    AccountTabBar bar;
+    bar.addTab(QStringLiteral("one"));
+    bar.addTab(QStringLiteral("two"));
+
+    QPalette dark = bar.palette();
+    dark.setColor(QPalette::Window, QColor(30, 30, 30));
+    bar.setPalette(dark);
+    const QString darkSheet = bar.styleSheet();
+    // The tabs that are NOT on screen carry the tint; the one that is stays as
+    // the platform draws it, and is told apart by being the only untinted one.
+    QVERIFY(darkSheet.contains(QLatin1String("QTabBar::tab:!selected")));
+
+    QPalette light = bar.palette();
+    light.setColor(QPalette::Window, QColor(240, 240, 240));
+    bar.setPalette(light);
+    const QString lightSheet = bar.styleSheet();
+    QVERIFY(lightSheet.contains(QLatin1String("QTabBar::tab:!selected")));
+
+    // The tint follows the palette rather than being fixed, so a light theme and
+    // a dark one must not end up with the same colour.
+    QVERIFY(darkSheet != lightSheet);
+  }
+
   // Idle account suspension (#1): only a background, off-screen, idle account is
   // frozen; the active or any visible view never is.
   void suspendDecision() {
@@ -2195,6 +2233,25 @@ private slots:
     QVERIFY(js.contains(QLatin1String(">= 6"))); // the limit was substituted
     QVERIFY(!ChatNav::unreadChatsScript(0).isEmpty()); // clamped, still valid
   }
+  void unreadSummaryReadsTheDatabaseAndFallsBackToTheList() {
+    const QString js = ChatNav::unreadSummaryScript();
+    // WhatsApp's own store, which is what makes the count independent of how
+    // much of the virtualised list happens to be drawn.
+    QVERIFY(js.contains(QLatin1String("model-storage")));
+    QVERIFY(js.contains(QLatin1String("unreadCount")));
+    // Archived chats are not counted; muted ones are.
+    QVERIFY(js.contains(QLatin1String("!c.archive")));
+    QVERIFY(!js.contains(QLatin1String("muteExpiration")));
+    // And the list is still there to answer while the first read is in flight,
+    // since runJavaScript cannot await a promise.
+    QVERIFY(js.contains(QLatin1String("#pane-side")));
+    QVERIFY(js.contains(QLatin1String("__whatlyUnread")));
+    // A read that did not finish must not be reported as a confident zero: the
+    // cursor sets `walked` only when it reaches the end of the store.
+    QVERIFY(js.contains(QLatin1String("walked = true")));
+    QVERIFY(js.contains(QLatin1String("return walked ?")));
+    QVERIFY(js.contains(QLatin1String("JSON.stringify")));
+  }
   void openScriptEscapesName() {
     const QString js =
         ChatNav::openChatByNameScript(QStringLiteral("a\"b'c\n<x>"));
@@ -2222,6 +2279,60 @@ private slots:
     // Retries, because expanding a collapsed chat list is a round trip through
     // the app and the box does not exist yet when the script first runs.
     QVERIFY(js.contains(QLatin1String("setTimeout")));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// AccountTabBar: a tab being dragged has to be identified by its account, never
+// by the slot it was pressed in. QTabBar reorders tabs live under the cursor, so
+// a slot number captured on press stops meaning that account as soon as the drag
+// moves sideways — and tearing off read that slot, so the neighbour was torn out
+// instead. The mouse path itself ends in QDrag::exec(), which blocks and cannot
+// be driven from a test; what is checked here is the identity it now relies on.
+class TstAccountTabBar : public QObject {
+  Q_OBJECT
+private slots:
+  void accountFollowsItsTabThroughAReorder() {
+    AccountTabBar bar;
+    for (const QString &id : {QStringLiteral("a1"), QStringLiteral("a2"),
+                              QStringLiteral("a3"), QStringLiteral("a4")})
+      bar.setTabData(bar.addTab(id), id);
+    bar.addTab(QStringLiteral("+")); // the affordance, deliberately without data
+
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("a3")), 2);
+    // moveTab is exactly what QTabBar's live reorder does while a tab is dragged
+    // past its neighbour, which is the trajectory that produced the wrong window.
+    bar.moveTab(2, 1);
+    // The slot that was pressed now holds a different account …
+    QCOMPARE(bar.tabData(2).toString(), QStringLiteral("a2"));
+    // … while the account pressed is still found, one slot to the left.
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("a3")), 1);
+    // The "+" tab is not an account, and neither is anything unknown.
+    QCOMPARE(bar.indexOfAccount(QString()), -1);
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("nope")), -1);
+  }
+
+  // The DEFAULT account's id is the empty string (MainWindow::Account::id), and
+  // the "+" affordance is the tab with no data at all. Telling those two apart by
+  // asking whether the id is empty makes the default account — the only account
+  // most people have — the one account that cannot be dragged out of the strip.
+  // It is the validity of the tab data that separates them, not the id.
+  void defaultAccountIsATabLikeAnyOther() {
+    AccountTabBar bar;
+    bar.setTabData(bar.addTab(QStringLiteral("Default")), QString()); // id ""
+    bar.setTabData(bar.addTab(QStringLiteral("Work")), QStringLiteral("w1"));
+    bar.addTab(QStringLiteral("+"));  // no data: not an account
+
+    QCOMPARE(bar.indexOfAccount(QString()), 0);
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("w1")), 1);
+    // The affordance is never an account, and its slot must not be reachable by
+    // asking for an id that no tab holds.
+    QVERIFY(!bar.tabData(2).isValid());
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("nope")), -1);
+    // And it still follows the default account through a reorder.
+    bar.moveTab(0, 1);
+    QCOMPARE(bar.indexOfAccount(QString()), 1);
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("w1")), 0);
   }
 };
 
@@ -3347,6 +3458,66 @@ private slots:
   }
 };
 
+// Guards the MSVC single-string-literal cap (C2026, 16380 bytes). The injected
+// scripts are large raw string literals; MSVC — unlike GCC/Clang — rejects any
+// single literal past the cap, which silently breaks only the Windows build. This
+// walks the source and fails if any raw string literal has grown past it, so the
+// regression is caught in the suite everyone runs rather than at Windows
+// packaging time. The fix is always to split the literal into adjacent literals
+// at a statement boundary; the compiler concatenates them, so the string is
+// unchanged (see #64).
+class TstScriptLiterals : public QObject {
+  Q_OBJECT
+private slots:
+  void rawLiteralsUnderMsvcCap() {
+    static constexpr int kMsvcCap = 16380;
+    const QString root = QStringLiteral(WHATLY_SOURCE_DIR);
+    const QString srcDir = root + QStringLiteral("/src");
+    QVERIFY2(QDir(srcDir).exists(), qPrintable(srcDir));
+
+    // R"delim( ... )delim": the backreference \1 ties the closing delimiter to
+    // the opening one, and DotMatchesEverything lets a literal span many lines.
+    // Group 2 is the literal's content, whose byte length is what MSVC limits.
+    QRegularExpression rx(QStringLiteral(R"(R"([A-Za-z0-9_]*)\((.*?)\)\1")"),
+                          QRegularExpression::DotMatchesEverythingOption);
+    QVERIFY(rx.isValid());
+
+    int filesScanned = 0, literalsChecked = 0;
+    QDirIterator it(srcDir,
+                    {QStringLiteral("*.cpp"), QStringLiteral("*.h")},
+                    QDir::Files, QDirIterator::Subdirectories);
+    while (it.hasNext()) {
+      const QString path = it.next();
+      // Skip vendored third-party sources: not ours to reshape.
+      if (path.contains(QStringLiteral("/libnotify-qt/")) ||
+          path.contains(QStringLiteral("/singleapplication/")))
+        continue;
+      QFile f(path);
+      QVERIFY2(f.open(QIODevice::ReadOnly), qPrintable(path));
+      const QString text = QString::fromUtf8(f.readAll());
+      ++filesScanned;
+      auto matches = rx.globalMatch(text);
+      while (matches.hasNext()) {
+        const int len = matches.next().captured(2).toUtf8().size();
+        ++literalsChecked;
+        QVERIFY2(len < kMsvcCap,
+                 qPrintable(
+                     QStringLiteral("%1: a raw string literal is %2 bytes, over "
+                                    "the MSVC %3-byte cap (C2026). Split it into "
+                                    "adjacent literals at a statement boundary "
+                                    "(see #64).")
+                         .arg(QDir(root).relativeFilePath(path))
+                         .arg(len)
+                         .arg(kMsvcCap)));
+      }
+    }
+    // Sanity: the scan must actually reach the source and find literals, or a
+    // wrong path would make this test silently vacuous.
+    QVERIFY(filesScanned > 0);
+    QVERIFY(literalsChecked > 0);
+  }
+};
+
 int main(int argc, char *argv[]) {
   // Keep the (headless) QWebEngineProfile used by the install() test happy on CI
   // runners: no sandbox, no GPU. Must be set before QApplication.
@@ -3377,6 +3548,7 @@ int main(int argc, char *argv[]) {
     status |= failed;
   };
   { TstUtils t;               run(&t); }
+  { TstScriptLiterals t;      run(&t); }
   { TstUtilsMore t;           run(&t); }
   { TstCommon t;              run(&t); }
   { TstDebugLog t;            run(&t); }
@@ -3404,6 +3576,7 @@ int main(int argc, char *argv[]) {
   { TstDropReader t;          run(&t); }
   { TstFlatpakManifest t;     run(&t); }
   { TstChatNav t;             run(&t); }
+  { TstAccountTabBar t;       run(&t); }
   { TstShortcuts t;           run(&t); }
   { TstBackup t;              run(&t); }
   { TstScreenLock t;          run(&t); }
