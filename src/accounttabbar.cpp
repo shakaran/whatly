@@ -100,24 +100,68 @@ void AccountTabBar::mousePressEvent(QMouseEvent *event) {
     // "no account here" — and treating it as nothing left the one account most
     // people have as the one account that could not be torn off.
     const int pressed = tabAt(event->position().toPoint());
+    m_pressedTab = pressed >= 0;
     m_pressData = tabData(pressed);
     // Take the sprite now, while the strip is still. By the time a drag starts,
     // QTabBar has slid the tabs around and is animating them, so a grab there
     // catches two tabs mid-swap and draws halves of both.
     m_pressSprite = pressed >= 0 ? grab(tabRect(pressed)) : QPixmap();
+    // Where that tab was when it was pressed. The click is owed to this patch of
+    // strip, not to whatever slides into it afterwards.
+    m_pressRect = pressed >= 0 ? tabRect(pressed) : QRect();
+
+    // A press is only half a click, and QTabBar switches accounts on it. That
+    // put a whole other WhatsApp session on screen for a tab that was merely
+    // being dragged out of the strip, or one the pointer had left again before
+    // the button came up. The press still goes to QTabBar, whose reordering
+    // machinery is driven by it, but the selection it makes is put quietly
+    // back; mouseReleaseEvent makes the real one, when the click is whole.
+    const int before = currentIndex();
+    QSignalBlocker quiet(this);
+    QTabBar::mousePressEvent(event);
+    if (currentIndex() != before)
+      setCurrentIndex(before);
+    return;
   }
   QTabBar::mousePressEvent(event);
+}
+
+void AccountTabBar::mouseReleaseEvent(QMouseEvent *event) {
+  const bool pressedTab = m_pressedTab;
+  const QVariant pressData = m_pressData;
+  m_pressedTab = false;
+  QTabBar::mouseReleaseEvent(event);
+
+  if (event->button() != Qt::LeftButton || !pressedTab)
+    return;
+  // The click has to end where it began, on the tab that was pressed and on the
+  // account that tab held. The pointer never left that patch of strip — a move
+  // that leaves it puts m_pressedTab down — so nothing can have slid into it,
+  // but the account is checked all the same: it is what the click was about.
+  const QPoint pos = event->position().toPoint();
+  const int under = tabAt(pos);
+  if (m_pressRect.contains(pos) && under >= 0 && tabData(under) == pressData)
+    setCurrentIndex(under);
 }
 
 void AccountTabBar::mouseMoveEvent(QMouseEvent *event) {
   // While the cursor stays within the strip, QTabBar reorders tabs live. Once
   // it leaves the strip vertically, hand off to a QDrag that tears the tab off
   // or docks it into another window.
+  const QPoint p = event->position().toPoint();
+  // Once the pointer leaves the tab it went down on, the click is over — and it
+  // does not come back if the pointer does. Whatever this becomes now is a drag,
+  // and a drag is not a choice: it is also what stops a within-strip reorder
+  // from selecting the tab it has just finished moving.
+  if (m_pressedTab && (event->buttons() & Qt::LeftButton) &&
+      !m_pressRect.contains(p))
+    m_pressedTab = false;
+
   if (m_pressData.isValid() && (event->buttons() & Qt::LeftButton)) {
-    const QPoint p = event->position().toPoint();
     if (p.y() < -kDetachMargin || p.y() > height() + kDetachMargin) {
       const QString id = m_pressData.toString();
       m_pressData.clear();
+      m_pressedTab = false; // this is a tear-off now, not a click on a tab
       // End QTabBar's in-progress move before starting the drag.
       QMouseEvent release(QEvent::MouseButtonRelease, event->position(),
                           event->globalPosition(), Qt::LeftButton,

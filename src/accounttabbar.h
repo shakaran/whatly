@@ -3,6 +3,7 @@
 
 #include <QPixmap>
 #include <QPoint>
+#include <QRect>
 #include <QString>
 #include <QTabBar>
 #include <QVariant>
@@ -45,6 +46,7 @@ signals:
 
 protected:
   void mousePressEvent(QMouseEvent *event) override;
+  void mouseReleaseEvent(QMouseEvent *event) override;
   void mouseMoveEvent(QMouseEvent *event) override;
   void dragEnterEvent(QDragEnterEvent *event) override;
   void dragMoveEvent(QDragMoveEvent *event) override;
@@ -86,6 +88,14 @@ private:
   // "there is no account here". Validity is the question being asked; the "+"
   // affordance is the one carrying no data at all.
   QVariant m_pressData;
+  // Whether the press landed on a tab at all. The data alone cannot say: the
+  // "+" affordance carries none, and neither does the empty run of strip beside
+  // the tabs, so without this a press on the empty strip and a release on "+"
+  // would look like a click on "+" and ask for a new account.
+  bool m_pressedTab = false;
+  // That tab's rectangle at the moment of the press. Leaving it ends the click,
+  // and coming back does not revive it: the rest of the gesture is a drag.
+  QRect m_pressRect;
   // The tab's pixels, taken at press time. Grabbing them when the drag starts
   // catches QTabBar's reorder animation in flight, which draws halves of two
   // different tabs into the sprite; at press the strip is stationary.
