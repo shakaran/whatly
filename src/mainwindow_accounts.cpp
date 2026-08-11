@@ -76,6 +76,48 @@ void MainWindow::setAlwaysShowAccountTabs(bool enabled) {
       QStringLiteral("alwaysShowAccountTabs"), enabled);
 }
 
+void MainWindow::countUnread(int idx) {
+  if (idx < 0 || idx >= m_accounts.size())
+    return;
+  QWebEnginePage *page = pageOf(m_accounts[idx]);
+  if (!page)
+    return; // dormant: it has nothing to count with
+  const QString id = m_accounts[idx].id;
+  page->runJavaScript(
+      ChatNav::unreadSummaryScript(), [this, id](const QVariant &result) {
+        const int i = accountIndexForId(id);
+        if (i < 0)
+          return;
+        // A count that could not be taken must leave the badge as it is. Zero is
+        // an answer — nothing is unread — and it has to be told apart from a
+        // page that was reloading, a store that would not open and a script that
+        // returned something unexpected, or the badge clears itself every time
+        // one of those happens, which during a reload is every time.
+        QJsonParseError parse{};
+        const QJsonDocument doc =
+            QJsonDocument::fromJson(result.toString().toUtf8(), &parse);
+        if (parse.error != QJsonParseError::NoError || !doc.isObject())
+          return;
+        const QJsonObject o = doc.object();
+        const QJsonValue counted = o.value(QStringLiteral("chats"));
+        if (o.value(QStringLiteral("source")).toString() ==
+                QLatin1String("none") ||
+            !counted.isDouble() || counted.toInt() < 0)
+          return;
+        const int chats = counted.toInt();
+        if (m_accounts[i].unread == chats)
+          return; // nothing to redraw
+        m_accounts[i].unread = chats;
+        refreshAccountTabs();
+        updateTrayUnread();
+      });
+}
+
+void MainWindow::countUnreadEverywhere() {
+  for (int i = 0; i < m_accounts.size(); ++i)
+    countUnread(i);
+}
+
 void MainWindow::refreshAccountStrip() { refreshAccountTabs(); }
 
 void MainWindow::buildAccountArea() {
@@ -96,6 +138,17 @@ void MainWindow::buildAccountArea() {
   connect(m_suspendTimer, &QTimer::timeout, this,
           [this]() { suspendIdleAccounts(); });
   m_suspendTimer->start();
+
+  // A title change is not the only way an unread count moves: marking a chat
+  // read or unread by hand moves it without one, and so does reading a chat on
+  // the phone. The page throttles the work — a call between reads simply hands
+  // back the last number — so this costs a function call and a string per
+  // account every few seconds.
+  m_unreadTimer = new QTimer(this);
+  m_unreadTimer->setInterval(3 * 1000);
+  connect(m_unreadTimer, &QTimer::timeout, this,
+          [this]() { countUnreadEverywhere(); });
+  m_unreadTimer->start();
   auto *central = new QWidget(this);
   auto *layout = new QVBoxLayout(central);
   layout->setContentsMargins(0, 0, 0, 0);
@@ -1081,8 +1134,10 @@ void MainWindow::updateTrayUnread() {
   }
 
   if (total > 0) {
+    // Chats, not messages: what is summed here is one per conversation with
+    // something unread in it.
     m_restoreAction->setText(tr("Restore") + " | " + QString::number(total) +
-                             " " + (total > 1 ? tr("messages") : tr("message")));
+                             " " + (total > 1 ? tr("chats") : tr("chat")));
     m_systemTrayIcon->setIcon(getTrayIcon(total));
     setWindowIcon(getTrayIcon(total));
   } else {

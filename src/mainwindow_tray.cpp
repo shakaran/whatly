@@ -14,6 +14,9 @@
 #include <QIcon>
 
 #include "shortcuts.h"
+#include "chatnav.h"
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QPalette>
 
 // ── Actions ──────────────────────────────────────────────────────────────────
@@ -433,18 +436,17 @@ void MainWindow::handleWebViewTitleChanged(const QString &title) {
   if (idx < 0)
     return;
 
-  // Pull the unread count out of the title ("(3) Chat name"), and remember it
-  // per account so the tray can show the total across all of them.
-  int unread = 0;
-  const QRegularExpressionMatch titleMatch =
-      m_notificationsTitleRegExp.match(title);
-  if (titleMatch.hasMatch()) {
-    const QRegularExpressionMatch countMatch =
-        m_unreadMessageCountRegExp.match(titleMatch.captured(0));
-    if (countMatch.hasMatch())
-      unread = countMatch.captured(1).toInt();
-  }
-  m_accounts[idx].unread = unread;
+  // A title change is the signal that something arrived, and nothing more than
+  // that. The number in it used to be taken as the unread count, and it is not
+  // one: measured on a session with ten unread chats holding fifty-five unread
+  // messages between them, WhatsApp's own title said "(1)". Whatever it counts,
+  // it is neither of the two things anyone reads a badge for. So ask the page.
+  //
+  // The answer is chats, not messages: each chat already shows its own number in
+  // the list, so a total repeats what is on screen, and a sum is dominated by
+  // whichever group is busiest — which stops it answering "how many
+  // conversations need me", the only question a badge is for.
+  countUnread(idx);
 
   // The window title follows the active account only.
   if (idx == m_activeAccount)

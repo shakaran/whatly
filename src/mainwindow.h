@@ -249,6 +249,11 @@ private:
   void collapseToOrdinalOrder(const QStringList &assign);
   bool m_loadingLayout = false; // guards saveAccounts while a layout is restored
   QTimer *m_layoutSaveTimer = nullptr; // debounces layout saves on window moves
+  // Ask one account's page how much is unread and put it on the badges. The
+  // page throttles the reading; this can be called as often as is useful.
+  void countUnread(int idx);
+  void countUnreadEverywhere();
+  QTimer *m_unreadTimer = nullptr;
   int accountIndexForView(const QObject *view) const;
   void refreshAccountTabs();
   // Ask a freshly loaded account's page for its WhatsApp Web version and cache
@@ -430,8 +435,6 @@ private:
   QMetaObject::Connection m_trayNotificationClickConnection;
 #endif
   QIcon m_trayIconNormal;
-  QRegularExpression m_notificationsTitleRegExp;
-  QRegularExpression m_unreadMessageCountRegExp;
   DownloadManagerWidget m_downloadManagerWidget;
   QScopedPointer<QWebEngineProfile> m_otrProfile;
   int m_correctlyLoadedRetries = 4;
