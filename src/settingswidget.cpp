@@ -695,12 +695,68 @@ bool SettingsWidget::eventFilter(QObject *obj, QEvent *event) {
     return true; // consume, so the popup does not close
   }
 
-  if (isChildOf(this, obj)) {
-    if (event->type() == QEvent::Wheel) {
-      return true;
+  // Sliders, combo boxes and spin boxes have this filter installed so the wheel
+  // cannot change their value under a passing pointer. Swallowing the event did
+  // that, but it also stopped the page: a scroll started anywhere died the moment
+  // the pointer crossed one of them, so reaching the bottom of Settings meant
+  // steering around every control on the way. Scroll the page by hand instead, so
+  // the gesture stays with what it started on and the control still ignores it.
+  //
+  // Done by moving the scrollbar rather than re-sending the event: the viewport is
+  // also a child of this widget, so forwarding would come straight back here.
+  if (event->type() == QEvent::Wheel && isChildOf(this, obj)) {
+    auto *wheel = static_cast<QWheelEvent *>(event);
+    QScrollBar *bar = ui->scrollArea ? ui->scrollArea->verticalScrollBar()
+                                     : nullptr;
+    const int dy = wheel->angleDelta().y();
+    if (bar && dy != 0) {
+      // Three steps per notch (a notch is 120), matching what the scroll area
+      // does on its own, and keeping the division last so a high-resolution
+      // wheel's smaller deltas are not rounded away to nothing.
+      bar->setValue(bar->value() - dy * bar->singleStep() * 3 / 120);
     }
+    return true;
   }
   return QWidget::eventFilter(obj, event);
+}
+
+void SettingsWidget::resizeEvent(QResizeEvent *event) {
+  QWidget::resizeEvent(event);
+  wrapLongTooltips();
+}
+
+void SettingsWidget::wrapLongTooltips() {
+  // Two thirds of the window, with a floor so a very narrow Settings window does
+  // not produce a one-word-per-line column.
+  const int wrapAt = qMax(360, width() * 2 / 3);
+  const auto widgets = findChildren<QWidget *>();
+  for (QWidget *w : widgets) {
+    // The original plain text is kept on the widget, so re-wrapping after a
+    // resize starts from the source rather than from the previous wrapping.
+    QVariant stored = w->property("whatlyPlainTip");
+    QString plain = stored.isValid() ? stored.toString() : w->toolTip();
+    if (plain.isEmpty() || plain.startsWith(QLatin1Char('<')))
+      continue; // nothing to do, or someone already made it rich text
+    if (plain.length() < 60 && !stored.isValid())
+      continue; // short enough to sit on one line
+    if (!stored.isValid())
+      w->setProperty("whatlyPlainTip", plain);
+    // A width on a one-cell table is the reliable way to constrain wrapping in
+    // Qt's rich text; a width on a div is not honoured consistently.
+    //
+    // cellpadding is the clearance. Qt places a tooltip that will not fit below
+    // the pointer above it instead, and clamps it to the screen — so it is never
+    // cut off, but it does end up flush against the edge. Padding inside the box
+    // cannot move the box, and does keep the text itself off the screen edge,
+    // which is the part that reads as cramped. Replacing Qt's tooltip outright to
+    // gain a few pixels of outer margin is not worth it.
+    w->setToolTip(
+        QStringLiteral("<qt><table width=\"%1\" cellpadding=\"6\" "
+                       "cellspacing=\"0\" border=\"0\">"
+                       "<tr><td>%2</td></tr></table></qt>")
+            .arg(wrapAt)
+            .arg(plain.toHtmlEscaped()));
+  }
 }
 
 void SettingsWidget::closeEvent(QCloseEvent *event) {
