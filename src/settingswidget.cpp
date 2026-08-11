@@ -182,6 +182,32 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
           .settings()
           .value("rememberWindowLayout", false)
           .toBool());
+  ui->unreadCountMutedCheckBox->setChecked(MainWindow::unreadCountIncludesMuted());
+  ui->unreadCountArchivedCheckBox->setChecked(
+      MainWindow::unreadCountIncludesArchived());
+  ui->unreadCountMessagesCheckBox->setChecked(
+      MainWindow::unreadCountCountsMessages());
+  // Each one changes what a number on screen means, so the number is worked out
+  // again at once rather than at the next message to arrive anywhere.
+  const auto recount = [this]() {
+    if (auto *w = qobject_cast<MainWindow *>(this->parent()))
+      w->countUnreadEverywhere();
+  };
+  connect(ui->unreadCountMutedCheckBox, &QCheckBox::toggled, this,
+          [recount](bool on) {
+            MainWindow::setUnreadCountIncludesMuted(on);
+            recount();
+          });
+  connect(ui->unreadCountArchivedCheckBox, &QCheckBox::toggled, this,
+          [recount](bool on) {
+            MainWindow::setUnreadCountIncludesArchived(on);
+            recount();
+          });
+  connect(ui->unreadCountMessagesCheckBox, &QCheckBox::toggled, this,
+          [recount](bool on) {
+            MainWindow::setUnreadCountCountsMessages(on);
+            recount();
+          });
   ui->dismissEmojiPanelCheckBox->setChecked(
       SettingsManager::instance()
           .settings()
@@ -513,6 +539,9 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     moveWidget(body(chatting), ui->muteAudioCheckBox, G);
     moveWidget(body(chatting), ui->autoPlayMediaCheckBox, G);
     moveWidget(body(chatting), ui->dismissEmojiPanelCheckBox, G);
+    moveWidget(body(chatting), ui->unreadCountMutedCheckBox, G);
+    moveWidget(body(chatting), ui->unreadCountArchivedCheckBox, G);
+    moveWidget(body(chatting), ui->unreadCountMessagesCheckBox, G);
     moveWidget(body(chatting), ui->hideMutedStatusCheckBox, G);
     // Two everyday messaging preferences that were filed under "Performance &
     // Privacy", where nobody would think to look for them: how photos are sent,

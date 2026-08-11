@@ -199,9 +199,10 @@ QString focusSearchScript() {
 )JS");
 }
 
-QString unreadSummaryScript() {
+QString unreadSummaryScript(bool includeMuted, bool includeArchived) {
   return QStringLiteral(R"JS(
 (function(){
+  var INCLUDE_MUTED = %1, INCLUDE_ARCHIVED = %2;
   // Counting the drawn rows, for when the database cannot be read. Same badge
   // detection as unreadChatsScript: a leaf span whose whole text is a number.
   function fromList(){
@@ -257,6 +258,15 @@ QString unreadSummaryScript() {
         var cur = req.result;
         if (!cur) { walked = true; resolve(); return; }
         var c = cur.value || {};
+        // Archived is the pile deliberately put away, and muted is the chat
+        // that was told not to interrupt — both still carry a pill in their
+        // list, so whether they belong in the total is a matter of how someone
+        // uses WhatsApp rather than of fact, and both are settings.
+        if ((!INCLUDE_ARCHIVED && c.archive) ||
+            (!INCLUDE_MUTED && (c.muteExpiration || c.isAutoMuted))) {
+          cur.continue();
+          return;
+        }
         var n = c.unreadCount | 0;
         // A chat marked unread by hand has no messages to count, and WhatsApp
         // records it as a negative count or as a flag depending on the build.
@@ -264,7 +274,7 @@ QString unreadSummaryScript() {
         // it appears under the list's own "unread" filter, which is the set this
         // number is meant to be the size of.
         var marked = n < 0 || !!c.markedUnread;
-        if ((n > 0 || marked) && !c.archive) {
+        if (n > 0 || marked) {
           chats++;
           messages += (n > 0 ? n : 0);
         }
@@ -277,12 +287,16 @@ QString unreadSummaryScript() {
     return walked ? { chats: chats, messages: messages, source: 'db' } : null;
   }
 
+  // The cache is per set of filters: change a setting and the number worked out
+  // under the old one is not an answer to the new question, so it is dropped
+  // rather than shown for one more beat.
+  var key = (INCLUDE_MUTED ? 'm' : '-') + (INCLUDE_ARCHIVED ? 'a' : '-');
   var W = window.__whatlyUnread ||
-          (window.__whatlyUnread = { known: null, busy: false, at: 0 });
-  // Asked often — a title change is not the only way an unread count moves, and
-  // marking a chat read or unread by hand moves it without one — so the read
-  // itself is throttled here rather than at the call site. Calls in between are
-  // free: they hand back the number already worked out.
+          (window.__whatlyUnread = { known: null, busy: false, at: 0, key: key });
+  if (W.key !== key) { W.known = null; W.at = 0; W.key = key; }
+  // Asked often — a title change is not the only way an unread count moves — so
+  // the read itself is throttled here rather than at the call site. A changed
+  // setting resets the clock above, because that answer is wanted at once.
   if (!W.busy && Date.now() - (W.at || 0) > 2500) {
     W.busy = true;
     W.at = Date.now();
@@ -294,7 +308,9 @@ QString unreadSummaryScript() {
   return JSON.stringify(W.known || fromList() ||
                         { chats: 0, messages: 0, source: 'none' });
 })()
-)JS");
+)JS")
+      .arg(includeMuted ? QStringLiteral("true") : QStringLiteral("false"),
+           includeArchived ? QStringLiteral("true") : QStringLiteral("false"));
 }
 
 } // namespace ChatNav

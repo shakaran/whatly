@@ -2267,14 +2267,17 @@ private slots:
     QVERIFY(!ChatNav::unreadChatsScript(0).isEmpty()); // clamped, still valid
   }
   void unreadSummaryReadsTheDatabaseAndFallsBackToTheList() {
-    const QString js = ChatNav::unreadSummaryScript();
+    const QString js = ChatNav::unreadSummaryScript(true, false);
     // WhatsApp's own store, which is what makes the count independent of how
     // much of the virtualised list happens to be drawn.
     QVERIFY(js.contains(QLatin1String("model-storage")));
     QVERIFY(js.contains(QLatin1String("unreadCount")));
-    // Archived chats are not counted; muted ones are.
-    QVERIFY(js.contains(QLatin1String("!c.archive")));
-    QVERIFY(!js.contains(QLatin1String("muteExpiration")));
+    // Both archived and muted are the user's call, so both are read from the
+    // record and both are gated on a flag rather than hard-coded.
+    QVERIFY(js.contains(QLatin1String("c.archive")));
+    QVERIFY(js.contains(QLatin1String("muteExpiration")));
+    // A chat marked unread by hand carries no message count and still counts.
+    QVERIFY(js.contains(QLatin1String("markedUnread")));
     // And the list is still there to answer while the first read is in flight,
     // since runJavaScript cannot await a promise.
     QVERIFY(js.contains(QLatin1String("#pane-side")));
@@ -2284,6 +2287,17 @@ private slots:
     QVERIFY(js.contains(QLatin1String("walked = true")));
     QVERIFY(js.contains(QLatin1String("return walked ?")));
     QVERIFY(js.contains(QLatin1String("JSON.stringify")));
+  }
+  void unreadSummaryCarriesTheUsersFilters() {
+    const QString both = ChatNav::unreadSummaryScript(true, true);
+    QVERIFY(both.contains(QLatin1String("INCLUDE_MUTED = true")));
+    QVERIFY(both.contains(QLatin1String("INCLUDE_ARCHIVED = true")));
+    const QString neither = ChatNav::unreadSummaryScript(false, false);
+    QVERIFY(neither.contains(QLatin1String("INCLUDE_MUTED = false")));
+    QVERIFY(neither.contains(QLatin1String("INCLUDE_ARCHIVED = false")));
+    // The page keeps the last answer, so it has to know which question it was
+    // an answer to — otherwise a changed setting shows the old number.
+    QVERIFY(both.contains(QLatin1String("W.key !== key")));
   }
   void openScriptEscapesName() {
     const QString js =

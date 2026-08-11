@@ -77,6 +77,42 @@ void MainWindow::setAlwaysShowAccountTabs(bool enabled) {
       QStringLiteral("alwaysShowAccountTabs"), enabled);
 }
 
+bool MainWindow::unreadCountIncludesMuted() {
+  return SettingsManager::instance()
+      .settings()
+      .value(QStringLiteral("unreadCountIncludesMuted"), true)
+      .toBool();
+}
+
+void MainWindow::setUnreadCountIncludesMuted(bool enabled) {
+  SettingsManager::instance().settings().setValue(
+      QStringLiteral("unreadCountIncludesMuted"), enabled);
+}
+
+bool MainWindow::unreadCountIncludesArchived() {
+  return SettingsManager::instance()
+      .settings()
+      .value(QStringLiteral("unreadCountIncludesArchived"), false)
+      .toBool();
+}
+
+void MainWindow::setUnreadCountIncludesArchived(bool enabled) {
+  SettingsManager::instance().settings().setValue(
+      QStringLiteral("unreadCountIncludesArchived"), enabled);
+}
+
+bool MainWindow::unreadCountCountsMessages() {
+  return SettingsManager::instance()
+      .settings()
+      .value(QStringLiteral("unreadCountCountsMessages"), false)
+      .toBool();
+}
+
+void MainWindow::setUnreadCountCountsMessages(bool enabled) {
+  SettingsManager::instance().settings().setValue(
+      QStringLiteral("unreadCountCountsMessages"), enabled);
+}
+
 void MainWindow::countUnread(int idx) {
   if (idx < 0 || idx >= m_accounts.size())
     return;
@@ -85,7 +121,9 @@ void MainWindow::countUnread(int idx) {
     return; // dormant: it has nothing to count with
   const QString id = m_accounts[idx].id;
   page->runJavaScript(
-      ChatNav::unreadSummaryScript(), [this, id](const QVariant &result) {
+      ChatNav::unreadSummaryScript(unreadCountIncludesMuted(),
+                                   unreadCountIncludesArchived()),
+      [this, id](const QVariant &result) {
         const int i = accountIndexForId(id);
         if (i < 0)
           return;
@@ -106,9 +144,11 @@ void MainWindow::countUnread(int idx) {
             !counted.isDouble() || counted.toInt() < 0)
           return;
         const int chats = counted.toInt();
-        if (m_accounts[i].unread == chats)
+        const int messages = o.value(QStringLiteral("messages")).toInt();
+        const int shown = unreadCountCountsMessages() ? messages : chats;
+        if (m_accounts[i].unread == shown)
           return; // nothing to redraw
-        m_accounts[i].unread = chats;
+        m_accounts[i].unread = shown;
         refreshAccountTabs();
         updateTrayUnread();
       });
