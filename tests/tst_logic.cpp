@@ -537,6 +537,28 @@ private slots:
     QVERIFY(src.contains(QLatin1String("emoji-variant")));
   }
 
+  // The rail buttons' retry must be able to tell "still in the rail" from "still
+  // in the document". Asking only the latter made a stranded entry permanent:
+  // it is the stop condition for the retry timer, so once satisfied the buttons
+  // were never rebuilt, and only destroying the page brought them back. Confirmed
+  // live before the fix, so this guards the shape of the condition.
+  void webTweaksRailButtonsRecoverFromReparenting() {
+    const QString src = WebTweaks::scriptSource();
+    // The remembered container, and the two comparisons against it.
+    QVERIFY(src.contains(QLatin1String("railParent")));
+    QVERIFY(src.contains(QLatin1String("entry.parentElement === railParent")));
+    QVERIFY(src.contains(QLatin1String("existing.parentElement === railParent")));
+    // A stranded entry must be removed rather than skipped, or its id stays taken
+    // and no replacement can be built.
+    QVERIFY(src.contains(QLatin1String("if (existing) existing.remove();")));
+    // Still nothing on the timer path that forces layout.
+    const int settledAt = src.indexOf(QLatin1String("var settled = function"));
+    const int installAt = src.indexOf(QLatin1String("var install = function"));
+    QVERIFY(settledAt > 0 && installAt > settledAt);
+    QVERIFY(!src.mid(settledAt, installAt - settledAt)
+                 .contains(QLatin1String("getBoundingClientRect")));
+  }
+
   // #7: the always-on HD receive flag script overrides wa_web_show_hd_photo.
   void webTweaksHdFlagScript() {
     const QString hd = WebTweaks::hdFlagScriptSource();
