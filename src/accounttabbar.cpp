@@ -12,6 +12,8 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QPolygon>
+#include <QEvent>
+#include <QPalette>
 
 // The dragged account's id travels as the mime payload; the distinct type lets
 // a strip recognise an account-tab drag (single process, so no cross-app risk).
@@ -22,6 +24,47 @@ AccountTabBar::AccountTabBar(QWidget *parent) : QTabBar(parent) {
   // Live within-strip reordering: the tabs slide as you drag. Leaving the strip
   // vertically hands off to a QDrag (tear-off / cross-window) in mouseMove.
   setMovable(true);
+  refreshSelectionTint();
+}
+
+void AccountTabBar::refreshSelectionTint() {
+  // setStyleSheet() below makes Qt re-resolve this widget's style, which sends it
+  // a StyleChange and can send a PaletteChange too — both of which land back in
+  // changeEvent() and would come straight back here. Without this guard that is
+  // unbounded recursion, and it crashed the app on start-up rather than
+  // misbehaving quietly, because the stack ran out inside Qt's own style
+  // machinery. Re-entrancy has to be blocked here rather than by picking "safe"
+  // event types: which events a style re-resolve sends is Qt's business, not ours.
+  if (m_tinting)
+    return;
+  m_tinting = true;
+  // Derived from the palette rather than hard-coded, so it follows whatever the
+  // theme is doing and stays right in both light and dark: a step away from the
+  // strip, lighter when the strip is dark and darker when it is light.
+  const QColor base = palette().color(QPalette::Window);
+  const bool dark = base.lightness() < 128;
+  const QColor tint = dark ? base.lighter(190) : base.darker(125);
+  // And it goes on the tabs that are NOT on screen. With it on the selected one
+  // instead, that tab was the only one the stylesheet drew and the others kept
+  // the platform's own bordered look — which read as the wrong way round, the
+  // bordered ones looking live and the flat one looking like background. Now the
+  // ones you are not in are the flat crowd and the odd one out is the account you
+  // are in, which keeps the point of tinting anything: the selected tab stays
+  // visible on the styles that would otherwise draw it much like the rest.
+  // Naming one state also keeps Qt from taking over the whole strip's drawing.
+  setStyleSheet(
+      QStringLiteral("QTabBar::tab:!selected{background:%1;}").arg(tint.name()));
+  m_tinting = false;
+}
+
+void AccountTabBar::changeEvent(QEvent *event) {
+  QTabBar::changeEvent(event);
+  // Only the palette, and not StyleChange: a StyleChange is what our own
+  // setStyleSheet() causes, so acting on it would be chasing our own tail. The
+  // palette is what the tint is actually derived from, so a theme switch is
+  // followed, and the guard above covers the rest.
+  if (event->type() == QEvent::PaletteChange)
+    refreshSelectionTint();
 }
 
 int AccountTabBar::accountTabCount() const {
