@@ -60,6 +60,15 @@ resize borders first. They also gain the trailing "+" tab the main strip has, an
 an account added from a detached window's "+" now appears in that window instead of
 jumping to the main one.
 
+**The collapsed chat list shows unread counts again.** Collapsing the list to a
+strip of avatars cut WhatsApp's own unread badge off the right-hand edge, so the one
+thing the narrow list most needs to tell you — which conversations are waiting — was
+only visible by hovering each row in turn. Each collapsed row now carries a small
+green count in its top-right corner, and no badge at all when there is nothing
+unread. The number is WhatsApp's own, read from the row rather than tracked
+separately, so it cannot drift out of step, and it is drawn without adding anything
+to the page.
+
 ## 7.0.0 (2026-08-03)
 
 Whatly 7.0.0 is a major feature release. Highlights: a built-in AI assistant
