@@ -1,5 +1,7 @@
 ## Unreleased
 
+**Spell-check dictionary cleanup.** The bundled set carried a duplicate `en-US` (identical to `en_US` bar the separator, and never selectable) and an invalid `vi_VI` region code; both are gone, keeping `en_US` and `vi_VN`. Groundwork for making dictionaries downloadable per language (#46).
+
 **A clearer message when WhatsApp Web fails to load.** When WhatsApp Web's own
 module loader collapses (its "unresolved dependencies / cr:NNNN is not defined"
 cascade), the web app never finishes initialising and it looks as if login is
