@@ -403,6 +403,11 @@ R"JS(
       } catch (e) { /* never break the page */ }
     }, 1000);
 
+)JS"
+// MSVC caps a single string literal at 16380 bytes and this half of the script
+// has grown past it again. Adjacent literals are concatenated by the compiler,
+// so this split is a build constraint only — it changes nothing about the script.
+R"JS(
     var panel = function () {
       var t = document.getElementById(TIP);
       if (!t) {

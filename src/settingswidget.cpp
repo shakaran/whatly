@@ -282,6 +282,13 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
           .value("minimizeOnTrayIconClick", false)
           .toBool());
   ui->minimizeOnTrayIconClick->blockSignals(false);
+  ui->minimizeOnlyFocusedWindowCheckBox->blockSignals(true);
+  ui->minimizeOnlyFocusedWindowCheckBox->setChecked(
+      SettingsManager::instance()
+          .settings()
+          .value("minimizeOnlyFocusedWindow", false)
+          .toBool());
+  ui->minimizeOnlyFocusedWindowCheckBox->blockSignals(false);
   ui->defaultDownloadLocation->setText(QDir::toNativeSeparators(
       SettingsManager::instance()
           .settings()
@@ -507,12 +514,27 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     moveWidget(body(chatting), ui->autoPlayMediaCheckBox, G);
     moveWidget(body(chatting), ui->dismissEmojiPanelCheckBox, G);
     moveWidget(body(chatting), ui->hideMutedStatusCheckBox, G);
+    // Two everyday messaging preferences that were filed under "Performance &
+    // Privacy", where nobody would think to look for them: how photos are sent,
+    // and whether Enter holds a message briefly before it goes. Neither has
+    // anything to do with performance.
+    moveWidget(body(chatting), ui->hdMediaCheckBox,
+               ui->verticalLayoutPerformance);
+    moveLayout(body(chatting), ui->horizontalLayoutUndoSend);
 
     // ── Privacy & Lock ──────────────────────────────────────
     auto *privacy = newSection(tr("Privacy & Lock"));
     moveRow(body(privacy), ui->privacyBlurLabel, ui->privacyBlurComboBox, G);
     moveWidget(body(privacy), ui->privacyBlurButtonCheckBox, G);
     moveLayout(body(privacy), ui->gridLayout_3); // app-lock block
+    // The two genuinely privacy settings out of the old "Performance & Privacy"
+    // group — which is what the "& Privacy" in its name was promising. Focus mode
+    // hides chat-list previews from anyone looking at the screen, and the WebRTC
+    // shield stops calls leaking the local address.
+    moveWidget(body(privacy), ui->focusModeCheckBox,
+               ui->verticalLayoutPerformance);
+    moveWidget(body(privacy), ui->webrtcShieldCheckBox,
+               ui->verticalLayoutPerformance);
 
     // ── Window & zoom ───────────────────────────────────────
     auto *window = newSection(tr("Window && zoom"));
@@ -530,6 +552,25 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
                ui->restartNowButton);
     moveWidget(body(window), ui->tabsInTitleBarCheckBox, G);
     moveLayout(body(window), ui->gridLayout_9); // zoom block
+    // Interface scale belongs beside the zoom controls, not under "Network &
+    // Startup" where it sat next to the autostart checkbox — the same mistake the
+    // frame checkbox made, and this section already carries the Restart-now
+    // button its label asks for.
+    moveLayout(body(window), ui->horizontalLayoutScale);
+    // Last in the section: it qualifies how the windows this section configures
+    // are put away, rather than being one more of the tray checkboxes above.
+    moveWidget(body(window), ui->minimizeOnlyFocusedWindowCheckBox, G);
+
+    // ── AI & translation ────────────────────────────────────
+    // The largest thing in the old "Performance & Privacy" group by far: two
+    // whole feature panels, each with an endpoint, a model or target language and
+    // an API key. They are neither performance nor privacy, and burying them
+    // there is most of why that group was impossible to navigate.
+    auto *aiTranslation = newSection(tr("AI && translation"));
+    moveWidget(body(aiTranslation), ui->aiGroupBox,
+               ui->verticalLayoutPerformance);
+    moveWidget(body(aiTranslation), ui->translationGroupBox,
+               ui->verticalLayoutPerformance);
 
     // ── Advanced ────────────────────────────────────────────
     auto *advanced = newSection(tr("Advanced"));
@@ -549,8 +590,9 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     outer->insertWidget(1, appearance);
     outer->insertWidget(2, notifications);
     outer->insertWidget(3, chatting);
-    outer->insertWidget(4, privacy);
-    outer->insertWidget(5, window);
+    outer->insertWidget(4, aiTranslation);
+    outer->insertWidget(5, privacy);
+    outer->insertWidget(6, window);
     outer->addWidget(advanced);
 
     QScrollArea *scrollArea = ui->scrollArea;
@@ -637,6 +679,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     makeCollapsible(appearance, false);
     makeCollapsible(notifications, false);
     makeCollapsible(chatting, false);
+    makeCollapsible(aiTranslation, false);
     makeCollapsible(privacy, false);
     makeCollapsible(window, false);
     makeCollapsible(advanced, false);
@@ -657,7 +700,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     addGroupRestart(ui->verticalLayoutShortcuts);
 
     makeCollapsible(ui->groupBox_7, false);          // Storage
-    makeCollapsible(ui->groupBoxPerformance, false); // Performance & Privacy
+    makeCollapsible(ui->groupBoxPerformance, false); // Performance
     makeCollapsible(ui->groupBoxNetwork, false);     // Network & Startup
     makeCollapsible(ui->groupBoxJsAddons, false);    // JS Addons
     makeCollapsible(ui->groupBoxCanned, false);      // Canned responses
@@ -702,12 +745,68 @@ bool SettingsWidget::eventFilter(QObject *obj, QEvent *event) {
     return true; // consume, so the popup does not close
   }
 
-  if (isChildOf(this, obj)) {
-    if (event->type() == QEvent::Wheel) {
-      return true;
+  // Sliders, combo boxes and spin boxes have this filter installed so the wheel
+  // cannot change their value under a passing pointer. Swallowing the event did
+  // that, but it also stopped the page: a scroll started anywhere died the moment
+  // the pointer crossed one of them, so reaching the bottom of Settings meant
+  // steering around every control on the way. Scroll the page by hand instead, so
+  // the gesture stays with what it started on and the control still ignores it.
+  //
+  // Done by moving the scrollbar rather than re-sending the event: the viewport is
+  // also a child of this widget, so forwarding would come straight back here.
+  if (event->type() == QEvent::Wheel && isChildOf(this, obj)) {
+    auto *wheel = static_cast<QWheelEvent *>(event);
+    QScrollBar *bar = ui->scrollArea ? ui->scrollArea->verticalScrollBar()
+                                     : nullptr;
+    const int dy = wheel->angleDelta().y();
+    if (bar && dy != 0) {
+      // Three steps per notch (a notch is 120), matching what the scroll area
+      // does on its own, and keeping the division last so a high-resolution
+      // wheel's smaller deltas are not rounded away to nothing.
+      bar->setValue(bar->value() - dy * bar->singleStep() * 3 / 120);
     }
+    return true;
   }
   return QWidget::eventFilter(obj, event);
+}
+
+void SettingsWidget::resizeEvent(QResizeEvent *event) {
+  QWidget::resizeEvent(event);
+  wrapLongTooltips();
+}
+
+void SettingsWidget::wrapLongTooltips() {
+  // Two thirds of the window, with a floor so a very narrow Settings window does
+  // not produce a one-word-per-line column.
+  const int wrapAt = qMax(360, width() * 2 / 3);
+  const auto widgets = findChildren<QWidget *>();
+  for (QWidget *w : widgets) {
+    // The original plain text is kept on the widget, so re-wrapping after a
+    // resize starts from the source rather than from the previous wrapping.
+    QVariant stored = w->property("whatlyPlainTip");
+    QString plain = stored.isValid() ? stored.toString() : w->toolTip();
+    if (plain.isEmpty() || plain.startsWith(QLatin1Char('<')))
+      continue; // nothing to do, or someone already made it rich text
+    if (plain.length() < 60 && !stored.isValid())
+      continue; // short enough to sit on one line
+    if (!stored.isValid())
+      w->setProperty("whatlyPlainTip", plain);
+    // A width on a one-cell table is the reliable way to constrain wrapping in
+    // Qt's rich text; a width on a div is not honoured consistently.
+    //
+    // cellpadding is the clearance. Qt places a tooltip that will not fit below
+    // the pointer above it instead, and clamps it to the screen — so it is never
+    // cut off, but it does end up flush against the edge. Padding inside the box
+    // cannot move the box, and does keep the text itself off the screen edge,
+    // which is the part that reads as cramped. Replacing Qt's tooltip outright to
+    // gain a few pixels of outer margin is not worth it.
+    w->setToolTip(
+        QStringLiteral("<qt><table width=\"%1\" cellpadding=\"6\" "
+                       "cellspacing=\"0\" border=\"0\">"
+                       "<tr><td>%2</td></tr></table></qt>")
+            .arg(wrapAt)
+            .arg(plain.toHtmlEscaped()));
+  }
 }
 
 void SettingsWidget::closeEvent(QCloseEvent *event) {
@@ -2312,6 +2411,11 @@ void SettingsWidget::on_minimizeOnTrayIconClick_toggled(bool checked) {
     ui->hideTrayIconCheckBox->setChecked(false);
 }
 
+void SettingsWidget::on_minimizeOnlyFocusedWindowCheckBox_toggled(bool checked) {
+  SettingsManager::instance().settings().setValue("minimizeOnlyFocusedWindow",
+                                                  checked);
+}
+
 void SettingsWidget::on_styleComboBox_currentTextChanged(const QString &arg1) {
   applyThemeQuirks();
   SettingsManager::instance().settings().setValue("widgetStyle", arg1);
@@ -2471,8 +2575,16 @@ void SettingsWidget::on_chnageCurrentPasswordPushButton_clicked() {
 }
 
 void SettingsWidget::keyPressEvent(QKeyEvent *e) {
-  if (e->key() == Qt::Key_Escape)
+  // Ctrl+W closes this page, exactly as Escape does. Everywhere else in Whatly
+  // that key means "put the window away", and reading it as "put the app in the
+  // tray" while Settings is the window in front is not what anyone pressing it
+  // here means — this is a page you close, and it is the only window that is.
+  if (e->key() == Qt::Key_Escape ||
+      (e->key() == Qt::Key_W && e->modifiers().testFlag(Qt::ControlModifier))) {
     this->close();
+    e->accept();
+    return;
+  }
 
   QWidget::keyPressEvent(e);
 }

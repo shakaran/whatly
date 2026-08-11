@@ -8,6 +8,7 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <QStandardPaths>
+#include <QApplication>
 #include <QMenu>
 #include <QStackedWidget>
 #include <QPointer>
@@ -76,6 +77,48 @@ void MainWindow::setAlwaysShowAccountTabs(bool enabled) {
       QStringLiteral("alwaysShowAccountTabs"), enabled);
 }
 
+void MainWindow::countUnread(int idx) {
+  if (idx < 0 || idx >= m_accounts.size())
+    return;
+  QWebEnginePage *page = pageOf(m_accounts[idx]);
+  if (!page)
+    return; // dormant: it has nothing to count with
+  const QString id = m_accounts[idx].id;
+  page->runJavaScript(
+      ChatNav::unreadSummaryScript(), [this, id](const QVariant &result) {
+        const int i = accountIndexForId(id);
+        if (i < 0)
+          return;
+        // A count that could not be taken must leave the badge as it is. Zero is
+        // an answer — nothing is unread — and it has to be told apart from a
+        // page that was reloading, a store that would not open and a script that
+        // returned something unexpected, or the badge clears itself every time
+        // one of those happens, which during a reload is every time.
+        QJsonParseError parse{};
+        const QJsonDocument doc =
+            QJsonDocument::fromJson(result.toString().toUtf8(), &parse);
+        if (parse.error != QJsonParseError::NoError || !doc.isObject())
+          return;
+        const QJsonObject o = doc.object();
+        const QJsonValue counted = o.value(QStringLiteral("chats"));
+        if (o.value(QStringLiteral("source")).toString() ==
+                QLatin1String("none") ||
+            !counted.isDouble() || counted.toInt() < 0)
+          return;
+        const int chats = counted.toInt();
+        if (m_accounts[i].unread == chats)
+          return; // nothing to redraw
+        m_accounts[i].unread = chats;
+        refreshAccountTabs();
+        updateTrayUnread();
+      });
+}
+
+void MainWindow::countUnreadEverywhere() {
+  for (int i = 0; i < m_accounts.size(); ++i)
+    countUnread(i);
+}
+
 void MainWindow::refreshAccountStrip() { refreshAccountTabs(); }
 
 void MainWindow::buildAccountArea() {
@@ -96,6 +139,17 @@ void MainWindow::buildAccountArea() {
   connect(m_suspendTimer, &QTimer::timeout, this,
           [this]() { suspendIdleAccounts(); });
   m_suspendTimer->start();
+
+  // A title change is not the only way an unread count moves: marking a chat
+  // read or unread by hand moves it without one, and so does reading a chat on
+  // the phone. The page throttles the work — a call between reads simply hands
+  // back the last number — so this costs a function call and a string per
+  // account every few seconds.
+  m_unreadTimer = new QTimer(this);
+  m_unreadTimer->setInterval(3 * 1000);
+  connect(m_unreadTimer, &QTimer::timeout, this,
+          [this]() { countUnreadEverywhere(); });
+  m_unreadTimer->start();
   auto *central = new QWidget(this);
   auto *layout = new QVBoxLayout(central);
   layout->setContentsMargins(0, 0, 0, 0);
@@ -454,6 +508,17 @@ bool MainWindow::eventFilter(QObject *watched, QEvent *event) {
   if (m_gridScroll && watched == m_gridScroll->viewport() &&
       event->type() == QEvent::Resize)
     syncGridContainerSize();
+  // About to be drawn is the real trigger for building a dormant account, and it
+  // is the only one that catches every case. Switching tabs is not enough: a
+  // detached window shows its own account without touching setActiveAccount(),
+  // and grid mode draws every account at once, so both would otherwise paint a
+  // blank view. Hooking the view's own visibility covers all of them, including
+  // any future path that puts an account on screen.
+  if (event->type() == QEvent::Show) {
+    const int idx = accountIndexForView(watched);
+    if (idx >= 0)
+      ensureAccountLoaded(idx);
+  }
   return QMainWindow::eventFilter(watched, event);
 }
 
@@ -662,6 +727,9 @@ WebView *MainWindow::addAccount(const QString &id, const QString &name,
       {m_translateSelectionAction},
       {m_aiSummarizeAction, m_exportChatAction});
 
+  // Watched so that whatever eventually puts this view on screen — a tab switch,
+  // grid mode, a detached window — builds the account first. See eventFilter().
+  view->installEventFilter(this);
   m_accountStack->addWidget(view);
   m_accounts.append({id, name, view, 0});
   m_accounts.last().lastActive = QDateTime::currentDateTime();
@@ -692,10 +760,8 @@ void MainWindow::setActiveAccount(int index) {
   m_activeAccount = index;
   m_webEngine = m_accounts[index].view;   // everything current-account flows through this
   m_accounts[index].lastActive = QDateTime::currentDateTime();
-  // Wake the account we are switching to (no-op if it was never suspended).
-  if (m_accounts[index].view && m_accounts[index].view->page())
-    m_accounts[index].view->page()->setLifecycleState(
-        QWebEnginePage::LifecycleState::Active);
+  // Opening a dormant account is when it comes into existence.
+  ensureAccountLoaded(index);
   m_accountStack->setCurrentWidget(m_accounts[index].view);
   // Point the strip at the tab carrying this account's id.
   QSignalBlocker block(m_accountBar);
@@ -760,6 +826,24 @@ int MainWindow::accountIndexForId(const QString &id) const {
   for (int i = 0; i < m_accounts.size(); ++i)
     if (m_accounts[i].id == id)
       return i;
+  return -1;
+}
+
+int MainWindow::focusedAccountIndex() const {
+  // A detached window shows whatever its own stack is on. Its tab strip swaps
+  // that stack directly and never sets m_activeAccount, so for any window other
+  // than this one the app-wide "active" account is simply the wrong answer.
+  if (auto *win =
+          qobject_cast<DetachedAccountWindow *>(QApplication::activeWindow())) {
+    const QWidget *shown = win->stack()->currentWidget();
+    for (int i = 0; i < m_accounts.size(); ++i)
+      if (m_accounts[i].view == shown)
+        return i;
+  }
+  // The main window, or a key that arrived with no active window at all (a tray
+  // menu item, say) — then the account this window is on is the best answer.
+  if (m_activeAccount >= 0 && m_activeAccount < m_accounts.size())
+    return m_activeAccount;
   return -1;
 }
 
@@ -889,10 +973,12 @@ void MainWindow::reorderWindowFromStrip(DetachedAccountWindow *win) {
 }
 
 void MainWindow::captureAccountVersion(WebView *view) {
-  if (!view || !view->page())
+  const int idx = view ? accountIndexForView(view) : -1;
+  QWebEnginePage *page = idx >= 0 ? pageOf(m_accounts[idx]) : nullptr;
+  if (!page)
     return;
   QPointer<WebView> guarded(view);
-  view->page()->runJavaScript(
+  page->runJavaScript(
       QStringLiteral("(window.Debug && window.Debug.VERSION) || ''"),
       [this, guarded](const QVariant &result) {
         if (!guarded)
@@ -908,29 +994,61 @@ void MainWindow::captureAccountVersion(WebView *view) {
       });
 }
 
+QWebEnginePage *MainWindow::pageOf(const Account &a) {
+  // Deliberately does not fall back to a.view->page(): QWebEngineView builds a
+  // page on demand when asked for one it does not have, so a single stray call
+  // on a dormant account would silently create a renderer bound to the default
+  // profile — the opposite of what dormancy is for, and a session mix-up.
+  return a.loaded && a.view ? a.view->page() : nullptr;
+}
+
+void MainWindow::ensureAccountLoaded(int index) {
+  if (index < 0 || index >= m_accounts.size())
+    return;
+  Account &a = m_accounts[index];
+  if (a.loaded || !a.view)
+    return;
+  // Marked before building, not after. createPageFor() attaches a page to the
+  // view, and that can emit a show event, which comes straight back here through
+  // eventFilter() — with the flag set afterwards, that would recurse forever.
+  a.loaded = true;
+  createPageFor(a.view, a.id);
+}
+
+void MainWindow::unloadAccount(int index) {
+  if (index < 0 || index >= m_accounts.size())
+    return;
+  Account &a = m_accounts[index];
+  if (!a.loaded || !a.view)
+    return;
+  QWebEnginePage *page = a.view->page();
+  // Cleared before the page goes, so anything reached during teardown sees a
+  // dormant account and cannot ask for the page being destroyed.
+  a.loaded = false;
+  // Detach first, then delete: the view holds a plain pointer to its page, and
+  // deleting it without detaching would leave that pointer dangling for the next
+  // caller. Detaching also drops the renderer, which is the memory we are after —
+  // freezing the page would have kept every byte of it.
+  a.view->setPage(nullptr);
+  delete page;
+}
+
 void MainWindow::suspendIdleAccounts() {
   const bool enabled = Performance::suspendInactiveAccounts();
   const int threshold = Performance::suspendAfterMinutes() * 60;
   const QDateTime now = QDateTime::currentDateTime();
   for (int i = 0; i < m_accounts.size(); ++i) {
     Account &a = m_accounts[i];
-    if (!a.view || !a.view->page())
-      continue;
+    if (!a.view || !a.loaded)
+      continue; // already dormant, nothing left to give back
     const bool isActive = (i == m_activeAccount);
     const bool isVisible = a.view->isVisible(); // grid tiles / detached windows
     const int idle = a.lastActive.isValid()
                          ? int(a.lastActive.secsTo(now))
                          : 0;
-    auto *page = a.view->page();
     if (Performance::shouldSuspendAccount(enabled, isActive, isVisible, idle,
-                                          threshold)) {
-      if (page->lifecycleState() == QWebEnginePage::LifecycleState::Active)
-        page->setLifecycleState(QWebEnginePage::LifecycleState::Frozen);
-    } else if (!enabled &&
-               page->lifecycleState() != QWebEnginePage::LifecycleState::Active) {
-      // Feature turned off: wake anything we had frozen.
-      page->setLifecycleState(QWebEnginePage::LifecycleState::Active);
-    }
+                                          threshold))
+      unloadAccount(i);
   }
 }
 
@@ -967,12 +1085,14 @@ void MainWindow::refreshRecentUnread() {
 }
 
 void MainWindow::openChatByName(const QString &accountId, const QString &name) {
-  // A tray pick is a request to use Whatly: raise the window first.
-  setWindowState((windowState() & ~Qt::WindowMinimized) | Qt::WindowActive);
-  show();
-  raise();
-  activateWindow();
+  // A tray pick is a request to use Whatly, so raise a window first — but the one
+  // that actually holds this account, not this one. Picking a chat belonging to a
+  // detached account used to bring this window forward and then switch the chat
+  // in a window the user could not see.
   const int idx = accountIndexForId(accountId);
+  bringForward(idx >= 0 && m_accounts[idx].window
+                   ? static_cast<QWidget *>(m_accounts[idx].window)
+                   : static_cast<QWidget *>(this));
   if (idx >= 0)
     setActiveAccount(idx);
   if (m_webEngine && m_webEngine->page())
@@ -981,8 +1101,8 @@ void MainWindow::openChatByName(const QString &accountId, const QString &name) {
 
 QString MainWindow::accountTabTooltip(const Account &acc) const {
   QString token;
-  if (acc.view && acc.view->page())
-    token = QUrlQuery(acc.view->page()->url()).queryItemValue(QStringLiteral("v"));
+  if (pageOf(acc))
+    token = QUrlQuery(pageOf(acc)->url()).queryItemValue(QStringLiteral("v"));
   return accountTabTooltipText(acc.waVersion, token);
 }
 
@@ -1061,8 +1181,10 @@ void MainWindow::updateTrayUnread() {
   }
 
   if (total > 0) {
+    // Chats, not messages: what is summed here is one per conversation with
+    // something unread in it.
     m_restoreAction->setText(tr("Restore") + " | " + QString::number(total) +
-                             " " + (total > 1 ? tr("messages") : tr("message")));
+                             " " + (total > 1 ? tr("chats") : tr("chat")));
     m_systemTrayIcon->setIcon(getTrayIcon(total));
     setWindowIcon(getTrayIcon(total));
   } else {
@@ -1275,6 +1397,28 @@ DetachedAccountWindow *MainWindow::createDetachedWindow() {
   // Becoming active makes this window "main" (front of the focus order).
   connect(win, &DetachedAccountWindow::activated, this,
           [this, win]() { noteWindowFocused(win); });
+  // The application-wide actions are carried by the main window, and Qt only
+  // fires a shortcut while a window carrying it is up and active — so with the
+  // main window hidden in the tray and this window in front, Ctrl+P and the rest
+  // did nothing at all, which is the "one window is special" this PR is about.
+  // Attaching the same actions here fixes that: a shortcut fires if ANY window
+  // holding the action qualifies.
+  //
+  // Only the actions that are about the application. The ones that act on "the
+  // current account" are deliberately left out: reload, zoom and fullscreen would
+  // silently mean the main window's account rather than the one being looked at,
+  // which is worse than the shortcut not working.
+  // Find is the one account action that is safe to share, because it asks
+  // focusedAccountIndex() which account the window with the keyboard is showing
+  // instead of assuming the app-wide one. Reload, zoom and fullscreen have no
+  // such answer yet, so they stay out.
+  for (QAction *shared :
+       {m_settingsAction, m_commandPaletteAction, m_aboutAction, m_quitAction,
+        m_toggleThemeAction, m_muteAction, m_lockAction,
+        m_scheduledMessagesAction, m_addAccountAction, m_chatListStripAction,
+        m_findChatAction})
+    if (shared)
+      win->addAction(shared);
   // Moving/resizing the window updates the saved arrangement (debounced).
   connect(win, &DetachedAccountWindow::geometryChanged, this, [this]() {
     if (m_layoutSaveTimer)
@@ -1289,12 +1433,14 @@ DetachedAccountWindow *MainWindow::createDetachedWindow() {
 void MainWindow::noteWindowFocused(DetachedAccountWindow *win) {
   m_focusOrder.removeAll(win);
   m_focusOrder.prepend(win); // most-recently-focused first; front is "main"
+  refreshWindowsMenu();      // the numbering IS this order
 }
 
 void MainWindow::destroyDetachedWindow(DetachedAccountWindow *win) {
   if (!win)
     return;
   m_focusOrder.removeAll(win);
+  refreshWindowsMenu(); // one window fewer to offer
   win->disconnect(this);
   win->deleteLater();
 }
@@ -1945,20 +2091,27 @@ void MainWindow::loadAccounts() {
       s.value(QStringLiteral("accounts/names")).toStringList();
   const QString kDefault = QStringLiteral("__default__");
 
+  // With winding down enabled, accounts start dormant — no page, no renderer, no
+  // download — and the one that ends up active is built by setActiveAccount()
+  // below. The rest come into existence when the user first clicks them, which is
+  // the same bargain the setting already makes for accounts that go idle later.
+  // Off (the default), every account is built at startup exactly as before.
+  const bool load = !Performance::suspendInactiveAccounts();
+
   if (ids.isEmpty()) {
     // Fresh install: just the default account.
-    addAccount(QString(), tr("Account 1"), true);
+    addAccount(QString(), tr("Account 1"), load);
   } else if (!ids.contains(kDefault)) {
     // Legacy save (before order-with-default): default implicit and first, then
     // the saved non-default accounts in order.
-    addAccount(QString(), tr("Account 1"), true);
+    addAccount(QString(), tr("Account 1"), load);
     for (int i = 0; i < ids.size(); ++i)
-      addAccount(ids[i], names.value(i, tr("Account %1").arg(i + 2)), true);
+      addAccount(ids[i], names.value(i, tr("Account %1").arg(i + 2)), load);
   } else {
     // Recreate the saved order exactly, including where the default sits.
     for (int i = 0; i < ids.size(); ++i) {
       const QString id = (ids[i] == kDefault) ? QString() : ids[i];
-      addAccount(id, names.value(i, tr("Account %1").arg(i + 1)), true);
+      addAccount(id, names.value(i, tr("Account %1").arg(i + 1)), load);
     }
   }
 

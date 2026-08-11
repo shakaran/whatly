@@ -14,11 +14,35 @@ namespace ChatNav {
 // the numeric count pill on the row, which is locale-independent.
 QString unreadChatsScript(int limit);
 
+// JS that answers how much is unread, as JSON: {"chats": N, "messages": M}.
+//
+// It reads WhatsApp Web's own IndexedDB (`model-storage`, store `chat`) rather
+// than the chat list, because the list is virtualised: a session with 592 chats
+// keeps about 66 of them in the DOM, so counting rows answers "unread among the
+// ones currently drawn" and changes as the list is scrolled. The database holds
+// every chat whatever is on screen.
+//
+// Archived chats are left out — they are the ones deliberately put away, and
+// they are not in the list the count sits beside. Muted ones are counted: they
+// still carry a badge in that list, and a count that disagreed with what the
+// user can see would be the bug this replaces.
+//
+// Falls back to counting the drawn rows if the database is not readable, which
+// is the honest degradation: WhatsApp's schema is theirs to change.
+QString unreadSummaryScript();
+
 // JS that opens the chat whose row title matches `name` exactly, by dispatching
 // the pointer/mouse sequence WhatsApp Web's list rows react to (a plain click is
 // ignored). Returns "ok" / "not-found" / "no-pane". The name is JSON-escaped, so
 // any characters are safe.
 QString openChatByNameScript(const QString &name);
+
+// JS that puts the keyboard into WhatsApp Web's own chat-list search box and
+// selects whatever is in it, so typing replaces it — what Ctrl+F does in a
+// browser. WhatsApp Web itself binds no key for this: in a browser Ctrl+F is the
+// browser's find bar, and Qt WebEngine has none, so the key did nothing at all.
+// Returns "ok" / "not-found".
+QString focusSearchScript();
 
 } // namespace ChatNav
 

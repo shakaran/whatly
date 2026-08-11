@@ -54,6 +54,7 @@ add_executable(tst_logic
     ${S}/notificationreply.cpp
     ${S}/setupwizard.cpp
     ${S}/lingertip.cpp
+    ${S}/accounttabbar.cpp
     ${S}/icons.qrc
 )
 target_include_directories(tst_logic PRIVATE ${S} ${CMAKE_BINARY_DIR})

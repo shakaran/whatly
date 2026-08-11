@@ -1059,6 +1059,11 @@ Open Settings now?</source>
         <translation>聊天</translation>
     </message>
     <message>
+        <location filename="../mainwindow_accounts.cpp" line="1140"/>
+        <source>chats</source>
+        <translation>聊天</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="1519"/>
         <source>Could not create the export folder.</source>
         <translation>無法建立匯出資料夾。</translation>

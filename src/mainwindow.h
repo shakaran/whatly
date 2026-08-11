@@ -80,6 +80,11 @@ public slots:
   void toggleChatListStrip();
   // Keep that action's text saying what it will do next, for the palette.
   void refreshChatListStripAction();
+  // Put the keyboard into WhatsApp Web's own chat search, in the account the
+  // window in front is showing. Expands the chat list first when it is
+  // collapsed, since the search box is clipped to a sliver there and focusing
+  // something invisible is not a usable answer to the key.
+  void focusChatSearch();
   // Relaunch this same executable with this same command line, so the settings
   // that only apply at startup take effect without the user having to quit and
   // find Whatly again. Everything about how the desk looks is saved first and
@@ -88,6 +93,28 @@ public slots:
   // Bring the window up and give it focus. The tray menu uses it: an action
   // picked from there used to run with the window still behind everything.
   void raiseWindow();
+  // The window the user should be brought to, which is simply the last one they
+  // touched. There is deliberately no "main" window from the user's side: this
+  // one owns the tray icon and the account list, but that is an implementation
+  // detail, and a tray click, a notification or a global shortcut must never haul
+  // it out from behind the window actually being worked in.
+  QWidget *frontWindow() const;
+  // Show, unminimise, raise and activate one window — and nothing else.
+  static void bringForward(QWidget *w);
+  // Every Whatly window, so "hide to tray" takes the whole app away rather than
+  // just this one, which would be another way of showing which is special.
+  QList<QWidget *> allWindows() const;
+  // The same windows, most-recently-used first. Hiding is what makes the order
+  // matter: it takes the whole app away, so bringing it back has to bring all of
+  // it back, and in the order the user left it.
+  QList<QWidget *> windowsByFocus() const;
+  // Bring the whole app back: every window that is hidden or minimised, with the
+  // one last used raised on top. Showing only that one is what stranded the
+  // others — hidden, with no window left to click and no entry pointing at them.
+  void restoreAllWindows();
+  // Put the whole app in the tray: every window, for the same reason hiding one
+  // and leaving the rest would say one of them is the real one.
+  void hideAllWindows();
   void newChat();
   // Whether the account strip stays up with only one account, where it is a row
   // of chrome carrying a single tab. Off by default; the "+" it holds is also
@@ -151,6 +178,10 @@ private:
     QString waVersion;
     // When this account was last the active/visible one; drives idle suspension.
     QDateTime lastActive;
+    // Whether this account currently has a page. A dormant account has none at
+    // all: not a frozen one, not an empty one. It gets a page the first time it
+    // is opened, and loses it again once it has been idle long enough.
+    bool loaded = false;
     // Non-null while the account has been torn off into its own window; its
     // view then lives in that window rather than in the tab stack/grid.
     QPointer<DetachedAccountWindow> window = nullptr;
@@ -167,6 +198,19 @@ private:
   void clearGridCells();
   void updateGridCaptions();
   WebView *addAccount(const QString &id, const QString &name, bool load);
+  // The account's live page, or nullptr while it is dormant. Everything that
+  // walks the account list must go through this rather than view->page():
+  // QWebEngineView hands out a page on demand, so asking a dormant account for
+  // one would build it — on the default profile, and defeating the point.
+  static QWebEnginePage *pageOf(const Account &a);
+  // Throw an idle account's page away, back to the dormant state it started in.
+  // Reopening the account builds it again from scratch.
+  void unloadAccount(int index);
+  // Build a dormant account's page because it is about to be shown. Every path
+  // that puts an account on screen has to call this, not just the tab switch in
+  // the main window — a detached window shows its own account without going
+  // anywhere near setActiveAccount().
+  void ensureAccountLoaded(int index);
   void setActiveAccount(int index);
   void promptAddAccount();
   void renameAccount(int index);
@@ -201,6 +245,12 @@ private:
   // Rebuild every detached window's tab strip from m_accounts.
   void refreshDetachedStrips();
   int accountIndexForId(const QString &id) const;
+  // The account the user is actually looking at: the one shown by whichever
+  // window has the keyboard, which is not m_activeAccount — switching tabs in a
+  // detached window swaps that window's stack without touching the app-wide
+  // "active" account. Any shared action triggered by a key has to ask this, or it
+  // acts on whatever was last clicked in the main window. -1 if there is none.
+  int focusedAccountIndex() const;
   // Most-recently-focused-first list of windows (nullptr = the main window). The
   // front is the "main" window: it receives newly-added accounts, and a closed
   // window's tabs dock into the front-most surviving window.
@@ -244,6 +294,11 @@ private:
   // is the question a title change has to ask, since an account sitting behind
   // another account's tab must not retitle the window in front of it.
   QWidget *windowShowingAccount(int idx) const;
+  // Ask one account's page how much is unread and put it on the badges. The
+  // page throttles the reading; this can be called as often as is useful.
+  void countUnread(int idx);
+  void countUnreadEverywhere();
+  QTimer *m_unreadTimer = nullptr;
   int accountIndexForView(const QObject *view) const;
   void refreshAccountTabs();
   // Ask a freshly loaded account's page for its WhatsApp Web version and cache
@@ -258,6 +313,15 @@ private:
   QMenu *m_recentUnreadMenu = nullptr;
   void refreshRecentUnread();
   void openChatByName(const QString &accountId, const QString &name);
+  // Every window in the tray menu, numbered by how recently it was used, so none
+  // can be left with nothing pointing at it.
+  QMenu *m_windowsMenu = nullptr;
+  // What each entry in that menu points at, in the same order — so a click goes
+  // to the window whose label was read, and to nothing at all if that window has
+  // since closed.
+  QList<QPointer<QWidget>> m_windowsMenuTargets;
+  void refreshWindowsMenu();
+  QString windowLabel(const QWidget *w) const;
   // The tab tooltip for an account: its WhatsApp Web version (once known) and
   // the build token from the page URL. Empty while neither is available.
   QString accountTabTooltip(const Account &acc) const;
@@ -425,8 +489,6 @@ private:
   QMetaObject::Connection m_trayNotificationClickConnection;
 #endif
   QIcon m_trayIconNormal;
-  QRegularExpression m_notificationsTitleRegExp;
-  QRegularExpression m_unreadMessageCountRegExp;
   DownloadManagerWidget m_downloadManagerWidget;
   QScopedPointer<QWebEngineProfile> m_otrProfile;
   int m_correctlyLoadedRetries = 4;
@@ -469,6 +531,7 @@ private:
   QAction *m_zoomOutAction = nullptr;
   QAction *m_zoomResetAction = nullptr;
   QAction *m_chatListStripAction = nullptr;
+  QAction *m_findChatAction = nullptr;
   QAction *m_translateSelectionAction = nullptr;
   QAction *m_translateComposerAction = nullptr;
 

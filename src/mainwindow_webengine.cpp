@@ -149,7 +149,14 @@ void MainWindow::createPageFor(WebView *view, const QString &accountId) {
                              .settings()
                              .value("zoomFactor", 1.0)
                              .toDouble();
-  view->page()->setZoomFactor(currentFactor);
+  page->setZoomFactor(currentFactor);
+
+  // The account now has a page, so everything that walks the account list may
+  // reach it. Recorded here rather than at each call site, because this is the
+  // only place a page is ever built.
+  const int idx = accountIndexForView(view);
+  if (idx >= 0)
+    m_accounts[idx].loaded = true;
 }
 
 // Buttons Whatly injects into WhatsApp's own UI need a way back into the app.
@@ -1319,8 +1326,8 @@ void MainWindow::toggleMute(const bool &checked) {
   // Mute every account, not just the visible one — a background account's call
   // tone or notification sound should go quiet too.
   for (const Account &account : m_accounts)
-    if (account.view && account.view->page())
-      account.view->page()->setAudioMuted(checked);
+    if (pageOf(account))
+      pageOf(account)->setAudioMuted(checked);
 
   SettingsManager::instance().settings().setValue("muteAudio", checked);
   // Keep the tray action and the Settings checkbox showing the same state,

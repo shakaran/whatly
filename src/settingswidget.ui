@@ -540,6 +540,16 @@ background:transparent;
               </property>
              </widget>
             </item>
+            <item row="51" column="0">
+             <widget class="QCheckBox" name="minimizeOnlyFocusedWindowCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Off by default, so &amp;quot;Minimise to tray&amp;quot; puts the whole app away: with several windows open, leaving the others on screen while the tray reports Whatly as away is the same confusion as one window being treated as the real one. Tick this to have it put away only the window you are in. Follows whatever key &amp;quot;Minimise to tray&amp;quot; is bound to.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Ctrl+W hides only the last focused window.</string>
+              </property>
+             </widget>
+            </item>
             <item row="4" column="0">
              <widget class="QCheckBox" name="minimizeOnTrayIconClick">
               <property name="text">
@@ -1565,7 +1575,7 @@ background:transparent;
        <item>
         <widget class="QGroupBox" name="groupBoxPerformance">
          <property name="title">
-          <string>Performance &amp; Privacy (requires restart)</string>
+          <string>Performance (requires restart)</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayoutPerformance">
           <item>
@@ -2049,10 +2059,10 @@ background:transparent;
             <item>
              <widget class="QCheckBox" name="suspendInactiveAccountsCheckBox">
               <property name="toolTip">
-               <string>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</string>
+               <string>Free memory by unloading accounts you are not viewing. An unloaded account does not receive messages, and reloads to where it was when you switch back to it. Single-account setups are unaffected.</string>
               </property>
               <property name="text">
-               <string>Suspend inactive accounts</string>
+               <string>Unload inactive accounts from memory</string>
               </property>
              </widget>
             </item>

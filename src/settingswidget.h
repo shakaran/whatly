@@ -78,6 +78,13 @@ public slots:
 protected slots:
   bool eventFilter(QObject *obj, QEvent *event);
   void closeEvent(QCloseEvent *event);
+  void resizeEvent(QResizeEvent *event) override;
+  // Long tooltips arrive from the .ui as a single line, and Qt does not wrap
+  // plain-text tooltips — so a sentence-long one stretches across the whole
+  // screen. Re-wrap them to about two thirds of this window's width. That is also
+  // what stops them being clipped: a tooltip that narrow no longer reaches the
+  // screen edge for Qt to have to shove back on-screen.
+  void wrapLongTooltips();
   void keyPressEvent(QKeyEvent *e);
 private slots:
   QString cachePath();
@@ -96,6 +103,7 @@ private slots:
   void on_defaultUserAgentButton_clicked();
   void on_identifyInLinkedDevicesCheckBox_toggled(bool checked);
   void on_minimizeOnTrayIconClick_toggled(bool checked);
+  void on_minimizeOnlyFocusedWindowCheckBox_toggled(bool checked);
   void on_muteAudioCheckBox_toggled(bool checked);
   void on_dismissEmojiPanelCheckBox_toggled(bool checked);
   void on_languageComboBox_currentIndexChanged(int index);

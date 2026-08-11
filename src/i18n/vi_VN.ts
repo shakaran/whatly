@@ -1059,6 +1059,11 @@ Mở Cài đặt ngay bây giờ?</translation>
         <translation>cuộc trò chuyện</translation>
     </message>
     <message>
+        <location filename="../mainwindow_accounts.cpp" line="1140"/>
+        <source>chats</source>
+        <translation>cuộc trò chuyện</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_webengine.cpp" line="1519"/>
         <source>Could not create the export folder.</source>
         <translation>Không thể tạo thư mục xuất.</translation>
