@@ -35,6 +35,11 @@ QString parseChatResponse(const QByteArray &json, QString *error);
 QString summarizeSystemPrompt();
 QString improveSystemPrompt();
 QString suggestReplySystemPrompt();
+// One-click tone rewrites of the composer draft: more formal, friendlier, or
+// shorter. Each keeps the meaning and language and returns only the new text.
+QString rewriteFormalSystemPrompt();
+QString rewriteFriendlySystemPrompt();
+QString rewriteShorterSystemPrompt();
 // System prompt for the "unread digest": triage the unread chats into a short,
 // prioritised summary in the conversation's language.
 QString unreadDigestSystemPrompt();

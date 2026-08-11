@@ -16,6 +16,7 @@
 
 #include "shortcuts.h"
 #include "chatnav.h"
+#include "aiassistant.h"
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QPalette>
@@ -198,6 +199,25 @@ void MainWindow::createActions() {
           &MainWindow::aiSuggestReply);
   addAction(m_aiSuggestAction);
 
+  // One-click tone rewrites of the composer draft (idea #5).
+  m_aiFormalAction = new QAction(tr("AI: Make it more formal"), this);
+  m_aiFormalAction->setIcon(QIcon::fromTheme(QStringLiteral("format-text-bold")));
+  connect(m_aiFormalAction, &QAction::triggered, this,
+          [this]() { aiRewrite(Ai::rewriteFormalSystemPrompt()); });
+  addAction(m_aiFormalAction);
+
+  m_aiFriendlyAction = new QAction(tr("AI: Make it friendlier"), this);
+  m_aiFriendlyAction->setIcon(QIcon::fromTheme(QStringLiteral("face-smile")));
+  connect(m_aiFriendlyAction, &QAction::triggered, this,
+          [this]() { aiRewrite(Ai::rewriteFriendlySystemPrompt()); });
+  addAction(m_aiFriendlyAction);
+
+  m_aiShorterAction = new QAction(tr("AI: Make it shorter"), this);
+  m_aiShorterAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-cut")));
+  connect(m_aiShorterAction, &QAction::triggered, this,
+          [this]() { aiRewrite(Ai::rewriteShorterSystemPrompt()); });
+  addAction(m_aiShorterAction);
+
   m_aiUnreadDigestAction = new QAction(tr("AI: Summarise unread chats"), this);
   m_aiUnreadDigestAction->setIcon(
       QIcon::fromTheme(QStringLiteral("mail-mark-unread")));
@@ -230,6 +250,28 @@ void MainWindow::createActions() {
 
   // Reflect any manual DND still in force from a previous run.
   refreshDndUi();
+
+  // Reply reminders: snooze the open chat, resurfacing it at a chosen time.
+  m_remind1hAction = new QAction(tr("Remind me to reply: in 1 hour"), this);
+  m_remind1hAction->setIcon(QIcon::fromTheme(QStringLiteral("appointment-soon")));
+  connect(m_remind1hAction, &QAction::triggered, this, [this]() {
+    scheduleChatReminder(QDateTime::currentDateTime().addSecs(60 * 60));
+  });
+  addAction(m_remind1hAction);
+
+  m_remind3hAction = new QAction(tr("Remind me to reply: in 3 hours"), this);
+  connect(m_remind3hAction, &QAction::triggered, this, [this]() {
+    scheduleChatReminder(QDateTime::currentDateTime().addSecs(3 * 60 * 60));
+  });
+  addAction(m_remind3hAction);
+
+  m_remindTomorrowAction =
+      new QAction(tr("Remind me to reply: tomorrow morning"), this);
+  connect(m_remindTomorrowAction, &QAction::triggered, this, [this]() {
+    scheduleChatReminder(
+        QDateTime(QDate::currentDate().addDays(1), QTime(9, 0)));
+  });
+  addAction(m_remindTomorrowAction);
 
   m_toggleThemeAction = new QAction(tr("&Toggle theme"), this);
   m_toggleThemeAction->setShortcut(
@@ -323,10 +365,17 @@ void MainWindow::createActions() {
       {m_aiSuggestAction, "aiSuggest", tr("AI: Suggest a reply")},
       {m_aiUnreadDigestAction, "aiUnreadDigest",
        tr("AI: Summarise unread chats")},
+      {m_aiFormalAction, "aiFormal", tr("AI: Make it more formal")},
+      {m_aiFriendlyAction, "aiFriendly", tr("AI: Make it friendlier")},
+      {m_aiShorterAction, "aiShorter", tr("AI: Make it shorter")},
       {m_dndAction, "dnd", tr("Do Not Disturb")},
       {m_dnd1hAction, "dnd1h", tr("Do Not Disturb: 1 hour")},
       {m_dnd2hAction, "dnd2h", tr("Do Not Disturb: 2 hours")},
       {m_dndMorningAction, "dndMorning", tr("Do Not Disturb: until morning")},
+      {m_remind1hAction, "remind1h", tr("Remind me to reply: in 1 hour")},
+      {m_remind3hAction, "remind3h", tr("Remind me to reply: in 3 hours")},
+      {m_remindTomorrowAction, "remindTomorrow",
+       tr("Remind me to reply: tomorrow morning")},
       {m_settingsAction, "settings", tr("Settings")},
       {m_toggleThemeAction, "toggleTheme", tr("Toggle theme")},
       {m_viewGridAction, "gridView", tr("Grid view")},

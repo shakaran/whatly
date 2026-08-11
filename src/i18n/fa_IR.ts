@@ -93,27 +93,27 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AiClient</name>
     <message>
-        <location filename="../aiassistant.cpp" line="222"/>
+        <location filename="../aiassistant.cpp" line="241"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
         <translation>هیچ نقطه پایانی هوش مصنوعی پیکربندی نشده است (تنظیمات ← دستیار هوش مصنوعی).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="226"/>
+        <location filename="../aiassistant.cpp" line="245"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
         <translation>هیچ مدل هوش مصنوعی پیکربندی نشده است (تنظیمات ← دستیار هوش مصنوعی).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="230"/>
+        <location filename="../aiassistant.cpp" line="249"/>
         <source>There is nothing to send to the assistant.</source>
         <translation>چیزی برای ارسال به دستیار وجود ندارد.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="270"/>
+        <location filename="../aiassistant.cpp" line="289"/>
         <source>The assistant took too long and was cancelled.</source>
         <translation>دستیار زمان زیادی طول کشید و لغو شد.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="273"/>
+        <location filename="../aiassistant.cpp" line="292"/>
         <source>The assistant request failed.</source>
         <translation>درخواست دستیار ناموفق بود.</translation>
     </message>
@@ -589,8 +589,8 @@ Do you wish to override the security check and continue ?   </source>
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.cpp" line="116"/>
-        <location filename="../mainwindow.cpp" line="1147"/>
-        <location filename="../mainwindow.cpp" line="1243"/>
+        <location filename="../mainwindow.cpp" line="1152"/>
+        <location filename="../mainwindow.cpp" line="1248"/>
         <source>No WhatsApp window is open</source>
         <translation>هیچ پنجره WhatsApp باز نیست</translation>
     </message>
@@ -605,194 +605,194 @@ Do you wish to override the security check and continue ?   </source>
         <translation>یادآوری: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="205"/>
+        <location filename="../mainwindow.cpp" line="210"/>
         <source>Update available</source>
         <translation>به‌روزرسانی موجود است</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="206"/>
+        <location filename="../mainwindow.cpp" line="211"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Whatly %1 در دسترس است. برای باز کردن صفحه دانلود کلیک کنید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="881"/>
-        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="886"/>
+        <location filename="../mainwindow.cpp" line="892"/>
         <location filename="../mainwindow_webengine.cpp" line="964"/>
         <location filename="../mainwindow_webengine.cpp" line="967"/>
         <source>| Error</source>
         <translation>| خطا</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="882"/>
+        <location filename="../mainwindow.cpp" line="887"/>
         <source>Unlock to access Settings.</source>
         <translation>برای دسترسی به تنظیمات، قفل را باز کنید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="888"/>
+        <location filename="../mainwindow.cpp" line="893"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>امکان مقداردهی اولیه ماژول تنظیمات وجود ندارد.
 WebEngine مقداردهی اولیه نشده است.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="909"/>
+        <location filename="../mainwindow.cpp" line="914"/>
         <source> | Action required</source>
         <translation> | نیاز به اقدام</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="910"/>
+        <location filename="../mainwindow.cpp" line="915"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>برای ادامه باید صفحه دوباره بارگذاری شود.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1089"/>
-        <location filename="../mainwindow.cpp" line="1650"/>
+        <location filename="../mainwindow.cpp" line="1094"/>
+        <location filename="../mainwindow.cpp" line="1655"/>
         <location filename="../mainwindow_webengine.cpp" line="1645"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly قفل است. برای ارسال پیام آن را باز کنید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1100"/>
+        <location filename="../mainwindow.cpp" line="1105"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>Cloud API به یک شماره تلفن به‌عنوان گیرنده نیاز دارد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1105"/>
+        <location filename="../mainwindow.cpp" line="1110"/>
         <source>The Cloud API is not configured.</source>
         <translation>Cloud API پیکربندی نشده است.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1114"/>
+        <location filename="../mainwindow.cpp" line="1119"/>
         <source>Cloud API send failed: %1</source>
         <translation>ارسال Cloud API ناموفق بود: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1139"/>
+        <location filename="../mainwindow.cpp" line="1144"/>
         <source>Could not understand the recipient: %1</source>
         <translation>گیرنده قابل تشخیص نبود: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1168"/>
-        <location filename="../mainwindow.cpp" line="1249"/>
+        <location filename="../mainwindow.cpp" line="1173"/>
+        <location filename="../mainwindow.cpp" line="1254"/>
         <source>Could not read the file to send: %1</source>
         <translation>فایل برای ارسال قابل خواندن نبود: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1177"/>
-        <location filename="../mainwindow.cpp" line="1259"/>
+        <location filename="../mainwindow.cpp" line="1182"/>
+        <location filename="../mainwindow.cpp" line="1264"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>فایل برای ارسال از طریق بک‌اند وب بیش از حد بزرگ است.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1202"/>
+        <location filename="../mainwindow.cpp" line="1207"/>
         <source>Opening the group and sending…</source>
         <translation>در حال باز کردن گروه و ارسال…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1203"/>
+        <location filename="../mainwindow.cpp" line="1208"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>در حال باز کردن گفتگو با «%1» و ارسال…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1234"/>
+        <location filename="../mainwindow.cpp" line="1239"/>
         <source>The local API could not start: %1</source>
         <translation>API محلی راه‌اندازی نشد: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1378"/>
+        <location filename="../mainwindow.cpp" line="1383"/>
         <source>Restart</source>
         <translation>راه‌اندازی مجدد</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1379"/>
+        <location filename="../mainwindow.cpp" line="1384"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly نتوانست نمونه جدیدی را راه‌اندازی کند، بنابراین این نمونه بسته نشد. لطفاً آن را ببندید و دوباره باز کنید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1505"/>
+        <location filename="../mainwindow.cpp" line="1510"/>
         <source>Expand the chat list</source>
         <translation>گسترش فهرست گفتگوها</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1506"/>
-        <location filename="../mainwindow_tray.cpp" line="314"/>
+        <location filename="../mainwindow.cpp" line="1511"/>
+        <location filename="../mainwindow_tray.cpp" line="356"/>
         <source>Collapse the chat list</source>
         <translation>جمع کردن فهرست گفتگوها</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1626"/>
+        <location filename="../mainwindow.cpp" line="1631"/>
         <source>Open</source>
         <translation>باز کردن</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1672"/>
-        <location filename="../mainwindow_tray.cpp" line="26"/>
+        <location filename="../mainwindow.cpp" line="1677"/>
+        <location filename="../mainwindow_tray.cpp" line="27"/>
         <source>New Chat</source>
         <translation>گفتگوی جدید</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1673"/>
+        <location filename="../mainwindow.cpp" line="1678"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>یک شماره WhatsApp معتبر همراه با کد کشور وارد کنید (مثلاً +91XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1703"/>
+        <location filename="../mainwindow.cpp" line="1708"/>
         <source>Rate Application</source>
         <translation>امتیاز دادن به برنامه</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="309"/>
-        <location filename="../mainwindow_accounts.cpp" line="1575"/>
+        <location filename="../mainwindow_accounts.cpp" line="1579"/>
         <source>Rename…</source>
         <translation>تغییر نام…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="310"/>
-        <location filename="../mainwindow_accounts.cpp" line="1576"/>
+        <location filename="../mainwindow_accounts.cpp" line="1580"/>
         <source>Open in own window</source>
         <translation>باز کردن در پنجره مستقل</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="314"/>
-        <location filename="../mainwindow_accounts.cpp" line="1579"/>
+        <location filename="../mainwindow_accounts.cpp" line="1583"/>
         <source>Remove account</source>
         <translation>حذف حساب</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="396"/>
+        <location filename="../mainwindow_accounts.cpp" line="398"/>
         <source>Switch to account: %1</source>
         <translation>تغییر به حساب: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="399"/>
-        <location filename="../mainwindow_tray.cpp" line="265"/>
+        <location filename="../mainwindow_accounts.cpp" line="401"/>
+        <location filename="../mainwindow_tray.cpp" line="307"/>
         <source>Add account…</source>
         <translation>افزودن حساب…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="400"/>
+        <location filename="../mainwindow_accounts.cpp" line="402"/>
         <source>Quick message…</source>
         <translation>پیام سریع…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="405"/>
+        <location filename="../mainwindow_accounts.cpp" line="407"/>
         <source>Insert: %1</source>
         <translation>درج: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="713"/>
+        <location filename="../mainwindow_accounts.cpp" line="715"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 خوانده‌نشده</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1342"/>
-        <location filename="../mainwindow_accounts.cpp" line="1972"/>
+        <location filename="../mainwindow_accounts.cpp" line="1346"/>
+        <location filename="../mainwindow_accounts.cpp" line="1976"/>
         <source>Add another account</source>
         <translation>افزودن حساب دیگر</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1371"/>
-        <location filename="../mainwindow_accounts.cpp" line="1376"/>
+        <location filename="../mainwindow_accounts.cpp" line="1375"/>
+        <location filename="../mainwindow_accounts.cpp" line="1380"/>
         <source>Restore</source>
         <translation>بازگردانی</translation>
     </message>
@@ -805,39 +805,39 @@ WebEngine مقداردهی اولیه نشده است.</translation>
         <translation type="vanished">پیام</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1421"/>
+        <location filename="../mainwindow_accounts.cpp" line="1425"/>
         <source>Add account</source>
         <translation>افزودن حساب</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1422"/>
+        <location filename="../mainwindow_accounts.cpp" line="1426"/>
         <source>Name for the new account:</source>
         <translation>نام برای حساب جدید:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1423"/>
-        <location filename="../mainwindow_accounts.cpp" line="2310"/>
-        <location filename="../mainwindow_accounts.cpp" line="2315"/>
+        <location filename="../mainwindow_accounts.cpp" line="1427"/>
+        <location filename="../mainwindow_accounts.cpp" line="2314"/>
+        <location filename="../mainwindow_accounts.cpp" line="2319"/>
         <source>Account %1</source>
         <translation>حساب %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1452"/>
+        <location filename="../mainwindow_accounts.cpp" line="1456"/>
         <source>Rename account</source>
         <translation>تغییر نام حساب</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1452"/>
+        <location filename="../mainwindow_accounts.cpp" line="1456"/>
         <source>Account name:</source>
         <translation>نام حساب:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1991"/>
+        <location filename="../mainwindow_accounts.cpp" line="1995"/>
         <source>Tip: give an account its own window</source>
         <translation>نکته: به هر حساب پنجره مستقل خودش را بدهید</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1992"/>
+        <location filename="../mainwindow_accounts.cpp" line="1996"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -846,8 +846,8 @@ You can pull any account out into its own window: right-click its tab and choose
 می‌توانید هر حساب را به پنجره مستقل خودش بکشید: روی زبانه آن راست‌کلیک کرده و «باز کردن در پنجره مستقل» را انتخاب کنید. برای اتصال دوباره حساب به‌عنوان زبانه، آن پنجره را ببندید.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2304"/>
         <location filename="../mainwindow_accounts.cpp" line="2308"/>
+        <location filename="../mainwindow_accounts.cpp" line="2312"/>
         <source>Account 1</source>
         <translation>حساب 1</translation>
     </message>
@@ -863,196 +863,232 @@ Open Settings now?</source>
 اکنون تنظیمات باز شود؟</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="31"/>
-        <location filename="../mainwindow_tray.cpp" line="309"/>
+        <location filename="../mainwindow_tray.cpp" line="32"/>
+        <location filename="../mainwindow_tray.cpp" line="351"/>
         <source>Fullscreen</source>
         <translation>تمام‌صفحه</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="37"/>
+        <location filename="../mainwindow_tray.cpp" line="38"/>
         <source>Mi&amp;nimize to tray</source>
         <translation>&amp;کوچک کردن به سینی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="75"/>
+        <location filename="../mainwindow_tray.cpp" line="76"/>
         <source>&amp;Restore</source>
         <translation>&amp;بازگردانی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="82"/>
+        <location filename="../mainwindow_tray.cpp" line="83"/>
         <source>Re&amp;load</source>
         <translation>&amp;بارگذاری مجدد</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="88"/>
+        <location filename="../mainwindow_tray.cpp" line="89"/>
         <source>Loc&amp;k</source>
         <translation>&amp;قفل</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="93"/>
+        <location filename="../mainwindow_tray.cpp" line="94"/>
         <source>&amp;Mute audio</source>
         <translation>&amp;بی‌صدا کردن صدا</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="102"/>
+        <location filename="../mainwindow_tray.cpp" line="103"/>
         <source>Zoom in</source>
         <translation>بزرگ‌نمایی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="108"/>
+        <location filename="../mainwindow_tray.cpp" line="109"/>
         <source>Zoom out</source>
         <translation>کوچک‌نمایی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="113"/>
-        <location filename="../mainwindow_tray.cpp" line="311"/>
+        <location filename="../mainwindow_tray.cpp" line="114"/>
+        <location filename="../mainwindow_tray.cpp" line="353"/>
         <source>Reset zoom</source>
         <translation>بازنشانی بزرگ‌نمایی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="133"/>
+        <location filename="../mainwindow_tray.cpp" line="134"/>
         <source>&amp;Find in chats</source>
         <translation>&amp;جستجو در گفتگوها</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="142"/>
+        <location filename="../mainwindow_tray.cpp" line="143"/>
         <source>&amp;Settings</source>
         <translation>&amp;تنظیمات</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="148"/>
+        <location filename="../mainwindow_tray.cpp" line="149"/>
         <source>Scheduled &amp;messages…</source>
         <translation>پیام‌های &amp;زمان‌بندی‌شده…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="155"/>
-        <location filename="../mainwindow_tray.cpp" line="317"/>
+        <location filename="../mainwindow_tray.cpp" line="156"/>
+        <location filename="../mainwindow_tray.cpp" line="359"/>
         <source>Translate selection</source>
         <translation>ترجمه متن انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="162"/>
-        <location filename="../mainwindow_tray.cpp" line="319"/>
+        <location filename="../mainwindow_tray.cpp" line="163"/>
+        <location filename="../mainwindow_tray.cpp" line="361"/>
         <source>Translate message box</source>
         <translation>ترجمه کادر پیام</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="171"/>
+        <location filename="../mainwindow_tray.cpp" line="172"/>
         <source>Export chat…</source>
         <translation>خروجی گرفتن از گفتگو…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="180"/>
-        <location filename="../mainwindow_tray.cpp" line="321"/>
+        <location filename="../mainwindow_tray.cpp" line="181"/>
+        <location filename="../mainwindow_tray.cpp" line="363"/>
         <source>AI: Summarise chat</source>
         <translation>هوش مصنوعی: خلاصه‌سازی گفتگو</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="187"/>
-        <location filename="../mainwindow_tray.cpp" line="322"/>
+        <location filename="../mainwindow_tray.cpp" line="188"/>
+        <location filename="../mainwindow_tray.cpp" line="364"/>
         <source>AI: Improve message</source>
         <translation>هوش مصنوعی: بهبود پیام</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="194"/>
-        <location filename="../mainwindow_tray.cpp" line="323"/>
+        <location filename="../mainwindow_tray.cpp" line="195"/>
+        <location filename="../mainwindow_tray.cpp" line="365"/>
         <source>AI: Suggest a reply</source>
         <translation>هوش مصنوعی: پیشنهاد پاسخ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="201"/>
-        <location filename="../mainwindow_tray.cpp" line="325"/>
+        <location filename="../mainwindow_tray.cpp" line="203"/>
+        <location filename="../mainwindow_tray.cpp" line="368"/>
+        <source>AI: Make it more formal</source>
+        <translation>هوش مصنوعی: رسمی‌ترش کن</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="209"/>
+        <location filename="../mainwindow_tray.cpp" line="369"/>
+        <source>AI: Make it friendlier</source>
+        <translation>هوش مصنوعی: صمیمی‌ترش کن</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="215"/>
+        <location filename="../mainwindow_tray.cpp" line="370"/>
+        <source>AI: Make it shorter</source>
+        <translation>هوش مصنوعی: کوتاه‌ترش کن</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="221"/>
+        <location filename="../mainwindow_tray.cpp" line="367"/>
         <source>AI: Summarise unread chats</source>
         <translation>هوش مصنوعی: خلاصهٔ گفتگوهای خوانده‌نشده</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="210"/>
-        <location filename="../mainwindow_tray.cpp" line="326"/>
+        <location filename="../mainwindow_tray.cpp" line="230"/>
+        <location filename="../mainwindow_tray.cpp" line="371"/>
         <source>Do Not Disturb</source>
         <translation type="unfinished">مزاحم نشوید</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="216"/>
-        <location filename="../mainwindow_tray.cpp" line="327"/>
+        <location filename="../mainwindow_tray.cpp" line="236"/>
+        <location filename="../mainwindow_tray.cpp" line="372"/>
         <source>Do Not Disturb: 1 hour</source>
         <translation>مزاحم نشوید: ۱ ساعت</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="221"/>
-        <location filename="../mainwindow_tray.cpp" line="328"/>
+        <location filename="../mainwindow_tray.cpp" line="241"/>
+        <location filename="../mainwindow_tray.cpp" line="373"/>
         <source>Do Not Disturb: 2 hours</source>
         <translation>مزاحم نشوید: ۲ ساعت</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="226"/>
-        <location filename="../mainwindow_tray.cpp" line="329"/>
+        <location filename="../mainwindow_tray.cpp" line="246"/>
+        <location filename="../mainwindow_tray.cpp" line="374"/>
         <source>Do Not Disturb: until morning</source>
         <translation>مزاحم نشوید: تا صبح</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="234"/>
+        <location filename="../mainwindow_tray.cpp" line="255"/>
+        <location filename="../mainwindow_tray.cpp" line="375"/>
+        <source>Remind me to reply: in 1 hour</source>
+        <translation>یادآوری پاسخ: تا ۱ ساعت دیگر</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="262"/>
+        <location filename="../mainwindow_tray.cpp" line="376"/>
+        <source>Remind me to reply: in 3 hours</source>
+        <translation>یادآوری پاسخ: تا ۳ ساعت دیگر</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="269"/>
+        <location filename="../mainwindow_tray.cpp" line="378"/>
+        <source>Remind me to reply: tomorrow morning</source>
+        <translation>یادآوری پاسخ: فردا صبح</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="276"/>
         <source>&amp;Toggle theme</source>
         <translation>&amp;تغییر پوسته</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="245"/>
+        <location filename="../mainwindow_tray.cpp" line="287"/>
         <source>Tabbed view</source>
         <translation>نمای زبانه‌ای</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="252"/>
-        <location filename="../mainwindow_tray.cpp" line="332"/>
+        <location filename="../mainwindow_tray.cpp" line="294"/>
+        <location filename="../mainwindow_tray.cpp" line="381"/>
         <source>Grid view</source>
         <translation>نمای شبکه‌ای</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="274"/>
-        <location filename="../mainwindow_tray.cpp" line="333"/>
+        <location filename="../mainwindow_tray.cpp" line="316"/>
+        <location filename="../mainwindow_tray.cpp" line="382"/>
         <source>Command palette</source>
         <translation>پالت فرمان</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="283"/>
+        <location filename="../mainwindow_tray.cpp" line="325"/>
         <source>&amp;About</source>
         <translation>&amp;درباره</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="292"/>
+        <location filename="../mainwindow_tray.cpp" line="334"/>
         <source>&amp;Quit</source>
         <translation>&amp;خروج</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="305"/>
+        <location filename="../mainwindow_tray.cpp" line="347"/>
         <source>Reload</source>
         <translation>بارگذاری مجدد</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="306"/>
+        <location filename="../mainwindow_tray.cpp" line="348"/>
         <source>Minimise to tray</source>
         <translation>کوچک کردن به سینی</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="307"/>
+        <location filename="../mainwindow_tray.cpp" line="349"/>
         <source>Lock</source>
         <translation>قفل</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="308"/>
+        <location filename="../mainwindow_tray.cpp" line="350"/>
         <source>Mute audio</source>
         <translation>بی‌صدا کردن صدا</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="310"/>
+        <location filename="../mainwindow_tray.cpp" line="352"/>
         <source>New chat / open URL</source>
         <translation>گفتگوی جدید / باز کردن URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="315"/>
+        <location filename="../mainwindow_tray.cpp" line="357"/>
         <source>Find in chats</source>
         <translation>جستجو در گفتگوها</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="320"/>
+        <location filename="../mainwindow_tray.cpp" line="362"/>
         <location filename="../mainwindow_webengine.cpp" line="1474"/>
         <location filename="../mainwindow_webengine.cpp" line="1478"/>
         <location filename="../mainwindow_webengine.cpp" line="1491"/>
@@ -1064,37 +1100,37 @@ Open Settings now?</source>
         <translation>خروجی گرفتن از گفتگو</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="330"/>
+        <location filename="../mainwindow_tray.cpp" line="379"/>
         <source>Settings</source>
         <translation>تنظیمات</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="331"/>
+        <location filename="../mainwindow_tray.cpp" line="380"/>
         <source>Toggle theme</source>
         <translation>تغییر پوسته</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="334"/>
+        <location filename="../mainwindow_tray.cpp" line="383"/>
         <source>Quit</source>
         <translation>خروج</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="357"/>
+        <location filename="../mainwindow_tray.cpp" line="406"/>
         <source>Windows</source>
         <translation>پنجره‌ها</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="362"/>
+        <location filename="../mainwindow_tray.cpp" line="411"/>
         <source>Recent unread</source>
         <translation>خوانده‌نشده‌های اخیر</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="527"/>
+        <location filename="../mainwindow_tray.cpp" line="576"/>
         <source>hidden</source>
         <translation>پنهان</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="529"/>
+        <location filename="../mainwindow_tray.cpp" line="578"/>
         <source>minimised</source>
         <translation>کوچک‌شده</translation>
     </message>
@@ -1179,39 +1215,54 @@ Open Settings now?</source>
         <translation>گفتگو قابل خواندن نبود: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1883"/>
+        <location filename="../mainwindow_webengine.cpp" line="1889"/>
         <source>Do Not Disturb on.</source>
         <translation>مزاحم نشوید روشن شد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1883"/>
+        <location filename="../mainwindow_webengine.cpp" line="1889"/>
         <source>Do Not Disturb off.</source>
         <translation>مزاحم نشوید خاموش شد.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1891"/>
-        <location filename="../mainwindow_webengine.cpp" line="1907"/>
+        <location filename="../mainwindow_webengine.cpp" line="1897"/>
+        <location filename="../mainwindow_webengine.cpp" line="1913"/>
         <source>Do Not Disturb on until %1.</source>
         <translation>مزاحم نشوید تا %1 روشن است.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1922"/>
+        <location filename="../mainwindow_webengine.cpp" line="1924"/>
+        <source>Open a chat to set a reply reminder.</source>
+        <translation>برای تنظیم یادآور پاسخ، یک گفتگو باز کنید.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1930"/>
+        <source>Time to reply to this chat.</source>
+        <translation>وقت پاسخ به این گفتگوست.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1933"/>
+        <source>Reply reminder set for %1.</source>
+        <translation>یادآور پاسخ برای %1 تنظیم شد.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1949"/>
         <source>No unread chats to summarise.</source>
         <translation>گفتگوی خوانده‌نشده‌ای برای خلاصه‌سازی نیست.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1927"/>
+        <location filename="../mainwindow_webengine.cpp" line="1954"/>
         <source>Unread digest</source>
         <translation>خلاصهٔ خوانده‌نشده‌ها</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1372"/>
+        <location filename="../mainwindow_accounts.cpp" line="1376"/>
         <location filename="../mainwindow_webengine.cpp" line="1566"/>
         <source>chat</source>
         <translation>گفتگو</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1372"/>
+        <location filename="../mainwindow_accounts.cpp" line="1376"/>
         <source>chats</source>
         <translation>گفتگوها</translation>
     </message>

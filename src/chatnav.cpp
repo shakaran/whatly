@@ -90,6 +90,19 @@ QString unreadDigestScript(int limit) {
 )JS").arg(limit);
 }
 
+QString currentChatNameScript() {
+  return QStringLiteral(R"JS(
+(function(){
+  var main = document.querySelector('#main');
+  if (!main) return '';
+  var header = main.querySelector('header');
+  if (!header) return '';
+  var el = header.querySelector('span[title]');
+  return el ? (el.getAttribute('title') || '') : '';
+})()
+)JS");
+}
+
 QString openChatByNameScript(const QString &name) {
   return QStringLiteral(R"JS(
 (function(){

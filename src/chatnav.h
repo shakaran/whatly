@@ -41,6 +41,11 @@ QString unreadDigestScript(int limit);
 // nothing about muting and the archived pile is not in that list at all.
 QString unreadSummaryScript(bool includeMuted, bool includeArchived);
 
+// JS returning the title of the currently open conversation (the name in the
+// #main header), or "" when no chat is open. Used to attach a reply reminder to
+// the chat you are looking at (idea: snooze a chat).
+QString currentChatNameScript();
+
 // JS that opens the chat whose row title matches `name` exactly, by dispatching
 // the pointer/mouse sequence WhatsApp Web's list rows react to (a plain click is
 // ignored). Returns "ok" / "not-found" / "no-pane". The name is JSON-escaped, so

@@ -379,8 +379,10 @@ void MainWindow::showCommandPalette() {
       m_translateSelectionAction, m_translateComposerAction,
       m_exportChatAction, m_aiSummarizeAction, m_aiImproveAction,
       m_aiSuggestAction,   m_aiUnreadDigestAction,
+      m_aiFormalAction,    m_aiFriendlyAction, m_aiShorterAction,
       m_dndAction,         m_dnd1hAction,     m_dnd2hAction,
       m_dndMorningAction,
+      m_remind1hAction,    m_remind3hAction,  m_remindTomorrowAction,
       m_viewTabsAction,    m_viewGridAction,  m_quitAction};
   for (QAction *a : actions) {
     if (!a)
@@ -785,9 +787,11 @@ WebView *MainWindow::addAccount(const QString &id, const QString &name,
   // need no shortcut or command palette. Composer actions appear in the message
   // box, selection actions when text is selected, chat actions always.
   view->setContextActions(
-      {m_aiImproveAction, m_aiSuggestAction, m_translateComposerAction},
+      {m_aiImproveAction, m_aiFormalAction, m_aiFriendlyAction,
+       m_aiShorterAction, m_aiSuggestAction, m_translateComposerAction},
       {m_translateSelectionAction},
-      {m_aiSummarizeAction, m_aiUnreadDigestAction, m_exportChatAction});
+      {m_aiSummarizeAction, m_aiUnreadDigestAction, m_remind1hAction,
+       m_remind3hAction, m_remindTomorrowAction, m_exportChatAction});
 
   // Watched so that whatever eventually puts this view on screen — a tab switch,
   // grid mode, a detached window — builds the account first. See eventFilter().

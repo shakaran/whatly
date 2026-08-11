@@ -2312,6 +2312,12 @@ private slots:
     QVERIFY(js.contains(QLatin1String(">= 6"))); // the limit was substituted
     QVERIFY(!ChatNav::unreadChatsScript(0).isEmpty()); // clamped, still valid
   }
+  void currentChatNameScript() {
+    const QString js = ChatNav::currentChatNameScript();
+    QVERIFY(js.contains(QLatin1String("#main")));   // reads the open conversation
+    QVERIFY(js.contains(QLatin1String("header")));
+    QVERIFY(js.contains(QLatin1String("span[title]")));
+  }
   void unreadDigestScript() {
     const QString js = ChatNav::unreadDigestScript(20);
     QVERIFY(js.contains(QLatin1String("#pane-side")));
@@ -2812,6 +2818,9 @@ private slots:
     QVERIFY(!Ai::improveSystemPrompt().isEmpty());
     QVERIFY(!Ai::suggestReplySystemPrompt().isEmpty());
     QVERIFY(!Ai::unreadDigestSystemPrompt().isEmpty());
+    QVERIFY(!Ai::rewriteFormalSystemPrompt().isEmpty());
+    QVERIFY(!Ai::rewriteFriendlySystemPrompt().isEmpty());
+    QVERIFY(!Ai::rewriteShorterSystemPrompt().isEmpty());
     const QString js = Ai::readContextScript(50);
     QVERIFY(js.contains(QLatin1String("data-pre-plain-text")));
     QVERIFY(js.contains(QLatin1String("selectable-text")));

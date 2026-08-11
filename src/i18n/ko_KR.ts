@@ -93,27 +93,27 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>AiClient</name>
     <message>
-        <location filename="../aiassistant.cpp" line="222"/>
+        <location filename="../aiassistant.cpp" line="241"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
         <translation>AI 엔드포인트가 구성되지 않았습니다 (설정 → AI 어시스턴트).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="226"/>
+        <location filename="../aiassistant.cpp" line="245"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
         <translation>AI 모델이 구성되지 않았습니다 (설정 → AI 어시스턴트).</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="230"/>
+        <location filename="../aiassistant.cpp" line="249"/>
         <source>There is nothing to send to the assistant.</source>
         <translation>어시스턴트에게 보낼 내용이 없습니다.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="270"/>
+        <location filename="../aiassistant.cpp" line="289"/>
         <source>The assistant took too long and was cancelled.</source>
         <translation>어시스턴트 응답이 너무 오래 걸려 취소되었습니다.</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="273"/>
+        <location filename="../aiassistant.cpp" line="292"/>
         <source>The assistant request failed.</source>
         <translation>어시스턴트 요청에 실패했습니다.</translation>
     </message>
@@ -588,7 +588,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="362"/>
+        <location filename="../mainwindow_tray.cpp" line="411"/>
         <source>Recent unread</source>
         <translation>최근 안 읽음</translation>
     </message>
@@ -668,39 +668,54 @@ Do you wish to override the security check and continue ?   </source>
         <translation>대화를 읽을 수 없습니다: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1883"/>
+        <location filename="../mainwindow_webengine.cpp" line="1889"/>
         <source>Do Not Disturb on.</source>
         <translation>방해 금지 켜짐.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1883"/>
+        <location filename="../mainwindow_webengine.cpp" line="1889"/>
         <source>Do Not Disturb off.</source>
         <translation>방해 금지 꺼짐.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1891"/>
-        <location filename="../mainwindow_webengine.cpp" line="1907"/>
+        <location filename="../mainwindow_webengine.cpp" line="1897"/>
+        <location filename="../mainwindow_webengine.cpp" line="1913"/>
         <source>Do Not Disturb on until %1.</source>
         <translation>방해 금지 켜짐 (%1까지).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1922"/>
+        <location filename="../mainwindow_webengine.cpp" line="1924"/>
+        <source>Open a chat to set a reply reminder.</source>
+        <translation>답장 알림을 설정하려면 채팅을 여세요.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1930"/>
+        <source>Time to reply to this chat.</source>
+        <translation>이 채팅에 답장할 시간입니다.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1933"/>
+        <source>Reply reminder set for %1.</source>
+        <translation>답장 알림을 %1(으)로 설정했습니다.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1949"/>
         <source>No unread chats to summarise.</source>
         <translation>요약할 읽지 않은 채팅이 없습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1927"/>
+        <location filename="../mainwindow_webengine.cpp" line="1954"/>
         <source>Unread digest</source>
         <translation>읽지 않음 요약</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1372"/>
+        <location filename="../mainwindow_accounts.cpp" line="1376"/>
         <location filename="../mainwindow_webengine.cpp" line="1566"/>
         <source>chat</source>
         <translation>채팅</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1372"/>
+        <location filename="../mainwindow_accounts.cpp" line="1376"/>
         <source>chats</source>
         <translation>채팅</translation>
     </message>
@@ -768,43 +783,43 @@ Do you wish to override the security check and continue ?   </source>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="116"/>
-        <location filename="../mainwindow.cpp" line="1147"/>
-        <location filename="../mainwindow.cpp" line="1243"/>
+        <location filename="../mainwindow.cpp" line="1152"/>
+        <location filename="../mainwindow.cpp" line="1248"/>
         <source>No WhatsApp window is open</source>
         <translation>열려 있는 WhatsApp 창이 없습니다</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1139"/>
+        <location filename="../mainwindow.cpp" line="1144"/>
         <source>Could not understand the recipient: %1</source>
         <translation>수신자를 인식할 수 없습니다: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1202"/>
+        <location filename="../mainwindow.cpp" line="1207"/>
         <source>Opening the group and sending…</source>
         <translation>그룹을 열고 전송하는 중…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1234"/>
+        <location filename="../mainwindow.cpp" line="1239"/>
         <source>The local API could not start: %1</source>
         <translation>로컬 API를 시작할 수 없습니다: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1114"/>
+        <location filename="../mainwindow.cpp" line="1119"/>
         <source>Cloud API send failed: %1</source>
         <translation>Cloud API 전송 실패: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1105"/>
+        <location filename="../mainwindow.cpp" line="1110"/>
         <source>The Cloud API is not configured.</source>
         <translation>Cloud API가 구성되지 않았습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1100"/>
+        <location filename="../mainwindow.cpp" line="1105"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>Cloud API에는 수신자로 전화번호가 필요합니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1203"/>
+        <location filename="../mainwindow.cpp" line="1208"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>&quot;%1&quot;와의 채팅을 열고 전송하는 중…</translation>
     </message>
@@ -819,91 +834,91 @@ Do you wish to override the security check and continue ?   </source>
         <translation>알림: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="205"/>
+        <location filename="../mainwindow.cpp" line="210"/>
         <source>Update available</source>
         <translation>업데이트 사용 가능</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="206"/>
+        <location filename="../mainwindow.cpp" line="211"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Whatly %1을(를) 사용할 수 있습니다. 클릭하여 다운로드 페이지를 여세요.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="881"/>
-        <location filename="../mainwindow.cpp" line="887"/>
+        <location filename="../mainwindow.cpp" line="886"/>
+        <location filename="../mainwindow.cpp" line="892"/>
         <location filename="../mainwindow_webengine.cpp" line="964"/>
         <location filename="../mainwindow_webengine.cpp" line="967"/>
         <source>| Error</source>
         <translation>| 오류</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="882"/>
+        <location filename="../mainwindow.cpp" line="887"/>
         <source>Unlock to access Settings.</source>
         <translation>설정에 접근하려면 잠금을 해제하세요.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="888"/>
+        <location filename="../mainwindow.cpp" line="893"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>설정 모듈을 초기화할 수 없습니다.
 WebEngine이 초기화되지 않았습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="909"/>
+        <location filename="../mainwindow.cpp" line="914"/>
         <source> | Action required</source>
         <translation> | 작업 필요</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="910"/>
+        <location filename="../mainwindow.cpp" line="915"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>계속하려면 페이지를 다시 불러와야 합니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1089"/>
-        <location filename="../mainwindow.cpp" line="1650"/>
+        <location filename="../mainwindow.cpp" line="1094"/>
+        <location filename="../mainwindow.cpp" line="1655"/>
         <location filename="../mainwindow_webengine.cpp" line="1645"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly가 잠겨 있습니다. 메시지를 보내려면 잠금을 해제하세요.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1378"/>
+        <location filename="../mainwindow.cpp" line="1383"/>
         <source>Restart</source>
         <translation>다시 시작</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1379"/>
+        <location filename="../mainwindow.cpp" line="1384"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly가 새 인스턴스를 시작하지 못해 현재 인스턴스를 닫지 않았습니다. 앱을 종료한 후 다시 열어 주세요.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1505"/>
+        <location filename="../mainwindow.cpp" line="1510"/>
         <source>Expand the chat list</source>
         <translation>채팅 목록 펼치기</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1506"/>
-        <location filename="../mainwindow_tray.cpp" line="314"/>
+        <location filename="../mainwindow.cpp" line="1511"/>
+        <location filename="../mainwindow_tray.cpp" line="356"/>
         <source>Collapse the chat list</source>
         <translation>채팅 목록 접기</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1626"/>
+        <location filename="../mainwindow.cpp" line="1631"/>
         <source>Open</source>
         <translation>열기</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1672"/>
-        <location filename="../mainwindow_tray.cpp" line="26"/>
+        <location filename="../mainwindow.cpp" line="1677"/>
+        <location filename="../mainwindow_tray.cpp" line="27"/>
         <source>New Chat</source>
         <translation>새 대화</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1673"/>
+        <location filename="../mainwindow.cpp" line="1678"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>국가 번호를 포함한 유효한 WhatsApp 번호를 입력하세요 (예: +82XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1703"/>
+        <location filename="../mainwindow.cpp" line="1708"/>
         <source>Rate Application</source>
         <translation>앱 평가</translation>
     </message>
@@ -919,196 +934,232 @@ Open Settings now?</source>
 지금 설정을 여시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="31"/>
-        <location filename="../mainwindow_tray.cpp" line="309"/>
+        <location filename="../mainwindow_tray.cpp" line="32"/>
+        <location filename="../mainwindow_tray.cpp" line="351"/>
         <source>Fullscreen</source>
         <translation>전체 화면</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="37"/>
+        <location filename="../mainwindow_tray.cpp" line="38"/>
         <source>Mi&amp;nimize to tray</source>
         <translation>트레이로 최소화(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="75"/>
+        <location filename="../mainwindow_tray.cpp" line="76"/>
         <source>&amp;Restore</source>
         <translation>복원(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="82"/>
+        <location filename="../mainwindow_tray.cpp" line="83"/>
         <source>Re&amp;load</source>
         <translation>새로 고침(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="88"/>
+        <location filename="../mainwindow_tray.cpp" line="89"/>
         <source>Loc&amp;k</source>
         <translation>잠금(&amp;K)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="93"/>
+        <location filename="../mainwindow_tray.cpp" line="94"/>
         <source>&amp;Mute audio</source>
         <translation>오디오 음소거(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="102"/>
+        <location filename="../mainwindow_tray.cpp" line="103"/>
         <source>Zoom in</source>
         <translation>확대</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="108"/>
+        <location filename="../mainwindow_tray.cpp" line="109"/>
         <source>Zoom out</source>
         <translation>축소</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="113"/>
-        <location filename="../mainwindow_tray.cpp" line="311"/>
+        <location filename="../mainwindow_tray.cpp" line="114"/>
+        <location filename="../mainwindow_tray.cpp" line="353"/>
         <source>Reset zoom</source>
         <translation>확대/축소 초기화</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="133"/>
+        <location filename="../mainwindow_tray.cpp" line="134"/>
         <source>&amp;Find in chats</source>
         <translation>채팅에서 찾기(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="142"/>
+        <location filename="../mainwindow_tray.cpp" line="143"/>
         <source>&amp;Settings</source>
         <translation>설정(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="148"/>
+        <location filename="../mainwindow_tray.cpp" line="149"/>
         <source>Scheduled &amp;messages…</source>
         <translation>예약 메시지…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="155"/>
-        <location filename="../mainwindow_tray.cpp" line="317"/>
+        <location filename="../mainwindow_tray.cpp" line="156"/>
+        <location filename="../mainwindow_tray.cpp" line="359"/>
         <source>Translate selection</source>
         <translation>선택 영역 번역</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="162"/>
-        <location filename="../mainwindow_tray.cpp" line="319"/>
+        <location filename="../mainwindow_tray.cpp" line="163"/>
+        <location filename="../mainwindow_tray.cpp" line="361"/>
         <source>Translate message box</source>
         <translation>메시지 입력란 번역</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="171"/>
+        <location filename="../mainwindow_tray.cpp" line="172"/>
         <source>Export chat…</source>
         <translation>채팅 내보내기…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="180"/>
-        <location filename="../mainwindow_tray.cpp" line="321"/>
+        <location filename="../mainwindow_tray.cpp" line="181"/>
+        <location filename="../mainwindow_tray.cpp" line="363"/>
         <source>AI: Summarise chat</source>
         <translation>AI: 채팅 요약</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="187"/>
-        <location filename="../mainwindow_tray.cpp" line="322"/>
+        <location filename="../mainwindow_tray.cpp" line="188"/>
+        <location filename="../mainwindow_tray.cpp" line="364"/>
         <source>AI: Improve message</source>
         <translation>AI: 메시지 개선</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="194"/>
-        <location filename="../mainwindow_tray.cpp" line="323"/>
+        <location filename="../mainwindow_tray.cpp" line="195"/>
+        <location filename="../mainwindow_tray.cpp" line="365"/>
         <source>AI: Suggest a reply</source>
         <translation>AI: 답장 제안</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="201"/>
-        <location filename="../mainwindow_tray.cpp" line="325"/>
+        <location filename="../mainwindow_tray.cpp" line="203"/>
+        <location filename="../mainwindow_tray.cpp" line="368"/>
+        <source>AI: Make it more formal</source>
+        <translation>AI: 더 격식 있게</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="209"/>
+        <location filename="../mainwindow_tray.cpp" line="369"/>
+        <source>AI: Make it friendlier</source>
+        <translation>AI: 더 친근하게</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="215"/>
+        <location filename="../mainwindow_tray.cpp" line="370"/>
+        <source>AI: Make it shorter</source>
+        <translation>AI: 더 짧게</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="221"/>
+        <location filename="../mainwindow_tray.cpp" line="367"/>
         <source>AI: Summarise unread chats</source>
         <translation>AI: 읽지 않은 채팅 요약</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="210"/>
-        <location filename="../mainwindow_tray.cpp" line="326"/>
+        <location filename="../mainwindow_tray.cpp" line="230"/>
+        <location filename="../mainwindow_tray.cpp" line="371"/>
         <source>Do Not Disturb</source>
         <translation type="unfinished">방해 금지</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="216"/>
-        <location filename="../mainwindow_tray.cpp" line="327"/>
+        <location filename="../mainwindow_tray.cpp" line="236"/>
+        <location filename="../mainwindow_tray.cpp" line="372"/>
         <source>Do Not Disturb: 1 hour</source>
         <translation>방해 금지: 1시간</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="221"/>
-        <location filename="../mainwindow_tray.cpp" line="328"/>
+        <location filename="../mainwindow_tray.cpp" line="241"/>
+        <location filename="../mainwindow_tray.cpp" line="373"/>
         <source>Do Not Disturb: 2 hours</source>
         <translation>방해 금지: 2시간</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="226"/>
-        <location filename="../mainwindow_tray.cpp" line="329"/>
+        <location filename="../mainwindow_tray.cpp" line="246"/>
+        <location filename="../mainwindow_tray.cpp" line="374"/>
         <source>Do Not Disturb: until morning</source>
         <translation>방해 금지: 아침까지</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="234"/>
+        <location filename="../mainwindow_tray.cpp" line="255"/>
+        <location filename="../mainwindow_tray.cpp" line="375"/>
+        <source>Remind me to reply: in 1 hour</source>
+        <translation>답장 알림: 1시간 후</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="262"/>
+        <location filename="../mainwindow_tray.cpp" line="376"/>
+        <source>Remind me to reply: in 3 hours</source>
+        <translation>답장 알림: 3시간 후</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="269"/>
+        <location filename="../mainwindow_tray.cpp" line="378"/>
+        <source>Remind me to reply: tomorrow morning</source>
+        <translation>답장 알림: 내일 아침</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="276"/>
         <source>&amp;Toggle theme</source>
         <translation>테마 전환(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="245"/>
+        <location filename="../mainwindow_tray.cpp" line="287"/>
         <source>Tabbed view</source>
         <translation>탭 보기</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="252"/>
-        <location filename="../mainwindow_tray.cpp" line="332"/>
+        <location filename="../mainwindow_tray.cpp" line="294"/>
+        <location filename="../mainwindow_tray.cpp" line="381"/>
         <source>Grid view</source>
         <translation>그리드 보기</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="274"/>
-        <location filename="../mainwindow_tray.cpp" line="333"/>
+        <location filename="../mainwindow_tray.cpp" line="316"/>
+        <location filename="../mainwindow_tray.cpp" line="382"/>
         <source>Command palette</source>
         <translation>명령 팔레트</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="283"/>
+        <location filename="../mainwindow_tray.cpp" line="325"/>
         <source>&amp;About</source>
         <translation>정보(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="292"/>
+        <location filename="../mainwindow_tray.cpp" line="334"/>
         <source>&amp;Quit</source>
         <translation>종료(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="305"/>
+        <location filename="../mainwindow_tray.cpp" line="347"/>
         <source>Reload</source>
         <translation>새로 고침</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="306"/>
+        <location filename="../mainwindow_tray.cpp" line="348"/>
         <source>Minimise to tray</source>
         <translation>트레이로 최소화</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="307"/>
+        <location filename="../mainwindow_tray.cpp" line="349"/>
         <source>Lock</source>
         <translation>잠금</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="308"/>
+        <location filename="../mainwindow_tray.cpp" line="350"/>
         <source>Mute audio</source>
         <translation>오디오 음소거</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="310"/>
+        <location filename="../mainwindow_tray.cpp" line="352"/>
         <source>New chat / open URL</source>
         <translation>새 채팅 / URL 열기</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="315"/>
+        <location filename="../mainwindow_tray.cpp" line="357"/>
         <source>Find in chats</source>
         <translation>채팅에서 찾기</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="320"/>
+        <location filename="../mainwindow_tray.cpp" line="362"/>
         <location filename="../mainwindow_webengine.cpp" line="1474"/>
         <location filename="../mainwindow_webengine.cpp" line="1478"/>
         <location filename="../mainwindow_webengine.cpp" line="1491"/>
@@ -1120,88 +1171,88 @@ Open Settings now?</source>
         <translation>채팅 내보내기</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="330"/>
+        <location filename="../mainwindow_tray.cpp" line="379"/>
         <source>Settings</source>
         <translation>설정</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="331"/>
+        <location filename="../mainwindow_tray.cpp" line="380"/>
         <source>Toggle theme</source>
         <translation>테마 전환</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="334"/>
+        <location filename="../mainwindow_tray.cpp" line="383"/>
         <source>Quit</source>
         <translation>종료</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="357"/>
+        <location filename="../mainwindow_tray.cpp" line="406"/>
         <source>Windows</source>
         <translation>창</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="527"/>
+        <location filename="../mainwindow_tray.cpp" line="576"/>
         <source>hidden</source>
         <translation>숨김</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="529"/>
+        <location filename="../mainwindow_tray.cpp" line="578"/>
         <source>minimised</source>
         <translation>최소화</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="309"/>
-        <location filename="../mainwindow_accounts.cpp" line="1575"/>
+        <location filename="../mainwindow_accounts.cpp" line="1579"/>
         <source>Rename…</source>
         <translation>이름 바꾸기…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="310"/>
-        <location filename="../mainwindow_accounts.cpp" line="1576"/>
+        <location filename="../mainwindow_accounts.cpp" line="1580"/>
         <source>Open in own window</source>
         <translation>독립 창으로 열기</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="314"/>
-        <location filename="../mainwindow_accounts.cpp" line="1579"/>
+        <location filename="../mainwindow_accounts.cpp" line="1583"/>
         <source>Remove account</source>
         <translation>계정 제거</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="396"/>
+        <location filename="../mainwindow_accounts.cpp" line="398"/>
         <source>Switch to account: %1</source>
         <translation>계정으로 전환: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="399"/>
-        <location filename="../mainwindow_tray.cpp" line="265"/>
+        <location filename="../mainwindow_accounts.cpp" line="401"/>
+        <location filename="../mainwindow_tray.cpp" line="307"/>
         <source>Add account…</source>
         <translation>계정 추가…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="400"/>
+        <location filename="../mainwindow_accounts.cpp" line="402"/>
         <source>Quick message…</source>
         <translation>빠른 메시지…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="405"/>
+        <location filename="../mainwindow_accounts.cpp" line="407"/>
         <source>Insert: %1</source>
         <translation>삽입: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="713"/>
+        <location filename="../mainwindow_accounts.cpp" line="715"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — 읽지 않음 %2개</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1342"/>
-        <location filename="../mainwindow_accounts.cpp" line="1972"/>
+        <location filename="../mainwindow_accounts.cpp" line="1346"/>
+        <location filename="../mainwindow_accounts.cpp" line="1976"/>
         <source>Add another account</source>
         <translation>다른 계정 추가</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1371"/>
-        <location filename="../mainwindow_accounts.cpp" line="1376"/>
+        <location filename="../mainwindow_accounts.cpp" line="1375"/>
+        <location filename="../mainwindow_accounts.cpp" line="1380"/>
         <source>Restore</source>
         <translation>복원</translation>
     </message>
@@ -1214,39 +1265,39 @@ Open Settings now?</source>
         <translation type="vanished">개의 메시지</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1421"/>
+        <location filename="../mainwindow_accounts.cpp" line="1425"/>
         <source>Add account</source>
         <translation>계정 추가</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1422"/>
+        <location filename="../mainwindow_accounts.cpp" line="1426"/>
         <source>Name for the new account:</source>
         <translation>새 계정 이름:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1423"/>
-        <location filename="../mainwindow_accounts.cpp" line="2310"/>
-        <location filename="../mainwindow_accounts.cpp" line="2315"/>
+        <location filename="../mainwindow_accounts.cpp" line="1427"/>
+        <location filename="../mainwindow_accounts.cpp" line="2314"/>
+        <location filename="../mainwindow_accounts.cpp" line="2319"/>
         <source>Account %1</source>
         <translation>계정 %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1452"/>
+        <location filename="../mainwindow_accounts.cpp" line="1456"/>
         <source>Rename account</source>
         <translation>계정 이름 바꾸기</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1452"/>
+        <location filename="../mainwindow_accounts.cpp" line="1456"/>
         <source>Account name:</source>
         <translation>계정 이름:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1991"/>
+        <location filename="../mainwindow_accounts.cpp" line="1995"/>
         <source>Tip: give an account its own window</source>
         <translation>팁: 계정에 전용 창 주기</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1992"/>
+        <location filename="../mainwindow_accounts.cpp" line="1996"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1255,8 +1306,8 @@ You can pull any account out into its own window: right-click its tab and choose
 어떤 계정이든 독립 창으로 꺼낼 수 있습니다. 해당 탭을 마우스 오른쪽 버튼으로 클릭하고 “독립 창으로 열기”를 선택하세요. 그 창을 닫으면 계정이 다시 탭으로 도킹됩니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2304"/>
         <location filename="../mainwindow_accounts.cpp" line="2308"/>
+        <location filename="../mainwindow_accounts.cpp" line="2312"/>
         <source>Account 1</source>
         <translation>계정 1</translation>
     </message>
@@ -1266,14 +1317,14 @@ You can pull any account out into its own window: right-click its tab and choose
         <translation>앱을 새로 고치려면 잠금을 해제하세요.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1168"/>
-        <location filename="../mainwindow.cpp" line="1249"/>
+        <location filename="../mainwindow.cpp" line="1173"/>
+        <location filename="../mainwindow.cpp" line="1254"/>
         <source>Could not read the file to send: %1</source>
         <translation>보낼 파일을 읽을 수 없습니다: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1177"/>
-        <location filename="../mainwindow.cpp" line="1259"/>
+        <location filename="../mainwindow.cpp" line="1182"/>
+        <location filename="../mainwindow.cpp" line="1264"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>파일이 너무 커서 web 백엔드로 보낼 수 없습니다.</translation>
     </message>

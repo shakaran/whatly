@@ -1822,12 +1822,18 @@ void MainWindow::aiSummarizeChat() {
 }
 
 void MainWindow::aiImproveComposer() {
+  aiRewrite(Ai::improveSystemPrompt());
+}
+
+void MainWindow::aiRewrite(const QString &systemPrompt) {
   if (!m_webEngine || !m_webEngine->page())
     return;
   m_webEngine->page()->runJavaScript(
-      Translate::readComposerScript(), [this](const QVariant &v) {
-        runAssistant(Ai::improveSystemPrompt(), v.toString(),
-                     [this](const QString &improved) { deliverAiText(improved); });
+      Translate::readComposerScript(), [this, systemPrompt](const QVariant &v) {
+        runAssistant(systemPrompt, v.toString(),
+                     [this](const QString &rewritten) {
+                       deliverAiText(rewritten);
+                     });
       });
 }
 
@@ -1906,6 +1912,27 @@ void MainWindow::dndSnoozeUntilMorning() {
   refreshDndUi();
   dndToast(tr("Do Not Disturb on until %1.")
                .arg(QLocale().toString(until, QLocale::ShortFormat)));
+}
+
+void MainWindow::scheduleChatReminder(const QDateTime &when) {
+  if (!m_webEngine || !m_webEngine->page() || !m_scheduledMessages)
+    return;
+  m_webEngine->page()->runJavaScript(
+      ChatNav::currentChatNameScript(), [this, when](const QVariant &v) {
+        const QString name = v.toString().trimmed();
+        if (name.isEmpty()) {
+          dndToast(tr("Open a chat to set a reply reminder."));
+          return;
+        }
+        // A reminder (not a message): no number, never touches the page to send.
+        // reminderDue reopens the chat by this name when it fires.
+        m_scheduledMessages->add(QString(), name,
+                                 tr("Time to reply to this chat."), when,
+                                 ScheduledMessages::Recurrence::None,
+                                 /*reminder=*/true);
+        dndToast(tr("Reply reminder set for %1.")
+                     .arg(QLocale().toString(when, QLocale::ShortFormat)));
+      });
 }
 
 void MainWindow::aiSummarizeUnread() {

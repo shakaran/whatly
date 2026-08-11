@@ -121,6 +121,11 @@ MainWindow::MainWindow(QWidget *parent)
                 name.isEmpty() ? tr("Reminder") : tr("Reminder: %1").arg(name);
             if (m_systemTrayIcon && QSystemTrayIcon::supportsMessages())
               m_systemTrayIcon->showMessage(title, text, windowIcon(), 15000);
+            // A reply reminder (snooze a chat) names the chat: reopen it so it is
+            // waiting when the user returns. A no-op if that chat is not listed.
+            if (!name.isEmpty() && m_webEngine && m_webEngine->page())
+              m_webEngine->page()->runJavaScript(
+                  ChatNav::openChatByNameScript(name));
           });
 
   createWebEngine();

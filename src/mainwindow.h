@@ -449,9 +449,14 @@ private:
   QAction *m_aiImproveAction = nullptr;
   QAction *m_aiSuggestAction = nullptr;
   QAction *m_aiUnreadDigestAction = nullptr;
+  QAction *m_aiFormalAction = nullptr;
+  QAction *m_aiFriendlyAction = nullptr;
+  QAction *m_aiShorterAction = nullptr;
   void aiSummarizeChat();
   void aiImproveComposer();
   void aiSuggestReply();
+  // Rewrite the composer draft with the given system prompt (tone presets).
+  void aiRewrite(const QString &systemPrompt);
   // Triage every unread chat into one prioritised digest, shown in a dialog.
   // Reads the unread rows (name + count + preview) without opening any chat.
   void aiSummarizeUnread();
@@ -469,6 +474,13 @@ private:
   void dndSnoozeUntilMorning();
   void refreshDndUi();                 // sync the checkable state + expiry timer
   void dndToast(const QString &message);
+
+  // Reply reminders (snooze a chat): schedule a reminder for the open chat at
+  // `when`; it fires a desktop notification and reopens the chat.
+  QAction *m_remind1hAction = nullptr;
+  QAction *m_remind3hAction = nullptr;
+  QAction *m_remindTomorrowAction = nullptr;
+  void scheduleChatReminder(const QDateTime &when);
   // Send system+user prompts and hand the result to `onResult`; progress and
   // errors are shown as an in-page toast (and a desktop notification on error,
   // so feedback is not lost if the window is unfocused). Guards on AI enabled.

@@ -131,6 +131,25 @@ QString suggestReplySystemPrompt() {
       "only the suggested reply text, with no quotes or explanation.");
 }
 
+QString rewriteFormalSystemPrompt() {
+  return QStringLiteral(
+      "You rewrite a WhatsApp message draft in a more formal, polite and "
+      "professional tone. Keep the original meaning and the same language. Do "
+      "not add greetings or explanations. Return only the rewritten message.");
+}
+QString rewriteFriendlySystemPrompt() {
+  return QStringLiteral(
+      "You rewrite a WhatsApp message draft in a warmer, more casual and "
+      "friendly tone. Keep the original meaning and the same language. Do not "
+      "add greetings or explanations. Return only the rewritten message.");
+}
+QString rewriteShorterSystemPrompt() {
+  return QStringLiteral(
+      "You make a WhatsApp message draft shorter and more concise while keeping "
+      "its meaning, language and tone. Do not add greetings or explanations. "
+      "Return only the shortened message.");
+}
+
 QString unreadDigestSystemPrompt() {
   return QStringLiteral(
       "You help the user triage their unread WhatsApp chats. You are given a "

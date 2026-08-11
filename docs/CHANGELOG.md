@@ -1,5 +1,20 @@
 ## Unreleased
 
+**One-click tone rewrites with the local AI (idea #5).** Next to *Improve
+message*, three new actions rewrite the message you are typing in a chosen tone:
+**more formal**, **friendlier**, or **shorter** — keeping the meaning and the
+language, and dropping the result straight back into the composer. Available
+from the message box's right-click menu, the Ctrl+K command palette and the
+Shortcuts, and, like every AI action, run against your configured endpoint so
+they can be fully local (Ollama).
+
+**Reply reminders: snooze a chat (idea).** On the chat you have open, set a
+reminder to reply — **in 1 hour**, **in 3 hours**, or **tomorrow morning** —
+from the right-click menu, the Ctrl+K palette or the Shortcuts. When it comes
+due Whatly raises a desktop notification and reopens that chat, so a
+conversation you meant to get back to does not slip away. The reminder is
+persisted, so it still fires after a restart.
+
 **Do Not Disturb on demand (idea #10).** Beyond the scheduled quiet-hours
 window, you can now silence notification popups right now: a checkable **Do Not
 Disturb** action plus quick durations — **1 hour**, **2 hours**, **until
