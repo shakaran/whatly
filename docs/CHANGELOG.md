@@ -1,5 +1,12 @@
 ## Unreleased
 
+**Settings sections styled correctly in every language.** The collapsible
+Settings sections were named after their translated titles, and a name with an
+accent or a slash — "Básico", "IA/traducción" — is not a valid Qt style-sheet
+selector, so on non-English locales the outline was dropped and the log filled
+with "Could not parse stylesheet" on every repaint. The sections are now named
+by a locale-independent index, so the styling applies and the noise is gone.
+
 **One-click tone rewrites with the local AI (idea #5).** Next to *Improve
 message*, three new actions rewrite the message you are typing in a chosen tone:
 **more formal**, **friendlier**, or **shorter** — keeping the meaning and the

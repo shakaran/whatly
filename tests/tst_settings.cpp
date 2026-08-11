@@ -11,6 +11,7 @@
 #include <QDialog>
 #include <QDoubleSpinBox>
 #include <QGroupBox>
+#include <QRegularExpression>
 #include <QLineEdit>
 #include <QPointer>
 #include <QSignalSpy>
@@ -92,6 +93,26 @@ private slots:
     }
     QTest::qWait(20); // let any queued slot work run
     QVERIFY(true);
+  }
+
+  // The collapsible sections are named for a Qt style-sheet selector
+  // (QGroupBox#name), whose parser rejects non-ASCII — so the name must never be
+  // derived from the translated title ("Básico", "IA/traducción"). Enforce the
+  // index form, which is locale-independent by construction.
+  void sectionNamesAreAsciiIdentifiers() {
+    QTemporaryDir cache, storage;
+    SettingsWidget sw(nullptr, 0, cache.path(), storage.path());
+    const QRegularExpression re(QStringLiteral("^whatlySection\\d+$"));
+    int seen = 0;
+    for (auto *g : sw.findChildren<QGroupBox *>()) {
+      const QString n = g->objectName();
+      if (!n.startsWith(QStringLiteral("whatlySection")))
+        continue;
+      ++seen;
+      QVERIFY2(re.match(n).hasMatch(),
+               qPrintable(QStringLiteral("section name not an ASCII index: ") + n));
+    }
+    QVERIFY(seen > 0); // the sections exist, so the check actually ran
   }
 
   // #13: "Hide tray icon" and the two settings that need a tray icon to work

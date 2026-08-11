@@ -404,13 +404,17 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     QWidget *host = ui->scrollAreaWidgetContents;
 
     // An empty titled sub-section, ready to receive controls.
-    const auto newSection = [host](const QString &title) {
+    int sectionCount = 0;
+    const auto newSection = [host, &sectionCount](const QString &title) {
       auto *g = new QGroupBox(title, host);
       // Named so makeCollapsible can draw its outline by object name; a bare
-      // "QGroupBox" rule would reach the nested groups inside it too.
-      g->setObjectName(QStringLiteral("whatlySection%1")
-                           .arg(QString(title).remove(QLatin1Char(' '))
-                                    .remove(QLatin1Char('&'))));
+      // "QGroupBox" rule would reach the nested groups inside it too. The name
+      // must be a plain ASCII identifier: it goes into a Qt style-sheet selector
+      // (QGroupBox#name), whose parser rejects the accents and slashes a
+      // translated title can carry ("Básico", "IA/traducción") — which is why it
+      // is an index, not the title.
+      g->setObjectName(
+          QStringLiteral("whatlySection%1").arg(sectionCount++));
       auto *v = new QVBoxLayout(g);
       v->setContentsMargins(12, 6, 6, 6);
       v->setSpacing(6);
