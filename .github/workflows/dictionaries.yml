@@ -18,12 +18,14 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v5
+        with:
+          submodules: recursive
 
       - name: Install Qt (for qwebengine_convert_dict)
         uses: jurplel/install-qt-action@v4
         with:
           version: '6.10.*'
-          modules: 'qtwebengine'
+          modules: 'qtwebengine qtwebchannel qtpositioning'
           cache: true
 
       - name: Build dependencies
