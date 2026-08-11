@@ -7,6 +7,7 @@
 #include <QRandomGenerator>
 #include <QScreen>
 
+#include "chatnav.h" // a chat picked from the tray, opened once its page is up
 #include "common.h"
 #include "scheduledmessages.h"
 #include "webenginenotifproxy.h"
@@ -155,8 +156,10 @@ void MainWindow::createPageFor(WebView *view, const QString &accountId) {
   // reach it. Recorded here rather than at each call site, because this is the
   // only place a page is ever built.
   const int idx = accountIndexForView(view);
-  if (idx >= 0)
+  if (idx >= 0) {
     m_accounts[idx].loaded = true;
+    m_accounts[idx].ready = false; // a page, but nothing on it yet
+  }
 }
 
 // Buttons Whatly injects into WhatsApp's own UI need a way back into the app.
@@ -1055,7 +1058,24 @@ void MainWindow::handleLoadFinished(bool loaded) {
     Performance::markStartupSucceeded();
     m_watchdogStrikes = 0; // fresh document, start clean
     checkLoadedCorrectly();
-    updatePageTheme();
+    // The page that just loaded, which is not necessarily the one on screen —
+    // see updatePageTheme(). Falling back to all of them keeps a load that
+    // arrives without an identifiable sender behaving as it used to.
+    if (const int idx = accountIndexForView(sender()); idx >= 0) {
+      m_accounts[idx].ready = true;
+      applyPageTheme(pageOf(m_accounts[idx]));
+      // A chat picked from the tray while this account had no page: this is the
+      // moment there is a chat list to find it in.
+      if (!m_pendingChatName.isEmpty() &&
+          m_pendingChatAccount == m_accounts[idx].id) {
+        const QString chat = m_pendingChatName;
+        m_pendingChatName.clear();
+        if (QWebEnginePage *page = pageOf(m_accounts[idx]))
+          page->runJavaScript(ChatNav::openChatByNameScript(chat));
+      }
+    } else {
+      updatePageTheme();
+    }
     handleZoom();
     if (m_settingsWidget != nullptr)
       m_settingsWidget->refresh();
@@ -1168,8 +1188,23 @@ void MainWindow::loadingQuirk(const QString &test) {
 
 // ── Page theme ────────────────────────────────────────────────────────────────
 
+// Every account that has a page, not just the one on screen. WhatsApp Web stores
+// its theme per profile and each account is its own profile, so a page that is
+// never told renders in whatever that profile last saved — light, for one that
+// has never been told at all. Only the active account was ever told, which was
+// invisible while every account was built at startup and had its theme applied
+// as it loaded. It stopped being invisible once a page could first appear while
+// another account was on screen: an account torn into its own window, grid view,
+// and a dormant account coming to life. Those pages came up light against a dark
+// app, and stayed light — the theme is pushed on a change and on load, and
+// neither happens again for a page already loaded.
 void MainWindow::updatePageTheme() {
-  if (!m_webEngine || !m_webEngine->page())
+  for (const Account &account : m_accounts)
+    applyPageTheme(pageOf(account));
+}
+
+void MainWindow::applyPageTheme(QWebEnginePage *page) {
+  if (!page)
     return;
 
   const bool dark = SettingsManager::instance()
@@ -1268,7 +1303,7 @@ void MainWindow::updatePageTheme() {
     })('%1');
   )js").arg(dark ? "dark" : "light");
 
-  m_webEngine->page()->runJavaScript(js);
+  page->runJavaScript(js);
 }
 
 QString MainWindow::getPageTheme() const {

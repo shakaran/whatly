@@ -361,6 +361,21 @@ R"JS(
   install();
   setInterval(install, 1000);
 
+  // A page in a window nobody can see has no layout: every rect measures zero,
+  // so the rail is not found and the buttons are not put back. That much is
+  // harmless, since there is nothing to look at. What is not harmless is that
+  // Chromium throttles timers in a hidden page, stretching the tick above to
+  // about a minute — so the buttons were still missing for up to that long after
+  // the window came back, which reads as them having been lost. Ask again as
+  // soon as the page is shown, and once more shortly after, because layout is
+  // not final at the instant visibility flips.
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) return;
+    install();
+    repaint();
+    setTimeout(function () { install(); repaint(); }, 250);
+  });
+
   // The icons follow state that changes without anything else on the page
   // moving: the theme lives in a class on <html>, the blur in a stylesheet in
   // <head>. Both observers are narrow, and paint() is a no-op when the state it
