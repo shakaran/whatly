@@ -1101,10 +1101,27 @@ void MainWindow::checkMediaCodecs() {
                                                         true);
         if (m_webEngine && m_webEngine->page())
           m_webEngine->page()->runJavaScript(Translate::toastScript(
+#ifdef Q_OS_LINUX
+              // On the Debian family the advice below names something nobody can
+              // get: the app's floor is Qt 6.9, Ubuntu 24.04 — Mint 22.x's base —
+              // offers 6.4.2, and no current Debian or Ubuntu release ships a Qt
+              // WebEngine that is both new enough and codec-enabled. The Flatpak
+              // builds against io.qt.qtwebengine.BaseApp and does have them, so
+              // it is the one build a reader can act on today.
+              tr("This build cannot send H.264/MP4 videos: its browser engine "
+                 "was built without the proprietary codecs. Photos and WebM/VP9 "
+                 "videos work. For MP4, use the Flatpak, whose engine is built "
+                 "with them. (Click to dismiss.)"),
+#else
+              // Left exactly as it was everywhere else, and deliberately: there
+              // is no Flatpak off Linux, and this sentence already has its
+              // twenty translations. Naming the right build on Windows is a
+              // question for whoever makes them.
               tr("This build cannot send H.264/MP4 videos: its browser engine "
                  "was built without the proprietary codecs. Photos and WebM/VP9 "
                  "videos work; for MP4, use a distro/native package built with "
                  "the codecs. (Click to dismiss.)"),
+#endif
               /*persistent=*/true));
       });
 }
