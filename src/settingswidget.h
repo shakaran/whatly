@@ -1,6 +1,7 @@
 #ifndef SETTINGSWIDGET_H
 #define SETTINGSWIDGET_H
 
+#include <QElapsedTimer>
 #include <QWidget>
 
 class QListWidgetItem;
@@ -250,8 +251,17 @@ private:
   // Fills the language picker from the .qm files compiled into the binary, so
   // adding a translation needs no code change.
   void populateLanguages();
+  // Whether a wheel over this widget has content of its own to scroll in that
+  // direction. The page's own scroll area does not count — scrolling the page is
+  // what the caller falls back to.
+  bool hasScrollOfItsOwn(QWidget *target, int angleDeltaY) const;
 
   Ui::SettingsWidget *ui;
+  // The wheel gesture in progress: what the first notch chose to scroll, and how
+  // long since the last one. A mouse wheel has no phase to separate one gesture
+  // from the next, so a pause is what ends it.
+  QElapsedTimer m_wheelIdle;
+  bool m_wheelScrollsPage = true;
   QString engineCachePath, enginePersistentStoragePath;
   QTimer *themeSwitchTimer;
   class OllamaManager *m_ollama = nullptr; // lazy; local-model detect/download
