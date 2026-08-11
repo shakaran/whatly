@@ -33,6 +33,7 @@
 #include "customcss.h"
 #include "webengineprofilemanager.h"
 #include "dictionaries.h"
+#include "dictionariessection.h"
 #include "chatliststrip.h"
 #include "privacyblur.h"
 #include "webfont.h"
@@ -550,6 +551,21 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     moveWidget(body(chatting), ui->hdMediaCheckBox,
                ui->verticalLayoutPerformance);
     moveLayout(body(chatting), ui->horizontalLayoutUndoSend);
+
+    // ── Spell-check dictionaries ─────────────────────────────
+    // A list with a Download/Delete button per language (issue #46): the full
+    // set is ~45 MB, so packages bundle a minimum and the rest are fetched here.
+    auto *dictionaries = newSection(tr("Spell-check dictionaries"));
+    auto *dictionariesWidget = new DictionariesSection(dictionaries);
+    body(dictionaries)->addWidget(dictionariesWidget);
+    connect(dictionariesWidget, &DictionariesSection::installedChanged, this,
+            [this]() {
+              // A language appeared or was removed: re-offer them in the picker
+              // and re-apply, so a just-downloaded language works without a
+              // restart and a deleted one drops out.
+              populateSpellCheck();
+              emit spellCheckChanged();
+            });
 
     // ── Privacy & Lock ──────────────────────────────────────
     auto *privacy = newSection(tr("Privacy & Lock"));

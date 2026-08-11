@@ -196,6 +196,8 @@ set(SOURCES
     src/webengineprofilemanager.cpp
     src/chattheme.cpp
     src/dictionaries.cpp
+    src/dictionarymanager.cpp
+    src/dictionariessection.cpp
     src/chatwallpaper.cpp
     src/customcss.cpp
     src/customjs.cpp
@@ -281,6 +283,8 @@ set(HEADERS
     src/webengineprofilemanager.h
     src/chattheme.h
     src/dictionaries.h
+    src/dictionarymanager.h
+    src/dictionariessection.h
     src/chatwallpaper.h
     src/customcss.h
     src/customjs.h
@@ -559,7 +563,7 @@ option(WHATLY_SPELLCHECK "Build the spell-check dictionaries" ON)
 
 # By default every hunspell dictionary in src/dictionaries is converted. Source
 # distributions that only want a few can pass a ';'-separated list of language
-# codes to build just those, e.g. -DWHATLY_DICTIONARIES="en-US;es-ES;fr" — the
+# codes to build just those, e.g. -DWHATLY_DICTIONARIES="en_US;es_ES;fr_FR" — the
 # names match the .dic basenames. Empty means "all" (issue #61).
 set(WHATLY_DICTIONARIES "" CACHE STRING
     "Semicolon-separated list of dictionary basenames to build (empty = all)")
@@ -592,7 +596,7 @@ if(WHATLY_DICTIONARIES)
     if(NOT _selected_dicts)
         message(FATAL_ERROR
             "WHATLY_DICTIONARIES=\"${WHATLY_DICTIONARIES}\" matched none of the "
-            "dictionaries in src/dictionaries. Use the .dic basenames, e.g. en-US.")
+            "dictionaries in src/dictionaries. Use the .dic basenames, e.g. en_US.")
     endif()
     set(WHATLY_HUNSPELL_DICTS ${_selected_dicts})
     message(STATUS "Building a subset of spell-check dictionaries: ${WHATLY_DICTIONARIES}")

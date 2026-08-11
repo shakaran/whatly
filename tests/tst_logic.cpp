@@ -26,6 +26,7 @@
 #include "appprofile.h"
 #include "settingsmanager.h"
 #include "dictionaries.h"
+#include "dictionarymanager.h"
 #include "identicons.h"
 #include "theme.h"
 #include "scheduledmessages.h"
@@ -3585,6 +3586,51 @@ private slots:
   }
 };
 
+class TstDictionaryManager : public QObject {
+  Q_OBJECT
+private slots:
+  void parseManifest() {
+    const QByteArray json = R"({"dictionaries":[
+      {"code":"en_US","size":5,"sha256":"ABC"},
+      {"code":"es_ES","size":10,"sha256":"def"},
+      {"size":3,"sha256":"nope"}
+    ]})";
+    const auto list = DictionaryManager::parseManifest(json);
+    QCOMPARE(list.size(), 2); // the entry without a code is skipped
+    QCOMPARE(list[0].code, QStringLiteral("en_US"));
+    QCOMPARE(list[0].size, qint64(5));
+    QCOMPARE(list[0].sha256, QStringLiteral("abc")); // lower-cased
+    // Junk / non-object is tolerated, not a crash.
+    QVERIFY(DictionaryManager::parseManifest("not json").isEmpty());
+    QVERIFY(DictionaryManager::parseManifest("[]").isEmpty());
+  }
+  void verify() {
+    const QByteArray data = QByteArrayLiteral("hello");
+    const QString sha = QStringLiteral(
+        "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824");
+    QVERIFY(DictionaryManager::verify(data, 5, sha));
+    QVERIFY(DictionaryManager::verify(data, 5, sha.toUpper())); // case-insensitive
+    QVERIFY(DictionaryManager::verify(data, 0, sha));           // size 0 = skip size check
+    QVERIFY(!DictionaryManager::verify(data, 4, sha));          // wrong size
+    QVERIFY(!DictionaryManager::verify(data, 5, QStringLiteral("deadbeef"))); // wrong hash
+    QVERIFY(!DictionaryManager::verify(data, 5, QString()));    // unverifiable -> not trusted
+  }
+  void displayName() {
+    // A recognised locale reads as its native name, not the raw code.
+    const QString de = DictionaryManager::displayName(QStringLiteral("de_DE"));
+    QVERIFY(!de.isEmpty());
+    QVERIFY(de != QStringLiteral("de_DE"));
+    // An unrecognised code falls back to itself rather than "C"/empty.
+    QCOMPARE(DictionaryManager::displayName(QStringLiteral("zz_ZZ")),
+             QStringLiteral("zz_ZZ"));
+  }
+  void urls() {
+    QVERIFY(DictionaryManager::manifestUrl().endsWith(QStringLiteral("/manifest.json")));
+    QVERIFY(DictionaryManager::assetUrl(QStringLiteral("en_US"))
+                .endsWith(QStringLiteral("/en_US.bdic")));
+  }
+};
+
 int main(int argc, char *argv[]) {
   // Keep the (headless) QWebEngineProfile used by the install() test happy on CI
   // runners: no sandbox, no GPU. Must be set before QApplication.
@@ -3616,6 +3662,7 @@ int main(int argc, char *argv[]) {
   };
   { TstUtils t;               run(&t); }
   { TstScriptLiterals t;      run(&t); }
+  { TstDictionaryManager t;   run(&t); }
   { TstUtilsMore t;           run(&t); }
   { TstCommon t;              run(&t); }
   { TstDebugLog t;            run(&t); }

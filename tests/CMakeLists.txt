@@ -45,7 +45,7 @@ set_tests_properties(ui_assets PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen
 add_executable(tst_logic
     tst_logic.cpp
     ${S}/utils.cpp ${S}/debuglog.cpp ${S}/appprofile.cpp ${S}/common.cpp
-    ${S}/sunclock.cpp ${S}/identicons.cpp ${S}/theme.cpp ${S}/dictionaries.cpp
+    ${S}/sunclock.cpp ${S}/identicons.cpp ${S}/theme.cpp ${S}/dictionaries.cpp ${S}/dictionarymanager.cpp
     ${S}/scheduledmessages.cpp ${S}/messaging.cpp ${S}/messagetemplates.cpp ${S}/autoreply.cpp ${S}/cloudapi.cpp ${S}/localapi.cpp ${S}/cloudwebhook.cpp
     ${S}/webfont.cpp ${S}/chattheme.cpp ${S}/mutedstatus.cpp ${S}/privacyblur.cpp ${S}/chatliststrip.cpp
     ${S}/chatwallpaper.cpp ${S}/customcss.cpp ${S}/customjs.cpp ${S}/commandpalette.cpp ${S}/updatechecker.cpp ${S}/storageinfo.cpp ${S}/shortcuts.cpp ${S}/backup.cpp ${S}/screenlock.cpp ${S}/passlock.cpp ${S}/quickreply.cpp ${S}/focusmode.cpp ${S}/hdmedia.cpp ${S}/undosend.cpp ${S}/translator.cpp ${S}/chatexport.cpp ${S}/aiassistant.cpp ${S}/ollama.cpp ${S}/cannedresponses.cpp ${S}/webtweaks.cpp
