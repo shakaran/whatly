@@ -57,6 +57,10 @@ not affiliated with WhatsApp or Meta.
 
 %install
 %cmake_install
+# The release build disables debug_package (no OBS debuginfo machinery in CI),
+# and that also skips rpm's automatic strip — leaving ~54 MB of DWARF in the
+# binary, which is almost the whole download. Strip it explicitly. See #67.
+strip %{buildroot}%{_bindir}/whatly
 
 %files
 %license LICENSE

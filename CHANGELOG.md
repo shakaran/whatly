@@ -1,5 +1,7 @@
 ## Unreleased
 
+**The .deb and portable .rpm now show their icons and appear in software centres (#67).** The packaging staged the whole app under /opt/whatly and copied only the 256x256 icon back to a system path, so six of the seven icons — including the monochrome tray icon — were invisible to the desktop, and the AppStream metainfo never reached /usr/share/metainfo, leaving the app with no entry in GNOME Software or KDE Discover. The full icon set, the metainfo and the licence now go to the right system paths. Separately, the native openSUSE .rpm was shipping ~54 MB of unstripped debug info (almost the whole download); its binary is now stripped, taking that package from ~17.5 MB to ~3 MB.
+
 **Switch spell-check language mid-sentence.** Ticking three
 languages in Settings means Chromium accepts any word that any of the three
 knows, so most typos in the language you are actually writing go unmarked. A new

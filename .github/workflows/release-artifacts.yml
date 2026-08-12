@@ -428,15 +428,25 @@ jobs:
         run: |
           rm -rf pkg
           mkdir -p pkg/opt/whatly pkg/usr/bin pkg/usr/share/applications \
-            pkg/usr/share/icons/hicolor/256x256/apps
+            pkg/usr/share/icons/hicolor pkg/usr/share/metainfo \
+            pkg/usr/share/licenses/whatly
           cp -a AppDir/usr/. pkg/opt/whatly/
           ln -sf /opt/whatly/bin/whatly pkg/usr/bin/whatly
           # Desktop entry + icon at the system locations, pointing into /opt.
           sed 's|^Exec=whatly|Exec=/opt/whatly/bin/whatly|' \
             AppDir/usr/share/applications/net.shakaran.whatly.desktop \
             > pkg/usr/share/applications/net.shakaran.whatly.desktop
-          cp AppDir/usr/share/icons/hicolor/256x256/apps/net.shakaran.whatly.png \
-            pkg/usr/share/icons/hicolor/256x256/apps/ || true
+          # The whole icon set — not just 256x256 — at the XDG path: /opt is not
+          # in the icon search path, so anything left only under /opt/whatly is
+          # invisible to the desktop (the tray's monochrome symbolic icon among
+          # them). No "|| true": a missing icon set should fail the build, not
+          # ship a package with no icon. AppStream metainfo and the licence go to
+          # the paths GNOME Software / KDE Discover and rpm expect. See #67.
+          cp -a AppDir/usr/share/icons/hicolor/. pkg/usr/share/icons/hicolor/
+          cp AppDir/usr/share/metainfo/net.shakaran.whatly.appdata.xml \
+            pkg/usr/share/metainfo/
+          cp AppDir/usr/share/licenses/whatly/LICENSE \
+            pkg/usr/share/licenses/whatly/ 2>/dev/null || true
 
       - name: Verify the bundled Qt WebEngine runtime is complete
         run: |
