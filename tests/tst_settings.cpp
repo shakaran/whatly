@@ -432,13 +432,16 @@ private slots:
     QVERIFY(!combo->view()->isVisible());
     QTest::mousePress(combo->lineEdit(), Qt::LeftButton);
     QTest::mouseRelease(combo->lineEdit(), Qt::LeftButton);
-    // Not yet — that is the whole point of the fix, and the assertion that fails if
-    // anyone opens it straight from the press again. The flash-and-vanish itself
-    // needs a real mouse grab and cannot be reproduced here, so this pins the
-    // mechanism instead of the symptom.
-    QVERIFY(!combo->view()->isVisible());
-    QTRY_VERIFY(combo->view()->isVisible());
+    QVERIFY2(combo->view()->isVisible(),
+             "a click on the box must open the list and it must survive the "
+             "release that follows");
     combo->hidePopup();
+    // What this cannot check: the list flashing up and vanishing again, which is
+    // what the click used to do. That needs the mouse grab a shown popup takes, and
+    // a synthesised release goes to the line edit rather than to the list, so it
+    // stays open here either way. The fix for it — handing the click to the arrow so
+    // Qt's own path swallows the release — is verified by hand; this pins the part
+    // that can be: that clicking the box opens the list at all.
 
     s.remove(QStringLiteral("spellCheckLanguages"));
     s.remove(QStringLiteral("spellCheckFocus"));
