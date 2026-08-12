@@ -73,8 +73,11 @@ disk by the app, and only the current origin is touched.
 is blocked by CORS (its endpoint sends no `Access-Control-Allow-Origin` header,
 the same in a plain browser) and its Permissions-Policy header names features
 this Chromium build does not implement; both repeat by the hundred and neither
-means anything is wrong. They are now filtered out, so the one line a bug report
-needs is no longer buried under identical noise.
+means anything is wrong. Reason-less promise rejections ("Uncaught (in promise)
+undefined"), which WhatsApp Web floods when its session state is unhealthy, are
+filtered too. All are now dropped, so the one line a bug report needs is no
+longer buried under identical noise (a rejection that carries a real value, or
+any other error, still shows).
 
 ## 7.1.0 (2026-08-11)
 
