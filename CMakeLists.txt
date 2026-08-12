@@ -197,7 +197,7 @@ set(SOURCES
     src/chattheme.cpp
     src/dictionaries.cpp
     src/dictionarymanager.cpp
-    src/dictionariessection.cpp
+    src/dictionaryrows.cpp
     src/chatwallpaper.cpp
     src/customcss.cpp
     src/customjs.cpp
@@ -285,7 +285,7 @@ set(HEADERS
     src/chattheme.h
     src/dictionaries.h
     src/dictionarymanager.h
-    src/dictionariessection.h
+    src/dictionaryrows.h
     src/chatwallpaper.h
     src/customcss.h
     src/customjs.h

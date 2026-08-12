@@ -27,6 +27,7 @@
 #include "settingsmanager.h"
 #include "dictionaries.h"
 #include "dictionarymanager.h"
+#include "dictionaryrows.h"
 #include "identicons.h"
 #include "theme.h"
 #include "scheduledmessages.h"
@@ -439,6 +440,99 @@ private slots:
     QVERIFY(have.contains(QStringLiteral("es_ES.bdic")));  // mirrored
     QVERIFY(have.contains(QStringLiteral("zz_ZZ.bdic")));  // user's own, kept
     QVERIFY(!have.contains(QStringLiteral("stale.bdic"))); // pruned
+  }
+  // The rows of the language list (#46), which is the whole of its interface: what
+  // each state offers, and in what order they are shown.
+  void rowsSayWhatEachLanguageOffers() {
+    const auto entry = [](const char *code, qint64 size, const char *sha) {
+      DictionaryEntry e;
+      e.code = QString::fromLatin1(code);
+      e.size = size;
+      e.sha256 = QString::fromLatin1(sha);
+      return e;
+    };
+    const QList<DictionaryEntry> catalog{
+        entry("en_US", 545259, "aa"), entry("pt_PT", 900000, "bb"),
+        entry("da_DK", 838860, "cc"), entry("vi_VN", 100, "")};
+    // en_US is bundled (mirrored as a symlink, so not removable), pt_PT and eo were
+    // downloaded, and eo is not in the catalogue at all.
+    const QStringList installed{QStringLiteral("en_US"), QStringLiteral("pt_PT"),
+                                QStringLiteral("eo")};
+    const QStringList removable{QStringLiteral("pt_PT"), QStringLiteral("eo")};
+    const QList<DictionaryRows::Row> rows =
+        DictionaryRows::build(installed, removable, catalog);
+    QCOMPARE(rows.size(), 5); // four catalogued, plus the un-catalogued eo
+
+    const auto row = [&rows](const char *code) {
+      for (const DictionaryRows::Row &r : rows)
+        if (r.code == QLatin1String(code))
+          return r;
+      return DictionaryRows::Row{};
+    };
+    // Here and bundled: it can be ticked, and there is nothing to delete — the file
+    // is a link into the read-only bundle and would only relink next launch.
+    QVERIFY(row("en_US").installed);
+    QVERIFY(row("en_US").action == DictionaryRows::Action::None);
+    // Here because it was downloaded: ticked, and it can go again.
+    QVERIFY(row("pt_PT").action == DictionaryRows::Action::Delete);
+    // Not here: the arrow, and the size it will cost.
+    QVERIFY(!row("da_DK").installed);
+    QVERIFY(row("da_DK").action == DictionaryRows::Action::Download);
+    QCOMPARE(row("da_DK").downloadSize, Q_INT64_C(838860));
+    // No sha256 in the manifest: not offered at all, because a .bdic that cannot be
+    // verified must never reach Chromium.
+    QVERIFY(row("vi_VN").action == DictionaryRows::Action::None);
+    // On disk but unknown to the catalogue (a user's own file): still a row, still
+    // deletable, and no download size to promise.
+    QVERIFY(row("eo").installed);
+    QVERIFY(row("eo").action == DictionaryRows::Action::Delete);
+    QCOMPARE(row("eo").downloadSize, Q_INT64_C(0));
+
+    // Ordered by the name each row shows, not by the code behind it.
+    QStringList shown;
+    for (const DictionaryRows::Row &r : rows)
+      shown << r.label;
+    QStringList sorted = shown;
+    std::sort(sorted.begin(), sorted.end(), [](const QString &a, const QString &b) {
+      return a.localeAwareCompare(b) < 0;
+    });
+    QCOMPARE(shown, sorted);
+
+    // The Portuguese pair is the reason the label strips CLDR's qualifier: this list
+    // says the territory itself, so "português europeu (Portugal)" said it twice.
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("pt_PT")),
+             QStringLiteral("português (Portugal)"));
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("pt_BR")),
+             QStringLiteral("português (Brasil)"));
+  }
+  // What hovering a row says: read off the file, with nothing invented.
+  void rowTooltipTellsWhatIsKnown() {
+    QTemporaryDir dir;
+    QVERIFY(dir.isValid());
+    QFile f(dir.filePath(QStringLiteral("eo.bdic")));
+    QVERIFY(f.open(QIODevice::WriteOnly));
+    f.write(QByteArray(1536 * 1024, 'x')); // 1.5 MiB, to be said in MB
+    f.close();
+    qputenv("QTWEBENGINE_DICTIONARIES_PATH", dir.path().toLocal8Bit());
+
+    DictionaryRows::Row here;
+    here.code = QStringLiteral("eo");
+    here.installed = true;
+    here.action = DictionaryRows::Action::Delete;
+    const QString tip = DictionaryRows::tooltip(here);
+    QVERIFY(tip.contains(QStringLiteral("1.5 MB")));
+    QVERIFY(tip.endsWith(QStringLiteral("eo"))); // the code Chromium is given
+    // No version and no upstream date: the manifest carries code, size and sha256
+    // only, so either would be invented.
+    QVERIFY(!tip.contains(QStringLiteral("version"), Qt::CaseInsensitive));
+
+    DictionaryRows::Row absent;
+    absent.code = QStringLiteral("da_DK");
+    absent.downloadSize = 838860;
+    absent.action = DictionaryRows::Action::Download;
+    QVERIFY(DictionaryRows::tooltip(absent).contains(QStringLiteral("0.8 MB")));
+
+    qunsetenv("QTWEBENGINE_DICTIONARIES_PATH");
   }
 };
 

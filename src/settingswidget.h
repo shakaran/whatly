@@ -5,6 +5,7 @@
 #include <QWidget>
 
 class QListWidgetItem;
+class QStandardItemModel;
 class QTime;
 
 #include "permissiondialog.h"
@@ -252,6 +253,14 @@ private:
   void populateFontFamilies();
   void populateSpellCheck();
   void saveSpellCheckLanguages();
+  // The picker's rows: every language, ticked or not, here or downloadable. Kept in
+  // step with what is on disk rather than rebuilt, because the list is usually open
+  // while it changes. See DictionaryRows.
+  void syncSpellCheckRows();
+  void setSpellCheckRowProgress(const QString &code, int progress,
+                                const QString &error = QString());
+  void downloadDictionary(const QString &code); // the row's arrow
+  void deleteDictionary(const QString &code);   // the row's bin
   // Fills the language picker from the .qm files compiled into the binary, so
   // adding a translation needs no code change.
   void populateLanguages();
@@ -269,10 +278,15 @@ private:
   QString engineCachePath, enginePersistentStoragePath;
   QTimer *themeSwitchTimer;
   class OllamaManager *m_ollama = nullptr; // lazy; local-model detect/download
-  // Downloadable spell-check dictionaries (#46), shared with DictionariesSection
-  // so there is a single catalogue fetch and one set of download signals.
+  // Downloadable spell-check dictionaries (#46): one catalogue fetch, and the rows
+  // of the language picker are what offers them.
   DictionaryManager *m_dictManager = nullptr;
   QList<DictionaryEntry> m_dictCatalog;
+  // The picker's own model, kept for the life of the widget so a row can change
+  // under an open list. m_spellRowsSyncing marks the writes this refresh does
+  // itself, which must not be mistaken for the user ticking something.
+  QStandardItemModel *m_spellRows = nullptr;
+  bool m_spellRowsSyncing = false;
 };
 
 #endif // SETTINGSWIDGET_H

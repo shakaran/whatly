@@ -9,16 +9,21 @@
 #include <QAbstractItemView>
 #include <QCheckBox>
 #include <QComboBox>
+#include <QCryptographicHash>
 #include <QDialog>
+#include <QDir>
 #include <QFile>
+#include <QFileInfo>
 #include <QDoubleSpinBox>
 #include <QGroupBox>
 #include <QRegularExpression>
 #include <QLineEdit>
 #include <QListWidget>
+#include <QMouseEvent>
 #include <QPointer>
 #include <QScrollArea>
 #include <QScrollBar>
+#include <QSettings>
 #include <QSignalSpy>
 #include <QPushButton>
 #include <QSlider>
@@ -27,9 +32,11 @@
 #include <QTemporaryDir>
 #include <QTimer>
 #include <QToolButton>
+#include <QUrl>
 
 #include "customtitlebar.h"
 #include "dictionaries.h"
+#include "dictionaryrows.h"
 #include "quickcompose.h"
 #include "settingsmanager.h"
 #include "settingswidget.h"
@@ -419,9 +426,14 @@ private slots:
     QCOMPARE(Dictionaries::languageLabel(QStringLiteral("es_MX")),
              QStringLiteral("español (México)"));
     // The bundle ships both of these and Qt reads them as one locale, so the label
-    // has to keep them apart.
+    // has to keep them apart — and say what the variant is rather than printing the
+    // raw code, which told a reader nothing.
     QVERIFY(Dictionaries::languageLabel(QStringLiteral("de_DE")) !=
             Dictionaries::languageLabel(QStringLiteral("de_DE_neu")));
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("de_DE_neu"))
+                .contains(QStringLiteral("neu")));
+    QVERIFY(!Dictionaries::languageLabel(QStringLiteral("de_DE_neu"))
+                 .contains(QStringLiteral("de_DE_neu")));
     QCOMPARE(Dictionaries::languageLabel(QStringLiteral("eo")),
              QStringLiteral("Esperanto (eo)"));
     QCOMPARE(Dictionaries::languageLabel(QStringLiteral("zz_ZZ")),
@@ -461,6 +473,129 @@ private slots:
     s.remove(QStringLiteral("spellCheckLanguages"));
     s.remove(QStringLiteral("spellCheckFocus"));
     qunsetenv("QTWEBENGINE_DICTIONARIES_PATH");
+  }
+
+  // The language list is also where dictionaries are got and got rid of (#46): a
+  // language the catalogue offers but the disk has not, fetched by pressing the
+  // arrow on its own row, then deleted by pressing the bin on it. The catalogue is
+  // a directory served over file://, so the manager fetches the manifest and the
+  // .bdic through the same code path as the release does — hash check and all —
+  // while the test itself touches no network.
+  void aRowDownloadsAndDeletesItsDictionary() {
+    QTemporaryDir served;
+    QVERIFY(served.isValid());
+    const QByteArray body = QByteArrayLiteral("BDIC") + QByteArray(4096, 'd');
+    {
+      QFile asset(served.filePath(QStringLiteral("da_DK.bdic")));
+      QVERIFY(asset.open(QIODevice::WriteOnly));
+      asset.write(body);
+    }
+    const QString sha = QString::fromLatin1(
+        QCryptographicHash::hash(body, QCryptographicHash::Sha256).toHex());
+    {
+      QFile manifest(served.filePath(QStringLiteral("manifest.json")));
+      QVERIFY(manifest.open(QIODevice::WriteOnly));
+      manifest.write(QStringLiteral("{\"dictionaries\":[{\"code\":\"da_DK\","
+                                    "\"size\":%1,\"sha256\":\"%2\"}]}")
+                         .arg(body.size())
+                         .arg(sha)
+                         .toUtf8());
+    }
+    qputenv("WHATLY_DICT_BASE_URL",
+            QUrl::fromLocalFile(served.path()).toString().toUtf8());
+
+    // One dictionary already in place, in the very directory a download lands in,
+    // so the list has a row of each kind. initTestCase's test mode is what keeps
+    // that directory out of the real profile.
+    const QString userDir = Dictionaries::userDictionaryPath();
+    QVERIFY(!userDir.isEmpty());
+    QVERIFY(QDir().mkpath(userDir));
+    const QString mine = QDir(userDir).filePath(QStringLiteral("en_US.bdic"));
+    const QString fetched = QDir(userDir).filePath(QStringLiteral("da_DK.bdic"));
+    QFile::remove(fetched);
+    {
+      QFile f(mine);
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("BDIC-stub");
+    }
+    QSettings &s = SettingsManager::instance().settings();
+    // Something chosen already, so the one-time "fetch the system locale's
+    // dictionary" step stays out of the way of what is being tested here.
+    s.setValue(QStringLiteral("spellCheckLanguages"),
+               QStringList{QStringLiteral("en_US")});
+
+    QTemporaryDir cache, storage;
+    SettingsWidget sw(nullptr, 0, cache.path(), storage.path());
+    auto *combo =
+        sw.findChild<QComboBox *>(QStringLiteral("spellCheckLanguageComboBox"));
+    QVERIFY(combo);
+    QAbstractItemModel *model = combo->model();
+    const auto rowOf = [model](const char *code) {
+      for (int i = 0; i < model->rowCount(); ++i)
+        if (model->index(i, 0).data(DictionaryRows::CodeRole).toString() ==
+            QLatin1String(code))
+          return i;
+      return -1;
+    };
+
+    // The catalogue is fetched asynchronously; its language turns up as a row.
+    QTRY_VERIFY_WITH_TIMEOUT(rowOf("da_DK") >= 0, 5000);
+    QModelIndex row = model->index(rowOf("da_DK"), 0);
+    QVERIFY(!row.data(DictionaryRows::InstalledRole).toBool());
+    QCOMPARE(row.data(DictionaryRows::ActionRole).toInt(),
+             int(DictionaryRows::Action::Download));
+    // Greyed, because there is nothing yet to check spelling against.
+    QVERIFY(!(model->flags(row) & Qt::ItemIsEnabled));
+    QVERIFY(row.data(Qt::ToolTipRole).toString().contains(QLatin1String("da_DK")));
+
+    const QModelIndex have = model->index(rowOf("en_US"), 0);
+    QVERIFY(have.data(DictionaryRows::InstalledRole).toBool());
+    QCOMPARE(have.data(DictionaryRows::ActionRole).toInt(),
+             int(DictionaryRows::Action::Delete));
+    QCOMPARE(have.data(Qt::CheckStateRole).toInt(), int(Qt::Checked));
+
+    // Press the row's button where the delegate paints it — the same rectangle the
+    // click handler hit-tests, which is the point of it being one function.
+    combo->showPopup();
+    QAbstractItemView *view = combo->view();
+    QVERIFY(view);
+    const auto pressTheButton = [view](const QModelIndex &at) {
+      const QPoint on =
+          DictionaryRowDelegate::actionRect(view->visualRect(at)).center();
+      QMouseEvent release(QEvent::MouseButtonRelease, QPointF(on),
+                          QPointF(view->viewport()->mapToGlobal(on)),
+                          Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+      QApplication::sendEvent(view->viewport(), &release);
+    };
+
+    pressTheButton(model->index(rowOf("da_DK"), 0));
+    QTRY_VERIFY_WITH_TIMEOUT(QFileInfo::exists(fetched), 5000);
+    // It lands ticked and deletable, and it is in what Chromium is given, with no
+    // restart in between.
+    row = model->index(rowOf("da_DK"), 0);
+    QVERIFY(row.data(DictionaryRows::InstalledRole).toBool());
+    QCOMPARE(row.data(DictionaryRows::ActionRole).toInt(),
+             int(DictionaryRows::Action::Delete));
+    QCOMPARE(row.data(Qt::CheckStateRole).toInt(), int(Qt::Checked));
+    QVERIFY(Dictionaries::selectedDictionaries().contains(QStringLiteral("da_DK")));
+
+    // The bin takes it away again, and its row goes back to offering the download.
+    pressTheButton(model->index(rowOf("da_DK"), 0));
+    QVERIFY(!QFileInfo::exists(fetched));
+    row = model->index(rowOf("da_DK"), 0);
+    QCOMPARE(row.data(DictionaryRows::ActionRole).toInt(),
+             int(DictionaryRows::Action::Download));
+    // The choice outlives the file: deleting a dictionary must not make the user
+    // find its language in the list a second time.
+    QVERIFY(s.value(QStringLiteral("spellCheckLanguages"))
+                .toStringList()
+                .contains(QStringLiteral("da_DK")));
+    QVERIFY(!Dictionaries::selectedDictionaries().contains(QStringLiteral("da_DK")));
+
+    combo->hidePopup();
+    QFile::remove(mine);
+    s.remove(QStringLiteral("spellCheckLanguages"));
+    qunsetenv("WHATLY_DICT_BASE_URL");
   }
 };
 

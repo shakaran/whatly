@@ -37,7 +37,7 @@
 #include "customcss.h"
 #include "webengineprofilemanager.h"
 #include "dictionaries.h"
-#include "dictionariessection.h"
+#include "dictionaryrows.h"
 #include "chatliststrip.h"
 #include "privacyblur.h"
 #include "webfont.h"
@@ -575,10 +575,11 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     moveLayout(body(chatting), ui->horizontalLayoutUndoSend);
 
     // ── Spell-check dictionaries ─────────────────────────────
-    // A list with a Download/Delete button per language (issue #46): the full
-    // set is ~45 MB, so packages bundle a minimum and the rest are fetched here.
-    // One manager is shared with the language picker below, so ticking a not-yet
-    // installed language there downloads it too — one catalogue fetch for both.
+    // The full set is ~43 MB, so packages bundle a minimum and the rest are
+    // fetched on demand (issue #46). The list that does it is the language picker
+    // in "Chatting" above: every language gets a row there, and the row carries
+    // the one control its state allows — a tick box and a bin for one you have, a
+    // download arrow for one you have not.
     if (!m_dictManager)
       m_dictManager = new DictionaryManager(this);
     connect(m_dictManager, &DictionaryManager::catalogReady, this,
@@ -611,18 +612,34 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
               }
             });
 
-    auto *dictionaries = newSection(tr("Spell-check dictionaries"));
-    auto *dictionariesWidget = new DictionariesSection(m_dictManager, dictionaries);
-    body(dictionaries)->addWidget(dictionariesWidget);
-    connect(dictionariesWidget, &DictionariesSection::installedChanged, this,
-            [this]() {
-              // A language appeared or was removed: re-offer them in the picker
-              // and re-apply, so a just-downloaded language works without a
-              // restart and a deleted one drops out.
+    // A download in flight shows its per-cent on its own row, so the list is also
+    // where you watch it arrive.
+    connect(m_dictManager, &DictionaryManager::downloadProgress, this,
+            [this](const QString &code, int percent) {
+              setSpellCheckRowProgress(code, percent);
+            });
+    connect(m_dictManager, &DictionaryManager::downloadFinished, this,
+            [this](const QString &code, bool ok, const QString &error) {
+              if (!ok) {
+                setSpellCheckRowProgress(code, DictionaryRows::Failed, error);
+                return;
+              }
+              // A language you went and fetched is one you mean to write in, so it
+              // arrives ticked; re-reading the list hands it to Chromium, which is
+              // what makes it work without a restart.
+              QStringList chosen = SettingsManager::instance()
+                                       .settings()
+                                       .value(QStringLiteral("spellCheckLanguages"))
+                                       .toStringList();
+              if (!chosen.contains(code)) {
+                chosen << code;
+                SettingsManager::instance().settings().setValue(
+                    QStringLiteral("spellCheckLanguages"), chosen);
+              }
               populateSpellCheck();
               emit spellCheckChanged();
             });
-    m_dictManager->fetchCatalog(); // one fetch, feeds both the section and picker
+    m_dictManager->fetchCatalog(); // the downloadable languages, for the picker
 
     // ── Privacy & Lock ──────────────────────────────────────
     auto *privacy = newSection(tr("Privacy & Lock"));
@@ -861,21 +878,43 @@ bool SettingsWidget::eventFilter(QObject *obj, QEvent *event) {
     return true;
   }
 
-  // The spell-check language combo is a multi-select: a click on the drop-down
-  // list toggles that language's checkbox and keeps the list open, instead of
-  // picking one entry and closing (which is what a plain combo does).
+  // The spell-check language list is a multi-select and a dictionary manager: a
+  // click on a row toggles that language's tick and keeps the list open (instead of
+  // picking one entry and closing, which is what a plain combo does), and a click
+  // on the row's button downloads or deletes that language's dictionary.
   if (ui->spellCheckLanguageComboBox->view() &&
       obj == ui->spellCheckLanguageComboBox->view()->viewport() &&
-      event->type() == QEvent::MouseButtonRelease) {
-    auto *me = static_cast<QMouseEvent *>(event);
+      (event->type() == QEvent::MouseButtonRelease ||
+       event->type() == QEvent::MouseMove)) {
     QAbstractItemView *view = ui->spellCheckLanguageComboBox->view();
+    if (event->type() == QEvent::MouseMove) {
+      // The button lights up under the pointer, and moving within one row is a
+      // move the view would not repaint for on its own.
+      view->viewport()->update();
+      return QWidget::eventFilter(obj, event);
+    }
+    auto *me = static_cast<QMouseEvent *>(event);
     const QModelIndex index = view->indexAt(me->pos());
     if (index.isValid()) {
-      const Qt::CheckState now =
-          view->model()->data(index, Qt::CheckStateRole).value<Qt::CheckState>();
-      view->model()->setData(index, now == Qt::Checked ? Qt::Unchecked
-                                                        : Qt::Checked,
-                             Qt::CheckStateRole);
+      const auto action = static_cast<DictionaryRows::Action>(
+          index.data(DictionaryRows::ActionRole).toInt());
+      if (action != DictionaryRows::Action::None &&
+          DictionaryRowDelegate::actionRect(view->visualRect(index))
+              .contains(me->pos())) {
+        const QString code = index.data(DictionaryRows::CodeRole).toString();
+        if (action == DictionaryRows::Action::Download)
+          downloadDictionary(code);
+        else
+          deleteDictionary(code);
+      } else if (index.data(DictionaryRows::InstalledRole).toBool()) {
+        // Only a language that is here can be ticked; a row waiting to be
+        // downloaded has nothing to check spelling with yet.
+        const Qt::CheckState now =
+            view->model()->data(index, Qt::CheckStateRole).value<Qt::CheckState>();
+        view->model()->setData(index, now == Qt::Checked ? Qt::Unchecked
+                                                          : Qt::Checked,
+                               Qt::CheckStateRole);
+      }
     }
     return true; // consume, so the popup does not close
   }
@@ -2319,11 +2358,15 @@ void SettingsWidget::populateSpellCheck() {
           : tr("Check spelling as I type"));
   ui->spellCheckCheckBox->blockSignals(false);
 
-  // The language picker is multi-select: Chromium can check against several
-  // languages at once. A plain QComboBox is single-select, so its items are made
-  // checkable and an event filter (installed once, below) toggles them on click
-  // without closing the popup.
-  const QStringList selected = Dictionaries::selectedDictionaries();
+  syncSpellCheckRows();
+}
+
+// The picker's list, which is also where dictionaries are got and got rid of
+// (issue #46): one row per language, carrying the tick that says spelling is
+// checked against it and the one button its state allows. See DictionaryRows for
+// what a row is, DictionaryRowDelegate for how it is drawn, and eventFilter() for
+// the click that presses its button.
+void SettingsWidget::syncSpellCheckRows() {
   auto *combo = ui->spellCheckLanguageComboBox;
   combo->blockSignals(true);
   if (!combo->isEditable()) {
@@ -2335,57 +2378,141 @@ void SettingsWidget::populateSpellCheck() {
     // list from the arrow alone. See eventFilter().
     combo->lineEdit()->installEventFilter(this);
   }
-  auto *model = new QStandardItemModel(combo);
-  for (const QString &dictionary : available) {
-    auto *item = new QStandardItem(Dictionaries::languageLabel(dictionary));
-    item->setData(dictionary, Qt::UserRole);
-    item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
-    item->setCheckState(selected.contains(dictionary) ? Qt::Checked
-                                                       : Qt::Unchecked);
-    model->appendRow(item);
+  if (!m_spellRows) {
+    m_spellRows = new QStandardItemModel(combo);
+    combo->setModel(m_spellRows);
+    connect(m_spellRows, &QStandardItemModel::itemChanged, this,
+            [this](QStandardItem *) {
+              if (m_spellRowsSyncing)
+                return; // this refresh's own writing, not the user ticking
+              saveSpellCheckLanguages();
+            });
+    if (QAbstractItemView *view = combo->view()) {
+      view->setItemDelegate(new DictionaryRowDelegate(view));
+      // The clicks: a tick that must not dismiss the list, and the row's button.
+      view->viewport()->installEventFilter(this);
+    }
   }
-  // Downloadable languages not yet installed: ticking one fetches it (#46). Only
-  // when the catalogue was fetched; otherwise the picker is just what is present.
-  for (const DictionaryEntry &entry : m_dictCatalog) {
-    if (available.contains(entry.code))
-      continue;
-    auto *item =
-        new QStandardItem(Dictionaries::languageLabel(entry.code) +
-                          QStringLiteral("  \u2014 ") + tr("download"));
-    item->setData(entry.code, Qt::UserRole);
-    item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
-    item->setCheckState(selected.contains(entry.code) ? Qt::Checked
-                                                      : Qt::Unchecked);
-    model->appendRow(item);
+
+  const QStringList installed = Dictionaries::availableDictionaries();
+  QStringList removable;
+  for (const QString &code : installed)
+    if (DictionaryManager::isRemovable(code))
+      removable << code; // a real download, not a symlink into the bundle
+  const QStringList selected = Dictionaries::selectedDictionaries();
+  const QList<DictionaryRows::Row> rows =
+      DictionaryRows::build(installed, removable, m_dictCatalog);
+
+  // Updated in place rather than rebuilt: this list is usually open while a
+  // download finishes on it or a language is deleted from it, and handing the
+  // combo a new model would pull the list out from under the pointer. Rows are
+  // matched by their code, so a row that appears or goes finds its own place.
+  m_spellRowsSyncing = true;
+  for (int i = 0; i < rows.size(); ++i) {
+    const DictionaryRows::Row &row = rows.at(i);
+    int at = -1;
+    for (int j = i; j < m_spellRows->rowCount(); ++j)
+      if (m_spellRows->item(j)->data(DictionaryRows::CodeRole).toString() ==
+          row.code) {
+        at = j;
+        break;
+      }
+    QStandardItem *item = nullptr;
+    if (at < 0) {
+      item = new QStandardItem;
+      m_spellRows->insertRow(i, item);
+    } else {
+      if (at != i)
+        m_spellRows->insertRow(i, m_spellRows->takeRow(at));
+      item = m_spellRows->item(i);
+    }
+
+    // A download in flight keeps its per-cent, and one that failed keeps saying so
+    // until it is tried again or the language arrives some other way.
+    const QVariant was = item->data(DictionaryRows::ProgressRole);
+    int progress = DictionaryRows::Idle;
+    if (m_dictManager && m_dictManager->isDownloading(row.code))
+      progress = was.isValid() ? was.toInt() : 0;
+    else if (!row.installed && was.toInt() == DictionaryRows::Failed)
+      progress = DictionaryRows::Failed;
+
+    item->setData(row.label, Qt::DisplayRole);
+    item->setData(row.code, DictionaryRows::CodeRole);
+    item->setData(row.installed, DictionaryRows::InstalledRole);
+    item->setData(static_cast<int>(row.action), DictionaryRows::ActionRole);
+    item->setData(row.downloadSize, DictionaryRows::SizeRole);
+    item->setData(progress, DictionaryRows::ProgressRole);
+    if (progress != DictionaryRows::Failed) // that one carries the reason
+      item->setData(DictionaryRows::tooltip(row), Qt::ToolTipRole);
+    item->setCheckState(row.installed && selected.contains(row.code)
+                            ? Qt::Checked
+                            : Qt::Unchecked);
+    // A language that is not on disk cannot be checked against, so its row is
+    // greyed and its download arrow is the only thing on it that does anything.
+    item->setFlags(row.installed ? (Qt::ItemIsEnabled | Qt::ItemIsUserCheckable)
+                                 : Qt::ItemIsUserCheckable);
   }
-  combo->setModel(model);
-  connect(model, &QStandardItemModel::itemChanged, this,
-          [this](QStandardItem *item) {
-            // Ticking a listed-but-not-installed language downloads it; it takes
-            // effect once the .bdic lands (installedChanged -> re-apply).
-            const QString code = item->data(Qt::UserRole).toString();
-            if (item->checkState() == Qt::Checked && m_dictManager &&
-                !Dictionaries::availableDictionaries().contains(code)) {
-              for (const DictionaryEntry &e : m_dictCatalog)
-                if (e.code == code) {
-                  m_dictManager->download(e);
-                  break;
-                }
-            }
-            saveSpellCheckLanguages();
-          });
-  // The view's items are toggled by a click that must not dismiss the popup.
-  if (combo->view() && !combo->view()->viewport()->property("whatlyFilter").toBool()) {
-    combo->view()->viewport()->installEventFilter(this);
-    combo->view()->viewport()->setProperty("whatlyFilter", true);
-  }
-  // Reads as single-choice at a glance, but it is a multi-select: say so, since
-  // the checkboxes only appear once the popup is open (issue #46).
-  combo->setToolTip(
-      tr("Tick one or more languages to check spelling against."));
-  combo->setEnabled(!available.isEmpty() && ui->spellCheckCheckBox->isChecked());
+  while (m_spellRows->rowCount() > rows.size())
+    m_spellRows->removeRow(m_spellRows->rowCount() - 1); // languages that went
+  m_spellRowsSyncing = false;
+
+  // Reads as single-choice at a glance, but it is a multi-select and a dictionary
+  // manager besides: say so, since neither shows until the list is open.
+  combo->setToolTip(tr("Tick the languages to check spelling against. Each row "
+                       "downloads or deletes its dictionary."));
+  // Live even when spelling is not being checked, and when nothing is installed at
+  // all: this is where a dictionary is fetched, so locking it would leave whoever
+  // has none no way to get one.
+  combo->setEnabled(m_spellRows->rowCount() > 0);
   combo->blockSignals(false);
   updateSpellCheckSummary();
+}
+
+// A download's per-cent on the row it belongs to, or DictionaryRows::Failed with
+// the reason on the tooltip. Nothing happens for a language the list is not
+// showing, which is the case while Settings has never been opened.
+void SettingsWidget::setSpellCheckRowProgress(const QString &code, int progress,
+                                              const QString &error) {
+  if (!m_spellRows)
+    return;
+  for (int i = 0; i < m_spellRows->rowCount(); ++i) {
+    QStandardItem *item = m_spellRows->item(i);
+    if (item->data(DictionaryRows::CodeRole).toString() != code)
+      continue;
+    m_spellRowsSyncing = true;
+    item->setData(progress, DictionaryRows::ProgressRole);
+    if (!error.isEmpty())
+      item->setData(item->data(Qt::ToolTipRole).toString() +
+                        QLatin1Char('\n') + error,
+                    Qt::ToolTipRole);
+    m_spellRowsSyncing = false;
+    return;
+  }
+}
+
+// Fetch one language's dictionary, named by its row. Only a catalogued language
+// can be fetched: the file has to come from somewhere, and the manifest is what
+// says how big it is and what it should hash to.
+void SettingsWidget::downloadDictionary(const QString &code) {
+  if (!m_dictManager)
+    return;
+  for (const DictionaryEntry &entry : m_dictCatalog)
+    if (entry.code == code) {
+      setSpellCheckRowProgress(code, 0);
+      m_dictManager->download(entry);
+      return;
+    }
+}
+
+// Delete one language's dictionary from disk. The tick is deliberately left where
+// it was: the stored list keeps the language and selectedDictionaries() drops what
+// is not on disk, so downloading it again restores the choice rather than making
+// the user find it a second time.
+void SettingsWidget::deleteDictionary(const QString &code) {
+  if (!m_dictManager || !m_dictManager->remove(code))
+    return;
+  populateSpellCheck();
+  emit spellCheckChanged();
 }
 
 // The combo shows a summary of what is checked rather than one entry's text.
@@ -2411,13 +2538,38 @@ void SettingsWidget::updateSpellCheckSummary() {
 }
 
 void SettingsWidget::saveSpellCheckLanguages() {
+  const QStringList installed = Dictionaries::availableDictionaries();
+  const QStringList stored = SettingsManager::instance()
+                                 .settings()
+                                 .value(QStringLiteral("spellCheckLanguages"))
+                                 .toStringList();
+  const auto ticked = [this](const QString &code) {
+    if (!m_spellRows)
+      return false;
+    for (int i = 0; i < m_spellRows->rowCount(); ++i)
+      if (m_spellRows->item(i)->data(DictionaryRows::CodeRole).toString() == code)
+        return m_spellRows->item(i)->checkState() == Qt::Checked;
+    return false;
+  };
+
   QStringList chosen;
-  auto *model =
-      qobject_cast<QStandardItemModel *>(ui->spellCheckLanguageComboBox->model());
-  if (model)
-    for (int i = 0; i < model->rowCount(); ++i)
-      if (model->item(i)->checkState() == Qt::Checked)
-        chosen << model->item(i)->data(Qt::UserRole).toString();
+  // What was already stored, in the order it was stored in, so ticking one box does
+  // not shuffle the lap Ctrl+Alt+S walks. A language that is not on disk keeps its
+  // place: its row cannot be ticked, and dropping it here would lose the choice for
+  // good — Dictionaries::selectedDictionaries() leaves it out of what Chromium is
+  // given, and downloading it again brings the tick back.
+  for (const QString &code : stored)
+    if (!installed.contains(code) || ticked(code))
+      chosen << code;
+  // Then whatever was ticked since, in the order the list shows them.
+  if (m_spellRows)
+    for (int i = 0; i < m_spellRows->rowCount(); ++i) {
+      const QString code =
+          m_spellRows->item(i)->data(DictionaryRows::CodeRole).toString();
+      if (m_spellRows->item(i)->checkState() == Qt::Checked &&
+          !chosen.contains(code))
+        chosen << code;
+    }
   SettingsManager::instance().settings().setValue("spellCheckLanguages", chosen);
   updateSpellCheckSummary();
   emit spellCheckChanged();
@@ -2449,7 +2601,9 @@ void SettingsWidget::on_privacyBlurButtonCheckBox_toggled(bool checked) {
 
 void SettingsWidget::on_spellCheckCheckBox_toggled(bool checked) {
   SettingsManager::instance().settings().setValue("spellCheckEnabled", checked);
-  ui->spellCheckLanguageComboBox->setEnabled(checked);
+  // The list stays open for business with the checker switched off: it is also
+  // where dictionaries are downloaded and deleted, and someone who has none would
+  // otherwise have no way to get one.
   emit spellCheckChanged();
 }
 

@@ -228,14 +228,34 @@ QString languageLabel(const QString &code) {
   if (name.isEmpty())
     return code;
 
+  // CLDR names a variant that is not its default by qualifying the plain name —
+  // "português europeu" beside the plain "português" that means Brazil — and this
+  // list says the territory itself, so the qualifier only repeats it in other
+  // words. Cut it back to the plain name. A name that differs outright rather than
+  // by a qualifier ("British English" beside "American English") does not start
+  // with it and stays whole.
+  const QString plain = QLocale(locale.language()).nativeLanguageName();
+  if (!plain.isEmpty() && name.size() > plain.size() && name.startsWith(plain))
+    name = plain;
+
   // Two cases where the code itself is the only honest thing to add. A code Qt does
   // not model exactly: the bundle ships de_DE beside de_DE_neu (the reformed
   // spelling) and en_US beside en-US, and Qt reads each pair as one and the same
   // locale, so naming them by locale alone would put two entries with identical
   // names in the picker. And a bare language like "eo", where Qt would otherwise
   // supply whichever territory it considers likeliest — for Esperanto, "mondo".
-  if (locale.name() != code)
+  if (locale.name() != code) {
+    // One of those is worth spelling out rather than dumping the code: a variant
+    // tag, as in de_DE_neu — German in the reformed spelling, which Qt reads as
+    // plain de_DE. Name the territory and the variant, because "Deutsch
+    // (de_DE_neu)" tells a reader nothing about what it is.
+    const QStringList parts = code.split(QLatin1Char('_'), Qt::SkipEmptyParts);
+    const QString territory = locale.nativeTerritoryName();
+    if (parts.size() > 2 && !territory.isEmpty())
+      return name + QStringLiteral(" (") + territory +
+             QStringLiteral(" · ") + parts.last() + QStringLiteral(")");
     return name + QStringLiteral(" (") + code + QStringLiteral(")");
+  }
 
   // Every entry gets the same shape, "language (territory)", because a list where
   // some rows carry a territory and others do not reads as an accident. CLDR
