@@ -108,6 +108,14 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.2.1" date="2026-08-13">
+      <description>
+        <p>A packaging point release (no application changes):</p>
+        <ul>
+          <li>Windows point releases now also ship a small update patch (.msp), built against the minor's x.y.0 installer, so an existing install can update by a couple of megabytes instead of re-downloading the whole ~140 MB</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.2.0" date="2026-08-12">
       <description>
         <p>Builds on 7.1.0, all local and private:</p>

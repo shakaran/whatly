@@ -1,3 +1,12 @@
+whatly (7.2.1) unstable; urgency=medium
+
+  * Windows: point releases now also ship a small update patch (.msp), built
+    against the minor's x.y.0 installer, so an existing install updates by a
+    couple of megabytes instead of the whole ~140 MB download (#71). No
+    application changes; packaging/CI only.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Thu, 13 Aug 2026 01:41:00 +0200
+
 whatly (7.2.0) unstable; urgency=medium
 
   * AI (local Ollama or any OpenAI-compatible endpoint): one-click tone rewrites

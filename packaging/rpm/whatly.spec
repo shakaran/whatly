@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        7.2.0
+Version:        7.2.1
 # Reference system-Qt spec for downstream packagers; the release itself builds
 # the native rpm from packaging/obs/whatly.spec. Release kept at 0 to match it
 # (both are the system-Qt "whatly"), so this never looks newer than, or collides
@@ -61,6 +61,13 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Thu Aug 13 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.2.1-1
+- Windows: point releases now also ship a small update patch (.msp) built
+  against the minor's x.y.0 installer, so an existing install updates by a couple
+  of megabytes instead of the whole ~140 MB download (#71). Qt is pinned per
+  minor so the patch stays small. Packaging/CI hardening for the Windows and
+  Linux artifact builds. See CHANGELOG.md.
+
 * Wed Aug 12 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.2.0-1
 - AI (local Ollama or any OpenAI-compatible endpoint): one-click tone rewrites
   (formal/friendlier/shorter), an unread-chats digest, and reply reminders that

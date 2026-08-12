@@ -1,4 +1,6 @@
-## Unreleased
+## 7.2.1 (2026-08-13)
+
+A packaging point release: no application changes, only how Windows updates ship.
 
 **Windows: a small update patch (.msp) instead of the whole installer (#71).**
 Because Qt is now pinned per minor version, a point release usually changes only
