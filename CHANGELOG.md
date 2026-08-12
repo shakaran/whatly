@@ -1,5 +1,12 @@
 ## Unreleased
 
+**Windows: the installer and portable zip now run on a clean machine (#68).**
+`whatly.exe` imports the MSVC runtime (`MSVCP140.dll`, `VCRUNTIME140*.dll`), but
+neither Windows artifact shipped it, so a PC without the "VC++ 2015–2022
+Redistributable" failed to launch with a missing-DLL dialog. The runtime is now
+deployed next to the executable, fixing both the `.msi` and the `.zip`; a CI
+guard fails the build if it is ever missing again.
+
 **A warning before a full disk corrupts your session.** When the data folder's
 disk drops below 1 GB free, Whatly now warns at startup that WhatsApp Web's
 local database can be corrupted by a truncated write (which forces you to link
