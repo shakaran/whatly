@@ -76,29 +76,38 @@ jobs:
       - name: Build
         run: cmake --build build --config Release
 
+      # windeployqt only copies the MSVC runtime when asked, and it finds the
+      # redistributable through VCINSTALLDIR — which the Visual Studio generator
+      # never sets, unlike a vcvars shell. Without both halves, whatly.exe ships
+      # importing MSVCP140.dll / VCRUNTIME140.dll from a machine that may not
+      # have them, and dies before main() with a missing-DLL box (issue #68).
+      # Everything downstream is packaged from build\Release, so this one step
+      # fixes the .msi and the portable .zip together.
       - name: Deploy Qt runtime
-        # --compiler-runtime copies the MSVC runtime (msvcp140.dll,
-        # vcruntime140*.dll, concrt140.dll) next to whatly.exe. Without it the
-        # binary's imports are absent from both artifacts, so a machine with no
-        # "VC++ 2015-2022 Redistributable" fails to launch with a missing-DLL
-        # dialog. App-local is licence-permitted and the only thing that works
-        # for the portable .zip (a zip cannot install a prerequisite). Both the
-        # .msi (harvested) and the .zip come from build\Release, so this one
-        # flag fixes both. See issue #68.
-        run: '& "$env:QT_ROOT_DIR\bin\windeployqt.exe" --compiler-runtime build\Release\whatly.exe'
-
-      - name: Verify the MSVC runtime was bundled
-        # whatly.exe imports these from the redistributable; if --compiler-runtime
-        # ever stops copying them, fail here rather than ship a package that dies
-        # on first launch on a machine without the VC++ redist (issue #68). Same
-        # fail-loudly instinct as the .msi size guard below.
+        shell: pwsh
         run: |
-          $need = 'msvcp140.dll','vcruntime140.dll','vcruntime140_1.dll'
-          $missing = $need | Where-Object { -not (Test-Path "build\Release\$_") }
-          if ($missing) {
-            throw "MSVC runtime missing from build\Release: $($missing -join ', ') - windeployqt --compiler-runtime did not copy it"
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $vs = & $vswhere -latest -products * `
+            -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
+            -property installationPath
+          if ($vs) { $env:VCINSTALLDIR = (Join-Path $vs 'VC\') }
+          & "$env:QT_ROOT_DIR\bin\windeployqt.exe" --compiler-runtime build\Release\whatly.exe
+
+      # A silent no-op here is the whole failure mode, so check rather than hope:
+      # windeployqt only warns when it cannot find the redistributable.
+      - name: Verify the MSVC runtime was deployed
+        shell: pwsh
+        run: |
+          $missing = @()
+          foreach ($dll in 'msvcp140.dll', 'vcruntime140.dll', 'vcruntime140_1.dll') {
+            if (-not (Test-Path "build\Release\$dll")) { $missing += $dll }
           }
-          Write-Host "MSVC runtime present: $($need -join ', ')"
+          if ($missing.Count -gt 0) {
+            throw "windeployqt did not deploy the MSVC runtime: $($missing -join ', '). " +
+                  "Without it the .msi and the .zip cannot start on a machine that " +
+                  "lacks the VC++ redistributable."
+          }
+          Get-ChildItem build\Release\*140*.dll | Select-Object Name, Length
 
       # ── Optional: code-sign the built .exe via SignPath (issue #325) ──────────
       # Skipped entirely unless SIGNPATH_API_TOKEN is configured. When it is, the
