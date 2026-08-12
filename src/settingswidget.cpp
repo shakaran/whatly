@@ -827,11 +827,18 @@ bool SettingsWidget::eventFilter(QObject *obj, QEvent *event) {
       ui->spellCheckLanguageComboBox->lineEdit() &&
       obj == ui->spellCheckLanguageComboBox->lineEdit()) {
     QAbstractItemView *view = ui->spellCheckLanguageComboBox->view();
-    // A second click closes it again, since that is what clicking a combo does.
-    if (view && view->isVisible())
-      ui->spellCheckLanguageComboBox->hidePopup();
-    else
-      ui->spellCheckLanguageComboBox->showPopup();
+    // Opening it from inside the press made it flash and vanish: the list appears
+    // under the pointer, the release that follows lands on it, and a release on a
+    // freshly shown popup reads as a click outside the list, which closes it. Qt's
+    // own arrow path blocks that one release with an internal timer this cannot
+    // reach — so open the list once this click has finished being delivered.
+    //
+    // Nothing to do when it is already open: the list has the mouse then, so the
+    // press never arrives here and Qt closes it as a click outside, which is the
+    // behaviour wanted anyway.
+    if (!view || !view->isVisible())
+      QTimer::singleShot(0, ui->spellCheckLanguageComboBox,
+                         &QComboBox::showPopup);
     return true;
   }
 

@@ -70,10 +70,10 @@ QStringList activeDictionaries();
 // per lap. An unknown `current` starts the lap over. Pure and unit tested.
 QString nextFocus(const QStringList &chosen, const QString &current);
 
-// A language code as something to read: "Esperanto (eo)", "Español (es_ES)".
-// Built from the language alone, so es_ES reads "Español" rather than "Español de
-// España" — the code in brackets already says which territory it is. A code no
-// QLocale recognises is handed back as it stands.
+// A language code as something to read: "Esperanto (eo)", "British English
+// (en_GB)". Named by the code's own locale, so the territory is not lost — the
+// language alone would have every English dictionary reading "American English".
+// A code no QLocale recognises is handed back as it stands.
 QString languageLabel(const QString &code);
 
 } // namespace Dictionaries

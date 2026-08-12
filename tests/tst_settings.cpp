@@ -378,6 +378,23 @@ private slots:
     // Three ticked, none focused: the count.
     QCOMPARE(combo->lineEdit()->text(), QStringLiteral("3 languages"));
 
+    // Every English dictionary used to read "American English": the label was built
+    // from the language alone, and Qt fills the dropped territory back in with the
+    // likeliest one. Two English variants must not share a name.
+    const QString us = Dictionaries::languageLabel(QStringLiteral("en_US"));
+    const QString gb = Dictionaries::languageLabel(QStringLiteral("en_GB"));
+    QVERIFY(us != gb);
+    QVERIFY(gb.startsWith(QStringLiteral("British")));
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("en_AU"))
+                .startsWith(QStringLiteral("Australian")));
+    // ...and the same trap on the other side of pt: two Portuguese, two names.
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("pt_BR")) !=
+            Dictionaries::languageLabel(QStringLiteral("pt_PT")));
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("eo")),
+             QStringLiteral("Esperanto (eo)"));
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("zz_ZZ")),
+             QStringLiteral("zz_ZZ"));
+
     // What the tray menu and Ctrl+Alt+S do, followed by the call MainWindow makes.
     Dictionaries::setFocusedDictionary(QStringLiteral("eo"));
     sw.updateSpellCheckSummary();
@@ -388,13 +405,23 @@ private slots:
     sw.updateSpellCheckSummary();
     QCOMPARE(combo->lineEdit()->text(), QStringLiteral("3 languages"));
 
-    // A click anywhere on the box opens the list, and a second one closes it.
+    // A click anywhere on the box opens the list — deferred to the next turn of
+    // the event loop, so the release that follows the press cannot be mistaken for
+    // a click outside a list that has only just appeared (which made it flash and
+    // vanish). Closing again is Qt's own doing: with the list open it holds the
+    // mouse, and a synthesised press cannot reproduce that grab, so this checks
+    // only the half that is ours.
     QVERIFY(combo->view());
     QVERIFY(!combo->view()->isVisible());
     QTest::mousePress(combo->lineEdit(), Qt::LeftButton);
-    QVERIFY(combo->view()->isVisible());
-    QTest::mousePress(combo->lineEdit(), Qt::LeftButton);
+    QTest::mouseRelease(combo->lineEdit(), Qt::LeftButton);
+    // Not yet — that is the whole point of the fix, and the assertion that fails if
+    // anyone opens it straight from the press again. The flash-and-vanish itself
+    // needs a real mouse grab and cannot be reproduced here, so this pins the
+    // mechanism instead of the symptom.
     QVERIFY(!combo->view()->isVisible());
+    QTRY_VERIFY(combo->view()->isVisible());
+    combo->hidePopup();
 
     s.remove(QStringLiteral("spellCheckLanguages"));
     s.remove(QStringLiteral("spellCheckFocus"));

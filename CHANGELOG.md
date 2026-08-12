@@ -12,7 +12,11 @@ in Settings is left alone, since that is the set being switched between. Two
 things about the language box itself came out of dogfooding it: it now opens its
 list when clicked anywhere on the box rather than only on the arrow, and an open
 Settings page keeps up with a language switched from the tray or the keyboard
-instead of going on claiming "3 languages" while one of them does the work.
+instead of going on claiming "3 languages" while one of them does the work. The
+languages are also named correctly at last: every English dictionary read
+"American English", and pt_PT was indistinguishable from pt_BR, because the name
+was built from the language with its territory thrown away — en_GB now reads
+"British English", en_AU "Australian English", pt_PT "português europeu".
 
 **The update notice now says the right thing for the way you installed Whatly.**
 It told everyone alike to click through to the download page, which is wrong

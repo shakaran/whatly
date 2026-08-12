@@ -216,10 +216,19 @@ QStringList activeDictionaries() {
 
 QString languageLabel(const QString &code) {
   const QLocale locale(code);
-  if (locale.language() == QLocale::C)
+  // An unrecognised code maps to the C locale (or to no language at all): show it
+  // as it stands rather than inventing a name for it.
+  if (locale.language() == QLocale::C || locale.language() == QLocale::AnyLanguage)
     return code;
-  return QLocale(locale.language()).nativeLanguageName() +
-         QStringLiteral(" (") + code + QStringLiteral(")");
+  // Ask the dictionary's own locale, not QLocale(its language). The language-only
+  // form throws the territory away and Qt fills in the likeliest one, which for
+  // English is the United States — so en_GB and en_AU both came out as "American
+  // English", and pt_PT was indistinguishable from pt_BR. Asking en_GB itself gives
+  // "British English", and pt_PT "português europeu".
+  const QString name = locale.nativeLanguageName();
+  return name.isEmpty()
+             ? code
+             : name + QStringLiteral(" (") + code + QStringLiteral(")");
 }
 
 QString nextFocus(const QStringList &chosen, const QString &current) {
