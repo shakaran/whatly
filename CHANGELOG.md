@@ -1,4 +1,17 @@
-## Unreleased
+## 7.2.0 (2026-08-12)
+
+Whatly 7.2.0 builds on 7.1.0. Highlights, all local and private: one-click AI
+tone rewrites of your draft (more formal, friendlier, shorter), an AI digest of
+your unread chats, and reply reminders that reopen a chat when they come due —
+all running against your configured endpoint, so they work fully offline with
+Ollama. Do Not Disturb now has an on-demand toggle with quick durations, and the
+spell checker can switch its active language mid-sentence. Under the hood, a
+linked account survives a corrupt or wiped profile without re-linking (automatic
+session backup + Service Worker recovery), and a low-disk warning offers to move
+the data folder before a full disk can corrupt it. Plus a stack of packaging
+fixes: the Windows installer and portable zip now carry the MSVC runtime, the
+update notice advises correctly per installation type, and the Linux .deb/.rpm
+ship all their icons and AppStream data.
 
 **The .deb and portable .rpm now show their icons and appear in software centres (#67).** The packaging staged the whole app under /opt/whatly and copied only the 256x256 icon back to a system path, so six of the seven icons — including the monochrome tray icon — were invisible to the desktop, and the AppStream metainfo never reached /usr/share/metainfo, leaving the app with no entry in GNOME Software or KDE Discover. The full icon set, the metainfo and the licence now go to the right system paths. Separately, the native openSUSE .rpm was shipping ~54 MB of unstripped debug info (almost the whole download); its binary is now stripped, taking that package from ~17.5 MB to ~3 MB. The portable .rpm is also renamed **whatly-bundle** (it bundles Qt under /opt), so it can no longer be mistaken by rpm for an upgrade of the native openSUSE **whatly** package and silently switch a user to the bundled layout.
 

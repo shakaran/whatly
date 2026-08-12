@@ -1,3 +1,19 @@
+whatly (7.2.0) unstable; urgency=medium
+
+  * AI (local Ollama or any OpenAI-compatible endpoint): one-click tone rewrites
+    of the composer (more formal, friendlier, shorter), a digest of unread
+    chats, and reply reminders that reopen the chat when due.
+  * Do Not Disturb on demand with quick durations; switch the spell-check
+    language mid-sentence (Ctrl+Alt+S / tray).
+  * Reliability: a linked account survives a corrupt/wiped profile without
+    re-linking (session backup + Service Worker recovery), and a low-disk
+    warning offers to move the data folder before a full disk corrupts it.
+  * Packaging: MSVC runtime in the Windows .msi/.zip (#68), per-installation
+    update advice (#70), Settings wheel scope (#72), and the .deb/.rpm now ship
+    all icons + AppStream data with the native rpm stripped (#67).
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Wed, 12 Aug 2026 21:39:30 +0200
+
 whatly (7.1.0) unstable; urgency=medium
 
   * Spell-check dictionaries are downloadable per language (#46): a fresh

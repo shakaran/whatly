@@ -108,6 +108,18 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.2.0" date="2026-08-12">
+      <description>
+        <p>Builds on 7.1.0, all local and private:</p>
+        <ul>
+          <li>AI (local Ollama or any OpenAI-compatible endpoint): one-click tone rewrites of your draft (more formal, friendlier, shorter), a digest of your unread chats, and reply reminders that reopen a chat when they come due</li>
+          <li>Do Not Disturb on demand with quick durations; switch the spell-check language mid-sentence</li>
+          <li>A linked account survives a corrupt or wiped profile without re-linking (automatic session backup + Service Worker recovery)</li>
+          <li>A low-disk warning offers to move the data folder before a full disk can corrupt it</li>
+          <li>Packaging: the Windows installer and portable zip carry the MSVC runtime; the update notice advises correctly per installation; the Linux .deb/.rpm ship all icons and AppStream data</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.1.0" date="2026-08-11">
       <description>
         <p>A feature release on top of 7.0.0:</p>

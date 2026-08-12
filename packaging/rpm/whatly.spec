@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        7.1.0
+Version:        7.2.0
 # Reference system-Qt spec for downstream packagers; the release itself builds
 # the native rpm from packaging/obs/whatly.spec. Release kept at 0 to match it
 # (both are the system-Qt "whatly"), so this never looks newer than, or collides
@@ -61,6 +61,18 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Wed Aug 12 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.2.0-1
+- AI (local Ollama or any OpenAI-compatible endpoint): one-click tone rewrites
+  (formal/friendlier/shorter), an unread-chats digest, and reply reminders that
+  reopen the chat when due; manual Do Not Disturb with quick durations.
+- Reliability: session-backup restores a linked account after a corrupt/wiped
+  profile (no re-link), Service Worker cache auto-recovery, and a low-disk
+  warning that offers to move the data folder before a full disk corrupts it.
+- Spell-check: switch the active language mid-sentence (Ctrl+Alt+S / tray).
+- Packaging & fixes: MSVC runtime in the Windows .msi/.zip (#68), per-install
+  update advice (#70), Settings wheel scope (#72), rpm icons/metainfo/strip and
+  a renamed whatly-bundle portable rpm (#67). See CHANGELOG.md.
+
 * Mon Aug 11 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.1.0-1
 - Spell-check dictionaries are downloadable per language (#46): packages bundle a
   minimum and fetch the rest on demand, verified by SHA-256; Esperanto included.
