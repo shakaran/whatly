@@ -1,3 +1,14 @@
+## Unreleased
+
+**Windows: a small update patch (.msp) instead of the whole installer (#71).**
+Because Qt is now pinned per minor version, a point release usually changes only
+the app — about 1% of the ~140 MB Windows download. Each x.y.(>0) release now
+also ships a `whatly-<version>-x64.msp` built against that minor's x.y.0
+installer, so an existing install can be updated by applying a couple of
+megabytes rather than re-downloading everything. The full `.msi` and portable
+`.zip` are still published for fresh installs; the patch is an extra. (AppImage
+and Flatpak already update by delta.)
+
 ## 7.2.0 (2026-08-12)
 
 Whatly 7.2.0 builds on 7.1.0. Highlights, all local and private: one-click AI

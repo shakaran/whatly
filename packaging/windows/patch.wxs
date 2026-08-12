@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  WiX v4/v5 source for the Whatly Windows update patch (.msp).
+
+  Built in CI by the `windows` job of release-artifacts.yml, only for a release
+  that is not the x.y.0 baseline of its minor, with:
+    wix build packaging/windows/patch.wxs -d Version=<x.y.z> \
+      -bindpath:target <dir with the x.y.0 baseline .msi> \
+      -bindpath:update  <dir with this release's .msi> \
+      -out whatly-<x.y.z>-x64.msp
+
+  It is a whole-product patch: the empty PatchFamily with Supersede="yes" takes
+  whatever changed between the two MSIs — which, with Qt pinned per minor (#71-A),
+  is usually just whatly.exe, so the .msp is a couple of MB instead of ~140 MB.
+  The base .msi (whatly.wxs) has a fixed UpgradeCode and deterministic component
+  GUIDs, which is what makes it patchable. See issue #71.
+-->
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Patch AllowRemoval="yes"
+         Manufacturer="Ángel Guzmán Maeso"
+         DisplayName="Whatly $(Version) update"
+         Description="Updates an existing Whatly install to $(Version)."
+         Classification="Update">
+    <Media Id="5000" Cabinet="patch.cab">
+      <PatchBaseline Id="WhatlyBaseline" />
+    </Media>
+    <!-- Empty + Supersede: include every component that differs between the
+         baseline and this release, and supersede any earlier patch in the line. -->
+    <PatchFamily Id="WhatlyPatchFamily" Version="$(Version)" Supersede="yes" />
+  </Patch>
+</Wix>

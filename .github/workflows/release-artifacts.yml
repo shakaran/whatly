@@ -198,6 +198,47 @@ jobs:
           }
           gh release upload "$tag" "$env:ASSET" "$env:MSI" --clobber --repo $env:GITHUB_REPOSITORY
 
+      - name: Build MSP update patch (best-effort)
+        # A small .msp (~2 MB) that updates the minor's x.y.0 install to this
+        # release when only the app changed. Qt is pinned per minor (#71-A), so
+        # within a minor it does not move, keeping the patch tiny; a new minor is
+        # x.y.0, which has no baseline and so no patch — which is also how a Qt
+        # bump is handled (it lands on x.y.0). Additive and non-fatal: the full
+        # .msi/.zip are already published above, so if there is no baseline, or
+        # wix cannot build the patch, nothing else is affected. The first .msp
+        # therefore appears in the first x.y.(>0) after a minor. See issue #71.
+        shell: pwsh
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = "${{ github.event.inputs.tag || github.ref_name }}"
+          $ver = $tag.TrimStart('v')
+          $p = $ver.Split('.')
+          $baseVer = "$($p[0]).$($p[1]).0"
+          if ($ver -eq $baseVer) {
+            Write-Host "This release is the $baseVer baseline; no patch to build."; exit 0
+          }
+          $env:PATH = "$env:PATH;$env:USERPROFILE\.dotnet\tools"
+          New-Item -ItemType Directory -Force -Path baseline, update | Out-Null
+          # The published baseline .msi is the source of the diff; download it
+          # rather than rebuilding, so the patch targets exactly what users have.
+          gh release download "v$baseVer" --repo $env:GITHUB_REPOSITORY `
+            --pattern "whatly-$baseVer-x64.msi" --dir baseline
+          if (-not (Test-Path "baseline\whatly-$baseVer-x64.msi")) {
+            Write-Warning "No baseline .msi published for v$baseVer; skipping patch."; exit 0
+          }
+          Copy-Item "$env:MSI" update\
+          $msp = "whatly-$ver-x64.msp"
+          wix build packaging\windows\patch.wxs -d Version=$ver `
+            -bindpath:target (Resolve-Path baseline).Path `
+            -bindpath:update (Resolve-Path update).Path `
+            -out $msp
+          if (-not (Test-Path $msp)) { Write-Warning "wix produced no .msp; skipping."; exit 0 }
+          $mb = [math]::Round((Get-Item $msp).Length / 1MB, 2)
+          Write-Host "Built $msp ($mb MB)"
+          gh release upload "$tag" $msp --clobber --repo $env:GITHUB_REPOSITORY
+
   # ── Flatpak ────────────────────────────────────────────────────────────────
   # Built inside the KDE 6.9 flatpak SDK image; the manifest's git source is
   # swapped for the checked-out tree so CI always packages the pushed commit.
