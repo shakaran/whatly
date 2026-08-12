@@ -588,7 +588,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="411"/>
+        <location filename="../mainwindow_tray.cpp" line="426"/>
         <source>Recent unread</source>
         <translation>No leídos recientes</translation>
     </message>
@@ -755,13 +755,13 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Resumen de no leídos</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1376"/>
+        <location filename="../mainwindow_accounts.cpp" line="1377"/>
         <location filename="../mainwindow_webengine.cpp" line="1569"/>
         <source>chat</source>
         <translation>chat</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1376"/>
+        <location filename="../mainwindow_accounts.cpp" line="1377"/>
         <source>chats</source>
         <translation>chats</translation>
     </message>
@@ -958,7 +958,7 @@ WebEngine no está inicializado.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1542"/>
-        <location filename="../mainwindow_tray.cpp" line="356"/>
+        <location filename="../mainwindow_tray.cpp" line="370"/>
         <source>Collapse the chat list</source>
         <translation>Contraer la lista de chats</translation>
     </message>
@@ -969,7 +969,7 @@ WebEngine no está inicializado.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1708"/>
-        <location filename="../mainwindow_tray.cpp" line="27"/>
+        <location filename="../mainwindow_tray.cpp" line="29"/>
         <source>New Chat</source>
         <translation>Nuevo chat</translation>
     </message>
@@ -995,232 +995,238 @@ Configure primero la contraseña en los ajustes.
 ¿Abrir los ajustes ahora?</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="32"/>
-        <location filename="../mainwindow_tray.cpp" line="351"/>
+        <location filename="../mainwindow_tray.cpp" line="34"/>
+        <location filename="../mainwindow_tray.cpp" line="365"/>
         <source>Fullscreen</source>
         <translation>Pantalla completa</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="38"/>
+        <location filename="../mainwindow_tray.cpp" line="40"/>
         <source>Mi&amp;nimize to tray</source>
         <translation>Mi&amp;nimizar a la bandeja</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="76"/>
+        <location filename="../mainwindow_tray.cpp" line="78"/>
         <source>&amp;Restore</source>
         <translation>&amp;Restaurar</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="83"/>
+        <location filename="../mainwindow_tray.cpp" line="85"/>
         <source>Re&amp;load</source>
         <translation>Re&amp;cargar</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="89"/>
+        <location filename="../mainwindow_tray.cpp" line="91"/>
         <source>Loc&amp;k</source>
         <translation>Blo&amp;quear</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="94"/>
+        <location filename="../mainwindow_tray.cpp" line="96"/>
         <source>&amp;Mute audio</source>
         <translation>&amp;Silenciar audio</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="103"/>
+        <location filename="../mainwindow_tray.cpp" line="105"/>
         <source>Zoom in</source>
         <translation>Acercar</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="109"/>
+        <location filename="../mainwindow_tray.cpp" line="111"/>
         <source>Zoom out</source>
         <translation>Alejar</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="114"/>
-        <location filename="../mainwindow_tray.cpp" line="353"/>
+        <location filename="../mainwindow_tray.cpp" line="116"/>
+        <location filename="../mainwindow_tray.cpp" line="367"/>
         <source>Reset zoom</source>
         <translation>Restablecer zoom</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="134"/>
+        <location filename="../mainwindow_tray.cpp" line="136"/>
         <source>&amp;Find in chats</source>
         <translation>&amp;Buscar en chats</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="143"/>
+        <location filename="../mainwindow_tray.cpp" line="149"/>
+        <location filename="../mainwindow_tray.cpp" line="372"/>
+        <source>Spelling: next language</source>
+        <translation>Corrección: idioma siguiente</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="157"/>
         <source>&amp;Settings</source>
         <translation>&amp;Ajustes</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="149"/>
+        <location filename="../mainwindow_tray.cpp" line="163"/>
         <source>Scheduled &amp;messages…</source>
         <translation>&amp;Mensajes programados…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="156"/>
-        <location filename="../mainwindow_tray.cpp" line="359"/>
+        <location filename="../mainwindow_tray.cpp" line="170"/>
+        <location filename="../mainwindow_tray.cpp" line="374"/>
         <source>Translate selection</source>
         <translation>Traducir selección</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="163"/>
-        <location filename="../mainwindow_tray.cpp" line="361"/>
+        <location filename="../mainwindow_tray.cpp" line="177"/>
+        <location filename="../mainwindow_tray.cpp" line="376"/>
         <source>Translate message box</source>
         <translation>Traducir cuadro de mensaje</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="172"/>
+        <location filename="../mainwindow_tray.cpp" line="186"/>
         <source>Export chat…</source>
         <translation>Exportar chat…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="181"/>
-        <location filename="../mainwindow_tray.cpp" line="363"/>
+        <location filename="../mainwindow_tray.cpp" line="195"/>
+        <location filename="../mainwindow_tray.cpp" line="378"/>
         <source>AI: Summarise chat</source>
         <translation>IA: Resumir chat</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="188"/>
-        <location filename="../mainwindow_tray.cpp" line="364"/>
+        <location filename="../mainwindow_tray.cpp" line="202"/>
+        <location filename="../mainwindow_tray.cpp" line="379"/>
         <source>AI: Improve message</source>
         <translation>IA: Mejorar mensaje</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="195"/>
-        <location filename="../mainwindow_tray.cpp" line="365"/>
+        <location filename="../mainwindow_tray.cpp" line="209"/>
+        <location filename="../mainwindow_tray.cpp" line="380"/>
         <source>AI: Suggest a reply</source>
         <translation>IA: Sugerir respuesta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="203"/>
-        <location filename="../mainwindow_tray.cpp" line="368"/>
+        <location filename="../mainwindow_tray.cpp" line="217"/>
+        <location filename="../mainwindow_tray.cpp" line="383"/>
         <source>AI: Make it more formal</source>
         <translation>IA: Hacerlo más formal</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="209"/>
-        <location filename="../mainwindow_tray.cpp" line="369"/>
+        <location filename="../mainwindow_tray.cpp" line="223"/>
+        <location filename="../mainwindow_tray.cpp" line="384"/>
         <source>AI: Make it friendlier</source>
         <translation>IA: Hacerlo más cercano</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="215"/>
-        <location filename="../mainwindow_tray.cpp" line="370"/>
+        <location filename="../mainwindow_tray.cpp" line="229"/>
+        <location filename="../mainwindow_tray.cpp" line="385"/>
         <source>AI: Make it shorter</source>
         <translation>IA: Hacerlo más corto</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="221"/>
-        <location filename="../mainwindow_tray.cpp" line="367"/>
+        <location filename="../mainwindow_tray.cpp" line="235"/>
+        <location filename="../mainwindow_tray.cpp" line="382"/>
         <source>AI: Summarise unread chats</source>
         <translation>IA: Resumir chats no leídos</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="230"/>
-        <location filename="../mainwindow_tray.cpp" line="371"/>
+        <location filename="../mainwindow_tray.cpp" line="244"/>
+        <location filename="../mainwindow_tray.cpp" line="386"/>
         <source>Do Not Disturb</source>
         <translation type="unfinished">No molestar</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="236"/>
-        <location filename="../mainwindow_tray.cpp" line="372"/>
+        <location filename="../mainwindow_tray.cpp" line="250"/>
+        <location filename="../mainwindow_tray.cpp" line="387"/>
         <source>Do Not Disturb: 1 hour</source>
         <translation>No molestar: 1 hora</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="241"/>
-        <location filename="../mainwindow_tray.cpp" line="373"/>
+        <location filename="../mainwindow_tray.cpp" line="255"/>
+        <location filename="../mainwindow_tray.cpp" line="388"/>
         <source>Do Not Disturb: 2 hours</source>
         <translation>No molestar: 2 horas</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="246"/>
-        <location filename="../mainwindow_tray.cpp" line="374"/>
+        <location filename="../mainwindow_tray.cpp" line="260"/>
+        <location filename="../mainwindow_tray.cpp" line="389"/>
         <source>Do Not Disturb: until morning</source>
         <translation>No molestar: hasta la mañana</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="255"/>
-        <location filename="../mainwindow_tray.cpp" line="375"/>
+        <location filename="../mainwindow_tray.cpp" line="269"/>
+        <location filename="../mainwindow_tray.cpp" line="390"/>
         <source>Remind me to reply: in 1 hour</source>
         <translation>Recordarme responder: en 1 hora</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="262"/>
-        <location filename="../mainwindow_tray.cpp" line="376"/>
+        <location filename="../mainwindow_tray.cpp" line="276"/>
+        <location filename="../mainwindow_tray.cpp" line="391"/>
         <source>Remind me to reply: in 3 hours</source>
         <translation>Recordarme responder: en 3 horas</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="269"/>
-        <location filename="../mainwindow_tray.cpp" line="378"/>
+        <location filename="../mainwindow_tray.cpp" line="283"/>
+        <location filename="../mainwindow_tray.cpp" line="393"/>
         <source>Remind me to reply: tomorrow morning</source>
         <translation>Recordarme responder: mañana por la mañana</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="276"/>
+        <location filename="../mainwindow_tray.cpp" line="290"/>
         <source>&amp;Toggle theme</source>
         <translation>Cambiar &amp;tema</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="287"/>
+        <location filename="../mainwindow_tray.cpp" line="301"/>
         <source>Tabbed view</source>
         <translation>Vista por pestañas</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="294"/>
-        <location filename="../mainwindow_tray.cpp" line="381"/>
+        <location filename="../mainwindow_tray.cpp" line="308"/>
+        <location filename="../mainwindow_tray.cpp" line="396"/>
         <source>Grid view</source>
         <translation>Vista en cuadrícula</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="316"/>
-        <location filename="../mainwindow_tray.cpp" line="382"/>
+        <location filename="../mainwindow_tray.cpp" line="330"/>
+        <location filename="../mainwindow_tray.cpp" line="397"/>
         <source>Command palette</source>
         <translation>Paleta de comandos</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="325"/>
+        <location filename="../mainwindow_tray.cpp" line="339"/>
         <source>&amp;About</source>
         <translation>&amp;Acerca de</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="334"/>
+        <location filename="../mainwindow_tray.cpp" line="348"/>
         <source>&amp;Quit</source>
         <translation>&amp;Salir</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="347"/>
+        <location filename="../mainwindow_tray.cpp" line="361"/>
         <source>Reload</source>
         <translation>Recargar</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="348"/>
+        <location filename="../mainwindow_tray.cpp" line="362"/>
         <source>Minimise to tray</source>
         <translation>Minimizar a la bandeja</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="349"/>
+        <location filename="../mainwindow_tray.cpp" line="363"/>
         <source>Lock</source>
         <translation>Bloquear</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="350"/>
+        <location filename="../mainwindow_tray.cpp" line="364"/>
         <source>Mute audio</source>
         <translation>Silenciar audio</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="352"/>
+        <location filename="../mainwindow_tray.cpp" line="366"/>
         <source>New chat / open URL</source>
         <translation>Nuevo chat / abrir URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="357"/>
+        <location filename="../mainwindow_tray.cpp" line="371"/>
         <source>Find in chats</source>
         <translation>Buscar en chats</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="362"/>
+        <location filename="../mainwindow_tray.cpp" line="377"/>
         <location filename="../mainwindow_webengine.cpp" line="1477"/>
         <location filename="../mainwindow_webengine.cpp" line="1481"/>
         <location filename="../mainwindow_webengine.cpp" line="1494"/>
@@ -1232,88 +1238,118 @@ Configure primero la contraseña en los ajustes.
         <translation>Exportar chat</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="379"/>
+        <location filename="../mainwindow_tray.cpp" line="394"/>
         <source>Settings</source>
         <translation>Ajustes</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="380"/>
+        <location filename="../mainwindow_tray.cpp" line="395"/>
         <source>Toggle theme</source>
         <translation>Cambiar tema</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="383"/>
+        <location filename="../mainwindow_tray.cpp" line="398"/>
         <source>Quit</source>
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="406"/>
+        <location filename="../mainwindow_tray.cpp" line="421"/>
         <source>Windows</source>
         <translation>Ventanas</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="576"/>
+        <location filename="../mainwindow_tray.cpp" line="443"/>
+        <source>Spelling</source>
+        <translation>Corrección</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="599"/>
         <source>hidden</source>
         <translation>oculta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="578"/>
+        <location filename="../mainwindow_tray.cpp" line="601"/>
         <source>minimised</source>
         <translation>minimizada</translation>
     </message>
     <message>
+        <location filename="../mainwindow_tray.cpp" line="638"/>
+        <source>All of them</source>
+        <translation>Todos</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="653"/>
+        <source>No spell-check language is installed.</source>
+        <translation>No hay ningún idioma de corrección instalado.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="654"/>
+        <source>Only one spell-check language is chosen. Pick more in Settings to switch between them.</source>
+        <translation>Solo hay un idioma de corrección elegido. Elige más en Ajustes para alternar entre ellos.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="677"/>
+        <source>Spelling: every chosen language</source>
+        <translation>Corrección: todos los idiomas elegidos</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="678"/>
+        <source>Spelling: %1</source>
+        <translation>Corrección: %1</translation>
+    </message>
+    <message>
         <location filename="../mainwindow_accounts.cpp" line="309"/>
-        <location filename="../mainwindow_accounts.cpp" line="1579"/>
+        <location filename="../mainwindow_accounts.cpp" line="1580"/>
         <source>Rename…</source>
         <translation>Renombrar…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="310"/>
-        <location filename="../mainwindow_accounts.cpp" line="1580"/>
+        <location filename="../mainwindow_accounts.cpp" line="1581"/>
         <source>Open in own window</source>
         <translation>Abrir en ventana propia</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="314"/>
-        <location filename="../mainwindow_accounts.cpp" line="1583"/>
+        <location filename="../mainwindow_accounts.cpp" line="1584"/>
         <source>Remove account</source>
         <translation>Eliminar cuenta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="398"/>
+        <location filename="../mainwindow_accounts.cpp" line="399"/>
         <source>Switch to account: %1</source>
         <translation>Cambiar a la cuenta: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="401"/>
-        <location filename="../mainwindow_tray.cpp" line="307"/>
+        <location filename="../mainwindow_accounts.cpp" line="402"/>
+        <location filename="../mainwindow_tray.cpp" line="321"/>
         <source>Add account…</source>
         <translation>Añadir cuenta…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="402"/>
+        <location filename="../mainwindow_accounts.cpp" line="403"/>
         <source>Quick message…</source>
         <translation>Mensaje rápido…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="407"/>
+        <location filename="../mainwindow_accounts.cpp" line="408"/>
         <source>Insert: %1</source>
         <translation>Insertar: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="715"/>
+        <location filename="../mainwindow_accounts.cpp" line="716"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 sin leer</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1346"/>
-        <location filename="../mainwindow_accounts.cpp" line="1976"/>
+        <location filename="../mainwindow_accounts.cpp" line="1347"/>
+        <location filename="../mainwindow_accounts.cpp" line="1977"/>
         <source>Add another account</source>
         <translation>Añadir otra cuenta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1375"/>
-        <location filename="../mainwindow_accounts.cpp" line="1380"/>
+        <location filename="../mainwindow_accounts.cpp" line="1376"/>
+        <location filename="../mainwindow_accounts.cpp" line="1381"/>
         <source>Restore</source>
         <translation>Restaurar</translation>
     </message>
@@ -1326,39 +1362,39 @@ Configure primero la contraseña en los ajustes.
         <translation type="vanished">mensaje</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1425"/>
+        <location filename="../mainwindow_accounts.cpp" line="1426"/>
         <source>Add account</source>
         <translation>Añadir cuenta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1426"/>
+        <location filename="../mainwindow_accounts.cpp" line="1427"/>
         <source>Name for the new account:</source>
         <translation>Nombre de la nueva cuenta:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1427"/>
-        <location filename="../mainwindow_accounts.cpp" line="2314"/>
-        <location filename="../mainwindow_accounts.cpp" line="2319"/>
+        <location filename="../mainwindow_accounts.cpp" line="1428"/>
+        <location filename="../mainwindow_accounts.cpp" line="2315"/>
+        <location filename="../mainwindow_accounts.cpp" line="2320"/>
         <source>Account %1</source>
         <translation>Cuenta %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1456"/>
+        <location filename="../mainwindow_accounts.cpp" line="1457"/>
         <source>Rename account</source>
         <translation>Renombrar cuenta</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1456"/>
+        <location filename="../mainwindow_accounts.cpp" line="1457"/>
         <source>Account name:</source>
         <translation>Nombre de la cuenta:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1995"/>
+        <location filename="../mainwindow_accounts.cpp" line="1996"/>
         <source>Tip: give an account its own window</source>
         <translation>Consejo: da a una cuenta su propia ventana</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1996"/>
+        <location filename="../mainwindow_accounts.cpp" line="1997"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1367,8 +1403,8 @@ You can pull any account out into its own window: right-click its tab and choose
 Puedes sacar cualquier cuenta a su propia ventana: haz clic derecho en su pestaña y elige «Abrir en ventana propia». Cierra esa ventana para volver a acoplar la cuenta como pestaña.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2308"/>
-        <location filename="../mainwindow_accounts.cpp" line="2312"/>
+        <location filename="../mainwindow_accounts.cpp" line="2309"/>
+        <location filename="../mainwindow_accounts.cpp" line="2313"/>
         <source>Account 1</source>
         <translation>Cuenta 1</translation>
     </message>
@@ -2313,17 +2349,17 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>Cómo se ajustan los bordes de los glifos a los píxeles. Automático sigue tu sistema; un nivel más ligero puede corregir texto pesado o irregular.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1568"/>
+        <location filename="../settingswidget.cpp" line="1591"/>
         <source>Slight</source>
         <translation>Ligero</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1569"/>
+        <location filename="../settingswidget.cpp" line="1592"/>
         <source>Medium</source>
         <translation>Mediano</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1570"/>
+        <location filename="../settingswidget.cpp" line="1593"/>
         <source>Full</source>
         <translation>Completo</translation>
     </message>
@@ -2397,8 +2433,8 @@ Configure primero la contraseña en los ajustes.</translation>
         <location filename="../settingswidget.ui" line="2010"/>
         <location filename="../settingswidget.ui" line="2054"/>
         <location filename="../settingswidget.ui" line="2211"/>
-        <location filename="../settingswidget.cpp" line="1566"/>
-        <location filename="../settingswidget.cpp" line="1858"/>
+        <location filename="../settingswidget.cpp" line="1589"/>
+        <location filename="../settingswidget.cpp" line="1881"/>
         <source>Automatic</source>
         <translation>Automático</translation>
     </message>
@@ -2671,7 +2707,7 @@ Configure primero la contraseña en los ajustes.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="691"/>
-        <location filename="../settingswidget.cpp" line="1483"/>
+        <location filename="../settingswidget.cpp" line="1506"/>
         <source>Custom CSS</source>
         <translation>CSS personalizado</translation>
     </message>
@@ -2728,7 +2764,7 @@ Configure primero la contraseña en los ajustes.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2277"/>
+        <location filename="../settingswidget.cpp" line="2300"/>
         <source>Check spelling as I type</source>
         <translation>Corregir ortografía mientras escribo</translation>
     </message>
@@ -2759,7 +2795,7 @@ Configure primero la contraseña en los ajustes.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
-        <location filename="../settingswidget.cpp" line="1459"/>
+        <location filename="../settingswidget.cpp" line="1482"/>
         <source>Chat wallpaper</source>
         <translation>Fondo de chat</translation>
     </message>
@@ -3610,194 +3646,194 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>Haz clic en un campo y pulsa la combinación de teclas. Borra un campo para eliminar el atajo. Los cambios se aplican tras reiniciar.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1116"/>
+        <location filename="../settingswidget.cpp" line="1139"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Esto eliminará los datos persistentes (incluidas las cookies persistentes y la caché) y cerrará la aplicación.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1121"/>
+        <location filename="../settingswidget.cpp" line="1144"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>¿Eliminar las cookies y cerrar la aplicación?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1227"/>
+        <location filename="../settingswidget.cpp" line="1250"/>
         <source>| Error</source>
         <translation>| Error</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1228"/>
+        <location filename="../settingswidget.cpp" line="1251"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>No se puede establecer una cadena de User-Agent vacía.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1279"/>
+        <location filename="../settingswidget.cpp" line="1302"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>El cambio automático de tema se desactivó al cambiar el tema manualmente.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1296"/>
+        <location filename="../settingswidget.cpp" line="1319"/>
         <source>Require setup</source>
         <translation>Requiere configuración</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1325"/>
+        <location filename="../settingswidget.cpp" line="1348"/>
         <source>App lock is not configured.</source>
         <translation>El bloqueo de la aplicación no está configurado.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1329"/>
+        <location filename="../settingswidget.cpp" line="1352"/>
         <source>Do you want to setup App lock now?</source>
         <translation>¿Quieres configurar el bloqueo de la aplicación ahora?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1371"/>
+        <location filename="../settingswidget.cpp" line="1394"/>
         <source>Feature permissions</source>
         <translation>Permisos de funciones</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1450"/>
+        <location filename="../settingswidget.cpp" line="1473"/>
         <source>Choose a chat wallpaper</source>
         <translation>Elegir un fondo de chat</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1452"/>
+        <location filename="../settingswidget.cpp" line="1475"/>
         <source>Images (%1)</source>
         <translation>Imágenes (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1460"/>
+        <location filename="../settingswidget.cpp" line="1483"/>
         <source>Could not use that image: %1</source>
         <translation>No se pudo usar esa imagen: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1475"/>
+        <location filename="../settingswidget.cpp" line="1498"/>
         <source>Choose a CSS file</source>
         <translation>Elegir un archivo CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1477"/>
+        <location filename="../settingswidget.cpp" line="1500"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Hojas de estilo (*.css);;Todos los archivos (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1484"/>
+        <location filename="../settingswidget.cpp" line="1507"/>
         <source>Could not read that file: %1</source>
         <translation>No se pudo leer ese archivo: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1557"/>
+        <location filename="../settingswidget.cpp" line="1580"/>
         <source>Disk</source>
         <translation>Disco</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1558"/>
+        <location filename="../settingswidget.cpp" line="1581"/>
         <source>Memory</source>
         <translation>Memoria</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1711"/>
+        <location filename="../settingswidget.cpp" line="1734"/>
         <source>Ollama not found at this address.</source>
         <translation>No se encontró Ollama en esta dirección.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1741"/>
+        <location filename="../settingswidget.cpp" line="1764"/>
         <source>Download complete.</source>
         <translation>Descarga completada.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1744"/>
+        <location filename="../settingswidget.cpp" line="1767"/>
         <source>Download failed: %1</source>
         <translation>Falló la descarga: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1755"/>
+        <location filename="../settingswidget.cpp" line="1778"/>
         <source>Checking…</source>
         <translation>Comprobando…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1780"/>
+        <location filename="../settingswidget.cpp" line="1803"/>
         <source>Starting download of %1…</source>
         <translation>Iniciando la descarga de %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1831"/>
+        <location filename="../settingswidget.cpp" line="1854"/>
         <source>System</source>
         <translation>Sistema</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1832"/>
+        <location filename="../settingswidget.cpp" line="1855"/>
         <source>None (direct)</source>
         <translation>Ninguno (directo)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1833"/>
+        <location filename="../settingswidget.cpp" line="1856"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1834"/>
+        <location filename="../settingswidget.cpp" line="1857"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1860"/>
+        <location filename="../settingswidget.cpp" line="1883"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Portal de escritorio (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1862"/>
+        <location filename="../settingswidget.cpp" line="1885"/>
         <source>System service (libnotify)</source>
         <translation>Servicio del sistema (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2047"/>
-        <location filename="../settingswidget.cpp" line="2051"/>
+        <location filename="../settingswidget.cpp" line="2070"/>
+        <location filename="../settingswidget.cpp" line="2074"/>
         <source>Add reply</source>
         <translation>Añadir respuesta</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2047"/>
+        <location filename="../settingswidget.cpp" line="2070"/>
         <source>Name</source>
         <translation>Nombre</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2051"/>
+        <location filename="../settingswidget.cpp" line="2074"/>
         <source>Text to insert</source>
         <translation>Texto a insertar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2068"/>
+        <location filename="../settingswidget.cpp" line="2091"/>
         <source>Choose a JavaScript file</source>
         <translation>Elegir un archivo JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2069"/>
+        <location filename="../settingswidget.cpp" line="2092"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Todos los archivos (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2074"/>
+        <location filename="../settingswidget.cpp" line="2097"/>
         <source>Could not add addon</source>
         <translation>No se pudo añadir el complemento</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2087"/>
+        <location filename="../settingswidget.cpp" line="2110"/>
         <source>Remove addon</source>
         <translation>Eliminar complemento</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2088"/>
+        <location filename="../settingswidget.cpp" line="2111"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>¿Eliminar el complemento &quot;%1&quot;? Esto borra su archivo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2276"/>
+        <location filename="../settingswidget.cpp" line="2299"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Corrector ortográfico (sin diccionarios instalados)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1559"/>
-        <location filename="../settingswidget.cpp" line="1567"/>
+        <location filename="../settingswidget.cpp" line="1582"/>
+        <location filename="../settingswidget.cpp" line="1590"/>
         <source>None</source>
         <translation>Ninguno</translation>
     </message>
@@ -3847,125 +3883,130 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>Avanzado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1033"/>
+        <location filename="../settingswidget.cpp" line="1056"/>
         <source>Shortcut in use</source>
         <translation>Atajo en uso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1034"/>
+        <location filename="../settingswidget.cpp" line="1057"/>
         <source>That shortcut is already used by another action.</source>
         <translation>Ese atajo ya lo utiliza otra acción.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1046"/>
+        <location filename="../settingswidget.cpp" line="1069"/>
         <source>Clear cache</source>
         <translation>Borrar caché</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1047"/>
+        <location filename="../settingswidget.cpp" line="1070"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>¿Borrar la caché ahora? Se volverá a descargar cuando sea necesario.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1057"/>
-        <location filename="../settingswidget.cpp" line="1063"/>
-        <location filename="../settingswidget.cpp" line="1072"/>
-        <location filename="../settingswidget.cpp" line="1075"/>
+        <location filename="../settingswidget.cpp" line="1080"/>
+        <location filename="../settingswidget.cpp" line="1086"/>
+        <location filename="../settingswidget.cpp" line="1095"/>
+        <location filename="../settingswidget.cpp" line="1098"/>
         <source>Export profile</source>
         <translation>Exportar perfil</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1058"/>
+        <location filename="../settingswidget.cpp" line="1081"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>El archivo contendrá tu sesión de WhatsApp iniciada. Mantenlo privado. ¿Continuar?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1065"/>
-        <location filename="../settingswidget.cpp" line="1080"/>
+        <location filename="../settingswidget.cpp" line="1088"/>
+        <location filename="../settingswidget.cpp" line="1103"/>
         <source>Archives (*.tar.gz)</source>
         <translation>Archivos comprimidos (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1073"/>
+        <location filename="../settingswidget.cpp" line="1096"/>
         <source>Profile exported.</source>
         <translation>Perfil exportado.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1080"/>
-        <location filename="../settingswidget.cpp" line="1084"/>
-        <location filename="../settingswidget.cpp" line="1092"/>
-        <location filename="../settingswidget.cpp" line="1095"/>
+        <location filename="../settingswidget.cpp" line="1103"/>
+        <location filename="../settingswidget.cpp" line="1107"/>
+        <location filename="../settingswidget.cpp" line="1115"/>
+        <location filename="../settingswidget.cpp" line="1118"/>
         <source>Import profile</source>
         <translation>Importar perfil</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1085"/>
+        <location filename="../settingswidget.cpp" line="1108"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>Esto sobrescribe los datos de la cuenta actual con el archivo y luego habrá que reiniciar Whatly. ¿Continuar?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1093"/>
+        <location filename="../settingswidget.cpp" line="1116"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>Perfil importado. Reinicia Whatly.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1716"/>
+        <location filename="../settingswidget.cpp" line="1739"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama encontrado (%1 modelos instalados).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2321"/>
+        <location filename="../settingswidget.cpp" line="2335"/>
         <source>download</source>
         <translation>descargar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2352"/>
+        <location filename="../settingswidget.cpp" line="2366"/>
         <source>Tick one or more languages to check spelling against.</source>
         <translation>Marca uno o varios idiomas para revisar la ortografía.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2363"/>
+        <location filename="../settingswidget.cpp" line="2378"/>
         <source>Choose languages…</source>
         <translation>Elegir idiomas…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2367"/>
+        <location filename="../settingswidget.cpp" line="2384"/>
+        <source>%1 of %2 chosen</source>
+        <translation>%1 de %2 elegidos</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2386"/>
         <source>%1 languages</source>
         <translation>%1 idiomas</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2465"/>
+        <location filename="../settingswidget.cpp" line="2484"/>
         <source>WhatsApp default</source>
         <translation>Predeterminada de WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2504"/>
+        <location filename="../settingswidget.cpp" line="2523"/>
         <source>System default</source>
         <translation>Predeterminado del sistema</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2539"/>
+        <location filename="../settingswidget.cpp" line="2558"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>El idioma de la interfaz cambiará cuando reinicies %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2553"/>
+        <location filename="../settingswidget.cpp" line="2572"/>
         <source>App Lock Setup</source>
         <translation>Configuración del bloqueo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2554"/>
+        <location filename="../settingswidget.cpp" line="2573"/>
         <source>Please setup the App lock password first.</source>
         <translation>Configura primero la contraseña del bloqueo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2670"/>
-        <location filename="../settingswidget.cpp" line="2681"/>
+        <location filename="../settingswidget.cpp" line="2689"/>
+        <location filename="../settingswidget.cpp" line="2700"/>
         <source>Select download directory</source>
         <translation>Seleccionar la carpeta de descargas</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2721"/>
+        <location filename="../settingswidget.cpp" line="2740"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -3976,7 +4017,7 @@ Esto cerrará tu sesión actual.
 ¡También podría requerir reiniciar por completo la aplicación!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2727"/>
+        <location filename="../settingswidget.cpp" line="2746"/>
         <source>Do you want to proceed?</source>
         <translation>¿Quieres continuar?</translation>
     </message>

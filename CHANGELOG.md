@@ -1,6 +1,6 @@
 ## Unreleased
 
-**Switch spell-check language mid-sentence (request #41).** Ticking three
+**Switch spell-check language mid-sentence.** Ticking three
 languages in Settings means Chromium accepts any word that any of the three
 knows, so most typos in the language you are actually writing go unmarked. A new
 **Spelling** submenu in the tray icon — and **Ctrl+Alt+S**, rebindable in
