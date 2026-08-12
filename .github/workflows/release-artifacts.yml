@@ -495,10 +495,18 @@ jobs:
             -d libxrandr2 -d libxkbcommon0 -d libasound2 \
             -d fonts-noto-core \
             -p "whatly_${ver}_amd64.deb" opt usr
-          fpm "${common[@]}" -t rpm \
+          # Named "whatly-bundle", not "whatly": this is the bundled-Qt, /opt
+          # variant, while the native openSUSE build is "whatly" (system Qt,
+          # /usr). Same Name+Version differing only by release would make rpm
+          # treat this as an *upgrade* of the native package (and both own
+          # /usr/bin/whatly), silently switching a user to the /opt layout.
+          # Distinct names stop that. The -n here overrides the one in `common`.
+          # See #67.
+          fpm "${common[@]}" -t rpm -n whatly-bundle \
+            --description "WhatsApp Web desktop client (Qt WebEngine bundled, installs to /opt/whatly)" \
             -d glib2 -d nss -d libXcomposite -d libXdamage -d libXrandr \
             -d libxkbcommon -d alsa-lib \
-            -p "whatly-${ver}-1.x86_64.rpm" opt usr
+            -p "whatly-bundle-${ver}-1.x86_64.rpm" opt usr
 
       - name: Attach to release
         env:

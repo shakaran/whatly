@@ -1,6 +1,11 @@
 Name:           whatly
 Version:        7.1.0
-Release:        1%{?dist}
+# Reference system-Qt spec for downstream packagers; the release itself builds
+# the native rpm from packaging/obs/whatly.spec. Release kept at 0 to match it
+# (both are the system-Qt "whatly"), so this never looks newer than, or collides
+# with, the published packages — the portable rpm is a separate "whatly-bundle".
+# See #67.
+Release:        0%{?dist}
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 
 License:        MIT
