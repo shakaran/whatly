@@ -1,5 +1,16 @@
 ## Unreleased
 
+**The update notice now says the right thing for the way you installed Whatly.**
+It told everyone alike to click through to the download page, which is wrong
+advice for most installations: a Flatpak cannot replace itself from inside its
+sandbox, and a package from the AUR, from OBS or from a distribution repository
+is updated by the package manager, not by hand. Each now gets its own sentence —
+Flathub or your software centre, your package manager, or the download page — and
+a running AppImage is told it can patch itself in place with AppImageUpdate,
+fetching only the parts that changed rather than the whole 150 MB. The notice
+still opens the release page when clicked, wherever the new version comes from,
+because the notes are worth reading either way.
+
 **The wheel in Settings scrolls what the pointer is on.** Opening the
 spell-check language picker and turning the wheel over its list scrolled the
 Settings page instead, leaving the list floating in mid-air over settings it had

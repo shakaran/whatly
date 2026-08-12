@@ -210,12 +210,38 @@ MainWindow::MainWindow(QWidget *parent)
   m_updateChecker = new UpdateChecker(this);
   connect(m_updateChecker, &UpdateChecker::updateAvailable, this,
           [this](const QString &version, const QString &url) {
+            // What to advise depends on who owns the update. Telling someone on
+            // a Flatpak or a distribution package to go and download a build is
+            // wrong: their package manager does it, and a sandboxed application
+            // cannot replace itself anyway. The click still opens the release
+            // page in every case, because the notes are worth reading wherever
+            // the new version will come from.
+            QString advice;
+            switch (UpdateCheck::currentInstall()) {
+            case UpdateCheck::Install::Flatpak:
+              advice = tr("Whatly %1 is available. Update it through Flathub or "
+                          "your software centre.");
+              break;
+            case UpdateCheck::Install::DistroPackage:
+              advice =
+                  tr("Whatly %1 is available. Update it with your package "
+                     "manager.");
+              break;
+            case UpdateCheck::Install::AppImage:
+              advice = tr("Whatly %1 is available. This AppImage can update "
+                          "itself in place with AppImageUpdate, fetching only "
+                          "the parts that changed.");
+              break;
+            case UpdateCheck::Install::Unknown:
+              // Kept word for word: it already has its translations.
+              advice =
+                  tr("Whatly %1 is available. Click to open the download page.");
+              break;
+            }
             if (m_systemTrayIcon && QSystemTrayIcon::supportsMessages())
-              m_systemTrayIcon->showMessage(
-                  tr("Update available"),
-                  tr("Whatly %1 is available. Click to open the download page.")
-                      .arg(version),
-                  windowIcon(), 15000);
+              m_systemTrayIcon->showMessage(tr("Update available"),
+                                            advice.arg(version), windowIcon(),
+                                            15000);
             m_pendingUpdateUrl = url;
           });
   connect(m_systemTrayIcon, &QSystemTrayIcon::messageClicked, this, [this]() {

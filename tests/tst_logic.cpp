@@ -3214,6 +3214,38 @@ private slots:
     QCOMPARE(url, QStringLiteral("https://example/rel/v6.4.0"));
     QVERIFY(UpdateCheck::latestFromJson("{}", &url).isEmpty());
   }
+  // Which advice the update notification gives depends on this, so every case
+  // is pinned rather than left to whichever branch happens to run.
+  void recognisesTheInstallFlavour() {
+    using I = UpdateCheck::Install;
+    // A Flatpak wins over everything else: inside the sandbox the paths of the
+    // other cases are meaningless.
+    QCOMPARE(UpdateCheck::installFrom(true, QString(), "/app/bin/whatly"),
+             I::Flatpak);
+    QCOMPARE(UpdateCheck::installFrom(true, "/tmp/x.AppImage", "/usr/bin/whatly"),
+             I::Flatpak);
+    // $APPIMAGE set is what marks a running AppImage, whatever it mounted at.
+    QCOMPARE(UpdateCheck::installFrom(false, "/home/u/Whatly.AppImage",
+                                      "/tmp/.mount_abc/usr/bin/whatly"),
+             I::AppImage);
+    // /usr means a package the distribution owns and updates.
+    QCOMPARE(UpdateCheck::installFrom(false, QString(), "/usr/bin/whatly"),
+             I::DistroPackage);
+    // Our own .deb and .rpm bundle their Qt under /opt, and their user does
+    // fetch the next build by hand, so they must not read as distro-owned.
+    QCOMPARE(UpdateCheck::installFrom(false, QString(), "/opt/whatly/bin/whatly"),
+             I::Unknown);
+    // Windows, macOS and a portable archive have none of the three markers.
+    QCOMPARE(UpdateCheck::installFrom(
+                 false, QString(), "C:/Program Files/Whatly/whatly.exe"),
+             I::Unknown);
+    QCOMPARE(UpdateCheck::installFrom(false, QString(),
+                                      "/home/u/whatly-portable/whatly"),
+             I::Unknown);
+    // "/usr" must match as a directory, not as a prefix of another name.
+    QCOMPARE(UpdateCheck::installFrom(false, QString(), "/usrlocal/whatly"),
+             I::Unknown);
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
