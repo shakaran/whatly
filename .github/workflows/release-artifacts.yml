@@ -230,9 +230,14 @@ jobs:
           }
           Copy-Item "$env:MSI" update\
           $msp = "whatly-$ver-x64.msp"
+          # WiX v5: PatchBaseline names the two MSIs explicitly (BaselineFile/
+          # UpdateFile) and resolves them against the unnamed -bindpath dirs. The
+          # names differ (x.y.0 vs x.y.z), so the two bindpaths are unambiguous.
           wix build packaging\windows\patch.wxs -d Version=$ver `
-            -bindpath:target (Resolve-Path baseline).Path `
-            -bindpath:update (Resolve-Path update).Path `
+            -d BaselineMsi="whatly-$baseVer-x64.msi" `
+            -d UpdateMsi="whatly-$ver-x64.msi" `
+            -bindpath (Resolve-Path baseline).Path `
+            -bindpath (Resolve-Path update).Path `
             -out $msp
           if (-not (Test-Path $msp)) { Write-Warning "wix produced no .msp; skipping."; exit 0 }
           $mb = [math]::Round((Get-Item $msp).Length / 1MB, 2)

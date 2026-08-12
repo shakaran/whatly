@@ -5,9 +5,14 @@
   Built in CI by the `windows` job of release-artifacts.yml, only for a release
   that is not the x.y.0 baseline of its minor, with:
     wix build packaging/windows/patch.wxs -d Version=<x.y.z> \
-      -bindpath:target <dir with the x.y.0 baseline .msi> \
-      -bindpath:update  <dir with this release's .msi> \
+      -d BaselineMsi=whatly-<x.y.0>-x64.msi \
+      -d UpdateMsi=whatly-<x.y.z>-x64.msi \
+      -bindpath <dir with the x.y.0 baseline .msi> \
+      -bindpath <dir with this release's .msi> \
       -out whatly-<x.y.z>-x64.msp
+
+  WiX v5 resolves BaselineFile/UpdateFile against the (unnamed) -bindpath dirs;
+  the two MSIs have distinct names (x.y.0 vs x.y.z) so the lookup is unambiguous.
 
   It is a whole-product patch: the empty PatchFamily with Supersede="yes" takes
   whatever changed between the two MSIs — which, with Qt pinned per minor (#71-A),
@@ -22,7 +27,9 @@
          Description="Updates an existing Whatly install to $(Version)."
          Classification="Update">
     <Media Id="5000" Cabinet="patch.cab">
-      <PatchBaseline Id="WhatlyBaseline" />
+      <PatchBaseline Id="WhatlyBaseline"
+                     BaselineFile="$(BaselineMsi)"
+                     UpdateFile="$(UpdateMsi)" />
     </Media>
     <!-- Empty + Supersede: include every component that differs between the
          baseline and this release, and supersede any earlier patch in the line. -->
