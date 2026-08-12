@@ -194,4 +194,80 @@ QStringList selectedDictionaries() {
   return chosen;
 }
 
+QString focusedDictionary() {
+  const QString stored = SettingsManager::instance()
+                             .settings()
+                             .value(QStringLiteral("spellCheckFocus"))
+                             .toString();
+  // A language dropped from the picker (or uninstalled) leaves no focus behind,
+  // rather than silently checking against nothing.
+  return selectedDictionaries().contains(stored) ? stored : QString();
+}
+
+void setFocusedDictionary(const QString &code) {
+  SettingsManager::instance().settings().setValue(
+      QStringLiteral("spellCheckFocus"), code);
+}
+
+QStringList activeDictionaries() {
+  const QString focus = focusedDictionary();
+  return focus.isEmpty() ? selectedDictionaries() : QStringList{focus};
+}
+
+QString languageLabel(const QString &code) {
+  const QLocale locale(code);
+  // An unrecognised code maps to the C locale (or to no language at all): show it
+  // as it stands rather than inventing a name for it.
+  if (locale.language() == QLocale::C || locale.language() == QLocale::AnyLanguage)
+    return code;
+  // Ask the dictionary's own locale, not QLocale(its language). The language-only
+  // form throws the territory away and Qt fills in the likeliest one, which for
+  // English is the United States — so en_GB and en_AU both came out as "American
+  // English". Asking en_GB itself gives "British English".
+  QString name = locale.nativeLanguageName();
+  if (name.isEmpty())
+    return code;
+
+  // Two cases where the code itself is the only honest thing to add. A code Qt does
+  // not model exactly: the bundle ships de_DE beside de_DE_neu (the reformed
+  // spelling) and en_US beside en-US, and Qt reads each pair as one and the same
+  // locale, so naming them by locale alone would put two entries with identical
+  // names in the picker. And a bare language like "eo", where Qt would otherwise
+  // supply whichever territory it considers likeliest — for Esperanto, "mondo".
+  if (locale.name() != code)
+    return name + QStringLiteral(" (") + code + QStringLiteral(")");
+
+  // Every entry gets the same shape, "language (territory)", because a list where
+  // some rows carry a territory and others do not reads as an accident. CLDR
+  // qualifies only the variants that are not its default, so plain "português" IS
+  // Brazilian and plain "español" IS Argentinian while es_ES and pt_PT carry theirs
+  // — naming the territory is what makes each row say which one it is.
+  const QString territory = locale.nativeTerritoryName();
+  if (territory.isEmpty())
+    return name;
+
+  // Where the name already ends in the territory, take it out before adding it
+  // back as the qualifier: "español de España" would otherwise become "español de
+  // España (España)", which is the row that stood out in the first place. The
+  // connector left behind ("de", "do", "of") is one short word, so drop it too.
+  const int at = name.lastIndexOf(territory, -1, Qt::CaseInsensitive);
+  if (at > 0) {
+    name.truncate(at);
+    name = name.trimmed();
+    const int space = name.lastIndexOf(QLatin1Char(' '));
+    if (space > 0 && name.length() - space - 1 <= 3)
+      name.truncate(space);
+  }
+  return name + QStringLiteral(" (") + territory + QStringLiteral(")");
+}
+
+QString nextFocus(const QStringList &chosen, const QString &current) {
+  if (chosen.size() < 2)
+    return QString(); // nothing to switch between: all of them is the only stop
+  const int at = chosen.indexOf(current);
+  if (at < 0)
+    return chosen.first(); // came from all of them, or from one since removed
+  return at + 1 < chosen.size() ? chosen.at(at + 1) : QString();
+}
+
 } // namespace Dictionaries

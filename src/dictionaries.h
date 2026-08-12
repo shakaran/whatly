@@ -53,6 +53,29 @@ QString preferredDictionary();
 // stored, so an upgrade from the single-language setting keeps working.
 QStringList selectedDictionaries();
 
+// The one chosen language being checked right now, or empty for all of them at
+// once. Chromium accepts a word any of its languages knows, so three languages
+// at once means three vocabularies' worth of typos going unmarked; narrowing to
+// the language actually being written is what makes the underline mean something.
+// The chosen set above is untouched by this — it stays the set to switch between.
+QString focusedDictionary();
+void setFocusedDictionary(const QString &code);
+
+// What QWebEngineProfile::setSpellCheckLanguages() is given: the focused language
+// alone while one is focused and still chosen, otherwise every chosen one.
+QStringList activeDictionaries();
+
+// The next language to focus after `current`, for a key pressed mid-sentence:
+// each of `chosen` in turn and then all of them together (an empty string) once
+// per lap. An unknown `current` starts the lap over. Pure and unit tested.
+QString nextFocus(const QStringList &chosen, const QString &current);
+
+// A language code as something to read: "Esperanto (eo)", "British English
+// (en_GB)". Named by the code's own locale, so the territory is not lost — the
+// language alone would have every English dictionary reading "American English".
+// A code no QLocale recognises is handed back as it stands.
+QString languageLabel(const QString &code);
+
 } // namespace Dictionaries
 
 #endif // DICTIONARIES_H

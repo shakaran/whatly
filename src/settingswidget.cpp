@@ -819,6 +819,29 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
 
 bool SettingsWidget::eventFilter(QObject *obj, QEvent *event) {
 
+  // The spell-check combo has to be editable to show a summary of what is ticked
+  // rather than one entry's text — and an editable combo opens its list only when
+  // the arrow is clicked, so clicking the box itself did nothing whatsoever. Open
+  // it from anywhere on the box, the way every other combo on this page behaves.
+  if (event->type() == QEvent::MouseButtonPress &&
+      ui->spellCheckLanguageComboBox->lineEdit() &&
+      obj == ui->spellCheckLanguageComboBox->lineEdit()) {
+    QAbstractItemView *view = ui->spellCheckLanguageComboBox->view();
+    // Opening it from inside the press made it flash and vanish: the list appears
+    // under the pointer, the release that follows lands on it, and a release on a
+    // freshly shown popup reads as a click outside the list, which closes it. Qt's
+    // own arrow path blocks that one release with an internal timer this cannot
+    // reach — so open the list once this click has finished being delivered.
+    //
+    // Nothing to do when it is already open: the list has the mouse then, so the
+    // press never arrives here and Qt closes it as a click outside, which is the
+    // behaviour wanted anyway.
+    if (!view || !view->isVisible())
+      QTimer::singleShot(0, ui->spellCheckLanguageComboBox,
+                         &QComboBox::showPopup);
+    return true;
+  }
+
   // The spell-check language combo is a multi-select: a click on the drop-down
   // list toggles that language's checkbox and keeps the list open, instead of
   // picking one entry and closing (which is what a plain combo does).
@@ -2288,18 +2311,14 @@ void SettingsWidget::populateSpellCheck() {
     combo->setEditable(true);
     combo->lineEdit()->setReadOnly(true);
     combo->lineEdit()->setFocusPolicy(Qt::NoFocus);
+    // Being editable is what lets it show a summary instead of one entry's text,
+    // and it is also why clicking the box did nothing: an editable combo opens its
+    // list from the arrow alone. See eventFilter().
+    combo->lineEdit()->installEventFilter(this);
   }
   auto *model = new QStandardItemModel(combo);
   for (const QString &dictionary : available) {
-    // Build from the language alone so "es_ES" reads "Español", not "Español
-    // de España" — the code in parentheses already disambiguates the territory.
-    const QLocale locale(dictionary);
-    const QString name = locale.language() == QLocale::C
-                             ? dictionary
-                             : QLocale(locale.language()).nativeLanguageName() +
-                                   QStringLiteral(" (") + dictionary +
-                                   QStringLiteral(")");
-    auto *item = new QStandardItem(name);
+    auto *item = new QStandardItem(Dictionaries::languageLabel(dictionary));
     item->setData(dictionary, Qt::UserRole);
     item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
     item->setCheckState(selected.contains(dictionary) ? Qt::Checked
@@ -2311,14 +2330,9 @@ void SettingsWidget::populateSpellCheck() {
   for (const DictionaryEntry &entry : m_dictCatalog) {
     if (available.contains(entry.code))
       continue;
-    const QLocale locale(entry.code);
-    const QString name =
-        locale.language() == QLocale::C
-            ? entry.code
-            : QLocale(locale.language()).nativeLanguageName() +
-                  QStringLiteral(" (") + entry.code + QStringLiteral(")");
-    auto *item = new QStandardItem(name + QStringLiteral("  \u2014 ") +
-                                   tr("download"));
+    auto *item =
+        new QStandardItem(Dictionaries::languageLabel(entry.code) +
+                          QStringLiteral("  \u2014 ") + tr("download"));
     item->setData(entry.code, Qt::UserRole);
     item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
     item->setCheckState(selected.contains(entry.code) ? Qt::Checked
@@ -2359,10 +2373,15 @@ void SettingsWidget::populateSpellCheck() {
 void SettingsWidget::updateSpellCheckSummary() {
   const QStringList selected = Dictionaries::selectedDictionaries();
   QString text;
+  const QString focus = Dictionaries::focusedDictionary();
   if (selected.isEmpty())
     text = tr("Choose languages\u2026"); // hints the picker takes several
   else if (selected.size() == 1)
     text = selected.first();
+  else if (!focus.isEmpty())
+    // Ticked three and checking against one of them: saying "3 languages" here
+    // would be a half-truth, and the checker's behaviour the puzzling half.
+    text = tr("%1 of %2 chosen").arg(focus).arg(selected.size());
   else
     text = tr("%1 languages").arg(selected.size());
   ui->spellCheckLanguageComboBox->setCurrentText(text);

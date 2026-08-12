@@ -16,6 +16,8 @@
 
 #include "shortcuts.h"
 #include "chatnav.h"
+#include "dictionaries.h"
+#include "webengineprofilemanager.h"
 #include "aiassistant.h"
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -139,6 +141,18 @@ void MainWindow::createActions() {
   connect(m_findChatAction, &QAction::triggered, this,
           &MainWindow::focusChatSearch);
   addAction(m_findChatAction);
+
+  // Which language spelling is checked against, switched from the keyboard while
+  // writing (#41). Ctrl+Alt+S because WhatsApp Web binds nothing with Alt in the
+  // message box, which is exactly where this key is pressed — and an application
+  // shortcut so it answers from a detached account window too.
+  m_spellNextAction = new QAction(tr("Spelling: next language"), this);
+  m_spellNextAction->setShortcut(
+      QKeySequence(Qt::Modifier::CTRL | Qt::Modifier::ALT | Qt::Key_S));
+  m_spellNextAction->setShortcutContext(Qt::ApplicationShortcut);
+  connect(m_spellNextAction, &QAction::triggered, this,
+          &MainWindow::cycleSpellCheckLanguage);
+  addAction(m_spellNextAction);
 
   m_settingsAction = new QAction(tr("&Settings"), this);
   m_settingsAction->setShortcut(QKeySequence(Qt::Modifier::CTRL | Qt::Key_P));
@@ -355,6 +369,7 @@ void MainWindow::createActions() {
       // be bound to whatever the user likes.
       {m_chatListStripAction, "chatListStrip", tr("Collapse the chat list")},
       {m_findChatAction, "findChat", tr("Find in chats")},
+      {m_spellNextAction, "spellNext", tr("Spelling: next language")},
       {m_translateSelectionAction, "translateSelection",
        tr("Translate selection")},
       {m_translateComposerAction, "translateComposer",
@@ -422,6 +437,10 @@ void MainWindow::createTrayIcon() {
   m_trayIconMenu->addAction(m_viewGridAction);
   m_trayIconMenu->addAction(m_addAccountAction);
   m_trayIconMenu->addSeparator();
+  // Which language spelling is checked against. Built each time it opens, and
+  // hidden while there is only one language to check against — a list of one is
+  // not a switch. The keyboard reaches the same thing (m_spellNextAction).
+  m_spellingMenu = m_trayIconMenu->addMenu(tr("Spelling"));
   m_trayIconMenu->addAction(m_toggleThemeAction);
   m_trayIconMenu->addAction(m_settingsAction);
   m_trayIconMenu->addAction(m_aboutAction);
@@ -459,6 +478,10 @@ void MainWindow::createTrayIcon() {
   m_systemTrayIcon->setContextMenu(m_trayIconMenu);
   connect(m_trayIconMenu, &QMenu::aboutToShow, this,
           &MainWindow::checkWindowState);
+  // On the whole menu opening, not on the submenu: whether "Spelling" is there at
+  // all has to be settled before the pointer reaches it.
+  connect(m_trayIconMenu, &QMenu::aboutToShow, this,
+          &MainWindow::rebuildSpellingMenu);
   connect(m_systemTrayIcon, &QSystemTrayIcon::activated, this,
           &MainWindow::iconActivated);
 
@@ -581,6 +604,79 @@ void MainWindow::refreshWindowsMenu() {
     m_windowsMenuTargets << QPointer<QWidget>(order[i]);
   }
   m_windowsMenu->menuAction()->setVisible(order.size() > 1);
+}
+
+// ── Spell-check language (#41) ─────────────────────────────────────────────────
+
+void MainWindow::rebuildSpellingMenu() {
+  if (!m_spellingMenu)
+    return;
+  const QStringList chosen = Dictionaries::selectedDictionaries();
+  // One language is not something to switch between, and none at all means there
+  // is no checker running to switch anything on.
+  m_spellingMenu->menuAction()->setVisible(chosen.size() > 1);
+  if (chosen.size() < 2)
+    return;
+
+  m_spellingMenu->clear();
+  // clear() takes the entries and leaves the group they were in behind, so a
+  // session's worth of menu openings would pile them up.
+  qDeleteAll(m_spellingMenu->findChildren<QActionGroup *>());
+  auto *group = new QActionGroup(m_spellingMenu); // radio marks, not tick boxes
+  const QString focus = Dictionaries::focusedDictionary();
+  for (const QString &code : chosen) {
+    QAction *entry = m_spellingMenu->addAction(Dictionaries::languageLabel(code));
+    entry->setCheckable(true);
+    entry->setChecked(code == focus);
+    entry->setActionGroup(group);
+    connect(entry, &QAction::triggered, this,
+            [this, code]() { applySpellCheckFocus(code); });
+  }
+  m_spellingMenu->addSeparator();
+  // All of them at once is Chromium's own behaviour and the state to come back
+  // to, not a fourth language: a message written in two of them wants both.
+  QAction *all = m_spellingMenu->addAction(tr("All of them"));
+  all->setCheckable(true);
+  all->setChecked(focus.isEmpty());
+  all->setActionGroup(group);
+  connect(all, &QAction::triggered, this,
+          [this]() { applySpellCheckFocus(QString()); });
+}
+
+void MainWindow::cycleSpellCheckLanguage() {
+  const QStringList chosen = Dictionaries::selectedDictionaries();
+  if (chosen.size() < 2) {
+    // Pressed with nothing to switch to. Say why rather than doing nothing at
+    // all, since the key gave no sign either way.
+    showNotification(QApplication::applicationDisplayName(),
+                     chosen.isEmpty()
+                         ? tr("No spell-check language is installed.")
+                         : tr("Only one spell-check language is chosen. Pick "
+                              "more in Settings to switch between them."));
+    return;
+  }
+  applySpellCheckFocus(
+      Dictionaries::nextFocus(chosen, Dictionaries::focusedDictionary()));
+}
+
+void MainWindow::applySpellCheckFocus(const QString &code) {
+  Dictionaries::setFocusedDictionary(code);
+  // Live: the profiles keep their pages, and Chromium picks the new language list
+  // up without a reload.
+  WebEngineProfileManager::instance().applyUserSettings();
+  // A Settings page left open is looking at the language box this just changed the
+  // meaning of, and it has no way to know: it only re-reads that line when the
+  // picker itself is used. Without this it goes on claiming "3 languages" while
+  // one of the three is doing the checking.
+  if (m_settingsWidget)
+    m_settingsWidget->updateSpellCheckSummary();
+  // A key pressed in the middle of a sentence has to answer for itself; the tray
+  // submenu is not where someone typing is looking.
+  showNotification(QApplication::applicationDisplayName(),
+                   code.isEmpty()
+                       ? tr("Spelling: every chosen language")
+                       : tr("Spelling: %1")
+                             .arg(Dictionaries::languageLabel(code)));
 }
 
 void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason) {

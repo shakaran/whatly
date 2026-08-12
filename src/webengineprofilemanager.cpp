@@ -251,8 +251,9 @@ void WebEngineProfileManager::applyUserSettingsTo(QWebEngineProfile *profile,
     // Chromium's spell checker underlines nothing unless it is given a language
     // whose .bdic it can actually find, so an empty list is the same as off. It
     // checks against every language in the list at once, which is the point of
-    // letting more than one be selected.
-    const QStringList dictionaries = Dictionaries::selectedDictionaries();
+    // letting more than one be selected — and the reason a single one of them can
+    // be focused while writing in that language (see activeDictionaries()).
+    const QStringList dictionaries = Dictionaries::activeDictionaries();
     const bool spellCheck =
         s.value(QStringLiteral("spellCheckEnabled"), true).toBool() &&
         !dictionaries.isEmpty();

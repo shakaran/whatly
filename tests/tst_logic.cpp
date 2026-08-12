@@ -322,6 +322,78 @@ private slots:
         QStringLiteral("spellCheckLanguages"));
     qunsetenv("QTWEBENGINE_DICTIONARIES_PATH");
   }
+  // Focusing one of the chosen languages (#41): what Chromium is given, and the
+  // order a key mid-sentence walks through.
+  void focusOneChosenLanguage() {
+    QTemporaryDir dir;
+    QVERIFY(dir.isValid());
+    for (const QString &n : {"en_US", "es_ES", "eo"}) {
+      QFile f(dir.filePath(n + QStringLiteral(".bdic")));
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("BDIC-stub");
+      f.close();
+    }
+    qputenv("QTWEBENGINE_DICTIONARIES_PATH", dir.path().toLocal8Bit());
+    const QStringList three{QStringLiteral("en_US"), QStringLiteral("eo"),
+                            QStringLiteral("es_ES")};
+    SettingsManager::instance().settings().setValue(
+        QStringLiteral("spellCheckLanguages"), three);
+    QCOMPARE(Dictionaries::selectedDictionaries(), three);
+
+    // Nothing focused: every chosen language at once, as before.
+    Dictionaries::setFocusedDictionary(QString());
+    QVERIFY(Dictionaries::focusedDictionary().isEmpty());
+    QCOMPARE(Dictionaries::activeDictionaries(), three);
+
+    // Focused: that one alone, however many are ticked.
+    Dictionaries::setFocusedDictionary(QStringLiteral("eo"));
+    QCOMPARE(Dictionaries::focusedDictionary(), QStringLiteral("eo"));
+    QCOMPARE(Dictionaries::activeDictionaries(),
+             QStringList{QStringLiteral("eo")});
+
+    // Focused on one that is no longer ticked: back to all of them, rather than
+    // checking against a language that is not in the picker any more.
+    SettingsManager::instance().settings().setValue(
+        QStringLiteral("spellCheckLanguages"),
+        QStringList{QStringLiteral("en_US"), QStringLiteral("es_ES")});
+    QVERIFY(Dictionaries::focusedDictionary().isEmpty());
+    QCOMPARE(Dictionaries::activeDictionaries().size(), 2);
+
+    // One lap: each language in turn, then all of them, then round again.
+    QCOMPARE(Dictionaries::nextFocus(three, QString()), QStringLiteral("en_US"));
+    QCOMPARE(Dictionaries::nextFocus(three, QStringLiteral("en_US")),
+             QStringLiteral("eo"));
+    QCOMPARE(Dictionaries::nextFocus(three, QStringLiteral("eo")),
+             QStringLiteral("es_ES"));
+    QVERIFY(Dictionaries::nextFocus(three, QStringLiteral("es_ES")).isEmpty());
+    // A language dropped from the picker since it was focused starts the lap over.
+    QCOMPARE(Dictionaries::nextFocus(three, QStringLiteral("zz_ZZ")),
+             QStringLiteral("en_US"));
+    // Nothing to switch between: all of them is the only stop there is.
+    QVERIFY(Dictionaries::nextFocus({QStringLiteral("eo")},
+                                    QStringLiteral("eo"))
+                .isEmpty());
+    QVERIFY(Dictionaries::nextFocus({}, QString()).isEmpty());
+
+    // Labels: one shape for every entry, the language in its own words and the
+    // territory that says which variant it is — so a list of them reads as a list
+    // rather than as an accident. tst_settings pins the pairs that used to collide.
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("es_ES")),
+             QStringLiteral("español (España)"));
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("eo"))
+                .startsWith(QStringLiteral("Esperanto")));
+    // An unknown code is left exactly as it is.
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("zz_ZZ")),
+             QStringLiteral("zz_ZZ"));
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("zz_ZZ")),
+             QStringLiteral("zz_ZZ"));
+
+    SettingsManager::instance().settings().remove(
+        QStringLiteral("spellCheckLanguages"));
+    SettingsManager::instance().settings().remove(
+        QStringLiteral("spellCheckFocus"));
+    qunsetenv("QTWEBENGINE_DICTIONARIES_PATH");
+  }
   // A dictionary named exactly after the system locale is the preferred one
   // (covers the exact-locale-match branch of preferredDictionary).
   void localeExactMatch() {

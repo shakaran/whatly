@@ -383,7 +383,8 @@ void MainWindow::showCommandPalette() {
       m_dndAction,         m_dnd1hAction,     m_dnd2hAction,
       m_dndMorningAction,
       m_remind1hAction,    m_remind3hAction,  m_remindTomorrowAction,
-      m_viewTabsAction,    m_viewGridAction,  m_quitAction};
+      m_viewTabsAction,    m_viewGridAction,  m_spellNextAction,
+      m_quitAction};
   for (QAction *a : actions) {
     if (!a)
       continue;

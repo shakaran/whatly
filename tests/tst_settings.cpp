@@ -6,13 +6,14 @@
 // dialog that still appears so nothing can block the run.
 #include <QtTest>
 #include <QApplication>
+#include <QAbstractItemView>
 #include <QCheckBox>
 #include <QComboBox>
 #include <QDialog>
+#include <QFile>
 #include <QDoubleSpinBox>
 #include <QGroupBox>
 #include <QRegularExpression>
-#include <QAbstractItemView>
 #include <QLineEdit>
 #include <QListWidget>
 #include <QPointer>
@@ -28,7 +29,9 @@
 #include <QToolButton>
 
 #include "customtitlebar.h"
+#include "dictionaries.h"
 #include "quickcompose.h"
+#include "settingsmanager.h"
 #include "settingswidget.h"
 
 class TstSettings : public QObject {
@@ -337,6 +340,109 @@ private slots:
     const int crossing = pageBar->value();
     turn(list->viewport(), -1);
     QVERIFY(pageBar->value() > crossing);
+  }
+
+  // Dogfood round 18, two findings against the spell-check picker.
+  //
+  // One: the language box shows a summary of what is ticked, but which language is
+  // being checked can be changed from the tray menu or the keyboard — and an open
+  // Settings page went on showing "3 languages" while one of the three was doing
+  // the work, because it only re-read that line when the picker itself was used.
+  //
+  // Two: the box is editable so it can show that summary, which is exactly why a
+  // click on it did nothing — an editable combo opens its list from the arrow alone.
+  void languageBoxFollowsTheFocusAndOpensOnClick() {
+    QTemporaryDir dicts;
+    QVERIFY(dicts.isValid());
+    for (const QString &n : {"eo", "en_US", "es_ES"}) {
+      QFile f(dicts.filePath(n + QStringLiteral(".bdic")));
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("BDIC-stub");
+      f.close();
+    }
+    // Set before constructing: the picker is filled during construction.
+    qputenv("QTWEBENGINE_DICTIONARIES_PATH", dicts.path().toLocal8Bit());
+    auto &s = SettingsManager::instance().settings();
+    s.setValue(QStringLiteral("spellCheckEnabled"), true);
+    s.setValue(QStringLiteral("spellCheckLanguages"),
+               QStringList{QStringLiteral("en_US"), QStringLiteral("eo"),
+                           QStringLiteral("es_ES")});
+    s.remove(QStringLiteral("spellCheckFocus"));
+
+    QTemporaryDir cache, storage;
+    SettingsWidget sw(nullptr, 0, cache.path(), storage.path());
+    auto *combo =
+        sw.findChild<QComboBox *>(QStringLiteral("spellCheckLanguageComboBox"));
+    QVERIFY(combo && combo->lineEdit());
+
+    // Three ticked, none focused: the count.
+    QCOMPARE(combo->lineEdit()->text(), QStringLiteral("3 languages"));
+
+    // Every English dictionary used to read "American English": the label was built
+    // from the language alone, and Qt fills the dropped territory back in with the
+    // likeliest one. Two English variants must not share a name.
+    const QString us = Dictionaries::languageLabel(QStringLiteral("en_US"));
+    const QString gb = Dictionaries::languageLabel(QStringLiteral("en_GB"));
+    QVERIFY(us != gb);
+    QVERIFY(gb.startsWith(QStringLiteral("British")));
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("en_AU"))
+                .startsWith(QStringLiteral("Australian")));
+    // The other half of it: CLDR gives its *default* variant the bare name, so
+    // "português" is the Brazilian one and "español" the Argentinian one, and
+    // neither said so. The territory has to be named for those.
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("pt_BR"))
+                .contains(QStringLiteral("Brasil")));
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("es_AR"))
+                .contains(QStringLiteral("Argentina")));
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("pt_BR")) !=
+            Dictionaries::languageLabel(QStringLiteral("pt_PT")));
+    // ...and exactly once: "español de España" has its territory taken out of the
+    // name before it goes back in as the qualifier, so the whole list keeps one
+    // shape and the Spanish entries read alike.
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("es_ES")),
+             QStringLiteral("español (España)"));
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("es_MX")),
+             QStringLiteral("español (México)"));
+    // The bundle ships both of these and Qt reads them as one locale, so the label
+    // has to keep them apart.
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("de_DE")) !=
+            Dictionaries::languageLabel(QStringLiteral("de_DE_neu")));
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("eo")),
+             QStringLiteral("Esperanto (eo)"));
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("zz_ZZ")),
+             QStringLiteral("zz_ZZ"));
+
+    // What the tray menu and Ctrl+Alt+S do, followed by the call MainWindow makes.
+    Dictionaries::setFocusedDictionary(QStringLiteral("eo"));
+    sw.updateSpellCheckSummary();
+    QCOMPARE(combo->lineEdit()->text(), QStringLiteral("eo of 3 chosen"));
+
+    // ...and back again, so the line is not one-way.
+    Dictionaries::setFocusedDictionary(QString());
+    sw.updateSpellCheckSummary();
+    QCOMPARE(combo->lineEdit()->text(), QStringLiteral("3 languages"));
+
+    // A click anywhere on the box opens the list — deferred to the next turn of
+    // the event loop, so the release that follows the press cannot be mistaken for
+    // a click outside a list that has only just appeared (which made it flash and
+    // vanish). Closing again is Qt's own doing: with the list open it holds the
+    // mouse, and a synthesised press cannot reproduce that grab, so this checks
+    // only the half that is ours.
+    QVERIFY(combo->view());
+    QVERIFY(!combo->view()->isVisible());
+    QTest::mousePress(combo->lineEdit(), Qt::LeftButton);
+    QTest::mouseRelease(combo->lineEdit(), Qt::LeftButton);
+    // Not yet — that is the whole point of the fix, and the assertion that fails if
+    // anyone opens it straight from the press again. The flash-and-vanish itself
+    // needs a real mouse grab and cannot be reproduced here, so this pins the
+    // mechanism instead of the symptom.
+    QVERIFY(!combo->view()->isVisible());
+    QTRY_VERIFY(combo->view()->isVisible());
+    combo->hidePopup();
+
+    s.remove(QStringLiteral("spellCheckLanguages"));
+    s.remove(QStringLiteral("spellCheckFocus"));
+    qunsetenv("QTWEBENGINE_DICTIONARIES_PATH");
   }
 };
 
