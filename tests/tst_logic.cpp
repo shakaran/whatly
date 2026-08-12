@@ -375,14 +375,16 @@ private slots:
                 .isEmpty());
     QVERIFY(Dictionaries::nextFocus({}, QString()).isEmpty());
 
-    // Labels: the language's own name with the code to tell territories apart,
-    // and an unknown code left exactly as it is.
-    QVERIFY(Dictionaries::languageLabel(QStringLiteral("es_ES"))
-                .endsWith(QStringLiteral(" (es_ES)")));
-    // ...and a name in front of it, not only the code again ("español (es_ES)" —
-    // Spanish does not capitalise its own language name).
-    QVERIFY(Dictionaries::languageLabel(QStringLiteral("es_ES")).size() >
-            QStringLiteral(" (es_ES)").size());
+    // Labels: one shape for every entry, the language in its own words and the
+    // territory that says which variant it is — so a list of them reads as a list
+    // rather than as an accident. tst_settings pins the pairs that used to collide.
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("es_ES")),
+             QStringLiteral("español (España)"));
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("eo"))
+                .startsWith(QStringLiteral("Esperanto")));
+    // An unknown code is left exactly as it is.
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("zz_ZZ")),
+             QStringLiteral("zz_ZZ"));
     QCOMPARE(Dictionaries::languageLabel(QStringLiteral("zz_ZZ")),
              QStringLiteral("zz_ZZ"));
 

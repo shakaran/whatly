@@ -396,9 +396,13 @@ private slots:
                 .contains(QStringLiteral("Argentina")));
     QVERIFY(Dictionaries::languageLabel(QStringLiteral("pt_BR")) !=
             Dictionaries::languageLabel(QStringLiteral("pt_PT")));
-    // ...but not twice, or es_ES reads "español de España (España)".
+    // ...and exactly once: "español de España" has its territory taken out of the
+    // name before it goes back in as the qualifier, so the whole list keeps one
+    // shape and the Spanish entries read alike.
     QCOMPARE(Dictionaries::languageLabel(QStringLiteral("es_ES")),
-             QStringLiteral("español de España"));
+             QStringLiteral("español (España)"));
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("es_MX")),
+             QStringLiteral("español (México)"));
     // The bundle ships both of these and Qt reads them as one locale, so the label
     // has to keep them apart.
     QVERIFY(Dictionaries::languageLabel(QStringLiteral("de_DE")) !=

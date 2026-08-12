@@ -237,17 +237,28 @@ QString languageLabel(const QString &code) {
   if (locale.name() != code)
     return name + QStringLiteral(" (") + code + QStringLiteral(")");
 
-  {
-    // CLDR qualifies only the variants that are not its default, so plain
-    // "português" IS Brazilian and plain "español" IS Argentinian, while pt_PT and
-    // es_ES carry theirs. Naming the territory is what makes every entry say which
-    // one it is — skipped where the name already says it, or es_ES would read
-    // "español de España (España)".
-    const QString territory = locale.nativeTerritoryName();
-    if (!territory.isEmpty() && !name.contains(territory, Qt::CaseInsensitive))
-      name += QStringLiteral(" (") + territory + QStringLiteral(")");
+  // Every entry gets the same shape, "language (territory)", because a list where
+  // some rows carry a territory and others do not reads as an accident. CLDR
+  // qualifies only the variants that are not its default, so plain "português" IS
+  // Brazilian and plain "español" IS Argentinian while es_ES and pt_PT carry theirs
+  // — naming the territory is what makes each row say which one it is.
+  const QString territory = locale.nativeTerritoryName();
+  if (territory.isEmpty())
+    return name;
+
+  // Where the name already ends in the territory, take it out before adding it
+  // back as the qualifier: "español de España" would otherwise become "español de
+  // España (España)", which is the row that stood out in the first place. The
+  // connector left behind ("de", "do", "of") is one short word, so drop it too.
+  const int at = name.lastIndexOf(territory, -1, Qt::CaseInsensitive);
+  if (at > 0) {
+    name.truncate(at);
+    name = name.trimmed();
+    const int space = name.lastIndexOf(QLatin1Char(' '));
+    if (space > 0 && name.length() - space - 1 <= 3)
+      name.truncate(space);
   }
-  return name;
+  return name + QStringLiteral(" (") + territory + QStringLiteral(")");
 }
 
 QString nextFocus(const QStringList &chosen, const QString &current) {
