@@ -664,6 +664,12 @@ void MainWindow::applySpellCheckFocus(const QString &code) {
   // Live: the profiles keep their pages, and Chromium picks the new language list
   // up without a reload.
   WebEngineProfileManager::instance().applyUserSettings();
+  // A Settings page left open is looking at the language box this just changed the
+  // meaning of, and it has no way to know: it only re-reads that line when the
+  // picker itself is used. Without this it goes on claiming "3 languages" while
+  // one of the three is doing the checking.
+  if (m_settingsWidget)
+    m_settingsWidget->updateSpellCheckSummary();
   // A key pressed in the middle of a sentence has to answer for itself; the tray
   // submenu is not where someone typing is looking.
   showNotification(QApplication::applicationDisplayName(),

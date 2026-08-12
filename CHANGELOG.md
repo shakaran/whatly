@@ -8,7 +8,11 @@ Settings like every other shortcut — now switches between the languages you
 chose, checking against one at a time, and comes back round to all of them at
 once for a message that mixes two. The switch takes effect on the page you are
 typing on, with no reload, and says which language it landed on; what you ticked
-in Settings is left alone, since that is the set being switched between.
+in Settings is left alone, since that is the set being switched between. Two
+things about the language box itself came out of dogfooding it: it now opens its
+list when clicked anywhere on the box rather than only on the arrow, and an open
+Settings page keeps up with a language switched from the tray or the keyboard
+instead of going on claiming "3 languages" while one of them does the work.
 
 **The update notice now says the right thing for the way you installed Whatly.**
 It told everyone alike to click through to the download page, which is wrong

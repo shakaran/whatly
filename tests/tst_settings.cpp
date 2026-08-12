@@ -6,13 +6,14 @@
 // dialog that still appears so nothing can block the run.
 #include <QtTest>
 #include <QApplication>
+#include <QAbstractItemView>
 #include <QCheckBox>
 #include <QComboBox>
 #include <QDialog>
+#include <QFile>
 #include <QDoubleSpinBox>
 #include <QGroupBox>
 #include <QRegularExpression>
-#include <QAbstractItemView>
 #include <QLineEdit>
 #include <QListWidget>
 #include <QPointer>
@@ -28,7 +29,9 @@
 #include <QToolButton>
 
 #include "customtitlebar.h"
+#include "dictionaries.h"
 #include "quickcompose.h"
+#include "settingsmanager.h"
 #include "settingswidget.h"
 
 class TstSettings : public QObject {
@@ -337,6 +340,65 @@ private slots:
     const int crossing = pageBar->value();
     turn(list->viewport(), -1);
     QVERIFY(pageBar->value() > crossing);
+  }
+
+  // Dogfood round 18, two findings against the spell-check picker.
+  //
+  // One: the language box shows a summary of what is ticked, but which language is
+  // being checked can be changed from the tray menu or the keyboard — and an open
+  // Settings page went on showing "3 languages" while one of the three was doing
+  // the work, because it only re-read that line when the picker itself was used.
+  //
+  // Two: the box is editable so it can show that summary, which is exactly why a
+  // click on it did nothing — an editable combo opens its list from the arrow alone.
+  void languageBoxFollowsTheFocusAndOpensOnClick() {
+    QTemporaryDir dicts;
+    QVERIFY(dicts.isValid());
+    for (const QString &n : {"eo", "en_US", "es_ES"}) {
+      QFile f(dicts.filePath(n + QStringLiteral(".bdic")));
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("BDIC-stub");
+      f.close();
+    }
+    // Set before constructing: the picker is filled during construction.
+    qputenv("QTWEBENGINE_DICTIONARIES_PATH", dicts.path().toLocal8Bit());
+    auto &s = SettingsManager::instance().settings();
+    s.setValue(QStringLiteral("spellCheckEnabled"), true);
+    s.setValue(QStringLiteral("spellCheckLanguages"),
+               QStringList{QStringLiteral("en_US"), QStringLiteral("eo"),
+                           QStringLiteral("es_ES")});
+    s.remove(QStringLiteral("spellCheckFocus"));
+
+    QTemporaryDir cache, storage;
+    SettingsWidget sw(nullptr, 0, cache.path(), storage.path());
+    auto *combo =
+        sw.findChild<QComboBox *>(QStringLiteral("spellCheckLanguageComboBox"));
+    QVERIFY(combo && combo->lineEdit());
+
+    // Three ticked, none focused: the count.
+    QCOMPARE(combo->lineEdit()->text(), QStringLiteral("3 languages"));
+
+    // What the tray menu and Ctrl+Alt+S do, followed by the call MainWindow makes.
+    Dictionaries::setFocusedDictionary(QStringLiteral("eo"));
+    sw.updateSpellCheckSummary();
+    QCOMPARE(combo->lineEdit()->text(), QStringLiteral("eo of 3 chosen"));
+
+    // ...and back again, so the line is not one-way.
+    Dictionaries::setFocusedDictionary(QString());
+    sw.updateSpellCheckSummary();
+    QCOMPARE(combo->lineEdit()->text(), QStringLiteral("3 languages"));
+
+    // A click anywhere on the box opens the list, and a second one closes it.
+    QVERIFY(combo->view());
+    QVERIFY(!combo->view()->isVisible());
+    QTest::mousePress(combo->lineEdit(), Qt::LeftButton);
+    QVERIFY(combo->view()->isVisible());
+    QTest::mousePress(combo->lineEdit(), Qt::LeftButton);
+    QVERIFY(!combo->view()->isVisible());
+
+    s.remove(QStringLiteral("spellCheckLanguages"));
+    s.remove(QStringLiteral("spellCheckFocus"));
+    qunsetenv("QTWEBENGINE_DICTIONARIES_PATH");
   }
 };
 

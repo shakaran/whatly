@@ -819,6 +819,22 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
 
 bool SettingsWidget::eventFilter(QObject *obj, QEvent *event) {
 
+  // The spell-check combo has to be editable to show a summary of what is ticked
+  // rather than one entry's text — and an editable combo opens its list only when
+  // the arrow is clicked, so clicking the box itself did nothing whatsoever. Open
+  // it from anywhere on the box, the way every other combo on this page behaves.
+  if (event->type() == QEvent::MouseButtonPress &&
+      ui->spellCheckLanguageComboBox->lineEdit() &&
+      obj == ui->spellCheckLanguageComboBox->lineEdit()) {
+    QAbstractItemView *view = ui->spellCheckLanguageComboBox->view();
+    // A second click closes it again, since that is what clicking a combo does.
+    if (view && view->isVisible())
+      ui->spellCheckLanguageComboBox->hidePopup();
+    else
+      ui->spellCheckLanguageComboBox->showPopup();
+    return true;
+  }
+
   // The spell-check language combo is a multi-select: a click on the drop-down
   // list toggles that language's checkbox and keeps the list open, instead of
   // picking one entry and closing (which is what a plain combo does).
@@ -2288,6 +2304,10 @@ void SettingsWidget::populateSpellCheck() {
     combo->setEditable(true);
     combo->lineEdit()->setReadOnly(true);
     combo->lineEdit()->setFocusPolicy(Qt::NoFocus);
+    // Being editable is what lets it show a summary instead of one entry's text,
+    // and it is also why clicking the box did nothing: an editable combo opens its
+    // list from the arrow alone. See eventFilter().
+    combo->lineEdit()->installEventFilter(this);
   }
   auto *model = new QStandardItemModel(combo);
   for (const QString &dictionary : available) {

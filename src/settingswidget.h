@@ -77,6 +77,11 @@ public slots:
   void updateAppLockPasswordViewer();
   void appAutoLockingSetChecked(bool checked);
   void toggleTheme();
+  // What the language box says about the spell checker. Public because the focused
+  // language can be changed from outside this window — the tray menu and the
+  // keyboard both do it — and an open Settings page went on showing the count it
+  // had ("3 languages") while one of those three was doing the work.
+  void updateSpellCheckSummary();
 protected slots:
   bool eventFilter(QObject *obj, QEvent *event);
   void closeEvent(QCloseEvent *event);
@@ -246,7 +251,6 @@ private:
   void populateChatListPreviewSize();
   void populateFontFamilies();
   void populateSpellCheck();
-  void updateSpellCheckSummary();
   void saveSpellCheckLanguages();
   // Fills the language picker from the .qm files compiled into the binary, so
   // adding a translation needs no code change.
