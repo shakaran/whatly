@@ -124,10 +124,16 @@ private slots:
     QVERIFY(Utils::isBenignWebConsoleNoise(QStringLiteral(
         "Error with Permissions-Policy header: Unrecognized feature: "
         "'bluetooth'.")));
+    // A reason-less promise rejection -> noise (WhatsApp floods these).
+    QVERIFY(Utils::isBenignWebConsoleNoise(
+        QStringLiteral("Uncaught (in promise) undefined")));
     // A real CORS failure to some other endpoint must still surface.
     QVERIFY(!Utils::isBenignWebConsoleNoise(QStringLiteral(
         "Access to fetch at 'https://api.example.com/data' has been blocked "
         "by CORS policy")));
+    // A promise rejection that carries an actual value must still surface.
+    QVERIFY(!Utils::isBenignWebConsoleNoise(QStringLiteral(
+        "Uncaught (in promise) TypeError: x is not a function")));
     QVERIFY(!Utils::isBenignWebConsoleNoise(QString()));
   }
   void serviceWorkerRegistrationFailure() {

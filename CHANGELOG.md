@@ -1,13 +1,11 @@
 ## Unreleased
 
-**The Windows packages carry the MSVC runtime they need (#68).** `whatly.exe`
-imports `MSVCP140.dll`, `VCRUNTIME140.dll` and `VCRUNTIME140_1.dll`, and neither
-the installer nor the portable archive contained them, so on a machine without
-the Visual C++ redistributable both died before starting — a bare "the code
-execution cannot proceed" box, with nothing the application could do about it,
-because the loader fails before its first line runs. The runtime is now deployed
-beside the executable, which fixes the installer and the archive together, and
-the release build fails loudly if it is ever missing again.
+**Windows: the installer and portable zip now run on a clean machine (#68).**
+`whatly.exe` imports the MSVC runtime (`MSVCP140.dll`, `VCRUNTIME140*.dll`), but
+neither Windows artifact shipped it, so a PC without the "VC++ 2015–2022
+Redistributable" failed to launch with a missing-DLL dialog. The runtime is now
+deployed next to the executable, fixing both the `.msi` and the `.zip`; a CI
+guard fails the build if it is ever missing again.
 
 **A warning before a full disk corrupts your session.** When the data folder's
 disk drops below 1 GB free, Whatly now warns at startup that WhatsApp Web's
@@ -82,8 +80,11 @@ disk by the app, and only the current origin is touched.
 is blocked by CORS (its endpoint sends no `Access-Control-Allow-Origin` header,
 the same in a plain browser) and its Permissions-Policy header names features
 this Chromium build does not implement; both repeat by the hundred and neither
-means anything is wrong. They are now filtered out, so the one line a bug report
-needs is no longer buried under identical noise.
+means anything is wrong. Reason-less promise rejections ("Uncaught (in promise)
+undefined"), which WhatsApp Web floods when its session state is unhealthy, are
+filtered too. All are now dropped, so the one line a bug report needs is no
+longer buried under identical noise (a rejection that carries a real value, or
+any other error, still shows).
 
 ## 7.1.0 (2026-08-11)
 

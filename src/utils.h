@@ -47,10 +47,12 @@ public:
   // True when a JS console message is well-understood, harmless noise that only
   // drowns the lines a bug report needs: WhatsApp's own de-identified-telemetry
   // fetch being blocked by CORS (its endpoint sends no ACAO header — the same in
-  // a plain browser), and the Permissions-Policy header naming features this
-  // Chromium build does not implement (bluetooth, otp-credentials, payment, usb).
-  // Both repeat by the hundred and neither means anything is wrong. Matched
-  // conservatively so real CORS or policy errors still surface.
+  // a plain browser), the Permissions-Policy header naming features this Chromium
+  // build does not implement (bluetooth, otp-credentials, payment, usb), and
+  // reason-less promise rejections ("Uncaught (in promise) undefined") that
+  // WhatsApp Web floods when its session state is unhealthy. All repeat by the
+  // dozen and none means anything actionable. Matched conservatively so real
+  // CORS/policy errors — and promise rejections that carry a value — still show.
   static bool isBenignWebConsoleNoise(const QString &consoleMessage);
   // True when a JS console message is the Service Worker failing to register
   // because its on-disk CacheStorage is corrupt ("wrong file structure on disk"

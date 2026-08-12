@@ -680,6 +680,13 @@ bool Utils::isBenignWebConsoleNoise(const QString &consoleMessage) {
   if (consoleMessage.contains(
           QLatin1String("Permissions-Policy header: Unrecognized feature")))
     return true;
+  // A promise rejected with no reason ("Uncaught (in promise) undefined"):
+  // WhatsApp Web floods these by the dozen when its session/module state is
+  // unhealthy, and an undefined reason carries nothing to act on. Only this
+  // exact reason-less form is dropped; a rejection with a real value still logs.
+  if (consoleMessage.contains(
+          QLatin1String("Uncaught (in promise) undefined")))
+    return true;
   return false;
 }
 
