@@ -98,10 +98,17 @@ jobs:
             -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
             -property installationPath
           if (-not $vs) { throw "vswhere could not locate a VS install with the VC toolset" }
-          $redist = Join-Path $vs 'VC\Redist\MSVC'
-          $ver = Get-ChildItem $redist -Directory | Sort-Object Name -Descending | Select-Object -First 1
-          $crt = Join-Path $ver.FullName 'x64\Microsoft.VC143.CRT'
-          Copy-Item (Join-Path $crt '*.dll') build\Release\ -Force
+          # The redist tree has both a version folder (14.4x.xxxxx) and a "v143"
+          # alias; find the actual x64 Microsoft.VC143.CRT directory rather than
+          # guessing the folder name (a plain descending sort picks "v143", whose
+          # path does not exist). Newest match wins.
+          $crt = Get-ChildItem -Path (Join-Path $vs 'VC\Redist\MSVC') -Recurse -Directory `
+                   -Filter 'Microsoft.VC143.CRT' -ErrorAction SilentlyContinue |
+                 Where-Object { $_.FullName -match '\\x64\\' } |
+                 Sort-Object FullName -Descending | Select-Object -First 1
+          if (-not $crt) { throw "Could not find x64 Microsoft.VC143.CRT under $vs" }
+          Write-Host "CRT source: $($crt.FullName)"
+          Copy-Item (Join-Path $crt.FullName '*.dll') build\Release\ -Force
           # windeployqt may also have dropped the redist installer; we ship the
           # DLLs app-local, so it is dead weight in the package.
           Remove-Item build\Release\vc_redist.x64.exe -ErrorAction SilentlyContinue
@@ -295,10 +302,16 @@ jobs:
           export QMAKE="$QT_ROOT_DIR/bin/qmake"
           export UPDATE_INFORMATION="gh-releases-zsync|shakaran|whatly|latest|Whatly-*-x86_64.AppImage.zsync"
           export OUTPUT="Whatly-${tag#v}-x86_64.AppImage"
-          ./linuxdeploy-x86_64.AppImage --appdir AppDir \
+          # Retry the whole run: --output appimage makes linuxdeploy fetch
+          # appimagetool from GitHub's 'continuous' release, which occasionally
+          # 5xx's and exited 4 mid-release. Three tries beats a failed release.
+          n=0; until ./linuxdeploy-x86_64.AppImage --appdir AppDir \
             --desktop-file AppDir/usr/share/applications/net.shakaran.whatly.desktop \
             --icon-file AppDir/usr/share/icons/hicolor/256x256/apps/net.shakaran.whatly.png \
-            --plugin qt --output appimage
+            --plugin qt --output appimage; do
+            n=$((n+1)); [ $n -ge 3 ] && { echo "::error::linuxdeploy failed after $n attempts"; exit 1; }
+            echo "linuxdeploy attempt $n failed; retrying in 15s"; sleep 15
+          done
 
       - name: Verify the NSS modules survived bundling
         run: |
@@ -429,10 +442,15 @@ jobs:
             echo "Wayland platform plugins to bundle: ${EXTRA_PLATFORM_PLUGINS:-<none>}"
           fi
           # Populate AppDir with the bundled Qt runtime (RPATH => $ORIGIN/../lib).
-          ./linuxdeploy-x86_64.AppImage --appdir AppDir \
+          # Retry: the qt plugin can fetch helpers from GitHub's 'continuous'
+          # release, which occasionally 5xx's mid-release.
+          n=0; until ./linuxdeploy-x86_64.AppImage --appdir AppDir \
             --desktop-file AppDir/usr/share/applications/net.shakaran.whatly.desktop \
             --icon-file AppDir/usr/share/icons/hicolor/256x256/apps/net.shakaran.whatly.png \
-            --plugin qt
+            --plugin qt; do
+            n=$((n+1)); [ $n -ge 3 ] && { echo "::error::linuxdeploy failed after $n attempts"; exit 1; }
+            echo "linuxdeploy attempt $n failed; retrying in 15s"; sleep 15
+          done
           # Log whether the Wayland platform plugin made it into the bundle
           # (non-fatal: absence just means Xwayland fallback).
           if find AppDir -name 'libqwayland*.so' -print -quit | grep -q .; then
