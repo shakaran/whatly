@@ -77,7 +77,28 @@ jobs:
         run: cmake --build build --config Release
 
       - name: Deploy Qt runtime
-        run: '& "$env:QT_ROOT_DIR\bin\windeployqt.exe" build\Release\whatly.exe'
+        # --compiler-runtime copies the MSVC runtime (msvcp140.dll,
+        # vcruntime140*.dll, concrt140.dll) next to whatly.exe. Without it the
+        # binary's imports are absent from both artifacts, so a machine with no
+        # "VC++ 2015-2022 Redistributable" fails to launch with a missing-DLL
+        # dialog. App-local is licence-permitted and the only thing that works
+        # for the portable .zip (a zip cannot install a prerequisite). Both the
+        # .msi (harvested) and the .zip come from build\Release, so this one
+        # flag fixes both. See issue #68.
+        run: '& "$env:QT_ROOT_DIR\bin\windeployqt.exe" --compiler-runtime build\Release\whatly.exe'
+
+      - name: Verify the MSVC runtime was bundled
+        # whatly.exe imports these from the redistributable; if --compiler-runtime
+        # ever stops copying them, fail here rather than ship a package that dies
+        # on first launch on a machine without the VC++ redist (issue #68). Same
+        # fail-loudly instinct as the .msi size guard below.
+        run: |
+          $need = 'msvcp140.dll','vcruntime140.dll','vcruntime140_1.dll'
+          $missing = $need | Where-Object { -not (Test-Path "build\Release\$_") }
+          if ($missing) {
+            throw "MSVC runtime missing from build\Release: $($missing -join ', ') - windeployqt --compiler-runtime did not copy it"
+          }
+          Write-Host "MSVC runtime present: $($need -join ', ')"
 
       # ── Optional: code-sign the built .exe via SignPath (issue #325) ──────────
       # Skipped entirely unless SIGNPATH_API_TOKEN is configured. When it is, the
