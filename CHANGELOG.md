@@ -1,5 +1,13 @@
 ## Unreleased
 
+**The wheel in Settings scrolls what the pointer is on.** Opening the
+spell-check language picker and turning the wheel over its list scrolled the
+Settings page instead, leaving the list floating in mid-air over settings it had
+nothing to do with. A wheel over a list now belongs to that list, the page
+scrolls when the pointer is on the page, and whichever of the two the gesture
+started on keeps it — so a scroll down the page no longer stops dead the moment
+the pointer crosses a list.
+
 **Windows: the installer and portable zip now run on a clean machine (#68).**
 `whatly.exe` imports the MSVC runtime (`MSVCP140.dll`, `VCRUNTIME140*.dll`), but
 neither Windows artifact shipped it, so a PC without the "VC++ 2015–2022

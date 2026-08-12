@@ -15,6 +15,7 @@
 #include <QStandardItemModel>
 #include <QStandardItem>
 #include <QAbstractItemView>
+#include <QAbstractScrollArea>
 #include <QLineEdit>
 #include <QMouseEvent>
 #include <QCheckBox>
@@ -372,6 +373,14 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
   }
   foreach (QSpinBox *spinBox, this->findChildren<QSpinBox *>()) {
     spinBox->installEventFilter(this);
+  }
+  // The lists inside the page scroll themselves and keep the wheel that starts
+  // on them, but a page scroll passing over one must not stop dead there — which
+  // is what happens when Qt hands them the event directly.
+  foreach (QAbstractScrollArea *area,
+           this->findChildren<QAbstractScrollArea *>()) {
+    if (area != ui->scrollArea)
+      area->viewport()->installEventFilter(this);
   }
 
   ui->scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -840,6 +849,27 @@ bool SettingsWidget::eventFilter(QObject *obj, QEvent *event) {
   // also a child of this widget, so forwarding would come straight back here.
   if (event->type() == QEvent::Wheel && isChildOf(this, obj)) {
     auto *wheel = static_cast<QWheelEvent *>(event);
+    auto *target = qobject_cast<QWidget *>(obj);
+
+    // An open drop-down list is a window of its own, floating above the page.
+    // Scrolling the page under it left the list hanging in mid-air over settings
+    // it has nothing to do with — the wheel over a list belongs to the list. The
+    // spell-check picker reached this because its viewport carries this filter
+    // for the multi-select clicks above.
+    if (target && target->window() != this->window())
+      return QWidget::eventFilter(obj, event);
+
+    // A mouse wheel has no begin/end phase, so a gesture is however many notches
+    // arrive without a pause, and whatever the first one chose keeps the rest of
+    // them: a page scroll must not park itself the moment the pointer crosses a
+    // list, and a list being scrolled must not hand the page a stray notch when
+    // it reaches its end.
+    if (!m_wheelIdle.isValid() || m_wheelIdle.hasExpired(400))
+      m_wheelScrollsPage = !hasScrollOfItsOwn(target, wheel->angleDelta().y());
+    m_wheelIdle.restart();
+    if (!m_wheelScrollsPage)
+      return QWidget::eventFilter(obj, event);
+
     QScrollBar *bar = ui->scrollArea ? ui->scrollArea->verticalScrollBar()
                                      : nullptr;
     const int dy = wheel->angleDelta().y();
@@ -897,6 +927,24 @@ void SettingsWidget::closeEvent(QCloseEvent *event) {
   SettingsManager::instance().settings().setValue("settingsGeo",
                                                   this->saveGeometry());
   QWidget::closeEvent(event);
+}
+
+bool SettingsWidget::hasScrollOfItsOwn(QWidget *target, int angleDeltaY) const {
+  for (QWidget *w = target; w && w != ui->scrollArea; w = w->parentWidget()) {
+    auto *area = qobject_cast<QAbstractScrollArea *>(w);
+    if (!area)
+      continue;
+    const QScrollBar *bar = area->verticalScrollBar();
+    if (angleDeltaY > 0 && bar->value() > bar->minimum())
+      return true;
+    if (angleDeltaY < 0 && bar->value() < bar->maximum())
+      return true;
+    // Already at that end, so it has nothing left to give: the page takes the
+    // gesture instead of the notch being lost. Only for a gesture that starts
+    // here — one that scrolls a list down to its end keeps the list until the
+    // hand stops, rather than running on into the page.
+  }
+  return false;
 }
 
 bool SettingsWidget::isChildOf(QObject *Of, QObject *self) {

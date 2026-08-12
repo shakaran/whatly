@@ -12,8 +12,12 @@
 #include <QDoubleSpinBox>
 #include <QGroupBox>
 #include <QRegularExpression>
+#include <QAbstractItemView>
 #include <QLineEdit>
+#include <QListWidget>
 #include <QPointer>
+#include <QScrollArea>
+#include <QScrollBar>
 #include <QSignalSpy>
 #include <QPushButton>
 #include <QSlider>
@@ -271,6 +275,68 @@ private slots:
     QCOMPARE(spy.count(), 1);
     QCOMPARE(spy.first().at(0).toString(), QStringLiteral("Alice"));
     QCOMPARE(spy.first().at(1).toString(), QStringLiteral("hola"));
+  }
+
+  // The wheel in Settings: the page scrolls when the pointer is on the page, the
+  // thing under the pointer scrolls when it has content of its own, and whichever
+  // of the two the gesture started on keeps the rest of it.
+  void wheelStaysWithWhatItStartedOn() {
+    QTemporaryDir cache, storage;
+    SettingsWidget sw(nullptr, 0, cache.path(), storage.path());
+
+    auto *page = sw.findChild<QScrollArea *>(QStringLiteral("scrollArea"));
+    auto *list = sw.findChild<QListWidget *>(QStringLiteral("jsAddonsList"));
+    auto *combo =
+        sw.findChild<QComboBox *>(QStringLiteral("spellCheckLanguageComboBox"));
+    auto *control = sw.findChildren<QSpinBox *>().value(0);
+    QVERIFY(page && list && combo && combo->view() && control);
+
+    // Give both scrollbars somewhere to go, since this window is never shown and
+    // so was never laid out against real content.
+    QScrollBar *pageBar = page->verticalScrollBar();
+    pageBar->setRange(0, 1000);
+    pageBar->setSingleStep(10);
+    QScrollBar *listBar = list->verticalScrollBar();
+    listBar->setRange(0, 1000);
+
+    auto turn = [](QWidget *at, int notches) {
+      QWheelEvent ev(QPointF(2, 2), at->mapToGlobal(QPointF(2, 2)), QPoint(),
+                     QPoint(0, 120 * notches), Qt::NoButton, Qt::NoModifier,
+                     Qt::NoScrollPhase, false);
+      QApplication::sendEvent(at, &ev);
+    };
+    // Nothing separates one turn of a mouse wheel from the next but a pause.
+    auto letGo = [] { QTest::qWait(500); };
+
+    // On a spin box: the page moves, and the box keeps its value — a wheel must
+    // not change a setting the pointer merely passed over.
+    const int before = control->value();
+    pageBar->setValue(100);
+    turn(control, -1);
+    QVERIFY(pageBar->value() > 100);
+    QCOMPARE(control->value(), before);
+
+    // On the open language list: the page stays exactly where it was. It is a
+    // window of its own, so scrolling the page leaves it floating in mid-air over
+    // settings it has nothing to do with.
+    letGo();
+    pageBar->setValue(100);
+    listBar->setValue(500);
+    turn(combo->view()->viewport(), -1);
+    QCOMPARE(pageBar->value(), 100);
+
+    // On a list inside the page that has more to show: also the list's own.
+    letGo();
+    turn(list->viewport(), -1);
+    QCOMPARE(pageBar->value(), 100);
+
+    // But a page scroll that crosses that same list carries on down the page,
+    // instead of dying the moment the pointer touches it.
+    letGo();
+    turn(control, -1);
+    const int crossing = pageBar->value();
+    turn(list->viewport(), -1);
+    QVERIFY(pageBar->value() > crossing);
   }
 };
 
