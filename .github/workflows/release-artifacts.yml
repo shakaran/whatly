@@ -76,22 +76,35 @@ jobs:
       - name: Build
         run: cmake --build build --config Release
 
-      # windeployqt only copies the MSVC runtime when asked, and it finds the
-      # redistributable through VCINSTALLDIR — which the Visual Studio generator
-      # never sets, unlike a vcvars shell. Without both halves, whatly.exe ships
-      # importing MSVCP140.dll / VCRUNTIME140.dll from a machine that may not
-      # have them, and dies before main() with a missing-DLL box (issue #68).
-      # Everything downstream is packaged from build\Release, so this one step
-      # fixes the .msi and the portable .zip together.
+      # whatly.exe imports MSVCP140.dll / VCRUNTIME140*.dll from the VC++
+      # redistributable; without them it dies before main() with a missing-DLL
+      # box on a machine that lacks the redist (issue #68). windeployqt deploys
+      # Qt, then we copy the CRT DLLs app-local from the VS redist tree — Qt
+      # 6.10's --compiler-runtime only stages the redist *installer*, which the
+      # portable .zip cannot run. Everything downstream is packaged from
+      # build\Release, so this one step fixes the .msi and the .zip together.
       - name: Deploy Qt runtime
         shell: pwsh
         run: |
+          & "$env:QT_ROOT_DIR\bin\windeployqt.exe" build\Release\whatly.exe
+          # Qt 6.10's `windeployqt --compiler-runtime` no longer copies the loose
+          # CRT DLLs — it stages vc_redist.x64.exe (an installer), which the
+          # portable .zip cannot run and the app needs beside the .exe. So copy
+          # the CRT DLLs app-local straight from the VS redist tree instead. See
+          # issues #67/#68. vswhere locates the VS install; Microsoft.VC143.CRT is
+          # the VS2022 (VC143) x64 runtime set.
           $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
           $vs = & $vswhere -latest -products * `
             -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
             -property installationPath
-          if ($vs) { $env:VCINSTALLDIR = (Join-Path $vs 'VC\') }
-          & "$env:QT_ROOT_DIR\bin\windeployqt.exe" --compiler-runtime build\Release\whatly.exe
+          if (-not $vs) { throw "vswhere could not locate a VS install with the VC toolset" }
+          $redist = Join-Path $vs 'VC\Redist\MSVC'
+          $ver = Get-ChildItem $redist -Directory | Sort-Object Name -Descending | Select-Object -First 1
+          $crt = Join-Path $ver.FullName 'x64\Microsoft.VC143.CRT'
+          Copy-Item (Join-Path $crt '*.dll') build\Release\ -Force
+          # windeployqt may also have dropped the redist installer; we ship the
+          # DLLs app-local, so it is dead weight in the package.
+          Remove-Item build\Release\vc_redist.x64.exe -ErrorAction SilentlyContinue
 
       # A silent no-op here is the whole failure mode, so check rather than hope:
       # windeployqt only warns when it cannot find the redistributable.
@@ -273,8 +286,10 @@ jobs:
         run: |
           base=https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous
           qtbase=https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous
-          wget -q "$base/linuxdeploy-x86_64.AppImage"
-          wget -q "$qtbase/linuxdeploy-plugin-qt-x86_64.AppImage"
+          wget -q --tries=5 --retry-connrefused --waitretry=10 --retry-on-http-error=429,500,502,503,504 \
+            "$base/linuxdeploy-x86_64.AppImage"
+          wget -q --tries=5 --retry-connrefused --waitretry=10 --retry-on-http-error=429,500,502,503,504 \
+            "$qtbase/linuxdeploy-plugin-qt-x86_64.AppImage"
           chmod +x linuxdeploy*.AppImage
           tag="${{ github.event.inputs.tag || github.ref_name }}"
           export QMAKE="$QT_ROOT_DIR/bin/qmake"
@@ -397,8 +412,10 @@ jobs:
           done
           qtbase=https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous
           base=https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous
-          wget -q "$base/linuxdeploy-x86_64.AppImage"
-          wget -q "$qtbase/linuxdeploy-plugin-qt-x86_64.AppImage"
+          wget -q --tries=5 --retry-connrefused --waitretry=10 --retry-on-http-error=429,500,502,503,504 \
+            "$base/linuxdeploy-x86_64.AppImage"
+          wget -q --tries=5 --retry-connrefused --waitretry=10 --retry-on-http-error=429,500,502,503,504 \
+            "$qtbase/linuxdeploy-plugin-qt-x86_64.AppImage"
           chmod +x linuxdeploy*.AppImage
           export QMAKE="$QT_ROOT_DIR/bin/qmake"
           # When the Wayland client plugin was built above, ask the Qt plugin to
