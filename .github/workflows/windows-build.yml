@@ -17,7 +17,7 @@ jobs:
           # 6.10 is the project's minimum supported Qt, so CI validates the
           # floor. (Also: released aqtinstall cannot resolve the changed
           # download-repo layout of Qt 6.11+ yet, see miurahr/aqtinstall#959.)
-          version: '6.10.*'
+          version: '6.10.3'  # exact pin (#71): bump deliberately, don't glob
           arch: win64_msvc2022_64
           modules: 'qtwebengine qtwebchannel qtpositioning'
           cache: true

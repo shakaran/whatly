@@ -65,7 +65,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.10.*'
+          version: '6.10.3'  # exact pin (#71): bump deliberately, don't glob
           arch: win64_msvc2022_64
           modules: 'qtwebengine qtwebchannel qtpositioning'
           cache: true
@@ -255,7 +255,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.10.*'
+          version: '6.10.3'  # exact pin (#71): bump deliberately, don't glob
           # qtserialport: the qtpositioning nmea plugin links it, and
           # linuxdeploy-plugin-qt fails to deploy without the library present.
           modules: 'qtwebengine qtwebchannel qtpositioning qtserialport'
@@ -349,7 +349,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.10.*'
+          version: '6.10.3'  # exact pin (#71): bump deliberately, don't glob
           modules: 'qtwebengine qtwebchannel qtpositioning qtserialport'
           cache: true
 
