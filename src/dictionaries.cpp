@@ -223,12 +223,31 @@ QString languageLabel(const QString &code) {
   // Ask the dictionary's own locale, not QLocale(its language). The language-only
   // form throws the territory away and Qt fills in the likeliest one, which for
   // English is the United States — so en_GB and en_AU both came out as "American
-  // English", and pt_PT was indistinguishable from pt_BR. Asking en_GB itself gives
-  // "British English", and pt_PT "português europeu".
-  const QString name = locale.nativeLanguageName();
-  return name.isEmpty()
-             ? code
-             : name + QStringLiteral(" (") + code + QStringLiteral(")");
+  // English". Asking en_GB itself gives "British English".
+  QString name = locale.nativeLanguageName();
+  if (name.isEmpty())
+    return code;
+
+  // Two cases where the code itself is the only honest thing to add. A code Qt does
+  // not model exactly: the bundle ships de_DE beside de_DE_neu (the reformed
+  // spelling) and en_US beside en-US, and Qt reads each pair as one and the same
+  // locale, so naming them by locale alone would put two entries with identical
+  // names in the picker. And a bare language like "eo", where Qt would otherwise
+  // supply whichever territory it considers likeliest — for Esperanto, "mondo".
+  if (locale.name() != code)
+    return name + QStringLiteral(" (") + code + QStringLiteral(")");
+
+  {
+    // CLDR qualifies only the variants that are not its default, so plain
+    // "português" IS Brazilian and plain "español" IS Argentinian, while pt_PT and
+    // es_ES carry theirs. Naming the territory is what makes every entry say which
+    // one it is — skipped where the name already says it, or es_ES would read
+    // "español de España (España)".
+    const QString territory = locale.nativeTerritoryName();
+    if (!territory.isEmpty() && !name.contains(territory, Qt::CaseInsensitive))
+      name += QStringLiteral(" (") + territory + QStringLiteral(")");
+  }
+  return name;
 }
 
 QString nextFocus(const QStringList &chosen, const QString &current) {

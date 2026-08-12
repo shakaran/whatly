@@ -387,9 +387,22 @@ private slots:
     QVERIFY(gb.startsWith(QStringLiteral("British")));
     QVERIFY(Dictionaries::languageLabel(QStringLiteral("en_AU"))
                 .startsWith(QStringLiteral("Australian")));
-    // ...and the same trap on the other side of pt: two Portuguese, two names.
+    // The other half of it: CLDR gives its *default* variant the bare name, so
+    // "português" is the Brazilian one and "español" the Argentinian one, and
+    // neither said so. The territory has to be named for those.
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("pt_BR"))
+                .contains(QStringLiteral("Brasil")));
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("es_AR"))
+                .contains(QStringLiteral("Argentina")));
     QVERIFY(Dictionaries::languageLabel(QStringLiteral("pt_BR")) !=
             Dictionaries::languageLabel(QStringLiteral("pt_PT")));
+    // ...but not twice, or es_ES reads "español de España (España)".
+    QCOMPARE(Dictionaries::languageLabel(QStringLiteral("es_ES")),
+             QStringLiteral("español de España"));
+    // The bundle ships both of these and Qt reads them as one locale, so the label
+    // has to keep them apart.
+    QVERIFY(Dictionaries::languageLabel(QStringLiteral("de_DE")) !=
+            Dictionaries::languageLabel(QStringLiteral("de_DE_neu")));
     QCOMPARE(Dictionaries::languageLabel(QStringLiteral("eo")),
              QStringLiteral("Esperanto (eo)"));
     QCOMPARE(Dictionaries::languageLabel(QStringLiteral("zz_ZZ")),
