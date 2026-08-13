@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        7.2.1
+Version:        7.2.2
 # Reference system-Qt spec for downstream packagers; the release itself builds
 # the native rpm from packaging/obs/whatly.spec. Release kept at 0 to match it
 # (both are the system-Qt "whatly"), so this never looks newer than, or collides
@@ -61,6 +61,13 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Thu Aug 13 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.2.2-1
+- Fix the "update available" notification doing nothing on click on KDE/Linux:
+  it now goes through libnotify with an "Open" action like message
+  notifications (#74).
+- Fix the spell-check language box flashing and closing on the first click; the
+  list now opens and stays open every time (#75). See CHANGELOG.md.
+
 * Thu Aug 13 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.2.1-1
 - Windows: point releases now also ship a small update patch (.msp) built
   against the minor's x.y.0 installer, so an existing install updates by a couple

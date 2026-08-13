@@ -7,7 +7,7 @@
 #
 
 Name:           whatly
-Version:        7.2.1
+Version:        7.2.2
 Release:        0
 Summary:        Feature-rich WhatsApp Web client based on Qt WebEngine
 License:        MIT

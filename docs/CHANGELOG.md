@@ -1,4 +1,4 @@
-## Unreleased
+## 7.2.2 (2026-08-13)
 
 - **The "update available" notification is clickable again on KDE/Linux (#74).**
   It was the only notification that went through the system tray toast, which

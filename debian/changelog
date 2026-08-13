@@ -1,3 +1,13 @@
+whatly (7.2.2) unstable; urgency=medium
+
+  * Fix the "update available" notification doing nothing when clicked on
+    KDE/Linux: it now uses the same libnotify path as message notifications,
+    with an "Open" action that opens the release page (#74).
+  * Fix the spell-check language box flashing and closing on the first click
+    (regression since 7.2.0); the list now opens and stays open every time (#75).
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Thu, 13 Aug 2026 03:18:02 +0200
+
 whatly (7.2.1) unstable; urgency=medium
 
   * Windows: point releases now also ship a small update patch (.msp), built

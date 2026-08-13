@@ -108,6 +108,15 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.2.2" date="2026-08-13">
+      <description>
+        <p>Two fixes:</p>
+        <ul>
+          <li>The "update available" notification is clickable again on KDE/Linux — it now uses the same notification path as messages, with an "Open" action (#74)</li>
+          <li>The spell-check language box opens on the first click instead of flashing and closing (a regression since 7.2.0) (#75)</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.2.1" date="2026-08-13">
       <description>
         <p>A packaging point release (no application changes):</p>
