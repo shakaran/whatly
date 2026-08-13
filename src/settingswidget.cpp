@@ -1730,6 +1730,11 @@ void SettingsWidget::loadPerformanceSettings() {
   ui->suspendAfterSpinBox->blockSignals(true);
   ui->suspendAfterSpinBox->setValue(Performance::suspendAfterMinutes());
   ui->suspendAfterSpinBox->blockSignals(false);
+  set(ui->unloadOffscreenWindowsCheckBox, Performance::unloadOffscreenWindows());
+  // Greyed out rather than hidden while unloading is off: the option has to be
+  // readable to be understood, and it does nothing on its own.
+  ui->unloadOffscreenWindowsCheckBox->setEnabled(
+      Performance::suspendInactiveAccounts());
 
   ui->jsMemoryLimitSpinBox->blockSignals(true);
   ui->jsMemoryLimitSpinBox->setValue(Performance::jsMemoryLimitMb());
@@ -1903,6 +1908,10 @@ void SettingsWidget::on_cacheTypeComboBox_currentIndexChanged(int index) {
 }
 void SettingsWidget::on_suspendInactiveAccountsCheckBox_toggled(bool checked) {
   Performance::setSuspendInactiveAccounts(checked);
+  ui->unloadOffscreenWindowsCheckBox->setEnabled(checked);
+}
+void SettingsWidget::on_unloadOffscreenWindowsCheckBox_toggled(bool checked) {
+  Performance::setUnloadOffscreenWindows(checked);
 }
 void SettingsWidget::on_suspendAfterSpinBox_valueChanged(int arg1) {
   Performance::setSuspendAfterMinutes(arg1);

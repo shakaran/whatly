@@ -203,6 +203,14 @@ void MainWindow::buildAccountArea() {
           [this]() { suspendIdleAccounts(); });
   m_suspendTimer->start();
 
+  // Unloading a window's accounts once it has been away for the configured delay
+  // (issue #25). The interval is set each time a window goes, since it is that
+  // delay and the user can change it; the sweep above is what catches the rest.
+  m_offscreenTimer = new QTimer(this);
+  m_offscreenTimer->setSingleShot(true);
+  connect(m_offscreenTimer, &QTimer::timeout, this,
+          [this]() { unloadOffscreenWindowAccounts(); });
+
   // A title change is not the only way an unread count moves: marking a chat
   // read or unread by hand moves it without one, and so does reading a chat on
   // the phone. The page throttles the work — a call between reads simply hands
@@ -1160,6 +1168,14 @@ void MainWindow::ensureAccountLoaded(int index) {
   // view, and that can emit a show event, which comes straight back here through
   // eventFilter() — with the flag set afterwards, that would recurse forever.
   a.loaded = true;
+  if (a.unloadedWithWindow) {
+    // The other half of the line written when it went. Which path got here does
+    // not matter — on X11 the view's own show event beats the sweep to it — and
+    // the pair is what makes the log readable: a page that came back is not the
+    // same event as an account being opened for the first time.
+    a.unloadedWithWindow = false;
+    qInfo() << "whatly: loading" << a.name << "again — its window is back";
+  }
   createPageFor(a.view, a.id);
 }
 
@@ -1199,6 +1215,111 @@ void MainWindow::suspendIdleAccounts() {
                                           threshold))
       unloadAccount(i);
   }
+  // The same sweep is the safety net for the window rule below: the events catch
+  // a window going away while the app is running, and this catches the rest — a
+  // window already minimised when the option was switched on, or one the
+  // compositor put away without telling us.
+  unloadOffscreenWindowAccounts();
+}
+
+bool MainWindow::windowIsOffscreen(const QWidget *w) {
+  if (!w)
+    return false; // an account with no window of its own is nobody's to unload
+  return !w->isVisible() || w->isMinimized();
+}
+
+QWidget *MainWindow::windowHostingAccount(int idx) const {
+  if (idx < 0 || idx >= m_accounts.size())
+    return nullptr;
+  const Account &a = m_accounts[idx];
+  return a.window ? static_cast<QWidget *>(a.window.data())
+                  : const_cast<MainWindow *>(this);
+}
+
+bool MainWindow::refreshOffscreenSince() {
+  const QDateTime now = QDateTime::currentDateTime();
+  QHash<const QWidget *, QDateTime> stamps;
+  bool wentAway = false;
+  for (const QWidget *w : allWindows()) {
+    if (!windowIsOffscreen(w))
+      continue; // on screen: it has no absence to time
+    const QDateTime since = m_offscreenSince.value(w);
+    stamps.insert(w, since.isValid() ? since : now);
+    if (!since.isValid())
+      wentAway = true;
+  }
+  // Built fresh rather than edited, so a window that came back and one that was
+  // closed both drop out without being looked for.
+  m_offscreenSince = stamps;
+  return wentAway;
+}
+
+void MainWindow::unloadOffscreenWindowAccounts() {
+  const bool enabled = Performance::suspendInactiveAccounts();
+  const bool alsoOffscreen = Performance::unloadOffscreenWindows();
+  if (!enabled || !alsoOffscreen)
+    return; // the common case, and the loop below has nothing to say about it
+  // Stamped here as well as on the events, so switching the option on while the
+  // window is already away starts the wait from now rather than unloading on the
+  // spot — and so the sweep can be the whole story on a platform that reports no
+  // window state change at all.
+  refreshOffscreenSince();
+  const int threshold = Performance::suspendAfterMinutes() * 60;
+  const QDateTime now = QDateTime::currentDateTime();
+  for (int i = 0; i < m_accounts.size(); ++i) {
+    if (!m_accounts[i].view || !m_accounts[i].loaded)
+      continue; // already dormant
+    const QWidget *host = windowHostingAccount(i);
+    const QDateTime since = m_offscreenSince.value(host);
+    const int away = since.isValid() ? int(since.secsTo(now)) : 0;
+    if (Performance::shouldUnloadWithWindow(enabled, alsoOffscreen,
+                                            windowIsOffscreen(host), away,
+                                            threshold)) {
+      // Logged, because from the outside this looks like the account having been
+      // thrown away: come back to the window and WhatsApp Web is loading again,
+      // with no message and nothing in the interface to say why. One line per
+      // account, and only when something really was unloaded.
+      qInfo() << "whatly: unloading" << m_accounts[i].name
+              << "with the window it was in";
+      unloadAccount(i);
+      m_accounts[i].unloadedWithWindow = true; // after: unloading clears nothing
+    }
+  }
+}
+
+void MainWindow::reloadOnscreenAccounts() {
+  for (int i = 0; i < m_accounts.size(); ++i) {
+    const Account &a = m_accounts[i];
+    if (!a.view || a.loaded)
+      continue;
+    // Only what is actually drawn. The other accounts of a window are dormant on
+    // purpose — that is the whole feature — and the view's own visibility is what
+    // tells them apart, in tab mode and in the grid alike. The window is asked as
+    // well because the view's answer is not the same everywhere: minimising on
+    // X11 hides the view with the window, and where it does not, the view alone
+    // would say a minimised window's account should be built again.
+    if (a.view->isVisible() && !windowIsOffscreen(windowHostingAccount(i)))
+      ensureAccountLoaded(i); // which does the saying, for either path
+  }
+}
+
+void MainWindow::noteWindowVisibilityChanged() {
+  // Unconditional, and first: a page that was thrown away has to come back
+  // however the setting has moved since it went, or turning the option off would
+  // leave the window it was on blank until the next tab switch. Deferred by one
+  // turn of the event loop because a window coming back is not finished doing so
+  // when the event arrives — on a restore from minimised the state is already
+  // new, but on a show the children are not visible yet.
+  QTimer::singleShot(0, this, [this]() { reloadOnscreenAccounts(); });
+  if (!Performance::suspendInactiveAccounts() ||
+      !Performance::unloadOffscreenWindows())
+    return; // nothing to time
+  const bool wentAway = refreshOffscreenSince();
+  if (wentAway && m_offscreenTimer)
+    // Come back when that window's wait is up. A second past it, so the sweep
+    // cannot arrive in the same second it started counting and find the wait a
+    // hair short.
+    m_offscreenTimer->start(Performance::suspendAfterMinutes() * 60000 + 1000);
 }
 
 // Every account that has a page, and the last answer is kept for the ones that
@@ -1684,6 +1805,12 @@ DetachedAccountWindow *MainWindow::createDetachedWindow() {
     if (m_layoutSaveTimer)
       m_layoutSaveTimer->start();
   });
+  // Minimised, put away or brought back: its accounts are unloaded or built
+  // again with it, the same as the main window's (issue #25). It is a peer window
+  // here as everywhere else — an account being watched on its own is exactly the
+  // one that must not be unloaded because the main window went away.
+  connect(win, &DetachedAccountWindow::visibilityChanged, this,
+          [this]() { noteWindowVisibilityChanged(); });
   // Closing the window docks its accounts back into the front-most survivor.
   connect(win, &DetachedAccountWindow::closed, this,
           [this, win]() { closeDetachedWindow(win); });

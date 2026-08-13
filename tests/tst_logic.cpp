@@ -2207,6 +2207,28 @@ private slots:
     Performance::setSuspendAfterMinutes(15);
   }
 
+  // The window half of the same setting (#25): the account a window was showing
+  // goes with the window, minimised or put away — but only with both switches on,
+  // and only after the same wait as the rule above. Dogfood round 27: it used to
+  // unload ten seconds after the window went, whatever the delay was set to, and
+  // "it should happen in conjunction with the 'Unload inactive accounts' setting".
+  void offscreenWindowUnloadDecision() {
+    QVERIFY(!Performance::shouldUnloadWithWindow(false, true, true, 9999, 60)); // unloading off
+    QVERIFY(!Performance::shouldUnloadWithWindow(true, false, true, 9999, 60)); // option off
+    QVERIFY(!Performance::shouldUnloadWithWindow(true, true, false, 9999, 60)); // on screen
+    QVERIFY(!Performance::shouldUnloadWithWindow(true, true, true, 30, 60));    // away, not long enough
+    QVERIFY(Performance::shouldUnloadWithWindow(true, true, true, 60, 60));     // the wait is up
+    QVERIFY(Performance::shouldUnloadWithWindow(true, true, true, 900, 60));
+
+    // It is off until asked for: someone who turns on unloading gets the idle rule
+    // and nothing more, so notifications keep arriving while the window is away.
+    QVERIFY(!Performance::unloadOffscreenWindows());
+    Performance::setUnloadOffscreenWindows(true);
+    QVERIFY(Performance::unloadOffscreenWindows());
+    Performance::setUnloadOffscreenWindows(false);
+    QVERIFY(!Performance::unloadOffscreenWindows());
+  }
+
   void settersRoundTrip() {
     Performance::setDisableGpuVsync(true);
     QVERIFY(Performance::disableGpuVsync());

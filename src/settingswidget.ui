@@ -2118,6 +2118,16 @@ background:transparent;
             </item>
            </layout>
           </item>
+          <item>
+           <widget class="QCheckBox" name="unloadOffscreenWindowsCheckBox">
+            <property name="toolTip">
+             <string>Also unload the account a window was showing, once that window has been minimised or put away to the tray for the same length of time as above. Nothing reaches an unloaded account: while Whatly is away there are no notifications from it and its counts stand still, and it takes a few seconds to come back when you return to the window. Needs the setting above.</string>
+            </property>
+            <property name="text">
+             <string>Unload also minimised and hidden accounts</string>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>

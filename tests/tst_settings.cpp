@@ -37,6 +37,7 @@
 #include "customtitlebar.h"
 #include "dictionaries.h"
 #include "dictionaryrows.h"
+#include "performance.h"
 #include "quickcompose.h"
 #include "settingsmanager.h"
 #include "settingswidget.h"
@@ -156,6 +157,37 @@ private slots:
     QVERIFY(!startMin->isChecked());
     minClick->setChecked(true);
     QVERIFY(!hide->isChecked());
+  }
+
+  // #25: "Unload also minimised and hidden accounts" extends the unloading above
+  // it and does nothing on its own, so it follows that box in and out of reach
+  // instead of sitting there looking like it works.
+  void unloadingWindowsFollowsUnloading() {
+    QTemporaryDir cache, storage;
+    Performance::setSuspendInactiveAccounts(false);
+    Performance::setUnloadOffscreenWindows(false);
+    SettingsWidget sw(nullptr, 0, cache.path(), storage.path());
+    auto *unload =
+        sw.findChild<QCheckBox *>("suspendInactiveAccountsCheckBox");
+    auto *windows =
+        sw.findChild<QCheckBox *>("unloadOffscreenWindowsCheckBox");
+    QVERIFY(unload && windows);
+
+    // Out of reach while the setting it extends is off — including on the way in,
+    // which is the case a toggled() handler alone would miss.
+    QVERIFY(!windows->isEnabled());
+    unload->setChecked(true);
+    QVERIFY(windows->isEnabled());
+
+    // And it is the box that writes the setting, so a tick survives the page.
+    windows->setChecked(true);
+    QVERIFY(Performance::unloadOffscreenWindows());
+    windows->setChecked(false);
+    QVERIFY(!Performance::unloadOffscreenWindows());
+
+    unload->setChecked(false);
+    QVERIFY(!windows->isEnabled());
+    Performance::setSuspendInactiveAccounts(false);
   }
 
   // Gert's request #6: the account tabs can move into the title bar, but only
