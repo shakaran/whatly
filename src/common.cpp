@@ -40,6 +40,51 @@ bool isInAppPopupUrl(const QUrl &url) {
   return url.isValid() && url.host() == QLatin1String("web.whatsapp.com");
 }
 
+QString trayTooltipText(const UnreadBreakdown &unread) {
+  QStringList lines;
+  lines << kAppDisplayName;
+  if (unread.chats <= 0) {
+    lines << QObject::tr("Nothing unread");
+    return lines.join(QLatin1Char('\n'));
+  }
+
+  // Singular and plural spelled out rather than left to %n: %n picks a plural form
+  // only once a translation is loaded, so the source language — the one an English
+  // desktop reads — would say "1 chats".
+  //
+  // The whole of it first, because that is the number on the badge's shoulders.
+  if (unread.messages == 1 && unread.chats == 1)
+    lines << QObject::tr("1 unread message in 1 chat");
+  else if (unread.messages == 1)
+    lines << QObject::tr("1 unread message in %1 chats").arg(unread.chats);
+  else if (unread.chats == 1)
+    lines << QObject::tr("%1 unread messages in 1 chat").arg(unread.messages);
+  else
+    lines << QObject::tr("%1 unread messages in %2 chats")
+                 .arg(unread.messages)
+                 .arg(unread.chats);
+
+  // Then the split, which is the point of a tooltip: a hundred messages waiting in
+  // muted chats and three in the rest is a different morning from the other way
+  // round, and the badge cannot tell the two apart.
+  if (unread.mutedKnown && unread.mutedChats > 0) {
+    lines << (unread.mutedChats == 1
+                  ? QObject::tr("%1 in 1 muted chat").arg(unread.mutedMessages)
+                  : QObject::tr("%1 in %2 muted chats")
+                        .arg(unread.mutedMessages)
+                        .arg(unread.mutedChats));
+    const int otherChats = unread.chats - unread.mutedChats;
+    const int otherMessages = unread.messages - unread.mutedMessages;
+    if (otherChats == 1)
+      lines << QObject::tr("%1 in 1 chat that is not muted").arg(otherMessages);
+    else if (otherChats > 1)
+      lines << QObject::tr("%1 in %2 chats that are not muted")
+                   .arg(otherMessages)
+                   .arg(otherChats);
+  }
+  return lines.join(QLatin1Char('\n'));
+}
+
 QString accountTabTooltipText(const QString &version, const QString &token) {
   QStringList lines;
   if (!version.isEmpty())

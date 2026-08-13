@@ -273,6 +273,8 @@ QString unreadSummaryScript(bool includeMuted, bool includeArchived) {
       }
       if (n > 0) { chats++; messages += n; }
     }
+    // No muted split from here: a drawn row does not say whether its chat is
+    // muted, and reporting nought muted would be a lie rather than an absence.
     return { chats: chats, messages: messages, source: 'list' };
   }
 
@@ -305,7 +307,10 @@ QString unreadSummaryScript(bool includeMuted, bool includeArchived) {
     // `walked` is the difference between "nothing is unread" and "the read did
     // not finish". Resolving the error paths with the counters as they stand
     // would report a confident zero and clear every badge.
-    var chats = 0, messages = 0, walked = false;
+    // chats/messages are the badge's figure — what the settings say to count.
+    // mutedChats/mutedMessages are the same set's muted part, counted whatever the
+    // muted setting says, because the tooltip shows the split and the badge cannot.
+    var chats = 0, messages = 0, mutedChats = 0, mutedMessages = 0, walked = false;
     await new Promise(function(resolve){
       var tx = db.transaction('chat', 'readonly');
       var req = tx.objectStore('chat').openCursor();
@@ -317,8 +322,8 @@ QString unreadSummaryScript(bool includeMuted, bool includeArchived) {
         // that was told not to interrupt — both still carry a pill in their
         // list, so whether they belong in the total is a matter of how someone
         // uses WhatsApp rather than of fact, and both are settings.
-        if ((!INCLUDE_ARCHIVED && c.archive) ||
-            (!INCLUDE_MUTED && (c.muteExpiration || c.isAutoMuted))) {
+        var isMuted = !!(c.muteExpiration || c.isAutoMuted);
+        if (!INCLUDE_ARCHIVED && c.archive) {
           cur.continue();
           return;
         }
@@ -330,8 +335,11 @@ QString unreadSummaryScript(bool includeMuted, bool includeArchived) {
         // number is meant to be the size of.
         var marked = n < 0 || !!c.markedUnread;
         if (n > 0 || marked) {
-          chats++;
-          messages += (n > 0 ? n : 0);
+          var msgs = (n > 0 ? n : 0);
+          if (isMuted) { mutedChats++; mutedMessages += msgs; }
+          // The muted filter is applied here rather than above, so a muted chat
+          // still reaches the split even when it is kept off the badge.
+          if (INCLUDE_MUTED || !isMuted) { chats++; messages += msgs; }
         }
         cur.continue();
       };
@@ -339,7 +347,9 @@ QString unreadSummaryScript(bool includeMuted, bool includeArchived) {
       tx.onabort = function(){ resolve(); };
     });
     db.close();
-    return walked ? { chats: chats, messages: messages, source: 'db' } : null;
+    return walked ? { chats: chats, messages: messages, mutedChats: mutedChats,
+                      mutedMessages: mutedMessages, source: 'db' }
+                  : null;
   }
 
   // The cache is per set of filters: change a setting and the number worked out

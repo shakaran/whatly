@@ -25,7 +25,7 @@ QString colourPath(int count) {
 // character instead of shrinking the text into the same box, because the panel
 // scales the whole icon down by three and there is nothing to spare.
 void paintCountBadge(QPainter &p, int size, const QString &text,
-                     const QColor &fill, const QColor &ink) {
+                     const QColor &fill, const QColor &ink, bool cutOut = false) {
   if (text.isEmpty() || size <= 0)
     return;
   const qreal k = size / 64.0;
@@ -44,6 +44,19 @@ void paintCountBadge(QPainter &p, int size, const QString &text,
 
   p.setRenderHint(QPainter::Antialiasing);
   p.setPen(Qt::NoPen);
+  // Monochrome asks for a gap: the badge is the same light tone as the glyph it
+  // sits on, so the two ran together into one bright blob and only the digits were
+  // left to read — at panel size, three or four pixels of them. Clearing a slightly
+  // larger rounded rect first lets the panel's own colour through as a ring, which
+  // separates the badge from the glyph whatever colour that panel is. The colour
+  // icon needs none of this: red on teal separates itself.
+  if (cutOut) {
+    const int grow = qMax(1, qRound(2 * k));
+    p.setCompositionMode(QPainter::CompositionMode_Clear);
+    p.drawRoundedRect(badge.adjusted(-grow, -grow, grow, grow), radius + grow,
+                      radius + grow);
+    p.setCompositionMode(QPainter::CompositionMode_SourceOver);
+  }
   p.setBrush(fill);
   p.drawRoundedRect(badge, radius, radius);
   p.setFont(f);
@@ -166,8 +179,13 @@ QImage composeTrayImage(int notificationCount, bool monochrome, bool connected,
       !text.isEmpty() && (monochrome || count > 9)) {
     QPainter p(&base);
     if (monochrome)
-      paintCountBadge(p, size, text, QColor(0xea, 0xea, 0xea), // as the glyph
-                      QColor(0x11, 0x11, 0x11));
+      // Grey rather than the glyph's own light tone: a badge in the same tone
+      // merged with the glyph into one bright blob, leaving the digits — three or
+      // four pixels of them at panel size — as the only thing to read. Mid-grey
+      // with white digits gives the badge an edge of its own and keeps the whole
+      // icon colourless, which is what the setting is for.
+      paintCountBadge(p, size, text, QColor(0x6a, 0x6a, 0x6a), Qt::white,
+                      /*cutOut=*/true);
     else
       paintCountBadge(p, size, text, QColor(0xe1, 0x1d, 0x1d), // the artwork's red
                       Qt::white);

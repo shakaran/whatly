@@ -1117,6 +1117,59 @@ private slots:
                  .contains(QLatin1Char('\n')));
   }
 
+  // The tray icon's tooltip, which is where the whole count lives: the badge can
+  // only show one number, and past ninety-nine not even that.
+  void trayTooltip() {
+    QCOMPARE(trayTooltipText(UnreadBreakdown{}),
+             QStringLiteral("Whatly\nNothing unread"));
+
+    // No muted split available (the drawn-rows fallback cannot see it): say what is
+    // known and nothing more. Reporting "0 muted" would be a claim, not a silence.
+    UnreadBreakdown plain;
+    plain.chats = 3;
+    plain.messages = 7;
+    QCOMPARE(trayTooltipText(plain),
+             QStringLiteral("Whatly\n7 unread messages in 3 chats"));
+
+    // The split, which is the point of asking for a tooltip at all.
+    UnreadBreakdown split;
+    split.chats = 12;
+    split.messages = 47;
+    split.mutedChats = 3;
+    split.mutedMessages = 9;
+    split.mutedKnown = true;
+    const QStringList lines =
+        trayTooltipText(split).split(QLatin1Char('\n'));
+    QCOMPARE(lines.size(), 4);
+    QCOMPARE(lines.at(1), QStringLiteral("47 unread messages in 12 chats"));
+    QCOMPARE(lines.at(2), QStringLiteral("9 in 3 muted chats"));
+    QCOMPARE(lines.at(3), QStringLiteral("38 in 9 chats that are not muted"));
+
+    // Everything muted: no line about chats that are not, since there are none.
+    UnreadBreakdown allMuted;
+    allMuted.chats = 2;
+    allMuted.messages = 5;
+    allMuted.mutedChats = 2;
+    allMuted.mutedMessages = 5;
+    allMuted.mutedKnown = true;
+    QCOMPARE(trayTooltipText(allMuted).split(QLatin1Char('\n')).size(), 3);
+    QVERIFY(!trayTooltipText(allMuted).contains(QStringLiteral("not muted")));
+
+    // Nothing muted, and known so: also no split, rather than "0 in 0 muted".
+    UnreadBreakdown noneMuted;
+    noneMuted.chats = 4;
+    noneMuted.messages = 4;
+    noneMuted.mutedKnown = true;
+    QCOMPARE(trayTooltipText(noneMuted).split(QLatin1Char('\n')).size(), 2);
+
+    // One of each reads as one of each.
+    UnreadBreakdown one;
+    one.chats = 1;
+    one.messages = 1;
+    QCOMPARE(trayTooltipText(one),
+             QStringLiteral("Whatly\n1 unread message in 1 chat"));
+  }
+
   // Group-invite links resolve to their code; sends and other URLs do not.
   void inviteCode() {
     QCOMPARE(inviteCodeFromUrl(QStringLiteral(

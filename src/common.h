@@ -42,6 +42,24 @@ bool isInAppPopupUrl(const QUrl &url);
 // so it is labelled a build token rather than shown as one.
 QString accountTabTooltipText(const QString &version, const QString &token);
 
+// What is unread, in as much detail as the page could tell us. The badge can only
+// show one number; this is what the tray icon's tooltip says instead, so the one
+// number is never the only thing available.
+struct UnreadBreakdown {
+  int chats = 0;         // chats with something unread
+  int messages = 0;      // unread messages in them
+  int mutedChats = 0;    // of those chats, the ones told not to interrupt
+  int mutedMessages = 0; // and the messages waiting in them
+  // Whether the muted figures are known at all: the database walk splits them,
+  // the fallback that counts drawn rows cannot, and reporting nought muted when
+  // the truth is "not known" would be a lie in the tooltip.
+  bool mutedKnown = false;
+};
+
+// The tray icon's tooltip: the app's name, then what is waiting, one thought per
+// line, the muted split only when it is known and non-zero. Pure, unit tested.
+QString trayTooltipText(const UnreadBreakdown &unread);
+
 // The group-invite code from a link handed to the app: a
 // https://chat.whatsapp.com/<code> web link or a whatsapp://chat?code=<code>
 // deep link (the form the x-scheme-handler delivers). Empty when the URL is not
