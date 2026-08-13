@@ -10,8 +10,10 @@
 #include <QDir>
 #include <QLocale>
 #include <QMessageBox>
+#include <QApplication>
 #include <QStyle>
 #include <QStyleFactory>
+#include <QStyleOptionComboBox>
 #include <QStandardItemModel>
 #include <QStandardItem>
 #include <QAbstractItemView>
@@ -826,19 +828,29 @@ bool SettingsWidget::eventFilter(QObject *obj, QEvent *event) {
   if (event->type() == QEvent::MouseButtonPress &&
       ui->spellCheckLanguageComboBox->lineEdit() &&
       obj == ui->spellCheckLanguageComboBox->lineEdit()) {
-    QAbstractItemView *view = ui->spellCheckLanguageComboBox->view();
-    // Opening it from inside the press made it flash and vanish: the list appears
-    // under the pointer, the release that follows lands on it, and a release on a
-    // freshly shown popup reads as a click outside the list, which closes it. Qt's
-    // own arrow path blocks that one release with an internal timer this cannot
-    // reach — so open the list once this click has finished being delivered.
+    auto *combo = ui->spellCheckLanguageComboBox;
+    // Hand the click to the arrow rather than calling showPopup() ourselves.
     //
-    // Nothing to do when it is already open: the list has the mouse then, so the
-    // press never arrives here and Qt closes it as a click outside, which is the
-    // behaviour wanted anyway.
-    if (!view || !view->isVisible())
-      QTimer::singleShot(0, ui->spellCheckLanguageComboBox,
-                         &QComboBox::showPopup);
+    // showPopup() alone made the list flash and vanish: it appears under the
+    // pointer and the release that follows lands on it, which a popup shown this
+    // instant reads as a click outside itself. Qt's own arrow path is the only one
+    // that swallows that release — QComboBox::mousePressEvent starts the container's
+    // block-release timer, and nothing public starts it — and deferring the call
+    // past the release did not help either, because the list is then shown with the
+    // combo still unfocused and closes on the activation change instead. Which is
+    // why clicking the arrow once cured it for the rest of the session, and why the
+    // fix is to take that same path every time.
+    QStyleOptionComboBox opt;
+    opt.initFrom(combo);
+    const QPoint arrow =
+        combo->style()
+            ->subControlRect(QStyle::CC_ComboBox, &opt,
+                             QStyle::SC_ComboBoxArrow, combo)
+            .center();
+    QMouseEvent press(QEvent::MouseButtonPress, QPointF(arrow),
+                      QPointF(combo->mapToGlobal(arrow)), Qt::LeftButton,
+                      Qt::LeftButton, Qt::NoModifier);
+    QApplication::sendEvent(combo, &press);
     return true;
   }
 
