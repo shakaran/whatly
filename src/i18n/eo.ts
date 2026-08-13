@@ -2334,6 +2334,21 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>%1 el %2 elektitaj</translation>
     </message>
     <message>
+        <location filename="../settingswidget.cpp" line="2232"/>
+        <source>Search settings</source>
+        <translation>Serĉi agordojn</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2235"/>
+        <source>Show only the settings that match. What you find is the setting itself, working where it stands — not a list to click through. Tooltips are searched as well as labels, and so are the English names of the settings when Whatly is running in another language.</source>
+        <translation>Montri nur la agordojn kiuj kongruas. Kion vi trovas estas la agordo mem, funkcianta kie ĝi staras — ne listo por alklaki. Ankaŭ la klarigaj tekstoj estas serĉataj, ne nur la etikedoj, kaj same la anglaj nomoj de la agordoj kiam Whatly funkcias en alia lingvo.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2330"/>
+        <source>No setting matches “%1”. Tooltips are searched too, so a plainer word usually finds it.</source>
+        <translation>Neniu agordo kongruas kun “%1”. Ankaŭ la klarigaj tekstoj estas serĉataj, do pli simpla vorto kutime trovas ĝin.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="435"/>
         <source>VIP contacts</source>
         <translation>VIP-kontaktoj</translation>

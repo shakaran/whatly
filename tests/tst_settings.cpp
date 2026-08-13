@@ -16,6 +16,7 @@
 #include <QFileInfo>
 #include <QDoubleSpinBox>
 #include <QGroupBox>
+#include <QLabel>
 #include <QRegularExpression>
 #include <QLineEdit>
 #include <QListWidget>
@@ -157,6 +158,61 @@ private slots:
     minClick->setChecked(true);
     QVERIFY(!hide->isChecked());
   }
+
+  // #39, his own idea: a search box that filters the page down to the settings
+  // that match — the real controls, still working where they stand, the way VLC's
+  // preferences search behaves. So the test asks about visibility, not about a
+  // list of results: there is no list.
+  void searchingShowsTheSettingsThemselves() {
+    QTemporaryDir cache, storage;
+    SettingsWidget sw(nullptr, 0, cache.path(), storage.path());
+    auto *box = sw.findChild<QLineEdit *>("settingsSearchBox");
+    auto *spell = sw.findChild<QCheckBox *>("spellCheckCheckBox");
+    auto *gpu = sw.findChild<QCheckBox *>("disableGpuCheckBox");
+    QVERIFY(box && spell && gpu);
+
+    // Nothing typed: the page is whole, whatever section anything is in.
+    QVERIFY(!spell->isHidden());
+    QVERIFY(!gpu->isHidden());
+
+    // A word from one setting hides the settings it is not in — and the control
+    // that matched is the control itself, live, not a copy: ticking it here is
+    // ticking the setting.
+    box->setText(QStringLiteral("spelling"));
+    QVERIFY(!spell->isHidden());
+    QVERIFY(gpu->isHidden());
+    const bool was = spell->isChecked();
+    spell->setChecked(!was);
+    QCOMPARE(SettingsManager::instance()
+                 .settings()
+                 .value(QStringLiteral("spellCheckEnabled"))
+                 .toBool(),
+             !was);
+    spell->setChecked(was);
+
+    // Cleared, and the page is back — including the sections that were closed
+    // before the search opened them.
+    box->clear();
+    QVERIFY(!spell->isHidden());
+    QVERIFY(!gpu->isHidden());
+
+    // A word in no setting anywhere says so rather than showing a blank page.
+    // isHidden() rather than isVisible() throughout: this window is never shown,
+    // so nothing in it is ever "visible" — what is being tested is what the
+    // search hid.
+    auto *nothing = sw.findChild<QLabel *>("settingsSearchNothing");
+    QVERIFY(nothing);
+    QVERIFY(nothing->isHidden());
+    box->setText(QStringLiteral("zzzznotasetting"));
+    QVERIFY(gpu->isHidden());
+    QVERIFY(spell->isHidden());
+    QVERIFY(!nothing->isHidden());
+    QVERIFY(nothing->text().contains(QStringLiteral("zzzznotasetting")));
+    box->clear();
+    QVERIFY(nothing->isHidden());
+  }
+
+
 
   // Gert's request #6: the account tabs can move into the title bar, but only
   // where there is a custom title bar for them to move into. A stored "yes"

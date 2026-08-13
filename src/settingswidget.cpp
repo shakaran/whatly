@@ -30,6 +30,8 @@
 #include <QGroupBox>
 #include <QScrollBar>
 #include <QTimer>
+#include <QTranslator>
+#include <QLabel>
 #include <QPropertyAnimation>
 
 #include "automatictheme.h"
@@ -96,6 +98,10 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
                                QString enginePersistentStoragePath)
     : QWidget(parent), ui(new Ui::SettingsWidget) {
   ui->setupUi(this);
+  // Before a single string is set from code: everything on the page is still the
+  // form's own text, which is the only moment the English behind a translation
+  // can be read back (see harvestEnglishText).
+  harvestEnglishText();
 
   // Which build this is, under the window's own title, where someone who wants
   // it knows to look and nobody else has to see it. This is the one place it is
@@ -863,6 +869,11 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     outer->setSpacing(this->fontMetrics().averageCharWidth());
     outer->addStretch(1);
   }
+
+  // Last, because it filters what the block above has just finished building
+  // (issue #39). The index itself waits for the first keystroke: on a page this
+  // size it is a walk of a few hundred widgets, and most visits never search.
+  buildSearchBox();
 }
 
 bool SettingsWidget::eventFilter(QObject *obj, QEvent *event) {
@@ -2277,6 +2288,158 @@ static QList<QToolButton *> sectionHeaders(const QWidget *page) {
   return headers;
 }
 
+// ── Searching the page (issue #39) ──────────────────────────────────────────
+
+void SettingsWidget::harvestEnglishText() {
+  // No translation loaded means the page is already in English and there is
+  // nothing to remember: the visible text is the searchable text.
+  const QList<QTranslator *> translators = qApp->findChildren<QTranslator *>();
+  if (translators.isEmpty())
+    return;
+  for (QTranslator *t : translators)
+    qApp->removeTranslator(t);
+  ui->retranslateUi(this); // every string is now the form's own English
+  for (const QWidget *w : findChildren<QWidget *>()) {
+    const QString text = SettingsSearch::textOf(w);
+    if (!text.isEmpty())
+      m_englishText.insert(w, text);
+  }
+  for (QTranslator *t : translators)
+    qApp->installTranslator(t);
+  ui->retranslateUi(this); // and back, before anyone has seen otherwise
+}
+
+void SettingsWidget::buildSearchBox() {
+  m_searchBox = new QLineEdit(ui->headerWidget);
+  m_searchBox->setObjectName(QStringLiteral("settingsSearchBox"));
+  m_searchBox->setPlaceholderText(tr("Search settings"));
+  m_searchBox->setClearButtonEnabled(true);
+  m_searchBox->setToolTip(tr(
+      "Show only the settings that match. What you find is the setting itself, "
+      "working where it stands — not a list to click through. Tooltips are "
+      "searched as well as labels, and so are the English names of the settings "
+      "when Whatly is running in another language."));
+  m_searchBox->setMaximumWidth(260);
+  if (auto *header = qobject_cast<QHBoxLayout *>(ui->headerWidget->layout())) {
+    header->addStretch(1);
+    header->addWidget(m_searchBox);
+    header->setContentsMargins(header->contentsMargins().left(), 0, 8, 0);
+  }
+  // Said in the page rather than in the box, because an empty page with a full
+  // search box reads as the page having broken.
+  m_searchNothing = new QLabel(ui->scrollAreaWidgetContents);
+  m_searchNothing->setObjectName(QStringLiteral("settingsSearchNothing"));
+  m_searchNothing->setWordWrap(true);
+  m_searchNothing->setVisible(false);
+  if (auto *column =
+          qobject_cast<QVBoxLayout *>(ui->scrollAreaWidgetContents->layout()))
+    column->insertWidget(0, m_searchNothing);
+
+  connect(m_searchBox, &QLineEdit::textChanged, this,
+          [this](const QString &text) { applySearch(text); });
+}
+
+void SettingsWidget::buildSearchIndex() {
+  const QList<QToolButton *> headers = sectionHeaders(this);
+  for (QToolButton *header : headers) {
+    SearchSection section;
+    section.header = header;
+    section.wrapper = header->parentWidget();
+    // The body is the group box the header opens: makeCollapsible() puts the two
+    // in a wrapper of their own, in that order.
+    if (section.wrapper)
+      for (QGroupBox *box : section.wrapper->findChildren<QGroupBox *>(
+               QString(), Qt::FindDirectChildrenOnly))
+        section.body = box;
+    if (!section.body)
+      continue;
+    // The title lives on the header, and its English on the group box, which is
+    // what carried it when the English was read (makeCollapsible moves the title
+    // out of the box and onto the header afterwards).
+    section.haystack = header->text() + QLatin1Char(' ') +
+                       m_englishText.value(section.body);
+    section.rows = SettingsSearch::rowsOf(section.body);
+    for (SettingsSearch::Row &row : section.rows)
+      for (const QWidget *w : row.widgets) {
+        row.haystack += QLatin1Char(' ') + m_englishText.value(w);
+        // A row is often a lone widget with the words inside it — a nested group,
+        // or a check box with a label of its own — and each of those carried its
+        // own English.
+        for (const QWidget *child : w->findChildren<QWidget *>())
+          row.haystack += QLatin1Char(' ') + m_englishText.value(child);
+      }
+    m_searchSections << section;
+  }
+}
+
+void SettingsWidget::applySearch(const QString &query) {
+  if (m_searchSections.isEmpty())
+    buildSearchIndex();
+  const QString trimmed = query.trimmed();
+  const bool searching = !trimmed.isEmpty();
+
+  // Remember the accordion the moment a search starts, so clearing the box is a
+  // return and not a rearrangement. Taken here rather than in buildSearchBox()
+  // because what matters is how the page stood when the typing began.
+  if (searching && !m_searchActive) {
+    m_searchWasOpen.clear();
+    for (const SearchSection &section : m_searchSections)
+      m_searchWasOpen.insert(section.header, section.header->isChecked());
+  }
+
+  int found = 0;
+  for (const SearchSection &section : m_searchSections) {
+    if (!searching) {
+      section.wrapper->setVisible(true);
+      for (const SettingsSearch::Row &row : section.rows) {
+        for (QWidget *w : row.widgets)
+          w->setVisible(true);
+        if (row.container)
+          row.container->setVisible(true);
+      }
+      if (m_searchWasOpen.contains(section.header))
+        section.header->setChecked(m_searchWasOpen.value(section.header));
+      continue;
+    }
+    // A section whose title matches shows everything in it: someone who types
+    // "spelling" wants that section, not the three rows that happen to repeat
+    // the word.
+    const bool wholeSection =
+        SettingsSearch::matches(section.haystack, trimmed);
+    int hits = 0;
+    QHash<QWidget *, bool> groupHasHit; // a group of rows: a form host, a nested group
+    for (const SettingsSearch::Row &row : section.rows) {
+      const bool hit =
+          wholeSection || SettingsSearch::matches(row.haystack, trimmed);
+      for (QWidget *w : row.widgets)
+        w->setVisible(hit);
+      if (row.container)
+        groupHasHit[row.container] |= hit;
+      if (hit)
+        ++hits;
+    }
+    // An empty titled frame where a group used to be says less than no frame at
+    // all, so a group goes with the last of its rows.
+    for (auto it = groupHasHit.constBegin(); it != groupHasHit.constEnd(); ++it)
+      it.key()->setVisible(it.value());
+    found += hits;
+    section.wrapper->setVisible(hits > 0);
+    if (hits > 0)
+      section.header->setChecked(true); // no point finding it behind a closed arrow
+  }
+
+  m_searchActive = searching;
+  if (m_searchNothing) {
+    m_searchNothing->setVisible(searching && found == 0);
+    if (searching && found == 0)
+      m_searchNothing->setText(
+          tr("No setting matches “%1”. Tooltips are searched too, so a plainer "
+             "word usually finds it.")
+              .arg(trimmed));
+  }
+}
+
+
 void SettingsWidget::saveUiState() {
   QSettings &s = SettingsManager::instance().settings();
   QStringList open;
@@ -3027,6 +3190,14 @@ void SettingsWidget::keyPressEvent(QKeyEvent *e) {
   // that key means "put the window away", and reading it as "put the app in the
   // tray" while Settings is the window in front is not what anyone pressing it
   // here means — this is a page you close, and it is the only window that is.
+  // ...but a search in progress is what Escape undoes first. Closing the whole
+  // page on the same key would throw away the filtered view and the page's own
+  // position with it, and every search box anywhere behaves this way.
+  if (e->key() == Qt::Key_Escape && m_searchBox && !m_searchBox->text().isEmpty()) {
+    m_searchBox->clear();
+    e->accept();
+    return;
+  }
   if (e->key() == Qt::Key_Escape ||
       (e->key() == Qt::Key_W && e->modifiers().testFlag(Qt::ControlModifier))) {
     this->close();
