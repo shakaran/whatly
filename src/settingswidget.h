@@ -259,6 +259,8 @@ private:
   void syncSpellCheckRows();
   void setSpellCheckRowProgress(const QString &code, int progress,
                                 const QString &error = QString());
+  void fetchDictionaryCatalog();                // the downloadable languages
+  void keepTheSpinnersTurning();                // repaint while a download runs
   void downloadDictionary(const QString &code); // the row's arrow
   void deleteDictionary(const QString &code);   // the row's bin
   // Fills the language picker from the .qm files compiled into the binary, so
@@ -287,6 +289,11 @@ private:
   // itself, which must not be mistaken for the user ticking something.
   QStandardItemModel *m_spellRows = nullptr;
   bool m_spellRowsSyncing = false;
+  // Why there are no downloadable languages, when there are none: kept so the list
+  // can say it on a row, and counted so a fetch that keeps failing stops retrying.
+  QString m_dictCatalogError;
+  int m_dictCatalogTries = 0;
+  QTimer *m_spellSpin = nullptr; // repaints the rows that are waiting on a file
 };
 
 #endif // SETTINGSWIDGET_H

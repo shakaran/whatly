@@ -76,6 +76,18 @@ void paintDownloadMark(QPainter *p, const QRect &box, const QColor &colour) {
               QPointF(r.right() - r.width() * 0.22, r.bottom() - r.height() * 0.2));
 }
 
+// The wait, drawn where the tick box will be once the file is here: a three-quarter
+// arc turning on the spot, so a row that is fetching something says so even when
+// the per-cent beside it is standing still.
+void paintSpinner(QPainter *p, const QRect &box, const QColor &colour, int angle) {
+  const QRectF r = QRectF(box).adjusted(2, 2, -2, -2);
+  QPen pen(colour, qMax(1.5, r.height() / 7.0));
+  pen.setCapStyle(Qt::RoundCap);
+  p->setPen(pen);
+  p->setBrush(Qt::NoBrush);
+  p->drawArc(r, -angle * 16, 270 * 16);
+}
+
 void paintTrashMark(QPainter *p, const QRect &box, const QColor &colour) {
   const QRectF r(box);
   QPen pen(colour, qMax(1.4, r.height() / 12.0));
@@ -164,7 +176,9 @@ QString tooltip(const Row &row) {
 } // namespace DictionaryRows
 
 DictionaryRowDelegate::DictionaryRowDelegate(QAbstractItemView *view)
-    : QStyledItemDelegate(view), m_view(view) {}
+    : QStyledItemDelegate(view), m_view(view) {
+  m_clock.start(); // the spinner's angle comes off this, not off a per-row counter
+}
 
 QRect DictionaryRowDelegate::actionRect(const QRect &row) {
   const int side = qMin(row.height() - 2 * kMargin + 4, kMaxButton);
@@ -202,20 +216,46 @@ void DictionaryRowDelegate::paint(QPainter *painter,
   const QString note = noteText(index);
   const int noteWidth =
       note.isEmpty() ? 0 : option.fontMetrics.horizontalAdvance(note) + kGap;
+  const int progress = index.data(DictionaryRows::ProgressRole).toInt();
+  const bool waiting = progress >= 0; // a download of this language is in flight
 
   // The tick box and the language, in the space left over. Narrowing the rect is
   // what makes a long name elide before the note rather than run under it.
   QStyleOptionViewItem body(option);
   if (!button.isEmpty())
     body.rect.setRight(button.left() - kGap - noteWidth);
-  QStyledItemDelegate::paint(painter, body, index);
-
-  if (button.isEmpty())
-    return;
+  if (waiting) {
+    // The spinner takes the tick box's place while the file is on its way, and the
+    // real tick box comes back — ticked — the moment it lands. An empty greyed box
+    // beside a language being fetched said nothing about what was happening.
+    QStyleOptionViewItem hide(body);
+    initStyleOption(&hide, index);
+    hide.features &= ~QStyleOptionViewItem::HasCheckIndicator;
+    hide.checkState = Qt::Unchecked;
+    style->drawControl(QStyle::CE_ItemViewItem, &hide, painter, widget);
+  } else {
+    QStyledItemDelegate::paint(painter, body, index);
+  }
 
   const bool selected = option.state & QStyle::State_Selected;
   const QColor ink = selected ? option.palette.highlightedText().color()
                               : option.palette.text().color();
+
+  if (waiting) {
+    // Where the style would have drawn the tick box, so the two occupy one slot.
+    QStyleOptionViewItem where(option);
+    initStyleOption(&where, index);
+    const QRect box = style->subElementRect(
+        QStyle::SE_ItemViewItemCheckIndicator, &where, widget);
+    painter->save();
+    painter->setRenderHint(QPainter::Antialiasing, true);
+    paintSpinner(painter, box.isEmpty() ? option.rect : box, ink,
+                 int(m_clock.elapsed() / 3 % 360));
+    painter->restore();
+  }
+
+  if (button.isEmpty())
+    return;
 
   if (!note.isEmpty()) {
     painter->save();

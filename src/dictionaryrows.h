@@ -1,6 +1,7 @@
 #ifndef DICTIONARYROWS_H
 #define DICTIONARYROWS_H
 
+#include <QElapsedTimer>
 #include <QList>
 #include <QString>
 #include <QStyledItemDelegate>
@@ -93,6 +94,9 @@ public:
 
 private:
   QAbstractItemView *m_view; // for the pointer's position, to light the button
+  // The spinner's angle is read off the clock rather than counted per repaint, so
+  // every row turns at the same speed however often the view is redrawn.
+  QElapsedTimer m_clock;
 };
 
 #endif // DICTIONARYROWS_H

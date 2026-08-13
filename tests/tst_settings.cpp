@@ -597,6 +597,56 @@ private slots:
     s.remove(QStringLiteral("spellCheckLanguages"));
     qunsetenv("WHATLY_DICT_BASE_URL");
   }
+
+  // A catalogue that cannot be fetched must say so. It failed silently once, and a
+  // list showing only the installed language looked exactly like a list of every
+  // language there is — the reason this row exists at all.
+  void aFailedCatalogueSaysSoAndCanBeRetried() {
+    QTemporaryDir nothing; // a base URL with no manifest.json in it
+    QVERIFY(nothing.isValid());
+    qputenv("WHATLY_DICT_BASE_URL",
+            QUrl::fromLocalFile(nothing.path()).toString().toUtf8());
+
+    QTemporaryDir cache, storage;
+    SettingsWidget sw(nullptr, 0, cache.path(), storage.path());
+    auto *combo =
+        sw.findChild<QComboBox *>(QStringLiteral("spellCheckLanguageComboBox"));
+    QVERIFY(combo);
+    QAbstractItemModel *model = combo->model();
+
+    // The notice is only shown once the retries are spent, so a fetch that works on
+    // the second attempt never flashes it.
+    const auto noticeRow = [model]() {
+      for (int i = 0; i < model->rowCount(); ++i)
+        if (model->index(i, 0).data(DictionaryRows::CodeRole).toString().isEmpty())
+          return i;
+      return -1;
+    };
+    QTRY_VERIFY_WITH_TIMEOUT(noticeRow() >= 0, 15000);
+    const QModelIndex notice = model->index(noticeRow(), 0);
+    QVERIFY(notice.data(Qt::DisplayRole).toString().contains(
+        QStringLiteral("again")));
+    QVERIFY(!notice.data(Qt::ToolTipRole).toString().isEmpty()); // why it failed
+    // Nothing to tick on it, and no button: it stands for no language.
+    QVERIFY(!(model->flags(notice) & Qt::ItemIsUserCheckable));
+    QCOMPARE(notice.data(DictionaryRows::ActionRole).toInt(),
+             int(DictionaryRows::Action::None));
+
+    // Clicking it anywhere asks again, and says that it is asking.
+    combo->showPopup();
+    QAbstractItemView *view = combo->view();
+    QVERIFY(view);
+    const QPoint on = view->visualRect(notice).center();
+    QMouseEvent release(QEvent::MouseButtonRelease, QPointF(on),
+                        QPointF(view->viewport()->mapToGlobal(on)),
+                        Qt::LeftButton, Qt::LeftButton, Qt::NoModifier);
+    QApplication::sendEvent(view->viewport(), &release);
+    QVERIFY(model->index(noticeRow(), 0).data(Qt::DisplayRole).toString().contains(
+        QStringLiteral("Fetching")));
+
+    combo->hidePopup();
+    qunsetenv("WHATLY_DICT_BASE_URL");
+  }
 };
 
 QTEST_MAIN(TstSettings)

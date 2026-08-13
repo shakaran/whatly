@@ -3,6 +3,7 @@
 
 #include "mainwindow.h"
 #include <QDateTime>
+#include <QDebug>
 #include <QFileDialog>
 #include <QImageReader>
 #include <QScreen>
@@ -585,6 +586,8 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
     connect(m_dictManager, &DictionaryManager::catalogReady, this,
             [this](const QList<DictionaryEntry> &entries) {
               m_dictCatalog = entries;
+              m_dictCatalogError.clear();
+              m_dictCatalogTries = 0;
               populateSpellCheck(); // offer the downloadable languages in the picker
 
               // One-time: if nothing is chosen yet and the system locale's
@@ -610,6 +613,25 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
                   break;
                 }
               }
+            });
+
+    // The list of downloadable languages comes from a GitHub release, and a fetch
+    // of it fails from time to time for reasons that have nothing to do with the
+    // user — an HTTP/2 stream refused on the way through the redirect is the one
+    // seen in practice. Try again twice before believing it, and then say so on a
+    // row instead of showing a list of the two installed languages as if that were
+    // all there is.
+    connect(m_dictManager, &DictionaryManager::catalogFailed, this,
+            [this](const QString &error) {
+              qWarning() << "whatly: could not fetch the dictionary catalogue:"
+                         << error;
+              m_dictCatalogError = error;
+              if (m_dictCatalogTries < 3) {
+                QTimer::singleShot(m_dictCatalogTries * 2000 - 1000, this,
+                                   [this] { fetchDictionaryCatalog(); });
+                return;
+              }
+              populateSpellCheck();
             });
 
     // A download in flight shows its per-cent on its own row, so the list is also
@@ -639,7 +661,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
               populateSpellCheck();
               emit spellCheckChanged();
             });
-    m_dictManager->fetchCatalog(); // the downloadable languages, for the picker
+    fetchDictionaryCatalog(); // the downloadable languages, for the picker
 
     // ── Privacy & Lock ──────────────────────────────────────
     auto *privacy = newSection(tr("Privacy & Lock"));
@@ -895,6 +917,17 @@ bool SettingsWidget::eventFilter(QObject *obj, QEvent *event) {
     }
     auto *me = static_cast<QMouseEvent *>(event);
     const QModelIndex index = view->indexAt(me->pos());
+    if (index.isValid() && index.data(DictionaryRows::CodeRole).toString().isEmpty()) {
+      // The row that says the list of downloadable languages could not be
+      // fetched: it stands for no language, so clicking it anywhere retries.
+      m_spellRowsSyncing = true;
+      view->model()->setData(index, tr("Fetching the list of languages…"),
+                             Qt::DisplayRole);
+      m_spellRowsSyncing = false;
+      m_dictCatalogTries = 0;
+      fetchDictionaryCatalog();
+      return true;
+    }
     if (index.isValid()) {
       const auto action = static_cast<DictionaryRows::Action>(
           index.data(DictionaryRows::ActionRole).toInt());
@@ -2454,12 +2487,30 @@ void SettingsWidget::syncSpellCheckRows() {
   }
   while (m_spellRows->rowCount() > rows.size())
     m_spellRows->removeRow(m_spellRows->rowCount() - 1); // languages that went
+
+  // Nothing downloadable, and a reason for it: one row saying so, which is also
+  // the retry. Without it a failed fetch left a list of whatever is installed and
+  // no hint that thirty more languages were meant to be in it.
+  if (m_dictCatalog.isEmpty() && !m_dictCatalogError.isEmpty()) {
+    auto *notice = new QStandardItem(
+        tr("Downloadable languages unavailable — click to try again"));
+    notice->setToolTip(m_dictCatalogError);
+    notice->setData(QString(), DictionaryRows::CodeRole); // no language of its own
+    notice->setData(false, DictionaryRows::InstalledRole);
+    notice->setData(static_cast<int>(DictionaryRows::Action::None),
+                    DictionaryRows::ActionRole);
+    notice->setData(DictionaryRows::Idle, DictionaryRows::ProgressRole);
+    notice->setFlags(Qt::ItemIsEnabled); // clickable, but nothing to tick
+    m_spellRows->appendRow(notice);
+  }
   m_spellRowsSyncing = false;
 
   // Reads as single-choice at a glance, but it is a multi-select and a dictionary
   // manager besides: say so, since neither shows until the list is open.
   combo->setToolTip(tr("Tick the languages to check spelling against. Each row "
                        "downloads or deletes its dictionary."));
+  keepTheSpinnersTurning(); // a download that landed leaves nothing to turn
+
   // Live even when spelling is not being checked, and when nothing is installed at
   // all: this is where a dictionary is fetched, so locking it would leave whoever
   // has none no way to get one.
@@ -2486,8 +2537,45 @@ void SettingsWidget::setSpellCheckRowProgress(const QString &code, int progress,
                         QLatin1Char('\n') + error,
                     Qt::ToolTipRole);
     m_spellRowsSyncing = false;
+    break;
+  }
+  keepTheSpinnersTurning();
+}
+
+// A spinner is only a spinner if something repaints it. Setting a row's data marks
+// the view dirty once, which would leave a still arc for the whole download — so
+// nudge the list while any row is waiting, and stop the moment none is.
+void SettingsWidget::keepTheSpinnersTurning() {
+  bool waiting = false;
+  if (m_spellRows)
+    for (int i = 0; i < m_spellRows->rowCount() && !waiting; ++i)
+      waiting = m_spellRows->item(i)->data(DictionaryRows::ProgressRole).toInt() >= 0;
+
+  if (!waiting) {
+    if (m_spellSpin)
+      m_spellSpin->stop();
     return;
   }
+  if (!m_spellSpin) {
+    m_spellSpin = new QTimer(this);
+    m_spellSpin->setInterval(60); // about as fast as an eye reads movement
+    connect(m_spellSpin, &QTimer::timeout, this, [this]() {
+      QAbstractItemView *view = ui->spellCheckLanguageComboBox->view();
+      if (view && view->isVisible())
+        view->viewport()->update();
+    });
+  }
+  if (!m_spellSpin->isActive())
+    m_spellSpin->start();
+}
+
+// Ask for the list of downloadable languages, counting the attempt so a fetch that
+// keeps failing stops retrying and says so instead.
+void SettingsWidget::fetchDictionaryCatalog() {
+  if (!m_dictManager)
+    return;
+  ++m_dictCatalogTries;
+  m_dictManager->fetchCatalog();
 }
 
 // Fetch one language's dictionary, named by its row. Only a catalogued language
