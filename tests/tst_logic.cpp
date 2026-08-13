@@ -275,6 +275,19 @@ private slots:
     const QPalette dark = Theme::getDarkPalette();
     QVERIFY(light.color(QPalette::Window) != dark.color(QPalette::Window));
   }
+
+  // A greyed-out control has to look greyed out in both themes. Every role a
+  // label can be drawn in, because setColor() without a colour group sets the
+  // disabled group as well — so forgetting one leaves disabled text in the
+  // enabled colour, which is what had happened to WindowText, and so to every
+  // check box, in the dark palette.
+  void disabledIsDimmerThanEnabled() {
+    for (const QPalette &p : {Theme::getLightPalette(), Theme::getDarkPalette()})
+      for (const QPalette::ColorRole role :
+           {QPalette::WindowText, QPalette::Text, QPalette::ButtonText})
+        QVERIFY(p.color(QPalette::Disabled, role) !=
+                p.color(QPalette::Active, role));
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
