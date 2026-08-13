@@ -1,3 +1,15 @@
+## Unreleased
+
+- **The "update available" notification is clickable again on KDE/Linux (#74).**
+  It was the only notification that went through the system tray toast, which
+  registers no action with the freedesktop server, so clicking it on KDE did
+  nothing. It now goes through the same libnotify path as message notifications,
+  with an "Open" action that opens the release page.
+- **The spell-check language box opens on the first click (#75).** Since 7.2.0,
+  clicking the box anywhere but its arrow made the list flash and vanish until
+  you clicked the arrow once. The click is now handed to the arrow so Qt takes
+  its own path, and the list opens and stays open every time.
+
 ## 7.2.1 (2026-08-13)
 
 A packaging point release: no application changes, only how Windows updates ship.
