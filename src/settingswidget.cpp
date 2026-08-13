@@ -2788,18 +2788,13 @@ void SettingsWidget::populateLanguages() {
                                                    QDir::Files, QDir::Name);
   for (const QFileInfo &file : files) {
     const QString code = file.completeBaseName(); // e.g. es_ES
-    const QLocale locale(code);
-    // Name the language in itself — an Italian speaker looks for "Italiano",
-    // not for whatever the current interface language calls it. Build from the
-    // language alone (not the full locale) so it reads "Español", not "Español
-    // de España" — the code in parentheses already disambiguates the territory.
-    QString label = QLocale(locale.language()).nativeLanguageName();
-    if (label.isEmpty())
-      label = code;
-    else
-      label[0] = label[0].toUpper();
-    ui->languageComboBox->addItem(QStringLiteral("%1 (%2)").arg(label, code),
-                                  code);
+    // Named by the same routine as the spell-check languages, so the two lists
+    // that a reader compares — the language Whatly speaks and the languages it
+    // checks spelling in — call the same language by the same name. That routine
+    // names each language in itself ("português", not "Portuguese"), qualifies it
+    // by territory where CLDR's default would otherwise be misleading, and falls
+    // back to the bare code for anything Qt does not model.
+    ui->languageComboBox->addItem(Dictionaries::languageLabel(code), code);
   }
 
   const int index = ui->languageComboBox->findData(current);

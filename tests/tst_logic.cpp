@@ -19,6 +19,7 @@
 #include <QWebEngineScriptCollection>
 #include <QDirIterator>
 #include <QRegularExpression>
+#include <QSet>
 
 #include "utils.h"
 #include "common.h"
@@ -291,6 +292,29 @@ private slots:
     Dictionaries::preferredDictionary();
     Dictionaries::selectedDictionaries();
   }
+
+  // Round 28, his request: the interface-language list is now named by the same
+  // routine as the spell-check list — Dictionaries::languageLabel — so the two
+  // lists a reader compares call the same language by the same name. Over the
+  // translations actually shipped, every name has to be its own: the old code
+  // built the name from the language alone, which threw the territory away and
+  // made zh_TW resolve to zh_CN's, so both Chinese translations were offered as
+  // "简体中文" — simplified, on the traditional one too.
+  void everyShippedInterfaceLanguageHasItsOwnName() {
+    QDir dir(QStringLiteral(WHATLY_SOURCE_DIR) + QStringLiteral("/src/i18n"));
+    const QFileInfoList files =
+        dir.entryInfoList({QStringLiteral("*.ts")}, QDir::Files, QDir::Name);
+    QVERIFY(files.size() > 5); // the catalogues are there, so the check ran
+    QSet<QString> seen;
+    for (const QFileInfo &file : files) {
+      const QString label = Dictionaries::languageLabel(file.completeBaseName());
+      QVERIFY(!label.isEmpty());
+      QVERIFY2(!seen.contains(label),
+               qPrintable(QStringLiteral("two interface languages named ") + label));
+      seen.insert(label);
+    }
+  }
+
   // Point the resolver at a directory of fake .bdic files so the full selection
   // logic (availability, locale preference, stored-list filtering) runs.
   void withFixture() {
