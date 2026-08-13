@@ -22,7 +22,14 @@ bool isFullyTransparent(const QImage &img);
 QImage monochromeGlyphMask(const QString &svgPath, const QString &fallbackPngPath,
                            int size);
 
-// Compose the full tray image for a given state: unread count (0..10), whether
+// What the badge says for a given count: nothing at zero, the number itself up to
+// ninety-nine, and "99+" beyond it. Not a cap on the count but on the digits: the
+// badge is about a third of an icon that a panel draws at some 22 px, so a third
+// digit is three pixels wide and says less than the "+" does. The real number is
+// on the tray icon's tooltip instead.
+QString badgeText(int count);
+
+// Compose the full tray image for a given state: unread count (any count), whether
 // the monochrome icon is requested, and whether the app is connected. The count
 // applies in every state — including 0 — so an idle tray honours the monochrome
 // choice just like a busy one (the #14 regression: the idle path used to bypass

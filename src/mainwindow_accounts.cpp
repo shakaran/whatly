@@ -1395,6 +1395,20 @@ void MainWindow::updateTrayUnread() {
     m_restoreAction->setText(tr("Restore") + " | " + QString::number(total) +
                              " " + (total > 1 ? tr("chats") : tr("chat")));
     m_systemTrayIcon->setIcon(getTrayIcon(total));
+    // The badge stops at "99+" because a third digit is a few pixels wide once the
+    // panel has scaled the icon down; the tooltip is where the real number fits.
+    //
+    // It counts what the tabs count — the same per-account figure, so the same
+    // choice of chats or messages, muted in or out, archived in or out — and says
+    // which of the two it is, since 42 chats and 42 messages are not the same news.
+    QString tip;
+    if (unreadCountCountsMessages())
+      tip = total > 1 ? tr("Whatly — %1 unread messages").arg(total)
+                      : tr("Whatly — 1 unread message");
+    else
+      tip = total > 1 ? tr("Whatly — %1 chats with unread messages").arg(total)
+                      : tr("Whatly — 1 chat with unread messages");
+    m_systemTrayIcon->setToolTip(tip);
     setWindowIcon(getTrayIcon(total));
   } else {
     m_restoreAction->setText(tr("Restore"));
@@ -1403,6 +1417,7 @@ void MainWindow::updateTrayUnread() {
     // fixed colour icon (issue #14: monochrome appeared to do nothing whenever
     // there were no unread messages).
     m_systemTrayIcon->setIcon(getTrayIcon(0));
+    m_systemTrayIcon->setToolTip(tr("Whatly"));
     setWindowIcon(themeIcon("whatly", ":/icons/app/icon-64.png"));
   }
 

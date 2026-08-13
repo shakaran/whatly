@@ -2253,6 +2253,51 @@ private slots:
     QVERIFY(idle != three);
   }
 
+  // What the badge says, which is the whole of the rule: the number up to
+  // ninety-nine, "99+" past it, nothing at zero. The count itself is no longer
+  // clamped — it used to stop at ten, which was invisible while the count came
+  // from the window title and under-reported, and became permanent once the count
+  // was real.
+  void badgeSaysTheNumberUpToNinetyNine() {
+    QVERIFY(TrayIcon::badgeText(0).isEmpty());
+    QVERIFY(TrayIcon::badgeText(-3).isEmpty());
+    QCOMPARE(TrayIcon::badgeText(1), QStringLiteral("1"));
+    QCOMPARE(TrayIcon::badgeText(9), QStringLiteral("9"));
+    QCOMPARE(TrayIcon::badgeText(10), QStringLiteral("10"));
+    QCOMPARE(TrayIcon::badgeText(42), QStringLiteral("42"));
+    QCOMPARE(TrayIcon::badgeText(99), QStringLiteral("99"));
+    QCOMPARE(TrayIcon::badgeText(100), QStringLiteral("99+"));
+    QCOMPARE(TrayIcon::badgeText(5000), QStringLiteral("99+"));
+  }
+
+  // Past nine the colour icon draws the badge itself, so counts that used to be
+  // one and the same picture — everything from ten up wore whatly-notify-10.png,
+  // a bare "+" with no digit — now differ from each other.
+  void colourCountsPastNineAreDrawnAndDiffer() {
+    const QImage nine = TrayIcon::composeTrayImage(9, false, true, 64);
+    const QImage ten = TrayIcon::composeTrayImage(10, false, true, 64);
+    const QImage forty = TrayIcon::composeTrayImage(42, false, true, 64);
+    QVERIFY(nine != ten);
+    QVERIFY(ten != forty);
+    QVERIFY(!TrayIcon::isFullyTransparent(ten));
+    // Only the digits stop at ninety-nine, so those two are the same picture.
+    QCOMPARE(TrayIcon::composeTrayImage(100, false, true, 64),
+             TrayIcon::composeTrayImage(5000, false, true, 64));
+    QVERIFY(TrayIcon::composeTrayImage(99, false, true, 64) !=
+            TrayIcon::composeTrayImage(100, false, true, 64));
+  }
+
+  // The monochrome mode said "9+" past nine while the colour one said "+", so the
+  // two disagreed about the same inbox. Both now draw the same text.
+  void monochromeCountsAgreeWithColour() {
+    QVERIFY(TrayIcon::composeTrayImage(9, true, true, 64) !=
+            TrayIcon::composeTrayImage(10, true, true, 64));
+    QVERIFY(TrayIcon::composeTrayImage(10, true, true, 64) !=
+            TrayIcon::composeTrayImage(42, true, true, 64));
+    QCOMPARE(TrayIcon::composeTrayImage(100, true, true, 64),
+             TrayIcon::composeTrayImage(5000, true, true, 64));
+  }
+
   // A disconnected state dims the icon, so it differs from the connected one.
   void disconnectedIsDimmed() {
     const QImage up = TrayIcon::composeTrayImage(0, false, true, 64);
