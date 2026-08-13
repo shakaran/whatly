@@ -189,6 +189,53 @@ private slots:
     QVERIFY(!windows->isEnabled());
     Performance::setSuspendInactiveAccounts(false);
   }
+  // The page's state is written for exactly one restart ("Restart now"), and his
+  // question was whether an ordinary quit or an upgrade could ever replay it. Two
+  // guarantees: reading it consumes it, and it is only replayed by the build that
+  // wrote it — the sections are stored by position, which means nothing once a
+  // version has added or reordered one.
+  void theRestartStateIsConsumedAndVersionStamped() {
+    QTemporaryDir cache, storage;
+    QSettings &s = SettingsManager::instance().settings();
+    for (const QString &key :
+         {QStringLiteral("ui/settingsSections"), QStringLiteral("ui/settingsScroll"),
+          QStringLiteral("ui/settingsGeometry"),
+          QStringLiteral("ui/settingsUiVersion")})
+      s.remove(key);
+
+    SettingsWidget sw(nullptr, 0, cache.path(), storage.path());
+    const QList<QToolButton *> headers = sw.findChildren<QToolButton *>();
+    QVERIFY(headers.size() > 3);
+
+    // Written by a restart: the stamp goes with it.
+    sw.saveUiState();
+    QCOMPARE(s.value(QStringLiteral("ui/settingsUiVersion")).toString(),
+             QString::fromLatin1(VERSIONSTR));
+    QVERIFY(s.contains(QStringLiteral("ui/settingsSections")));
+
+    // Read once, and gone: an ordinary launch afterwards has nothing to find.
+    sw.restoreUiState();
+    QVERIFY(!s.contains(QStringLiteral("ui/settingsSections")));
+    QVERIFY(!s.contains(QStringLiteral("ui/settingsScroll")));
+    QVERIFY(!s.contains(QStringLiteral("ui/settingsUiVersion")));
+
+    // And a state left by another build is not replayed. Ask for every section
+    // open, stamp it with a version that is not this one, and the page must keep
+    // the accordion it has.
+    QStringList all;
+    for (int i = 0; i < 20; ++i)
+      all << QString::number(i);
+    s.setValue(QStringLiteral("ui/settingsSections"), all.join(QLatin1Char(',')));
+    s.setValue(QStringLiteral("ui/settingsUiVersion"),
+               QStringLiteral("0.0.0-not-this-build"));
+    QList<bool> before;
+    for (QToolButton *h : headers)
+      before << h->isChecked();
+    sw.restoreUiState();
+    for (int i = 0; i < headers.size(); ++i)
+      QCOMPARE(headers[i]->isChecked(), before[i]);
+    QVERIFY(!s.contains(QStringLiteral("ui/settingsSections"))); // consumed even so
+  }
 
   // Gert's request #6: the account tabs can move into the title bar, but only
   // where there is a custom title bar for them to move into. A stored "yes"
