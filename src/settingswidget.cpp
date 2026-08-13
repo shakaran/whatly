@@ -18,6 +18,7 @@
 #include <QStandardItem>
 #include <QAbstractItemView>
 #include <QAbstractScrollArea>
+#include <QAbstractSpinBox>
 #include <QLineEdit>
 #include <QMouseEvent>
 #include <QCheckBox>
@@ -373,7 +374,13 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
   foreach (QComboBox *box, this->findChildren<QComboBox *>()) {
     box->installEventFilter(this);
   }
-  foreach (QSpinBox *spinBox, this->findChildren<QSpinBox *>()) {
+  // QAbstractSpinBox, not QSpinBox: the interface scale and the two zoom factors
+  // are QDoubleSpinBox, which is a sibling of QSpinBox and not a subclass of it —
+  // so those three were left out of this guard and a wheel scrolling the page went
+  // on changing them under the pointer. The interface scale is the one that hurts:
+  // it only takes effect at the next launch, so the app comes back at half size
+  // with nothing to connect it to.
+  foreach (QAbstractSpinBox *spinBox, this->findChildren<QAbstractSpinBox *>()) {
     spinBox->installEventFilter(this);
   }
   // The lists inside the page scroll themselves and keep the wheel that starts
