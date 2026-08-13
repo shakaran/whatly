@@ -238,18 +238,48 @@ MainWindow::MainWindow(QWidget *parent)
                   tr("Whatly %1 is available. Click to open the download page.");
               break;
             }
+#ifdef Q_OS_LINUX
+            // Route through libnotify with a registered "open" action, exactly
+            // like message notifications do. QSystemTrayIcon::showMessage
+            // registers no action, so on KDE (and any freedesktop server) a
+            // click on the notification body invokes nothing and does nothing —
+            // that was issue #74. libnotify's actionInvoked does fire. This also
+            // avoids the tray messageClicked path that the code itself warns
+            // against on Linux (see mainwindow_tray.cpp).
+            auto ntf = m_notifier.createNotification(tr("Update available"),
+                                                     advice.arg(version), kAppId);
+            ntf->setTimeout(15000);
+            ntf->addAction("open", tr("Open"));
+            ntf->setHintString("image-path", kAppId);
+            ntf->setHintString("desktop-entry", kAppId);
+            ntf->setHint("image-data",
+                         notificationImageHint(QPixmap(":/icons/app/icon-256.png")));
+            const QString openUrl = url;
+            QObject::connect(ntf.get(), &Notification::Event::actionInvoked, this,
+                             [openUrl](const QString &action) {
+                               if (action == "open")
+                                 QDesktopServices::openUrl(QUrl(openUrl));
+                             });
+            ntf->show();
+#else
             if (m_systemTrayIcon && QSystemTrayIcon::supportsMessages())
               m_systemTrayIcon->showMessage(tr("Update available"),
                                             advice.arg(version), windowIcon(),
                                             15000);
             m_pendingUpdateUrl = url;
+#endif
           });
+#ifndef Q_OS_LINUX
+  // Windows/macOS: the tray toast has no action buttons, so a click on the body
+  // (QSystemTrayIcon::messageClicked) is how the release page is opened. On
+  // Linux this path is deliberately not used — see the libnotify branch above.
   connect(m_systemTrayIcon, &QSystemTrayIcon::messageClicked, this, [this]() {
     if (!m_pendingUpdateUrl.isEmpty()) {
       QDesktopServices::openUrl(QUrl(m_pendingUpdateUrl));
       m_pendingUpdateUrl.clear();
     }
   });
+#endif
   QTimer::singleShot(4000, this, [this]() { m_updateChecker->check(false); });
 
   // First-run wizard: shown once, after the window is up, and only when it has
