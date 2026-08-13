@@ -292,7 +292,12 @@ private slots:
     auto *combo =
         sw.findChild<QComboBox *>(QStringLiteral("spellCheckLanguageComboBox"));
     auto *control = sw.findChildren<QSpinBox *>().value(0);
-    QVERIFY(page && list && combo && combo->view() && control);
+    // The interface scale is a QDoubleSpinBox — a sibling of QSpinBox, not a
+    // subclass — which is exactly how it slipped through the guard and let a wheel
+    // scrolling the page set the whole interface to half size at the next launch.
+    auto *scale =
+        sw.findChild<QDoubleSpinBox *>(QStringLiteral("interfaceScaleSpinBox"));
+    QVERIFY(page && list && combo && combo->view() && control && scale);
 
     // Give both scrollbars somewhere to go, since this window is never shown and
     // so was never laid out against real content.
@@ -318,6 +323,16 @@ private slots:
     turn(control, -1);
     QVERIFY(pageBar->value() > 100);
     QCOMPARE(control->value(), before);
+
+    // The same on a double spin box, and on this one in particular: a stored 0.5
+    // interface scale is not visible until the app is restarted, so a wheel that
+    // could set it left no way to connect the half-size window to what caused it.
+    letGo();
+    const double scaleBefore = scale->value();
+    pageBar->setValue(100);
+    turn(scale, -1);
+    QVERIFY(pageBar->value() > 100);
+    QCOMPARE(scale->value(), scaleBefore);
 
     // On the open language list: the page stays exactly where it was. It is a
     // window of its own, so scrolling the page leaves it floating in mid-air over

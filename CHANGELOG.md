@@ -1,3 +1,7 @@
+## Unreleased
+
+- **A wheel scrolling the Settings page can no longer set the interface scale or the page zoom.** The guard that keeps the wheel from changing a control it merely passes over was installed on `QSpinBox`, and the interface scale and the two zoom factors are `QDoubleSpinBox` — a sibling of `QSpinBox`, not a subclass — so those three were never covered. The interface scale is the one that does damage: it is only read at launch, so the setting is changed silently and the app comes back at half size, with nothing left to connect the tiny window to the scroll that caused it. The guard now covers every `QAbstractSpinBox`, and the wheel regression test checks the interface scale by name.
+
 ## 7.2.2 (2026-08-13)
 
 - **The "update available" notification is clickable again on KDE/Linux (#74).**
