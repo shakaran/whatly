@@ -65,6 +65,7 @@ QString watcherScript() {
 
   var GRACE  = 6000;    // how long the file has to arrive after the click
   var FORGET = 120000;  // clicks further apart than this are not the same try
+  var MUTE   = 60000;   // having said it once, keep quiet about this one
   var asked  = new Map();
 
   // A bubble waiting for its media shows a size, and nothing that has arrived.
@@ -79,24 +80,32 @@ QString watcherScript() {
   document.addEventListener('click', function (e) {
     var target = e.target;
     if (!target || !target.closest) return;
-    var button = target.closest('button, [role="button"]');
-    if (!button) return;
-    var row = button.closest('[data-id]');
+    // Any click inside a bubble that is still waiting counts as asking for it.
+    // Keying on the download button alone missed the ask: the placeholder
+    // itself starts the download too, so the first tries went uncounted and the
+    // notice arrived a click or two later than it should have.
+    var row = target.closest('[data-id]');
     if (!stillWaiting(row)) return;
 
     var id = row.getAttribute('data-id') || '';
     var now = Date.now();
     var rec = asked.get(id);
-    if (!rec || now - rec.when > FORGET) rec = {times: 0, when: now};
+    if (!rec || now - rec.when > FORGET) rec = {times: 0, when: now, told: 0};
     rec.times += 1;
     rec.when = now;
     asked.set(id, rec);
-    if (rec.times < 2) return;   // the first ask gets its chance in silence
+    if (rec.times < 2) return;                        // the first ask in silence
+    if (rec.told && now - rec.told < MUTE) return;    // already said, once is enough
 
     var times = rec.times;
     setTimeout(function () {
       if (!stillWaiting(row)) return;   // it came after all: say nothing
-      asked.delete(id);
+      // Impatience is normal, and every further click had armed its own wait.
+      // Without this the notice was printed several times over, and each one
+      // replaced the last — which read as the notice jumping about the page.
+      var current = asked.get(id);
+      if (current && current.told && Date.now() - current.told < MUTE) return;
+      if (current) current.told = Date.now();
       console.log('WHATLY_MEDIA_STUCK ' + JSON.stringify({
         attempts: times,
         online: navigator.onLine !== false
