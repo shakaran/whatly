@@ -173,6 +173,7 @@ set(SOURCES
     src/downloadmanagerwidget.cpp
     src/downloadwidget.cpp
     src/linkeddevicename.cpp
+    src/mediastuck.cpp
     src/lock.cpp
     src/passlock.cpp
     src/main.cpp
@@ -265,6 +266,7 @@ set(HEADERS
     src/downloadmanagerwidget.h
     src/downloadwidget.h
     src/linkeddevicename.h
+    src/mediastuck.h
     src/lock.h
     src/passlock.h
     src/identicons.h

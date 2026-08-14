@@ -30,6 +30,7 @@
 #include <QVBoxLayout>
 #include <QSet>
 
+#include "mediastuck.h"
 #include "utils.h"
 #include "common.h"
 #include "debuglog.h"
@@ -197,6 +198,40 @@ private slots:
         true, QString(), QStringLiteral("/home/u/Whatly.AppImage")));
     QVERIFY(!Utils::canOfferAppImageSelfUpdate(
         true, QStringLiteral("/usr/bin/appimageupdatetool"), QString()));
+  }
+  void mediaThatNeverArrives() {
+    // What the injected watcher prints, verbatim in shape.
+    const QString asked =
+        QStringLiteral("WHATLY_MEDIA_STUCK {\"attempts\":2,\"online\":true}");
+    QVERIFY(MediaStuck::isReport(asked));
+    QCOMPARE(MediaStuck::parse(asked).attempts, 2);
+    QVERIFY(MediaStuck::parse(asked).online);
+    // Anything else is not one, and parses to nothing worth saying.
+    QVERIFY(!MediaStuck::isReport(QStringLiteral("Uncaught TypeError: x")));
+    QVERIFY(!MediaStuck::isReport(QString()));
+    QCOMPARE(MediaStuck::parse(QStringLiteral("noise")).attempts, 0);
+
+    // One ask is not a failure: WhatsApp fetches lazily and the first click
+    // often just takes a moment. Two with a connection means the copy is
+    // probably gone; two without one means it will come by itself.
+    QCOMPARE(MediaStuck::adviceFor({1, true}), MediaStuck::Advice::None);
+    QCOMPARE(MediaStuck::adviceFor({0, false}), MediaStuck::Advice::None);
+    QCOMPARE(MediaStuck::adviceFor({2, true}), MediaStuck::Advice::Expired);
+    QCOMPARE(MediaStuck::adviceFor({3, false}), MediaStuck::Advice::Offline);
+
+    // Every advice that is given has something to say; None says nothing.
+    QVERIFY(!MediaStuck::text(MediaStuck::Advice::Expired).isEmpty());
+    QVERIFY(!MediaStuck::text(MediaStuck::Advice::Offline).isEmpty());
+    QVERIFY(MediaStuck::text(MediaStuck::Advice::None).isEmpty());
+    // The two sentences must differ: the offline one promises the file arrives
+    // on its own, which would be a lie in the other case.
+    QVERIFY(MediaStuck::text(MediaStuck::Advice::Expired) !=
+            MediaStuck::text(MediaStuck::Advice::Offline));
+
+    // The watcher goes in once and prints the marker this side parses.
+    const QString js = MediaStuck::watcherScript();
+    QVERIFY(js.contains(QLatin1String("__whatlyMediaWatch")));
+    QVERIFY(js.contains(QString(MediaStuck::kMarker).trimmed()));
   }
   void toCamelCase() {
     QCOMPARE(Utils::toCamelCase(QStringLiteral("hello world")),

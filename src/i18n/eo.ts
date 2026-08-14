@@ -1460,6 +1460,19 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
     </message>
 </context>
 <context>
+    <name>MediaStuck</name>
+    <message>
+        <location filename="../mediastuck.cpp" line="42"/>
+        <source>This file did not download: there is no connection at the moment. It will arrive on its own once there is. (Click to dismiss.)</source>
+        <translation>Ĉi tiu dosiero ne elŝutiĝis: nun ne estas konekto. Ĝi alvenos per si mem tuj kiam estos. (Klaku por forigi.)</translation>
+    </message>
+    <message>
+        <location filename="../mediastuck.cpp" line="47"/>
+        <source>This file did not download. WhatsApp keeps a copy on its servers only for a while, and it is usually gone by the time a message is old — there is nothing here that can fetch it back. Ask for it again from the phone that sent it. (Click to dismiss.)</source>
+        <translation>Ĉi tiu dosiero ne elŝutiĝis. WhatsApp konservas kopion en siaj serviloj nur dum kelka tempo, kaj kutime ĝi jam malaperis kiam mesaĝo estas malnova — nenio ĉi tie povas reakiri ĝin. Petu ĝin denove de la telefono kiu sendis ĝin. (Klaku por forigi.)</translation>
+    </message>
+</context>
+<context>
     <name>MoreApps</name>
     <message>
         <location filename="../widgets/MoreApps/moreapps.ui" line="14"/>
