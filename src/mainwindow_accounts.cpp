@@ -3,6 +3,7 @@
 // a single-account setup is untouched by any of this.
 #include "mainwindow.h"
 
+#include <QDebug>
 #include <QEvent>
 #include <QFile>
 #include <QInputDialog>
@@ -1054,7 +1055,25 @@ void MainWindow::captureAccountVersion(WebView *view) {
         if (ver.isEmpty())
           return;
         const int idx = accountIndexForView(guarded);
-        if (idx < 0 || m_accounts[idx].waVersion == ver)
+        if (idx < 0)
+          return;
+        // Written to the log on every load, not only when it changes. WhatsApp Web
+        // updates itself under the app without saying so, and which build an
+        // account was running is the first thing worth knowing about a page that
+        // misbehaved — afterwards, the log is the only place that can still say it.
+        const QString was = m_accounts[idx].waVersion;
+        // Named as the tab names it, so a line about one account out of four is
+        // recognisable; by position when it has no name of its own.
+        const QString who = m_accounts[idx].name.isEmpty()
+                                ? QStringLiteral("account %1").arg(idx + 1)
+                                : m_accounts[idx].name;
+        qInfo().noquote()
+            << QStringLiteral("whatly: %1 is on WhatsApp Web %2%3")
+                   .arg(who, ver,
+                        was.isEmpty() || was == ver
+                            ? QString()
+                            : QStringLiteral(" — was %1").arg(was));
+        if (was == ver)
           return; // unchanged: nothing to relabel
         m_accounts[idx].waVersion = ver;
         refreshAccountTabs(); // also refreshes every detached window's strip
