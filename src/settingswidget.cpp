@@ -2472,6 +2472,12 @@ void SettingsWidget::saveUiState() {
              ui->scrollArea->verticalScrollBar()->value());
   s.setValue(QStringLiteral("ui/settingsGeometry"), saveGeometry());
   s.setValue(QStringLiteral("ui/settingsWasOpen"), isVisible());
+  // Which build wrote it. The sections are stored by position in the accordion,
+  // which is only a name for the same section while the accordion is the same:
+  // a version that adds one, or reorders them, would have this replayed onto a
+  // different list and open the wrong rows.
+  s.setValue(QStringLiteral("ui/settingsUiVersion"),
+             QString::fromLatin1(VERSIONSTR));
 }
 
 void SettingsWidget::restoreUiState() {
@@ -2481,20 +2487,38 @@ void SettingsWidget::restoreUiState() {
   if (!geom.isEmpty())
     restoreGeometry(geom);
 
-  QSet<int> want;
-  const QStringList open = s.value(QStringLiteral("ui/settingsSections"))
-                               .toString()
-                               .split(QLatin1Char(','), Qt::SkipEmptyParts);
-  for (const QString &n : open)
-    want.insert(n.toInt());
-  const QList<QToolButton *> headers = sectionHeaders(this);
-  for (int i = 0; i < headers.size(); ++i)
-    headers[i]->setChecked(want.contains(i));
+  // A window's size and place mean the same thing in any version, so they are
+  // restored above whatever wrote them. Positions in a list are not: replay them
+  // only for the build that wrote them, and after an upgrade let the page open
+  // the way a first launch does.
+  const bool sameBuild = s.value(QStringLiteral("ui/settingsUiVersion"))
+                             .toString() == QString::fromLatin1(VERSIONSTR);
+  int offset = 0;
+  if (sameBuild) {
+    QSet<int> want;
+    const QStringList open = s.value(QStringLiteral("ui/settingsSections"))
+                                 .toString()
+                                 .split(QLatin1Char(','), Qt::SkipEmptyParts);
+    for (const QString &n : open)
+      want.insert(n.toInt());
+    const QList<QToolButton *> headers = sectionHeaders(this);
+    for (int i = 0; i < headers.size(); ++i)
+      headers[i]->setChecked(want.contains(i));
+    offset = s.value(QStringLiteral("ui/settingsScroll"), 0).toInt();
+  }
+
+  // Written for one restart and read by it: consumed here, so nothing is left in
+  // the file to be replayed by a later launch that never asked for it. The values
+  // above are already in hand, the one below by copy.
+  for (const QString &key :
+       {QStringLiteral("ui/settingsSections"), QStringLiteral("ui/settingsScroll"),
+        QStringLiteral("ui/settingsGeometry"),
+        QStringLiteral("ui/settingsUiVersion")})
+    s.remove(key);
 
   // The sections have only just been told to open; the scroll range they
   // create does not exist until the layout settles, so the offset is applied
   // one turn of the event loop later.
-  const int offset = s.value(QStringLiteral("ui/settingsScroll"), 0).toInt();
   QTimer::singleShot(0, this, [this, offset]() {
     ui->scrollArea->verticalScrollBar()->setValue(offset);
   });
