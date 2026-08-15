@@ -19,6 +19,15 @@
 #include <QWebEngineScriptCollection>
 #include <QDirIterator>
 #include <QRegularExpression>
+#include <QCheckBox>
+#include <QComboBox>
+#include <QGroupBox>
+#include <QLabel>
+#include <QFormLayout>
+#include <QGridLayout>
+#include <QHBoxLayout>
+#include <QLineEdit>
+#include <QVBoxLayout>
 #include <QSet>
 
 #include "utils.h"
@@ -31,6 +40,7 @@
 #include "dictionaryrows.h"
 #include "identicons.h"
 #include "theme.h"
+#include "settingssearch.h"
 #include "scheduledmessages.h"
 #include "sunclock.hpp"
 #include "webfont.h"
@@ -292,6 +302,124 @@ private slots:
     QCOMPARE(Identicons::colorCount(solid), quint32(1));
     solid.setPixelColor(0, 0, Qt::red);
     QCOMPARE(Identicons::colorCount(solid), quint32(2));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+class TstSettingsSearch : public QObject {
+  Q_OBJECT
+private slots:
+  // What the Settings search will and will not find (#39). The page-filtering
+  // half is in tst_settings, which can build the real page; this is the part with
+  // the rules in it.
+  void matchingIsForgiving() {
+    // Case, accents and punctuation are all beside the point: what matters is
+    // what someone can type without thinking about it.
+    QVERIFY(SettingsSearch::matches(QStringLiteral("Básico"),
+                                    QStringLiteral("basico")));
+    QVERIFY(SettingsSearch::matches(QStringLiteral("Notificación"),
+                                    QStringLiteral("NOTIFICACION")));
+    QVERIFY(SettingsSearch::matches(QStringLiteral("Spell-check dictionaries"),
+                                    QStringLiteral("spellcheck")));
+    QVERIFY(SettingsSearch::matches(QStringLiteral("Wi-Fi"),
+                                    QStringLiteral("wifi")));
+
+    // Every word has to appear, in any order, and half a word counts while it is
+    // being typed.
+    QVERIFY(SettingsSearch::matches(
+        QStringLiteral("Unload also minimised and hidden accounts"),
+        QStringLiteral("hidden unload")));
+    QVERIFY(SettingsSearch::matches(
+        QStringLiteral("Unload also minimised and hidden accounts"),
+        QStringLiteral("minim")));
+    QVERIFY(!SettingsSearch::matches(
+        QStringLiteral("Unload also minimised and hidden accounts"),
+        QStringLiteral("unload proxy")));
+
+    // An empty query matches everything: that is how clearing the box gives the
+    // whole page back rather than emptying it.
+    QVERIFY(SettingsSearch::matches(QStringLiteral("anything"), QString()));
+    QVERIFY(SettingsSearch::matches(QStringLiteral("anything"),
+                                    QStringLiteral("   ")));
+  }
+
+  // A row is found by everything on it — including the tooltip, which is where
+  // the words people search with actually live: the label says "unload inactive
+  // accounts" and only the tooltip says "memory".
+  void rowsAreFoundByTheirTooltipsToo() {
+    QGroupBox body;
+    auto *column = new QVBoxLayout(&body);
+    auto *lonely = new QCheckBox(QStringLiteral("Unload inactive accounts"));
+    lonely->setToolTip(QStringLiteral("Free memory by unloading accounts"));
+    column->addWidget(lonely);
+    auto *pair = new QHBoxLayout;
+    auto *label = new QLabel(QStringLiteral("Font hinting"));
+    auto *combo = new QComboBox;
+    combo->addItem(QStringLiteral("Slight"));
+    pair->addWidget(label);
+    pair->addWidget(combo);
+    column->addLayout(pair);
+    column->addStretch(1); // no widgets: not a row, and not a crash either
+
+    const QList<SettingsSearch::Row> rows = SettingsSearch::rowsOf(&body);
+    QCOMPARE(rows.size(), 2);
+    QCOMPARE(rows[0].widgets.size(), 1);
+    QVERIFY(SettingsSearch::matches(rows[0].haystack, QStringLiteral("memory")));
+
+    // The label and the control it labels are one row, so a search can never
+    // leave a label standing beside nothing or a spin box with no name.
+    QCOMPARE(rows[1].widgets.size(), 2);
+    QVERIFY(rows[1].widgets.contains(label));
+    QVERIFY(rows[1].widgets.contains(combo));
+    // And a combo is found by what is in it, not only by its label.
+    QVERIFY(SettingsSearch::matches(rows[1].haystack, QStringLiteral("slight")));
+  }
+
+  // Dogfood round 28: searching "spelling" showed all forty keyboard shortcuts.
+  // They are a form inside one host widget — one item of the section's column, and
+  // so one row, however many lines it draws. A row has to be a band of the page,
+  // which means walking down through anything that stacks.
+  void aFormInsideAHostIsNotOneRow() {
+    QGroupBox body;
+    auto *column = new QVBoxLayout(&body);
+    auto *host = new QWidget; // exactly what the shortcuts section uses
+    auto *form = new QFormLayout(host);
+    form->addRow(QStringLiteral("Spelling: next language"),
+                 new QLineEdit(QStringLiteral("Ctrl+Alt+S")));
+    form->addRow(QStringLiteral("Find in chats"),
+                 new QLineEdit(QStringLiteral("Ctrl+F")));
+    form->addRow(QStringLiteral("Quit"), new QLineEdit(QStringLiteral("Ctrl+Q")));
+    column->addWidget(host);
+
+    const QList<SettingsSearch::Row> rows = SettingsSearch::rowsOf(&body);
+    QCOMPARE(rows.size(), 3);
+    // Label and field together, and the host recorded as the group they are in,
+    // so it can be hidden when none of them matches.
+    for (const SettingsSearch::Row &row : rows) {
+      QCOMPARE(row.widgets.size(), 2);
+      QCOMPARE(row.container, host);
+    }
+    int found = 0;
+    for (const SettingsSearch::Row &row : rows)
+      if (SettingsSearch::matches(row.haystack, QStringLiteral("spelling")))
+        ++found;
+    QCOMPARE(found, 1); // one shortcut, not the whole list
+  }
+
+  // The same for a grid, which is how the older half of the page is laid out.
+  void aGridSplitsByItsRows() {
+    QGroupBox body;
+    auto *grid = new QGridLayout(&body);
+    grid->addWidget(new QLabel(QStringLiteral("Interface language")), 0, 0);
+    grid->addWidget(new QComboBox, 0, 1);
+    grid->addWidget(new QCheckBox(QStringLiteral("Use native file dialog")), 1, 0);
+
+    const QList<SettingsSearch::Row> rows = SettingsSearch::rowsOf(&body);
+    QCOMPARE(rows.size(), 2);
+    QCOMPARE(rows[0].widgets.size(), 2); // the label and the control it labels
+    QCOMPARE(rows[1].widgets.size(), 1);
+    QVERIFY(SettingsSearch::matches(rows[0].haystack, QStringLiteral("language")));
+    QVERIFY(!SettingsSearch::matches(rows[1].haystack, QStringLiteral("language")));
   }
 };
 
@@ -4290,6 +4418,7 @@ int main(int argc, char *argv[]) {
   { TstCloudWebhook t;        run(&t); }
   { TstIdenticons t;          run(&t); }
   { TstTheme t;               run(&t); }
+  { TstSettingsSearch t;      run(&t); }
   { TstDictionaries t;        run(&t); }
   { TstSunclock t;            run(&t); }
   { TstScheduled t;           run(&t); }
