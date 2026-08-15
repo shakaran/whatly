@@ -149,6 +149,18 @@ private slots:
         QStringLiteral("Uncaught TypeError: foo is not a function")));
     QVERIFY(!Utils::isServiceWorkerRegistrationFailure(QString()));
   }
+  // Redirect to XCB only for proprietary NVIDIA on a Wayland session, and only
+  // when the user has not chosen a platform (issue #84).
+  void preferXcbPlatformPolicy() {
+    // The known-bad combination: not chosen, Wayland, NVIDIA proprietary.
+    QVERIFY(Utils::shouldPreferXcbPlatform(false, true, true));
+    // The user's own choice always wins.
+    QVERIFY(!Utils::shouldPreferXcbPlatform(true, true, true));
+    // X11 session, or no NVIDIA: leave the platform alone.
+    QVERIFY(!Utils::shouldPreferXcbPlatform(false, false, true));
+    QVERIFY(!Utils::shouldPreferXcbPlatform(false, true, false));
+    QVERIFY(!Utils::shouldPreferXcbPlatform(false, false, false));
+  }
   void toCamelCase() {
     QCOMPARE(Utils::toCamelCase(QStringLiteral("hello world")),
              QStringLiteral("Hello World"));

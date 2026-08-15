@@ -696,3 +696,10 @@ bool Utils::isServiceWorkerRegistrationFailure(const QString &consoleMessage) {
          consoleMessage.contains(
              QLatin1String("service-worker-registration-failure"));
 }
+
+bool Utils::shouldPreferXcbPlatform(bool userChosePlatform, bool waylandSession,
+                                    bool nvidiaProprietary) {
+  // The user's own platform choice always wins; otherwise only the exact
+  // known-bad combination (Wayland session + proprietary NVIDIA) is redirected.
+  return !userChosePlatform && waylandSession && nvidiaProprietary;
+}
