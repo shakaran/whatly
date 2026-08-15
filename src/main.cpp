@@ -11,6 +11,13 @@
 #include <unistd.h>
 #endif
 #ifdef Q_OS_WIN
+// Both defines before the include, as lock.cpp already does: windows.h defines
+// min() and max() as macros, and every Qt header included after it that writes
+// std::max(...) — QtQml's qjslist.h among them, reached from this file through
+// WebEngine — is then handed a mangled token and fails to compile. The MSVC
+// build broke on exactly that, in a header nobody here wrote.
+#define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
 #include <windows.h> // OpenProcess, for the restart handshake below
 #endif
 #include <QDebug>
