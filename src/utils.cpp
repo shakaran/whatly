@@ -666,8 +666,15 @@ bool Utils::wasFrontmostRecently(bool active, qint64 lastDeactivationMs,
 }
 
 bool Utils::isWhatsAppLoadFailure(const QString &consoleMessage) {
+  // The collapse ends by naming a numeric Chromium module id it cannot resolve
+  // ("cr:34987 is not defined"). A named module that is merely late
+  // ("WAWebUserPrefsGeneral is not defined") prints the same two phrases on a
+  // load that goes on to succeed, so the id is what separates the failure from
+  // the noise. See issue #43.
+  static const QRegularExpression undefinedModuleId(
+      QStringLiteral("\\bcr:\\d+ is not defined"));
   return consoleMessage.contains(QLatin1String("unresolved dependencies")) &&
-         consoleMessage.contains(QLatin1String("is not defined"));
+         undefinedModuleId.match(consoleMessage).hasMatch();
 }
 
 bool Utils::isBenignWebConsoleNoise(const QString &consoleMessage) {

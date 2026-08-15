@@ -125,6 +125,16 @@ private slots:
     QVERIFY(!Utils::isWhatsAppLoadFailure(
         QStringLiteral("module has unresolved dependencies")));
     QVERIFY(!Utils::isWhatsAppLoadFailure(QString()));
+    // Verbatim from a load that went on to succeed: a named module waiting for
+    // another one that has not arrived yet. Both phrases are there, no module id
+    // is, and the page was up seconds later — so this must stay quiet.
+    QVERIFY(!Utils::isWhatsAppLoadFailure(QStringLiteral(
+        "Requiring module \"WAWebMiscBrowserUtils\" with unresolved "
+        "dependencies: WAWebMiscBrowserUtils is waiting for "
+        "WAWebUserPrefsGeneral\nWAWebUserPrefsGeneral is not defined")));
+    QVERIFY(!Utils::isWhatsAppLoadFailure(QStringLiteral(
+        "Requiring module \"WAWebCompanionRegClientUtils\" with unresolved "
+        "dependencies: WAWebCompanionRegClientUtils is not defined")));
   }
   void benignWebConsoleNoise() {
     // WhatsApp's telemetry beacon, CORS-blocked -> noise.
