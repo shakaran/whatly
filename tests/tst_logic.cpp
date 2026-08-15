@@ -281,12 +281,28 @@ private slots:
   // disabled group as well — so forgetting one leaves disabled text in the
   // enabled colour, which is what had happened to WindowText, and so to every
   // check box, in the dark palette.
+  //
+  // Assert dimness, not mere inequality: the disabled foreground must have less
+  // contrast against its own background than the active one does, so a colour
+  // that differs but is not actually dimmer cannot pass. Each foreground role is
+  // paired with the background it is drawn on.
   void disabledIsDimmerThanEnabled() {
+    auto luma = [](const QColor &c) {
+      return 0.2126 * c.redF() + 0.7152 * c.greenF() + 0.0722 * c.blueF();
+    };
+    auto contrast = [&](const QPalette &p, QPalette::ColorGroup g,
+                        QPalette::ColorRole fg, QPalette::ColorRole bg) {
+      return qAbs(luma(p.color(g, fg)) - luma(p.color(g, bg)));
+    };
+    const struct {
+      QPalette::ColorRole fg, bg;
+    } pairs[] = {{QPalette::WindowText, QPalette::Window},
+                 {QPalette::Text, QPalette::Base},
+                 {QPalette::ButtonText, QPalette::Button}};
     for (const QPalette &p : {Theme::getLightPalette(), Theme::getDarkPalette()})
-      for (const QPalette::ColorRole role :
-           {QPalette::WindowText, QPalette::Text, QPalette::ButtonText})
-        QVERIFY(p.color(QPalette::Disabled, role) !=
-                p.color(QPalette::Active, role));
+      for (const auto &pair : pairs)
+        QVERIFY(contrast(p, QPalette::Disabled, pair.fg, pair.bg) <
+                contrast(p, QPalette::Active, pair.fg, pair.bg));
   }
 };
 
