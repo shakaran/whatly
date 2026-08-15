@@ -2463,17 +2463,17 @@ Please setup the password in the Settings first.</source>
         <translation>ग्लिफ़ किनारों को पिक्सेल के साथ कैसे संरेखित किया जाता है। स्वचालित आपके सिस्टम का अनुसरण करता है; हल्का स्तर भारी या असमान टेक्स्ट ठीक कर सकता है।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1682"/>
+        <location filename="../settingswidget.cpp" line="1693"/>
         <source>Slight</source>
         <translation>हल्का</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1683"/>
+        <location filename="../settingswidget.cpp" line="1694"/>
         <source>Medium</source>
         <translation>मध्यम</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1684"/>
+        <location filename="../settingswidget.cpp" line="1695"/>
         <source>Full</source>
         <translation>पूर्ण</translation>
     </message>
@@ -2547,8 +2547,8 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="2010"/>
         <location filename="../settingswidget.ui" line="2054"/>
         <location filename="../settingswidget.ui" line="2221"/>
-        <location filename="../settingswidget.cpp" line="1680"/>
-        <location filename="../settingswidget.cpp" line="1981"/>
+        <location filename="../settingswidget.cpp" line="1691"/>
+        <location filename="../settingswidget.cpp" line="1992"/>
         <source>Automatic</source>
         <translation>स्वचालित</translation>
     </message>
@@ -2821,7 +2821,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="691"/>
-        <location filename="../settingswidget.cpp" line="1597"/>
+        <location filename="../settingswidget.cpp" line="1608"/>
         <source>Custom CSS</source>
         <translation>कस्टम CSS</translation>
     </message>
@@ -2878,7 +2878,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2400"/>
+        <location filename="../settingswidget.cpp" line="2563"/>
         <source>Check spelling as I type</source>
         <translation>टाइप करते समय वर्तनी जाँचें</translation>
     </message>
@@ -2909,7 +2909,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
-        <location filename="../settingswidget.cpp" line="1573"/>
+        <location filename="../settingswidget.cpp" line="1584"/>
         <source>Chat wallpaper</source>
         <translation>चैट वॉलपेपर</translation>
     </message>
@@ -3770,224 +3770,239 @@ Please setup the password in the Settings first.</source>
         <translation>किसी फ़ील्ड पर क्लिक करें और कुंजी संयोजन दबाएँ। शॉर्टकट हटाने के लिए फ़ील्ड साफ़ करें। परिवर्तन पुनरारंभ के बाद लागू होते हैं।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1230"/>
+        <location filename="../settingswidget.cpp" line="1241"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>यह स्थायी डेटा (स्थायी कुकीज़ और कैश सहित) हटा देगा और एप्लिकेशन बंद कर देगा।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1235"/>
+        <location filename="../settingswidget.cpp" line="1246"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>कुकीज़ हटाएँ और एप्लिकेशन बंद करें?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1341"/>
+        <location filename="../settingswidget.cpp" line="1352"/>
         <source>| Error</source>
         <translation>| त्रुटि</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1342"/>
+        <location filename="../settingswidget.cpp" line="1353"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>खाली User-Agent स्ट्रिंग सेट नहीं की जा सकती।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1393"/>
+        <location filename="../settingswidget.cpp" line="1404"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>थीम मैन्युअल रूप से बदलने के कारण स्वचालित थीम परिवर्तन निष्क्रिय कर दिया गया।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1410"/>
+        <location filename="../settingswidget.cpp" line="1421"/>
         <source>Require setup</source>
         <translation>सेटअप आवश्यक</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1439"/>
+        <location filename="../settingswidget.cpp" line="1450"/>
         <source>App lock is not configured.</source>
         <translation>ऐप लॉक कॉन्फ़िगर नहीं है।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1443"/>
+        <location filename="../settingswidget.cpp" line="1454"/>
         <source>Do you want to setup App lock now?</source>
         <translation>क्या आप अभी ऐप लॉक सेट करना चाहते हैं?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1485"/>
+        <location filename="../settingswidget.cpp" line="1496"/>
         <source>Feature permissions</source>
         <translation>सुविधा अनुमतियाँ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1564"/>
+        <location filename="../settingswidget.cpp" line="1575"/>
         <source>Choose a chat wallpaper</source>
         <translation>चैट वॉलपेपर चुनें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1566"/>
+        <location filename="../settingswidget.cpp" line="1577"/>
         <source>Images (%1)</source>
         <translation>छवियाँ (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1574"/>
+        <location filename="../settingswidget.cpp" line="1585"/>
         <source>Could not use that image: %1</source>
         <translation>वह छवि उपयोग नहीं की जा सकी: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1589"/>
+        <location filename="../settingswidget.cpp" line="1600"/>
         <source>Choose a CSS file</source>
         <translation>एक CSS फ़ाइल चुनें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1591"/>
+        <location filename="../settingswidget.cpp" line="1602"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>स्टाइलशीट (*.css);;सभी फ़ाइलें (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1598"/>
+        <location filename="../settingswidget.cpp" line="1609"/>
         <source>Could not read that file: %1</source>
         <translation>वह फ़ाइल नहीं पढ़ी जा सकी: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1671"/>
+        <location filename="../settingswidget.cpp" line="1682"/>
         <source>Disk</source>
         <translation>डिस्क</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1672"/>
+        <location filename="../settingswidget.cpp" line="1683"/>
         <source>Memory</source>
         <translation>मेमोरी</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1830"/>
+        <location filename="../settingswidget.cpp" line="1841"/>
         <source>Ollama not found at this address.</source>
         <translation>इस पते पर Ollama नहीं मिला।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1860"/>
+        <location filename="../settingswidget.cpp" line="1871"/>
         <source>Download complete.</source>
         <translation>डाउनलोड पूरा हुआ।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1863"/>
+        <location filename="../settingswidget.cpp" line="1874"/>
         <source>Download failed: %1</source>
         <translation>डाउनलोड विफल: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1874"/>
+        <location filename="../settingswidget.cpp" line="1885"/>
         <source>Checking…</source>
         <translation>जाँच जारी…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1899"/>
+        <location filename="../settingswidget.cpp" line="1910"/>
         <source>Starting download of %1…</source>
         <translation>%1 का डाउनलोड शुरू हो रहा है…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1954"/>
+        <location filename="../settingswidget.cpp" line="1965"/>
         <source>System</source>
         <translation>सिस्टम</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1955"/>
+        <location filename="../settingswidget.cpp" line="1966"/>
         <source>None (direct)</source>
         <translation>कोई नहीं (सीधा)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1956"/>
+        <location filename="../settingswidget.cpp" line="1967"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1957"/>
+        <location filename="../settingswidget.cpp" line="1968"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1983"/>
+        <location filename="../settingswidget.cpp" line="1994"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>डेस्कटॉप पोर्टल (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1985"/>
+        <location filename="../settingswidget.cpp" line="1996"/>
         <source>System service (libnotify)</source>
         <translation>सिस्टम सेवा (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2170"/>
-        <location filename="../settingswidget.cpp" line="2174"/>
+        <location filename="../settingswidget.cpp" line="2181"/>
+        <location filename="../settingswidget.cpp" line="2185"/>
         <source>Add reply</source>
         <translation>उत्तर जोड़ें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2170"/>
+        <location filename="../settingswidget.cpp" line="2181"/>
         <source>Name</source>
         <translation>नाम</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2174"/>
+        <location filename="../settingswidget.cpp" line="2185"/>
         <source>Text to insert</source>
         <translation>सम्मिलित किया जाने वाला टेक्स्ट</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2191"/>
+        <location filename="../settingswidget.cpp" line="2202"/>
         <source>Choose a JavaScript file</source>
         <translation>एक JavaScript फ़ाइल चुनें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2192"/>
+        <location filename="../settingswidget.cpp" line="2203"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;सभी फ़ाइलें (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2197"/>
+        <location filename="../settingswidget.cpp" line="2208"/>
         <source>Could not add addon</source>
         <translation>ऐडऑन नहीं जोड़ा जा सका</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2210"/>
+        <location filename="../settingswidget.cpp" line="2221"/>
         <source>Remove addon</source>
         <translation>ऐडऑन हटाएँ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2211"/>
+        <location filename="../settingswidget.cpp" line="2222"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>ऐडऑन &quot;%1&quot; हटाएँ? इससे इसकी फ़ाइल हट जाती है।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2399"/>
+        <location filename="../settingswidget.cpp" line="2324"/>
+        <source>Search settings</source>
+        <translation>सेटिंग खोजें</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2326"/>
+        <source>Show only the settings that match. What you find is the setting itself, working where it stands — not a list to click through. Tooltips are searched as well as labels, and so are the English names of the settings when Whatly is running in another language.</source>
+        <translation>केवल मेल खाने वाली सेटिंग दिखाता है। आप जो पाते हैं वह सेटिंग स्वयं है, अपनी जगह पर काम करती हुई — क्लिक करने के लिए कोई सूची नहीं। लेबल के साथ-साथ टूलटिप भी खोजे जाते हैं, और जब Whatly किसी अन्य भाषा में चल रहा हो तो सेटिंग के अंग्रेज़ी नाम भी।</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2445"/>
+        <source>No setting matches “%1”. Tooltips are searched too, so a plainer word usually finds it.</source>
+        <translation>“%1” से कोई सेटिंग मेल नहीं खाती। टूलटिप भी खोजे जाते हैं, इसलिए आसान शब्द से आमतौर पर मिल जाती है।</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2562"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>वर्तनी परीक्षक (कोई शब्दकोश स्थापित नहीं)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2505"/>
+        <location filename="../settingswidget.cpp" line="2668"/>
         <source>Downloadable languages unavailable — click to try again</source>
         <translation>डाउनलोड करने योग्य भाषाएँ अनुपलब्ध — पुनः प्रयास के लिए क्लिक करें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2519"/>
+        <location filename="../settingswidget.cpp" line="2682"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>वर्तनी जाँच के लिए भाषाएँ चुनें। प्रत्येक पंक्ति अपना शब्दकोश डाउनलोड या हटाती है।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1673"/>
-        <location filename="../settingswidget.cpp" line="1681"/>
+        <location filename="../settingswidget.cpp" line="1684"/>
+        <location filename="../settingswidget.cpp" line="1692"/>
         <source>None</source>
         <translation>कोई नहीं</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="529"/>
+        <location filename="../settingswidget.cpp" line="535"/>
         <source>Basics</source>
         <translation>मूल बातें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="537"/>
+        <location filename="../settingswidget.cpp" line="543"/>
         <source>Appearance</source>
         <translation>दिखावट</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="556"/>
+        <location filename="../settingswidget.cpp" line="562"/>
         <source>Notifications</source>
         <translation>सूचनाएँ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="560"/>
+        <location filename="../settingswidget.cpp" line="566"/>
         <source>Chatting</source>
         <translation>बातचीत</translation>
     </message>
@@ -3996,94 +4011,94 @@ Please setup the password in the Settings first.</source>
         <translation type="vanished">वर्तनी-जाँच शब्दकोश</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="667"/>
+        <location filename="../settingswidget.cpp" line="673"/>
         <source>Privacy &amp; Lock</source>
         <translation>गोपनीयता और लॉक</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="681"/>
+        <location filename="../settingswidget.cpp" line="687"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>विंडो और ज़ूम</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="710"/>
+        <location filename="../settingswidget.cpp" line="716"/>
         <source>AI &amp;&amp; translation</source>
         <translation>AI &amp;&amp; अनुवाद</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="717"/>
+        <location filename="../settingswidget.cpp" line="723"/>
         <source>Advanced</source>
         <translation>उन्नत</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="924"/>
+        <location filename="../settingswidget.cpp" line="935"/>
         <source>Fetching the list of languages…</source>
         <translation>भाषाओं की सूची प्राप्त की जा रही है…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1147"/>
+        <location filename="../settingswidget.cpp" line="1158"/>
         <source>Shortcut in use</source>
         <translation>शॉर्टकट उपयोग में है</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1148"/>
+        <location filename="../settingswidget.cpp" line="1159"/>
         <source>That shortcut is already used by another action.</source>
         <translation>यह शॉर्टकट पहले से किसी अन्य क्रिया द्वारा उपयोग किया जा रहा है।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1160"/>
+        <location filename="../settingswidget.cpp" line="1171"/>
         <source>Clear cache</source>
         <translation>कैश साफ़ करें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1161"/>
+        <location filename="../settingswidget.cpp" line="1172"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>अभी कैश साफ़ करें? आवश्यकता होने पर इसे फिर से डाउनलोड कर लिया जाएगा।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1171"/>
-        <location filename="../settingswidget.cpp" line="1177"/>
-        <location filename="../settingswidget.cpp" line="1186"/>
-        <location filename="../settingswidget.cpp" line="1189"/>
+        <location filename="../settingswidget.cpp" line="1182"/>
+        <location filename="../settingswidget.cpp" line="1188"/>
+        <location filename="../settingswidget.cpp" line="1197"/>
+        <location filename="../settingswidget.cpp" line="1200"/>
         <source>Export profile</source>
         <translation>प्रोफ़ाइल निर्यात करें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1172"/>
+        <location filename="../settingswidget.cpp" line="1183"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>आर्काइव में आपका लॉग-इन WhatsApp सत्र होगा। इसे निजी रखें। जारी रखें?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1179"/>
-        <location filename="../settingswidget.cpp" line="1194"/>
+        <location filename="../settingswidget.cpp" line="1190"/>
+        <location filename="../settingswidget.cpp" line="1205"/>
         <source>Archives (*.tar.gz)</source>
         <translation>आर्काइव (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1187"/>
+        <location filename="../settingswidget.cpp" line="1198"/>
         <source>Profile exported.</source>
         <translation>प्रोफ़ाइल निर्यात की गई।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1194"/>
-        <location filename="../settingswidget.cpp" line="1198"/>
-        <location filename="../settingswidget.cpp" line="1206"/>
+        <location filename="../settingswidget.cpp" line="1205"/>
         <location filename="../settingswidget.cpp" line="1209"/>
+        <location filename="../settingswidget.cpp" line="1217"/>
+        <location filename="../settingswidget.cpp" line="1220"/>
         <source>Import profile</source>
         <translation>प्रोफ़ाइल आयात करें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1199"/>
+        <location filename="../settingswidget.cpp" line="1210"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>यह मौजूदा खाते के डेटा को आर्काइव से अधिलेखित करता है, फिर Whatly को पुनः आरंभ करना होगा। जारी रखें?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1207"/>
+        <location filename="../settingswidget.cpp" line="1218"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>प्रोफ़ाइल आयात की गई। कृपया Whatly को पुनः आरंभ करें।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1835"/>
+        <location filename="../settingswidget.cpp" line="1846"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama मिला (%1 मॉडल इंस्टॉल हैं)।</translation>
     </message>
@@ -4096,53 +4111,53 @@ Please setup the password in the Settings first.</source>
         <translation type="vanished">वर्तनी जाँच के लिए एक या अधिक भाषाएँ चुनें।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2621"/>
+        <location filename="../settingswidget.cpp" line="2784"/>
         <source>Choose languages…</source>
         <translation>भाषाएँ चुनें…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2627"/>
+        <location filename="../settingswidget.cpp" line="2790"/>
         <source>%1 of %2 chosen</source>
         <translation>%2 में से %1 चुनी गईं</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2629"/>
+        <location filename="../settingswidget.cpp" line="2792"/>
         <source>%1 languages</source>
         <translation>%1 भाषाएँ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2754"/>
+        <location filename="../settingswidget.cpp" line="2917"/>
         <source>WhatsApp default</source>
         <translation>WhatsApp डिफ़ॉल्ट</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2793"/>
+        <location filename="../settingswidget.cpp" line="2956"/>
         <source>System default</source>
         <translation>सिस्टम डिफ़ॉल्ट</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2828"/>
+        <location filename="../settingswidget.cpp" line="2986"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>%1 को पुनः आरंभ करने पर इंटरफ़ेस भाषा बदल जाएगी।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2842"/>
+        <location filename="../settingswidget.cpp" line="3000"/>
         <source>App Lock Setup</source>
         <translation>ऐप लॉक सेटअप</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2843"/>
+        <location filename="../settingswidget.cpp" line="3001"/>
         <source>Please setup the App lock password first.</source>
         <translation>कृपया पहले ऐप लॉक पासवर्ड सेट करें।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2959"/>
-        <location filename="../settingswidget.cpp" line="2970"/>
+        <location filename="../settingswidget.cpp" line="3117"/>
+        <location filename="../settingswidget.cpp" line="3128"/>
         <source>Select download directory</source>
         <translation>डाउनलोड फ़ोल्डर चुनें</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3010"/>
+        <location filename="../settingswidget.cpp" line="3168"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -4153,7 +4168,7 @@ You may also require a complete restart of Application!</source>
 आपको एप्लिकेशन को पूरी तरह पुनः आरंभ करने की भी आवश्यकता हो सकती है!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3016"/>
+        <location filename="../settingswidget.cpp" line="3174"/>
         <source>Do you want to proceed?</source>
         <translation>क्या आप आगे बढ़ना चाहते हैं?</translation>
     </message>

@@ -2413,9 +2413,24 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
-        <location filename="../settingswidget.cpp" line="2627"/>
+        <location filename="../settingswidget.cpp" line="2790"/>
         <source>%1 of %2 chosen</source>
         <translation>%1 el %2 elektitaj</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2324"/>
+        <source>Search settings</source>
+        <translation>Serĉi agordojn</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2326"/>
+        <source>Show only the settings that match. What you find is the setting itself, working where it stands — not a list to click through. Tooltips are searched as well as labels, and so are the English names of the settings when Whatly is running in another language.</source>
+        <translation>Montri nur la agordojn kiuj kongruas. Kion vi trovas estas la agordo mem, funkcianta kie ĝi staras — ne listo por alklaki. Ankaŭ la klarigaj tekstoj estas serĉataj, ne nur la etikedoj, kaj same la anglaj nomoj de la agordoj kiam Whatly funkcias en alia lingvo.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="2445"/>
+        <source>No setting matches “%1”. Tooltips are searched too, so a plainer word usually finds it.</source>
+        <translation>Neniu agordo kongruas kun “%1”. Ankaŭ la klarigaj tekstoj estas serĉataj, do pli simpla vorto kutime trovas ĝin.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="435"/>
@@ -2488,17 +2503,17 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>Kiel glifaj randoj alĝustiĝas al bilderoj. Aŭtomata sekvas vian sistemon; pli malpeza nivelo povas ripari pezan aŭ neregulan tekston.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1682"/>
+        <location filename="../settingswidget.cpp" line="1693"/>
         <source>Slight</source>
         <translation>Malpeza</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1683"/>
+        <location filename="../settingswidget.cpp" line="1694"/>
         <source>Medium</source>
         <translation>Meza</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1684"/>
+        <location filename="../settingswidget.cpp" line="1695"/>
         <source>Full</source>
         <translation>Plena</translation>
     </message>
@@ -2547,8 +2562,8 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <location filename="../settingswidget.ui" line="2010"/>
         <location filename="../settingswidget.ui" line="2054"/>
         <location filename="../settingswidget.ui" line="2221"/>
-        <location filename="../settingswidget.cpp" line="1680"/>
-        <location filename="../settingswidget.cpp" line="1981"/>
+        <location filename="../settingswidget.cpp" line="1691"/>
+        <location filename="../settingswidget.cpp" line="1992"/>
         <source>Automatic</source>
         <translation>Aŭtomata</translation>
     </message>
@@ -2816,7 +2831,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="691"/>
-        <location filename="../settingswidget.cpp" line="1597"/>
+        <location filename="../settingswidget.cpp" line="1608"/>
         <source>Custom CSS</source>
         <translation>Propra CSS</translation>
     </message>
@@ -2873,7 +2888,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2400"/>
+        <location filename="../settingswidget.cpp" line="2563"/>
         <source>Check spelling as I type</source>
         <translation>Kontroli la literumadon dum mi tajpas</translation>
     </message>
@@ -2929,7 +2944,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
-        <location filename="../settingswidget.cpp" line="1573"/>
+        <location filename="../settingswidget.cpp" line="1584"/>
         <source>Chat wallpaper</source>
         <translation>Tapeto de la babilo</translation>
     </message>
@@ -3711,37 +3726,37 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>kontrolas la subskribon de la webhook</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="529"/>
+        <location filename="../settingswidget.cpp" line="535"/>
         <source>Basics</source>
         <translation>Bazaĵoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="537"/>
+        <location filename="../settingswidget.cpp" line="543"/>
         <source>Appearance</source>
         <translation>Aspekto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="556"/>
+        <location filename="../settingswidget.cpp" line="562"/>
         <source>Notifications</source>
         <translation>Sciigoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="560"/>
+        <location filename="../settingswidget.cpp" line="566"/>
         <source>Chatting</source>
         <translation>Babilado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="667"/>
+        <location filename="../settingswidget.cpp" line="673"/>
         <source>Privacy &amp; Lock</source>
         <translation>Privateco kaj ŝloso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="710"/>
+        <location filename="../settingswidget.cpp" line="716"/>
         <source>AI &amp;&amp; translation</source>
         <translation>AI kaj tradukado</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="681"/>
+        <location filename="../settingswidget.cpp" line="687"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>Fenestro &amp;&amp; zomo</translation>
     </message>
@@ -3750,281 +3765,281 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation type="vanished">Literumkontrolaj vortaroj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="717"/>
+        <location filename="../settingswidget.cpp" line="723"/>
         <source>Advanced</source>
         <translation>Fakula</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="924"/>
+        <location filename="../settingswidget.cpp" line="935"/>
         <source>Fetching the list of languages…</source>
         <translation>Prenas la liston de lingvoj…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1147"/>
+        <location filename="../settingswidget.cpp" line="1158"/>
         <source>Shortcut in use</source>
         <translation>Fulmoklavo jam uzata</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1148"/>
+        <location filename="../settingswidget.cpp" line="1159"/>
         <source>That shortcut is already used by another action.</source>
         <translation>Tiu fulmoklavo jam estas uzata de alia ago.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1160"/>
+        <location filename="../settingswidget.cpp" line="1171"/>
         <source>Clear cache</source>
         <translation>Malplenigi la kaŝmemoron</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1161"/>
+        <location filename="../settingswidget.cpp" line="1172"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Ĉu malplenigi la kaŝmemoron nun? Ĝi estos reelŝutita laŭbezone.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1171"/>
-        <location filename="../settingswidget.cpp" line="1177"/>
-        <location filename="../settingswidget.cpp" line="1186"/>
-        <location filename="../settingswidget.cpp" line="1189"/>
+        <location filename="../settingswidget.cpp" line="1182"/>
+        <location filename="../settingswidget.cpp" line="1188"/>
+        <location filename="../settingswidget.cpp" line="1197"/>
+        <location filename="../settingswidget.cpp" line="1200"/>
         <source>Export profile</source>
         <translation>Eksporti la profilon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1172"/>
+        <location filename="../settingswidget.cpp" line="1183"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>La arkivo enhavos vian ensalutitan seancon de Vacapo. Tenu ĝin privata. Ĉu daŭrigi?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1179"/>
-        <location filename="../settingswidget.cpp" line="1194"/>
+        <location filename="../settingswidget.cpp" line="1190"/>
+        <location filename="../settingswidget.cpp" line="1205"/>
         <source>Archives (*.tar.gz)</source>
         <translation>Arkivoj (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1187"/>
+        <location filename="../settingswidget.cpp" line="1198"/>
         <source>Profile exported.</source>
         <translation>La profilo estas eksportita.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1194"/>
-        <location filename="../settingswidget.cpp" line="1198"/>
-        <location filename="../settingswidget.cpp" line="1206"/>
+        <location filename="../settingswidget.cpp" line="1205"/>
         <location filename="../settingswidget.cpp" line="1209"/>
+        <location filename="../settingswidget.cpp" line="1217"/>
+        <location filename="../settingswidget.cpp" line="1220"/>
         <source>Import profile</source>
         <translation>Importi profilon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1199"/>
+        <location filename="../settingswidget.cpp" line="1210"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>Tio anstataŭigas la datumojn de la nuna konto per la arkivo, poste Whatly devas esti restartigita. Ĉu daŭrigi?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1207"/>
+        <location filename="../settingswidget.cpp" line="1218"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>La profilo estas importita. Bonvolu restartigi Whatly.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1230"/>
+        <location filename="../settingswidget.cpp" line="1241"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Tio forigos la daŭrajn datumojn ! Daŭraj datumoj inkluzivas daŭrajn kuketojn kaj la kaŝmemoron, kaj ĉesigos la aplikaĵon.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1235"/>
+        <location filename="../settingswidget.cpp" line="1246"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>Ĉu forigi la kuketojn kaj ĉesigi la aplikaĵon?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1341"/>
+        <location filename="../settingswidget.cpp" line="1352"/>
         <source>| Error</source>
         <translation>| Eraro</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1342"/>
+        <location filename="../settingswidget.cpp" line="1353"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>Ne eblas agordi malplenan ĉenon de uzantagento.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1393"/>
+        <location filename="../settingswidget.cpp" line="1404"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>La aŭtomata ŝanĝo de etoso estis malŝaltita pro permana baskuligo de la etoso.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1410"/>
+        <location filename="../settingswidget.cpp" line="1421"/>
         <source>Require setup</source>
         <translation>Bezonas agordon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1439"/>
+        <location filename="../settingswidget.cpp" line="1450"/>
         <source>App lock is not configured.</source>
         <translation>La aplikaĵa ŝloso ne estas agordita.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1443"/>
+        <location filename="../settingswidget.cpp" line="1454"/>
         <source>Do you want to setup App lock now?</source>
         <translation>Ĉu vi volas agordi la aplikaĵan ŝloson nun?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1485"/>
+        <location filename="../settingswidget.cpp" line="1496"/>
         <source>Feature permissions</source>
         <translation>Permesoj de la funkcioj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1564"/>
+        <location filename="../settingswidget.cpp" line="1575"/>
         <source>Choose a chat wallpaper</source>
         <translation>Elekti tapeton por la babilo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1566"/>
+        <location filename="../settingswidget.cpp" line="1577"/>
         <source>Images (%1)</source>
         <translation>Bildoj (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1574"/>
+        <location filename="../settingswidget.cpp" line="1585"/>
         <source>Could not use that image: %1</source>
         <translation>Ne eblis uzi tiun bildon: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1589"/>
+        <location filename="../settingswidget.cpp" line="1600"/>
         <source>Choose a CSS file</source>
         <translation>Elekti CSS-dosieron</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1591"/>
+        <location filename="../settingswidget.cpp" line="1602"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Stilfolioj (*.css);;Ĉiuj dosieroj (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1598"/>
+        <location filename="../settingswidget.cpp" line="1609"/>
         <source>Could not read that file: %1</source>
         <translation>Ne eblis legi tiun dosieron: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1671"/>
+        <location filename="../settingswidget.cpp" line="1682"/>
         <source>Disk</source>
         <translation>Disko</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1672"/>
+        <location filename="../settingswidget.cpp" line="1683"/>
         <source>Memory</source>
         <translation>Memoro</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1673"/>
-        <location filename="../settingswidget.cpp" line="1681"/>
+        <location filename="../settingswidget.cpp" line="1684"/>
+        <location filename="../settingswidget.cpp" line="1692"/>
         <source>None</source>
         <translation>Neniu</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1830"/>
+        <location filename="../settingswidget.cpp" line="1841"/>
         <source>Ollama not found at this address.</source>
         <translation>Ollama ne trovita ĉe ĉi tiu adreso.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1835"/>
+        <location filename="../settingswidget.cpp" line="1846"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama trovita (%1 modeloj instalitaj).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1860"/>
+        <location filename="../settingswidget.cpp" line="1871"/>
         <source>Download complete.</source>
         <translation>Elŝuto finita.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1863"/>
+        <location filename="../settingswidget.cpp" line="1874"/>
         <source>Download failed: %1</source>
         <translation>Elŝuto malsukcesis: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1874"/>
+        <location filename="../settingswidget.cpp" line="1885"/>
         <source>Checking…</source>
         <translation>Kontrolante…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1899"/>
+        <location filename="../settingswidget.cpp" line="1910"/>
         <source>Starting download of %1…</source>
         <translation>Komencante elŝuton de %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1954"/>
+        <location filename="../settingswidget.cpp" line="1965"/>
         <source>System</source>
         <translation>Sistemo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1955"/>
+        <location filename="../settingswidget.cpp" line="1966"/>
         <source>None (direct)</source>
         <translation>Neniu (rekta)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1956"/>
+        <location filename="../settingswidget.cpp" line="1967"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1957"/>
+        <location filename="../settingswidget.cpp" line="1968"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1983"/>
+        <location filename="../settingswidget.cpp" line="1994"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Labortabla portalo (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1985"/>
+        <location filename="../settingswidget.cpp" line="1996"/>
         <source>System service (libnotify)</source>
         <translation>Sistema servo (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2170"/>
-        <location filename="../settingswidget.cpp" line="2174"/>
+        <location filename="../settingswidget.cpp" line="2181"/>
+        <location filename="../settingswidget.cpp" line="2185"/>
         <source>Add reply</source>
         <translation>Aldoni respondon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2170"/>
+        <location filename="../settingswidget.cpp" line="2181"/>
         <source>Name</source>
         <translation>Nomo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2174"/>
+        <location filename="../settingswidget.cpp" line="2185"/>
         <source>Text to insert</source>
         <translation>Enmetota teksto</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2191"/>
+        <location filename="../settingswidget.cpp" line="2202"/>
         <source>Choose a JavaScript file</source>
         <translation>Elekti JavaScript-dosieron</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2192"/>
+        <location filename="../settingswidget.cpp" line="2203"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Ĉiuj dosieroj (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2197"/>
+        <location filename="../settingswidget.cpp" line="2208"/>
         <source>Could not add addon</source>
         <translation>Ne eblis aldoni la aldonaĵon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2210"/>
+        <location filename="../settingswidget.cpp" line="2221"/>
         <source>Remove addon</source>
         <translation>Forigi la aldonaĵon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2211"/>
+        <location filename="../settingswidget.cpp" line="2222"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>Ĉu forigi la aldonaĵon &quot;%1&quot;? Tio forigas ĝian dosieron.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2399"/>
+        <location filename="../settingswidget.cpp" line="2562"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Literumkontrolilo (neniu vortaro instalita)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2505"/>
+        <location filename="../settingswidget.cpp" line="2668"/>
         <source>Downloadable languages unavailable — click to try again</source>
         <translation>Elŝuteblaj lingvoj nedisponeblaj — alklaku por reprovi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2519"/>
+        <location filename="../settingswidget.cpp" line="2682"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>Marku la lingvojn por literumkontrolo. Ĉiu vico elŝutas aŭ forigas sian vortaron.</translation>
     </message>
@@ -4037,48 +4052,48 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation type="vanished">Marku unu aŭ plurajn lingvojn por literumkontrolo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2621"/>
+        <location filename="../settingswidget.cpp" line="2784"/>
         <source>Choose languages…</source>
         <translation>Elektu lingvojn…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2629"/>
+        <location filename="../settingswidget.cpp" line="2792"/>
         <source>%1 languages</source>
         <translation>%1 lingvoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2754"/>
+        <location filename="../settingswidget.cpp" line="2917"/>
         <source>WhatsApp default</source>
         <translation>Defaŭlto de Vacapo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2793"/>
+        <location filename="../settingswidget.cpp" line="2956"/>
         <source>System default</source>
         <translation>Defaŭlto de la sistemo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2828"/>
+        <location filename="../settingswidget.cpp" line="2986"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>La lingvo de la interfaco ŝanĝiĝos kiam vi restartigos %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2842"/>
+        <location filename="../settingswidget.cpp" line="3000"/>
         <source>App Lock Setup</source>
         <translation>Agordo de la aplikaĵa ŝloso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2843"/>
+        <location filename="../settingswidget.cpp" line="3001"/>
         <source>Please setup the App lock password first.</source>
         <translation>Bonvolu unue agordi la pasvorton de la aplikaĵa ŝloso.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2959"/>
-        <location filename="../settingswidget.cpp" line="2970"/>
+        <location filename="../settingswidget.cpp" line="3117"/>
+        <location filename="../settingswidget.cpp" line="3128"/>
         <source>Select download directory</source>
         <translation>Elekti la elŝutan dosierujon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3010"/>
+        <location filename="../settingswidget.cpp" line="3168"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -4089,7 +4104,7 @@ Tio elsalutigos vian nunan seancon.
 Eble vi ankaŭ bezonos kompletan restartigon de la aplikaĵo!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3016"/>
+        <location filename="../settingswidget.cpp" line="3174"/>
         <source>Do you want to proceed?</source>
         <translation>Ĉu vi volas daŭrigi?</translation>
     </message>

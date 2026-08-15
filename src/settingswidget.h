@@ -2,16 +2,22 @@
 #define SETTINGSWIDGET_H
 
 #include <QElapsedTimer>
+#include <QHash>
 #include <QWidget>
 
+class QGroupBox;
+class QLabel;
+class QLineEdit;
 class QListWidgetItem;
 class QStandardItemModel;
 class QTime;
+class QToolButton;
 
 #include "permissiondialog.h"
 #include "settingsmanager.h"
 #include "utils.h"
 #include "dictionarymanager.h"
+#include "settingssearch.h"
 
 namespace Ui {
 class SettingsWidget;
@@ -271,6 +277,44 @@ private:
   // direction. The page's own scroll area does not count — scrolling the page is
   // what the caller falls back to.
   bool hasScrollOfItsOwn(QWidget *target, int angleDeltaY) const;
+
+  // ── Searching the page (issue #39) ────────────────────────────────────────
+  // The box goes in the header, beside the title, so it stays put while the page
+  // scrolls under it.
+  void buildSearchBox();
+  // Section by section, row by row, worked out once and kept: the accordion is
+  // assembled in the constructor and nothing moves afterwards.
+  void buildSearchIndex();
+  // Show what matches, hide the rest, and open every section that has something
+  // in it. An empty query puts the page back exactly as it was found, accordion
+  // included.
+  void applySearch(const QString &query);
+  // Read the form's English back while it is still on screen — after setupUi()
+  // and before anything is set from code. With a translation loaded, taking the
+  // translators off and calling retranslateUi() puts the English text on the
+  // widgets, where it can be harvested and then translated back. That is the only
+  // way round: a .qm maps English to the local language and cannot be read the
+  // other way, and someone who runs Whatly in Esperanto still knows some of these
+  // settings by the English name they were discussed in.
+  void harvestEnglishText();
+  QHash<const QWidget *, QString> m_englishText;
+
+  // One section of the accordion: its header (whose text is the section title),
+  // the group box it opens, and the rows inside it.
+  struct SearchSection {
+    QToolButton *header = nullptr;
+    QWidget *wrapper = nullptr; // header + body, the thing to hide as a whole
+    QGroupBox *body = nullptr;
+    QString haystack; // the title, in both languages
+    QList<SettingsSearch::Row> rows;
+  };
+  QList<SearchSection> m_searchSections;
+  QLineEdit *m_searchBox = nullptr;
+  QLabel *m_searchNothing = nullptr;
+  // Which sections were open when the search started, so clearing the box gives
+  // the page back rather than leaving it wide open.
+  QHash<QToolButton *, bool> m_searchWasOpen;
+  bool m_searchActive = false;
 
   Ui::SettingsWidget *ui;
   // The wheel gesture in progress: what the first notch chose to scroll, and how
