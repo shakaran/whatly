@@ -2300,12 +2300,20 @@ static QList<QToolButton *> sectionHeaders(const QWidget *page) {
 // ── Searching the page (issue #39) ──────────────────────────────────────────
 
 void SettingsWidget::harvestEnglishText() {
-  // No translation loaded means the page is already in English and there is
-  // nothing to remember: the visible text is the searchable text.
-  const QList<QTranslator *> translators = qApp->findChildren<QTranslator *>();
-  if (translators.isEmpty())
+  // Only the translators that actually loaded something are installed and move
+  // the visible text off English. main() parents both translators to qApp even
+  // when their load() fails (they stay empty and were never installed), so
+  // findChildren() alone would report those too — and reinstalling a
+  // never-installed empty translator mutates global state for nothing. Filter to
+  // the non-empty ones; if none is active the page is already English and there
+  // is nothing to remember.
+  QList<QTranslator *> active;
+  for (QTranslator *t : qApp->findChildren<QTranslator *>())
+    if (!t->isEmpty())
+      active.append(t);
+  if (active.isEmpty())
     return;
-  for (QTranslator *t : translators)
+  for (QTranslator *t : active)
     qApp->removeTranslator(t);
   ui->retranslateUi(this); // every string is now the form's own English
   for (const QWidget *w : findChildren<QWidget *>()) {
@@ -2313,7 +2321,7 @@ void SettingsWidget::harvestEnglishText() {
     if (!text.isEmpty())
       m_englishText.insert(w, text);
   }
-  for (QTranslator *t : translators)
+  for (QTranslator *t : active)
     qApp->installTranslator(t);
   ui->retranslateUi(this); // and back, before anyone has seen otherwise
 }
@@ -2385,7 +2393,10 @@ void SettingsWidget::applySearch(const QString &query) {
   if (m_searchSections.isEmpty())
     buildSearchIndex();
   const QString trimmed = query.trimmed();
-  const bool searching = !trimmed.isEmpty();
+  // A query that is only punctuation or whitespace normalises to nothing, which
+  // matches() treats as "match everything" — that must read as an empty box
+  // (restore the page), not as a search that force-opens every section.
+  const bool searching = !SettingsSearch::normalise(trimmed).isEmpty();
 
   // Remember the accordion the moment a search starts, so clearing the box is a
   // return and not a rearrangement. Taken here rather than in buildSearchBox()

@@ -120,7 +120,16 @@ void addBand(const QList<QLayoutItem *> &items, QWidget *container,
   if (items.size() == 1) {
     if (QWidget *w = items.first()->widget()) {
       if (isGroupOfControls(w)) {
+        const int before = out->size();
         collectRows(w->layout(), w, out);
+        // A nested group box's own title is words for everything inside it, so a
+        // search on the group's name should keep its rows. It is not captured
+        // anywhere else (only section titles are), so fold it into each row this
+        // group produced.
+        const QString groupText = textOf(w);
+        if (!groupText.isEmpty())
+          for (int i = before; i < out->size(); ++i)
+            (*out)[i].haystack += QLatin1Char(' ') + groupText;
         return;
       }
     } else if (QLayout *inner = items.first()->layout()) {
