@@ -70,21 +70,28 @@ QString watcherScript() {
   var asked  = new Map();
 
   // A bubble waiting for its media shows a size, and nothing that has arrived.
-  // The blurred placeholder is a data: URI, so it does not count as arrived.
+  // The small data: images in it are the emoji of a reaction, not the media.
   function stillWaiting(row) {
     if (!row || !row.isConnected) return false;
     if (row.querySelector('video, audio, img[src^="blob:"], img[src^="http"]'))
       return false;
-    return /\d+([.,]\d+)?\s?(kB|KB|MB|GB)/.test(row.textContent || '');
+    if (!/\d+([.,]\d+)?\s?(kB|KB|MB|GB)/.test(row.textContent || ''))
+      return false;
+    // And it must have something to download with. A document keeps showing its
+    // size long after it has arrived, so the size alone says nothing.
+    return !!row.querySelector('button:not([aria-label])');
   }
 
   document.addEventListener('click', function (e) {
     var target = e.target;
     if (!target || !target.closest) return;
-    // Any click inside a bubble that is still waiting counts as asking for it.
-    // Keying on the download button alone missed the ask: the placeholder
-    // itself starts the download too, so the first tries went uncounted and the
-    // notice arrived a click or two later than it should have.
+    // The bubble's own body counts as asking for the file — the picture starts
+    // the download as much as the arrow does, and keying on the arrow alone left
+    // the first tries uncounted. What does not count is the furniture around it:
+    // the reaction, the quoted message, the delivery state, the menus. Every one
+    // of those carries an aria-label, and the media body carries none, which is
+    // the whole test.
+    if (target.closest('[aria-label]')) return;
     var row = target.closest('[data-id]');
     if (!stillWaiting(row)) return;
 
