@@ -188,6 +188,7 @@ set(SOURCES
     src/permissiondialog.cpp
     src/rateapp.cpp
     src/settingswidget.cpp
+    src/settingssearch.cpp
     src/sunclock.cpp
     src/theme.cpp
     src/utils.cpp
@@ -277,6 +278,7 @@ set(HEADERS
     src/requestinterceptor.h
     src/settingsmanager.h
     src/settingswidget.h
+    src/settingssearch.h
     src/sunclock.hpp
     src/theme.h
     src/utils.h
