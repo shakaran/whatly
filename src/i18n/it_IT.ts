@@ -748,13 +748,13 @@ Desideri ignorare il controllo di sicurezza e continuare?</translation>
         <translation>Riepilogo non letti</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1377"/>
+        <location filename="../mainwindow_accounts.cpp" line="1421"/>
         <location filename="../mainwindow_webengine.cpp" line="1569"/>
         <source>chat</source>
         <translation>chat</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1377"/>
+        <location filename="../mainwindow_accounts.cpp" line="1421"/>
         <source>chats</source>
         <translation>chat</translation>
     </message>
@@ -1145,52 +1145,52 @@ Aprire le Impostazioni ora?</translation>
         <translation>Ortografia: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="309"/>
-        <location filename="../mainwindow_accounts.cpp" line="1580"/>
+        <location filename="../mainwindow_accounts.cpp" line="335"/>
+        <location filename="../mainwindow_accounts.cpp" line="1647"/>
         <source>Rename…</source>
         <translation>Rinomina…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="310"/>
-        <location filename="../mainwindow_accounts.cpp" line="1581"/>
+        <location filename="../mainwindow_accounts.cpp" line="336"/>
+        <location filename="../mainwindow_accounts.cpp" line="1648"/>
         <source>Open in own window</source>
         <translation>Apri in una finestra propria</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="314"/>
-        <location filename="../mainwindow_accounts.cpp" line="1584"/>
+        <location filename="../mainwindow_accounts.cpp" line="340"/>
+        <location filename="../mainwindow_accounts.cpp" line="1651"/>
         <source>Remove account</source>
         <translation>Rimuovi account</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="399"/>
+        <location filename="../mainwindow_accounts.cpp" line="425"/>
         <source>Switch to account: %1</source>
         <translation>Passa all&apos;account: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="402"/>
+        <location filename="../mainwindow_accounts.cpp" line="428"/>
         <location filename="../mainwindow_tray.cpp" line="321"/>
         <source>Add account…</source>
         <translation>Aggiungi account…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="403"/>
+        <location filename="../mainwindow_accounts.cpp" line="429"/>
         <source>Quick message…</source>
         <translation>Messaggio rapido…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="408"/>
+        <location filename="../mainwindow_accounts.cpp" line="434"/>
         <source>Insert: %1</source>
         <translation>Inserisci: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="716"/>
+        <location filename="../mainwindow_accounts.cpp" line="742"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 non letti</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1347"/>
-        <location filename="../mainwindow_accounts.cpp" line="1977"/>
+        <location filename="../mainwindow_accounts.cpp" line="1391"/>
+        <location filename="../mainwindow_accounts.cpp" line="2044"/>
         <source>Add another account</source>
         <translation>Aggiungi un altro account</translation>
     </message>
@@ -1203,39 +1203,39 @@ Aprire le Impostazioni ora?</translation>
         <translation type="vanished">messaggio</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1426"/>
+        <location filename="../mainwindow_accounts.cpp" line="1493"/>
         <source>Add account</source>
         <translation>Aggiungi account</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1427"/>
+        <location filename="../mainwindow_accounts.cpp" line="1494"/>
         <source>Name for the new account:</source>
         <translation>Nome del nuovo account:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1428"/>
-        <location filename="../mainwindow_accounts.cpp" line="2315"/>
-        <location filename="../mainwindow_accounts.cpp" line="2320"/>
+        <location filename="../mainwindow_accounts.cpp" line="1495"/>
+        <location filename="../mainwindow_accounts.cpp" line="2382"/>
+        <location filename="../mainwindow_accounts.cpp" line="2387"/>
         <source>Account %1</source>
         <translation>Account %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1457"/>
+        <location filename="../mainwindow_accounts.cpp" line="1524"/>
         <source>Rename account</source>
         <translation>Rinomina account</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1457"/>
+        <location filename="../mainwindow_accounts.cpp" line="1524"/>
         <source>Account name:</source>
         <translation>Nome account:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1996"/>
+        <location filename="../mainwindow_accounts.cpp" line="2063"/>
         <source>Tip: give an account its own window</source>
         <translation>Suggerimento: dai a un account una finestra propria</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1997"/>
+        <location filename="../mainwindow_accounts.cpp" line="2064"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1244,14 +1244,14 @@ You can pull any account out into its own window: right-click its tab and choose
 Puoi estrarre qualsiasi account in una finestra propria: fai clic con il tasto destro sulla sua scheda e scegli «Apri in una finestra propria». Chiudi quella finestra per riagganciare l&apos;account come scheda.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2309"/>
-        <location filename="../mainwindow_accounts.cpp" line="2313"/>
+        <location filename="../mainwindow_accounts.cpp" line="2376"/>
+        <location filename="../mainwindow_accounts.cpp" line="2380"/>
         <source>Account 1</source>
         <translation>Account 1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1376"/>
-        <location filename="../mainwindow_accounts.cpp" line="1381"/>
+        <location filename="../mainwindow_accounts.cpp" line="1420"/>
+        <location filename="../mainwindow_accounts.cpp" line="1447"/>
         <source>Restore</source>
         <translation>Ripristina</translation>
     </message>
@@ -1519,12 +1519,57 @@ WebEngine non è inizializzato.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../common.cpp" line="46"/>
+        <location filename="../common.cpp" line="59"/>
+        <source>Nothing unread</source>
+        <translation>Niente da leggere</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="69"/>
+        <source>1 unread message in 1 chat</source>
+        <translation>1 messaggio non letto in 1 chat</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="71"/>
+        <source>1 unread message in %1 chats</source>
+        <translation>1 messaggio non letto in %1 chat</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="73"/>
+        <source>%1 unread messages in 1 chat</source>
+        <translation>%1 messaggi non letti in 1 chat</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="75"/>
+        <source>%1 unread messages in %2 chats</source>
+        <translation>%1 messaggi non letti in %2 chat</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="85"/>
+        <source>%1 in 1 muted chat</source>
+        <translation>%1 in 1 chat silenziata</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="86"/>
+        <source>%1 in %2 muted chats</source>
+        <translation>%1 in %2 chat silenziate</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="92"/>
+        <source>%1 in 1 chat that is not muted</source>
+        <translation>%1 in 1 chat non silenziata</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="94"/>
+        <source>%1 in %2 chats that are not muted</source>
+        <translation>%1 in %2 chat non silenziate</translation>
+    </message>
+    <message>
+        <location filename="../common.cpp" line="104"/>
         <source>WhatsApp Web %1</source>
         <translation>WhatsApp Web %1</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="48"/>
+        <location filename="../common.cpp" line="106"/>
         <source>Build token: %1</source>
         <translation>Token di build: %1</translation>
     </message>
@@ -3931,7 +3976,7 @@ Imposta la password nelle Impostazioni.</translation>
     <message>
         <location filename="../settingswidget.cpp" line="924"/>
         <source>Fetching the list of languages…</source>
-        <translation>Recupero dell'elenco delle lingue…</translation>
+        <translation>Recupero dell&apos;elenco delle lingue…</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1147"/>
