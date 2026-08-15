@@ -61,6 +61,15 @@ QPalette Theme::initDarkPalette() {
                        QColor(127, 127, 127));
   darkPalette.setColor(QPalette::Disabled, QPalette::Text,
                        QColor(127, 127, 127));
+  // The label of a check box is drawn in WindowText, not Text or ButtonText, and
+  // this was the one disabled colour the dark palette never set. setColor without
+  // a colour group sets every group at once, so "WindowText is white" above made
+  // the disabled colour white as well, and a greyed-out box read exactly like a
+  // live one: in Settings, where a box is greyed out until the setting it depends
+  // on is switched on, it looked available and did nothing when clicked. The light
+  // palette has always set this; only the dark one was missing it.
+  darkPalette.setColor(QPalette::Disabled, QPalette::WindowText,
+                       QColor(127, 127, 127));
   return darkPalette;
 }
 
