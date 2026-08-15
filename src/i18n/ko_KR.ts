@@ -1455,6 +1455,19 @@ You can pull any account out into its own window: right-click its tab and choose
     </message>
 </context>
 <context>
+    <name>MediaStuck</name>
+    <message>
+        <location filename="../mediastuck.cpp" line="39"/>
+        <source>This file did not download: there is no connection at the moment. It will arrive on its own once there is. (Click to dismiss.)</source>
+        <translation>이 파일을 다운로드하지 못했습니다: 지금은 연결이 없습니다. 연결되면 자동으로 도착합니다. (클릭하여 닫기)</translation>
+    </message>
+    <message>
+        <location filename="../mediastuck.cpp" line="44"/>
+        <source>This file did not download. WhatsApp keeps a copy on its servers only for a while, and it is usually gone by the time a message is old — there is nothing here that can fetch it back. Ask for it again from the phone that sent it. (Click to dismiss.)</source>
+        <translation>이 파일을 다운로드하지 못했습니다. WhatsApp은 사본을 서버에 일정 기간만 보관하며, 메시지가 오래되면 대개 이미 사라져 있습니다 — 여기서는 다시 가져올 방법이 없습니다. 보낸 기기에서 다시 요청하세요. (클릭하여 닫기)</translation>
+    </message>
+</context>
+<context>
     <name>MoreApps</name>
     <message>
         <location filename="../widgets/MoreApps/moreapps.ui" line="14"/>
@@ -2878,7 +2891,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2563"/>
+        <location filename="../settingswidget.cpp" line="2598"/>
         <source>Check spelling as I type</source>
         <translation>입력하는 동안 맞춤법 검사</translation>
     </message>
@@ -3951,32 +3964,32 @@ Please setup the password in the Settings first.</source>
         <translation>애드온 &quot;%1&quot;을(를) 제거하시겠습니까? 해당 파일이 삭제됩니다.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2324"/>
+        <location filename="../settingswidget.cpp" line="2332"/>
         <source>Search settings</source>
         <translation>설정 검색</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2326"/>
+        <location filename="../settingswidget.cpp" line="2334"/>
         <source>Show only the settings that match. What you find is the setting itself, working where it stands — not a list to click through. Tooltips are searched as well as labels, and so are the English names of the settings when Whatly is running in another language.</source>
         <translation>일치하는 설정만 표시합니다. 찾은 것은 설정 그 자체로, 목록을 클릭해 들어가는 것이 아니라 그 자리에서 바로 작동합니다. 레이블뿐 아니라 툴팁도 검색되며, Whatly가 다른 언어로 실행 중일 때는 설정의 영어 이름도 검색됩니다.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2445"/>
+        <location filename="../settingswidget.cpp" line="2456"/>
         <source>No setting matches “%1”. Tooltips are searched too, so a plainer word usually finds it.</source>
         <translation>“%1”과(와) 일치하는 설정이 없습니다. 툴팁도 검색되므로 더 간단한 단어로 대개 찾을 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2562"/>
+        <location filename="../settingswidget.cpp" line="2597"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>맞춤법 검사기(설치된 사전 없음)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2668"/>
+        <location filename="../settingswidget.cpp" line="2703"/>
         <source>Downloadable languages unavailable — click to try again</source>
         <translation>다운로드 가능한 언어를 불러올 수 없습니다 — 클릭하여 다시 시도</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2682"/>
+        <location filename="../settingswidget.cpp" line="2717"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>맞춤법 검사에 사용할 언어를 선택하세요. 각 행에서 사전을 다운로드하거나 삭제합니다.</translation>
     </message>
@@ -4111,53 +4124,53 @@ Please setup the password in the Settings first.</source>
         <translation type="vanished">맞춤법 검사를 할 언어를 하나 이상 선택하세요.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2784"/>
+        <location filename="../settingswidget.cpp" line="2819"/>
         <source>Choose languages…</source>
         <translation>언어 선택…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2790"/>
+        <location filename="../settingswidget.cpp" line="2825"/>
         <source>%1 of %2 chosen</source>
         <translation>선택한 %2개 중 %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2792"/>
+        <location filename="../settingswidget.cpp" line="2827"/>
         <source>%1 languages</source>
         <translation>언어 %1개</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2917"/>
+        <location filename="../settingswidget.cpp" line="2952"/>
         <source>WhatsApp default</source>
         <translation>WhatsApp 기본값</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2956"/>
+        <location filename="../settingswidget.cpp" line="2991"/>
         <source>System default</source>
         <translation>시스템 기본값</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2986"/>
+        <location filename="../settingswidget.cpp" line="3021"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>%1 을(를) 다시 시작하면 인터페이스 언어가 바뀝니다.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3000"/>
+        <location filename="../settingswidget.cpp" line="3035"/>
         <source>App Lock Setup</source>
         <translation>앱 잠금 설정</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3001"/>
+        <location filename="../settingswidget.cpp" line="3036"/>
         <source>Please setup the App lock password first.</source>
         <translation>먼저 앱 잠금 비밀번호를 설정하세요.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3117"/>
-        <location filename="../settingswidget.cpp" line="3128"/>
+        <location filename="../settingswidget.cpp" line="3152"/>
+        <location filename="../settingswidget.cpp" line="3163"/>
         <source>Select download directory</source>
         <translation>다운로드 폴더 선택</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3168"/>
+        <location filename="../settingswidget.cpp" line="3203"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -4168,7 +4181,7 @@ You may also require a complete restart of Application!</source>
 애플리케이션을 완전히 다시 시작해야 할 수도 있습니다!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3174"/>
+        <location filename="../settingswidget.cpp" line="3209"/>
         <source>Do you want to proceed?</source>
         <translation>계속할까요?</translation>
     </message>
@@ -4258,104 +4271,104 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>WebEnginePage</name>
     <message>
-        <location filename="../webenginepage.cpp" line="55"/>
+        <location filename="../webenginepage.cpp" line="57"/>
         <source>Share your screen</source>
         <translation>화면 공유</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="57"/>
+        <location filename="../webenginepage.cpp" line="59"/>
         <source>Choose what to share:</source>
         <translation>공유할 항목을 선택하세요:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="69"/>
+        <location filename="../webenginepage.cpp" line="71"/>
         <source>Untitled</source>
         <translation>제목 없음</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="73"/>
+        <location filename="../webenginepage.cpp" line="75"/>
         <source>Screen: </source>
         <translation>화면: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="74"/>
+        <location filename="../webenginepage.cpp" line="76"/>
         <source>Window: </source>
         <translation>창: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="181"/>
+        <location filename="../webenginepage.cpp" line="183"/>
         <source>Allow %1 to access your location information?</source>
         <translation>%1 이(가) 위치 정보에 접근하도록 허용하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="183"/>
+        <location filename="../webenginepage.cpp" line="185"/>
         <source>Allow %1 to access your microphone?</source>
         <translation>%1 이(가) 마이크에 접근하도록 허용하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="185"/>
+        <location filename="../webenginepage.cpp" line="187"/>
         <source>Allow %1 to access your webcam?</source>
         <translation>%1 이(가) 카메라에 접근하도록 허용하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="187"/>
+        <location filename="../webenginepage.cpp" line="189"/>
         <source>Allow %1 to access your microphone and webcam?</source>
         <translation>%1 이(가) 마이크와 카메라에 접근하도록 허용하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="189"/>
+        <location filename="../webenginepage.cpp" line="191"/>
         <source>Allow %1 to lock your mouse cursor?</source>
         <translation>%1 이(가) 마우스 커서를 고정하도록 허용하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="191"/>
+        <location filename="../webenginepage.cpp" line="193"/>
         <source>Allow %1 to capture video of your desktop?</source>
         <translation>%1 이(가) 바탕 화면의 영상을 녹화하도록 허용하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="193"/>
+        <location filename="../webenginepage.cpp" line="195"/>
         <source>Allow %1 to capture audio and video of your desktop?</source>
         <translation>%1 이(가) 바탕 화면의 소리와 영상을 녹화하도록 허용하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="196"/>
+        <location filename="../webenginepage.cpp" line="198"/>
         <source>Allow %1 to show notification on your desktop?</source>
         <translation>%1 이(가) 바탕 화면에 알림을 표시하도록 허용하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="198"/>
+        <location filename="../webenginepage.cpp" line="200"/>
         <source>Allow %1 to read your clipboard? This is needed to paste images into a chat.</source>
         <translation>%1 이(가) 클립보드를 읽도록 허용하시겠습니까? 대화에 이미지를 붙여 넣으려면 필요합니다.</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="201"/>
+        <location filename="../webenginepage.cpp" line="203"/>
         <source>Allow %1 to see the fonts installed on your system?</source>
         <translation>%1 이(가) 시스템에 설치된 글꼴을 보도록 허용하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="221"/>
-        <location filename="../webenginepage.cpp" line="435"/>
+        <location filename="../webenginepage.cpp" line="223"/>
+        <location filename="../webenginepage.cpp" line="438"/>
         <source>Permission Request</source>
         <translation>권한 요청</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="358"/>
-        <location filename="../webenginepage.cpp" line="367"/>
+        <location filename="../webenginepage.cpp" line="361"/>
+        <location filename="../webenginepage.cpp" line="370"/>
         <source>Certificate Error</source>
         <translation>인증서 오류</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="387"/>
+        <location filename="../webenginepage.cpp" line="390"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
         <translation>%2 의 «%1» 에 대한 사용자 이름과 비밀번호를 입력하세요</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="417"/>
+        <location filename="../webenginepage.cpp" line="420"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
         <translation>다음을 사용하여 프록시 «%1» 에 연결:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="436"/>
+        <location filename="../webenginepage.cpp" line="439"/>
         <source>Allow %1 to open all %2 links?</source>
         <translation>%1 이(가) 모든 %2 링크를 열도록 허용하시겠습니까?</translation>
     </message>

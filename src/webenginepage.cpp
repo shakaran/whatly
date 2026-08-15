@@ -7,6 +7,8 @@
 #include <QAbstractItemModel>
 #include "common.h"
 #include "debuglog.h"
+#include "mediastuck.h"
+#include "translator.h"
 #include "utils.h"
 #include "webengineprofilemanager.h"
 #include <QApplication>
@@ -270,6 +272,7 @@ void WebEnginePage::handleLoadFinished(bool ok) {
   if (ok) {
     injectPreventScrollWheelZoomHelper();
     injectNewChatJavaScript();
+    runJavaScript(MediaStuck::watcherScript());
   }
 }
 
@@ -476,6 +479,26 @@ void WebEnginePage::javaScriptConsoleMessage(
   // Into the ring buffer regardless of level: the line that explains a bug is
   // routinely the one nobody thought worth printing.
   DebugLog::append(QStringLiteral("[js] %1 %2").arg(where, message));
+
+  // Our own watcher saying a media download was asked for twice and still has
+  // not come. WhatsApp Web leaves the placeholder sitting there and says
+  // nothing, and the refusal behind it is a network-level failure this hook
+  // never sees — so the click count is what there is to go on. Answer where the
+  // user is looking, and put it in the log for the bug report too.
+  if (MediaStuck::isReport(message)) {
+    const MediaStuck::Report report = MediaStuck::parse(message);
+    const MediaStuck::Advice advice = MediaStuck::adviceFor(report);
+    if (advice != MediaStuck::Advice::None) {
+      qInfo().noquote() << QStringLiteral(
+                               "whatly: a media download has not arrived after "
+                               "%1 attempts (connection: %2)")
+                               .arg(report.attempts)
+                               .arg(report.online ? QStringLiteral("up")
+                                                  : QStringLiteral("down"));
+      runJavaScript(Translate::toastScript(MediaStuck::text(advice)));
+    }
+    return;
+  }
 
   // A Service Worker that cannot register because its on-disk cache is corrupt
   // helps stall WhatsApp Web's bootstrap, and Chromium does not self-heal that

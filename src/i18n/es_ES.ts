@@ -1455,6 +1455,19 @@ Puedes sacar cualquier cuenta a su propia ventana: haz clic derecho en su pesta�
     </message>
 </context>
 <context>
+    <name>MediaStuck</name>
+    <message>
+        <location filename="../mediastuck.cpp" line="39"/>
+        <source>This file did not download: there is no connection at the moment. It will arrive on its own once there is. (Click to dismiss.)</source>
+        <translation>Este archivo no se descargó: no hay conexión en este momento. Llegará por sí solo cuando la haya. (Clic para descartar.)</translation>
+    </message>
+    <message>
+        <location filename="../mediastuck.cpp" line="44"/>
+        <source>This file did not download. WhatsApp keeps a copy on its servers only for a while, and it is usually gone by the time a message is old — there is nothing here that can fetch it back. Ask for it again from the phone that sent it. (Click to dismiss.)</source>
+        <translation>Este archivo no se descargó. WhatsApp guarda una copia en sus servidores solo por un tiempo, y normalmente ya no está cuando un mensaje es antiguo; aquí no hay nada que pueda recuperarla. Pídela de nuevo al teléfono que la envió. (Clic para descartar.)</translation>
+    </message>
+</context>
+<context>
     <name>MoreApps</name>
     <message>
         <location filename="../widgets/MoreApps/moreapps.ui" line="14"/>
@@ -2878,7 +2891,7 @@ Configure primero la contraseña en los ajustes.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2563"/>
+        <location filename="../settingswidget.cpp" line="2598"/>
         <source>Check spelling as I type</source>
         <translation>Corregir ortografía mientras escribo</translation>
     </message>
@@ -3951,32 +3964,32 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation>¿Eliminar el complemento &quot;%1&quot;? Esto borra su archivo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2324"/>
+        <location filename="../settingswidget.cpp" line="2332"/>
         <source>Search settings</source>
         <translation>Buscar ajustes</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2326"/>
+        <location filename="../settingswidget.cpp" line="2334"/>
         <source>Show only the settings that match. What you find is the setting itself, working where it stands — not a list to click through. Tooltips are searched as well as labels, and so are the English names of the settings when Whatly is running in another language.</source>
         <translation>Muestra solo los ajustes que coinciden. Lo que encuentras es el ajuste en sí, funcionando donde está, no una lista para navegar. Se buscan los tooltips además de las etiquetas, y también los nombres en inglés de los ajustes cuando Whatly se ejecuta en otro idioma.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2445"/>
+        <location filename="../settingswidget.cpp" line="2456"/>
         <source>No setting matches “%1”. Tooltips are searched too, so a plainer word usually finds it.</source>
         <translation>Ningún ajuste coincide con «%1». También se buscan los tooltips, así que una palabra más simple suele encontrarlo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2562"/>
+        <location filename="../settingswidget.cpp" line="2597"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Corrector ortográfico (sin diccionarios instalados)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2668"/>
+        <location filename="../settingswidget.cpp" line="2703"/>
         <source>Downloadable languages unavailable — click to try again</source>
         <translation>Idiomas descargables no disponibles — haz clic para reintentar</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2682"/>
+        <location filename="../settingswidget.cpp" line="2717"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>Marca los idiomas con los que corregir la ortografía. Cada fila descarga o elimina su diccionario.</translation>
     </message>
@@ -4111,53 +4124,53 @@ Configure primero la contraseña en los ajustes.</translation>
         <translation type="vanished">Marca uno o varios idiomas para revisar la ortografía.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2784"/>
+        <location filename="../settingswidget.cpp" line="2819"/>
         <source>Choose languages…</source>
         <translation>Elegir idiomas…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2790"/>
+        <location filename="../settingswidget.cpp" line="2825"/>
         <source>%1 of %2 chosen</source>
         <translation>%1 de %2 elegidos</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2792"/>
+        <location filename="../settingswidget.cpp" line="2827"/>
         <source>%1 languages</source>
         <translation>%1 idiomas</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2917"/>
+        <location filename="../settingswidget.cpp" line="2952"/>
         <source>WhatsApp default</source>
         <translation>Predeterminada de WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2956"/>
+        <location filename="../settingswidget.cpp" line="2991"/>
         <source>System default</source>
         <translation>Predeterminado del sistema</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2986"/>
+        <location filename="../settingswidget.cpp" line="3021"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>El idioma de la interfaz cambiará cuando reinicies %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3000"/>
+        <location filename="../settingswidget.cpp" line="3035"/>
         <source>App Lock Setup</source>
         <translation>Configuración del bloqueo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3001"/>
+        <location filename="../settingswidget.cpp" line="3036"/>
         <source>Please setup the App lock password first.</source>
         <translation>Configura primero la contraseña del bloqueo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3117"/>
-        <location filename="../settingswidget.cpp" line="3128"/>
+        <location filename="../settingswidget.cpp" line="3152"/>
+        <location filename="../settingswidget.cpp" line="3163"/>
         <source>Select download directory</source>
         <translation>Seleccionar la carpeta de descargas</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3168"/>
+        <location filename="../settingswidget.cpp" line="3203"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -4168,7 +4181,7 @@ Esto cerrará tu sesión actual.
 ¡También podría requerir reiniciar por completo la aplicación!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3174"/>
+        <location filename="../settingswidget.cpp" line="3209"/>
         <source>Do you want to proceed?</source>
         <translation>¿Quieres continuar?</translation>
     </message>
@@ -4258,104 +4271,104 @@ Esto cerrará tu sesión actual.
 <context>
     <name>WebEnginePage</name>
     <message>
-        <location filename="../webenginepage.cpp" line="55"/>
+        <location filename="../webenginepage.cpp" line="57"/>
         <source>Share your screen</source>
         <translation>Compartir pantalla</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="57"/>
+        <location filename="../webenginepage.cpp" line="59"/>
         <source>Choose what to share:</source>
         <translation>Elige qué compartir:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="69"/>
+        <location filename="../webenginepage.cpp" line="71"/>
         <source>Untitled</source>
         <translation>Sin título</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="73"/>
+        <location filename="../webenginepage.cpp" line="75"/>
         <source>Screen: </source>
         <translation>Pantalla: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="74"/>
+        <location filename="../webenginepage.cpp" line="76"/>
         <source>Window: </source>
         <translation>Ventana: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="181"/>
+        <location filename="../webenginepage.cpp" line="183"/>
         <source>Allow %1 to access your location information?</source>
         <translation>¿Permitir que %1 acceda a su información de ubicación?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="183"/>
+        <location filename="../webenginepage.cpp" line="185"/>
         <source>Allow %1 to access your microphone?</source>
         <translation>¿Permitir que %1 acceda a su micrófono?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="185"/>
+        <location filename="../webenginepage.cpp" line="187"/>
         <source>Allow %1 to access your webcam?</source>
         <translation>¿Permitir que %1 acceda a su cámara?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="187"/>
+        <location filename="../webenginepage.cpp" line="189"/>
         <source>Allow %1 to access your microphone and webcam?</source>
         <translation>¿Permitir que %1 acceda a su micrófono y su cámara?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="189"/>
+        <location filename="../webenginepage.cpp" line="191"/>
         <source>Allow %1 to lock your mouse cursor?</source>
         <translation>¿Permitir que %1 capture el cursor del ratón?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="191"/>
+        <location filename="../webenginepage.cpp" line="193"/>
         <source>Allow %1 to capture video of your desktop?</source>
         <translation>¿Permitir que %1 grabe el vídeo de su escritorio?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="193"/>
+        <location filename="../webenginepage.cpp" line="195"/>
         <source>Allow %1 to capture audio and video of your desktop?</source>
         <translation>¿Permitir que %1 grabe el audio y el vídeo de su escritorio?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="196"/>
+        <location filename="../webenginepage.cpp" line="198"/>
         <source>Allow %1 to show notification on your desktop?</source>
         <translation>¿Permitir que %1 muestre notificaciones en su escritorio?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="198"/>
+        <location filename="../webenginepage.cpp" line="200"/>
         <source>Allow %1 to read your clipboard? This is needed to paste images into a chat.</source>
         <translation>¿Permitir que %1 lea su portapapeles? Es necesario para pegar imágenes en un chat.</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="201"/>
+        <location filename="../webenginepage.cpp" line="203"/>
         <source>Allow %1 to see the fonts installed on your system?</source>
         <translation>¿Permitir que %1 vea las fuentes instaladas en su sistema?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="221"/>
-        <location filename="../webenginepage.cpp" line="435"/>
+        <location filename="../webenginepage.cpp" line="223"/>
+        <location filename="../webenginepage.cpp" line="438"/>
         <source>Permission Request</source>
         <translation>Solicitud de permiso</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="358"/>
-        <location filename="../webenginepage.cpp" line="367"/>
+        <location filename="../webenginepage.cpp" line="361"/>
+        <location filename="../webenginepage.cpp" line="370"/>
         <source>Certificate Error</source>
         <translation>Error de certificado</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="387"/>
+        <location filename="../webenginepage.cpp" line="390"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
         <translation>Introduzca el usuario y la contraseña de «%1» en %2</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="417"/>
+        <location filename="../webenginepage.cpp" line="420"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
         <translation>Conectar al proxy «%1» usando:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="436"/>
+        <location filename="../webenginepage.cpp" line="439"/>
         <source>Allow %1 to open all %2 links?</source>
         <translation>¿Permitir que %1 abra todos los enlaces %2?</translation>
     </message>

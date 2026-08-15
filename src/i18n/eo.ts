@@ -1460,6 +1460,19 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
     </message>
 </context>
 <context>
+    <name>MediaStuck</name>
+    <message>
+        <location filename="../mediastuck.cpp" line="39"/>
+        <source>This file did not download: there is no connection at the moment. It will arrive on its own once there is. (Click to dismiss.)</source>
+        <translation>Ĉi tiu dosiero ne elŝutiĝis: nun ne estas konekto. Ĝi alvenos per si mem tuj kiam estos. (Klaku por forigi.)</translation>
+    </message>
+    <message>
+        <location filename="../mediastuck.cpp" line="44"/>
+        <source>This file did not download. WhatsApp keeps a copy on its servers only for a while, and it is usually gone by the time a message is old — there is nothing here that can fetch it back. Ask for it again from the phone that sent it. (Click to dismiss.)</source>
+        <translation>Ĉi tiu dosiero ne elŝutiĝis. WhatsApp konservas kopion en siaj serviloj nur dum kelka tempo, kaj kutime ĝi jam malaperis kiam mesaĝo estas malnova — nenio ĉi tie povas reakiri ĝin. Petu ĝin denove de la telefono kiu sendis ĝin. (Klaku por forigi.)</translation>
+    </message>
+</context>
+<context>
     <name>MoreApps</name>
     <message>
         <location filename="../widgets/MoreApps/moreapps.ui" line="14"/>
@@ -2413,22 +2426,22 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
 <context>
     <name>SettingsWidget</name>
     <message>
-        <location filename="../settingswidget.cpp" line="2790"/>
+        <location filename="../settingswidget.cpp" line="2825"/>
         <source>%1 of %2 chosen</source>
         <translation>%1 el %2 elektitaj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2324"/>
+        <location filename="../settingswidget.cpp" line="2332"/>
         <source>Search settings</source>
         <translation>Serĉi agordojn</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2326"/>
+        <location filename="../settingswidget.cpp" line="2334"/>
         <source>Show only the settings that match. What you find is the setting itself, working where it stands — not a list to click through. Tooltips are searched as well as labels, and so are the English names of the settings when Whatly is running in another language.</source>
         <translation>Montri nur la agordojn kiuj kongruas. Kion vi trovas estas la agordo mem, funkcianta kie ĝi staras — ne listo por alklaki. Ankaŭ la klarigaj tekstoj estas serĉataj, ne nur la etikedoj, kaj same la anglaj nomoj de la agordoj kiam Whatly funkcias en alia lingvo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2445"/>
+        <location filename="../settingswidget.cpp" line="2456"/>
         <source>No setting matches “%1”. Tooltips are searched too, so a plainer word usually finds it.</source>
         <translation>Neniu agordo kongruas kun “%1”. Ankaŭ la klarigaj tekstoj estas serĉataj, do pli simpla vorto kutime trovas ĝin.</translation>
     </message>
@@ -2888,7 +2901,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2563"/>
+        <location filename="../settingswidget.cpp" line="2598"/>
         <source>Check spelling as I type</source>
         <translation>Kontroli la literumadon dum mi tajpas</translation>
     </message>
@@ -4029,17 +4042,17 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>Ĉu forigi la aldonaĵon &quot;%1&quot;? Tio forigas ĝian dosieron.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2562"/>
+        <location filename="../settingswidget.cpp" line="2597"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Literumkontrolilo (neniu vortaro instalita)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2668"/>
+        <location filename="../settingswidget.cpp" line="2703"/>
         <source>Downloadable languages unavailable — click to try again</source>
         <translation>Elŝuteblaj lingvoj nedisponeblaj — alklaku por reprovi</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2682"/>
+        <location filename="../settingswidget.cpp" line="2717"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>Marku la lingvojn por literumkontrolo. Ĉiu vico elŝutas aŭ forigas sian vortaron.</translation>
     </message>
@@ -4052,48 +4065,48 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation type="vanished">Marku unu aŭ plurajn lingvojn por literumkontrolo.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2784"/>
+        <location filename="../settingswidget.cpp" line="2819"/>
         <source>Choose languages…</source>
         <translation>Elektu lingvojn…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2792"/>
+        <location filename="../settingswidget.cpp" line="2827"/>
         <source>%1 languages</source>
         <translation>%1 lingvoj</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2917"/>
+        <location filename="../settingswidget.cpp" line="2952"/>
         <source>WhatsApp default</source>
         <translation>Defaŭlto de Vacapo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2956"/>
+        <location filename="../settingswidget.cpp" line="2991"/>
         <source>System default</source>
         <translation>Defaŭlto de la sistemo</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2986"/>
+        <location filename="../settingswidget.cpp" line="3021"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>La lingvo de la interfaco ŝanĝiĝos kiam vi restartigos %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3000"/>
+        <location filename="../settingswidget.cpp" line="3035"/>
         <source>App Lock Setup</source>
         <translation>Agordo de la aplikaĵa ŝloso</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3001"/>
+        <location filename="../settingswidget.cpp" line="3036"/>
         <source>Please setup the App lock password first.</source>
         <translation>Bonvolu unue agordi la pasvorton de la aplikaĵa ŝloso.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3117"/>
-        <location filename="../settingswidget.cpp" line="3128"/>
+        <location filename="../settingswidget.cpp" line="3152"/>
+        <location filename="../settingswidget.cpp" line="3163"/>
         <source>Select download directory</source>
         <translation>Elekti la elŝutan dosierujon</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3168"/>
+        <location filename="../settingswidget.cpp" line="3203"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -4104,7 +4117,7 @@ Tio elsalutigos vian nunan seancon.
 Eble vi ankaŭ bezonos kompletan restartigon de la aplikaĵo!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3174"/>
+        <location filename="../settingswidget.cpp" line="3209"/>
         <source>Do you want to proceed?</source>
         <translation>Ĉu vi volas daŭrigi?</translation>
     </message>
@@ -4254,104 +4267,104 @@ Eble vi ankaŭ bezonos kompletan restartigon de la aplikaĵo!</translation>
 <context>
     <name>WebEnginePage</name>
     <message>
-        <location filename="../webenginepage.cpp" line="55"/>
+        <location filename="../webenginepage.cpp" line="57"/>
         <source>Share your screen</source>
         <translation>Kunhavigi vian ekranon</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="57"/>
+        <location filename="../webenginepage.cpp" line="59"/>
         <source>Choose what to share:</source>
         <translation>Elektu kion kunhavigi:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="69"/>
+        <location filename="../webenginepage.cpp" line="71"/>
         <source>Untitled</source>
         <translation>Sentitola</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="73"/>
+        <location filename="../webenginepage.cpp" line="75"/>
         <source>Screen: </source>
         <translation>Ekrano: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="74"/>
+        <location filename="../webenginepage.cpp" line="76"/>
         <source>Window: </source>
         <translation>Fenestro: </translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="181"/>
+        <location filename="../webenginepage.cpp" line="183"/>
         <source>Allow %1 to access your location information?</source>
         <translation>Ĉu permesi al %1 aliri vian lokan informon?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="183"/>
+        <location filename="../webenginepage.cpp" line="185"/>
         <source>Allow %1 to access your microphone?</source>
         <translation>Ĉu permesi al %1 aliri vian mikrofonon?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="185"/>
+        <location filename="../webenginepage.cpp" line="187"/>
         <source>Allow %1 to access your webcam?</source>
         <translation>Ĉu permesi al %1 aliri vian retkameraon?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="187"/>
+        <location filename="../webenginepage.cpp" line="189"/>
         <source>Allow %1 to access your microphone and webcam?</source>
         <translation>Ĉu permesi al %1 aliri vian mikrofonon kaj retkameraon?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="189"/>
+        <location filename="../webenginepage.cpp" line="191"/>
         <source>Allow %1 to lock your mouse cursor?</source>
         <translation>Ĉu permesi al %1 ŝlosi vian musmontrilon?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="191"/>
+        <location filename="../webenginepage.cpp" line="193"/>
         <source>Allow %1 to capture video of your desktop?</source>
         <translation>Ĉu permesi al %1 kapti videon de via labortablo?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="193"/>
+        <location filename="../webenginepage.cpp" line="195"/>
         <source>Allow %1 to capture audio and video of your desktop?</source>
         <translation>Ĉu permesi al %1 kapti sonon kaj videon de via labortablo?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="196"/>
+        <location filename="../webenginepage.cpp" line="198"/>
         <source>Allow %1 to show notification on your desktop?</source>
         <translation>Ĉu permesi al %1 montri sciigojn en via labortablo?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="198"/>
+        <location filename="../webenginepage.cpp" line="200"/>
         <source>Allow %1 to read your clipboard? This is needed to paste images into a chat.</source>
         <translation>Ĉu permesi al %1 legi vian tondujon? Tio necesas por alglui bildojn en babilon.</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="201"/>
+        <location filename="../webenginepage.cpp" line="203"/>
         <source>Allow %1 to see the fonts installed on your system?</source>
         <translation>Ĉu permesi al %1 vidi la tiparojn instalitajn en via sistemo?</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="221"/>
-        <location filename="../webenginepage.cpp" line="435"/>
+        <location filename="../webenginepage.cpp" line="223"/>
+        <location filename="../webenginepage.cpp" line="438"/>
         <source>Permission Request</source>
         <translation>Peto de permeso</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="358"/>
-        <location filename="../webenginepage.cpp" line="367"/>
+        <location filename="../webenginepage.cpp" line="361"/>
+        <location filename="../webenginepage.cpp" line="370"/>
         <source>Certificate Error</source>
         <translation>Eraro de atestilo</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="387"/>
+        <location filename="../webenginepage.cpp" line="390"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
         <translation>Enigu uzantnomon kaj pasvorton por &quot;%1&quot; ĉe %2</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="417"/>
+        <location filename="../webenginepage.cpp" line="420"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
         <translation>Konektiĝi al la prokurilo &quot;%1&quot; per:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="436"/>
+        <location filename="../webenginepage.cpp" line="439"/>
         <source>Allow %1 to open all %2 links?</source>
         <translation>Ĉu permesi al %1 malfermi ĉiujn ligilojn %2?</translation>
     </message>
