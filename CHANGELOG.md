@@ -1,4 +1,6 @@
-## Unreleased
+## 7.3.0 (2026-08-15)
+
+- **Two more interface languages: Bengali and Urdu, for 22 in total.** The two most widely spoken languages Whatly did not yet have, both with large WhatsApp user bases. Urdu is right-to-left, like the Arabic and Persian already supported. Pick either from Settings, or leave the interface on the system language.
 
 - **The Windows build compiles again.** `main.cpp` includes `<windows.h>` for the restart handshake, and `windows.h` defines `min()` and `max()` as macros. Every Qt header pulled in after it that writes `std::max(...)` is then handed a mangled token: MSVC died inside `QtQml/qjslist.h`, a file nobody here wrote, with `error C2589: '(' : illegal token on right side of '::'`. The include now carries `WIN32_LEAN_AND_MEAN` and `NOMINMAX` before it, as `lock.cpp` has done all along. Nothing else changes; the failure was latent from the day the include was added and only surfaced when the include chain grew as far as QtQml.
 

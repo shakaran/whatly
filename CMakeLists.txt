@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Set version
-set(PROJECT_VERSION 7.2.2)
+set(PROJECT_VERSION 7.3.0)
 set(PROJECT_DESCRIPTION "Feature rich WhatsApp web client based on Qt WebEngine")
 
 # Get Git information
@@ -392,6 +392,7 @@ if (Qt${QT_VERSION_MAJOR}LinguistTools_FOUND)
     qt_add_translations(whatly
         TS_FILES
             src/i18n/ar_SA.ts
+            src/i18n/bn_BD.ts
             src/i18n/de_DE.ts
             src/i18n/eo.ts
             src/i18n/es_ES.ts
@@ -408,6 +409,7 @@ if (Qt${QT_VERSION_MAJOR}LinguistTools_FOUND)
             src/i18n/ru_RU.ts
             src/i18n/tr_TR.ts
             src/i18n/uk_UA.ts
+            src/i18n/ur_PK.ts
             src/i18n/vi_VN.ts
             src/i18n/zh_CN.ts
             src/i18n/zh_TW.ts

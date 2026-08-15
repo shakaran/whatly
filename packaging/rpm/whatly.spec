@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        7.2.2
+Version:        7.3.0
 # Reference system-Qt spec for downstream packagers; the release itself builds
 # the native rpm from packaging/obs/whatly.spec. Release kept at 0 to match it
 # (both are the system-Qt "whatly"), so this never looks newer than, or collides
@@ -61,6 +61,14 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Sat Aug 15 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.3.0-1
+- Settings gains a live search box that filters the page to what matches (#39),
+  and its language names, restart state and wheel handling are fixed.
+- Two new interface languages, Bengali and Urdu, for 22 in total.
+- AppImage can update itself in place via appimageupdatetool (#85); XCB is used
+  on proprietary NVIDIA + Wayland so the window is not blank (#84); a stuck media
+  download now explains itself. Many diagnostics and tray fixes. See CHANGELOG.md.
+
 * Thu Aug 13 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.2.2-1
 - Fix the "update available" notification doing nothing on click on KDE/Linux:
   it now goes through libnotify with an "Open" action like message

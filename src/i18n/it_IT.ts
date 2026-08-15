@@ -1465,12 +1465,12 @@ WebEngine non è inizializzato.</translation>
     <message>
         <location filename="../mediastuck.cpp" line="39"/>
         <source>This file did not download: there is no connection at the moment. It will arrive on its own once there is. (Click to dismiss.)</source>
-        <translation>Questo file non è stato scaricato: al momento non c'è connessione. Arriverà da solo appena ci sarà. (Clic per ignorare.)</translation>
+        <translation>Questo file non è stato scaricato: al momento non c&apos;è connessione. Arriverà da solo appena ci sarà. (Clic per ignorare.)</translation>
     </message>
     <message>
         <location filename="../mediastuck.cpp" line="44"/>
         <source>This file did not download. WhatsApp keeps a copy on its servers only for a while, and it is usually gone by the time a message is old — there is nothing here that can fetch it back. Ask for it again from the phone that sent it. (Click to dismiss.)</source>
-        <translation>Questo file non è stato scaricato. WhatsApp conserva una copia sui suoi server solo per un po', e di solito è già sparita quando un messaggio è vecchio: qui non c'è nulla che possa recuperarla. Richiedilo di nuovo al telefono che l'ha inviato. (Clic per ignorare.)</translation>
+        <translation>Questo file non è stato scaricato. WhatsApp conserva una copia sui suoi server solo per un po&apos;, e di solito è già sparita quando un messaggio è vecchio: qui non c&apos;è nulla che possa recuperarla. Richiedilo di nuovo al telefono che l&apos;ha inviato. (Clic per ignorare.)</translation>
     </message>
 </context>
 <context>
@@ -1706,97 +1706,97 @@ WebEngine non è inizializzato.</translation>
         <translation>potrebbe essere necessario riavviare. Segnala l&apos;errore allo sviluppatore.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="195"/>
+        <location filename="../main.cpp" line="202"/>
         <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
         <translation>Niente da migrare da &quot;%1&quot; — già migrato, o nessun dato trovato.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="200"/>
+        <location filename="../main.cpp" line="207"/>
         <source>Would copy:</source>
         <translation>Copierebbe:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="200"/>
+        <location filename="../main.cpp" line="207"/>
         <source>Copied:</source>
         <translation>Copiato:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="204"/>
+        <location filename="../main.cpp" line="211"/>
         <source>Run again without --dry-run to perform the copy.</source>
         <translation>Esegui di nuovo senza --dry-run per eseguire la copia.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="583"/>
+        <location filename="../main.cpp" line="590"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Client WhatsApp Web ricco di funzionalità basato su Qt WebEngine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="590"/>
+        <location filename="../main.cpp" line="597"/>
         <source>Displays help on commandline options</source>
         <translation>Visualizza la guida sulle opzioni della riga di comando</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="595"/>
+        <location filename="../main.cpp" line="602"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>Apre la finestra di Impostazioni in un&apos;istanza in esecuzione di </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="600"/>
+        <location filename="../main.cpp" line="607"/>
         <source>Locks a running instance of </source>
         <translation>Blocca un&apos;istanza in esecuzione di </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="606"/>
+        <location filename="../main.cpp" line="613"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>Apre la finestra Info in un&apos;istanza in esecuzione di </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="611"/>
+        <location filename="../main.cpp" line="618"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>Apre la finestra dei messaggi programmati in un&apos;istanza in esecuzione di </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="618"/>
+        <location filename="../main.cpp" line="625"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>Passa dal tema scuro a quello chiaro in un&apos;istanza in esecuzione di </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="625"/>
+        <location filename="../main.cpp" line="632"/>
         <source>Reload the app in a running instance of </source>
         <translation>Ricarica l&apos;app in un&apos;istanza in esecuzione di </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="631"/>
+        <location filename="../main.cpp" line="638"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>Apri una nuova chat in un&apos;istanza in esecuzione di </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="644"/>
+        <location filename="../main.cpp" line="651"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Esegui come account separato con sessione e impostazioni proprie, in una finestra dedicata&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="661"/>
+        <location filename="../main.cpp" line="668"/>
         <source>Show main window of running instance of </source>
         <translation>Mostra la finestra principale dell&apos;istanza in esecuzione di </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="668"/>
+        <location filename="../main.cpp" line="675"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>Copia le impostazioni e la sessione connessa da un’installazione precedente (es. la vecchia versione &quot;whatsie&quot;) in questa, poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="675"/>
+        <location filename="../main.cpp" line="682"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>Con --migrate-from, mostra solo ciò che verrebbe copiato</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="693"/>
+        <location filename="../main.cpp" line="700"/>
         <source>Print the current unread message count and exit</source>
         <translation>Stampa il numero di messaggi non letti ed esce</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1218"/>
+        <location filename="../main.cpp" line="1225"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>Blocco non configurato, 
@@ -1902,172 +1902,172 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Mostra l&apos;elenco delle chat</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1316"/>
+        <location filename="../main.cpp" line="1323"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Ripristinato da un arresto anomalo all&apos;avvio passando al rendering sicuro. Puoi regolarlo in Impostazioni → Prestazioni.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="699"/>
+        <location filename="../main.cpp" line="706"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>Invia un messaggio tramite l&apos;istanza in esecuzione, poi esce (richiede --to e --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="703"/>
+        <location filename="../main.cpp" line="710"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>Destinatario per --send: un numero di telefono (internazionale), un id di gruppo o un nome di contatto</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="708"/>
+        <location filename="../main.cpp" line="715"/>
         <source>Message text for --send</source>
         <translation>Testo del messaggio per --send</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="720"/>
+        <location filename="../main.cpp" line="727"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>Come --send consegna: &apos;web&apos; (la sessione di WhatsApp Web in esecuzione) o &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="711"/>
+        <location filename="../main.cpp" line="718"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>Allega un file a --send (il --message, se presente, diventa la didascalia)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="654"/>
+        <location filename="../main.cpp" line="661"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>Interno: attende l&apos;uscita del processo con questo id prima di avviarsi, usato da &quot;Riavvia ora&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="716"/>
+        <location filename="../main.cpp" line="723"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Didascalia per l&apos;allegato --file (alias di --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="726"/>
+        <location filename="../main.cpp" line="733"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>Usa il modello salvato con questo nome come messaggio di --send (riempi i suoi {{campi}} con --var)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="731"/>
+        <location filename="../main.cpp" line="738"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>Riempi un campo del modello: key=value (ripetibile)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="735"/>
+        <location filename="../main.cpp" line="742"/>
         <source>List the saved message templates and exit</source>
         <translation>Elenca i modelli di messaggio salvati ed esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="738"/>
+        <location filename="../main.cpp" line="745"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>Salva (o sostituisci) un modello di messaggio, poi esci: name=body</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="742"/>
+        <location filename="../main.cpp" line="749"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Elimina il modello di messaggio con questo nome, poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="747"/>
+        <location filename="../main.cpp" line="754"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>Attiva la risposta automatica ai messaggi in arrivo ed esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="750"/>
+        <location filename="../main.cpp" line="757"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>Disattiva la risposta automatica ed esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="753"/>
+        <location filename="../main.cpp" line="760"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>Elenca le regole di risposta automatica attive (con lo stato) ed esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="756"/>
+        <location filename="../main.cpp" line="763"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Usa questo file JSON come sorgente di regole di risposta automatica ed esci (vuoto per rimuoverlo)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="762"/>
+        <location filename="../main.cpp" line="769"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>Imposta l&apos;id del numero di telefono della Cloud API, poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="766"/>
+        <location filename="../main.cpp" line="773"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>Imposta il token di accesso della Cloud API, poi esci (memorizzato nella configurazione dell&apos;account)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="771"/>
+        <location filename="../main.cpp" line="778"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>Imposta la versione graph della Cloud API (es. v21.0), poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="775"/>
+        <location filename="../main.cpp" line="782"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>Mostra se la Cloud API è configurata, poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="778"/>
+        <location filename="../main.cpp" line="785"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>Per --send --backend cloud: invia questo modello approvato da Meta</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="782"/>
+        <location filename="../main.cpp" line="789"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>Codice lingua per --cloud-template (es. es, en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="786"/>
+        <location filename="../main.cpp" line="793"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Un parametro posizionale del corpo per --cloud-template (ripetibile)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="791"/>
+        <location filename="../main.cpp" line="798"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>Attiva l&apos;API HTTP locale, poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="794"/>
+        <location filename="../main.cpp" line="801"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>Disattiva l&apos;API HTTP locale, poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="797"/>
+        <location filename="../main.cpp" line="804"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>Imposta la porta dell&apos;API HTTP locale (predefinita 8590), poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="801"/>
+        <location filename="../main.cpp" line="808"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>Imposta il token Bearer dell&apos;API HTTP locale, poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="805"/>
+        <location filename="../main.cpp" line="812"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>Mostra la configurazione dell&apos;API HTTP locale, poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="809"/>
+        <location filename="../main.cpp" line="816"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>Attiva la ricezione dei webhook della Cloud API, poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="812"/>
+        <location filename="../main.cpp" line="819"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>Disattiva la ricezione dei webhook della Cloud API, poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="815"/>
+        <location filename="../main.cpp" line="822"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>Imposta il token di verifica del webhook della Cloud API, poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="819"/>
+        <location filename="../main.cpp" line="826"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>Imposta il secret dell&apos;app Meta per la verifica della firma del webhook, poi esci</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="823"/>
+        <location filename="../main.cpp" line="830"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>Mostra la configurazione del webhook della Cloud API, poi esci</translation>
     </message>

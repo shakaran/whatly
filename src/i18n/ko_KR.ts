@@ -1639,97 +1639,97 @@ You can pull any account out into its own window: right-click its tab and choose
         <translation>디버그 정보 숨기기</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="195"/>
+        <location filename="../main.cpp" line="202"/>
         <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
         <translation>&quot;%1&quot;에서 마이그레이션할 항목이 없습니다 — 이미 완료되었거나 데이터가 없습니다.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="200"/>
+        <location filename="../main.cpp" line="207"/>
         <source>Would copy:</source>
         <translation>복사 예정:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="200"/>
+        <location filename="../main.cpp" line="207"/>
         <source>Copied:</source>
         <translation>복사됨:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="204"/>
+        <location filename="../main.cpp" line="211"/>
         <source>Run again without --dry-run to perform the copy.</source>
         <translation>복사를 수행하려면 --dry-run 없이 다시 실행하세요.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="583"/>
+        <location filename="../main.cpp" line="590"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Qt WebEngine 기반의 다기능 WhatsApp Web 클라이언트</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="590"/>
+        <location filename="../main.cpp" line="597"/>
         <source>Displays help on commandline options</source>
         <translation>명령줄 옵션 도움말을 표시합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="595"/>
+        <location filename="../main.cpp" line="602"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>실행 중인 인스턴스에서 설정을 엽니다: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="600"/>
+        <location filename="../main.cpp" line="607"/>
         <source>Locks a running instance of </source>
         <translation>실행 중인 인스턴스를 잠급니다: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="606"/>
+        <location filename="../main.cpp" line="613"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>실행 중인 인스턴스에서 «정보» 창을 엽니다: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="611"/>
+        <location filename="../main.cpp" line="618"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>실행 중인 인스턴스에서 예약 메시지 대화상자를 엽니다 </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="618"/>
+        <location filename="../main.cpp" line="625"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>실행 중인 인스턴스에서 밝은 테마와 어두운 테마를 전환합니다: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="625"/>
+        <location filename="../main.cpp" line="632"/>
         <source>Reload the app in a running instance of </source>
         <translation>실행 중인 인스턴스에서 앱을 새로 고칩니다: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="631"/>
+        <location filename="../main.cpp" line="638"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>실행 중인 인스턴스에서 새 대화 창을 엽니다: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="644"/>
+        <location filename="../main.cpp" line="651"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;자체 세션과 설정을 가진 별도 계정으로, 별도의 창에서 실행합니다&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="661"/>
+        <location filename="../main.cpp" line="668"/>
         <source>Show main window of running instance of </source>
         <translation>실행 중인 인스턴스의 기본 창을 표시합니다: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="668"/>
+        <location filename="../main.cpp" line="675"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>이전 설치(예: 이전 &quot;whatsie&quot; 빌드)에서 설정과 로그인된 세션을 여기로 복사한 후 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="675"/>
+        <location filename="../main.cpp" line="682"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>--migrate-from와 함께 사용하면 복사될 항목만 표시합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="693"/>
+        <location filename="../main.cpp" line="700"/>
         <source>Print the current unread message count and exit</source>
         <translation>현재 읽지 않은 메시지 수를 출력하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1218"/>
+        <location filename="../main.cpp" line="1225"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>앱 잠금이 설정되어 있지 않습니다.
@@ -1896,172 +1896,172 @@ Please setup the password in the Settings first.</source>
         <translation>채팅 목록 표시</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1316"/>
+        <location filename="../main.cpp" line="1323"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>시작 시 충돌에서 안전 렌더링으로 전환하여 복구했습니다. 설정 → 성능에서 조정할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="699"/>
+        <location filename="../main.cpp" line="706"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>실행 중인 인스턴스를 통해 메시지를 보내고 종료합니다 (--to 및 --message 필요)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="703"/>
+        <location filename="../main.cpp" line="710"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>--send의 수신자: 전화번호(국제), 그룹 ID 또는 연락처 이름</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="708"/>
+        <location filename="../main.cpp" line="715"/>
         <source>Message text for --send</source>
         <translation>--send의 메시지 텍스트</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="720"/>
+        <location filename="../main.cpp" line="727"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>--send 전송 방식: &apos;web&apos;(실행 중인 WhatsApp Web 세션) 또는 &apos;cloud&apos;(Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="711"/>
+        <location filename="../main.cpp" line="718"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>--send에 파일을 첨부합니다 (--message가 있으면 캡션이 됩니다)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="654"/>
+        <location filename="../main.cpp" line="661"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>내부용: 시작하기 전에 이 id를 가진 프로세스가 종료될 때까지 대기하며, &quot;지금 다시 시작&quot;에서 사용됩니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="716"/>
+        <location filename="../main.cpp" line="723"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>--file 첨부의 캡션 (--message의 별칭)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="726"/>
+        <location filename="../main.cpp" line="733"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>이 이름의 저장된 템플릿을 --send 메시지로 사용합니다 (--var로 {{필드}} 채우기)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="731"/>
+        <location filename="../main.cpp" line="738"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>템플릿 필드 채우기: key=value (반복 가능)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="735"/>
+        <location filename="../main.cpp" line="742"/>
         <source>List the saved message templates and exit</source>
         <translation>저장된 메시지 템플릿을 나열하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="738"/>
+        <location filename="../main.cpp" line="745"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>메시지 템플릿을 저장(또는 교체)하고 종료합니다: name=body</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="742"/>
+        <location filename="../main.cpp" line="749"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>이 이름의 저장된 메시지 템플릿을 삭제하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="747"/>
+        <location filename="../main.cpp" line="754"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>수신 메시지에 대한 자동 회신을 켜고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="750"/>
+        <location filename="../main.cpp" line="757"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>자동 회신을 끄고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="753"/>
+        <location filename="../main.cpp" line="760"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>활성화된 자동 회신 규칙(상태 포함)을 나열하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="756"/>
+        <location filename="../main.cpp" line="763"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>이 JSON 파일을 자동 회신 규칙의 소스로 사용하고 종료합니다 (비우면 해제)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="762"/>
+        <location filename="../main.cpp" line="769"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>Cloud API 전화번호 ID를 설정하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="766"/>
+        <location filename="../main.cpp" line="773"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>Cloud API 액세스 토큰을 설정하고 종료합니다(계정 설정에 저장됨)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="771"/>
+        <location filename="../main.cpp" line="778"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>Cloud API graph 버전을 설정하고 종료합니다(예: v21.0)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="775"/>
+        <location filename="../main.cpp" line="782"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>Cloud API 구성 여부를 표시하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="778"/>
+        <location filename="../main.cpp" line="785"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>--send --backend cloud용: Meta가 승인한 이 템플릿을 전송합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="782"/>
+        <location filename="../main.cpp" line="789"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>--cloud-template의 언어 코드(예: es, en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="786"/>
+        <location filename="../main.cpp" line="793"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>--cloud-template의 위치 본문 매개변수(반복 가능)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="791"/>
+        <location filename="../main.cpp" line="798"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>로컬 HTTP API를 활성화하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="794"/>
+        <location filename="../main.cpp" line="801"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>로컬 HTTP API를 비활성화하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="797"/>
+        <location filename="../main.cpp" line="804"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>로컬 HTTP API 포트를 설정하고 종료합니다(기본값 8590)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="801"/>
+        <location filename="../main.cpp" line="808"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>로컬 HTTP API Bearer 토큰을 설정하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="805"/>
+        <location filename="../main.cpp" line="812"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>로컬 HTTP API 구성을 표시하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="809"/>
+        <location filename="../main.cpp" line="816"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>Cloud API 웹훅 수신을 활성화하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="812"/>
+        <location filename="../main.cpp" line="819"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>Cloud API 웹훅 수신을 비활성화하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="815"/>
+        <location filename="../main.cpp" line="822"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>Cloud API 웹훅 확인 토큰을 설정하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="819"/>
+        <location filename="../main.cpp" line="826"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>웹훅 서명 확인을 위한 Meta 앱 시크릿을 설정하고 종료합니다</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="823"/>
+        <location filename="../main.cpp" line="830"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>Cloud API 웹훅 구성을 표시하고 종료합니다</translation>
     </message>

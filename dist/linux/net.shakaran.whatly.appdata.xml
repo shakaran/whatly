@@ -46,7 +46,7 @@
       <li>Global keyboard shortcuts and a built-in download manager</li>
       <li>Per-session audio mute and notification suppression</li>
       <li>HiDPI/4K scaling, configurable zoom and a custom user-agent string</li>
-      <li>Runs on Linux and Windows (plus an experimental macOS build); interface translated into 20 languages</li>
+      <li>Runs on Linux and Windows (plus an experimental macOS build); interface translated into 22 languages</li>
     </ul>
   </description>
 
@@ -108,6 +108,15 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.3.0" date="2026-08-15">
+      <description>
+        <ul>
+          <li>Settings now has a live search box that filters the page to the settings that match (#39)</li>
+          <li>Two new interface languages, Bengali and Urdu, for 22 in total</li>
+          <li>The AppImage can update itself in place; on NVIDIA + Wayland the window no longer opens blank; a stuck media download explains itself; the tray badge counts past nine; and many diagnostics, translation and packaging fixes</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.2.2" date="2026-08-13">
       <description>
         <p>Two fixes:</p>

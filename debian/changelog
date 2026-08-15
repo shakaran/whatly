@@ -1,3 +1,18 @@
+whatly (7.3.0) unstable; urgency=medium
+
+  * Settings gains a live search box that filters the page to the settings that
+    match (#39), with the real controls left in place; interface language names,
+    the restart UI state and mouse-wheel handling over spin boxes are fixed.
+  * Two new interface languages, Bengali and Urdu, for 22 in total.
+  * The AppImage can update itself in place via appimageupdatetool (#85). On
+    proprietary NVIDIA under Wayland the window no longer comes up blank, using
+    XCB automatically (#84). A stuck media download now explains itself, the
+    tray badge counts past nine with a fuller tooltip, the update notice is
+    clickable on KDE (#74), and many diagnostics and packaging fixes. See
+    CHANGELOG.md.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Sat, 15 Aug 2026 16:52:56 +0200
+
 whatly (7.2.2) unstable; urgency=medium
 
   * Fix the "update available" notification doing nothing when clicked on

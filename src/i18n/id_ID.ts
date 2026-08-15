@@ -1639,97 +1639,97 @@ Anda dapat menarik akun mana pun ke jendelanya sendiri: klik kanan tabnya dan pi
         <translation>Sembunyikan informasi debug</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="195"/>
+        <location filename="../main.cpp" line="202"/>
         <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
         <translation>Tidak ada yang bisa dimigrasikan dari &quot;%1&quot; — sudah dimigrasikan, atau tidak ada data.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="200"/>
+        <location filename="../main.cpp" line="207"/>
         <source>Would copy:</source>
         <translation>Akan menyalin:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="200"/>
+        <location filename="../main.cpp" line="207"/>
         <source>Copied:</source>
         <translation>Disalin:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="204"/>
+        <location filename="../main.cpp" line="211"/>
         <source>Run again without --dry-run to perform the copy.</source>
         <translation>Jalankan lagi tanpa --dry-run untuk melakukan penyalinan.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="583"/>
+        <location filename="../main.cpp" line="590"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Klien WhatsApp Web berfitur lengkap berbasis Qt WebEngine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="590"/>
+        <location filename="../main.cpp" line="597"/>
         <source>Displays help on commandline options</source>
         <translation>Menampilkan bantuan untuk opsi baris perintah</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="595"/>
+        <location filename="../main.cpp" line="602"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>Membuka pengaturan pada instansi yang sedang berjalan dari </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="600"/>
+        <location filename="../main.cpp" line="607"/>
         <source>Locks a running instance of </source>
         <translation>Mengunci instansi yang sedang berjalan dari </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="606"/>
+        <location filename="../main.cpp" line="613"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>Membuka jendela «Tentang» pada instansi yang sedang berjalan dari </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="611"/>
+        <location filename="../main.cpp" line="618"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>Membuka dialog pesan terjadwal di instans yang sedang berjalan dari </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="618"/>
+        <location filename="../main.cpp" line="625"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>Beralih antara tema terang dan gelap pada instansi yang sedang berjalan dari </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="625"/>
+        <location filename="../main.cpp" line="632"/>
         <source>Reload the app in a running instance of </source>
         <translation>Memuat ulang aplikasi pada instansi yang sedang berjalan dari </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="631"/>
+        <location filename="../main.cpp" line="638"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>Membuka jendela obrolan baru pada instansi yang sedang berjalan dari </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="644"/>
+        <location filename="../main.cpp" line="651"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Jalankan sebagai akun terpisah dengan sesi dan pengaturannya sendiri, di jendelanya sendiri&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="661"/>
+        <location filename="../main.cpp" line="668"/>
         <source>Show main window of running instance of </source>
         <translation>Menampilkan jendela utama dari instansi yang sedang berjalan dari </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="668"/>
+        <location filename="../main.cpp" line="675"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>Salin pengaturan dan sesi yang masuk dari instalasi sebelumnya (mis. versi &quot;whatsie&quot; lama) ke sini, lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="675"/>
+        <location filename="../main.cpp" line="682"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>Dengan --migrate-from, hanya laporkan apa yang akan disalin</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="693"/>
+        <location filename="../main.cpp" line="700"/>
         <source>Print the current unread message count and exit</source>
         <translation>Cetak jumlah pesan belum dibaca saat ini lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1218"/>
+        <location filename="../main.cpp" line="1225"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>Kunci aplikasi belum dikonfigurasi.
@@ -1896,172 +1896,172 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Tampilkan daftar obrolan</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1316"/>
+        <location filename="../main.cpp" line="1323"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Dipulihkan dari kegagalan saat memulai dengan beralih ke rendering aman. Anda dapat menyesuaikannya di Pengaturan → Kinerja.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="699"/>
+        <location filename="../main.cpp" line="706"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>Kirim pesan melalui instansi yang sedang berjalan, lalu keluar (perlu --to dan --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="703"/>
+        <location filename="../main.cpp" line="710"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>Penerima untuk --send: nomor telepon (internasional), id grup, atau nama kontak</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="708"/>
+        <location filename="../main.cpp" line="715"/>
         <source>Message text for --send</source>
         <translation>Teks pesan untuk --send</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="720"/>
+        <location filename="../main.cpp" line="727"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>Cara --send mengirim: &apos;web&apos; (sesi WhatsApp Web yang berjalan) atau &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="711"/>
+        <location filename="../main.cpp" line="718"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>Lampirkan berkas untuk --send (--message, jika ada, menjadi keterangan)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="654"/>
+        <location filename="../main.cpp" line="661"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>Internal: menunggu proses dengan id ini keluar sebelum memulai, digunakan oleh &quot;Mulai ulang sekarang&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="716"/>
+        <location filename="../main.cpp" line="723"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Keterangan untuk lampiran --file (alias dari --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="726"/>
+        <location filename="../main.cpp" line="733"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>Gunakan templat tersimpan bernama ini sebagai pesan --send (isi {{field}}-nya dengan --var)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="731"/>
+        <location filename="../main.cpp" line="738"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>Isi sebuah field templat: key=value (dapat diulang)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="735"/>
+        <location filename="../main.cpp" line="742"/>
         <source>List the saved message templates and exit</source>
         <translation>Tampilkan templat pesan tersimpan lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="738"/>
+        <location filename="../main.cpp" line="745"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>Simpan (atau ganti) templat pesan, lalu keluar: name=body</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="742"/>
+        <location filename="../main.cpp" line="749"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Hapus templat pesan bernama ini, lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="747"/>
+        <location filename="../main.cpp" line="754"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>Aktifkan balasan otomatis untuk pesan masuk lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="750"/>
+        <location filename="../main.cpp" line="757"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>Nonaktifkan balasan otomatis lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="753"/>
+        <location filename="../main.cpp" line="760"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>Tampilkan aturan balasan otomatis yang aktif (beserta statusnya) lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="756"/>
+        <location filename="../main.cpp" line="763"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Gunakan berkas JSON ini sebagai sumber aturan balasan otomatis lalu keluar (kosongkan untuk menghapus)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="762"/>
+        <location filename="../main.cpp" line="769"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>Setel id nomor telepon Cloud API, lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="766"/>
+        <location filename="../main.cpp" line="773"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>Setel token akses Cloud API, lalu keluar (disimpan di konfigurasi akun)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="771"/>
+        <location filename="../main.cpp" line="778"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>Setel versi graph Cloud API (mis. v21.0), lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="775"/>
+        <location filename="../main.cpp" line="782"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>Tampilkan apakah Cloud API sudah dikonfigurasi, lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="778"/>
+        <location filename="../main.cpp" line="785"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>Untuk --send --backend cloud: kirim templat yang disetujui Meta ini</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="782"/>
+        <location filename="../main.cpp" line="789"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>Kode bahasa untuk --cloud-template (mis. es, en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="786"/>
+        <location filename="../main.cpp" line="793"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Sebuah parameter body posisional untuk --cloud-template (dapat diulang)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="791"/>
+        <location filename="../main.cpp" line="798"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>Aktifkan API HTTP lokal, lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="794"/>
+        <location filename="../main.cpp" line="801"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>Nonaktifkan API HTTP lokal, lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="797"/>
+        <location filename="../main.cpp" line="804"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>Setel port API HTTP lokal (bawaan 8590), lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="801"/>
+        <location filename="../main.cpp" line="808"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>Setel token Bearer API HTTP lokal, lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="805"/>
+        <location filename="../main.cpp" line="812"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>Tampilkan konfigurasi API HTTP lokal, lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="809"/>
+        <location filename="../main.cpp" line="816"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>Aktifkan penerimaan webhook Cloud API, lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="812"/>
+        <location filename="../main.cpp" line="819"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>Nonaktifkan penerimaan webhook Cloud API, lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="815"/>
+        <location filename="../main.cpp" line="822"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>Setel token verifikasi webhook Cloud API, lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="819"/>
+        <location filename="../main.cpp" line="826"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>Setel app secret Meta untuk pemeriksaan tanda tangan webhook, lalu keluar</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="823"/>
+        <location filename="../main.cpp" line="830"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>Tampilkan konfigurasi webhook Cloud API, lalu keluar</translation>
     </message>

@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fa_IR">
+<TS version="2.1" language="bn_BD">
 <context>
     <name>About</name>
+    <message>
+        <location filename="../about.cpp" line="88"/>
+        <source>Version: </source>
+        <translation>সংস্করণ: </translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="144"/>
+        <location filename="../about.ui" line="220"/>
+        <source>Report a Bug</source>
+        <translation>একটি বাগ রিপোর্ট করুন</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="145"/>
+        <source>The debug information was too long for the browser to carry, so it has been copied to your clipboard instead. Paste it into the issue.</source>
+        <translation>ডিবাগ তথ্যটি ব্রাউজারের বহন করার জন্য অত্যন্ত দীর্ঘ ছিল, তাই এটি পরিবর্তে আপনার ক্লিপবোর্ডে অনুলিপি করা হয়েছে। এটি ইস্যুতে পেস্ট করুন।</translation>
+    </message>
+    <message>
+        <location filename="../about.cpp" line="152"/>
+        <source> | About</source>
+        <translation> | সম্পর্কে</translation>
+    </message>
     <message>
         <location filename="../about.ui" line="14"/>
         <source>Form</source>
@@ -31,7 +52,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../about.ui" line="171"/>
         <source>Donate PayPal</source>
-        <translation>اهدا از طریق PayPal</translation>
+        <translation>PayPal-এ দান করুন</translation>
     </message>
     <message>
         <location filename="../about.ui" line="178"/>
@@ -46,48 +67,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../about.ui" line="192"/>
         <source>Rate in Store</source>
-        <translation>امتیاز دادن در فروشگاه</translation>
+        <translation>স্টোরে রেট করুন</translation>
     </message>
     <message>
         <location filename="../about.ui" line="203"/>
         <source>More Applications</source>
-        <translation>برنامه‌های بیشتر</translation>
+        <translation>আরও অ্যাপ্লিকেশন</translation>
     </message>
     <message>
         <location filename="../about.ui" line="210"/>
         <source>Source Code</source>
-        <translation>کد منبع</translation>
+        <translation>সোর্স কোড</translation>
     </message>
     <message>
         <location filename="../about.ui" line="217"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copies the debug information below to the clipboard and opens the issue tracker, so it can be pasted straight into the report.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اطلاعات اشکال‌زدایی زیر را در کلیپ‌بورد کپی می‌کند و ردیاب مشکلات (issue tracker) را باز می‌کند تا مستقیماً در گزارش جای‌گذاری شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="144"/>
-        <location filename="../about.ui" line="220"/>
-        <source>Report a Bug</source>
-        <translation>گزارش اشکال</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;নিচের ডিবাগ তথ্য ক্লিপবোর্ডে কপি করে ইস্যু ট্র্যাকার খোলে, যাতে তা সরাসরি রিপোর্টে পেস্ট করা যায়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../about.ui" line="229"/>
         <source>Debug Info</source>
-        <translation>اطلاعات اشکال‌زدایی</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="88"/>
-        <source>Version: </source>
-        <translation>نسخه: </translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="145"/>
-        <source>The debug information was too long for the browser to carry, so it has been copied to your clipboard instead. Paste it into the issue.</source>
-        <translation>اطلاعات اشکال‌زدایی برای مرورگر بیش از حد طولانی بود، بنابراین در عوض در کلیپ‌بورد شما کپی شد. آن را در گزارش مشکل جای‌گذاری کنید.</translation>
-    </message>
-    <message>
-        <location filename="../about.cpp" line="152"/>
-        <source> | About</source>
-        <translation> | درباره</translation>
+        <translation>ডিবাগ তথ্য</translation>
     </message>
 </context>
 <context>
@@ -95,27 +95,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../aiassistant.cpp" line="241"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
-        <translation>هیچ نقطه پایانی هوش مصنوعی پیکربندی نشده است (تنظیمات ← دستیار هوش مصنوعی).</translation>
+        <translation>কোনো AI এন্ডপয়েন্ট কনফিগার করা নেই (সেটিংস → AI অ্যাসিস্ট্যান্ট)।</translation>
     </message>
     <message>
         <location filename="../aiassistant.cpp" line="245"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
-        <translation>هیچ مدل هوش مصنوعی پیکربندی نشده است (تنظیمات ← دستیار هوش مصنوعی).</translation>
+        <translation>কোনো AI মডেল কনফিগার করা নেই (সেটিংস → AI অ্যাসিস্ট্যান্ট)।</translation>
     </message>
     <message>
         <location filename="../aiassistant.cpp" line="249"/>
         <source>There is nothing to send to the assistant.</source>
-        <translation>چیزی برای ارسال به دستیار وجود ندارد.</translation>
+        <translation>অ্যাসিস্ট্যান্টের কাছে পাঠানোর মতো কিছু নেই।</translation>
     </message>
     <message>
         <location filename="../aiassistant.cpp" line="289"/>
         <source>The assistant took too long and was cancelled.</source>
-        <translation>دستیار زمان زیادی طول کشید و لغو شد.</translation>
+        <translation>অ্যাসিস্ট্যান্ট অত্যধিক সময় নিয়েছে এবং বাতিল করা হয়েছে।</translation>
     </message>
     <message>
         <location filename="../aiassistant.cpp" line="292"/>
         <source>The assistant request failed.</source>
-        <translation>درخواست دستیار ناموفق بود.</translation>
+        <translation>অ্যাসিস্ট্যান্ট অনুরোধ ব্যর্থ হয়েছে।</translation>
     </message>
 </context>
 <context>
@@ -128,27 +128,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../automatictheme.ui" line="27"/>
         <source>Sunrise</source>
-        <translation>طلوع آفتاب</translation>
+        <translation>সূর্যোদয়</translation>
     </message>
     <message>
         <location filename="../automatictheme.ui" line="34"/>
         <source>Sunset</source>
-        <translation>غروب آفتاب</translation>
+        <translation>সূর্যাস্ত</translation>
     </message>
     <message>
         <location filename="../automatictheme.ui" line="55"/>
         <source>  Refresh </source>
-        <translation>  تازه‌سازی </translation>
+        <translation>  রিফ্রেশ </translation>
     </message>
     <message>
         <location filename="../automatictheme.ui" line="70"/>
         <source>Disable and Close</source>
-        <translation>غیرفعال کردن و بستن</translation>
+        <translation>নিষ্ক্রিয় করুন এবং বন্ধ করুন</translation>
     </message>
     <message>
         <location filename="../automatictheme.ui" line="94"/>
         <source>  Enable and Close</source>
-        <translation>  فعال کردن و بستن</translation>
+        <translation>  সক্রিয় করুন এবং বন্ধ করুন</translation>
     </message>
     <message>
         <location filename="../automatictheme.cpp" line="27"/>
@@ -156,16 +156,14 @@ p, li { white-space: pre-wrap; }
         <location filename="../automatictheme.cpp" line="94"/>
         <location filename="../automatictheme.cpp" line="103"/>
         <source>Error</source>
-        <translation>خطا</translation>
+        <translation>ত্রুটি</translation>
     </message>
     <message>
         <location filename="../automatictheme.cpp" line="95"/>
         <source>Invalid Geo-Coordinates.
 
 Please try again.</source>
-        <translation>مختصات جغرافیایی نامعتبر است.
-
-لطفاً دوباره تلاش کنید.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../automatictheme.cpp" line="104"/>
@@ -174,11 +172,7 @@ Please try again.</source>
 Sunrise and Sunset time cannot have similar values.
 
 Please try again.</source>
-        <translation>پیکربندی نامعتبر است.
-
-زمان طلوع و غروب آفتاب نمی‌توانند مقادیر یکسانی داشته باشند.
-
-لطفاً دوباره تلاش کنید.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -186,26 +180,24 @@ Please try again.</source>
     <message>
         <location filename="../certificateerrordialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation>کادر گفتگو</translation>
+        <translation>ডায়ালগ</translation>
     </message>
     <message>
         <location filename="../certificateerrordialog.ui" line="26"/>
         <source>Icon</source>
-        <translation>نماد</translation>
+        <translation>আইকন</translation>
     </message>
     <message>
         <location filename="../certificateerrordialog.ui" line="42"/>
         <source>Error</source>
-        <translation>خطا</translation>
+        <translation>ত্রুটি</translation>
     </message>
     <message>
         <location filename="../certificateerrordialog.ui" line="61"/>
         <source>If you wish so, you may continue with an unverified certificate. Accepting an unverified certificate mean you may not be connected with the host you tried to connect to.
 
 Do you wish to override the security check and continue ?   </source>
-        <translation>اگر می‌خواهید، می‌توانید با یک گواهی تأییدنشده ادامه دهید. پذیرفتن گواهی تأییدنشده به این معناست که ممکن است به میزبانی که قصد اتصال به آن را داشتید متصل نشده باشید.
-
-آیا می‌خواهید بررسی امنیتی را نادیده بگیرید و ادامه دهید؟   </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -213,17 +205,17 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../chatliststrip.cpp" line="739"/>
         <source>Small</source>
-        <translation>کوچک</translation>
+        <translation>ছোট</translation>
     </message>
     <message>
         <location filename="../chatliststrip.cpp" line="741"/>
         <source>Medium</source>
-        <translation>متوسط</translation>
+        <translation>মাঝারি</translation>
     </message>
     <message>
         <location filename="../chatliststrip.cpp" line="743"/>
         <source>Large</source>
-        <translation>بزرگ</translation>
+        <translation>বড়</translation>
     </message>
 </context>
 <context>
@@ -231,72 +223,72 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../chattheme.cpp" line="184"/>
         <source>WhatsApp (default)</source>
-        <translation>WhatsApp (پیش‌فرض)</translation>
+        <translation>WhatsApp (ডিফল্ট)</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="186"/>
         <source>Barbie pink</source>
-        <translation>صورتی باربی</translation>
+        <translation>বার্বি গোলাপি</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="188"/>
         <source>Dusty rose</source>
-        <translation>رز خاکی</translation>
+        <translation>ডাস্টি রোজ</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="190"/>
         <source>Lavender</source>
-        <translation>اسطوخودوسی</translation>
+        <translation>ল্যাভেন্ডার</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="192"/>
         <source>Violet</source>
-        <translation>بنفش</translation>
+        <translation>ভায়োলেট</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="194"/>
         <source>Sky blue</source>
-        <translation>آبی آسمانی</translation>
+        <translation>আকাশি নীল</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="196"/>
         <source>Deep ocean</source>
-        <translation>اقیانوس عمیق</translation>
+        <translation>গভীর সমুদ্র</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="198"/>
         <source>Teal</source>
-        <translation>سبزآبی</translation>
+        <translation>টিল</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="200"/>
         <source>Mint</source>
-        <translation>نعنایی</translation>
+        <translation>মিন্ট</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="202"/>
         <source>Coral</source>
-        <translation>مرجانی</translation>
+        <translation>কোরাল</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="204"/>
         <source>Peach</source>
-        <translation>هلویی</translation>
+        <translation>পিচ</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="206"/>
         <source>Gold</source>
-        <translation>طلایی</translation>
+        <translation>সোনালি</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="208"/>
         <source>Crimson</source>
-        <translation>زرشکی</translation>
+        <translation>ক্রিমসন</translation>
     </message>
     <message>
         <location filename="../chattheme.cpp" line="210"/>
         <source>Graphite</source>
-        <translation>گرافیتی</translation>
+        <translation>গ্রাফাইট</translation>
     </message>
 </context>
 <context>
@@ -304,22 +296,22 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../commandpalette.cpp" line="46"/>
         <source>Command palette</source>
-        <translation>پالت فرمان</translation>
+        <translation>কমান্ড প্যালেট</translation>
     </message>
     <message>
         <location filename="../commandpalette.cpp" line="57"/>
         <source>Type a command…</source>
-        <translation>یک فرمان تایپ کنید…</translation>
+        <translation>একটি কমান্ড টাইপ করুন…</translation>
     </message>
     <message>
         <location filename="../commandpalette.cpp" line="59"/>
         <source>Command search</source>
-        <translation>جستجوی فرمان</translation>
+        <translation>কমান্ড অনুসন্ধান</translation>
     </message>
     <message>
         <location filename="../commandpalette.cpp" line="62"/>
         <source>Matching commands</source>
-        <translation>فرمان‌های مطابق</translation>
+        <translation>মিলে যাওয়া কমান্ড</translation>
     </message>
 </context>
 <context>
@@ -327,52 +319,17 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../customtitlebar.cpp" line="90"/>
         <source>Minimise</source>
-        <translation>کوچک کردن</translation>
+        <translation>মিনিমাইজ করুন</translation>
     </message>
     <message>
         <location filename="../customtitlebar.cpp" line="94"/>
         <source>Maximise</source>
-        <translation>بزرگ کردن</translation>
+        <translation>ম্যাক্সিমাইজ করুন</translation>
     </message>
     <message>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
-        <translation>بستن</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">دریافت فهرست واژه‌نامه‌های قابل دانلود ممکن نشد: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">دانلود %1 ناموفق بود: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">در حال بارگذاری واژه‌نامه‌های موجود…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">هیچ واژه‌نامه‌ای در دسترس نیست.</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">نصب‌شده</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">حذف</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">نصب‌شده (همراه برنامه)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">دانلود</translation>
+        <translation>বন্ধ করুন</translation>
     </message>
 </context>
 <context>
@@ -380,17 +337,17 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../dictionarymanager.cpp" line="112"/>
         <source>No writable dictionary directory.</source>
-        <translation>هیچ پوشه‌ی واژه‌نامه‌ی قابل نوشتنی وجود ندارد.</translation>
+        <translation>কোনো লেখাযোগ্য ডিকশনারি ডিরেক্টরি নেই।</translation>
     </message>
     <message>
         <location filename="../dictionarymanager.cpp" line="142"/>
         <source>The downloaded dictionary failed verification.</source>
-        <translation>واژه‌نامه‌ی دانلودشده در بررسی صحت ناموفق بود.</translation>
+        <translation>ডাউনলোড করা ডিকশনারি যাচাইকরণে ব্যর্থ হয়েছে।</translation>
     </message>
     <message>
         <location filename="../dictionarymanager.cpp" line="152"/>
         <source>Could not save the dictionary.</source>
-        <translation>ذخیره‌ی واژه‌نامه ممکن نشد.</translation>
+        <translation>ডিকশনারি সংরক্ষণ করা যায়নি।</translation>
     </message>
 </context>
 <context>
@@ -398,42 +355,42 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../downloadmanagerwidget.ui" line="20"/>
         <source>Downloads</source>
-        <translation>دانلودها</translation>
+        <translation>ডাউনলোড</translation>
     </message>
     <message>
         <location filename="../downloadmanagerwidget.ui" line="80"/>
         <source>No downloads</source>
-        <translation>دانلودی وجود ندارد</translation>
+        <translation>কোনো ডাউনলোড নেই</translation>
     </message>
     <message>
         <location filename="../downloadmanagerwidget.ui" line="125"/>
         <source>Clear download list</source>
-        <translation>پاک کردن فهرست دانلودها</translation>
+        <translation>ডাউনলোড তালিকা পরিষ্কার করুন</translation>
     </message>
     <message>
         <location filename="../downloadmanagerwidget.ui" line="128"/>
         <source>Clear all</source>
-        <translation>پاک کردن همه</translation>
+        <translation>সব পরিষ্কার করুন</translation>
     </message>
     <message>
         <location filename="../downloadmanagerwidget.ui" line="139"/>
         <source>Open download directory in file manager</source>
-        <translation>باز کردن پوشه دانلود در مدیر فایل</translation>
+        <translation>ফাইল ম্যানেজারে ডাউনলোড ডিরেক্টরি খুলুন</translation>
     </message>
     <message>
         <location filename="../downloadmanagerwidget.ui" line="142"/>
         <source>Open Download directory</source>
-        <translation>باز کردن پوشه دانلود</translation>
+        <translation>ডাউনলোড ডিরেক্টরি খুলুন</translation>
     </message>
     <message>
         <location filename="../downloadmanagerwidget.cpp" line="36"/>
         <source>File with same name already exist!</source>
-        <translation>فایلی با همین نام از قبل وجود دارد!</translation>
+        <translation>একই নামের ফাইল ইতিমধ্যে বিদ্যমান!</translation>
     </message>
     <message>
         <location filename="../downloadmanagerwidget.cpp" line="37"/>
         <source>Save file with a new name?</source>
-        <translation>فایل با نام جدید ذخیره شود؟</translation>
+        <translation>নতুন নামে ফাইল সংরক্ষণ করবেন?</translation>
     </message>
 </context>
 <context>
@@ -442,67 +399,67 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../downloadwidget.ui" line="26"/>
         <location filename="../downloadwidget.ui" line="48"/>
         <source>TextLabel</source>
-        <translation>برچسب متنی</translation>
+        <translation>TextLabel</translation>
     </message>
     <message>
         <location filename="../downloadwidget.ui" line="63"/>
         <source>Open file using system application</source>
-        <translation>باز کردن فایل با برنامه سیستم</translation>
+        <translation>সিস্টেম অ্যাপ্লিকেশন ব্যবহার করে ফাইল খুলুন</translation>
     </message>
     <message>
         <location filename="../downloadwidget.cpp" line="58"/>
         <source>%L1 B</source>
-        <translation>%L1 بایت</translation>
+        <translation>%L1 B</translation>
     </message>
     <message>
         <location filename="../downloadwidget.cpp" line="60"/>
         <source>%L1 KiB</source>
-        <translation>%L1 کیلوبایت</translation>
+        <translation>%L1 KiB</translation>
     </message>
     <message>
         <location filename="../downloadwidget.cpp" line="62"/>
         <source>%L1 MiB</source>
-        <translation>%L1 مگابایت</translation>
+        <translation>%L1 MiB</translation>
     </message>
     <message>
         <location filename="../downloadwidget.cpp" line="64"/>
         <source>%L1 GiB</source>
-        <translation>%L1 گیگابایت</translation>
+        <translation>%L1 GiB</translation>
     </message>
     <message>
         <location filename="../downloadwidget.cpp" line="86"/>
         <source>%p% - %1 of %2 downloaded - %3/s</source>
-        <translation>%p% - %1 از %2 دانلود شد - %3/ثانیه</translation>
+        <translation>%p% - %2-এর %1 ডাউনলোড হয়েছে - %3/সে</translation>
     </message>
     <message>
         <location filename="../downloadwidget.cpp" line="94"/>
         <source>unknown size - %1 downloaded - %2/s</source>
-        <translation>اندازه نامشخص - %1 دانلود شد - %2/ثانیه</translation>
+        <translation>অজানা আকার - %1 ডাউনলোড হয়েছে - %2/সে</translation>
     </message>
     <message>
         <location filename="../downloadwidget.cpp" line="103"/>
         <source>completed - %1 downloaded - %2/s</source>
-        <translation>کامل شد - %1 دانلود شد - %2/ثانیه</translation>
+        <translation>সম্পন্ন - %1 ডাউনলোড হয়েছে - %2/সে</translation>
     </message>
     <message>
         <location filename="../downloadwidget.cpp" line="111"/>
         <source>cancelled - %1 downloaded - %2/s</source>
-        <translation>لغو شد - %1 دانلود شد - %2/ثانیه</translation>
+        <translation>বাতিল করা হয়েছে - %1 ডাউনলোড হয়েছে - %2/সে</translation>
     </message>
     <message>
         <location filename="../downloadwidget.cpp" line="119"/>
         <source>interrupted: %1</source>
-        <translation>متوقف شد: %1</translation>
+        <translation>বাধাগ্রস্ত: %1</translation>
     </message>
     <message>
         <location filename="../downloadwidget.cpp" line="127"/>
         <source>Stop downloading</source>
-        <translation>توقف دانلود</translation>
+        <translation>ডাউনলোড বন্ধ করুন</translation>
     </message>
     <message>
         <location filename="../downloadwidget.cpp" line="131"/>
         <source>Remove from list</source>
-        <translation>حذف از فهرست</translation>
+        <translation>তালিকা থেকে সরান</translation>
     </message>
 </context>
 <context>
@@ -510,7 +467,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../dropprogress.cpp" line="76"/>
         <source>Attaching…</source>
-        <translation>در حال پیوست…</translation>
+        <translation>সংযুক্ত করা হচ্ছে…</translation>
     </message>
 </context>
 <context>
@@ -523,53 +480,53 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../lock.ui" line="199"/>
         <source>Set lock passcode</source>
-        <translation>تنظیم رمز قفل</translation>
+        <translation>লক পাসকোড সেট করুন</translation>
     </message>
     <message>
         <location filename="../lock.ui" line="224"/>
         <source>enter passcode</source>
-        <translation>رمز عبور را وارد کنید</translation>
+        <translation>পাসকোড লিখুন</translation>
     </message>
     <message>
         <location filename="../lock.ui" line="243"/>
         <source>enter passcode again</source>
-        <translation>رمز عبور را دوباره وارد کنید</translation>
+        <translation>পাসকোড আবার লিখুন</translation>
     </message>
     <message>
         <location filename="../lock.ui" line="256"/>
         <source>Set Pass Code</source>
-        <translation>تنظیم رمز عبور</translation>
+        <translation>পাসকোড সেট করুন</translation>
     </message>
     <message>
         <location filename="../lock.ui" line="269"/>
         <source>Cancel</source>
-        <translation>لغو</translation>
+        <translation>বাতিল করুন</translation>
     </message>
     <message>
         <location filename="../lock.ui" line="276"/>
         <location filename="../lock.ui" line="629"/>
         <source>Warning: Caps Lock is On</source>
-        <translation>هشدار: Caps Lock روشن است</translation>
+        <translation>সতর্কতা: ক্যাপস লক চালু আছে</translation>
     </message>
     <message>
         <location filename="../lock.ui" line="346"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Note: Passcode must be more then 3 characters and must match in both fields.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;توجه: رمز عبور باید بیش از 3 نویسه باشد و در هر دو فیلد یکسان باشد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;নোট: পাসকোড অবশ্যই 3 অক্ষরের বেশি হতে হবে এবং উভয় ঘরে মিলতে হবে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../lock.ui" line="597"/>
         <source>Enter your passcode to get access</source>
-        <translation>برای دسترسی رمز عبور خود را وارد کنید</translation>
+        <translation>অ্যাক্সেস পেতে আপনার পাসকোড লিখুন</translation>
     </message>
     <message>
         <location filename="../lock.ui" line="622"/>
         <source>enter your passcode</source>
-        <translation>رمز عبور خود را وارد کنید</translation>
+        <translation>আপনার পাসকোড লিখুন</translation>
     </message>
     <message>
         <location filename="../lock.ui" line="639"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wrong Passcode, Please try again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;رمز عبور اشتباه است، لطفاً دوباره تلاش کنید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ভুল পাসকোড, অনুগ্রহ করে আবার চেষ্টা করুন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -579,53 +536,59 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../mainwindow.cpp" line="1238"/>
         <location filename="../mainwindow.cpp" line="1334"/>
         <source>No WhatsApp window is open</source>
-        <translation>هیچ پنجره WhatsApp باز نیست</translation>
+        <translation>কোনো WhatsApp উইন্ডো খোলা নেই</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="123"/>
         <source>Reminder</source>
-        <translation>یادآوری</translation>
+        <translation>রিমাইন্ডার</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="123"/>
         <source>Reminder: %1</source>
-        <translation>یادآوری: %1</translation>
+        <translation>রিমাইন্ডার: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="230"/>
+        <source>Whatly %1 is available. Update it through Flathub or your software centre.</source>
+        <translation>Whatly %1 উপলব্ধ। Flathub বা আপনার সফটওয়্যার সেন্টারের মাধ্যমে এটি আপডেট করুন।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="235"/>
+        <source>Whatly %1 is available. Update it with your package manager.</source>
+        <translation>Whatly %1 উপলব্ধ। আপনার প্যাকেজ ম্যানেজার দিয়ে এটি আপডেট করুন।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="240"/>
+        <source>Whatly %1 is available. Choose Update now to fetch just the parts that changed and update in place.</source>
+        <translation>Whatly %1 উপলব্ধ। শুধু পরিবর্তিত অংশগুলি আনতে এবং যথাস্থানে আপডেট করতে এখনই আপডেট করুন বেছে নিন।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="243"/>
+        <source>Whatly %1 is available. This AppImage can update itself in place with AppImageUpdate, fetching only the parts that changed.</source>
+        <translation>Whatly %1 উপলব্ধ। এই AppImage AppImageUpdate দিয়ে যথাস্থানে নিজেকে আপডেট করতে পারে, শুধু পরিবর্তিত অংশগুলি এনে।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="250"/>
+        <source>Whatly %1 is available. Click to open the download page.</source>
+        <translation>Whatly %1 উপলব্ধ। ডাউনলোড পৃষ্ঠা খুলতে ক্লিক করুন।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="261"/>
         <location filename="../mainwindow.cpp" line="283"/>
         <source>Update available</source>
-        <translation>به‌روزرسانی موجود است</translation>
+        <translation>আপডেট উপলব্ধ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="250"/>
-        <source>Whatly %1 is available. Click to open the download page.</source>
-        <translation>Whatly %1 در دسترس است. برای باز کردن صفحه دانلود کلیک کنید.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="230"/>
-        <source>Whatly %1 is available. Update it through Flathub or your software centre.</source>
-        <translation>Whatly %1 در دسترس است. آن را از طریق Flathub یا مرکز نرم‌افزار خود به‌روزرسانی کنید.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="235"/>
-        <source>Whatly %1 is available. Update it with your package manager.</source>
-        <translation>Whatly %1 در دسترس است. آن را با مدیر بستهٔ خود به‌روزرسانی کنید.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="240"/>
-        <source>Whatly %1 is available. Choose Update now to fetch just the parts that changed and update in place.</source>
-        <translation>Whatly %1 در دسترس است. برای دریافت فقط بخش‌های تغییریافته و به‌روزرسانی درجا، «به‌روزرسانی اکنون» را انتخاب کنید.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="243"/>
-        <source>Whatly %1 is available. This AppImage can update itself in place with AppImageUpdate, fetching only the parts that changed.</source>
-        <translation>Whatly %1 در دسترس است. این AppImage می‌تواند با AppImageUpdate در جای خود به‌روزرسانی شود و تنها بخش‌های تغییرکرده را دریافت کند.</translation>
+        <location filename="../mainwindow.cpp" line="264"/>
+        <location filename="../mainwindow.cpp" line="1798"/>
+        <source>Open</source>
+        <translation>খুলুন</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="267"/>
         <source>Update now</source>
-        <translation>به‌روزرسانی اکنون</translation>
+        <translation>এখনই আপডেট করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="972"/>
@@ -633,88 +596,93 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../mainwindow_webengine.cpp" line="967"/>
         <location filename="../mainwindow_webengine.cpp" line="970"/>
         <source>| Error</source>
-        <translation>| خطا</translation>
+        <translation>| ত্রুটি</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="973"/>
         <source>Unlock to access Settings.</source>
-        <translation>برای دسترسی به تنظیمات، قفل را باز کنید.</translation>
+        <translation>সেটিংস অ্যাক্সেস করতে আনলক করুন।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="979"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
-        <translation>امکان مقداردهی اولیه ماژول تنظیمات وجود ندارد.
-WebEngine مقداردهی اولیه نشده است.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1000"/>
         <source> | Action required</source>
-        <translation> | نیاز به اقدام</translation>
+        <translation> | পদক্ষেপ প্রয়োজন</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1001"/>
         <source>Page needs to be reloaded to continue.</source>
-        <translation>برای ادامه باید صفحه دوباره بارگذاری شود.</translation>
+        <translation>চালিয়ে যেতে পৃষ্ঠাটি পুনরায় লোড করা প্রয়োজন।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1180"/>
         <location filename="../mainwindow.cpp" line="1822"/>
         <location filename="../mainwindow_webengine.cpp" line="1648"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
-        <translation>Whatly قفل است. برای ارسال پیام آن را باز کنید.</translation>
+        <translation>Whatly লক করা আছে। বার্তা পাঠাতে এটি আনলক করুন।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1191"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
-        <translation>Cloud API به یک شماره تلفن به‌عنوان گیرنده نیاز دارد.</translation>
+        <translation>Cloud API-এর প্রাপক হিসাবে একটি ফোন নম্বর প্রয়োজন।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1196"/>
         <source>The Cloud API is not configured.</source>
-        <translation>Cloud API پیکربندی نشده است.</translation>
+        <translation>Cloud API কনফিগার করা নেই।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1205"/>
         <source>Cloud API send failed: %1</source>
-        <translation>ارسال Cloud API ناموفق بود: %1</translation>
+        <translation>Cloud API পাঠানো ব্যর্থ হয়েছে: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1230"/>
         <source>Could not understand the recipient: %1</source>
-        <translation>گیرنده قابل تشخیص نبود: %1</translation>
+        <translation>প্রাপককে বোঝা যায়নি: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1259"/>
         <location filename="../mainwindow.cpp" line="1340"/>
         <source>Could not read the file to send: %1</source>
-        <translation>فایل برای ارسال قابل خواندن نبود: %1</translation>
+        <translation>পাঠানোর জন্য ফাইলটি পড়া যায়নি: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1268"/>
         <location filename="../mainwindow.cpp" line="1350"/>
         <source>The file is too large to send over the web backend.</source>
-        <translation>فایل برای ارسال از طریق بک‌اند وب بیش از حد بزرگ است.</translation>
+        <translation>ওয়েব ব্যাকএন্ডের মাধ্যমে পাঠানোর জন্য ফাইলটি অত্যন্ত বড়।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1293"/>
         <source>Opening the group and sending…</source>
-        <translation>در حال باز کردن گروه و ارسال…</translation>
+        <translation>গ্রুপটি খোলা হচ্ছে এবং পাঠানো হচ্ছে…</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1294"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
-        <translation>در حال باز کردن گفتگو با «%1» و ارسال…</translation>
+        <translation>&quot;%1&quot;-এর সাথে চ্যাট খোলা হচ্ছে এবং পাঠানো হচ্ছে…</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1325"/>
         <source>The local API could not start: %1</source>
-        <translation>API محلی راه‌اندازی نشد: %1</translation>
+        <translation>লোকাল API শুরু করা যায়নি: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1462"/>
         <source>Updating Whatly…</source>
-        <translation>در حال به‌روزرسانی Whatly…</translation>
+        <translation>Whatly আপডেট করা হচ্ছে…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1462"/>
+        <location filename="../mainwindow_webengine.cpp" line="1493"/>
+        <source>Cancel</source>
+        <translation>বাতিল করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1464"/>
@@ -722,176 +690,171 @@ WebEngine مقداردهی اولیه نشده است.</translation>
         <location filename="../mainwindow.cpp" line="1511"/>
         <location filename="../mainwindow.cpp" line="1523"/>
         <source>Software update</source>
-        <translation>به‌روزرسانی نرم‌افزار</translation>
+        <translation>সফটওয়্যার আপডেট</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1506"/>
         <source>The update could not be completed. You can download the new version from the release page instead.</source>
-        <translation>به‌روزرسانی کامل نشد. می‌توانید نسخهٔ جدید را از صفحهٔ انتشار دانلود کنید.</translation>
+        <translation>আপডেটটি সম্পন্ন করা যায়নি। পরিবর্তে আপনি রিলিজ পৃষ্ঠা থেকে নতুন সংস্করণটি ডাউনলোড করতে পারেন।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1512"/>
         <source>Whatly was updated. Restart now to use the new version?</source>
-        <translation>Whatly به‌روزرسانی شد. برای استفاده از نسخهٔ جدید اکنون راه‌اندازی مجدد شود؟</translation>
+        <translation>Whatly আপডেট করা হয়েছে। নতুন সংস্করণ ব্যবহার করতে এখনই পুনরায় চালু করবেন?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1524"/>
         <source>The update tool could not be started.</source>
-        <translation>ابزار به‌روزرسانی راه‌اندازی نشد.</translation>
+        <translation>আপডেট টুলটি শুরু করা যায়নি।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1550"/>
         <source>Restart</source>
-        <translation>راه‌اندازی مجدد</translation>
+        <translation>পুনরায় চালু করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1551"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
-        <translation>Whatly نتوانست نمونه جدیدی را راه‌اندازی کند، بنابراین این نمونه بسته نشد. لطفاً آن را ببندید و دوباره باز کنید.</translation>
+        <translation>Whatly একটি নতুন ইনস্ট্যান্স শুরু করতে পারেনি, তাই এটি এটিকে বন্ধ করেনি। অনুগ্রহ করে এটি বন্ধ করে আবার খুলুন।</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1677"/>
         <source>Expand the chat list</source>
-        <translation>گسترش فهرست گفتگوها</translation>
+        <translation>চ্যাট তালিকা প্রসারিত করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1678"/>
         <location filename="../mainwindow_tray.cpp" line="370"/>
         <source>Collapse the chat list</source>
-        <translation>جمع کردن فهرست گفتگوها</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="264"/>
-        <location filename="../mainwindow.cpp" line="1798"/>
-        <source>Open</source>
-        <translation>باز کردن</translation>
+        <translation>চ্যাট তালিকা সংকুচিত করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1844"/>
         <location filename="../mainwindow_tray.cpp" line="29"/>
         <source>New Chat</source>
-        <translation>گفتگوی جدید</translation>
+        <translation>নতুন চ্যাট</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1845"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
-        <translation>یک شماره WhatsApp معتبر همراه با کد کشور وارد کنید (مثلاً +91XXXXXXXXXX)</translation>
+        <translation>দেশের কোড সহ একটি বৈধ WhatsApp নম্বর লিখুন (উদাহরণ- +91XXXXXXXXXX)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1875"/>
         <source>Rate Application</source>
-        <translation>امتیاز دادن به برنامه</translation>
+        <translation>অ্যাপ্লিকেশন রেট করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="343"/>
         <location filename="../mainwindow_accounts.cpp" line="1775"/>
         <source>Rename…</source>
-        <translation>تغییر نام…</translation>
+        <translation>নাম পরিবর্তন করুন…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="344"/>
         <location filename="../mainwindow_accounts.cpp" line="1776"/>
         <source>Open in own window</source>
-        <translation>باز کردن در پنجره مستقل</translation>
+        <translation>নিজস্ব উইন্ডোতে খুলুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="348"/>
         <location filename="../mainwindow_accounts.cpp" line="1779"/>
         <source>Remove account</source>
-        <translation>حذف حساب</translation>
+        <translation>অ্যাকাউন্ট সরান</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="433"/>
         <source>Switch to account: %1</source>
-        <translation>تغییر به حساب: %1</translation>
+        <translation>অ্যাকাউন্টে যান: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="436"/>
         <location filename="../mainwindow_tray.cpp" line="321"/>
         <source>Add account…</source>
-        <translation>افزودن حساب…</translation>
+        <translation>অ্যাকাউন্ট যোগ করুন…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="437"/>
         <source>Quick message…</source>
-        <translation>پیام سریع…</translation>
+        <translation>দ্রুত বার্তা…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="442"/>
         <source>Insert: %1</source>
-        <translation>درج: %1</translation>
+        <translation>সন্নিবেশ করুন: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="750"/>
         <source>%1 — %2 unread</source>
-        <translation>%1 — %2 خوانده‌نشده</translation>
+        <translation>%1 — %2টি অপঠিত</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1519"/>
         <location filename="../mainwindow_accounts.cpp" line="2178"/>
         <source>Add another account</source>
-        <translation>افزودن حساب دیگر</translation>
+        <translation>আরেকটি অ্যাকাউন্ট যোগ করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1548"/>
         <location filename="../mainwindow_accounts.cpp" line="1575"/>
         <source>Restore</source>
-        <translation>بازگردانی</translation>
+        <translation>পুনরুদ্ধার করুন</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">پیام</translation>
+        <location filename="../mainwindow_accounts.cpp" line="1549"/>
+        <source>chats</source>
+        <translation>চ্যাট</translation>
     </message>
     <message>
-        <source>message</source>
-        <translation type="vanished">پیام</translation>
+        <location filename="../mainwindow_accounts.cpp" line="1549"/>
+        <location filename="../mainwindow_webengine.cpp" line="1569"/>
+        <source>chat</source>
+        <translation>চ্যাট</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1621"/>
         <source>Add account</source>
-        <translation>افزودن حساب</translation>
+        <translation>অ্যাকাউন্ট যোগ করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1622"/>
         <source>Name for the new account:</source>
-        <translation>نام برای حساب جدید:</translation>
+        <translation>নতুন অ্যাকাউন্টের নাম:</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1623"/>
         <location filename="../mainwindow_accounts.cpp" line="2516"/>
         <location filename="../mainwindow_accounts.cpp" line="2521"/>
         <source>Account %1</source>
-        <translation>حساب %1</translation>
+        <translation>অ্যাকাউন্ট %1</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1652"/>
         <source>Rename account</source>
-        <translation>تغییر نام حساب</translation>
+        <translation>অ্যাকাউন্টের নাম পরিবর্তন করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1652"/>
         <source>Account name:</source>
-        <translation>نام حساب:</translation>
+        <translation>অ্যাকাউন্টের নাম:</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="2197"/>
         <source>Tip: give an account its own window</source>
-        <translation>نکته: به هر حساب پنجره مستقل خودش را بدهید</translation>
+        <translation>টিপ: একটি অ্যাকাউন্টকে নিজস্ব উইন্ডো দিন</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="2198"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
-        <translation>اکنون بیش از یک حساب دارید که به‌صورت زبانه در بالا نمایش داده می‌شوند.
-
-می‌توانید هر حساب را به پنجره مستقل خودش بکشید: روی زبانه آن راست‌کلیک کرده و «باز کردن در پنجره مستقل» را انتخاب کنید. برای اتصال دوباره حساب به‌عنوان زبانه، آن پنجره را ببندید.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="2510"/>
         <location filename="../mainwindow_accounts.cpp" line="2514"/>
         <source>Account 1</source>
-        <translation>حساب 1</translation>
+        <translation>অ্যাকাউন্ট ১</translation>
     </message>
     <message>
         <location filename="../mainwindow_lock.cpp" line="132"/>
@@ -899,241 +862,238 @@ You can pull any account out into its own window: right-click its tab and choose
 Please setup the password in the Settings first.
 
 Open Settings now?</source>
-        <translation>قفل برنامه پیکربندی نشده است، 
-لطفاً ابتدا رمز عبور را در تنظیمات تنظیم کنید.
-
-اکنون تنظیمات باز شود؟</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="34"/>
         <location filename="../mainwindow_tray.cpp" line="365"/>
         <source>Fullscreen</source>
-        <translation>تمام‌صفحه</translation>
+        <translation>পূর্ণস্ক্রিন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="40"/>
         <source>Mi&amp;nimize to tray</source>
-        <translation>&amp;کوچک کردن به سینی</translation>
+        <translation>ট্রেতে ছোট করুন (&amp;n)</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>&amp;بازگردانی</translation>
+        <translation>পুনরুদ্ধার করুন (&amp;R)</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="85"/>
         <source>Re&amp;load</source>
-        <translation>&amp;بارگذاری مجدد</translation>
+        <translation>পুনরায় লোড করুন (&amp;l)</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="91"/>
         <source>Loc&amp;k</source>
-        <translation>&amp;قفل</translation>
+        <translation>লক করুন (&amp;k)</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="96"/>
         <source>&amp;Mute audio</source>
-        <translation>&amp;بی‌صدا کردن صدا</translation>
+        <translation>অডিও নিঃশব্দ করুন (&amp;M)</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="105"/>
         <source>Zoom in</source>
-        <translation>بزرگ‌نمایی</translation>
+        <translation>বড় করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="111"/>
         <source>Zoom out</source>
-        <translation>کوچک‌نمایی</translation>
+        <translation>ছোট করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="116"/>
         <location filename="../mainwindow_tray.cpp" line="367"/>
         <source>Reset zoom</source>
-        <translation>بازنشانی بزرگ‌نمایی</translation>
+        <translation>জুম রিসেট করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="136"/>
         <source>&amp;Find in chats</source>
-        <translation>&amp;جستجو در گفتگوها</translation>
+        <translation>চ্যাটে খুঁজুন (&amp;F)</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="149"/>
         <location filename="../mainwindow_tray.cpp" line="372"/>
         <source>Spelling: next language</source>
-        <translation>غلط‌یاب: زبان بعدی</translation>
+        <translation>বানান: পরবর্তী ভাষা</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="157"/>
         <source>&amp;Settings</source>
-        <translation>&amp;تنظیمات</translation>
+        <translation>সেটিংস (&amp;S)</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="163"/>
         <source>Scheduled &amp;messages…</source>
-        <translation>پیام‌های &amp;زمان‌بندی‌شده…</translation>
+        <translation>নির্ধারিত বার্তা (&amp;m)…</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="170"/>
         <location filename="../mainwindow_tray.cpp" line="374"/>
         <source>Translate selection</source>
-        <translation>ترجمه متن انتخاب‌شده</translation>
+        <translation>নির্বাচন অনুবাদ করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="177"/>
         <location filename="../mainwindow_tray.cpp" line="376"/>
         <source>Translate message box</source>
-        <translation>ترجمه کادر پیام</translation>
+        <translation>বার্তা বাক্স অনুবাদ করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="186"/>
         <source>Export chat…</source>
-        <translation>خروجی گرفتن از گفتگو…</translation>
+        <translation>চ্যাট এক্সপোর্ট করুন…</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="195"/>
         <location filename="../mainwindow_tray.cpp" line="378"/>
         <source>AI: Summarise chat</source>
-        <translation>هوش مصنوعی: خلاصه‌سازی گفتگو</translation>
+        <translation>AI: চ্যাটের সারসংক্ষেপ করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="202"/>
         <location filename="../mainwindow_tray.cpp" line="379"/>
         <source>AI: Improve message</source>
-        <translation>هوش مصنوعی: بهبود پیام</translation>
+        <translation>AI: বার্তা উন্নত করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="209"/>
         <location filename="../mainwindow_tray.cpp" line="380"/>
         <source>AI: Suggest a reply</source>
-        <translation>هوش مصنوعی: پیشنهاد پاسخ</translation>
+        <translation>AI: একটি উত্তর প্রস্তাব করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="217"/>
         <location filename="../mainwindow_tray.cpp" line="383"/>
         <source>AI: Make it more formal</source>
-        <translation>هوش مصنوعی: رسمی‌ترش کن</translation>
+        <translation>AI: আরও আনুষ্ঠানিক করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="223"/>
         <location filename="../mainwindow_tray.cpp" line="384"/>
         <source>AI: Make it friendlier</source>
-        <translation>هوش مصنوعی: صمیمی‌ترش کن</translation>
+        <translation>AI: আরও বন্ধুত্বপূর্ণ করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="229"/>
         <location filename="../mainwindow_tray.cpp" line="385"/>
         <source>AI: Make it shorter</source>
-        <translation>هوش مصنوعی: کوتاه‌ترش کن</translation>
+        <translation>AI: আরও সংক্ষিপ্ত করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="235"/>
         <location filename="../mainwindow_tray.cpp" line="382"/>
         <source>AI: Summarise unread chats</source>
-        <translation>هوش مصنوعی: خلاصهٔ گفتگوهای خوانده‌نشده</translation>
+        <translation>AI: অপঠিত চ্যাটের সারসংক্ষেপ করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="244"/>
         <location filename="../mainwindow_tray.cpp" line="386"/>
         <source>Do Not Disturb</source>
-        <translation type="unfinished">مزاحم نشوید</translation>
+        <translation>বিরক্ত করবেন না</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="250"/>
         <location filename="../mainwindow_tray.cpp" line="387"/>
         <source>Do Not Disturb: 1 hour</source>
-        <translation>مزاحم نشوید: ۱ ساعت</translation>
+        <translation>বিরক্ত করবেন না: ১ ঘণ্টা</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="255"/>
         <location filename="../mainwindow_tray.cpp" line="388"/>
         <source>Do Not Disturb: 2 hours</source>
-        <translation>مزاحم نشوید: ۲ ساعت</translation>
+        <translation>বিরক্ত করবেন না: ২ ঘণ্টা</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="260"/>
         <location filename="../mainwindow_tray.cpp" line="389"/>
         <source>Do Not Disturb: until morning</source>
-        <translation>مزاحم نشوید: تا صبح</translation>
+        <translation>বিরক্ত করবেন না: সকাল পর্যন্ত</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="269"/>
         <location filename="../mainwindow_tray.cpp" line="390"/>
         <source>Remind me to reply: in 1 hour</source>
-        <translation>یادآوری پاسخ: تا ۱ ساعت دیگر</translation>
+        <translation>উত্তর দিতে মনে করিয়ে দিন: ১ ঘণ্টা পর</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="276"/>
         <location filename="../mainwindow_tray.cpp" line="391"/>
         <source>Remind me to reply: in 3 hours</source>
-        <translation>یادآوری پاسخ: تا ۳ ساعت دیگر</translation>
+        <translation>উত্তর দিতে মনে করিয়ে দিন: ৩ ঘণ্টা পর</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="283"/>
         <location filename="../mainwindow_tray.cpp" line="393"/>
         <source>Remind me to reply: tomorrow morning</source>
-        <translation>یادآوری پاسخ: فردا صبح</translation>
+        <translation>উত্তর দিতে মনে করিয়ে দিন: আগামীকাল সকালে</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="290"/>
         <source>&amp;Toggle theme</source>
-        <translation>&amp;تغییر پوسته</translation>
+        <translation>থিম টগল করুন (&amp;T)</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="301"/>
         <source>Tabbed view</source>
-        <translation>نمای زبانه‌ای</translation>
+        <translation>ট্যাব ভিউ</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="308"/>
         <location filename="../mainwindow_tray.cpp" line="396"/>
         <source>Grid view</source>
-        <translation>نمای شبکه‌ای</translation>
+        <translation>গ্রিড ভিউ</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="330"/>
         <location filename="../mainwindow_tray.cpp" line="397"/>
         <source>Command palette</source>
-        <translation>پالت فرمان</translation>
+        <translation>কমান্ড প্যালেট</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="339"/>
         <source>&amp;About</source>
-        <translation>&amp;درباره</translation>
+        <translation>সম্পর্কে (&amp;A)</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="348"/>
         <source>&amp;Quit</source>
-        <translation>&amp;خروج</translation>
+        <translation>প্রস্থান করুন (&amp;Q)</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="361"/>
         <source>Reload</source>
-        <translation>بارگذاری مجدد</translation>
+        <translation>পুনরায় লোড করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="362"/>
         <source>Minimise to tray</source>
-        <translation>کوچک کردن به سینی</translation>
+        <translation>ট্রেতে ছোট করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="363"/>
         <source>Lock</source>
-        <translation>قفل</translation>
+        <translation>লক করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="364"/>
         <source>Mute audio</source>
-        <translation>بی‌صدا کردن صدا</translation>
+        <translation>অডিও নিঃশব্দ করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="366"/>
         <source>New chat / open URL</source>
-        <translation>گفتگوی جدید / باز کردن URL</translation>
+        <translation>নতুন চ্যাট / URL খুলুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="371"/>
         <source>Find in chats</source>
-        <translation>جستجو در گفتگوها</translation>
+        <translation>চ্যাটে খুঁজুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="377"/>
@@ -1145,313 +1105,296 @@ Open Settings now?</source>
         <location filename="../mainwindow_webengine.cpp" line="1610"/>
         <location filename="../mainwindow_webengine.cpp" line="1614"/>
         <source>Export chat</source>
-        <translation>خروجی گرفتن از گفتگو</translation>
+        <translation>চ্যাট এক্সপোর্ট করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="394"/>
         <source>Settings</source>
-        <translation>تنظیمات</translation>
+        <translation>সেটিংস</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="395"/>
         <source>Toggle theme</source>
-        <translation>تغییر پوسته</translation>
+        <translation>থিম টগল করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="398"/>
         <source>Quit</source>
-        <translation>خروج</translation>
+        <translation>প্রস্থান করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="421"/>
         <source>Windows</source>
-        <translation>پنجره‌ها</translation>
+        <translation>উইন্ডো</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="426"/>
         <source>Recent unread</source>
-        <translation>خوانده‌نشده‌های اخیر</translation>
+        <translation>সাম্প্রতিক অপঠিত</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="443"/>
         <source>Spelling</source>
-        <translation>غلط‌یاب</translation>
+        <translation>বানান</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="599"/>
         <source>hidden</source>
-        <translation>پنهان</translation>
+        <translation>লুকানো</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="601"/>
         <source>minimised</source>
-        <translation>کوچک‌شده</translation>
+        <translation>ছোট করা</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="638"/>
         <source>All of them</source>
-        <translation>همه</translation>
+        <translation>সবগুলো</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="653"/>
         <source>No spell-check language is installed.</source>
-        <translation>هیچ زبان غلط‌یابی نصب نشده است.</translation>
+        <translation>কোনো বানান-পরীক্ষার ভাষা ইনস্টল করা নেই।</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="654"/>
         <source>Only one spell-check language is chosen. Pick more in Settings to switch between them.</source>
-        <translation>تنها یک زبان غلط‌یابی انتخاب شده است. برای جابه‌جایی میان آن‌ها، در تنظیمات زبان‌های بیشتری انتخاب کنید.</translation>
+        <translation>শুধুমাত্র একটি বানান-পরীক্ষার ভাষা নির্বাচন করা হয়েছে। এগুলোর মধ্যে পরিবর্তন করতে সেটিংসে আরও নির্বাচন করুন।</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="677"/>
         <source>Spelling: every chosen language</source>
-        <translation>غلط‌یاب: همهٔ زبان‌های انتخاب‌شده</translation>
+        <translation>বানান: নির্বাচিত প্রতিটি ভাষা</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="678"/>
         <source>Spelling: %1</source>
-        <translation>غلط‌یاب: %1</translation>
+        <translation>বানান: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="859"/>
         <source>Reply</source>
-        <translation>پاسخ</translation>
+        <translation>উত্তর দিন</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="860"/>
         <source>Reply to %1…</source>
-        <translation>پاسخ به %1…</translation>
+        <translation>%1-কে উত্তর দিন…</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="965"/>
         <source>Unlock to Reload the App.</source>
-        <translation>برای بارگذاری مجدد برنامه، قفل را باز کنید.</translation>
+        <translation>অ্যাপ পুনরায় লোড করতে আনলক করুন।</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1008"/>
         <source>Waiting for network…</source>
-        <translation>در انتظار شبکه…</translation>
+        <translation>নেটওয়ার্কের জন্য অপেক্ষা করা হচ্ছে…</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1134"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
-        <translation>این نسخه نمی‌تواند ویدیوهای H.264/MP4 ارسال کند: موتور مرورگر آن بدون کُدک‌های اختصاصی ساخته شده است. عکس‌ها و ویدیوهای WebM/VP9 کار می‌کنند. برای MP4 از نسخهٔ Flatpak استفاده کنید که موتور آن با آن‌ها ساخته شده است. (برای بستن کلیک کنید.)</translation>
+        <translation>এই বিল্ড H.264/MP4 ভিডিও পাঠাতে পারে না: এর ব্রাউজার ইঞ্জিন মালিকানাধীন কোডেক ছাড়া তৈরি করা হয়েছে। ছবি এবং WebM/VP9 ভিডিও কাজ করে। MP4-এর জন্য Flatpak ব্যবহার করুন, যার ইঞ্জিন সেগুলো সহ তৈরি করা হয়েছে। (বাতিল করতে ক্লিক করুন।)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1143"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation>این نسخه نمی‌تواند ویدیوهای H.264/MP4 ارسال کند: موتور مرورگرش بدون کدک‌های اختصاصی ساخته شده است. عکس‌ها و ویدیوهای WebM/VP9 کار می‌کنند؛ برای MP4 از بسته توزیع/بومی ساخته‌شده با کدک‌ها استفاده کنید. (برای بستن کلیک کنید.)</translation>
+        <translation>এই বিল্ড H.264/MP4 ভিডিও পাঠাতে পারে না: এর ব্রাউজার ইঞ্জিন মালিকানাধীন কোডেক ছাড়া তৈরি করা হয়েছে। ছবি এবং WebM/VP9 ভিডিও কাজ করে; MP4-এর জন্য কোডেক সহ তৈরি করা কোনো ডিস্ট্রো/নেটিভ প্যাকেজ ব্যবহার করুন। (বাতিল করতে ক্লিক করুন।)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1434"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
-        <translation>ترجمه درون‌خطی خاموش است (آن را در تنظیمات ← ترجمه فعال کنید).</translation>
+        <translation>ইনলাইন অনুবাদ বন্ধ আছে (সেটিংস → অনুবাদ থেকে চালু করুন)।</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1438"/>
         <source>The message box is empty.</source>
-        <translation>کادر پیام خالی است.</translation>
+        <translation>বার্তা বাক্সটি খালি।</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1439"/>
         <source>Select some text to translate first.</source>
-        <translation>ابتدا متنی را برای ترجمه انتخاب کنید.</translation>
+        <translation>প্রথমে অনুবাদ করার জন্য কিছু লেখা নির্বাচন করুন।</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1477"/>
         <source>No conversation is open.</source>
-        <translation>هیچ گفتگویی باز نیست.</translation>
+        <translation>কোনো কথোপকথন খোলা নেই।</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1481"/>
         <source>An export is already running.</source>
-        <translation>یک خروجی‌گیری در حال حاضر در حال اجراست.</translation>
+        <translation>একটি এক্সপোর্ট ইতিমধ্যে চলছে।</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1486"/>
         <source>Choose a folder for the exported chat</source>
-        <translation>پوشه‌ای برای گفتگوی خروجی‌گرفته‌شده انتخاب کنید</translation>
+        <translation>এক্সপোর্ট করা চ্যাটের জন্য একটি ফোল্ডার বাছুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1492"/>
         <source>Collecting messages… scrolling through the conversation.</source>
-        <translation>در حال جمع‌آوری پیام‌ها… در حال پیمایش در گفتگو.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="1462"/>
-        <location filename="../mainwindow_webengine.cpp" line="1493"/>
-        <source>Cancel</source>
-        <translation>لغو</translation>
+        <translation>বার্তা সংগ্রহ করা হচ্ছে… কথোপকথন স্ক্রল করা হচ্ছে।</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1540"/>
         <source>Collecting messages… (%1 so far)</source>
-        <translation>در حال جمع‌آوری پیام‌ها… (تاکنون %1)</translation>
+        <translation>বার্তা সংগ্রহ করা হচ্ছে… (এখন পর্যন্ত %1টি)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1546"/>
         <source>Could not read the conversation: %1</source>
-        <translation>گفتگو قابل خواندن نبود: %1</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1892"/>
-        <source>Do Not Disturb on.</source>
-        <translation>مزاحم نشوید روشن شد.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1892"/>
-        <source>Do Not Disturb off.</source>
-        <translation>مزاحم نشوید خاموش شد.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1900"/>
-        <location filename="../mainwindow_webengine.cpp" line="1916"/>
-        <source>Do Not Disturb on until %1.</source>
-        <translation>مزاحم نشوید تا %1 روشن است.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1927"/>
-        <source>Open a chat to set a reply reminder.</source>
-        <translation>برای تنظیم یادآور پاسخ، یک گفتگو باز کنید.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1933"/>
-        <source>Time to reply to this chat.</source>
-        <translation>وقت پاسخ به این گفتگوست.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1936"/>
-        <source>Reply reminder set for %1.</source>
-        <translation>یادآور پاسخ برای %1 تنظیم شد.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1967"/>
-        <location filename="../mainwindow_webengine.cpp" line="1991"/>
-        <source>Low disk space</source>
-        <translation>فضای دیسک کم است</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1968"/>
-        <source>Whatly&apos;s data folder has only %1 free.</source>
-        <translation>پوشهٔ دادهٔ Whatly تنها %1 فضای آزاد دارد.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1971"/>
-        <source>With so little space, WhatsApp Web&apos;s local database can be corrupted by a truncated write, which forces you to link your phone again. Move Whatly&apos;s data folder to a disk with more room, or free up space.</source>
-        <translation>با این مقدار فضای اندک، پایگاه‌دادهٔ محلی واتساپ وب ممکن است بر اثر نوشتن ناقص خراب شود و مجبور شوید دوباره گوشی را متصل کنید. پوشهٔ دادهٔ Whatly را به دیسکی با فضای بیشتر منتقل کنید یا فضا آزاد کنید.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1975"/>
-        <source>Change folder…</source>
-        <translation>تغییر پوشه…</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1976"/>
-        <source>Later</source>
-        <translation type="unfinished">بعداً</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1984"/>
-        <source>Choose a data folder for Whatly</source>
-        <translation>یک پوشهٔ داده برای Whatly انتخاب کنید</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1992"/>
-        <source>That folder is also low on space (%1 free). Please pick another.</source>
-        <translation>آن پوشه هم فضای کمی دارد (%1 آزاد). لطفاً پوشهٔ دیگری انتخاب کنید.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="1999"/>
-        <source>Restart Whatly</source>
-        <translation>راه‌اندازی مجدد Whatly</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="2000"/>
-        <source>Whatly will use &quot;%1&quot; as its data folder after a restart. Your current data stays where it is (you can move it there yourself). Restart now?</source>
-        <translation>پس از راه‌اندازی مجدد، Whatly از «%1» به‌عنوان پوشهٔ داده استفاده می‌کند. داده‌های فعلی شما سر جای‌شان می‌مانند (می‌توانید خودتان منتقل کنید). اکنون راه‌اندازی مجدد شود؟</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="2020"/>
-        <source>No unread chats to summarise.</source>
-        <translation>گفتگوی خوانده‌نشده‌ای برای خلاصه‌سازی نیست.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="2025"/>
-        <source>Unread digest</source>
-        <translation>خلاصهٔ خوانده‌نشده‌ها</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_accounts.cpp" line="1549"/>
-        <location filename="../mainwindow_webengine.cpp" line="1569"/>
-        <source>chat</source>
-        <translation>گفتگو</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_accounts.cpp" line="1549"/>
-        <source>chats</source>
-        <translation>گفتگوها</translation>
+        <translation>কথোপকথন পড়া যায়নি: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1581"/>
         <source>Could not create the export folder.</source>
-        <translation>پوشه خروجی ایجاد نشد.</translation>
+        <translation>এক্সপোর্ট ফোল্ডার তৈরি করা যায়নি।</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1611"/>
         <source>The export could not be fully written.</source>
-        <translation>خروجی به‌طور کامل نوشته نشد.</translation>
+        <translation>এক্সপোর্টটি সম্পূর্ণরূপে লেখা যায়নি।</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1615"/>
         <source>Saved %1 messages and %2 media files to %3</source>
-        <translation>%1 پیام و %2 فایل رسانه‌ای در %3 ذخیره شد</translation>
+        <translation>%1টি বার্তা এবং %2টি মিডিয়া ফাইল %3-এ সংরক্ষণ করা হয়েছে</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1704"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
-        <translation>دستیار هوش مصنوعی خاموش است (آن را در تنظیمات ← دستیار هوش مصنوعی فعال کنید).</translation>
+        <translation>AI সহকারী বন্ধ আছে (সেটিংস → AI সহকারী থেকে চালু করুন)।</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1709"/>
         <source>There is nothing for the assistant to work on.</source>
-        <translation>چیزی برای پردازش دستیار وجود ندارد.</translation>
+        <translation>সহকারীর কাজ করার জন্য কিছু নেই।</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1721"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
-        <translation>در حال پرسش از دستیار… (حافظه کم: %1 مگابایت آزاد؛ مدل محلی ممکن است ناموفق باشد یا برنامه را کند کند)</translation>
+        <translation>সহকারীকে জিজ্ঞাসা করা হচ্ছে… (কম মেমরি: %1 MB খালি; একটি লোকাল মডেল ব্যর্থ হতে পারে বা অ্যাপকে ধীর করতে পারে)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1726"/>
         <source>Asking the assistant…</source>
-        <translation>در حال پرسش از دستیار…</translation>
+        <translation>সহকারীকে জিজ্ঞাসা করা হচ্ছে…</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1747"/>
         <source>AI assistant</source>
-        <translation>دستیار هوش مصنوعی</translation>
+        <translation>AI সহকারী</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1762"/>
         <source>Close</source>
-        <translation>بستن</translation>
+        <translation>বন্ধ করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1772"/>
         <location filename="../mainwindow_webengine.cpp" line="1786"/>
         <location filename="../mainwindow_webengine.cpp" line="1809"/>
         <source>AI result</source>
-        <translation>نتیجه هوش مصنوعی</translation>
+        <translation>AI ফলাফল</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1806"/>
         <source>Message updated.</source>
-        <translation>پیام به‌روزرسانی شد.</translation>
+        <translation>বার্তা আপডেট করা হয়েছে।</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1822"/>
         <source>Chat summary</source>
-        <translation>خلاصه گفتگو</translation>
+        <translation>চ্যাটের সারসংক্ষেপ</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1892"/>
+        <source>Do Not Disturb on.</source>
+        <translation>বিরক্ত করবেন না চালু।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1892"/>
+        <source>Do Not Disturb off.</source>
+        <translation>বিরক্ত করবেন না বন্ধ।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1900"/>
+        <location filename="../mainwindow_webengine.cpp" line="1916"/>
+        <source>Do Not Disturb on until %1.</source>
+        <translation>%1 পর্যন্ত বিরক্ত করবেন না চালু।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1927"/>
+        <source>Open a chat to set a reply reminder.</source>
+        <translation>উত্তরের অনুস্মারক সেট করতে একটি চ্যাট খুলুন।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1933"/>
+        <source>Time to reply to this chat.</source>
+        <translation>এই চ্যাটে উত্তর দেওয়ার সময় হয়েছে।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1936"/>
+        <source>Reply reminder set for %1.</source>
+        <translation>%1-এর জন্য উত্তরের অনুস্মারক সেট করা হয়েছে।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1967"/>
+        <location filename="../mainwindow_webengine.cpp" line="1991"/>
+        <source>Low disk space</source>
+        <translation>ডিস্কে জায়গা কম</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1968"/>
+        <source>Whatly&apos;s data folder has only %1 free.</source>
+        <translation>Whatly&apos;র ডেটা ফোল্ডারে মাত্র %1 খালি আছে।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1971"/>
+        <source>With so little space, WhatsApp Web&apos;s local database can be corrupted by a truncated write, which forces you to link your phone again. Move Whatly&apos;s data folder to a disk with more room, or free up space.</source>
+        <translation>এত কম জায়গা থাকলে, একটি অসম্পূর্ণ রাইটের কারণে WhatsApp Web-এর লোকাল ডেটাবেস নষ্ট হতে পারে, যা আপনাকে আবার আপনার ফোন লিঙ্ক করতে বাধ্য করবে। Whatly&apos;র ডেটা ফোল্ডারটি বেশি জায়গা আছে এমন একটি ডিস্কে সরান, অথবা জায়গা খালি করুন।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1975"/>
+        <source>Change folder…</source>
+        <translation>ফোল্ডার পরিবর্তন করুন…</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1976"/>
+        <source>Later</source>
+        <translation>পরে</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1984"/>
+        <source>Choose a data folder for Whatly</source>
+        <translation>Whatly-র জন্য একটি ডেটা ফোল্ডার বাছুন</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1992"/>
+        <source>That folder is also low on space (%1 free). Please pick another.</source>
+        <translation>সেই ফোল্ডারেও জায়গা কম (%1 খালি)। অনুগ্রহ করে অন্য একটি বাছুন।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1999"/>
+        <source>Restart Whatly</source>
+        <translation>Whatly পুনরায় চালু করুন</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="2000"/>
+        <source>Whatly will use &quot;%1&quot; as its data folder after a restart. Your current data stays where it is (you can move it there yourself). Restart now?</source>
+        <translation>পুনরায় চালু করার পর Whatly &quot;%1&quot;-কে তার ডেটা ফোল্ডার হিসেবে ব্যবহার করবে। আপনার বর্তমান ডেটা যেখানে আছে সেখানেই থাকবে (আপনি নিজে সেটি সেখানে সরাতে পারেন)। এখনই পুনরায় চালু করবেন?</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="2020"/>
+        <source>No unread chats to summarise.</source>
+        <translation>সারসংক্ষেপ করার জন্য কোনো অপঠিত চ্যাট নেই।</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="2025"/>
+        <source>Unread digest</source>
+        <translation>অপঠিত সারসংক্ষেপ</translation>
     </message>
 </context>
 <context>
@@ -1459,12 +1402,12 @@ Open Settings now?</source>
     <message>
         <location filename="../mediastuck.cpp" line="39"/>
         <source>This file did not download: there is no connection at the moment. It will arrive on its own once there is. (Click to dismiss.)</source>
-        <translation>این فایل دانلود نشد: در حال حاضر اتصالی نیست. به‌محض برقراری اتصال، خودش می‌رسد. (برای بستن کلیک کنید.)</translation>
+        <translation>এই ফাইলটি ডাউনলোড হয়নি: এই মুহূর্তে কোনো সংযোগ নেই। সংযোগ ফিরে এলে এটি নিজে থেকেই চলে আসবে। (বাতিল করতে ক্লিক করুন।)</translation>
     </message>
     <message>
         <location filename="../mediastuck.cpp" line="44"/>
         <source>This file did not download. WhatsApp keeps a copy on its servers only for a while, and it is usually gone by the time a message is old — there is nothing here that can fetch it back. Ask for it again from the phone that sent it. (Click to dismiss.)</source>
-        <translation>این فایل دانلود نشد. WhatsApp فقط برای مدتی نسخه‌ای را روی سرورهایش نگه می‌دارد و معمولاً وقتی پیامی قدیمی می‌شود دیگر موجود نیست — اینجا چیزی نیست که بتواند آن را بازیابی کند. آن را دوباره از تلفنی که فرستاده درخواست کنید. (برای بستن کلیک کنید.)</translation>
+        <translation>এই ফাইলটি ডাউনলোড হয়নি। WhatsApp তার সার্ভারে শুধুমাত্র কিছু সময়ের জন্য একটি কপি রাখে, এবং একটি বার্তা পুরনো হওয়ার সময় সাধারণত সেটি চলে যায় — এখানে এটি ফিরিয়ে আনতে পারে এমন কিছু নেই। যে ফোন থেকে এটি পাঠানো হয়েছিল সেখান থেকে আবার চেয়ে নিন। (বাতিল করতে ক্লিক করুন।)</translation>
     </message>
 </context>
 <context>
@@ -1485,7 +1428,7 @@ Open Settings now?</source>
     <message>
         <location filename="../notificationpopup.h" line="53"/>
         <source>Close</source>
-        <translation>بستن</translation>
+        <translation>বন্ধ করুন</translation>
     </message>
 </context>
 <context>
@@ -1493,27 +1436,27 @@ Open Settings now?</source>
     <message>
         <location filename="../passworddialog.ui" line="14"/>
         <source>Authentication Required</source>
-        <translation>احراز هویت لازم است</translation>
+        <translation>প্রমাণীকরণ প্রয়োজন</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="20"/>
         <source>Icon</source>
-        <translation>نماد</translation>
+        <translation>আইকন</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="36"/>
         <source>Info</source>
-        <translation>اطلاعات</translation>
+        <translation>তথ্য</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="46"/>
         <source>Username:</source>
-        <translation>نام کاربری:</translation>
+        <translation>ব্যবহারকারীর নাম:</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="56"/>
         <source>Password:</source>
-        <translation>رمز عبور:</translation>
+        <translation>পাসওয়ার্ড:</translation>
     </message>
 </context>
 <context>
@@ -1526,12 +1469,12 @@ Open Settings now?</source>
     <message>
         <location filename="../permissiondialog.ui" line="24"/>
         <source>Feature</source>
-        <translation>ویژگی</translation>
+        <translation>বৈশিষ্ট্য</translation>
     </message>
     <message>
         <location filename="../permissiondialog.ui" line="29"/>
         <source>Status</source>
-        <translation>وضعیت</translation>
+        <translation>স্ট্যাটাস</translation>
     </message>
 </context>
 <context>
@@ -1539,27 +1482,27 @@ Open Settings now?</source>
     <message>
         <location filename="../privacyblur.cpp" line="85"/>
         <source>Off</source>
-        <translation>خاموش</translation>
+        <translation>বন্ধ</translation>
     </message>
     <message>
         <location filename="../privacyblur.cpp" line="87"/>
         <source>Chat list</source>
-        <translation>فهرست گفتگوها</translation>
+        <translation>চ্যাট তালিকা</translation>
     </message>
     <message>
         <location filename="../privacyblur.cpp" line="89"/>
         <source>Open conversation</source>
-        <translation>گفتگوی باز</translation>
+        <translation>কথোপকথন খুলুন</translation>
     </message>
     <message>
         <location filename="../privacyblur.cpp" line="91"/>
         <source>Chat list and conversation</source>
-        <translation>فهرست گفتگوها و گفتگو</translation>
+        <translation>চ্যাট তালিকা ও কথোপকথন</translation>
     </message>
     <message>
         <location filename="../privacyblur.cpp" line="94"/>
         <source>Everything, photos included</source>
-        <translation>همه چیز، شامل عکس‌ها</translation>
+        <translation>সবকিছু, ছবিসহ</translation>
     </message>
 </context>
 <context>
@@ -1568,7 +1511,7 @@ Open Settings now?</source>
         <location filename="../about.cpp" line="94"/>
         <location filename="../about.cpp" line="172"/>
         <source>Show Debug Info</source>
-        <translation>نمایش اطلاعات اشکال‌زدایی</translation>
+        <translation>ডিবাগ তথ্য দেখান</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="129"/>
@@ -1581,102 +1524,113 @@ Open Settings now?</source>
     <message>
         <location filename="../about.cpp" line="177"/>
         <source>Hide Debug Info</source>
-        <translation>پنهان کردن اطلاعات اشکال‌زدایی</translation>
+        <translation>ডিবাগ তথ্য লুকান</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="86"/>
-        <source>Unexpected response from the AI service.</source>
-        <translation>پاسخ غیرمنتظره از سرویس هوش مصنوعی.</translation>
+        <location filename="../utils.cpp" line="357"/>
+        <location filename="../utils.cpp" line="391"/>
+        <source>Install mode</source>
+        <translation>ইনস্টল মোড</translation>
     </message>
     <message>
-        <location filename="../aiassistant.cpp" line="108"/>
-        <source>The AI service returned no text.</source>
-        <translation>سرویس هوش مصنوعی هیچ متنی برنگرداند.</translation>
+        <location filename="../utils.cpp" line="375"/>
+        <source>Version</source>
+        <translation>সংস্করণ</translation>
     </message>
     <message>
-        <location filename="../backup.cpp" line="17"/>
-        <source>Could not run &apos;tar&apos;</source>
-        <translation>اجرای &apos;tar&apos; ممکن نشد</translation>
+        <location filename="../utils.cpp" line="377"/>
+        <source>Source Branch</source>
+        <translation>সোর্স ব্রাঞ্চ</translation>
     </message>
     <message>
-        <location filename="../backup.cpp" line="36"/>
-        <source>Nothing to back up</source>
-        <translation>چیزی برای پشتیبان‌گیری وجود ندارد</translation>
+        <location filename="../utils.cpp" line="379"/>
+        <source>Commit Hash</source>
+        <translation>কমিট হ্যাশ</translation>
     </message>
     <message>
-        <location filename="../chatwallpaper.cpp" line="150"/>
-        <location filename="../customcss.cpp" line="88"/>
-        <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
-        <source>Cannot create %1</source>
-        <translation>ایجاد %1 ممکن نیست</translation>
+        <location filename="../utils.cpp" line="381"/>
+        <source>Build Datetime</source>
+        <translation>বিল্ড তারিখ ও সময়</translation>
     </message>
     <message>
-        <location filename="../backup.cpp" line="74"/>
-        <source>Cannot copy %1</source>
-        <translation>کپی %1 ممکن نیست</translation>
+        <location filename="../utils.cpp" line="383"/>
+        <source>Qt Runtime Version</source>
+        <translation>Qt রানটাইম সংস্করণ</translation>
     </message>
     <message>
-        <location filename="../backup.cpp" line="86"/>
-        <location filename="../backup.cpp" line="107"/>
-        <source>Cannot create a temporary directory</source>
-        <translation>ایجاد پوشه موقت ممکن نیست</translation>
+        <location filename="../utils.cpp" line="385"/>
+        <source>Qt Compiled Version</source>
+        <translation>Qt কম্পাইল করা সংস্করণ</translation>
     </message>
     <message>
-        <location filename="../backup.cpp" line="119"/>
-        <source>Could not restore the settings file</source>
-        <translation>بازگردانی فایل تنظیمات ممکن نشد</translation>
+        <location filename="../utils.cpp" line="387"/>
+        <source>System</source>
+        <translation>সিস্টেম</translation>
     </message>
     <message>
-        <location filename="../chatwallpaper.cpp" line="156"/>
-        <source>Cannot write %1</source>
-        <translation>نوشتن %1 ممکن نیست</translation>
+        <location filename="../utils.cpp" line="389"/>
+        <source>Architecture</source>
+        <translation>আর্কিটেকচার</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="532"/>
+        <source>Exception</source>
+        <translation>এক্সেপশন</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="535"/>
+        <source> has encountered a problem.</source>
+        <translation> একটি সমস্যার সম্মুখীন হয়েছে।</translation>
+    </message>
+    <message>
+        <location filename="../utils.cpp" line="538"/>
+        <source> may need to Restart. Please report the error to developer.</source>
+        <translation> পুনরায় চালু করার প্রয়োজন হতে পারে। অনুগ্রহ করে ত্রুটিটি ডেভেলপারকে জানান।</translation>
     </message>
     <message>
         <location filename="../common.cpp" line="59"/>
         <source>Nothing unread</source>
-        <translation>چیزی خوانده‌نشده نیست</translation>
+        <translation>কোনো অপঠিত বার্তা নেই</translation>
     </message>
     <message>
         <location filename="../common.cpp" line="69"/>
         <source>1 unread message in 1 chat</source>
-        <translation>یک پیام خوانده‌نشده در یک گفتگو</translation>
+        <translation>১টি চ্যাটে ১টি অপঠিত বার্তা</translation>
     </message>
     <message>
         <location filename="../common.cpp" line="71"/>
         <source>1 unread message in %1 chats</source>
-        <translation>یک پیام خوانده‌نشده در %1 گفتگو</translation>
+        <translation>%1টি চ্যাটে ১টি অপঠিত বার্তা</translation>
     </message>
     <message>
         <location filename="../common.cpp" line="73"/>
         <source>%1 unread messages in 1 chat</source>
-        <translation>%1 پیام خوانده‌نشده در یک گفتگو</translation>
+        <translation>১টি চ্যাটে %1টি অপঠিত বার্তা</translation>
     </message>
     <message>
         <location filename="../common.cpp" line="75"/>
         <source>%1 unread messages in %2 chats</source>
-        <translation>%1 پیام خوانده‌نشده در %2 گفتگو</translation>
+        <translation>%2টি চ্যাটে %1টি অপঠিত বার্তা</translation>
     </message>
     <message>
         <location filename="../common.cpp" line="85"/>
         <source>%1 in 1 muted chat</source>
-        <translation>%1 در یک گفتگوی بی‌صدا</translation>
+        <translation>১টি নিঃশব্দ চ্যাটে %1</translation>
     </message>
     <message>
         <location filename="../common.cpp" line="86"/>
         <source>%1 in %2 muted chats</source>
-        <translation>%1 در %2 گفتگوی بی‌صدا</translation>
+        <translation>%2টি নিঃশব্দ চ্যাটে %1</translation>
     </message>
     <message>
         <location filename="../common.cpp" line="92"/>
         <source>%1 in 1 chat that is not muted</source>
-        <translation>%1 در یک گفتگوی بی‌صدانشده</translation>
+        <translation>১টি চ্যাটে %1 যা নিঃশব্দ নয়</translation>
     </message>
     <message>
         <location filename="../common.cpp" line="94"/>
         <source>%1 in %2 chats that are not muted</source>
-        <translation>%1 در %2 گفتگوی بی‌صدانشده</translation>
+        <translation>%2টি চ্যাটে %1 যেগুলো নিঃশব্দ নয়</translation>
     </message>
     <message>
         <location filename="../common.cpp" line="104"/>
@@ -1686,400 +1640,158 @@ Open Settings now?</source>
     <message>
         <location filename="../common.cpp" line="106"/>
         <source>Build token: %1</source>
-        <translation>توکن بیلد: %1</translation>
+        <translation>বিল্ড টোকেন: %1</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="202"/>
-        <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
-        <translation>چیزی برای انتقال از «%1» وجود ندارد — قبلاً منتقل شده یا داده‌ای در آنجا یافت نشد.</translation>
+        <location filename="../dictionaryrows.cpp" line="41"/>
+        <source>failed</source>
+        <translation>ব্যর্থ</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="207"/>
-        <source>Would copy:</source>
-        <translation>کپی خواهد شد:</translation>
+        <location filename="../dictionaryrows.cpp" line="48"/>
+        <location filename="../dictionaryrows.cpp" line="305"/>
+        <source>bundled</source>
+        <translation>বান্ডেলকৃত</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="207"/>
-        <source>Copied:</source>
-        <translation>کپی شد:</translation>
+        <location filename="../dictionaryrows.cpp" line="156"/>
+        <source>Size: %1</source>
+        <translation>আকার: %1</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="211"/>
-        <source>Run again without --dry-run to perform the copy.</source>
-        <translation>برای انجام کپی، دوباره بدون --dry-run اجرا کنید.</translation>
+        <location filename="../dictionaryrows.cpp" line="157"/>
+        <source>Installed: %1</source>
+        <translation>ইনস্টল করা হয়েছে: %1</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="590"/>
-        <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
-        <translation>کلاینت وب WhatsApp با امکانات کامل، مبتنی بر Qt WebEngine</translation>
+        <location filename="../dictionaryrows.cpp" line="163"/>
+        <source>Shipped with Whatly</source>
+        <translation>Whatly-এর সাথে সরবরাহকৃত</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="597"/>
-        <source>Displays help on commandline options</source>
-        <translation>راهنمای گزینه‌های خط فرمان را نمایش می‌دهد</translation>
+        <location filename="../dictionaryrows.cpp" line="165"/>
+        <source>Download size: %1</source>
+        <translation>ডাউনলোড আকার: %1</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="602"/>
-        <source>Opens Settings dialog in a running instance of </source>
-        <translation>باز کردن کادر تنظیمات در نمونه در حال اجرای </translation>
+        <location filename="../dictionaryrows.cpp" line="169"/>
+        <source>Click the arrow to download it.</source>
+        <translation>এটি ডাউনলোড করতে তীরচিহ্নে ক্লিক করুন।</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="607"/>
-        <source>Locks a running instance of </source>
-        <translation>قفل کردن نمونه در حال اجرای </translation>
+        <location filename="../dictionaryrows.cpp" line="171"/>
+        <source>The bin removes it; it can be downloaded again.</source>
+        <translation>বিন এটি সরিয়ে দেয়; এটি আবার ডাউনলোড করা যায়।</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="613"/>
-        <source>Opens About dialog in a running instance of </source>
-        <translation>باز کردن کادر درباره در نمونه در حال اجرای </translation>
+        <location filename="../chatwallpaper.cpp" line="150"/>
+        <location filename="../customcss.cpp" line="88"/>
+        <location filename="../customjs.cpp" line="84"/>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
+        <source>Cannot create %1</source>
+        <translation>%1 তৈরি করা যায়নি</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="618"/>
-        <source>Opens the scheduled messages dialog in a running instance of </source>
-        <translation>باز کردن کادر پیام‌های زمان‌بندی‌شده در نمونه در حال اجرای </translation>
+        <location filename="../chatwallpaper.cpp" line="156"/>
+        <source>Cannot write %1</source>
+        <translation>%1 লেখা যায়নি</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="625"/>
-        <source>Toggle between dark &amp; light theme in a running instance of </source>
-        <translation>تغییر بین پوسته تیره و روشن در نمونه در حال اجرای </translation>
+        <location filename="../backup.cpp" line="17"/>
+        <source>Could not run &apos;tar&apos;</source>
+        <translation>&apos;tar&apos; চালানো যায়নি</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="632"/>
-        <source>Reload the app in a running instance of </source>
-        <translation>بارگذاری مجدد برنامه در نمونه در حال اجرای </translation>
+        <location filename="../backup.cpp" line="36"/>
+        <source>Nothing to back up</source>
+        <translation>ব্যাকআপ করার কিছু নেই</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="638"/>
-        <source>Open new chat prompt in a running instance of </source>
-        <translation>باز کردن پنجره گفتگوی جدید در نمونه در حال اجرای </translation>
+        <location filename="../backup.cpp" line="74"/>
+        <source>Cannot copy %1</source>
+        <translation>%1 কপি করা যায়নি</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="651"/>
-        <source>Run as a separate account with its own session and settings, in its own window</source>
-        <translation>اجرا به‌عنوان حساب جداگانه با نشست و تنظیمات مستقل، در پنجره مستقل خودش</translation>
+        <location filename="../backup.cpp" line="86"/>
+        <location filename="../backup.cpp" line="107"/>
+        <source>Cannot create a temporary directory</source>
+        <translation>একটি অস্থায়ী ডিরেক্টরি তৈরি করা যায়নি</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="661"/>
-        <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
-        <translation>داخلی: قبل از شروع منتظر خروج فرآیند با این شناسه بماند، استفاده‌شده توسط «راه‌اندازی مجدد اکنون»</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="668"/>
-        <source>Show main window of running instance of </source>
-        <translation>نمایش پنجره اصلی نمونه در حال اجرای </translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="675"/>
-        <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
-        <translation>کپی تنظیمات و نشست واردشده از یک نصب قبلی (مثلاً نسخه قدیمی‌تر «whatsie») به این نصب، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="682"/>
-        <source>With --migrate-from, only report what would be copied</source>
-        <translation>با --migrate-from، فقط گزارش آنچه کپی خواهد شد</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="700"/>
-        <source>Print the current unread message count and exit</source>
-        <translation>چاپ تعداد پیام‌های خوانده‌نشده فعلی و خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="706"/>
-        <source>Send a message via the running instance, then exit (needs --to and --message)</source>
-        <translation>ارسال پیام از طریق نمونه در حال اجرا، سپس خروج (نیاز به --to و --message دارد)</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="710"/>
-        <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
-        <translation>گیرنده برای --send: یک شماره تلفن (بین‌المللی)، شناسه گروه یا نام مخاطب</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="715"/>
-        <source>Message text for --send</source>
-        <translation>متن پیام برای --send</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="718"/>
-        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
-        <translation>پیوست فایل برای --send (در صورت وجود، --message آن به‌عنوان توضیح می‌شود)</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="723"/>
-        <source>Caption for the --file attachment (alias of --message)</source>
-        <translation>توضیح برای پیوست --file (نام مستعار --message)</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="727"/>
-        <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
-        <translation>نحوه ارسال --send: &apos;web&apos; (نشست در حال اجرای WhatsApp Web) یا &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="733"/>
-        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
-        <translation>استفاده از قالب ذخیره‌شده با این نام به‌عنوان پیام --send (پر کردن {{fields}} آن با --var)</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="738"/>
-        <source>Fill a template field: key=value (repeatable)</source>
-        <translation>پر کردن یک فیلد قالب: key=value (قابل تکرار)</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="742"/>
-        <source>List the saved message templates and exit</source>
-        <translation>فهرست قالب‌های پیام ذخیره‌شده و خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="745"/>
-        <source>Save (or replace) a message template, then exit: name=body</source>
-        <translation>ذخیره (یا جایگزینی) یک قالب پیام، سپس خروج: name=body</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="749"/>
-        <source>Delete the saved message template of this name, then exit</source>
-        <translation>حذف قالب پیام ذخیره‌شده با این نام، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="754"/>
-        <source>Turn auto-reply to incoming messages on, then exit</source>
-        <translation>روشن کردن پاسخ خودکار به پیام‌های ورودی، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="757"/>
-        <source>Turn auto-reply off, then exit</source>
-        <translation>خاموش کردن پاسخ خودکار، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="760"/>
-        <source>List the active auto-reply rules (status included) and exit</source>
-        <translation>فهرست قوانین فعال پاسخ خودکار (شامل وضعیت) و خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="763"/>
-        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
-        <translation>استفاده از این فایل JSON به‌عنوان منبع قوانین پاسخ خودکار، سپس خروج (خالی برای پاک کردن)</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="769"/>
-        <source>Set the Cloud API phone-number id, then exit</source>
-        <translation>تنظیم شناسه شماره تلفن Cloud API، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="773"/>
-        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
-        <translation>تنظیم توکن دسترسی Cloud API، سپس خروج (در پیکربندی حساب ذخیره می‌شود)</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="778"/>
-        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
-        <translation>تنظیم نسخه Graph API برای Cloud API (مثلاً v21.0)، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="782"/>
-        <source>Show whether the Cloud API is configured, then exit</source>
-        <translation>نمایش اینکه آیا Cloud API پیکربندی شده است، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="785"/>
-        <source>For --send --backend cloud: send this Meta-approved template</source>
-        <translation>برای --send --backend cloud: ارسال این قالب تأییدشده توسط Meta</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="789"/>
-        <source>Language code for --cloud-template (e.g. es, en_US)</source>
-        <translation>کد زبان برای --cloud-template (مثلاً es، en_US)</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="793"/>
-        <source>A positional body parameter for --cloud-template (repeatable)</source>
-        <translation>یک پارامتر موقعیتی بدنه برای --cloud-template (قابل تکرار)</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="798"/>
-        <source>Enable the local HTTP API, then exit</source>
-        <translation>فعال کردن API محلی HTTP، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="801"/>
-        <source>Disable the local HTTP API, then exit</source>
-        <translation>غیرفعال کردن API محلی HTTP، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="804"/>
-        <source>Set the local HTTP API port (default 8590), then exit</source>
-        <translation>تنظیم پورت API محلی HTTP (پیش‌فرض 8590)، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="808"/>
-        <source>Set the local HTTP API bearer token, then exit</source>
-        <translation>تنظیم توکن Bearer برای API محلی HTTP، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="812"/>
-        <source>Show the local HTTP API configuration, then exit</source>
-        <translation>نمایش پیکربندی API محلی HTTP، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="816"/>
-        <source>Enable receiving Cloud API webhooks, then exit</source>
-        <translation>فعال کردن دریافت وب‌هوک‌های Cloud API، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="819"/>
-        <source>Disable receiving Cloud API webhooks, then exit</source>
-        <translation>غیرفعال کردن دریافت وب‌هوک‌های Cloud API، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="822"/>
-        <source>Set the Cloud API webhook verify token, then exit</source>
-        <translation>تنظیم توکن تأیید وب‌هوک Cloud API، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="826"/>
-        <source>Set the Meta app secret for webhook signature checks, then exit</source>
-        <translation>تنظیم رمز مخفی برنامه Meta برای بررسی امضای وب‌هوک، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="830"/>
-        <source>Show the Cloud API webhook configuration, then exit</source>
-        <translation>نمایش پیکربندی وب‌هوک Cloud API، سپس خروج</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="1225"/>
-        <source>App lock is not configured, 
-Please setup the password in the Settings first.</source>
-        <translation>قفل برنامه پیکربندی نشده است، 
-لطفاً ابتدا رمز عبور را در تنظیمات تنظیم کنید.</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="1323"/>
-        <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
-        <translation>با تغییر به رندر ایمن، از خرابی هنگام راه‌اندازی بازیابی شد. می‌توانید این را در تنظیمات ← عملکرد تنظیم کنید.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow_webengine.cpp" line="962"/>
-        <source>Reloading...</source>
-        <translation>در حال بارگذاری مجدد...</translation>
-    </message>
-    <message>
-        <location filename="../ollama.cpp" line="17"/>
-        <source>Good quality, light and fast. Recommended.</source>
-        <translation>کیفیت خوب، سبک و سریع. توصیه‌شده.</translation>
-    </message>
-    <message>
-        <location filename="../ollama.cpp" line="19"/>
-        <source>Meta Llama, balanced and multilingual.</source>
-        <translation>Meta Llama، متعادل و چندزبانه.</translation>
-    </message>
-    <message>
-        <location filename="../ollama.cpp" line="21"/>
-        <source>Google Gemma, very small.</source>
-        <translation>Google Gemma، بسیار کوچک.</translation>
-    </message>
-    <message>
-        <location filename="../ollama.cpp" line="23"/>
-        <source>Tiny and fastest; lower quality.</source>
-        <translation>بسیار کوچک و سریع‌ترین؛ کیفیت پایین‌تر.</translation>
-    </message>
-    <message>
-        <location filename="../ollama.cpp" line="25"/>
-        <source>Microsoft Phi-3, strong for its size.</source>
-        <translation>Microsoft Phi-3، قدرتمند نسبت به اندازه‌اش.</translation>
-    </message>
-    <message>
-        <location filename="../translator.cpp" line="109"/>
-        <source>Unexpected response from the translation service.</source>
-        <translation>پاسخ غیرمنتظره از سرویس ترجمه.</translation>
-    </message>
-    <message>
-        <location filename="../translator.cpp" line="126"/>
-        <source>The translation service returned no text.</source>
-        <translation>سرویس ترجمه هیچ متنی برنگرداند.</translation>
-    </message>
-    <message>
-        <location filename="../translator.cpp" line="230"/>
-        <source>No translation endpoint is configured (Settings → Translation).</source>
-        <translation>هیچ نقطه پایانی ترجمه پیکربندی نشده است (تنظیمات ← ترجمه).</translation>
-    </message>
-    <message>
-        <location filename="../translator.cpp" line="236"/>
-        <source>Nothing to translate.</source>
-        <translation>چیزی برای ترجمه وجود ندارد.</translation>
-    </message>
-    <message>
-        <location filename="../translator.cpp" line="262"/>
-        <source>Translation failed.</source>
-        <translation>ترجمه ناموفق بود.</translation>
+        <location filename="../backup.cpp" line="119"/>
+        <source>Could not restore the settings file</source>
+        <translation>সেটিংস ফাইলটি পুনরুদ্ধার করা যায়নি</translation>
     </message>
     <message>
         <location filename="../undosend.cpp" line="129"/>
         <source>Undo</source>
-        <translation>واگرد</translation>
+        <translation>পূর্বাবস্থায় ফিরুন</translation>
     </message>
     <message>
         <location filename="../undosend.cpp" line="131"/>
         <source>Sending in</source>
-        <translation>ارسال در</translation>
+        <translation>পাঠানো হচ্ছে</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="357"/>
-        <location filename="../utils.cpp" line="391"/>
-        <source>Install mode</source>
-        <translation>حالت نصب</translation>
+        <location filename="../translator.cpp" line="109"/>
+        <source>Unexpected response from the translation service.</source>
+        <translation>অনুবাদ পরিষেবা থেকে অপ্রত্যাশিত প্রতিক্রিয়া।</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="375"/>
-        <source>Version</source>
-        <translation>نسخه</translation>
+        <location filename="../translator.cpp" line="126"/>
+        <source>The translation service returned no text.</source>
+        <translation>অনুবাদ পরিষেবা কোনো লেখা ফেরত দেয়নি।</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="377"/>
-        <source>Source Branch</source>
-        <translation>شاخه منبع</translation>
+        <location filename="../translator.cpp" line="230"/>
+        <source>No translation endpoint is configured (Settings → Translation).</source>
+        <translation>কোনো অনুবাদ এন্ডপয়েন্ট কনফিগার করা নেই (সেটিংস → অনুবাদ)।</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="379"/>
-        <source>Commit Hash</source>
-        <translation>هش کامیت</translation>
+        <location filename="../translator.cpp" line="236"/>
+        <source>Nothing to translate.</source>
+        <translation>অনুবাদ করার কিছু নেই।</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="381"/>
-        <source>Build Datetime</source>
-        <translation>تاریخ و زمان بیلد</translation>
+        <location filename="../translator.cpp" line="262"/>
+        <source>Translation failed.</source>
+        <translation>অনুবাদ ব্যর্থ হয়েছে।</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="383"/>
-        <source>Qt Runtime Version</source>
-        <translation>نسخه زمان اجرای Qt</translation>
+        <location filename="../aiassistant.cpp" line="86"/>
+        <source>Unexpected response from the AI service.</source>
+        <translation>AI পরিষেবা থেকে অপ্রত্যাশিত প্রতিক্রিয়া।</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="385"/>
-        <source>Qt Compiled Version</source>
-        <translation>نسخه کامپایل‌شده Qt</translation>
+        <location filename="../aiassistant.cpp" line="108"/>
+        <source>The AI service returned no text.</source>
+        <translation>AI পরিষেবা কোনো লেখা ফেরত দেয়নি।</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="387"/>
-        <source>System</source>
-        <translation>سیستم</translation>
+        <location filename="../ollama.cpp" line="17"/>
+        <source>Good quality, light and fast. Recommended.</source>
+        <translation>ভালো মানের, হালকা ও দ্রুত। প্রস্তাবিত।</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="389"/>
-        <source>Architecture</source>
-        <translation>معماری</translation>
+        <location filename="../ollama.cpp" line="19"/>
+        <source>Meta Llama, balanced and multilingual.</source>
+        <translation>Meta Llama, সুষম ও বহুভাষিক।</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="532"/>
-        <source>Exception</source>
-        <translation>استثنا</translation>
+        <location filename="../ollama.cpp" line="21"/>
+        <source>Google Gemma, very small.</source>
+        <translation>Google Gemma, খুবই ছোট।</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="535"/>
-        <source> has encountered a problem.</source>
-        <translation> با یک مشکل مواجه شد.</translation>
+        <location filename="../ollama.cpp" line="23"/>
+        <source>Tiny and fastest; lower quality.</source>
+        <translation>খুবই ছোট ও দ্রুততম; মান কম।</translation>
     </message>
     <message>
-        <location filename="../utils.cpp" line="538"/>
-        <source> may need to Restart. Please report the error to developer.</source>
-        <translation> ممکن است نیاز به راه‌اندازی مجدد داشته باشد. لطفاً خطا را به توسعه‌دهنده گزارش دهید.</translation>
+        <location filename="../ollama.cpp" line="25"/>
+        <source>Microsoft Phi-3, strong for its size.</source>
+        <translation>Microsoft Phi-3, আকারের তুলনায় শক্তিশালী।</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="470"/>
@@ -2109,25 +1821,25 @@ Please setup the password in the Settings first.</source>
         <location filename="../webtweaks.cpp" line="474"/>
         <source>Zoom in</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished">بزرگ‌نمایی</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="475"/>
         <source>Zoom out</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished">کوچک‌نمایی</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="476"/>
         <source>Reset zoom</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished">بازنشانی بزرگ‌نمایی</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="477"/>
         <source>Collapse the chat list</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished">جمع کردن فهرست گفتگوها</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="478"/>
@@ -2136,45 +1848,275 @@ Please setup the password in the Settings first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dictionaryrows.cpp" line="41"/>
-        <source>failed</source>
-        <translation>ناموفق</translation>
+        <location filename="../mainwindow_webengine.cpp" line="962"/>
+        <source>Reloading...</source>
+        <translation>পুনরায় লোড হচ্ছে...</translation>
     </message>
     <message>
-        <location filename="../dictionaryrows.cpp" line="48"/>
-        <location filename="../dictionaryrows.cpp" line="305"/>
-        <source>bundled</source>
-        <translation>همراه برنامه</translation>
+        <location filename="../main.cpp" line="202"/>
+        <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
+        <translation>&quot;%1&quot; থেকে মাইগ্রেট করার কিছু নেই — ইতিমধ্যে মাইগ্রেট করা হয়েছে, অথবা সেখানে কোনো ডেটা পাওয়া যায়নি।</translation>
     </message>
     <message>
-        <location filename="../dictionaryrows.cpp" line="156"/>
-        <source>Size: %1</source>
-        <translation>اندازه: %1</translation>
+        <location filename="../main.cpp" line="207"/>
+        <source>Would copy:</source>
+        <translation>কপি করা হবে:</translation>
     </message>
     <message>
-        <location filename="../dictionaryrows.cpp" line="157"/>
-        <source>Installed: %1</source>
-        <translation>نصب‌شده: %1</translation>
+        <location filename="../main.cpp" line="207"/>
+        <source>Copied:</source>
+        <translation>কপি করা হয়েছে:</translation>
     </message>
     <message>
-        <location filename="../dictionaryrows.cpp" line="163"/>
-        <source>Shipped with Whatly</source>
-        <translation>همراه Whatly ارائه می‌شود</translation>
+        <location filename="../main.cpp" line="211"/>
+        <source>Run again without --dry-run to perform the copy.</source>
+        <translation>কপি সম্পাদন করতে --dry-run ছাড়া আবার চালান।</translation>
     </message>
     <message>
-        <location filename="../dictionaryrows.cpp" line="165"/>
-        <source>Download size: %1</source>
-        <translation>اندازهٔ دانلود: %1</translation>
+        <location filename="../main.cpp" line="590"/>
+        <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
+        <translation>Qt WebEngine ভিত্তিক ফিচার-সমৃদ্ধ WhatsApp ওয়েব ক্লায়েন্ট</translation>
     </message>
     <message>
-        <location filename="../dictionaryrows.cpp" line="169"/>
-        <source>Click the arrow to download it.</source>
-        <translation>برای دانلود روی فلش کلیک کنید.</translation>
+        <location filename="../main.cpp" line="597"/>
+        <source>Displays help on commandline options</source>
+        <translation>কমান্ডলাইন বিকল্পের উপর সাহায্য প্রদর্শন করে</translation>
     </message>
     <message>
-        <location filename="../dictionaryrows.cpp" line="171"/>
-        <source>The bin removes it; it can be downloaded again.</source>
-        <translation>سطل زباله آن را حذف می‌کند؛ می‌توان دوباره آن را دانلود کرد.</translation>
+        <location filename="../main.cpp" line="602"/>
+        <source>Opens Settings dialog in a running instance of </source>
+        <translation>-এর একটি চলমান ইনস্ট্যান্সে সেটিংস ডায়ালগ খোলে </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="607"/>
+        <source>Locks a running instance of </source>
+        <translation>-এর একটি চলমান ইনস্ট্যান্স লক করে </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="613"/>
+        <source>Opens About dialog in a running instance of </source>
+        <translation>-এর একটি চলমান ইনস্ট্যান্সে অ্যাবাউট ডায়ালগ খোলে </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="618"/>
+        <source>Opens the scheduled messages dialog in a running instance of </source>
+        <translation>-এর একটি চলমান ইনস্ট্যান্সে নির্ধারিত বার্তার ডায়ালগ খোলে </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="625"/>
+        <source>Toggle between dark &amp; light theme in a running instance of </source>
+        <translation>-এর একটি চলমান ইনস্ট্যান্সে গাঢ় &amp; হালকা থিমের মধ্যে টগল করে </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="632"/>
+        <source>Reload the app in a running instance of </source>
+        <translation>-এর একটি চলমান ইনস্ট্যান্সে অ্যাপটি পুনরায় লোড করে </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="638"/>
+        <source>Open new chat prompt in a running instance of </source>
+        <translation>-এর একটি চলমান ইনস্ট্যান্সে নতুন চ্যাট প্রম্পট খোলে </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="651"/>
+        <source>Run as a separate account with its own session and settings, in its own window</source>
+        <translation>নিজস্ব সেশন ও সেটিংসসহ একটি পৃথক অ্যাকাউন্ট হিসেবে, নিজস্ব উইন্ডোতে চালান</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="661"/>
+        <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
+        <translation>অভ্যন্তরীণ: শুরু করার আগে এই আইডির প্রক্রিয়াটি শেষ হওয়ার জন্য অপেক্ষা করুন, &quot;এখনই পুনরায় চালু করুন&quot; দ্বারা ব্যবহৃত</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="668"/>
+        <source>Show main window of running instance of </source>
+        <translation>-এর চলমান ইনস্ট্যান্সের প্রধান উইন্ডো দেখান </translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="675"/>
+        <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
+        <translation>পূর্ববর্তী একটি ইনস্টল থেকে সেটিংস ও লগ-ইন সেশন কপি করুন (যেমন পুরনো &quot;whatsie&quot; বিল্ড) এটিতে, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="682"/>
+        <source>With --migrate-from, only report what would be copied</source>
+        <translation>--migrate-from সহ, শুধু কী কপি করা হবে তা রিপোর্ট করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="700"/>
+        <source>Print the current unread message count and exit</source>
+        <translation>বর্তমান অপঠিত বার্তার সংখ্যা প্রিন্ট করুন এবং প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="706"/>
+        <source>Send a message via the running instance, then exit (needs --to and --message)</source>
+        <translation>চলমান ইনস্ট্যান্সের মাধ্যমে একটি বার্তা পাঠান, তারপর প্রস্থান করুন (--to এবং --message প্রয়োজন)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="710"/>
+        <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
+        <translation>--send-এর প্রাপক: একটি ফোন নম্বর (আন্তর্জাতিক), একটি গ্রুপ আইডি, অথবা একটি পরিচিতির নাম</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="715"/>
+        <source>Message text for --send</source>
+        <translation>--send-এর জন্য বার্তার লেখা</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="718"/>
+        <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
+        <translation>--send-এর জন্য একটি ফাইল সংযুক্ত করুন (এর --message, যদি থাকে, ক্যাপশন হয়ে যায়)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="723"/>
+        <source>Caption for the --file attachment (alias of --message)</source>
+        <translation>--file সংযুক্তির জন্য ক্যাপশন (--message-এর উপনাম)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="727"/>
+        <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
+        <translation>--send কীভাবে পৌঁছে দেয়: &apos;web&apos; (চলমান WhatsApp Web সেশন) অথবা &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="733"/>
+        <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
+        <translation>এই নামের সংরক্ষিত টেমপ্লেটটি --send বার্তা হিসেবে ব্যবহার করুন (এর {{fields}} --var দিয়ে পূরণ করুন)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="738"/>
+        <source>Fill a template field: key=value (repeatable)</source>
+        <translation>একটি টেমপ্লেট ফিল্ড পূরণ করুন: key=value (পুনরাবৃত্তিযোগ্য)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="742"/>
+        <source>List the saved message templates and exit</source>
+        <translation>সংরক্ষিত বার্তার টেমপ্লেটগুলো তালিকাভুক্ত করুন এবং প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="745"/>
+        <source>Save (or replace) a message template, then exit: name=body</source>
+        <translation>একটি বার্তার টেমপ্লেট সংরক্ষণ করুন (বা প্রতিস্থাপন করুন), তারপর প্রস্থান করুন: name=body</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="749"/>
+        <source>Delete the saved message template of this name, then exit</source>
+        <translation>এই নামের সংরক্ষিত বার্তার টেমপ্লেটটি মুছে ফেলুন, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="754"/>
+        <source>Turn auto-reply to incoming messages on, then exit</source>
+        <translation>আগত বার্তায় স্বয়ংক্রিয় উত্তর চালু করুন, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="757"/>
+        <source>Turn auto-reply off, then exit</source>
+        <translation>স্বয়ংক্রিয় উত্তর বন্ধ করুন, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="760"/>
+        <source>List the active auto-reply rules (status included) and exit</source>
+        <translation>সক্রিয় স্বয়ংক্রিয়-উত্তর নিয়মগুলো তালিকাভুক্ত করুন (স্ট্যাটাসসহ) এবং প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="763"/>
+        <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
+        <translation>এই JSON ফাইলটি স্বয়ংক্রিয়-উত্তর নিয়মের উৎস হিসেবে ব্যবহার করুন, তারপর প্রস্থান করুন (মুছতে খালি রাখুন)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="769"/>
+        <source>Set the Cloud API phone-number id, then exit</source>
+        <translation>Cloud API ফোন-নম্বর আইডি সেট করুন, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="773"/>
+        <source>Set the Cloud API access token, then exit (stored in the account config)</source>
+        <translation>Cloud API অ্যাক্সেস টোকেন সেট করুন, তারপর প্রস্থান করুন (অ্যাকাউন্ট কনফিগে সংরক্ষিত)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="778"/>
+        <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
+        <translation>Cloud API গ্রাফ সংস্করণ সেট করুন (যেমন v21.0), তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="782"/>
+        <source>Show whether the Cloud API is configured, then exit</source>
+        <translation>Cloud API কনফিগার করা আছে কিনা দেখান, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="785"/>
+        <source>For --send --backend cloud: send this Meta-approved template</source>
+        <translation>--send --backend cloud-এর জন্য: এই Meta-অনুমোদিত টেমপ্লেটটি পাঠান</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="789"/>
+        <source>Language code for --cloud-template (e.g. es, en_US)</source>
+        <translation>--cloud-template-এর জন্য ভাষা কোড (যেমন es, en_US)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="793"/>
+        <source>A positional body parameter for --cloud-template (repeatable)</source>
+        <translation>--cloud-template-এর জন্য একটি পজিশনাল বডি প্যারামিটার (পুনরাবৃত্তিযোগ্য)</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="798"/>
+        <source>Enable the local HTTP API, then exit</source>
+        <translation>স্থানীয় HTTP API সক্রিয় করুন, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="801"/>
+        <source>Disable the local HTTP API, then exit</source>
+        <translation>স্থানীয় HTTP API নিষ্ক্রিয় করুন, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="804"/>
+        <source>Set the local HTTP API port (default 8590), then exit</source>
+        <translation>স্থানীয় HTTP API পোর্ট সেট করুন (ডিফল্ট 8590), তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="808"/>
+        <source>Set the local HTTP API bearer token, then exit</source>
+        <translation>স্থানীয় HTTP API বিয়ারার টোকেন সেট করুন, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="812"/>
+        <source>Show the local HTTP API configuration, then exit</source>
+        <translation>স্থানীয় HTTP API কনফিগারেশন দেখান, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="816"/>
+        <source>Enable receiving Cloud API webhooks, then exit</source>
+        <translation>Cloud API ওয়েবহুক গ্রহণ সক্রিয় করুন, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="819"/>
+        <source>Disable receiving Cloud API webhooks, then exit</source>
+        <translation>Cloud API ওয়েবহুক গ্রহণ নিষ্ক্রিয় করুন, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="822"/>
+        <source>Set the Cloud API webhook verify token, then exit</source>
+        <translation>Cloud API ওয়েবহুক যাচাই টোকেন সেট করুন, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="826"/>
+        <source>Set the Meta app secret for webhook signature checks, then exit</source>
+        <translation>ওয়েবহুক স্বাক্ষর যাচাইয়ের জন্য Meta অ্যাপ সিক্রেট সেট করুন, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="830"/>
+        <source>Show the Cloud API webhook configuration, then exit</source>
+        <translation>Cloud API ওয়েবহুক কনফিগারেশন দেখান, তারপর প্রস্থান করুন</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="1225"/>
+        <source>App lock is not configured, 
+Please setup the password in the Settings first.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="1323"/>
+        <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
+        <translation>নিরাপদ রেন্ডারিংয়ে পরিবর্তন করে একটি স্টার্ট-আপ ক্র্যাশ থেকে পুনরুদ্ধার করা হয়েছে। আপনি এটি সেটিংস → পারফরম্যান্স-এ সমন্বয় করতে পারেন।</translation>
     </message>
 </context>
 <context>
@@ -2182,22 +2124,22 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../quickcompose.cpp" line="24"/>
         <source>Quick message</source>
-        <translation>پیام سریع</translation>
+        <translation>দ্রুত বার্তা</translation>
     </message>
     <message>
         <location filename="../quickcompose.cpp" line="31"/>
         <source>Contact name or phone number</source>
-        <translation>نام مخاطب یا شماره تلفن</translation>
+        <translation>পরিচিতির নাম বা ফোন নম্বর</translation>
     </message>
     <message>
         <location filename="../quickcompose.cpp" line="36"/>
         <source>Message (press Enter to send)</source>
-        <translation>پیام (برای ارسال Enter را فشار دهید)</translation>
+        <translation>বার্তা (পাঠাতে Enter চাপুন)</translation>
     </message>
     <message>
         <location filename="../quickcompose.cpp" line="40"/>
         <source>Send</source>
-        <translation>ارسال</translation>
+        <translation>পাঠান</translation>
     </message>
 </context>
 <context>
@@ -2210,48 +2152,48 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../rateapp.ui" line="43"/>
         <source>Rate this app</source>
-        <translation>امتیاز دادن به این برنامه</translation>
+        <translation>এই অ্যাপটি রেট করুন</translation>
     </message>
     <message>
         <location filename="../rateapp.ui" line="56"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If you enjoy using this app, would you mind taking a moment to rate it?&lt;/p&gt;&lt;p&gt;It won&apos;t take more than a minute. Thanks you for your support!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اگر از استفاده از این برنامه لذت می‌برید، آیا مایلید کمی وقت بگذارید و به آن امتیاز دهید؟&lt;/p&gt;&lt;p&gt;بیش از یک دقیقه زمان نمی‌برد. از حمایت شما سپاسگزاریم!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;আপনি যদি এই অ্যাপটি ব্যবহার করে আনন্দ পান, তাহলে কি একটু সময় নিয়ে এটিকে রেটিং দেবেন?&lt;/p&gt;&lt;p&gt;এতে এক মিনিটের বেশি লাগবে না। আপনার সমর্থনের জন্য ধন্যবাদ!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../rateapp.ui" line="73"/>
         <source>  Rate in Store</source>
-        <translation>  امتیاز دادن در فروشگاه</translation>
+        <translation>  স্টোরে রেট করুন</translation>
     </message>
     <message>
         <location filename="../rateapp.ui" line="99"/>
         <location filename="../rateapp.ui" line="156"/>
         <source>Or</source>
-        <translation>یا</translation>
+        <translation>অথবা</translation>
     </message>
     <message>
         <location filename="../rateapp.ui" line="119"/>
         <source>Star rate Github repo</source>
-        <translation>ستاره دادن به مخزن گیت‌هاب</translation>
+        <translation>Github রিপো স্টার রেট করুন</translation>
     </message>
     <message>
         <location filename="../rateapp.ui" line="130"/>
         <source>Donate via PayPal </source>
-        <translation>اهدا از طریق PayPal </translation>
+        <translation>PayPal-এর মাধ্যমে দান করুন </translation>
     </message>
     <message>
         <location filename="../rateapp.ui" line="176"/>
         <source>Donate via OpenCollective</source>
-        <translation>اهدا از طریق OpenCollective</translation>
+        <translation>OpenCollective-এর মাধ্যমে দান করুন</translation>
     </message>
     <message>
         <location filename="../rateapp.ui" line="187"/>
         <source>Later</source>
-        <translation>بعداً</translation>
+        <translation>পরে</translation>
     </message>
     <message>
         <location filename="../rateapp.ui" line="210"/>
         <source>  Already Done  </source>
-        <translation>  قبلاً انجام شده  </translation>
+        <translation>  ইতিমধ্যে সম্পন্ন  </translation>
     </message>
 </context>
 <context>
@@ -2259,42 +2201,42 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../scheduledmessages.cpp" line="245"/>
         <source>Timed out waiting for the message to send</source>
-        <translation>زمان انتظار برای ارسال پیام به پایان رسید</translation>
+        <translation>বার্তা পাঠানোর জন্য অপেক্ষার সময় শেষ হয়েছে</translation>
     </message>
     <message>
         <location filename="../scheduledmessages.cpp" line="325"/>
         <source>Daily</source>
-        <translation>روزانه</translation>
+        <translation>প্রতিদিন</translation>
     </message>
     <message>
         <location filename="../scheduledmessages.cpp" line="327"/>
         <source>Weekdays</source>
-        <translation>روزهای هفته</translation>
+        <translation>কর্মদিবস</translation>
     </message>
     <message>
         <location filename="../scheduledmessages.cpp" line="329"/>
         <source>Weekly</source>
-        <translation>هفتگی</translation>
+        <translation>সাপ্তাহিক</translation>
     </message>
     <message>
         <location filename="../scheduledmessages.cpp" line="333"/>
         <source>Once</source>
-        <translation>یک‌بار</translation>
+        <translation>একবার</translation>
     </message>
     <message>
         <location filename="../scheduledmessages.cpp" line="339"/>
         <source>Sent</source>
-        <translation>ارسال‌شده</translation>
+        <translation>পাঠানো হয়েছে</translation>
     </message>
     <message>
         <location filename="../scheduledmessages.cpp" line="341"/>
         <source>Failed</source>
-        <translation>ناموفق</translation>
+        <translation>ব্যর্থ</translation>
     </message>
     <message>
         <location filename="../scheduledmessages.cpp" line="345"/>
         <source>Pending</source>
-        <translation>در انتظار</translation>
+        <translation>মুলতুবি</translation>
     </message>
 </context>
 <context>
@@ -2304,115 +2246,115 @@ Please setup the password in the Settings first.</source>
         <location filename="../scheduledmessagesdialog.cpp" line="114"/>
         <location filename="../scheduledmessagesdialog.cpp" line="120"/>
         <source>Scheduled messages</source>
-        <translation>پیام‌های زمان‌بندی‌شده</translation>
+        <translation>নির্ধারিত বার্তা</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="30"/>
         <location filename="../scheduledmessagesdialog.cpp" line="42"/>
         <source>To</source>
-        <translation>به</translation>
+        <translation>প্রাপক</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="30"/>
         <location filename="../scheduledmessagesdialog.cpp" line="51"/>
         <source>When</source>
-        <translation>زمان</translation>
+        <translation>কখন</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="30"/>
         <location filename="../scheduledmessagesdialog.cpp" line="71"/>
         <source>Message</source>
-        <translation>پیام</translation>
+        <translation>বার্তা</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="30"/>
         <source>Status</source>
-        <translation>وضعیت</translation>
+        <translation>স্ট্যাটাস</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="41"/>
         <source>Phone number, international format e.g. 447700900000</source>
-        <translation>شماره تلفن، فرمت بین‌المللی مثلاً 447700900000</translation>
+        <translation>ফোন নম্বর, আন্তর্জাতিক ফরম্যাট যেমন 447700900000</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="45"/>
         <source>Optional label</source>
-        <translation>برچسب اختیاری</translation>
+        <translation>ঐচ্ছিক লেবেল</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="46"/>
         <source>Name</source>
-        <translation>نام</translation>
+        <translation>নাম</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="54"/>
         <source>Once</source>
-        <translation>یک‌بار</translation>
+        <translation>একবার</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="56"/>
         <source>Daily</source>
-        <translation>روزانه</translation>
+        <translation>প্রতিদিন</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="58"/>
         <source>Weekdays</source>
-        <translation>روزهای هفته</translation>
+        <translation>কর্মদিবস</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="60"/>
         <source>Weekly</source>
-        <translation>هفتگی</translation>
+        <translation>সাপ্তাহিক</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="62"/>
         <source>Repeat</source>
-        <translation>تکرار</translation>
+        <translation>পুনরাবৃত্তি</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="65"/>
         <source>Remind me instead of sending (notify, don&apos;t message)</source>
-        <translation>به‌جای ارسال، به من یادآوری کن (فقط اعلان، بدون ارسال پیام)</translation>
+        <translation>পাঠানোর বদলে আমাকে মনে করিয়ে দিন (বিজ্ঞপ্তি দিন, বার্তা পাঠাবেন না)</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="69"/>
         <source>Message to send</source>
-        <translation>پیام برای ارسال</translation>
+        <translation>পাঠানোর বার্তা</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="75"/>
         <source>The app must be running and WhatsApp logged in at the scheduled time. If it is closed, the message is sent the next time you open the app. Sending opens the recipient&apos;s chat.</source>
-        <translation>در زمان برنامه‌ریزی‌شده، برنامه باید در حال اجرا باشد و WhatsApp واردشده باشد. اگر بسته باشد، پیام در دفعه بعدی که برنامه را باز می‌کنید ارسال می‌شود. ارسال، گفتگوی گیرنده را باز می‌کند.</translation>
+        <translation>নির্ধারিত সময়ে অ্যাপটি চালু এবং WhatsApp-এ লগ ইন থাকতে হবে। যদি এটি বন্ধ থাকে, তবে পরবর্তী বার অ্যাপটি খোলার সময় বার্তাটি পাঠানো হবে। পাঠানোর সময় প্রাপকের চ্যাট খুলে যায়।</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="85"/>
         <source>Schedule</source>
-        <translation>زمان‌بندی</translation>
+        <translation>নির্ধারণ করুন</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="86"/>
         <source>Remove selected</source>
-        <translation>حذف موارد انتخاب‌شده</translation>
+        <translation>নির্বাচিত অপসারণ করুন</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="87"/>
         <source>Clear sent/failed</source>
-        <translation>پاک کردن ارسال‌شده‌ها/ناموفق‌ها</translation>
+        <translation>পাঠানো/ব্যর্থ পরিষ্কার করুন</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="88"/>
         <source>Close</source>
-        <translation>بستن</translation>
+        <translation>বন্ধ করুন</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="115"/>
         <source>Enter a phone number and a message.</source>
-        <translation>یک شماره تلفن و یک پیام وارد کنید.</translation>
+        <translation>একটি ফোন নম্বর এবং একটি বার্তা লিখুন।</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="121"/>
         <source>The time is in the past — send this message now?</source>
-        <translation>زمان مربوط به گذشته است — این پیام اکنون ارسال شود؟</translation>
+        <translation>সময়টি অতীতে — এই বার্তাটি এখনই পাঠাবেন?</translation>
     </message>
 </context>
 <context>
@@ -2425,27 +2367,27 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="83"/>
         <source>Settings</source>
-        <translation>تنظیمات</translation>
+        <translation>সেটিংস</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="135"/>
         <source>General settings</source>
-        <translation>تنظیمات عمومی</translation>
+        <translation>সাধারণ সেটিংস</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="143"/>
         <source>Widget Style</source>
-        <translation>سبک ابزارک</translation>
+        <translation>উইজেট স্টাইল</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="182"/>
         <source>Display theme</source>
-        <translation>پوسته نمایش</translation>
+        <translation>ডিসপ্লে থিম</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="195"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Based on your system timezone and location.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;بر اساس منطقه زمانی و موقعیت مکانی سیستم شما.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;আপনার সিস্টেমের টাইমজোন ও অবস্থানের ভিত্তিতে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="198"/>
@@ -2455,98 +2397,98 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="1691"/>
         <location filename="../settingswidget.cpp" line="1992"/>
         <source>Automatic</source>
-        <translation>خودکار</translation>
+        <translation>স্বয়ংক্রিয়</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="206"/>
         <source>Dark</source>
-        <translation>تیره</translation>
+        <translation>গাঢ়</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="215"/>
         <source>Light</source>
-        <translation>روشن</translation>
+        <translation>হালকা</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="227"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Match the desktop&apos;s own light/dark preference, and change with it. Overrides the manual theme and the automatic sunrise/sunset switch.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;با تنظیم روشن/تاریک خود دسکتاپ هماهنگ می‌شود و همراه با آن تغییر می‌کند. این گزینه بر تم دستی و سوئیچ خودکار طلوع/غروب آفتاب اولویت دارد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ডেস্কটপের নিজস্ব হালকা/গাঢ় পছন্দের সাথে মিলিয়ে নেয় এবং তার সাথে পরিবর্তিত হয়। ম্যানুয়াল থিম এবং স্বয়ংক্রিয় সূর্যোদয়/সূর্যাস্ত পরিবর্তনকে অগ্রাহ্য করে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="230"/>
         <source>Follow system light/dark theme</source>
-        <translation>پیروی از پوسته روشن/تیره سیستم</translation>
+        <translation>সিস্টেমের হালকা/গাঢ় থিম অনুসরণ করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="267"/>
         <source>Native notification</source>
-        <translation>اعلان بومی</translation>
+        <translation>নেটিভ বিজ্ঞপ্তি</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="276"/>
         <source>Customized notification</source>
-        <translation>اعلان سفارشی</translation>
+        <translation>কাস্টমাইজড বিজ্ঞপ্তি</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="294"/>
         <source>  Try</source>
-        <translation>  آزمایش</translation>
+        <translation>  চেষ্টা করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="305"/>
         <source>Notification type</source>
-        <translation>نوع اعلان</translation>
+        <translation>বিজ্ঞপ্তির ধরন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="312"/>
         <source>Disable Notifications Popup</source>
-        <translation>غیرفعال کردن پنجره بازشوی اعلان‌ها</translation>
+        <translation>বিজ্ঞপ্তি পপআপ নিষ্ক্রিয় করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="319"/>
         <source>Popup timeout</source>
-        <translation>زمان محو شدن پنجره بازشو</translation>
+        <translation>পপআপ টাইমআউট</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="326"/>
         <location filename="../settingswidget.ui" line="1319"/>
         <source> Secs</source>
-        <translation> ثانیه</translation>
+        <translation> সেকেন্ড</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="339"/>
         <source>Notification delivery</source>
-        <translation>روش تحویل اعلان</translation>
+        <translation>বিজ্ঞপ্তি ডেলিভারি</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="346"/>
         <source>How native notifications are sent on Linux. Automatic uses the desktop portal inside a Flatpak sandbox and the system service otherwise.</source>
-        <translation>نحوه ارسال اعلان‌های بومی در لینوکس. حالت خودکار در Flatpak از پورتال دسکتاپ و در غیر این صورت از سرویس سیستم استفاده می‌کند.</translation>
+        <translation>Linux-এ নেটিভ বিজ্ঞপ্তি কীভাবে পাঠানো হয়। স্বয়ংক্রিয় ব্যবস্থা Flatpak স্যান্ডবক্সের ভিতরে ডেস্কটপ পোর্টাল এবং অন্যথায় সিস্টেম সার্ভিস ব্যবহার করে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="353"/>
         <source>Ask the notification service to play a sound for new messages.</source>
-        <translation>درخواست از سرویس اعلان برای پخش صدا هنگام پیام‌های جدید.</translation>
+        <translation>নতুন বার্তার জন্য বিজ্ঞপ্তি সার্ভিসকে একটি শব্দ বাজাতে বলুন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="356"/>
         <source>Play sound</source>
-        <translation>پخش صدا</translation>
+        <translation>শব্দ বাজান</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="363"/>
         <source>Suppress notification popups during a daily quiet period. Unread badges still update; only the popup is held back.</source>
-        <translation>جلوگیری از نمایش پنجره‌های بازشوی اعلان در یک بازه آرام روزانه. نشان‌های خوانده‌نشده همچنان به‌روز می‌شوند؛ فقط پنجره بازشو نمایش داده نمی‌شود.</translation>
+        <translation>প্রতিদিনের একটি নীরব সময়ে বিজ্ঞপ্তি পপআপ দমন করুন। অপঠিত ব্যাজ তখনও আপডেট হয়; শুধু পপআপটি আটকে রাখা হয়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="366"/>
         <source>Do Not Disturb</source>
-        <translation>مزاحم نشوید</translation>
+        <translation>বিরক্ত করবেন না</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="375"/>
         <source>From</source>
-        <translation>از</translation>
+        <translation>থেকে</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="382"/>
@@ -2557,546 +2499,546 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="389"/>
         <source>to</source>
-        <translation>تا</translation>
+        <translation>পর্যন্ত</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="418"/>
         <source>Highlight keywords</source>
-        <translation>برجسته کردن کلمات کلیدی</translation>
+        <translation>কীওয়ার্ড হাইলাইট করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="425"/>
         <source>Comma-separated words that always notify, even during Do Not Disturb (case-insensitive).</source>
-        <translation>کلماتی که با کاما جدا شده‌اند و همیشه اعلان می‌دهند، حتی در حالت مزاحم نشوید (بدون حساسیت به حروف بزرگ و کوچک).</translation>
+        <translation>কমা দিয়ে পৃথক করা শব্দ যা সর্বদা বিজ্ঞপ্তি দেয়, এমনকি বিরক্ত করবেন না চলাকালীনও (কেস-সংবেদনশীল নয়)।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="428"/>
         <source>e.g. urgent, boss, invoice</source>
-        <translation>مثلاً urgent، boss، invoice</translation>
+        <translation>যেমন urgent, boss, invoice</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="435"/>
         <source>VIP contacts</source>
-        <translation>مخاطبان VIP</translation>
+        <translation>VIP পরিচিতি</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="442"/>
         <source>Comma-separated contact or group names that always notify, even during Do Not Disturb (case-insensitive).</source>
-        <translation>نام مخاطبان یا گروه‌هایی که با کاما جدا شده‌اند و همیشه اعلان می‌دهند، حتی در حالت مزاحم نشوید (بدون حساسیت به حروف بزرگ و کوچک).</translation>
+        <translation>কমা দিয়ে পৃথক করা পরিচিতি বা গ্রুপের নাম যা সর্বদা বিজ্ঞপ্তি দেয়, এমনকি বিরক্ত করবেন না চলাকালীনও (কেস-সংবেদনশীল নয়)।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="445"/>
         <source>e.g. Alice, Work group</source>
-        <translation>مثلاً Alice، Work group</translation>
+        <translation>যেমন Alice, Work group</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="452"/>
         <source>Muted contacts</source>
-        <translation>مخاطبان بی‌صدا شده</translation>
+        <translation>নিঃশব্দ পরিচিতি</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="459"/>
         <source>Comma-separated contact or group names whose notifications are never shown (their unread badge still updates).</source>
-        <translation>نام مخاطبان یا گروه‌هایی که با کاما جدا شده‌اند و اعلان‌های آن‌ها هرگز نمایش داده نمی‌شود (نشان خوانده‌نشده آن‌ها همچنان به‌روز می‌شود).</translation>
+        <translation>কমা দিয়ে পৃথক করা পরিচিতি বা গ্রুপের নাম যাদের বিজ্ঞপ্তি কখনও দেখানো হয় না (তাদের অপঠিত ব্যাজ তখনও আপডেট হয়)।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="462"/>
         <source>e.g. Noisy group</source>
-        <translation>مثلاً Noisy group</translation>
+        <translation>যেমন Noisy group</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="469"/>
         <source>Add a reply field to desktop notifications so you can answer a message without opening the window. Only works where the notification service supports it (e.g. KDE Plasma); elsewhere notifications behave as before.</source>
-        <translation>افزودن فیلد پاسخ به اعلان‌های دسکتاپ تا بتوانید بدون باز کردن پنجره به یک پیام پاسخ دهید. فقط در جایی کار می‌کند که سرویس اعلان از آن پشتیبانی کند (مثلاً KDE Plasma)؛ در غیر این صورت اعلان‌ها مانند قبل رفتار می‌کنند.</translation>
+        <translation>ডেস্কটপ বিজ্ঞপ্তিতে একটি উত্তর ক্ষেত্র যোগ করুন যাতে উইন্ডো না খুলেই একটি বার্তার উত্তর দিতে পারেন। শুধু সেখানেই কাজ করে যেখানে বিজ্ঞপ্তি সার্ভিস এটি সমর্থন করে (যেমন KDE Plasma); অন্যত্র বিজ্ঞপ্তি আগের মতোই আচরণ করে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="472"/>
         <source>Reply directly from notifications (where supported)</source>
-        <translation>پاسخ مستقیم از اعلان‌ها (در جایی که پشتیبانی می‌شود)</translation>
+        <translation>বিজ্ঞপ্তি থেকে সরাসরি উত্তর দিন (যেখানে সমর্থিত)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="508"/>
         <source>Use Native File Dialog</source>
-        <translation>استفاده از کادر فایل بومی</translation>
+        <translation>নেটিভ ফাইল ডায়ালগ ব্যবহার করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="515"/>
         <source>Mute Audio from Page</source>
-        <translation>بی‌صدا کردن صدای صفحه</translation>
+        <translation>পৃষ্ঠা থেকে অডিও নিঃশব্দ করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="522"/>
         <source>Disable Auto Playback of Media</source>
-        <translation>غیرفعال کردن پخش خودکار رسانه</translation>
+        <translation>মিডিয়ার স্বয়ংক্রিয় প্লেব্যাক নিষ্ক্রিয় করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="529"/>
         <source>Minimize in tray on start</source>
-        <translation>کوچک کردن به سینی هنگام شروع</translation>
+        <translation>চালু করার সময় ট্রেতে মিনিমাইজ করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="536"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window&apos;s position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;وقتی از بیش از یک پنجره حساب کاربری استفاده می‌کنید، موقعیت، اندازه و برگه‌های هر پنجره را به خاطر بسپار و دفعه بعد آن‌ها را بازیابی کن. به‌طور پیش‌فرض غیرفعال است: برنامه به‌صورت یک پنجره واحد که همه حساب‌ها را در خود دارد بازمی‌گردد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;আপনি যখন একাধিক অ্যাকাউন্ট উইন্ডো ব্যবহার করেন, তখন প্রতিটি উইন্ডোর অবস্থান, আকার ও ট্যাব মনে রাখে এবং পরের বার সেগুলো পুনরুদ্ধার করে। ডিফল্টভাবে বন্ধ: অ্যাপটি প্রতিটি অ্যাকাউন্ট ধারণকারী একটিমাত্র উইন্ডো হিসেবে ফিরে আসে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="539"/>
         <source>Remember multiple window positions on restart</source>
-        <translation>به خاطر سپردن موقعیت چند پنجره هنگام راه‌اندازی مجدد</translation>
+        <translation>পুনরায় চালু করার সময় একাধিক উইন্ডোর অবস্থান মনে রাখুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="546"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Off by default, so &amp;quot;Minimise to tray&amp;quot; puts the whole app away: with several windows open, leaving the others on screen while the tray reports Whatly as away is the same confusion as one window being treated as the real one. Tick this to have it put away only the window you are in. Follows whatever key &amp;quot;Minimise to tray&amp;quot; is bound to.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;به‌طور پیش‌فرض غیرفعال است، بنابراین &quot;کوچک‌کردن به سینی&quot; کل برنامه را کنار می‌گذارد: با چند پنجره باز، رها کردن بقیه روی صفحه در حالی که سینی Whatly را به‌عنوان غایب نشان می‌دهد، همان سردرگمی است که یک پنجره به‌عنوان پنجره واقعی در نظر گرفته شود. این گزینه را علامت بزنید تا فقط پنجره‌ای که در آن هستید کنار گذاشته شود. از هر کلیدی که به &quot;کوچک‌کردن به سینی&quot; اختصاص یافته پیروی می‌کند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ডিফল্টভাবে বন্ধ, তাই &amp;quot;ট্রেতে মিনিমাইজ&amp;quot; পুরো অ্যাপটিকে সরিয়ে রাখে: একাধিক উইন্ডো খোলা থাকলে বাকিগুলো পর্দায় রেখে ট্রে যখন Whatly-কে দূরে বলে দেখায়, তখন সেটা একটি উইন্ডোকে আসল ধরে নেওয়ার মতোই বিভ্রান্তি তৈরি করে। এটি টিক দিলে কেবল আপনি যে উইন্ডোতে আছেন সেটিই সরিয়ে রাখবে। &amp;quot;ট্রেতে মিনিমাইজ&amp;quot; যে কী-এর সাথে যুক্ত সেটিই অনুসরণ করে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="549"/>
         <source>Ctrl+W hides only the last focused window.</source>
-        <translation>Ctrl+W فقط آخرین پنجره فعال را پنهان می‌کند.</translation>
+        <translation>Ctrl+W শুধুমাত্র সর্বশেষ ফোকাস করা উইন্ডোটি লুকায়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="556"/>
         <source>Show/Hide on clicking tray Icon (if supported)</source>
-        <translation>نمایش/پنهان کردن با کلیک روی نماد سینی (در صورت پشتیبانی)</translation>
+        <translation>ট্রে আইকনে ক্লিক করলে দেখান/লুকান (যদি সমর্থিত হয়)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="563"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A muted chat still shows its own count in the list. Off, it stops adding to the badge on the account tab and to the tray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;یک گفتگوی بی‌صدا همچنان شمار خود را در فهرست نشان می‌دهد. در حالت خاموش، دیگر به نشان روی زبانهٔ حساب و به سینی سیستم افزوده نمی‌شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;মিউট করা চ্যাট তালিকায় নিজের সংখ্যা এখনও দেখায়। বন্ধ থাকলে, এটি অ্যাকাউন্ট ট্যাবের ব্যাজ ও ট্রেতে যোগ হওয়া বন্ধ করে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="566"/>
         <source>Count muted chats as unread</source>
-        <translation>شمردن گفتگوهای بی‌صدا به‌عنوان خوانده‌نشده</translation>
+        <translation>নিঃশব্দ চ্যাটগুলো অপঠিত হিসেবে গণনা করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="573"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Archived chats are kept out of the main list. On, unread messages in them add to the badge as well.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;گفتگوهای بایگانی‌شده خارج از فهرست اصلی نگه داشته می‌شوند. در حالت روشن، پیام‌های خوانده‌نشدهٔ آن‌ها نیز به نشان افزوده می‌شوند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;আর্কাইভ করা চ্যাটগুলো মূল তালিকা থেকে বাইরে রাখা হয়। চালু থাকলে, সেগুলোর অপঠিত বার্তাও ব্যাজে যোগ হয়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="576"/>
         <source>Count archived chats as unread</source>
-        <translation>شمردن گفتگوهای بایگانی‌شده به‌عنوان خوانده‌نشده</translation>
+        <translation>সংরক্ষণাগারভুক্ত চ্যাটগুলো অপঠিত হিসেবে গণনা করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="583"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Off, the badge is the number of conversations waiting. On, it is the number of messages in them &amp;mdash; and the collapsed chat list&amp;apos;s unread filter then carries the number of conversations.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;در حالت خاموش، نشان برابر شمار گفتگوهای در انتظار است. در حالت روشن، برابر شمار پیام‌های درون آن‌هاست &amp;mdash; و آنگاه صافیِ خوانده‌نشدهٔ فهرست جمع‌شدهٔ گفتگوها شمار گفتگوها را نشان می‌دهد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;বন্ধ থাকলে, ব্যাজ হলো অপেক্ষমাণ কথোপকথনের সংখ্যা। চালু থাকলে, এটি তাদের ভেতরের বার্তার সংখ্যা &amp;mdash; আর তখন সংকুচিত চ্যাট তালিকার অপঠিত ফিল্টার কথোপকথনের সংখ্যা বহন করে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="586"/>
         <source>Count unread messages instead of chats</source>
-        <translation>شمردن پیام‌های خوانده‌نشده به‌جای گفتگوها</translation>
+        <translation>চ্যাটের বদলে অপঠিত বার্তা গণনা করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="593"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close the emoji, GIF &amp;amp; sticker panel when you click elsewhere. WhatsApp Web otherwise keeps it open until the button is pressed again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;با کلیک در جای دیگر، پنل ایموجی، GIF &amp;amp; استیکر بسته می‌شود. در غیر این صورت، WhatsApp Web آن را باز نگه می‌دارد تا زمانی که دکمه دوباره فشرده شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;অন্য কোথাও ক্লিক করলে ইমোজি, GIF &amp;amp; স্টিকার প্যানেল বন্ধ করে দেয়। নইলে WhatsApp Web বোতাম আবার চাপা না হওয়া পর্যন্ত এটি খোলা রাখে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="596"/>
         <source>Close emoji/sticker panel when clicking outside</source>
-        <translation>بستن پنل شکلک/استیکر با کلیک بیرون از آن</translation>
+        <translation>বাইরে ক্লিক করলে ইমোজি/স্টিকার প্যানেল বন্ধ করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="603"/>
         <source>Interface language (requires restart)</source>
-        <translation>زبان رابط کاربری (نیاز به راه‌اندازی مجدد)</translation>
+        <translation>ইন্টারফেস ভাষা (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="610"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of Whatly&apos;s own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;زبان رابط کاربری خود Whatly. پس از راه‌اندازی مجدد برنامه اعمال می‌شود. زبان خود چت‌ها از WhatsApp Web می‌آید و در اینجا قابل تغییر نیست.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Whatly-র নিজস্ব ইন্টারফেসের ভাষা। অ্যাপটি পুনরায় চালু করার পর কার্যকর হয়। চ্যাটগুলোর নিজস্ব ভাষা WhatsApp Web থেকে আসে এবং এখানে পরিবর্তন করা যায় না।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="617"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a light/dark button to WhatsApp&apos;s own sidebar, just above your profile picture.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;دکمه‌ای برای حالت روشن/تاریک به نوار کناری خود واتس‌اپ، درست بالای عکس پروفایل شما اضافه می‌کند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp-এর নিজস্ব সাইডবারে, আপনার প্রোফাইল ছবির ঠিক উপরে একটি হালকা/গাঢ় বোতাম যোগ করে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="620"/>
         <source>Theme button in WhatsApp&apos;s sidebar</source>
-        <translation>دکمه پوسته در نوار کناری WhatsApp</translation>
+        <translation>WhatsApp-এর সাইডবারে থিম বোতাম</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="627"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that blurs and unblurs your chats in one click, without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;دکمه‌ای به نوار کناری خود واتس‌اپ اضافه می‌کند که با یک کلیک، چت‌های شما را تار یا واضح می‌کند، بدون نیاز به باز کردن تنظیمات.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp-এর নিজস্ব সাইডবারে একটি বোতাম যোগ করে যা সেটিংস না খুলেই এক ক্লিকে আপনার চ্যাট ঝাপসা ও পরিষ্কার করে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="630"/>
         <source>Blur button in WhatsApp&apos;s sidebar</source>
-        <translation>دکمه تاری در نوار کناری WhatsApp</translation>
+        <translation>WhatsApp-এর সাইডবারে ব্লার বোতাম</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="637"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds zoom out / reset / zoom in buttons to WhatsApp&apos;s own sidebar, to scale the page live without opening Settings.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;دکمه‌های بزرگ‌نمایی کاهشی / بازنشانی / بزرگ‌نمایی افزایشی را به نوار کناری خود واتس‌اپ اضافه می‌کند تا مقیاس صفحه را به‌صورت زنده و بدون باز کردن تنظیمات تغییر دهید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp-এর নিজস্ব সাইডবারে জুম আউট / রিসেট / জুম ইন বোতাম যোগ করে, যাতে সেটিংস না খুলেই পেজটি সরাসরি স্কেল করা যায়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="640"/>
         <source>Zoom buttons in WhatsApp&apos;s sidebar</source>
-        <translation>دکمه‌های بزرگ‌نمایی در نوار کناری WhatsApp</translation>
+        <translation>WhatsApp-এর সাইডবারে জুম বোতাম</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="647"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;دکمه‌ای به نوار کناری خود واتس‌اپ اضافه می‌کند که فهرست چت‌ها را به نواری از عکس‌های پروفایل جمع می‌کند و عرض استفاده‌شده را به مکالمه واگذار می‌کند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp-এর নিজস্ব সাইডবারে একটি বোতাম যোগ করে যা চ্যাট তালিকাকে প্রোফাইল ছবির একটি সরু সারিতে সংকুচিত করে, ফলে কথোপকথন সেই ব্যবহৃত প্রস্থটুকু পায়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="650"/>
         <source>Chat-list collapse button in WhatsApp&apos;s sidebar</source>
-        <translation>دکمه جمع کردن فهرست گفتگوها در نوار کناری WhatsApp</translation>
+        <translation>WhatsApp-এর সাইডবারে চ্যাট-তালিকা সংকোচন বোতাম</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="657"/>
         <source>Collapsed chat preview</source>
-        <translation>پیش‌نمایش گفتگوی جمع‌شده</translation>
+        <translation>সংকুচিত চ্যাট প্রিভিউ</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="664"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform&apos;s font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اندازه پیش‌نمایشی که هنگام بردن نشانگر روی یک عکس در فهرست جمع‌شده چت‌ها ظاهر می‌شود. مقدار پیش‌فرض با نمایش فونت این پلتفرم هماهنگ است؛ اگر در صفحه شما کوچک یا بزرگ به نظر می‌رسد، مقدار دیگری انتخاب کنید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;সংকুচিত চ্যাট তালিকায় কোনো ছবির উপর হোভার করলে যে প্রিভিউ দেখা যায় তা কত বড় আঁকা হবে। ডিফল্টটি এই প্ল্যাটফর্মের ফন্ট রেন্ডারিংয়ের সাথে মানানসই; আপনার পর্দায় এটি ছোট বা বড় দেখালে অন্যটি বেছে নিন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="671"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;به‌جای نماد سبزرنگ واتس‌اپ، از یک نماد سینی تک‌رنگ که با بقیه پنل شما هماهنگ است استفاده کنید. این نماد همچنین زمانی که واتس‌اپ متصل نیست کم‌رنگ می‌شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;সবুজ WhatsApp আইকনের বদলে আপনার প্যানেলের বাকি অংশের সাথে মানানসই একটি একরঙা ট্রে আইকন ব্যবহার করুন। WhatsApp সংযুক্ত না থাকলে আইকনটি ম্লানও হয়ে যায়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="674"/>
         <source>Monochrome tray icon</source>
-        <translation>نماد تک‌رنگ سینی</translation>
+        <translation>একরঙা ট্রে আইকন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="681"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;پیمایش را به‌صورت متحرک نمایش بده، به‌جای پرش خط به خط.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;লাইনে লাইনে লাফ দেওয়ার বদলে স্ক্রলিং অ্যানিমেট করুন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="684"/>
         <source>Smooth scrolling</source>
-        <translation>پیمایش نرم</translation>
+        <translation>মসৃণ স্ক্রলিং</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="691"/>
         <location filename="../settingswidget.cpp" line="1608"/>
         <source>Custom CSS</source>
-        <translation>CSS سفارشی</translation>
+        <translation>কাস্টম CSS</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="700"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;یک فایل .css بارگذاری کنید تا ظاهر WhatsApp Web تغییر کند — شیوه‌نامه‌های جامعه کاربری (مانند catppuccin و مشابه آن) در اینجا کار می‌کنند. این روی تم چت اعمال می‌شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web-কে নতুন করে স্টাইল করতে একটি .css ফাইল লোড করুন — কমিউনিটি স্টাইলশিট (catppuccin এবং এ ধরনের) এখানে কাজ করে। চ্যাট থিমের উপরে প্রয়োগ করা হয়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="703"/>
         <source>Choose file…</source>
-        <translation>انتخاب فایل…</translation>
+        <translation>ফাইল নির্বাচন করুন…</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="710"/>
         <location filename="../settingswidget.ui" line="850"/>
         <source>Clear</source>
-        <translation>پاک کردن</translation>
+        <translation>পরিষ্কার করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="719"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;نماد سینی سیستم را به‌طور کامل حذف می‌کند. از آنجا که سینی‌ای برای بازگرداندن برنامه وجود ندارد، بستن پنجره به‌جای پنهان کردن، برنامه را می‌بندد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;সিস্টেম-ট্রে আইকনটি সম্পূর্ণরূপে সরিয়ে দিন। ফিরিয়ে আনার মতো কোনো ট্রে না থাকায়, উইন্ডো বন্ধ করলে অ্যাপটি লুকানোর বদলে বন্ধ হয়ে যায়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="722"/>
         <source>Hide tray icon</source>
-        <translation>پنهان کردن نماد سینی</translation>
+        <translation>ট্রে আইকন লুকান</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="729"/>
         <source>Font family</source>
-        <translation>خانواده قلم</translation>
+        <translation>ফন্ট পরিবার</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="736"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Render WhatsApp Web&apos;s text in a font installed on your system. Emoji, icons and monospaced message formatting are left untouched.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;متن WhatsApp Web را با فونتی که روی سیستم شما نصب شده نمایش می‌دهد. ایموجی‌ها، نمادها و قالب‌بندی پیام با فونت تک‌عرض بدون تغییر باقی می‌مانند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web-এর টেক্সট আপনার সিস্টেমে ইনস্টল করা একটি ফন্টে রেন্ডার করুন। ইমোজি, আইকন ও মনোস্পেসড বার্তা ফরম্যাটিং অপরিবর্তিত থাকে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="743"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;بخش «به‌روزرسانی‌های بی‌صدا» را در پنل وضعیت/به‌روزرسانی‌ها پنهان می‌کند، به‌طوری که وضعیت‌های مخاطبینی که بی‌صدا کرده‌اید اصلاً نمایش داده نشوند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;স্ট্যাটাস/আপডেট প্যানেলে &quot;মিউট করা আপডেট&quot; বিভাগটি লুকিয়ে রাখুন, যাতে আপনার মিউট করা পরিচিতিদের স্ট্যাটাস একদমই না দেখায়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="746"/>
         <source>Hide muted status updates</source>
-        <translation>پنهان کردن به‌روزرسانی‌های وضعیت بی‌صدا شده</translation>
+        <translation>নিঃশব্দ স্ট্যাটাস আপডেট লুকান</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="753"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;هنگام تایپ، زیر کلمات غلط املایی خط می‌کشد و پیشنهادهای اصلاحی را در منوی کلیک راست ارائه می‌دهد.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;টাইপ করার সময় ভুল বানানের শব্দ আন্ডারলাইন করে, এবং রাইট-ক্লিক মেনুতে সংশোধন সাজেস্ট করে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
         <location filename="../settingswidget.cpp" line="2598"/>
         <source>Check spelling as I type</source>
-        <translation>بررسی املا هنگام تایپ</translation>
+        <translation>টাইপ করার সময় বানান যাচাই করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="763"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;زبانی که باید بر اساس آن بررسی انجام شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;যে ভাষার বিরুদ্ধে যাচাই করা হবে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="770"/>
         <source>Interface font size</source>
-        <translation>اندازه قلم رابط کاربری</translation>
+        <translation>ইন্টারফেস ফন্টের আকার</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="777"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اندازه قلم رابط کاربری خود برنامه — منوها، تنظیمات و کادرهای گفتگو. این روی متن WhatsApp Web تأثیری ندارد؛ برای آن از بزرگ‌نمایی استفاده کنید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;অ্যাপের নিজস্ব ইন্টারফেসের পয়েন্ট সাইজ — মেনু, সেটিংস ও ডায়ালগ। এটি WhatsApp Web-এর টেক্সটকে প্রভাবিত করে না; তার জন্য জুম ব্যবহার করুন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="780"/>
         <source> pt</source>
-        <translation> pt</translation>
+        <translation> পয়েন্ট</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="793"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اگر فرآیند صفحه WhatsApp Web از کار بیفتد، به‌جای پرسیدن ابتدا، آن را به‌صورت خودکار بازخوانی کن.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web-এর পেজ প্রসেস ক্র্যাশ করলে, আগে জিজ্ঞাসা না করে সেটি স্বয়ংক্রিয়ভাবে পুনরায় লোড করুন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="796"/>
         <source>Reload automatically after a crash</source>
-        <translation>بارگذاری مجدد خودکار پس از خرابی</translation>
+        <translation>ক্র্যাশের পর স্বয়ংক্রিয়ভাবে পুনরায় লোড করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="803"/>
         <source>Privacy blur</source>
-        <translation>تاری حریم خصوصی</translation>
+        <translation>গোপনীয়তা ব্লার</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="810"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;چت‌های شما را تار می‌کند تا زمانی که نشانگر ماوس را روی آن‌ها ببرید، به‌طوری که کسی که نگاهی گذرا به صفحه می‌اندازد نتواند آن‌ها را بخواند. بردن نشانگر روی یک ردیف فقط همان ردیف را آشکار می‌کند.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;আপনি হোভার না করা পর্যন্ত আপনার চ্যাট ঝাপসা করে রাখে, যাতে পর্দার দিকে চোখ বোলানো কেউ সেগুলো পড়তে না পারে। কোনো সারিতে হোভার করলে কেবল সেই সারিটিই প্রকাশ পায়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="817"/>
         <source>Chat colour Tint</source>
-        <translation>طیف رنگی گفتگو</translation>
+        <translation>চ্যাট রঙের আভা</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="824"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;رنگ خود WhatsApp Web را تغییر می‌دهد. عکس‌ها، آواتارها و استیکرها رنگ اصلی خود را حفظ می‌کنند. این روی تم روشن یا تاریک، هرکدام که فعال باشد، اعمال می‌شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web-কেই নতুন রঙে রাঙায়। ছবি, অবতার ও স্টিকার নিজেদের রঙ ধরে রাখে। হালকা বা গাঢ় থিম যেটিই সক্রিয় থাক, তার উপরে কাজ করে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
         <location filename="../settingswidget.cpp" line="1584"/>
         <source>Chat wallpaper</source>
-        <translation>تصویر زمینه گفتگو</translation>
+        <translation>চ্যাট ওয়ালপেপার</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="840"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;از یکی از تصاویر خودتان به‌عنوان پس‌زمینه پنل چت استفاده کنید، درست همان‌طور که واتس‌اپ در اندروید انجام می‌دهد. این تصویر درون Whatly ذخیره می‌شود، در هیچ‌جا آپلود نمی‌شود و فقط برای شما قابل مشاهده است.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp যেমন Android-এ করে, তেমনি আপনার নিজের কোনো ছবি চ্যাট পেনের ব্যাকগ্রাউন্ড হিসেবে ব্যবহার করুন। ছবিটি Whatly-র ভেতরে সংরক্ষিত থাকে, কোথাও আপলোড হয় না, এবং কেবল আপনিই দেখতে পান।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="843"/>
         <source>Choose image…</source>
-        <translation>انتخاب تصویر…</translation>
+        <translation>ছবি নির্বাচন করুন…</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="859"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ورودهای جدید به‌جای &amp;quot;Google Chrome (Linux)&amp;quot;، در فهرست دستگاه‌های متصلِ گوشی شما به‌صورت &amp;quot;Whatly for Linux&amp;quot; (یا پلتفرم متناظر) نمایش داده می‌شوند. این نام هنگام اتصال یک دستگاه روی گوشی ذخیره می‌شود، بنابراین تغییر این گزینه فقط روی اتصال‌های آینده تأثیر می‌گذارد — برای تغییر نام یک نشست موجود، ابتدا خارج شوید و سپس دوباره متصل شوید.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;নতুন লগইনগুলো আপনার ফোনের লিঙ্কড-ডিভাইস তালিকায় &amp;quot;Google Chrome (Linux)&amp;quot;-এর বদলে &amp;quot;Whatly for Linux&amp;quot; (বা মানানসই প্ল্যাটফর্ম) হিসেবে দেখা যায়। ডিভাইস লিঙ্ক করার সময় নামটি ফোনে সংরক্ষিত হয়, তাই এটি পরিবর্তন করলে কেবল ভবিষ্যতের লিঙ্কেই প্রভাব পড়ে — বিদ্যমান সেশনের নাম বদলাতে লগ আউট করে আবার লিঙ্ক করুন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="862"/>
         <source>Identify as Whatly in linked devices</source>
-        <translation>معرفی به‌عنوان Whatly در دستگاه‌های متصل</translation>
+        <translation>লিঙ্কড ডিভাইসে Whatly হিসেবে সনাক্ত করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="876"/>
         <source>User Agent</source>
-        <translation>User Agent</translation>
+        <translation>ইউজার এজেন্ট</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="879"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;پیشرفته — مگر اینکه دقیقاً بدانید در حال انجام چه کاری هستید، این گزینه را دست نزنید. یک عامل کاربر (user agent) غیراستاندارد می‌تواند باعث شود واتس‌اپ از بارگذاری خودداری کند، و مقادیر غیرمعمول این خطر را دارند که حساب واتس‌اپ شما علامت‌گذاری یا مسدود شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;উন্নত — আপনি ঠিক কী করছেন তা না জানলে এটিতে হাত দেবেন না। একটি অ-মানক ইউজার এজেন্ট WhatsApp-কে লোড হতে অস্বীকার করাতে পারে, এবং অস্বাভাবিক মান আপনার WhatsApp অ্যাকাউন্ট ফ্ল্যাগ বা ব্ল্যাকলিস্ট হওয়ার ঝুঁকি তৈরি করে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="889"/>
         <source>  Set</source>
-        <translation>  تنظیم</translation>
+        <translation>  সেট করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="900"/>
         <source>Reset to default</source>
-        <translation>بازنشانی به پیش‌فرض</translation>
+        <translation>ডিফল্টে রিসেট করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="923"/>
         <source>Zoom factor when normal</source>
-        <translation>ضریب بزرگ‌نمایی در حالت عادی</translation>
+        <translation>সাধারণ অবস্থায় জুম ফ্যাক্টর</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="951"/>
         <location filename="../settingswidget.ui" line="1086"/>
         <source>Zoom Out</source>
-        <translation>کوچک‌نمایی</translation>
+        <translation>জুম আউট</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="990"/>
         <location filename="../settingswidget.ui" line="1125"/>
         <source>Zoom In</source>
-        <translation>بزرگ‌نمایی</translation>
+        <translation>জুম ইন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1035"/>
         <location filename="../settingswidget.ui" line="1170"/>
         <source>reset</source>
-        <translation>بازنشانی</translation>
+        <translation>রিসেট</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1058"/>
         <source>Zoom factor when maximized/fullscreen</source>
-        <translation>ضریب بزرگ‌نمایی در حالت بزرگ‌شده/تمام‌صفحه</translation>
+        <translation>সর্বোচ্চ/পূর্ণস্ক্রিন অবস্থায় জুম ফ্যাক্টর</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1193"/>
         <source>Minimize to tray</source>
-        <translation>کوچک کردن به سینی</translation>
+        <translation>ট্রেতে মিনিমাইজ করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1202"/>
         <source>Quit</source>
-        <translation>خروج</translation>
+        <translation>প্রস্থান করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1214"/>
         <source>Global shortcuts</source>
-        <translation>میان‌برهای عمومی</translation>
+        <translation>গ্লোবাল শর্টকাট</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1221"/>
         <source>Close button action</source>
-        <translation>عملکرد دکمه بستن</translation>
+        <translation>বন্ধ বোতামের ক্রিয়া</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1228"/>
         <source>  Show shortcuts</source>
-        <translation>  نمایش میان‌برها</translation>
+        <translation>  শর্টকাট দেখান</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1239"/>
         <source>Permissions</source>
-        <translation>مجوزها</translation>
+        <translation>অনুমতি</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1246"/>
         <source>  Show permissions</source>
-        <translation>  نمایش مجوزها</translation>
+        <translation>  অনুমতি দেখান</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1261"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;فعال‌سازی صفحه قفل.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;লক স্ক্রিন সক্রিয় করুন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1264"/>
         <source>Enable App lock on start</source>
-        <translation>فعال کردن قفل برنامه هنگام شروع</translation>
+        <translation>চালু করার সময় অ্যাপ লক সক্রিয় করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1271"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;وقتی پنجره به سینی سیستم پنهان می‌شود، آن را پشت رمز عبور قفل کن. نیازمند تنظیم یک گذرواژه است.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;উইন্ডোটি যখন সিস্টেম ট্রেতে লুকায়, তখন সেটি পাসকোডের আড়ালে লক করে দিন। এর জন্য একটি পাসওয়ার্ড সেট করা থাকতে হবে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1274"/>
         <source>Lock when hidden to tray</source>
-        <translation>قفل هنگام پنهان شدن به سینی</translation>
+        <translation>ট্রেতে লুকানো অবস্থায় লক করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1281"/>
         <source>Also lock Whatly when the desktop session locks. Requires a password to be set. (Linux)</source>
-        <translation>همچنین Whatly را هنگام قفل شدن نشست دسکتاپ قفل کن. نیاز به تنظیم رمز عبور دارد. (لینوکس)</translation>
+        <translation>ডেস্কটপ সেশন লক হলে Whatly-ও লক করুন। একটি পাসওয়ার্ড সেট থাকা প্রয়োজন। (Linux)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1284"/>
         <source>Lock when the screen locks</source>
-        <translation>قفل هنگام قفل شدن صفحه</translation>
+        <translation>স্ক্রিন লক হলে লক করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1291"/>
         <source>Current Password</source>
-        <translation>رمز عبور فعلی</translation>
+        <translation>বর্তমান পাসওয়ার্ড</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1298"/>
         <location filename="../settingswidget.ui" line="1332"/>
         <source>Change password</source>
-        <translation>تغییر رمز عبور</translation>
+        <translation>পাসওয়ার্ড পরিবর্তন করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1301"/>
         <location filename="../settingswidget.ui" line="1410"/>
         <source>Change</source>
-        <translation>تغییر</translation>
+        <translation>পরিবর্তন করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1312"/>
         <source>Enable auto locking after</source>
-        <translation>فعال کردن قفل خودکار پس از</translation>
+        <translation>এর পরে স্বয়ংক্রিয় লকিং সক্রিয় করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1335"/>
         <source>Reset</source>
-        <translation>بازنشانی</translation>
+        <translation>রিসেট</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1367"/>
         <source>View password</source>
-        <translation>نمایش رمز عبور</translation>
+        <translation>পাসওয়ার্ড দেখুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1394"/>
         <source>Default Download location</source>
-        <translation>محل پیش‌فرض دانلود</translation>
+        <translation>ডিফল্ট ডাউনলোড অবস্থান</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1407"/>
         <source>Change Download Location</source>
-        <translation>تغییر محل دانلود</translation>
+        <translation>ডাউনলোড অবস্থান পরিবর্তন করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1426"/>
         <source>Storage </source>
-        <translation>فضای ذخیره‌سازی </translation>
+        <translation>সংরক্ষণাগার </translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1446"/>
         <source>Property</source>
-        <translation>ویژگی</translation>
+        <translation>বৈশিষ্ট্য</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1453"/>
         <source>  Clear (requires restart)</source>
-        <translation>  پاک کردن (نیاز به راه‌اندازی مجدد)</translation>
+        <translation>  পরিষ্কার করুন (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1464"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;داده‌های پایدار شامل کوکی‌های پایدار، حافظه محلی HTML5 و پیوندهای بازدیدشده است.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;স্থায়ী ডেটার মধ্যে রয়েছে স্থায়ী কুকি, HTML5 লোকাল স্টোরেজ, এবং পরিদর্শিত লিঙ্ক।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1467"/>
         <source>Persistent data</source>
-        <translation>داده‌های پایدار</translation>
+        <translation>স্থায়ী ডেটা</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1474"/>
@@ -3107,222 +3049,208 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1484"/>
         <source>The HTTP/media cache. Clearing it is safe — it is re-downloaded as needed.</source>
-        <translation>حافظه پنهان HTTP/رسانه. پاک کردن آن بی‌خطر است — در صورت نیاز دوباره دانلود می‌شود.</translation>
+        <translation>HTTP/মিডিয়া ক্যাশে। এটি পরিষ্কার করা নিরাপদ — প্রয়োজন অনুসারে এটি আবার ডাউনলোড হয়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1487"/>
         <source>Cache</source>
-        <translation>حافظه پنهان</translation>
+        <translation>ক্যাশে</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1504"/>
         <source>  Clear cache</source>
-        <translation>  پاک کردن حافظه پنهان</translation>
+        <translation>  ক্যাশে পরিষ্কার করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1527"/>
         <source>Size</source>
-        <translation>اندازه</translation>
+        <translation>আকার</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1549"/>
         <source>Action</source>
-        <translation>عملیات</translation>
+        <translation>ক্রিয়া</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1563"/>
         <source>Backup</source>
-        <translation>پشتیبان</translation>
+        <translation>ব্যাকআপ</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1570"/>
         <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
-        <translation>ذخیره این حساب (تنظیمات، نشست و افزونه‌ها) در یک بایگانی .tar.gz. این بایگانی شامل نشست واردشده شماست — آن را خصوصی نگه دارید.</translation>
+        <translation>এই অ্যাকাউন্টটি (সেটিংস, সেশন এবং অ্যাডঅন) একটি .tar.gz আর্কাইভে সংরক্ষণ করুন। আর্কাইভে আপনার লগ-ইন করা সেশন থাকে — এটি ব্যক্তিগত রাখুন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1573"/>
         <source>Export profile…</source>
-        <translation>خروجی گرفتن از پروفایل…</translation>
+        <translation>প্রোফাইল রপ্তানি করুন…</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1580"/>
         <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
-        <translation>بازگردانی یک حساب از بایگانی .tar.gz. این کار داده‌های فعلی را رونویسی می‌کند و نیاز به راه‌اندازی مجدد دارد.</translation>
+        <translation>একটি .tar.gz আর্কাইভ থেকে একটি অ্যাকাউন্ট পুনরুদ্ধার করুন। এটি বর্তমান ডেটা প্রতিস্থাপন করে এবং পুনরায় চালু করা প্রয়োজন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1583"/>
         <source>Import profile…</source>
-        <translation>وارد کردن پروفایل…</translation>
+        <translation>প্রোফাইল আমদানি করুন…</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1608"/>
         <source>Performance (requires restart)</source>
-        <translation>کارایی (نیازمند راه‌اندازی مجدد)</translation>
-    </message>
-    <message>
-        <location filename="../settingswidget.ui" line="2092"/>
-        <source>Free memory by unloading accounts you are not viewing. An unloaded account does not receive messages, and reloads to where it was when you switch back to it. Single-account setups are unaffected.</source>
-        <translation>با تخلیه حساب‌هایی که مشاهده نمی‌کنید، حافظه را آزاد کنید. حساب تخلیه‌شده پیامی دریافت نمی‌کند و هنگام بازگشت به آن، به همان جایی که بود بارگذاری می‌شود. تنظیمات تک‌حسابی تحت تأثیر قرار نمی‌گیرند.</translation>
-    </message>
-    <message>
-        <location filename="../settingswidget.ui" line="2095"/>
-        <source>Unload inactive accounts from memory</source>
-        <translation>تخلیه حساب‌های غیرفعال از حافظه</translation>
-    </message>
-    <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">عملکرد و حریم خصوصی (نیاز به راه‌اندازی مجدد)</translation>
+        <translation>কর্মক্ষমতা (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1614"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
-        <translation>تنظیم دقیق موتور رندر. پیش‌فرض‌ها در بیشتر سیستم‌ها ایمن هستند؛ اگر پنجره خالی است یا برنامه هنگام شروع خراب می‌شود، یا لگ دارد، این موارد را تغییر دهید. تغییرات پس از راه‌اندازی مجدد اعمال می‌شود.</translation>
+        <translation>রেন্ডারিং ইঞ্জিন সূক্ষ্মভাবে সমন্বয় করুন। বেশিরভাগ সিস্টেমে ডিফল্ট মানগুলো নিরাপদ; উইন্ডো ফাঁকা থাকলে বা অ্যাপ চালু হওয়ার সময় ক্র্যাশ করলে, অথবা আটকে গেলে, এগুলো পরিবর্তন করে দেখুন। পরিবর্তনগুলো পুনরায় চালু করার পরে প্রযোজ্য হয়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1624"/>
         <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
-        <translation>رندر کاملاً روی CPU (--disable-gpu). خرابی پنجره خالی و خرابی هنگام شروع را در برخی تنظیمات GPU/درایور برطرف می‌کند. پیش‌فرض در لینوکس.</translation>
+        <translation>সম্পূর্ণভাবে CPU-তে রেন্ডার করুন (--disable-gpu)। কিছু GPU/ড্রাইভার সেটআপে ফাঁকা উইন্ডো এবং চালু হওয়ার সময় ক্র্যাশ ঠিক করে। Linux-এ ডিফল্ট।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1627"/>
         <source>Disable GPU acceleration</source>
-        <translation>غیرفعال کردن شتاب‌دهی GPU</translation>
+        <translation>GPU ত্বরণ নিষ্ক্রিয় করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1634"/>
         <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
-        <translation>ترکیب صفحه روی CPU (--disable-gpu-compositing). از پرش فریم قدیمی در برخی درایورها جلوگیری می‌کند.</translation>
+        <translation>পৃষ্ঠাটি CPU-তে কম্পোজিট করুন (--disable-gpu-compositing)। কিছু ড্রাইভারে পুরনো-ফ্রেমের ঝিলমিল এড়ায়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1637"/>
         <source>Disable GPU compositing</source>
-        <translation>غیرفعال کردن ترکیب GPU</translation>
+        <translation>GPU কম্পোজিটিং নিষ্ক্রিয় করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1644"/>
         <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
-        <translation>غیرفعال کردن VSync در GPU (--disable-gpu-vsync). ممکن است تأخیر ورودی را کاهش دهد اما باعث پارگی تصویر شود.</translation>
+        <translation>GPU VSync নিষ্ক্রিয় করুন (--disable-gpu-vsync)। টিয়ারিং-এর বিনিময়ে ইনপুট ল্যাগ কমাতে পারে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1647"/>
         <source>Disable GPU VSync</source>
-        <translation>غیرفعال کردن VSync در GPU</translation>
+        <translation>GPU VSync নিষ্ক্রিয় করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1654"/>
         <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
-        <translation>اجرای فرآیند GPU درون فرآیند اصلی (--in-process-gpu). راه‌حلی برای برخی تنظیمات سندباکس‌شده.</translation>
+        <translation>GPU প্রক্রিয়াটি মূল প্রক্রিয়ার ভেতরে চালান (--in-process-gpu)। কিছু স্যান্ডবক্সড সেটআপের জন্য একটি সমাধান।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1657"/>
         <source>Run GPU in-process</source>
-        <translation>اجرای GPU درون فرآیند</translation>
+        <translation>GPU ইন-প্রসেস চালান</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1664"/>
         <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
-        <translation>اجبار شتاب‌دهی حتی زمانی که درایور در فهرست مسدود است (--ignore-gpu-blocklist). برای روشن کردن دوباره GPU این را امتحان کنید.</translation>
+        <translation>ড্রাইভার ব্লকলিস্টে থাকলেও ত্বরণ বাধ্যতামূলক করুন (--ignore-gpu-blocklist)। GPU আবার চালু করতে এটি চেষ্টা করুন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1667"/>
         <source>Ignore GPU blocklist</source>
-        <translation>نادیده گرفتن فهرست مسدود GPU</translation>
+        <translation>GPU ব্লকলিস্ট উপেক্ষা করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1674"/>
         <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
-        <translation>اجرای همه چیز در یک فرآیند واحد (--single-process). حافظه کمتری استفاده می‌کند اما پایداری کمتری دارد.</translation>
+        <translation>সবকিছু একটি একক প্রক্রিয়ায় চালান (--single-process)। কম মেমরি ব্যবহার করে কিন্তু কম স্থিতিশীল।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1677"/>
         <source>Single-process mode (lower memory)</source>
-        <translation>حالت تک‌فرآیندی (حافظه کمتر)</translation>
+        <translation>একক-প্রক্রিয়া মোড (কম মেমরি)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1684"/>
         <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
-        <translation>اشتراک یک فرآیند رندر به ازای هر سایت (--process-per-site). مصرف حافظه را کاهش می‌دهد.</translation>
+        <translation>প্রতি সাইটে একটি রেন্ডারার প্রক্রিয়া ভাগ করুন (--process-per-site)। মেমরির ব্যবহার কমায়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1687"/>
         <source>One process per site (lower memory)</source>
-        <translation>یک فرآیند به ازای هر سایت (حافظه کمتر)</translation>
+        <translation>প্রতি সাইটে একটি প্রক্রিয়া (কম মেমরি)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1694"/>
         <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
-        <translation>درخواست از موتور جاوااسکریپت برای استفاده از حافظه کمتر با هزینه‌ای اندک در سرعت (V8 --optimize-for-size). برای برنامه‌ای که در سینی می‌ماند توصیه می‌شود. زمانی که محدودیت حافظه جاوااسکریپت در زیر تنظیم شده باشد نادیده گرفته می‌شود.</translation>
+        <translation>JavaScript ইঞ্জিনকে সামান্য গতির বিনিময়ে কম মেমরি ব্যবহার করতে বলুন (V8 --optimize-for-size)। ট্রেতে থাকা অ্যাপের জন্য সুপারিশকৃত। নিচে একটি JavaScript মেমরি সীমা নির্ধারণ করা থাকলে উপেক্ষা করা হয়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1697"/>
         <source>Optimize memory over speed (lower memory)</source>
-        <translation>بهینه‌سازی حافظه به‌جای سرعت (حافظه کمتر)</translation>
+        <translation>গতির চেয়ে মেমরিকে অগ্রাধিকার দিন (কম মেমরি)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1704"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
-        <translation>پنهان کردن نام مخاطبان و پیش‌نمایش پیام‌ها در فهرست گفتگوها (با نگه‌داشتن نشانگر روی آن نمایش داده می‌شود). هنگام اشتراک‌گذاری صفحه مفید است. گفتگوی باز دست‌نخورده باقی می‌ماند.</translation>
+        <translation>চ্যাট তালিকায় পরিচিতির নাম এবং বার্তার প্রিভিউ লুকান (একটি প্রকাশ করতে হোভার করুন)। স্ক্রিন শেয়ার করার সময় উপকারী। খোলা কথোপকথন অপরিবর্তিত থাকে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1707"/>
         <source>Focus mode (hide chat-list previews)</source>
-        <translation>حالت تمرکز (پنهان کردن پیش‌نمایش فهرست گفتگوها)</translation>
+        <translation>ফোকাস মোড (চ্যাট-তালিকার প্রিভিউ লুকান)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1714"/>
         <source>Default photos and videos to HD quality in the media editor. Depends on WhatsApp Web&apos;s layout; if a WhatsApp update breaks it, turn it off.</source>
-        <translation>پیش‌فرض کردن کیفیت HD برای عکس‌ها و ویدیوها در ویرایشگر رسانه. به چیدمان WhatsApp Web بستگی دارد؛ اگر به‌روزرسانی WhatsApp آن را خراب کند، آن را خاموش کنید.</translation>
+        <translation>মিডিয়া এডিটরে ফটো এবং ভিডিও ডিফল্টভাবে HD মানে রাখুন। এটি WhatsApp Web-এর লেআউটের উপর নির্ভর করে; কোনো WhatsApp আপডেট এটি ভেঙে দিলে, এটি বন্ধ করে দিন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1717"/>
         <source>Send photos and videos in HD by default</source>
-        <translation>ارسال عکس‌ها و ویدیوها با کیفیت HD به‌طور پیش‌فرض</translation>
+        <translation>ফটো এবং ভিডিও ডিফল্টভাবে HD-তে পাঠান</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1726"/>
         <source>Hold a message for a few seconds after you press Enter, showing an &quot;Undo&quot; button before it is actually sent. Press Enter again to send at once.</source>
-        <translation>نگه‌داشتن پیام برای چند ثانیه پس از فشار Enter، با نمایش دکمه «واگرد» پیش از ارسال واقعی. برای ارسال فوری دوباره Enter را فشار دهید.</translation>
+        <translation>Enter চাপার পর কয়েক সেকেন্ড বার্তাটি ধরে রাখুন, প্রকৃতপক্ষে পাঠানোর আগে একটি &quot;পূর্বাবস্থায় ফেরান&quot; বোতাম দেখায়। অবিলম্বে পাঠাতে আবার Enter চাপুন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1729"/>
         <source>Undo send (hold Enter-sent messages briefly)</source>
-        <translation>واگرد ارسال (نگه‌داشتن کوتاه پیام‌های ارسالی با Enter)</translation>
+        <translation>পাঠানো পূর্বাবস্থায় ফেরান (Enter-এ পাঠানো বার্তা কিছুক্ষণ ধরে রাখুন)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1736"/>
         <source>How long to hold a message before it is sent.</source>
-        <translation>مدت نگه‌داشتن پیام پیش از ارسال.</translation>
+        <translation>পাঠানোর আগে একটি বার্তা কতক্ষণ ধরে রাখতে হবে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1739"/>
         <source> s</source>
-        <translation> ثانیه</translation>
+        <translation> সে</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1754"/>
         <source>Inline translation</source>
-        <translation>ترجمه درون‌خطی</translation>
+        <translation>ইনলাইন অনুবাদ</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1760"/>
         <source>Translate selected text or your message box through a LibreTranslate-compatible service. The request is made by the app, so the endpoint and key never reach WhatsApp Web. Bind keys to &quot;Translate selection&quot; / &quot;Translate message box&quot; in Shortcuts, or use the command palette.</source>
-        <translation>ترجمه متن انتخاب‌شده یا کادر پیام شما از طریق یک سرویس سازگار با LibreTranslate. درخواست توسط برنامه انجام می‌شود، بنابراین نقطه پایانی و کلید هرگز به WhatsApp Web نمی‌رسند. کلیدها را در بخش میان‌برها به «ترجمه متن انتخاب‌شده» / «ترجمه کادر پیام» متصل کنید، یا از پالت فرمان استفاده کنید.</translation>
+        <translation>একটি LibreTranslate-সামঞ্জস্যপূর্ণ পরিষেবার মাধ্যমে নির্বাচিত টেক্সট বা আপনার বার্তা বাক্স অনুবাদ করুন। অনুরোধটি অ্যাপ দ্বারা করা হয়, তাই এন্ডপয়েন্ট এবং কী কখনো WhatsApp Web-এ পৌঁছায় না। শর্টকাটে &quot;নির্বাচন অনুবাদ করুন&quot; / &quot;বার্তা বাক্স অনুবাদ করুন&quot;-এ কী বাঁধুন, অথবা কমান্ড প্যালেট ব্যবহার করুন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1763"/>
         <source>Enable inline translation</source>
-        <translation>فعال کردن ترجمه درون‌خطی</translation>
+        <translation>ইনলাইন অনুবাদ সক্ষম করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1770"/>
         <location filename="../settingswidget.ui" line="1840"/>
         <source>Endpoint</source>
-        <translation>نقطه پایانی</translation>
+        <translation>এন্ডপয়েন্ট</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1777"/>
         <source>A LibreTranslate-compatible &quot;/translate&quot; URL, e.g. http://localhost:5000/translate for a self-hosted instance.</source>
-        <translation>یک آدرس «/translate» سازگار با LibreTranslate، مثلاً http://localhost:5000/translate برای یک نمونه خودمیزبان.</translation>
+        <translation>একটি LibreTranslate-সামঞ্জস্যপূর্ণ &quot;/translate&quot; URL, যেমন একটি স্ব-হোস্টেড ইনস্ট্যান্সের জন্য http://localhost:5000/translate।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1780"/>
@@ -3333,47 +3261,47 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="1787"/>
         <location filename="../settingswidget.ui" line="1874"/>
         <source>API key (optional)</source>
-        <translation>کلید API (اختیاری)</translation>
+        <translation>API কী (ঐচ্ছিক)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1794"/>
         <source>Only needed by endpoints that require one. Stored locally.</source>
-        <translation>فقط برای نقاط پایانی که به آن نیاز دارند لازم است. به‌صورت محلی ذخیره می‌شود.</translation>
+        <translation>কেবল সেই এন্ডপয়েন্টগুলোর প্রয়োজন যেগুলোর একটি কী দরকার। স্থানীয়ভাবে সংরক্ষিত।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1804"/>
         <source>Target language</source>
-        <translation>زبان مقصد</translation>
+        <translation>লক্ষ্য ভাষা</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1811"/>
         <source>Two-letter code to translate into (e.g. en, es, fr). Leave empty to use the app&apos;s language. The source language is detected automatically.</source>
-        <translation>کد دو حرفی برای ترجمه (مثلاً en، es، fr). برای استفاده از زبان برنامه، خالی بگذارید. زبان مبدأ به‌طور خودکار تشخیص داده می‌شود.</translation>
+        <translation>যে ভাষায় অনুবাদ করতে হবে তার দুই-অক্ষরের কোড (যেমন en, es, fr)। অ্যাপের ভাষা ব্যবহার করতে খালি রাখুন। উৎস ভাষা স্বয়ংক্রিয়ভাবে সনাক্ত করা হয়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1814"/>
         <source>app language</source>
-        <translation>زبان برنامه</translation>
+        <translation>অ্যাপের ভাষা</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1824"/>
         <source>AI assistant</source>
-        <translation>دستیار هوش مصنوعی</translation>
+        <translation>AI সহকারী</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1830"/>
         <source>Summarise a chat, improve your draft or suggest a reply through an OpenAI-compatible service. The chat text is sent to that service, so use one you trust (a local runner keeps it on your machine). The request is made by the app, so the endpoint and key never reach WhatsApp Web. Actions live in the command palette and Shortcuts.</source>
-        <translation>خلاصه‌سازی یک گفتگو، بهبود پیش‌نویس شما یا پیشنهاد پاسخ از طریق یک سرویس سازگار با OpenAI. متن گفتگو به آن سرویس ارسال می‌شود، پس از سرویسی استفاده کنید که به آن اعتماد دارید (یک اجراکننده محلی آن را روی دستگاه شما نگه می‌دارد). درخواست توسط برنامه انجام می‌شود، بنابراین نقطه پایانی و کلید هرگز به WhatsApp Web نمی‌رسند. عملیات‌ها در پالت فرمان و میان‌برها موجود هستند.</translation>
+        <translation>একটি OpenAI-সামঞ্জস্যপূর্ণ পরিষেবার মাধ্যমে একটি চ্যাট সারসংক্ষেপ করুন, আপনার খসড়া উন্নত করুন বা একটি উত্তর প্রস্তাব করুন। চ্যাটের টেক্সট সেই পরিষেবায় পাঠানো হয়, তাই এমন একটি ব্যবহার করুন যা আপনি বিশ্বাস করেন (একটি স্থানীয় রানার এটি আপনার মেশিনে রাখে)। অনুরোধটি অ্যাপ দ্বারা করা হয়, তাই এন্ডপয়েন্ট এবং কী কখনো WhatsApp Web-এ পৌঁছায় না। ক্রিয়াগুলো কমান্ড প্যালেট এবং শর্টকাটে থাকে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1833"/>
         <source>Enable AI assistant</source>
-        <translation>فعال کردن دستیار هوش مصنوعی</translation>
+        <translation>AI সহকারী সক্ষম করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1847"/>
         <source>An OpenAI-compatible /chat/completions URL, e.g. https://api.openai.com/v1/chat/completions or http://localhost:11434/v1/chat/completions for a local Ollama.</source>
-        <translation>یک آدرس «/chat/completions» سازگار با OpenAI، مثلاً https://api.openai.com/v1/chat/completions یا http://localhost:11434/v1/chat/completions برای یک Ollama محلی.</translation>
+        <translation>একটি OpenAI-সামঞ্জস্যপূর্ণ /chat/completions URL, যেমন https://api.openai.com/v1/chat/completions অথবা একটি স্থানীয় Ollama-এর জন্য http://localhost:11434/v1/chat/completions।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1850"/>
@@ -3383,236 +3311,238 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1857"/>
         <source>Model</source>
-        <translation>مدل</translation>
+        <translation>মডেল</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1864"/>
         <source>The model name the endpoint expects, e.g. gpt-4o-mini or llama3.</source>
-        <translation>نام مدلی که نقطه پایانی انتظار دارد، مثلاً gpt-4o-mini یا llama3.</translation>
+        <translation>এন্ডপয়েন্ট যে মডেলের নাম প্রত্যাশা করে, যেমন gpt-4o-mini বা llama3।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1867"/>
         <source>e.g. gpt-4o-mini</source>
-        <translation>مثلاً gpt-4o-mini</translation>
+        <translation>যেমন gpt-4o-mini</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1881"/>
         <source>Sent as a Bearer token. Not needed by most local runners. Stored locally.</source>
-        <translation>به‌عنوان توکن Bearer ارسال می‌شود. برای بیشتر اجراکننده‌های محلی لازم نیست. به‌صورت محلی ذخیره می‌شود.</translation>
+        <translation>একটি Bearer টোকেন হিসেবে পাঠানো হয়। বেশিরভাগ স্থানীয় রানারের প্রয়োজন হয় না। স্থানীয়ভাবে সংরক্ষিত।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1898"/>
         <source>Local models (Ollama)</source>
-        <translation>مدل‌های محلی (Ollama)</translation>
+        <translation>স্থানীয় মডেল (Ollama)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1907"/>
         <source>Check for a local Ollama and list its installed models.</source>
-        <translation>بررسی وجود Ollama محلی و فهرست مدل‌های نصب‌شده آن.</translation>
+        <translation>একটি স্থানীয় Ollama-র জন্য পরীক্ষা করুন এবং এর ইনস্টল করা মডেলগুলো তালিকাভুক্ত করুন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1910"/>
         <source>Detect Ollama</source>
-        <translation>شناسایی Ollama</translation>
+        <translation>Ollama সনাক্ত করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1926"/>
         <source>Installed model</source>
-        <translation>مدل نصب‌شده</translation>
+        <translation>ইনস্টল করা মডেল</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1933"/>
         <source>Pick one of the models already installed in Ollama; it becomes the model above.</source>
-        <translation>یکی از مدل‌های نصب‌شده در Ollama را انتخاب کنید؛ این مدل به مدل بالا تبدیل می‌شود.</translation>
+        <translation>Ollama-তে ইতিমধ্যে ইনস্টল করা মডেলগুলোর একটি বেছে নিন; এটি উপরের মডেল হয়ে যায়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1940"/>
         <source>Download a light model</source>
-        <translation>دانلود یک مدل سبک</translation>
+        <translation>একটি হালকা মডেল ডাউনলোড করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1949"/>
         <source>Light, fast models that run well on modest hardware.</source>
-        <translation>مدل‌های سبک و سریع که روی سخت‌افزار معمولی به‌خوبی اجرا می‌شوند.</translation>
+        <translation>হালকা, দ্রুত মডেল যা সাধারণ হার্ডওয়্যারে ভালো চলে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1956"/>
         <source>Download</source>
-        <translation>دانلود</translation>
+        <translation>ডাউনলোড</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1988"/>
         <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
-        <translation>جلوگیری از فاش شدن آدرس IP محلی شما توسط WebRTC روی اتصالات بدون پروکسی.</translation>
+        <translation>WebRTC-কে নন-প্রক্সিড সংযোগের মাধ্যমে আপনার স্থানীয় IP ঠিকানা প্রকাশ করা থেকে বিরত রাখুন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1991"/>
         <source>Prevent WebRTC IP leak</source>
-        <translation>جلوگیری از افشای IP توسط WebRTC</translation>
+        <translation>WebRTC IP লিক প্রতিরোধ করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2000"/>
         <source>JavaScript memory limit</source>
-        <translation>محدودیت حافظه جاوااسکریپت</translation>
+        <translation>JavaScript মেমরি সীমা</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2007"/>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
-        <translation>محدود کردن heap جاوااسکریپت (V8 --max-old-space-size). 0 = خودکار. اگر برنامه رم زیادی مصرف می‌کند، آن را کاهش دهید.</translation>
+        <translation>JavaScript হিপ সীমাবদ্ধ করুন (V8 --max-old-space-size)। 0 = স্বয়ংক্রিয়। অ্যাপ খুব বেশি RAM ব্যবহার করলে এটি কমান।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2013"/>
         <location filename="../settingswidget.ui" line="2057"/>
         <source> MB</source>
-        <translation> مگابایت</translation>
+        <translation> MB</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2030"/>
         <source>HTTP cache</source>
-        <translation>حافظه پنهان HTTP</translation>
+        <translation>HTTP ক্যাশে</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2037"/>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
-        <translation>محل نگه‌داری حافظه پنهان HTTP. حافظه هنگام خروج پاک می‌شود؛ هیچ‌کدام حافظه پنهان را غیرفعال می‌کند.</translation>
+        <translation>HTTP ক্যাশে কোথায় রাখতে হবে। Memory বন্ধ করার সময় পরিষ্কার হয়; None ক্যাশিং নিষ্ক্রিয় করে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2044"/>
         <source>Max size</source>
-        <translation>حداکثر اندازه</translation>
+        <translation>সর্বোচ্চ আকার</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2051"/>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
-        <translation>حداکثر اندازه حافظه پنهان روی دیسک. 0 = خودکار.</translation>
+        <translation>সর্বোচ্চ অন-ডিস্ক ক্যাশে আকার। 0 = স্বয়ংক্রিয়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2074"/>
         <source>Font hinting</source>
-        <translation>هینتینگ قلم</translation>
+        <translation>ফন্ট হিন্টিং</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2081"/>
         <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
-        <translation>نحوه تنظیم لبه‌های حروف روی پیکسل‌ها. حالت خودکار از سیستم شما پیروی می‌کند؛ سطح سبک‌تر می‌تواند متن سنگین یا ناهموار را اصلاح کند.</translation>
+        <translation>গ্লিফের প্রান্তগুলো কীভাবে পিক্সেলে সংযুক্ত হয়। Automatic আপনার সিস্টেম অনুসরণ করে; একটি হালকা স্তর ভারী বা অসম টেক্সট ঠিক করতে পারে।</translation>
     </message>
     <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">آزادسازی حافظه با معلق کردن حساب‌هایی که مشاهده نمی‌کنید. حساب معلق‌شده تا زمانی که به آن برنگردید پیامی دریافت نمی‌کند. تنظیمات تک‌حسابی تحت تأثیر قرار نمی‌گیرند.</translation>
+        <location filename="../settingswidget.ui" line="2092"/>
+        <source>Free memory by unloading accounts you are not viewing. An unloaded account does not receive messages, and reloads to where it was when you switch back to it. Single-account setups are unaffected.</source>
+        <translation>আপনি যেসব অ্যাকাউন্ট দেখছেন না সেগুলো আনলোড করে মেমরি খালি করুন। একটি আনলোড করা অ্যাকাউন্ট বার্তা গ্রহণ করে না, এবং আপনি ফিরে গেলে যেখানে ছিল সেখানে পুনরায় লোড হয়। একক-অ্যাকাউন্ট সেটআপ অপ্রভাবিত থাকে।</translation>
     </message>
     <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">معلق کردن حساب‌های غیرفعال</translation>
+        <location filename="../settingswidget.ui" line="2095"/>
+        <source>Unload inactive accounts from memory</source>
+        <translation>নিষ্ক্রিয় অ্যাকাউন্টগুলো মেমরি থেকে আনলোড করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2102"/>
         <source>after</source>
-        <translation>پس از</translation>
+        <translation>পরে</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2109"/>
         <source> min</source>
-        <translation> دقیقه</translation>
+        <translation> মিনিট</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2124"/>
         <source>Also unload the account a window was showing, once that window has been minimised or put away to the tray for the same length of time as above. Nothing reaches an unloaded account: while Whatly is away there are no notifications from it and its counts stand still, and it takes a few seconds to come back when you return to the window. Needs the setting above.</source>
-        <translation>حسابی را که یک پنجره نشان می‌داد نیز تخلیه می‌کند، به‌محض اینکه آن پنجره به همان مدت بالا کوچک‌شده یا در سینی سیستم قرار گرفته باشد. هیچ‌چیز به حساب تخلیه‌شده نمی‌رسد: وقتی Whatly دور است، اعلانی از آن نمی‌آید و شمارنده‌هایش متوقف می‌مانند، و وقتی به پنجره برمی‌گردید چند ثانیه طول می‌کشد تا بازگردد. به تنظیم بالا نیاز دارد.</translation>
+        <translation>একটি উইন্ডো যে অ্যাকাউন্ট দেখাচ্ছিল সেটিও আনলোড করুন, একবার সেই উইন্ডোটি উপরের মতো একই সময়ের জন্য ছোট করা বা ট্রেতে সরিয়ে রাখা হলে। একটি আনলোড করা অ্যাকাউন্টে কিছুই পৌঁছায় না: Whatly যতক্ষণ দূরে থাকে ততক্ষণ এটি থেকে কোনো বিজ্ঞপ্তি আসে না এবং এর সংখ্যা স্থির থাকে, এবং আপনি উইন্ডোতে ফিরে এলে এটি ফিরে আসতে কয়েক সেকেন্ড সময় নেয়। উপরের সেটিংটি প্রয়োজন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2127"/>
         <source>Unload also minimised and hidden accounts</source>
-        <translation>تخلیهٔ حساب‌های کوچک‌شده و پنهان نیز</translation>
+        <translation>ছোট করা এবং লুকানো অ্যাকাউন্টগুলোও আনলোড করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2137"/>
         <source>Network &amp; Startup</source>
-        <translation>شبکه و راه‌اندازی</translation>
+        <translation>নেটওয়ার্ক &amp; স্টার্টআপ</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2143"/>
         <source>Launch Whatly automatically when you log in to your desktop session.</source>
-        <translation>راه‌اندازی خودکار Whatly هنگام ورود به نشست دسکتاپ.</translation>
+        <translation>আপনি আপনার ডেস্কটপ সেশনে লগ ইন করলে Whatly স্বয়ংক্রিয়ভাবে চালু করুন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2146"/>
         <source>Start Whatly when I log in</source>
-        <translation>راه‌اندازی Whatly هنگام ورود من</translation>
+        <translation>আমি লগ ইন করলে Whatly চালু করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2153"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>به Whatly اجازه بده حاشیه و نوار عنوان پنجره را به‌جای سیستم رسم کند، تا از پوسته خود Whatly پیروی کنند. به‌تنهایی فقط ظاهر آن‌ها را تغییر می‌دهد؛ گزینه «پنهان کردن نوار عنوان» را نیز علامت بزنید تا ردیف عنوان کاملاً حذف شود. پس از راه‌اندازی مجدد اعمال می‌شود.</translation>
+        <translation>সিস্টেমের পরিবর্তে Whatly-কে উইন্ডোর সীমানা এবং টাইটেল বার আঁকতে দিন, যাতে সেগুলো Whatly-র নিজস্ব থিম অনুসরণ করে। এটি নিজে থেকে কেবল সেগুলোর চেহারা পরিবর্তন করে; টাইটেল সারিটি সম্পূর্ণরূপে সরিয়ে ফেলতে &quot;টাইটেল বার লুকান&quot;-ও টিক করুন। পুনরায় চালু করার পরে প্রযোজ্য হয়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2156"/>
         <source>Use a custom window frame (requires restart)</source>
-        <translation>استفاده از قاب پنجره سفارشی (نیاز به راه‌اندازی مجدد)</translation>
+        <translation>একটি কাস্টম উইন্ডো ফ্রেম ব্যবহার করুন (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2169"/>
         <source>Restart Whatly now so the settings above take effect. The windows, and this page with it, come back exactly as they are.</source>
-        <translation>اکنون Whatly را راه‌اندازی مجدد کنید تا تنظیمات بالا اعمال شوند. پنجره‌ها و این صفحه دقیقاً همان‌طور که هستند بازمی‌گردند.</translation>
+        <translation>উপরের সেটিংস কার্যকর করতে এখন Whatly পুনরায় চালু করুন। উইন্ডোগুলো, এবং এই পৃষ্ঠাটিও, ঠিক যেমন আছে তেমনই ফিরে আসে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2172"/>
         <source>Restart now</source>
-        <translation>راه‌اندازی مجدد اکنون</translation>
+        <translation>এখন পুনরায় চালু করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2179"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
-        <translation>نگه‌داشتن نوار زبانه حساب‌ها حتی زمانی که فقط یک حساب وجود دارد، تا «+» آن همیشه در دسترس باشد. با خاموش بودن آن، نوار زمانی ظاهر می‌شود که حساب دومی وجود داشته باشد؛ همچنان می‌توانید با Ctrl+K یکی اضافه کنید.</translation>
+        <translation>কেবল একটি অ্যাকাউন্ট থাকলেও অ্যাকাউন্ট ট্যাব স্ট্রিপটি চালু রাখুন, যাতে এর &quot;+&quot; সবসময় হাতের কাছে থাকে। এটি বন্ধ থাকলে, একটি দ্বিতীয় অ্যাকাউন্ট থাকলে স্ট্রিপটি প্রদর্শিত হয়; আপনি এখনও Ctrl+K দিয়ে একটি যোগ করতে পারেন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2182"/>
         <source>Show the account tabs even with a single account</source>
-        <translation>نمایش زبانه‌های حساب حتی با یک حساب</translation>
+        <translation>একটি একক অ্যাকাউন্ট থাকলেও অ্যাকাউন্ট ট্যাবগুলো দেখান</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2189"/>
         <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
-        <translation>حذف نوار عنوان و قرار دادن دکمه‌های آن در انتهای نوار زبانه حساب‌ها، مانند مرورگرها، به‌جای اختصاص یک ردیف مستقل به آن‌ها. این کار قاب پنجره سفارشی را که به آن نیاز دارد روشن می‌کند. پس از راه‌اندازی مجدد اعمال می‌شود.</translation>
+        <translation>টাইটেল বার বাদ দিন এবং একটি ব্রাউজারের মতো এর বোতামগুলো অ্যাকাউন্ট ট্যাব স্ট্রিপের শেষে রাখুন, তাদের জন্য আলাদা একটি সারি দেওয়ার পরিবর্তে। এটি কাস্টম উইন্ডো ফ্রেম চালু করে, যা এর প্রয়োজন। পুনরায় চালু করার পরে প্রযোজ্য হয়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2192"/>
         <source>Hide the title bar (requires restart)</source>
-        <translation>پنهان کردن نوار عنوان (نیاز به راه‌اندازی مجدد)</translation>
+        <translation>টাইটেল বার লুকান (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2199"/>
         <source>Check GitHub once a day for a newer release and let you know. Whatly never downloads or installs anything on its own.</source>
-        <translation>بررسی روزانه GitHub برای نسخه جدیدتر و اطلاع‌رسانی به شما. Whatly هرگز چیزی را خودش دانلود یا نصب نمی‌کند.</translation>
+        <translation>একটি নতুন রিলিজের জন্য দিনে একবার GitHub পরীক্ষা করুন এবং আপনাকে জানান। Whatly কখনো নিজে থেকে কিছু ডাউনলোড বা ইনস্টল করে না।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2202"/>
         <source>Check for updates automatically</source>
-        <translation>بررسی خودکار به‌روزرسانی‌ها</translation>
+        <translation>স্বয়ংক্রিয়ভাবে আপডেটের জন্য পরীক্ষা করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2211"/>
         <source>Interface scale (requires restart)</source>
-        <translation>مقیاس رابط کاربری (نیاز به راه‌اندازی مجدد)</translation>
+        <translation>ইন্টারফেস স্কেল (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2218"/>
         <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
-        <translation>مقیاس‌دهی به کل پنجره و صفحه (QT_SCALE_FACTOR). حالت خودکار از دسکتاپ پیروی می‌کند. متغیر محیطی QT_SCALE_FACTOR، در صورت تنظیم، این را نادیده می‌گیرد. پس از راه‌اندازی مجدد اعمال می‌شود.</translation>
+        <translation>পুরো উইন্ডো এবং পৃষ্ঠাটি স্কেল করুন (QT_SCALE_FACTOR)। Automatic ডেস্কটপ অনুসরণ করে। একটি QT_SCALE_FACTOR এনভায়রনমেন্ট ভেরিয়েবল সেট করা থাকলে, তা এটিকে অগ্রাহ্য করে। পুনরায় চালু করার পরে প্রযোজ্য হয়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2254"/>
         <source>Proxy</source>
-        <translation>پروکسی</translation>
+        <translation>প্রক্সি</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2261"/>
         <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
-        <translation>نحوه اتصال Whatly به شبکه. حالت سیستم از سیستم‌عامل پیروی می‌کند؛ هیچ‌کدام مستقیم متصل می‌شود.</translation>
+        <translation>Whatly কীভাবে নেটওয়ার্কের সাথে সংযোগ করে। System অপারেটিং সিস্টেম অনুসরণ করে; None সরাসরি সংযোগ করে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2286"/>
         <source>Host</source>
-        <translation>میزبان</translation>
+        <translation>হোস্ট</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2293"/>
@@ -3623,218 +3553,214 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="2300"/>
         <location filename="../settingswidget.ui" line="2580"/>
         <source>Port</source>
-        <translation>پورت</translation>
+        <translation>পোর্ট</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2314"/>
         <source>Username</source>
-        <translation>نام کاربری</translation>
+        <translation>ব্যবহারকারীর নাম</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2321"/>
         <location filename="../settingswidget.ui" line="2338"/>
         <source>Optional</source>
-        <translation>اختیاری</translation>
+        <translation>ঐচ্ছিক</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2328"/>
         <source>Password</source>
-        <translation>رمز عبور</translation>
+        <translation>পাসওয়ার্ড</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2351"/>
         <source>Custom JavaScript addons (requires restart)</source>
-        <translation>افزونه‌های جاوااسکریپت سفارشی (نیاز به راه‌اندازی مجدد)</translation>
+        <translation>কাস্টম JavaScript অ্যাডঅন (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2357"/>
         <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
-        <translation>بارگذاری فایل‌های .js برای اجرا روی WhatsApp Web. هر افزونه در سندباکس مستقل خودش اجرا می‌شود، بنابراین یک افزونه خراب نمی‌تواند بقیه یا صفحه را از کار بیندازد. علامت یک افزونه را بردارید تا بدون حذف آن غیرفعال شود. تغییرات پس از راه‌اندازی مجدد اعمال می‌شوند.</translation>
+        <translation>WhatsApp Web-এ চালানোর জন্য .js ফাইল লোড করুন। প্রতিটি অ্যাডঅন তার নিজস্ব স্যান্ডবক্সে চলে, তাই একটি ভাঙা অ্যাডঅন অন্যগুলো বা পৃষ্ঠাটিকে বিকল করতে পারে না। একটি অ্যাডঅন সরিয়ে না ফেলে নিষ্ক্রিয় করতে সেটি আনটিক করুন। পরিবর্তনগুলো পুনরায় চালু করার পরে প্রযোজ্য হয়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2379"/>
         <source>Add addon…</source>
-        <translation>افزودن افزونه…</translation>
+        <translation>অ্যাডঅন যোগ করুন…</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2386"/>
         <location filename="../settingswidget.ui" line="2446"/>
         <source>Remove</source>
-        <translation>حذف</translation>
+        <translation>সরান</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2411"/>
         <source>Saved replies</source>
-        <translation>پاسخ‌های ذخیره‌شده</translation>
+        <translation>সংরক্ষিত উত্তর</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2417"/>
         <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
-        <translation>متن‌های کوتاهی که اغلب ارسال می‌کنید. یکی را از پالت فرمان (Ctrl+K) درج کنید — «Insert» را تایپ کرده و آن را انتخاب کنید؛ متن در کادر پیام تایپ می‌شود.</translation>
+        <translation>ছোট টেক্সট যা আপনি প্রায়ই পাঠান। কমান্ড প্যালেট (Ctrl+K) থেকে একটি সন্নিবেশ করুন — &quot;Insert&quot; টাইপ করুন এবং এটি বেছে নিন; টেক্সটটি বার্তা বাক্সে টাইপ হয়ে যায়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2439"/>
         <source>Add reply…</source>
-        <translation>افزودن پاسخ…</translation>
+        <translation>উত্তর যোগ করুন…</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2471"/>
         <source>Keyboard shortcuts (requires restart)</source>
-        <translation>میان‌برهای صفحه‌کلید (نیاز به راه‌اندازی مجدد)</translation>
+        <translation>কীবোর্ড শর্টকাট (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2477"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
-        <translation>روی یک فیلد کلیک کرده و ترکیب کلیدها را فشار دهید. برای حذف میان‌بر، فیلد را پاک کنید. تغییرات پس از راه‌اندازی مجدد اعمال می‌شوند.</translation>
+        <translation>একটি ক্ষেত্রে ক্লিক করুন এবং কী সংমিশ্রণ চাপুন। শর্টকাট সরাতে একটি ক্ষেত্র পরিষ্কার করুন। পরিবর্তনগুলো পুনরায় চালু করার পরে প্রযোজ্য হয়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2493"/>
         <source>Cloud API (send without a browser session)</source>
-        <translation>Cloud API (ارسال بدون نشست مرورگر)</translation>
+        <translation>Cloud API (একটি ব্রাউজার সেশন ছাড়াই পাঠান)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2499"/>
         <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account&apos;s config and Whatly never obtains it itself.</source>
-        <translation>ارسال با `--send --backend cloud` از طریق Meta WhatsApp Business Cloud API — نیازی به نشست در حال اجرای WhatsApp Web نیست. توکن دسترسی چیزی است که شما از Meta تهیه می‌کنید؛ در پیکربندی این حساب ذخیره می‌شود و Whatly هرگز خودش آن را به دست نمی‌آورد.</translation>
+        <translation>Meta WhatsApp Business Cloud API-এর মাধ্যমে `--send --backend cloud` দিয়ে পাঠান — কোনো চালু WhatsApp Web সেশনের প্রয়োজন নেই। অ্যাক্সেস টোকেনটি আপনি Meta থেকে সরবরাহ করেন; এটি এই অ্যাকাউন্টের কনফিগে সংরক্ষিত থাকে এবং Whatly কখনো নিজে এটি অর্জন করে না।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2509"/>
         <source>Phone-number ID</source>
-        <translation>شناسه شماره تلفن</translation>
+        <translation>ফোন-নম্বর ID</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2523"/>
         <source>Access token</source>
-        <translation>توکن دسترسی</translation>
+        <translation>অ্যাক্সেস টোকেন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2533"/>
         <source>your Meta access token</source>
-        <translation>توکن دسترسی Meta شما</translation>
+        <translation>আপনার Meta অ্যাক্সেস টোকেন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2540"/>
         <source>Graph API version</source>
-        <translation>نسخه Graph API</translation>
+        <translation>Graph API সংস্করণ</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2557"/>
         <source>Local API &amp; Cloud webhooks</source>
-        <translation>API محلی و وب‌هوک‌های Cloud</translation>
+        <translation>লোকাল API &amp; ক্লাউড ওয়েবহুক</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2563"/>
         <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
-        <translation>یک نقطه پایانی کوچک HTTP روی رابط loopback (127.0.0.1) به سایر برنامه‌های این دستگاه اجازه می‌دهد از طریق Whatly ارسال کنند، و به Meta اجازه می‌دهد وب‌هوک‌های Cloud API (پیام‌های ورودی) را تحویل دهد تا پاسخ خودکار بدون مرورگر کار کند. این هرگز روی شبکه در معرض دید قرار نمی‌گیرد؛ برای دریافت وب‌هوک از Meta، پورت را با یک تونل یا پروکسی معکوس (مثلاً cloudflared یا ngrok) هدایت کنید.</translation>
+        <translation>লুপব্যাক ইন্টারফেসে (127.0.0.1) একটি ছোট HTTP এন্ডপয়েন্ট এই মেশিনের অন্যান্য প্রোগ্রামকে Whatly-এর মাধ্যমে পাঠাতে দেয়, এবং Meta-কে Cloud API ওয়েবহুক (আগত বার্তা) পৌঁছে দিতে দেয় যাতে ব্রাউজার ছাড়াই স্বয়ংক্রিয় উত্তর কাজ করে। এটি কখনও নেটওয়ার্কে উন্মুক্ত হয় না; Meta থেকে ওয়েবহুক পেতে হলে একটি টানেল বা রিভার্স প্রক্সি দিয়ে পোর্ট ফরওয়ার্ড করুন (যেমন cloudflared বা ngrok)।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2573"/>
         <source>Enable the local HTTP API (send over HTTP)</source>
-        <translation>فعال کردن API محلی HTTP (ارسال از طریق HTTP)</translation>
+        <translation>লোকাল HTTP API চালু করুন (HTTP-এর মাধ্যমে পাঠান)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2597"/>
         <source>Bearer token</source>
-        <translation>توکن Bearer</translation>
+        <translation>বেয়ারার টোকেন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2607"/>
         <source>required to authorise requests</source>
-        <translation>برای مجاز کردن درخواست‌ها لازم است</translation>
+        <translation>অনুরোধ অনুমোদনের জন্য প্রয়োজন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2614"/>
         <source>Receive Cloud API webhooks (incoming messages)</source>
-        <translation>دریافت وب‌هوک‌های Cloud API (پیام‌های ورودی)</translation>
+        <translation>Cloud API ওয়েবহুক গ্রহণ করুন (আগত বার্তা)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2621"/>
         <source>Webhook verify token</source>
-        <translation>توکن تأیید وب‌هوک</translation>
+        <translation>ওয়েবহুক ভেরিফাই টোকেন</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2631"/>
         <source>echoed to Meta during setup</source>
-        <translation>در هنگام راه‌اندازی به Meta بازگردانده می‌شود</translation>
+        <translation>সেটআপের সময় Meta-কে প্রতিধ্বনিত করা হয়</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2638"/>
         <source>Meta app secret</source>
-        <translation>رمز مخفی برنامه Meta</translation>
+        <translation>Meta অ্যাপ সিক্রেট</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2648"/>
         <source>verifies the webhook signature</source>
-        <translation>امضای وب‌هوک را تأیید می‌کند</translation>
+        <translation>ওয়েবহুক স্বাক্ষর যাচাই করে</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="535"/>
         <source>Basics</source>
-        <translation>اصول</translation>
+        <translation>মৌলিক</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="543"/>
         <source>Appearance</source>
-        <translation>ظاهر</translation>
+        <translation>চেহারা</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="562"/>
         <source>Notifications</source>
-        <translation>اعلان‌ها</translation>
+        <translation>নোটিফিকেশন</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="566"/>
         <source>Chatting</source>
-        <translation>گفتگو</translation>
-    </message>
-    <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">واژه‌نامه‌های غلط‌یاب املایی</translation>
+        <translation>চ্যাটিং</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="673"/>
         <source>Privacy &amp; Lock</source>
-        <translation>حریم خصوصی و قفل</translation>
+        <translation>গোপনীয়তা &amp; লক</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="687"/>
         <source>Window &amp;&amp; zoom</source>
-        <translation>پنجره &amp;&amp; بزرگ‌نمایی</translation>
+        <translation>উইন্ডো &amp;&amp; জুম</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="716"/>
         <source>AI &amp;&amp; translation</source>
-        <translation>هوش مصنوعی &amp;&amp; ترجمه</translation>
+        <translation>AI &amp;&amp; অনুবাদ</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="723"/>
         <source>Advanced</source>
-        <translation>پیشرفته</translation>
+        <translation>উন্নত</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="935"/>
         <source>Fetching the list of languages…</source>
-        <translation>در حال دریافت فهرست زبان‌ها…</translation>
+        <translation>ভাষার তালিকা আনা হচ্ছে…</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1158"/>
         <source>Shortcut in use</source>
-        <translation>میان‌بر در حال استفاده</translation>
+        <translation>শর্টকাট ব্যবহৃত হচ্ছে</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1159"/>
         <source>That shortcut is already used by another action.</source>
-        <translation>آن میان‌بر قبلاً توسط عملیات دیگری استفاده شده است.</translation>
+        <translation>সেই শর্টকাটটি ইতিমধ্যে অন্য একটি কাজের জন্য ব্যবহৃত হচ্ছে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1171"/>
         <source>Clear cache</source>
-        <translation>پاک کردن حافظه پنهان</translation>
+        <translation>ক্যাশ পরিষ্কার করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1172"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
-        <translation>حافظه پنهان اکنون پاک شود؟ در صورت نیاز دوباره دانلود خواهد شد.</translation>
+        <translation>এখনই ক্যাশ পরিষ্কার করবেন? প্রয়োজন অনুযায়ী এটি আবার ডাউনলোড করা হবে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1182"/>
@@ -3842,23 +3768,23 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="1197"/>
         <location filename="../settingswidget.cpp" line="1200"/>
         <source>Export profile</source>
-        <translation>خروجی گرفتن از پروفایل</translation>
+        <translation>প্রোফাইল রপ্তানি করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1183"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
-        <translation>این بایگانی شامل نشست واردشده WhatsApp شما خواهد بود. آن را خصوصی نگه دارید. ادامه می‌دهید؟</translation>
+        <translation>আর্কাইভে আপনার লগ-ইন করা WhatsApp সেশন থাকবে। এটি ব্যক্তিগত রাখুন। চালিয়ে যাবেন?</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1190"/>
         <location filename="../settingswidget.cpp" line="1205"/>
         <source>Archives (*.tar.gz)</source>
-        <translation>بایگانی‌ها (*.tar.gz)</translation>
+        <translation>আর্কাইভ (*.tar.gz)</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1198"/>
         <source>Profile exported.</source>
-        <translation>پروفایل خروجی گرفته شد.</translation>
+        <translation>প্রোফাইল রপ্তানি হয়েছে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1205"/>
@@ -3866,163 +3792,163 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="1217"/>
         <location filename="../settingswidget.cpp" line="1220"/>
         <source>Import profile</source>
-        <translation>وارد کردن پروفایل</translation>
+        <translation>প্রোফাইল আমদানি করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1210"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
-        <translation>این کار داده‌های حساب فعلی را با بایگانی رونویسی می‌کند، سپس Whatly باید راه‌اندازی مجدد شود. ادامه می‌دهید؟</translation>
+        <translation>এটি বর্তমান অ্যাকাউন্টের ডেটা আর্কাইভ দিয়ে প্রতিস্থাপন করবে, এরপর Whatly পুনরায় চালু করতে হবে। চালিয়ে যাবেন?</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1218"/>
         <source>Profile imported. Please restart Whatly.</source>
-        <translation>پروفایل وارد شد. لطفاً Whatly را راه‌اندازی مجدد کنید.</translation>
+        <translation>প্রোফাইল আমদানি হয়েছে। অনুগ্রহ করে Whatly পুনরায় চালু করুন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1241"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
-        <translation>این کار داده‌های پایدار را حذف خواهد کرد! داده‌های پایدار شامل کوکی‌های پایدار و حافظه پنهان است، و برنامه را خواهد بست.</translation>
+        <translation>এটি স্থায়ী ডেটা মুছে ফেলবে! স্থায়ী ডেটার মধ্যে স্থায়ী কুকি এবং ক্যাশ অন্তর্ভুক্ত, এবং অ্যাপ্লিকেশন বন্ধ করে দেবে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1246"/>
         <source>Delete Cookies and Quit Application?</source>
-        <translation>کوکی‌ها حذف و برنامه بسته شود؟</translation>
+        <translation>কুকি মুছে অ্যাপ্লিকেশন বন্ধ করবেন?</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1352"/>
         <source>| Error</source>
-        <translation>| خطا</translation>
+        <translation>| ত্রুটি</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1353"/>
         <source>Cannot set an empty UserAgent String.</source>
-        <translation>نمی‌توان رشته UserAgent خالی تنظیم کرد.</translation>
+        <translation>খালি UserAgent স্ট্রিং সেট করা যাবে না।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1404"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
-        <translation>تعویض خودکار پوسته به دلیل تغییر دستی پوسته غیرفعال شد.</translation>
+        <translation>ম্যানুয়াল থিম টগলের কারণে স্বয়ংক্রিয় থিম পরিবর্তন নিষ্ক্রিয় করা হয়েছে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1421"/>
         <source>Require setup</source>
-        <translation>نیاز به تنظیم</translation>
+        <translation>সেটআপ প্রয়োজন</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1450"/>
         <source>App lock is not configured.</source>
-        <translation>قفل برنامه پیکربندی نشده است.</translation>
+        <translation>অ্যাপ লক কনফিগার করা নেই।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1454"/>
         <source>Do you want to setup App lock now?</source>
-        <translation>آیا می‌خواهید اکنون قفل برنامه را تنظیم کنید؟</translation>
+        <translation>আপনি কি এখন অ্যাপ লক সেটআপ করতে চান?</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1496"/>
         <source>Feature permissions</source>
-        <translation>مجوزهای ویژگی</translation>
+        <translation>ফিচার অনুমতি</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1575"/>
         <source>Choose a chat wallpaper</source>
-        <translation>یک تصویر زمینه گفتگو انتخاب کنید</translation>
+        <translation>একটি চ্যাট ওয়ালপেপার বেছে নিন</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1577"/>
         <source>Images (%1)</source>
-        <translation>تصاویر (%1)</translation>
+        <translation>ছবি (%1)</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1585"/>
         <source>Could not use that image: %1</source>
-        <translation>استفاده از آن تصویر ممکن نشد: %1</translation>
+        <translation>সেই ছবিটি ব্যবহার করা যায়নি: %1</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1600"/>
         <source>Choose a CSS file</source>
-        <translation>یک فایل CSS انتخاب کنید</translation>
+        <translation>একটি CSS ফাইল বেছে নিন</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1602"/>
         <source>Stylesheets (*.css);;All files (*)</source>
-        <translation>شیوه‌نامه‌ها (*.css);;همه فایل‌ها (*)</translation>
+        <translation>স্টাইলশিট (*.css);;সব ফাইল (*)</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1609"/>
         <source>Could not read that file: %1</source>
-        <translation>آن فایل قابل خواندن نبود: %1</translation>
+        <translation>সেই ফাইলটি পড়া যায়নি: %1</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1682"/>
         <source>Disk</source>
-        <translation>دیسک</translation>
+        <translation>ডিস্ক</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1683"/>
         <source>Memory</source>
-        <translation>حافظه</translation>
+        <translation>মেমরি</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1684"/>
         <location filename="../settingswidget.cpp" line="1692"/>
         <source>None</source>
-        <translation>هیچ‌کدام</translation>
+        <translation>কোনোটি নয়</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1693"/>
         <source>Slight</source>
-        <translation>کم</translation>
+        <translation>সামান্য</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1694"/>
         <source>Medium</source>
-        <translation>متوسط</translation>
+        <translation>মাঝারি</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1695"/>
         <source>Full</source>
-        <translation>کامل</translation>
+        <translation>সম্পূর্ণ</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1841"/>
         <source>Ollama not found at this address.</source>
-        <translation>Ollama در این آدرس یافت نشد.</translation>
+        <translation>এই ঠিকানায় Ollama পাওয়া যায়নি।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1846"/>
         <source>Ollama found (%1 models installed).</source>
-        <translation>Ollama یافت شد (%1 مدل نصب‌شده).</translation>
+        <translation>Ollama পাওয়া গেছে (%1টি মডেল ইনস্টল করা আছে)।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1871"/>
         <source>Download complete.</source>
-        <translation>دانلود کامل شد.</translation>
+        <translation>ডাউনলোড সম্পূর্ণ।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1874"/>
         <source>Download failed: %1</source>
-        <translation>دانلود ناموفق بود: %1</translation>
+        <translation>ডাউনলোড ব্যর্থ: %1</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1885"/>
         <source>Checking…</source>
-        <translation>در حال بررسی…</translation>
+        <translation>যাচাই করা হচ্ছে…</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1910"/>
         <source>Starting download of %1…</source>
-        <translation>در حال شروع دانلود %1…</translation>
+        <translation>%1-এর ডাউনলোড শুরু হচ্ছে…</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1965"/>
         <source>System</source>
-        <translation>سیستم</translation>
+        <translation>সিস্টেম</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1966"/>
         <source>None (direct)</source>
-        <translation>هیچ‌کدام (مستقیم)</translation>
+        <translation>কোনোটি নয় (সরাসরি)</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1967"/>
@@ -4037,137 +3963,129 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1994"/>
         <source>Desktop portal (Flatpak)</source>
-        <translation>پورتال دسکتاپ (Flatpak)</translation>
+        <translation>ডেস্কটপ পোর্টাল (Flatpak)</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1996"/>
         <source>System service (libnotify)</source>
-        <translation>سرویس سیستم (libnotify)</translation>
+        <translation>সিস্টেম সার্ভিস (libnotify)</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2181"/>
         <location filename="../settingswidget.cpp" line="2185"/>
         <source>Add reply</source>
-        <translation>افزودن پاسخ</translation>
+        <translation>উত্তর যোগ করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2181"/>
         <source>Name</source>
-        <translation>نام</translation>
+        <translation>নাম</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2185"/>
         <source>Text to insert</source>
-        <translation>متن برای درج</translation>
+        <translation>সন্নিবেশ করার টেক্সট</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2202"/>
         <source>Choose a JavaScript file</source>
-        <translation>یک فایل جاوااسکریپت انتخاب کنید</translation>
+        <translation>একটি JavaScript ফাইল বেছে নিন</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2203"/>
         <source>JavaScript (*.js);;All files (*)</source>
-        <translation>جاوااسکریپت (*.js);;همه فایل‌ها (*)</translation>
+        <translation>JavaScript (*.js);;সব ফাইল (*)</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2208"/>
         <source>Could not add addon</source>
-        <translation>افزودن افزونه ممکن نشد</translation>
+        <translation>অ্যাডঅন যোগ করা যায়নি</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2221"/>
         <source>Remove addon</source>
-        <translation>حذف افزونه</translation>
+        <translation>অ্যাডঅন সরান</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2222"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
-        <translation>افزونه «%1» حذف شود؟ این کار فایل آن را حذف می‌کند.</translation>
+        <translation>&quot;%1&quot; অ্যাডঅনটি সরাবেন? এটি এর ফাইল মুছে ফেলবে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2332"/>
         <source>Search settings</source>
-        <translation>جستجوی تنظیمات</translation>
+        <translation>সেটিংস অনুসন্ধান করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2334"/>
         <source>Show only the settings that match. What you find is the setting itself, working where it stands — not a list to click through. Tooltips are searched as well as labels, and so are the English names of the settings when Whatly is running in another language.</source>
-        <translation>فقط تنظیمات مطابق را نشان می‌دهد. آنچه می‌یابید خودِ تنظیم است که در جای خود کار می‌کند، نه فهرستی برای کلیک‌کردن. علاوه بر برچسب‌ها، راهنماها نیز جستجو می‌شوند و همچنین نام‌های انگلیسی تنظیمات وقتی Whatly به زبان دیگری اجرا می‌شود.</translation>
+        <translation>শুধু সেই সেটিংসগুলো দেখান যা মিলে যায়। আপনি যা খুঁজে পান তা সেটিংটি নিজেই, নিজের জায়গায় কার্যকর — ক্লিক করে যাওয়ার তালিকা নয়। লেবেলের পাশাপাশি টুলটিপও অনুসন্ধান করা হয়, এবং Whatly অন্য ভাষায় চললে সেটিংসের ইংরেজি নামগুলোও অনুসন্ধান করা হয়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2456"/>
         <source>No setting matches “%1”. Tooltips are searched too, so a plainer word usually finds it.</source>
-        <translation>هیچ تنظیمی با «%1» مطابقت ندارد. راهنماها نیز جستجو می‌شوند، بنابراین معمولاً با کلمه‌ای ساده‌تر پیدا می‌شود.</translation>
+        <translation>“%1”-এর সাথে কোনো সেটিং মেলেনি। টুলটিপও অনুসন্ধান করা হয়, তাই সহজ কোনো শব্দ সাধারণত এটি খুঁজে পায়।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2597"/>
         <source>Spell checker (no dictionaries installed)</source>
-        <translation>بررسی‌کننده املا (هیچ فرهنگ لغتی نصب نشده)</translation>
+        <translation>বানান পরীক্ষক (কোনো অভিধান ইনস্টল করা নেই)</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2703"/>
         <source>Downloadable languages unavailable — click to try again</source>
-        <translation>زبان‌های قابل دانلود در دسترس نیستند — برای تلاش دوباره کلیک کنید</translation>
+        <translation>ডাউনলোডযোগ্য ভাষা অনুপলব্ধ — আবার চেষ্টা করতে ক্লিক করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2717"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
-        <translation>زبان‌هایی را که می‌خواهید غلط‌یابی املایی شوند علامت بزنید. هر ردیف واژه‌نامهٔ خود را دانلود یا حذف می‌کند.</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">دانلود</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">یک یا چند زبان را برای بررسی املا انتخاب کنید.</translation>
+        <translation>যেসব ভাষার বিপরীতে বানান পরীক্ষা করতে চান সেগুলো টিক দিন। প্রতিটি সারি তার অভিধান ডাউনলোড বা মুছে ফেলে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2819"/>
         <source>Choose languages…</source>
-        <translation>انتخاب زبان‌ها…</translation>
+        <translation>ভাষা বেছে নিন…</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2825"/>
         <source>%1 of %2 chosen</source>
-        <translation>%1 از %2 انتخاب‌شده</translation>
+        <translation>%2-এর মধ্যে %1টি বাছাই করা হয়েছে</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2827"/>
         <source>%1 languages</source>
-        <translation>%1 زبان</translation>
+        <translation>%1টি ভাষা</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2952"/>
         <source>WhatsApp default</source>
-        <translation>پیش‌فرض WhatsApp</translation>
+        <translation>WhatsApp ডিফল্ট</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2991"/>
         <source>System default</source>
-        <translation>پیش‌فرض سیستم</translation>
+        <translation>সিস্টেম ডিফল্ট</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="3021"/>
         <source>The interface language will change when you restart %1.</source>
-        <translation>زبان رابط کاربری هنگام راه‌اندازی مجدد %1 تغییر خواهد کرد.</translation>
+        <translation>আপনি %1 পুনরায় চালু করলে ইন্টারফেসের ভাষা পরিবর্তন হবে।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="3035"/>
         <source>App Lock Setup</source>
-        <translation>تنظیم قفل برنامه</translation>
+        <translation>অ্যাপ লক সেটআপ</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="3036"/>
         <source>Please setup the App lock password first.</source>
-        <translation>لطفاً ابتدا رمز عبور قفل برنامه را تنظیم کنید.</translation>
+        <translation>অনুগ্রহ করে প্রথমে অ্যাপ লক পাসওয়ার্ড সেটআপ করুন।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="3152"/>
         <location filename="../settingswidget.cpp" line="3163"/>
         <source>Select download directory</source>
-        <translation>پوشه دانلود را انتخاب کنید</translation>
+        <translation>ডাউনলোড ডিরেক্টরি নির্বাচন করুন</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="3203"/>
@@ -4175,15 +4093,12 @@ Please setup the password in the Settings first.</source>
 
 This will LogOut your current session.
 You may also require a complete restart of Application!</source>
-        <translation>شما در حال تغییر رمز عبور فعلی قفل برنامه هستید!
-
-این کار نشست فعلی شما را خارج خواهد کرد.
-ممکن است نیاز به راه‌اندازی مجدد کامل برنامه نیز داشته باشید!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="3209"/>
         <source>Do you want to proceed?</source>
-        <translation>آیا می‌خواهید ادامه دهید؟</translation>
+        <translation>আপনি কি এগিয়ে যেতে চান?</translation>
     </message>
 </context>
 <context>
@@ -4192,72 +4107,72 @@ You may also require a complete restart of Application!</source>
         <location filename="../setupwizard.cpp" line="24"/>
         <location filename="../setupwizard.cpp" line="30"/>
         <source>Welcome to Whatly</source>
-        <translation>به Whatly خوش آمدید</translation>
+        <translation>Whatly-তে স্বাগতম</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="31"/>
         <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
-        <translation>یک کلاینت سریع و بومی WhatsApp Web برای دسکتاپ. بیایید چند چیز را تنظیم کنیم — می‌توانید همه این‌ها را بعداً در تنظیمات تغییر دهید.</translation>
+        <translation>ডেস্কটপের জন্য একটি দ্রুত, নেটিভ WhatsApp Web ক্লায়েন্ট। চলুন কয়েকটি জিনিস সেট আপ করি — আপনি এসবই পরে সেটিংসে বদলাতে পারবেন।</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="36"/>
         <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
-        <translation>Whatly گفتگوهای شما را در یک پنجره دسکتاپ مناسب، همراه با نماد سینی، اعلان‌ها، پوسته‌ها و چند حساب نگه می‌دارد.</translation>
+        <translation>Whatly আপনার চ্যাটগুলো একটি যথাযথ ডেস্কটপ উইন্ডোতে রাখে, ট্রে আইকন, নোটিফিকেশন, থিম এবং একাধিক অ্যাকাউন্ট সহ।</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="46"/>
         <source>A few preferences</source>
-        <translation>چند ترجیح</translation>
+        <translation>কয়েকটি পছন্দ</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="47"/>
         <source>Sensible defaults; tweak to taste.</source>
-        <translation>پیش‌فرض‌های منطقی؛ بر اساس سلیقه تنظیم کنید.</translation>
+        <translation>যুক্তিসঙ্গত ডিফল্ট; পছন্দমতো পরিবর্তন করুন।</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="50"/>
         <source>Match the system light/dark theme</source>
-        <translation>تطبیق با پوسته روشن/تیره سیستم</translation>
+        <translation>সিস্টেমের হালকা/গাঢ় থিমের সাথে মেলান</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="55"/>
         <source>Start Whatly when I log in</source>
-        <translation>راه‌اندازی Whatly هنگام ورود من</translation>
+        <translation>আমি লগ ইন করলে Whatly চালু করুন</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="61"/>
         <source>Notification delivery:</source>
-        <translation>روش تحویل اعلان:</translation>
+        <translation>নোটিফিকেশন সরবরাহ:</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="64"/>
         <source>Automatic</source>
-        <translation>خودکار</translation>
+        <translation>স্বয়ংক্রিয়</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="65"/>
         <source>Desktop portal (Flatpak)</source>
-        <translation>پورتال دسکتاپ (Flatpak)</translation>
+        <translation>ডেস্কটপ পোর্টাল (Flatpak)</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="67"/>
         <source>System service (libnotify)</source>
-        <translation>سرویس سیستم (libnotify)</translation>
+        <translation>সিস্টেম সার্ভিস (libnotify)</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="77"/>
         <source>All set</source>
-        <translation>همه چیز آماده است</translation>
+        <translation>সব প্রস্তুত</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="78"/>
         <source>You&apos;re ready to go. Scan the QR code with your phone to sign in.</source>
-        <translation>شما آماده‌اید. برای ورود، کد QR را با تلفن خود اسکن کنید.</translation>
+        <translation>আপনি শুরু করতে প্রস্তুত। সাইন ইন করতে আপনার ফোন দিয়ে QR কোড স্ক্যান করুন।</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="82"/>
         <source>Everything here lives in Settings if you change your mind.</source>
-        <translation>اگر نظرتان تغییر کرد، همه این موارد در تنظیمات موجود است.</translation>
+        <translation>আপনি মত পরিবর্তন করলে এখানকার সবকিছু সেটিংসে রয়েছে।</translation>
     </message>
 </context>
 <context>
@@ -4265,7 +4180,7 @@ You may also require a complete restart of Application!</source>
     <message>
         <location filename="../updatechecker.cpp" line="138"/>
         <source>Could not read the latest release</source>
-        <translation>آخرین نسخه قابل خواندن نبود</translation>
+        <translation>সর্বশেষ রিলিজ পড়া যায়নি</translation>
     </message>
 </context>
 <context>
@@ -4273,104 +4188,104 @@ You may also require a complete restart of Application!</source>
     <message>
         <location filename="../webenginepage.cpp" line="57"/>
         <source>Share your screen</source>
-        <translation>اشتراک‌گذاری صفحه شما</translation>
+        <translation>আপনার স্ক্রিন শেয়ার করুন</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="59"/>
         <source>Choose what to share:</source>
-        <translation>انتخاب کنید چه چیزی به اشتراک گذاشته شود:</translation>
+        <translation>কী শেয়ার করবেন তা বেছে নিন:</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="71"/>
         <source>Untitled</source>
-        <translation>بدون عنوان</translation>
+        <translation>শিরোনামহীন</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="75"/>
         <source>Screen: </source>
-        <translation>صفحه‌نمایش: </translation>
+        <translation>স্ক্রিন: </translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="76"/>
         <source>Window: </source>
-        <translation>پنجره: </translation>
+        <translation>উইন্ডো: </translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="183"/>
         <source>Allow %1 to access your location information?</source>
-        <translation>به %1 اجازه داده شود به اطلاعات مکان شما دسترسی داشته باشد؟</translation>
+        <translation>%1-কে আপনার অবস্থানের তথ্য অ্যাক্সেস করার অনুমতি দেবেন?</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="185"/>
         <source>Allow %1 to access your microphone?</source>
-        <translation>به %1 اجازه داده شود به میکروفون شما دسترسی داشته باشد؟</translation>
+        <translation>%1-কে আপনার মাইক্রোফোন অ্যাক্সেস করার অনুমতি দেবেন?</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="187"/>
         <source>Allow %1 to access your webcam?</source>
-        <translation>به %1 اجازه داده شود به وب‌کم شما دسترسی داشته باشد؟</translation>
+        <translation>%1-কে আপনার ওয়েবক্যাম অ্যাক্সেস করার অনুমতি দেবেন?</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="189"/>
         <source>Allow %1 to access your microphone and webcam?</source>
-        <translation>به %1 اجازه داده شود به میکروفون و وب‌کم شما دسترسی داشته باشد؟</translation>
+        <translation>%1-কে আপনার মাইক্রোফোন এবং ওয়েবক্যাম অ্যাক্সেস করার অনুমতি দেবেন?</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="191"/>
         <source>Allow %1 to lock your mouse cursor?</source>
-        <translation>به %1 اجازه داده شود نشانگر ماوس شما را قفل کند؟</translation>
+        <translation>%1-কে আপনার মাউস কার্সর লক করার অনুমতি দেবেন?</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="193"/>
         <source>Allow %1 to capture video of your desktop?</source>
-        <translation>به %1 اجازه داده شود از دسکتاپ شما ویدیو ضبط کند؟</translation>
+        <translation>%1-কে আপনার ডেস্কটপের ভিডিও ক্যাপচার করার অনুমতি দেবেন?</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="195"/>
         <source>Allow %1 to capture audio and video of your desktop?</source>
-        <translation>به %1 اجازه داده شود از دسکتاپ شما صدا و ویدیو ضبط کند؟</translation>
+        <translation>%1-কে আপনার ডেস্কটপের অডিও এবং ভিডিও ক্যাপচার করার অনুমতি দেবেন?</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="198"/>
         <source>Allow %1 to show notification on your desktop?</source>
-        <translation>به %1 اجازه داده شود روی دسکتاپ شما اعلان نمایش دهد؟</translation>
+        <translation>%1-কে আপনার ডেস্কটপে নোটিফিকেশন দেখানোর অনুমতি দেবেন?</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="200"/>
         <source>Allow %1 to read your clipboard? This is needed to paste images into a chat.</source>
-        <translation>به %1 اجازه داده شود کلیپ‌بورد شما را بخواند؟ این برای جای‌گذاری تصاویر در گفتگو لازم است.</translation>
+        <translation>%1-কে আপনার ক্লিপবোর্ড পড়ার অনুমতি দেবেন? চ্যাটে ছবি পেস্ট করার জন্য এটি প্রয়োজন।</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="203"/>
         <source>Allow %1 to see the fonts installed on your system?</source>
-        <translation>به %1 اجازه داده شود قلم‌های نصب‌شده روی سیستم شما را ببیند؟</translation>
+        <translation>%1-কে আপনার সিস্টেমে ইনস্টল করা ফন্টগুলো দেখার অনুমতি দেবেন?</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="223"/>
         <location filename="../webenginepage.cpp" line="438"/>
         <source>Permission Request</source>
-        <translation>درخواست مجوز</translation>
+        <translation>অনুমতির অনুরোধ</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="361"/>
         <location filename="../webenginepage.cpp" line="370"/>
         <source>Certificate Error</source>
-        <translation>خطای گواهی</translation>
+        <translation>সার্টিফিকেট ত্রুটি</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="390"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
-        <translation>نام کاربری و رمز عبور برای «%1» در %2 را وارد کنید</translation>
+        <translation>%2-এ &quot;%1&quot;-এর জন্য ব্যবহারকারীর নাম এবং পাসওয়ার্ড লিখুন</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="420"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
-        <translation>اتصال به پروکسی «%1» با استفاده از:</translation>
+        <translation>প্রক্সি &quot;%1&quot;-এ সংযোগ করুন এটি ব্যবহার করে:</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="439"/>
         <source>Allow %1 to open all %2 links?</source>
-        <translation>به %1 اجازه داده شود همه پیوندهای %2 را باز کند؟</translation>
+        <translation>%1-কে সব %2 লিঙ্ক খোলার অনুমতি দেবেন?</translation>
     </message>
 </context>
 <context>
@@ -4378,48 +4293,45 @@ You may also require a complete restart of Application!</source>
     <message>
         <location filename="../webview.cpp" line="58"/>
         <source>Render process normal exit</source>
-        <translation>خروج عادی فرآیند رندر</translation>
+        <translation>রেন্ডার প্রসেস স্বাভাবিকভাবে বন্ধ</translation>
     </message>
     <message>
         <location filename="../webview.cpp" line="61"/>
         <source>Render process abnormal exit</source>
-        <translation>خروج غیرعادی فرآیند رندر</translation>
+        <translation>রেন্ডার প্রসেস অস্বাভাবিকভাবে বন্ধ</translation>
     </message>
     <message>
         <location filename="../webview.cpp" line="64"/>
         <source>Render process crashed</source>
-        <translation>فرآیند رندر خراب شد</translation>
+        <translation>রেন্ডার প্রসেস ক্র্যাশ করেছে</translation>
     </message>
     <message>
         <location filename="../webview.cpp" line="67"/>
         <source>Render process killed</source>
-        <translation>فرآیند رندر متوقف شد</translation>
+        <translation>রেন্ডার প্রসেস বন্ধ করা হয়েছে</translation>
     </message>
     <message>
         <location filename="../webview.cpp" line="103"/>
         <source>WhatsApp Web keeps closing</source>
-        <translation>WhatsApp Web پیوسته بسته می‌شود</translation>
+        <translation>WhatsApp Web বারবার বন্ধ হয়ে যাচ্ছে</translation>
     </message>
     <message>
         <location filename="../webview.cpp" line="104"/>
         <source>WhatsApp Web&apos;s renderer keeps terminating (code %1), so Whatly has stopped reloading it to avoid a loop.
 
 This is often a GPU or sandbox problem. Try turning off GPU acceleration in Settings → Performance, then reload.</source>
-        <translation>رندر WhatsApp Web پیوسته خاتمه می‌یابد (کد %1)، بنابراین Whatly برای جلوگیری از حلقه، بارگذاری مجدد آن را متوقف کرده است.
-
-این اغلب یک مشکل GPU یا سندباکس است. سعی کنید شتاب‌دهی GPU را در تنظیمات ← عملکرد خاموش کنید، سپس دوباره بارگذاری کنید.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../webview.cpp" line="130"/>
         <source>Render process exited with code: %1
 Do you want to reload the page ?</source>
-        <translation>فرآیند رندر با کد خارج شد: %1
-آیا می‌خواهید صفحه را دوباره بارگذاری کنید؟</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../webview.cpp" line="309"/>
         <source>Too large to attach (limit %1 MB): %2</source>
-        <translation>برای پیوست بیش از حد بزرگ است (حد %1 مگابایت): %2</translation>
+        <translation>সংযুক্ত করার জন্য অত্যধিক বড় (সীমা %1 MB): %2</translation>
     </message>
 </context>
 </TS>

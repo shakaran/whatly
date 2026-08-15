@@ -56,7 +56,7 @@ experimental **macOS** build.
 | 🔤 **Spell checker** | Actually works — Chromium `.bdic` dictionaries are shipped, and you can check against **several languages at once**. |
 | 🖥️ **Native integration** | System tray with a **monochrome** option and live connection status, desktop notifications, an app lock, a download manager, global shortcuts. |
 | 🌗 **Follows your desktop** | Optionally track the system light/dark preference, live. |
-| 🌍 **20 languages** | The interface is translated, with an in-app language picker. |
+| 🌍 **22 languages** | The interface is translated, with an in-app language picker. |
 | 🪟 **Windows 10+** | One codebase, native toasts and a proper GUI executable. |
 | 🍎 **macOS** *(experimental)* | Builds as an unsigned `.app`/`.dmg`; not yet runtime-validated. |
 
@@ -455,7 +455,7 @@ Three independent ways to be signed in to more than one account:
 
 The interface follows your system locale and can be changed in
 **Settings → General settings → Interface language** (takes effect after a
-restart). 20 languages ship with the app.
+restart). 22 languages ship with the app.
 
 > **Only `it_IT` was translated by a human.** The rest were machine-generated
 > without native-speaker review and will contain mistakes. Corrections are very

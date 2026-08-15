@@ -1639,97 +1639,97 @@ Je kunt elk account naar een eigen venster slepen: klik met de rechtermuisknop o
         <translation>Foutopsporingsinformatie verbergen</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="195"/>
+        <location filename="../main.cpp" line="202"/>
         <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
         <translation>Niets te migreren van &quot;%1&quot; — al gemigreerd, of geen gegevens gevonden.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="200"/>
+        <location filename="../main.cpp" line="207"/>
         <source>Would copy:</source>
         <translation>Zou kopiëren:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="200"/>
+        <location filename="../main.cpp" line="207"/>
         <source>Copied:</source>
         <translation>Gekopieerd:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="204"/>
+        <location filename="../main.cpp" line="211"/>
         <source>Run again without --dry-run to perform the copy.</source>
         <translation>Voer opnieuw uit zonder --dry-run om de kopie uit te voeren.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="583"/>
+        <location filename="../main.cpp" line="590"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Veelzijdige WhatsApp Web-client op basis van Qt WebEngine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="590"/>
+        <location filename="../main.cpp" line="597"/>
         <source>Displays help on commandline options</source>
         <translation>Toont de hulp voor de opdrachtregelopties</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="595"/>
+        <location filename="../main.cpp" line="602"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>Opent de instellingen in een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="600"/>
+        <location filename="../main.cpp" line="607"/>
         <source>Locks a running instance of </source>
         <translation>Vergrendelt een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="606"/>
+        <location filename="../main.cpp" line="613"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>Opent het venster «Over» in een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="611"/>
+        <location filename="../main.cpp" line="618"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>Opent het dialoogvenster voor geplande berichten in een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="618"/>
+        <location filename="../main.cpp" line="625"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>Wisselt tussen licht en donker thema in een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="625"/>
+        <location filename="../main.cpp" line="632"/>
         <source>Reload the app in a running instance of </source>
         <translation>Herlaadt de toepassing in een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="631"/>
+        <location filename="../main.cpp" line="638"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>Opent het venster voor een nieuw gesprek in een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="644"/>
+        <location filename="../main.cpp" line="651"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Uitvoeren als een apart account met een eigen sessie en instellingen, in een eigen venster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="661"/>
+        <location filename="../main.cpp" line="668"/>
         <source>Show main window of running instance of </source>
         <translation>Toont het hoofdvenster van de actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="668"/>
+        <location filename="../main.cpp" line="675"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>Kopieer instellingen en de aangemelde sessie van een eerdere installatie (bijv. de oudere &quot;whatsie&quot;-versie) naar deze en sluit af</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="675"/>
+        <location filename="../main.cpp" line="682"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>Met --migrate-from alleen tonen wat er gekopieerd zou worden</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="693"/>
+        <location filename="../main.cpp" line="700"/>
         <source>Print the current unread message count and exit</source>
         <translation>Toon het huidige aantal ongelezen berichten en sluit af</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1218"/>
+        <location filename="../main.cpp" line="1225"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>De app-vergrendeling is niet ingesteld.
@@ -1896,172 +1896,172 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Chatlijst tonen</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1316"/>
+        <location filename="../main.cpp" line="1323"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Hersteld van een crash bij het opstarten door over te schakelen naar veilige weergave. Je kunt dit aanpassen in Instellingen → Prestaties.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="699"/>
+        <location filename="../main.cpp" line="706"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>Verstuurt een bericht via de actieve instantie en sluit af (vereist --to en --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="703"/>
+        <location filename="../main.cpp" line="710"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>Ontvanger voor --send: een telefoonnummer (internationaal), een groeps-id of een contactnaam</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="708"/>
+        <location filename="../main.cpp" line="715"/>
         <source>Message text for --send</source>
         <translation>Berichttekst voor --send</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="720"/>
+        <location filename="../main.cpp" line="727"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>Hoe --send verzendt: &apos;web&apos; (de actieve WhatsApp Web-sessie) of &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="711"/>
+        <location filename="../main.cpp" line="718"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>Voegt een bestand toe aan --send (de --message, indien aanwezig, wordt het bijschrift)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="654"/>
+        <location filename="../main.cpp" line="661"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>Intern: wacht tot het proces met deze id is afgesloten voordat wordt gestart, gebruikt door &quot;Nu opnieuw starten&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="716"/>
+        <location filename="../main.cpp" line="723"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Bijschrift voor de --file-bijlage (alias van --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="726"/>
+        <location filename="../main.cpp" line="733"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>Gebruikt de opgeslagen sjabloon met deze naam als --send-bericht (vult de {{velden}} met --var)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="731"/>
+        <location filename="../main.cpp" line="738"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>Een sjabloonveld invullen: key=value (herhaalbaar)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="735"/>
+        <location filename="../main.cpp" line="742"/>
         <source>List the saved message templates and exit</source>
         <translation>De opgeslagen berichtsjablonen tonen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="738"/>
+        <location filename="../main.cpp" line="745"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>Een berichtsjabloon opslaan (of vervangen), dan afsluiten: name=body</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="742"/>
+        <location filename="../main.cpp" line="749"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>De opgeslagen berichtsjabloon met deze naam verwijderen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="747"/>
+        <location filename="../main.cpp" line="754"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>Automatisch antwoorden op inkomende berichten inschakelen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="750"/>
+        <location filename="../main.cpp" line="757"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>Automatisch antwoorden uitschakelen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="753"/>
+        <location filename="../main.cpp" line="760"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>De actieve auto-antwoordregels (met status) tonen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="756"/>
+        <location filename="../main.cpp" line="763"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Dit JSON-bestand als bron van auto-antwoordregels gebruiken en afsluiten (leeg om te wissen)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="762"/>
+        <location filename="../main.cpp" line="769"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>De telefoonnummer-id van de Cloud API instellen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="766"/>
+        <location filename="../main.cpp" line="773"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>De toegangstoken van de Cloud API instellen en afsluiten (opgeslagen in de accountconfiguratie)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="771"/>
+        <location filename="../main.cpp" line="778"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>De graph-versie van de Cloud API instellen (bijv. v21.0) en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="775"/>
+        <location filename="../main.cpp" line="782"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>Tonen of de Cloud API is geconfigureerd en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="778"/>
+        <location filename="../main.cpp" line="785"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>Voor --send --backend cloud: dit door Meta goedgekeurde sjabloon verzenden</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="782"/>
+        <location filename="../main.cpp" line="789"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>Taalcode voor --cloud-template (bijv. es, en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="786"/>
+        <location filename="../main.cpp" line="793"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Een positionele bodyparameter voor --cloud-template (herhaalbaar)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="791"/>
+        <location filename="../main.cpp" line="798"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>De lokale HTTP-API inschakelen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="794"/>
+        <location filename="../main.cpp" line="801"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>De lokale HTTP-API uitschakelen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="797"/>
+        <location filename="../main.cpp" line="804"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>De poort van de lokale HTTP-API instellen (standaard 8590) en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="801"/>
+        <location filename="../main.cpp" line="808"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>Het Bearer-token van de lokale HTTP-API instellen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="805"/>
+        <location filename="../main.cpp" line="812"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>De configuratie van de lokale HTTP-API tonen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="809"/>
+        <location filename="../main.cpp" line="816"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>Het ontvangen van Cloud API-webhooks inschakelen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="812"/>
+        <location filename="../main.cpp" line="819"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>Het ontvangen van Cloud API-webhooks uitschakelen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="815"/>
+        <location filename="../main.cpp" line="822"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>Het verificatietoken van de Cloud API-webhook instellen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="819"/>
+        <location filename="../main.cpp" line="826"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>Het Meta-app-geheim voor webhook-handtekeningcontrole instellen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="823"/>
+        <location filename="../main.cpp" line="830"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>De configuratie van de Cloud API-webhook tonen en afsluiten</translation>
     </message>
