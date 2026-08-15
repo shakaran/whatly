@@ -29,12 +29,19 @@ signals:
   // Emitted when the window is moved or resized, so MainWindow can persist the
   // updated arrangement (debounced on its side).
   void geometryChanged();
+  // Emitted when the window is minimised, restored, put away or brought back, so
+  // MainWindow can unload the accounts nobody can see and build back the ones
+  // that have come into view (issue #25). This window holds no account data, so
+  // it cannot act on any of that itself.
+  void visibilityChanged();
 
 protected:
   void closeEvent(QCloseEvent *event) override;
   void changeEvent(QEvent *event) override;
   void moveEvent(QMoveEvent *event) override;
   void resizeEvent(QResizeEvent *event) override;
+  void showEvent(QShowEvent *event) override;
+  void hideEvent(QHideEvent *event) override;
 
 private:
   AccountTabBar *m_bar = nullptr;

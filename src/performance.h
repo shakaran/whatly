@@ -63,6 +63,18 @@ int suspendAfterMinutes();
 // background (non-active, off-screen) account idle past the threshold.
 bool shouldSuspendAccount(bool enabled, bool isActive, bool isVisible,
                           int idleSecs, int thresholdSecs);
+// Extend that unloading to whole windows that are off screen: the account a
+// minimised window — or one put away to the tray — was showing is unloaded as
+// well, and built again when the window comes back. Off by default, and inert
+// unless the option above is on (issue #25).
+bool unloadOffscreenWindows();
+// Pure decision, unit tested. Same delay as above, counted from when the window
+// went away rather than from when the account was last read: the account on
+// screen was being read until the moment the window went, so its own idle clock
+// would say "just now" for a window that has been gone all afternoon.
+bool shouldUnloadWithWindow(bool enabled, bool alsoOffscreen,
+                            bool windowOffscreen, int awaySecs,
+                            int thresholdSecs);
 
 // Interface/content scale factor (feeds QT_SCALE_FACTOR + --force-device-scale-
 // factor, matching #203). 0 = automatic (let the environment/desktop decide).
@@ -84,6 +96,7 @@ void setCacheType(const QString &type);
 void setFontHinting(const QString &level);
 void setSuspendInactiveAccounts(bool v);
 void setSuspendAfterMinutes(int m);
+void setUnloadOffscreenWindows(bool v);
 void setCacheMaxMb(int mb);
 void setInterfaceScaleFactor(double factor);
 

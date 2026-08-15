@@ -696,3 +696,24 @@ bool Utils::isServiceWorkerRegistrationFailure(const QString &consoleMessage) {
          consoleMessage.contains(
              QLatin1String("service-worker-registration-failure"));
 }
+
+bool Utils::shouldPreferXcbPlatform(bool userChosePlatform, bool waylandSession,
+                                    bool nvidiaProprietary) {
+  // The user's own platform choice always wins; otherwise only the exact
+  // known-bad combination (Wayland session + proprietary NVIDIA) is redirected.
+  return !userChosePlatform && waylandSession && nvidiaProprietary;
+}
+
+QString Utils::appImageUpdateTool() {
+  // The current name first, then the older one; either updates in place.
+  QString tool = QStandardPaths::findExecutable(
+      QStringLiteral("appimageupdatetool"));
+  if (tool.isEmpty())
+    tool = QStandardPaths::findExecutable(QStringLiteral("AppImageUpdate"));
+  return tool;
+}
+
+bool Utils::canOfferAppImageSelfUpdate(bool isAppImage, const QString &toolPath,
+                                       const QString &appImagePath) {
+  return isAppImage && !toolPath.isEmpty() && !appImagePath.isEmpty();
+}

@@ -61,6 +61,30 @@ public:
   // and helps stall WhatsApp Web's bootstrap (see isWhatsAppLoadFailure). The
   // page can clear it with its own caches/serviceWorker APIs. See issue #43.
   static bool isServiceWorkerRegistrationFailure(const QString &consoleMessage);
+  // Whether to force the XCB (XWayland) platform instead of native Wayland.
+  // Proprietary NVIDIA on a Wayland session frequently ships no working
+  // wayland-egl, so Qt cannot get a QRhi for the widget backing store and the
+  // window comes up blank and unfocusable — with no way to reach Settings to
+  // fix it (issue #84). XCB has GLX and works there. True only when all three
+  // hold: the user has not chosen a platform themselves (their choice always
+  // wins), the session is Wayland, and the proprietary NVIDIA driver is present.
+  // Pure so the policy is unit-tested; main() gathers the three facts from the
+  // environment. NVIDIA-on-Wayland users who do have it working can still set
+  // QT_QPA_PLATFORM=wayland to override.
+  static bool shouldPreferXcbPlatform(bool userChosePlatform,
+                                      bool waylandSession, bool nvidiaProprietary);
+  // The path to AppImageUpdate's CLI (appimageupdatetool, or the older
+  // AppImageUpdate) on PATH, or "" when neither is installed. The AppImage
+  // carries its own zsync update information, so this tool fetches only the
+  // changed blocks instead of the whole ~150 MB image. See issue #85.
+  static QString appImageUpdateTool();
+  // Whether Whatly can offer to update itself in place: it is running as an
+  // AppImage, the update tool is present, and the running image's path is known
+  // (the APPIMAGE env var). Pure so the policy is unit-tested; the caller
+  // supplies the three facts. Every other install kind (Flatpak, distro package)
+  // is updated from outside the app and must never see this. See issue #85.
+  static bool canOfferAppImageSelfUpdate(bool isAppImage, const QString &toolPath,
+                                         const QString &appImagePath);
   // Small and faint: a label that has to sit beside something with a job to do
   // without competing with it. Used for both of the above.
   static void makeWatermark(QLabel *label);

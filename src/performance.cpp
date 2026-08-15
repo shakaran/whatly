@@ -85,6 +85,19 @@ bool shouldSuspendAccount(bool enabled, bool isActive, bool isVisible,
   // affected.
   return enabled && !isActive && !isVisible && idleSecs >= thresholdSecs;
 }
+bool unloadOffscreenWindows() {
+  return b(QStringLiteral("perf/unloadOffscreenWindows"), false);
+}
+bool shouldUnloadWithWindow(bool enabled, bool alsoOffscreen,
+                            bool windowOffscreen, int awaySecs,
+                            int thresholdSecs) {
+  // Both switches are required — this is an extension of the option above, not a
+  // rule of its own — and so is the same waiting time, which is why the delay is
+  // not repeated next to the box. Which tab the account is on has no say: the
+  // whole window is off screen, so none of its accounts is being read.
+  return enabled && alsoOffscreen && windowOffscreen &&
+         awaySecs >= thresholdSecs;
+}
 
 QString fontHinting() {
   // "" means leave Chromium's default (derived from fontconfig); otherwise one
@@ -122,6 +135,9 @@ void setSuspendInactiveAccounts(bool v) {
 }
 void setSuspendAfterMinutes(int m) {
   settings().setValue(QStringLiteral("perf/suspendAfterMinutes"), qMax(1, m));
+}
+void setUnloadOffscreenWindows(bool v) {
+  setB(QStringLiteral("perf/unloadOffscreenWindows"), v);
 }
 void setCacheMaxMb(int mb) {
   settings().setValue(QStringLiteral("perf/cacheMaxMb"), qMax(0, mb));

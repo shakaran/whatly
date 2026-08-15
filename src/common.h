@@ -54,6 +54,11 @@ struct UnreadBreakdown {
   // the fallback that counts drawn rows cannot, and reporting nought muted when
   // the truth is "not known" would be a lie in the tooltip.
   bool mutedKnown = false;
+  // Whether `chats`/`messages` already include the muted ones. They do when the
+  // badge is set to count muted (the default); when it is not, the muted figures
+  // are a disjoint set kept off the badge, and the tooltip has to add them back
+  // to show the real total and a split that does not go negative.
+  bool mutedInTotal = true;
 };
 
 // The tray icon's tooltip: the app's name, then what is waiting, one thought per

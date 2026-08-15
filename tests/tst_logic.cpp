@@ -28,6 +28,7 @@
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QVBoxLayout>
+#include <QSet>
 
 #include "utils.h"
 #include "common.h"
@@ -158,6 +159,34 @@ private slots:
     QVERIFY(!Utils::isServiceWorkerRegistrationFailure(
         QStringLiteral("Uncaught TypeError: foo is not a function")));
     QVERIFY(!Utils::isServiceWorkerRegistrationFailure(QString()));
+  }
+  // Redirect to XCB only for proprietary NVIDIA on a Wayland session, and only
+  // when the user has not chosen a platform (issue #84).
+  void preferXcbPlatformPolicy() {
+    // The known-bad combination: not chosen, Wayland, NVIDIA proprietary.
+    QVERIFY(Utils::shouldPreferXcbPlatform(false, true, true));
+    // The user's own choice always wins.
+    QVERIFY(!Utils::shouldPreferXcbPlatform(true, true, true));
+    // X11 session, or no NVIDIA: leave the platform alone.
+    QVERIFY(!Utils::shouldPreferXcbPlatform(false, false, true));
+    QVERIFY(!Utils::shouldPreferXcbPlatform(false, true, false));
+    QVERIFY(!Utils::shouldPreferXcbPlatform(false, false, false));
+  }
+  // Offer the in-place AppImage update only when it is an AppImage, the tool is
+  // present, and the running image path is known (issue #85).
+  void appImageSelfUpdatePolicy() {
+    QVERIFY(Utils::canOfferAppImageSelfUpdate(
+        true, QStringLiteral("/usr/bin/appimageupdatetool"),
+        QStringLiteral("/home/u/Whatly.AppImage")));
+    // Not an AppImage: never.
+    QVERIFY(!Utils::canOfferAppImageSelfUpdate(
+        false, QStringLiteral("/usr/bin/appimageupdatetool"),
+        QStringLiteral("/home/u/Whatly.AppImage")));
+    // Tool missing, or image path unknown: cannot run it, so do not offer.
+    QVERIFY(!Utils::canOfferAppImageSelfUpdate(
+        true, QString(), QStringLiteral("/home/u/Whatly.AppImage")));
+    QVERIFY(!Utils::canOfferAppImageSelfUpdate(
+        true, QStringLiteral("/usr/bin/appimageupdatetool"), QString()));
   }
   void toCamelCase() {
     QCOMPARE(Utils::toCamelCase(QStringLiteral("hello world")),
@@ -403,6 +432,35 @@ private slots:
     const QPalette dark = Theme::getDarkPalette();
     QVERIFY(light.color(QPalette::Window) != dark.color(QPalette::Window));
   }
+
+  // A greyed-out control has to look greyed out in both themes. Every role a
+  // label can be drawn in, because setColor() without a colour group sets the
+  // disabled group as well — so forgetting one leaves disabled text in the
+  // enabled colour, which is what had happened to WindowText, and so to every
+  // check box, in the dark palette.
+  //
+  // Assert dimness, not mere inequality: the disabled foreground must have less
+  // contrast against its own background than the active one does, so a colour
+  // that differs but is not actually dimmer cannot pass. Each foreground role is
+  // paired with the background it is drawn on.
+  void disabledIsDimmerThanEnabled() {
+    auto luma = [](const QColor &c) {
+      return 0.2126 * c.redF() + 0.7152 * c.greenF() + 0.0722 * c.blueF();
+    };
+    auto contrast = [&](const QPalette &p, QPalette::ColorGroup g,
+                        QPalette::ColorRole fg, QPalette::ColorRole bg) {
+      return qAbs(luma(p.color(g, fg)) - luma(p.color(g, bg)));
+    };
+    const struct {
+      QPalette::ColorRole fg, bg;
+    } pairs[] = {{QPalette::WindowText, QPalette::Window},
+                 {QPalette::Text, QPalette::Base},
+                 {QPalette::ButtonText, QPalette::Button}};
+    for (const QPalette &p : {Theme::getLightPalette(), Theme::getDarkPalette()})
+      for (const auto &pair : pairs)
+        QVERIFY(contrast(p, QPalette::Disabled, pair.fg, pair.bg) <
+                contrast(p, QPalette::Active, pair.fg, pair.bg));
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -419,6 +477,29 @@ private slots:
     Dictionaries::preferredDictionary();
     Dictionaries::selectedDictionaries();
   }
+
+  // Round 28, his request: the interface-language list is now named by the same
+  // routine as the spell-check list — Dictionaries::languageLabel — so the two
+  // lists a reader compares call the same language by the same name. Over the
+  // translations actually shipped, every name has to be its own: the old code
+  // built the name from the language alone, which threw the territory away and
+  // made zh_TW resolve to zh_CN's, so both Chinese translations were offered as
+  // "简体中文" — simplified, on the traditional one too.
+  void everyShippedInterfaceLanguageHasItsOwnName() {
+    QDir dir(QStringLiteral(WHATLY_SOURCE_DIR) + QStringLiteral("/src/i18n"));
+    const QFileInfoList files =
+        dir.entryInfoList({QStringLiteral("*.ts")}, QDir::Files, QDir::Name);
+    QVERIFY(files.size() > 5); // the catalogues are there, so the check ran
+    QSet<QString> seen;
+    for (const QFileInfo &file : files) {
+      const QString label = Dictionaries::languageLabel(file.completeBaseName());
+      QVERIFY(!label.isEmpty());
+      QVERIFY2(!seen.contains(label),
+               qPrintable(QStringLiteral("two interface languages named ") + label));
+      seen.insert(label);
+    }
+  }
+
   // Point the resolver at a directory of fake .bdic files so the full selection
   // logic (availability, locale preference, stored-list filtering) runs.
   void withFixture() {
@@ -1273,6 +1354,23 @@ private slots:
     QCOMPARE(lines.at(2), QStringLiteral("9 in 3 muted chats"));
     QCOMPARE(lines.at(3), QStringLiteral("38 in 9 chats that are not muted"));
 
+    // The badge set NOT to count muted: chats/messages then exclude the muted
+    // ones, which are a disjoint set. The tooltip must add them back for the real
+    // total and split, instead of subtracting a disjoint set into a negative
+    // "-7 in 1 chat that is not muted" (the bug this pins).
+    UnreadBreakdown offBadge;
+    offBadge.chats = 5;     // non-muted only
+    offBadge.messages = 10; // non-muted only
+    offBadge.mutedChats = 3;
+    offBadge.mutedMessages = 9;
+    offBadge.mutedKnown = true;
+    offBadge.mutedInTotal = false;
+    const QStringList off = trayTooltipText(offBadge).split(QLatin1Char('\n'));
+    QCOMPARE(off.size(), 4);
+    QCOMPARE(off.at(1), QStringLiteral("19 unread messages in 8 chats"));
+    QCOMPARE(off.at(2), QStringLiteral("9 in 3 muted chats"));
+    QCOMPARE(off.at(3), QStringLiteral("10 in 5 chats that are not muted"));
+
     // Everything muted: no line about chats that are not, since there are none.
     UnreadBreakdown allMuted;
     allMuted.chats = 2;
@@ -2105,6 +2203,7 @@ private slots:
     Performance::setCacheMaxMb(0);
     Performance::setFontHinting(QString()); // default: follow the system
     Performance::setSuspendInactiveAccounts(false);
+    Performance::setUnloadOffscreenWindows(false); // else a prior run leaks in
 
     // No start-up crash recovery pending: level 0, watch disarmed.
     Performance::markStartupSucceeded();
@@ -2333,6 +2432,28 @@ private slots:
     QCOMPARE(Performance::suspendAfterMinutes(), 1); // clamped to >= 1
     Performance::setSuspendInactiveAccounts(false);
     Performance::setSuspendAfterMinutes(15);
+  }
+
+  // The window half of the same setting (#25): the account a window was showing
+  // goes with the window, minimised or put away — but only with both switches on,
+  // and only after the same wait as the rule above. Dogfood round 27: it used to
+  // unload ten seconds after the window went, whatever the delay was set to, and
+  // "it should happen in conjunction with the 'Unload inactive accounts' setting".
+  void offscreenWindowUnloadDecision() {
+    QVERIFY(!Performance::shouldUnloadWithWindow(false, true, true, 9999, 60)); // unloading off
+    QVERIFY(!Performance::shouldUnloadWithWindow(true, false, true, 9999, 60)); // option off
+    QVERIFY(!Performance::shouldUnloadWithWindow(true, true, false, 9999, 60)); // on screen
+    QVERIFY(!Performance::shouldUnloadWithWindow(true, true, true, 30, 60));    // away, not long enough
+    QVERIFY(Performance::shouldUnloadWithWindow(true, true, true, 60, 60));     // the wait is up
+    QVERIFY(Performance::shouldUnloadWithWindow(true, true, true, 900, 60));
+
+    // It is off until asked for: someone who turns on unloading gets the idle rule
+    // and nothing more, so notifications keep arriving while the window is away.
+    QVERIFY(!Performance::unloadOffscreenWindows());
+    Performance::setUnloadOffscreenWindows(true);
+    QVERIFY(Performance::unloadOffscreenWindows());
+    Performance::setUnloadOffscreenWindows(false);
+    QVERIFY(!Performance::unloadOffscreenWindows());
   }
 
   void settersRoundTrip() {
