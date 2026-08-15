@@ -743,8 +743,16 @@ const QIcon MainWindow::getTrayIcon(const int &notificationCount) const {
                               .toBool();
   // The whole composition (monochrome/colour, count badge, connection dimming,
   // and the SVG→colour fallback) lives in a pure, unit-tested helper.
-  return QIcon(QPixmap::fromImage(TrayIcon::composeTrayImage(
-      notificationCount, monochrome, m_trayConnected, 64)));
+  //
+  // Composed at several sizes rather than at 64 alone: a panel draws the tray icon
+  // at about 22 px, and a two-digit badge downscaled from 64 to 22 turns to mush,
+  // while the same badge drawn at 22 keeps its digits. QIcon hands the platform
+  // whichever size it asks for.
+  QIcon icon;
+  for (const int size : {22, 24, 32, 48, 64})
+    icon.addPixmap(QPixmap::fromImage(TrayIcon::composeTrayImage(
+        notificationCount, monochrome, m_trayConnected, size)));
+  return icon;
 }
 
 void MainWindow::handleWebViewTitleChanged(const QString &title) {

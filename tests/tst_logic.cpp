@@ -1117,6 +1117,59 @@ private slots:
                  .contains(QLatin1Char('\n')));
   }
 
+  // The tray icon's tooltip, which is where the whole count lives: the badge can
+  // only show one number, and past ninety-nine not even that.
+  void trayTooltip() {
+    QCOMPARE(trayTooltipText(UnreadBreakdown{}),
+             QStringLiteral("Whatly\nNothing unread"));
+
+    // No muted split available (the drawn-rows fallback cannot see it): say what is
+    // known and nothing more. Reporting "0 muted" would be a claim, not a silence.
+    UnreadBreakdown plain;
+    plain.chats = 3;
+    plain.messages = 7;
+    QCOMPARE(trayTooltipText(plain),
+             QStringLiteral("Whatly\n7 unread messages in 3 chats"));
+
+    // The split, which is the point of asking for a tooltip at all.
+    UnreadBreakdown split;
+    split.chats = 12;
+    split.messages = 47;
+    split.mutedChats = 3;
+    split.mutedMessages = 9;
+    split.mutedKnown = true;
+    const QStringList lines =
+        trayTooltipText(split).split(QLatin1Char('\n'));
+    QCOMPARE(lines.size(), 4);
+    QCOMPARE(lines.at(1), QStringLiteral("47 unread messages in 12 chats"));
+    QCOMPARE(lines.at(2), QStringLiteral("9 in 3 muted chats"));
+    QCOMPARE(lines.at(3), QStringLiteral("38 in 9 chats that are not muted"));
+
+    // Everything muted: no line about chats that are not, since there are none.
+    UnreadBreakdown allMuted;
+    allMuted.chats = 2;
+    allMuted.messages = 5;
+    allMuted.mutedChats = 2;
+    allMuted.mutedMessages = 5;
+    allMuted.mutedKnown = true;
+    QCOMPARE(trayTooltipText(allMuted).split(QLatin1Char('\n')).size(), 3);
+    QVERIFY(!trayTooltipText(allMuted).contains(QStringLiteral("not muted")));
+
+    // Nothing muted, and known so: also no split, rather than "0 in 0 muted".
+    UnreadBreakdown noneMuted;
+    noneMuted.chats = 4;
+    noneMuted.messages = 4;
+    noneMuted.mutedKnown = true;
+    QCOMPARE(trayTooltipText(noneMuted).split(QLatin1Char('\n')).size(), 2);
+
+    // One of each reads as one of each.
+    UnreadBreakdown one;
+    one.chats = 1;
+    one.messages = 1;
+    QCOMPARE(trayTooltipText(one),
+             QStringLiteral("Whatly\n1 unread message in 1 chat"));
+  }
+
   // Group-invite links resolve to their code; sends and other URLs do not.
   void inviteCode() {
     QCOMPARE(inviteCodeFromUrl(QStringLiteral(
@@ -2251,6 +2304,51 @@ private slots:
     const QImage idle = TrayIcon::composeTrayImage(0, true, true, 64);
     const QImage three = TrayIcon::composeTrayImage(3, true, true, 64);
     QVERIFY(idle != three);
+  }
+
+  // What the badge says, which is the whole of the rule: the number up to
+  // ninety-nine, "99+" past it, nothing at zero. The count itself is no longer
+  // clamped — it used to stop at ten, which was invisible while the count came
+  // from the window title and under-reported, and became permanent once the count
+  // was real.
+  void badgeSaysTheNumberUpToNinetyNine() {
+    QVERIFY(TrayIcon::badgeText(0).isEmpty());
+    QVERIFY(TrayIcon::badgeText(-3).isEmpty());
+    QCOMPARE(TrayIcon::badgeText(1), QStringLiteral("1"));
+    QCOMPARE(TrayIcon::badgeText(9), QStringLiteral("9"));
+    QCOMPARE(TrayIcon::badgeText(10), QStringLiteral("10"));
+    QCOMPARE(TrayIcon::badgeText(42), QStringLiteral("42"));
+    QCOMPARE(TrayIcon::badgeText(99), QStringLiteral("99"));
+    QCOMPARE(TrayIcon::badgeText(100), QStringLiteral("99+"));
+    QCOMPARE(TrayIcon::badgeText(5000), QStringLiteral("99+"));
+  }
+
+  // Past nine the colour icon draws the badge itself, so counts that used to be
+  // one and the same picture — everything from ten up wore whatly-notify-10.png,
+  // a bare "+" with no digit — now differ from each other.
+  void colourCountsPastNineAreDrawnAndDiffer() {
+    const QImage nine = TrayIcon::composeTrayImage(9, false, true, 64);
+    const QImage ten = TrayIcon::composeTrayImage(10, false, true, 64);
+    const QImage forty = TrayIcon::composeTrayImage(42, false, true, 64);
+    QVERIFY(nine != ten);
+    QVERIFY(ten != forty);
+    QVERIFY(!TrayIcon::isFullyTransparent(ten));
+    // Only the digits stop at ninety-nine, so those two are the same picture.
+    QCOMPARE(TrayIcon::composeTrayImage(100, false, true, 64),
+             TrayIcon::composeTrayImage(5000, false, true, 64));
+    QVERIFY(TrayIcon::composeTrayImage(99, false, true, 64) !=
+            TrayIcon::composeTrayImage(100, false, true, 64));
+  }
+
+  // The monochrome mode said "9+" past nine while the colour one said "+", so the
+  // two disagreed about the same inbox. Both now draw the same text.
+  void monochromeCountsAgreeWithColour() {
+    QVERIFY(TrayIcon::composeTrayImage(9, true, true, 64) !=
+            TrayIcon::composeTrayImage(10, true, true, 64));
+    QVERIFY(TrayIcon::composeTrayImage(10, true, true, 64) !=
+            TrayIcon::composeTrayImage(42, true, true, 64));
+    QCOMPARE(TrayIcon::composeTrayImage(100, true, true, 64),
+             TrayIcon::composeTrayImage(5000, true, true, 64));
   }
 
   // A disconnected state dims the icon, so it differs from the connected one.

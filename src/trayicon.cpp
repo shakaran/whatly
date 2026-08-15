@@ -18,6 +18,51 @@ QString colourPath(int count) {
              : QStringLiteral(":/icons/app/notification/whatly-notify-%1.png")
                    .arg(count);
 }
+
+// The badge, drawn rather than baked. Measured off whatly-notify-3.png so a drawn
+// one sits where the artwork's does: flush with the bottom-right corner, 32x27 of
+// a 64x64 icon, corners rounded by about 8. It widens for a second and third
+// character instead of shrinking the text into the same box, because the panel
+// scales the whole icon down by three and there is nothing to spare.
+void paintCountBadge(QPainter &p, int size, const QString &text,
+                     const QColor &fill, const QColor &ink, bool cutOut = false) {
+  if (text.isEmpty() || size <= 0)
+    return;
+  const qreal k = size / 64.0;
+  const int height = qRound(27 * k);
+  const int radius = qRound(8 * k);
+  const int padX = qRound(7 * k);
+
+  QFont f = qApp->font();
+  f.setBold(true);
+  // One size down for three characters ("99+"), which is the only text that needs
+  // it; two digits still get the full height.
+  f.setPixelSize(qMax(1, qRound((text.size() >= 3 ? 15 : 19) * k)));
+  const QFontMetrics fm(f);
+  const int width = qMax(qRound(32 * k), fm.horizontalAdvance(text) + 2 * padX);
+  const QRect badge(size - width, size - height, width, height);
+
+  p.setRenderHint(QPainter::Antialiasing);
+  p.setPen(Qt::NoPen);
+  // Monochrome asks for a gap: the badge is the same light tone as the glyph it
+  // sits on, so the two ran together into one bright blob and only the digits were
+  // left to read — at panel size, three or four pixels of them. Clearing a slightly
+  // larger rounded rect first lets the panel's own colour through as a ring, which
+  // separates the badge from the glyph whatever colour that panel is. The colour
+  // icon needs none of this: red on teal separates itself.
+  if (cutOut) {
+    const int grow = qMax(1, qRound(2 * k));
+    p.setCompositionMode(QPainter::CompositionMode_Clear);
+    p.drawRoundedRect(badge.adjusted(-grow, -grow, grow, grow), radius + grow,
+                      radius + grow);
+    p.setCompositionMode(QPainter::CompositionMode_SourceOver);
+  }
+  p.setBrush(fill);
+  p.drawRoundedRect(badge, radius, radius);
+  p.setFont(f);
+  p.setPen(ink);
+  p.drawText(badge, Qt::AlignCenter, text);
+}
 } // namespace
 
 namespace TrayIcon {
@@ -62,9 +107,18 @@ QImage monochromeGlyphMask(const QString &svgPath, const QString &fallbackPngPat
   return img; // still empty — caller degrades to the colour icon
 }
 
+QString badgeText(int count) {
+  if (count <= 0)
+    return QString();
+  return count > 99 ? QStringLiteral("99+") : QString::number(count);
+}
+
 QImage composeTrayImage(int notificationCount, bool monochrome, bool connected,
                         int size) {
-  const int count = std::clamp(notificationCount, 0, 10);
+  // No longer clamped to ten. The clamp was invisible while the count came from
+  // the window title and under-reported wildly; with a real count of unread chats
+  // the ceiling is reached and stayed at, so the badge stopped saying anything.
+  const int count = qMax(0, notificationCount);
 
   QPixmap base(size, size);
   base.fill(Qt::transparent);
@@ -110,28 +164,31 @@ QImage composeTrayImage(int notificationCount, bool monochrome, bool connected,
     p.drawPixmap(0, 0, light);
     p.end();
   } else {
-    // The colourful icons already carry the count badge baked in.
-    QPixmap glyph(colourPath(count));
+    // The colourful icons carry a baked-in badge for one to nine. Past nine there
+    // is no artwork for it — there used to be one file, whatly-notify-10.png, with
+    // a bare "+" and no digit in it — so take the plain icon and draw the badge.
+    QPixmap glyph(colourPath(count <= 9 ? count : 0));
     QPainter p(&base);
     p.drawPixmap(base.rect(), glyph);
   }
 
-  // In monochrome mode the count is not baked into the glyph, so draw it.
-  if (monochrome && count > 0) {
+  // Draw the count: always in monochrome, where nothing is baked in, and past nine
+  // in colour, where the artwork stops. One badge, one rule, two palettes — the two
+  // modes used to disagree, and the colour one said less than the monochrome one.
+  if (const QString text = badgeText(count);
+      !text.isEmpty() && (monochrome || count > 9)) {
     QPainter p(&base);
-    p.setRenderHint(QPainter::Antialiasing);
-    const int d = 34;
-    const QRect badge(size - d, 0, d, d);
-    p.setPen(Qt::NoPen);
-    p.setBrush(QColor(0xea, 0xea, 0xea)); // same light as the glyph
-    p.drawEllipse(badge);
-    QFont f = qApp->font();
-    f.setPixelSize(count >= 10 ? 20 : 26);
-    f.setBold(true);
-    p.setFont(f);
-    p.setPen(QColor(0x11, 0x11, 0x11)); // dark number on the light badge
-    p.drawText(badge, Qt::AlignCenter,
-               count >= 10 ? QStringLiteral("9+") : QString::number(count));
+    if (monochrome)
+      // Grey rather than the glyph's own light tone: a badge in the same tone
+      // merged with the glyph into one bright blob, leaving the digits — three or
+      // four pixels of them at panel size — as the only thing to read. Mid-grey
+      // with white digits gives the badge an edge of its own and keeps the whole
+      // icon colourless, which is what the setting is for.
+      paintCountBadge(p, size, text, QColor(0x6a, 0x6a, 0x6a), Qt::white,
+                      /*cutOut=*/true);
+    else
+      paintCountBadge(p, size, text, QColor(0xe1, 0x1d, 0x1d), // the artwork's red
+                      Qt::white);
     p.end();
   }
 

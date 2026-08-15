@@ -23,6 +23,7 @@ class LocalApiServer;
 #include "messaging.h"
 
 #include "autolockeventfilter.h"
+#include "common.h" // UnreadBreakdown, carried per account for the tray tooltip
 #include "downloadmanagerwidget.h"
 #include "lock.h"
 #include "notificationpopup.h"
@@ -196,6 +197,9 @@ private:
     QString name;    // shown on the tab
     WebView *view = nullptr;
     int unread = 0;
+    // The same count in as much detail as the page gave, for the tray tooltip: the
+    // badge shows one number, and which number that is depends on settings.
+    UnreadBreakdown unreadDetail;
     // WhatsApp Web version (window.Debug.VERSION), captured on load and shown in
     // the tab tooltip. Empty until the page reports it.
     QString waVersion;

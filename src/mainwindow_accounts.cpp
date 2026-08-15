@@ -147,8 +147,30 @@ void MainWindow::countUnread(int idx) {
         const int chats = counted.toInt();
         const int messages = o.value(QStringLiteral("messages")).toInt();
         const int shown = unreadCountCountsMessages() ? messages : chats;
-        if (m_accounts[i].unread == shown)
-          return; // nothing to redraw
+
+        // The detail behind the badge, for the tray tooltip. The muted split comes
+        // from the database walk only; the fallback that counts drawn rows cannot
+        // see it, and its absence must not read as "none are muted".
+        UnreadBreakdown detail;
+        detail.chats = chats;
+        detail.messages = messages;
+        detail.mutedKnown = o.contains(QStringLiteral("mutedChats"));
+        detail.mutedChats = o.value(QStringLiteral("mutedChats")).toInt();
+        detail.mutedMessages = o.value(QStringLiteral("mutedMessages")).toInt();
+        const bool detailMoved =
+            m_accounts[i].unreadDetail.messages != detail.messages ||
+            m_accounts[i].unreadDetail.chats != detail.chats ||
+            m_accounts[i].unreadDetail.mutedChats != detail.mutedChats ||
+            m_accounts[i].unreadDetail.mutedMessages != detail.mutedMessages;
+        m_accounts[i].unreadDetail = detail;
+
+        if (m_accounts[i].unread == shown) {
+          // The badge is unchanged, but the tooltip's detail may not be: unread
+          // messages arriving in muted chats move nothing else.
+          if (detailMoved)
+            updateTrayUnread();
+          return;
+        }
         m_accounts[i].unread = shown;
         refreshAccountTabs();
         updateTrayUnread();
@@ -1395,6 +1417,26 @@ void MainWindow::updateTrayUnread() {
     m_restoreAction->setText(tr("Restore") + " | " + QString::number(total) +
                              " " + (total > 1 ? tr("chats") : tr("chat")));
     m_systemTrayIcon->setIcon(getTrayIcon(total));
+    // The badge stops at "99+" because a third digit is a few pixels wide once the
+    // panel has scaled the icon down; the tooltip is where the real number fits.
+    //
+    // It counts what the tabs count — the same figures, so the same choice of
+    // muted in or out and archived in or out — and it says both numbers rather
+    // than only the badge's one, split by muted where the page could tell us:
+    // a hundred messages waiting in muted chats and three in the rest is a
+    // different morning from the other way round.
+    UnreadBreakdown sum;
+    sum.mutedKnown = true;
+    for (const Account &a : m_accounts) {
+      sum.chats += a.unreadDetail.chats;
+      sum.messages += a.unreadDetail.messages;
+      sum.mutedChats += a.unreadDetail.mutedChats;
+      sum.mutedMessages += a.unreadDetail.mutedMessages;
+      // One account that cannot split its count makes the whole split unsound.
+      if (a.unreadDetail.chats > 0 && !a.unreadDetail.mutedKnown)
+        sum.mutedKnown = false;
+    }
+    m_systemTrayIcon->setToolTip(trayTooltipText(sum));
     setWindowIcon(getTrayIcon(total));
   } else {
     m_restoreAction->setText(tr("Restore"));
@@ -1403,6 +1445,7 @@ void MainWindow::updateTrayUnread() {
     // fixed colour icon (issue #14: monochrome appeared to do nothing whenever
     // there were no unread messages).
     m_systemTrayIcon->setIcon(getTrayIcon(0));
+    m_systemTrayIcon->setToolTip(trayTooltipText(UnreadBreakdown{}));
     setWindowIcon(themeIcon("whatly", ":/icons/app/icon-64.png"));
   }
 
