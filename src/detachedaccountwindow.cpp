@@ -87,7 +87,19 @@ void DetachedAccountWindow::closeEvent(QCloseEvent *event) {
 void DetachedAccountWindow::changeEvent(QEvent *event) {
   if (event->type() == QEvent::ActivationChange && isActiveWindow())
     emit activated();
+  if (event->type() == QEvent::WindowStateChange)
+    emit visibilityChanged(); // minimised or restored; the listener tells which
   QWidget::changeEvent(event);
+}
+
+void DetachedAccountWindow::showEvent(QShowEvent *event) {
+  QWidget::showEvent(event);
+  emit visibilityChanged();
+}
+
+void DetachedAccountWindow::hideEvent(QHideEvent *event) {
+  QWidget::hideEvent(event);
+  emit visibilityChanged();
 }
 
 void DetachedAccountWindow::moveEvent(QMoveEvent *event) {

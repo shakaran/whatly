@@ -50,7 +50,9 @@
 #include <QDesktopServices>
 #include <QMessageBox>
 #include <QProcess>
+#include <QProgressDialog>
 #include <QVarLengthArray>
+#include "utils.h"
 #ifdef Q_OS_UNIX
 #include <sys/syscall.h>
 #include <sys/wait.h>
@@ -216,6 +218,12 @@ MainWindow::MainWindow(QWidget *parent)
             // cannot replace itself anyway. The click still opens the release
             // page in every case, because the notes are worth reading wherever
             // the new version will come from.
+            // The AppImage can update itself in place when appimageupdatetool is
+            // present (issue #85): offer it as an action rather than leaving the
+            // user to find, install and run a separate tool.
+            const bool canSelfUpdate = Utils::canOfferAppImageSelfUpdate(
+                UpdateCheck::currentInstall() == UpdateCheck::Install::AppImage,
+                Utils::appImageUpdateTool(), qEnvironmentVariable("APPIMAGE"));
             QString advice;
             switch (UpdateCheck::currentInstall()) {
             case UpdateCheck::Install::Flatpak:
@@ -228,9 +236,13 @@ MainWindow::MainWindow(QWidget *parent)
                      "manager.");
               break;
             case UpdateCheck::Install::AppImage:
-              advice = tr("Whatly %1 is available. This AppImage can update "
-                          "itself in place with AppImageUpdate, fetching only "
-                          "the parts that changed.");
+              advice = canSelfUpdate
+                           ? tr("Whatly %1 is available. Choose Update now to "
+                                "fetch just the parts that changed and update "
+                                "in place.")
+                           : tr("Whatly %1 is available. This AppImage can "
+                                "update itself in place with AppImageUpdate, "
+                                "fetching only the parts that changed.");
               break;
             case UpdateCheck::Install::Unknown:
               // Kept word for word: it already has its translations.
@@ -250,15 +262,20 @@ MainWindow::MainWindow(QWidget *parent)
                                                      advice.arg(version), kAppId);
             ntf->setTimeout(15000);
             ntf->addAction("open", tr("Open"));
+            // The in-place updater, only when the AppImage really can run it.
+            if (canSelfUpdate)
+              ntf->addAction("update", tr("Update now"));
             ntf->setHintString("image-path", kAppId);
             ntf->setHintString("desktop-entry", kAppId);
             ntf->setHint("image-data",
                          notificationImageHint(QPixmap(":/icons/app/icon-256.png")));
             const QString openUrl = url;
             QObject::connect(ntf.get(), &Notification::Event::actionInvoked, this,
-                             [openUrl](const QString &action) {
+                             [this, openUrl](const QString &action) {
                                if (action == "open")
                                  QDesktopServices::openUrl(QUrl(openUrl));
+                               else if (action == "update")
+                                 startAppImageSelfUpdate();
                              });
             ntf->show();
 #else
@@ -399,6 +416,8 @@ void MainWindow::showEvent(QShowEvent *event) {
   // the desktop shell renders itself may never emit that, leaving the entries
   // stale (see checkWindowState).
   checkWindowState();
+  // Back from the tray: whatever was unloaded with this window is built again.
+  noteWindowVisibilityChanged();
 
   if (m_geometryRestored)
     return;
@@ -413,6 +432,7 @@ void MainWindow::showEvent(QShowEvent *event) {
 void MainWindow::hideEvent(QHideEvent *event) {
   QMainWindow::hideEvent(event);
   checkWindowState();
+  noteWindowVisibilityChanged(); // put away to the tray: start the clock on it
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event) {
@@ -437,8 +457,13 @@ void MainWindow::moveEvent(QMoveEvent *event) {
 // ── Window state & zoom ───────────────────────────────────────────────────────
 
 void MainWindow::changeEvent(QEvent *e) {
-  if (e->type() == QEvent::WindowStateChange)
+  if (e->type() == QEvent::WindowStateChange) {
     handleZoomOnWindowStateChange(static_cast<QWindowStateChangeEvent *>(e));
+    // Minimised or restored: both directions land here, and the handler works out
+    // which it was from the state the window is in now. A hide has its own event
+    // — Qt does not call minimising a state change of visibility.
+    noteWindowVisibilityChanged();
+  }
   // Remember when the window last lost activation: a tray-icon click moves
   // focus to the shell before iconActivated() runs, so this lets it tell "was
   // frontmost a moment ago" apart from "buried under another window".
@@ -1422,6 +1447,87 @@ void MainWindow::raiseWindow() { bringForward(frontWindow()); }
 // It is handed the current process id instead and waits for it to go before
 // claiming the key. Nothing is killed: this window closes through the ordinary
 // quit path, which is also what writes the window layout out.
+void MainWindow::startAppImageSelfUpdate() {
+  // Only ever offered for an AppImage with the tool present (see the update
+  // notification), but re-check here so a stale action can never run the wrong
+  // thing. The tool reads the update information embedded in the image and
+  // fetches only the changed blocks over HTTPS from the GitHub release.
+  const QString tool = Utils::appImageUpdateTool();
+  const QString image = qEnvironmentVariable("APPIMAGE");
+  if (!Utils::canOfferAppImageSelfUpdate(
+          UpdateCheck::currentInstall() == UpdateCheck::Install::AppImage, tool,
+          image))
+    return;
+
+  auto *dlg = new QProgressDialog(tr("Updating Whatly…"), tr("Cancel"), 0, 100,
+                                  this);
+  dlg->setWindowTitle(tr("Software update"));
+  dlg->setWindowModality(Qt::WindowModal);
+  dlg->setMinimumDuration(0);
+  dlg->setAutoClose(false);
+  dlg->setAutoReset(false);
+  dlg->setValue(0);
+
+  auto *proc = new QProcess(this);
+  // --overwrite replaces the current image in place (written to a temp file and
+  // renamed, so the mounted, running image is not corrupted mid-update).
+  proc->setProgram(tool);
+  proc->setArguments({QStringLiteral("--overwrite"), image});
+  proc->setProcessChannelMode(QProcess::MergedChannels);
+
+  connect(proc, &QProcess::readyReadStandardOutput, dlg, [proc, dlg]() {
+    // appimageupdatetool prints running "..NN% done.." lines; lift the last
+    // percentage on each chunk so the bar tracks it. If none is found the bar
+    // simply holds, which is fine — it is a progress hint, not a contract.
+    const QString out = QString::fromUtf8(proc->readAll());
+    static const QRegularExpression pct(QStringLiteral("(\\d+)\\s*%"));
+    int last = -1;
+    for (auto it = pct.globalMatch(out); it.hasNext();)
+      last = it.next().captured(1).toInt();
+    if (last >= 0)
+      dlg->setValue(qBound(0, last, 100));
+  });
+
+  connect(dlg, &QProgressDialog::canceled, proc, [proc]() { proc->kill(); });
+
+  connect(proc, &QProcess::finished, this,
+          [this, proc, dlg](int code, QProcess::ExitStatus status) {
+            const bool canceled = dlg->wasCanceled();
+            dlg->close();
+            dlg->deleteLater();
+            const bool ok =
+                status == QProcess::NormalExit && code == 0 && !canceled;
+            proc->deleteLater();
+            if (canceled)
+              return;
+            if (!ok) {
+              QMessageBox::warning(
+                  this, tr("Software update"),
+                  tr("The update could not be completed. You can download the "
+                     "new version from the release page instead."));
+              return;
+            }
+            if (QMessageBox::question(
+                    this, tr("Software update"),
+                    tr("Whatly was updated. Restart now to use the new "
+                       "version?")) == QMessageBox::Yes)
+              restartApp();
+          });
+
+  connect(proc, &QProcess::errorOccurred, this,
+          [this, proc, dlg](QProcess::ProcessError) {
+            if (proc->state() != QProcess::NotRunning)
+              return; // finished() will handle a crash after a start
+            dlg->close();
+            dlg->deleteLater();
+            QMessageBox::warning(this, tr("Software update"),
+                                 tr("The update tool could not be started."));
+            proc->deleteLater();
+          });
+
+  proc->start();
+}
+
 void MainWindow::restartApp() {
   QStringList args = QCoreApplication::arguments();
   if (!args.isEmpty())

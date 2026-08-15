@@ -4,6 +4,7 @@
 
 #include "performance.h"
 #include "networkproxy.h"
+#include "utils.h"
 #ifdef Q_OS_UNIX
 #include <csignal>
 #include <sys/socket.h>
@@ -376,6 +377,37 @@ static void setChromiumFlags() {
   qputenv("QTWEBENGINE_CHROMIUM_FLAGS", flags.toUtf8());
 }
 
+// Must run before QApplication is created so Qt reads the platform choice.
+// Proprietary NVIDIA on a Wayland session often has no working wayland-egl, so
+// Qt cannot get a QRhi for the widget backing store and the window comes up
+// blank and unfocusable — with no way to reach Settings to change anything
+// (issue #84). XCB (XWayland) has GLX and works there, which is exactly what the
+// reporter confirmed. Redirect only that specific combination, and only when the
+// user has not chosen a platform themselves; a working NVIDIA-Wayland setup can
+// force it back with QT_QPA_PLATFORM=wayland.
+static void preferXcbOnNvidiaWayland() {
+#ifdef Q_OS_LINUX
+  const bool userChosePlatform =
+      !qEnvironmentVariableIsEmpty("QT_QPA_PLATFORM");
+  const bool waylandSession =
+      !qEnvironmentVariableIsEmpty("WAYLAND_DISPLAY") ||
+      qgetenv("XDG_SESSION_TYPE") == QByteArrayLiteral("wayland");
+  // The proprietary driver exposes these; the open nouveau/nova stack does not,
+  // and it has working wayland-egl, so it must not be caught here.
+  const bool nvidiaProprietary = QFile::exists(
+                                     QStringLiteral("/proc/driver/nvidia/version")) ||
+                                 QFile::exists(QStringLiteral("/dev/nvidiactl"));
+  if (Utils::shouldPreferXcbPlatform(userChosePlatform, waylandSession,
+                                     nvidiaProprietary)) {
+    qputenv("QT_QPA_PLATFORM", "xcb");
+    qInfo().noquote()
+        << "whatly: proprietary NVIDIA on Wayland detected; using the XCB "
+           "platform so the window is not blank (issue #84). Set "
+           "QT_QPA_PLATFORM=wayland to override.";
+  }
+#endif
+}
+
 // "Restart now" starts this process while the old one is still shutting down.
 // SingleApplication would see that one and hand these arguments over instead of
 // starting up, leaving nothing running at all, so wait for it to go first. It
@@ -443,6 +475,7 @@ int main(int argc, char *argv[]) {
   Performance::evaluateStartup();
 
   setChromiumFlags();
+  preferXcbOnNvidiaWayland();
 
   // The account id is folded into SingleApplication's instance key (it hashes
   // userData into the key), so two accounts are two primary instances that do

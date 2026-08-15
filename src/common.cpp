@@ -43,7 +43,19 @@ bool isInAppPopupUrl(const QUrl &url) {
 QString trayTooltipText(const UnreadBreakdown &unread) {
   QStringList lines;
   lines << kAppDisplayName;
-  if (unread.chats <= 0) {
+
+  // The tooltip always tells the real total — muted and not — whatever the badge
+  // is set to count. chats/messages already include the muted ones when
+  // mutedInTotal is set (the default); when it is not, the muted set is disjoint
+  // and kept off the badge, so add it back here. Without this the split below
+  // subtracted a disjoint set and could read "-7 in 1 chat that is not muted".
+  const int totalChats =
+      unread.mutedInTotal ? unread.chats : unread.chats + unread.mutedChats;
+  const int totalMessages = unread.mutedInTotal
+                                ? unread.messages
+                                : unread.messages + unread.mutedMessages;
+
+  if (totalChats <= 0) {
     lines << QObject::tr("Nothing unread");
     return lines.join(QLatin1Char('\n'));
   }
@@ -52,29 +64,30 @@ QString trayTooltipText(const UnreadBreakdown &unread) {
   // only once a translation is loaded, so the source language — the one an English
   // desktop reads — would say "1 chats".
   //
-  // The whole of it first, because that is the number on the badge's shoulders.
-  if (unread.messages == 1 && unread.chats == 1)
+  // The whole of it first.
+  if (totalMessages == 1 && totalChats == 1)
     lines << QObject::tr("1 unread message in 1 chat");
-  else if (unread.messages == 1)
-    lines << QObject::tr("1 unread message in %1 chats").arg(unread.chats);
-  else if (unread.chats == 1)
-    lines << QObject::tr("%1 unread messages in 1 chat").arg(unread.messages);
+  else if (totalMessages == 1)
+    lines << QObject::tr("1 unread message in %1 chats").arg(totalChats);
+  else if (totalChats == 1)
+    lines << QObject::tr("%1 unread messages in 1 chat").arg(totalMessages);
   else
     lines << QObject::tr("%1 unread messages in %2 chats")
-                 .arg(unread.messages)
-                 .arg(unread.chats);
+                 .arg(totalMessages)
+                 .arg(totalChats);
 
   // Then the split, which is the point of a tooltip: a hundred messages waiting in
   // muted chats and three in the rest is a different morning from the other way
-  // round, and the badge cannot tell the two apart.
+  // round, and the badge cannot tell the two apart. Computed off the real total,
+  // so the "not muted" remainder is the same whether or not muted is on the badge.
   if (unread.mutedKnown && unread.mutedChats > 0) {
     lines << (unread.mutedChats == 1
                   ? QObject::tr("%1 in 1 muted chat").arg(unread.mutedMessages)
                   : QObject::tr("%1 in %2 muted chats")
                         .arg(unread.mutedMessages)
                         .arg(unread.mutedChats));
-    const int otherChats = unread.chats - unread.mutedChats;
-    const int otherMessages = unread.messages - unread.mutedMessages;
+    const int otherChats = totalChats - unread.mutedChats;
+    const int otherMessages = totalMessages - unread.mutedMessages;
     if (otherChats == 1)
       lines << QObject::tr("%1 in 1 chat that is not muted").arg(otherMessages);
     else if (otherChats > 1)
