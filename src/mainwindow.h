@@ -214,6 +214,12 @@ private:
     // tray pick has neither a chat list nor the chat being asked for until this
     // is true.
     bool ready = false;
+    // Set when this account's page was thrown away because its window went off
+    // screen, and cleared when it is built again. Only so the pair of events can
+    // be logged as a pair: whichever path puts the account back — the view's own
+    // show, or the sweep — says so, and nothing else in the log claims a reload
+    // that was really just an account being opened for the first time.
+    bool unloadedWithWindow = false;
     // The unread chats this account last reported, kept so the tray can still
     // offer them once the account has no page. A dormant account is the one that
     // most needs a way back into it, and dropping its chats takes that away.
@@ -353,6 +359,35 @@ private:
   // threshold, to cut memory (Performance setting; off by default).
   void suspendIdleAccounts();
   QTimer *m_suspendTimer = nullptr;
+  // The window half of that setting (issue #25): unload the accounts of every
+  // window that is off screen, and build back the ones that have come into view.
+  // Driven by the events, not by the clock, so an account is there again by the
+  // time the window it is in has finished appearing.
+  void unloadOffscreenWindowAccounts();
+  void reloadOnscreenAccounts();
+  // A window of ours was minimised, put away or brought back. Both halves run
+  // from here: the reload at once, the unloading after the window has stayed
+  // away — see m_offscreenTimer.
+  void noteWindowVisibilityChanged();
+  // Minimised counts as away even though Qt still calls such a window visible:
+  // isVisible() answers "has it been shown", not "can it be seen", and a
+  // minimised window is the case this option is named after.
+  static bool windowIsOffscreen(const QWidget *w);
+  // Which window an account lives in whether or not that window is showing it —
+  // windowShowingAccount() answers the narrower question and says nullptr for an
+  // account sitting behind another one's tab, which here would read as "no
+  // window is hiding it".
+  QWidget *windowHostingAccount(int idx) const;
+  // When each window that is currently off screen went away, which is the clock
+  // the wait is measured on. A window that has come back, or has been closed,
+  // loses its entry, so the wait always measures one unbroken absence rather than
+  // the total of several. Returns true when a window has only just gone.
+  bool refreshOffscreenSince();
+  QHash<const QWidget *, QDateTime> m_offscreenSince;
+  // Started when a window goes away, to look again once its wait is up. The
+  // minute-long sweep would find it too, but a minute late for someone who set
+  // the delay to one.
+  QTimer *m_offscreenTimer = nullptr;
   // Recent unread chats in the tray menu (idea #3): refresh the cached list from
   // the active account and jump to one on click.
   QMenu *m_recentUnreadMenu = nullptr;

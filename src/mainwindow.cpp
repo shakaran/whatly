@@ -399,6 +399,8 @@ void MainWindow::showEvent(QShowEvent *event) {
   // the desktop shell renders itself may never emit that, leaving the entries
   // stale (see checkWindowState).
   checkWindowState();
+  // Back from the tray: whatever was unloaded with this window is built again.
+  noteWindowVisibilityChanged();
 
   if (m_geometryRestored)
     return;
@@ -413,6 +415,7 @@ void MainWindow::showEvent(QShowEvent *event) {
 void MainWindow::hideEvent(QHideEvent *event) {
   QMainWindow::hideEvent(event);
   checkWindowState();
+  noteWindowVisibilityChanged(); // put away to the tray: start the clock on it
 }
 
 void MainWindow::resizeEvent(QResizeEvent *event) {
@@ -437,8 +440,13 @@ void MainWindow::moveEvent(QMoveEvent *event) {
 // ── Window state & zoom ───────────────────────────────────────────────────────
 
 void MainWindow::changeEvent(QEvent *e) {
-  if (e->type() == QEvent::WindowStateChange)
+  if (e->type() == QEvent::WindowStateChange) {
     handleZoomOnWindowStateChange(static_cast<QWindowStateChangeEvent *>(e));
+    // Minimised or restored: both directions land here, and the handler works out
+    // which it was from the state the window is in now. A hide has its own event
+    // — Qt does not call minimising a state change of visibility.
+    noteWindowVisibilityChanged();
+  }
   // Remember when the window last lost activation: a tray-icon click moves
   // focus to the shell before iconActivated() runs, so this lets it tell "was
   // frontmost a moment ago" apart from "buried under another window".

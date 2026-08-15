@@ -2419,6 +2419,16 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>Malŝarĝi neaktivajn kontojn el la memoro post X minutoj. Ĉi tio ŝparas spacon, kaj la konto aŭtomate reŝarĝiĝos al sia antaŭa stato kiam vi revenos al la langeto. Unukontaj agordoj ne estas influataj.</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="2127"/>
+        <source>Unload also minimised and hidden accounts</source>
+        <translation>Malŝarĝi ankaŭ minimumigitajn kaj kaŝitajn kontojn</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2124"/>
+        <source>Also unload the account a window was showing, once that window has been minimised or put away to the tray for the same length of time as above. Nothing reaches an unloaded account: while Whatly is away there are no notifications from it and its counts stand still, and it takes a few seconds to come back when you return to the window. Needs the setting above.</source>
+        <translation>Malŝarĝi ankaŭ la konton, kiun fenestro montris, post kiam tiu fenestro estas minimumigita aŭ formetita al la sistempleto dum la sama tempo kiel supre. Nenio atingas malŝarĝitan konton: dum Whatly estas formetita, ĝi sendas nenian sciigon kaj ĝiaj nombroj haltas, kaj necesas kelkaj sekundoj por ke ĝi revenu kiam vi reiras al la fenestro. Necesas la supra agordo.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="2102"/>
         <source>after</source>
         <translation>post</translation>
