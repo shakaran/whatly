@@ -98,6 +98,11 @@ public slots:
   // find Whatly again. Everything about how the desk looks is saved first and
   // put back by the new process.
   void restartApp();
+  // Update the running AppImage in place with appimageupdatetool, which fetches
+  // only the changed blocks (zsync) rather than the whole image, then offer to
+  // restart. Only ever reached for an AppImage with the tool present; a no-op
+  // otherwise. See issue #85.
+  void startAppImageSelfUpdate();
   // Bring the window up and give it focus. The tray menu uses it: an action
   // picked from there used to run with the window still behind everything.
   void raiseWindow();

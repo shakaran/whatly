@@ -161,6 +161,22 @@ private slots:
     QVERIFY(!Utils::shouldPreferXcbPlatform(false, true, false));
     QVERIFY(!Utils::shouldPreferXcbPlatform(false, false, false));
   }
+  // Offer the in-place AppImage update only when it is an AppImage, the tool is
+  // present, and the running image path is known (issue #85).
+  void appImageSelfUpdatePolicy() {
+    QVERIFY(Utils::canOfferAppImageSelfUpdate(
+        true, QStringLiteral("/usr/bin/appimageupdatetool"),
+        QStringLiteral("/home/u/Whatly.AppImage")));
+    // Not an AppImage: never.
+    QVERIFY(!Utils::canOfferAppImageSelfUpdate(
+        false, QStringLiteral("/usr/bin/appimageupdatetool"),
+        QStringLiteral("/home/u/Whatly.AppImage")));
+    // Tool missing, or image path unknown: cannot run it, so do not offer.
+    QVERIFY(!Utils::canOfferAppImageSelfUpdate(
+        true, QString(), QStringLiteral("/home/u/Whatly.AppImage")));
+    QVERIFY(!Utils::canOfferAppImageSelfUpdate(
+        true, QStringLiteral("/usr/bin/appimageupdatetool"), QString()));
+  }
   void toCamelCase() {
     QCOMPARE(Utils::toCamelCase(QStringLiteral("hello world")),
              QStringLiteral("Hello World"));
