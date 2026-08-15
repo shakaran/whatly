@@ -1260,8 +1260,15 @@ bool MainWindow::refreshOffscreenSince() {
 void MainWindow::unloadOffscreenWindowAccounts() {
   const bool enabled = Performance::suspendInactiveAccounts();
   const bool alsoOffscreen = Performance::unloadOffscreenWindows();
-  if (!enabled || !alsoOffscreen)
+  if (!enabled || !alsoOffscreen) {
+    // Rule off: drop the timing state, so re-enabling it later starts the wait
+    // from now rather than from a stamp left over from when it was last on —
+    // which would unload a still-hidden window's account the instant it is
+    // switched back on, against the "wait starts now" contract above. The 60s
+    // sweep calls this whatever the settings say, so the clear always lands.
+    m_offscreenSince.clear();
     return; // the common case, and the loop below has nothing to say about it
+  }
   // Stamped here as well as on the events, so switching the option on while the
   // window is already away starts the wait from now rather than unloading on the
   // spot — and so the sweep can be the whole story on a platform that reports no

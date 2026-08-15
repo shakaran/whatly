@@ -1994,6 +1994,7 @@ private slots:
     Performance::setCacheMaxMb(0);
     Performance::setFontHinting(QString()); // default: follow the system
     Performance::setSuspendInactiveAccounts(false);
+    Performance::setUnloadOffscreenWindows(false); // else a prior run leaks in
 
     // No start-up crash recovery pending: level 0, watch disarmed.
     Performance::markStartupSucceeded();
