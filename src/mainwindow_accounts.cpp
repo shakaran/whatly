@@ -157,6 +157,9 @@ void MainWindow::countUnread(int idx) {
         detail.mutedKnown = o.contains(QStringLiteral("mutedChats"));
         detail.mutedChats = o.value(QStringLiteral("mutedChats")).toInt();
         detail.mutedMessages = o.value(QStringLiteral("mutedMessages")).toInt();
+        // Whether chats/messages already count the muted ones, so the tooltip can
+        // add them back for the real total when the badge is set to leave them out.
+        detail.mutedInTotal = unreadCountIncludesMuted();
         const bool detailMoved =
             m_accounts[i].unreadDetail.messages != detail.messages ||
             m_accounts[i].unreadDetail.chats != detail.chats ||
@@ -1427,6 +1430,8 @@ void MainWindow::updateTrayUnread() {
     // different morning from the other way round.
     UnreadBreakdown sum;
     sum.mutedKnown = true;
+    // The muted setting is global, so every account's detail agrees on it.
+    sum.mutedInTotal = unreadCountIncludesMuted();
     for (const Account &a : m_accounts) {
       sum.chats += a.unreadDetail.chats;
       sum.messages += a.unreadDetail.messages;

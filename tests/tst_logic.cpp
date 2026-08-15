@@ -1145,6 +1145,23 @@ private slots:
     QCOMPARE(lines.at(2), QStringLiteral("9 in 3 muted chats"));
     QCOMPARE(lines.at(3), QStringLiteral("38 in 9 chats that are not muted"));
 
+    // The badge set NOT to count muted: chats/messages then exclude the muted
+    // ones, which are a disjoint set. The tooltip must add them back for the real
+    // total and split, instead of subtracting a disjoint set into a negative
+    // "-7 in 1 chat that is not muted" (the bug this pins).
+    UnreadBreakdown offBadge;
+    offBadge.chats = 5;     // non-muted only
+    offBadge.messages = 10; // non-muted only
+    offBadge.mutedChats = 3;
+    offBadge.mutedMessages = 9;
+    offBadge.mutedKnown = true;
+    offBadge.mutedInTotal = false;
+    const QStringList off = trayTooltipText(offBadge).split(QLatin1Char('\n'));
+    QCOMPARE(off.size(), 4);
+    QCOMPARE(off.at(1), QStringLiteral("19 unread messages in 8 chats"));
+    QCOMPARE(off.at(2), QStringLiteral("9 in 3 muted chats"));
+    QCOMPARE(off.at(3), QStringLiteral("10 in 5 chats that are not muted"));
+
     // Everything muted: no line about chats that are not, since there are none.
     UnreadBreakdown allMuted;
     allMuted.chats = 2;
