@@ -63,7 +63,8 @@ QString watcherScript() {
   if (window.__whatlyMediaWatch) return;
   window.__whatlyMediaWatch = true;
 
-  var GRACE  = 6000;    // how long the file has to arrive after the click
+  var GRACE  = 2500;    // how long the file has to arrive after the click
+  var LATE   = 15000;   // and how long it may still turn up and prove us wrong
   var FORGET = 120000;  // clicks further apart than this are not the same try
   var MUTE   = 60000;   // having said it once, keep quiet about this one
   var asked  = new Map();
@@ -110,6 +111,23 @@ QString watcherScript() {
         attempts: times,
         online: navigator.onLine !== false
       }));
+      // Two and a half seconds is soon enough to feel like an answer, and short
+      // enough to be wrong about a slow download. So keep watching, and if the
+      // file does turn up, take the notice back rather than leave a lie on the
+      // screen. Only the very notice this caused is removed: it is captured
+      // once it appears, and left alone if anything else has replaced it since.
+      var mine = null;
+      setTimeout(function () {
+        mine = document.getElementById('whatly-translate-toast');
+      }, 300);
+      var until = Date.now() + LATE;
+      var poll = setInterval(function () {
+        if (Date.now() > until) { clearInterval(poll); return; }
+        if (stillWaiting(row)) return;
+        clearInterval(poll);
+        if (mine && mine.isConnected) mine.remove();
+        if (current) current.told = 0;   // it worked: allow a later complaint
+      }, 500);
     }, GRACE);
   }, true);
 })();
