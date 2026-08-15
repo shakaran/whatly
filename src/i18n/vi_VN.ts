@@ -576,8 +576,8 @@ Bạn có muốn bỏ qua kiểm tra bảo mật và tiếp tục không?   </tr
     <name>MainWindow</name>
     <message>
         <location filename="../mainwindow.cpp" line="116"/>
-        <location filename="../mainwindow.cpp" line="1213"/>
-        <location filename="../mainwindow.cpp" line="1309"/>
+        <location filename="../mainwindow.cpp" line="1221"/>
+        <location filename="../mainwindow.cpp" line="1317"/>
         <source>No WhatsApp window is open</source>
         <translation>Không có cửa sổ WhatsApp nào đang mở</translation>
     </message>
@@ -618,185 +618,185 @@ Bạn có muốn bỏ qua kiểm tra bảo mật và tiếp tục không?   </tr
         <translation>Whatly %1 đã có sẵn. AppImage này có thể tự cập nhật tại chỗ bằng AppImageUpdate, chỉ tải về những phần đã thay đổi.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="947"/>
-        <location filename="../mainwindow.cpp" line="953"/>
+        <location filename="../mainwindow.cpp" line="955"/>
+        <location filename="../mainwindow.cpp" line="961"/>
         <location filename="../mainwindow_webengine.cpp" line="967"/>
         <location filename="../mainwindow_webengine.cpp" line="970"/>
         <source>| Error</source>
         <translation>| Lỗi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="948"/>
+        <location filename="../mainwindow.cpp" line="956"/>
         <source>Unlock to access Settings.</source>
         <translation>Mở khóa để truy cập Cài đặt.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="954"/>
+        <location filename="../mainwindow.cpp" line="962"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>Không thể khởi tạo mô-đun cài đặt.
 Webengine chưa được khởi tạo.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="975"/>
+        <location filename="../mainwindow.cpp" line="983"/>
         <source> | Action required</source>
         <translation> | Cần thao tác</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="976"/>
+        <location filename="../mainwindow.cpp" line="984"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>Cần tải lại trang để tiếp tục.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1155"/>
-        <location filename="../mainwindow.cpp" line="1716"/>
+        <location filename="../mainwindow.cpp" line="1163"/>
+        <location filename="../mainwindow.cpp" line="1724"/>
         <location filename="../mainwindow_webengine.cpp" line="1648"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly đang bị khóa. Mở khóa để gửi tin nhắn.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1166"/>
+        <location filename="../mainwindow.cpp" line="1174"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>Cloud API cần một số điện thoại làm người nhận.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1171"/>
+        <location filename="../mainwindow.cpp" line="1179"/>
         <source>The Cloud API is not configured.</source>
         <translation>Cloud API chưa được cấu hình.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1180"/>
+        <location filename="../mainwindow.cpp" line="1188"/>
         <source>Cloud API send failed: %1</source>
         <translation>Gửi qua Cloud API thất bại: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1205"/>
+        <location filename="../mainwindow.cpp" line="1213"/>
         <source>Could not understand the recipient: %1</source>
         <translation>Không nhận dạng được người nhận: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1234"/>
-        <location filename="../mainwindow.cpp" line="1315"/>
+        <location filename="../mainwindow.cpp" line="1242"/>
+        <location filename="../mainwindow.cpp" line="1323"/>
         <source>Could not read the file to send: %1</source>
         <translation>Không thể đọc tệp cần gửi: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1243"/>
-        <location filename="../mainwindow.cpp" line="1325"/>
+        <location filename="../mainwindow.cpp" line="1251"/>
+        <location filename="../mainwindow.cpp" line="1333"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>Tệp quá lớn để gửi qua backend web.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1268"/>
+        <location filename="../mainwindow.cpp" line="1276"/>
         <source>Opening the group and sending…</source>
         <translation>Đang mở nhóm và gửi…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1269"/>
+        <location filename="../mainwindow.cpp" line="1277"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>Đang mở cuộc trò chuyện với &quot;%1&quot; và gửi…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1300"/>
+        <location filename="../mainwindow.cpp" line="1308"/>
         <source>The local API could not start: %1</source>
         <translation>Không thể khởi động API cục bộ: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1444"/>
+        <location filename="../mainwindow.cpp" line="1452"/>
         <source>Restart</source>
         <translation>Khởi động lại</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1445"/>
+        <location filename="../mainwindow.cpp" line="1453"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly không thể khởi động một phiên bản mới nên phiên bản này chưa đóng. Vui lòng thoát và mở lại.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1571"/>
+        <location filename="../mainwindow.cpp" line="1579"/>
         <source>Expand the chat list</source>
         <translation>Mở rộng danh sách trò chuyện</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1572"/>
+        <location filename="../mainwindow.cpp" line="1580"/>
         <location filename="../mainwindow_tray.cpp" line="370"/>
         <source>Collapse the chat list</source>
         <translation>Thu gọn danh sách trò chuyện</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="252"/>
-        <location filename="../mainwindow.cpp" line="1692"/>
+        <location filename="../mainwindow.cpp" line="1700"/>
         <source>Open</source>
         <translation>Mở</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1738"/>
+        <location filename="../mainwindow.cpp" line="1746"/>
         <location filename="../mainwindow_tray.cpp" line="29"/>
         <source>New Chat</source>
         <translation>Cuộc trò chuyện mới</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1739"/>
+        <location filename="../mainwindow.cpp" line="1747"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Nhập số WhatsApp hợp lệ kèm mã quốc gia (vd: +91XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1769"/>
+        <location filename="../mainwindow.cpp" line="1777"/>
         <source>Rate Application</source>
         <translation>Đánh giá ứng dụng</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="335"/>
-        <location filename="../mainwindow_accounts.cpp" line="1647"/>
+        <location filename="../mainwindow_accounts.cpp" line="343"/>
+        <location filename="../mainwindow_accounts.cpp" line="1775"/>
         <source>Rename…</source>
         <translation>Đổi tên…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="336"/>
-        <location filename="../mainwindow_accounts.cpp" line="1648"/>
+        <location filename="../mainwindow_accounts.cpp" line="344"/>
+        <location filename="../mainwindow_accounts.cpp" line="1776"/>
         <source>Open in own window</source>
         <translation>Mở trong cửa sổ riêng</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="340"/>
-        <location filename="../mainwindow_accounts.cpp" line="1651"/>
+        <location filename="../mainwindow_accounts.cpp" line="348"/>
+        <location filename="../mainwindow_accounts.cpp" line="1779"/>
         <source>Remove account</source>
         <translation>Xóa tài khoản</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="425"/>
+        <location filename="../mainwindow_accounts.cpp" line="433"/>
         <source>Switch to account: %1</source>
         <translation>Chuyển sang tài khoản: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="428"/>
+        <location filename="../mainwindow_accounts.cpp" line="436"/>
         <location filename="../mainwindow_tray.cpp" line="321"/>
         <source>Add account…</source>
         <translation>Thêm tài khoản…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="429"/>
+        <location filename="../mainwindow_accounts.cpp" line="437"/>
         <source>Quick message…</source>
         <translation>Tin nhắn nhanh…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="434"/>
+        <location filename="../mainwindow_accounts.cpp" line="442"/>
         <source>Insert: %1</source>
         <translation>Chèn: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="742"/>
+        <location filename="../mainwindow_accounts.cpp" line="750"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 chưa đọc</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1391"/>
-        <location filename="../mainwindow_accounts.cpp" line="2044"/>
+        <location filename="../mainwindow_accounts.cpp" line="1519"/>
+        <location filename="../mainwindow_accounts.cpp" line="2178"/>
         <source>Add another account</source>
         <translation>Thêm tài khoản khác</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1420"/>
-        <location filename="../mainwindow_accounts.cpp" line="1447"/>
+        <location filename="../mainwindow_accounts.cpp" line="1548"/>
+        <location filename="../mainwindow_accounts.cpp" line="1575"/>
         <source>Restore</source>
         <translation>Khôi phục</translation>
     </message>
@@ -809,39 +809,39 @@ Webengine chưa được khởi tạo.</translation>
         <translation type="vanished">tin nhắn</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1493"/>
+        <location filename="../mainwindow_accounts.cpp" line="1621"/>
         <source>Add account</source>
         <translation>Thêm tài khoản</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1494"/>
+        <location filename="../mainwindow_accounts.cpp" line="1622"/>
         <source>Name for the new account:</source>
         <translation>Tên cho tài khoản mới:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1495"/>
-        <location filename="../mainwindow_accounts.cpp" line="2382"/>
-        <location filename="../mainwindow_accounts.cpp" line="2387"/>
+        <location filename="../mainwindow_accounts.cpp" line="1623"/>
+        <location filename="../mainwindow_accounts.cpp" line="2516"/>
+        <location filename="../mainwindow_accounts.cpp" line="2521"/>
         <source>Account %1</source>
         <translation>Tài khoản %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1524"/>
+        <location filename="../mainwindow_accounts.cpp" line="1652"/>
         <source>Rename account</source>
         <translation>Đổi tên tài khoản</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1524"/>
+        <location filename="../mainwindow_accounts.cpp" line="1652"/>
         <source>Account name:</source>
         <translation>Tên tài khoản:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2063"/>
+        <location filename="../mainwindow_accounts.cpp" line="2197"/>
         <source>Tip: give an account its own window</source>
         <translation>Mẹo: cho tài khoản một cửa sổ riêng</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2064"/>
+        <location filename="../mainwindow_accounts.cpp" line="2198"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -850,8 +850,8 @@ You can pull any account out into its own window: right-click its tab and choose
 Bạn có thể kéo bất kỳ tài khoản nào ra cửa sổ riêng: nhấp chuột phải vào thẻ và chọn &quot;Mở trong cửa sổ riêng&quot;. Đóng cửa sổ đó để gắn tài khoản trở lại thành thẻ.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2376"/>
-        <location filename="../mainwindow_accounts.cpp" line="2380"/>
+        <location filename="../mainwindow_accounts.cpp" line="2510"/>
+        <location filename="../mainwindow_accounts.cpp" line="2514"/>
         <source>Account 1</source>
         <translation>Tài khoản 1</translation>
     </message>
@@ -1342,13 +1342,13 @@ Mở Cài đặt ngay bây giờ?</translation>
         <translation>Tóm tắt chưa đọc</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1421"/>
+        <location filename="../mainwindow_accounts.cpp" line="1549"/>
         <location filename="../mainwindow_webengine.cpp" line="1569"/>
         <source>chat</source>
         <translation>cuộc trò chuyện</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1421"/>
+        <location filename="../mainwindow_accounts.cpp" line="1549"/>
         <source>chats</source>
         <translation>cuộc trò chuyện</translation>
     </message>
@@ -2399,9 +2399,9 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <location filename="../settingswidget.ui" line="198"/>
         <location filename="../settingswidget.ui" line="2010"/>
         <location filename="../settingswidget.ui" line="2054"/>
-        <location filename="../settingswidget.ui" line="2211"/>
+        <location filename="../settingswidget.ui" line="2221"/>
         <location filename="../settingswidget.cpp" line="1680"/>
-        <location filename="../settingswidget.cpp" line="1972"/>
+        <location filename="../settingswidget.cpp" line="1981"/>
         <source>Automatic</source>
         <translation>Tự động</translation>
     </message>
@@ -2786,7 +2786,7 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2391"/>
+        <location filename="../settingswidget.cpp" line="2400"/>
         <source>Check spelling as I type</source>
         <translation>Kiểm tra chính tả khi gõ</translation>
     </message>
@@ -3463,245 +3463,255 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <translation> phút</translation>
     </message>
     <message>
+        <location filename="../settingswidget.ui" line="2124"/>
+        <source>Also unload the account a window was showing, once that window has been minimised or put away to the tray for the same length of time as above. Nothing reaches an unloaded account: while Whatly is away there are no notifications from it and its counts stand still, and it takes a few seconds to come back when you return to the window. Needs the setting above.</source>
+        <translation>Cũng dỡ tải tài khoản mà một cửa sổ đang hiển thị, khi cửa sổ đó đã thu nhỏ hoặc cất vào khay trong cùng khoảng thời gian như trên. Không có gì đến được tài khoản đã dỡ tải: khi Whatly vắng mặt, nó không phát thông báo và các bộ đếm đứng yên, và mất vài giây để trở lại khi bạn quay lại cửa sổ. Cần thiết lập ở trên.</translation>
+    </message>
+    <message>
         <location filename="../settingswidget.ui" line="2127"/>
+        <source>Unload also minimised and hidden accounts</source>
+        <translation>Cũng dỡ tải các tài khoản đã thu nhỏ và ẩn</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="2137"/>
         <source>Network &amp; Startup</source>
         <translation>Mạng &amp; Khởi động</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2133"/>
+        <location filename="../settingswidget.ui" line="2143"/>
         <source>Launch Whatly automatically when you log in to your desktop session.</source>
         <translation>Tự động khởi chạy Whatly khi bạn đăng nhập vào phiên làm việc trên máy tính.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2136"/>
+        <location filename="../settingswidget.ui" line="2146"/>
         <source>Start Whatly when I log in</source>
         <translation>Khởi động Whatly khi tôi đăng nhập</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2143"/>
+        <location filename="../settingswidget.ui" line="2153"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>Để Whatly tự vẽ đường viền và thanh tiêu đề cửa sổ thay vì hệ thống, để chúng theo giao diện riêng của Whatly. Riêng tùy chọn này chỉ thay đổi hình thức; hãy tích thêm &quot;Ẩn thanh tiêu đề&quot; để loại bỏ hoàn toàn dòng tiêu đề. Áp dụng sau khi khởi động lại.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2146"/>
+        <location filename="../settingswidget.ui" line="2156"/>
         <source>Use a custom window frame (requires restart)</source>
         <translation>Dùng khung cửa sổ tùy chỉnh (cần khởi động lại)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2159"/>
+        <location filename="../settingswidget.ui" line="2169"/>
         <source>Restart Whatly now so the settings above take effect. The windows, and this page with it, come back exactly as they are.</source>
         <translation>Khởi động lại Whatly ngay để các cài đặt ở trên có hiệu lực. Các cửa sổ, cùng với trang này, sẽ trở lại đúng như hiện tại.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2162"/>
+        <location filename="../settingswidget.ui" line="2172"/>
         <source>Restart now</source>
         <translation>Khởi động lại ngay</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2169"/>
+        <location filename="../settingswidget.ui" line="2179"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
         <translation>Giữ thanh thẻ tài khoản hiển thị ngay cả khi chỉ có một tài khoản, để nút &quot;+&quot; luôn sẵn sàng. Khi tắt, thanh sẽ chỉ xuất hiện khi có tài khoản thứ hai; bạn vẫn có thể thêm bằng Ctrl+K.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2172"/>
+        <location filename="../settingswidget.ui" line="2182"/>
         <source>Show the account tabs even with a single account</source>
         <translation>Hiện thẻ tài khoản ngay cả khi chỉ có một tài khoản</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2179"/>
+        <location filename="../settingswidget.ui" line="2189"/>
         <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
         <translation>Bỏ thanh tiêu đề và đặt các nút của nó ở cuối thanh thẻ tài khoản, giống như trình duyệt, thay vì có một dòng riêng. Tự động bật khung cửa sổ tùy chỉnh vì cần thiết. Áp dụng sau khi khởi động lại.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2182"/>
+        <location filename="../settingswidget.ui" line="2192"/>
         <source>Hide the title bar (requires restart)</source>
         <translation>Ẩn thanh tiêu đề (cần khởi động lại)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2189"/>
+        <location filename="../settingswidget.ui" line="2199"/>
         <source>Check GitHub once a day for a newer release and let you know. Whatly never downloads or installs anything on its own.</source>
         <translation>Kiểm tra GitHub mỗi ngày một lần để tìm bản phát hành mới hơn và thông báo cho bạn. Whatly không bao giờ tự tải xuống hay cài đặt bất cứ thứ gì.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2192"/>
+        <location filename="../settingswidget.ui" line="2202"/>
         <source>Check for updates automatically</source>
         <translation>Tự động kiểm tra cập nhật</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2201"/>
+        <location filename="../settingswidget.ui" line="2211"/>
         <source>Interface scale (requires restart)</source>
         <translation>Tỷ lệ giao diện (cần khởi động lại)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2208"/>
+        <location filename="../settingswidget.ui" line="2218"/>
         <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
         <translation>Thu phóng toàn bộ cửa sổ và trang (QT_SCALE_FACTOR). Tự động sẽ theo hệ thống máy tính. Biến môi trường QT_SCALE_FACTOR, nếu được đặt, sẽ ghi đè giá trị này. Áp dụng sau khi khởi động lại.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2244"/>
+        <location filename="../settingswidget.ui" line="2254"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2251"/>
+        <location filename="../settingswidget.ui" line="2261"/>
         <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
         <translation>Cách Whatly kết nối mạng. Hệ thống (System) sẽ theo hệ điều hành; Không (None) kết nối trực tiếp.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2276"/>
+        <location filename="../settingswidget.ui" line="2286"/>
         <source>Host</source>
         <translation>Máy chủ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2283"/>
+        <location filename="../settingswidget.ui" line="2293"/>
         <source>127.0.0.1</source>
         <translation>127.0.0.1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2290"/>
-        <location filename="../settingswidget.ui" line="2570"/>
+        <location filename="../settingswidget.ui" line="2300"/>
+        <location filename="../settingswidget.ui" line="2580"/>
         <source>Port</source>
         <translation>Cổng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2304"/>
+        <location filename="../settingswidget.ui" line="2314"/>
         <source>Username</source>
         <translation>Tên đăng nhập</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2311"/>
-        <location filename="../settingswidget.ui" line="2328"/>
+        <location filename="../settingswidget.ui" line="2321"/>
+        <location filename="../settingswidget.ui" line="2338"/>
         <source>Optional</source>
         <translation>Tùy chọn</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2318"/>
+        <location filename="../settingswidget.ui" line="2328"/>
         <source>Password</source>
         <translation>Mật khẩu</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2341"/>
+        <location filename="../settingswidget.ui" line="2351"/>
         <source>Custom JavaScript addons (requires restart)</source>
         <translation>Tiện ích mở rộng JavaScript tùy chỉnh (cần khởi động lại)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2347"/>
+        <location filename="../settingswidget.ui" line="2357"/>
         <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
         <translation>Tải các tệp .js để chạy trên WhatsApp Web. Mỗi tiện ích mở rộng chạy trong sandbox riêng, nên một tiện ích bị lỗi không thể làm hỏng các tiện ích khác hoặc trang. Bỏ tích một tiện ích để tắt mà không cần xóa. Thay đổi có hiệu lực sau khi khởi động lại.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2369"/>
+        <location filename="../settingswidget.ui" line="2379"/>
         <source>Add addon…</source>
         <translation>Thêm tiện ích mở rộng…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2376"/>
-        <location filename="../settingswidget.ui" line="2436"/>
+        <location filename="../settingswidget.ui" line="2386"/>
+        <location filename="../settingswidget.ui" line="2446"/>
         <source>Remove</source>
         <translation>Xóa</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2401"/>
+        <location filename="../settingswidget.ui" line="2411"/>
         <source>Saved replies</source>
         <translation>Trả lời đã lưu</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2407"/>
+        <location filename="../settingswidget.ui" line="2417"/>
         <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
         <translation>Đoạn văn bản ngắn bạn thường gửi. Chèn từ bảng lệnh (Ctrl+K) — gõ &quot;Insert&quot; và chọn; văn bản sẽ được nhập vào ô nhập tin nhắn.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2429"/>
+        <location filename="../settingswidget.ui" line="2439"/>
         <source>Add reply…</source>
         <translation>Thêm trả lời…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2461"/>
+        <location filename="../settingswidget.ui" line="2471"/>
         <source>Keyboard shortcuts (requires restart)</source>
         <translation>Phím tắt bàn phím (cần khởi động lại)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2467"/>
+        <location filename="../settingswidget.ui" line="2477"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>Nhấp vào một ô rồi nhấn tổ hợp phím. Xóa ô để loại bỏ phím tắt. Thay đổi có hiệu lực sau khi khởi động lại.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2483"/>
+        <location filename="../settingswidget.ui" line="2493"/>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API (gửi mà không cần phiên trình duyệt)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2489"/>
+        <location filename="../settingswidget.ui" line="2499"/>
         <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account&apos;s config and Whatly never obtains it itself.</source>
         <translation>Gửi bằng `--send --backend cloud` qua Meta WhatsApp Business Cloud API — không cần phiên WhatsApp Web đang chạy. Access token do bạn cung cấp từ Meta; nó được lưu trong cấu hình tài khoản này và Whatly không bao giờ tự lấy được.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2499"/>
+        <location filename="../settingswidget.ui" line="2509"/>
         <source>Phone-number ID</source>
         <translation>ID số điện thoại</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2513"/>
+        <location filename="../settingswidget.ui" line="2523"/>
         <source>Access token</source>
         <translation>Access token</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2523"/>
+        <location filename="../settingswidget.ui" line="2533"/>
         <source>your Meta access token</source>
         <translation>access token Meta của bạn</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2530"/>
+        <location filename="../settingswidget.ui" line="2540"/>
         <source>Graph API version</source>
         <translation>Phiên bản Graph API</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2547"/>
+        <location filename="../settingswidget.ui" line="2557"/>
         <source>Local API &amp; Cloud webhooks</source>
         <translation>API cục bộ &amp; Webhook Cloud</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2553"/>
+        <location filename="../settingswidget.ui" line="2563"/>
         <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
         <translation>Một điểm cuối HTTP nhỏ trên giao diện loopback (127.0.0.1) cho phép các chương trình khác trên máy này gửi qua Whatly, và cho phép Meta gửi webhook Cloud API (tin nhắn đến) để tự động trả lời hoạt động mà không cần trình duyệt. Điểm cuối này không bao giờ tiếp xúc với mạng; để nhận webhook từ Meta, hãy chuyển tiếp cổng bằng tunnel hoặc reverse proxy (vd: cloudflared hoặc ngrok).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2563"/>
+        <location filename="../settingswidget.ui" line="2573"/>
         <source>Enable the local HTTP API (send over HTTP)</source>
         <translation>Bật API HTTP cục bộ (gửi qua HTTP)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2587"/>
+        <location filename="../settingswidget.ui" line="2597"/>
         <source>Bearer token</source>
         <translation>Bearer token</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2597"/>
+        <location filename="../settingswidget.ui" line="2607"/>
         <source>required to authorise requests</source>
         <translation>cần thiết để ủy quyền yêu cầu</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2604"/>
+        <location filename="../settingswidget.ui" line="2614"/>
         <source>Receive Cloud API webhooks (incoming messages)</source>
         <translation>Nhận webhook Cloud API (tin nhắn đến)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2611"/>
+        <location filename="../settingswidget.ui" line="2621"/>
         <source>Webhook verify token</source>
         <translation>Token xác minh webhook</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2621"/>
+        <location filename="../settingswidget.ui" line="2631"/>
         <source>echoed to Meta during setup</source>
         <translation>được phản hồi lại cho Meta trong quá trình thiết lập</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2628"/>
+        <location filename="../settingswidget.ui" line="2638"/>
         <source>Meta app secret</source>
         <translation>Meta app secret</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2638"/>
+        <location filename="../settingswidget.ui" line="2648"/>
         <source>verifies the webhook signature</source>
         <translation>xác minh chữ ký webhook</translation>
     </message>
@@ -3923,118 +3933,118 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <translation>Đầy đủ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1825"/>
+        <location filename="../settingswidget.cpp" line="1830"/>
         <source>Ollama not found at this address.</source>
         <translation>Không tìm thấy Ollama tại địa chỉ này.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1830"/>
+        <location filename="../settingswidget.cpp" line="1835"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Đã tìm thấy Ollama (%1 mô hình đã cài đặt).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1855"/>
+        <location filename="../settingswidget.cpp" line="1860"/>
         <source>Download complete.</source>
         <translation>Đã tải xong.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1858"/>
+        <location filename="../settingswidget.cpp" line="1863"/>
         <source>Download failed: %1</source>
         <translation>Tải xuống thất bại: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1869"/>
+        <location filename="../settingswidget.cpp" line="1874"/>
         <source>Checking…</source>
         <translation>Đang kiểm tra…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1894"/>
+        <location filename="../settingswidget.cpp" line="1899"/>
         <source>Starting download of %1…</source>
         <translation>Đang bắt đầu tải %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1945"/>
+        <location filename="../settingswidget.cpp" line="1954"/>
         <source>System</source>
         <translation>Hệ thống</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1946"/>
+        <location filename="../settingswidget.cpp" line="1955"/>
         <source>None (direct)</source>
         <translation>Không (trực tiếp)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1947"/>
+        <location filename="../settingswidget.cpp" line="1956"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1948"/>
+        <location filename="../settingswidget.cpp" line="1957"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1974"/>
+        <location filename="../settingswidget.cpp" line="1983"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Desktop portal (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1976"/>
+        <location filename="../settingswidget.cpp" line="1985"/>
         <source>System service (libnotify)</source>
         <translation>Dịch vụ hệ thống (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2161"/>
-        <location filename="../settingswidget.cpp" line="2165"/>
+        <location filename="../settingswidget.cpp" line="2170"/>
+        <location filename="../settingswidget.cpp" line="2174"/>
         <source>Add reply</source>
         <translation>Thêm trả lời</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2161"/>
+        <location filename="../settingswidget.cpp" line="2170"/>
         <source>Name</source>
         <translation>Tên</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2165"/>
+        <location filename="../settingswidget.cpp" line="2174"/>
         <source>Text to insert</source>
         <translation>Văn bản cần chèn</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2182"/>
+        <location filename="../settingswidget.cpp" line="2191"/>
         <source>Choose a JavaScript file</source>
         <translation>Chọn tệp JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2183"/>
+        <location filename="../settingswidget.cpp" line="2192"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Tất cả tệp (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2188"/>
+        <location filename="../settingswidget.cpp" line="2197"/>
         <source>Could not add addon</source>
         <translation>Không thể thêm tiện ích mở rộng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2201"/>
+        <location filename="../settingswidget.cpp" line="2210"/>
         <source>Remove addon</source>
         <translation>Xóa tiện ích mở rộng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2202"/>
+        <location filename="../settingswidget.cpp" line="2211"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>Xóa tiện ích mở rộng &quot;%1&quot;? Việc này sẽ xóa tệp của nó.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2390"/>
+        <location filename="../settingswidget.cpp" line="2399"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Kiểm tra chính tả (chưa cài đặt từ điển nào)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2496"/>
+        <location filename="../settingswidget.cpp" line="2505"/>
         <source>Downloadable languages unavailable — click to try again</source>
         <translation>Không có ngôn ngữ tải xuống — nhấp để thử lại</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2510"/>
+        <location filename="../settingswidget.cpp" line="2519"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>Đánh dấu các ngôn ngữ để kiểm tra chính tả. Mỗi hàng tải xuống hoặc xóa từ điển của nó.</translation>
     </message>
@@ -4047,53 +4057,53 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <translation type="vanished">Chọn một hoặc nhiều ngôn ngữ để kiểm tra chính tả.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2612"/>
+        <location filename="../settingswidget.cpp" line="2621"/>
         <source>Choose languages…</source>
         <translation>Chọn ngôn ngữ…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2618"/>
+        <location filename="../settingswidget.cpp" line="2627"/>
         <source>%1 of %2 chosen</source>
         <translation>%1 trên %2 đã chọn</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2620"/>
+        <location filename="../settingswidget.cpp" line="2629"/>
         <source>%1 languages</source>
         <translation>%1 ngôn ngữ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2745"/>
+        <location filename="../settingswidget.cpp" line="2754"/>
         <source>WhatsApp default</source>
         <translation>Mặc định của WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2784"/>
+        <location filename="../settingswidget.cpp" line="2793"/>
         <source>System default</source>
         <translation>Mặc định hệ thống</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2819"/>
+        <location filename="../settingswidget.cpp" line="2828"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>Ngôn ngữ giao diện sẽ thay đổi khi bạn khởi động lại %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2833"/>
+        <location filename="../settingswidget.cpp" line="2842"/>
         <source>App Lock Setup</source>
         <translation>Thiết lập khóa ứng dụng</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2834"/>
+        <location filename="../settingswidget.cpp" line="2843"/>
         <source>Please setup the App lock password first.</source>
         <translation>Vui lòng thiết lập mật khẩu khóa ứng dụng trước.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2950"/>
-        <location filename="../settingswidget.cpp" line="2961"/>
+        <location filename="../settingswidget.cpp" line="2959"/>
+        <location filename="../settingswidget.cpp" line="2970"/>
         <source>Select download directory</source>
         <translation>Chọn thư mục tải xuống</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3001"/>
+        <location filename="../settingswidget.cpp" line="3010"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -4104,7 +4114,7 @@ Thao tác này sẽ đăng xuất phiên hiện tại của bạn.
 Bạn cũng có thể cần khởi động lại hoàn toàn ứng dụng!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3007"/>
+        <location filename="../settingswidget.cpp" line="3016"/>
         <source>Do you want to proceed?</source>
         <translation>Bạn có muốn tiếp tục không?</translation>
     </message>
