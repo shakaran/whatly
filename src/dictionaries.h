@@ -24,17 +24,25 @@ QString dictionaryPath();
 // location is available.
 QString userDictionaryPath();
 
+// Whether this build ships a dictionary of its own for `code`. What sits in the
+// user directory cannot answer that: the mirror below is a symlink on Unix and
+// a copy on Windows, so there a bundled dictionary and a downloaded one look
+// alike. A build that bundles none (the Windows package) always says no.
+bool isBundled(const QString &code);
+
 // Make the user directory the one Qt is pointed at: mirror the bundled .bdic
-// files into it (as symlinks) so they merge with any the user dropped there,
-// and drop stale links from a previous run (an AppImage remounts at a new path
-// each launch). No-op when QTWEBENGINE_DICTIONARIES_PATH is set, since then the
-// user is managing the directory explicitly. Call before dictionaryPath().
+// files into it so they merge with any the user dropped there, and drop
+// anything in it that is not a dictionary (an AppImage remounts at a new path
+// each launch, which leaves last run's links pointing nowhere). No-op when
+// QTWEBENGINE_DICTIONARIES_PATH is set, since then the user is managing the
+// directory explicitly. Call before dictionaryPath().
 void syncUserDictionaries();
 
 // The mechanism behind syncUserDictionaries(), on explicit directories so it is
-// unit tested: prune broken symlinks in userDir, then symlink every *.bdic from
-// bundledDir that userDir does not already provide (a real file the user added
-// keeps its place). bundledDir may be empty (prune only).
+// unit tested: drop every *.bdic in userDir that is not a dictionary, then
+// mirror every *.bdic from bundledDir that userDir does not already provide (a
+// real file the user added keeps its place). bundledDir may be empty (prune
+// only).
 void syncDictionaryDirs(const QString &userDir, const QString &bundledDir);
 
 // Basenames of the .bdic files in that directory ("en_US", "es_ES", ...) —

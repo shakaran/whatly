@@ -161,7 +161,7 @@ bool DictionaryManager::isRemovable(const QString &code) {
   if (dir.isEmpty())
     return false;
   const QFileInfo fi(QDir(dir).filePath(code + QStringLiteral(".bdic")));
-  return fi.exists() && !fi.isSymLink();
+  return fi.exists() && !Dictionaries::isBundled(code);
 }
 
 bool DictionaryManager::remove(const QString &code) {
@@ -170,10 +170,12 @@ bool DictionaryManager::remove(const QString &code) {
     return false;
   const QString path = QDir(dir).filePath(code + QStringLiteral(".bdic"));
   const QFileInfo fi(path);
-  // Only remove a real downloaded file. A symlink is a bundled dictionary
-  // mirrored by syncUserDictionaries(); deleting it would just relink next
-  // launch, so report that it cannot be removed.
-  if (!fi.exists() || fi.isSymLink())
+  // Only remove a real downloaded file. A dictionary the build also bundles is
+  // mirrored here by syncUserDictionaries(); deleting it would just be mirrored
+  // again next launch, so report that it cannot be removed. Asked of the bundle
+  // rather than of the file, because the mirror is a symlink on Unix and a copy
+  // on Windows, and a copy is indistinguishable from a download.
+  if (!fi.exists() || Dictionaries::isBundled(code))
     return false;
   return QFile::remove(path);
 }

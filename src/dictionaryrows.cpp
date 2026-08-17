@@ -159,7 +159,7 @@ QString tooltip(const Row &row) {
                                              ? file.birthTime()
                                              : file.lastModified(),
                                          QLocale::ShortFormat));
-    if (file.isSymLink())
+    if (Dictionaries::isBundled(row.code))
       lines << QObject::tr("Shipped with Whatly");
   } else if (row.downloadSize > 0) {
     lines << QObject::tr("Download size: %1").arg(humanSize(row.downloadSize));
