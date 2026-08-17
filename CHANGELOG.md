@@ -1,5 +1,6 @@
 ## Unreleased
 
+- **The "storage bucket persistence denied" console error is gone.** WhatsApp Web moved to the Storage Buckets API, which the existing `navigator.storage.persist()` override did not cover, so the persistence grant Whatly fakes for the classic API was denied for the new one. The override now also wraps `navigator.storageBuckets.open()` so a bucket reports itself persisted.
 - **The Windows/macOS codec notice no longer points at a package that does not exist (#93).** When a build without the proprietary H.264 codecs meets an MP4, the notice named "a distro/native package built with the codecs" — but off Linux there is no Flatpak and no codec-enabled build of Whatly at all, so that remedy pointed at nothing. It now says plainly that this build cannot do MP4, that photos and WebM/VP9 work, and offers a real way through: convert the MP4 to WebM, or send it as a document. (Shipping a codec-enabled Windows build is a separate, licensing-gated decision and is not this change.)
 
 ## 7.3.0 (2026-08-15)

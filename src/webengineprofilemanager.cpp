@@ -153,6 +153,23 @@ void WebEngineProfileManager::configureProfile(QWebEngineProfile *profile,
         "      writable:true,configurable:true"
         "    });"
         "  }"
+        // WhatsApp Web moved to the Storage Buckets API, which the two overrides
+        // above do not cover: it opens a bucket with {persisted:true} and, when
+        // QtWebEngine does not grant it, logs "[storage] storage bucket
+        // persistence denied". Wrap open() so the bucket it returns reports
+        // persist()/persisted() as true, keeping that path quiet as well.
+        "  if(navigator.storageBuckets&&navigator.storageBuckets.open){"
+        "    var _o=navigator.storageBuckets.open.bind(navigator.storageBuckets);"
+        "    navigator.storageBuckets.open=function(n,o){"
+        "      return _o(n,o).then(function(b){"
+        "        try{"
+        "          b.persist=function(){return Promise.resolve(true);};"
+        "          b.persisted=function(){return Promise.resolve(true);};"
+        "        }catch(e){}"
+        "        return b;"
+        "      });"
+        "    };"
+        "  }"
         "})();"));
     persistScript.setInjectionPoint(QWebEngineScript::DocumentCreation);
     persistScript.setWorldId(QWebEngineScript::MainWorld);
