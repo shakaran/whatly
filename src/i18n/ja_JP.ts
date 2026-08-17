@@ -600,151 +600,150 @@ Do you wish to override the security check and continue ?   </source>
         <translation>このビルドは H.264/MP4 動画を送信できません。ブラウザーエンジンが独自コーデックなしでビルドされているためです。写真と WebM/VP9 動画は利用できます。MP4 には、それらを含めてエンジンがビルドされている Flatpak をご利用ください。(クリックで閉じます。)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1143"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation>このビルドは H.264/MP4 動画を送信できません。ブラウザーエンジンがプロプライエタリコーデックなしでビルドされています。写真と WebM/VP9 動画は使えます。MP4 にはコーデック入りのディストリ/ネイティブ版をご利用ください。（クリックで閉じる）</translation>
+        <translation type="vanished">このビルドは H.264/MP4 動画を送信できません。ブラウザーエンジンがプロプライエタリコーデックなしでビルドされています。写真と WebM/VP9 動画は使えます。MP4 にはコーデック入りのディストリ/ネイティブ版をご利用ください。（クリックで閉じる）</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1434"/>
+        <location filename="../mainwindow_webengine.cpp" line="1438"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>インライン翻訳はオフです（設定 → 翻訳で有効にしてください）。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1438"/>
+        <location filename="../mainwindow_webengine.cpp" line="1442"/>
         <source>The message box is empty.</source>
         <translation>メッセージ入力欄が空です。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1439"/>
+        <location filename="../mainwindow_webengine.cpp" line="1443"/>
         <source>Select some text to translate first.</source>
         <translation>先に翻訳するテキストを選択してください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1477"/>
+        <location filename="../mainwindow_webengine.cpp" line="1481"/>
         <source>No conversation is open.</source>
         <translation>開いている会話がありません。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1481"/>
+        <location filename="../mainwindow_webengine.cpp" line="1485"/>
         <source>An export is already running.</source>
         <translation>すでにエクスポートが実行中です。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1486"/>
+        <location filename="../mainwindow_webengine.cpp" line="1490"/>
         <source>Choose a folder for the exported chat</source>
         <translation>エクスポートするチャットの保存先フォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1492"/>
+        <location filename="../mainwindow_webengine.cpp" line="1496"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>メッセージを収集中… 会話をスクロールしています。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1462"/>
-        <location filename="../mainwindow_webengine.cpp" line="1493"/>
+        <location filename="../mainwindow_webengine.cpp" line="1497"/>
         <source>Cancel</source>
         <translation type="unfinished">キャンセル</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1540"/>
+        <location filename="../mainwindow_webengine.cpp" line="1544"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>メッセージを収集中…（現在 %1 件）</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1546"/>
+        <location filename="../mainwindow_webengine.cpp" line="1550"/>
         <source>Could not read the conversation: %1</source>
         <translation>会話を読み取れませんでした: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1892"/>
+        <location filename="../mainwindow_webengine.cpp" line="1896"/>
         <source>Do Not Disturb on.</source>
         <translation>おやすみモードをオンにしました。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1892"/>
+        <location filename="../mainwindow_webengine.cpp" line="1896"/>
         <source>Do Not Disturb off.</source>
         <translation>おやすみモードをオフにしました。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1900"/>
-        <location filename="../mainwindow_webengine.cpp" line="1916"/>
+        <location filename="../mainwindow_webengine.cpp" line="1904"/>
+        <location filename="../mainwindow_webengine.cpp" line="1920"/>
         <source>Do Not Disturb on until %1.</source>
         <translation>おやすみモードをオンにしました（%1 まで）。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1927"/>
+        <location filename="../mainwindow_webengine.cpp" line="1931"/>
         <source>Open a chat to set a reply reminder.</source>
         <translation>返信リマインダーを設定するにはチャットを開いてください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1933"/>
+        <location filename="../mainwindow_webengine.cpp" line="1937"/>
         <source>Time to reply to this chat.</source>
         <translation>このチャットに返信する時間です。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1936"/>
+        <location filename="../mainwindow_webengine.cpp" line="1940"/>
         <source>Reply reminder set for %1.</source>
         <translation>返信リマインダーを %1 に設定しました。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1967"/>
-        <location filename="../mainwindow_webengine.cpp" line="1991"/>
+        <location filename="../mainwindow_webengine.cpp" line="1971"/>
+        <location filename="../mainwindow_webengine.cpp" line="1995"/>
         <source>Low disk space</source>
         <translation>ディスクの空き容量が少なくなっています</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1968"/>
+        <location filename="../mainwindow_webengine.cpp" line="1972"/>
         <source>Whatly&apos;s data folder has only %1 free.</source>
         <translation>Whatly のデータフォルダーの空きが %1 しかありません。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1971"/>
+        <location filename="../mainwindow_webengine.cpp" line="1975"/>
         <source>With so little space, WhatsApp Web&apos;s local database can be corrupted by a truncated write, which forces you to link your phone again. Move Whatly&apos;s data folder to a disk with more room, or free up space.</source>
         <translation>空き容量がこれほど少ないと、書き込みが途中で切れて WhatsApp Web のローカルデータベースが破損し、端末の再リンクが必要になることがあります。Whatly のデータフォルダーを空きの多いディスクに移動するか、空き容量を確保してください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1975"/>
+        <location filename="../mainwindow_webengine.cpp" line="1979"/>
         <source>Change folder…</source>
         <translation>フォルダーを変更…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1976"/>
+        <location filename="../mainwindow_webengine.cpp" line="1980"/>
         <source>Later</source>
         <translation type="unfinished">後で</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1984"/>
+        <location filename="../mainwindow_webengine.cpp" line="1988"/>
         <source>Choose a data folder for Whatly</source>
         <translation>Whatly のデータフォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1992"/>
+        <location filename="../mainwindow_webengine.cpp" line="1996"/>
         <source>That folder is also low on space (%1 free). Please pick another.</source>
         <translation>そのフォルダーも空きが少ないです（空き %1）。別のフォルダーを選んでください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1999"/>
+        <location filename="../mainwindow_webengine.cpp" line="2003"/>
         <source>Restart Whatly</source>
         <translation>Whatly を再起動</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2000"/>
+        <location filename="../mainwindow_webengine.cpp" line="2004"/>
         <source>Whatly will use &quot;%1&quot; as its data folder after a restart. Your current data stays where it is (you can move it there yourself). Restart now?</source>
         <translation>再起動後、Whatly はデータフォルダーとして「%1」を使用します。現在のデータはそのまま残ります（自分で移動できます）。今すぐ再起動しますか？</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2020"/>
+        <location filename="../mainwindow_webengine.cpp" line="2024"/>
         <source>No unread chats to summarise.</source>
         <translation>要約する未読チャットはありません。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2025"/>
+        <location filename="../mainwindow_webengine.cpp" line="2029"/>
         <source>Unread digest</source>
         <translation>未読の要約</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1549"/>
-        <location filename="../mainwindow_webengine.cpp" line="1569"/>
+        <location filename="../mainwindow_webengine.cpp" line="1573"/>
         <source>chat</source>
         <translation>チャット</translation>
     </message>
@@ -754,64 +753,69 @@ Do you wish to override the security check and continue ?   </source>
         <translation>チャット</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1581"/>
+        <location filename="../mainwindow_webengine.cpp" line="1585"/>
         <source>Could not create the export folder.</source>
         <translation>エクスポート用フォルダーを作成できませんでした。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1611"/>
+        <location filename="../mainwindow_webengine.cpp" line="1615"/>
         <source>The export could not be fully written.</source>
         <translation>エクスポートを完全に書き出せませんでした。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1615"/>
+        <location filename="../mainwindow_webengine.cpp" line="1619"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>%1 件のメッセージと %2 個のメディアファイルを %3 に保存しました</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1704"/>
+        <location filename="../mainwindow_webengine.cpp" line="1708"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>AI アシスタントはオフです（設定 → AI アシスタントで有効にしてください）。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1709"/>
+        <location filename="../mainwindow_webengine.cpp" line="1713"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>アシスタントが処理できるものがありません。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1721"/>
+        <location filename="../mainwindow_webengine.cpp" line="1725"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>アシスタントに問い合わせ中…（メモリ不足: 空き %1 MB。ローカルモデルは失敗したりアプリが重くなることがあります）</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1726"/>
+        <location filename="../mainwindow_webengine.cpp" line="1730"/>
         <source>Asking the assistant…</source>
         <translation>アシスタントに問い合わせ中…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1747"/>
+        <location filename="../mainwindow_webengine.cpp" line="1751"/>
         <source>AI assistant</source>
         <translation type="unfinished">AI アシスタント</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1806"/>
+        <location filename="../mainwindow_webengine.cpp" line="1810"/>
         <source>Message updated.</source>
         <translation>メッセージを更新しました。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1772"/>
-        <location filename="../mainwindow_webengine.cpp" line="1786"/>
-        <location filename="../mainwindow_webengine.cpp" line="1809"/>
+        <location filename="../mainwindow_webengine.cpp" line="1776"/>
+        <location filename="../mainwindow_webengine.cpp" line="1790"/>
+        <location filename="../mainwindow_webengine.cpp" line="1813"/>
         <source>AI result</source>
         <translation>AI の結果</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1822"/>
+        <location filename="../mainwindow_webengine.cpp" line="1146"/>
+        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs, and no build of Whatly with them exists for this platform. Photos and WebM/VP9 videos work; to send an MP4, convert it to WebM first or share it as a document. (Click to dismiss.)</source>
+        <translation>このビルドは H.264/MP4 動画を送信できません。ブラウザーエンジンが専有コーデックなしでビルドされており、このプラットフォーム向けにそれらを含む Whatly のビルドは存在しません。写真と WebM/VP9 動画は使えます。MP4 を送るには、まず WebM に変換するか、ドキュメントとして共有してください。（クリックで閉じる）</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1826"/>
         <source>Chat summary</source>
         <translation>チャットの要約</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1762"/>
+        <location filename="../mainwindow_webengine.cpp" line="1766"/>
         <source>Close</source>
         <translation type="unfinished">閉じる</translation>
     </message>
@@ -936,7 +940,7 @@ WebEngine が初期化されていません。</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1180"/>
         <location filename="../mainwindow.cpp" line="1822"/>
-        <location filename="../mainwindow_webengine.cpp" line="1648"/>
+        <location filename="../mainwindow_webengine.cpp" line="1652"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly はロックされています。メッセージを送るにはロックを解除してください。</translation>
     </message>
@@ -1255,13 +1259,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="377"/>
-        <location filename="../mainwindow_webengine.cpp" line="1477"/>
         <location filename="../mainwindow_webengine.cpp" line="1481"/>
-        <location filename="../mainwindow_webengine.cpp" line="1494"/>
-        <location filename="../mainwindow_webengine.cpp" line="1545"/>
-        <location filename="../mainwindow_webengine.cpp" line="1580"/>
-        <location filename="../mainwindow_webengine.cpp" line="1610"/>
+        <location filename="../mainwindow_webengine.cpp" line="1485"/>
+        <location filename="../mainwindow_webengine.cpp" line="1498"/>
+        <location filename="../mainwindow_webengine.cpp" line="1549"/>
+        <location filename="../mainwindow_webengine.cpp" line="1584"/>
         <location filename="../mainwindow_webengine.cpp" line="1614"/>
+        <location filename="../mainwindow_webengine.cpp" line="1618"/>
         <source>Export chat</source>
         <translation>チャットをエクスポート</translation>
     </message>

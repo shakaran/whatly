@@ -1,3 +1,7 @@
+## Unreleased
+
+- **The Windows/macOS codec notice no longer points at a package that does not exist (#93).** When a build without the proprietary H.264 codecs meets an MP4, the notice named "a distro/native package built with the codecs" — but off Linux there is no Flatpak and no codec-enabled build of Whatly at all, so that remedy pointed at nothing. It now says plainly that this build cannot do MP4, that photos and WebM/VP9 work, and offers a real way through: convert the MP4 to WebM, or send it as a document. (Shipping a codec-enabled Windows build is a separate, licensing-gated decision and is not this change.)
+
 ## 7.3.0 (2026-08-15)
 
 - **Two more interface languages: Bengali and Urdu, for 22 in total.** The two most widely spoken languages Whatly did not yet have, both with large WhatsApp user bases. Urdu is right-to-left, like the Arabic and Persian already supported. Pick either from Settings, or leave the interface on the system language.

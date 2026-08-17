@@ -660,7 +660,7 @@ WebEngine 尚未初始化。</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1180"/>
         <location filename="../mainwindow.cpp" line="1822"/>
-        <location filename="../mainwindow_webengine.cpp" line="1648"/>
+        <location filename="../mainwindow_webengine.cpp" line="1652"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly 已鎖定。請解鎖後再傳送訊息。</translation>
     </message>
@@ -1137,13 +1137,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="377"/>
-        <location filename="../mainwindow_webengine.cpp" line="1477"/>
         <location filename="../mainwindow_webengine.cpp" line="1481"/>
-        <location filename="../mainwindow_webengine.cpp" line="1494"/>
-        <location filename="../mainwindow_webengine.cpp" line="1545"/>
-        <location filename="../mainwindow_webengine.cpp" line="1580"/>
-        <location filename="../mainwindow_webengine.cpp" line="1610"/>
+        <location filename="../mainwindow_webengine.cpp" line="1485"/>
+        <location filename="../mainwindow_webengine.cpp" line="1498"/>
+        <location filename="../mainwindow_webengine.cpp" line="1549"/>
+        <location filename="../mainwindow_webengine.cpp" line="1584"/>
         <location filename="../mainwindow_webengine.cpp" line="1614"/>
+        <location filename="../mainwindow_webengine.cpp" line="1618"/>
         <source>Export chat</source>
         <translation>匯出聊天記錄</translation>
     </message>
@@ -1238,151 +1238,155 @@ Open Settings now?</source>
         <translation>此版本無法傳送 H.264/MP4 影片：其瀏覽器引擎在建置時未包含專有編解碼器。相片與 WebM/VP9 影片可正常使用。若要傳送 MP4，請使用 Flatpak 版本，其引擎已包含這些編解碼器。（按一下即可關閉。）</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1143"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation>此版本無法傳送 H.264/MP4 影片：其瀏覽器引擎建置時未包含專有編解碼器。相片與 WebM/VP9 影片可用；如需 MP4，請使用含編解碼器建置的發行版/原生套件。（點擊關閉。）</translation>
+        <translation type="vanished">此版本無法傳送 H.264/MP4 影片：其瀏覽器引擎建置時未包含專有編解碼器。相片與 WebM/VP9 影片可用；如需 MP4，請使用含編解碼器建置的發行版/原生套件。（點擊關閉。）</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1434"/>
+        <location filename="../mainwindow_webengine.cpp" line="1438"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>行內翻譯已關閉（請在設定 → 翻譯中啟用）。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1438"/>
+        <location filename="../mainwindow_webengine.cpp" line="1442"/>
         <source>The message box is empty.</source>
         <translation>訊息輸入框是空的。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1439"/>
+        <location filename="../mainwindow_webengine.cpp" line="1443"/>
         <source>Select some text to translate first.</source>
         <translation>請先選取要翻譯的文字。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1477"/>
+        <location filename="../mainwindow_webengine.cpp" line="1481"/>
         <source>No conversation is open.</source>
         <translation>沒有開啟中的對話。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1481"/>
+        <location filename="../mainwindow_webengine.cpp" line="1485"/>
         <source>An export is already running.</source>
         <translation>已有匯出作業正在進行。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1486"/>
+        <location filename="../mainwindow_webengine.cpp" line="1490"/>
         <source>Choose a folder for the exported chat</source>
         <translation>選擇要匯出聊天記錄的資料夾</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1492"/>
+        <location filename="../mainwindow_webengine.cpp" line="1496"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>正在收集訊息…捲動瀏覽對話中。</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1462"/>
-        <location filename="../mainwindow_webengine.cpp" line="1493"/>
+        <location filename="../mainwindow_webengine.cpp" line="1497"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1540"/>
+        <location filename="../mainwindow_webengine.cpp" line="1146"/>
+        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs, and no build of Whatly with them exists for this platform. Photos and WebM/VP9 videos work; to send an MP4, convert it to WebM first or share it as a document. (Click to dismiss.)</source>
+        <translation>此版本無法傳送 H.264/MP4 影片：其瀏覽器引擎在建置時未包含專有編解碼器，而且此平台沒有包含它們的 Whatly 版本。照片和 WebM/VP9 影片可以正常使用；若要傳送 MP4，請先將其轉換為 WebM，或作為文件傳送。（點擊關閉。）</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1544"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>正在收集訊息…（目前已 %1 則）</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1546"/>
+        <location filename="../mainwindow_webengine.cpp" line="1550"/>
         <source>Could not read the conversation: %1</source>
         <translation>無法讀取對話：%1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1892"/>
+        <location filename="../mainwindow_webengine.cpp" line="1896"/>
         <source>Do Not Disturb on.</source>
         <translation>請勿打擾已開啟。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1892"/>
+        <location filename="../mainwindow_webengine.cpp" line="1896"/>
         <source>Do Not Disturb off.</source>
         <translation>請勿打擾已關閉。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1900"/>
-        <location filename="../mainwindow_webengine.cpp" line="1916"/>
+        <location filename="../mainwindow_webengine.cpp" line="1904"/>
+        <location filename="../mainwindow_webengine.cpp" line="1920"/>
         <source>Do Not Disturb on until %1.</source>
         <translation>請勿打擾已開啟，直到 %1。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1927"/>
+        <location filename="../mainwindow_webengine.cpp" line="1931"/>
         <source>Open a chat to set a reply reminder.</source>
         <translation>請先開啟一個聊天以設定回覆提醒。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1933"/>
+        <location filename="../mainwindow_webengine.cpp" line="1937"/>
         <source>Time to reply to this chat.</source>
         <translation>該回覆這個聊天了。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1936"/>
+        <location filename="../mainwindow_webengine.cpp" line="1940"/>
         <source>Reply reminder set for %1.</source>
         <translation>已設定回覆提醒：%1。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1967"/>
-        <location filename="../mainwindow_webengine.cpp" line="1991"/>
+        <location filename="../mainwindow_webengine.cpp" line="1971"/>
+        <location filename="../mainwindow_webengine.cpp" line="1995"/>
         <source>Low disk space</source>
         <translation>磁碟空間不足</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1968"/>
+        <location filename="../mainwindow_webengine.cpp" line="1972"/>
         <source>Whatly&apos;s data folder has only %1 free.</source>
         <translation>Whatly 的資料夾僅剩 %1 可用。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1971"/>
+        <location filename="../mainwindow_webengine.cpp" line="1975"/>
         <source>With so little space, WhatsApp Web&apos;s local database can be corrupted by a truncated write, which forces you to link your phone again. Move Whatly&apos;s data folder to a disk with more room, or free up space.</source>
         <translation>空間如此之少時，WhatsApp Web 的本機資料庫可能因寫入被截斷而損毀，迫使你重新連結手機。請將 Whatly 的資料夾移到空間更大的磁碟，或釋放空間。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1975"/>
+        <location filename="../mainwindow_webengine.cpp" line="1979"/>
         <source>Change folder…</source>
         <translation>變更資料夾…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1976"/>
+        <location filename="../mainwindow_webengine.cpp" line="1980"/>
         <source>Later</source>
         <translation type="unfinished">稍後</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1984"/>
+        <location filename="../mainwindow_webengine.cpp" line="1988"/>
         <source>Choose a data folder for Whatly</source>
         <translation>為 Whatly 選擇資料夾</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1992"/>
+        <location filename="../mainwindow_webengine.cpp" line="1996"/>
         <source>That folder is also low on space (%1 free). Please pick another.</source>
         <translation>該資料夾空間也不足（剩餘 %1）。請另選一個。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1999"/>
+        <location filename="../mainwindow_webengine.cpp" line="2003"/>
         <source>Restart Whatly</source>
         <translation>重新啟動 Whatly</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2000"/>
+        <location filename="../mainwindow_webengine.cpp" line="2004"/>
         <source>Whatly will use &quot;%1&quot; as its data folder after a restart. Your current data stays where it is (you can move it there yourself). Restart now?</source>
         <translation>重新啟動後 Whatly 將使用「%1」作為資料夾。你目前的資料仍留在原處（你可以自行移動）。現在重新啟動嗎？</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2020"/>
+        <location filename="../mainwindow_webengine.cpp" line="2024"/>
         <source>No unread chats to summarise.</source>
         <translation>沒有未讀聊天可總結。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2025"/>
+        <location filename="../mainwindow_webengine.cpp" line="2029"/>
         <source>Unread digest</source>
         <translation>未讀摘要</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1549"/>
-        <location filename="../mainwindow_webengine.cpp" line="1569"/>
+        <location filename="../mainwindow_webengine.cpp" line="1573"/>
         <source>chat</source>
         <translation>聊天</translation>
     </message>
@@ -1392,64 +1396,64 @@ Open Settings now?</source>
         <translation>聊天</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1581"/>
+        <location filename="../mainwindow_webengine.cpp" line="1585"/>
         <source>Could not create the export folder.</source>
         <translation>無法建立匯出資料夾。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1611"/>
+        <location filename="../mainwindow_webengine.cpp" line="1615"/>
         <source>The export could not be fully written.</source>
         <translation>匯出內容無法完整寫入。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1615"/>
+        <location filename="../mainwindow_webengine.cpp" line="1619"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>已將 %1 則訊息與 %2 個媒體檔案儲存至 %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1704"/>
+        <location filename="../mainwindow_webengine.cpp" line="1708"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>AI 助理已關閉（請在設定 → AI 助理中啟用）。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1709"/>
+        <location filename="../mainwindow_webengine.cpp" line="1713"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>沒有可供助理處理的內容。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1721"/>
+        <location filename="../mainwindow_webengine.cpp" line="1725"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>正在詢問助理…（記憶體不足：剩餘 %1 MB；本機模型可能失敗或拖慢應用程式）</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1726"/>
+        <location filename="../mainwindow_webengine.cpp" line="1730"/>
         <source>Asking the assistant…</source>
         <translation>正在詢問助理…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1747"/>
+        <location filename="../mainwindow_webengine.cpp" line="1751"/>
         <source>AI assistant</source>
         <translation>AI 助理</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1762"/>
+        <location filename="../mainwindow_webengine.cpp" line="1766"/>
         <source>Close</source>
         <translation>關閉</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1772"/>
-        <location filename="../mainwindow_webengine.cpp" line="1786"/>
-        <location filename="../mainwindow_webengine.cpp" line="1809"/>
+        <location filename="../mainwindow_webengine.cpp" line="1776"/>
+        <location filename="../mainwindow_webengine.cpp" line="1790"/>
+        <location filename="../mainwindow_webengine.cpp" line="1813"/>
         <source>AI result</source>
         <translation>AI 結果</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1806"/>
+        <location filename="../mainwindow_webengine.cpp" line="1810"/>
         <source>Message updated.</source>
         <translation>訊息已更新。</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1822"/>
+        <location filename="../mainwindow_webengine.cpp" line="1826"/>
         <source>Chat summary</source>
         <translation>聊天摘要</translation>
     </message>

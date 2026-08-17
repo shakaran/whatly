@@ -600,151 +600,150 @@ Do you wish to override the security check and continue ?   </source>
         <translation>이 빌드는 H.264/MP4 동영상을 보낼 수 없습니다. 브라우저 엔진이 독점 코덱 없이 빌드되었기 때문입니다. 사진과 WebM/VP9 동영상은 정상 작동합니다. MP4의 경우 해당 코덱이 포함되어 엔진이 빌드된 Flatpak을 사용하세요. (클릭하여 닫기.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1143"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation>이 빌드는 H.264/MP4 동영상을 보낼 수 없습니다. 브라우저 엔진이 독점 코덱 없이 빌드되었습니다. 사진과 WebM/VP9 동영상은 작동합니다. MP4는 코덱이 포함된 배포판/네이티브 패키지를 사용하세요. (클릭하여 닫기.)</translation>
+        <translation type="vanished">이 빌드는 H.264/MP4 동영상을 보낼 수 없습니다. 브라우저 엔진이 독점 코덱 없이 빌드되었습니다. 사진과 WebM/VP9 동영상은 작동합니다. MP4는 코덱이 포함된 배포판/네이티브 패키지를 사용하세요. (클릭하여 닫기.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1434"/>
+        <location filename="../mainwindow_webengine.cpp" line="1438"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>인라인 번역이 꺼져 있습니다 (설정 → 번역에서 켜세요).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1438"/>
+        <location filename="../mainwindow_webengine.cpp" line="1442"/>
         <source>The message box is empty.</source>
         <translation>메시지 입력란이 비어 있습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1439"/>
+        <location filename="../mainwindow_webengine.cpp" line="1443"/>
         <source>Select some text to translate first.</source>
         <translation>먼저 번역할 텍스트를 선택하세요.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1477"/>
+        <location filename="../mainwindow_webengine.cpp" line="1481"/>
         <source>No conversation is open.</source>
         <translation>열린 대화가 없습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1481"/>
+        <location filename="../mainwindow_webengine.cpp" line="1485"/>
         <source>An export is already running.</source>
         <translation>이미 내보내기가 진행 중입니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1486"/>
+        <location filename="../mainwindow_webengine.cpp" line="1490"/>
         <source>Choose a folder for the exported chat</source>
         <translation>내보낼 채팅을 저장할 폴더 선택</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1492"/>
+        <location filename="../mainwindow_webengine.cpp" line="1496"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>메시지 수집 중… 대화를 스크롤하는 중입니다.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1462"/>
-        <location filename="../mainwindow_webengine.cpp" line="1493"/>
+        <location filename="../mainwindow_webengine.cpp" line="1497"/>
         <source>Cancel</source>
         <translation type="unfinished">취소</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1540"/>
+        <location filename="../mainwindow_webengine.cpp" line="1544"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>메시지 수집 중… (현재 %1개)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1546"/>
+        <location filename="../mainwindow_webengine.cpp" line="1550"/>
         <source>Could not read the conversation: %1</source>
         <translation>대화를 읽을 수 없습니다: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1892"/>
+        <location filename="../mainwindow_webengine.cpp" line="1896"/>
         <source>Do Not Disturb on.</source>
         <translation>방해 금지 켜짐.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1892"/>
+        <location filename="../mainwindow_webengine.cpp" line="1896"/>
         <source>Do Not Disturb off.</source>
         <translation>방해 금지 꺼짐.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1900"/>
-        <location filename="../mainwindow_webengine.cpp" line="1916"/>
+        <location filename="../mainwindow_webengine.cpp" line="1904"/>
+        <location filename="../mainwindow_webengine.cpp" line="1920"/>
         <source>Do Not Disturb on until %1.</source>
         <translation>방해 금지 켜짐 (%1까지).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1927"/>
+        <location filename="../mainwindow_webengine.cpp" line="1931"/>
         <source>Open a chat to set a reply reminder.</source>
         <translation>답장 알림을 설정하려면 채팅을 여세요.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1933"/>
+        <location filename="../mainwindow_webengine.cpp" line="1937"/>
         <source>Time to reply to this chat.</source>
         <translation>이 채팅에 답장할 시간입니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1936"/>
+        <location filename="../mainwindow_webengine.cpp" line="1940"/>
         <source>Reply reminder set for %1.</source>
         <translation>답장 알림을 %1(으)로 설정했습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1967"/>
-        <location filename="../mainwindow_webengine.cpp" line="1991"/>
+        <location filename="../mainwindow_webengine.cpp" line="1971"/>
+        <location filename="../mainwindow_webengine.cpp" line="1995"/>
         <source>Low disk space</source>
         <translation>디스크 공간 부족</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1968"/>
+        <location filename="../mainwindow_webengine.cpp" line="1972"/>
         <source>Whatly&apos;s data folder has only %1 free.</source>
         <translation>Whatly 데이터 폴더에 %1만 남았습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1971"/>
+        <location filename="../mainwindow_webengine.cpp" line="1975"/>
         <source>With so little space, WhatsApp Web&apos;s local database can be corrupted by a truncated write, which forces you to link your phone again. Move Whatly&apos;s data folder to a disk with more room, or free up space.</source>
         <translation>공간이 이렇게 적으면 쓰기가 잘려 WhatsApp Web의 로컬 데이터베이스가 손상되어 휴대폰을 다시 연결해야 할 수 있습니다. Whatly 데이터 폴더를 여유 공간이 많은 디스크로 옮기거나 공간을 확보하세요.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1975"/>
+        <location filename="../mainwindow_webengine.cpp" line="1979"/>
         <source>Change folder…</source>
         <translation>폴더 변경…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1976"/>
+        <location filename="../mainwindow_webengine.cpp" line="1980"/>
         <source>Later</source>
         <translation type="unfinished">나중에</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1984"/>
+        <location filename="../mainwindow_webengine.cpp" line="1988"/>
         <source>Choose a data folder for Whatly</source>
         <translation>Whatly 데이터 폴더 선택</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1992"/>
+        <location filename="../mainwindow_webengine.cpp" line="1996"/>
         <source>That folder is also low on space (%1 free). Please pick another.</source>
         <translation>그 폴더도 공간이 부족합니다(%1 남음). 다른 폴더를 선택하세요.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1999"/>
+        <location filename="../mainwindow_webengine.cpp" line="2003"/>
         <source>Restart Whatly</source>
         <translation>Whatly 다시 시작</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2000"/>
+        <location filename="../mainwindow_webengine.cpp" line="2004"/>
         <source>Whatly will use &quot;%1&quot; as its data folder after a restart. Your current data stays where it is (you can move it there yourself). Restart now?</source>
         <translation>다시 시작하면 Whatly가 &quot;%1&quot;을(를) 데이터 폴더로 사용합니다. 현재 데이터는 그대로 남습니다(직접 옮길 수 있습니다). 지금 다시 시작할까요?</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2020"/>
+        <location filename="../mainwindow_webengine.cpp" line="2024"/>
         <source>No unread chats to summarise.</source>
         <translation>요약할 읽지 않은 채팅이 없습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2025"/>
+        <location filename="../mainwindow_webengine.cpp" line="2029"/>
         <source>Unread digest</source>
         <translation>읽지 않음 요약</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1549"/>
-        <location filename="../mainwindow_webengine.cpp" line="1569"/>
+        <location filename="../mainwindow_webengine.cpp" line="1573"/>
         <source>chat</source>
         <translation>채팅</translation>
     </message>
@@ -754,64 +753,69 @@ Do you wish to override the security check and continue ?   </source>
         <translation>채팅</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1581"/>
+        <location filename="../mainwindow_webengine.cpp" line="1585"/>
         <source>Could not create the export folder.</source>
         <translation>내보내기 폴더를 만들 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1611"/>
+        <location filename="../mainwindow_webengine.cpp" line="1615"/>
         <source>The export could not be fully written.</source>
         <translation>내보내기를 완전히 저장하지 못했습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1615"/>
+        <location filename="../mainwindow_webengine.cpp" line="1619"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>메시지 %1개와 미디어 파일 %2개를 %3에 저장했습니다</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1704"/>
+        <location filename="../mainwindow_webengine.cpp" line="1708"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>AI 어시스턴트가 꺼져 있습니다 (설정 → AI 어시스턴트에서 켜세요).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1709"/>
+        <location filename="../mainwindow_webengine.cpp" line="1713"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>어시스턴트가 처리할 내용이 없습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1721"/>
+        <location filename="../mainwindow_webengine.cpp" line="1725"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>어시스턴트에 요청 중… (메모리 부족: %1 MB 남음; 로컬 모델이 실패하거나 앱이 느려질 수 있습니다)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1726"/>
+        <location filename="../mainwindow_webengine.cpp" line="1730"/>
         <source>Asking the assistant…</source>
         <translation>어시스턴트에 요청 중…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1747"/>
+        <location filename="../mainwindow_webengine.cpp" line="1751"/>
         <source>AI assistant</source>
         <translation type="unfinished">AI 어시스턴트</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1806"/>
+        <location filename="../mainwindow_webengine.cpp" line="1810"/>
         <source>Message updated.</source>
         <translation>메시지가 업데이트되었습니다.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1772"/>
-        <location filename="../mainwindow_webengine.cpp" line="1786"/>
-        <location filename="../mainwindow_webengine.cpp" line="1809"/>
+        <location filename="../mainwindow_webengine.cpp" line="1776"/>
+        <location filename="../mainwindow_webengine.cpp" line="1790"/>
+        <location filename="../mainwindow_webengine.cpp" line="1813"/>
         <source>AI result</source>
         <translation>AI 결과</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1822"/>
+        <location filename="../mainwindow_webengine.cpp" line="1146"/>
+        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs, and no build of Whatly with them exists for this platform. Photos and WebM/VP9 videos work; to send an MP4, convert it to WebM first or share it as a document. (Click to dismiss.)</source>
+        <translation>이 빌드는 H.264/MP4 동영상을 보낼 수 없습니다. 브라우저 엔진이 독점 코덱 없이 빌드되었으며, 이 플랫폼용으로 코덱이 포함된 Whatly 빌드는 없습니다. 사진과 WebM/VP9 동영상은 작동합니다. MP4를 보내려면 먼저 WebM으로 변환하거나 문서로 공유하세요. (클릭하여 닫기)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1826"/>
         <source>Chat summary</source>
         <translation>채팅 요약</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1762"/>
+        <location filename="../mainwindow_webengine.cpp" line="1766"/>
         <source>Close</source>
         <translation type="unfinished">닫기</translation>
     </message>
@@ -936,7 +940,7 @@ WebEngine이 초기화되지 않았습니다.</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1180"/>
         <location filename="../mainwindow.cpp" line="1822"/>
-        <location filename="../mainwindow_webengine.cpp" line="1648"/>
+        <location filename="../mainwindow_webengine.cpp" line="1652"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly가 잠겨 있습니다. 메시지를 보내려면 잠금을 해제하세요.</translation>
     </message>
@@ -1255,13 +1259,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="377"/>
-        <location filename="../mainwindow_webengine.cpp" line="1477"/>
         <location filename="../mainwindow_webengine.cpp" line="1481"/>
-        <location filename="../mainwindow_webengine.cpp" line="1494"/>
-        <location filename="../mainwindow_webengine.cpp" line="1545"/>
-        <location filename="../mainwindow_webengine.cpp" line="1580"/>
-        <location filename="../mainwindow_webengine.cpp" line="1610"/>
+        <location filename="../mainwindow_webengine.cpp" line="1485"/>
+        <location filename="../mainwindow_webengine.cpp" line="1498"/>
+        <location filename="../mainwindow_webengine.cpp" line="1549"/>
+        <location filename="../mainwindow_webengine.cpp" line="1584"/>
         <location filename="../mainwindow_webengine.cpp" line="1614"/>
+        <location filename="../mainwindow_webengine.cpp" line="1618"/>
         <source>Export chat</source>
         <translation>채팅 내보내기</translation>
     </message>

@@ -660,7 +660,7 @@ Webengine chưa được khởi tạo.</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1180"/>
         <location filename="../mainwindow.cpp" line="1822"/>
-        <location filename="../mainwindow_webengine.cpp" line="1648"/>
+        <location filename="../mainwindow_webengine.cpp" line="1652"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly đang bị khóa. Mở khóa để gửi tin nhắn.</translation>
     </message>
@@ -1137,13 +1137,13 @@ Mở Cài đặt ngay bây giờ?</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="377"/>
-        <location filename="../mainwindow_webengine.cpp" line="1477"/>
         <location filename="../mainwindow_webengine.cpp" line="1481"/>
-        <location filename="../mainwindow_webengine.cpp" line="1494"/>
-        <location filename="../mainwindow_webengine.cpp" line="1545"/>
-        <location filename="../mainwindow_webengine.cpp" line="1580"/>
-        <location filename="../mainwindow_webengine.cpp" line="1610"/>
+        <location filename="../mainwindow_webengine.cpp" line="1485"/>
+        <location filename="../mainwindow_webengine.cpp" line="1498"/>
+        <location filename="../mainwindow_webengine.cpp" line="1549"/>
+        <location filename="../mainwindow_webengine.cpp" line="1584"/>
         <location filename="../mainwindow_webengine.cpp" line="1614"/>
+        <location filename="../mainwindow_webengine.cpp" line="1618"/>
         <source>Export chat</source>
         <translation>Xuất cuộc trò chuyện</translation>
     </message>
@@ -1238,151 +1238,155 @@ Mở Cài đặt ngay bây giờ?</translation>
         <translation>Bản dựng này không thể gửi video H.264/MP4: công cụ trình duyệt của nó được biên dịch mà không có các codec độc quyền. Ảnh và video WebM/VP9 vẫn hoạt động. Với MP4, hãy dùng bản Flatpak, có công cụ được biên dịch kèm các codec đó. (Nhấp để đóng.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1143"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation>Bản dựng này không thể gửi video H.264/MP4: engine trình duyệt của nó được biên dịch không kèm codec độc quyền. Ảnh và video WebM/VP9 vẫn hoạt động; với MP4, hãy dùng gói bản phân phối/gốc được biên dịch kèm codec. (Nhấp để đóng.)</translation>
+        <translation type="vanished">Bản dựng này không thể gửi video H.264/MP4: engine trình duyệt của nó được biên dịch không kèm codec độc quyền. Ảnh và video WebM/VP9 vẫn hoạt động; với MP4, hãy dùng gói bản phân phối/gốc được biên dịch kèm codec. (Nhấp để đóng.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1434"/>
+        <location filename="../mainwindow_webengine.cpp" line="1438"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>Dịch nhanh đang tắt (bật trong Cài đặt → Dịch thuật).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1438"/>
+        <location filename="../mainwindow_webengine.cpp" line="1442"/>
         <source>The message box is empty.</source>
         <translation>Ô nhập tin nhắn đang trống.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1439"/>
+        <location filename="../mainwindow_webengine.cpp" line="1443"/>
         <source>Select some text to translate first.</source>
         <translation>Hãy chọn một đoạn văn bản để dịch trước.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1477"/>
+        <location filename="../mainwindow_webengine.cpp" line="1481"/>
         <source>No conversation is open.</source>
         <translation>Không có cuộc trò chuyện nào đang mở.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1481"/>
+        <location filename="../mainwindow_webengine.cpp" line="1485"/>
         <source>An export is already running.</source>
         <translation>Một tiến trình xuất đang chạy.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1486"/>
+        <location filename="../mainwindow_webengine.cpp" line="1490"/>
         <source>Choose a folder for the exported chat</source>
         <translation>Chọn thư mục để lưu cuộc trò chuyện đã xuất</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1492"/>
+        <location filename="../mainwindow_webengine.cpp" line="1496"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>Đang thu thập tin nhắn… cuộn qua cuộc trò chuyện.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1462"/>
-        <location filename="../mainwindow_webengine.cpp" line="1493"/>
+        <location filename="../mainwindow_webengine.cpp" line="1497"/>
         <source>Cancel</source>
         <translation>Hủy</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1540"/>
+        <location filename="../mainwindow_webengine.cpp" line="1146"/>
+        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs, and no build of Whatly with them exists for this platform. Photos and WebM/VP9 videos work; to send an MP4, convert it to WebM first or share it as a document. (Click to dismiss.)</source>
+        <translation>Bản dựng này không thể gửi video H.264/MP4: engine trình duyệt của nó được dựng mà không có codec độc quyền, và không có bản dựng Whatly nào kèm chúng cho nền tảng này. Ảnh và video WebM/VP9 vẫn hoạt động; để gửi MP4, hãy chuyển đổi sang WebM trước hoặc chia sẻ dưới dạng tài liệu. (Nhấp để đóng.)</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1544"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>Đang thu thập tin nhắn… (%1 cho đến nay)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1546"/>
+        <location filename="../mainwindow_webengine.cpp" line="1550"/>
         <source>Could not read the conversation: %1</source>
         <translation>Không thể đọc cuộc trò chuyện: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1892"/>
+        <location filename="../mainwindow_webengine.cpp" line="1896"/>
         <source>Do Not Disturb on.</source>
         <translation>Không làm phiền đang bật.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1892"/>
+        <location filename="../mainwindow_webengine.cpp" line="1896"/>
         <source>Do Not Disturb off.</source>
         <translation>Không làm phiền đã tắt.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1900"/>
-        <location filename="../mainwindow_webengine.cpp" line="1916"/>
+        <location filename="../mainwindow_webengine.cpp" line="1904"/>
+        <location filename="../mainwindow_webengine.cpp" line="1920"/>
         <source>Do Not Disturb on until %1.</source>
         <translation>Không làm phiền bật đến %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1927"/>
+        <location filename="../mainwindow_webengine.cpp" line="1931"/>
         <source>Open a chat to set a reply reminder.</source>
         <translation>Mở một cuộc trò chuyện để đặt nhắc trả lời.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1933"/>
+        <location filename="../mainwindow_webengine.cpp" line="1937"/>
         <source>Time to reply to this chat.</source>
         <translation>Đã đến lúc trả lời cuộc trò chuyện này.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1936"/>
+        <location filename="../mainwindow_webengine.cpp" line="1940"/>
         <source>Reply reminder set for %1.</source>
         <translation>Đã đặt nhắc trả lời lúc %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1967"/>
-        <location filename="../mainwindow_webengine.cpp" line="1991"/>
+        <location filename="../mainwindow_webengine.cpp" line="1971"/>
+        <location filename="../mainwindow_webengine.cpp" line="1995"/>
         <source>Low disk space</source>
         <translation>Sắp hết dung lượng đĩa</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1968"/>
+        <location filename="../mainwindow_webengine.cpp" line="1972"/>
         <source>Whatly&apos;s data folder has only %1 free.</source>
         <translation>Thư mục dữ liệu của Whatly chỉ còn trống %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1971"/>
+        <location filename="../mainwindow_webengine.cpp" line="1975"/>
         <source>With so little space, WhatsApp Web&apos;s local database can be corrupted by a truncated write, which forces you to link your phone again. Move Whatly&apos;s data folder to a disk with more room, or free up space.</source>
         <translation>Với dung lượng ít như vậy, cơ sở dữ liệu cục bộ của WhatsApp Web có thể bị hỏng do ghi bị cắt ngang, buộc bạn phải liên kết lại điện thoại. Hãy chuyển thư mục dữ liệu của Whatly sang ổ đĩa rộng hơn, hoặc giải phóng dung lượng.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1975"/>
+        <location filename="../mainwindow_webengine.cpp" line="1979"/>
         <source>Change folder…</source>
         <translation>Đổi thư mục…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1976"/>
+        <location filename="../mainwindow_webengine.cpp" line="1980"/>
         <source>Later</source>
         <translation type="unfinished">Để sau</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1984"/>
+        <location filename="../mainwindow_webengine.cpp" line="1988"/>
         <source>Choose a data folder for Whatly</source>
         <translation>Chọn thư mục dữ liệu cho Whatly</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1992"/>
+        <location filename="../mainwindow_webengine.cpp" line="1996"/>
         <source>That folder is also low on space (%1 free). Please pick another.</source>
         <translation>Thư mục đó cũng sắp hết dung lượng (còn trống %1). Vui lòng chọn thư mục khác.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1999"/>
+        <location filename="../mainwindow_webengine.cpp" line="2003"/>
         <source>Restart Whatly</source>
         <translation>Khởi động lại Whatly</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2000"/>
+        <location filename="../mainwindow_webengine.cpp" line="2004"/>
         <source>Whatly will use &quot;%1&quot; as its data folder after a restart. Your current data stays where it is (you can move it there yourself). Restart now?</source>
         <translation>Sau khi khởi động lại, Whatly sẽ dùng &quot;%1&quot; làm thư mục dữ liệu. Dữ liệu hiện tại của bạn vẫn ở nguyên chỗ (bạn có thể tự chuyển). Khởi động lại ngay?</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2020"/>
+        <location filename="../mainwindow_webengine.cpp" line="2024"/>
         <source>No unread chats to summarise.</source>
         <translation>Không có trò chuyện chưa đọc để tóm tắt.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2025"/>
+        <location filename="../mainwindow_webengine.cpp" line="2029"/>
         <source>Unread digest</source>
         <translation>Tóm tắt chưa đọc</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1549"/>
-        <location filename="../mainwindow_webengine.cpp" line="1569"/>
+        <location filename="../mainwindow_webengine.cpp" line="1573"/>
         <source>chat</source>
         <translation>cuộc trò chuyện</translation>
     </message>
@@ -1392,64 +1396,64 @@ Mở Cài đặt ngay bây giờ?</translation>
         <translation>cuộc trò chuyện</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1581"/>
+        <location filename="../mainwindow_webengine.cpp" line="1585"/>
         <source>Could not create the export folder.</source>
         <translation>Không thể tạo thư mục xuất.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1611"/>
+        <location filename="../mainwindow_webengine.cpp" line="1615"/>
         <source>The export could not be fully written.</source>
         <translation>Không thể ghi đầy đủ dữ liệu xuất.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1615"/>
+        <location filename="../mainwindow_webengine.cpp" line="1619"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>Đã lưu %1 tin nhắn và %2 tệp phương tiện vào %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1704"/>
+        <location filename="../mainwindow_webengine.cpp" line="1708"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>Trợ lý AI đang tắt (bật trong Cài đặt → Trợ lý AI).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1709"/>
+        <location filename="../mainwindow_webengine.cpp" line="1713"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>Không có gì để trợ lý xử lý.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1721"/>
+        <location filename="../mainwindow_webengine.cpp" line="1725"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>Đang hỏi trợ lý… (bộ nhớ thấp: còn %1 MB trống; mô hình cục bộ có thể lỗi hoặc làm chậm ứng dụng)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1726"/>
+        <location filename="../mainwindow_webengine.cpp" line="1730"/>
         <source>Asking the assistant…</source>
         <translation>Đang hỏi trợ lý…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1747"/>
+        <location filename="../mainwindow_webengine.cpp" line="1751"/>
         <source>AI assistant</source>
         <translation>Trợ lý AI</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1762"/>
+        <location filename="../mainwindow_webengine.cpp" line="1766"/>
         <source>Close</source>
         <translation>Đóng</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1772"/>
-        <location filename="../mainwindow_webengine.cpp" line="1786"/>
-        <location filename="../mainwindow_webengine.cpp" line="1809"/>
+        <location filename="../mainwindow_webengine.cpp" line="1776"/>
+        <location filename="../mainwindow_webengine.cpp" line="1790"/>
+        <location filename="../mainwindow_webengine.cpp" line="1813"/>
         <source>AI result</source>
         <translation>Kết quả AI</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1806"/>
+        <location filename="../mainwindow_webengine.cpp" line="1810"/>
         <source>Message updated.</source>
         <translation>Đã cập nhật tin nhắn.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1822"/>
+        <location filename="../mainwindow_webengine.cpp" line="1826"/>
         <source>Chat summary</source>
         <translation>Tóm tắt cuộc trò chuyện</translation>
     </message>

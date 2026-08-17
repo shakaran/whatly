@@ -1136,14 +1136,18 @@ void MainWindow::checkMediaCodecs() {
                  "videos work. For MP4, use the Flatpak, whose engine is built "
                  "with them. (Click to dismiss.)"),
 #else
-              // Left exactly as it was everywhere else, and deliberately: there
-              // is no Flatpak off Linux, and this sentence already has its
-              // twenty translations. Naming the right build on Windows is a
-              // question for whoever makes them.
+              // Off Linux there is no Flatpak and no codec-enabled build of
+              // Whatly at all: Qt's own binaries (used by the Windows and macOS
+              // builds) ship without the proprietary codecs, so pointing at
+              // "another package" would name something that does not exist
+              // (issue #93). Say plainly what does not work and what does, and
+              // offer a real way through instead of a package that was never
+              // built.
               tr("This build cannot send H.264/MP4 videos: its browser engine "
-                 "was built without the proprietary codecs. Photos and WebM/VP9 "
-                 "videos work; for MP4, use a distro/native package built with "
-                 "the codecs. (Click to dismiss.)"),
+                 "was built without the proprietary codecs, and no build of "
+                 "Whatly with them exists for this platform. Photos and WebM/VP9 "
+                 "videos work; to send an MP4, convert it to WebM first or share "
+                 "it as a document. (Click to dismiss.)"),
 #endif
               /*persistent=*/true));
       });
