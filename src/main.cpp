@@ -387,6 +387,24 @@ static void setChromiumFlags() {
   qputenv("QTWEBENGINE_CHROMIUM_FLAGS", flags.toUtf8());
 }
 
+// Quiet the font-database fallback chatter. The language picker lists every
+// interface language by its native name (हिन्दी, বাংলা, العربية…), so Qt renders
+// scripts the default sans family does not itself carry and logs
+// "qt.text.font.db: OpenType support missing for <font>, script N" for each — even
+// though it then composes the text correctly from the per-script Noto families.
+// That is fallback working as designed (no single sans font covers every script;
+// Noto is split per script on purpose), so it is pure noise. Silence only that
+// category's warnings, and only append to whatever rules the user already set so
+// an explicit override of theirs still wins. Must run before QApplication.
+static void quietFontFallbackWarnings() {
+  const QByteArray existing = qgetenv("QT_LOGGING_RULES");
+  const QByteArray rule = "qt.text.font.db.warning=false";
+  if (existing.isEmpty())
+    qputenv("QT_LOGGING_RULES", rule);
+  else if (!existing.contains("qt.text.font.db"))
+    qputenv("QT_LOGGING_RULES", existing + ';' + rule);
+}
+
 // Falling back to XCB only when the Wayland backing store actually fails, rather
 // than forcing it on every NVIDIA-on-Wayland session (issue #84). Forcing it up
 // front was too broad: a Wayland setup that works then ran on XWayland, where the
@@ -522,6 +540,7 @@ int main(int argc, char *argv[]) {
   Performance::evaluateStartup();
 
   setChromiumFlags();
+  quietFontFallbackWarnings();
 #ifdef Q_OS_LINUX
   // Watch for the Wayland backing-store RHI failure (issue #84); if it happens,
   // relaunchInXcbIfBlank() below switches to XCB once. Must be armed before
