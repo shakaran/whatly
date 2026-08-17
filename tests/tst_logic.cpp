@@ -171,17 +171,18 @@ private slots:
         QStringLiteral("Uncaught TypeError: foo is not a function")));
     QVERIFY(!Utils::isServiceWorkerRegistrationFailure(QString()));
   }
-  // Redirect to XCB only for proprietary NVIDIA on a Wayland session, and only
-  // when the user has not chosen a platform (issue #84).
-  void preferXcbPlatformPolicy() {
-    // The known-bad combination: not chosen, Wayland, NVIDIA proprietary.
-    QVERIFY(Utils::shouldPreferXcbPlatform(false, true, true));
-    // The user's own choice always wins.
-    QVERIFY(!Utils::shouldPreferXcbPlatform(true, true, true));
-    // X11 session, or no NVIDIA: leave the platform alone.
-    QVERIFY(!Utils::shouldPreferXcbPlatform(false, false, true));
-    QVERIFY(!Utils::shouldPreferXcbPlatform(false, true, false));
-    QVERIFY(!Utils::shouldPreferXcbPlatform(false, false, false));
+  // Arm the Wayland RHI-failure watch (and possible one-shot XCB relaunch) only
+  // on a Wayland session the user did not override, and never on the relaunch
+  // that already switched to XCB (issue #84).
+  void waylandRhiFallbackPolicy() {
+    // Wayland, not overridden, first attempt: arm it.
+    QVERIFY(Utils::shouldArmWaylandRhiFallback(false, true, false));
+    // The user's own platform choice always wins.
+    QVERIFY(!Utils::shouldArmWaylandRhiFallback(true, true, false));
+    // Not a Wayland session: nothing to fall back from.
+    QVERIFY(!Utils::shouldArmWaylandRhiFallback(false, false, false));
+    // Already the XCB fallback attempt: never arm again (no relaunch loop).
+    QVERIFY(!Utils::shouldArmWaylandRhiFallback(false, true, true));
   }
   // Offer the in-place AppImage update only when it is an AppImage, the tool is
   // present, and the running image path is known (issue #85).

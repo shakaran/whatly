@@ -704,11 +704,12 @@ bool Utils::isServiceWorkerRegistrationFailure(const QString &consoleMessage) {
              QLatin1String("service-worker-registration-failure"));
 }
 
-bool Utils::shouldPreferXcbPlatform(bool userChosePlatform, bool waylandSession,
-                                    bool nvidiaProprietary) {
-  // The user's own platform choice always wins; otherwise only the exact
-  // known-bad combination (Wayland session + proprietary NVIDIA) is redirected.
-  return !userChosePlatform && waylandSession && nvidiaProprietary;
+bool Utils::shouldArmWaylandRhiFallback(bool userChosePlatform,
+                                        bool waylandSession, bool alreadyTried) {
+  // The user's own platform choice always wins; only watch on a Wayland session,
+  // and never on the relaunch that already switched to XCB (or a failure there
+  // would relaunch forever).
+  return !userChosePlatform && waylandSession && !alreadyTried;
 }
 
 QString Utils::appImageUpdateTool() {

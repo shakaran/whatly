@@ -24,6 +24,9 @@
 #include <QThread>
 #include <QDir>
 #include <QFile>
+#include <QProcess>
+#include <QProcessEnvironment>
+#include <atomic>
 #include <QFileInfo>
 #include <QLibraryInfo>
 #include <QLocale>
@@ -384,36 +387,73 @@ static void setChromiumFlags() {
   qputenv("QTWEBENGINE_CHROMIUM_FLAGS", flags.toUtf8());
 }
 
-// Must run before QApplication is created so Qt reads the platform choice.
-// Proprietary NVIDIA on a Wayland session often has no working wayland-egl, so
-// Qt cannot get a QRhi for the widget backing store and the window comes up
-// blank and unfocusable — with no way to reach Settings to change anything
-// (issue #84). XCB (XWayland) has GLX and works there, which is exactly what the
-// reporter confirmed. Redirect only that specific combination, and only when the
-// user has not chosen a platform themselves; a working NVIDIA-Wayland setup can
-// force it back with QT_QPA_PLATFORM=wayland.
-static void preferXcbOnNvidiaWayland() {
+// Falling back to XCB only when the Wayland backing store actually fails, rather
+// than forcing it on every NVIDIA-on-Wayland session (issue #84). Forcing it up
+// front was too broad: a Wayland setup that works then ran on XWayland, where the
+// NVIDIA GL stack can crash the renderer in a loop. Instead a message handler
+// watches Qt's own log for the one failure that means the window cannot paint,
+// and relaunchInXcbIfBlank() switches platforms once if it appears.
 #ifdef Q_OS_LINUX
+static QtMessageHandler g_prevMsgHandler = nullptr;
+static std::atomic<bool> g_rhiBackingStoreFailed{false};
+
+static void rhiWatchMessageHandler(QtMsgType type, const QMessageLogContext &ctx,
+                                   const QString &msg) {
+  // The exact #84 failure: the top-level widget's backing store cannot obtain a
+  // QRhi, so nothing is painted and the window is blank and unfocusable.
+  if (msg.contains(QLatin1String(
+          "Failed to create QRhi for QBackingStoreRhiSupport")) ||
+      msg.contains(QLatin1String("Failed to get a QRhi from the top-level")))
+    g_rhiBackingStoreFailed.store(true);
+  if (g_prevMsgHandler)
+    g_prevMsgHandler(type, ctx, msg);
+}
+
+// Arms the watch when the policy says to; returns whether it was armed so the
+// caller knows to schedule the post-startup check. Must run before QApplication.
+static bool armWaylandRhiFallback() {
   const bool userChosePlatform =
       !qEnvironmentVariableIsEmpty("QT_QPA_PLATFORM");
   const bool waylandSession =
       !qEnvironmentVariableIsEmpty("WAYLAND_DISPLAY") ||
       qgetenv("XDG_SESSION_TYPE") == QByteArrayLiteral("wayland");
-  // The proprietary driver exposes these; the open nouveau/nova stack does not,
-  // and it has working wayland-egl, so it must not be caught here.
-  const bool nvidiaProprietary = QFile::exists(
-                                     QStringLiteral("/proc/driver/nvidia/version")) ||
-                                 QFile::exists(QStringLiteral("/dev/nvidiactl"));
-  if (Utils::shouldPreferXcbPlatform(userChosePlatform, waylandSession,
-                                     nvidiaProprietary)) {
-    qputenv("QT_QPA_PLATFORM", "xcb");
-    qInfo().noquote()
-        << "whatly: proprietary NVIDIA on Wayland detected; using the XCB "
-           "platform so the window is not blank (issue #84). Set "
-           "QT_QPA_PLATFORM=wayland to override.";
-  }
-#endif
+  const bool alreadyTried =
+      qgetenv("WHATLY_XCB_FALLBACK") == QByteArrayLiteral("1");
+  if (!Utils::shouldArmWaylandRhiFallback(userChosePlatform, waylandSession,
+                                          alreadyTried))
+    return false;
+  g_prevMsgHandler = qInstallMessageHandler(rhiWatchMessageHandler);
+  return true;
 }
+
+// If the backing store failed, relaunch this same process once on XCB, guarded
+// by WHATLY_XCB_FALLBACK so a failure there does not loop. Called shortly after
+// the window is shown, by which point the failure (if any) has been logged.
+static void relaunchInXcbIfBlank(int argc, char *argv[]) {
+  if (!g_rhiBackingStoreFailed.load())
+    return;
+  qInfo().noquote()
+      << "whatly: the Wayland backing store could not initialise a renderer "
+         "(issue #84); relaunching on the XCB platform. Set "
+         "QT_QPA_PLATFORM=wayland to force Wayland.";
+  QStringList args;
+  for (int i = 1; i < argc; ++i) {
+    const QString a = QString::fromLocal8Bit(argv[i]);
+    if (a.startsWith(QLatin1String("--restart-wait=")))
+      continue; // stale from a previous restart; not ours to carry
+    args << a;
+  }
+  QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+  env.insert(QStringLiteral("QT_QPA_PLATFORM"), QStringLiteral("xcb"));
+  env.insert(QStringLiteral("WHATLY_XCB_FALLBACK"), QStringLiteral("1"));
+  QProcess proc;
+  proc.setProgram(QCoreApplication::applicationFilePath());
+  proc.setArguments(args);
+  proc.setProcessEnvironment(env);
+  if (proc.startDetached())
+    qApp->quit();
+}
+#endif
 
 // "Restart now" starts this process while the old one is still shutting down.
 // SingleApplication would see that one and hand these arguments over instead of
@@ -482,7 +522,12 @@ int main(int argc, char *argv[]) {
   Performance::evaluateStartup();
 
   setChromiumFlags();
-  preferXcbOnNvidiaWayland();
+#ifdef Q_OS_LINUX
+  // Watch for the Wayland backing-store RHI failure (issue #84); if it happens,
+  // relaunchInXcbIfBlank() below switches to XCB once. Must be armed before
+  // QApplication so the handler sees the failure as the window is created.
+  const bool rhiWatchArmed = armWaylandRhiFallback();
+#endif
 
   // The account id is folded into SingleApplication's instance key (it hashes
   // userData into the key), so two accounts are two primary instances that do
@@ -1348,6 +1393,14 @@ int main(int argc, char *argv[]) {
       ::sigaction(SIGTERM, &sa, nullptr);
     }
   }
+#endif
+
+#ifdef Q_OS_LINUX
+  // A short beat after the window is shown, check whether the Wayland backing
+  // store failed to get a renderer and, if so, relaunch once on XCB (issue #84).
+  if (rhiWatchArmed)
+    QTimer::singleShot(1500, &whatly,
+                       [argc, argv]() { relaunchInXcbIfBlank(argc, argv); });
 #endif
 
   return instance.exec();

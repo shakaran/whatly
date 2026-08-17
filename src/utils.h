@@ -61,18 +61,19 @@ public:
   // and helps stall WhatsApp Web's bootstrap (see isWhatsAppLoadFailure). The
   // page can clear it with its own caches/serviceWorker APIs. See issue #43.
   static bool isServiceWorkerRegistrationFailure(const QString &consoleMessage);
-  // Whether to force the XCB (XWayland) platform instead of native Wayland.
-  // Proprietary NVIDIA on a Wayland session frequently ships no working
-  // wayland-egl, so Qt cannot get a QRhi for the widget backing store and the
-  // window comes up blank and unfocusable — with no way to reach Settings to
-  // fix it (issue #84). XCB has GLX and works there. True only when all three
-  // hold: the user has not chosen a platform themselves (their choice always
-  // wins), the session is Wayland, and the proprietary NVIDIA driver is present.
-  // Pure so the policy is unit-tested; main() gathers the three facts from the
-  // environment. NVIDIA-on-Wayland users who do have it working can still set
-  // QT_QPA_PLATFORM=wayland to override.
-  static bool shouldPreferXcbPlatform(bool userChosePlatform,
-                                      bool waylandSession, bool nvidiaProprietary);
+  // Whether to watch for the Wayland backing-store RHI failure and be ready to
+  // fall back to XCB (issue #84). Some Wayland sessions (notably proprietary
+  // NVIDIA without a working wayland-egl) cannot give Qt a QRhi for the widget
+  // backing store, so the window comes up blank and unfocusable; XCB (XWayland)
+  // has GLX and works there. Forcing XCB up front for every such session was too
+  // broad — a Wayland setup that works then runs on XWayland, where the NVIDIA
+  // GL stack can crash the renderer in a loop — so instead main() arms a log
+  // watch and relaunches on XCB only if the failure actually happens. Arm it
+  // only when the user has not chosen a platform (their choice wins), the session
+  // is Wayland, and this is not already the one-shot XCB fallback attempt (the
+  // guard against a relaunch loop). Pure so the policy is unit-tested.
+  static bool shouldArmWaylandRhiFallback(bool userChosePlatform,
+                                          bool waylandSession, bool alreadyTried);
   // The path to AppImageUpdate's CLI (appimageupdatetool, or the older
   // AppImageUpdate) on PATH, or "" when neither is installed. The AppImage
   // carries its own zsync update information, so this tool fetches only the
