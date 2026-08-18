@@ -393,12 +393,14 @@ static void setChromiumFlags() {
 // "qt.text.font.db: OpenType support missing for <font>, script N" for each — even
 // though it then composes the text correctly from the per-script Noto families.
 // That is fallback working as designed (no single sans font covers every script;
-// Noto is split per script on purpose), so it is pure noise. Silence only that
-// category's warnings, and only append to whatever rules the user already set so
-// an explicit override of theirs still wins. Must run before QApplication.
+// Noto is split per script on purpose), so it is pure noise. Silence that whole
+// category, appending only to whatever rules the user already set so an explicit
+// override of theirs still wins. Must run before the first log line: Qt's logging
+// registry reads QT_LOGGING_RULES the first time anything logs, and does not
+// re-read it afterwards, so setting it after the "starting…" qWarning was too late.
 static void quietFontFallbackWarnings() {
   const QByteArray existing = qgetenv("QT_LOGGING_RULES");
-  const QByteArray rule = "qt.text.font.db.warning=false";
+  const QByteArray rule = "qt.text.font.db=false";
   if (existing.isEmpty())
     qputenv("QT_LOGGING_RULES", rule);
   else if (!existing.contains("qt.text.font.db"))
@@ -504,6 +506,7 @@ static void waitForPreviousInstance(int argc, char *argv[]) {
 }
 
 int main(int argc, char *argv[]) {
+  quietFontFallbackWarnings(); // before the first log; the rules are read once
   DebugLog::install();   // before anything can log
 
   // Which build this is, as the first thing logged. A bug report, or a tester
@@ -540,7 +543,6 @@ int main(int argc, char *argv[]) {
   Performance::evaluateStartup();
 
   setChromiumFlags();
-  quietFontFallbackWarnings();
 #ifdef Q_OS_LINUX
   // Watch for the Wayland backing-store RHI failure (issue #84); if it happens,
   // relaunchInXcbIfBlank() below switches to XCB once. Must be armed before
