@@ -1,0 +1,57 @@
+# OpenSSF Scorecard: audits the repository's supply-chain security posture
+# (branch protection, pinned actions, token permissions, dangerous workflows,
+# SAST, maintenance, and so on) and publishes the result so the README badge and
+# https://scorecard.dev can show it. Results are also uploaded to the repo's code
+# scanning tab. Runs on a weekly schedule, on branch-protection changes, and on
+# push to the default branch. See https://github.com/ossf/scorecard-action.
+name: Scorecard supply-chain security
+
+on:
+  # Re-run when a branch protection rule changes, since that is one of the checks.
+  branch_protection_rule:
+  schedule:
+    - cron: '25 6 * * 2' # weekly, Tuesday 06:25 UTC
+  push:
+    branches: [ "main" ]
+
+# Least privilege by default; the job below elevates only what it needs.
+permissions: read-all
+
+jobs:
+  analysis:
+    name: Scorecard analysis
+    runs-on: ubuntu-latest
+    permissions:
+      # Needed to upload the SARIF results to the code-scanning dashboard.
+      security-events: write
+      # Needed for the OIDC token that publish_results uses to prove provenance
+      # to the OpenSSF API (what makes the badge and the public report work).
+      id-token: write
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - name: "Run analysis"
+        uses: ossf/scorecard-action@v2.4.2
+        with:
+          results_file: results.sarif
+          results_format: sarif
+          # Publish to the OpenSSF API so the badge and the public report update.
+          # Only meaningful on the default branch of a public repository.
+          publish_results: true
+
+      # Keep the SARIF around as a build artifact for local inspection too.
+      - name: "Upload artifact"
+        uses: actions/upload-artifact@v4
+        with:
+          name: SARIF file
+          path: results.sarif
+          retention-days: 5
+
+      - name: "Upload to code-scanning"
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: results.sarif
