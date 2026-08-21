@@ -1,0 +1,60 @@
+name: Coverage
+
+permissions:
+  contents: read
+
+# Builds the unit tests instrumented for gcov, runs them headless, and uploads a
+# Cobertura report to Codecov. Same build as the Unit Tests workflow, plus
+# -DWHATLY_COVERAGE=ON. tst_settings is not run here for the same reason as in
+# tests.yml (the headless runner aborts it early), so the reported coverage is of
+# what the CI-safe suites (tst_logic, tst_ui_assets) exercise — the pure logic in
+# src/, not the Qt UI or WhatsApp Web.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  coverage:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          submodules: recursive
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.10.3'  # exact pin (#71): bump deliberately, don't glob
+          host: linux
+          target: desktop
+          arch: linux_gcc_64
+          modules: 'qtwebengine qtwebchannel qtpositioning'
+          cache: true
+
+      - name: Install build tools + gcovr
+        run: sudo apt-get update && sudo apt-get install -y ninja-build libx11-dev libxcb1-dev gcovr
+
+      - name: Configure (tests + coverage)
+        run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug -DWHATLY_TESTS=ON -DWHATLY_COVERAGE=ON -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
+
+      - name: Build the tests
+        run: cmake --build build --target tst_ui_assets tst_logic
+
+      - name: Run the tests (headless)
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: |
+          find build -name '*.gcda' -delete 2>/dev/null || true
+          ctest --test-dir build --output-on-failure -E settings
+
+      - name: Generate coverage report (Cobertura XML)
+        run: gcovr --root . --filter 'src/' --cobertura --output coverage.xml --print-summary
+
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          files: coverage.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: false
