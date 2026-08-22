@@ -12,6 +12,9 @@
 #include <QPixmap>
 #include <QSignalSpy>
 #include <QStandardPaths>
+#include <QTcpServer>
+#include <QTcpSocket>
+#include <QHostAddress>
 #include <QTemporaryDir>
 #include <QMimeData>
 #include <QTemporaryFile>
@@ -27,6 +30,11 @@
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QListView>
+#include <QListWidget>
+#include <QPainter>
+#include <QStandardItemModel>
+#include <QStyleOptionViewItem>
 #include <QVBoxLayout>
 #include <QSet>
 
@@ -1940,6 +1948,137 @@ private slots:
     QVERIFY(resp.contains("Content-Length: " + QByteArray::number(body.size())));
     QVERIFY(resp.contains("Connection: close"));
     QVERIFY(resp.endsWith(body));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// The LocalApiServer end to end: a real loopback listener answering raw HTTP
+// requests, covering onNewConnection/serviceRequest dispatch (auth, routing,
+// the /send and /webhook endpoints) that the pure-parser tests above cannot.
+class TstLocalApiServer : public QObject {
+  Q_OBJECT
+
+  // One request/response over loopback. Returns the full response bytes (the
+  // server closes the connection after each reply, so we read to EOF).
+  static QByteArray roundTrip(int port, const QByteArray &raw) {
+    QTcpSocket sock;
+    QByteArray resp;
+    QObject::connect(&sock, &QIODevice::readyRead, &sock,
+                     [&]() { resp += sock.readAll(); });
+    // The server and this client share the test's event loop, so a blocking
+    // waitForReadyRead would never let the server's newConnection slot run.
+    // QSignalSpy::wait() spins a real loop instead, so both sides progress.
+    QSignalSpy done(&sock, &QAbstractSocket::disconnected);
+    sock.connectToHost(QHostAddress::LocalHost, static_cast<quint16>(port));
+    if (!sock.waitForConnected(3000))
+      return QByteArray();
+    sock.write(raw);
+    sock.flush();
+    done.wait(4000); // server replies then closes (Connection: close)
+    resp += sock.readAll();
+    return resp;
+  }
+
+  static QByteArray httpReq(const QByteArray &method, const QByteArray &path,
+                            const QByteArray &auth = QByteArray(),
+                            const QByteArray &body = QByteArray()) {
+    QByteArray r = method + " " + path + " HTTP/1.1\r\nHost: 127.0.0.1\r\n";
+    if (!auth.isEmpty())
+      r += "Authorization: Bearer " + auth + "\r\n";
+    r += "Content-Length: " + QByteArray::number(body.size()) +
+         "\r\nConnection: close\r\n\r\n" + body;
+    return r;
+  }
+
+private slots:
+  void init() {
+    LocalApi::setEnabled(true);
+    LocalApi::setToken(QStringLiteral("secret"));
+    LocalApi::setPort(0); // ephemeral: let the OS pick a free loopback port
+    CloudWebhook::setEnabled(false);
+  }
+  void cleanup() {
+    LocalApi::setEnabled(false);
+    LocalApi::setToken(QString());
+    CloudWebhook::setEnabled(false);
+  }
+
+  void sendAcceptedEmitsCommand() {
+    LocalApiServer server;
+    QVERIFY(server.start());
+    QVERIFY(server.isListening());
+    const int port = server.listeningPort();
+    QSignalSpy spy(&server, &LocalApiServer::sendRequested);
+    const QByteArray resp = roundTrip(
+        port, httpReq("POST", "/send", "secret", "{\"to\":\"x\"}"));
+    QVERIFY(resp.startsWith("HTTP/1.1 202 Accepted\r\n"));
+    QCOMPARE(spy.count(), 1);
+  }
+
+  void rejectsMissingOrWrongToken() {
+    LocalApiServer server;
+    QVERIFY(server.start());
+    const int port = server.listeningPort();
+    const QByteArray noTok =
+        roundTrip(port, httpReq("POST", "/send", QByteArray(), "{\"to\":\"x\"}"));
+    QVERIFY(noTok.startsWith("HTTP/1.1 401 "));
+    const QByteArray badTok =
+        roundTrip(port, httpReq("POST", "/send", "nope", "{\"to\":\"x\"}"));
+    QVERIFY(badTok.startsWith("HTTP/1.1 401 "));
+  }
+
+  void routingErrors() {
+    LocalApiServer server;
+    QVERIFY(server.start());
+    const int port = server.listeningPort();
+    const QByteArray wrongMethod =
+        roundTrip(port, httpReq("GET", "/send", "secret"));
+    QVERIFY(wrongMethod.startsWith("HTTP/1.1 405 "));
+    const QByteArray unknown =
+        roundTrip(port, httpReq("POST", "/nope", "secret", "{}"));
+    QVERIFY(unknown.startsWith("HTTP/1.1 404 "));
+    const QByteArray badBody =
+        roundTrip(port, httpReq("POST", "/send", "secret", "not json"));
+    QVERIFY(badBody.startsWith("HTTP/1.1 400 "));
+  }
+
+  void webhookVerifyHandshake() {
+    CloudWebhook::setEnabled(true);
+    CloudWebhook::setVerifyToken(QStringLiteral("vtok"));
+    LocalApiServer server;
+    QVERIFY(server.start());
+    const int port = server.listeningPort();
+    // Disabled path is checked first: without the enable it would 404. Here the
+    // GET handshake echoes the challenge back on a matching verify token.
+    const QByteArray ok = roundTrip(
+        port, httpReq("GET", "/webhook?hub.mode=subscribe&hub.verify_token=vtok&"
+                             "hub.challenge=98765"));
+    QVERIFY(ok.startsWith("HTTP/1.1 200 "));
+    QVERIFY(ok.endsWith("98765"));
+    const QByteArray bad = roundTrip(
+        port, httpReq("GET", "/webhook?hub.mode=subscribe&hub.verify_token=wrong&"
+                             "hub.challenge=1"));
+    QVERIFY(bad.startsWith("HTTP/1.1 403 "));
+  }
+
+  void webhookDisabledIs404() {
+    // Webhook off, but the send API keeps the listener up.
+    LocalApiServer server;
+    QVERIFY(server.start());
+    const int port = server.listeningPort();
+    const QByteArray resp = roundTrip(port, httpReq("GET", "/webhook"));
+    QVERIFY(resp.startsWith("HTTP/1.1 404 "));
+  }
+
+  void startFailsWhenUnconfigured() {
+    LocalApi::setEnabled(false);
+    LocalApi::setToken(QString());
+    CloudWebhook::setEnabled(false);
+    LocalApiServer server;
+    QString error;
+    QVERIFY(!server.start(&error));
+    QVERIFY(!error.isEmpty());
+    QVERIFY(!server.isListening());
   }
 };
 
@@ -4421,6 +4560,203 @@ private slots:
   }
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+// The widgets, instantiated headless (offscreen) and driven through their public
+// surface: constructors, filtering, custom painting and event handling that the
+// pure-logic suites never reach.
+class TstWidgets : public QObject {
+  Q_OBJECT
+private slots:
+  void commandPaletteFiltersAndRuns() {
+    int ran = -1;
+    QList<CommandPalette::Command> cmds{
+        {QStringLiteral("Open settings"), [&]() { ran = 0; }},
+        {QStringLiteral("Toggle theme"), [&]() { ran = 1; }},
+        {QStringLiteral("Reload page"), [&]() { ran = 2; }},
+    };
+    CommandPalette palette(cmds);
+    auto *edit = palette.findChild<QLineEdit *>();
+    auto *list = palette.findChild<QListWidget *>();
+    QVERIFY(edit);
+    QVERIFY(list);
+    QCOMPARE(list->count(), 3); // empty query shows all (refilter ran in ctor)
+
+    edit->setText(QStringLiteral("theme")); // textChanged → refilter
+    QVERIFY(list->count() >= 1);
+    QVERIFY(list->count() < 3); // unrelated commands filtered out
+
+    // Down/Up move the selection and Return runs it, all via the search box's
+    // installed event filter.
+    QTest::keyClick(edit, Qt::Key_Down);
+    QTest::keyClick(edit, Qt::Key_Up);
+    QTest::keyClick(edit, Qt::Key_Return);
+    QVERIFY(ran >= 0);
+    QCOMPARE(palette.result(), int(QDialog::Accepted));
+
+    // A query that matches nothing empties the list without crashing.
+    CommandPalette empty(cmds);
+    empty.findChild<QLineEdit *>()->setText(QStringLiteral("zzzzzzzz"));
+    QCOMPARE(empty.findChild<QListWidget *>()->count(), 0);
+  }
+
+  void accountTabBarQueriesAndClicks() {
+    AccountTabBar bar;
+    bar.resize(360, 36);
+    const int a = bar.addTab(QStringLiteral("Work"));
+    bar.setTabData(a, QStringLiteral("work"));
+    const int b = bar.addTab(QStringLiteral("Home"));
+    bar.setTabData(b, QStringLiteral("home"));
+    bar.addTab(QStringLiteral("+")); // the affordance carries no tab data
+
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("work")), a);
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("home")), b);
+    QCOMPARE(bar.indexOfAccount(QStringLiteral("missing")), -1);
+
+    // The custom strip paints without crashing, and a plain click (no drag)
+    // selects through mousePress/mouseRelease.
+    QVERIFY(!bar.grab().isNull());
+    QTest::mouseClick(&bar, Qt::LeftButton, Qt::NoModifier,
+                      bar.tabRect(b).center());
+    QCOMPARE(bar.currentIndex(), b);
+  }
+
+  void dictionaryDelegateRenders() {
+    const QRect row(0, 0, 200, 24);
+    const QRect btn = DictionaryRowDelegate::actionRect(row);
+    QVERIFY(!btn.isEmpty());
+    QVERIFY(row.contains(btn));
+    QVERIFY(!DictionaryRowDelegate::noteRect(row).isEmpty());
+    QVERIFY(DictionaryRowDelegate::actionRect(QRect(0, 0, 4, 24)).isEmpty());
+
+    QListView view;
+    QStandardItemModel model;
+    const auto add = [&](bool installed, DictionaryRows::Action action,
+                         int progress, qint64 size) {
+      auto *it = new QStandardItem(QStringLiteral("Language"));
+      it->setCheckable(true);
+      it->setCheckState(installed ? Qt::Checked : Qt::Unchecked);
+      it->setData(installed, DictionaryRows::InstalledRole);
+      it->setData(int(action), DictionaryRows::ActionRole);
+      it->setData(progress, DictionaryRows::ProgressRole);
+      it->setData(QVariant::fromValue<qint64>(size), DictionaryRows::SizeRole);
+      model.appendRow(it);
+    };
+    add(true, DictionaryRows::Action::Delete, DictionaryRows::Idle, 0);
+    add(false, DictionaryRows::Action::Download, DictionaryRows::Idle, 838860);
+    add(false, DictionaryRows::Action::Download, 45, 0); // downloading → spinner
+    add(false, DictionaryRows::Action::Download, DictionaryRows::Failed, 0);
+    add(true, DictionaryRows::Action::None, DictionaryRows::Idle, 0); // bundled
+
+    view.setModel(&model);
+    DictionaryRowDelegate delegate(&view);
+    view.setItemDelegate(&delegate);
+    view.resize(240, 200);
+
+    QPixmap canvas(240, 30);
+    for (int r = 0; r < model.rowCount(); ++r) {
+      const QModelIndex idx = model.index(r, 0);
+      QStyleOptionViewItem opt;
+      opt.rect = QRect(0, 0, 240, 28);
+      opt.widget = &view;
+      opt.palette = view.palette();
+      opt.font = view.font();
+      opt.fontMetrics = QFontMetrics(opt.font);
+      opt.state = QStyle::State_Enabled;
+      if (r == 0)
+        opt.state |= QStyle::State_Selected; // selected-ink branch
+      canvas.fill(Qt::white);
+      QPainter p(&canvas);
+      delegate.paint(&p, opt, idx);
+      p.end();
+      const QSize hint = delegate.sizeHint(opt, idx);
+      QVERIFY(hint.width() > 0);
+      QVERIFY(hint.height() >= 22);
+    }
+  }
+};
+
+// A one-shot localhost HTTP server that answers the next request with 200 + a
+// fixed JSON body. Lets the network clients run their real request/reply path
+// against a stand-in instead of a live service.
+class MockHttpServer : public QObject {
+  Q_OBJECT
+public:
+  QString start(const QByteArray &body) {
+    m_body = body;
+    if (!m_server.listen(QHostAddress::LocalHost, 0))
+      return QString();
+    connect(&m_server, &QTcpServer::newConnection, this, [this]() {
+      QTcpSocket *sock = m_server.nextPendingConnection();
+      connect(sock, &QTcpSocket::readyRead, this, [this, sock]() {
+        sock->readAll(); // the request content does not matter to the mock
+        QByteArray resp = "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\n"
+                          "Content-Length: " +
+                          QByteArray::number(m_body.size()) +
+                          "\r\nConnection: close\r\n\r\n" + m_body;
+        sock->write(resp);
+        sock->flush();
+        sock->disconnectFromHost();
+      });
+    });
+    return QStringLiteral("http://127.0.0.1:%1").arg(m_server.serverPort());
+  }
+
+private:
+  QTcpServer m_server;
+  QByteArray m_body;
+};
+
+// The request/reply paths of the network clients, driven against MockHttpServer.
+class TstNetworkClients : public QObject {
+  Q_OBJECT
+private slots:
+  void ollamaCheckParsesTags() {
+    MockHttpServer mock;
+    const QString url = mock.start(
+        R"({"models":[{"name":"llama3:latest"},{"name":"phi3:mini"}]})");
+    QVERIFY(!url.isEmpty());
+    OllamaManager m;
+    QSignalSpy spy(&m, &OllamaManager::checked);
+    m.check(url);
+    QVERIFY(spy.wait(5000));
+    const auto args = spy.takeFirst();
+    QVERIFY(args.at(0).toBool()); // reachable
+    QVERIFY(args.at(1).toStringList().contains(QStringLiteral("llama3:latest")));
+  }
+
+  void translatorTranslates() {
+    MockHttpServer mock;
+    const QString url = mock.start(R"({"translatedText":"hola"})");
+    QVERIFY(!url.isEmpty());
+    Translate::setEndpoint(url);
+    Translator t;
+    QSignalSpy ok(&t, &Translator::translated);
+    QSignalSpy bad(&t, &Translator::failed);
+    t.translate(QStringLiteral("hi"), QStringLiteral("es"));
+    QVERIFY(ok.wait(5000) || bad.count() > 0);
+    QCOMPARE(bad.count(), 0);
+    QCOMPARE(ok.takeFirst().at(0).toString(), QStringLiteral("hola"));
+    Translate::setEndpoint(QString());
+  }
+
+  void aiCompletes() {
+    MockHttpServer mock;
+    const QByteArray body = R"({"choices":[{"message":{"content":"ok"}}]})";
+    const QString url = mock.start(body);
+    QVERIFY(!url.isEmpty());
+    Ai::setEndpoint(url);
+    Ai::setModel(QStringLiteral("m"));
+    AiClient c;
+    QSignalSpy done(&c, &AiClient::completed);
+    QSignalSpy bad(&c, &AiClient::failed);
+    c.complete(QStringLiteral("sys"), QStringLiteral("user"));
+    QVERIFY(done.wait(5000) || bad.count() > 0);
+    QCOMPARE(bad.count(), 0);
+    QCOMPARE(done.takeFirst().at(0).toString(), QStringLiteral("ok"));
+    Ai::setEndpoint(QString());
+  }
+};
+
 int main(int argc, char *argv[]) {
   // Keep the (headless) QWebEngineProfile used by the install() test happy on CI
   // runners: no sandbox, no GPU. Must be set before QApplication.
@@ -4461,6 +4797,7 @@ int main(int argc, char *argv[]) {
   { TstAutoReply t;           run(&t); }
   { TstCloudApi t;            run(&t); }
   { TstLocalApi t;            run(&t); }
+  { TstLocalApiServer t;      run(&t); }
   { TstCloudWebhook t;        run(&t); }
   { TstIdenticons t;          run(&t); }
   { TstTheme t;               run(&t); }
@@ -4505,6 +4842,8 @@ int main(int argc, char *argv[]) {
   { TstPortalNotification t;  run(&t); }
   { TstSetupWizard t;         run(&t); }
   { TstScriptInstall t;       run(&t); }
+  { TstNetworkClients t;      run(&t); }
+  { TstWidgets t;             run(&t); }
   // Profile-mutating test runs last so it doesn't disturb the others.
   { TstAppProfile t;          run(&t); }
   { TstAppProfileArgs t;      run(&t); }
