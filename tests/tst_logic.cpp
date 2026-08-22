@@ -30,12 +30,14 @@
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QCryptographicHash>
 #include <QDateTime>
 #include <QDragEnterEvent>
 #include <QDragLeaveEvent>
 #include <QDragMoveEvent>
 #include <QDropEvent>
 #include <QEnterEvent>
+#include <QKeyEvent>
 #include <QListView>
 #include <QListWidget>
 #include <QMouseEvent>
@@ -2077,6 +2079,39 @@ private slots:
     const int port = server.listeningPort();
     const QByteArray resp = roundTrip(port, httpReq("GET", "/webhook"));
     QVERIFY(resp.startsWith("HTTP/1.1 404 "));
+  }
+
+  void webhookPostDeliversMessages() {
+    CloudWebhook::setEnabled(true);
+    CloudWebhook::setAppSecret(QString()); // no signature check configured
+    LocalApiServer server;
+    QVERIFY(server.start());
+    const int port = server.listeningPort();
+    QSignalSpy got(&server, &LocalApiServer::webhookMessageReceived);
+    const QByteArray payload =
+        R"({"object":"whatsapp_business_account","entry":[{"changes":[{"value":{)"
+        R"("messages":[{"from":"34600123456","id":"wamid.1","type":"text",)"
+        R"("text":{"body":"hola"}},{"from":"34600999999","id":"wamid.2",)"
+        R"("type":"image"}]}}]}]})";
+    const QByteArray resp =
+        roundTrip(port, httpReq("POST", "/webhook", QByteArray(), payload));
+    QVERIFY(resp.startsWith("HTTP/1.1 200 "));
+    QCOMPARE(got.count(), 1); // only the text message carries a body
+    CloudWebhook::setAppSecret(QString());
+  }
+
+  void webhookPostRejectsBadSignature() {
+    CloudWebhook::setEnabled(true);
+    CloudWebhook::setAppSecret(QStringLiteral("secret")); // now checked
+    LocalApiServer server;
+    QVERIFY(server.start());
+    const int port = server.listeningPort();
+    QByteArray req = httpReq("POST", "/webhook", QByteArray(), "{}");
+    req.replace("Connection: close",
+                "x-hub-signature-256: sha256=deadbeef\r\nConnection: close");
+    const QByteArray resp = roundTrip(port, req);
+    QVERIFY(resp.startsWith("HTTP/1.1 401 "));
+    CloudWebhook::setAppSecret(QString());
   }
 
   void startFailsWhenUnconfigured() {
@@ -4813,6 +4848,27 @@ private slots:
     QVERIFY(!error.isEmpty());
   }
 
+  void backupErrorBranches() {
+    QTemporaryDir root;
+    QVERIFY(root.isValid());
+    const QString blocker = root.path() + QStringLiteral("/afile");
+    writeFile(blocker, "x"); // a plain file where a directory is needed
+    const QString underFile = blocker + QStringLiteral("/sub");
+    QString error;
+
+    // extractArchive cannot mkpath a directory under a file.
+    QVERIFY(!Backup::extractArchive(root.path() + QStringLiteral("/none.tgz"),
+                                    underFile, &error));
+    QVERIFY(!error.isEmpty());
+
+    // makeArchive with an archive path under a file makes tar fail.
+    QVERIFY(!Backup::makeArchive(root.path(), underFile, &error));
+
+    // copyDirRecursive into a destination that cannot be created fails.
+    error.clear();
+    QVERIFY(!Backup::copyDirRecursive(root.path(), underFile, &error));
+  }
+
   void profileExportImportRoundTrip() {
     // Runs entirely inside the test-mode locations (QStandardPaths test mode is
     // on for the whole suite), so it never touches a real profile.
@@ -5164,6 +5220,124 @@ private slots:
     for (const auto &e : sm.entries()) // leave the shared store as we found it
       sm.remove(e.id);
   }
+
+  void persistsAcrossInstances() {
+    {
+      ScheduledMessages sm;
+      for (const auto &e : sm.entries())
+        sm.remove(e.id);
+      sm.add(QStringLiteral("34600000000"), QStringLiteral("N"),
+             QStringLiteral("later"),
+             QDateTime::currentDateTime().addDays(1), Recurrence::Weekly,
+             false); // saved to disk, due tomorrow so it never fires here
+    }
+    ScheduledMessages fresh; // its constructor load()s the saved entry back
+    QVERIFY(!fresh.entries().isEmpty());
+    // find() returning nullptr: reporting a result for an unknown id is a no-op.
+    fresh.reportResult(QStringLiteral("no-such-id"), true, QString());
+    for (const auto &e : fresh.entries()) // leave the shared store clean
+      fresh.remove(e.id);
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// A few Utils helpers whose branches the existing tests miss: the cache-size unit
+// picker, genRand's "no character classes" recursion, the XML entity round trip,
+// and getInstallType reading the packaging environment.
+class TstUtilsCoverage : public QObject {
+  Q_OBJECT
+  static void writeSized(const QString &path, int bytes) {
+    QFile f(path);
+    f.open(QIODevice::WriteOnly);
+    f.write(QByteArray(bytes, 'x'));
+    f.close();
+  }
+private slots:
+  void refreshCacheSizeUnits() {
+    QTemporaryDir mb;
+    writeSized(mb.path() + QStringLiteral("/big.bin"), 2 * 1024 * 1024);
+    QVERIFY(Utils::refreshCacheSize(mb.path()).contains(QStringLiteral("MB")));
+    QTemporaryDir kb;
+    writeSized(kb.path() + QStringLiteral("/mid.bin"), 4 * 1024);
+    QVERIFY(Utils::refreshCacheSize(kb.path()).contains(QStringLiteral("kB")));
+    QTemporaryDir b;
+    writeSized(b.path() + QStringLiteral("/tiny.bin"), 8);
+    QVERIFY(Utils::refreshCacheSize(b.path()).endsWith(QStringLiteral(" B")));
+  }
+
+  void genRandRecursesWithoutClasses() {
+    // No character class enabled: the function recurses with all of them on.
+    QCOMPARE(Utils::genRand(8, false, false, false).size(), 8);
+  }
+
+  void xmlEntitiesRoundTrip() {
+    const QString raw = QStringLiteral("a&b<c>\"d'e");
+    const QString enc = Utils::encodeXML(raw);
+    QVERIFY(enc.contains(QStringLiteral("&amp;")));
+    QVERIFY(enc.contains(QStringLiteral("&lt;")));
+    QCOMPARE(Utils::decodeXML(enc), raw);
+  }
+
+  void watermarkStyling() {
+    Utils::makeWatermark(nullptr); // a null label is a no-op
+    {
+      QLabel l; // a point-sized font is scaled down
+      QFont f = l.font();
+      f.setPointSizeF(12.0);
+      l.setFont(f);
+      Utils::makeWatermark(&l);
+      QVERIFY(l.graphicsEffect() != nullptr);
+    }
+    {
+      QLabel l; // a pixel-sized font takes the other branch
+      QFont f = l.font();
+      f.setPixelSize(20);
+      l.setFont(f);
+      Utils::makeWatermark(&l);
+      QVERIFY(l.graphicsEffect() != nullptr);
+    }
+  }
+
+  void installTypeReadsEnvironment() {
+    qputenv("INSTALL_TYPE", "custom");
+    QCOMPARE(Utils::getInstallType(), QStringLiteral("custom"));
+    qunsetenv("INSTALL_TYPE");
+    qputenv("SNAP", "/snap/whatly/current");
+    QCOMPARE(Utils::getInstallType(), QStringLiteral("snap"));
+    qunsetenv("SNAP");
+    qputenv("FLATPAK_ID", "net.shakaran.whatly");
+    QCOMPARE(Utils::getInstallType(), QStringLiteral("flatpak"));
+    qunsetenv("FLATPAK_ID");
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// A grab bag of otherwise-unreached branches: the AI response parser's no-text
+// path, the optional API-key setter, and the language-label variant/bare-code
+// shapes.
+class TstMiscCoverage : public QObject {
+  Q_OBJECT
+private slots:
+  void aiParserAndApiKey() {
+    Ai::setApiKey(QStringLiteral("k")); // the optional-key setter
+    QString err;
+    // A well-formed envelope carrying no message content is a failure with a
+    // human-readable reason, not an empty success.
+    const QString out = Ai::parseChatResponse(
+        QByteArray(R"({"choices":[{"message":{}}]})"), &err);
+    QVERIFY(out.isEmpty());
+    QVERIFY(!err.isEmpty());
+    Ai::setApiKey(QString());
+  }
+
+  void languageLabelVariantAndBareCode() {
+    // A variant tag Qt folds into a plain locale is spelled out by territory
+    // and variant rather than dumped as a raw code.
+    const QString neu = Dictionaries::languageLabel(QStringLiteral("de_DE_neu"));
+    QVERIFY(neu.contains(QStringLiteral("neu")));
+    // A bare language Qt would over-qualify keeps the code as its disambiguator.
+    QVERIFY(!Dictionaries::languageLabel(QStringLiteral("eo")).isEmpty());
+  }
 };
 
 // A one-shot localhost HTTP server that answers the next request with 200 + a
@@ -5270,6 +5444,157 @@ private slots:
     QCOMPARE(done.takeFirst().at(0).toString(), QStringLiteral("ok"));
     Ai::setEndpoint(QString());
   }
+
+  void aiGuardsAndErrors() {
+    // No endpoint configured.
+    Ai::setEndpoint(QString());
+    Ai::setModel(QStringLiteral("m"));
+    {
+      AiClient c;
+      QSignalSpy bad(&c, &AiClient::failed);
+      c.complete(QStringLiteral("sys"), QStringLiteral("user"));
+      QCOMPARE(bad.count(), 1);
+    }
+    // Endpoint but no model.
+    Ai::setEndpoint(QStringLiteral("http://127.0.0.1:1"));
+    Ai::setModel(QString());
+    {
+      AiClient c;
+      QSignalSpy bad(&c, &AiClient::failed);
+      c.complete(QStringLiteral("sys"), QStringLiteral("user"));
+      QCOMPARE(bad.count(), 1);
+    }
+    // Endpoint and model, but nothing to send.
+    Ai::setModel(QStringLiteral("m"));
+    {
+      AiClient c;
+      QSignalSpy bad(&c, &AiClient::failed);
+      c.complete(QStringLiteral("sys"), QStringLiteral("   "));
+      QCOMPARE(bad.count(), 1);
+    }
+    // A reply that is not the expected JSON fails after the round trip.
+    {
+      MockHttpServer mock;
+      Ai::setEndpoint(mock.start("not json at all"));
+      AiClient c;
+      QSignalSpy bad(&c, &AiClient::failed);
+      c.complete(QStringLiteral("sys"), QStringLiteral("hola"));
+      QVERIFY(bad.wait(5000));
+    }
+    // A well-formed request to a port with nothing listening fails on the
+    // network error branch of the reply handler.
+    {
+      Ai::setEndpoint(QStringLiteral("http://127.0.0.1:1"));
+      Ai::setModel(QStringLiteral("m"));
+      AiClient c;
+      QSignalSpy bad(&c, &AiClient::failed);
+      c.complete(QStringLiteral("sys"), QStringLiteral("hola"));
+      QVERIFY(bad.wait(5000));
+    }
+    Ai::setEndpoint(QString());
+  }
+
+  void translatorGuardsAndErrors() {
+    Translate::setEndpoint(QString());
+    {
+      Translator t;
+      QSignalSpy bad(&t, &Translator::failed);
+      t.translate(QStringLiteral("hi"), QStringLiteral("es"));
+      QCOMPARE(bad.count(), 1); // no endpoint
+    }
+    Translate::setEndpoint(QStringLiteral("http://127.0.0.1:1"));
+    {
+      Translator t;
+      QSignalSpy bad(&t, &Translator::failed);
+      t.translate(QStringLiteral("   "), QStringLiteral("es"));
+      QCOMPARE(bad.count(), 1); // nothing to translate
+    }
+    {
+      MockHttpServer mock;
+      Translate::setEndpoint(mock.start("not json"));
+      Translator t;
+      QSignalSpy bad(&t, &Translator::failed);
+      t.translate(QStringLiteral("hi"), QStringLiteral("es"));
+      QVERIFY(bad.wait(5000));
+    }
+    {
+      // Nothing listening: the reply handler's network-error branch fires.
+      Translate::setEndpoint(QStringLiteral("http://127.0.0.1:1"));
+      Translator t;
+      QSignalSpy bad(&t, &Translator::failed);
+      t.translate(QStringLiteral("hi"), QStringLiteral("es"));
+      QVERIFY(bad.wait(5000));
+    }
+    Translate::setEndpoint(QString());
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DictionaryManager's networked catalogue fetch and asset download, pointed at
+// the mock server via WHATLY_DICT_BASE_URL: manifest parse, the failure path,
+// and a download that is verified and saved / rejected on a bad hash.
+class TstDictionaryManagerNet : public QObject {
+  Q_OBJECT
+  static QString sha256Hex(const QByteArray &d) {
+    return QString::fromLatin1(
+        QCryptographicHash::hash(d, QCryptographicHash::Sha256).toHex());
+  }
+private slots:
+  void cleanup() { qunsetenv("WHATLY_DICT_BASE_URL"); }
+
+  void fetchCatalogParsesManifest() {
+    MockHttpServer mock;
+    const QString url = mock.start(
+        R"({"dictionaries":[{"code":"de_DE","size":4,"sha256":"aa"}]})");
+    QVERIFY(!url.isEmpty());
+    qputenv("WHATLY_DICT_BASE_URL", url.toUtf8());
+    DictionaryManager dm;
+    QSignalSpy ready(&dm, &DictionaryManager::catalogReady);
+    dm.fetchCatalog();
+    QVERIFY(ready.wait(5000));
+  }
+
+  void fetchCatalogReportsFailure() {
+    qputenv("WHATLY_DICT_BASE_URL", "http://127.0.0.1:1"); // nothing listening
+    DictionaryManager dm;
+    QSignalSpy failed(&dm, &DictionaryManager::catalogFailed);
+    dm.fetchCatalog();
+    QVERIFY(failed.wait(5000));
+  }
+
+  void downloadVerifiesAndSaves() {
+    const QByteArray asset("BDIC-CONTENT");
+    MockHttpServer mock;
+    const QString url = mock.start(asset);
+    qputenv("WHATLY_DICT_BASE_URL", url.toUtf8());
+    DictionaryEntry entry;
+    entry.code = QStringLiteral("xx_DL");
+    entry.size = asset.size();
+    entry.sha256 = sha256Hex(asset);
+    DictionaryManager dm;
+    QSignalSpy done(&dm, &DictionaryManager::downloadFinished);
+    dm.download(entry);
+    QVERIFY(done.wait(5000));
+    QCOMPARE(done.first().at(1).toBool(), true); // verified and written
+    QFile::remove(QDir(Dictionaries::userDictionaryPath())
+                      .filePath(QStringLiteral("xx_DL.bdic")));
+  }
+
+  void downloadRejectsBadHash() {
+    const QByteArray asset("BAD");
+    MockHttpServer mock;
+    const QString url = mock.start(asset);
+    qputenv("WHATLY_DICT_BASE_URL", url.toUtf8());
+    DictionaryEntry entry;
+    entry.code = QStringLiteral("xx_BAD");
+    entry.size = asset.size();
+    entry.sha256 = QStringLiteral("deadbeef"); // does not match the payload
+    DictionaryManager dm;
+    QSignalSpy done(&dm, &DictionaryManager::downloadFinished);
+    dm.download(entry);
+    QVERIFY(done.wait(5000));
+    QCOMPARE(done.first().at(1).toBool(), false); // verification failed
+  }
 };
 
 int main(int argc, char *argv[]) {
@@ -5358,11 +5683,14 @@ int main(int argc, char *argv[]) {
   { TstSetupWizard t;         run(&t); }
   { TstScriptInstall t;       run(&t); }
   { TstNetworkClients t;      run(&t); }
+  { TstDictionaryManagerNet t; run(&t); }
   { TstWidgets t;             run(&t); }
   { TstFileOps t;             run(&t); }
   { TstScheduledDue t;        run(&t); }
   { TstDictionaryManagerMore t; run(&t); }
   { TstChatExportMore t;      run(&t); }
+  { TstUtilsCoverage t;       run(&t); }
+  { TstMiscCoverage t;        run(&t); }
   // Profile-mutating test runs last so it doesn't disturb the others.
   { TstAppProfile t;          run(&t); }
   { TstAppProfileArgs t;      run(&t); }

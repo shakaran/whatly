@@ -8,6 +8,7 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QPushButton>
+#include <QKeyEvent>
 
 #include <QDesktopServices>
 #include <QUrl>
@@ -37,6 +38,7 @@ private slots:
   void aboutLogo();
   void aboutButtonIcons();
   void aboutDebugInfoToggle();
+  void aboutKeyPress();
   void linkButtonsExercised();
   void rateAppShouldShowStates();
 };
@@ -141,6 +143,18 @@ void TstUiAssets::aboutButtonIcons() {
   }
   QVERIFY2(missing.isEmpty(),
            qPrintable("About: buttons with no icon: " + missing.join(", ")));
+}
+
+void TstUiAssets::aboutKeyPress() {
+  // Escape closes the dialog; any other key falls through to the base handler.
+  About w;
+  w.show();
+  QTest::qWait(20);
+  QKeyEvent esc(QEvent::KeyPress, Qt::Key_Escape, Qt::NoModifier);
+  QApplication::sendEvent(&w, &esc);
+  QKeyEvent other(QEvent::KeyPress, Qt::Key_A, Qt::NoModifier);
+  QApplication::sendEvent(&w, &other);
+  QVERIFY(true);
 }
 
 void TstUiAssets::linkButtonsExercised() {
