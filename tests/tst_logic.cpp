@@ -30,11 +30,19 @@
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QDateTime>
+#include <QDragEnterEvent>
+#include <QDragLeaveEvent>
+#include <QDragMoveEvent>
+#include <QDropEvent>
+#include <QEnterEvent>
 #include <QListView>
 #include <QListWidget>
+#include <QMouseEvent>
 #include <QPainter>
 #include <QStandardItemModel>
 #include <QStyleOptionViewItem>
+#include <QUrl>
 #include <QVBoxLayout>
 #include <QSet>
 
@@ -98,6 +106,7 @@
 #include "dropattach.h"
 #include "dropreader.h"
 #include "dropresolve.h"
+#include "lingertip.h"
 #include "networkproxy.h"
 #include "notificationrules.h"
 #include "autostart.h"
@@ -4558,6 +4567,41 @@ private slots:
     SessionBackup::setPathsForTesting(root.path(), QStringLiteral("-x"));
     QVERIFY(!SessionBackup::restore(QString()));
   }
+  void runsStartupRecovery() {
+    QSettings &s = SettingsManager::instance().settings();
+    const QVariant savedEnabled = s.value(QStringLiteral("sessionBackup/enabled"));
+    const QVariant savedIds = s.value(QStringLiteral("accounts/ids"));
+
+    QTemporaryDir root;
+    QVERIFY(root.isValid());
+    SessionBackup::setPathsForTesting(root.path(), QString());
+    const QString live = root.path() + QStringLiteral("/QtWebEngine");
+    const QString idb = live + QStringLiteral("/IndexedDB");
+
+    // Disabled: recovery returns straight away and restores nothing.
+    s.setValue(QStringLiteral("sessionBackup/enabled"), false);
+    SessionBackup::runStartupRecovery();
+
+    // Enabled: a wiped live session with a good snapshot is put back at startup.
+    s.setValue(QStringLiteral("sessionBackup/enabled"), true);
+    s.setValue(QStringLiteral("accounts/ids"), QStringList{});
+    writeIndexedDb(live, 512 * 1024);
+    QVERIFY(SessionBackup::snapshot(QString()));
+    QDir(idb).removeRecursively();
+    QVERIFY(!SessionBackup::sessionLooksPresent(
+        StorageInfo::directorySize(idb)));
+
+    SessionBackup::runStartupRecovery(); // the restore branch
+    QVERIFY(SessionBackup::sessionLooksPresent(
+        StorageInfo::directorySize(idb)));
+
+    // A second pass, with the session now present, takes a fresh snapshot
+    // instead of restoring.
+    SessionBackup::runStartupRecovery(); // the snapshot branch
+
+    s.setValue(QStringLiteral("sessionBackup/enabled"), savedEnabled);
+    s.setValue(QStringLiteral("accounts/ids"), savedIds);
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -4618,6 +4662,59 @@ private slots:
     QTest::mouseClick(&bar, Qt::LeftButton, Qt::NoModifier,
                       bar.tabRect(b).center());
     QCOMPARE(bar.currentIndex(), b);
+
+    // A press then a move that stays within the strip exercises mouseMoveEvent
+    // without crossing the detach margin (which would start a blocking QDrag).
+    QTest::mousePress(&bar, Qt::LeftButton, Qt::NoModifier,
+                      bar.tabRect(a).center());
+    QMouseEvent mv(QEvent::MouseMove, QPointF(bar.tabRect(b).center()),
+                   bar.mapToGlobal(bar.tabRect(b).center()), Qt::NoButton,
+                   Qt::LeftButton, Qt::NoModifier);
+    QApplication::sendEvent(&bar, &mv);
+    QTest::mouseRelease(&bar, Qt::LeftButton, Qt::NoModifier,
+                        bar.tabRect(b).center());
+  }
+
+  void accountTabBarIsADropTarget() {
+    const QString mimeType =
+        QStringLiteral("application/x-whatly-account-tab");
+    AccountTabBar bar;
+    bar.resize(360, 36);
+    bar.setAcceptDrops(true); // the real host enables drops on the strip
+    bar.setTabData(bar.addTab(QStringLiteral("Work")), QStringLiteral("work"));
+    bar.setTabData(bar.addTab(QStringLiteral("Home")), QStringLiteral("home"));
+
+    QMimeData data;
+    data.setData(mimeType, QByteArray("home"));
+
+    QDragEnterEvent enter(bar.tabRect(0).center(), Qt::MoveAction, &data,
+                          Qt::LeftButton, Qt::NoModifier);
+    QApplication::sendEvent(&bar, &enter);
+    QVERIFY(enter.isAccepted());
+
+    QDragMoveEvent move(bar.tabRect(1).center(), Qt::MoveAction, &data,
+                        Qt::LeftButton, Qt::NoModifier);
+    QApplication::sendEvent(&bar, &move);
+
+    // With a drag hovering, paintEvent draws the insertion indicator.
+    QVERIFY(!bar.grab().isNull());
+
+    QSignalSpy dropped(&bar, &AccountTabBar::accountDropped);
+    QDropEvent drop(QPointF(bar.tabRect(1).center()), Qt::MoveAction, &data,
+                    Qt::LeftButton, Qt::NoModifier);
+    QApplication::sendEvent(&bar, &drop);
+    QCOMPARE(dropped.count(), 1);
+    QCOMPARE(dropped.first().at(0).toString(), QStringLiteral("home"));
+
+    // A foreign payload falls through to the base class, unaccepted.
+    QMimeData other;
+    other.setText(QStringLiteral("nope"));
+    QDragEnterEvent foreign(bar.tabRect(0).center(), Qt::MoveAction, &other,
+                            Qt::LeftButton, Qt::NoModifier);
+    QApplication::sendEvent(&bar, &foreign);
+
+    QDragLeaveEvent leave;
+    QApplication::sendEvent(&bar, &leave); // clears the indicator
   }
 
   void dictionaryDelegateRenders() {
@@ -4675,6 +4772,400 @@ private slots:
   }
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+// File-level helpers driven on real temporary trees: the tar backup round trip,
+// the drop reader's file-to-script pass, drop resolution, and the linger-tip
+// event filter.
+class TstFileOps : public QObject {
+  Q_OBJECT
+
+  static void writeFile(const QString &path, const QByteArray &data) {
+    QFile f(path);
+    f.open(QIODevice::WriteOnly);
+    f.write(data);
+    f.close();
+  }
+
+private slots:
+  void backupMakeAndExtract() {
+    QTemporaryDir src;
+    QVERIFY(src.isValid());
+    writeFile(src.path() + QStringLiteral("/one.txt"), "first");
+    QVERIFY(QDir(src.path()).mkpath(QStringLiteral("sub")));
+    writeFile(src.path() + QStringLiteral("/sub/two.txt"), "second");
+
+    QTemporaryDir out;
+    QVERIFY(out.isValid());
+    const QString archive = out.path() + QStringLiteral("/backup.tgz");
+    QString error;
+    // Real tar: makeArchive → extractArchive must reproduce the tree.
+    QVERIFY2(Backup::makeArchive(src.path(), archive, &error),
+             qPrintable(error));
+    QVERIFY(QFileInfo::exists(archive));
+    const QString dest = out.path() + QStringLiteral("/restored");
+    QVERIFY2(Backup::extractArchive(archive, dest, &error), qPrintable(error));
+    QVERIFY(QFileInfo::exists(dest + QStringLiteral("/one.txt")));
+    QVERIFY(QFileInfo::exists(dest + QStringLiteral("/sub/two.txt")));
+
+    // A source that is not there is refused, not archived empty.
+    QVERIFY(!Backup::makeArchive(src.path() + QStringLiteral("/missing"),
+                                 archive, &error));
+    QVERIFY(!error.isEmpty());
+  }
+
+  void profileExportImportRoundTrip() {
+    // Runs entirely inside the test-mode locations (QStandardPaths test mode is
+    // on for the whole suite), so it never touches a real profile.
+    QSettings &s = SettingsManager::instance().settings();
+    s.setValue(QStringLiteral("backup/probe"), QStringLiteral("v"));
+    s.sync(); // make sure the .conf exists on disk for exportProfile to copy
+
+    const QString appData =
+        QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QVERIFY(QDir().mkpath(appData + QStringLiteral("/sub")));
+    writeFile(appData + QStringLiteral("/probe.txt"), "data");
+    writeFile(appData + QStringLiteral("/sub/nested.txt"), "nested");
+
+    QTemporaryDir out;
+    QVERIFY(out.isValid());
+    const QString archive = out.path() + QStringLiteral("/profile.tgz");
+    QString error;
+    QVERIFY2(Backup::exportProfile(archive, &error), qPrintable(error));
+    QVERIFY(QFileInfo::exists(archive));
+    // Import extracts and copies the settings + app data back into place.
+    QVERIFY2(Backup::importProfile(archive, &error), qPrintable(error));
+    QVERIFY(QFileInfo::exists(appData + QStringLiteral("/probe.txt")));
+    QVERIFY(QFileInfo::exists(appData + QStringLiteral("/sub/nested.txt")));
+
+    s.remove(QStringLiteral("backup/probe"));
+    QFile::remove(appData + QStringLiteral("/probe.txt"));
+    QDir(appData + QStringLiteral("/sub")).removeRecursively();
+  }
+
+  void dropReaderReadsFilesIntoScript() {
+    QTemporaryDir dir;
+    QVERIFY(dir.isValid());
+    const QString a = dir.path() + QStringLiteral("/hello.txt");
+    const QString b = dir.path() + QStringLiteral("/world.txt");
+    writeFile(a, "hello"); // base64 → aGVsbG8=
+    writeFile(b, "world");
+    writeFile(dir.path() + QStringLiteral("/empty.txt"), QByteArray());
+
+    // plan() keeps real non-empty files and drops the empty one and the dir.
+    const DropReader::Plan plan = DropReader::plan(
+        {a, b, dir.path() + QStringLiteral("/empty.txt"), dir.path()});
+    QCOMPARE(plan.accepted.size(), 2);
+    QVERIFY(plan.totalBytes > 0);
+
+    DropReader reader(plan.accepted, plan.totalBytes);
+    QSignalSpy progress(&reader, &DropReader::progress);
+    QSignalSpy finished(&reader, &DropReader::finished);
+    reader.run();
+    QCOMPARE(finished.count(), 1);
+    QVERIFY(progress.count() >= 1);
+    QVERIFY(!reader.script().isEmpty());
+    QVERIFY(reader.script().contains(QStringLiteral("aGVsbG8="))); // "hello"
+
+    // A reader torn down before it runs drops everything and produces nothing.
+    DropReader cancelled(plan.accepted, plan.totalBytes);
+    cancelled.cancel();
+    cancelled.run();
+    QVERIFY(cancelled.script().isEmpty());
+  }
+
+  void dropResolveFallsBackWhenNoReadableFile() {
+    // A local-file URL to something that is not readable: the readable-probe
+    // pass yields nothing, so the last-resort pass hands the path back anyway.
+    QMimeData mime;
+    const QString ghost = QStringLiteral("/nonexistent/whatly-drop-test.bin");
+    mime.setUrls({QUrl::fromLocalFile(ghost)});
+    const QStringList paths = DropResolve::droppedFilePaths(&mime);
+    QCOMPARE(paths.size(), 1);
+    QCOMPARE(paths.first(), ghost);
+
+    // The portal branch is reached when the portal mime is present; without a
+    // running portal it stays invalid and falls through without crashing.
+    QMimeData portal;
+    portal.setData(QStringLiteral("application/vnd.portal.filetransfer"),
+                   QByteArray("some-key"));
+    DropResolve::droppedFilePaths(&portal); // no assertion: exercises the path
+
+    QVERIFY(DropResolve::droppedFilePaths(nullptr).isEmpty());
+  }
+
+  void debugLogAppendAndTrim() {
+    // (The level-stamping message handler cannot be exercised here: QtTest
+    // installs its own handler for the duration of each test, so qWarning never
+    // reaches DebugLog's. append/recent are the public surface.)
+    DebugLog::append(QStringLiteral("cov-marker-unique"));
+    QVERIFY(DebugLog::recent(400).contains(QStringLiteral("cov-marker-unique")));
+
+    // Past the ring-buffer cap the oldest lines are dropped, not the newest.
+    for (int i = 0; i < 600; ++i)
+      DebugLog::append(QStringLiteral("filler-%1").arg(i));
+    const QString tail = DebugLog::recent(500);
+    QVERIFY(tail.contains(QStringLiteral("filler-599")));
+    QVERIFY(!tail.contains(QStringLiteral("cov-marker-unique"))); // aged out
+  }
+
+  void debugLogRotatesCaptureFile() {
+    QTemporaryDir dir;
+    QVERIFY(dir.isValid());
+    const QString path = dir.path() + QStringLiteral("/webengine.log");
+    writeFile(path, "previous session");
+    QVERIFY(DebugLog::rotateCaptureFile(path));
+    QVERIFY(QFileInfo::exists(path));                            // fresh, empty
+    QCOMPARE(QFileInfo(path).size(), 0LL);
+    QVERIFY(QFileInfo::exists(path + QStringLiteral(".prev"))); // old kept aside
+  }
+
+  void lingerTipEventFilter() {
+    QWidget w;
+    w.resize(120, 40);
+    int eligibleCalls = 0;
+    LingerTip::install(&w, QStringLiteral("a tip"),
+                       [&](const QPoint &) {
+                         ++eligibleCalls;
+                         return true;
+                       });
+    QEnterEvent enter(QPointF(5, 5), QPointF(5, 5), QPointF(5, 5));
+    QApplication::sendEvent(&w, &enter);
+    QMouseEvent move(QEvent::MouseMove, QPointF(6, 6), QPointF(6, 6),
+                     Qt::NoButton, Qt::NoButton, Qt::NoModifier);
+    QApplication::sendEvent(&w, &move);
+    QEvent leave(QEvent::Leave);
+    QApplication::sendEvent(&w, &leave);
+    QVERIFY(eligibleCalls >= 2); // the filter consulted eligibility on enter+move
+
+    // An ineligible position stops the timer rather than starting it.
+    QWidget w2;
+    w2.resize(120, 40);
+    LingerTip::install(&w2, QStringLiteral("x"),
+                       [](const QPoint &) { return false; });
+    QMouseEvent m2(QEvent::MouseMove, QPointF(2, 2), QPointF(2, 2),
+                   Qt::NoButton, Qt::NoButton, Qt::NoModifier);
+    QApplication::sendEvent(&w2, &m2);
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ChatExport's pure formatting: every MIME → extension branch, the file-name
+// sanitiser's edges, and transcriptLine across text / attached / omitted media
+// and the "You" / named / anonymous sender cases.
+class TstChatExportMore : public QObject {
+  Q_OBJECT
+private slots:
+  void extForMimeCoversEveryType() {
+    using ChatExport::extForMime;
+    QCOMPARE(extForMime(QStringLiteral("image/jpeg")), QStringLiteral(".jpg"));
+    QCOMPARE(extForMime(QStringLiteral("image/jpg")), QStringLiteral(".jpg"));
+    QCOMPARE(extForMime(QStringLiteral("image/png")), QStringLiteral(".png"));
+    QCOMPARE(extForMime(QStringLiteral("image/webp")), QStringLiteral(".webp"));
+    QCOMPARE(extForMime(QStringLiteral("image/gif")), QStringLiteral(".gif"));
+    QCOMPARE(extForMime(QStringLiteral("video/mp4")), QStringLiteral(".mp4"));
+    QCOMPARE(extForMime(QStringLiteral("video/webm")), QStringLiteral(".webm"));
+    QCOMPARE(extForMime(QStringLiteral("audio/ogg")), QStringLiteral(".ogg"));
+    QCOMPARE(extForMime(QStringLiteral("audio/ogg; codecs=opus")),
+             QStringLiteral(".ogg"));
+    QCOMPARE(extForMime(QStringLiteral("audio/mpeg")), QStringLiteral(".mp3"));
+    QCOMPARE(extForMime(QStringLiteral("audio/mp4")), QStringLiteral(".m4a"));
+    QCOMPARE(extForMime(QStringLiteral("audio/aac")), QStringLiteral(".m4a"));
+    QCOMPARE(extForMime(QStringLiteral("application/pdf")),
+             QStringLiteral(".pdf"));
+    // Fallback: a short, clean subtype becomes the extension; anything else
+    // (too long, no slash) falls back to .bin.
+    QCOMPARE(extForMime(QStringLiteral("application/xyz")),
+             QStringLiteral(".xyz"));
+    QCOMPARE(extForMime(QStringLiteral("application/octet-stream")),
+             QStringLiteral(".bin"));
+    QCOMPARE(extForMime(QStringLiteral("nonsense")), QStringLiteral(".bin"));
+  }
+
+  void sanitizeFileNameEdges() {
+    using ChatExport::sanitizeFileName;
+    QCOMPARE(sanitizeFileName(QString()), QStringLiteral("chat")); // empty
+    QCOMPARE(sanitizeFileName(QStringLiteral("....")),
+             QStringLiteral("chat")); // trailing dots stripped to nothing
+    QCOMPARE(sanitizeFileName(QStringLiteral("a/b:c*?")),
+             QStringLiteral("a_b_c__")); // illegal chars replaced
+    QCOMPARE(sanitizeFileName(QString(200, QLatin1Char('a'))).size(), 120);
+  }
+
+  void transcriptLineVariants() {
+    using ChatExport::Message;
+    QList<Message> msgs;
+    msgs.append({QStringLiteral("09:00"), QStringLiteral("Alice"),
+                 QStringLiteral("in"), QStringLiteral("text"),
+                 QStringLiteral("hi"), QString(), false});
+    msgs.append({QStringLiteral("09:01"), QString(), QStringLiteral("out"),
+                 QStringLiteral("text"), QStringLiteral("reply"), QString(),
+                 false});
+    msgs.append({QStringLiteral("09:02"), QString(), QStringLiteral("in"),
+                 QStringLiteral("image"), QStringLiteral("cap"),
+                 QStringLiteral("img.jpg"), false});
+    msgs.append({QStringLiteral("09:03"), QString(), QStringLiteral("out"),
+                 QStringLiteral("video"), QString(), QString(), true});
+    const QString t = ChatExport::buildTranscript(QStringLiteral("My Chat"),
+                                                  msgs);
+    QVERIFY(t.contains(QStringLiteral("Alice: hi")));
+    QVERIFY(t.contains(QStringLiteral("You: reply")));   // anonymous outgoing
+    QVERIFY(t.contains(QStringLiteral("<attached: media/img.jpg> cap")));
+    QVERIFY(t.contains(QStringLiteral("<video omitted>")));
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// DictionaryManager's pure and file-level surface (URLs, display names, and the
+// remove/isRemovable file checks), plus Dictionaries::syncDictionaryDirs mirroring
+// a bundle and dropping stale links. The network catalogue/download is not here.
+class TstDictionaryManagerMore : public QObject {
+  Q_OBJECT
+private slots:
+  void urlsAndDisplayName() {
+    qunsetenv("WHATLY_DICT_BASE_URL");
+    const QString base = DictionaryManager::catalogBaseUrl();
+    QVERIFY(!base.isEmpty());
+    QCOMPARE(DictionaryManager::manifestUrl(),
+             base + QStringLiteral("/manifest.json"));
+    QCOMPARE(DictionaryManager::assetUrl(QStringLiteral("es")),
+             base + QStringLiteral("/es.bdic"));
+
+    // The env var overrides the built-in base.
+    qputenv("WHATLY_DICT_BASE_URL", "https://example.test/dic");
+    QCOMPARE(DictionaryManager::catalogBaseUrl(),
+             QStringLiteral("https://example.test/dic"));
+    qunsetenv("WHATLY_DICT_BASE_URL");
+
+    QVERIFY(!DictionaryManager::displayName(QStringLiteral("es")).isEmpty());
+    // An unrecognised code is shown raw rather than as the C locale.
+    QCOMPARE(DictionaryManager::displayName(QStringLiteral("zz_NOPE")),
+             QStringLiteral("zz_NOPE"));
+  }
+
+  void removeAndIsRemovable() {
+    const QString dir = Dictionaries::userDictionaryPath();
+    QVERIFY(!dir.isEmpty());
+    QVERIFY(QDir().mkpath(dir));
+    const QString code = QStringLiteral("xx_COV");
+    const QString path = QDir(dir).filePath(code + QStringLiteral(".bdic"));
+    {
+      QFile f(path);
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("bdic");
+    }
+    DictionaryManager dm;
+    QVERIFY(DictionaryManager::isRemovable(code)); // real file, not a symlink
+    QVERIFY(DictionaryManager::installed().contains(code));
+    QVERIFY(dm.remove(code));
+    QVERIFY(!QFileInfo::exists(path));
+    QVERIFY(!DictionaryManager::isRemovable(code)); // gone now
+    QVERIFY(!dm.remove(code));                      // nothing left to remove
+  }
+
+  void syncMirrorsBundleAndDropsStaleLinks() {
+    QTemporaryDir root;
+    QVERIFY(root.isValid());
+    const QString bundled = root.path() + QStringLiteral("/bundled");
+    const QString user = root.path() + QStringLiteral("/user");
+    QVERIFY(QDir().mkpath(bundled));
+    QVERIFY(QDir().mkpath(user));
+    {
+      QFile f(bundled + QStringLiteral("/de_DE.bdic"));
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("x");
+    }
+    // A stale symlink pointing at a file that is not there must be dropped.
+    QFile::link(root.path() + QStringLiteral("/gone.bdic"),
+                user + QStringLiteral("/old_XX.bdic"));
+
+    Dictionaries::syncDictionaryDirs(user, bundled);
+
+    QVERIFY(QFileInfo::exists(user + QStringLiteral("/de_DE.bdic"))); // mirrored
+    QVERIFY(!QFileInfo(user + QStringLiteral("/old_XX.bdic"))
+                 .exists()); // stale link removed
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// ScheduledMessages driven through its due-checking machinery: a reminder that
+// fires at once, a message that asks to be sent, recurrence advancing on
+// success, and failure being recorded — plus the pure recurrence helpers.
+class TstScheduledDue : public QObject {
+  Q_OBJECT
+  using Recurrence = ScheduledMessages::Recurrence;
+  using Status = ScheduledMessages::Status;
+
+private slots:
+  void recurrenceHelpers() {
+    const QDateTime monday(QDate(2026, 1, 5), QTime(9, 0)); // a Monday
+    QVERIFY(!ScheduledMessages::nextOccurrence(monday, Recurrence::None)
+                 .isValid());
+    QCOMPARE(ScheduledMessages::nextOccurrence(monday, Recurrence::Daily).date(),
+             monday.date().addDays(1));
+    QCOMPARE(ScheduledMessages::nextOccurrence(monday, Recurrence::Weekly).date(),
+             monday.date().addDays(7));
+    // Weekdays from a Friday skips the weekend to the following Monday.
+    const QDateTime friday(QDate(2026, 1, 9), QTime(9, 0));
+    QCOMPARE(ScheduledMessages::nextOccurrence(friday, Recurrence::Weekdays)
+                 .date()
+                 .dayOfWeek(),
+             1);
+    for (Recurrence r : {Recurrence::None, Recurrence::Daily,
+                         Recurrence::Weekdays, Recurrence::Weekly})
+      QVERIFY(!ScheduledMessages::recurrenceLabel(r).isEmpty());
+    QVERIFY(!ScheduledMessages::statusLabel(Status::Pending).isEmpty());
+    QVERIFY(!ScheduledMessages::statusLabel(Status::Sent).isEmpty());
+    QVERIFY(!ScheduledMessages::statusLabel(Status::Failed).isEmpty());
+  }
+
+  void firesDueRemindersAndSends() {
+    ScheduledMessages sm;
+    // Start from a known-empty state so a stray entry from another test cannot
+    // occupy the single send slot.
+    for (const auto &e : sm.entries())
+      sm.remove(e.id);
+    sm.start();
+
+    QSignalSpy reminders(&sm, &ScheduledMessages::reminderDue);
+    QSignalSpy sends(&sm, &ScheduledMessages::sendRequested);
+    const QDateTime past = QDateTime::currentDateTime().addSecs(-60);
+
+    // A due reminder fires immediately without occupying the send slot.
+    const QString rid = sm.add(QStringLiteral("34600000000"),
+                               QStringLiteral("Me"), QStringLiteral("ping"),
+                               past, Recurrence::None, /*reminder=*/true);
+    QVERIFY(reminders.count() >= 1);
+
+    // A due recurring message asks to be sent; success reschedules it.
+    const QString mid = sm.add(QStringLiteral("34600000000"), QString(),
+                               QStringLiteral("hola"), past, Recurrence::Daily,
+                               /*reminder=*/false);
+    QVERIFY(sends.count() >= 1);
+    sm.reportResult(mid, true, QString());
+    if (const auto list = sm.entries(); true)
+      for (const auto &e : list)
+        if (e.id == mid)
+          QCOMPARE(e.status, Status::Pending); // advanced, not completed
+
+    // A failure is recorded on the entry.
+    const QString fid =
+        sm.add(QStringLiteral("34600000000"), QString(),
+               QStringLiteral("fallo"), past, Recurrence::None, false);
+    sm.reportResult(fid, false, QStringLiteral("nope"));
+    for (const auto &e : sm.entries())
+      if (e.id == fid) {
+        QCOMPARE(e.status, Status::Failed);
+        QCOMPARE(e.error, QStringLiteral("nope"));
+      }
+
+    sm.removeCompleted(); // drops the Failed one
+    sm.remove(rid);
+    sm.remove(mid);
+    for (const auto &e : sm.entries()) // leave the shared store as we found it
+      sm.remove(e.id);
+  }
+};
+
 // A one-shot localhost HTTP server that answers the next request with 200 + a
 // fixed JSON body. Lets the network clients run their real request/reply path
 // against a stand-in instead of a live service.
@@ -4722,6 +5213,30 @@ private slots:
     const auto args = spy.takeFirst();
     QVERIFY(args.at(0).toBool()); // reachable
     QVERIFY(args.at(1).toStringList().contains(QStringLiteral("llama3:latest")));
+  }
+
+  void ollamaCheckReportsUnreachable() {
+    OllamaManager m;
+    QSignalSpy spy(&m, &OllamaManager::checked);
+    m.check(QStringLiteral("http://127.0.0.1:1")); // nothing is listening there
+    QVERIFY(spy.wait(5000));
+    QCOMPARE(spy.first().at(0).toBool(), false); // the error branch
+  }
+
+  void ollamaPullStreamsProgress() {
+    MockHttpServer mock;
+    // Ollama streams newline-delimited JSON progress, then a final success line.
+    const QString url = mock.start(
+        "{\"status\":\"pulling\",\"completed\":50,\"total\":100}\n"
+        "{\"status\":\"success\"}\n");
+    QVERIFY(!url.isEmpty());
+    OllamaManager m;
+    QSignalSpy progress(&m, &OllamaManager::pullProgress);
+    QSignalSpy finished(&m, &OllamaManager::pullFinished);
+    m.pull(url, QStringLiteral("llama3"));
+    QVERIFY(finished.wait(5000));
+    QVERIFY(progress.count() >= 1);
+    QCOMPARE(finished.first().at(0).toBool(), true);
   }
 
   void translatorTranslates() {
@@ -4844,6 +5359,10 @@ int main(int argc, char *argv[]) {
   { TstScriptInstall t;       run(&t); }
   { TstNetworkClients t;      run(&t); }
   { TstWidgets t;             run(&t); }
+  { TstFileOps t;             run(&t); }
+  { TstScheduledDue t;        run(&t); }
+  { TstDictionaryManagerMore t; run(&t); }
+  { TstChatExportMore t;      run(&t); }
   // Profile-mutating test runs last so it doesn't disturb the others.
   { TstAppProfile t;          run(&t); }
   { TstAppProfileArgs t;      run(&t); }
