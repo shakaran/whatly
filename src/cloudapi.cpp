@@ -54,13 +54,19 @@ bool isConfigured() {
   return !phoneNumberId().isEmpty() && !accessToken().isEmpty();
 }
 
+// The Graph API host. Overridable through WHATLY_CLOUD_API_BASE so the send path
+// can be pointed at a local stand-in in tests; in normal use it is Meta's host.
+QString baseUrl() {
+  const QString env = qEnvironmentVariable("WHATLY_CLOUD_API_BASE");
+  return env.isEmpty() ? QStringLiteral("https://graph.facebook.com") : env;
+}
 QString messagesUrl(const QString &apiVersion, const QString &phoneNumberId) {
-  return QStringLiteral("https://graph.facebook.com/%1/%2/messages")
-      .arg(apiVersion, phoneNumberId);
+  return baseUrl() +
+         QStringLiteral("/%1/%2/messages").arg(apiVersion, phoneNumberId);
 }
 QString mediaUrl(const QString &apiVersion, const QString &phoneNumberId) {
-  return QStringLiteral("https://graph.facebook.com/%1/%2/media")
-      .arg(apiVersion, phoneNumberId);
+  return baseUrl() +
+         QStringLiteral("/%1/%2/media").arg(apiVersion, phoneNumberId);
 }
 
 QByteArray textPayload(const QString &to, const QString &body) {

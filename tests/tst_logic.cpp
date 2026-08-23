@@ -5118,6 +5118,26 @@ private slots:
     QVERIFY(!dm.remove(code));                      // nothing left to remove
   }
 
+  void preferredDictionaryFallsBackToLocale() {
+    auto &s = SettingsManager::instance().settings();
+    const QVariant saved = s.value(QStringLiteral("spellCheckLanguage"));
+    const QString dir = Dictionaries::userDictionaryPath();
+    QVERIFY(QDir().mkpath(dir));
+    const QString path = QDir(dir).filePath(QStringLiteral("es_ES.bdic"));
+    {
+      QFile f(path);
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("x");
+    }
+    // A stored choice that is not installed falls through to the locale-name,
+    // then language, then first-available logic.
+    s.setValue(QStringLiteral("spellCheckLanguage"),
+               QStringLiteral("zz_NONE"));
+    QVERIFY(!Dictionaries::preferredDictionary().isEmpty());
+    s.setValue(QStringLiteral("spellCheckLanguage"), saved);
+    QFile::remove(path);
+  }
+
   void syncMirrorsBundleAndDropsStaleLinks() {
     QTemporaryDir root;
     QVERIFY(root.isValid());
@@ -5597,6 +5617,197 @@ private slots:
   }
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+// The Cloud API send path, pointed at the mock server via WHATLY_CLOUD_API_BASE:
+// text, template and media sends, their API-error, network-error, unconfigured
+// and unreadable-file branches. No request ever reaches Meta.
+class TstCloudApiNet : public QObject {
+  Q_OBJECT
+private slots:
+  void init() {
+    CloudApi::setPhoneNumberId(QStringLiteral("12345"));
+    CloudApi::setAccessToken(QStringLiteral("tok"));
+    CloudApi::setApiVersion(QStringLiteral("v21.0"));
+  }
+  void cleanup() {
+    qunsetenv("WHATLY_CLOUD_API_BASE");
+    CloudApi::setPhoneNumberId(QString());
+    CloudApi::setAccessToken(QString());
+  }
+
+  void sendTextSucceeds() {
+    MockHttpServer mock;
+    qputenv("WHATLY_CLOUD_API_BASE",
+            mock.start(R"({"messages":[{"id":"wamid.1"}]})").toUtf8());
+    const CloudApi::Result r = CloudApi::sendText(QStringLiteral("34600000000"),
+                                                  QStringLiteral("hola"));
+    QVERIFY(r.ok);
+    QCOMPARE(r.messageId, QStringLiteral("wamid.1"));
+  }
+
+  void sendTextReportsApiError() {
+    MockHttpServer mock;
+    qputenv("WHATLY_CLOUD_API_BASE",
+            mock.start(R"({"error":{"message":"Bad token"}})").toUtf8());
+    const CloudApi::Result r = CloudApi::sendText(QStringLiteral("34600000000"),
+                                                  QStringLiteral("hola"));
+    QVERIFY(!r.ok);
+    QCOMPARE(r.error, QStringLiteral("Bad token"));
+  }
+
+  void sendTextNetworkError() {
+    qputenv("WHATLY_CLOUD_API_BASE", "http://127.0.0.1:1");
+    const CloudApi::Result r = CloudApi::sendText(QStringLiteral("34600000000"),
+                                                  QStringLiteral("hola"));
+    QVERIFY(!r.ok);
+    QVERIFY(!r.error.isEmpty());
+  }
+
+  void sendUnconfiguredFails() {
+    CloudApi::setAccessToken(QString()); // now not configured
+    QVERIFY(!CloudApi::sendText(QStringLiteral("34600000000"),
+                                QStringLiteral("hola"))
+                 .ok);
+    QVERIFY(!CloudApi::sendTemplate(QStringLiteral("34600000000"),
+                                    QStringLiteral("t"), QStringLiteral("en"),
+                                    {})
+                 .ok);
+    QVERIFY(!CloudApi::sendMediaFile(QStringLiteral("34600000000"),
+                                     QStringLiteral("/no/file"), QString())
+                 .ok);
+  }
+
+  void sendTemplateSucceeds() {
+    MockHttpServer mock;
+    qputenv("WHATLY_CLOUD_API_BASE",
+            mock.start(R"({"messages":[{"id":"wamid.t"}]})").toUtf8());
+    const CloudApi::Result r = CloudApi::sendTemplate(
+        QStringLiteral("34600000000"), QStringLiteral("hello_world"),
+        QStringLiteral("en_US"), {QStringLiteral("Ada")});
+    QVERIFY(r.ok);
+  }
+
+  void sendMediaFileSucceedsUploadsThenSends() {
+    QTemporaryDir dir;
+    QVERIFY(dir.isValid());
+    const QString path = dir.path() + QStringLiteral("/photo.png");
+    {
+      QFile f(path);
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("PNGDATA");
+    }
+    // One body serves both requests: the upload reads "id", the send reads
+    // "messages".
+    MockHttpServer mock;
+    qputenv("WHATLY_CLOUD_API_BASE",
+            mock.start(R"({"id":"media123","messages":[{"id":"wamid.m"}]})")
+                .toUtf8());
+    QVERIFY(CloudApi::sendMediaFile(QStringLiteral("34600000000"), path,
+                                    QStringLiteral("cap"))
+                .ok);
+  }
+
+  void sendMediaFileUnreadableFileFails() {
+    const CloudApi::Result r = CloudApi::sendMediaFile(
+        QStringLiteral("34600000000"), QStringLiteral("/no/such/file.png"),
+        QString());
+    QVERIFY(!r.ok);
+  }
+
+  void sendMediaFileUploadFailure() {
+    QTemporaryDir dir;
+    const QString path = dir.path() + QStringLiteral("/x.png");
+    {
+      QFile f(path);
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("X");
+    }
+    MockHttpServer mock; // no media id in the response → upload is treated failed
+    qputenv("WHATLY_CLOUD_API_BASE",
+            mock.start(R"({"error":{"message":"upload denied"}})").toUtf8());
+    QVERIFY(!CloudApi::sendMediaFile(QStringLiteral("34600000000"), path,
+                                     QString())
+                 .ok);
+  }
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// The update check, pointed at the mock via WHATLY_UPDATE_URL: an available
+// release, up-to-date, malformed JSON and a network error — plus the disabled
+// and recently-checked early returns. No request ever reaches GitHub.
+class TstUpdateCheckNet : public QObject {
+  Q_OBJECT
+private slots:
+  void cleanup() { qunsetenv("WHATLY_UPDATE_URL"); }
+
+  void reportsUpdateAvailable() {
+    MockHttpServer mock;
+    qputenv("WHATLY_UPDATE_URL",
+            mock.start(R"({"tag_name":"v99.9.9","html_url":"rel"})")
+                .toUtf8());
+    UpdateChecker c;
+    QSignalSpy up(&c, &UpdateChecker::updateAvailable);
+    c.check(true);
+    QVERIFY(up.wait(5000));
+    QCOMPARE(up.first().at(0).toString(), QStringLiteral("v99.9.9"));
+  }
+
+  void reportsUpToDate() {
+    MockHttpServer mock;
+    qputenv("WHATLY_UPDATE_URL",
+            mock.start(R"({"tag_name":"0.0.0","html_url":"rel"})")
+                .toUtf8());
+    UpdateChecker c;
+    QSignalSpy same(&c, &UpdateChecker::upToDate);
+    c.check(true);
+    QVERIFY(same.wait(5000));
+  }
+
+  void reportsBadJson() {
+    MockHttpServer mock;
+    qputenv("WHATLY_UPDATE_URL", mock.start("not json").toUtf8());
+    UpdateChecker c;
+    QSignalSpy fail(&c, &UpdateChecker::checkFailed);
+    c.check(true);
+    QVERIFY(fail.wait(5000));
+  }
+
+  void reportsNetworkError() {
+    qputenv("WHATLY_UPDATE_URL", "http://127.0.0.1:1");
+    UpdateChecker c;
+    QSignalSpy fail(&c, &UpdateChecker::checkFailed);
+    c.check(true);
+    QVERIFY(fail.wait(5000));
+  }
+
+  void respectsDisabledAndRateLimit() {
+    auto &s = SettingsManager::instance().settings();
+    const QVariant savedEnabled = s.value(QStringLiteral("checkForUpdates"));
+    const QVariant savedLast = s.value(QStringLiteral("update/lastCheckMs"));
+
+    // Disabled: an unforced check does nothing.
+    UpdateChecker::setEnabled(false);
+    {
+      UpdateChecker c;
+      QSignalSpy any(&c, &UpdateChecker::checkFailed);
+      c.check(false);
+      QVERIFY(any.count() == 0);
+    }
+    // Enabled but checked a moment ago: the rate limit skips it.
+    UpdateChecker::setEnabled(true);
+    s.setValue(QStringLiteral("update/lastCheckMs"),
+               QDateTime::currentMSecsSinceEpoch());
+    {
+      UpdateChecker c;
+      QSignalSpy any(&c, &UpdateChecker::checkFailed);
+      c.check(false);
+      QVERIFY(any.count() == 0);
+    }
+    s.setValue(QStringLiteral("checkForUpdates"), savedEnabled);
+    s.setValue(QStringLiteral("update/lastCheckMs"), savedLast);
+  }
+};
+
 int main(int argc, char *argv[]) {
   // Keep the (headless) QWebEngineProfile used by the install() test happy on CI
   // runners: no sandbox, no GPU. Must be set before QApplication.
@@ -5684,6 +5895,8 @@ int main(int argc, char *argv[]) {
   { TstScriptInstall t;       run(&t); }
   { TstNetworkClients t;      run(&t); }
   { TstDictionaryManagerNet t; run(&t); }
+  { TstCloudApiNet t;         run(&t); }
+  { TstUpdateCheckNet t;      run(&t); }
   { TstWidgets t;             run(&t); }
   { TstFileOps t;             run(&t); }
   { TstScheduledDue t;        run(&t); }
