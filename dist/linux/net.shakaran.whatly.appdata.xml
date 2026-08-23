@@ -108,6 +108,17 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.3.1" date="2026-08-23">
+      <description>
+        <p>A maintenance release:</p>
+        <ul>
+          <li>The NVIDIA-on-Wayland fix no longer forces XCB on setups where Wayland renders fine; it only relaunches on XCB if the backing store actually fails (#84)</li>
+          <li>The "storage bucket persistence denied" console error is gone, and the OpenType font-fallback log spam is quieted</li>
+          <li>The Windows/macOS codec notice no longer points at a package that does not exist, and now offers a real way through (#93)</li>
+          <li>Under the hood: unit-test coverage raised to about 90%, with OpenSSF Scorecard and Codecov added</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.3.0" date="2026-08-15">
       <description>
         <ul>
