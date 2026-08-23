@@ -685,35 +685,52 @@ private slots:
     qunsetenv("QTWEBENGINE_DICTIONARIES_PATH");
   }
   // syncDictionaryDirs mirrors the bundle into the user dir, keeps a user-added
-  // dictionary, and prunes a stale (broken) symlink from a previous run.
+  // dictionary, and drops whatever in it is not a dictionary. The bundled files
+  // carry the real "BDic" magic because that is now what decides.
   void userDictSync() {
     QTemporaryDir bundle, user;
     QVERIFY(bundle.isValid() && user.isValid());
     for (const QString &n : {"en_US", "es_ES"}) {
       QFile f(bundle.filePath(n + QStringLiteral(".bdic")));
       QVERIFY(f.open(QIODevice::WriteOnly));
-      f.write("BDIC");
+      f.write("BDic");
       f.close();
     }
     // A dictionary the user dropped in themselves...
     QFile uf(user.filePath(QStringLiteral("zz_ZZ.bdic")));
     QVERIFY(uf.open(QIODevice::WriteOnly));
-    uf.write("BDIC");
+    uf.write("BDic");
     uf.close();
-    // ...and a stale link left over from a previous run (target does not exist).
+    // ...and something a previous run left that is not one. These bytes are a
+    // .lnk header, which is exactly what Windows was left holding: QFile::link()
+    // writes a shortcut there, wearing the .bdic name of the dictionary it was
+    // meant to be. Nothing platform-specific is being asserted — a file that is
+    // not a dictionary has to go, wherever it came from.
+    QFile stale(user.filePath(QStringLiteral("stale.bdic")));
+    QVERIFY(stale.open(QIODevice::WriteOnly));
+    stale.write(QByteArray::fromHex("4c00000001140200"));
+    stale.close();
+#ifndef Q_OS_WIN
+    // And where symlinks are real, one whose target is gone.
     QFile::link(QStringLiteral("/nonexistent/gone.bdic"),
-                user.filePath(QStringLiteral("stale.bdic")));
+                user.filePath(QStringLiteral("gone.bdic")));
+#endif
 
     Dictionaries::syncDictionaryDirs(user.path(), bundle.path());
 
-    // QDir::Files resolves symlinks: valid links to the bundle count, the broken
-    // one does not.
     const QStringList have =
         QDir(user.path()).entryList({QStringLiteral("*.bdic")}, QDir::Files);
     QVERIFY(have.contains(QStringLiteral("en_US.bdic")));  // mirrored
     QVERIFY(have.contains(QStringLiteral("es_ES.bdic")));  // mirrored
     QVERIFY(have.contains(QStringLiteral("zz_ZZ.bdic")));  // user's own, kept
     QVERIFY(!have.contains(QStringLiteral("stale.bdic"))); // pruned
+    // Gone from disk, not merely missing from a listing that resolves symlinks.
+    // That distinction is the whole bug: the shortcut was a plain file, so it
+    // was listed, and only a check that reads it can tell it apart.
+    QVERIFY(!QFileInfo::exists(user.filePath(QStringLiteral("stale.bdic"))));
+#ifndef Q_OS_WIN
+    QVERIFY(!have.contains(QStringLiteral("gone.bdic")));
+#endif
   }
   // The rows of the language list (#46), which is the whole of its interface: what
   // each state offers, and in what order they are shown.
@@ -728,7 +745,7 @@ private slots:
     const QList<DictionaryEntry> catalog{
         entry("en_US", 545259, "aa"), entry("pt_PT", 900000, "bb"),
         entry("da_DK", 838860, "cc"), entry("vi_VN", 100, "")};
-    // en_US is bundled (mirrored as a symlink, so not removable), pt_PT and eo were
+    // en_US is bundled (mirrored from it, so not removable), pt_PT and eo were
     // downloaded, and eo is not in the catalogue at all.
     const QStringList installed{QStringLiteral("en_US"), QStringLiteral("pt_PT"),
                                 QStringLiteral("eo")};
@@ -743,8 +760,8 @@ private slots:
           return r;
       return DictionaryRows::Row{};
     };
-    // Here and bundled: it can be ticked, and there is nothing to delete — the file
-    // is a link into the read-only bundle and would only relink next launch.
+    // Here and bundled: it can be ticked, and there is nothing to delete — it is
+    // mirrored from the read-only bundle and would only come back next launch.
     QVERIFY(row("en_US").installed);
     QVERIFY(row("en_US").action == DictionaryRows::Action::None);
     // Here because it was downloaded: ticked, and it can go again.
