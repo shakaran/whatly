@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        7.3.0
+Version:        7.3.1
 # Reference system-Qt spec for downstream packagers; the release itself builds
 # the native rpm from packaging/obs/whatly.spec. Release kept at 0 to match it
 # (both are the system-Qt "whatly"), so this never looks newer than, or collides
@@ -61,6 +61,16 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Sun Aug 23 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.3.1-1
+- The NVIDIA-on-Wayland fix no longer forces XCB where Wayland renders fine; it
+  relaunches on XCB only if the backing store actually fails (#84).
+- The "storage bucket persistence denied" console error is gone and the OpenType
+  font-fallback log spam is quieted.
+- The Windows/macOS codec notice no longer names a package that does not exist
+  and offers a real way through (#93).
+- Under the hood: unit-test coverage raised to ~90%, with OpenSSF Scorecard and
+  Codecov added. See CHANGELOG.md.
+
 * Sat Aug 15 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.3.0-1
 - Settings gains a live search box that filters the page to what matches (#39),
   and its language names, restart state and wheel handling are fixed.
