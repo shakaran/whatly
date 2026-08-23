@@ -2124,6 +2124,37 @@ private slots:
     QVERIFY(!error.isEmpty());
     QVERIFY(!server.isListening());
   }
+
+  void startFailsWhenPortInUse() {
+    LocalApi::setPort(0); // A takes an ephemeral port
+    LocalApiServer a;
+    QVERIFY(a.start());
+    const int port = a.listeningPort();
+    LocalApi::setPort(port); // force B onto the same, already-bound port
+    LocalApiServer b;
+    QString error;
+    QVERIFY(!b.start(&error)); // listen() fails
+    QVERIFY(!error.isEmpty());
+    LocalApi::setPort(0);
+  }
+
+  void stopClosesTheListener() {
+    LocalApiServer server;
+    QVERIFY(server.start());
+    QVERIFY(server.isListening());
+    server.stop();
+    QVERIFY(!server.isListening());
+  }
+
+  void webhookRejectsOtherMethods() {
+    CloudWebhook::setEnabled(true);
+    LocalApiServer server;
+    QVERIFY(server.start());
+    const int port = server.listeningPort();
+    const QByteArray resp =
+        roundTrip(port, httpReq("PUT", "/webhook", QByteArray(), "{}"));
+    QVERIFY(resp.startsWith("HTTP/1.1 405 "));
+  }
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -5360,6 +5391,103 @@ private slots:
   }
 };
 
+// ─────────────────────────────────────────────────────────────────────────────
+// CustomJs add/enable/remove on a real temporary addon store, and the settings
+// search text extraction over a small built layout.
+class TstMoreCoverage : public QObject {
+  Q_OBJECT
+private slots:
+  void customJsAddonLifecycle() {
+    QTemporaryDir dir;
+    QVERIFY(dir.isValid());
+    const QString js = dir.path() + QStringLiteral("/my addon.js");
+    {
+      QFile f(js);
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("console.log('hi')");
+    }
+    QString error;
+    const QString name = CustomJs::addFromFile(js, &error);
+    QVERIFY2(!name.isEmpty(), qPrintable(error));
+    QVERIFY(!CustomJs::sourceOf(name).isEmpty());
+    CustomJs::setEnabled(name, true);
+    QVERIFY(CustomJs::isEnabled(name));
+    CustomJs::setEnabled(name, false);
+    QVERIFY(!CustomJs::isEnabled(name));
+    // A second import of the same base name is suffixed rather than clobbering.
+    const QString name2 = CustomJs::addFromFile(js, &error);
+    QVERIFY(!name2.isEmpty());
+    QVERIFY(name2 != name);
+    CustomJs::remove(name);
+    CustomJs::remove(name2);
+  }
+
+  void autoReplyJsonErrors() {
+    QString err;
+    QVERIFY(AutoReply::rulesFromJson(QByteArray("not json"), &err).isEmpty());
+    QVERIFY(!err.isEmpty()); // parse error
+    err.clear();
+    QVERIFY(AutoReply::rulesFromJson(QByteArray("{}"), &err).isEmpty());
+    QVERIFY(!err.isEmpty()); // an object is not the expected array
+  }
+
+  void dictionaryManagerDownloadGuards() {
+    DictionaryManager dm;
+    QSignalSpy done(&dm, &DictionaryManager::downloadFinished);
+    DictionaryEntry empty; // no code → download is a no-op
+    dm.download(empty);
+    QCOMPARE(done.count(), 0);
+  }
+
+  void sessionBackupDataRootFollowsSettings() {
+    SessionBackup::setPathsForTesting(QString(), QString()); // no override
+    auto &s = SettingsManager::instance().settings();
+    const QVariant saved = s.value(QStringLiteral("storage/dataDir"));
+    const QVariant savedEnabled = s.value(QStringLiteral("sessionBackup/enabled"));
+    s.setValue(QStringLiteral("sessionBackup/enabled"), true);
+
+    // The storage/dataDir override branch of dataRoot().
+    QTemporaryDir d;
+    QVERIFY(d.isValid());
+    s.setValue(QStringLiteral("storage/dataDir"), d.path());
+    SessionBackup::runStartupRecovery();
+    // The default AppLocalDataLocation branch.
+    s.remove(QStringLiteral("storage/dataDir"));
+    SessionBackup::runStartupRecovery();
+
+    if (saved.isValid())
+      s.setValue(QStringLiteral("storage/dataDir"), saved);
+    s.setValue(QStringLiteral("sessionBackup/enabled"), savedEnabled);
+  }
+
+  void settingsSearchTextExtraction() {
+    QVERIFY(SettingsSearch::matches(
+        SettingsSearch::normalise(QStringLiteral("Básico spell-check")),
+        QStringLiteral("basico")));
+    QVERIFY(!SettingsSearch::matches(QStringLiteral("nothing here"),
+                                     QStringLiteral("zzz")));
+
+    // A widget tree read through the layout: the label's text is found, and so is
+    // a nested child's.
+    QWidget root;
+    auto *layout = new QVBoxLayout(&root);
+    auto *label = new QLabel(QStringLiteral("Memory limit"), &root);
+    layout->addWidget(label);
+    auto *group = new QWidget(&root);
+    auto *inner = new QVBoxLayout(group);
+    inner->addWidget(new QLabel(QStringLiteral("nested option"), group));
+    layout->addWidget(group);
+
+    QVERIFY(SettingsSearch::textOf(label).contains(QStringLiteral("Memory")));
+    const QString viaItem =
+        SettingsSearch::textOfItem(layout->itemAt(0));
+    QVERIFY(viaItem.contains(QStringLiteral("Memory")));
+    const QString groupText =
+        SettingsSearch::textOfItem(layout->itemAt(1));
+    QVERIFY(groupText.contains(QStringLiteral("nested")));
+  }
+};
+
 // A one-shot localhost HTTP server that answers the next request with 200 + a
 // fixed JSON body. Lets the network clients run their real request/reply path
 // against a stand-in instead of a live service.
@@ -5903,6 +6031,7 @@ int main(int argc, char *argv[]) {
   { TstDictionaryManagerMore t; run(&t); }
   { TstChatExportMore t;      run(&t); }
   { TstUtilsCoverage t;       run(&t); }
+  { TstMoreCoverage t;        run(&t); }
   { TstMiscCoverage t;        run(&t); }
   // Profile-mutating test runs last so it doesn't disturb the others.
   { TstAppProfile t;          run(&t); }
