@@ -1,3 +1,17 @@
+whatly (7.3.1) unstable; urgency=medium
+
+  * The NVIDIA-on-Wayland fix no longer forces XCB on setups where Wayland
+    renders fine; Whatly stays on Wayland and only relaunches on XCB once,
+    automatically, if the backing store actually fails to get a renderer (#84).
+  * The "storage bucket persistence denied" console error is gone, and the
+    OpenType font-fallback log spam is quieted.
+  * The Windows/macOS codec notice no longer names a package that does not
+    exist and now offers a real way through (#93).
+  * Under the hood: unit-test coverage raised to about 90%, with OpenSSF
+    Scorecard and Codecov added. See CHANGELOG.md.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Sun, 23 Aug 2026 12:00:00 +0200
+
 whatly (7.3.0) unstable; urgency=medium
 
   * Settings gains a live search box that filters the page to the settings that

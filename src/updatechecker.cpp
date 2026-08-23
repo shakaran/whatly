@@ -20,6 +20,13 @@ const char kReleasesUrl[] =
 const char kEnabledKey[] = "checkForUpdates";
 const char kLastCheckKey[] = "update/lastCheckMs";
 constexpr qint64 kDayMs = 24LL * 60 * 60 * 1000;
+
+// The releases endpoint, overridable through WHATLY_UPDATE_URL so the check path
+// can be pointed at a local stand-in in tests; in normal use it is GitHub's.
+QString releasesUrl() {
+  const QString env = qEnvironmentVariable("WHATLY_UPDATE_URL");
+  return env.isEmpty() ? QString::fromLatin1(kReleasesUrl) : env;
+}
 } // namespace
 
 namespace UpdateCheck {
@@ -120,7 +127,7 @@ void UpdateChecker::check(bool force) {
   if (!m_net)
     m_net = new QNetworkAccessManager(this);
 
-  QNetworkRequest req{QUrl(QString::fromLatin1(kReleasesUrl))};
+  QNetworkRequest req{QUrl(releasesUrl())};
   req.setRawHeader("Accept", "application/vnd.github+json");
   req.setHeader(QNetworkRequest::UserAgentHeader, QByteArrayLiteral("Whatly"));
   QNetworkReply *reply = m_net->get(req);
