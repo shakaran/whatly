@@ -86,20 +86,41 @@ QString userDictionaryPath() {
   return base + QStringLiteral("/qtwebengine_dictionaries");
 }
 
+bool isBundled(const QString &code) {
+  const QString dir = bundledSourceDir();
+  if (dir.isEmpty())
+    return false;
+  return QFileInfo::exists(QDir(dir).filePath(code + QStringLiteral(".bdic")));
+}
+
 void syncDictionaryDirs(const QString &userDir, const QString &bundledDir) {
   if (userDir.isEmpty())
     return;
   QDir().mkpath(userDir);
   QDir ud(userDir);
 
-  // Drop stale links first: an AppImage remounts at a fresh path each launch, so
-  // last run's symlinks into the bundle no longer resolve. QDir::System is what
-  // makes a listing include a symlink whose target is gone.
+  // Drop whatever is not a dictionary first. Two things leave one behind. An
+  // AppImage remounts at a fresh path each launch, so last run's symlinks into
+  // the bundle no longer resolve. And on Windows QFile::link() writes a .lnk
+  // shortcut, which Qt does not read back as a symlink because it decides that
+  // by file name — so a shortcut called da_DK.bdic answered no to the old
+  // isSymLink() test, survived every launch, and was handed to Chromium as a
+  // dictionary it cannot read: the language showed as installed and silently
+  // checked nothing. Asking the file what it is answers both, and a half-written
+  // download besides. Chromium's .bdic begins with "BDic". QDir::System is what
+  // makes the listing include a symlink whose target is gone, and such a link
+  // cannot be opened — which is the same answer.
   const auto entries = ud.entryInfoList(
       {QStringLiteral("*.bdic")},
       QDir::Files | QDir::System | QDir::NoDotAndDotDot);
   for (const QFileInfo &fi : entries) {
-    if (fi.isSymLink() && !QFileInfo::exists(fi.symLinkTarget()))
+    bool isDictionary = false;
+    {
+      QFile f(fi.absoluteFilePath());
+      isDictionary = f.open(QIODevice::ReadOnly) &&
+                     f.read(4) == QByteArrayLiteral("BDic");
+    }
+    if (!isDictionary)
       QFile::remove(fi.absoluteFilePath());
   }
 
@@ -107,15 +128,24 @@ void syncDictionaryDirs(const QString &userDir, const QString &bundledDir) {
       QDir(bundledDir).canonicalPath() == ud.canonicalPath())
     return; // nothing to mirror, or the user dir already is the bundle
 
-  // Symlink each bundled dictionary the user dir does not already provide. A
+  // Mirror each bundled dictionary the user dir does not already provide. A
   // real .bdic the user dropped in keeps its place and shadows the bundled one
-  // of the same name; a still-valid link from a previous run is left as is.
+  // of the same name; a still-valid mirror from a previous run is left as is.
   const QStringList bundled =
       QDir(bundledDir).entryList({QStringLiteral("*.bdic")}, QDir::Files);
   for (const QString &f : bundled) {
     const QString dest = ud.filePath(f);
-    if (!QFileInfo::exists(dest))
-      QFile::link(QDir(bundledDir).filePath(f), dest);
+    if (QFileInfo::exists(dest))
+      continue;
+#ifdef Q_OS_WIN
+    // Copy, because QFile::link() cannot make a link here: Qt's own
+    // documentation says the name must end in .lnk for that, and this one ends
+    // in .bdic. The bundle is read-only either way, and a copy is the only form
+    // the engine can open.
+    QFile::copy(QDir(bundledDir).filePath(f), dest);
+#else
+    QFile::link(QDir(bundledDir).filePath(f), dest);
+#endif
   }
 }
 
