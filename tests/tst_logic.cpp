@@ -862,6 +862,19 @@ private slots:
 class TstScheduled : public QObject {
   Q_OBJECT
 private slots:
+  // The sender presses WhatsApp's own Send button, so it has to be able to find
+  // it. WhatsApp renamed that icon to "wds-ic-send-filled" and no longer puts
+  // "send" on the page at all; with only the old name the lookup fell through to
+  // two hardcoded aria-labels, English and Spanish, and in any other interface
+  // language the job failed on its own 45-second deadline reporting a timeout
+  // waiting for the chat to open.
+  void senderFindsTheCurrentSendIcon() {
+    const QString js = ScheduledMessages::senderScriptSource();
+    QVERIFY(js.contains(QLatin1String("wds-ic-send-filled")));
+    // The older name is kept as a fallback, not relied on.
+    QVERIFY(js.indexOf(QLatin1String("wds-ic-send-filled")) <
+            js.indexOf(QLatin1String("aria-label=\"Send")));
+  }
   void recurrenceNextOccurrence() {
     using R = ScheduledMessages::Recurrence;
     const QDateTime base(QDate(2026, 1, 1), QTime(9, 0)); // Thu 2026-01-01

@@ -372,7 +372,14 @@ QString ScheduledMessages::senderScriptSource() {
     return b.length ? b[b.length - 1] : null;
   }
   function sendButton() {
-    var icon = document.querySelector('footer span[data-icon="send"]')
+    // 'wds-ic-send-filled' on current WhatsApp Web; 'send' was the older name
+    // and is no longer on the page at all. The two aria-labels are a last
+    // resort and only cover English and Spanish, so without the current icon
+    // name this found nothing and the job failed on its own deadline with
+    // "timeout waiting for the chat to open".
+    var icon = document.querySelector('footer [data-icon="wds-ic-send-filled"]')
+      || document.querySelector('[data-icon="wds-ic-send-filled"]')
+      || document.querySelector('footer span[data-icon="send"]')
       || document.querySelector('span[data-icon="send"]')
       || document.querySelector('button[aria-label="Send"],button[aria-label="Enviar"]');
     if (!icon) return null;
