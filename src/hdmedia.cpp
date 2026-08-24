@@ -54,14 +54,17 @@ static const char kScriptTemplate[] = R"JS(
     // aria-disabled="false". The generated class name changes between WhatsApp
     // deployments, so what is read is the opacity it produces, not its name.
     function dimmed(btn) {
-      // Every part of the icon, not just the first one: which element carries
-      // the dimming is WhatsApp's business and could move. In the usable state
-      // the wrapper, the svg and its path all measure 1, so asking all of them
-      // cannot produce a false positive, and asking only the first would miss
-      // the dimming if anything were ever nested ahead of it.
-      var parts = btn.querySelectorAll('span, svg, path');
-      for (var i = 0; i < parts.length; i++) {
-        var o = parseFloat(window.getComputedStyle(parts[i]).opacity);
+      // The control itself and every part of the icon, not just the first part:
+      // which element carries the dimming is WhatsApp's business and could move,
+      // and findHd() may return the button, the wrapper or the icon. In the
+      // usable state all of them measure 1, so asking all of them cannot produce
+      // a false positive; asking only some of them would let a dimmed control
+      // look usable.
+      var parts = [btn];
+      var inside = btn.querySelectorAll('span, svg, path');
+      for (var i = 0; i < inside.length; i++) parts.push(inside[i]);
+      for (var j = 0; j < parts.length; j++) {
+        var o = parseFloat(window.getComputedStyle(parts[j]).opacity);
         if (!isNaN(o) && o < 0.9) return true;
       }
       return false;
