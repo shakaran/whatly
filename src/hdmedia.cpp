@@ -54,10 +54,17 @@ static const char kScriptTemplate[] = R"JS(
     // aria-disabled="false". The generated class name changes between WhatsApp
     // deployments, so what is read is the opacity it produces, not its name.
     function dimmed(btn) {
-      var icon = btn.querySelector('span') || btn.querySelector('svg');
-      if (!icon) return false;
-      var o = parseFloat(window.getComputedStyle(icon).opacity);
-      return !isNaN(o) && o < 0.9;
+      // Every part of the icon, not just the first one: which element carries
+      // the dimming is WhatsApp's business and could move. In the usable state
+      // the wrapper, the svg and its path all measure 1, so asking all of them
+      // cannot produce a false positive, and asking only the first would miss
+      // the dimming if anything were ever nested ahead of it.
+      var parts = btn.querySelectorAll('span, svg, path');
+      for (var i = 0; i < parts.length; i++) {
+        var o = parseFloat(window.getComputedStyle(parts[i]).opacity);
+        if (!isNaN(o) && o < 0.9) return true;
+      }
+      return false;
     }
 
     function labelOf(el) {
