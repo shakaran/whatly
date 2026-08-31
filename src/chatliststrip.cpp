@@ -91,6 +91,29 @@ static const char kCollapseCss[] =
     "color:var(--whatly-unread-fg,#fff);"
     "font-size:15px;font-weight:600;line-height:24px;text-align:center;"
     "pointer-events:none}"
+    // WhatsApp's own notices inside the list — today the "Refresh to update"
+    // banner it shows once its service worker has a new version waiting. A
+    // notice is not a row, so the clip that keeps a row to its avatar does
+    // nothing for it: a row holds its name and message on ONE line and is simply
+    // cut off at 97px, while a notice's sentence WRAPS, and a 97px column turns
+    // it into a ladder of single letters running the height of the strip.
+    //
+    // Treated as the topmost chat instead, which is what it already looks like:
+    // the icon stays where an avatar sits, the words are clipped exactly as a
+    // row's are, and the whole notice goes in the hover preview. Nothing is
+    // hidden and no size is imposed, so the notice keeps its own background and
+    // still reads as not-a-chat.
+    "[data-whatly-banner]{overflow:hidden!important}"
+    "[data-whatly-banner],[data-whatly-banner] *{cursor:pointer!important}"
+    // The rule that does the actual work; everything else here follows from it.
+    // The notice's own box is named as well as its descendants: the capture
+    // shows its sentences sitting as bare text directly inside it, and a text
+    // node has no element of its own for `*` to reach — white-space has to be
+    // set on whatever holds it.
+    // The preview is a clone and would inherit this and show one clipped line,
+    // so show() takes the attribute off the clone.
+    "[data-whatly-banner],[data-whatly-banner] *{white-space:nowrap!important;"
+    "overflow:hidden!important;text-overflow:clip!important}"
     // The filter pills (All / Unread / Favourites / more) are a horizontal row
     // that a 97px column simply guillotines. Fold them into a 2x2 grid of round
     // buttons instead, each labelled with the first letter of its own caption —
@@ -298,6 +321,45 @@ static const char kScriptTemplate[] = R"JS(
             if (e.childNodes[i].nodeType === 3) t += e.childNodes[i].textContent;
           if (t.trim()) e.setAttribute('data-whatly-hide', '1');
         });
+      }
+
+      // WhatsApp's own notices in the list, tagged so the stylesheet above can
+      // clip one like a row and the hover preview can show it whole.
+      //
+      // Read off the live page: the notice is a <span> carrying
+      // data-testid="chat-butterbar", a direct child of #side and the immediate
+      // PREVIOUS SIBLING of #pane-side — above the list, not inside it. It holds
+      // a bare <svg> in a wrapper carrying no data-icon at all, two sentences,
+      // and a <button>Refresh</button> nested below its top level.
+      //
+      // Matched by that testid, which is a name WhatsApp CHOSE — "butterbar" is
+      // its own word for this class of bar — and not one its compiler generated.
+      // The class strings on the very same element are generated and change with
+      // every deploy, so they are worth nothing to match on. A testid can be
+      // renamed too, as `data-icon="send"` was, so the slot itself is kept
+      // behind it: the one element immediately above the list, and only that
+      // one, so a rename can never promote the filter row or the search box
+      // into a notice instead.
+      //
+      // The element STAYS IN THE PAGE once the update has been applied, empty
+      // and zero-height, so its presence alone means nothing. The content tests
+      // are what tell a notice from that empty shell — measured with nothing to
+      // show, it has no button, no icon and no element children at all — and
+      // they are what keeps the strip from drawing a permanent phantom cell
+      // above every chat list.
+      untag('data-whatly-banner');
+      var pane = document.querySelector('#pane-side');
+      var note = side.querySelector('[data-testid="chat-butterbar"]');
+      if (!note && pane) note = pane.previousElementSibling;
+      if (note && !note.querySelector('[role="row"]') &&
+          note.querySelector('svg,[data-icon]') &&
+          note.querySelector('button,[role="button"],a')) {
+        var bt = (note.textContent || '').trim();
+        // A word fits at 97px and needs nothing doing; a page of text is a
+        // container that happened to pass the tests above. Length is the
+        // whole test, so this holds in every interface language.
+        if (bt.length >= 12 && bt.length <= 400)
+          note.setAttribute('data-whatly-banner', '1');
       }
 
       // The filter pills: the row that holds both the "all" pill and the "more"
@@ -554,6 +616,9 @@ R"JS(
       var zoom = window.__whatlyStripZoom || 1;
       var clone = row.cloneNode(true);
       clone.removeAttribute('id');
+      // A notice is clipped to one nowrapped line in the strip; the preview is
+      // the place it gets read, so the clone must not inherit that.
+      clone.removeAttribute('data-whatly-banner');
       clone.style.zoom = zoom;
       // A chat row is built to hold exactly one line of preview, so its inner
       // blocks have fixed heights and centre what is in them. Let the message
@@ -614,8 +679,11 @@ R"JS(
     document.addEventListener('pointerover', function (ev) {
       try {
         if (!collapsed()) { hide(); return; }
+        // A notice is previewed exactly as a row is — same panel, same clone,
+        // same delay — because to the reader it IS the topmost chat.
         var row = ev.target.closest &&
-                  ev.target.closest('#pane-side [role="row"]');
+                  (ev.target.closest('#pane-side [role="row"]') ||
+                   ev.target.closest('[data-whatly-banner]'));
         if (!row) { hide(); return; }
         if (timer) clearTimeout(timer);
         timer = setTimeout(function () { show(row); }, 100);
@@ -623,6 +691,50 @@ R"JS(
     }, true);
     document.addEventListener('scroll', hide, true);
     document.addEventListener('pointerdown', hide, true);
+
+    // Collapsed, a notice shows its icon and nothing else — and its button is
+    // one of the things clipped away, sitting at the right-hand end of a box cut
+    // to 97px. So a click that lands on the icon has to be carried to it, or the
+    // notice is something you can see and cannot act on.
+    //
+    // Which control: the first one carrying visible text. A notice that also
+    // offers a bare icon button — a dismiss cross is the obvious one — would
+    // otherwise have that picked simply for being first in the markup, and
+    // dismissing an update prompt is the opposite of what the click meant. Falls
+    // back to the first control of any kind, so a notice whose only button is an
+    // icon still works.
+    //
+    // A click that already landed on a control is left entirely alone, so
+    // WhatsApp never receives it twice.
+    document.addEventListener('click', function (ev) {
+      try {
+        if (!collapsed()) return;
+        if (!ev.target.closest) return;
+        var note = ev.target.closest('[data-whatly-banner]');
+        if (!note) return;
+        if (ev.target.closest('button,[role="button"],a')) return;
+        var acts = note.querySelectorAll('button,[role="button"],a');
+        var act = null;
+        for (var ai = 0; ai < acts.length; ai++) {
+          if ((acts[ai].textContent || '').trim()) { act = acts[ai]; break; }
+        }
+        if (!act) act = acts[0];
+        if (!act) return;
+        ev.preventDefault();
+        // Immediate, because the notice turns out to live in the strip ABOVE
+        // #pane-side, and the handler further down treats a click up there as
+        // "I want to search" — it opens the list and focuses the box. Both are
+        // capture-phase listeners on document, where plain stopPropagation()
+        // does not stop the other one, so a click here would otherwise refresh
+        // AND uncollapse. Note this is reached only once a control has been
+        // found: where there is none, the return above leaves the event alone
+        // and the list simply opens, which is the right thing for a notice
+        // whose button cannot be carried a click.
+        ev.stopImmediatePropagation();
+        hide();
+        act.click();
+      } catch (e) { /* never break the page */ }
+    }, true);
 
     // WhatsApp centres the emoji / GIF / sticker panel on the button that opens
     // it and clamps it against the RIGHT edge of the window only. With the list
@@ -687,6 +799,21 @@ R"JS(
         if (!side.contains(ev.target) || pane.contains(ev.target)) return;
         var filters = document.querySelector('[data-whatly-filters]');
         if (filters && filters.contains(ev.target)) return;
+        // A control inside the notice, which lives up here too. The handler
+        // above carries a click on the collapsed notice to its button by
+        // calling click() on it, and that arrives as a FRESH event with the
+        // button as its target — so without this, this handler cancels the very
+        // click that was being delivered, in the capture phase, before the
+        // button ever sees it, and opens the search box instead. It is the same
+        // for a click the user lands on the button directly.
+        //
+        // Deliberately only the controls: a click on the notice that reaches no
+        // control at all still falls through and opens the list, which is the
+        // right outcome for a notice whose button cannot be carried a click.
+        if (ev.target.closest &&
+            ev.target.closest('[data-whatly-banner] button,' +
+                              '[data-whatly-banner] [role="button"],' +
+                              '[data-whatly-banner] a')) return;
         ev.preventDefault();
         ev.stopPropagation();
         hide();

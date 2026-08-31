@@ -1158,6 +1158,63 @@ private slots:
     ChatListStrip::setCollapsed(false);
   }
 
+  // WhatsApp's own notices in the list — the "Refresh to update" banner is the
+  // one seen in the wild — are not rows, so nothing that keeps a row to its
+  // avatar reaches them: a row's name and message sit on one line and are cut
+  // off at 97px, while a notice's sentence wraps, and the column turns it into a
+  // ladder of single letters the height of the strip. They are handled as the
+  // topmost chat instead.
+  //
+  // Nothing in this repo drives a real page, so what a test here can pin is that
+  // the script still carries every half of the mechanism. The behaviour is
+  // driven against a stand-in page built from the markup as it was read off the
+  // live banner, and the assertions below are chosen to fail on the two ways
+  // that markup has already caught this code out: looking for the notice INSIDE
+  // the list, when it sits above it, and matching only block-level tags, when it
+  // is a span. A detector that matches nothing at all still reads as a working
+  // one from in here, which is exactly why those two are pinned negatively.
+  void chatListStripTamesTheUpdateNotice() {
+    ChatListStrip::setCollapsed(true);
+    const QString on = ChatListStrip::scriptSource();
+    QVERIFY(on.contains(QLatin1String("data-whatly-banner")));
+    // Clipped like a row rather than wrapped: the one rule that does the work.
+    // The notice's own box is in the selector because its sentences sit in it as
+    // bare text, which `*` cannot reach.
+    QVERIFY(on.contains(QLatin1String(
+        "[data-whatly-banner],[data-whatly-banner] *{white-space:nowrap")));
+    // Matched by the name WhatsApp chose for the bar, not by the generated
+    // class names next to it on the same element.
+    QVERIFY(on.contains(QLatin1String("[data-testid=\"chat-butterbar\"]")));
+    // …and never by searching the list itself: the notice is the previous
+    // sibling of #pane-side, so a search scoped inside it finds nothing at all.
+    QVERIFY(!on.contains(QLatin1String("listPane")));
+    QVERIFY(on.contains(QLatin1String("previousElementSibling")));
+    // The bar stays in the page while empty once the update is applied, so the
+    // content tests are what stop the strip drawing a permanent phantom cell.
+    QVERIFY(on.contains(QLatin1String("svg,[data-icon]")));
+    // The preview is where the message is actually read, so the clone must not
+    // inherit the one-line clipping the strip imposes.
+    QVERIFY(on.contains(
+        QLatin1String("clone.removeAttribute('data-whatly-banner')")));
+    // Collapsed, the notice's own button is one of the things clipped away, so
+    // a click on the icon has to be carried to it — and stopped hard, or the
+    // handler that opens the search box takes the same click and uncollapses.
+    QVERIFY(on.contains(QLatin1String("act.click()")));
+    QVERIFY(on.contains(QLatin1String("ev.stopImmediatePropagation()")));
+    // …and that carried click arrives as a fresh event on the button, so the
+    // search handler has to let the notice's own controls past. Without this it
+    // cancels the click in the capture phase and opens the search box instead,
+    // which is the whole of what "the button does nothing" looked like.
+    QVERIFY(on.contains(QLatin1String("[data-whatly-banner] button,")));
+
+    // Expanded, the clipping rule must be gone with the rest of the stylesheet,
+    // or a notice would be held to one line in a list that is not collapsed.
+    ChatListStrip::setCollapsed(false);
+    const QString off = ChatListStrip::scriptSource();
+    QVERIFY(!off.contains(
+        QLatin1String("[data-whatly-banner] *{white-space:nowrap")));
+  }
+
   // The hover preview's default size follows the platform: the value settled on
   // against Windows' font rendering came back too small from Linux. Whatever
   // the default, the chosen id has to reach the script as a NUMBER, and an id
