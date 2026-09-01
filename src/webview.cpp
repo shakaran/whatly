@@ -152,21 +152,6 @@ WebView::~WebView() {
   delete m_dropProgress;
 }
 
-void WebView::wheelEvent(QWheelEvent *event) {
-  bool controlKeyIsHeld =
-      QGuiApplication::keyboardModifiers().testFlag(Qt::ControlModifier);
-  // this doesn't work, (even after checking the global QApplication keyboard
-  // modifiers) as expected, the Ctrl+wheel is managed by Chromium
-  // WebenginePage directly. So, we manage it by injecting js to page using
-  // WebEnginePage::injectPreventScrollWheelZoomHelper
-  if ((event->modifiers() & Qt::ControlModifier) != 0 || controlKeyIsHeld) {
-    qDebug() << "skipped ctrl + m_wheel event on webengineview";
-    event->ignore();
-  } else {
-    QWebEngineView::wheelEvent(event);
-  }
-}
-
 void WebView::contextMenuEvent(QContextMenuEvent *event) {
   auto menu = createStandardContextMenu();
   menu->setAttribute(Qt::WA_DeleteOnClose, true);
@@ -254,6 +239,21 @@ bool WebView::eventFilter(QObject *watched, QEvent *event) {
     if (keyEvent->matches(QKeySequence::Paste) && pasteClipboardImage())
       return true; // handled here; skip the native paste that would drop it
   }
+
+  // Ctrl+wheel zooms the page, which is never what a chat window wants. It is
+  // stopped here, on the internal render widget, because that is the only
+  // object a wheel event actually reaches — a wheelEvent() override on the view
+  // itself is never called, which is why the page used to be given a
+  // non-passive `wheel` listener on `window` instead. That cure was worse than
+  // the zoom: a blocking wheel handler covering the whole document takes
+  // scrolling off the compositor thread, so every tick has to wait on WhatsApp
+  // Web's main thread. A busy moment stalls the scroll and then applies it in a
+  // jump, and a jump landing in a list that has re-anchored itself in the
+  // meantime reads as the text sliding backwards.
+  if (event->type() == QEvent::Wheel &&
+      static_cast<QWheelEvent *>(event)->modifiers().testFlag(
+          Qt::ControlModifier))
+    return true; // neither zoom nor scroll while Ctrl is held, as before
 
   // Drops arrive on the internal render widget, not the view. Only claim drops
   // that carry files (issue #285); leave in-page drags to Chromium. A file

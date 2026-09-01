@@ -270,7 +270,6 @@ void WebEnginePage::handleLoadFinished(bool ok) {
   }
 
   if (ok) {
-    injectPreventScrollWheelZoomHelper();
     injectNewChatJavaScript();
     runJavaScript(MediaStuck::watcherScript());
   }
@@ -566,28 +565,6 @@ void WebEnginePage::recoverFromCorruptServiceWorker() {
     } catch (e) { /* reload regardless: a clean load is the goal */ }
     location.reload();
   })();)");
-  this->runJavaScript(js);
-}
-
-void WebEnginePage::injectPreventScrollWheelZoomHelper() {
-  QString js = R"(
-                    (function () {
-                        const SSWZ = function () {
-                            this.keyScrollHandler = function (e) {
-                                if (e.ctrlKey) {
-                                    e.preventDefault();
-                                    return false;
-                                }
-                            }
-                        };
-                        if (window === top) {
-                            const sswz = new SSWZ();
-                            window.addEventListener('wheel', sswz.keyScrollHandler, {
-                                passive: false
-                            });
-                        }
-                    })();
-                )";
   this->runJavaScript(js);
 }
 
