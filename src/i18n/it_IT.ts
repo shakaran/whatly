@@ -586,22 +586,22 @@ Desideri ignorare il controllo di sicurezza e continuare?</translation>
         <translation>Non letti recenti</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="859"/>
+        <location filename="../mainwindow_webengine.cpp" line="922"/>
         <source>Reply</source>
         <translation>Rispondi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="860"/>
+        <location filename="../mainwindow_webengine.cpp" line="923"/>
         <source>Reply to %1…</source>
         <translation>Rispondi a %1…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1008"/>
+        <location filename="../mainwindow_webengine.cpp" line="1071"/>
         <source>Waiting for network…</source>
         <translation>In attesa della rete…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1134"/>
+        <location filename="../mainwindow_webengine.cpp" line="1198"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>Questa build non può inviare video H.264/MP4: il suo motore del browser è stato compilato senza i codec proprietari. Le foto e i video WebM/VP9 funzionano. Per gli MP4 usa il Flatpak, il cui motore è compilato con essi. (Fai clic per chiudere.)</translation>
     </message>
@@ -610,146 +610,146 @@ Desideri ignorare il controllo di sicurezza e continuare?</translation>
         <translation type="vanished">Questa build non può inviare video H.264/MP4: il suo motore browser è stato compilato senza i codec proprietari. Le foto e i video WebM/VP9 funzionano; per l&apos;MP4 usa un pacchetto della distribuzione/nativo compilato con i codec. (Clicca per chiudere.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1438"/>
+        <location filename="../mainwindow_webengine.cpp" line="1511"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>La traduzione in linea è disattivata (attivala in Impostazioni → Traduzione).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1442"/>
+        <location filename="../mainwindow_webengine.cpp" line="1515"/>
         <source>The message box is empty.</source>
         <translation>La casella del messaggio è vuota.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1443"/>
+        <location filename="../mainwindow_webengine.cpp" line="1516"/>
         <source>Select some text to translate first.</source>
         <translation>Seleziona prima del testo da tradurre.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1481"/>
+        <location filename="../mainwindow_webengine.cpp" line="1554"/>
         <source>No conversation is open.</source>
         <translation>Nessuna conversazione aperta.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1485"/>
+        <location filename="../mainwindow_webengine.cpp" line="1558"/>
         <source>An export is already running.</source>
         <translation>Un&apos;esportazione è già in corso.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1490"/>
+        <location filename="../mainwindow_webengine.cpp" line="1563"/>
         <source>Choose a folder for the exported chat</source>
         <translation>Scegli una cartella per la chat esportata</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1496"/>
+        <location filename="../mainwindow_webengine.cpp" line="1569"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>Raccolta dei messaggi… scorrimento della conversazione.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1502"/>
-        <location filename="../mainwindow_webengine.cpp" line="1497"/>
+        <location filename="../mainwindow_webengine.cpp" line="1570"/>
         <source>Cancel</source>
         <translation type="unfinished">Annulla</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1544"/>
+        <location filename="../mainwindow_webengine.cpp" line="1617"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>Raccolta dei messaggi… (%1 finora)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1550"/>
+        <location filename="../mainwindow_webengine.cpp" line="1623"/>
         <source>Could not read the conversation: %1</source>
         <translation>Impossibile leggere la conversazione: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1896"/>
+        <location filename="../mainwindow_webengine.cpp" line="1969"/>
         <source>Do Not Disturb on.</source>
         <translation>Non disturbare attivato.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1896"/>
+        <location filename="../mainwindow_webengine.cpp" line="1969"/>
         <source>Do Not Disturb off.</source>
         <translation>Non disturbare disattivato.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1904"/>
-        <location filename="../mainwindow_webengine.cpp" line="1920"/>
+        <location filename="../mainwindow_webengine.cpp" line="1977"/>
+        <location filename="../mainwindow_webengine.cpp" line="1993"/>
         <source>Do Not Disturb on until %1.</source>
         <translation>Non disturbare attivato fino alle %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1931"/>
+        <location filename="../mainwindow_webengine.cpp" line="2004"/>
         <source>Open a chat to set a reply reminder.</source>
         <translation>Apri una chat per impostare un promemoria di risposta.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1937"/>
+        <location filename="../mainwindow_webengine.cpp" line="2010"/>
         <source>Time to reply to this chat.</source>
         <translation>È ora di rispondere a questa chat.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1940"/>
+        <location filename="../mainwindow_webengine.cpp" line="2013"/>
         <source>Reply reminder set for %1.</source>
         <translation>Promemoria di risposta impostato per %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1971"/>
-        <location filename="../mainwindow_webengine.cpp" line="1995"/>
+        <location filename="../mainwindow_webengine.cpp" line="2044"/>
+        <location filename="../mainwindow_webengine.cpp" line="2068"/>
         <source>Low disk space</source>
         <translation>Spazio su disco insufficiente</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1972"/>
+        <location filename="../mainwindow_webengine.cpp" line="2045"/>
         <source>Whatly&apos;s data folder has only %1 free.</source>
         <translation>La cartella dati di Whatly ha solo %1 liberi.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1975"/>
+        <location filename="../mainwindow_webengine.cpp" line="2048"/>
         <source>With so little space, WhatsApp Web&apos;s local database can be corrupted by a truncated write, which forces you to link your phone again. Move Whatly&apos;s data folder to a disk with more room, or free up space.</source>
         <translation>Con così poco spazio, il database locale di WhatsApp Web può corrompersi per una scrittura troncata, costringendoti a ricollegare il telefono. Sposta la cartella dati di Whatly su un disco più capiente, o libera spazio.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1979"/>
+        <location filename="../mainwindow_webengine.cpp" line="2052"/>
         <source>Change folder…</source>
         <translation>Cambia cartella…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1980"/>
+        <location filename="../mainwindow_webengine.cpp" line="2053"/>
         <source>Later</source>
         <translation type="unfinished">Più tardi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1988"/>
+        <location filename="../mainwindow_webengine.cpp" line="2061"/>
         <source>Choose a data folder for Whatly</source>
         <translation>Scegli una cartella dati per Whatly</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1996"/>
+        <location filename="../mainwindow_webengine.cpp" line="2069"/>
         <source>That folder is also low on space (%1 free). Please pick another.</source>
         <translation>Anche quella cartella ha poco spazio (%1 liberi). Scegline un&apos;altra.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2003"/>
+        <location filename="../mainwindow_webengine.cpp" line="2076"/>
         <source>Restart Whatly</source>
         <translation>Riavvia Whatly</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2004"/>
+        <location filename="../mainwindow_webengine.cpp" line="2077"/>
         <source>Whatly will use &quot;%1&quot; as its data folder after a restart. Your current data stays where it is (you can move it there yourself). Restart now?</source>
         <translation>Whatly userà «%1» come cartella dati dopo il riavvio. I tuoi dati attuali restano dove sono (puoi spostarli tu). Riavviare ora?</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2024"/>
+        <location filename="../mainwindow_webengine.cpp" line="2097"/>
         <source>No unread chats to summarise.</source>
         <translation>Nessuna chat non letta da riassumere.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2029"/>
+        <location filename="../mainwindow_webengine.cpp" line="2102"/>
         <source>Unread digest</source>
         <translation>Riepilogo non letti</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1591"/>
-        <location filename="../mainwindow_webengine.cpp" line="1573"/>
+        <location filename="../mainwindow_webengine.cpp" line="1646"/>
         <source>chat</source>
         <translation>chat</translation>
     </message>
@@ -759,69 +759,74 @@ Desideri ignorare il controllo di sicurezza e continuare?</translation>
         <translation>chat</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1585"/>
+        <location filename="../mainwindow_webengine.cpp" line="1658"/>
         <source>Could not create the export folder.</source>
         <translation>Impossibile creare la cartella di esportazione.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1615"/>
+        <location filename="../mainwindow_webengine.cpp" line="1688"/>
         <source>The export could not be fully written.</source>
         <translation>Non è stato possibile scrivere completamente l&apos;esportazione.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1619"/>
+        <location filename="../mainwindow_webengine.cpp" line="1692"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>Salvati %1 messaggi e %2 file multimediali in %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1708"/>
+        <location filename="../mainwindow_webengine.cpp" line="1781"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>L&apos;assistente IA è disattivato (attivalo in Impostazioni → Assistente IA).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1713"/>
+        <location filename="../mainwindow_webengine.cpp" line="1786"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>Non c&apos;è nulla su cui l&apos;assistente possa lavorare.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1725"/>
+        <location filename="../mainwindow_webengine.cpp" line="1798"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>Interrogazione dell&apos;assistente… (memoria scarsa: %1 MB liberi; un modello locale può fallire o rallentare l&apos;app)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1730"/>
+        <location filename="../mainwindow_webengine.cpp" line="1803"/>
         <source>Asking the assistant…</source>
         <translation>Interrogazione dell&apos;assistente…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1751"/>
+        <location filename="../mainwindow_webengine.cpp" line="1824"/>
         <source>AI assistant</source>
         <translation type="unfinished">Assistente IA</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1810"/>
+        <location filename="../mainwindow_webengine.cpp" line="1883"/>
         <source>Message updated.</source>
         <translation>Messaggio aggiornato.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1776"/>
-        <location filename="../mainwindow_webengine.cpp" line="1790"/>
-        <location filename="../mainwindow_webengine.cpp" line="1813"/>
+        <location filename="../mainwindow_webengine.cpp" line="1849"/>
+        <location filename="../mainwindow_webengine.cpp" line="1863"/>
+        <location filename="../mainwindow_webengine.cpp" line="1886"/>
         <source>AI result</source>
         <translation>Risultato IA</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1146"/>
+        <location filename="../mainwindow_webengine.cpp" line="1210"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs, and no build of Whatly with them exists for this platform. Photos and WebM/VP9 videos work; to send an MP4, convert it to WebM first or share it as a document. (Click to dismiss.)</source>
         <translation>Questa build non può inviare video H.264/MP4: il suo motore del browser è stato compilato senza i codec proprietari e non esiste alcuna build di Whatly con essi per questa piattaforma. Le foto e i video WebM/VP9 funzionano; per inviare un MP4, convertilo prima in WebM o condividilo come documento. (Clic per ignorare.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1826"/>
+        <location filename="../mainwindow_webengine.cpp" line="1222"/>
+        <source>Voice and video calls need the same codecs, so this build cannot make them either.</source>
+        <translation>Le chiamate vocali e video richiedono gli stessi codec, quindi nemmeno questa build può effettuarle.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1899"/>
         <source>Chat summary</source>
         <translation>Riepilogo della chat</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1766"/>
+        <location filename="../mainwindow_webengine.cpp" line="1839"/>
         <source>Close</source>
         <translation type="unfinished">Chiudi</translation>
     </message>
@@ -1079,18 +1084,19 @@ Aprire le Impostazioni ora?</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="377"/>
-        <location filename="../mainwindow_webengine.cpp" line="1481"/>
-        <location filename="../mainwindow_webengine.cpp" line="1485"/>
-        <location filename="../mainwindow_webengine.cpp" line="1498"/>
-        <location filename="../mainwindow_webengine.cpp" line="1549"/>
-        <location filename="../mainwindow_webengine.cpp" line="1584"/>
-        <location filename="../mainwindow_webengine.cpp" line="1614"/>
-        <location filename="../mainwindow_webengine.cpp" line="1618"/>
+        <location filename="../mainwindow_webengine.cpp" line="1554"/>
+        <location filename="../mainwindow_webengine.cpp" line="1558"/>
+        <location filename="../mainwindow_webengine.cpp" line="1571"/>
+        <location filename="../mainwindow_webengine.cpp" line="1622"/>
+        <location filename="../mainwindow_webengine.cpp" line="1657"/>
+        <location filename="../mainwindow_webengine.cpp" line="1687"/>
+        <location filename="../mainwindow_webengine.cpp" line="1691"/>
         <source>Export chat</source>
         <translation>Esporta chat</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="394"/>
+        <location filename="../mainwindow_webengine.cpp" line="329"/>
         <source>Settings</source>
         <translation>Impostazioni</translation>
     </message>
@@ -1367,8 +1373,8 @@ Puoi estrarre qualsiasi account in una finestra propria: fai clic con il tasto d
     <message>
         <location filename="../mainwindow.cpp" line="1012"/>
         <location filename="../mainwindow.cpp" line="1018"/>
-        <location filename="../mainwindow_webengine.cpp" line="967"/>
-        <location filename="../mainwindow_webengine.cpp" line="970"/>
+        <location filename="../mainwindow_webengine.cpp" line="1030"/>
+        <location filename="../mainwindow_webengine.cpp" line="1033"/>
         <source>| Error</source>
         <translation>| Errore</translation>
     </message>
@@ -1392,7 +1398,7 @@ WebEngine non è inizializzato.</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1220"/>
         <location filename="../mainwindow.cpp" line="1862"/>
-        <location filename="../mainwindow_webengine.cpp" line="1652"/>
+        <location filename="../mainwindow_webengine.cpp" line="1725"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly è bloccato. Sbloccalo per inviare messaggi.</translation>
     </message>
@@ -1463,7 +1469,7 @@ WebEngine non è inizializzato.</translation>
         <translation>Inserisci un numero WhatsApp valido con prefisso internazionale (es- +39XXXXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="965"/>
+        <location filename="../mainwindow_webengine.cpp" line="1028"/>
         <source>Unlock to Reload the App.</source>
         <translation>Sblocca per Ricaricare l&apos;App.</translation>
     </message>
@@ -1591,57 +1597,57 @@ WebEngine non è inizializzato.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../common.cpp" line="59"/>
+        <location filename="../common.cpp" line="74"/>
         <source>Nothing unread</source>
         <translation>Niente da leggere</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="69"/>
+        <location filename="../common.cpp" line="84"/>
         <source>1 unread message in 1 chat</source>
         <translation>1 messaggio non letto in 1 chat</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="71"/>
+        <location filename="../common.cpp" line="86"/>
         <source>1 unread message in %1 chats</source>
         <translation>1 messaggio non letto in %1 chat</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="73"/>
+        <location filename="../common.cpp" line="88"/>
         <source>%1 unread messages in 1 chat</source>
         <translation>%1 messaggi non letti in 1 chat</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="75"/>
+        <location filename="../common.cpp" line="90"/>
         <source>%1 unread messages in %2 chats</source>
         <translation>%1 messaggi non letti in %2 chat</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="85"/>
+        <location filename="../common.cpp" line="100"/>
         <source>%1 in 1 muted chat</source>
         <translation>%1 in 1 chat silenziata</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="86"/>
+        <location filename="../common.cpp" line="101"/>
         <source>%1 in %2 muted chats</source>
         <translation>%1 in %2 chat silenziate</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="92"/>
+        <location filename="../common.cpp" line="107"/>
         <source>%1 in 1 chat that is not muted</source>
         <translation>%1 in 1 chat non silenziata</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="94"/>
+        <location filename="../common.cpp" line="109"/>
         <source>%1 in %2 chats that are not muted</source>
         <translation>%1 in %2 chat non silenziate</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="104"/>
+        <location filename="../common.cpp" line="119"/>
         <source>WhatsApp Web %1</source>
         <translation>WhatsApp Web %1</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="106"/>
+        <location filename="../common.cpp" line="121"/>
         <source>Build token: %1</source>
         <translation>Token di build: %1</translation>
     </message>
@@ -1823,7 +1829,7 @@ Please setup the password in the Settings first.</source>
 Imposta la password nelle Impostazioni.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="962"/>
+        <location filename="../mainwindow_webengine.cpp" line="1025"/>
         <source>Reloading...</source>
         <translation>Caricamento...</translation>
     </message>

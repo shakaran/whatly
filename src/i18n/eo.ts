@@ -717,8 +717,8 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../mainwindow.cpp" line="1012"/>
         <location filename="../mainwindow.cpp" line="1018"/>
-        <location filename="../mainwindow_webengine.cpp" line="967"/>
-        <location filename="../mainwindow_webengine.cpp" line="970"/>
+        <location filename="../mainwindow_webengine.cpp" line="1030"/>
+        <location filename="../mainwindow_webengine.cpp" line="1033"/>
         <source>| Error</source>
         <translation>| Eraro</translation>
     </message>
@@ -747,7 +747,7 @@ La retmotoro ne estas pravalorizita.</translation>
     <message>
         <location filename="../mainwindow.cpp" line="1220"/>
         <location filename="../mainwindow.cpp" line="1862"/>
-        <location filename="../mainwindow_webengine.cpp" line="1652"/>
+        <location filename="../mainwindow_webengine.cpp" line="1725"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly estas ŝlosita. Malŝlosu ĝin por sendi mesaĝojn.</translation>
     </message>
@@ -1187,18 +1187,19 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="377"/>
-        <location filename="../mainwindow_webengine.cpp" line="1481"/>
-        <location filename="../mainwindow_webengine.cpp" line="1485"/>
-        <location filename="../mainwindow_webengine.cpp" line="1498"/>
-        <location filename="../mainwindow_webengine.cpp" line="1549"/>
-        <location filename="../mainwindow_webengine.cpp" line="1584"/>
-        <location filename="../mainwindow_webengine.cpp" line="1614"/>
-        <location filename="../mainwindow_webengine.cpp" line="1618"/>
+        <location filename="../mainwindow_webengine.cpp" line="1554"/>
+        <location filename="../mainwindow_webengine.cpp" line="1558"/>
+        <location filename="../mainwindow_webengine.cpp" line="1571"/>
+        <location filename="../mainwindow_webengine.cpp" line="1622"/>
+        <location filename="../mainwindow_webengine.cpp" line="1657"/>
+        <location filename="../mainwindow_webengine.cpp" line="1687"/>
+        <location filename="../mainwindow_webengine.cpp" line="1691"/>
         <source>Export chat</source>
         <translation>Eksporti babilon</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="394"/>
+        <location filename="../mainwindow_webengine.cpp" line="329"/>
         <source>Settings</source>
         <translation>Agordoj</translation>
     </message>
@@ -1213,22 +1214,22 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation>Eliri</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="859"/>
+        <location filename="../mainwindow_webengine.cpp" line="922"/>
         <source>Reply</source>
         <translation>Respondi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="860"/>
+        <location filename="../mainwindow_webengine.cpp" line="923"/>
         <source>Reply to %1…</source>
         <translation>Respondi al %1…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="965"/>
+        <location filename="../mainwindow_webengine.cpp" line="1028"/>
         <source>Unlock to Reload the App.</source>
         <translation>Malŝlosu por reŝargi la aplikaĵon.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1008"/>
+        <location filename="../mainwindow_webengine.cpp" line="1071"/>
         <source>Waiting for network…</source>
         <translation>Atendado de la reto…</translation>
     </message>
@@ -1237,156 +1238,161 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation type="vanished">Ĉi tiu muntaĵo ne povas sendi H.264/MP4-videojn: ĝia retumila motoro estis muntita sen la proprietaj kodekoj. Fotoj kaj WebM/VP9-videoj funkcias; por MP4 uzu distribuan/denaskan pakon muntitan kun la kodekoj. (Alklaku por forigi.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1134"/>
+        <location filename="../mainwindow_webengine.cpp" line="1198"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>Ĉi tiu muntaĵo ne povas sendi H.264/MP4-videojn: ĝia retumila motoro estis muntita sen la proprietaj kodekoj. Fotoj kaj WebM/VP9-videoj funkcias. Por MP4 uzu la Flatpak-version, kies motoro estas muntita kun ili. (Alklaku por forigi.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1146"/>
+        <location filename="../mainwindow_webengine.cpp" line="1210"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs, and no build of Whatly with them exists for this platform. Photos and WebM/VP9 videos work; to send an MP4, convert it to WebM first or share it as a document. (Click to dismiss.)</source>
         <translation>Ĉi tiu muntaĵo ne povas sendi filmetojn H.264/MP4: ĝia retumila motoro estis muntita sen la proprietaj kodekoj, kaj ne ekzistas muntaĵo de Whatly kun ili por ĉi tiu platformo. Fotoj kaj filmetoj WebM/VP9 funkcias; por sendi MP4, unue konvertu ĝin al WebM aŭ kunhavigu ĝin kiel dokumenton. (Alklaku por forigi.)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1438"/>
+        <location filename="../mainwindow_webengine.cpp" line="1222"/>
+        <source>Voice and video calls need the same codecs, so this build cannot make them either.</source>
+        <translation>Voĉaj kaj videaj vokoj bezonas la samajn kodekojn, do ĉi tiu muntaĵo ankaŭ ne povas fari ilin.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_webengine.cpp" line="1511"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>Enteksta traduko estas malŝaltita (ŝaltu ĝin en Agordoj → Traduko).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1442"/>
+        <location filename="../mainwindow_webengine.cpp" line="1515"/>
         <source>The message box is empty.</source>
         <translation>La mesaĝkesto estas malplena.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1443"/>
+        <location filename="../mainwindow_webengine.cpp" line="1516"/>
         <source>Select some text to translate first.</source>
         <translation>Unue elektu tekston por traduki.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1481"/>
+        <location filename="../mainwindow_webengine.cpp" line="1554"/>
         <source>No conversation is open.</source>
         <translation>Neniu konversacio estas malfermita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1485"/>
+        <location filename="../mainwindow_webengine.cpp" line="1558"/>
         <source>An export is already running.</source>
         <translation>Eksporto jam funkcias.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1490"/>
+        <location filename="../mainwindow_webengine.cpp" line="1563"/>
         <source>Choose a folder for the exported chat</source>
         <translation>Elektu dosierujon por la eksportita babilo</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1496"/>
+        <location filename="../mainwindow_webengine.cpp" line="1569"/>
         <source>Collecting messages… scrolling through the conversation.</source>
         <translation>Kolektante mesaĝojn… trarulumante la konversacion.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1502"/>
-        <location filename="../mainwindow_webengine.cpp" line="1497"/>
+        <location filename="../mainwindow_webengine.cpp" line="1570"/>
         <source>Cancel</source>
         <translation type="unfinished">Nuligi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1544"/>
+        <location filename="../mainwindow_webengine.cpp" line="1617"/>
         <source>Collecting messages… (%1 so far)</source>
         <translation>Kolektante mesaĝojn… (%1 ĝis nun)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1550"/>
+        <location filename="../mainwindow_webengine.cpp" line="1623"/>
         <source>Could not read the conversation: %1</source>
         <translation>Ne eblis legi la konversacion: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1896"/>
+        <location filename="../mainwindow_webengine.cpp" line="1969"/>
         <source>Do Not Disturb on.</source>
         <translation>Ne ĝeni ŝaltita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1896"/>
+        <location filename="../mainwindow_webengine.cpp" line="1969"/>
         <source>Do Not Disturb off.</source>
         <translation>Ne ĝeni malŝaltita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1904"/>
-        <location filename="../mainwindow_webengine.cpp" line="1920"/>
+        <location filename="../mainwindow_webengine.cpp" line="1977"/>
+        <location filename="../mainwindow_webengine.cpp" line="1993"/>
         <source>Do Not Disturb on until %1.</source>
         <translation>Ne ĝeni ŝaltita ĝis %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1931"/>
+        <location filename="../mainwindow_webengine.cpp" line="2004"/>
         <source>Open a chat to set a reply reminder.</source>
         <translation>Malfermu babilon por agordi respond-memorigilon.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1937"/>
+        <location filename="../mainwindow_webengine.cpp" line="2010"/>
         <source>Time to reply to this chat.</source>
         <translation>Estas tempo respondi al ĉi tiu babilo.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1940"/>
+        <location filename="../mainwindow_webengine.cpp" line="2013"/>
         <source>Reply reminder set for %1.</source>
         <translation>Respond-memorigilo agordita por %1.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1971"/>
-        <location filename="../mainwindow_webengine.cpp" line="1995"/>
+        <location filename="../mainwindow_webengine.cpp" line="2044"/>
+        <location filename="../mainwindow_webengine.cpp" line="2068"/>
         <source>Low disk space</source>
         <translation>Malmulte da diskospaco</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1972"/>
+        <location filename="../mainwindow_webengine.cpp" line="2045"/>
         <source>Whatly&apos;s data folder has only %1 free.</source>
         <translation>La datumdosierujo de Whatly havas nur %1 liberajn.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1975"/>
+        <location filename="../mainwindow_webengine.cpp" line="2048"/>
         <source>With so little space, WhatsApp Web&apos;s local database can be corrupted by a truncated write, which forces you to link your phone again. Move Whatly&apos;s data folder to a disk with more room, or free up space.</source>
         <translation>Kun tiom malmulte da spaco, la loka datumbazo de WhatsApp Web povas difektiĝi pro trunkita skribo, devigante vin reliĝi vian telefonon. Movu la datumdosierujon de Whatly al disko kun pli da spaco, aŭ liberigu spacon.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1979"/>
+        <location filename="../mainwindow_webengine.cpp" line="2052"/>
         <source>Change folder…</source>
         <translation>Ŝanĝi dosierujon…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1980"/>
+        <location filename="../mainwindow_webengine.cpp" line="2053"/>
         <source>Later</source>
         <translation type="unfinished">Poste</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1988"/>
+        <location filename="../mainwindow_webengine.cpp" line="2061"/>
         <source>Choose a data folder for Whatly</source>
         <translation>Elektu datumdosierujon por Whatly</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1996"/>
+        <location filename="../mainwindow_webengine.cpp" line="2069"/>
         <source>That folder is also low on space (%1 free). Please pick another.</source>
         <translation>Ankaŭ tiu dosierujo havas malmulte da spaco (%1 liberaj). Bonvolu elekti alian.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2003"/>
+        <location filename="../mainwindow_webengine.cpp" line="2076"/>
         <source>Restart Whatly</source>
         <translation>Rekomenci Whatly</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2004"/>
+        <location filename="../mainwindow_webengine.cpp" line="2077"/>
         <source>Whatly will use &quot;%1&quot; as its data folder after a restart. Your current data stays where it is (you can move it there yourself). Restart now?</source>
         <translation>Post rekomenco, Whatly uzos «%1» kiel datumdosierujon. Viaj nunaj datumoj restas kie ili estas (vi povas mem movi ilin). Ĉu rekomenci nun?</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2024"/>
+        <location filename="../mainwindow_webengine.cpp" line="2097"/>
         <source>No unread chats to summarise.</source>
         <translation>Neniuj nelegitaj babiloj por resumi.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="2029"/>
+        <location filename="../mainwindow_webengine.cpp" line="2102"/>
         <source>Unread digest</source>
         <translation>Resumo de nelegitaj</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1591"/>
-        <location filename="../mainwindow_webengine.cpp" line="1573"/>
+        <location filename="../mainwindow_webengine.cpp" line="1646"/>
         <source>chat</source>
         <translation>babilo</translation>
     </message>
@@ -1396,64 +1402,64 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation>babiloj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1585"/>
+        <location filename="../mainwindow_webengine.cpp" line="1658"/>
         <source>Could not create the export folder.</source>
         <translation>Ne eblis krei la eksportan dosierujon.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1615"/>
+        <location filename="../mainwindow_webengine.cpp" line="1688"/>
         <source>The export could not be fully written.</source>
         <translation>La eksporto ne povis esti plene skribita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1619"/>
+        <location filename="../mainwindow_webengine.cpp" line="1692"/>
         <source>Saved %1 messages and %2 media files to %3</source>
         <translation>Konservis %1 mesaĝojn kaj %2 aŭdvidajn dosierojn al %3</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1708"/>
+        <location filename="../mainwindow_webengine.cpp" line="1781"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
         <translation>La AI-asistanto estas malŝaltita (ŝaltu ĝin en Agordoj → AI-asistanto).</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1713"/>
+        <location filename="../mainwindow_webengine.cpp" line="1786"/>
         <source>There is nothing for the assistant to work on.</source>
         <translation>Estas nenio pri kio la asistanto povus labori.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1725"/>
+        <location filename="../mainwindow_webengine.cpp" line="1798"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
         <translation>Demandante la asistanton… (malmulte da memoro: %1 MB liberaj; loka modelo povus malsukcesi aŭ malrapidigi la aplikaĵon)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1730"/>
+        <location filename="../mainwindow_webengine.cpp" line="1803"/>
         <source>Asking the assistant…</source>
         <translation>Demandante la asistanton…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1751"/>
+        <location filename="../mainwindow_webengine.cpp" line="1824"/>
         <source>AI assistant</source>
         <translation type="unfinished">AI-asistanto</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1810"/>
+        <location filename="../mainwindow_webengine.cpp" line="1883"/>
         <source>Message updated.</source>
         <translation>Mesaĝo ĝisdatigita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1776"/>
-        <location filename="../mainwindow_webengine.cpp" line="1790"/>
-        <location filename="../mainwindow_webengine.cpp" line="1813"/>
+        <location filename="../mainwindow_webengine.cpp" line="1849"/>
+        <location filename="../mainwindow_webengine.cpp" line="1863"/>
+        <location filename="../mainwindow_webengine.cpp" line="1886"/>
         <source>AI result</source>
         <translation>AI-rezulto</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1826"/>
+        <location filename="../mainwindow_webengine.cpp" line="1899"/>
         <source>Chat summary</source>
         <translation>Resumo de la babilo</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="1766"/>
+        <location filename="../mainwindow_webengine.cpp" line="1839"/>
         <source>Close</source>
         <translation type="unfinished">Fermi</translation>
     </message>
@@ -1590,57 +1596,57 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../common.cpp" line="59"/>
+        <location filename="../common.cpp" line="74"/>
         <source>Nothing unread</source>
         <translation>Nenio nelegita</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="69"/>
+        <location filename="../common.cpp" line="84"/>
         <source>1 unread message in 1 chat</source>
         <translation>1 nelegita mesaĝo en 1 babilo</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="71"/>
+        <location filename="../common.cpp" line="86"/>
         <source>1 unread message in %1 chats</source>
         <translation>1 nelegita mesaĝo en %1 babiloj</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="73"/>
+        <location filename="../common.cpp" line="88"/>
         <source>%1 unread messages in 1 chat</source>
         <translation>%1 nelegitaj mesaĝoj en 1 babilo</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="75"/>
+        <location filename="../common.cpp" line="90"/>
         <source>%1 unread messages in %2 chats</source>
         <translation>%1 nelegitaj mesaĝoj en %2 babiloj</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="85"/>
+        <location filename="../common.cpp" line="100"/>
         <source>%1 in 1 muted chat</source>
         <translation>%1 en 1 silentigita babilo</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="86"/>
+        <location filename="../common.cpp" line="101"/>
         <source>%1 in %2 muted chats</source>
         <translation>%1 en %2 silentigitaj babiloj</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="92"/>
+        <location filename="../common.cpp" line="107"/>
         <source>%1 in 1 chat that is not muted</source>
         <translation>%1 en 1 nesilentigita babilo</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="94"/>
+        <location filename="../common.cpp" line="109"/>
         <source>%1 in %2 chats that are not muted</source>
         <translation>%1 en %2 nesilentigitaj babiloj</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="104"/>
+        <location filename="../common.cpp" line="119"/>
         <source>WhatsApp Web %1</source>
         <translation>WhatsApp Web %1</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="106"/>
+        <location filename="../common.cpp" line="121"/>
         <source>Build token: %1</source>
         <translation>Kompila ĵetono: %1</translation>
     </message>
@@ -1969,7 +1975,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>Restariĝis post starta kolapso per ŝalto al sekura bildigo. Vi povas ŝanĝi tion en Agordoj → Rendimento.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_webengine.cpp" line="962"/>
+        <location filename="../mainwindow_webengine.cpp" line="1025"/>
         <source>Reloading...</source>
         <translation>Reŝargado...</translation>
     </message>
