@@ -862,6 +862,37 @@ private slots:
 class TstScheduled : public QObject {
   Q_OBJECT
 private slots:
+  // The sender presses WhatsApp's own Send button, so it has to be able to find
+  // it. WhatsApp renamed that icon to "wds-ic-send-filled" and no longer puts
+  // "send" on the page at all; with only the old name the lookup fell through to
+  // two hardcoded aria-labels, English and Spanish, and in any other interface
+  // language the job failed on its own 45-second deadline reporting a timeout
+  // waiting for the chat to open.
+  void senderFindsTheCurrentSendIcon() {
+    const QString js = ScheduledMessages::senderScriptSource();
+    // The selectors themselves, not merely the icon name: the name also appears
+    // in the comment above the lookup, so searching for it alone would still
+    // pass with the selector deleted.
+    const int footerFirst = js.indexOf(QLatin1String(
+        "querySelector('footer [data-icon=\"wds-ic-send-filled\"]')"));
+    const int anywhere = js.indexOf(QLatin1String(
+        "querySelector('[data-icon=\"wds-ic-send-filled\"]')"));
+    const int legacy = js.indexOf(QLatin1String("[data-icon=\"send\"]"));
+    const int english = js.indexOf(QLatin1String("aria-label=\"Send\""));
+    const int spanish = js.indexOf(QLatin1String("aria-label=\"Enviar\""));
+    QVERIFY(footerFirst >= 0);
+    QVERIFY(anywhere >= 0);
+    QVERIFY(legacy >= 0); // the older name stays behind it, as a fallback
+    QVERIFY(english >= 0);
+    QVERIFY(spanish >= 0);
+    // The order is the whole point: ask the current name before the older one
+    // and before the two hardcoded labels, or the label path goes on carrying
+    // the feature and it goes on failing outside English and Spanish.
+    QVERIFY(footerFirst < legacy);
+    QVERIFY(anywhere < legacy);
+    QVERIFY(anywhere < english);
+    QVERIFY(anywhere < spanish);
+  }
   void recurrenceNextOccurrence() {
     using R = ScheduledMessages::Recurrence;
     const QDateTime base(QDate(2026, 1, 1), QTime(9, 0)); // Thu 2026-01-01
