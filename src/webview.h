@@ -32,7 +32,6 @@ public:
 
 protected:
   void contextMenuEvent(QContextMenuEvent *event) override;
-  void wheelEvent(QWheelEvent *event) override;
   bool event(QEvent *event) override;
   bool eventFilter(QObject *watched, QEvent *event) override;
 

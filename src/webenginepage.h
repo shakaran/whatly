@@ -71,7 +71,6 @@ private slots:
   void handleSelectClientCertificate(
       QWebEngineClientCertificateSelection clientCertSelection);
   void fullScreenRequestedByPage(QWebEngineFullScreenRequest request);
-  void injectPreventScrollWheelZoomHelper();
   void injectNewChatJavaScript();
 
 private:
