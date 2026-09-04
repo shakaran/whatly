@@ -1185,34 +1185,44 @@ void MainWindow::checkMediaCodecs() {
           return;
         SettingsManager::instance().settings().setValue("mediaCodecNoticeShown",
                                                         true);
-        if (m_webEngine && m_webEngine->page())
-          m_webEngine->page()->runJavaScript(Translate::toastScript(
+        if (!m_webEngine || !m_webEngine->page())
+          return;
+        QString text =
 #ifdef Q_OS_LINUX
-              // On the Debian family the advice below names something nobody can
-              // get: the app's floor is Qt 6.9, Ubuntu 24.04 — Mint 22.x's base —
-              // offers 6.4.2, and no current Debian or Ubuntu release ships a Qt
-              // WebEngine that is both new enough and codec-enabled. The Flatpak
-              // builds against io.qt.qtwebengine.BaseApp and does have them, so
-              // it is the one build a reader can act on today.
-              tr("This build cannot send H.264/MP4 videos: its browser engine "
-                 "was built without the proprietary codecs. Photos and WebM/VP9 "
-                 "videos work. For MP4, use the Flatpak, whose engine is built "
-                 "with them. (Click to dismiss.)"),
+            // On the Debian family the advice below names something nobody can
+            // get: the app's floor is Qt 6.9, Ubuntu 24.04 — Mint 22.x's base —
+            // offers 6.4.2, and no current Debian or Ubuntu release ships a Qt
+            // WebEngine that is both new enough and codec-enabled. The Flatpak
+            // builds against io.qt.qtwebengine.BaseApp and does have them, so
+            // it is the one build a reader can act on today.
+            tr("This build cannot send H.264/MP4 videos: its browser engine "
+               "was built without the proprietary codecs. Photos and WebM/VP9 "
+               "videos work. For MP4, use the Flatpak, whose engine is built "
+               "with them. (Click to dismiss.)");
 #else
-              // Off Linux there is no Flatpak and no codec-enabled build of
-              // Whatly at all: Qt's own binaries (used by the Windows and macOS
-              // builds) ship without the proprietary codecs, so pointing at
-              // "another package" would name something that does not exist
-              // (issue #93). Say plainly what does not work and what does, and
-              // offer a real way through instead of a package that was never
-              // built.
-              tr("This build cannot send H.264/MP4 videos: its browser engine "
-                 "was built without the proprietary codecs, and no build of "
-                 "Whatly with them exists for this platform. Photos and WebM/VP9 "
-                 "videos work; to send an MP4, convert it to WebM first or share "
-                 "it as a document. (Click to dismiss.)"),
+            // Off Linux there is no Flatpak and no codec-enabled build of
+            // Whatly at all: Qt's own binaries (used by the Windows and macOS
+            // builds) ship without the proprietary codecs, so pointing at
+            // "another package" would name something that does not exist
+            // (issue #93). Say plainly what does not work and what does, and
+            // offer a real way through instead of a package that was never
+            // built.
+            tr("This build cannot send H.264/MP4 videos: its browser engine "
+               "was built without the proprietary codecs, and no build of "
+               "Whatly with them exists for this platform. Photos and WebM/VP9 "
+               "videos work; to send an MP4, convert it to WebM first or share "
+               "it as a document. (Click to dismiss.)");
 #endif
-              /*persistent=*/true));
+        // WhatsApp Web's voice/video calls need the same H.264 codec, so a
+        // codec-free engine greys them out as "unsupported browser" (issue #97).
+        // Same root cause, so it rides this same one-time notice rather than a
+        // second popup. Appended as its own string, leaving the two MP4 messages
+        // (and their translations) untouched.
+        text += QLatin1Char(' ') +
+                tr("Voice and video calls need the same codecs, so this build "
+                   "cannot make them either.");
+        m_webEngine->page()->runJavaScript(
+            Translate::toastScript(text, /*persistent=*/true));
       });
 }
 
