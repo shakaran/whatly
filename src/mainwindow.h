@@ -574,6 +574,9 @@ private:
                             const QString &caption);
   // The page-side script that completes an attachment send (injected on load).
   static QString attachmentSenderScriptSource();
+  // The floating gear injected when there is no system tray, so Settings stays
+  // reachable (issue #103). Its label reuses the already-translated "Settings".
+  static QString settingsAffordanceScript();
   // Send text to a contact/group given by name (or a group id) through WhatsApp
   // Web: opens the target chat by exact-title search, then types and sends.
   // Used by commandSend for a non-phone-number recipient. Best-effort.
