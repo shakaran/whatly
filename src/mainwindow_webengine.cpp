@@ -6,6 +6,7 @@
 #include <QFile>
 #include <QRandomGenerator>
 #include <QScreen>
+#include <QSystemTrayIcon>
 
 #include "chatnav.h" // a chat picked from the tray, opened once its page is up
 #include "common.h"
@@ -190,6 +191,8 @@ void MainWindow::installPageBridge(QWebEnginePage *page) {
             });
     connect(m_pageBridge, &PageBridge::incomingMessageReceived, this,
             &MainWindow::handleIncomingMessage);
+    connect(m_pageBridge, &PageBridge::settingsRequested, this,
+            [this]() { showSettings(); });
   }
   if (!m_webChannel) {
     m_webChannel = new QWebChannel(this);
@@ -229,6 +232,26 @@ void MainWindow::installPageBridge(QWebEnginePage *page) {
   for (const auto &script : stale)
     scripts.remove(script);
   scripts.insert(bridge);
+
+  // With no system tray there is no tray menu, and the window has no menu bar or
+  // chrome of its own, so Settings can only be reached by the (undiscoverable)
+  // Ctrl+P — which is what issue #103 ran into. Give exactly those users a small
+  // floating gear that opens Settings through the bridge. Not injected when a
+  // tray is present, so the usual chrome-less look is unchanged.
+  {
+    QWebEngineScript gear;
+    gear.setName(QStringLiteral("whatly-settings-affordance"));
+    const auto staleGear = scripts.find(gear.name());
+    for (const auto &script : staleGear)
+      scripts.remove(script);
+    if (!QSystemTrayIcon::isSystemTrayAvailable()) {
+      gear.setSourceCode(settingsAffordanceScript());
+      gear.setInjectionPoint(QWebEngineScript::DocumentReady);
+      gear.setWorldId(QWebEngineScript::MainWorld);
+      gear.setRunsOnSubFrames(false);
+      scripts.insert(gear);
+    }
+  }
 
   // The scheduled-message sender rides along on every load: it looks for a job
   // left in sessionStorage (which survives the navigation the send triggers)
@@ -298,6 +321,46 @@ void MainWindow::installPageBridge(QWebEnginePage *page) {
 // The page-side automation for `--send --file`. Injected on every load; a no-op
 // until a job appears in sessionStorage under 'whatlyAttachJob'. Verified live
 // against current WhatsApp Web: type the caption into the composer first, then
+// A small floating gear that opens Settings through the bridge, injected only
+// when there is no system tray (issue #103). Kept deliberately plain and out of
+// the way (bottom-left, half-faded until hovered) since it exists as a fallback,
+// not decoration. Its label is the already-translated "Settings".
+QString MainWindow::settingsAffordanceScript() {
+  QString label = tr("Settings");
+  label.replace(QLatin1Char('\\'), QLatin1String("\\\\"))
+      .replace(QLatin1Char('\''), QLatin1String("\\'"));
+  return QStringLiteral(R"JS(
+    (function(){
+      if (window.__whatlySettingsFab) return;
+      window.__whatlySettingsFab = true;
+      function add(){
+        if (!document.body || document.getElementById('whatly-settings-fab')) return;
+        var b = document.createElement('button');
+        b.id = 'whatly-settings-fab';
+        b.type = 'button';
+        b.title = ')JS") +
+         label + QStringLiteral(R"JS(';
+        b.setAttribute('aria-label', b.title);
+        b.textContent = '⚙';
+        b.style.cssText = 'position:fixed;left:10px;bottom:10px;z-index:2147483647;'
+          + 'width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;'
+          + 'font-size:17px;line-height:34px;text-align:center;padding:0;'
+          + 'background:rgba(0,0,0,.55);color:#fff;opacity:.5;'
+          + 'transition:opacity .15s;box-shadow:0 1px 4px rgba(0,0,0,.4);';
+        b.addEventListener('mouseenter', function(){ b.style.opacity='1'; });
+        b.addEventListener('mouseleave', function(){ b.style.opacity='.5'; });
+        b.addEventListener('click', function(){
+          try { if (window.__whatlyBridge && window.__whatlyBridge.openSettings)
+            window.__whatlyBridge.openSettings(); } catch (e) {}
+        });
+        document.body.appendChild(b);
+      }
+      if (document.body) add();
+      else document.addEventListener('DOMContentLoaded', add);
+    })();
+  )JS");
+}
+
 // PASTE the image (a ClipboardEvent carrying the File — the hidden file-input
 // path attaches the image but loses the caption), which opens the media editor
 // with the caption already set; then click Send with a full pointer sequence.

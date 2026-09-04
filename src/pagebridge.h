@@ -33,6 +33,10 @@ public slots:
   // conversation, so MainWindow can evaluate the rules and reply.
   void incomingMessage(const QString &text) { emit incomingMessageReceived(text); }
 
+  // Invoked by the floating gear injected when there is no system tray, so
+  // Settings is reachable without the tray menu (issue #103).
+  void openSettings() { emit settingsRequested(); }
+
 signals:
   void themeToggleRequested();
   void privacyBlurToggleRequested();
@@ -43,6 +47,7 @@ signals:
   void scheduledMessageFinished(const QString &id, bool ok,
                                 const QString &error);
   void incomingMessageReceived(const QString &text);
+  void settingsRequested();
 };
 
 #endif // PAGEBRIDGE_H
