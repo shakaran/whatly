@@ -61,6 +61,11 @@ signals:
   // "Restart now": the settings that only take effect at launch are worth
   // nothing until the app comes back, so offer to do it here.
   void restartRequested();
+  // The opt-in scroll-diagnostics probe was switched on or off: (re)install it.
+  void diagnosticsChanged();
+  // "Copy diagnostics": read the probe's collected figures out of the page and
+  // put them on the clipboard (and in the log) so they can go into a bug report.
+  void copyDiagnosticsRequested();
 
 public:
   explicit SettingsWidget(QWidget *parent = nullptr, int screenNumber = 0,

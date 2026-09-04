@@ -1,4 +1,5 @@
 #include "settingswidget.h"
+#include "diagnostics.h"
 #include "ui_settingswidget.h"
 
 #include "mainwindow.h"
@@ -842,6 +843,35 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
       h->addWidget(restartButton());
       v->addLayout(h);
     };
+    // Opt-in diagnostics: a switch that turns on a scroll-timing probe and a
+    // button that copies what it has gathered, for pasting into a bug report.
+    // Off by default and injected only while on, so it costs nothing otherwise.
+    if (ui->verticalLayoutPerformance) {
+      auto *diag = new QCheckBox(tr("Collect scroll diagnostics"), this);
+      diag->setToolTip(
+          tr("Records how smoothly the chat scrolls, to attach to a bug "
+             "report. Off by default; it does nothing until you turn it on, "
+             "and adds nothing to a normal session."));
+      diag->setChecked(Diagnostics::scrollProbeEnabled());
+      connect(diag, &QCheckBox::toggled, this, [this](bool on) {
+        Diagnostics::setScrollProbeEnabled(on);
+        emit diagnosticsChanged();
+      });
+      ui->verticalLayoutPerformance->addWidget(diag);
+
+      auto *copyDiag = new QPushButton(tr("Copy diagnostics"), this);
+      copyDiag->setToolTip(
+          tr("Copy the collected scroll figures to the clipboard (and the log) "
+             "so they can be pasted into a bug report."));
+      copyDiag->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Fixed);
+      connect(copyDiag, &QPushButton::clicked, this,
+              &SettingsWidget::copyDiagnosticsRequested);
+      auto *diagRow = new QHBoxLayout;
+      diagRow->setContentsMargins(0, 0, 0, 0);
+      diagRow->addStretch(1);
+      diagRow->addWidget(copyDiag);
+      ui->verticalLayoutPerformance->addLayout(diagRow);
+    }
     addGroupRestart(ui->verticalLayoutPerformance);
     addGroupRestart(ui->verticalLayoutJsAddons);
     addGroupRestart(ui->verticalLayoutShortcuts);
