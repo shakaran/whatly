@@ -3381,6 +3381,31 @@ private slots:
     // only when the editor closes), so a "not HD resolution" rejection on
     // sub-HD media cannot re-open the dialog forever.
     QVERIFY(js.contains(QLatin1String("tried")));
+    // #96: the control is identified by the name inside WhatsApp's own icon,
+    // which is not translated and does not change with the media. Its label is
+    // both — "Photo quality" when HD is possible, the reason it is not when it
+    // is not — so a label search for "HD" matched this control only while it
+    // was refusing: HD was never enabled for media that could take it, and
+    // every attachment that could not cost a dialog.
+    QVERIFY(js.contains(QLatin1String("wds-ic-hd-settings")));
+    QVERIFY(js.contains(QLatin1String("data-testid")));
+    QVERIFY(!js.contains(QLatin1String("button[aria-label]")));
+    // Whether HD is possible is settled before anything is clicked, so the
+    // "Cannot set to HD" dialog is never provoked at all. WhatsApp dims the icon
+    // when it is impossible — the control itself is identical either way, down to
+    // aria-disabled="false" — so the rendered opacity is what is read.
+    QVERIFY(js.contains(QLatin1String("getComputedStyle")));
+    QVERIFY(js.contains(QLatin1String("opacity")));
+    // The dimming comes from a generated class name that changes between
+    // WhatsApp deployments; the effect is read, never the name.
+    QVERIFY(!js.contains(QLatin1String("xyd83as")));
+    // And if WhatsApp ever stops dimming it, a refusal that does get through is
+    // remembered by its wording rather than provoked again for every attachment.
+    QVERIFY(js.contains(QLatin1String("refused")));
+    QVERIFY(js.contains(QLatin1String("[role=\"dialog\"]")));
+    // A menu entry is only taken from outside the conversation, so a message
+    // that merely says "HD" cannot be clicked instead.
+    QVERIFY(js.contains(QLatin1String("closest('#main')")));
     HdMedia::setEnabled(false);
   }
   void installOnProfile() {
