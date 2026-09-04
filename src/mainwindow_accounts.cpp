@@ -211,8 +211,13 @@ void MainWindow::buildAccountArea() {
   // delay and the user can change it; the sweep above is what catches the rest.
   m_offscreenTimer = new QTimer(this);
   m_offscreenTimer->setSingleShot(true);
-  connect(m_offscreenTimer, &QTimer::timeout, this,
-          [this]() { unloadOffscreenWindowAccounts(); });
+  connect(m_offscreenTimer, &QTimer::timeout, this, [this]() {
+    unloadOffscreenWindowAccounts();
+    // One timer, and it has just been spent. Any window that is away but not yet
+    // past its own wait would otherwise be left with nothing to come back for
+    // until the next sweep, so the next deadline is armed here (issue #91).
+    armOffscreenTimer();
+  });
 
   // A title change is not the only way an unread count moves: marking a chat
   // read or unread by hand moves it without one, and so does reading a chat on
@@ -1324,12 +1329,49 @@ void MainWindow::noteWindowVisibilityChanged() {
   if (!Performance::suspendInactiveAccounts() ||
       !Performance::unloadOffscreenWindows())
     return; // nothing to time
-  const bool wentAway = refreshOffscreenSince();
-  if (wentAway && m_offscreenTimer)
-    // Come back when that window's wait is up. A second past it, so the sweep
-    // cannot arrive in the same second it started counting and find the wait a
-    // hair short.
-    m_offscreenTimer->start(Performance::suspendAfterMinutes() * 60000 + 1000);
+  refreshOffscreenSince();
+  armOffscreenTimer();
+}
+
+// The single timer, set for the first deadline still to come rather than for a
+// fresh full delay (issue #91). There is one timer and a wait per window, so
+// arming it for the delay every time any window goes hands it to whichever went
+// last: window A hides, then window B hides a minute later, and B's arming moves
+// the timer a minute past A's deadline. Reading the earliest of the pending
+// waits instead means the timer always belongs to the window that needs it
+// soonest, and re-arming after each timeout carries it on to the next one.
+//
+// Deadlines already passed are left out on purpose. Their windows have just been
+// through unloadOffscreenWindowAccounts(), and one that still has a loaded
+// account after that is the minute-long sweep's to collect, exactly as before
+// — arming for a wait that is already up would fire, find the same window still
+// listed, and arm for it again.
+void MainWindow::armOffscreenTimer() {
+  if (!m_offscreenTimer)
+    return;
+  // A second past the wait, so a check cannot arrive in the same second the
+  // window went and find the wait a hair short.
+  const qint64 wait = qint64(Performance::suspendAfterMinutes()) * 60000 + 1000;
+  const QDateTime now = QDateTime::currentDateTime();
+  qint64 soonest = -1;
+  for (auto it = m_offscreenSince.cbegin(); it != m_offscreenSince.cend();
+       ++it) {
+    if (!it.value().isValid())
+      continue;
+    const qint64 left = wait - it.value().msecsTo(now);
+    if (left <= 0)
+      continue; // its wait is up; the unload and the sweep have it
+    if (soonest < 0 || left < soonest)
+      soonest = left;
+  }
+  // Nothing left to wait for: every window is back, or every wait is up. Stop
+  // rather than leave the last one running: it would fire on a set of windows it
+  // was not armed for.
+  if (soonest < 0) {
+    m_offscreenTimer->stop();
+    return;
+  }
+  m_offscreenTimer->start(int(soonest));
 }
 
 // Every account that has a page, and the last answer is kept for the ones that

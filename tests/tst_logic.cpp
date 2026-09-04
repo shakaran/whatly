@@ -862,6 +862,37 @@ private slots:
 class TstScheduled : public QObject {
   Q_OBJECT
 private slots:
+  // The sender presses WhatsApp's own Send button, so it has to be able to find
+  // it. WhatsApp renamed that icon to "wds-ic-send-filled" and no longer puts
+  // "send" on the page at all; with only the old name the lookup fell through to
+  // two hardcoded aria-labels, English and Spanish, and in any other interface
+  // language the job failed on its own 45-second deadline reporting a timeout
+  // waiting for the chat to open.
+  void senderFindsTheCurrentSendIcon() {
+    const QString js = ScheduledMessages::senderScriptSource();
+    // The selectors themselves, not merely the icon name: the name also appears
+    // in the comment above the lookup, so searching for it alone would still
+    // pass with the selector deleted.
+    const int footerFirst = js.indexOf(QLatin1String(
+        "querySelector('footer [data-icon=\"wds-ic-send-filled\"]')"));
+    const int anywhere = js.indexOf(QLatin1String(
+        "querySelector('[data-icon=\"wds-ic-send-filled\"]')"));
+    const int legacy = js.indexOf(QLatin1String("[data-icon=\"send\"]"));
+    const int english = js.indexOf(QLatin1String("aria-label=\"Send\""));
+    const int spanish = js.indexOf(QLatin1String("aria-label=\"Enviar\""));
+    QVERIFY(footerFirst >= 0);
+    QVERIFY(anywhere >= 0);
+    QVERIFY(legacy >= 0); // the older name stays behind it, as a fallback
+    QVERIFY(english >= 0);
+    QVERIFY(spanish >= 0);
+    // The order is the whole point: ask the current name before the older one
+    // and before the two hardcoded labels, or the label path goes on carrying
+    // the feature and it goes on failing outside English and Spanish.
+    QVERIFY(footerFirst < legacy);
+    QVERIFY(anywhere < legacy);
+    QVERIFY(anywhere < english);
+    QVERIFY(anywhere < spanish);
+  }
   void recurrenceNextOccurrence() {
     using R = ScheduledMessages::Recurrence;
     const QDateTime base(QDate(2026, 1, 1), QTime(9, 0)); // Thu 2026-01-01
@@ -3350,6 +3381,31 @@ private slots:
     // only when the editor closes), so a "not HD resolution" rejection on
     // sub-HD media cannot re-open the dialog forever.
     QVERIFY(js.contains(QLatin1String("tried")));
+    // #96: the control is identified by the name inside WhatsApp's own icon,
+    // which is not translated and does not change with the media. Its label is
+    // both — "Photo quality" when HD is possible, the reason it is not when it
+    // is not — so a label search for "HD" matched this control only while it
+    // was refusing: HD was never enabled for media that could take it, and
+    // every attachment that could not cost a dialog.
+    QVERIFY(js.contains(QLatin1String("wds-ic-hd-settings")));
+    QVERIFY(js.contains(QLatin1String("data-testid")));
+    QVERIFY(!js.contains(QLatin1String("button[aria-label]")));
+    // Whether HD is possible is settled before anything is clicked, so the
+    // "Cannot set to HD" dialog is never provoked at all. WhatsApp dims the icon
+    // when it is impossible — the control itself is identical either way, down to
+    // aria-disabled="false" — so the rendered opacity is what is read.
+    QVERIFY(js.contains(QLatin1String("getComputedStyle")));
+    QVERIFY(js.contains(QLatin1String("opacity")));
+    // The dimming comes from a generated class name that changes between
+    // WhatsApp deployments; the effect is read, never the name.
+    QVERIFY(!js.contains(QLatin1String("xyd83as")));
+    // And if WhatsApp ever stops dimming it, a refusal that does get through is
+    // remembered by its wording rather than provoked again for every attachment.
+    QVERIFY(js.contains(QLatin1String("refused")));
+    QVERIFY(js.contains(QLatin1String("[role=\"dialog\"]")));
+    // A menu entry is only taken from outside the conversation, so a message
+    // that merely says "HD" cannot be clicked instead.
+    QVERIFY(js.contains(QLatin1String("closest('#main')")));
     HdMedia::setEnabled(false);
   }
   void installOnProfile() {

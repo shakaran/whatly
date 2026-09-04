@@ -389,6 +389,9 @@ private:
   // the total of several. Returns true when a window has only just gone.
   bool refreshOffscreenSince();
   QHash<const QWidget *, QDateTime> m_offscreenSince;
+  // Sets m_offscreenTimer for the earliest wait still to come, so a window going
+  // away cannot push back the deadline of one that went before it (issue #91).
+  void armOffscreenTimer();
   // Started when a window goes away, to look again once its wait is up. The
   // minute-long sweep would find it too, but a minute late for someone who set
   // the delay to one.
