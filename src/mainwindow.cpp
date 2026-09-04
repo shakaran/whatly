@@ -97,7 +97,7 @@ MainWindow::MainWindow(QWidget *parent)
   // ours writes is CustomTitleBar::barTitle(), which puts the name back exactly
   // once, because there no platform is going to.
   setWindowTitle(AppProfile::label().trimmed());
-  setWindowIcon(themeIcon("whatly", ":/icons/app/icon-64.png"));
+  setWindowIcon(appWindowIcon());
   // Optional client-side decoration: drop the native frame so buildAccountArea
   // can add its own title bar. Off by default, so nothing changes for anyone who
   // has not opted in.

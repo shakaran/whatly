@@ -575,7 +575,7 @@ int main(int argc, char *argv[]) {
       QDir::setCurrent(QCoreApplication::applicationDirPath());
   }
 #endif
-  instance.setWindowIcon(themeIcon("whatly", ":/icons/app/icon-64.png"));
+  instance.setWindowIcon(appWindowIcon());
   // The machine name is lowercase — it is the leaf of every QStandardPaths
   // location (~/.local/share/shakaran/whatly, ~/.config/shakaran/whatly.conf)
   // and of the settings file. The human-facing name, shown in window titles and
