@@ -639,7 +639,7 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
         <translation>Berichten verzamelen… door het gesprek scrollen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1462"/>
+        <location filename="../mainwindow.cpp" line="1502"/>
         <location filename="../mainwindow_webengine.cpp" line="1497"/>
         <source>Cancel</source>
         <translation type="unfinished">Annuleren</translation>
@@ -742,13 +742,13 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
         <translation>Samenvatting ongelezen</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1549"/>
+        <location filename="../mainwindow_accounts.cpp" line="1591"/>
         <location filename="../mainwindow_webengine.cpp" line="1573"/>
         <source>chat</source>
         <translation>gesprek</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1549"/>
+        <location filename="../mainwindow_accounts.cpp" line="1591"/>
         <source>chats</source>
         <translation>gesprekken</translation>
     </message>
@@ -807,7 +807,7 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1146"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs, and no build of Whatly with them exists for this platform. Photos and WebM/VP9 videos work; to send an MP4, convert it to WebM first or share it as a document. (Click to dismiss.)</source>
-        <translation>Deze build kan geen H.264/MP4-video's verzenden: de browser-engine is gebouwd zonder de propriëtaire codecs, en er bestaat geen build van Whatly met die codecs voor dit platform. Foto's en WebM/VP9-video's werken; om een MP4 te verzenden, converteer die eerst naar WebM of deel die als document. (Klik om te sluiten.)</translation>
+        <translation>Deze build kan geen H.264/MP4-video&apos;s verzenden: de browser-engine is gebouwd zonder de propriëtaire codecs, en er bestaat geen build van Whatly met die codecs voor dit platform. Foto&apos;s en WebM/VP9-video&apos;s werken; om een MP4 te verzenden, converteer die eerst naar WebM of deel die als document. (Klik om te sluiten.)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1826"/>
@@ -820,198 +820,214 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
         <translation type="unfinished">Sluiten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="118"/>
-        <location filename="../mainwindow.cpp" line="1238"/>
-        <location filename="../mainwindow.cpp" line="1334"/>
+        <location filename="../mainwindow.cpp" line="122"/>
+        <location filename="../mainwindow.cpp" line="1278"/>
+        <location filename="../mainwindow.cpp" line="1374"/>
         <source>No WhatsApp window is open</source>
         <translation>Er is geen WhatsApp-venster geopend</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1230"/>
+        <location filename="../mainwindow.cpp" line="1270"/>
         <source>Could not understand the recipient: %1</source>
         <translation>Kan de ontvanger niet begrijpen: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1293"/>
+        <location filename="../mainwindow.cpp" line="1333"/>
         <source>Opening the group and sending…</source>
         <translation>Groep openen en verzenden…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1325"/>
+        <location filename="../mainwindow.cpp" line="1365"/>
         <source>The local API could not start: %1</source>
         <translation>Kan de lokale API niet starten: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1205"/>
+        <location filename="../mainwindow.cpp" line="1245"/>
         <source>Cloud API send failed: %1</source>
         <translation>Verzenden via de Cloud API mislukt: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1196"/>
+        <location filename="../mainwindow.cpp" line="1236"/>
         <source>The Cloud API is not configured.</source>
         <translation>De Cloud API is niet geconfigureerd.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1191"/>
+        <location filename="../mainwindow.cpp" line="1231"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>De Cloud API heeft een telefoonnummer als ontvanger nodig.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1294"/>
+        <location filename="../mainwindow.cpp" line="1334"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>Chat met &quot;%1&quot; openen en verzenden…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="123"/>
+        <location filename="../mainwindow.cpp" line="127"/>
         <source>Reminder</source>
         <translation>Herinnering</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="123"/>
+        <location filename="../mainwindow.cpp" line="127"/>
         <source>Reminder: %1</source>
         <translation>Herinnering: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="261"/>
-        <location filename="../mainwindow.cpp" line="283"/>
+        <location filename="../mainwindow.cpp" line="265"/>
+        <location filename="../mainwindow.cpp" line="287"/>
         <source>Update available</source>
         <translation>Update beschikbaar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="250"/>
+        <location filename="../mainwindow.cpp" line="254"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Whatly %1 is beschikbaar. Klik om de downloadpagina te openen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="230"/>
+        <location filename="../mainwindow.cpp" line="234"/>
         <source>Whatly %1 is available. Update it through Flathub or your software centre.</source>
         <translation>Whatly %1 is beschikbaar. Werk het bij via Flathub of je softwarecentrum.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="235"/>
+        <location filename="../mainwindow.cpp" line="239"/>
         <source>Whatly %1 is available. Update it with your package manager.</source>
         <translation>Whatly %1 is beschikbaar. Werk het bij met je pakketbeheerder.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="240"/>
+        <location filename="../mainwindow.cpp" line="244"/>
         <source>Whatly %1 is available. Choose Update now to fetch just the parts that changed and update in place.</source>
         <translation>Whatly %1 is beschikbaar. Kies Nu bijwerken om alleen de gewijzigde delen te downloaden en ter plekke bij te werken.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="243"/>
+        <location filename="../mainwindow.cpp" line="247"/>
         <source>Whatly %1 is available. This AppImage can update itself in place with AppImageUpdate, fetching only the parts that changed.</source>
         <translation>Whatly %1 is beschikbaar. Deze AppImage kan zichzelf ter plekke bijwerken met AppImageUpdate en haalt alleen de gewijzigde delen op.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
+        <location filename="../mainwindow.cpp" line="271"/>
         <source>Update now</source>
         <translation>Nu bijwerken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="972"/>
-        <location filename="../mainwindow.cpp" line="978"/>
+        <location filename="../mainwindow.cpp" line="905"/>
+        <location filename="../mainwindow.cpp" line="914"/>
+        <source>Diagnostics</source>
+        <translation>Diagnostiek</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>No scroll diagnostics recorded yet. Turn on collection, scroll a chat for a few seconds, then copy.</source>
+        <translation>Nog geen scroll-diagnostiek geregistreerd. Schakel verzamelen in, scroll een paar seconden door een gesprek en kopieer daarna.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="915"/>
+        <source>Scroll diagnostics copied to the clipboard (and added to the log). Paste them into your bug report.</source>
+        <translation>Scroll-diagnostiek gekopieerd naar het klembord (en toegevoegd aan het logboek). Plak het in je bugrapport.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <location filename="../mainwindow.cpp" line="1018"/>
         <location filename="../mainwindow_webengine.cpp" line="967"/>
         <location filename="../mainwindow_webengine.cpp" line="970"/>
         <source>| Error</source>
         <translation>| Fout</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="973"/>
+        <location filename="../mainwindow.cpp" line="1013"/>
         <source>Unlock to access Settings.</source>
         <translation>Ontgrendel om de instellingen te openen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="979"/>
+        <location filename="../mainwindow.cpp" line="1019"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>Kan de instellingenmodule niet initialiseren.
 WebEngine is niet geïnitialiseerd.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1000"/>
+        <location filename="../mainwindow.cpp" line="1040"/>
         <source> | Action required</source>
         <translation> | Actie vereist</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1001"/>
+        <location filename="../mainwindow.cpp" line="1041"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>De pagina moet opnieuw worden geladen om door te gaan.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1180"/>
-        <location filename="../mainwindow.cpp" line="1822"/>
+        <location filename="../mainwindow.cpp" line="1220"/>
+        <location filename="../mainwindow.cpp" line="1862"/>
         <location filename="../mainwindow_webengine.cpp" line="1652"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly is vergrendeld. Ontgrendel het om berichten te versturen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1462"/>
+        <location filename="../mainwindow.cpp" line="1502"/>
         <source>Updating Whatly…</source>
         <translation>Whatly wordt bijgewerkt…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1464"/>
-        <location filename="../mainwindow.cpp" line="1505"/>
-        <location filename="../mainwindow.cpp" line="1511"/>
-        <location filename="../mainwindow.cpp" line="1523"/>
+        <location filename="../mainwindow.cpp" line="1504"/>
+        <location filename="../mainwindow.cpp" line="1545"/>
+        <location filename="../mainwindow.cpp" line="1551"/>
+        <location filename="../mainwindow.cpp" line="1563"/>
         <source>Software update</source>
         <translation>Software-update</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1506"/>
+        <location filename="../mainwindow.cpp" line="1546"/>
         <source>The update could not be completed. You can download the new version from the release page instead.</source>
         <translation>De update kon niet worden voltooid. Je kunt de nieuwe versie in plaats daarvan van de releasepagina downloaden.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1512"/>
+        <location filename="../mainwindow.cpp" line="1552"/>
         <source>Whatly was updated. Restart now to use the new version?</source>
         <translation>Whatly is bijgewerkt. Nu herstarten om de nieuwe versie te gebruiken?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1524"/>
+        <location filename="../mainwindow.cpp" line="1564"/>
         <source>The update tool could not be started.</source>
         <translation>Het updatehulpprogramma kon niet worden gestart.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1550"/>
+        <location filename="../mainwindow.cpp" line="1590"/>
         <source>Restart</source>
         <translation>Opnieuw starten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1551"/>
+        <location filename="../mainwindow.cpp" line="1591"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly kon geen nieuwe instantie starten en heeft deze daarom niet gesloten. Sluit de app af en open hem opnieuw.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1677"/>
+        <location filename="../mainwindow.cpp" line="1717"/>
         <source>Expand the chat list</source>
         <translation>Chatlijst uitklappen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1678"/>
+        <location filename="../mainwindow.cpp" line="1718"/>
         <location filename="../mainwindow_tray.cpp" line="370"/>
         <source>Collapse the chat list</source>
         <translation>Chatlijst inklappen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="264"/>
-        <location filename="../mainwindow.cpp" line="1798"/>
+        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="1838"/>
         <source>Open</source>
         <translation>Openen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1844"/>
+        <location filename="../mainwindow.cpp" line="1884"/>
         <location filename="../mainwindow_tray.cpp" line="29"/>
         <source>New Chat</source>
         <translation>Nieuw gesprek</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1845"/>
+        <location filename="../mainwindow.cpp" line="1885"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Voer een geldig WhatsApp-nummer met landnummer in (bijv. +31XXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1875"/>
+        <location filename="../mainwindow.cpp" line="1915"/>
         <source>Rate Application</source>
         <translation>Toepassing beoordelen</translation>
     </message>
@@ -1330,58 +1346,58 @@ Instellingen nu openen?</translation>
         <translation>Spelling: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="343"/>
-        <location filename="../mainwindow_accounts.cpp" line="1775"/>
+        <location filename="../mainwindow_accounts.cpp" line="348"/>
+        <location filename="../mainwindow_accounts.cpp" line="1817"/>
         <source>Rename…</source>
         <translation>Naam wijzigen…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="344"/>
-        <location filename="../mainwindow_accounts.cpp" line="1776"/>
+        <location filename="../mainwindow_accounts.cpp" line="349"/>
+        <location filename="../mainwindow_accounts.cpp" line="1818"/>
         <source>Open in own window</source>
         <translation>In eigen venster openen</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="348"/>
-        <location filename="../mainwindow_accounts.cpp" line="1779"/>
+        <location filename="../mainwindow_accounts.cpp" line="353"/>
+        <location filename="../mainwindow_accounts.cpp" line="1821"/>
         <source>Remove account</source>
         <translation>Account verwijderen</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="433"/>
+        <location filename="../mainwindow_accounts.cpp" line="438"/>
         <source>Switch to account: %1</source>
         <translation>Overschakelen naar account: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="436"/>
+        <location filename="../mainwindow_accounts.cpp" line="441"/>
         <location filename="../mainwindow_tray.cpp" line="321"/>
         <source>Add account…</source>
         <translation>Account toevoegen…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="437"/>
+        <location filename="../mainwindow_accounts.cpp" line="442"/>
         <source>Quick message…</source>
         <translation>Snel bericht…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="442"/>
+        <location filename="../mainwindow_accounts.cpp" line="447"/>
         <source>Insert: %1</source>
         <translation>Invoegen: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="750"/>
+        <location filename="../mainwindow_accounts.cpp" line="755"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 ongelezen</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1519"/>
-        <location filename="../mainwindow_accounts.cpp" line="2178"/>
+        <location filename="../mainwindow_accounts.cpp" line="1561"/>
+        <location filename="../mainwindow_accounts.cpp" line="2220"/>
         <source>Add another account</source>
         <translation>Nog een account toevoegen</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1548"/>
-        <location filename="../mainwindow_accounts.cpp" line="1575"/>
+        <location filename="../mainwindow_accounts.cpp" line="1590"/>
+        <location filename="../mainwindow_accounts.cpp" line="1617"/>
         <source>Restore</source>
         <translation>Herstellen</translation>
     </message>
@@ -1394,39 +1410,39 @@ Instellingen nu openen?</translation>
         <translation type="vanished">bericht</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1621"/>
+        <location filename="../mainwindow_accounts.cpp" line="1663"/>
         <source>Add account</source>
         <translation>Account toevoegen</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1622"/>
+        <location filename="../mainwindow_accounts.cpp" line="1664"/>
         <source>Name for the new account:</source>
         <translation>Naam voor het nieuwe account:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1623"/>
-        <location filename="../mainwindow_accounts.cpp" line="2516"/>
-        <location filename="../mainwindow_accounts.cpp" line="2521"/>
+        <location filename="../mainwindow_accounts.cpp" line="1665"/>
+        <location filename="../mainwindow_accounts.cpp" line="2558"/>
+        <location filename="../mainwindow_accounts.cpp" line="2563"/>
         <source>Account %1</source>
         <translation>Account %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1652"/>
+        <location filename="../mainwindow_accounts.cpp" line="1694"/>
         <source>Rename account</source>
         <translation>Accountnaam wijzigen</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1652"/>
+        <location filename="../mainwindow_accounts.cpp" line="1694"/>
         <source>Account name:</source>
         <translation>Accountnaam:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2197"/>
+        <location filename="../mainwindow_accounts.cpp" line="2239"/>
         <source>Tip: give an account its own window</source>
         <translation>Tip: geef een account een eigen venster</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2198"/>
+        <location filename="../mainwindow_accounts.cpp" line="2240"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1435,8 +1451,8 @@ You can pull any account out into its own window: right-click its tab and choose
 Je kunt elk account naar een eigen venster slepen: klik met de rechtermuisknop op het tabblad en kies ‘In eigen venster openen’. Sluit dat venster om het account weer als tabblad vast te zetten.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2510"/>
-        <location filename="../mainwindow_accounts.cpp" line="2514"/>
+        <location filename="../mainwindow_accounts.cpp" line="2552"/>
+        <location filename="../mainwindow_accounts.cpp" line="2556"/>
         <source>Account 1</source>
         <translation>Account 1</translation>
     </message>
@@ -1446,14 +1462,14 @@ Je kunt elk account naar een eigen venster slepen: klik met de rechtermuisknop o
         <translation>Ontgrendel om de toepassing te herladen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1259"/>
-        <location filename="../mainwindow.cpp" line="1340"/>
+        <location filename="../mainwindow.cpp" line="1299"/>
+        <location filename="../mainwindow.cpp" line="1380"/>
         <source>Could not read the file to send: %1</source>
         <translation>Kan het te verzenden bestand niet lezen: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1268"/>
-        <location filename="../mainwindow.cpp" line="1350"/>
+        <location filename="../mainwindow.cpp" line="1308"/>
+        <location filename="../mainwindow.cpp" line="1390"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>Het bestand is te groot om via de web-backend te versturen.</translation>
     </message>
@@ -1643,97 +1659,97 @@ Je kunt elk account naar een eigen venster slepen: klik met de rechtermuisknop o
         <translation>Foutopsporingsinformatie verbergen</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="202"/>
+        <location filename="../main.cpp" line="205"/>
         <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
         <translation>Niets te migreren van &quot;%1&quot; — al gemigreerd, of geen gegevens gevonden.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="207"/>
+        <location filename="../main.cpp" line="210"/>
         <source>Would copy:</source>
         <translation>Zou kopiëren:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="207"/>
+        <location filename="../main.cpp" line="210"/>
         <source>Copied:</source>
         <translation>Gekopieerd:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="211"/>
+        <location filename="../main.cpp" line="214"/>
         <source>Run again without --dry-run to perform the copy.</source>
         <translation>Voer opnieuw uit zonder --dry-run om de kopie uit te voeren.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="590"/>
+        <location filename="../main.cpp" line="656"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Veelzijdige WhatsApp Web-client op basis van Qt WebEngine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="597"/>
+        <location filename="../main.cpp" line="663"/>
         <source>Displays help on commandline options</source>
         <translation>Toont de hulp voor de opdrachtregelopties</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="602"/>
+        <location filename="../main.cpp" line="668"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>Opent de instellingen in een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="607"/>
+        <location filename="../main.cpp" line="673"/>
         <source>Locks a running instance of </source>
         <translation>Vergrendelt een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="613"/>
+        <location filename="../main.cpp" line="679"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>Opent het venster «Over» in een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="618"/>
+        <location filename="../main.cpp" line="684"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>Opent het dialoogvenster voor geplande berichten in een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="625"/>
+        <location filename="../main.cpp" line="691"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>Wisselt tussen licht en donker thema in een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="632"/>
+        <location filename="../main.cpp" line="698"/>
         <source>Reload the app in a running instance of </source>
         <translation>Herlaadt de toepassing in een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="638"/>
+        <location filename="../main.cpp" line="704"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>Opent het venster voor een nieuw gesprek in een actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="651"/>
+        <location filename="../main.cpp" line="717"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Uitvoeren als een apart account met een eigen sessie en instellingen, in een eigen venster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="668"/>
+        <location filename="../main.cpp" line="734"/>
         <source>Show main window of running instance of </source>
         <translation>Toont het hoofdvenster van de actieve instantie van </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="675"/>
+        <location filename="../main.cpp" line="741"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>Kopieer instellingen en de aangemelde sessie van een eerdere installatie (bijv. de oudere &quot;whatsie&quot;-versie) naar deze en sluit af</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="682"/>
+        <location filename="../main.cpp" line="748"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>Met --migrate-from alleen tonen wat er gekopieerd zou worden</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="700"/>
+        <location filename="../main.cpp" line="766"/>
         <source>Print the current unread message count and exit</source>
         <translation>Toon het huidige aantal ongelezen berichten en sluit af</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1225"/>
+        <location filename="../main.cpp" line="1291"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>De app-vergrendeling is niet ingesteld.
@@ -1900,172 +1916,172 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Chatlijst tonen</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1323"/>
+        <location filename="../main.cpp" line="1389"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Hersteld van een crash bij het opstarten door over te schakelen naar veilige weergave. Je kunt dit aanpassen in Instellingen → Prestaties.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="706"/>
+        <location filename="../main.cpp" line="772"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>Verstuurt een bericht via de actieve instantie en sluit af (vereist --to en --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="710"/>
+        <location filename="../main.cpp" line="776"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>Ontvanger voor --send: een telefoonnummer (internationaal), een groeps-id of een contactnaam</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="715"/>
+        <location filename="../main.cpp" line="781"/>
         <source>Message text for --send</source>
         <translation>Berichttekst voor --send</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="727"/>
+        <location filename="../main.cpp" line="793"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>Hoe --send verzendt: &apos;web&apos; (de actieve WhatsApp Web-sessie) of &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="718"/>
+        <location filename="../main.cpp" line="784"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>Voegt een bestand toe aan --send (de --message, indien aanwezig, wordt het bijschrift)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="661"/>
+        <location filename="../main.cpp" line="727"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>Intern: wacht tot het proces met deze id is afgesloten voordat wordt gestart, gebruikt door &quot;Nu opnieuw starten&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="723"/>
+        <location filename="../main.cpp" line="789"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Bijschrift voor de --file-bijlage (alias van --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="733"/>
+        <location filename="../main.cpp" line="799"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>Gebruikt de opgeslagen sjabloon met deze naam als --send-bericht (vult de {{velden}} met --var)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="738"/>
+        <location filename="../main.cpp" line="804"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>Een sjabloonveld invullen: key=value (herhaalbaar)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="742"/>
+        <location filename="../main.cpp" line="808"/>
         <source>List the saved message templates and exit</source>
         <translation>De opgeslagen berichtsjablonen tonen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="745"/>
+        <location filename="../main.cpp" line="811"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>Een berichtsjabloon opslaan (of vervangen), dan afsluiten: name=body</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="749"/>
+        <location filename="../main.cpp" line="815"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>De opgeslagen berichtsjabloon met deze naam verwijderen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="754"/>
+        <location filename="../main.cpp" line="820"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>Automatisch antwoorden op inkomende berichten inschakelen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="757"/>
+        <location filename="../main.cpp" line="823"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>Automatisch antwoorden uitschakelen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="760"/>
+        <location filename="../main.cpp" line="826"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>De actieve auto-antwoordregels (met status) tonen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="763"/>
+        <location filename="../main.cpp" line="829"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Dit JSON-bestand als bron van auto-antwoordregels gebruiken en afsluiten (leeg om te wissen)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="769"/>
+        <location filename="../main.cpp" line="835"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>De telefoonnummer-id van de Cloud API instellen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="773"/>
+        <location filename="../main.cpp" line="839"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>De toegangstoken van de Cloud API instellen en afsluiten (opgeslagen in de accountconfiguratie)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="778"/>
+        <location filename="../main.cpp" line="844"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>De graph-versie van de Cloud API instellen (bijv. v21.0) en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="782"/>
+        <location filename="../main.cpp" line="848"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>Tonen of de Cloud API is geconfigureerd en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="785"/>
+        <location filename="../main.cpp" line="851"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>Voor --send --backend cloud: dit door Meta goedgekeurde sjabloon verzenden</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="789"/>
+        <location filename="../main.cpp" line="855"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>Taalcode voor --cloud-template (bijv. es, en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="793"/>
+        <location filename="../main.cpp" line="859"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Een positionele bodyparameter voor --cloud-template (herhaalbaar)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="798"/>
+        <location filename="../main.cpp" line="864"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>De lokale HTTP-API inschakelen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="801"/>
+        <location filename="../main.cpp" line="867"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>De lokale HTTP-API uitschakelen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="804"/>
+        <location filename="../main.cpp" line="870"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>De poort van de lokale HTTP-API instellen (standaard 8590) en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="808"/>
+        <location filename="../main.cpp" line="874"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>Het Bearer-token van de lokale HTTP-API instellen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="812"/>
+        <location filename="../main.cpp" line="878"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>De configuratie van de lokale HTTP-API tonen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="816"/>
+        <location filename="../main.cpp" line="882"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>Het ontvangen van Cloud API-webhooks inschakelen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="819"/>
+        <location filename="../main.cpp" line="885"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>Het ontvangen van Cloud API-webhooks uitschakelen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="822"/>
+        <location filename="../main.cpp" line="888"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>Het verificatietoken van de Cloud API-webhook instellen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="826"/>
+        <location filename="../main.cpp" line="892"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>Het Meta-app-geheim voor webhook-handtekeningcontrole instellen en afsluiten</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="830"/>
+        <location filename="../main.cpp" line="896"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>De configuratie van de Cloud API-webhook tonen en afsluiten</translation>
     </message>
@@ -2480,17 +2496,17 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Hoe glyphranden op pixels worden uitgelijnd. Automatisch volgt je systeem; een lichter niveau kan zwaar of ongelijk tekstbeeld verhelpen.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1693"/>
+        <location filename="../settingswidget.cpp" line="1723"/>
         <source>Slight</source>
         <translation>Licht</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1694"/>
+        <location filename="../settingswidget.cpp" line="1724"/>
         <source>Medium</source>
         <translation>Gemiddeld</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1695"/>
+        <location filename="../settingswidget.cpp" line="1725"/>
         <source>Full</source>
         <translation>Volledig</translation>
     </message>
@@ -2564,8 +2580,8 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <location filename="../settingswidget.ui" line="2010"/>
         <location filename="../settingswidget.ui" line="2054"/>
         <location filename="../settingswidget.ui" line="2221"/>
-        <location filename="../settingswidget.cpp" line="1691"/>
-        <location filename="../settingswidget.cpp" line="1992"/>
+        <location filename="../settingswidget.cpp" line="1721"/>
+        <location filename="../settingswidget.cpp" line="2022"/>
         <source>Automatic</source>
         <translation>Automatisch</translation>
     </message>
@@ -2838,7 +2854,7 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="691"/>
-        <location filename="../settingswidget.cpp" line="1608"/>
+        <location filename="../settingswidget.cpp" line="1638"/>
         <source>Custom CSS</source>
         <translation>Aangepaste CSS</translation>
     </message>
@@ -2895,7 +2911,7 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2598"/>
+        <location filename="../settingswidget.cpp" line="2628"/>
         <source>Check spelling as I type</source>
         <translation>Spelling controleren tijdens het typen</translation>
     </message>
@@ -2926,7 +2942,7 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
-        <location filename="../settingswidget.cpp" line="1584"/>
+        <location filename="../settingswidget.cpp" line="1614"/>
         <source>Chat wallpaper</source>
         <translation>Chatachtergrond</translation>
     </message>
@@ -3787,239 +3803,239 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Klik op een veld en druk op de toetsencombinatie. Wis een veld om de sneltoets te verwijderen. Wijzigingen worden na een herstart toegepast.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1241"/>
+        <location filename="../settingswidget.cpp" line="1271"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Hiermee worden de persistente gegevens (inclusief persistente cookies en cache) verwijderd en wordt de toepassing afgesloten.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1246"/>
+        <location filename="../settingswidget.cpp" line="1276"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>Cookies verwijderen en de toepassing afsluiten?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1352"/>
+        <location filename="../settingswidget.cpp" line="1382"/>
         <source>| Error</source>
         <translation>| Fout</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1353"/>
+        <location filename="../settingswidget.cpp" line="1383"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>Kan geen lege User-Agent-tekenreeks instellen.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1404"/>
+        <location filename="../settingswidget.cpp" line="1434"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>Het automatisch wisselen van thema is uitgeschakeld omdat het thema handmatig is gewijzigd.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1421"/>
+        <location filename="../settingswidget.cpp" line="1451"/>
         <source>Require setup</source>
         <translation>Instellen vereist</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1450"/>
+        <location filename="../settingswidget.cpp" line="1480"/>
         <source>App lock is not configured.</source>
         <translation>De app-vergrendeling is niet ingesteld.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1454"/>
+        <location filename="../settingswidget.cpp" line="1484"/>
         <source>Do you want to setup App lock now?</source>
         <translation>Wilt u de app-vergrendeling nu instellen?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1496"/>
+        <location filename="../settingswidget.cpp" line="1526"/>
         <source>Feature permissions</source>
         <translation>Functiemachtigingen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1575"/>
+        <location filename="../settingswidget.cpp" line="1605"/>
         <source>Choose a chat wallpaper</source>
         <translation>Kies een chatachtergrond</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1577"/>
+        <location filename="../settingswidget.cpp" line="1607"/>
         <source>Images (%1)</source>
         <translation>Afbeeldingen (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1585"/>
+        <location filename="../settingswidget.cpp" line="1615"/>
         <source>Could not use that image: %1</source>
         <translation>Kon die afbeelding niet gebruiken: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1600"/>
+        <location filename="../settingswidget.cpp" line="1630"/>
         <source>Choose a CSS file</source>
         <translation>Kies een CSS-bestand</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1602"/>
+        <location filename="../settingswidget.cpp" line="1632"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Stylesheets (*.css);;Alle bestanden (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1609"/>
+        <location filename="../settingswidget.cpp" line="1639"/>
         <source>Could not read that file: %1</source>
         <translation>Kon dat bestand niet lezen: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1682"/>
+        <location filename="../settingswidget.cpp" line="1712"/>
         <source>Disk</source>
         <translation>Schijf</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1683"/>
+        <location filename="../settingswidget.cpp" line="1713"/>
         <source>Memory</source>
         <translation>Geheugen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1841"/>
+        <location filename="../settingswidget.cpp" line="1871"/>
         <source>Ollama not found at this address.</source>
         <translation>Ollama niet gevonden op dit adres.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1871"/>
+        <location filename="../settingswidget.cpp" line="1901"/>
         <source>Download complete.</source>
         <translation>Download voltooid.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1874"/>
+        <location filename="../settingswidget.cpp" line="1904"/>
         <source>Download failed: %1</source>
         <translation>Download mislukt: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1885"/>
+        <location filename="../settingswidget.cpp" line="1915"/>
         <source>Checking…</source>
         <translation>Controleren…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1910"/>
+        <location filename="../settingswidget.cpp" line="1940"/>
         <source>Starting download of %1…</source>
         <translation>Download van %1 starten…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1965"/>
+        <location filename="../settingswidget.cpp" line="1995"/>
         <source>System</source>
         <translation>Systeem</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1966"/>
+        <location filename="../settingswidget.cpp" line="1996"/>
         <source>None (direct)</source>
         <translation>Geen (rechtstreeks)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1967"/>
+        <location filename="../settingswidget.cpp" line="1997"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1968"/>
+        <location filename="../settingswidget.cpp" line="1998"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1994"/>
+        <location filename="../settingswidget.cpp" line="2024"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Bureaubladportaal (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1996"/>
+        <location filename="../settingswidget.cpp" line="2026"/>
         <source>System service (libnotify)</source>
         <translation>Systeemservice (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2181"/>
-        <location filename="../settingswidget.cpp" line="2185"/>
+        <location filename="../settingswidget.cpp" line="2211"/>
+        <location filename="../settingswidget.cpp" line="2215"/>
         <source>Add reply</source>
         <translation>Antwoord toevoegen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2181"/>
+        <location filename="../settingswidget.cpp" line="2211"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2185"/>
+        <location filename="../settingswidget.cpp" line="2215"/>
         <source>Text to insert</source>
         <translation>In te voegen tekst</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2202"/>
+        <location filename="../settingswidget.cpp" line="2232"/>
         <source>Choose a JavaScript file</source>
         <translation>Kies een JavaScript-bestand</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2203"/>
+        <location filename="../settingswidget.cpp" line="2233"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Alle bestanden (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2208"/>
+        <location filename="../settingswidget.cpp" line="2238"/>
         <source>Could not add addon</source>
         <translation>Kan add-on niet toevoegen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2221"/>
+        <location filename="../settingswidget.cpp" line="2251"/>
         <source>Remove addon</source>
         <translation>Add-on verwijderen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2222"/>
+        <location filename="../settingswidget.cpp" line="2252"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>Add-on &quot;%1&quot; verwijderen? Hiermee wordt het bestand verwijderd.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2332"/>
+        <location filename="../settingswidget.cpp" line="2362"/>
         <source>Search settings</source>
         <translation>Instellingen zoeken</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2334"/>
+        <location filename="../settingswidget.cpp" line="2364"/>
         <source>Show only the settings that match. What you find is the setting itself, working where it stands — not a list to click through. Tooltips are searched as well as labels, and so are the English names of the settings when Whatly is running in another language.</source>
         <translation>Toont alleen de instellingen die overeenkomen. Wat je vindt is de instelling zelf, werkend waar ze staat — geen lijst om door te klikken. Naast labels worden ook tooltips doorzocht, en ook de Engelse namen van de instellingen wanneer Whatly in een andere taal draait.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2456"/>
+        <location filename="../settingswidget.cpp" line="2486"/>
         <source>No setting matches “%1”. Tooltips are searched too, so a plainer word usually finds it.</source>
         <translation>Geen instelling komt overeen met “%1”. Ook tooltips worden doorzocht, dus een eenvoudiger woord vindt het meestal.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2597"/>
+        <location filename="../settingswidget.cpp" line="2627"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Spellingcontrole (geen woordenboeken geïnstalleerd)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2703"/>
+        <location filename="../settingswidget.cpp" line="2733"/>
         <source>Downloadable languages unavailable — click to try again</source>
         <translation>Downloadbare talen niet beschikbaar — klik om opnieuw te proberen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2717"/>
+        <location filename="../settingswidget.cpp" line="2747"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>Vink de talen aan om de spelling tegen te controleren. Elke rij downloadt of verwijdert zijn woordenboek.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1684"/>
-        <location filename="../settingswidget.cpp" line="1692"/>
+        <location filename="../settingswidget.cpp" line="1714"/>
+        <location filename="../settingswidget.cpp" line="1722"/>
         <source>None</source>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="535"/>
+        <location filename="../settingswidget.cpp" line="536"/>
         <source>Basics</source>
         <translation>Algemeen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="543"/>
+        <location filename="../settingswidget.cpp" line="544"/>
         <source>Appearance</source>
         <translation>Weergave</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="562"/>
+        <location filename="../settingswidget.cpp" line="563"/>
         <source>Notifications</source>
         <translation>Meldingen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="566"/>
+        <location filename="../settingswidget.cpp" line="567"/>
         <source>Chatting</source>
         <translation>Chatten</translation>
     </message>
@@ -4028,94 +4044,114 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation type="vanished">Spellingcontrolewoordenboeken</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="673"/>
+        <location filename="../settingswidget.cpp" line="674"/>
         <source>Privacy &amp; Lock</source>
         <translation>Privacy en vergrendeling</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="687"/>
+        <location filename="../settingswidget.cpp" line="688"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>Venster en zoom</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="716"/>
+        <location filename="../settingswidget.cpp" line="717"/>
         <source>AI &amp;&amp; translation</source>
         <translation>AI &amp;&amp; vertaling</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="723"/>
+        <location filename="../settingswidget.cpp" line="724"/>
         <source>Advanced</source>
         <translation>Geavanceerd</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="935"/>
+        <location filename="../settingswidget.cpp" line="850"/>
+        <source>Collect scroll diagnostics</source>
+        <translation>Scroll-diagnostiek verzamelen</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="852"/>
+        <source>Records how smoothly the chat scrolls, to attach to a bug report. Off by default; it does nothing until you turn it on, and adds nothing to a normal session.</source>
+        <translation>Registreert hoe soepel het gesprek scrolt, om bij een bugrapport te voegen. Standaard uit; het doet niets totdat je het inschakelt en voegt niets toe aan een normale sessie.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="862"/>
+        <source>Copy diagnostics</source>
+        <translation>Diagnostiek kopiëren</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="864"/>
+        <source>Copy the collected scroll figures to the clipboard (and the log) so they can be pasted into a bug report.</source>
+        <translation>Kopieert de verzamelde scrollgegevens naar het klembord (en het logboek) zodat ze in een bugrapport geplakt kunnen worden.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="965"/>
         <source>Fetching the list of languages…</source>
         <translation>Lijst met talen ophalen…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1158"/>
+        <location filename="../settingswidget.cpp" line="1188"/>
         <source>Shortcut in use</source>
         <translation>Sneltoets al in gebruik</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1159"/>
+        <location filename="../settingswidget.cpp" line="1189"/>
         <source>That shortcut is already used by another action.</source>
         <translation>Die sneltoets wordt al door een andere actie gebruikt.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1171"/>
+        <location filename="../settingswidget.cpp" line="1201"/>
         <source>Clear cache</source>
         <translation>Cache wissen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1172"/>
+        <location filename="../settingswidget.cpp" line="1202"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Cache nu wissen? Deze wordt opnieuw gedownload wanneer dat nodig is.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1182"/>
-        <location filename="../settingswidget.cpp" line="1188"/>
-        <location filename="../settingswidget.cpp" line="1197"/>
-        <location filename="../settingswidget.cpp" line="1200"/>
+        <location filename="../settingswidget.cpp" line="1212"/>
+        <location filename="../settingswidget.cpp" line="1218"/>
+        <location filename="../settingswidget.cpp" line="1227"/>
+        <location filename="../settingswidget.cpp" line="1230"/>
         <source>Export profile</source>
         <translation>Profiel exporteren</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1183"/>
+        <location filename="../settingswidget.cpp" line="1213"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>Het archief bevat je aangemelde WhatsApp-sessie. Houd het privé. Doorgaan?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1190"/>
-        <location filename="../settingswidget.cpp" line="1205"/>
+        <location filename="../settingswidget.cpp" line="1220"/>
+        <location filename="../settingswidget.cpp" line="1235"/>
         <source>Archives (*.tar.gz)</source>
         <translation>Archieven (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1198"/>
+        <location filename="../settingswidget.cpp" line="1228"/>
         <source>Profile exported.</source>
         <translation>Profiel geëxporteerd.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1205"/>
-        <location filename="../settingswidget.cpp" line="1209"/>
-        <location filename="../settingswidget.cpp" line="1217"/>
-        <location filename="../settingswidget.cpp" line="1220"/>
+        <location filename="../settingswidget.cpp" line="1235"/>
+        <location filename="../settingswidget.cpp" line="1239"/>
+        <location filename="../settingswidget.cpp" line="1247"/>
+        <location filename="../settingswidget.cpp" line="1250"/>
         <source>Import profile</source>
         <translation>Profiel importeren</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1210"/>
+        <location filename="../settingswidget.cpp" line="1240"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>Dit overschrijft de gegevens van het huidige account met het archief, waarna Whatly opnieuw moet worden gestart. Doorgaan?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1218"/>
+        <location filename="../settingswidget.cpp" line="1248"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>Profiel geïmporteerd. Start Whatly opnieuw.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1846"/>
+        <location filename="../settingswidget.cpp" line="1876"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama gevonden (%1 modellen geïnstalleerd).</translation>
     </message>
@@ -4128,53 +4164,53 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation type="vanished">Vink een of meer talen aan voor de spellingcontrole.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2819"/>
+        <location filename="../settingswidget.cpp" line="2849"/>
         <source>Choose languages…</source>
         <translation>Talen kiezen…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2825"/>
+        <location filename="../settingswidget.cpp" line="2855"/>
         <source>%1 of %2 chosen</source>
         <translation>%1 van %2 gekozen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2827"/>
+        <location filename="../settingswidget.cpp" line="2857"/>
         <source>%1 languages</source>
         <translation>%1 talen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2952"/>
+        <location filename="../settingswidget.cpp" line="2982"/>
         <source>WhatsApp default</source>
         <translation>WhatsApp-standaard</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2991"/>
+        <location filename="../settingswidget.cpp" line="3021"/>
         <source>System default</source>
         <translation>Systeemstandaard</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3021"/>
+        <location filename="../settingswidget.cpp" line="3051"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>De interfacetaal verandert wanneer u %1 opnieuw start.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3035"/>
+        <location filename="../settingswidget.cpp" line="3065"/>
         <source>App Lock Setup</source>
         <translation>App-vergrendeling instellen</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3036"/>
+        <location filename="../settingswidget.cpp" line="3066"/>
         <source>Please setup the App lock password first.</source>
         <translation>Stel eerst het wachtwoord voor de app-vergrendeling in.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3152"/>
-        <location filename="../settingswidget.cpp" line="3163"/>
+        <location filename="../settingswidget.cpp" line="3182"/>
+        <location filename="../settingswidget.cpp" line="3193"/>
         <source>Select download directory</source>
         <translation>Downloadmap selecteren</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3203"/>
+        <location filename="../settingswidget.cpp" line="3233"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -4185,7 +4221,7 @@ Hierdoor wordt uw huidige sessie afgemeld.
 Mogelijk is ook een volledige herstart van de toepassing vereist!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3209"/>
+        <location filename="../settingswidget.cpp" line="3239"/>
         <source>Do you want to proceed?</source>
         <translation>Wilt u doorgaan?</translation>
     </message>
@@ -4267,7 +4303,7 @@ Mogelijk is ook een volledige herstart van de toepassing vereist!</translation>
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../updatechecker.cpp" line="138"/>
+        <location filename="../updatechecker.cpp" line="145"/>
         <source>Could not read the latest release</source>
         <translation>Kon de nieuwste release niet lezen</translation>
     </message>
@@ -4351,28 +4387,28 @@ Mogelijk is ook een volledige herstart van de toepassing vereist!</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="223"/>
-        <location filename="../webenginepage.cpp" line="438"/>
+        <location filename="../webenginepage.cpp" line="437"/>
         <source>Permission Request</source>
         <translation>Machtigingsverzoek</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="361"/>
-        <location filename="../webenginepage.cpp" line="370"/>
+        <location filename="../webenginepage.cpp" line="360"/>
+        <location filename="../webenginepage.cpp" line="369"/>
         <source>Certificate Error</source>
         <translation>Certificaatfout</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="390"/>
+        <location filename="../webenginepage.cpp" line="389"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
         <translation>Voer gebruikersnaam en wachtwoord in voor «%1» op %2</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="420"/>
+        <location filename="../webenginepage.cpp" line="419"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
         <translation>Verbinden met proxy «%1» via:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="439"/>
+        <location filename="../webenginepage.cpp" line="438"/>
         <source>Allow %1 to open all %2 links?</source>
         <translation>%1 toestaan alle %2-koppelingen te openen?</translation>
     </message>

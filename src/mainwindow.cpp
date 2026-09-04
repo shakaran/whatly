@@ -38,6 +38,8 @@
 #include "chatwallpaper.h"
 #include "customcss.h"
 #include "customjs.h"
+#include "diagnostics.h"
+#include "debuglog.h"
 #include "setupwizard.h"
 #include "customtitlebar.h"
 #include "updatechecker.h"
@@ -48,6 +50,8 @@
 
 #include <QTimer>
 #include <QDesktopServices>
+#include <QClipboard>
+#include <QGuiApplication>
 #include <QMessageBox>
 #include <QProcess>
 #include <QProgressDialog>
@@ -875,6 +879,42 @@ void MainWindow::initSettingWidget() {
             // Reinstall for future loads; a full effect for script addons needs
             // a reload, so this only refreshes the injected collection.
             CustomJs::install(WebEngineProfileManager::instance().profile());
+          });
+
+  connect(m_settingsWidget, &SettingsWidget::diagnosticsChanged,
+          m_settingsWidget, [=]() {
+            // Install (or remove) for future loads, and run it on every open
+            // page so turning it on starts collecting without a reload.
+            Diagnostics::install(WebEngineProfileManager::instance().profile());
+            if (Diagnostics::scrollProbeEnabled())
+              for (const Account &account : m_accounts)
+                if (pageOf(account))
+                  pageOf(account)->runJavaScript(Diagnostics::scrollProbeScript());
+          });
+
+  connect(m_settingsWidget, &SettingsWidget::copyDiagnosticsRequested,
+          m_settingsWidget, [=]() {
+            QWebEnginePage *page = m_webEngine ? m_webEngine->page() : nullptr;
+            if (!page)
+              return;
+            page->runJavaScript(
+                Diagnostics::readbackScript(), [this](const QVariant &v) {
+                  const QString data = v.toString().trimmed();
+                  if (data.isEmpty()) {
+                    QMessageBox::information(
+                        m_settingsWidget, tr("Diagnostics"),
+                        tr("No scroll diagnostics recorded yet. Turn on "
+                           "collection, scroll a chat for a few seconds, then "
+                           "copy."));
+                    return;
+                  }
+                  QGuiApplication::clipboard()->setText(data);
+                  DebugLog::append(QStringLiteral("scroll diagnostics: ") + data);
+                  QMessageBox::information(
+                      m_settingsWidget, tr("Diagnostics"),
+                      tr("Scroll diagnostics copied to the clipboard (and added "
+                         "to the log). Paste them into your bug report."));
+                });
           });
 
   connect(m_settingsWidget, &SettingsWidget::chatWallpaperChanged,

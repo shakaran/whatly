@@ -8,6 +8,7 @@
 #include "chatwallpaper.h"
 #include "customcss.h"
 #include "customjs.h"
+#include "diagnostics.h"
 #include "focusmode.h"
 #include "hdmedia.h"
 #include "chatliststrip.h"
@@ -281,6 +282,7 @@ void WebEngineProfileManager::applyUserSettingsTo(QWebEngineProfile *profile,
     ChatWallpaper::install(profile);
     CustomCss::install(profile);
     CustomJs::install(profile);
+    Diagnostics::install(profile);
     FocusMode::install(profile);
     HdMedia::install(profile);
     ChatTheme::install(profile);

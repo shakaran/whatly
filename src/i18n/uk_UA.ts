@@ -575,266 +575,282 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="118"/>
-        <location filename="../mainwindow.cpp" line="1238"/>
-        <location filename="../mainwindow.cpp" line="1334"/>
+        <location filename="../mainwindow.cpp" line="122"/>
+        <location filename="../mainwindow.cpp" line="1278"/>
+        <location filename="../mainwindow.cpp" line="1374"/>
         <source>No WhatsApp window is open</source>
         <translation>Немає відкритого вікна WhatsApp</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="123"/>
+        <location filename="../mainwindow.cpp" line="127"/>
         <source>Reminder</source>
         <translation>Нагадування</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="123"/>
+        <location filename="../mainwindow.cpp" line="127"/>
         <source>Reminder: %1</source>
         <translation>Нагадування: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="261"/>
-        <location filename="../mainwindow.cpp" line="283"/>
+        <location filename="../mainwindow.cpp" line="265"/>
+        <location filename="../mainwindow.cpp" line="287"/>
         <source>Update available</source>
         <translation>Доступне оновлення</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="250"/>
+        <location filename="../mainwindow.cpp" line="254"/>
         <source>Whatly %1 is available. Click to open the download page.</source>
         <translation>Доступна версія Whatly %1. Натисніть, щоб відкрити сторінку завантаження.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="230"/>
+        <location filename="../mainwindow.cpp" line="234"/>
         <source>Whatly %1 is available. Update it through Flathub or your software centre.</source>
         <translation>Whatly %1 доступний. Оновіть його через Flathub або центр програм.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="235"/>
+        <location filename="../mainwindow.cpp" line="239"/>
         <source>Whatly %1 is available. Update it with your package manager.</source>
         <translation>Whatly %1 доступний. Оновіть його за допомогою менеджера пакунків.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="240"/>
+        <location filename="../mainwindow.cpp" line="244"/>
         <source>Whatly %1 is available. Choose Update now to fetch just the parts that changed and update in place.</source>
         <translation>Whatly %1 доступний. Виберіть «Оновити зараз», щоб завантажити лише змінені частини й оновити на місці.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="243"/>
+        <location filename="../mainwindow.cpp" line="247"/>
         <source>Whatly %1 is available. This AppImage can update itself in place with AppImageUpdate, fetching only the parts that changed.</source>
         <translation>Whatly %1 доступний. Цей AppImage може оновитися на місці за допомогою AppImageUpdate, завантаживши лише змінені частини.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="267"/>
+        <location filename="../mainwindow.cpp" line="271"/>
         <source>Update now</source>
         <translation>Оновити зараз</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="972"/>
-        <location filename="../mainwindow.cpp" line="978"/>
+        <location filename="../mainwindow.cpp" line="905"/>
+        <location filename="../mainwindow.cpp" line="914"/>
+        <source>Diagnostics</source>
+        <translation>Діагностика</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="906"/>
+        <source>No scroll diagnostics recorded yet. Turn on collection, scroll a chat for a few seconds, then copy.</source>
+        <translation>Діагностику прокручування ще не записано. Увімкніть збирання, прокрутіть чат кілька секунд, а потім скопіюйте.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="915"/>
+        <source>Scroll diagnostics copied to the clipboard (and added to the log). Paste them into your bug report.</source>
+        <translation>Діагностику прокручування скопійовано до буфера обміну (і додано до журналу). Вставте її у свій звіт про помилку.</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1012"/>
+        <location filename="../mainwindow.cpp" line="1018"/>
         <location filename="../mainwindow_webengine.cpp" line="967"/>
         <location filename="../mainwindow_webengine.cpp" line="970"/>
         <source>| Error</source>
         <translation>| Помилка</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="973"/>
+        <location filename="../mainwindow.cpp" line="1013"/>
         <source>Unlock to access Settings.</source>
         <translation>Розблокуйте, щоб отримати доступ до налаштувань.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="979"/>
+        <location filename="../mainwindow.cpp" line="1019"/>
         <source>Unable to initialize settings module.
 Webengine is not initialized.</source>
         <translation>Не вдалося ініціалізувати модуль налаштувань.
 WebEngine не ініціалізовано.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1000"/>
+        <location filename="../mainwindow.cpp" line="1040"/>
         <source> | Action required</source>
         <translation> | Потрібна дія</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1001"/>
+        <location filename="../mainwindow.cpp" line="1041"/>
         <source>Page needs to be reloaded to continue.</source>
         <translation>Щоб продовжити, потрібно перезавантажити сторінку.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1180"/>
-        <location filename="../mainwindow.cpp" line="1822"/>
+        <location filename="../mainwindow.cpp" line="1220"/>
+        <location filename="../mainwindow.cpp" line="1862"/>
         <location filename="../mainwindow_webengine.cpp" line="1652"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly заблоковано. Розблокуйте його, щоб надсилати повідомлення.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1191"/>
+        <location filename="../mainwindow.cpp" line="1231"/>
         <source>The Cloud API needs a phone number as the recipient.</source>
         <translation>Cloud API потребує номер телефону як отримувача.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1196"/>
+        <location filename="../mainwindow.cpp" line="1236"/>
         <source>The Cloud API is not configured.</source>
         <translation>Cloud API не налаштовано.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1205"/>
+        <location filename="../mainwindow.cpp" line="1245"/>
         <source>Cloud API send failed: %1</source>
         <translation>Не вдалося надіслати через Cloud API: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1230"/>
+        <location filename="../mainwindow.cpp" line="1270"/>
         <source>Could not understand the recipient: %1</source>
         <translation>Не вдалося розпізнати отримувача: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1259"/>
-        <location filename="../mainwindow.cpp" line="1340"/>
+        <location filename="../mainwindow.cpp" line="1299"/>
+        <location filename="../mainwindow.cpp" line="1380"/>
         <source>Could not read the file to send: %1</source>
         <translation>Не вдалося прочитати файл для надсилання: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1268"/>
-        <location filename="../mainwindow.cpp" line="1350"/>
+        <location filename="../mainwindow.cpp" line="1308"/>
+        <location filename="../mainwindow.cpp" line="1390"/>
         <source>The file is too large to send over the web backend.</source>
         <translation>Файл завеликий для надсилання через веб-бекенд.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1293"/>
+        <location filename="../mainwindow.cpp" line="1333"/>
         <source>Opening the group and sending…</source>
         <translation>Відкриваємо групу та надсилаємо…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1294"/>
+        <location filename="../mainwindow.cpp" line="1334"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
         <translation>Відкриваємо чат з &quot;%1&quot; та надсилаємо…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1325"/>
+        <location filename="../mainwindow.cpp" line="1365"/>
         <source>The local API could not start: %1</source>
         <translation>Не вдалося запустити локальний API: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1462"/>
+        <location filename="../mainwindow.cpp" line="1502"/>
         <source>Updating Whatly…</source>
         <translation>Оновлення Whatly…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1464"/>
-        <location filename="../mainwindow.cpp" line="1505"/>
-        <location filename="../mainwindow.cpp" line="1511"/>
-        <location filename="../mainwindow.cpp" line="1523"/>
+        <location filename="../mainwindow.cpp" line="1504"/>
+        <location filename="../mainwindow.cpp" line="1545"/>
+        <location filename="../mainwindow.cpp" line="1551"/>
+        <location filename="../mainwindow.cpp" line="1563"/>
         <source>Software update</source>
         <translation>Оновлення програми</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1506"/>
+        <location filename="../mainwindow.cpp" line="1546"/>
         <source>The update could not be completed. You can download the new version from the release page instead.</source>
         <translation>Не вдалося завершити оновлення. Ви можете завантажити нову версію зі сторінки випуску.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1512"/>
+        <location filename="../mainwindow.cpp" line="1552"/>
         <source>Whatly was updated. Restart now to use the new version?</source>
         <translation>Whatly оновлено. Перезапустити зараз, щоб використати нову версію?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1524"/>
+        <location filename="../mainwindow.cpp" line="1564"/>
         <source>The update tool could not be started.</source>
         <translation>Не вдалося запустити інструмент оновлення.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1550"/>
+        <location filename="../mainwindow.cpp" line="1590"/>
         <source>Restart</source>
         <translation>Перезапустити</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1551"/>
+        <location filename="../mainwindow.cpp" line="1591"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly не вдалося запустити новий екземпляр, тож цей не було закрито. Будь ласка, закрийте програму та відкрийте її знову.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1677"/>
+        <location filename="../mainwindow.cpp" line="1717"/>
         <source>Expand the chat list</source>
         <translation>Розгорнути список чатів</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1678"/>
+        <location filename="../mainwindow.cpp" line="1718"/>
         <location filename="../mainwindow_tray.cpp" line="370"/>
         <source>Collapse the chat list</source>
         <translation>Згорнути список чатів</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="264"/>
-        <location filename="../mainwindow.cpp" line="1798"/>
+        <location filename="../mainwindow.cpp" line="268"/>
+        <location filename="../mainwindow.cpp" line="1838"/>
         <source>Open</source>
         <translation>Відкрити</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1844"/>
+        <location filename="../mainwindow.cpp" line="1884"/>
         <location filename="../mainwindow_tray.cpp" line="29"/>
         <source>New Chat</source>
         <translation>Новий чат</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1845"/>
+        <location filename="../mainwindow.cpp" line="1885"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Введіть дійсний номер WhatsApp з кодом країни (напр. +91XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1875"/>
+        <location filename="../mainwindow.cpp" line="1915"/>
         <source>Rate Application</source>
         <translation>Оцінити застосунок</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="343"/>
-        <location filename="../mainwindow_accounts.cpp" line="1775"/>
+        <location filename="../mainwindow_accounts.cpp" line="348"/>
+        <location filename="../mainwindow_accounts.cpp" line="1817"/>
         <source>Rename…</source>
         <translation>Перейменувати…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="344"/>
-        <location filename="../mainwindow_accounts.cpp" line="1776"/>
+        <location filename="../mainwindow_accounts.cpp" line="349"/>
+        <location filename="../mainwindow_accounts.cpp" line="1818"/>
         <source>Open in own window</source>
         <translation>Відкрити в окремому вікні</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="348"/>
-        <location filename="../mainwindow_accounts.cpp" line="1779"/>
+        <location filename="../mainwindow_accounts.cpp" line="353"/>
+        <location filename="../mainwindow_accounts.cpp" line="1821"/>
         <source>Remove account</source>
         <translation>Вилучити обліковий запис</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="433"/>
+        <location filename="../mainwindow_accounts.cpp" line="438"/>
         <source>Switch to account: %1</source>
         <translation>Перейти до облікового запису: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="436"/>
+        <location filename="../mainwindow_accounts.cpp" line="441"/>
         <location filename="../mainwindow_tray.cpp" line="321"/>
         <source>Add account…</source>
         <translation>Додати обліковий запис…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="437"/>
+        <location filename="../mainwindow_accounts.cpp" line="442"/>
         <source>Quick message…</source>
         <translation>Швидке повідомлення…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="442"/>
+        <location filename="../mainwindow_accounts.cpp" line="447"/>
         <source>Insert: %1</source>
         <translation>Вставити: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="750"/>
+        <location filename="../mainwindow_accounts.cpp" line="755"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 непрочитаних</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1519"/>
-        <location filename="../mainwindow_accounts.cpp" line="2178"/>
+        <location filename="../mainwindow_accounts.cpp" line="1561"/>
+        <location filename="../mainwindow_accounts.cpp" line="2220"/>
         <source>Add another account</source>
         <translation>Додати ще один обліковий запис</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1548"/>
-        <location filename="../mainwindow_accounts.cpp" line="1575"/>
+        <location filename="../mainwindow_accounts.cpp" line="1590"/>
+        <location filename="../mainwindow_accounts.cpp" line="1617"/>
         <source>Restore</source>
         <translation>Відновити</translation>
     </message>
@@ -847,39 +863,39 @@ WebEngine не ініціалізовано.</translation>
         <translation type="vanished">повідомлення</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1621"/>
+        <location filename="../mainwindow_accounts.cpp" line="1663"/>
         <source>Add account</source>
         <translation>Додати обліковий запис</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1622"/>
+        <location filename="../mainwindow_accounts.cpp" line="1664"/>
         <source>Name for the new account:</source>
         <translation>Назва нового облікового запису:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1623"/>
-        <location filename="../mainwindow_accounts.cpp" line="2516"/>
-        <location filename="../mainwindow_accounts.cpp" line="2521"/>
+        <location filename="../mainwindow_accounts.cpp" line="1665"/>
+        <location filename="../mainwindow_accounts.cpp" line="2558"/>
+        <location filename="../mainwindow_accounts.cpp" line="2563"/>
         <source>Account %1</source>
         <translation>Обліковий запис %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1652"/>
+        <location filename="../mainwindow_accounts.cpp" line="1694"/>
         <source>Rename account</source>
         <translation>Перейменувати обліковий запис</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1652"/>
+        <location filename="../mainwindow_accounts.cpp" line="1694"/>
         <source>Account name:</source>
         <translation>Назва облікового запису:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2197"/>
+        <location filename="../mainwindow_accounts.cpp" line="2239"/>
         <source>Tip: give an account its own window</source>
         <translation>Порада: надайте обліковому запису власне вікно</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2198"/>
+        <location filename="../mainwindow_accounts.cpp" line="2240"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -888,8 +904,8 @@ You can pull any account out into its own window: right-click its tab and choose
 Ви можете витягнути будь-який обліковий запис в окреме вікно: клацніть правою кнопкою на його вкладці та виберіть «Відкрити в окремому вікні». Закрийте це вікно, щоб знову закріпити обліковий запис як вкладку.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2510"/>
-        <location filename="../mainwindow_accounts.cpp" line="2514"/>
+        <location filename="../mainwindow_accounts.cpp" line="2552"/>
+        <location filename="../mainwindow_accounts.cpp" line="2556"/>
         <source>Account 1</source>
         <translation>Обліковий запис 1</translation>
     </message>
@@ -1277,7 +1293,7 @@ Open Settings now?</source>
         <translation>Збирання повідомлень… прокручування розмови.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1462"/>
+        <location filename="../mainwindow.cpp" line="1502"/>
         <location filename="../mainwindow_webengine.cpp" line="1497"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
@@ -1385,13 +1401,13 @@ Open Settings now?</source>
         <translation>Підсумок непрочитаного</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1549"/>
+        <location filename="../mainwindow_accounts.cpp" line="1591"/>
         <location filename="../mainwindow_webengine.cpp" line="1573"/>
         <source>chat</source>
         <translation>чат</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1549"/>
+        <location filename="../mainwindow_accounts.cpp" line="1591"/>
         <source>chats</source>
         <translation>чати</translation>
     </message>
@@ -1693,269 +1709,269 @@ Open Settings now?</source>
         <translation>Токен збірки: %1</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="202"/>
+        <location filename="../main.cpp" line="205"/>
         <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
         <translation>Немає чого переносити з &quot;%1&quot; — вже перенесено, або дані там не знайдено.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="207"/>
+        <location filename="../main.cpp" line="210"/>
         <source>Would copy:</source>
         <translation>Буде скопійовано:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="207"/>
+        <location filename="../main.cpp" line="210"/>
         <source>Copied:</source>
         <translation>Скопійовано:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="211"/>
+        <location filename="../main.cpp" line="214"/>
         <source>Run again without --dry-run to perform the copy.</source>
         <translation>Запустіть знову без --dry-run, щоб виконати копіювання.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="590"/>
+        <location filename="../main.cpp" line="656"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Багатофункціональний клієнт WhatsApp Web на основі Qt WebEngine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="597"/>
+        <location filename="../main.cpp" line="663"/>
         <source>Displays help on commandline options</source>
         <translation>Показує довідку щодо параметрів командного рядка</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="602"/>
+        <location filename="../main.cpp" line="668"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>Відкриває діалог налаштувань у запущеному екземплярі </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="607"/>
+        <location filename="../main.cpp" line="673"/>
         <source>Locks a running instance of </source>
         <translation>Блокує запущений екземпляр </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="613"/>
+        <location filename="../main.cpp" line="679"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>Відкриває діалог &quot;Про програму&quot; у запущеному екземплярі </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="618"/>
+        <location filename="../main.cpp" line="684"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>Відкриває діалог запланованих повідомлень у запущеному екземплярі </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="625"/>
+        <location filename="../main.cpp" line="691"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>Перемикає між темною та світлою темою у запущеному екземплярі </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="632"/>
+        <location filename="../main.cpp" line="698"/>
         <source>Reload the app in a running instance of </source>
         <translation>Перезавантажує застосунок у запущеному екземплярі </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="638"/>
+        <location filename="../main.cpp" line="704"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>Відкриває запит нового чату у запущеному екземплярі </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="651"/>
+        <location filename="../main.cpp" line="717"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>Запустити як окремий обліковий запис з власною сесією та налаштуваннями, у власному вікні</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="661"/>
+        <location filename="../main.cpp" line="727"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>Внутрішнє: зачекати завершення процесу з цим ідентифікатором перед запуском, використовується &quot;Перезапустити зараз&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="668"/>
+        <location filename="../main.cpp" line="734"/>
         <source>Show main window of running instance of </source>
         <translation>Показати головне вікно запущеного екземпляра </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="675"/>
+        <location filename="../main.cpp" line="741"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>Скопіювати налаштування та активну сесію з попереднього встановлення (напр. старішої збірки &quot;whatsie&quot;) в поточне, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="682"/>
+        <location filename="../main.cpp" line="748"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>З --migrate-from лише повідомити, що було б скопійовано</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="700"/>
+        <location filename="../main.cpp" line="766"/>
         <source>Print the current unread message count and exit</source>
         <translation>Вивести поточну кількість непрочитаних повідомлень та вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="706"/>
+        <location filename="../main.cpp" line="772"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>Надіслати повідомлення через запущений екземпляр, потім вийти (потрібні --to та --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="710"/>
+        <location filename="../main.cpp" line="776"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>Отримувач для --send: номер телефону (міжнародний), ідентифікатор групи або ім&apos;я контакту</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="715"/>
+        <location filename="../main.cpp" line="781"/>
         <source>Message text for --send</source>
         <translation>Текст повідомлення для --send</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="718"/>
+        <location filename="../main.cpp" line="784"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>Прикріпити файл для --send (його --message, якщо є, стає підписом)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="723"/>
+        <location filename="../main.cpp" line="789"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Підпис для вкладення --file (псевдонім --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="727"/>
+        <location filename="../main.cpp" line="793"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>Як --send доставляє: &apos;web&apos; (запущена сесія WhatsApp Web) або &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="733"/>
+        <location filename="../main.cpp" line="799"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>Використати збережений шаблон з цією назвою як повідомлення --send (заповнити його {{fields}} за допомогою --var)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="738"/>
+        <location filename="../main.cpp" line="804"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>Заповнити поле шаблону: key=value (можна повторювати)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="742"/>
+        <location filename="../main.cpp" line="808"/>
         <source>List the saved message templates and exit</source>
         <translation>Показати список збережених шаблонів повідомлень та вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="745"/>
+        <location filename="../main.cpp" line="811"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>Зберегти (або замінити) шаблон повідомлення, потім вийти: name=body</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="749"/>
+        <location filename="../main.cpp" line="815"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Видалити збережений шаблон повідомлення з цією назвою, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="754"/>
+        <location filename="../main.cpp" line="820"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>Увімкнути автовідповідь на вхідні повідомлення, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="757"/>
+        <location filename="../main.cpp" line="823"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>Вимкнути автовідповідь, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="760"/>
+        <location filename="../main.cpp" line="826"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>Показати список активних правил автовідповіді (зі станом) та вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="763"/>
+        <location filename="../main.cpp" line="829"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Використати цей файл JSON як джерело правил автовідповіді, потім вийти (порожньо, щоб очистити)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="769"/>
+        <location filename="../main.cpp" line="835"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>Встановити ідентифікатор номера телефону Cloud API, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="773"/>
+        <location filename="../main.cpp" line="839"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>Встановити токен доступу Cloud API, потім вийти (зберігається в конфігурації облікового запису)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="778"/>
+        <location filename="../main.cpp" line="844"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>Встановити версію Graph API для Cloud API (напр. v21.0), потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="782"/>
+        <location filename="../main.cpp" line="848"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>Показати, чи налаштовано Cloud API, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="785"/>
+        <location filename="../main.cpp" line="851"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>Для --send --backend cloud: надіслати цей затверджений Meta шаблон</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="789"/>
+        <location filename="../main.cpp" line="855"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>Код мови для --cloud-template (напр. es, en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="793"/>
+        <location filename="../main.cpp" line="859"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Позиційний параметр тіла для --cloud-template (можна повторювати)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="798"/>
+        <location filename="../main.cpp" line="864"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>Увімкнути локальний HTTP API, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="801"/>
+        <location filename="../main.cpp" line="867"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>Вимкнути локальний HTTP API, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="804"/>
+        <location filename="../main.cpp" line="870"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>Встановити порт локального HTTP API (типово 8590), потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="808"/>
+        <location filename="../main.cpp" line="874"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>Встановити токен Bearer для локального HTTP API, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="812"/>
+        <location filename="../main.cpp" line="878"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>Показати конфігурацію локального HTTP API, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="816"/>
+        <location filename="../main.cpp" line="882"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>Увімкнути отримання вебхуків Cloud API, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="819"/>
+        <location filename="../main.cpp" line="885"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>Вимкнути отримання вебхуків Cloud API, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="822"/>
+        <location filename="../main.cpp" line="888"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>Встановити токен перевірки вебхука Cloud API, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="826"/>
+        <location filename="../main.cpp" line="892"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>Встановити секрет застосунку Meta для перевірки підпису вебхука, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="830"/>
+        <location filename="../main.cpp" line="896"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>Показати конфігурацію вебхука Cloud API, потім вийти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1225"/>
+        <location filename="../main.cpp" line="1291"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>Блокування застосунку не налаштовано, 
 спочатку встановіть пароль у налаштуваннях.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1323"/>
+        <location filename="../main.cpp" line="1389"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Відновлено після збою запуску шляхом перемикання на безпечний рендеринг. Це можна налаштувати в Налаштування → Продуктивність.</translation>
     </message>
@@ -2456,8 +2472,8 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="2010"/>
         <location filename="../settingswidget.ui" line="2054"/>
         <location filename="../settingswidget.ui" line="2221"/>
-        <location filename="../settingswidget.cpp" line="1691"/>
-        <location filename="../settingswidget.cpp" line="1992"/>
+        <location filename="../settingswidget.cpp" line="1721"/>
+        <location filename="../settingswidget.cpp" line="2022"/>
         <source>Automatic</source>
         <translation>Автоматично</translation>
     </message>
@@ -2785,7 +2801,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="691"/>
-        <location filename="../settingswidget.cpp" line="1608"/>
+        <location filename="../settingswidget.cpp" line="1638"/>
         <source>Custom CSS</source>
         <translation>Власний CSS</translation>
     </message>
@@ -2842,7 +2858,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2598"/>
+        <location filename="../settingswidget.cpp" line="2628"/>
         <source>Check spelling as I type</source>
         <translation>Перевіряти правопис під час набору</translation>
     </message>
@@ -2898,7 +2914,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
-        <location filename="../settingswidget.cpp" line="1584"/>
+        <location filename="../settingswidget.cpp" line="1614"/>
         <source>Chat wallpaper</source>
         <translation>Шпалери чату</translation>
     </message>
@@ -3772,22 +3788,22 @@ Please setup the password in the Settings first.</source>
         <translation>перевіряє підпис вебхука</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="535"/>
+        <location filename="../settingswidget.cpp" line="536"/>
         <source>Basics</source>
         <translation>Основи</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="543"/>
+        <location filename="../settingswidget.cpp" line="544"/>
         <source>Appearance</source>
         <translation>Зовнішній вигляд</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="562"/>
+        <location filename="../settingswidget.cpp" line="563"/>
         <source>Notifications</source>
         <translation>Сповіщення</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="566"/>
+        <location filename="../settingswidget.cpp" line="567"/>
         <source>Chatting</source>
         <translation>Спілкування</translation>
     </message>
@@ -3796,326 +3812,346 @@ Please setup the password in the Settings first.</source>
         <translation type="vanished">Словники перевірки орфографії</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="673"/>
+        <location filename="../settingswidget.cpp" line="674"/>
         <source>Privacy &amp; Lock</source>
         <translation>Конфіденційність і блокування</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="687"/>
+        <location filename="../settingswidget.cpp" line="688"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>Вікно та масштаб</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="716"/>
+        <location filename="../settingswidget.cpp" line="717"/>
         <source>AI &amp;&amp; translation</source>
         <translation>ШІ &amp;&amp; переклад</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="723"/>
+        <location filename="../settingswidget.cpp" line="724"/>
         <source>Advanced</source>
         <translation>Розширені</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="935"/>
+        <location filename="../settingswidget.cpp" line="850"/>
+        <source>Collect scroll diagnostics</source>
+        <translation>Збирати діагностику прокручування</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="852"/>
+        <source>Records how smoothly the chat scrolls, to attach to a bug report. Off by default; it does nothing until you turn it on, and adds nothing to a normal session.</source>
+        <translation>Записує, наскільки плавно прокручується чат, щоб додати до звіту про помилку. Типово вимкнено; нічого не робить, доки ви не ввімкнете, і не впливає на звичайний сеанс.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="862"/>
+        <source>Copy diagnostics</source>
+        <translation>Копіювати діагностику</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="864"/>
+        <source>Copy the collected scroll figures to the clipboard (and the log) so they can be pasted into a bug report.</source>
+        <translation>Копіює зібрані дані про прокручування до буфера обміну (і до журналу), щоб їх можна було вставити у звіт про помилку.</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.cpp" line="965"/>
         <source>Fetching the list of languages…</source>
         <translation>Отримання списку мов…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1158"/>
+        <location filename="../settingswidget.cpp" line="1188"/>
         <source>Shortcut in use</source>
         <translation>Скорочення вже використовується</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1159"/>
+        <location filename="../settingswidget.cpp" line="1189"/>
         <source>That shortcut is already used by another action.</source>
         <translation>Це скорочення вже використовується іншою дією.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1171"/>
+        <location filename="../settingswidget.cpp" line="1201"/>
         <source>Clear cache</source>
         <translation>Очистити кеш</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1172"/>
+        <location filename="../settingswidget.cpp" line="1202"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>Очистити кеш зараз? Він буде завантажений повторно за потреби.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1182"/>
-        <location filename="../settingswidget.cpp" line="1188"/>
-        <location filename="../settingswidget.cpp" line="1197"/>
-        <location filename="../settingswidget.cpp" line="1200"/>
+        <location filename="../settingswidget.cpp" line="1212"/>
+        <location filename="../settingswidget.cpp" line="1218"/>
+        <location filename="../settingswidget.cpp" line="1227"/>
+        <location filename="../settingswidget.cpp" line="1230"/>
         <source>Export profile</source>
         <translation>Експортувати профіль</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1183"/>
+        <location filename="../settingswidget.cpp" line="1213"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>Архів міститиме вашу активну сесію WhatsApp. Тримайте його в таємниці. Продовжити?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1190"/>
-        <location filename="../settingswidget.cpp" line="1205"/>
+        <location filename="../settingswidget.cpp" line="1220"/>
+        <location filename="../settingswidget.cpp" line="1235"/>
         <source>Archives (*.tar.gz)</source>
         <translation>Архіви (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1198"/>
+        <location filename="../settingswidget.cpp" line="1228"/>
         <source>Profile exported.</source>
         <translation>Профіль експортовано.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1205"/>
-        <location filename="../settingswidget.cpp" line="1209"/>
-        <location filename="../settingswidget.cpp" line="1217"/>
-        <location filename="../settingswidget.cpp" line="1220"/>
+        <location filename="../settingswidget.cpp" line="1235"/>
+        <location filename="../settingswidget.cpp" line="1239"/>
+        <location filename="../settingswidget.cpp" line="1247"/>
+        <location filename="../settingswidget.cpp" line="1250"/>
         <source>Import profile</source>
         <translation>Імпортувати профіль</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1210"/>
+        <location filename="../settingswidget.cpp" line="1240"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>Це перезапише дані поточного облікового запису вмістом архіву, після чого Whatly потрібно буде перезапустити. Продовжити?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1218"/>
+        <location filename="../settingswidget.cpp" line="1248"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>Профіль імпортовано. Будь ласка, перезапустіть Whatly.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1241"/>
+        <location filename="../settingswidget.cpp" line="1271"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>Це видалить постійні дані! Постійні дані включають постійні файли cookie та кеш, і завершить роботу застосунку.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1246"/>
+        <location filename="../settingswidget.cpp" line="1276"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>Видалити файли cookie та завершити роботу застосунку?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1352"/>
+        <location filename="../settingswidget.cpp" line="1382"/>
         <source>| Error</source>
         <translation>| Помилка</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1353"/>
+        <location filename="../settingswidget.cpp" line="1383"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>Неможливо встановити порожній рядок User Agent.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1404"/>
+        <location filename="../settingswidget.cpp" line="1434"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>Автоматичне перемикання теми вимкнено через ручну зміну теми.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1421"/>
+        <location filename="../settingswidget.cpp" line="1451"/>
         <source>Require setup</source>
         <translation>Потрібне налаштування</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1450"/>
+        <location filename="../settingswidget.cpp" line="1480"/>
         <source>App lock is not configured.</source>
         <translation>Блокування застосунку не налаштовано.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1454"/>
+        <location filename="../settingswidget.cpp" line="1484"/>
         <source>Do you want to setup App lock now?</source>
         <translation>Бажаєте налаштувати блокування застосунку зараз?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1496"/>
+        <location filename="../settingswidget.cpp" line="1526"/>
         <source>Feature permissions</source>
         <translation>Дозволи функцій</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1575"/>
+        <location filename="../settingswidget.cpp" line="1605"/>
         <source>Choose a chat wallpaper</source>
         <translation>Виберіть шпалери чату</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1577"/>
+        <location filename="../settingswidget.cpp" line="1607"/>
         <source>Images (%1)</source>
         <translation>Зображення (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1585"/>
+        <location filename="../settingswidget.cpp" line="1615"/>
         <source>Could not use that image: %1</source>
         <translation>Не вдалося використати це зображення: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1600"/>
+        <location filename="../settingswidget.cpp" line="1630"/>
         <source>Choose a CSS file</source>
         <translation>Виберіть файл CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1602"/>
+        <location filename="../settingswidget.cpp" line="1632"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>Таблиці стилів (*.css);;Усі файли (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1609"/>
+        <location filename="../settingswidget.cpp" line="1639"/>
         <source>Could not read that file: %1</source>
         <translation>Не вдалося прочитати цей файл: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1682"/>
+        <location filename="../settingswidget.cpp" line="1712"/>
         <source>Disk</source>
         <translation>Диск</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1683"/>
+        <location filename="../settingswidget.cpp" line="1713"/>
         <source>Memory</source>
         <translation>Пам&apos;ять</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1684"/>
-        <location filename="../settingswidget.cpp" line="1692"/>
+        <location filename="../settingswidget.cpp" line="1714"/>
+        <location filename="../settingswidget.cpp" line="1722"/>
         <source>None</source>
         <translation>Немає</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1693"/>
+        <location filename="../settingswidget.cpp" line="1723"/>
         <source>Slight</source>
         <translation>Легкий</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1694"/>
+        <location filename="../settingswidget.cpp" line="1724"/>
         <source>Medium</source>
         <translation>Середній</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1695"/>
+        <location filename="../settingswidget.cpp" line="1725"/>
         <source>Full</source>
         <translation>Повний</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1841"/>
+        <location filename="../settingswidget.cpp" line="1871"/>
         <source>Ollama not found at this address.</source>
         <translation>Ollama не знайдено за цією адресою.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1846"/>
+        <location filename="../settingswidget.cpp" line="1876"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama знайдено (встановлено моделей: %1).</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1871"/>
+        <location filename="../settingswidget.cpp" line="1901"/>
         <source>Download complete.</source>
         <translation>Завантаження завершено.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1874"/>
+        <location filename="../settingswidget.cpp" line="1904"/>
         <source>Download failed: %1</source>
         <translation>Не вдалося завантажити: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1885"/>
+        <location filename="../settingswidget.cpp" line="1915"/>
         <source>Checking…</source>
         <translation>Перевірка…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1910"/>
+        <location filename="../settingswidget.cpp" line="1940"/>
         <source>Starting download of %1…</source>
         <translation>Починається завантаження %1…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1965"/>
+        <location filename="../settingswidget.cpp" line="1995"/>
         <source>System</source>
         <translation>Система</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1966"/>
+        <location filename="../settingswidget.cpp" line="1996"/>
         <source>None (direct)</source>
         <translation>Немає (напряму)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1967"/>
+        <location filename="../settingswidget.cpp" line="1997"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1968"/>
+        <location filename="../settingswidget.cpp" line="1998"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1994"/>
+        <location filename="../settingswidget.cpp" line="2024"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>Портал стільниці (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1996"/>
+        <location filename="../settingswidget.cpp" line="2026"/>
         <source>System service (libnotify)</source>
         <translation>Системна служба (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2181"/>
-        <location filename="../settingswidget.cpp" line="2185"/>
+        <location filename="../settingswidget.cpp" line="2211"/>
+        <location filename="../settingswidget.cpp" line="2215"/>
         <source>Add reply</source>
         <translation>Додати відповідь</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2181"/>
+        <location filename="../settingswidget.cpp" line="2211"/>
         <source>Name</source>
         <translation>Назва</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2185"/>
+        <location filename="../settingswidget.cpp" line="2215"/>
         <source>Text to insert</source>
         <translation>Текст для вставки</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2202"/>
+        <location filename="../settingswidget.cpp" line="2232"/>
         <source>Choose a JavaScript file</source>
         <translation>Виберіть файл JavaScript</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2203"/>
+        <location filename="../settingswidget.cpp" line="2233"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;Усі файли (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2208"/>
+        <location filename="../settingswidget.cpp" line="2238"/>
         <source>Could not add addon</source>
         <translation>Не вдалося додати додаток</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2221"/>
+        <location filename="../settingswidget.cpp" line="2251"/>
         <source>Remove addon</source>
         <translation>Вилучити додаток</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2222"/>
+        <location filename="../settingswidget.cpp" line="2252"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>Вилучити додаток &quot;%1&quot;? Це видалить його файл.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2332"/>
+        <location filename="../settingswidget.cpp" line="2362"/>
         <source>Search settings</source>
         <translation>Пошук налаштувань</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2334"/>
+        <location filename="../settingswidget.cpp" line="2364"/>
         <source>Show only the settings that match. What you find is the setting itself, working where it stands — not a list to click through. Tooltips are searched as well as labels, and so are the English names of the settings when Whatly is running in another language.</source>
         <translation>Показує лише налаштування, що збігаються. Те, що ви знаходите, — саме налаштування, яке працює на своєму місці, а не список для переходу. Окрім підписів шукаються підказки, а також англійські назви налаштувань, коли Whatly працює іншою мовою.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2456"/>
+        <location filename="../settingswidget.cpp" line="2486"/>
         <source>No setting matches “%1”. Tooltips are searched too, so a plainer word usually finds it.</source>
         <translation>Немає налаштувань, що відповідають «%1». Підказки теж шукаються, тож простіше слово зазвичай допомагає.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2597"/>
+        <location filename="../settingswidget.cpp" line="2627"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>Перевірка правопису (словники не встановлено)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2703"/>
+        <location filename="../settingswidget.cpp" line="2733"/>
         <source>Downloadable languages unavailable — click to try again</source>
         <translation>Мови для завантаження недоступні — натисніть, щоб повторити</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2717"/>
+        <location filename="../settingswidget.cpp" line="2747"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>Позначте мови для перевірки орфографії. Кожен рядок завантажує або видаляє свій словник.</translation>
     </message>
@@ -4128,53 +4164,53 @@ Please setup the password in the Settings first.</source>
         <translation type="vanished">Позначте одну або кілька мов для перевірки орфографії.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2819"/>
+        <location filename="../settingswidget.cpp" line="2849"/>
         <source>Choose languages…</source>
         <translation>Виберіть мови…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2825"/>
+        <location filename="../settingswidget.cpp" line="2855"/>
         <source>%1 of %2 chosen</source>
         <translation>%1 з %2 вибраних</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2827"/>
+        <location filename="../settingswidget.cpp" line="2857"/>
         <source>%1 languages</source>
         <translation>%1 мов</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2952"/>
+        <location filename="../settingswidget.cpp" line="2982"/>
         <source>WhatsApp default</source>
         <translation>Типово для WhatsApp</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2991"/>
+        <location filename="../settingswidget.cpp" line="3021"/>
         <source>System default</source>
         <translation>Типово для системи</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3021"/>
+        <location filename="../settingswidget.cpp" line="3051"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>Мова інтерфейсу зміниться після перезапуску %1.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3035"/>
+        <location filename="../settingswidget.cpp" line="3065"/>
         <source>App Lock Setup</source>
         <translation>Налаштування блокування застосунку</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3036"/>
+        <location filename="../settingswidget.cpp" line="3066"/>
         <source>Please setup the App lock password first.</source>
         <translation>Спочатку налаштуйте пароль блокування застосунку.</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3152"/>
-        <location filename="../settingswidget.cpp" line="3163"/>
+        <location filename="../settingswidget.cpp" line="3182"/>
+        <location filename="../settingswidget.cpp" line="3193"/>
         <source>Select download directory</source>
         <translation>Виберіть теку завантаження</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3203"/>
+        <location filename="../settingswidget.cpp" line="3233"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -4185,7 +4221,7 @@ You may also require a complete restart of Application!</source>
 Може також знадобитися повний перезапуск застосунку!</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3209"/>
+        <location filename="../settingswidget.cpp" line="3239"/>
         <source>Do you want to proceed?</source>
         <translation>Бажаєте продовжити?</translation>
     </message>
@@ -4267,7 +4303,7 @@ You may also require a complete restart of Application!</source>
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../updatechecker.cpp" line="138"/>
+        <location filename="../updatechecker.cpp" line="145"/>
         <source>Could not read the latest release</source>
         <translation>Не вдалося отримати інформацію про останній випуск</translation>
     </message>
@@ -4351,28 +4387,28 @@ You may also require a complete restart of Application!</source>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="223"/>
-        <location filename="../webenginepage.cpp" line="438"/>
+        <location filename="../webenginepage.cpp" line="437"/>
         <source>Permission Request</source>
         <translation>Запит дозволу</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="361"/>
-        <location filename="../webenginepage.cpp" line="370"/>
+        <location filename="../webenginepage.cpp" line="360"/>
+        <location filename="../webenginepage.cpp" line="369"/>
         <source>Certificate Error</source>
         <translation>Помилка сертифіката</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="390"/>
+        <location filename="../webenginepage.cpp" line="389"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
         <translation>Введіть ім&apos;я користувача та пароль для &quot;%1&quot; на %2</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="420"/>
+        <location filename="../webenginepage.cpp" line="419"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
         <translation>Підключитися до проксі &quot;%1&quot; за допомогою:</translation>
     </message>
     <message>
-        <location filename="../webenginepage.cpp" line="439"/>
+        <location filename="../webenginepage.cpp" line="438"/>
         <source>Allow %1 to open all %2 links?</source>
         <translation>Дозволити %1 відкривати всі посилання %2?</translation>
     </message>

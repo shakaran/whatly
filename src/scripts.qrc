@@ -1,0 +1,7 @@
+<!-- Scripts embedded into the binary. The diagnostics probe is the very file the
+     debug/ harnesses test, so there is one source of truth for it. -->
+<RCC>
+  <qresource prefix="/scripts">
+    <file alias="scroll-smoothness-probe.js">../debug/scroll-smoothness-probe.js</file>
+  </qresource>
+</RCC>

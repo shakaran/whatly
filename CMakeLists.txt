@@ -203,6 +203,7 @@ set(SOURCES
     src/chatwallpaper.cpp
     src/customcss.cpp
     src/customjs.cpp
+    src/diagnostics.cpp
     src/commandpalette.cpp
     src/updatechecker.cpp
     src/storageinfo.cpp
@@ -293,6 +294,7 @@ set(HEADERS
     src/chatwallpaper.h
     src/customcss.h
     src/customjs.h
+    src/diagnostics.h
     src/commandpalette.h
     src/updatechecker.h
     src/storageinfo.h
@@ -360,6 +362,7 @@ set(UI_FILES
 
 set(RESOURCES
     src/icons.qrc
+    src/scripts.qrc
 )
 
 # SingleApplication library
