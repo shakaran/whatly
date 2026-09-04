@@ -29,6 +29,9 @@ extern bool defaultAppAutoLock;
 extern double defaultZoomFactorMaximized;
 
 QIcon themeIcon(const QString& name, const QString& fallback);
+// The application/window icon, resolved from the themed kAppId icon (all sizes +
+// SVG) with a multi-size raster fallback, so it stays sharp when scaled (#105).
+QIcon appWindowIcon();
 
 // A window request (window.open / target="_blank") whose URL lives on
 // web.whatsapp.com is one of WhatsApp's own in-app popups — above all the call

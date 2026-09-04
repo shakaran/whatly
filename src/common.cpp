@@ -36,6 +36,21 @@ QIcon themeIcon(const QString& name, const QString& fallback) {
   return QIcon::fromTheme(name, QIcon(fallback));
 }
 
+// The application/window icon. It asks the icon theme for kAppId
+// (net.shakaran.whatly) — the name every hicolor size and the scalable SVG are
+// installed under — so a panel or task bar scaling it stays sharp. The previous
+// lookup asked for "whatly", which nothing is installed as, so it always fell
+// through to a single 64px raster and blurred when scaled up (issue #105). The
+// fallback here is itself a multi-size QIcon, for a run from the build tree
+// where nothing is installed in a theme.
+QIcon appWindowIcon() {
+  QIcon fallback;
+  for (const char *s : {"16", "32", "48", "64", "128", "256", "512"})
+    fallback.addFile(
+        QStringLiteral(":/icons/app/icon-%1.png").arg(QLatin1String(s)));
+  return QIcon::fromTheme(kAppId, fallback);
+}
+
 bool isInAppPopupUrl(const QUrl &url) {
   return url.isValid() && url.host() == QLatin1String("web.whatsapp.com");
 }

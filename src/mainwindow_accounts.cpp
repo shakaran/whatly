@@ -1621,7 +1621,7 @@ void MainWindow::updateTrayUnread() {
     // there were no unread messages).
     m_systemTrayIcon->setIcon(getTrayIcon(0));
     m_systemTrayIcon->setToolTip(trayTooltipText(UnreadBreakdown{}));
-    setWindowIcon(themeIcon("whatly", ":/icons/app/icon-64.png"));
+    setWindowIcon(appWindowIcon());
   }
 
   updateLauncherBadge(total);

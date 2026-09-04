@@ -1,3 +1,4 @@
+#include "common.h"
 #include "detachedaccountwindow.h"
 #include "accounttabbar.h"
 #include "customtitlebar.h"
@@ -17,7 +18,7 @@ DetachedAccountWindow::DetachedAccountWindow(QWidget *parent) : QWidget(parent) 
   // stays visible when the main window is minimised to the tray, which is the
   // whole point of tearing accounts off to watch them on their own.
   setWindowFlag(Qt::Window, true);
-  setWindowIcon(QIcon(QStringLiteral(":/icons/app/icon-64.png")));
+  setWindowIcon(appWindowIcon());
   resize(900, 700);
 
   // Same client-side decoration as the main window, for the same reason: a
