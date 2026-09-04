@@ -1,0 +1,12 @@
+{
+  "name": "whatly-debug-probes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Harnesses that prove the debug probes before they are trusted with a measurement",
+  "scripts": {
+    "test": "node scroll-harness.js && node banner-probe-harness.js update-banner-probe.js"
+  },
+  "devDependencies": {
+    "jsdom": "24.1.3"
+  }
+}
