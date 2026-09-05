@@ -2,6 +2,7 @@
 #include <QFont>
 #include <QSocketNotifier>
 
+#include "customtitlebar.h"
 #include "performance.h"
 #include "networkproxy.h"
 #include "utils.h"
@@ -356,6 +357,19 @@ static void setChromiumFlags() {
 #endif
   if (const QString perf = Performance::chromiumFlagFragment(); !perf.isEmpty())
     flags += QLatin1Char(' ') + perf;
+
+  // With the custom (frameless) window frame, WhatsApp Web stops fetching older
+  // messages after switching chats and back (issue #104) — the page behaves as
+  // if it were in the background. A frameless window can read to the compositor
+  // as occluded/backgrounded, and Chromium then throttles the renderer and its
+  // timers, which is what stalls WhatsApp's multi-device message sync (a real
+  // browser, never frameless this way, is unaffected). Turn that throttling off
+  // for exactly this case, so the page keeps syncing whatever the frame does.
+  // Only when the custom frame is on, so the default behaviour is unchanged.
+  if (CustomTitleBar::isEnabled())
+    flags += QStringLiteral(" --disable-backgrounding-occluded-windows "
+                            "--disable-renderer-backgrounding "
+                            "--disable-background-timer-throttling");
 #ifdef QT_DEBUG
   flags.prepend(QStringLiteral("--remote-debugging-port=9421 "));
 #endif
