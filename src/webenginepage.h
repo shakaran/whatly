@@ -77,6 +77,15 @@ private:
   // The WhatsApp-Web-loader-failure hint (issue #43) is emitted at most once per
   // page; the failure itself prints a long cascade of console errors.
   bool m_reportedWaLoadFailure = false;
+  // Auto-recovery for that same collapse: reload (bypassing cache) a bounded
+  // number of times, since it is usually a transient flaky-CDN load and a fresh
+  // fetch assembles the bundle (issue #43). m_handlingWaCollapse acts once per
+  // load (the collapse prints many lines); it resets when a new load starts.
+  // The counter resets when a failure arrives well after the last one, so a new
+  // incident gets its own retries rather than being starved by an old burst.
+  bool m_handlingWaCollapse = false;
+  int m_waLoadFailureReloads = 0;
+  qint64 m_lastWaFailureMs = 0;
 
   // The Service-Worker-cache recovery (clear caches + unregister + reload) is
   // attempted at most once per page, so a reload that fails the same way cannot

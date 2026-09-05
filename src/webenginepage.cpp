@@ -1,3 +1,4 @@
+#include <QDateTime>
 #include "webenginepage.h"
 #include <QDialog>
 #include <QDialogButtonBox>
@@ -31,6 +32,11 @@ WebEnginePage::WebEnginePage(QWebEngineProfile *profile, QObject *parent)
 
   connect(this, &QWebEnginePage::loadFinished, this,
           &WebEnginePage::handleLoadFinished);
+  // A new load clears the "already handling this collapse" latch, so each load's
+  // module-loader failure (issue #43) is acted on once — the counter that bounds
+  // the reloads is separate and is not cleared here.
+  connect(this, &QWebEnginePage::loadStarted, this,
+          [this]() { m_handlingWaCollapse = false; });
   connect(this, &QWebEnginePage::authenticationRequired, this,
           &WebEnginePage::handleAuthenticationRequired);
   connect(this, &QWebEnginePage::permissionRequested, this,
@@ -516,17 +522,40 @@ void WebEnginePage::javaScriptConsoleMessage(
   // to the user like login is broken. Whatly does not implement login, so tell
   // the user what it actually is and how to recover. Once per page: the failure
   // prints many lines. See issue #43.
-  if (level == QWebEnginePage::ErrorMessageLevel && !m_reportedWaLoadFailure &&
+  if (level == QWebEnginePage::ErrorMessageLevel && !m_handlingWaCollapse &&
       Utils::isWhatsAppLoadFailure(message)) {
-    m_reportedWaLoadFailure = true;
-    qWarning().noquote()
-        << "whatly: WhatsApp Web did not finish loading \u2014 its module loader "
-           "reported unresolved dependencies. This is not a login problem "
-           "(Whatly does not implement login; it just loads web.whatsapp.com); "
-           "it is usually a corrupt/locked profile or a partial cached bundle. "
-           "Try reloading (Ctrl+R); if it persists, clear the data from Settings "
-           "\u203a Storage (or delete the QtWebEngine cache and storage folders) "
-           "and relaunch. Details: https://github.com/shakaran/whatly/issues/43";
+    m_handlingWaCollapse = true; // act once; the collapse prints many lines
+    const qint64 now = QDateTime::currentMSecsSinceEpoch();
+    // A failure well after the last one is a new incident, not the same burst
+    // recurring across reloads, so let it have its own retries.
+    if (m_lastWaFailureMs == 0 || now - m_lastWaFailureMs > 60000)
+      m_waLoadFailureReloads = 0;
+    m_lastWaFailureMs = now;
+
+    if (m_waLoadFailureReloads < 2) {
+      // Usually a transient flaky-CDN load: a fresh fetch (bypassing any partial
+      // cached bundle) assembles it. Reload rather than leaving the user on a
+      // page that never finishes \u2014 the reporter of #43 found reloading recovers.
+      ++m_waLoadFailureReloads;
+      qWarning().noquote()
+          << "whatly: WhatsApp Web's module loader collapsed (unresolved "
+             "dependencies); reloading and bypassing cache to recover \u2014 "
+             "attempt"
+          << m_waLoadFailureReloads
+          << "of 2 (issue #43).";
+      triggerAction(QWebEnginePage::ReloadAndBypassCache);
+    } else if (!m_reportedWaLoadFailure) {
+      m_reportedWaLoadFailure = true;
+      qWarning().noquote()
+          << "whatly: WhatsApp Web still did not finish loading after two "
+             "reloads \u2014 its module loader reported unresolved "
+             "dependencies. This is not a login problem (Whatly does not "
+             "implement login; it just loads web.whatsapp.com); it is usually a "
+             "flaky network path to WhatsApp's CDN, or a corrupt/locked profile. "
+             "Try again later, or clear the data from Settings \u203a Storage "
+             "(or delete the QtWebEngine cache and storage folders) and "
+             "relaunch. Details: https://github.com/shakaran/whatly/issues/43";
+    }
   }
 
   switch (level) {
