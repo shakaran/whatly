@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        7.3.1
+Version:        7.4.0
 # Reference system-Qt spec for downstream packagers; the release itself builds
 # the native rpm from packaging/obs/whatly.spec. Release kept at 0 to match it
 # (both are the system-Qt "whatly"), so this never looks newer than, or collides
@@ -61,6 +61,18 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/whatly/
 
 %changelog
+* Sun Sep 06 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.4.0-1
+- Settings can be opened without a system tray (a gear appears in the page when
+  none is available, #103); the app icon is sharp in the task bar again (#105).
+- Auto-reload recovers when WhatsApp Web's module loader collapses on a flaky
+  network (#43); with the custom window frame on, older messages load again when
+  switching chats (#104).
+- The "no H.264 codecs" notice now also explains greyed-out voice/video calls
+  (#97).
+- Scheduled messages send in any language; HD sending works without per-image
+  nagging; smoother wheel scrolling; opt-in scroll diagnostics; Windows
+  spell-check fix. See CHANGELOG.md.
+
 * Sun Aug 23 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.3.1-1
 - The NVIDIA-on-Wayland fix no longer forces XCB where Wayland renders fine; it
   relaunches on XCB only if the backing store actually fails (#84).
