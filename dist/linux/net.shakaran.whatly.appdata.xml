@@ -108,6 +108,18 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.4.0" date="2026-09-06">
+      <description>
+        <ul>
+          <li>Settings can be opened without a system tray: a small gear appears in the page when no tray is available (#103)</li>
+          <li>The app icon is sharp in the task bar again, including on Flatpak (#105)</li>
+          <li>Whatly auto-reloads to recover when WhatsApp Web's module loader collapses on a flaky network (#43)</li>
+          <li>With the custom window frame on, WhatsApp Web no longer stops loading older messages when switching chats (#104)</li>
+          <li>The "no H.264 codecs" notice now also explains why voice/video calls are greyed out (#97)</li>
+          <li>Scheduled messages send again whatever the interface language, sending in HD works and no longer nags per image, and wheel scrolling is smoother; plus an opt-in scroll-diagnostics switch for bug reports and a Windows spell-check fix</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.3.1" date="2026-08-23">
       <description>
         <p>A maintenance release:</p>

@@ -1,3 +1,20 @@
+whatly (7.4.0) unstable; urgency=medium
+
+  * Settings can be opened without a system tray — a small gear appears in the
+    page when no tray is available (#103); the app icon is sharp in the task bar
+    again, including on Flatpak (#105).
+  * Whatly auto-reloads to recover when WhatsApp Web's module loader collapses on
+    a flaky network path (#43), and with the custom window frame on it no longer
+    stops loading older messages when switching chats (#104).
+  * The "no H.264 codecs" notice now also explains why voice/video calls are
+    greyed out (#97).
+  * Scheduled messages send again in any interface language; HD sending works and
+    no longer nags per image; wheel scrolling is smoother; an opt-in
+    scroll-diagnostics switch was added; and a Windows spell-check fix. See
+    CHANGELOG.md.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Sat, 06 Sep 2026 12:00:00 +0200
+
 whatly (7.3.1) unstable; urgency=medium
 
   * The NVIDIA-on-Wayland fix no longer forces XCB on setups where Wayland
