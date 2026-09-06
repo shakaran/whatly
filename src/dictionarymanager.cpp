@@ -1,5 +1,6 @@
 #include "dictionarymanager.h"
 #include "dictionaries.h"
+#include "settingsmanager.h"
 
 #include <QCryptographicHash>
 #include <QDir>
@@ -177,5 +178,16 @@ bool DictionaryManager::remove(const QString &code) {
   // on Windows, and a copy is indistinguishable from a download.
   if (!fi.exists() || Dictionaries::isBundled(code))
     return false;
-  return QFile::remove(path);
+  const bool ok = QFile::remove(path);
+  if (ok)
+    // Record that a dictionary was let go deliberately, so the first-run
+    // system-language fetch (issue #110) never pulls one back in behind the
+    // user's back. This is the single path the Settings delete button goes
+    // through; a file removed by hand does not reach here, and so stays
+    // recoverable. Set on any removal, not only the last one: someone who keeps
+    // one language and deletes the rest does not want the system language
+    // fetched in either.
+    SettingsManager::instance().settings().setValue(
+        QStringLiteral("dictionaries/systemFetchOptOut"), true);
+  return ok;
 }

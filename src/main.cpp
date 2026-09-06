@@ -43,6 +43,7 @@
 #include "debuglog.h"
 #include "def.h"
 #include "dictionaries.h"
+#include "dictionarybootstrap.h"
 #include "mainwindow.h"
 #include "autoreply.h"
 #include "cloudapi.h"
@@ -1258,6 +1259,15 @@ int main(int argc, char *argv[]) {
   WebEngineProfileManager::instance();
 
   MainWindow whatly;
+
+  // First-run spell-check dictionary fetch (issue #110). When the install ships
+  // no dictionary, pull the one matching the system locale so a non-English user
+  // is not left with a bundled en_US they never chose. Deferred to the event
+  // loop so it never delays the window, and confined to the primary instance
+  // (a secondary one has already returned above). It acts once and then, by its
+  // own stop conditions, gets out of the way.
+  auto *dictionaryBootstrap = new DictionaryBootstrap(&whatly);
+  QTimer::singleShot(0, dictionaryBootstrap, &DictionaryBootstrap::start);
 
   // else
   QObject::connect(

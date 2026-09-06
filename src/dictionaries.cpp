@@ -2,6 +2,7 @@
 #include "settingsmanager.h"
 
 #include <QCoreApplication>
+#include <QCryptographicHash>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
@@ -198,6 +199,38 @@ QString preferredDictionary() {
       return candidate;
 
   return available.first();
+}
+
+QString systemFetchCandidate(const QStringList &manifestCodes,
+                             const QString &localeName) {
+  if (manifestCodes.isEmpty() || localeName.isEmpty())
+    return QString();
+
+  // The full locale name first (es_ES), so a system that names its territory
+  // gets that exact dictionary when the manifest has it.
+  if (manifestCodes.contains(localeName))
+    return localeName;
+
+  // Then by bare language: prefer the plain-language code (es) if the manifest
+  // carries one, else the first territory form of it (es_ES, es_MX), so an es_AR
+  // system still gets Spanish rather than nothing.
+  const QString language = localeName.section(QLatin1Char('_'), 0, 0);
+  if (language.isEmpty())
+    return QString();
+  if (manifestCodes.contains(language))
+    return language;
+  for (const QString &code : manifestCodes)
+    if (code.startsWith(language + QLatin1Char('_')))
+      return code;
+  return QString();
+}
+
+QString manifestTag(const QStringList &manifestCodes) {
+  QStringList sorted = manifestCodes;
+  sorted.sort();
+  const QByteArray joined = sorted.join(QLatin1Char('\n')).toUtf8();
+  return QString::fromLatin1(
+      QCryptographicHash::hash(joined, QCryptographicHash::Sha1).toHex());
 }
 
 QStringList selectedDictionaries() {

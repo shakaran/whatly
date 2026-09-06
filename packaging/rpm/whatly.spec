@@ -58,7 +58,11 @@ not affiliated with WhatsApp or Meta.
 %{_datadir}/applications/net.shakaran.whatly.desktop
 %{_datadir}/icons/hicolor/*/apps/net.shakaran.whatly.*
 %{_metainfodir}/net.shakaran.whatly.appdata.xml
-%{_datadir}/whatly/
+# The share/whatly dir is intentionally not shipped: it would only hold bundled
+# spell-check bdic dictionaries, and the package bundles none now that the app
+# fetches the system language on first run (#110). Build with
+# -DWHATLY_BUNDLE_DICTIONARIES=en_US (or another set) to bundle some, and add
+# %%{_datadir}/whatly/ back here if you do.
 
 %changelog
 * Sun Sep 06 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.4.0-1

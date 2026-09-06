@@ -107,11 +107,13 @@ so the app downloads them on demand, and the packages then bundle only a minimum
    `.bdic`, generates `manifest.json` (code, size, SHA-256, via
    `tools/gen-dictionary-manifest.py`) and uploads both to the `dictionaries`
    release. Re-run it whenever `src/dictionaries` changes.
-2. Once that release exists, build packages with a minimum bundled set, e.g.
-   `-DWHATLY_BUNDLE_DICTIONARIES="en_US"` (empty = bundle all, the default). The
-   rest are fetched at runtime into the user's writable dictionary directory and
-   verified before use.
+2. Once that release exists, packages bundle no dictionary at all
+   (`WHATLY_BUNDLE_DICTIONARIES` defaults to `NONE`): on first run the app fetches
+   the one matching the system locale into the user's writable dictionary
+   directory, verified before use, and the rest are still fetched on demand from
+   Settings (issue #110). Pass `-DWHATLY_BUNDLE_DICTIONARIES="es_ES;fr_FR"` to
+   bundle a specific set instead, or `-DWHATLY_BUNDLE_DICTIONARIES=""` to bundle
+   every built dictionary (e.g. an offline build).
 
-Do not flip a package to the minimum before the `dictionaries` release is
-published, or non-bundled languages would have no dictionary and nowhere to get
-one.
+Do not build with `NONE` (or a partial set) before the `dictionaries` release is
+published, or a fresh install would have no dictionary and nowhere to get one.

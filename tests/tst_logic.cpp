@@ -55,6 +55,7 @@
 #include "appprofile.h"
 #include "settingsmanager.h"
 #include "dictionaries.h"
+#include "dictionarybootstrap.h"
 #include "dictionarymanager.h"
 #include "dictionaryrows.h"
 #include "identicons.h"
@@ -5279,6 +5280,74 @@ private slots:
     QVERIFY(!dm.remove(code));                      // nothing left to remove
   }
 
+  // First-run fetch selection (issue #110): the language chosen from the
+  // manifest for a system with nothing installed. Pure, so no network is needed.
+  void firstRunFetchCandidate() {
+    const QStringList manifest = {
+        QStringLiteral("en_US"), QStringLiteral("es_ES"),
+        QStringLiteral("es_MX"), QStringLiteral("de_DE")};
+    // Full name wins when the manifest carries it.
+    QCOMPARE(
+        Dictionaries::systemFetchCandidate(manifest, QStringLiteral("es_ES")),
+        QStringLiteral("es_ES"));
+    // A territory the manifest lacks falls back to another form of the language,
+    // so an es_AR system still gets Spanish rather than nothing.
+    const QString ar =
+        Dictionaries::systemFetchCandidate(manifest, QStringLiteral("es_AR"));
+    QVERIFY(ar == QStringLiteral("es_ES") || ar == QStringLiteral("es_MX"));
+    // The plain-language code is preferred over a territory form when present.
+    const QStringList withPlain = {QStringLiteral("es"),
+                                   QStringLiteral("es_ES")};
+    QCOMPARE(
+        Dictionaries::systemFetchCandidate(withPlain, QStringLiteral("es_AR")),
+        QStringLiteral("es"));
+    // A language the manifest does not carry gives nothing (the eo case).
+    QVERIFY(Dictionaries::systemFetchCandidate(manifest, QStringLiteral("eo"))
+                .isEmpty());
+    // Empty inputs are safe.
+    QVERIFY(Dictionaries::systemFetchCandidate({}, QStringLiteral("es_ES"))
+                .isEmpty());
+    QVERIFY(
+        Dictionaries::systemFetchCandidate(manifest, QString()).isEmpty());
+  }
+
+  void manifestTagIsStableAndOrderIndependent() {
+    const QStringList a = {QStringLiteral("en_US"), QStringLiteral("es_ES")};
+    const QStringList b = {QStringLiteral("es_ES"), QStringLiteral("en_US")};
+    QCOMPARE(Dictionaries::manifestTag(a), Dictionaries::manifestTag(b));
+    const QStringList c = {QStringLiteral("en_US"), QStringLiteral("es_ES"),
+                           QStringLiteral("de_DE")};
+    QVERIFY(Dictionaries::manifestTag(a) != Dictionaries::manifestTag(c));
+  }
+
+  // A Settings-driven removal records the opt-out, so the first-run fetch does
+  // not pull a dictionary back in behind the user's back (issue #110).
+  void removeRecordsOptOut() {
+    auto &s = SettingsManager::instance().settings();
+    const QString key = QStringLiteral("dictionaries/systemFetchOptOut");
+    const QVariant saved = s.value(key);
+    s.remove(key);
+
+    const QString dir = Dictionaries::userDictionaryPath();
+    QVERIFY(QDir().mkpath(dir));
+    const QString code = QStringLiteral("yy_OPT");
+    const QString path = QDir(dir).filePath(code + QStringLiteral(".bdic"));
+    {
+      QFile f(path);
+      QVERIFY(f.open(QIODevice::WriteOnly));
+      f.write("bdic");
+    }
+    DictionaryManager dm;
+    QVERIFY(dm.remove(code));
+    QVERIFY(s.value(key).toBool());
+
+    // Restore, so this global setting does not leak into other tests.
+    if (saved.isValid())
+      s.setValue(key, saved);
+    else
+      s.remove(key);
+  }
+
   void preferredDictionaryFallsBackToLocale() {
     auto &s = SettingsManager::instance().settings();
     const QVariant saved = s.value(QStringLiteral("spellCheckLanguage"));
@@ -5875,6 +5944,129 @@ private slots:
   }
 };
 
+// A localhost HTTP server that tells the manifest request apart from the asset
+// request by path, so the two-step first-run fetch (manifest.json, then the
+// <code>.bdic) can be driven end to end against a stand-in.
+class MockDictServer : public QObject {
+  Q_OBJECT
+public:
+  QString start(const QByteArray &manifest, const QByteArray &asset) {
+    m_manifest = manifest;
+    m_asset = asset;
+    if (!m_server.listen(QHostAddress::LocalHost, 0))
+      return QString();
+    connect(&m_server, &QTcpServer::newConnection, this, [this]() {
+      QTcpSocket *sock = m_server.nextPendingConnection();
+      connect(sock, &QTcpSocket::readyRead, this, [this, sock]() {
+        const QByteArray req = sock->readAll(); // the request line carries the path
+        const QByteArray &body =
+            req.contains("manifest.json") ? m_manifest : m_asset;
+        const QByteArray resp =
+            "HTTP/1.1 200 OK\r\nContent-Type: application/octet-stream\r\n"
+            "Content-Length: " +
+            QByteArray::number(body.size()) +
+            "\r\nConnection: close\r\n\r\n" + body;
+        sock->write(resp);
+        sock->flush();
+        sock->disconnectFromHost();
+      });
+    });
+    return QStringLiteral("http://127.0.0.1:%1").arg(m_server.serverPort());
+  }
+
+private:
+  QTcpServer m_server;
+  QByteArray m_manifest;
+  QByteArray m_asset;
+};
+
+// The first-run dictionary fetch (issue #110), driven end to end against
+// MockDictServer via WHATLY_DICT_BASE_URL. beginFetch() bypasses the
+// installed()/opt-out gate, so the pipeline is exercised whatever the host has.
+class TstDictionaryBootstrapNet : public QObject {
+  Q_OBJECT
+  static QString sha256Hex(const QByteArray &d) {
+    return QString::fromLatin1(
+        QCryptographicHash::hash(d, QCryptographicHash::Sha256).toHex());
+  }
+  static void clearState() {
+    auto &s = SettingsManager::instance().settings();
+    s.remove(QStringLiteral("dictionaries/systemFetchNotInManifest"));
+    s.remove(QStringLiteral("dictionaries/systemFetchManifestTag"));
+  }
+
+private slots:
+  void cleanup() {
+    qunsetenv("WHATLY_DICT_BASE_URL");
+    qunsetenv("WHATLY_DICT_TEST_FAST");
+    clearState();
+  }
+
+  void fetchesTheSystemLanguage() {
+    const QString locale = QLocale::system().name();
+    QVERIFY(!locale.isEmpty());
+    const QByteArray asset("BDicSYSTEMFETCH");
+    // The manifest carries the system locale's own code, so the candidate is
+    // found whatever the host's locale happens to be.
+    const QByteArray manifest =
+        QStringLiteral(
+            "{\"dictionaries\":[{\"code\":\"%1\",\"size\":%2,\"sha256\":\"%3\"}]}")
+            .arg(locale)
+            .arg(asset.size())
+            .arg(sha256Hex(asset))
+            .toUtf8();
+    MockDictServer mock;
+    const QString url = mock.start(manifest, asset);
+    QVERIFY(!url.isEmpty());
+    qputenv("WHATLY_DICT_BASE_URL", url.toUtf8());
+
+    DictionaryBootstrap boot;
+    QSignalSpy done(&boot, &DictionaryBootstrap::finished);
+    boot.beginFetch();
+    QVERIFY(done.wait(5000));
+    QCOMPARE(done.first().at(0).toBool(), true);       // fetched
+    QCOMPARE(done.first().at(1).toString(), locale);   // the system language
+    const QString path = QDir(Dictionaries::userDictionaryPath())
+                             .filePath(locale + QStringLiteral(".bdic"));
+    QVERIFY(QFileInfo::exists(path));                  // saved (test-mode dir)
+    QFile::remove(path);
+  }
+
+  void recordsNotInManifest() {
+    clearState();
+    // A manifest that cannot match the system locale (a made-up code), so the
+    // "not in manifest" stop is taken and remembered against the manifest tag.
+    const QByteArray manifest =
+        R"({"dictionaries":[{"code":"zz_NOPE","size":1,"sha256":"aa"}]})";
+    MockDictServer mock;
+    const QString url = mock.start(manifest, QByteArray("x"));
+    QVERIFY(!url.isEmpty());
+    qputenv("WHATLY_DICT_BASE_URL", url.toUtf8());
+
+    DictionaryBootstrap boot;
+    QSignalSpy done(&boot, &DictionaryBootstrap::finished);
+    boot.beginFetch();
+    QVERIFY(done.wait(5000));
+    QCOMPARE(done.first().at(0).toBool(), false);
+    auto &s = SettingsManager::instance().settings();
+    QVERIFY(s.value(QStringLiteral("dictionaries/systemFetchNotInManifest"))
+                .toBool());
+    QVERIFY(!s.value(QStringLiteral("dictionaries/systemFetchManifestTag"))
+                 .toString()
+                 .isEmpty());
+  }
+
+  void givesUpWithoutNetwork() {
+    qputenv("WHATLY_DICT_TEST_FAST", "1");           // tiny backoff
+    qputenv("WHATLY_DICT_BASE_URL", "http://127.0.0.1:1"); // nothing listening
+    DictionaryBootstrap boot;
+    QSignalSpy done(&boot, &DictionaryBootstrap::finished);
+    boot.beginFetch();
+    QVERIFY(done.wait(5000));
+    QCOMPARE(done.first().at(0).toBool(), false);     // gave up, cleanly
+  }
+};
+
 // ─────────────────────────────────────────────────────────────────────────────
 // The Cloud API send path, pointed at the mock server via WHATLY_CLOUD_API_BASE:
 // text, template and media sends, their API-error, network-error, unconfigured
@@ -6153,6 +6345,7 @@ int main(int argc, char *argv[]) {
   { TstScriptInstall t;       run(&t); }
   { TstNetworkClients t;      run(&t); }
   { TstDictionaryManagerNet t; run(&t); }
+  { TstDictionaryBootstrapNet t; run(&t); }
   { TstCloudApiNet t;         run(&t); }
   { TstUpdateCheckNet t;      run(&t); }
   { TstWidgets t;             run(&t); }

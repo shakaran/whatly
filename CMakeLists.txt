@@ -198,6 +198,7 @@ set(SOURCES
     src/webengineprofilemanager.cpp
     src/chattheme.cpp
     src/dictionaries.cpp
+    src/dictionarybootstrap.cpp
     src/dictionarymanager.cpp
     src/dictionaryrows.cpp
     src/chatwallpaper.cpp
@@ -289,6 +290,7 @@ set(HEADERS
     src/webengineprofilemanager.h
     src/chattheme.h
     src/dictionaries.h
+    src/dictionarybootstrap.h
     src/dictionarymanager.h
     src/dictionaryrows.h
     src/chatwallpaper.h
@@ -580,14 +582,16 @@ set(WHATLY_DICTIONARIES "" CACHE STRING
     "Semicolon-separated list of dictionary basenames to build (empty = all)")
 
 # Which of the built dictionaries to actually INSTALL into the package, as
-# opposed to build. Defaults to a minimum ("en_US") now that the 'dictionaries'
-# release serves the rest for on-demand download (issue #46): a fresh install
-# ships small and fetches the user's language on first run. Set to "" to bundle
-# every built dictionary instead (e.g. an offline build), or to another list to
-# choose the minimum. The full set is always built, so the manifest workflow is
+# opposed to build. Defaults to NONE now that the 'dictionaries' release serves
+# them for on-demand download (issue #46) and the app fetches the system
+# language on first run (issue #110): a fresh install ships no dictionary at all
+# and pulls the user's own language rather than a bundled en_US that is the right
+# default for nobody in particular. Set to "" to bundle every built dictionary
+# instead (e.g. an offline build), or to a semicolon-separated list of basenames
+# to bundle just those. The full set is always built, so the manifest workflow is
 # unaffected.
-set(WHATLY_BUNDLE_DICTIONARIES "en_US" CACHE STRING
-    "Dictionary basenames to install (empty = all built)")
+set(WHATLY_BUNDLE_DICTIONARIES "NONE" CACHE STRING
+    "Dictionary basenames to install (empty = all built, NONE = none)")
 
 if(WHATLY_SPELLCHECK)
 
@@ -664,6 +668,8 @@ list(LENGTH WHATLY_BDICS WHATLY_DICT_COUNT)
 if(UNIX AND NOT APPLE)
     if(WHATLY_BUNDLE_DICTIONARIES STREQUAL "")
         set(WHATLY_INSTALL_BDICS ${WHATLY_BDICS})   # all of them
+    elseif(WHATLY_BUNDLE_DICTIONARIES STREQUAL "NONE")
+        set(WHATLY_INSTALL_BDICS "")                # none; fetched on first run
     else()
         set(WHATLY_INSTALL_BDICS "")
         foreach(code ${WHATLY_BUNDLE_DICTIONARIES})
@@ -676,9 +682,13 @@ if(UNIX AND NOT APPLE)
             endif()
         endforeach()
     endif()
-    install(FILES ${WHATLY_INSTALL_BDICS}
-        DESTINATION ${DATADIR}/whatly/qtwebengine_dictionaries
-    )
+    # An empty set means nothing to install (NONE, or a list that matched none):
+    # skip the install() rather than call it with no files, which errors.
+    if(WHATLY_INSTALL_BDICS)
+        install(FILES ${WHATLY_INSTALL_BDICS}
+            DESTINATION ${DATADIR}/whatly/qtwebengine_dictionaries
+        )
+    endif()
 endif()
 
 else()

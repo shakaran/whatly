@@ -55,6 +55,22 @@ QStringList availableDictionaries();
 // installed, else one matching the system locale, else the first available.
 QString preferredDictionary();
 
+// The dictionary code to fetch on first run for a system with nothing installed
+// (issue #110): the manifest code matching `localeName` (QLocale::system().name(),
+// e.g. "es_ES") by full name first, then by bare language, so an "es_AR" system
+// still gets Spanish from whatever the manifest carries; empty when the manifest
+// offers nothing for that language. Pure, so the first-run choice is unit tested
+// without a network. Mirrors preferredDictionary()'s widening, applied to the
+// manifest rather than to what is on disk.
+QString systemFetchCandidate(const QStringList &manifestCodes,
+                             const QString &localeName);
+
+// A short, order-independent tag identifying a manifest by the set of codes it
+// carries. Lets a "the system language is not in the manifest" result be
+// remembered and re-checked only when the manifest actually changes, rather than
+// re-attempted every launch. Pure and unit tested.
+QString manifestTag(const QStringList &manifestCodes);
+
 // The dictionaries to spell-check with, as a list — Chromium checks against all
 // of them at once. Comes from the stored "spellCheckLanguages" list, filtered to
 // those still installed; falls back to preferredDictionary() when nothing is
