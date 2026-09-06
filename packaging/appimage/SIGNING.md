@@ -35,13 +35,18 @@ EOF
 gpg --batch --gen-key /tmp/whatly-appimage-key.conf
 rm -f /tmp/whatly-appimage-key.conf
 
-# 2. Find the fingerprint. Select by the unique Name-Real, NOT the email — the
-#    maintainer already has personal keys under angel@guzmanmaeso.com, and
-#    selecting by email would match those (and fail to export, since they carry
-#    a passphrase). This picks only the new, passphrase-less signing key.
+# 2. Find the fingerprint. Select by the Name-Real, NOT the email — the
+#    maintainer has personal keys under angel@guzmanmaeso.com, and selecting by
+#    email would match those (and fail to export, since they carry a passphrase).
+#    IMPORTANT: make sure there is exactly ONE "Whatly AppImage Signing" key
+#    first — a stale one from an earlier attempt would make the picker ambiguous
+#    and could select the wrong key. Delete any extras before continuing:
+#      gpg --list-secret-keys 'Whatly AppImage Signing'   # should show one key
+#      gpg --batch --yes --delete-secret-keys <FPR-of-stale> ; gpg --batch --yes --delete-keys <FPR-of-stale>
 KEYFPR=$(gpg --list-secret-keys --with-colons 'Whatly AppImage Signing' \
   | awk -F: '/^fpr:/{print $10; exit}')
-echo "signing key: $KEYFPR"
+echo "signing key: $KEYFPR"   # sanity-check the UID is the right address:
+gpg --list-keys "$KEYFPR" | grep -E 'Whatly AppImage Signing'
 
 # 3. Export the PRIVATE key by fingerprint (this is the CI secret's value).
 gpg --armor --export-secret-keys "$KEYFPR" > whatly-appimage-private.asc
