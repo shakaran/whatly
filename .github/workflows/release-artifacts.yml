@@ -335,8 +335,38 @@ jobs:
             else echo "::error::NSS module $lib not found on the runner"; exit 1; fi
           done
 
-      - name: Package AppImage
+      # Import the GPG signing key, if one is configured, so appimagetool can sign
+      # the image (issue #85). Entirely optional: with no APPIMAGE_GPG_PRIVATE_KEY
+      # secret the build produces an unsigned AppImage exactly as before, so the
+      # release never breaks for want of a key. The key should be passphrase-less
+      # (a CI signing key) — appimagetool drives gpg itself and cannot prompt.
+      - name: Import AppImage signing key (optional)
+        id: signkey
+        env:
+          APPIMAGE_GPG_PRIVATE_KEY: ${{ secrets.APPIMAGE_GPG_PRIVATE_KEY }}
         run: |
+          if [ -z "$APPIMAGE_GPG_PRIVATE_KEY" ]; then
+            echo "sign=0" >> "$GITHUB_OUTPUT"
+            echo "No APPIMAGE_GPG_PRIVATE_KEY secret set — building an unsigned AppImage."
+            exit 0
+          fi
+          printf '%s' "$APPIMAGE_GPG_PRIVATE_KEY" | gpg --batch --import
+          keyid=$(gpg --list-secret-keys --with-colons | awk -F: '/^fpr:/{print $10; exit}')
+          if [ -z "$keyid" ]; then
+            echo "::error::APPIMAGE_GPG_PRIVATE_KEY set but no key imported"; exit 1
+          fi
+          echo "sign=1" >> "$GITHUB_OUTPUT"
+          echo "keyid=$keyid" >> "$GITHUB_OUTPUT"
+          echo "AppImage signing key imported: $keyid"
+
+      - name: Package AppImage
+        env:
+          SIGN: ${{ steps.signkey.outputs.sign }}
+          SIGN_KEY: ${{ steps.signkey.outputs.keyid }}
+        run: |
+          # appimagetool (invoked by linuxdeploy's --output appimage) embeds a
+          # detached GPG signature when SIGN=1; SIGN_KEY picks the key. Both are
+          # empty/0 when no signing key is configured, so it stays unsigned then.
           base=https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous
           qtbase=https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous
           wget -q --tries=5 --retry-connrefused --waitretry=10 --retry-on-http-error=429,500,502,503,504 \
@@ -375,6 +405,22 @@ jobs:
           gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 \
             || gh release create "$tag" --repo "$GITHUB_REPOSITORY" --title "$tag" --generate-notes || true
           gh release upload "$tag" Whatly-*-x86_64.AppImage Whatly-*-x86_64.AppImage.zsync --clobber --repo "$GITHUB_REPOSITORY"
+
+      # Publish the public half of the signing key alongside the image, so the
+      # signature it now carries can be verified (issue #85). Only when signing
+      # actually ran. The same key is committed to the repo (dist/linux) as the
+      # canonical copy; this asset is a convenience for verifying a given release.
+      - name: Publish AppImage signing public key
+        if: steps.signkey.outputs.sign == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="${{ github.event.inputs.tag || github.ref_name }}"
+          gpg --armor --export "${{ steps.signkey.outputs.keyid }}" \
+            > whatly-appimage-pubkey.asc
+          gh release upload "$tag" whatly-appimage-pubkey.asc --clobber \
+            --repo "$GITHUB_REPOSITORY"
+          echo "Published whatly-appimage-pubkey.asc (key ${{ steps.signkey.outputs.keyid }})"
 
   # ── .deb and .rpm (Qt bundled under /opt/whatly, built with fpm) ─────────────
   # The app needs Qt 6.10, which stable distros do not ship, so — like the

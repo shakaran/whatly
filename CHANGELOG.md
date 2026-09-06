@@ -1,3 +1,7 @@
+## Unreleased
+
+- **The release pipeline can sign the AppImage (#85).** Groundwork for verifying the self-update: when an `APPIMAGE_GPG_PRIVATE_KEY` secret is configured, the release now builds a GPG-signed AppImage (`appimagetool` with `SIGN=1`) and publishes the public key as `whatly-appimage-pubkey.asc` alongside it. It is entirely optional — with no key set the image is built unsigned exactly as before, so nothing breaks in the meantime. The key setup is documented in `packaging/appimage/SIGNING.md`. In-app verification of the signature before restarting into an update is the remaining step, and wants a real signed release to develop against.
+
 ## 7.4.0 (2026-09-06)
 
 - **Whatly recovers on its own when WhatsApp Web's loader collapses (#43).** WhatsApp Web sometimes fails to assemble its JavaScript bundle — its module loader reports unresolved dependencies (`cr:NNNN is not defined`) and the page never finishes loading, so no login method works. It is usually a transient flaky network path to WhatsApp's CDN (a captured session shows every chunk arriving fine over HTTP/2 when it works), and reloading fixes it. Whatly now does that automatically: on detecting the collapse it reloads, bypassing the cache in case a partial bundle was stored, up to twice per incident before falling back to the existing explanatory notice. The reloads are bounded and reset only when a fresh, unrelated failure occurs, so a persistent problem can't turn into a reload loop.
