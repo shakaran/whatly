@@ -553,6 +553,25 @@ int main(int argc, char *argv[]) {
   qputenv("QT_FORCE_STDERR_LOGGING", "1");
 #endif
 
+  // The machine name is lowercase — it is the leaf of every QStandardPaths
+  // location (~/.local/share/shakaran/whatly, ~/.config/shakaran/whatly.conf)
+  // and of the settings file. The human-facing name, shown in window titles and
+  // the About box, is set separately so those read "Whatly", not "whatly".
+  //
+  // These must come before the FIRST read of any setting. SettingsManager is a
+  // function-local static that takes the application and organization names once,
+  // when it is constructed, and setChromiumFlags() below reads a setting (the
+  // custom-frame flag). Named after that first read, the singleton spends the
+  // whole run pointing at an unnamed store: every read returns its default —
+  // light theme, no accounts, follow-system-theme off — and every write is
+  // discarded, so the app looks like a first run on every launch.
+  QApplication::setApplicationName(kAppName);
+  QApplication::setApplicationDisplayName(kAppDisplayName);
+  QApplication::setDesktopFileName(kAppId);
+  QApplication::setOrganizationDomain(kOrgDomain);
+  QApplication::setOrganizationName(kOrgName);
+  QApplication::setApplicationVersion(VERSIONSTR);
+
   // Detect a previous launch that crashed before WhatsApp Web loaded, so the
   // Chromium flags built next can escalate to safer rendering (issue #3).
   Performance::evaluateStartup();
@@ -591,16 +610,6 @@ int main(int argc, char *argv[]) {
   }
 #endif
   instance.setWindowIcon(appWindowIcon());
-  // The machine name is lowercase — it is the leaf of every QStandardPaths
-  // location (~/.local/share/shakaran/whatly, ~/.config/shakaran/whatly.conf)
-  // and of the settings file. The human-facing name, shown in window titles and
-  // the About box, is set separately so those read "Whatly", not "whatly".
-  QApplication::setApplicationName(kAppName);
-  QApplication::setApplicationDisplayName(kAppDisplayName);
-  QApplication::setDesktopFileName(kAppId);
-  QApplication::setOrganizationDomain(kOrgDomain);
-  QApplication::setOrganizationName(kOrgName);
-  QApplication::setApplicationVersion(VERSIONSTR);
 
   // Now that the app/org names (and thus the data path) are set, persist
   // Chromium's own fd-2 output to a file for bug reports. Must be before Qt

@@ -1,5 +1,7 @@
 ## Unreleased
 
+- **Settings are no longer lost on every launch.** The Chromium flags are assembled before `main()` sets the application and organization names, and assembling them now reads a setting — the custom-frame check added in 7.6.0 for the frameless-window scroll fix (#104). That first read is what constructs `SettingsManager`, a function-local static that takes both names once, when it is built, so the whole run pointed at an unnamed store: every read returned its default (light window theme, "follow system theme" off, so the system was never consulted either, and no saved accounts) and every write was discarded. The names are now set before anything reads a setting. Nothing was ever written to the wrong place, so an existing configuration comes back untouched.
+
 ## 7.6.0 (2026-09-08)
 
 - **"Link with phone number" can be made to work again (#43).** WhatsApp's phone-number linking refuses to issue a pairing code unless the browser it is told about is one it recognises, and the "Identify as Whatly in linked devices" feature reported an unknown "Whatly", which silently broke that flow while QR linking kept working. The browser name is now a setting: leave it empty for the clean "Whatly" label as before, or set a recognised browser such as Chrome to make phone-number linking work (the browser prefix then reappears in the label). Thanks to Nigel1992 for the precise A/B diagnosis.
