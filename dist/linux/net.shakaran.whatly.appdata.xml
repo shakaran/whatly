@@ -108,6 +108,14 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.6.1" date="2026-09-08">
+      <description>
+        <ul>
+          <li>Settings are no longer lost on every launch, a 7.6.0 regression: the application and organization names are now set before the first setting is read, so the settings store is scoped correctly again</li>
+          <li>The same startup-ordering fix is expected to resolve the 100% CPU hang on restart (#98)</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.6.0" date="2026-09-08">
       <description>
         <ul>

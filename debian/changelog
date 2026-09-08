@@ -1,3 +1,17 @@
+whatly (7.6.1) unstable; urgency=medium
+
+  * Settings are no longer lost on every launch, a 7.6.0 regression. Assembling
+    the Chromium flags began reading a setting (the custom-frame check from
+    #104), which constructed the settings singleton before main() had set the
+    application and organization names, so the whole run pointed at an unnamed
+    store: every read returned its default and every write was discarded. The
+    names are now set before anything reads a setting. Nothing was written to the
+    wrong place, so an existing configuration comes back untouched.
+  * The same fix is expected to resolve the 100% CPU hang on restart (#98),
+    whose profile pointed at the settings and single-instance startup path.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Tue, 08 Sep 2026 18:00:00 +0200
+
 whatly (7.6.0) unstable; urgency=medium
 
   * The AppImage self-update now verifies the new image's GPG signature against
