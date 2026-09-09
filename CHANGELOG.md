@@ -1,5 +1,7 @@
 ## Unreleased
 
+- **Sharper taskbar icon on portable and HiDPI setups (#112).** The installed icon set gains a 512x512 size, the AppImage now embeds the 512px icon rather than the 256px one, and the window icon carries the scalable SVG so it stays crisp at any size the compositor asks for (Wayland's `xdg-toplevel-icon` on Qt 6.9+, HiDPI panels) even when the icon theme has no `net.shakaran.whatly` entry to prefer. That last case, a portable AppImage that was never integrated into the desktop, is the one that stayed blurry; an installed package (deb/rpm/Flatpak) already had the theme's scalable icon.
+
 ## 7.6.1 (2026-09-08)
 
 - **Settings are no longer lost on every launch.** The Chromium flags are assembled before `main()` sets the application and organization names, and assembling them now reads a setting — the custom-frame check added in 7.6.0 for the frameless-window scroll fix (#104). That first read is what constructs `SettingsManager`, a function-local static that takes both names once, when it is built, so the whole run pointed at an unnamed store: every read returned its default (light window theme, "follow system theme" off, so the system was never consulted either, and no saved accounts) and every write was discarded. The names are now set before anything reads a setting. Nothing was ever written to the wrong place, so an existing configuration comes back untouched.

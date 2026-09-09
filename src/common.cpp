@@ -45,6 +45,12 @@ QIcon themeIcon(const QString& name, const QString& fallback) {
 // where nothing is installed in a theme.
 QIcon appWindowIcon() {
   QIcon fallback;
+  // The scalable SVG so the window icon stays crisp at any size the compositor
+  // asks for (Wayland's xdg-toplevel-icon in Qt 6.9+, HiDPI panels), even when
+  // the icon theme has no net.shakaran.whatly entry to prefer — a portable
+  // AppImage that was never installed is the case that stays blurry otherwise
+  // (#112). The exact-size rasters below are used where they match.
+  fallback.addFile(QStringLiteral(":/icons/app/icon.svg"));
   for (const char *s : {"16", "32", "48", "64", "128", "256", "512"})
     fallback.addFile(
         QStringLiteral(":/icons/app/icon-%1.png").arg(QLatin1String(s)));

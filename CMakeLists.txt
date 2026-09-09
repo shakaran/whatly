@@ -556,6 +556,9 @@ install(FILES dist/linux/hicolor/128x128/apps/net.shakaran.whatly.png
 install(FILES dist/linux/hicolor/256x256/apps/net.shakaran.whatly.png
     DESTINATION ${DATADIR}/icons/hicolor/256x256/apps
 )
+install(FILES dist/linux/hicolor/512x512/apps/net.shakaran.whatly.png
+    DESTINATION ${DATADIR}/icons/hicolor/512x512/apps
+)
 install(FILES dist/linux/hicolor/scalable/apps/net.shakaran.whatly.svg
     DESTINATION ${DATADIR}/icons/hicolor/scalable/apps
 )

@@ -383,7 +383,7 @@ jobs:
           # 5xx's and exited 4 mid-release. Three tries beats a failed release.
           n=0; until ./linuxdeploy-x86_64.AppImage --appdir AppDir \
             --desktop-file AppDir/usr/share/applications/net.shakaran.whatly.desktop \
-            --icon-file AppDir/usr/share/icons/hicolor/256x256/apps/net.shakaran.whatly.png \
+            --icon-file AppDir/usr/share/icons/hicolor/512x512/apps/net.shakaran.whatly.png \
             --plugin qt --output appimage; do
             n=$((n+1)); [ $n -ge 3 ] && { echo "::error::linuxdeploy failed after $n attempts"; exit 1; }
             echo "linuxdeploy attempt $n failed; retrying in 15s"; sleep 15
@@ -538,7 +538,7 @@ jobs:
           # release, which occasionally 5xx's mid-release.
           n=0; until ./linuxdeploy-x86_64.AppImage --appdir AppDir \
             --desktop-file AppDir/usr/share/applications/net.shakaran.whatly.desktop \
-            --icon-file AppDir/usr/share/icons/hicolor/256x256/apps/net.shakaran.whatly.png \
+            --icon-file AppDir/usr/share/icons/hicolor/512x512/apps/net.shakaran.whatly.png \
             --plugin qt; do
             n=$((n+1)); [ $n -ge 3 ] && { echo "::error::linuxdeploy failed after $n attempts"; exit 1; }
             echo "linuxdeploy attempt $n failed; retrying in 15s"; sleep 15

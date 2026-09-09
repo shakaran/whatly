@@ -110,6 +110,7 @@
         <file>icons/app/icon-32.png</file>
         <file>icons/app/icon-16.png</file>
         <file>icons/app/icon-512.png</file>
+        <file>icons/app/icon.svg</file>
         <file>icons/app/resize.sh</file>
         <file>icons/anticlockwise-line.png</file>
         <file>icons/arrow-go-back-line.png</file>
