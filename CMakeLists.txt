@@ -414,6 +414,7 @@ if (Qt${QT_VERSION_MAJOR}LinguistTools_FOUND)
             src/i18n/nl_NL.ts
             src/i18n/pl_PL.ts
             src/i18n/pt_BR.ts
+            src/i18n/pt_PT.ts
             src/i18n/ru_RU.ts
             src/i18n/tr_TR.ts
             src/i18n/uk_UA.ts
