@@ -575,7 +575,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="426"/>
+        <location filename="../mainwindow_tray.cpp" line="434"/>
         <source>Recent unread</source>
         <translation>غير المقروءة الأخيرة</translation>
     </message>
@@ -639,7 +639,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>يجري جمع الرسائل… يتم تصفح المحادثة.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1529"/>
+        <location filename="../mainwindow.cpp" line="1555"/>
         <location filename="../mainwindow_webengine.cpp" line="1576"/>
         <source>Cancel</source>
         <translation type="unfinished">إلغاء</translation>
@@ -742,13 +742,13 @@ Do you wish to override the security check and continue ?   </source>
         <translation>ملخّص غير المقروء</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1592"/>
+        <location filename="../mainwindow_accounts.cpp" line="1593"/>
         <location filename="../mainwindow_webengine.cpp" line="1652"/>
         <source>chat</source>
         <translation>محادثة</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1592"/>
+        <location filename="../mainwindow_accounts.cpp" line="1593"/>
         <source>chats</source>
         <translation>محادثات</translation>
     </message>
@@ -960,95 +960,107 @@ Webengine is not initialized.</source>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1229"/>
-        <location filename="../mainwindow.cpp" line="1944"/>
+        <location filename="../mainwindow.cpp" line="1970"/>
         <location filename="../mainwindow_webengine.cpp" line="1731"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly مقفل. ألغِ القفل لإرسال الرسائل.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1529"/>
+        <location filename="../mainwindow.cpp" line="1527"/>
+        <source>Whatly is up to date (version %1).</source>
+        <translation>Whatly محدَّث (الإصدار %1).</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1535"/>
+        <source>Could not check for updates: %1</source>
+        <translation>تعذّر التحقق من التحديثات: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1555"/>
         <source>Updating Whatly…</source>
         <translation>جارٍ تحديث Whatly…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1531"/>
-        <location filename="../mainwindow.cpp" line="1572"/>
-        <location filename="../mainwindow.cpp" line="1599"/>
-        <location filename="../mainwindow.cpp" line="1623"/>
-        <location filename="../mainwindow.cpp" line="1634"/>
+        <location filename="../mainwindow.cpp" line="1526"/>
+        <location filename="../mainwindow.cpp" line="1534"/>
+        <location filename="../mainwindow.cpp" line="1557"/>
+        <location filename="../mainwindow.cpp" line="1598"/>
+        <location filename="../mainwindow.cpp" line="1625"/>
+        <location filename="../mainwindow.cpp" line="1649"/>
+        <location filename="../mainwindow.cpp" line="1660"/>
         <source>Software update</source>
         <translation>تحديث البرنامج</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1573"/>
+        <location filename="../mainwindow.cpp" line="1599"/>
         <source>The update could not be completed. You can download the new version from the release page instead.</source>
         <translation>تعذّر إكمال التحديث. يمكنك بدلاً من ذلك تنزيل الإصدار الجديد من صفحة الإصدار.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1596"/>
+        <location filename="../mainwindow.cpp" line="1622"/>
         <source>The previous version has been restored.</source>
         <translation>تمت استعادة الإصدار السابق.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1600"/>
+        <location filename="../mainwindow.cpp" line="1626"/>
         <source>The downloaded update failed signature verification and was not applied.</source>
         <translation>فشل التحقق من توقيع التحديث الذي تم تنزيله ولم يتم تطبيقه.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1616"/>
+        <location filename="../mainwindow.cpp" line="1642"/>
         <source>Whatly was updated, but its signature could not be verified. Restart now to use the new version?</source>
         <translation>تم تحديث Whatly، لكن تعذّر التحقق من توقيعه. هل تريد إعادة التشغيل الآن لاستخدام الإصدار الجديد؟</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1618"/>
+        <location filename="../mainwindow.cpp" line="1644"/>
         <source>Whatly was updated. Restart now to use the new version?</source>
         <translation>تم تحديث Whatly. هل تريد إعادة التشغيل الآن لاستخدام الإصدار الجديد؟</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1635"/>
+        <location filename="../mainwindow.cpp" line="1661"/>
         <source>The update tool could not be started.</source>
         <translation>تعذّر بدء أداة التحديث.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1661"/>
+        <location filename="../mainwindow.cpp" line="1687"/>
         <source>Restart</source>
         <translation>إعادة التشغيل</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1662"/>
+        <location filename="../mainwindow.cpp" line="1688"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>تعذّر على Whatly بدء نسخة جديدة، لذلك لم يُغلق هذه النسخة. يُرجى إنهاء التطبيق ثم إعادة فتحه.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1799"/>
+        <location filename="../mainwindow.cpp" line="1825"/>
         <source>Expand the chat list</source>
         <translation>توسيع قائمة الدردشات</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1800"/>
-        <location filename="../mainwindow_tray.cpp" line="370"/>
+        <location filename="../mainwindow.cpp" line="1826"/>
+        <location filename="../mainwindow_tray.cpp" line="378"/>
         <source>Collapse the chat list</source>
         <translation>طي قائمة الدردشات</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="277"/>
-        <location filename="../mainwindow.cpp" line="1920"/>
+        <location filename="../mainwindow.cpp" line="1946"/>
         <source>Open</source>
         <translation>فتح</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1966"/>
+        <location filename="../mainwindow.cpp" line="1992"/>
         <location filename="../mainwindow_tray.cpp" line="29"/>
         <source>New Chat</source>
         <translation>محادثة جديدة</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1967"/>
+        <location filename="../mainwindow.cpp" line="1993"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>أدخل رقم WhatsApp صالحًا مع رمز الدولة (مثال: ‎+966XXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1997"/>
+        <location filename="../mainwindow.cpp" line="2023"/>
         <source>Rate Application</source>
         <translation>تقييم التطبيق</translation>
     </message>
@@ -1065,7 +1077,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="34"/>
-        <location filename="../mainwindow_tray.cpp" line="365"/>
+        <location filename="../mainwindow_tray.cpp" line="373"/>
         <source>Fullscreen</source>
         <translation>ملء الشاشة</translation>
     </message>
@@ -1106,7 +1118,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="116"/>
-        <location filename="../mainwindow_tray.cpp" line="367"/>
+        <location filename="../mainwindow_tray.cpp" line="375"/>
         <source>Reset zoom</source>
         <translation>إعادة تعيين التكبير</translation>
     </message>
@@ -1117,7 +1129,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="149"/>
-        <location filename="../mainwindow_tray.cpp" line="372"/>
+        <location filename="../mainwindow_tray.cpp" line="380"/>
         <source>Spelling: next language</source>
         <translation>التدقيق الإملائي: اللغة التالية</translation>
     </message>
@@ -1133,13 +1145,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="170"/>
-        <location filename="../mainwindow_tray.cpp" line="374"/>
+        <location filename="../mainwindow_tray.cpp" line="382"/>
         <source>Translate selection</source>
         <translation>ترجمة التحديد</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="177"/>
-        <location filename="../mainwindow_tray.cpp" line="376"/>
+        <location filename="../mainwindow_tray.cpp" line="384"/>
         <source>Translate message box</source>
         <translation>ترجمة مربع الرسالة</translation>
     </message>
@@ -1150,85 +1162,85 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="195"/>
-        <location filename="../mainwindow_tray.cpp" line="378"/>
+        <location filename="../mainwindow_tray.cpp" line="386"/>
         <source>AI: Summarise chat</source>
         <translation>الذكاء الاصطناعي: تلخيص المحادثة</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="202"/>
-        <location filename="../mainwindow_tray.cpp" line="379"/>
+        <location filename="../mainwindow_tray.cpp" line="387"/>
         <source>AI: Improve message</source>
         <translation>الذكاء الاصطناعي: تحسين الرسالة</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="209"/>
-        <location filename="../mainwindow_tray.cpp" line="380"/>
+        <location filename="../mainwindow_tray.cpp" line="388"/>
         <source>AI: Suggest a reply</source>
         <translation>الذكاء الاصطناعي: اقتراح رد</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="217"/>
-        <location filename="../mainwindow_tray.cpp" line="383"/>
+        <location filename="../mainwindow_tray.cpp" line="391"/>
         <source>AI: Make it more formal</source>
         <translation>الذكاء الاصطناعي: اجعلها أكثر رسمية</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="223"/>
-        <location filename="../mainwindow_tray.cpp" line="384"/>
+        <location filename="../mainwindow_tray.cpp" line="392"/>
         <source>AI: Make it friendlier</source>
         <translation>الذكاء الاصطناعي: اجعلها أكثر ودّية</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="229"/>
-        <location filename="../mainwindow_tray.cpp" line="385"/>
+        <location filename="../mainwindow_tray.cpp" line="393"/>
         <source>AI: Make it shorter</source>
         <translation>الذكاء الاصطناعي: اجعلها أقصر</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="235"/>
-        <location filename="../mainwindow_tray.cpp" line="382"/>
+        <location filename="../mainwindow_tray.cpp" line="390"/>
         <source>AI: Summarise unread chats</source>
         <translation>الذكاء الاصطناعي: تلخيص المحادثات غير المقروءة</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="244"/>
-        <location filename="../mainwindow_tray.cpp" line="386"/>
+        <location filename="../mainwindow_tray.cpp" line="394"/>
         <source>Do Not Disturb</source>
         <translation type="unfinished">عدم الإزعاج</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="250"/>
-        <location filename="../mainwindow_tray.cpp" line="387"/>
+        <location filename="../mainwindow_tray.cpp" line="395"/>
         <source>Do Not Disturb: 1 hour</source>
         <translation>عدم الإزعاج: ساعة واحدة</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="255"/>
-        <location filename="../mainwindow_tray.cpp" line="388"/>
+        <location filename="../mainwindow_tray.cpp" line="396"/>
         <source>Do Not Disturb: 2 hours</source>
         <translation>عدم الإزعاج: ساعتان</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="260"/>
-        <location filename="../mainwindow_tray.cpp" line="389"/>
+        <location filename="../mainwindow_tray.cpp" line="397"/>
         <source>Do Not Disturb: until morning</source>
         <translation>عدم الإزعاج: حتى الصباح</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="269"/>
-        <location filename="../mainwindow_tray.cpp" line="390"/>
+        <location filename="../mainwindow_tray.cpp" line="398"/>
         <source>Remind me to reply: in 1 hour</source>
         <translation>ذكّرني بالرد: بعد ساعة</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="276"/>
-        <location filename="../mainwindow_tray.cpp" line="391"/>
+        <location filename="../mainwindow_tray.cpp" line="399"/>
         <source>Remind me to reply: in 3 hours</source>
         <translation>ذكّرني بالرد: بعد 3 ساعات</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="283"/>
-        <location filename="../mainwindow_tray.cpp" line="393"/>
+        <location filename="../mainwindow_tray.cpp" line="401"/>
         <source>Remind me to reply: tomorrow morning</source>
         <translation>ذكّرني بالرد: صباح الغد</translation>
     </message>
@@ -1244,13 +1256,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="308"/>
-        <location filename="../mainwindow_tray.cpp" line="396"/>
+        <location filename="../mainwindow_tray.cpp" line="404"/>
         <source>Grid view</source>
         <translation>عرض شبكي</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="330"/>
-        <location filename="../mainwindow_tray.cpp" line="397"/>
+        <location filename="../mainwindow_tray.cpp" line="405"/>
         <source>Command palette</source>
         <translation>لوحة الأوامر</translation>
     </message>
@@ -1260,42 +1272,47 @@ Open Settings now?</source>
         <translation>حول (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="348"/>
+        <location filename="../mainwindow_tray.cpp" line="351"/>
+        <source>Check for updates</source>
+        <translation>التحقق من التحديثات</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="356"/>
         <source>&amp;Quit</source>
         <translation>خروج (&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="361"/>
+        <location filename="../mainwindow_tray.cpp" line="369"/>
         <source>Reload</source>
         <translation>إعادة التحميل</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="362"/>
+        <location filename="../mainwindow_tray.cpp" line="370"/>
         <source>Minimise to tray</source>
         <translation>التصغير إلى شريط النظام</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="363"/>
+        <location filename="../mainwindow_tray.cpp" line="371"/>
         <source>Lock</source>
         <translation>قفل</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="364"/>
+        <location filename="../mainwindow_tray.cpp" line="372"/>
         <source>Mute audio</source>
         <translation>كتم الصوت</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="366"/>
+        <location filename="../mainwindow_tray.cpp" line="374"/>
         <source>New chat / open URL</source>
         <translation>محادثة جديدة / فتح URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="371"/>
+        <location filename="../mainwindow_tray.cpp" line="379"/>
         <source>Find in chats</source>
         <translation>بحث في المحادثات</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="377"/>
+        <location filename="../mainwindow_tray.cpp" line="385"/>
         <location filename="../mainwindow_webengine.cpp" line="1560"/>
         <location filename="../mainwindow_webengine.cpp" line="1564"/>
         <location filename="../mainwindow_webengine.cpp" line="1577"/>
@@ -1307,119 +1324,119 @@ Open Settings now?</source>
         <translation>تصدير المحادثة</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="394"/>
+        <location filename="../mainwindow_tray.cpp" line="402"/>
         <location filename="../mainwindow_webengine.cpp" line="329"/>
         <source>Settings</source>
         <translation>الإعدادات</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="395"/>
+        <location filename="../mainwindow_tray.cpp" line="403"/>
         <source>Toggle theme</source>
         <translation>تبديل السمة</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="398"/>
+        <location filename="../mainwindow_tray.cpp" line="406"/>
         <source>Quit</source>
         <translation>خروج</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="421"/>
+        <location filename="../mainwindow_tray.cpp" line="429"/>
         <source>Windows</source>
         <translation>النوافذ</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="443"/>
+        <location filename="../mainwindow_tray.cpp" line="451"/>
         <source>Spelling</source>
         <translation>التدقيق الإملائي</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="601"/>
+        <location filename="../mainwindow_tray.cpp" line="610"/>
         <source>hidden</source>
         <translation>مخفية</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="603"/>
+        <location filename="../mainwindow_tray.cpp" line="612"/>
         <source>minimised</source>
         <translation>مصغّرة</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="640"/>
+        <location filename="../mainwindow_tray.cpp" line="649"/>
         <source>All of them</source>
         <translation>كلّها</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="655"/>
+        <location filename="../mainwindow_tray.cpp" line="664"/>
         <source>No spell-check language is installed.</source>
         <translation>لا توجد لغة تدقيق إملائي مثبَّتة.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="656"/>
+        <location filename="../mainwindow_tray.cpp" line="665"/>
         <source>Only one spell-check language is chosen. Pick more in Settings to switch between them.</source>
         <translation>لم تُختَر سوى لغة تدقيق واحدة. اختر المزيد من الإعدادات للتبديل بينها.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="679"/>
+        <location filename="../mainwindow_tray.cpp" line="688"/>
         <source>Spelling: every chosen language</source>
         <translation>التدقيق الإملائي: كل اللغات المختارة</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="680"/>
+        <location filename="../mainwindow_tray.cpp" line="689"/>
         <source>Spelling: %1</source>
         <translation>التدقيق الإملائي: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="348"/>
-        <location filename="../mainwindow_accounts.cpp" line="1818"/>
+        <location filename="../mainwindow_accounts.cpp" line="1819"/>
         <source>Rename…</source>
         <translation>إعادة تسمية…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="349"/>
-        <location filename="../mainwindow_accounts.cpp" line="1819"/>
+        <location filename="../mainwindow_accounts.cpp" line="1820"/>
         <source>Open in own window</source>
         <translation>فتح في نافذة خاصة</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="353"/>
-        <location filename="../mainwindow_accounts.cpp" line="1822"/>
+        <location filename="../mainwindow_accounts.cpp" line="1823"/>
         <source>Remove account</source>
         <translation>إزالة الحساب</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="439"/>
+        <location filename="../mainwindow_accounts.cpp" line="440"/>
         <source>Switch to account: %1</source>
         <translation>التبديل إلى الحساب: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="442"/>
+        <location filename="../mainwindow_accounts.cpp" line="443"/>
         <location filename="../mainwindow_tray.cpp" line="321"/>
         <source>Add account…</source>
         <translation>إضافة حساب…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="443"/>
+        <location filename="../mainwindow_accounts.cpp" line="444"/>
         <source>Quick message…</source>
         <translation>رسالة سريعة…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="448"/>
+        <location filename="../mainwindow_accounts.cpp" line="449"/>
         <source>Insert: %1</source>
         <translation>إدراج: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="756"/>
+        <location filename="../mainwindow_accounts.cpp" line="757"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 غير مقروءة</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1562"/>
-        <location filename="../mainwindow_accounts.cpp" line="2221"/>
+        <location filename="../mainwindow_accounts.cpp" line="1563"/>
+        <location filename="../mainwindow_accounts.cpp" line="2222"/>
         <source>Add another account</source>
         <translation>إضافة حساب آخر</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1591"/>
-        <location filename="../mainwindow_accounts.cpp" line="1618"/>
+        <location filename="../mainwindow_accounts.cpp" line="1592"/>
+        <location filename="../mainwindow_accounts.cpp" line="1619"/>
         <source>Restore</source>
         <translation>استعادة</translation>
     </message>
@@ -1432,39 +1449,39 @@ Open Settings now?</source>
         <translation type="vanished">رسالة</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1664"/>
+        <location filename="../mainwindow_accounts.cpp" line="1665"/>
         <source>Add account</source>
         <translation>إضافة حساب</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1665"/>
+        <location filename="../mainwindow_accounts.cpp" line="1666"/>
         <source>Name for the new account:</source>
         <translation>اسم الحساب الجديد:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1666"/>
-        <location filename="../mainwindow_accounts.cpp" line="2559"/>
-        <location filename="../mainwindow_accounts.cpp" line="2564"/>
+        <location filename="../mainwindow_accounts.cpp" line="1667"/>
+        <location filename="../mainwindow_accounts.cpp" line="2560"/>
+        <location filename="../mainwindow_accounts.cpp" line="2565"/>
         <source>Account %1</source>
         <translation>الحساب %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1695"/>
+        <location filename="../mainwindow_accounts.cpp" line="1696"/>
         <source>Rename account</source>
         <translation>إعادة تسمية الحساب</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1695"/>
+        <location filename="../mainwindow_accounts.cpp" line="1696"/>
         <source>Account name:</source>
         <translation>اسم الحساب:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2240"/>
+        <location filename="../mainwindow_accounts.cpp" line="2241"/>
         <source>Tip: give an account its own window</source>
         <translation>نصيحة: امنح الحساب نافذته الخاصة</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2241"/>
+        <location filename="../mainwindow_accounts.cpp" line="2242"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1473,8 +1490,8 @@ You can pull any account out into its own window: right-click its tab and choose
 يمكنك سحب أي حساب إلى نافذته الخاصة: انقر بزر الفأرة الأيمن على علامة التبويب واختر «فتح في نافذة خاصة». أغلق تلك النافذة لإعادة إرساء الحساب كعلامة تبويب.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2553"/>
-        <location filename="../mainwindow_accounts.cpp" line="2557"/>
+        <location filename="../mainwindow_accounts.cpp" line="2554"/>
+        <location filename="../mainwindow_accounts.cpp" line="2558"/>
         <source>Account 1</source>
         <translation>الحساب 1</translation>
     </message>
@@ -1607,57 +1624,57 @@ You can pull any account out into its own window: right-click its tab and choose
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../common.cpp" line="74"/>
+        <location filename="../common.cpp" line="80"/>
         <source>Nothing unread</source>
         <translation>لا شيء غير مقروء</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="84"/>
+        <location filename="../common.cpp" line="90"/>
         <source>1 unread message in 1 chat</source>
         <translation>رسالة واحدة غير مقروءة في محادثة واحدة</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="86"/>
+        <location filename="../common.cpp" line="92"/>
         <source>1 unread message in %1 chats</source>
         <translation>رسالة واحدة غير مقروءة في %1 محادثة</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="88"/>
+        <location filename="../common.cpp" line="94"/>
         <source>%1 unread messages in 1 chat</source>
         <translation>%1 رسالة غير مقروءة في محادثة واحدة</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="90"/>
+        <location filename="../common.cpp" line="96"/>
         <source>%1 unread messages in %2 chats</source>
         <translation>%1 رسالة غير مقروءة في %2 محادثة</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="100"/>
+        <location filename="../common.cpp" line="106"/>
         <source>%1 in 1 muted chat</source>
         <translation>%1 في محادثة واحدة مكتومة</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="101"/>
+        <location filename="../common.cpp" line="107"/>
         <source>%1 in %2 muted chats</source>
         <translation>%1 في %2 محادثة مكتومة</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="107"/>
+        <location filename="../common.cpp" line="113"/>
         <source>%1 in 1 chat that is not muted</source>
         <translation>%1 في محادثة واحدة غير مكتومة</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="109"/>
+        <location filename="../common.cpp" line="115"/>
         <source>%1 in %2 chats that are not muted</source>
         <translation>%1 في %2 محادثة غير مكتومة</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="119"/>
+        <location filename="../common.cpp" line="125"/>
         <source>WhatsApp Web %1</source>
         <translation>WhatsApp Web %1</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="121"/>
+        <location filename="../common.cpp" line="127"/>
         <source>Build token: %1</source>
         <translation>رمز البناء: %1</translation>
     </message>
@@ -1701,77 +1718,77 @@ You can pull any account out into its own window: right-click its tab and choose
         <translation>أعد التشغيل بدون --dry-run لتنفيذ النسخ.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="671"/>
+        <location filename="../main.cpp" line="680"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>عميل WhatsApp Web غني بالمزايا ومبني على Qt WebEngine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="678"/>
+        <location filename="../main.cpp" line="687"/>
         <source>Displays help on commandline options</source>
         <translation>يعرض المساعدة الخاصة بخيارات سطر الأوامر</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="683"/>
+        <location filename="../main.cpp" line="692"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>يفتح الإعدادات في نسخة قيد التشغيل من </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="688"/>
+        <location filename="../main.cpp" line="697"/>
         <source>Locks a running instance of </source>
         <translation>يقفل نسخة قيد التشغيل من </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="694"/>
+        <location filename="../main.cpp" line="703"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>يفتح نافذة «حول» في نسخة قيد التشغيل من </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="699"/>
+        <location filename="../main.cpp" line="708"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>يفتح مربع حوار الرسائل المجدولة في نسخة قيد التشغيل من </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="706"/>
+        <location filename="../main.cpp" line="715"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>يبدّل بين السمة الفاتحة والداكنة في نسخة قيد التشغيل من </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="713"/>
+        <location filename="../main.cpp" line="722"/>
         <source>Reload the app in a running instance of </source>
         <translation>يعيد تحميل التطبيق في نسخة قيد التشغيل من </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="719"/>
+        <location filename="../main.cpp" line="728"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>يفتح نافذة محادثة جديدة في نسخة قيد التشغيل من </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="732"/>
+        <location filename="../main.cpp" line="741"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;التشغيل كحساب منفصل بجلسته وإعداداته الخاصة، في نافذته الخاصة&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="749"/>
+        <location filename="../main.cpp" line="758"/>
         <source>Show main window of running instance of </source>
         <translation>يعرض النافذة الرئيسية للنسخة قيد التشغيل من </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="756"/>
+        <location filename="../main.cpp" line="765"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>انسخ الإعدادات والجلسة المسجّلة من تثبيت سابق (مثل إصدار &quot;whatsie&quot; القديم) إلى هذا، ثم اخرج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="763"/>
+        <location filename="../main.cpp" line="772"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>مع --migrate-from، أبلغ فقط عمّا سيتم نسخه</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="781"/>
+        <location filename="../main.cpp" line="790"/>
         <source>Print the current unread message count and exit</source>
         <translation>طباعة عدد الرسائل غير المقروءة الحالي ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1315"/>
+        <location filename="../main.cpp" line="1324"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>لم يُضبط قفل التطبيق.
@@ -1938,172 +1955,172 @@ Please setup the password in the Settings first.</source>
         <translation>إظهار قائمة الدردشات</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1413"/>
+        <location filename="../main.cpp" line="1422"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>تمت الاستعادة من تعطل عند بدء التشغيل عبر التبديل إلى العرض الآمن. يمكنك ضبط ذلك من الإعدادات → الأداء.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="787"/>
+        <location filename="../main.cpp" line="796"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>يرسل رسالة عبر النسخة قيد التشغيل ثم يخرج (يتطلب --to و --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="791"/>
+        <location filename="../main.cpp" line="800"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>المستلم لـ --send: رقم هاتف (دولي)، أو معرّف مجموعة، أو اسم جهة اتصال</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="796"/>
+        <location filename="../main.cpp" line="805"/>
         <source>Message text for --send</source>
         <translation>نص الرسالة لـ --send</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="808"/>
+        <location filename="../main.cpp" line="817"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>كيف يرسل --send: &apos;web&apos; (جلسة واتساب ويب قيد التشغيل) أو &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="799"/>
+        <location filename="../main.cpp" line="808"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>يرفق ملفًا مع --send (يصبح --message، إن وُجد، تعليقًا)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="742"/>
+        <location filename="../main.cpp" line="751"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>داخلي: ينتظر خروج العملية التي تحمل هذا المعرّف قبل البدء، يُستخدم بواسطة &quot;إعادة التشغيل الآن&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="804"/>
+        <location filename="../main.cpp" line="813"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>تعليق لمرفق --file (اسم بديل لـ --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="814"/>
+        <location filename="../main.cpp" line="823"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>استخدم القالب المحفوظ بهذا الاسم كرسالة لـ --send (املأ {{الحقول}} فيه باستخدام --var)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="819"/>
+        <location filename="../main.cpp" line="828"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>املأ حقلًا في القالب: key=value (قابل للتكرار)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="823"/>
+        <location filename="../main.cpp" line="832"/>
         <source>List the saved message templates and exit</source>
         <translation>اعرض قوالب الرسائل المحفوظة ثم اخرج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="826"/>
+        <location filename="../main.cpp" line="835"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>احفظ (أو استبدل) قالب رسالة ثم اخرج: name=body</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="830"/>
+        <location filename="../main.cpp" line="839"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>احذف قالب الرسالة المحفوظ بهذا الاسم ثم اخرج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="835"/>
+        <location filename="../main.cpp" line="844"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>تفعيل الرد التلقائي على الرسائل الواردة ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="838"/>
+        <location filename="../main.cpp" line="847"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>إيقاف الرد التلقائي ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="841"/>
+        <location filename="../main.cpp" line="850"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>اعرض قواعد الرد التلقائي النشطة (مع حالتها) ثم اخرج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="844"/>
+        <location filename="../main.cpp" line="853"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>استخدم ملف JSON هذا كمصدر لقواعد الرد التلقائي ثم اخرج (فارغ للإزالة)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="850"/>
+        <location filename="../main.cpp" line="859"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>تعيين معرّف رقم هاتف Cloud API ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="854"/>
+        <location filename="../main.cpp" line="863"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>تعيين رمز الوصول لـ Cloud API ثم الخروج (يُخزَّن في إعدادات الحساب)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="859"/>
+        <location filename="../main.cpp" line="868"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>تعيين إصدار graph لـ Cloud API (مثل v21.0) ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="863"/>
+        <location filename="../main.cpp" line="872"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>إظهار ما إذا كان Cloud API مُهيّأً ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="866"/>
+        <location filename="../main.cpp" line="875"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>لـ --send --backend cloud: إرسال هذا القالب المعتمد من Meta</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="870"/>
+        <location filename="../main.cpp" line="879"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>رمز اللغة لـ --cloud-template (مثل es، en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="874"/>
+        <location filename="../main.cpp" line="883"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>معامل نص موضعي لـ --cloud-template (قابل للتكرار)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="879"/>
+        <location filename="../main.cpp" line="888"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>تفعيل واجهة HTTP المحلية ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="882"/>
+        <location filename="../main.cpp" line="891"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>تعطيل واجهة HTTP المحلية ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="885"/>
+        <location filename="../main.cpp" line="894"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>تعيين منفذ واجهة HTTP المحلية (الافتراضي 8590) ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="889"/>
+        <location filename="../main.cpp" line="898"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>تعيين رمز Bearer لواجهة HTTP المحلية ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="893"/>
+        <location filename="../main.cpp" line="902"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>عرض إعدادات واجهة HTTP المحلية ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="897"/>
+        <location filename="../main.cpp" line="906"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>تفعيل استقبال webhooks الخاصة بـ Cloud API ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="900"/>
+        <location filename="../main.cpp" line="909"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>تعطيل استقبال webhooks الخاصة بـ Cloud API ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="903"/>
+        <location filename="../main.cpp" line="912"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>تعيين رمز التحقق لـ webhook الخاص بـ Cloud API ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="907"/>
+        <location filename="../main.cpp" line="916"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>تعيين سر تطبيق Meta للتحقق من توقيع webhook ثم الخروج</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="911"/>
+        <location filename="../main.cpp" line="920"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>عرض إعدادات webhook الخاص بـ Cloud API ثم الخروج</translation>
     </message>
@@ -3001,7 +3018,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="881"/>
         <source>Leave empty to show just &quot;Whatly&quot;. Set a browser WhatsApp knows, such as Chrome, if linking by phone number does not work.</source>
-        <translation>اتركه فارغًا لعرض "Whatly" فقط. أدخل متصفحًا يعرفه WhatsApp، مثل Chrome، إذا كان الربط عبر رقم الهاتف لا يعمل.</translation>
+        <translation>اتركه فارغًا لعرض &quot;Whatly&quot; فقط. أدخل متصفحًا يعرفه WhatsApp، مثل Chrome، إذا كان الربط عبر رقم الهاتف لا يعمل.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="897"/>

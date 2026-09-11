@@ -575,7 +575,7 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="426"/>
+        <location filename="../mainwindow_tray.cpp" line="434"/>
         <source>Recent unread</source>
         <translation>Недавние непрочитанные</translation>
     </message>
@@ -639,7 +639,7 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Сбор сообщений… прокрутка разговора.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1529"/>
+        <location filename="../mainwindow.cpp" line="1555"/>
         <location filename="../mainwindow_webengine.cpp" line="1576"/>
         <source>Cancel</source>
         <translation type="unfinished">Отмена</translation>
@@ -742,13 +742,13 @@ Do you wish to override the security check and continue ?   </source>
         <translation>Сводка непрочитанного</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1592"/>
+        <location filename="../mainwindow_accounts.cpp" line="1593"/>
         <location filename="../mainwindow_webengine.cpp" line="1652"/>
         <source>chat</source>
         <translation>чат</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1592"/>
+        <location filename="../mainwindow_accounts.cpp" line="1593"/>
         <source>chats</source>
         <translation>чаты</translation>
     </message>
@@ -960,95 +960,107 @@ WebEngine не инициализирован.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1229"/>
-        <location filename="../mainwindow.cpp" line="1944"/>
+        <location filename="../mainwindow.cpp" line="1970"/>
         <location filename="../mainwindow_webengine.cpp" line="1731"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly заблокирован. Разблокируйте его, чтобы отправлять сообщения.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1529"/>
+        <location filename="../mainwindow.cpp" line="1527"/>
+        <source>Whatly is up to date (version %1).</source>
+        <translation>Whatly обновлён до последней версии (%1).</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1535"/>
+        <source>Could not check for updates: %1</source>
+        <translation>Не удалось проверить обновления: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1555"/>
         <source>Updating Whatly…</source>
         <translation>Обновление Whatly…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1531"/>
-        <location filename="../mainwindow.cpp" line="1572"/>
-        <location filename="../mainwindow.cpp" line="1599"/>
-        <location filename="../mainwindow.cpp" line="1623"/>
-        <location filename="../mainwindow.cpp" line="1634"/>
+        <location filename="../mainwindow.cpp" line="1526"/>
+        <location filename="../mainwindow.cpp" line="1534"/>
+        <location filename="../mainwindow.cpp" line="1557"/>
+        <location filename="../mainwindow.cpp" line="1598"/>
+        <location filename="../mainwindow.cpp" line="1625"/>
+        <location filename="../mainwindow.cpp" line="1649"/>
+        <location filename="../mainwindow.cpp" line="1660"/>
         <source>Software update</source>
         <translation>Обновление ПО</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1573"/>
+        <location filename="../mainwindow.cpp" line="1599"/>
         <source>The update could not be completed. You can download the new version from the release page instead.</source>
         <translation>Не удалось завершить обновление. Вы можете скачать новую версию со страницы релиза.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1596"/>
+        <location filename="../mainwindow.cpp" line="1622"/>
         <source>The previous version has been restored.</source>
         <translation>Предыдущая версия восстановлена.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1600"/>
+        <location filename="../mainwindow.cpp" line="1626"/>
         <source>The downloaded update failed signature verification and was not applied.</source>
         <translation>Загруженное обновление не прошло проверку подписи и не было применено.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1616"/>
+        <location filename="../mainwindow.cpp" line="1642"/>
         <source>Whatly was updated, but its signature could not be verified. Restart now to use the new version?</source>
         <translation>Whatly обновлён, но не удалось проверить его подпись. Перезапустить сейчас, чтобы использовать новую версию?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1618"/>
+        <location filename="../mainwindow.cpp" line="1644"/>
         <source>Whatly was updated. Restart now to use the new version?</source>
         <translation>Whatly обновлён. Перезапустить сейчас, чтобы использовать новую версию?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1635"/>
+        <location filename="../mainwindow.cpp" line="1661"/>
         <source>The update tool could not be started.</source>
         <translation>Не удалось запустить инструмент обновления.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1661"/>
+        <location filename="../mainwindow.cpp" line="1687"/>
         <source>Restart</source>
         <translation>Перезапустить</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1662"/>
+        <location filename="../mainwindow.cpp" line="1688"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly не удалось запустить новый экземпляр, поэтому текущий не был закрыт. Закройте приложение и откройте его снова.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1799"/>
+        <location filename="../mainwindow.cpp" line="1825"/>
         <source>Expand the chat list</source>
         <translation>Развернуть список чатов</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1800"/>
-        <location filename="../mainwindow_tray.cpp" line="370"/>
+        <location filename="../mainwindow.cpp" line="1826"/>
+        <location filename="../mainwindow_tray.cpp" line="378"/>
         <source>Collapse the chat list</source>
         <translation>Свернуть список чатов</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="277"/>
-        <location filename="../mainwindow.cpp" line="1920"/>
+        <location filename="../mainwindow.cpp" line="1946"/>
         <source>Open</source>
         <translation>Открыть</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1966"/>
+        <location filename="../mainwindow.cpp" line="1992"/>
         <location filename="../mainwindow_tray.cpp" line="29"/>
         <source>New Chat</source>
         <translation>Новый чат</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1967"/>
+        <location filename="../mainwindow.cpp" line="1993"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Введите корректный номер WhatsApp с кодом страны (напр. +7XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1997"/>
+        <location filename="../mainwindow.cpp" line="2023"/>
         <source>Rate Application</source>
         <translation>Оценить приложение</translation>
     </message>
@@ -1065,7 +1077,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="34"/>
-        <location filename="../mainwindow_tray.cpp" line="365"/>
+        <location filename="../mainwindow_tray.cpp" line="373"/>
         <source>Fullscreen</source>
         <translation>Полный экран</translation>
     </message>
@@ -1106,7 +1118,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="116"/>
-        <location filename="../mainwindow_tray.cpp" line="367"/>
+        <location filename="../mainwindow_tray.cpp" line="375"/>
         <source>Reset zoom</source>
         <translation>Сбросить масштаб</translation>
     </message>
@@ -1117,7 +1129,7 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="149"/>
-        <location filename="../mainwindow_tray.cpp" line="372"/>
+        <location filename="../mainwindow_tray.cpp" line="380"/>
         <source>Spelling: next language</source>
         <translation>Проверка орфографии: следующий язык</translation>
     </message>
@@ -1133,13 +1145,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="170"/>
-        <location filename="../mainwindow_tray.cpp" line="374"/>
+        <location filename="../mainwindow_tray.cpp" line="382"/>
         <source>Translate selection</source>
         <translation>Перевести выделенное</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="177"/>
-        <location filename="../mainwindow_tray.cpp" line="376"/>
+        <location filename="../mainwindow_tray.cpp" line="384"/>
         <source>Translate message box</source>
         <translation>Перевести поле сообщения</translation>
     </message>
@@ -1150,85 +1162,85 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="195"/>
-        <location filename="../mainwindow_tray.cpp" line="378"/>
+        <location filename="../mainwindow_tray.cpp" line="386"/>
         <source>AI: Summarise chat</source>
         <translation>ИИ: Сводка чата</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="202"/>
-        <location filename="../mainwindow_tray.cpp" line="379"/>
+        <location filename="../mainwindow_tray.cpp" line="387"/>
         <source>AI: Improve message</source>
         <translation>ИИ: Улучшить сообщение</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="209"/>
-        <location filename="../mainwindow_tray.cpp" line="380"/>
+        <location filename="../mainwindow_tray.cpp" line="388"/>
         <source>AI: Suggest a reply</source>
         <translation>ИИ: Предложить ответ</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="217"/>
-        <location filename="../mainwindow_tray.cpp" line="383"/>
+        <location filename="../mainwindow_tray.cpp" line="391"/>
         <source>AI: Make it more formal</source>
         <translation>ИИ: Сделать формальнее</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="223"/>
-        <location filename="../mainwindow_tray.cpp" line="384"/>
+        <location filename="../mainwindow_tray.cpp" line="392"/>
         <source>AI: Make it friendlier</source>
         <translation>ИИ: Сделать дружелюбнее</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="229"/>
-        <location filename="../mainwindow_tray.cpp" line="385"/>
+        <location filename="../mainwindow_tray.cpp" line="393"/>
         <source>AI: Make it shorter</source>
         <translation>ИИ: Сделать короче</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="235"/>
-        <location filename="../mainwindow_tray.cpp" line="382"/>
+        <location filename="../mainwindow_tray.cpp" line="390"/>
         <source>AI: Summarise unread chats</source>
         <translation>ИИ: Сводка непрочитанных чатов</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="244"/>
-        <location filename="../mainwindow_tray.cpp" line="386"/>
+        <location filename="../mainwindow_tray.cpp" line="394"/>
         <source>Do Not Disturb</source>
         <translation type="unfinished">Не беспокоить</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="250"/>
-        <location filename="../mainwindow_tray.cpp" line="387"/>
+        <location filename="../mainwindow_tray.cpp" line="395"/>
         <source>Do Not Disturb: 1 hour</source>
         <translation>Не беспокоить: 1 час</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="255"/>
-        <location filename="../mainwindow_tray.cpp" line="388"/>
+        <location filename="../mainwindow_tray.cpp" line="396"/>
         <source>Do Not Disturb: 2 hours</source>
         <translation>Не беспокоить: 2 часа</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="260"/>
-        <location filename="../mainwindow_tray.cpp" line="389"/>
+        <location filename="../mainwindow_tray.cpp" line="397"/>
         <source>Do Not Disturb: until morning</source>
         <translation>Не беспокоить: до утра</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="269"/>
-        <location filename="../mainwindow_tray.cpp" line="390"/>
+        <location filename="../mainwindow_tray.cpp" line="398"/>
         <source>Remind me to reply: in 1 hour</source>
         <translation>Напомнить ответить: через 1 час</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="276"/>
-        <location filename="../mainwindow_tray.cpp" line="391"/>
+        <location filename="../mainwindow_tray.cpp" line="399"/>
         <source>Remind me to reply: in 3 hours</source>
         <translation>Напомнить ответить: через 3 часа</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="283"/>
-        <location filename="../mainwindow_tray.cpp" line="393"/>
+        <location filename="../mainwindow_tray.cpp" line="401"/>
         <source>Remind me to reply: tomorrow morning</source>
         <translation>Напомнить ответить: завтра утром</translation>
     </message>
@@ -1244,13 +1256,13 @@ Open Settings now?</source>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="308"/>
-        <location filename="../mainwindow_tray.cpp" line="396"/>
+        <location filename="../mainwindow_tray.cpp" line="404"/>
         <source>Grid view</source>
         <translation>Вид сеткой</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="330"/>
-        <location filename="../mainwindow_tray.cpp" line="397"/>
+        <location filename="../mainwindow_tray.cpp" line="405"/>
         <source>Command palette</source>
         <translation>Палитра команд</translation>
     </message>
@@ -1260,42 +1272,47 @@ Open Settings now?</source>
         <translation>&amp;О программе</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="348"/>
+        <location filename="../mainwindow_tray.cpp" line="351"/>
+        <source>Check for updates</source>
+        <translation>Проверить обновления</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="356"/>
         <source>&amp;Quit</source>
         <translation>В&amp;ыход</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="361"/>
+        <location filename="../mainwindow_tray.cpp" line="369"/>
         <source>Reload</source>
         <translation>Перезагрузить</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="362"/>
+        <location filename="../mainwindow_tray.cpp" line="370"/>
         <source>Minimise to tray</source>
         <translation>Свернуть в трей</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="363"/>
+        <location filename="../mainwindow_tray.cpp" line="371"/>
         <source>Lock</source>
         <translation>Заблокировать</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="364"/>
+        <location filename="../mainwindow_tray.cpp" line="372"/>
         <source>Mute audio</source>
         <translation>Отключить звук</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="366"/>
+        <location filename="../mainwindow_tray.cpp" line="374"/>
         <source>New chat / open URL</source>
         <translation>Новый чат / открыть URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="371"/>
+        <location filename="../mainwindow_tray.cpp" line="379"/>
         <source>Find in chats</source>
         <translation>Найти в чатах</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="377"/>
+        <location filename="../mainwindow_tray.cpp" line="385"/>
         <location filename="../mainwindow_webengine.cpp" line="1560"/>
         <location filename="../mainwindow_webengine.cpp" line="1564"/>
         <location filename="../mainwindow_webengine.cpp" line="1577"/>
@@ -1307,119 +1324,119 @@ Open Settings now?</source>
         <translation>Экспортировать чат</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="394"/>
+        <location filename="../mainwindow_tray.cpp" line="402"/>
         <location filename="../mainwindow_webengine.cpp" line="329"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="395"/>
+        <location filename="../mainwindow_tray.cpp" line="403"/>
         <source>Toggle theme</source>
         <translation>Переключить тему</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="398"/>
+        <location filename="../mainwindow_tray.cpp" line="406"/>
         <source>Quit</source>
         <translation>Выход</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="421"/>
+        <location filename="../mainwindow_tray.cpp" line="429"/>
         <source>Windows</source>
         <translation>Окна</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="443"/>
+        <location filename="../mainwindow_tray.cpp" line="451"/>
         <source>Spelling</source>
         <translation>Орфография</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="601"/>
+        <location filename="../mainwindow_tray.cpp" line="610"/>
         <source>hidden</source>
         <translation>скрыто</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="603"/>
+        <location filename="../mainwindow_tray.cpp" line="612"/>
         <source>minimised</source>
         <translation>свёрнуто</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="640"/>
+        <location filename="../mainwindow_tray.cpp" line="649"/>
         <source>All of them</source>
         <translation>Все</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="655"/>
+        <location filename="../mainwindow_tray.cpp" line="664"/>
         <source>No spell-check language is installed.</source>
         <translation>Не установлено ни одного языка проверки орфографии.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="656"/>
+        <location filename="../mainwindow_tray.cpp" line="665"/>
         <source>Only one spell-check language is chosen. Pick more in Settings to switch between them.</source>
         <translation>Выбран только один язык проверки. Выберите больше в настройках, чтобы переключаться между ними.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="679"/>
+        <location filename="../mainwindow_tray.cpp" line="688"/>
         <source>Spelling: every chosen language</source>
         <translation>Орфография: все выбранные языки</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="680"/>
+        <location filename="../mainwindow_tray.cpp" line="689"/>
         <source>Spelling: %1</source>
         <translation>Орфография: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="348"/>
-        <location filename="../mainwindow_accounts.cpp" line="1818"/>
+        <location filename="../mainwindow_accounts.cpp" line="1819"/>
         <source>Rename…</source>
         <translation>Переименовать…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="349"/>
-        <location filename="../mainwindow_accounts.cpp" line="1819"/>
+        <location filename="../mainwindow_accounts.cpp" line="1820"/>
         <source>Open in own window</source>
         <translation>Открыть в отдельном окне</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="353"/>
-        <location filename="../mainwindow_accounts.cpp" line="1822"/>
+        <location filename="../mainwindow_accounts.cpp" line="1823"/>
         <source>Remove account</source>
         <translation>Удалить аккаунт</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="439"/>
+        <location filename="../mainwindow_accounts.cpp" line="440"/>
         <source>Switch to account: %1</source>
         <translation>Переключиться на аккаунт: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="442"/>
+        <location filename="../mainwindow_accounts.cpp" line="443"/>
         <location filename="../mainwindow_tray.cpp" line="321"/>
         <source>Add account…</source>
         <translation>Добавить аккаунт…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="443"/>
+        <location filename="../mainwindow_accounts.cpp" line="444"/>
         <source>Quick message…</source>
         <translation>Быстрое сообщение…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="448"/>
+        <location filename="../mainwindow_accounts.cpp" line="449"/>
         <source>Insert: %1</source>
         <translation>Вставить: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="756"/>
+        <location filename="../mainwindow_accounts.cpp" line="757"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 непрочитанных</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1562"/>
-        <location filename="../mainwindow_accounts.cpp" line="2221"/>
+        <location filename="../mainwindow_accounts.cpp" line="1563"/>
+        <location filename="../mainwindow_accounts.cpp" line="2222"/>
         <source>Add another account</source>
         <translation>Добавить ещё аккаунт</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1591"/>
-        <location filename="../mainwindow_accounts.cpp" line="1618"/>
+        <location filename="../mainwindow_accounts.cpp" line="1592"/>
+        <location filename="../mainwindow_accounts.cpp" line="1619"/>
         <source>Restore</source>
         <translation>Восстановить</translation>
     </message>
@@ -1432,39 +1449,39 @@ Open Settings now?</source>
         <translation type="vanished">сообщение</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1664"/>
+        <location filename="../mainwindow_accounts.cpp" line="1665"/>
         <source>Add account</source>
         <translation>Добавить аккаунт</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1665"/>
+        <location filename="../mainwindow_accounts.cpp" line="1666"/>
         <source>Name for the new account:</source>
         <translation>Имя нового аккаунта:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1666"/>
-        <location filename="../mainwindow_accounts.cpp" line="2559"/>
-        <location filename="../mainwindow_accounts.cpp" line="2564"/>
+        <location filename="../mainwindow_accounts.cpp" line="1667"/>
+        <location filename="../mainwindow_accounts.cpp" line="2560"/>
+        <location filename="../mainwindow_accounts.cpp" line="2565"/>
         <source>Account %1</source>
         <translation>Аккаунт %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1695"/>
+        <location filename="../mainwindow_accounts.cpp" line="1696"/>
         <source>Rename account</source>
         <translation>Переименовать аккаунт</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1695"/>
+        <location filename="../mainwindow_accounts.cpp" line="1696"/>
         <source>Account name:</source>
         <translation>Имя аккаунта:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2240"/>
+        <location filename="../mainwindow_accounts.cpp" line="2241"/>
         <source>Tip: give an account its own window</source>
         <translation>Совет: выделите учётной записи отдельное окно</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2241"/>
+        <location filename="../mainwindow_accounts.cpp" line="2242"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -1473,8 +1490,8 @@ You can pull any account out into its own window: right-click its tab and choose
 Любую учётную запись можно вынести в отдельное окно: щёлкните её вкладку правой кнопкой мыши и выберите «Открыть в отдельном окне». Закройте это окно, чтобы вернуть учётную запись обратно в виде вкладки.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2553"/>
-        <location filename="../mainwindow_accounts.cpp" line="2557"/>
+        <location filename="../mainwindow_accounts.cpp" line="2554"/>
+        <location filename="../mainwindow_accounts.cpp" line="2558"/>
         <source>Account 1</source>
         <translation>Аккаунт 1</translation>
     </message>
@@ -1607,57 +1624,57 @@ You can pull any account out into its own window: right-click its tab and choose
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../common.cpp" line="74"/>
+        <location filename="../common.cpp" line="80"/>
         <source>Nothing unread</source>
         <translation>Нет непрочитанного</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="84"/>
+        <location filename="../common.cpp" line="90"/>
         <source>1 unread message in 1 chat</source>
         <translation>1 непрочитанное сообщение в 1 чате</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="86"/>
+        <location filename="../common.cpp" line="92"/>
         <source>1 unread message in %1 chats</source>
         <translation>1 непрочитанное сообщение в %1 чатах</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="88"/>
+        <location filename="../common.cpp" line="94"/>
         <source>%1 unread messages in 1 chat</source>
         <translation>%1 непрочитанных сообщений в 1 чате</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="90"/>
+        <location filename="../common.cpp" line="96"/>
         <source>%1 unread messages in %2 chats</source>
         <translation>%1 непрочитанных сообщений в %2 чатах</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="100"/>
+        <location filename="../common.cpp" line="106"/>
         <source>%1 in 1 muted chat</source>
         <translation>%1 в 1 чате без звука</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="101"/>
+        <location filename="../common.cpp" line="107"/>
         <source>%1 in %2 muted chats</source>
         <translation>%1 в %2 чатах без звука</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="107"/>
+        <location filename="../common.cpp" line="113"/>
         <source>%1 in 1 chat that is not muted</source>
         <translation>%1 в 1 чате со звуком</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="109"/>
+        <location filename="../common.cpp" line="115"/>
         <source>%1 in %2 chats that are not muted</source>
         <translation>%1 в %2 чатах со звуком</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="119"/>
+        <location filename="../common.cpp" line="125"/>
         <source>WhatsApp Web %1</source>
         <translation>WhatsApp Web %1</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="121"/>
+        <location filename="../common.cpp" line="127"/>
         <source>Build token: %1</source>
         <translation>Токен сборки: %1</translation>
     </message>
@@ -1701,77 +1718,77 @@ You can pull any account out into its own window: right-click its tab and choose
         <translation>Запустите снова без --dry-run, чтобы выполнить копирование.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="671"/>
+        <location filename="../main.cpp" line="680"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Многофункциональный клиент WhatsApp Web на основе Qt WebEngine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="678"/>
+        <location filename="../main.cpp" line="687"/>
         <source>Displays help on commandline options</source>
         <translation>Показывает справку по параметрам командной строки</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="683"/>
+        <location filename="../main.cpp" line="692"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>Открывает настройки в запущенном экземпляре </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="688"/>
+        <location filename="../main.cpp" line="697"/>
         <source>Locks a running instance of </source>
         <translation>Блокирует запущенный экземпляр </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="694"/>
+        <location filename="../main.cpp" line="703"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>Открывает окно «О программе» в запущенном экземпляре </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="699"/>
+        <location filename="../main.cpp" line="708"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>Открывает диалог запланированных сообщений в запущенном экземпляре </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="706"/>
+        <location filename="../main.cpp" line="715"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>Переключает светлую и тёмную тему в запущенном экземпляре </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="713"/>
+        <location filename="../main.cpp" line="722"/>
         <source>Reload the app in a running instance of </source>
         <translation>Перезагружает приложение в запущенном экземпляре </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="719"/>
+        <location filename="../main.cpp" line="728"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>Открывает окно нового чата в запущенном экземпляре </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="732"/>
+        <location filename="../main.cpp" line="741"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Запустить как отдельный аккаунт с собственной сессией и настройками, в своём окне&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="749"/>
+        <location filename="../main.cpp" line="758"/>
         <source>Show main window of running instance of </source>
         <translation>Показывает главное окно запущенного экземпляра </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="756"/>
+        <location filename="../main.cpp" line="765"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>Скопировать настройки и активный сеанс из предыдущей установки (например, старой версии «whatsie») в эту и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="763"/>
+        <location filename="../main.cpp" line="772"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>С --migrate-from только показать, что будет скопировано</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="781"/>
+        <location filename="../main.cpp" line="790"/>
         <source>Print the current unread message count and exit</source>
         <translation>Вывести текущее число непрочитанных сообщений и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1315"/>
+        <location filename="../main.cpp" line="1324"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>Блокировка приложения не настроена.
@@ -1938,172 +1955,172 @@ Please setup the password in the Settings first.</source>
         <translation>Показать список чатов</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1413"/>
+        <location filename="../main.cpp" line="1422"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Восстановлено после сбоя при запуске путём переключения на безопасный режим отображения. Это можно изменить в Настройки → Производительность.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="787"/>
+        <location filename="../main.cpp" line="796"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>Отправляет сообщение через запущенный экземпляр и завершает работу (нужны --to и --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="791"/>
+        <location filename="../main.cpp" line="800"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>Получатель для --send: номер телефона (международный), идентификатор группы или имя контакта</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="796"/>
+        <location filename="../main.cpp" line="805"/>
         <source>Message text for --send</source>
         <translation>Текст сообщения для --send</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="808"/>
+        <location filename="../main.cpp" line="817"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>Как доставляет --send: &apos;web&apos; (запущенная сессия WhatsApp Web) или &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="799"/>
+        <location filename="../main.cpp" line="808"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>Прикрепляет файл для --send (--message, если задан, становится подписью)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="742"/>
+        <location filename="../main.cpp" line="751"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>Внутреннее: дождаться завершения процесса с этим id перед запуском, используется командой &quot;Перезапустить сейчас&quot;</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="804"/>
+        <location filename="../main.cpp" line="813"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Подпись для вложения --file (псевдоним --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="814"/>
+        <location filename="../main.cpp" line="823"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>Использовать сохранённый шаблон с этим именем как сообщение --send (заполнить его {{поля}} через --var)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="819"/>
+        <location filename="../main.cpp" line="828"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>Заполнить поле шаблона: key=value (можно повторять)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="823"/>
+        <location filename="../main.cpp" line="832"/>
         <source>List the saved message templates and exit</source>
         <translation>Показать сохранённые шаблоны сообщений и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="826"/>
+        <location filename="../main.cpp" line="835"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>Сохранить (или заменить) шаблон сообщения, затем выйти: name=body</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="830"/>
+        <location filename="../main.cpp" line="839"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Удалить сохранённый шаблон сообщения с этим именем и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="835"/>
+        <location filename="../main.cpp" line="844"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>Включить автоответ на входящие сообщения и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="838"/>
+        <location filename="../main.cpp" line="847"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>Выключить автоответ и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="841"/>
+        <location filename="../main.cpp" line="850"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>Показать активные правила автоответа (со статусом) и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="844"/>
+        <location filename="../main.cpp" line="853"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Использовать этот JSON-файл как источник правил автоответа и выйти (пусто — очистить)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="850"/>
+        <location filename="../main.cpp" line="859"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>Задать идентификатор номера телефона Cloud API и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="854"/>
+        <location filename="../main.cpp" line="863"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>Задать токен доступа Cloud API и выйти (сохраняется в конфигурации учётной записи)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="859"/>
+        <location filename="../main.cpp" line="868"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>Задать версию graph для Cloud API (напр. v21.0) и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="863"/>
+        <location filename="../main.cpp" line="872"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>Показать, настроен ли Cloud API, и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="866"/>
+        <location filename="../main.cpp" line="875"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>Для --send --backend cloud: отправить этот одобренный Meta шаблон</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="870"/>
+        <location filename="../main.cpp" line="879"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>Код языка для --cloud-template (напр. es, en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="874"/>
+        <location filename="../main.cpp" line="883"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Позиционный параметр тела для --cloud-template (можно повторять)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="879"/>
+        <location filename="../main.cpp" line="888"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>Включить локальный HTTP API и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="882"/>
+        <location filename="../main.cpp" line="891"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>Отключить локальный HTTP API и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="885"/>
+        <location filename="../main.cpp" line="894"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>Задать порт локального HTTP API (по умолчанию 8590) и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="889"/>
+        <location filename="../main.cpp" line="898"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>Задать Bearer-токен локального HTTP API и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="893"/>
+        <location filename="../main.cpp" line="902"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>Показать конфигурацию локального HTTP API и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="897"/>
+        <location filename="../main.cpp" line="906"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>Включить приём вебхуков Cloud API и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="900"/>
+        <location filename="../main.cpp" line="909"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>Отключить приём вебхуков Cloud API и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="903"/>
+        <location filename="../main.cpp" line="912"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>Задать токен проверки вебхука Cloud API и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="907"/>
+        <location filename="../main.cpp" line="916"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>Задать секрет приложения Meta для проверки подписи вебхука и выйти</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="911"/>
+        <location filename="../main.cpp" line="920"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>Показать конфигурацию вебхука Cloud API и выйти</translation>
     </message>

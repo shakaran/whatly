@@ -1,5 +1,6 @@
 ## Unreleased
 
+- **A manual "Check for updates" action (#114).** The once-a-day background check is silent unless it finds an update, so a dismissed or missed notice left no way to ask again. A "Check for updates" entry, in the tray menu and the command palette, now forces a check and reports the result either way: the usual update notice, or "Whatly is up to date", or the error if the check could not run.
 - **Sharper taskbar icon on portable and HiDPI setups (#112).** The installed icon set gains a 512x512 size, the AppImage now embeds the 512px icon rather than the 256px one, and the window icon carries the scalable SVG so it stays crisp at any size the compositor asks for (Wayland's `xdg-toplevel-icon` on Qt 6.9+, HiDPI panels) even when the icon theme has no `net.shakaran.whatly` entry to prefer. That last case, a portable AppImage that was never integrated into the desktop, is the one that stayed blurry; an installed package (deb/rpm/Flatpak) already had the theme's scalable icon.
 
 ## 7.6.1 (2026-09-08)

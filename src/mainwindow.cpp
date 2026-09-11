@@ -1514,6 +1514,32 @@ void MainWindow::raiseWindow() { bringForward(frontWindow()); }
 // It is handed the current process id instead and waits for it to go before
 // claiming the key. Nothing is killed: this window closes through the ordinary
 // quit path, which is also what writes the window layout out.
+void MainWindow::checkForUpdatesInteractive() {
+  // One-shot feedback for the outcomes the once-a-day background check leaves
+  // silent. updateAvailable already fires its own rich notification (with the
+  // self-update action where it applies), so it is left to the standing handler;
+  // here it only tears the guard down. The guard is the connection context and
+  // is deleted on the first result, so these do not leak into background checks.
+  auto *guard = new QObject(this);
+  connect(m_updateChecker, &UpdateChecker::upToDate, guard, [this, guard]() {
+    QMessageBox::information(
+        this, tr("Software update"),
+        tr("Whatly is up to date (version %1).")
+            .arg(QCoreApplication::applicationVersion()));
+    guard->deleteLater();
+  });
+  connect(m_updateChecker, &UpdateChecker::checkFailed, guard,
+          [this, guard](const QString &error) {
+            QMessageBox::warning(
+                this, tr("Software update"),
+                tr("Could not check for updates: %1").arg(error));
+            guard->deleteLater();
+          });
+  connect(m_updateChecker, &UpdateChecker::updateAvailable, guard,
+          [guard](const QString &, const QString &) { guard->deleteLater(); });
+  m_updateChecker->check(true); // force, ignoring the once-a-day throttle
+}
+
 void MainWindow::startAppImageSelfUpdate() {
   // Only ever offered for an AppImage with the tool present (see the update
   // notification), but re-check here so a stale action can never run the wrong

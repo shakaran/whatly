@@ -416,6 +416,7 @@ void MainWindow::showCommandPalette() {
       m_lockAction,        m_muteAction,      m_fullscreenAction,
       m_openUrlAction,     m_scheduledMessagesAction, m_toggleThemeAction,
       m_chatListStripAction, m_settingsAction, m_aboutAction,
+      m_checkUpdatesAction,
       m_translateSelectionAction, m_translateComposerAction,
       m_exportChatAction, m_aiSummarizeAction, m_aiImproveAction,
       m_aiSuggestAction,   m_aiUnreadDigestAction,

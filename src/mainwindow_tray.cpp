@@ -345,6 +345,14 @@ void MainWindow::createActions() {
   connect(m_aboutAction, &QAction::triggered, this, &MainWindow::showAbout);
   addAction(m_aboutAction);
 
+  // Manual update check (#114): the background check is once a day and silent
+  // unless an update is found, so a dismissed or missed notice left no way to
+  // ask again. This forces a check and reports the result either way.
+  m_checkUpdatesAction = new QAction(tr("Check for updates"), this);
+  connect(m_checkUpdatesAction, &QAction::triggered, this,
+          &MainWindow::checkForUpdatesInteractive);
+  addAction(m_checkUpdatesAction);
+
   m_quitAction = new QAction(tr("&Quit"), this);
   m_quitAction->setShortcut(QKeySequence(Qt::Modifier::CTRL | Qt::Key_Q));
   connect(m_quitAction, &QAction::triggered, this, &MainWindow::quitApp);
@@ -443,6 +451,7 @@ void MainWindow::createTrayIcon() {
   m_spellingMenu = m_trayIconMenu->addMenu(tr("Spelling"));
   m_trayIconMenu->addAction(m_toggleThemeAction);
   m_trayIconMenu->addAction(m_settingsAction);
+  m_trayIconMenu->addAction(m_checkUpdatesAction);
   m_trayIconMenu->addAction(m_aboutAction);
   m_trayIconMenu->addSeparator();
   m_trayIconMenu->addAction(m_quitAction);

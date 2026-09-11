@@ -580,43 +580,43 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="443"/>
+        <location filename="../mainwindow_tray.cpp" line="451"/>
         <source>Spelling</source>
         <translation>Literumado</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="149"/>
-        <location filename="../mainwindow_tray.cpp" line="372"/>
+        <location filename="../mainwindow_tray.cpp" line="380"/>
         <source>Spelling: next language</source>
         <translation>Literumado: sekva lingvo</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="640"/>
+        <location filename="../mainwindow_tray.cpp" line="649"/>
         <source>All of them</source>
         <translation>Ĉiuj elektitaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="680"/>
+        <location filename="../mainwindow_tray.cpp" line="689"/>
         <source>Spelling: %1</source>
         <translation>Literumado: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="679"/>
+        <location filename="../mainwindow_tray.cpp" line="688"/>
         <source>Spelling: every chosen language</source>
         <translation>Literumado: ĉiuj elektitaj lingvoj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="655"/>
+        <location filename="../mainwindow_tray.cpp" line="664"/>
         <source>No spell-check language is installed.</source>
         <translation>Neniu literuma lingvo estas instalita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="656"/>
+        <location filename="../mainwindow_tray.cpp" line="665"/>
         <source>Only one spell-check language is chosen. Pick more in Settings to switch between them.</source>
         <translation>Nur unu literuma lingvo estas elektita. Elektu pliajn en Agordoj por ŝalti inter ili.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="426"/>
+        <location filename="../mainwindow_tray.cpp" line="434"/>
         <source>Recent unread</source>
         <translation>Lastaj nelegitaj</translation>
     </message>
@@ -626,22 +626,22 @@ Do you wish to override the security check and continue ?   </source>
         <translation>&amp;Serĉi en babiloj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="371"/>
+        <location filename="../mainwindow_tray.cpp" line="379"/>
         <source>Find in chats</source>
         <translation>Serĉi en babiloj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="421"/>
+        <location filename="../mainwindow_tray.cpp" line="429"/>
         <source>Windows</source>
         <translation>Fenestroj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="601"/>
+        <location filename="../mainwindow_tray.cpp" line="610"/>
         <source>hidden</source>
         <translation>kaŝita</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="603"/>
+        <location filename="../mainwindow_tray.cpp" line="612"/>
         <source>minimised</source>
         <translation>minimumigita</translation>
     </message>
@@ -746,7 +746,7 @@ La retmotoro ne estas pravalorizita.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1229"/>
-        <location filename="../mainwindow.cpp" line="1944"/>
+        <location filename="../mainwindow.cpp" line="1970"/>
         <location filename="../mainwindow_webengine.cpp" line="1731"/>
         <source>Whatly is locked. Unlock it to send messages.</source>
         <translation>Whatly estas ŝlosita. Malŝlosu ĝin por sendi mesaĝojn.</translation>
@@ -800,123 +800,135 @@ La retmotoro ne estas pravalorizita.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="277"/>
-        <location filename="../mainwindow.cpp" line="1920"/>
+        <location filename="../mainwindow.cpp" line="1946"/>
         <source>Open</source>
         <translation>Malfermi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1529"/>
+        <location filename="../mainwindow.cpp" line="1555"/>
         <source>Updating Whatly…</source>
         <translation>Ĝisdatigado de Whatly…</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1531"/>
-        <location filename="../mainwindow.cpp" line="1572"/>
-        <location filename="../mainwindow.cpp" line="1599"/>
-        <location filename="../mainwindow.cpp" line="1623"/>
-        <location filename="../mainwindow.cpp" line="1634"/>
+        <location filename="../mainwindow.cpp" line="1526"/>
+        <location filename="../mainwindow.cpp" line="1534"/>
+        <location filename="../mainwindow.cpp" line="1557"/>
+        <location filename="../mainwindow.cpp" line="1598"/>
+        <location filename="../mainwindow.cpp" line="1625"/>
+        <location filename="../mainwindow.cpp" line="1649"/>
+        <location filename="../mainwindow.cpp" line="1660"/>
         <source>Software update</source>
         <translation>Programara ĝisdatigo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1573"/>
+        <location filename="../mainwindow.cpp" line="1527"/>
+        <source>Whatly is up to date (version %1).</source>
+        <translation>Whatly estas ĝisdata (versio %1).</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1535"/>
+        <source>Could not check for updates: %1</source>
+        <translation>Ne eblis kontroli ĝisdatigojn: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1599"/>
         <source>The update could not be completed. You can download the new version from the release page instead.</source>
         <translation>La ĝisdatigo ne povis finiĝi. Vi povas anstataŭe elŝuti la novan version de la eldona paĝo.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1596"/>
+        <location filename="../mainwindow.cpp" line="1622"/>
         <source>The previous version has been restored.</source>
         <translation>La antaŭa versio estas restarigita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1600"/>
+        <location filename="../mainwindow.cpp" line="1626"/>
         <source>The downloaded update failed signature verification and was not applied.</source>
         <translation>La elŝutita ĝisdatigo malsukcesis la subskriban kontrolon kaj ne estis aplikita.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1616"/>
+        <location filename="../mainwindow.cpp" line="1642"/>
         <source>Whatly was updated, but its signature could not be verified. Restart now to use the new version?</source>
         <translation>Whatly estis ĝisdatigita, sed ĝia subskribo ne povis esti kontrolita. Ĉu rekomenci nun por uzi la novan version?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1618"/>
+        <location filename="../mainwindow.cpp" line="1644"/>
         <source>Whatly was updated. Restart now to use the new version?</source>
         <translation>Whatly estis ĝisdatigita. Ĉu rekomenci nun por uzi la novan version?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1635"/>
+        <location filename="../mainwindow.cpp" line="1661"/>
         <source>The update tool could not be started.</source>
         <translation>La ĝisdatiga ilo ne povis lanĉiĝi.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1966"/>
+        <location filename="../mainwindow.cpp" line="1992"/>
         <location filename="../mainwindow_tray.cpp" line="29"/>
         <source>New Chat</source>
         <translation>Nova babilo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1967"/>
+        <location filename="../mainwindow.cpp" line="1993"/>
         <source>Enter a valid WhatsApp number with country code (ex- +91XXXXXXXXXX)</source>
         <translation>Enigu validan numeron de Vacapo kun landokodo (ekz. +91XXXXXXXXXX)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1997"/>
+        <location filename="../mainwindow.cpp" line="2023"/>
         <source>Rate Application</source>
         <translation>Taksi la aplikaĵon</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="348"/>
-        <location filename="../mainwindow_accounts.cpp" line="1818"/>
+        <location filename="../mainwindow_accounts.cpp" line="1819"/>
         <source>Rename…</source>
         <translation>Alinomi…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="349"/>
-        <location filename="../mainwindow_accounts.cpp" line="1819"/>
+        <location filename="../mainwindow_accounts.cpp" line="1820"/>
         <source>Open in own window</source>
         <translation>Malfermi en propra fenestro</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="353"/>
-        <location filename="../mainwindow_accounts.cpp" line="1822"/>
+        <location filename="../mainwindow_accounts.cpp" line="1823"/>
         <source>Remove account</source>
         <translation>Forigi la konton</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="439"/>
+        <location filename="../mainwindow_accounts.cpp" line="440"/>
         <source>Switch to account: %1</source>
         <translation>Ŝalti al la konto: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="442"/>
+        <location filename="../mainwindow_accounts.cpp" line="443"/>
         <location filename="../mainwindow_tray.cpp" line="321"/>
         <source>Add account…</source>
         <translation>Aldoni konton…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="443"/>
+        <location filename="../mainwindow_accounts.cpp" line="444"/>
         <source>Quick message…</source>
         <translation>Rapida mesaĝo…</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="448"/>
+        <location filename="../mainwindow_accounts.cpp" line="449"/>
         <source>Insert: %1</source>
         <translation>Enmeti: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="756"/>
+        <location filename="../mainwindow_accounts.cpp" line="757"/>
         <source>%1 — %2 unread</source>
         <translation>%1 — %2 nelegitaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1562"/>
-        <location filename="../mainwindow_accounts.cpp" line="2221"/>
+        <location filename="../mainwindow_accounts.cpp" line="1563"/>
+        <location filename="../mainwindow_accounts.cpp" line="2222"/>
         <source>Add another account</source>
         <translation>Aldoni alian konton</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1591"/>
-        <location filename="../mainwindow_accounts.cpp" line="1618"/>
+        <location filename="../mainwindow_accounts.cpp" line="1592"/>
+        <location filename="../mainwindow_accounts.cpp" line="1619"/>
         <source>Restore</source>
         <translation>Restarigi</translation>
     </message>
@@ -929,39 +941,39 @@ La retmotoro ne estas pravalorizita.</translation>
         <translation type="vanished">mesaĝo</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1664"/>
+        <location filename="../mainwindow_accounts.cpp" line="1665"/>
         <source>Add account</source>
         <translation>Aldoni konton</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1665"/>
+        <location filename="../mainwindow_accounts.cpp" line="1666"/>
         <source>Name for the new account:</source>
         <translation>Nomo por la nova konto:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1666"/>
-        <location filename="../mainwindow_accounts.cpp" line="2559"/>
-        <location filename="../mainwindow_accounts.cpp" line="2564"/>
+        <location filename="../mainwindow_accounts.cpp" line="1667"/>
+        <location filename="../mainwindow_accounts.cpp" line="2560"/>
+        <location filename="../mainwindow_accounts.cpp" line="2565"/>
         <source>Account %1</source>
         <translation>Konto %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1695"/>
+        <location filename="../mainwindow_accounts.cpp" line="1696"/>
         <source>Rename account</source>
         <translation>Alinomi la konton</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1695"/>
+        <location filename="../mainwindow_accounts.cpp" line="1696"/>
         <source>Account name:</source>
         <translation>Nomo de la konto:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2240"/>
+        <location filename="../mainwindow_accounts.cpp" line="2241"/>
         <source>Tip: give an account its own window</source>
         <translation>Konsileto: donu al konto ĝian propran fenestron</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2241"/>
+        <location filename="../mainwindow_accounts.cpp" line="2242"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
@@ -970,8 +982,8 @@ You can pull any account out into its own window: right-click its tab and choose
 Vi povas eltiri iun ajn konton en propran fenestron: dekstre alklaku ĝian langeton kaj elektu “Malfermi en propra fenestro”. Fermu tiun fenestron por redoki la konton kiel langeton.</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2553"/>
-        <location filename="../mainwindow_accounts.cpp" line="2557"/>
+        <location filename="../mainwindow_accounts.cpp" line="2554"/>
+        <location filename="../mainwindow_accounts.cpp" line="2558"/>
         <source>Account 1</source>
         <translation>Konto 1</translation>
     </message>
@@ -988,7 +1000,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="34"/>
-        <location filename="../mainwindow_tray.cpp" line="365"/>
+        <location filename="../mainwindow_tray.cpp" line="373"/>
         <source>Fullscreen</source>
         <translation>Plenekrane</translation>
     </message>
@@ -1029,7 +1041,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="116"/>
-        <location filename="../mainwindow_tray.cpp" line="367"/>
+        <location filename="../mainwindow_tray.cpp" line="375"/>
         <source>Reset zoom</source>
         <translation>Restarigi la zomon</translation>
     </message>
@@ -1045,13 +1057,13 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="170"/>
-        <location filename="../mainwindow_tray.cpp" line="374"/>
+        <location filename="../mainwindow_tray.cpp" line="382"/>
         <source>Translate selection</source>
         <translation>Traduki elekton</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="177"/>
-        <location filename="../mainwindow_tray.cpp" line="376"/>
+        <location filename="../mainwindow_tray.cpp" line="384"/>
         <source>Translate message box</source>
         <translation>Traduki mesaĝkeston</translation>
     </message>
@@ -1062,85 +1074,85 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="195"/>
-        <location filename="../mainwindow_tray.cpp" line="378"/>
+        <location filename="../mainwindow_tray.cpp" line="386"/>
         <source>AI: Summarise chat</source>
         <translation>AI: Resumi babilon</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="202"/>
-        <location filename="../mainwindow_tray.cpp" line="379"/>
+        <location filename="../mainwindow_tray.cpp" line="387"/>
         <source>AI: Improve message</source>
         <translation>AI: Plibonigi mesaĝon</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="209"/>
-        <location filename="../mainwindow_tray.cpp" line="380"/>
+        <location filename="../mainwindow_tray.cpp" line="388"/>
         <source>AI: Suggest a reply</source>
         <translation>AI: Sugesti respondon</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="217"/>
-        <location filename="../mainwindow_tray.cpp" line="383"/>
+        <location filename="../mainwindow_tray.cpp" line="391"/>
         <source>AI: Make it more formal</source>
         <translation>AI: Igi pli formala</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="223"/>
-        <location filename="../mainwindow_tray.cpp" line="384"/>
+        <location filename="../mainwindow_tray.cpp" line="392"/>
         <source>AI: Make it friendlier</source>
         <translation>AI: Igi pli amika</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="229"/>
-        <location filename="../mainwindow_tray.cpp" line="385"/>
+        <location filename="../mainwindow_tray.cpp" line="393"/>
         <source>AI: Make it shorter</source>
         <translation>AI: Igi pli mallonga</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="235"/>
-        <location filename="../mainwindow_tray.cpp" line="382"/>
+        <location filename="../mainwindow_tray.cpp" line="390"/>
         <source>AI: Summarise unread chats</source>
         <translation>AI: Resumi nelegitajn babilojn</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="244"/>
-        <location filename="../mainwindow_tray.cpp" line="386"/>
+        <location filename="../mainwindow_tray.cpp" line="394"/>
         <source>Do Not Disturb</source>
         <translation type="unfinished">Ne ĝeni</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="250"/>
-        <location filename="../mainwindow_tray.cpp" line="387"/>
+        <location filename="../mainwindow_tray.cpp" line="395"/>
         <source>Do Not Disturb: 1 hour</source>
         <translation>Ne ĝeni: 1 horo</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="255"/>
-        <location filename="../mainwindow_tray.cpp" line="388"/>
+        <location filename="../mainwindow_tray.cpp" line="396"/>
         <source>Do Not Disturb: 2 hours</source>
         <translation>Ne ĝeni: 2 horoj</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="260"/>
-        <location filename="../mainwindow_tray.cpp" line="389"/>
+        <location filename="../mainwindow_tray.cpp" line="397"/>
         <source>Do Not Disturb: until morning</source>
         <translation>Ne ĝeni: ĝis mateno</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="269"/>
-        <location filename="../mainwindow_tray.cpp" line="390"/>
+        <location filename="../mainwindow_tray.cpp" line="398"/>
         <source>Remind me to reply: in 1 hour</source>
         <translation>Memorigu min respondi: post 1 horo</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="276"/>
-        <location filename="../mainwindow_tray.cpp" line="391"/>
+        <location filename="../mainwindow_tray.cpp" line="399"/>
         <source>Remind me to reply: in 3 hours</source>
         <translation>Memorigu min respondi: post 3 horoj</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="283"/>
-        <location filename="../mainwindow_tray.cpp" line="393"/>
+        <location filename="../mainwindow_tray.cpp" line="401"/>
         <source>Remind me to reply: tomorrow morning</source>
         <translation>Memorigu min respondi: morgaŭ matene</translation>
     </message>
@@ -1156,13 +1168,13 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="308"/>
-        <location filename="../mainwindow_tray.cpp" line="396"/>
+        <location filename="../mainwindow_tray.cpp" line="404"/>
         <source>Grid view</source>
         <translation>Krada vido</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="330"/>
-        <location filename="../mainwindow_tray.cpp" line="397"/>
+        <location filename="../mainwindow_tray.cpp" line="405"/>
         <source>Command palette</source>
         <translation>Komandpaletro</translation>
     </message>
@@ -1172,37 +1184,42 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation>&amp;Pri</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="348"/>
+        <location filename="../mainwindow_tray.cpp" line="351"/>
+        <source>Check for updates</source>
+        <translation>Kontroli ĝisdatigojn</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow_tray.cpp" line="356"/>
         <source>&amp;Quit</source>
         <translation>&amp;Eliri</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="361"/>
+        <location filename="../mainwindow_tray.cpp" line="369"/>
         <source>Reload</source>
         <translation>Reŝargi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="362"/>
+        <location filename="../mainwindow_tray.cpp" line="370"/>
         <source>Minimise to tray</source>
         <translation>Minimumigi al la sistempleto</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="363"/>
+        <location filename="../mainwindow_tray.cpp" line="371"/>
         <source>Lock</source>
         <translation>Ŝlosi</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="364"/>
+        <location filename="../mainwindow_tray.cpp" line="372"/>
         <source>Mute audio</source>
         <translation>Silentigi la sonon</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="366"/>
+        <location filename="../mainwindow_tray.cpp" line="374"/>
         <source>New chat / open URL</source>
         <translation>Nova babilo / malfermi URL</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="377"/>
+        <location filename="../mainwindow_tray.cpp" line="385"/>
         <location filename="../mainwindow_webengine.cpp" line="1560"/>
         <location filename="../mainwindow_webengine.cpp" line="1564"/>
         <location filename="../mainwindow_webengine.cpp" line="1577"/>
@@ -1214,18 +1231,18 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation>Eksporti babilon</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="394"/>
+        <location filename="../mainwindow_tray.cpp" line="402"/>
         <location filename="../mainwindow_webengine.cpp" line="329"/>
         <source>Settings</source>
         <translation>Agordoj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="395"/>
+        <location filename="../mainwindow_tray.cpp" line="403"/>
         <source>Toggle theme</source>
         <translation>Baskuligi la etoson</translation>
     </message>
     <message>
-        <location filename="../mainwindow_tray.cpp" line="398"/>
+        <location filename="../mainwindow_tray.cpp" line="406"/>
         <source>Quit</source>
         <translation>Eliri</translation>
     </message>
@@ -1304,7 +1321,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation>Kolektante mesaĝojn… trarulumante la konversacion.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1529"/>
+        <location filename="../mainwindow.cpp" line="1555"/>
         <location filename="../mainwindow_webengine.cpp" line="1576"/>
         <source>Cancel</source>
         <translation type="unfinished">Nuligi</translation>
@@ -1407,13 +1424,13 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation>Resumo de nelegitaj</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1592"/>
+        <location filename="../mainwindow_accounts.cpp" line="1593"/>
         <location filename="../mainwindow_webengine.cpp" line="1652"/>
         <source>chat</source>
         <translation>babilo</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1592"/>
+        <location filename="../mainwindow_accounts.cpp" line="1593"/>
         <source>chats</source>
         <translation>babiloj</translation>
     </message>
@@ -1480,23 +1497,23 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation type="unfinished">Fermi</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1661"/>
+        <location filename="../mainwindow.cpp" line="1687"/>
         <source>Restart</source>
         <translation>Restartigo</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1662"/>
+        <location filename="../mainwindow.cpp" line="1688"/>
         <source>Whatly could not start a new instance, so it has not closed this one. Please quit and reopen it.</source>
         <translation>Whatly ne povis lanĉi novan instancon, do ĝi ne fermis ĉi tiun. Bonvolu eliri kaj remalfermi ĝin.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1799"/>
+        <location filename="../mainwindow.cpp" line="1825"/>
         <source>Expand the chat list</source>
         <translation>Malfaldi la liston de babiloj</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1800"/>
-        <location filename="../mainwindow_tray.cpp" line="370"/>
+        <location filename="../mainwindow.cpp" line="1826"/>
+        <location filename="../mainwindow_tray.cpp" line="378"/>
         <source>Collapse the chat list</source>
         <translation>Faldi la liston de babiloj</translation>
     </message>
@@ -1612,57 +1629,57 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../common.cpp" line="74"/>
+        <location filename="../common.cpp" line="80"/>
         <source>Nothing unread</source>
         <translation>Nenio nelegita</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="84"/>
+        <location filename="../common.cpp" line="90"/>
         <source>1 unread message in 1 chat</source>
         <translation>1 nelegita mesaĝo en 1 babilo</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="86"/>
+        <location filename="../common.cpp" line="92"/>
         <source>1 unread message in %1 chats</source>
         <translation>1 nelegita mesaĝo en %1 babiloj</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="88"/>
+        <location filename="../common.cpp" line="94"/>
         <source>%1 unread messages in 1 chat</source>
         <translation>%1 nelegitaj mesaĝoj en 1 babilo</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="90"/>
+        <location filename="../common.cpp" line="96"/>
         <source>%1 unread messages in %2 chats</source>
         <translation>%1 nelegitaj mesaĝoj en %2 babiloj</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="100"/>
+        <location filename="../common.cpp" line="106"/>
         <source>%1 in 1 muted chat</source>
         <translation>%1 en 1 silentigita babilo</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="101"/>
+        <location filename="../common.cpp" line="107"/>
         <source>%1 in %2 muted chats</source>
         <translation>%1 en %2 silentigitaj babiloj</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="107"/>
+        <location filename="../common.cpp" line="113"/>
         <source>%1 in 1 chat that is not muted</source>
         <translation>%1 en 1 nesilentigita babilo</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="109"/>
+        <location filename="../common.cpp" line="115"/>
         <source>%1 in %2 chats that are not muted</source>
         <translation>%1 en %2 nesilentigitaj babiloj</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="119"/>
+        <location filename="../common.cpp" line="125"/>
         <source>WhatsApp Web %1</source>
         <translation>WhatsApp Web %1</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="121"/>
+        <location filename="../common.cpp" line="127"/>
         <source>Build token: %1</source>
         <translation>Kompila ĵetono: %1</translation>
     </message>
@@ -1749,244 +1766,244 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation>Rulu denove sen --dry-run por efektive kopii.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="671"/>
+        <location filename="../main.cpp" line="680"/>
         <source>Feature rich WhatsApp web client based on Qt WebEngine</source>
         <translation>Funkcioriĉa klientprogramo de Vacapo Reto bazita sur Qt WebEngine</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="678"/>
+        <location filename="../main.cpp" line="687"/>
         <source>Displays help on commandline options</source>
         <translation>Montras helpon pri la komandliniaj opcioj</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="683"/>
+        <location filename="../main.cpp" line="692"/>
         <source>Opens Settings dialog in a running instance of </source>
         <translation>Malfermas la agordan dialogon en ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="688"/>
+        <location filename="../main.cpp" line="697"/>
         <source>Locks a running instance of </source>
         <translation>Ŝlosas ruliĝantan ekzempleron de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="694"/>
+        <location filename="../main.cpp" line="703"/>
         <source>Opens About dialog in a running instance of </source>
         <translation>Malfermas la dialogon Pri en ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="699"/>
+        <location filename="../main.cpp" line="708"/>
         <source>Opens the scheduled messages dialog in a running instance of </source>
         <translation>Malfermas la dialogon de planitaj mesaĝoj en ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="706"/>
+        <location filename="../main.cpp" line="715"/>
         <source>Toggle between dark &amp; light theme in a running instance of </source>
         <translation>Baskuligas inter malhela kaj hela etoso en ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="713"/>
+        <location filename="../main.cpp" line="722"/>
         <source>Reload the app in a running instance of </source>
         <translation>Reŝargas la aplikaĵon en ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="719"/>
+        <location filename="../main.cpp" line="728"/>
         <source>Open new chat prompt in a running instance of </source>
         <translation>Malfermas la inviton por nova babilo en ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="732"/>
+        <location filename="../main.cpp" line="741"/>
         <source>Run as a separate account with its own session and settings, in its own window</source>
         <translation>Ruli kiel apartan konton kun propra seanco kaj propraj agordoj, en propra fenestro</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="749"/>
+        <location filename="../main.cpp" line="758"/>
         <source>Show main window of running instance of </source>
         <translation>Montras la ĉefan fenestron de ruliĝanta ekzemplero de </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="756"/>
+        <location filename="../main.cpp" line="765"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
         <translation>Kopias la agordojn kaj la ensalutitan seancon el antaŭa instalo (ekz. la pli malnova muntaĵo &quot;whatsie&quot;) en ĉi tiun, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="763"/>
+        <location filename="../main.cpp" line="772"/>
         <source>With --migrate-from, only report what would be copied</source>
         <translation>Kun --migrate-from, nur raportas kio estus kopiita</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="781"/>
+        <location filename="../main.cpp" line="790"/>
         <source>Print the current unread message count and exit</source>
         <translation>Presas la nunan nombron de nelegitaj mesaĝoj kaj eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="787"/>
+        <location filename="../main.cpp" line="796"/>
         <source>Send a message via the running instance, then exit (needs --to and --message)</source>
         <translation>Sendas mesaĝon per la ruliĝanta ekzemplero, poste eliras (bezonas --to kaj --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="791"/>
+        <location filename="../main.cpp" line="800"/>
         <source>Recipient for --send: a phone number (international), a group id, or a contact name</source>
         <translation>Ricevanto por --send: telefonnumero (internacia), grupa identigilo, aŭ nomo de kontakto</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="796"/>
+        <location filename="../main.cpp" line="805"/>
         <source>Message text for --send</source>
         <translation>Teksto de la mesaĝo por --send</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="799"/>
+        <location filename="../main.cpp" line="808"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
         <translation>Alkroĉas dosieron por --send (ĝia --message, se ekzistas, iĝas la apudskribo)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="804"/>
+        <location filename="../main.cpp" line="813"/>
         <source>Caption for the --file attachment (alias of --message)</source>
         <translation>Apudskribo por la alkroĉaĵo --file (alinomo de --message)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="808"/>
+        <location filename="../main.cpp" line="817"/>
         <source>How --send delivers: &apos;web&apos; (the running WhatsApp Web session) or &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</source>
         <translation>Kiel --send liveras: &apos;web&apos; (la ruliĝanta seanco de Vacapo Reto) aŭ &apos;cloud&apos; (Meta WhatsApp Business Cloud API)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="814"/>
+        <location filename="../main.cpp" line="823"/>
         <source>Use the saved template of this name as the --send message (fill its {{fields}} with --var)</source>
         <translation>Uzas la konservitan ŝablonon kun ĉi tiu nomo kiel la mesaĝon de --send (plenigu ĝiajn {{kampojn}} per --var)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="819"/>
+        <location filename="../main.cpp" line="828"/>
         <source>Fill a template field: key=value (repeatable)</source>
         <translation>Plenigas kampon de ŝablono: ŝlosilo=valoro (ripetebla)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="823"/>
+        <location filename="../main.cpp" line="832"/>
         <source>List the saved message templates and exit</source>
         <translation>Listigas la konservitajn mesaĝŝablonojn kaj eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="826"/>
+        <location filename="../main.cpp" line="835"/>
         <source>Save (or replace) a message template, then exit: name=body</source>
         <translation>Konservas (aŭ anstataŭigas) mesaĝŝablonon, poste eliras: nomo=korpo</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="830"/>
+        <location filename="../main.cpp" line="839"/>
         <source>Delete the saved message template of this name, then exit</source>
         <translation>Forigas la konservitan mesaĝŝablonon kun ĉi tiu nomo, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="835"/>
+        <location filename="../main.cpp" line="844"/>
         <source>Turn auto-reply to incoming messages on, then exit</source>
         <translation>Ŝaltas aŭtomatan respondon al alvenantaj mesaĝoj, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="838"/>
+        <location filename="../main.cpp" line="847"/>
         <source>Turn auto-reply off, then exit</source>
         <translation>Malŝaltas la aŭtomatan respondon, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="841"/>
+        <location filename="../main.cpp" line="850"/>
         <source>List the active auto-reply rules (status included) and exit</source>
         <translation>Listigas la aktivajn regulojn de aŭtomata respondo (kun la stato) kaj eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="844"/>
+        <location filename="../main.cpp" line="853"/>
         <source>Use this JSON file as a source of auto-reply rules, then exit (empty to clear)</source>
         <translation>Uzas ĉi tiun JSON-dosieron kiel fonton de reguloj de aŭtomata respondo, poste eliras (malplena por forigi)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="850"/>
+        <location filename="../main.cpp" line="859"/>
         <source>Set the Cloud API phone-number id, then exit</source>
         <translation>Agordas la identigilon de la telefonnumero de la Nuba API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="854"/>
+        <location filename="../main.cpp" line="863"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
         <translation>Agordas la alirĵetonon de la Nuba API, poste eliras (konservita en la agordo de la konto)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="859"/>
+        <location filename="../main.cpp" line="868"/>
         <source>Set the Cloud API graph version (e.g. v21.0), then exit</source>
         <translation>Agordas la version de la Graph-API (ekz. v21.0), poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="863"/>
+        <location filename="../main.cpp" line="872"/>
         <source>Show whether the Cloud API is configured, then exit</source>
         <translation>Montras ĉu la Nuba API estas agordita, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="866"/>
+        <location filename="../main.cpp" line="875"/>
         <source>For --send --backend cloud: send this Meta-approved template</source>
         <translation>Por --send --backend cloud: sendas ĉi tiun ŝablonon aprobitan de Meta</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="870"/>
+        <location filename="../main.cpp" line="879"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
         <translation>Lingvokodo por --cloud-template (ekz. es, en_US)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="874"/>
+        <location filename="../main.cpp" line="883"/>
         <source>A positional body parameter for --cloud-template (repeatable)</source>
         <translation>Pozicia parametro de la korpo por --cloud-template (ripetebla)</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="879"/>
+        <location filename="../main.cpp" line="888"/>
         <source>Enable the local HTTP API, then exit</source>
         <translation>Ŝaltas la lokan HTTP-API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="882"/>
+        <location filename="../main.cpp" line="891"/>
         <source>Disable the local HTTP API, then exit</source>
         <translation>Malŝaltas la lokan HTTP-API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="885"/>
+        <location filename="../main.cpp" line="894"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
         <translation>Agordas la pordon de la loka HTTP-API (defaŭlte 8590), poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="889"/>
+        <location filename="../main.cpp" line="898"/>
         <source>Set the local HTTP API bearer token, then exit</source>
         <translation>Agordas la Bearer-ĵetonon de la loka HTTP-API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="893"/>
+        <location filename="../main.cpp" line="902"/>
         <source>Show the local HTTP API configuration, then exit</source>
         <translation>Montras la agordon de la loka HTTP-API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="897"/>
+        <location filename="../main.cpp" line="906"/>
         <source>Enable receiving Cloud API webhooks, then exit</source>
         <translation>Ŝaltas la ricevadon de webhook-oj de la Nuba API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="900"/>
+        <location filename="../main.cpp" line="909"/>
         <source>Disable receiving Cloud API webhooks, then exit</source>
         <translation>Malŝaltas la ricevadon de webhook-oj de la Nuba API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="903"/>
+        <location filename="../main.cpp" line="912"/>
         <source>Set the Cloud API webhook verify token, then exit</source>
         <translation>Agordas la kontrolĵetonon de la webhook de la Nuba API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="907"/>
+        <location filename="../main.cpp" line="916"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
         <translation>Agordas la sekreton de la Meta-aplikaĵo por kontroli la subskribon de la webhook, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="911"/>
+        <location filename="../main.cpp" line="920"/>
         <source>Show the Cloud API webhook configuration, then exit</source>
         <translation>Montras la agordon de la webhook de la Nuba API, poste eliras</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1315"/>
+        <location filename="../main.cpp" line="1324"/>
         <source>App lock is not configured, 
 Please setup the password in the Settings first.</source>
         <translation>La aplikaĵa ŝloso ne estas agordita.
 Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="1413"/>
+        <location filename="../main.cpp" line="1422"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
         <translation>Restariĝis post starta kolapso per ŝalto al sekura bildigo. Vi povas ŝanĝi tion en Agordoj → Rendimento.</translation>
     </message>
@@ -2099,7 +2116,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>Restarigi la zomon</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="742"/>
+        <location filename="../main.cpp" line="751"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
         <translation>Interna: atendi la finiĝon de la procezo kun ĉi tiu identigilo antaŭ ol lanĉiĝi; uzata de “Restartigi nun”</translation>
     </message>
@@ -3036,7 +3053,7 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
     <message>
         <location filename="../settingswidget.ui" line="881"/>
         <source>Leave empty to show just &quot;Whatly&quot;. Set a browser WhatsApp knows, such as Chrome, if linking by phone number does not work.</source>
-        <translation>Lasu malplena por montri nur "Whatly". Enigu retumilon kiun WhatsApp konas, kiel Chrome, se ligado per telefonnumero ne funkcias.</translation>
+        <translation>Lasu malplena por montri nur &quot;Whatly&quot;. Enigu retumilon kiun WhatsApp konas, kiel Chrome, se ligado per telefonnumero ne funkcias.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="897"/>

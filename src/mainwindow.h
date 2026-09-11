@@ -103,6 +103,10 @@ public slots:
   // restart. Only ever reached for an AppImage with the tool present; a no-op
   // otherwise. See issue #85.
   void startAppImageSelfUpdate();
+  // Force an update check and report the result either way (#114): the
+  // background check is silent when up to date, so a manual trigger needs its
+  // own "you are on the latest version" / error feedback.
+  void checkForUpdatesInteractive();
   // Bring the window up and give it focus. The tray menu uses it: an action
   // picked from there used to run with the window still behind everything.
   void raiseWindow();
@@ -676,6 +680,7 @@ private:
   QAction *m_minimizeAction = nullptr;
   QAction *m_restoreAction = nullptr;
   QAction *m_aboutAction = nullptr;
+  QAction *m_checkUpdatesAction = nullptr;
   QAction *m_settingsAction = nullptr;
   QAction *m_scheduledMessagesAction = nullptr;
   QAction *m_toggleThemeAction = nullptr;
