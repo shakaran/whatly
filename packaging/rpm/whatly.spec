@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        7.6.2
+Version:        7.6.3
 # Reference system-Qt spec for downstream packagers; the release itself builds
 # the native rpm from packaging/obs/whatly.spec. Release kept at 0 to match it
 # (both are the system-Qt "whatly"), so this never looks newer than, or collides
@@ -65,6 +65,11 @@ not affiliated with WhatsApp or Meta.
 # %%{_datadir}/whatly/ back here if you do.
 
 %changelog
+* Sat Sep 12 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.6.3-1
+- The taskbar icon is sharp again while there are unread messages: the unread
+  badge is composited over the high-resolution app icon instead of the 64px tray
+  artwork a HiDPI panel had to upscale (#112).
+
 * Sat Sep 12 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.6.2-1
 - Eight new interface languages, taking the total to 30: Portuguese (Portugal),
   Catalan, Romanian, Swedish, Galician, Danish, Norwegian Bokmål and Greek.

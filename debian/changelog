@@ -1,3 +1,13 @@
+whatly (7.6.3) unstable; urgency=medium
+
+  * The taskbar icon is sharp again while there are unread messages (#112). The
+    account window borrowed the 64px tray icon to show the count, which a HiDPI
+    panel or titlebar upscaled to a blur; the unread badge is now composited over
+    the high-resolution app icon (SVG / 512px) instead. The tray keeps its own
+    small artwork. Thanks to Tulis12 for the screenshot.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Sat, 12 Sep 2026 18:30:00 +0200
+
 whatly (7.6.2) unstable; urgency=medium
 
   * Eight new interface languages, taking the total to 30: Portuguese (Portugal),

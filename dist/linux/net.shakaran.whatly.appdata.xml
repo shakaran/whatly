@@ -108,6 +108,13 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.6.3" date="2026-09-12">
+      <description>
+        <ul>
+          <li>The taskbar icon is sharp again while there are unread messages: the unread badge is now composited over the high-resolution app icon instead of the 64px tray artwork a HiDPI panel had to upscale (#112)</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.6.2" date="2026-09-12">
       <description>
         <ul>
