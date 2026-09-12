@@ -13,9 +13,9 @@ jobs:
       contents: write
     steps:
       - name: Checkout source
-        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Go Semantic Release
-        uses: go-semantic-release/action@7149b1688a03fa91bc122d93cd8bc3e95d1872b2 # v1.17.0
+        uses: go-semantic-release/action@2e9dc4247a6004f8377781bef4cb9dad273a741f # v1.24.1
         id: semrel
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -23,7 +23,7 @@ jobs:
           changelog-generator-opt: "emojis=true"
           prepend: true
       - name: Git Commit Changelog
-        uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a # v4
+        uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7.2.0
         with:
           commit_message: "docs(changelog): update cl & ver after release"
           file_pattern: CHANGELOG.md
