@@ -510,7 +510,7 @@
   var listEl = document.getElementById("changelog-list");
   var REPO = "shakaran/whatly";
 
-  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;"); }
 
   function inline(s){
     s = esc(s);
