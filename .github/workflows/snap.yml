@@ -37,12 +37,12 @@ jobs:
       # cached) before the secret has been added, without the job going red.
       SNAP_STORE_CREDS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           submodules: recursive
 
       - name: Build the snap
-        uses: snapcore/action-build@v1
+        uses: snapcore/action-build@3bdaa03e1ba6bf59a65f84a751d943d549a54e79 # v1
         id: build
 
       # A version tag is a release: publish straight to stable so
@@ -59,7 +59,7 @@ jobs:
 
       - name: Publish
         if: env.SNAP_STORE_CREDS != ''
-        uses: snapcore/action-publish@v1
+        uses: snapcore/action-publish@214b86e5ca036ead1668c79afb81e550e6c54d40 # v1
         env:
           SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
         with:

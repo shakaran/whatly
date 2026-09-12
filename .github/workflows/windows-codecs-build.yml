@@ -33,7 +33,7 @@ jobs:
       SCCACHE_DIR: ${{ github.workspace }}\.sccache
     steps:
       - name: Install base Qt ${{ inputs.qt_version }}
-        uses: jurplel/install-qt-action@v4
+        uses: jurplel/install-qt-action@48d3ad6db93f3627c8ee7a0454bc6f3744f7e730 # v4
         with:
           version: ${{ inputs.qt_version }}
           arch: win64_msvc2022_64
@@ -69,14 +69,14 @@ jobs:
           }
 
       - name: Set up MSVC 2022 + SDK 26100 environment
-        uses: ilammy/msvc-dev-cmd@v1
+        uses: ilammy/msvc-dev-cmd@0b201ec74fa43914dc39ae48a89fd1d8cb592756 # v1
         with:
           arch: x64
           sdk: '10.0.26100.0'
           vsversion: '2022'
 
       - name: Set up sccache
-        uses: mozilla-actions/sccache-action@v0.0.6
+        uses: mozilla-actions/sccache-action@9e326ebed976843c9932b3aa0e021c6f50310eb4 # v0.0.6
 
       - name: Restore the sccache disk cache
         # Persist SCCACHE_DIR across runs (and across the warm -> finish jobs)
@@ -86,7 +86,7 @@ jobs:
         # action) so the save below can run with if: always() — a full Chromium
         # build does not fit one warm+finish pass, so the cache MUST persist even
         # when finish stops incomplete, or the extra progress is lost.
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5
         with:
           path: ${{ github.workspace }}\.sccache
           key: sccache-winwe-${{ inputs.qt_version }}-${{ github.run_id }}-${{ inputs.phase }}
@@ -179,7 +179,7 @@ jobs:
         # incomplete — that is what lets a subsequent full run resume further
         # along until one completes within budget.
         if: always()
-        uses: actions/cache/save@v5
+        uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5
         with:
           path: ${{ github.workspace }}\.sccache
           key: sccache-winwe-${{ inputs.qt_version }}-${{ github.run_id }}-${{ inputs.phase }}
@@ -208,7 +208,7 @@ jobs:
 
       - name: Upload built module
         if: ${{ inputs.phase == 'finish' && steps.build.outputs.completed == 'true' }}
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
           name: qtwebengine-codecs-${{ inputs.qt_version }}
           path: |

@@ -14,7 +14,7 @@ on:
         required: true
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   # Create the GitHub release first, with the matching CHANGELOG.md section as
@@ -26,7 +26,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
       - name: Create (or update) the release from CHANGELOG.md
         env:
           GH_TOKEN: ${{ github.token }}
@@ -52,6 +52,8 @@ jobs:
 
   windows:
     needs: create-release
+    permissions:
+      contents: write
     runs-on: windows-2022
     # Optional Windows code signing via the SignPath Foundation free OSS program
     # (issue #325). Everything below is a no-op until the SIGNPATH_API_TOKEN
@@ -60,10 +62,10 @@ jobs:
     env:
       SIGNPATH_API_TOKEN: ${{ secrets.SIGNPATH_API_TOKEN }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v4
+        uses: jurplel/install-qt-action@48d3ad6db93f3627c8ee7a0454bc6f3744f7e730 # v4
         with:
           version: '6.10.3'  # exact pin (#71): bump deliberately, don't glob
           arch: win64_msvc2022_64
@@ -136,14 +138,14 @@ jobs:
       - name: Upload unsigned .exe for signing
         if: env.SIGNPATH_API_TOKEN != ''
         id: upload-unsigned
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
           name: whatly-unsigned-exe
           path: build/Release/whatly.exe
 
       - name: Code-sign with SignPath
         if: env.SIGNPATH_API_TOKEN != ''
-        uses: signpath/github-action-submit-signing-request@v1
+        uses: signpath/github-action-submit-signing-request@ced31329c0317e779dad2eec2a7c3bb46ea1343e # v1
         with:
           api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
           organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
@@ -249,9 +251,11 @@ jobs:
   # swapped for the checked-out tree so CI always packages the pushed commit.
   flatpak:
     needs: create-release
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           submodules: recursive
 
@@ -290,16 +294,18 @@ jobs:
   # ── AppImage (+ .zsync delta updates) ───────────────────────────────────────
   appimage:
     needs: create-release
+    permissions:
+      contents: write
     runs-on: ubuntu-22.04
     env:
       APPIMAGE_EXTRACT_AND_RUN: 1   # runners have no FUSE
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           submodules: recursive
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v4
+        uses: jurplel/install-qt-action@48d3ad6db93f3627c8ee7a0454bc6f3744f7e730 # v4
         with:
           version: '6.10.3'  # exact pin (#71): bump deliberately, don't glob
           # qtserialport: the qtpositioning nmea plugin links it, and
@@ -430,16 +436,18 @@ jobs:
   # Standalone job: a failure here never blocks the other artifacts.
   packages:
     needs: create-release
+    permissions:
+      contents: write
     runs-on: ubuntu-22.04
     env:
       APPIMAGE_EXTRACT_AND_RUN: 1
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           submodules: recursive
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v4
+        uses: jurplel/install-qt-action@48d3ad6db93f3627c8ee7a0454bc6f3744f7e730 # v4
         with:
           version: '6.10.3'  # exact pin (#71): bump deliberately, don't glob
           modules: 'qtwebengine qtwebchannel qtpositioning qtserialport'
@@ -653,6 +661,8 @@ jobs:
   # failure here never blocks the other artifacts.
   opensuse:
     needs: create-release
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     container: opensuse/tumbleweed:latest
     steps:
@@ -674,7 +684,7 @@ jobs:
             'cmake(Qt6Svg)' 'cmake(Qt6LinguistTools)' \
             'pkgconfig(x11)' 'pkgconfig(xcb)'
 
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           submodules: recursive
 
@@ -702,7 +712,7 @@ jobs:
           ls -la whatly-*.rpm
 
       - name: Attach to release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@3bb12739c298aeb8a4eeaf626c5b8d85266b0e65 # v2
         with:
           tag_name: ${{ github.event.inputs.tag || github.ref_name }}
           files: whatly-*.rpm

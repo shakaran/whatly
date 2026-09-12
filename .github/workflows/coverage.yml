@@ -19,12 +19,12 @@ jobs:
   coverage:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           submodules: recursive
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v4
+        uses: jurplel/install-qt-action@48d3ad6db93f3627c8ee7a0454bc6f3744f7e730 # v4
         with:
           version: '6.10.3'  # exact pin (#71): bump deliberately, don't glob
           host: linux
@@ -53,7 +53,7 @@ jobs:
         run: gcovr --root . --filter 'src/' --cobertura --output coverage.xml --print-summary
 
       - name: Upload to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5
         with:
           files: coverage.xml
           token: ${{ secrets.CODECOV_TOKEN }}

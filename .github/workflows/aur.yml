@@ -34,7 +34,7 @@ jobs:
       # a REST tarball that does not land in the workspace as expected.
       - name: Install git
         run: pacman -Sy --noconfirm --needed git
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
       - name: Install build dependencies
         run: |
           pacman -Syu --noconfirm --needed cmake ninja \
@@ -64,7 +64,7 @@ jobs:
     env:
       AUR_SSH_PRIVATE_KEY: ${{ secrets.AUR_SSH_PRIVATE_KEY }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
 
       - name: Stamp version and checksums
         if: env.AUR_SSH_PRIVATE_KEY != ''
@@ -92,7 +92,7 @@ jobs:
 
       - name: Publish whatly (source)
         if: env.AUR_SSH_PRIVATE_KEY != ''
-        uses: KSXGitHub/github-actions-deploy-aur@v2.7.2
+        uses: KSXGitHub/github-actions-deploy-aur@9dfe151cf48f26a957bbd0379c120e79cb990e13 # v2.7.2
         with:
           pkgname: whatly
           pkgbuild: packaging/aur/whatly/PKGBUILD
@@ -107,7 +107,7 @@ jobs:
 
       - name: Publish whatly-bin (prebuilt)
         if: env.AUR_SSH_PRIVATE_KEY != ''
-        uses: KSXGitHub/github-actions-deploy-aur@v2.7.2
+        uses: KSXGitHub/github-actions-deploy-aur@9dfe151cf48f26a957bbd0379c120e79cb990e13 # v2.7.2
         with:
           pkgname: whatly-bin
           pkgbuild: packaging/aur/whatly-bin/PKGBUILD
