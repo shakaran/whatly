@@ -407,6 +407,7 @@ if (Qt${QT_VERSION_MAJOR}LinguistTools_FOUND)
             src/i18n/es_ES.ts
             src/i18n/fa_IR.ts
             src/i18n/fr_FR.ts
+            src/i18n/gl_ES.ts
             src/i18n/hi_IN.ts
             src/i18n/id_ID.ts
             src/i18n/it_IT.ts
