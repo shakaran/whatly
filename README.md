@@ -58,7 +58,8 @@ experimental **macOS** build.
 | 🔤 **Spell checker** | Actually works — Chromium `.bdic` dictionaries are shipped, and you can check against **several languages at once**. |
 | 🖥️ **Native integration** | System tray with a **monochrome** option and live connection status, desktop notifications, an app lock, a download manager, global shortcuts. |
 | 🌗 **Follows your desktop** | Optionally track the system light/dark preference, live. |
-| 🌍 **22 languages** | The interface is translated, with an in-app language picker. |
+| 🌍 **30 languages** | The interface is translated, with an in-app language picker. |
+| 🤖 **AI & translation** | Optional inline translation (LibreTranslate) and an AI assistant (OpenAI-compatible or a local Ollama) that summarises chats, redrafts your message or suggests a reply — the text never touches WhatsApp Web. |
 | 🪟 **Windows 10+** | One codebase, native toasts and a proper GUI executable. |
 | 🍎 **macOS** *(experimental)* | Builds as an unsigned `.app`/`.dmg`; not yet runtime-validated. |
 
@@ -208,6 +209,38 @@ On top of upstream WhatSie, this fork adds:
   detachable per-account windows, and a resizable grid view.
 - **Zoom buttons in WhatsApp's sidebar** — scale the page live without opening
   Settings.
+- **AI assistant** — summarise a chat or your unread chats, or redraft your
+  message (shorter, friendlier, more formal) and suggest a reply, through an
+  OpenAI-compatible endpoint or a **local Ollama** (a light-model downloader is
+  built in). The request is made by the app, so the endpoint and key never reach
+  WhatsApp Web; with a local runner the text never leaves your machine. Actions
+  live in the command palette and Shortcuts.
+- **Inline translation** — translate the message box or a selection through a
+  **LibreTranslate**-compatible service, into the app's language or a target you
+  set. Same privacy shape: the request comes from the app, not WhatsApp Web.
+- **Undo send** — optionally hold a message for a few seconds after
+  <kbd>Enter</kbd>, showing an *Undo* button before it actually goes out; press
+  <kbd>Enter</kbd> again to send at once.
+- **Boss key** — <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>H</kbd> hides every Whatly
+  window at once and suppresses message popups while hidden; press it again (or
+  use the tray) to bring them back. Unread badges keep updating meanwhile.
+- **Export a chat** — save a whole conversation, media included, to a folder.
+- **In-app self-update for the AppImage** — the portable build can update itself
+  in place with AppImageUpdate, fetching only the parts that changed and
+  **verifying the new image's GPG signature** against the key compiled into the
+  build before restarting into it; a tampered image is rejected and rolled back.
+  A manual **Check for updates** (tray menu and command palette) forces a check
+  and reports the result either way.
+- **Free memory by unloading idle accounts** — accounts you are not viewing can
+  be unloaded after a delay and reload where they were when you return, so an
+  always-on multi-account setup keeps a smaller footprint.
+- **First-run spell-check dictionary** — on a fresh install Whatly fetches the
+  dictionary matching your system language automatically, so the spell checker is
+  useful out of the box without shipping one dictionary for everybody.
+- **Configurable linking browser name** — *Identify as Whatly in linked devices*
+  now takes a browser name: leave it empty for a clean *"Whatly"* label, or set a
+  browser WhatsApp recognises (such as Chrome) when linking by phone number needs
+  it.
 
 ## Screenshots
 
@@ -457,11 +490,15 @@ Three independent ways to be signed in to more than one account:
 
 The interface follows your system locale and can be changed in
 **Settings → General settings → Interface language** (takes effect after a
-restart). 22 languages ship with the app.
+restart). 30 languages ship with the app.
 
-> **Only `it_IT` was translated by a human.** The rest were machine-generated
-> without native-speaker review and will contain mistakes. Corrections are very
-> welcome and need no C++ — see [docs/TRANSLATIONS.md](docs/TRANSLATIONS.md).
+> **Translation quality varies.** `it_IT` was translated by a human. Portuguese
+> (Portugal) and seven European languages added since — Catalan, Romanian,
+> Swedish, Galician, Danish, Norwegian Bokmål and Greek — were translated string
+> by string rather than bulk-machine-translated, but still have not had a
+> native-speaker review. The remaining languages were machine-generated without
+> review and will contain mistakes. Corrections are very welcome and need no
+> C++ — see [docs/TRANSLATIONS.md](docs/TRANSLATIONS.md).
 >
 > This covers Whatly's own interface only. The language of the chats comes from
 > WhatsApp Web and cannot be changed here.

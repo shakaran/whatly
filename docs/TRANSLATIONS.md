@@ -11,11 +11,14 @@ language**; the change takes effect after a restart.
 
 ## ⚠️ Most of these translations are machine-generated
 
-`it_IT` was contributed by a human translator. **Every other language was
-generated without native-speaker review** and is very likely to contain awkward
-or plainly wrong wording — more so the further it gets from the Western European
-languages. They are here because an untranslated interface helps nobody, not
-because they are good.
+`it_IT` was contributed by a human translator. Portuguese (Portugal) and seven
+European languages added later — Catalan, Romanian, Swedish, Galician, Danish,
+Norwegian Bokmål and Greek — were translated string by string rather than
+bulk-machine-translated, but still **have not had a native-speaker review**.
+**Every other language was generated without native-speaker review** and is very
+likely to contain awkward or plainly wrong wording — more so the further it gets
+from the Western European languages. They are here because an untranslated
+interface helps nobody, not because they are good.
 
 **Corrections from native speakers are the whole point.** Fixing even a handful
 of strings in your language is a genuinely useful contribution, and you do not
