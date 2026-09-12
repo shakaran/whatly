@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 7.6.2 (2026-09-12)
+
 - **Portuguese (Portugal) is available as an interface language,** the 23rd. It is seeded from the existing Brazilian Portuguese translation and adjusted to European Portuguese vocabulary (ficheiro, utilizador, guardar).
 - **Catalan (ca_ES) is available as an interface language,** the 24th. It is a full translation of the English source (787 strings), leaving only untranslatable placeholders, URLs and unit labels to fall back to English.
 - **Romanian (ro_RO) is available as an interface language,** the 25th. It is a full translation of the English source (787 strings), leaving only untranslatable placeholders, URLs and unit labels to fall back to English.

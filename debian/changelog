@@ -1,3 +1,18 @@
+whatly (7.6.2) unstable; urgency=medium
+
+  * Eight new interface languages, taking the total to 30: Portuguese (Portugal),
+    Catalan, Romanian, Swedish, Galician, Danish, Norwegian Bokmål and Greek.
+    Portuguese (Portugal) is seeded from Brazilian Portuguese; the seven European
+    ones are full string-by-string translations of the English source.
+  * A manual "Check for updates" action in the tray menu and the command palette
+    (#114). It forces a check, ignoring the once-a-day throttle, and reports the
+    result either way: the update notice, "Whatly is up to date", or the error.
+  * Sharper taskbar icon on portable and HiDPI setups (#112): the installed icon
+    set gains a 512x512 size, the AppImage embeds the 512px icon, and the window
+    icon carries the scalable SVG (Wayland's xdg-toplevel-icon on Qt 6.9+).
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Sat, 12 Sep 2026 12:00:00 +0200
+
 whatly (7.6.1) unstable; urgency=medium
 
   * Settings are no longer lost on every launch, a 7.6.0 regression. Assembling

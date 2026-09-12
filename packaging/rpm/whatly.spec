@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        7.6.1
+Version:        7.6.2
 # Reference system-Qt spec for downstream packagers; the release itself builds
 # the native rpm from packaging/obs/whatly.spec. Release kept at 0 to match it
 # (both are the system-Qt "whatly"), so this never looks newer than, or collides
@@ -65,6 +65,14 @@ not affiliated with WhatsApp or Meta.
 # %%{_datadir}/whatly/ back here if you do.
 
 %changelog
+* Sat Sep 12 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.6.2-1
+- Eight new interface languages, taking the total to 30: Portuguese (Portugal),
+  Catalan, Romanian, Swedish, Galician, Danish, Norwegian Bokmål and Greek.
+- A manual "Check for updates" action in the tray menu and the command palette
+  that forces a check and reports the result either way (#114).
+- Sharper taskbar icon on portable and HiDPI setups: a 512px size, the scalable
+  SVG on the window icon, and Wayland's xdg-toplevel-icon (#112).
+
 * Tue Sep 08 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.6.1-1
 - Settings are no longer lost on every launch (a 7.6.0 regression): the app and
   organization names are set before the first setting is read, so the settings

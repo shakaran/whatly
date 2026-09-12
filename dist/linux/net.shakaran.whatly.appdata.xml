@@ -108,6 +108,15 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.6.2" date="2026-09-12">
+      <description>
+        <ul>
+          <li>Eight new interface languages, taking the total to 30: Portuguese (Portugal), Catalan, Romanian, Swedish, Galician, Danish, Norwegian Bokmål and Greek</li>
+          <li>A manual "Check for updates" action in the tray menu and the command palette that forces a check and reports the result either way (#114)</li>
+          <li>Sharper taskbar icon on portable and HiDPI setups: a 512x512 size, the scalable SVG on the window icon, and Wayland's xdg-toplevel-icon (#112)</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.6.1" date="2026-09-08">
       <description>
         <ul>
