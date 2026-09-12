@@ -2977,6 +2977,30 @@ private slots:
             TrayIcon::composeTrayImage(100, false, true, 64));
   }
 
+  // The window/taskbar icon composes the badge over a caller-supplied base at any
+  // size, so it stays real pixels instead of upscaling the 64px tray artwork to a
+  // blur on a HiDPI panel (#112).
+  void badgeOverBaseSizesAndBadge() {
+    QImage base(256, 256, QImage::Format_ARGB32_Premultiplied);
+    base.fill(Qt::white);
+
+    // Honours a size larger than any tray artwork, and draws something.
+    const QImage big = TrayIcon::composeBadgeOverBase(base, 3, 128);
+    QCOMPARE(big.size(), QSize(128, 128));
+    QVERIFY(!TrayIcon::isFullyTransparent(big));
+
+    // Zero count is the base with no badge; a count changes it, and different
+    // counts differ (the number is drawn on top).
+    QVERIFY(TrayIcon::composeBadgeOverBase(base, 0, 128) != big);
+    QVERIFY(TrayIcon::composeBadgeOverBase(base, 3, 128) !=
+            TrayIcon::composeBadgeOverBase(base, 42, 128));
+
+    // A null base still yields a badge-only image of the right size (no crash).
+    const QImage nullBase = TrayIcon::composeBadgeOverBase(QImage(), 5, 64);
+    QCOMPARE(nullBase.size(), QSize(64, 64));
+    QVERIFY(!TrayIcon::isFullyTransparent(nullBase));
+  }
+
   // The monochrome mode said "9+" past nine while the colour one said "+", so the
   // two disagreed about the same inbox. Both now draw the same text.
   void monochromeCountsAgreeWithColour() {

@@ -33,6 +33,12 @@ QIcon themeIcon(const QString& name, const QString& fallback);
 // SVG) with a multi-size raster fallback, so it stays sharp when scaled (#105).
 QIcon appWindowIcon();
 
+// The window/taskbar icon with the unread count badged onto it. Composited over
+// the high-resolution app icon at several sizes so a HiDPI panel or titlebar
+// draws it crisp, instead of upscaling the 64px tray artwork to a blur (#112).
+// A count of zero returns the plain appWindowIcon().
+QIcon appWindowIconWithBadge(int notificationCount);
+
 // A window request (window.open / target="_blank") whose URL lives on
 // web.whatsapp.com is one of WhatsApp's own in-app popups — above all the call
 // "Move to new window" popout — and must stay inside Whatly rather than being

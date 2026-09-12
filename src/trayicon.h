@@ -38,6 +38,15 @@ QString badgeText(int count);
 QImage composeTrayImage(int notificationCount, bool monochrome, bool connected,
                         int size);
 
+// Compose the unread badge over a caller-supplied base image at the given square
+// size. Unlike composeTrayImage, the base is not the 64px tray artwork but
+// whatever the caller renders — the window/taskbar icon passes the
+// high-resolution app icon (SVG / 512px), which a panel then draws at 128px or
+// more on HiDPI without upscaling a small raster to a blur (#112). The count
+// badge is drawn (never baked in) so it is crisp at those sizes too; a zero or
+// empty count returns the base scaled to size with no badge.
+QImage composeBadgeOverBase(const QImage &base, int notificationCount, int size);
+
 } // namespace TrayIcon
 
 #endif // TRAYICON_H

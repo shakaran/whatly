@@ -1614,7 +1614,10 @@ void MainWindow::updateTrayUnread() {
         sum.mutedKnown = false;
     }
     m_systemTrayIcon->setToolTip(trayTooltipText(sum));
-    setWindowIcon(getTrayIcon(total));
+    // The window/taskbar icon needs the badge composited over the
+    // high-resolution app icon, not the 64px tray artwork, or a HiDPI panel
+    // upscales it to a blur (#112). The tray icon above keeps its own artwork.
+    setWindowIcon(appWindowIconWithBadge(total));
   } else {
     m_restoreAction->setText(tr("Restore"));
     // Route the idle icon through getTrayIcon(0) too, so it honours the

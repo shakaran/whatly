@@ -1,6 +1,10 @@
 #include "common.h"
 
+#include "trayicon.h"
+
+#include <QImage>
 #include <QObject>
+#include <QPixmap>
 #include <QRegularExpression>
 #include <QStringList>
 #include <QUrl>
@@ -55,6 +59,25 @@ QIcon appWindowIcon() {
     fallback.addFile(
         QStringLiteral(":/icons/app/icon-%1.png").arg(QLatin1String(s)));
   return QIcon::fromTheme(kAppId, fallback);
+}
+
+QIcon appWindowIconWithBadge(int notificationCount) {
+  if (notificationCount <= 0)
+    return appWindowIcon();
+
+  const QIcon appIcon = appWindowIcon();
+  QIcon out;
+  // A titlebar and, especially, a HiDPI panel draw the window icon much larger
+  // than the tray does, so compose the badge over the high-resolution app icon
+  // at these sizes rather than over the 64px tray artwork the account window
+  // used to borrow (#112). QIcon then hands the compositor whichever size it
+  // asks for from real pixels.
+  for (const int size : {32, 48, 64, 128, 256}) {
+    const QImage base = appIcon.pixmap(size, size).toImage();
+    out.addPixmap(QPixmap::fromImage(
+        TrayIcon::composeBadgeOverBase(base, notificationCount, size)));
+  }
+  return out;
 }
 
 bool isInAppPopupUrl(const QUrl &url) {

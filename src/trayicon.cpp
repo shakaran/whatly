@@ -206,4 +206,32 @@ QImage composeTrayImage(int notificationCount, bool monochrome, bool connected,
   return base.toImage();
 }
 
+QImage composeBadgeOverBase(const QImage &base, int notificationCount, int size) {
+  const int count = qMax(0, notificationCount);
+
+  QImage out(size, size, QImage::Format_ARGB32_Premultiplied);
+  out.fill(Qt::transparent);
+  QPainter p(&out);
+  p.setRenderHint(QPainter::SmoothPixmapTransform, true);
+
+  // The caller hands us a high-resolution base (the app icon rendered from its
+  // SVG / 512px raster), so scaling it to the requested size stays crisp even
+  // at the 128px+ a HiDPI panel or a titlebar asks for — which is the whole
+  // point over the 64px tray artwork (#112). Centre it in case it is not square.
+  if (!base.isNull()) {
+    const QImage scaled = base.scaled(size, size, Qt::KeepAspectRatio,
+                                      Qt::SmoothTransformation);
+    p.drawImage((size - scaled.width()) / 2, (size - scaled.height()) / 2,
+                scaled);
+  }
+
+  // Draw the count badge (nothing at zero). The same helper and red the tray uses
+  // past nine, so the two surfaces agree.
+  if (const QString text = badgeText(count); !text.isEmpty())
+    paintCountBadge(p, size, text, QColor(0xe1, 0x1d, 0x1d), Qt::white);
+
+  p.end();
+  return out;
+}
+
 } // namespace TrayIcon
