@@ -402,7 +402,9 @@ if (Qt${QT_VERSION_MAJOR}LinguistTools_FOUND)
             src/i18n/ar_SA.ts
             src/i18n/bn_BD.ts
             src/i18n/ca_ES.ts
+            src/i18n/da_DK.ts
             src/i18n/de_DE.ts
+            src/i18n/el_GR.ts
             src/i18n/eo.ts
             src/i18n/es_ES.ts
             src/i18n/fa_IR.ts
@@ -413,6 +415,7 @@ if (Qt${QT_VERSION_MAJOR}LinguistTools_FOUND)
             src/i18n/it_IT.ts
             src/i18n/ja_JP.ts
             src/i18n/ko_KR.ts
+            src/i18n/nb_NO.ts
             src/i18n/nl_NL.ts
             src/i18n/pl_PL.ts
             src/i18n/pt_BR.ts
