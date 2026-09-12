@@ -12,12 +12,12 @@
         <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
         <source>Report a Bug</source>
-        <translation>Informar d'un error</translation>
+        <translation>Informar d&apos;un error</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="145"/>
         <source>The debug information was too long for the browser to carry, so it has been copied to your clipboard instead. Paste it into the issue.</source>
-        <translation>La informació de depuració era massa llarga per al navegador, així que s'ha copiat al porta-retalls. Enganxeu-la a la incidència.</translation>
+        <translation>La informació de depuració era massa llarga per al navegador, així que s&apos;ha copiat al porta-retalls. Enganxeu-la a la incidència.</translation>
     </message>
     <message>
         <location filename="../about.cpp" line="152"/>
@@ -82,7 +82,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../about.ui" line="217"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copies the debug information below to the clipboard and opens the issue tracker, so it can be pasted straight into the report.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copia la informació de depuració de sota al porta-retalls i obre el gestor d'incidències, perquè es pugui enganxar directament a l'informe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copia la informació de depuració de sota al porta-retalls i obre el gestor d&apos;incidències, perquè es pugui enganxar directament a l&apos;informe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../about.ui" line="229"/>
@@ -95,27 +95,27 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../aiassistant.cpp" line="241"/>
         <source>No AI endpoint is configured (Settings → AI assistant).</source>
-        <translation>No s'ha configurat cap punt final d'IA (Configuració → Assistent d'IA).</translation>
+        <translation>No s&apos;ha configurat cap punt final d&apos;IA (Configuració → Assistent d&apos;IA).</translation>
     </message>
     <message>
         <location filename="../aiassistant.cpp" line="245"/>
         <source>No AI model is configured (Settings → AI assistant).</source>
-        <translation>No s'ha configurat cap model d'IA (Configuració → Assistent d'IA).</translation>
+        <translation>No s&apos;ha configurat cap model d&apos;IA (Configuració → Assistent d&apos;IA).</translation>
     </message>
     <message>
         <location filename="../aiassistant.cpp" line="249"/>
         <source>There is nothing to send to the assistant.</source>
-        <translation>No hi ha res per enviar a l'assistent.</translation>
+        <translation>No hi ha res per enviar a l&apos;assistent.</translation>
     </message>
     <message>
         <location filename="../aiassistant.cpp" line="289"/>
         <source>The assistant took too long and was cancelled.</source>
-        <translation>L'assistent ha trigat massa i s'ha cancel·lat.</translation>
+        <translation>L&apos;assistent ha trigat massa i s&apos;ha cancel·lat.</translation>
     </message>
     <message>
         <location filename="../aiassistant.cpp" line="292"/>
         <source>The assistant request failed.</source>
-        <translation>La sol·licitud a l'assistent ha fallat.</translation>
+        <translation>La sol·licitud a l&apos;assistent ha fallat.</translation>
     </message>
 </context>
 <context>
@@ -296,7 +296,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../commandpalette.cpp" line="46"/>
         <source>Command palette</source>
-        <translation>Paleta d'ordres</translation>
+        <translation>Paleta d&apos;ordres</translation>
     </message>
     <message>
         <location filename="../commandpalette.cpp" line="57"/>
@@ -306,7 +306,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../commandpalette.cpp" line="59"/>
         <source>Command search</source>
-        <translation>Cerca d'ordres</translation>
+        <translation>Cerca d&apos;ordres</translation>
     </message>
     <message>
         <location filename="../commandpalette.cpp" line="62"/>
@@ -347,7 +347,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../dictionarymanager.cpp" line="153"/>
         <source>Could not save the dictionary.</source>
-        <translation>No s'ha pogut desar el diccionari.</translation>
+        <translation>No s&apos;ha pogut desar el diccionari.</translation>
     </message>
 </context>
 <context>
@@ -404,7 +404,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../downloadwidget.ui" line="63"/>
         <source>Open file using system application</source>
-        <translation>Obre el fitxer amb l'aplicació del sistema</translation>
+        <translation>Obre el fitxer amb l&apos;aplicació del sistema</translation>
     </message>
     <message>
         <location filename="../downloadwidget.cpp" line="58"/>
@@ -467,7 +467,7 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../dropprogress.cpp" line="76"/>
         <source>Attaching…</source>
-        <translation>S'està adjuntant…</translation>
+        <translation>S&apos;està adjuntant…</translation>
     </message>
 </context>
 <context>
@@ -599,12 +599,12 @@ Do you wish to override the security check and continue ?   </source>
     <message>
         <location filename="../mainwindow.cpp" line="915"/>
         <source>No scroll diagnostics recorded yet. Turn on collection, scroll a chat for a few seconds, then copy.</source>
-        <translation>Encara no s'ha registrat cap diagnòstic de desplaçament. Activeu la recollida, desplaceu-vos per un xat uns segons i després copieu.</translation>
+        <translation>Encara no s&apos;ha registrat cap diagnòstic de desplaçament. Activeu la recollida, desplaceu-vos per un xat uns segons i després copieu.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="924"/>
         <source>Scroll diagnostics copied to the clipboard (and added to the log). Paste them into your bug report.</source>
-        <translation>S'ha copiat el diagnòstic de desplaçament al porta-retalls (i afegit al registre). Enganxeu-lo al vostre informe d'error.</translation>
+        <translation>S&apos;ha copiat el diagnòstic de desplaçament al porta-retalls (i afegit al registre). Enganxeu-lo al vostre informe d&apos;error.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1021"/>
@@ -655,18 +655,18 @@ Webengine is not initialized.</source>
     <message>
         <location filename="../mainwindow.cpp" line="1254"/>
         <source>Cloud API send failed: %1</source>
-        <translation>L'enviament per la Cloud API ha fallat: %1</translation>
+        <translation>L&apos;enviament per la Cloud API ha fallat: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1279"/>
         <source>Could not understand the recipient: %1</source>
-        <translation>No s'ha entès el destinatari: %1</translation>
+        <translation>No s&apos;ha entès el destinatari: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1308"/>
         <location filename="../mainwindow.cpp" line="1389"/>
         <source>Could not read the file to send: %1</source>
-        <translation>No s'ha pogut llegir el fitxer a enviar: %1</translation>
+        <translation>No s&apos;ha pogut llegir el fitxer a enviar: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1317"/>
@@ -677,17 +677,17 @@ Webengine is not initialized.</source>
     <message>
         <location filename="../mainwindow.cpp" line="1342"/>
         <source>Opening the group and sending…</source>
-        <translation>S'està obrint el grup i enviant…</translation>
+        <translation>S&apos;està obrint el grup i enviant…</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1343"/>
         <source>Opening the chat with &quot;%1&quot; and sending…</source>
-        <translation>S'està obrint el xat amb «%1» i enviant…</translation>
+        <translation>S&apos;està obrint el xat amb «%1» i enviant…</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1374"/>
         <source>The local API could not start: %1</source>
-        <translation>L'API local no s'ha pogut iniciar: %1</translation>
+        <translation>L&apos;API local no s&apos;ha pogut iniciar: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1526"/>
@@ -708,12 +708,12 @@ Webengine is not initialized.</source>
     <message>
         <location filename="../mainwindow.cpp" line="1535"/>
         <source>Could not check for updates: %1</source>
-        <translation>No s'han pogut comprovar les actualitzacions: %1</translation>
+        <translation>No s&apos;han pogut comprovar les actualitzacions: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1555"/>
         <source>Updating Whatly…</source>
-        <translation>S'està actualitzant el Whatly…</translation>
+        <translation>S&apos;està actualitzant el Whatly…</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1555"/>
@@ -724,32 +724,32 @@ Webengine is not initialized.</source>
     <message>
         <location filename="../mainwindow.cpp" line="1599"/>
         <source>The update could not be completed. You can download the new version from the release page instead.</source>
-        <translation>No s'ha pogut completar l'actualització. En comptes d'això, podeu baixar la versió nova des de la pàgina de llançaments.</translation>
+        <translation>No s&apos;ha pogut completar l&apos;actualització. En comptes d&apos;això, podeu baixar la versió nova des de la pàgina de llançaments.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1622"/>
         <source>The previous version has been restored.</source>
-        <translation>S'ha restaurat la versió anterior.</translation>
+        <translation>S&apos;ha restaurat la versió anterior.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1626"/>
         <source>The downloaded update failed signature verification and was not applied.</source>
-        <translation>L'actualització baixada no ha superat la verificació de signatura i no s'ha aplicat.</translation>
+        <translation>L&apos;actualització baixada no ha superat la verificació de signatura i no s&apos;ha aplicat.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1642"/>
         <source>Whatly was updated, but its signature could not be verified. Restart now to use the new version?</source>
-        <translation>El Whatly s'ha actualitzat, però no s'ha pogut verificar la seva signatura. Voleu reiniciar ara per usar la versió nova?</translation>
+        <translation>El Whatly s&apos;ha actualitzat, però no s&apos;ha pogut verificar la seva signatura. Voleu reiniciar ara per usar la versió nova?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1644"/>
         <source>Whatly was updated. Restart now to use the new version?</source>
-        <translation>El Whatly s'ha actualitzat. Voleu reiniciar ara per usar la versió nova?</translation>
+        <translation>El Whatly s&apos;ha actualitzat. Voleu reiniciar ara per usar la versió nova?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1661"/>
         <source>The update tool could not be started.</source>
-        <translation>No s'ha pogut iniciar l'eina d'actualització.</translation>
+        <translation>No s&apos;ha pogut iniciar l&apos;eina d&apos;actualització.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1687"/>
@@ -786,7 +786,7 @@ Webengine is not initialized.</source>
     <message>
         <location filename="../mainwindow.cpp" line="2023"/>
         <source>Rate Application</source>
-        <translation>Valora l'aplicació</translation>
+        <translation>Valora l&apos;aplicació</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="348"/>
@@ -937,7 +937,7 @@ Open Settings now?</source>
     <message>
         <location filename="../mainwindow_tray.cpp" line="96"/>
         <source>&amp;Mute audio</source>
-        <translation>&amp;Silencia l'àudio</translation>
+        <translation>&amp;Silencia l&apos;àudio</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="105"/>
@@ -953,7 +953,7 @@ Open Settings now?</source>
         <location filename="../mainwindow_tray.cpp" line="116"/>
         <location filename="../mainwindow_tray.cpp" line="375"/>
         <source>Reset zoom</source>
-        <translation>Restableix l'ampliació</translation>
+        <translation>Restableix l&apos;ampliació</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="136"/>
@@ -1063,19 +1063,19 @@ Open Settings now?</source>
         <location filename="../mainwindow_tray.cpp" line="269"/>
         <location filename="../mainwindow_tray.cpp" line="398"/>
         <source>Remind me to reply: in 1 hour</source>
-        <translation>Recorda'm que respongui: d'aquí a 1 hora</translation>
+        <translation>Recorda&apos;m que respongui: d&apos;aquí a 1 hora</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="276"/>
         <location filename="../mainwindow_tray.cpp" line="399"/>
         <source>Remind me to reply: in 3 hours</source>
-        <translation>Recorda'm que respongui: d'aquí a 3 hores</translation>
+        <translation>Recorda&apos;m que respongui: d&apos;aquí a 3 hores</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="283"/>
         <location filename="../mainwindow_tray.cpp" line="401"/>
         <source>Remind me to reply: tomorrow morning</source>
-        <translation>Recorda'm que respongui: demà al matí</translation>
+        <translation>Recorda&apos;m que respongui: demà al matí</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="290"/>
@@ -1097,7 +1097,7 @@ Open Settings now?</source>
         <location filename="../mainwindow_tray.cpp" line="330"/>
         <location filename="../mainwindow_tray.cpp" line="405"/>
         <source>Command palette</source>
-        <translation>Paleta d'ordres</translation>
+        <translation>Paleta d&apos;ordres</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="339"/>
@@ -1132,7 +1132,7 @@ Open Settings now?</source>
     <message>
         <location filename="../mainwindow_tray.cpp" line="372"/>
         <source>Mute audio</source>
-        <translation>Silencia l'àudio</translation>
+        <translation>Silencia l&apos;àudio</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="374"/>
@@ -1210,7 +1210,7 @@ Open Settings now?</source>
     <message>
         <location filename="../mainwindow_tray.cpp" line="665"/>
         <source>Only one spell-check language is chosen. Pick more in Settings to switch between them.</source>
-        <translation>Només s'ha triat un idioma de correcció ortogràfica. Trieu-ne més a la configuració per canviar entre ells.</translation>
+        <translation>Només s&apos;ha triat un idioma de correcció ortogràfica. Trieu-ne més a la configuració per canviar entre ells.</translation>
     </message>
     <message>
         <location filename="../mainwindow_tray.cpp" line="688"/>
@@ -1235,22 +1235,22 @@ Open Settings now?</source>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1034"/>
         <source>Unlock to Reload the App.</source>
-        <translation>Desbloqueja per tornar a carregar l'aplicació.</translation>
+        <translation>Desbloqueja per tornar a carregar l&apos;aplicació.</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1077"/>
         <source>Waiting for network…</source>
-        <translation>S'està esperant la xarxa…</translation>
+        <translation>S&apos;està esperant la xarxa…</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1204"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
-        <translation>Aquesta compilació no pot enviar vídeos H.264/MP4: el seu motor de navegador s'ha compilat sense els còdecs propietaris. Les fotos i els vídeos WebM/VP9 funcionen. Per a MP4, feu servir el Flatpak, el motor del qual s'ha compilat amb ells. (Feu clic per descartar.)</translation>
+        <translation>Aquesta compilació no pot enviar vídeos H.264/MP4: el seu motor de navegador s&apos;ha compilat sense els còdecs propietaris. Les fotos i els vídeos WebM/VP9 funcionen. Per a MP4, feu servir el Flatpak, el motor del qual s&apos;ha compilat amb ells. (Feu clic per descartar.)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1216"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs, and no build of Whatly with them exists for this platform. Photos and WebM/VP9 videos work; to send an MP4, convert it to WebM first or share it as a document. (Click to dismiss.)</source>
-        <translation>Aquesta compilació no pot enviar vídeos H.264/MP4: el seu motor de navegador s'ha compilat sense els còdecs propietaris, i no existeix cap compilació del Whatly amb ells per a aquesta plataforma. Les fotos i els vídeos WebM/VP9 funcionen; per enviar un MP4, convertiu-lo primer a WebM o compartiu-lo com a document. (Feu clic per descartar.)</translation>
+        <translation>Aquesta compilació no pot enviar vídeos H.264/MP4: el seu motor de navegador s&apos;ha compilat sense els còdecs propietaris, i no existeix cap compilació del Whatly amb ells per a aquesta plataforma. Les fotos i els vídeos WebM/VP9 funcionen; per enviar un MP4, convertiu-lo primer a WebM o compartiu-lo com a document. (Feu clic per descartar.)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1228"/>
@@ -1280,7 +1280,7 @@ Open Settings now?</source>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1564"/>
         <source>An export is already running.</source>
-        <translation>Ja s'està fent una exportació.</translation>
+        <translation>Ja s&apos;està fent una exportació.</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1569"/>
@@ -1290,57 +1290,57 @@ Open Settings now?</source>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1575"/>
         <source>Collecting messages… scrolling through the conversation.</source>
-        <translation>S'estan recollint els missatges… desplaçant-se per la conversa.</translation>
+        <translation>S&apos;estan recollint els missatges… desplaçant-se per la conversa.</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1623"/>
         <source>Collecting messages… (%1 so far)</source>
-        <translation>S'estan recollint els missatges… (%1 fins ara)</translation>
+        <translation>S&apos;estan recollint els missatges… (%1 fins ara)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1629"/>
         <source>Could not read the conversation: %1</source>
-        <translation>No s'ha pogut llegir la conversa: %1</translation>
+        <translation>No s&apos;ha pogut llegir la conversa: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1664"/>
         <source>Could not create the export folder.</source>
-        <translation>No s'ha pogut crear la carpeta d'exportació.</translation>
+        <translation>No s&apos;ha pogut crear la carpeta d&apos;exportació.</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1694"/>
         <source>The export could not be fully written.</source>
-        <translation>No s'ha pogut escriure l'exportació completa.</translation>
+        <translation>No s&apos;ha pogut escriure l&apos;exportació completa.</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1698"/>
         <source>Saved %1 messages and %2 media files to %3</source>
-        <translation>S'han desat %1 missatges i %2 fitxers multimèdia a %3</translation>
+        <translation>S&apos;han desat %1 missatges i %2 fitxers multimèdia a %3</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1787"/>
         <source>The AI assistant is off (enable it in Settings → AI assistant).</source>
-        <translation>L'assistent d'IA està desactivat (activeu-lo a Configuració → Assistent d'IA).</translation>
+        <translation>L&apos;assistent d&apos;IA està desactivat (activeu-lo a Configuració → Assistent d&apos;IA).</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1792"/>
         <source>There is nothing for the assistant to work on.</source>
-        <translation>No hi ha res perquè l'assistent hi treballi.</translation>
+        <translation>No hi ha res perquè l&apos;assistent hi treballi.</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1804"/>
         <source>Asking the assistant… (low memory: %1 MB free; a local model may fail or slow the app)</source>
-        <translation>S'està consultant l'assistent… (poca memòria: %1 MB lliures; un model local pot fallar o alentir l'aplicació)</translation>
+        <translation>S&apos;està consultant l&apos;assistent… (poca memòria: %1 MB lliures; un model local pot fallar o alentir l&apos;aplicació)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1809"/>
         <source>Asking the assistant…</source>
-        <translation>S'està consultant l'assistent…</translation>
+        <translation>S&apos;està consultant l&apos;assistent…</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1830"/>
         <source>AI assistant</source>
-        <translation>Assistent d'IA</translation>
+        <translation>Assistent d&apos;IA</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1845"/>
@@ -1457,12 +1457,12 @@ Open Settings now?</source>
     <message>
         <location filename="../mediastuck.cpp" line="39"/>
         <source>This file did not download: there is no connection at the moment. It will arrive on its own once there is. (Click to dismiss.)</source>
-        <translation>Aquest fitxer no s'ha baixat: ara mateix no hi ha connexió. Arribarà per si sol quan n'hi hagi. (Feu clic per descartar.)</translation>
+        <translation>Aquest fitxer no s&apos;ha baixat: ara mateix no hi ha connexió. Arribarà per si sol quan n&apos;hi hagi. (Feu clic per descartar.)</translation>
     </message>
     <message>
         <location filename="../mediastuck.cpp" line="44"/>
         <source>This file did not download. WhatsApp keeps a copy on its servers only for a while, and it is usually gone by the time a message is old — there is nothing here that can fetch it back. Ask for it again from the phone that sent it. (Click to dismiss.)</source>
-        <translation>Aquest fitxer no s'ha baixat. El WhatsApp només en manté una còpia als seus servidors durant un temps, i normalment ja no hi és quan un missatge és antic; aquí no hi ha res que la pugui recuperar. Torneu a demanar-lo al telèfon que el va enviar. (Feu clic per descartar.)</translation>
+        <translation>Aquest fitxer no s&apos;ha baixat. El WhatsApp només en manté una còpia als seus servidors durant un temps, i normalment ja no hi és quan un missatge és antic; aquí no hi ha res que la pugui recuperar. Torneu a demanar-lo al telèfon que el va enviar. (Feu clic per descartar.)</translation>
     </message>
 </context>
 <context>
@@ -1506,7 +1506,7 @@ Open Settings now?</source>
     <message>
         <location filename="../passworddialog.ui" line="46"/>
         <source>Username:</source>
-        <translation>Nom d'usuari:</translation>
+        <translation>Nom d&apos;usuari:</translation>
     </message>
     <message>
         <location filename="../passworddialog.ui" line="56"/>
@@ -1585,7 +1585,7 @@ Open Settings now?</source>
         <location filename="../utils.cpp" line="357"/>
         <location filename="../utils.cpp" line="391"/>
         <source>Install mode</source>
-        <translation>Mode d'instal·lació</translation>
+        <translation>Mode d&apos;instal·lació</translation>
     </message>
     <message>
         <location filename="../utils.cpp" line="375"/>
@@ -1595,7 +1595,7 @@ Open Settings now?</source>
     <message>
         <location filename="../utils.cpp" line="377"/>
         <source>Source Branch</source>
-        <translation>Branca d'origen</translation>
+        <translation>Branca d&apos;origen</translation>
     </message>
     <message>
         <location filename="../utils.cpp" line="379"/>
@@ -1610,7 +1610,7 @@ Open Settings now?</source>
     <message>
         <location filename="../utils.cpp" line="383"/>
         <source>Qt Runtime Version</source>
-        <translation>Versió d'execució de Qt</translation>
+        <translation>Versió d&apos;execució de Qt</translation>
     </message>
     <message>
         <location filename="../utils.cpp" line="385"/>
@@ -1640,7 +1640,7 @@ Open Settings now?</source>
     <message>
         <location filename="../utils.cpp" line="538"/>
         <source> may need to Restart. Please report the error to developer.</source>
-        <translation> pot necessitar reiniciar-se. Informeu de l'error al desenvolupador.</translation>
+        <translation> pot necessitar reiniciar-se. Informeu de l&apos;error al desenvolupador.</translation>
     </message>
     <message>
         <location filename="../common.cpp" line="80"/>
@@ -1736,7 +1736,7 @@ Open Settings now?</source>
     <message>
         <location filename="../dictionaryrows.cpp" line="171"/>
         <source>The bin removes it; it can be downloaded again.</source>
-        <translation>La paperera l'elimina; es pot tornar a baixar.</translation>
+        <translation>La paperera l&apos;elimina; es pot tornar a baixar.</translation>
     </message>
     <message>
         <location filename="../chatwallpaper.cpp" line="150"/>
@@ -1755,7 +1755,7 @@ Open Settings now?</source>
     <message>
         <location filename="../backup.cpp" line="17"/>
         <source>Could not run &apos;tar&apos;</source>
-        <translation>No s'ha pogut executar «tar»</translation>
+        <translation>No s&apos;ha pogut executar «tar»</translation>
     </message>
     <message>
         <location filename="../backup.cpp" line="36"/>
@@ -1776,7 +1776,7 @@ Open Settings now?</source>
     <message>
         <location filename="../backup.cpp" line="119"/>
         <source>Could not restore the settings file</source>
-        <translation>No s'ha pogut restaurar el fitxer de configuració</translation>
+        <translation>No s&apos;ha pogut restaurar el fitxer de configuració</translation>
     </message>
     <message>
         <location filename="../undosend.cpp" line="129"/>
@@ -1786,7 +1786,7 @@ Open Settings now?</source>
     <message>
         <location filename="../undosend.cpp" line="131"/>
         <source>Sending in</source>
-        <translation>S'enviarà en</translation>
+        <translation>S&apos;enviarà en</translation>
     </message>
     <message>
         <location filename="../translator.cpp" line="109"/>
@@ -1801,7 +1801,7 @@ Open Settings now?</source>
     <message>
         <location filename="../translator.cpp" line="230"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
-        <translation>No s'ha configurat cap punt final de traducció (Configuració → Traducció).</translation>
+        <translation>No s&apos;ha configurat cap punt final de traducció (Configuració → Traducció).</translation>
     </message>
     <message>
         <location filename="../translator.cpp" line="236"/>
@@ -1816,12 +1816,12 @@ Open Settings now?</source>
     <message>
         <location filename="../aiassistant.cpp" line="86"/>
         <source>Unexpected response from the AI service.</source>
-        <translation>Resposta inesperada del servei d'IA.</translation>
+        <translation>Resposta inesperada del servei d&apos;IA.</translation>
     </message>
     <message>
         <location filename="../aiassistant.cpp" line="108"/>
         <source>The AI service returned no text.</source>
-        <translation>El servei d'IA no ha retornat cap text.</translation>
+        <translation>El servei d&apos;IA no ha retornat cap text.</translation>
     </message>
     <message>
         <location filename="../ollama.cpp" line="17"/>
@@ -1876,25 +1876,25 @@ Open Settings now?</source>
         <location filename="../webtweaks.cpp" line="474"/>
         <source>Zoom in</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation>Amplia</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="475"/>
         <source>Zoom out</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation>Redueix</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="476"/>
         <source>Reset zoom</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation>Restableix l&apos;ampliació</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="477"/>
         <source>Collapse the chat list</source>
         <comment>WebTweaks</comment>
-        <translation type="unfinished"></translation>
+        <translation>Replega la llista de xats</translation>
     </message>
     <message>
         <location filename="../webtweaks.cpp" line="478"/>
@@ -1905,12 +1905,12 @@ Open Settings now?</source>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1031"/>
         <source>Reloading...</source>
-        <translation>S'està tornant a carregar...</translation>
+        <translation>S&apos;està tornant a carregar...</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="207"/>
         <source>Nothing to migrate from &quot;%1&quot; — already migrated, or no data found there.</source>
-        <translation>No hi ha res a migrar de «%1» (ja s'ha migrat, o no s'hi han trobat dades).</translation>
+        <translation>No hi ha res a migrar de «%1» (ja s&apos;ha migrat, o no s&apos;hi han trobat dades).</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="212"/>
@@ -1935,7 +1935,7 @@ Open Settings now?</source>
     <message>
         <location filename="../main.cpp" line="687"/>
         <source>Displays help on commandline options</source>
-        <translation>Mostra l'ajuda de les opcions de línia d'ordres</translation>
+        <translation>Mostra l&apos;ajuda de les opcions de línia d&apos;ordres</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="692"/>
@@ -1965,7 +1965,7 @@ Open Settings now?</source>
     <message>
         <location filename="../main.cpp" line="722"/>
         <source>Reload the app in a running instance of </source>
-        <translation>Torna a carregar l'aplicació en una instància en execució de </translation>
+        <translation>Torna a carregar l&apos;aplicació en una instància en execució de </translation>
     </message>
     <message>
         <location filename="../main.cpp" line="728"/>
@@ -1980,7 +1980,7 @@ Open Settings now?</source>
     <message>
         <location filename="../main.cpp" line="751"/>
         <source>Internal: wait for the process with this id to exit before starting, used by &quot;Restart now&quot;</source>
-        <translation>Intern: espera que el procés amb aquest identificador surti abans d'iniciar-se, usat per «Reinicia ara»</translation>
+        <translation>Intern: espera que el procés amb aquest identificador surti abans d&apos;iniciar-se, usat per «Reinicia ara»</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="758"/>
@@ -1990,7 +1990,7 @@ Open Settings now?</source>
     <message>
         <location filename="../main.cpp" line="765"/>
         <source>Copy settings and the logged-in session from a previous install (e.g. the older &quot;whatsie&quot; build) into this one, then exit</source>
-        <translation>Copia la configuració i la sessió iniciada d'una instal·lació anterior (p. ex. la compilació antiga «whatsie») en aquesta, i després surt</translation>
+        <translation>Copia la configuració i la sessió iniciada d&apos;una instal·lació anterior (p. ex. la compilació antiga «whatsie») en aquesta, i després surt</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="772"/>
@@ -2020,12 +2020,12 @@ Open Settings now?</source>
     <message>
         <location filename="../main.cpp" line="808"/>
         <source>Attach a file for --send (its --message, if any, becomes the caption)</source>
-        <translation>Adjunta un fitxer per a --send (el seu --message, si n'hi ha, es converteix en el peu)</translation>
+        <translation>Adjunta un fitxer per a --send (el seu --message, si n&apos;hi ha, es converteix en el peu)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="813"/>
         <source>Caption for the --file attachment (alias of --message)</source>
-        <translation>Peu per a l'adjunt --file (àlies de --message)</translation>
+        <translation>Peu per a l&apos;adjunt --file (àlies de --message)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="817"/>
@@ -2080,12 +2080,12 @@ Open Settings now?</source>
     <message>
         <location filename="../main.cpp" line="859"/>
         <source>Set the Cloud API phone-number id, then exit</source>
-        <translation>Estableix l'identificador del número de telèfon de la Cloud API, i després surt</translation>
+        <translation>Estableix l&apos;identificador del número de telèfon de la Cloud API, i després surt</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="863"/>
         <source>Set the Cloud API access token, then exit (stored in the account config)</source>
-        <translation>Estableix el testimoni d'accés de la Cloud API, i després surt (es desa a la configuració del compte)</translation>
+        <translation>Estableix el testimoni d&apos;accés de la Cloud API, i després surt (es desa a la configuració del compte)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="868"/>
@@ -2105,7 +2105,7 @@ Open Settings now?</source>
     <message>
         <location filename="../main.cpp" line="879"/>
         <source>Language code for --cloud-template (e.g. es, en_US)</source>
-        <translation>Codi d'idioma per a --cloud-template (p. ex. es, en_US)</translation>
+        <translation>Codi d&apos;idioma per a --cloud-template (p. ex. es, en_US)</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="883"/>
@@ -2115,27 +2115,27 @@ Open Settings now?</source>
     <message>
         <location filename="../main.cpp" line="888"/>
         <source>Enable the local HTTP API, then exit</source>
-        <translation>Activa l'API HTTP local, i després surt</translation>
+        <translation>Activa l&apos;API HTTP local, i després surt</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="891"/>
         <source>Disable the local HTTP API, then exit</source>
-        <translation>Desactiva l'API HTTP local, i després surt</translation>
+        <translation>Desactiva l&apos;API HTTP local, i després surt</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="894"/>
         <source>Set the local HTTP API port (default 8590), then exit</source>
-        <translation>Estableix el port de l'API HTTP local (per defecte 8590), i després surt</translation>
+        <translation>Estableix el port de l&apos;API HTTP local (per defecte 8590), i després surt</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="898"/>
         <source>Set the local HTTP API bearer token, then exit</source>
-        <translation>Estableix el testimoni Bearer de l'API HTTP local, i després surt</translation>
+        <translation>Estableix el testimoni Bearer de l&apos;API HTTP local, i després surt</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="902"/>
         <source>Show the local HTTP API configuration, then exit</source>
-        <translation>Mostra la configuració de l'API HTTP local, i després surt</translation>
+        <translation>Mostra la configuració de l&apos;API HTTP local, i després surt</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="906"/>
@@ -2155,7 +2155,7 @@ Open Settings now?</source>
     <message>
         <location filename="../main.cpp" line="916"/>
         <source>Set the Meta app secret for webhook signature checks, then exit</source>
-        <translation>Estableix el secret de l'aplicació de Meta per a les comprovacions de signatura del webhook, i després surt</translation>
+        <translation>Estableix el secret de l&apos;aplicació de Meta per a les comprovacions de signatura del webhook, i després surt</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="920"/>
@@ -2171,7 +2171,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../main.cpp" line="1422"/>
         <source>Recovered from a start-up crash by switching to safe rendering. You can adjust this in Settings → Performance.</source>
-        <translation>S'ha recuperat d'una fallada d'inici canviant a la renderització segura. Podeu ajustar-ho a Configuració → Rendiment.</translation>
+        <translation>S&apos;ha recuperat d&apos;una fallada d&apos;inici canviant a la renderització segura. Podeu ajustar-ho a Configuració → Rendiment.</translation>
     </message>
 </context>
 <context>
@@ -2212,7 +2212,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../rateapp.ui" line="56"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If you enjoy using this app, would you mind taking a moment to rate it?&lt;/p&gt;&lt;p&gt;It won&apos;t take more than a minute. Thanks you for your support!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si us agrada fer servir aquesta aplicació, us importaria dedicar un moment a valorar-la?&lt;/p&gt;&lt;p&gt;No trigareu més d'un minut. Gràcies pel vostre suport!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si us agrada fer servir aquesta aplicació, us importaria dedicar un moment a valorar-la?&lt;/p&gt;&lt;p&gt;No trigareu més d&apos;un minut. Gràcies pel vostre suport!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../rateapp.ui" line="73"/>
@@ -2256,7 +2256,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../scheduledmessages.cpp" line="245"/>
         <source>Timed out waiting for the message to send</source>
-        <translation>S'ha esgotat el temps esperant que s'enviés el missatge</translation>
+        <translation>S&apos;ha esgotat el temps esperant que s&apos;enviés el missatge</translation>
     </message>
     <message>
         <location filename="../scheduledmessages.cpp" line="325"/>
@@ -2369,7 +2369,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="65"/>
         <source>Remind me instead of sending (notify, don&apos;t message)</source>
-        <translation>Recorda-m'ho en comptes d'enviar (notifica, no enviïs)</translation>
+        <translation>Recorda-m&apos;ho en comptes d&apos;enviar (notifica, no enviïs)</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="69"/>
@@ -2379,7 +2379,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="75"/>
         <source>The app must be running and WhatsApp logged in at the scheduled time. If it is closed, the message is sent the next time you open the app. Sending opens the recipient&apos;s chat.</source>
-        <translation>L'aplicació ha d'estar en execució i el WhatsApp amb la sessió iniciada a l'hora programada. Si està tancada, el missatge s'envia el cop següent que obriu l'aplicació. En enviar-lo s'obre el xat del destinatari.</translation>
+        <translation>L&apos;aplicació ha d&apos;estar en execució i el WhatsApp amb la sessió iniciada a l&apos;hora programada. Si està tancada, el missatge s&apos;envia el cop següent que obriu l&apos;aplicació. En enviar-lo s&apos;obre el xat del destinatari.</translation>
     </message>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="85"/>
@@ -2409,7 +2409,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../scheduledmessagesdialog.cpp" line="121"/>
         <source>The time is in the past — send this message now?</source>
-        <translation>L'hora ja ha passat: voleu enviar aquest missatge ara?</translation>
+        <translation>L&apos;hora ja ha passat: voleu enviar aquest missatge ara?</translation>
     </message>
 </context>
 <context>
@@ -2467,7 +2467,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="227"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Match the desktop&apos;s own light/dark preference, and change with it. Overrides the manual theme and the automatic sunrise/sunset switch.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Coincideix amb la preferència clar/fosc de l'escriptori i canvia amb ella. Substitueix el tema manual i el canvi automàtic de sortida/posta del sol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Coincideix amb la preferència clar/fosc de l&apos;escriptori i canvia amb ella. Substitueix el tema manual i el canvi automàtic de sortida/posta del sol.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="230"/>
@@ -2502,7 +2502,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="319"/>
         <source>Popup timeout</source>
-        <translation>Temps d'espera de la finestra emergent</translation>
+        <translation>Temps d&apos;espera de la finestra emergent</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="326"/>
@@ -2518,7 +2518,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="346"/>
         <source>How native notifications are sent on Linux. Automatic uses the desktop portal inside a Flatpak sandbox and the system service otherwise.</source>
-        <translation>Com s'envien les notificacions natives a Linux. Automàtic fa servir el portal d'escriptori dins d'un entorn Flatpak i el servei del sistema en la resta de casos.</translation>
+        <translation>Com s&apos;envien les notificacions natives a Linux. Automàtic fa servir el portal d&apos;escriptori dins d&apos;un entorn Flatpak i el servei del sistema en la resta de casos.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="353"/>
@@ -2604,7 +2604,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="469"/>
         <source>Add a reply field to desktop notifications so you can answer a message without opening the window. Only works where the notification service supports it (e.g. KDE Plasma); elsewhere notifications behave as before.</source>
-        <translation>Afegeix un camp de resposta a les notificacions d'escriptori perquè pugueu contestar un missatge sense obrir la finestra. Només funciona on el servei de notificacions ho admet (p. ex. KDE Plasma); a la resta, les notificacions es comporten com abans.</translation>
+        <translation>Afegeix un camp de resposta a les notificacions d&apos;escriptori perquè pugueu contestar un missatge sense obrir la finestra. Només funciona on el servei de notificacions ho admet (p. ex. KDE Plasma); a la resta, les notificacions es comporten com abans.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="472"/>
@@ -2619,7 +2619,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="515"/>
         <source>Mute Audio from Page</source>
-        <translation>Silencia l'àudio de la pàgina</translation>
+        <translation>Silencia l&apos;àudio de la pàgina</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="522"/>
@@ -2634,7 +2634,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="536"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When you use more than one account window, remember each window&apos;s position, size and tabs and restore them next time. Off by default: the app comes back as a single window holding every account.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Quan feu servir més d'una finestra de compte, recorda la posició, la mida i les pestanyes de cada finestra i restaura-les el cop següent. Desactivat per defecte: l'aplicació torna com una sola finestra que conté tots els comptes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Quan feu servir més d&apos;una finestra de compte, recorda la posició, la mida i les pestanyes de cada finestra i restaura-les el cop següent. Desactivat per defecte: l&apos;aplicació torna com una sola finestra que conté tots els comptes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="539"/>
@@ -2644,12 +2644,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="546"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Off by default, so &amp;quot;Minimise to tray&amp;quot; puts the whole app away: with several windows open, leaving the others on screen while the tray reports Whatly as away is the same confusion as one window being treated as the real one. Tick this to have it put away only the window you are in. Follows whatever key &amp;quot;Minimise to tray&amp;quot; is bound to.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Desactivat per defecte, de manera que &amp;quot;Minimitza a la safata&amp;quot; amaga tota l'aplicació: amb diverses finestres obertes, deixar-ne les altres a la pantalla mentre la safata informa que el Whatly està absent és la mateixa confusió que tractar una finestra com la de debò. Marqueu-ho perquè amagui només la finestra en què sou. Segueix la tecla a què estigui assignat &amp;quot;Minimitza a la safata&amp;quot;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Desactivat per defecte, de manera que &amp;quot;Minimitza a la safata&amp;quot; amaga tota l&apos;aplicació: amb diverses finestres obertes, deixar-ne les altres a la pantalla mentre la safata informa que el Whatly està absent és la mateixa confusió que tractar una finestra com la de debò. Marqueu-ho perquè amagui només la finestra en què sou. Segueix la tecla a què estigui assignat &amp;quot;Minimitza a la safata&amp;quot;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="549"/>
         <source>Ctrl+W hides only the last focused window.</source>
-        <translation>Ctrl+W amaga només l'última finestra enfocada.</translation>
+        <translation>Ctrl+W amaga només l&apos;última finestra enfocada.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="556"/>
@@ -2689,12 +2689,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="593"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Close the emoji, GIF &amp;amp; sticker panel when you click elsewhere. WhatsApp Web otherwise keeps it open until the button is pressed again.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tanca el tauler d'emojis, GIF i adhesius quan feu clic en un altre lloc. Altrament, el WhatsApp Web el manté obert fins que es torna a prémer el botó.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tanca el tauler d&apos;emojis, GIF i adhesius quan feu clic en un altre lloc. Altrament, el WhatsApp Web el manté obert fins que es torna a prémer el botó.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="596"/>
         <source>Close emoji/sticker panel when clicking outside</source>
-        <translation>Tanca el tauler d'emojis/adhesius en fer clic a fora</translation>
+        <translation>Tanca el tauler d&apos;emojis/adhesius en fer clic a fora</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="603"/>
@@ -2704,7 +2704,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="610"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Language of Whatly&apos;s own interface. Takes effect after restarting the app. The language of the chats themselves comes from WhatsApp Web and cannot be changed here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Idioma de la interfície pròpia del Whatly. Té efecte després de reiniciar l'aplicació. L'idioma dels xats mateixos ve del WhatsApp Web i no es pot canviar aquí.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Idioma de la interfície pròpia del Whatly. Té efecte després de reiniciar l&apos;aplicació. L&apos;idioma dels xats mateixos ve del WhatsApp Web i no es pot canviar aquí.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="617"/>
@@ -2734,12 +2734,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="640"/>
         <source>Zoom buttons in WhatsApp&apos;s sidebar</source>
-        <translation>Botons d'ampliació a la barra lateral del WhatsApp</translation>
+        <translation>Botons d&apos;ampliació a la barra lateral del WhatsApp</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="647"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adds a button to WhatsApp&apos;s own sidebar that collapses the chat list to a strip of profile pictures, giving the conversation the width it was using.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Afegeix un botó a la barra lateral del WhatsApp que replega la llista de xats a una tira de fotos de perfil, donant a la conversa l'amplada que ocupava.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Afegeix un botó a la barra lateral del WhatsApp que replega la llista de xats a una tira de fotos de perfil, donant a la conversa l&apos;amplada que ocupava.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="650"/>
@@ -2754,12 +2754,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="664"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;How large to draw the preview that appears when you hover a picture in the collapsed chat list. The default suits this platform&apos;s font rendering; pick another if it reads small or large on your screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Com de gran s'ha de dibuixar la vista prèvia que apareix quan passeu el cursor per una foto a la llista de xats replegada. El valor per defecte s'adapta a la renderització de lletres d'aquesta plataforma; trieu-ne un altre si es veu petita o gran a la pantalla.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Com de gran s&apos;ha de dibuixar la vista prèvia que apareix quan passeu el cursor per una foto a la llista de xats replegada. El valor per defecte s&apos;adapta a la renderització de lletres d&apos;aquesta plataforma; trieu-ne un altre si es veu petita o gran a la pantalla.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="671"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use a single-colour tray icon that matches the rest of your panel, instead of the green WhatsApp one. The icon also dims when WhatsApp is not connected.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fes servir una icona de safata d'un sol color que combini amb la resta del tauler, en comptes de la verda del WhatsApp. La icona també s'enfosqueix quan el WhatsApp no està connectat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fes servir una icona de safata d&apos;un sol color que combini amb la resta del tauler, en comptes de la verda del WhatsApp. La icona també s&apos;enfosqueix quan el WhatsApp no està connectat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="674"/>
@@ -2785,7 +2785,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="700"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Carrega un fitxer .css per reestilitzar el WhatsApp Web: els fulls d'estil de la comunitat (catppuccin i similars) funcionen aquí. S'aplica per damunt del tema del xat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Carrega un fitxer .css per reestilitzar el WhatsApp Web: els fulls d&apos;estil de la comunitat (catppuccin i similars) funcionen aquí. S&apos;aplica per damunt del tema del xat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="703"/>
@@ -2801,7 +2801,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="719"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Elimina del tot la icona de la safata del sistema. Sense safata des d'on restaurar, tancar la finestra tanca l'aplicació en comptes d'amagar-la.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Elimina del tot la icona de la safata del sistema. Sense safata des d&apos;on restaurar, tancar la finestra tanca l&apos;aplicació en comptes d&apos;amagar-la.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="722"/>
@@ -2821,12 +2821,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="743"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Amaga la secció «Actualitzacions silenciades» al tauler d'estats/actualitzacions, perquè els estats dels contactes que heu silenciat no apareguin gens.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Amaga la secció «Actualitzacions silenciades» al tauler d&apos;estats/actualitzacions, perquè els estats dels contactes que heu silenciat no apareguin gens.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="746"/>
         <source>Hide muted status updates</source>
-        <translation>Amaga les actualitzacions d'estat silenciades</translation>
+        <translation>Amaga les actualitzacions d&apos;estat silenciades</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="753"/>
@@ -2837,12 +2837,12 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="756"/>
         <location filename="../settingswidget.cpp" line="2634"/>
         <source>Check spelling as I type</source>
-        <translation>Comprova l'ortografia mentre escric</translation>
+        <translation>Comprova l&apos;ortografia mentre escric</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="763"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;L'idioma amb què comprovar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;L&apos;idioma amb què comprovar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="770"/>
@@ -2852,7 +2852,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="777"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mida en punts de la interfície pròpia de l'aplicació: menús, configuració i diàlegs. Això no afecta el text del WhatsApp Web; per a això feu servir l'ampliació.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mida en punts de la interfície pròpia de l&apos;aplicació: menús, configuració i diàlegs. Això no afecta el text del WhatsApp Web; per a això feu servir l&apos;ampliació.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="780"/>
@@ -2862,12 +2862,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="793"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si el procés de la pàgina del WhatsApp Web falla, torna'l a carregar automàticament en comptes de preguntar primer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Si el procés de la pàgina del WhatsApp Web falla, torna&apos;l a carregar automàticament en comptes de preguntar primer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="796"/>
         <source>Reload automatically after a crash</source>
-        <translation>Torna a carregar automàticament després d'una fallada</translation>
+        <translation>Torna a carregar automàticament després d&apos;una fallada</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="803"/>
@@ -2887,7 +2887,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="824"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolora el WhatsApp Web mateix. Les fotos, els avatars i els adhesius conserven els seus propis colors. Funciona per damunt del tema clar o fosc, sigui quin sigui l'actiu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolora el WhatsApp Web mateix. Les fotos, els avatars i els adhesius conserven els seus propis colors. Funciona per damunt del tema clar o fosc, sigui quin sigui l&apos;actiu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="831"/>
@@ -2908,12 +2908,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="859"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Els inicis de sessió nous apareixen com a &amp;quot;Whatly for Linux&amp;quot; (o la plataforma corresponent) a la llista de dispositius vinculats del telèfon en comptes de &amp;quot;Google Chrome (Linux)&amp;quot;. El nom es desa al telèfon quan es vincula un dispositiu, així que canviar-ho només afecta les vinculacions futures: tanqueu la sessió i torneu a vincular per canviar el nom d'una sessió existent.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Els inicis de sessió nous apareixen com a &amp;quot;Whatly for Linux&amp;quot; (o la plataforma corresponent) a la llista de dispositius vinculats del telèfon en comptes de &amp;quot;Google Chrome (Linux)&amp;quot;. El nom es desa al telèfon quan es vincula un dispositiu, així que canviar-ho només afecta les vinculacions futures: tanqueu la sessió i torneu a vincular per canviar el nom d&apos;una sessió existent.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="862"/>
         <source>Identify as Whatly in linked devices</source>
-        <translation>Identifica't com a Whatly als dispositius vinculats</translation>
+        <translation>Identifica&apos;t com a Whatly als dispositius vinculats</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="871"/>
@@ -2933,12 +2933,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="897"/>
         <source>User Agent</source>
-        <translation>Agent d'usuari</translation>
+        <translation>Agent d&apos;usuari</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="900"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Avançat: no ho toqueu si no sabeu exactament què esteu fent. Un agent d'usuari no estàndard pot fer que el WhatsApp es negui a carregar-se, i els valors inusuals arrisquen que el vostre compte de WhatsApp quedi marcat o a la llista negra.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Avançat: no ho toqueu si no sabeu exactament què esteu fent. Un agent d&apos;usuari no estàndard pot fer que el WhatsApp es negui a carregar-se, i els valors inusuals arrisquen que el vostre compte de WhatsApp quedi marcat o a la llista negra.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="910"/>
@@ -2953,7 +2953,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="944"/>
         <source>Zoom factor when normal</source>
-        <translation>Factor d'ampliació en mode normal</translation>
+        <translation>Factor d&apos;ampliació en mode normal</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="972"/>
@@ -2976,7 +2976,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1079"/>
         <source>Zoom factor when maximized/fullscreen</source>
-        <translation>Factor d'ampliació en maximitzat/pantalla completa</translation>
+        <translation>Factor d&apos;ampliació en maximitzat/pantalla completa</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1214"/>
@@ -3021,12 +3021,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1285"/>
         <source>Enable App lock on start</source>
-        <translation>Activa el bloqueig de l'aplicació en iniciar</translation>
+        <translation>Activa el bloqueig de l&apos;aplicació en iniciar</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1292"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Quan la finestra s'amaga a la safata del sistema, bloqueja-la darrere del codi. Cal tenir una contrasenya definida.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Quan la finestra s&apos;amaga a la safata del sistema, bloqueja-la darrere del codi. Cal tenir una contrasenya definida.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1295"/>
@@ -3036,7 +3036,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1302"/>
         <source>Also lock Whatly when the desktop session locks. Requires a password to be set. (Linux)</source>
-        <translation>Bloqueja també el Whatly quan es bloqueja la sessió d'escriptori. Cal tenir una contrasenya definida. (Linux)</translation>
+        <translation>Bloqueja també el Whatly quan es bloqueja la sessió d&apos;escriptori. Cal tenir una contrasenya definida. (Linux)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1305"/>
@@ -3103,7 +3103,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1485"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Les dades persistents inclouen les galetes persistents, l'emmagatzematge local HTML5 i els enllaços visitats.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Les dades persistents inclouen les galetes persistents, l&apos;emmagatzematge local HTML5 i els enllaços visitats.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1488"/>
@@ -3149,7 +3149,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1591"/>
         <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
-        <translation>Desa aquest compte (configuració, sessió i complements) en un arxiu .tar.gz. L'arxiu conté la vostra sessió iniciada; mantingueu-lo privat.</translation>
+        <translation>Desa aquest compte (configuració, sessió i complements) en un arxiu .tar.gz. L&apos;arxiu conté la vostra sessió iniciada; mantingueu-lo privat.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1594"/>
@@ -3159,7 +3159,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1601"/>
         <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
-        <translation>Restaura un compte des d'un arxiu .tar.gz. Això sobreescriu les dades actuals i cal reiniciar.</translation>
+        <translation>Restaura un compte des d&apos;un arxiu .tar.gz. Això sobreescriu les dades actuals i cal reiniciar.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1604"/>
@@ -3174,17 +3174,17 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1635"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
-        <translation>Ajusteu amb precisió el motor de renderització. Els valors per defecte són segurs en la majoria de sistemes; si la finestra queda en blanc o l'aplicació falla en iniciar-se, o si va a batzegades, proveu de canviar-los. Els canvis s'apliquen després de reiniciar.</translation>
+        <translation>Ajusteu amb precisió el motor de renderització. Els valors per defecte són segurs en la majoria de sistemes; si la finestra queda en blanc o l&apos;aplicació falla en iniciar-se, o si va a batzegades, proveu de canviar-los. Els canvis s&apos;apliquen després de reiniciar.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1645"/>
         <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
-        <translation>Renderitza totalment a la CPU (--disable-gpu). Corregeix finestres en blanc i fallades d'inici en algunes configuracions de GPU/controlador. Per defecte a Linux.</translation>
+        <translation>Renderitza totalment a la CPU (--disable-gpu). Corregeix finestres en blanc i fallades d&apos;inici en algunes configuracions de GPU/controlador. Per defecte a Linux.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1648"/>
         <source>Disable GPU acceleration</source>
-        <translation>Desactiva l'acceleració de la GPU</translation>
+        <translation>Desactiva l&apos;acceleració de la GPU</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1655"/>
@@ -3199,7 +3199,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1665"/>
         <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
-        <translation>Desactiva la VSync de la GPU (--disable-gpu-vsync). Pot reduir el retard d'entrada a canvi d'esquinçament d'imatge.</translation>
+        <translation>Desactiva la VSync de la GPU (--disable-gpu-vsync). Pot reduir el retard d&apos;entrada a canvi d&apos;esquinçament d&apos;imatge.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1668"/>
@@ -3219,7 +3219,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1685"/>
         <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
-        <translation>Força l'acceleració fins i tot quan el controlador és a la llista de bloqueig (--ignore-gpu-blocklist). Proveu-ho per tornar a activar la GPU.</translation>
+        <translation>Força l&apos;acceleració fins i tot quan el controlador és a la llista de bloqueig (--ignore-gpu-blocklist). Proveu-ho per tornar a activar la GPU.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1688"/>
@@ -3234,12 +3234,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1698"/>
         <source>Single-process mode (lower memory)</source>
-        <translation>Mode d'un sol procés (menys memòria)</translation>
+        <translation>Mode d&apos;un sol procés (menys memòria)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1705"/>
         <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
-        <translation>Comparteix un procés de renderització per lloc (--process-per-site). Redueix l'ús de memòria.</translation>
+        <translation>Comparteix un procés de renderització per lloc (--process-per-site). Redueix l&apos;ús de memòria.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1708"/>
@@ -3249,7 +3249,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1715"/>
         <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
-        <translation>Demana al motor de JavaScript que faci servir menys memòria a canvi d'una petita pèrdua de velocitat (V8 --optimize-for-size). Recomanat per a una aplicació que es queda a la safata. S'ignora si s'estableix un límit de memòria de JavaScript a sota.</translation>
+        <translation>Demana al motor de JavaScript que faci servir menys memòria a canvi d&apos;una petita pèrdua de velocitat (V8 --optimize-for-size). Recomanat per a una aplicació que es queda a la safata. S&apos;ignora si s&apos;estableix un límit de memòria de JavaScript a sota.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1718"/>
@@ -3269,7 +3269,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1735"/>
         <source>Default photos and videos to HD quality in the media editor. Depends on WhatsApp Web&apos;s layout; if a WhatsApp update breaks it, turn it off.</source>
-        <translation>Posa per defecte les fotos i els vídeos en qualitat HD a l'editor multimèdia. Depèn de la disposició del WhatsApp Web; si una actualització del WhatsApp ho trenca, desactiveu-ho.</translation>
+        <translation>Posa per defecte les fotos i els vídeos en qualitat HD a l&apos;editor multimèdia. Depèn de la disposició del WhatsApp Web; si una actualització del WhatsApp ho trenca, desactiveu-ho.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1738"/>
@@ -3279,17 +3279,17 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1747"/>
         <source>Hold a message for a few seconds after you press Enter, showing an &quot;Undo&quot; button before it is actually sent. Press Enter again to send at once.</source>
-        <translation>Retén un missatge uns segons després de prémer Retorn, mostrant un botó «Desfés» abans que s'enviï de debò. Torneu a prémer Retorn per enviar-lo immediatament.</translation>
+        <translation>Retén un missatge uns segons després de prémer Retorn, mostrant un botó «Desfés» abans que s&apos;enviï de debò. Torneu a prémer Retorn per enviar-lo immediatament.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1750"/>
         <source>Undo send (hold Enter-sent messages briefly)</source>
-        <translation>Desfés l'enviament (retén breument els missatges enviats amb Retorn)</translation>
+        <translation>Desfés l&apos;enviament (retén breument els missatges enviats amb Retorn)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1757"/>
         <source>How long to hold a message before it is sent.</source>
-        <translation>Quant de temps es reté un missatge abans d'enviar-lo.</translation>
+        <translation>Quant de temps es reté un missatge abans d&apos;enviar-lo.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1760"/>
@@ -3304,7 +3304,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1781"/>
         <source>Translate selected text or your message box through a LibreTranslate-compatible service. The request is made by the app, so the endpoint and key never reach WhatsApp Web. Bind keys to &quot;Translate selection&quot; / &quot;Translate message box&quot; in Shortcuts, or use the command palette.</source>
-        <translation>Tradueix el text seleccionat o la vostra casella del missatge a través d'un servei compatible amb LibreTranslate. La sol·licitud la fa l'aplicació, així que el punt final i la clau no arriben mai al WhatsApp Web. Assigneu tecles a «Tradueix la selecció» / «Tradueix la casella del missatge» a Dreceres, o feu servir la paleta d'ordres.</translation>
+        <translation>Tradueix el text seleccionat o la vostra casella del missatge a través d&apos;un servei compatible amb LibreTranslate. La sol·licitud la fa l&apos;aplicació, així que el punt final i la clau no arriben mai al WhatsApp Web. Assigneu tecles a «Tradueix la selecció» / «Tradueix la casella del missatge» a Dreceres, o feu servir la paleta d&apos;ordres.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1784"/>
@@ -3331,7 +3331,7 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="1808"/>
         <location filename="../settingswidget.ui" line="1895"/>
         <source>API key (optional)</source>
-        <translation>Clau d'API (opcional)</translation>
+        <translation>Clau d&apos;API (opcional)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1815"/>
@@ -3346,27 +3346,27 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1832"/>
         <source>Two-letter code to translate into (e.g. en, es, fr). Leave empty to use the app&apos;s language. The source language is detected automatically.</source>
-        <translation>Codi de dues lletres a què traduir (p. ex. en, es, fr). Deixeu-ho buit per usar l'idioma de l'aplicació. L'idioma d'origen es detecta automàticament.</translation>
+        <translation>Codi de dues lletres a què traduir (p. ex. en, es, fr). Deixeu-ho buit per usar l&apos;idioma de l&apos;aplicació. L&apos;idioma d&apos;origen es detecta automàticament.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1835"/>
         <source>app language</source>
-        <translation>idioma de l'aplicació</translation>
+        <translation>idioma de l&apos;aplicació</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1845"/>
         <source>AI assistant</source>
-        <translation>Assistent d'IA</translation>
+        <translation>Assistent d&apos;IA</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1851"/>
         <source>Summarise a chat, improve your draft or suggest a reply through an OpenAI-compatible service. The chat text is sent to that service, so use one you trust (a local runner keeps it on your machine). The request is made by the app, so the endpoint and key never reach WhatsApp Web. Actions live in the command palette and Shortcuts.</source>
-        <translation>Resumeix un xat, millora el vostre esborrany o suggereix una resposta a través d'un servei compatible amb OpenAI. El text del xat s'envia a aquest servei, així que feu servir un de confiança (un executor local el manté al vostre equip). La sol·licitud la fa l'aplicació, així que el punt final i la clau no arriben mai al WhatsApp Web. Les accions són a la paleta d'ordres i a Dreceres.</translation>
+        <translation>Resumeix un xat, millora el vostre esborrany o suggereix una resposta a través d&apos;un servei compatible amb OpenAI. El text del xat s&apos;envia a aquest servei, així que feu servir un de confiança (un executor local el manté al vostre equip). La sol·licitud la fa l&apos;aplicació, així que el punt final i la clau no arriben mai al WhatsApp Web. Les accions són a la paleta d&apos;ordres i a Dreceres.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1854"/>
         <source>Enable AI assistant</source>
-        <translation>Activa l'assistent d'IA</translation>
+        <translation>Activa l&apos;assistent d&apos;IA</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1868"/>
@@ -3396,7 +3396,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1902"/>
         <source>Sent as a Bearer token. Not needed by most local runners. Stored locally.</source>
-        <translation>S'envia com a testimoni Bearer. La majoria d'executors locals no el necessiten. Es desa localment.</translation>
+        <translation>S&apos;envia com a testimoni Bearer. La majoria d&apos;executors locals no el necessiten. Es desa localment.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1919"/>
@@ -3411,7 +3411,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1931"/>
         <source>Detect Ollama</source>
-        <translation>Detecta l'Ollama</translation>
+        <translation>Detecta l&apos;Ollama</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1947"/>
@@ -3421,7 +3421,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="1954"/>
         <source>Pick one of the models already installed in Ollama; it becomes the model above.</source>
-        <translation>Trieu un dels models ja instal·lats a l'Ollama; passa a ser el model de dalt.</translation>
+        <translation>Trieu un dels models ja instal·lats a l&apos;Ollama; passa a ser el model de dalt.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="1961"/>
@@ -3446,7 +3446,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2012"/>
         <source>Prevent WebRTC IP leak</source>
-        <translation>Evita la fuita d'IP per WebRTC</translation>
+        <translation>Evita la fuita d&apos;IP per WebRTC</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2021"/>
@@ -3456,7 +3456,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2028"/>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
-        <translation>Limita la pila de JavaScript (V8 --max-old-space-size). 0 = automàtic. Baixeu-lo si l'aplicació fa servir massa RAM.</translation>
+        <translation>Limita la pila de JavaScript (V8 --max-old-space-size). 0 = automàtic. Baixeu-lo si l&apos;aplicació fa servir massa RAM.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2034"/>
@@ -3472,7 +3472,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2058"/>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
-        <translation>On mantenir la memòria cau HTTP. Memòria s'esborra en sortir; Cap desactiva la memòria cau.</translation>
+        <translation>On mantenir la memòria cau HTTP. Memòria s&apos;esborra en sortir; Cap desactiva la memòria cau.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2065"/>
@@ -3492,12 +3492,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2102"/>
         <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
-        <translation>Com s'ajusten les vores dels glifs als píxels. Automàtic segueix el sistema; un nivell més lleuger pot corregir un text massa marcat o irregular.</translation>
+        <translation>Com s&apos;ajusten les vores dels glifs als píxels. Automàtic segueix el sistema; un nivell més lleuger pot corregir un text massa marcat o irregular.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2113"/>
         <source>Free memory by unloading accounts you are not viewing. An unloaded account does not receive messages, and reloads to where it was when you switch back to it. Single-account setups are unaffected.</source>
-        <translation>Allibera memòria descarregant els comptes que no esteu veient. Un compte descarregat no rep missatges i es torna a carregar allà on era quan hi torneu. Les configuracions d'un sol compte no es veuen afectades.</translation>
+        <translation>Allibera memòria descarregant els comptes que no esteu veient. Un compte descarregat no rep missatges i es torna a carregar allà on era quan hi torneu. Les configuracions d&apos;un sol compte no es veuen afectades.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2116"/>
@@ -3517,7 +3517,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2145"/>
         <source>Also unload the account a window was showing, once that window has been minimised or put away to the tray for the same length of time as above. Nothing reaches an unloaded account: while Whatly is away there are no notifications from it and its counts stand still, and it takes a few seconds to come back when you return to the window. Needs the setting above.</source>
-        <translation>Descarrega també el compte que mostrava una finestra, un cop aquesta finestra s'ha minimitzat o amagat a la safata durant el mateix temps que a dalt. No arriba res a un compte descarregat: mentre el Whatly està absent no en rep notificacions i els seus comptadors no avancen, i triga uns segons a tornar quan torneu a la finestra. Cal l'opció de dalt.</translation>
+        <translation>Descarrega també el compte que mostrava una finestra, un cop aquesta finestra s&apos;ha minimitzat o amagat a la safata durant el mateix temps que a dalt. No arriba res a un compte descarregat: mentre el Whatly està absent no en rep notificacions i els seus comptadors no avancen, i triga uns segons a tornar quan torneu a la finestra. Cal l&apos;opció de dalt.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2148"/>
@@ -3532,7 +3532,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2164"/>
         <source>Launch Whatly automatically when you log in to your desktop session.</source>
-        <translation>Inicia el Whatly automàticament quan inicieu la sessió d'escriptori.</translation>
+        <translation>Inicia el Whatly automàticament quan inicieu la sessió d&apos;escriptori.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2167"/>
@@ -3542,7 +3542,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2174"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
-        <translation>Deixa que el Whatly dibuixi la vora i la barra de títol de la finestra en comptes del sistema, perquè segueixin el tema propi del Whatly. Per si sol això només en canvia l'aparença; marqueu també «Amaga la barra de títol» per treure del tot la fila del títol. S'aplica després de reiniciar.</translation>
+        <translation>Deixa que el Whatly dibuixi la vora i la barra de títol de la finestra en comptes del sistema, perquè segueixin el tema propi del Whatly. Per si sol això només en canvia l&apos;aparença; marqueu també «Amaga la barra de títol» per treure del tot la fila del títol. S&apos;aplica després de reiniciar.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2177"/>
@@ -3572,7 +3572,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2210"/>
         <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
-        <translation>Elimina la barra de títol i posa els seus botons al final de la tira de pestanyes de comptes, com fa un navegador, en comptes de donar-los una fila pròpia. Activa el marc de finestra personalitzat, que necessita. S'aplica després de reiniciar.</translation>
+        <translation>Elimina la barra de títol i posa els seus botons al final de la tira de pestanyes de comptes, com fa un navegador, en comptes de donar-los una fila pròpia. Activa el marc de finestra personalitzat, que necessita. S&apos;aplica després de reiniciar.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2213"/>
@@ -3597,7 +3597,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2239"/>
         <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
-        <translation>Escala tota la finestra i la pàgina (QT_SCALE_FACTOR). Automàtic segueix l'escriptori. Una variable d'entorn QT_SCALE_FACTOR, si està definida, ho substitueix. S'aplica després de reiniciar.</translation>
+        <translation>Escala tota la finestra i la pàgina (QT_SCALE_FACTOR). Automàtic segueix l&apos;escriptori. Una variable d&apos;entorn QT_SCALE_FACTOR, si està definida, ho substitueix. S&apos;aplica després de reiniciar.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2275"/>
@@ -3628,7 +3628,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2335"/>
         <source>Username</source>
-        <translation>Nom d'usuari</translation>
+        <translation>Nom d&apos;usuari</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2342"/>
@@ -3649,7 +3649,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2378"/>
         <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
-        <translation>Carrega fitxers .js per executar-los al WhatsApp Web. Cada complement s'executa al seu propi entorn aïllat, així que un de trencat no pot fer caure els altres ni la pàgina. Desmarqueu un complement per desactivar-lo sense eliminar-lo. Els canvis s'apliquen després de reiniciar.</translation>
+        <translation>Carrega fitxers .js per executar-los al WhatsApp Web. Cada complement s&apos;executa al seu propi entorn aïllat, així que un de trencat no pot fer caure els altres ni la pàgina. Desmarqueu un complement per desactivar-lo sense eliminar-lo. Els canvis s&apos;apliquen després de reiniciar.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2400"/>
@@ -3670,7 +3670,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2438"/>
         <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
-        <translation>Textos curts que envieu sovint. Inseriu-ne un des de la paleta d'ordres (Ctrl+K): escriviu «Insereix» i trieu-lo; el text s'escriu a la casella del missatge.</translation>
+        <translation>Textos curts que envieu sovint. Inseriu-ne un des de la paleta d&apos;ordres (Ctrl+K): escriviu «Insereix» i trieu-lo; el text s&apos;escriu a la casella del missatge.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2460"/>
@@ -3685,7 +3685,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2498"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
-        <translation>Feu clic en un camp i premeu la combinació de tecles. Buideu un camp per eliminar la drecera. Els canvis s'apliquen després de reiniciar.</translation>
+        <translation>Feu clic en un camp i premeu la combinació de tecles. Buideu un camp per eliminar la drecera. Els canvis s&apos;apliquen després de reiniciar.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2514"/>
@@ -3695,7 +3695,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2520"/>
         <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account&apos;s config and Whatly never obtains it itself.</source>
-        <translation>Envia amb `--send --backend cloud` a través de la Cloud API de WhatsApp Business de Meta, sense necessitat d'una sessió del WhatsApp Web en execució. El testimoni d'accés és un que proporcioneu vosaltres des de Meta; es desa a la configuració d'aquest compte i el Whatly mai no l'obté per si sol.</translation>
+        <translation>Envia amb `--send --backend cloud` a través de la Cloud API de WhatsApp Business de Meta, sense necessitat d&apos;una sessió del WhatsApp Web en execució. El testimoni d&apos;accés és un que proporcioneu vosaltres des de Meta; es desa a la configuració d&apos;aquest compte i el Whatly mai no l&apos;obté per si sol.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2530"/>
@@ -3705,12 +3705,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2544"/>
         <source>Access token</source>
-        <translation>Testimoni d'accés</translation>
+        <translation>Testimoni d&apos;accés</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2554"/>
         <source>your Meta access token</source>
-        <translation>el vostre testimoni d'accés de Meta</translation>
+        <translation>el vostre testimoni d&apos;accés de Meta</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2561"/>
@@ -3725,12 +3725,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2584"/>
         <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
-        <translation>Un petit punt final HTTP a la interfície loopback (127.0.0.1) permet que altres programes d'aquest equip enviïn a través del Whatly, i permet que Meta lliuri webhooks de la Cloud API (missatges entrants) perquè la resposta automàtica funcioni sense navegador. No s'exposa mai a la xarxa; per rebre webhooks de Meta, redirigiu el port amb un túnel o un servidor intermediari invers (p. ex. cloudflared o ngrok).</translation>
+        <translation>Un petit punt final HTTP a la interfície loopback (127.0.0.1) permet que altres programes d&apos;aquest equip enviïn a través del Whatly, i permet que Meta lliuri webhooks de la Cloud API (missatges entrants) perquè la resposta automàtica funcioni sense navegador. No s&apos;exposa mai a la xarxa; per rebre webhooks de Meta, redirigiu el port amb un túnel o un servidor intermediari invers (p. ex. cloudflared o ngrok).</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2594"/>
         <source>Enable the local HTTP API (send over HTTP)</source>
-        <translation>Activa l'API HTTP local (envia per HTTP)</translation>
+        <translation>Activa l&apos;API HTTP local (envia per HTTP)</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2618"/>
@@ -3760,7 +3760,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.ui" line="2659"/>
         <source>Meta app secret</source>
-        <translation>Secret de l'aplicació de Meta</translation>
+        <translation>Secret de l&apos;aplicació de Meta</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2669"/>
@@ -3815,7 +3815,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="858"/>
         <source>Records how smoothly the chat scrolls, to attach to a bug report. Off by default; it does nothing until you turn it on, and adds nothing to a normal session.</source>
-        <translation>Registra la fluïdesa del desplaçament del xat, per adjuntar-ho a un informe d'error. Desactivat per defecte; no fa res fins que l'activeu i no afegeix res a una sessió normal.</translation>
+        <translation>Registra la fluïdesa del desplaçament del xat, per adjuntar-ho a un informe d&apos;error. Desactivat per defecte; no fa res fins que l&apos;activeu i no afegeix res a una sessió normal.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="868"/>
@@ -3825,12 +3825,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="870"/>
         <source>Copy the collected scroll figures to the clipboard (and the log) so they can be pasted into a bug report.</source>
-        <translation>Copia les dades de desplaçament recollides al porta-retalls (i al registre) perquè es puguin enganxar en un informe d'error.</translation>
+        <translation>Copia les dades de desplaçament recollides al porta-retalls (i al registre) perquè es puguin enganxar en un informe d&apos;error.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="971"/>
         <source>Fetching the list of languages…</source>
-        <translation>S'està obtenint la llista d'idiomes…</translation>
+        <translation>S&apos;està obtenint la llista d&apos;idiomes…</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1194"/>
@@ -3840,7 +3840,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1195"/>
         <source>That shortcut is already used by another action.</source>
-        <translation>Aquesta drecera ja s'utilitza en una altra acció.</translation>
+        <translation>Aquesta drecera ja s&apos;utilitza en una altra acció.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1207"/>
@@ -3863,7 +3863,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1219"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
-        <translation>L'arxiu contindrà la vostra sessió iniciada del WhatsApp. Mantingueu-lo privat. Voleu continuar?</translation>
+        <translation>L&apos;arxiu contindrà la vostra sessió iniciada del WhatsApp. Mantingueu-lo privat. Voleu continuar?</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1226"/>
@@ -3887,7 +3887,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1246"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
-        <translation>Això sobreescriu les dades del compte actual amb l'arxiu, i després cal reiniciar el Whatly. Voleu continuar?</translation>
+        <translation>Això sobreescriu les dades del compte actual amb l&apos;arxiu, i després cal reiniciar el Whatly. Voleu continuar?</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1254"/>
@@ -3897,12 +3897,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1277"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
-        <translation>Això suprimirà les dades persistents! Les dades persistents inclouen les galetes persistents i la memòria cau, i tancarà l'aplicació.</translation>
+        <translation>Això suprimirà les dades persistents! Les dades persistents inclouen les galetes persistents i la memòria cau, i tancarà l&apos;aplicació.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1282"/>
         <source>Delete Cookies and Quit Application?</source>
-        <translation>Voleu suprimir les galetes i sortir de l'aplicació?</translation>
+        <translation>Voleu suprimir les galetes i sortir de l&apos;aplicació?</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1388"/>
@@ -3912,12 +3912,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1389"/>
         <source>Cannot set an empty UserAgent String.</source>
-        <translation>No es pot establir una cadena d'agent d'usuari buida.</translation>
+        <translation>No es pot establir una cadena d&apos;agent d&apos;usuari buida.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1440"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
-        <translation>El canvi automàtic de tema s'ha desactivat en canviar el tema manualment.</translation>
+        <translation>El canvi automàtic de tema s&apos;ha desactivat en canviar el tema manualment.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1457"/>
@@ -3927,12 +3927,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1486"/>
         <source>App lock is not configured.</source>
-        <translation>El bloqueig de l'aplicació no està configurat.</translation>
+        <translation>El bloqueig de l&apos;aplicació no està configurat.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1490"/>
         <source>Do you want to setup App lock now?</source>
-        <translation>Voleu configurar el bloqueig de l'aplicació ara?</translation>
+        <translation>Voleu configurar el bloqueig de l&apos;aplicació ara?</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1532"/>
@@ -3952,7 +3952,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1621"/>
         <source>Could not use that image: %1</source>
-        <translation>No s'ha pogut usar aquesta imatge: %1</translation>
+        <translation>No s&apos;ha pogut usar aquesta imatge: %1</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1636"/>
@@ -3962,12 +3962,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1638"/>
         <source>Stylesheets (*.css);;All files (*)</source>
-        <translation>Fulls d'estil (*.css);;Tots els fitxers (*)</translation>
+        <translation>Fulls d&apos;estil (*.css);;Tots els fitxers (*)</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1645"/>
         <source>Could not read that file: %1</source>
-        <translation>No s'ha pogut llegir aquest fitxer: %1</translation>
+        <translation>No s&apos;ha pogut llegir aquest fitxer: %1</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1718"/>
@@ -4003,7 +4003,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1877"/>
         <source>Ollama not found at this address.</source>
-        <translation>No s'ha trobat l'Ollama en aquesta adreça.</translation>
+        <translation>No s&apos;ha trobat l&apos;Ollama en aquesta adreça.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1882"/>
@@ -4023,12 +4023,12 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="1921"/>
         <source>Checking…</source>
-        <translation>S'està comprovant…</translation>
+        <translation>S&apos;està comprovant…</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="1946"/>
         <source>Starting download of %1…</source>
-        <translation>S'inicia la baixada de %1…</translation>
+        <translation>S&apos;inicia la baixada de %1…</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2001"/>
@@ -4053,7 +4053,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="2030"/>
         <source>Desktop portal (Flatpak)</source>
-        <translation>Portal d'escriptori (Flatpak)</translation>
+        <translation>Portal d&apos;escriptori (Flatpak)</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2032"/>
@@ -4089,7 +4089,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="2244"/>
         <source>Could not add addon</source>
-        <translation>No s'ha pogut afegir el complement</translation>
+        <translation>No s&apos;ha pogut afegir el complement</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2257"/>
@@ -4099,7 +4099,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="2258"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
-        <translation>Voleu eliminar el complement «%1»? Això n'esborra el fitxer.</translation>
+        <translation>Voleu eliminar el complement «%1»? Això n&apos;esborra el fitxer.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2368"/>
@@ -4109,7 +4109,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="2370"/>
         <source>Show only the settings that match. What you find is the setting itself, working where it stands — not a list to click through. Tooltips are searched as well as labels, and so are the English names of the settings when Whatly is running in another language.</source>
-        <translation>Mostra només les opcions que coincideixen. El que trobeu és la mateixa opció, funcional allà on és, no una llista per anar clicant. Se cerquen tant els consells emergents com les etiquetes, i també els noms en anglès de les opcions quan el Whatly s'executa en un altre idioma.</translation>
+        <translation>Mostra només les opcions que coincideixen. El que trobeu és la mateixa opció, funcional allà on és, no una llista per anar clicant. Se cerquen tant els consells emergents com les etiquetes, i també els noms en anglès de les opcions quan el Whatly s&apos;executa en un altre idioma.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2492"/>
@@ -4129,7 +4129,7 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="2753"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
-        <translation>Marqueu els idiomes amb què comprovar l'ortografia. Cada fila baixa o suprimeix el seu diccionari.</translation>
+        <translation>Marqueu els idiomes amb què comprovar l&apos;ortografia. Cada fila baixa o suprimeix el seu diccionari.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2855"/>
@@ -4159,17 +4159,17 @@ Please setup the password in the Settings first.</source>
     <message>
         <location filename="../settingswidget.cpp" line="3057"/>
         <source>The interface language will change when you restart %1.</source>
-        <translation>L'idioma de la interfície canviarà quan reinicieu %1.</translation>
+        <translation>L&apos;idioma de la interfície canviarà quan reinicieu %1.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="3082"/>
         <source>App Lock Setup</source>
-        <translation>Configuració del bloqueig de l'aplicació</translation>
+        <translation>Configuració del bloqueig de l&apos;aplicació</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="3083"/>
         <source>Please setup the App lock password first.</source>
-        <translation>Primer configureu la contrasenya del bloqueig de l'aplicació.</translation>
+        <translation>Primer configureu la contrasenya del bloqueig de l&apos;aplicació.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="3199"/>
@@ -4202,12 +4202,12 @@ You may also require a complete restart of Application!</source>
     <message>
         <location filename="../setupwizard.cpp" line="31"/>
         <source>A fast, native WhatsApp Web client for the desktop. Let&apos;s set a few things up — you can change all of this later in Settings.</source>
-        <translation>Un client de WhatsApp Web ràpid i natiu per a l'escriptori. Configurem unes quantes coses (podeu canviar-ho tot més tard a la configuració).</translation>
+        <translation>Un client de WhatsApp Web ràpid i natiu per a l&apos;escriptori. Configurem unes quantes coses (podeu canviar-ho tot més tard a la configuració).</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="36"/>
         <source>Whatly keeps your chats in a proper desktop window, with a tray icon, notifications, themes, and multiple accounts.</source>
-        <translation>El Whatly manté els vostres xats en una finestra d'escriptori de debò, amb icona de safata, notificacions, temes i diversos comptes.</translation>
+        <translation>El Whatly manté els vostres xats en una finestra d&apos;escriptori de debò, amb icona de safata, notificacions, temes i diversos comptes.</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="46"/>
@@ -4242,7 +4242,7 @@ You may also require a complete restart of Application!</source>
     <message>
         <location filename="../setupwizard.cpp" line="65"/>
         <source>Desktop portal (Flatpak)</source>
-        <translation>Portal d'escriptori (Flatpak)</translation>
+        <translation>Portal d&apos;escriptori (Flatpak)</translation>
     </message>
     <message>
         <location filename="../setupwizard.cpp" line="67"/>
@@ -4262,7 +4262,7 @@ You may also require a complete restart of Application!</source>
     <message>
         <location filename="../setupwizard.cpp" line="82"/>
         <source>Everything here lives in Settings if you change your mind.</source>
-        <translation>Tot això és a la configuració si canvieu d'opinió.</translation>
+        <translation>Tot això és a la configuració si canvieu d&apos;opinió.</translation>
     </message>
 </context>
 <context>
@@ -4270,7 +4270,7 @@ You may also require a complete restart of Application!</source>
     <message>
         <location filename="../updatechecker.cpp" line="145"/>
         <source>Could not read the latest release</source>
-        <translation>No s'ha pogut llegir l'últim llançament</translation>
+        <translation>No s&apos;ha pogut llegir l&apos;últim llançament</translation>
     </message>
 </context>
 <context>
@@ -4328,17 +4328,17 @@ You may also require a complete restart of Application!</source>
     <message>
         <location filename="../webenginepage.cpp" line="199"/>
         <source>Allow %1 to capture video of your desktop?</source>
-        <translation>Voleu permetre que %1 capturi vídeo de l'escriptori?</translation>
+        <translation>Voleu permetre que %1 capturi vídeo de l&apos;escriptori?</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="201"/>
         <source>Allow %1 to capture audio and video of your desktop?</source>
-        <translation>Voleu permetre que %1 capturi àudio i vídeo de l'escriptori?</translation>
+        <translation>Voleu permetre que %1 capturi àudio i vídeo de l&apos;escriptori?</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="204"/>
         <source>Allow %1 to show notification on your desktop?</source>
-        <translation>Voleu permetre que %1 mostri notificacions a l'escriptori?</translation>
+        <translation>Voleu permetre que %1 mostri notificacions a l&apos;escriptori?</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="206"/>
@@ -4365,12 +4365,12 @@ You may also require a complete restart of Application!</source>
     <message>
         <location filename="../webenginepage.cpp" line="395"/>
         <source>Enter username and password for &quot;%1&quot; at %2</source>
-        <translation>Introduïu el nom d'usuari i la contrasenya de «%1» a %2</translation>
+        <translation>Introduïu el nom d&apos;usuari i la contrasenya de «%1» a %2</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="425"/>
         <source>Connect to proxy &quot;%1&quot; using:</source>
-        <translation>Connecta't al servidor intermediari «%1» amb:</translation>
+        <translation>Connecta&apos;t al servidor intermediari «%1» amb:</translation>
     </message>
     <message>
         <location filename="../webenginepage.cpp" line="444"/>
@@ -4398,7 +4398,7 @@ You may also require a complete restart of Application!</source>
     <message>
         <location filename="../webview.cpp" line="67"/>
         <source>Render process killed</source>
-        <translation>El procés de renderització s'ha finalitzat</translation>
+        <translation>El procés de renderització s&apos;ha finalitzat</translation>
     </message>
     <message>
         <location filename="../webview.cpp" line="103"/>
