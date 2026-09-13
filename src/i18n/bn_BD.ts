@@ -790,19 +790,19 @@ Webengine is not initialized.</source>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="348"/>
-        <location filename="../mainwindow_accounts.cpp" line="1819"/>
+        <location filename="../mainwindow_accounts.cpp" line="1822"/>
         <source>Rename…</source>
         <translation>নাম পরিবর্তন করুন…</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="349"/>
-        <location filename="../mainwindow_accounts.cpp" line="1820"/>
+        <location filename="../mainwindow_accounts.cpp" line="1823"/>
         <source>Open in own window</source>
         <translation>নিজস্ব উইন্ডোতে খুলুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="353"/>
-        <location filename="../mainwindow_accounts.cpp" line="1823"/>
+        <location filename="../mainwindow_accounts.cpp" line="1826"/>
         <source>Remove account</source>
         <translation>অ্যাকাউন্ট সরান</translation>
     </message>
@@ -834,13 +834,13 @@ Webengine is not initialized.</source>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1563"/>
-        <location filename="../mainwindow_accounts.cpp" line="2222"/>
+        <location filename="../mainwindow_accounts.cpp" line="2225"/>
         <source>Add another account</source>
         <translation>আরেকটি অ্যাকাউন্ট যোগ করুন</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1592"/>
-        <location filename="../mainwindow_accounts.cpp" line="1619"/>
+        <location filename="../mainwindow_accounts.cpp" line="1622"/>
         <source>Restore</source>
         <translation>পুনরুদ্ধার করুন</translation>
     </message>
@@ -856,47 +856,47 @@ Webengine is not initialized.</source>
         <translation>চ্যাট</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1665"/>
+        <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>অ্যাকাউন্ট যোগ করুন</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1666"/>
+        <location filename="../mainwindow_accounts.cpp" line="1669"/>
         <source>Name for the new account:</source>
         <translation>নতুন অ্যাকাউন্টের নাম:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1667"/>
-        <location filename="../mainwindow_accounts.cpp" line="2560"/>
-        <location filename="../mainwindow_accounts.cpp" line="2565"/>
+        <location filename="../mainwindow_accounts.cpp" line="1670"/>
+        <location filename="../mainwindow_accounts.cpp" line="2563"/>
+        <location filename="../mainwindow_accounts.cpp" line="2568"/>
         <source>Account %1</source>
         <translation>অ্যাকাউন্ট %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1696"/>
+        <location filename="../mainwindow_accounts.cpp" line="1699"/>
         <source>Rename account</source>
         <translation>অ্যাকাউন্টের নাম পরিবর্তন করুন</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="1696"/>
+        <location filename="../mainwindow_accounts.cpp" line="1699"/>
         <source>Account name:</source>
         <translation>অ্যাকাউন্টের নাম:</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2241"/>
+        <location filename="../mainwindow_accounts.cpp" line="2244"/>
         <source>Tip: give an account its own window</source>
         <translation>টিপ: একটি অ্যাকাউন্টকে নিজস্ব উইন্ডো দিন</translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2242"/>
+        <location filename="../mainwindow_accounts.cpp" line="2245"/>
         <source>You now have more than one account, shown as tabs along the top.
 
 You can pull any account out into its own window: right-click its tab and choose “Open in own window”. Close that window to dock the account back as a tab.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow_accounts.cpp" line="2554"/>
-        <location filename="../mainwindow_accounts.cpp" line="2558"/>
+        <location filename="../mainwindow_accounts.cpp" line="2557"/>
+        <location filename="../mainwindow_accounts.cpp" line="2561"/>
         <source>Account 1</source>
         <translation>অ্যাকাউন্ট ১</translation>
     </message>
@@ -1647,57 +1647,57 @@ Open Settings now?</source>
         <translation> পুনরায় চালু করার প্রয়োজন হতে পারে। অনুগ্রহ করে ত্রুটিটি ডেভেলপারকে জানান।</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="80"/>
+        <location filename="../common.cpp" line="103"/>
         <source>Nothing unread</source>
         <translation>কোনো অপঠিত বার্তা নেই</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="90"/>
+        <location filename="../common.cpp" line="113"/>
         <source>1 unread message in 1 chat</source>
         <translation>১টি চ্যাটে ১টি অপঠিত বার্তা</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="92"/>
+        <location filename="../common.cpp" line="115"/>
         <source>1 unread message in %1 chats</source>
         <translation>%1টি চ্যাটে ১টি অপঠিত বার্তা</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="94"/>
+        <location filename="../common.cpp" line="117"/>
         <source>%1 unread messages in 1 chat</source>
         <translation>১টি চ্যাটে %1টি অপঠিত বার্তা</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="96"/>
+        <location filename="../common.cpp" line="119"/>
         <source>%1 unread messages in %2 chats</source>
         <translation>%2টি চ্যাটে %1টি অপঠিত বার্তা</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="106"/>
+        <location filename="../common.cpp" line="129"/>
         <source>%1 in 1 muted chat</source>
         <translation>১টি নিঃশব্দ চ্যাটে %1</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="107"/>
+        <location filename="../common.cpp" line="130"/>
         <source>%1 in %2 muted chats</source>
         <translation>%2টি নিঃশব্দ চ্যাটে %1</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="113"/>
+        <location filename="../common.cpp" line="136"/>
         <source>%1 in 1 chat that is not muted</source>
         <translation>১টি চ্যাটে %1 যা নিঃশব্দ নয়</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="115"/>
+        <location filename="../common.cpp" line="138"/>
         <source>%1 in %2 chats that are not muted</source>
         <translation>%2টি চ্যাটে %1 যেগুলো নিঃশব্দ নয়</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="125"/>
+        <location filename="../common.cpp" line="148"/>
         <source>WhatsApp Web %1</source>
         <translation>WhatsApp Web %1</translation>
     </message>
     <message>
-        <location filename="../common.cpp" line="127"/>
+        <location filename="../common.cpp" line="150"/>
         <source>Build token: %1</source>
         <translation>বিল্ড টোকেন: %1</translation>
     </message>
@@ -2450,11 +2450,11 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="198"/>
-        <location filename="../settingswidget.ui" line="2031"/>
-        <location filename="../settingswidget.ui" line="2075"/>
-        <location filename="../settingswidget.ui" line="2242"/>
-        <location filename="../settingswidget.cpp" line="1727"/>
-        <location filename="../settingswidget.cpp" line="2028"/>
+        <location filename="../settingswidget.ui" line="2041"/>
+        <location filename="../settingswidget.ui" line="2085"/>
+        <location filename="../settingswidget.ui" line="2252"/>
+        <location filename="../settingswidget.cpp" line="1735"/>
+        <location filename="../settingswidget.cpp" line="2036"/>
         <source>Automatic</source>
         <translation>স্বয়ংক্রিয়</translation>
     </message>
@@ -2510,7 +2510,7 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="326"/>
-        <location filename="../settingswidget.ui" line="1340"/>
+        <location filename="../settingswidget.ui" line="1350"/>
         <source> Secs</source>
         <translation> সেকেন্ড</translation>
     </message>
@@ -2772,1417 +2772,1427 @@ Please setup the password in the Settings first.</source>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="681"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Draw the unread count in red on the monochrome tray icon, so the number stands out while the glyph stays colourless. Off keeps the count the same neutral tone as the glyph. Only applies when the monochrome tray icon is on.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ট্রে-এর মনোক্রোম আইকনে অপঠিত সংখ্যা লাল রঙে আঁকে, যাতে গ্লিফ বর্ণহীন থাকা অবস্থায় সংখ্যাটি চোখে পড়ে। বন্ধ থাকলে গণনা গ্লিফের মতোই নিরপেক্ষ রঙে থাকে। কেবল মনোক্রোম ট্রে আইকন চালু থাকলেই প্রযোজ্য।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="684"/>
+        <source>Red count on the monochrome icon</source>
+        <translation>মনোক্রোম আইকনে লাল গণনা</translation>
+    </message>
+    <message>
+        <location filename="../settingswidget.ui" line="691"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Animate scrolling instead of jumping line by line.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;লাইনে লাইনে লাফ দেওয়ার বদলে স্ক্রলিং অ্যানিমেট করুন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="684"/>
+        <location filename="../settingswidget.ui" line="694"/>
         <source>Smooth scrolling</source>
         <translation>মসৃণ স্ক্রলিং</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="691"/>
-        <location filename="../settingswidget.cpp" line="1644"/>
+        <location filename="../settingswidget.ui" line="701"/>
+        <location filename="../settingswidget.cpp" line="1647"/>
         <source>Custom CSS</source>
         <translation>কাস্টম CSS</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="700"/>
+        <location filename="../settingswidget.ui" line="710"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load a .css file to restyle WhatsApp Web — the community stylesheets (catppuccin and the like) work here. Applied on top of the chat theme.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web-কে নতুন করে স্টাইল করতে একটি .css ফাইল লোড করুন — কমিউনিটি স্টাইলশিট (catppuccin এবং এ ধরনের) এখানে কাজ করে। চ্যাট থিমের উপরে প্রয়োগ করা হয়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="703"/>
+        <location filename="../settingswidget.ui" line="713"/>
         <source>Choose file…</source>
         <translation>ফাইল নির্বাচন করুন…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="710"/>
-        <location filename="../settingswidget.ui" line="850"/>
+        <location filename="../settingswidget.ui" line="720"/>
+        <location filename="../settingswidget.ui" line="860"/>
         <source>Clear</source>
         <translation>পরিষ্কার করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="719"/>
+        <location filename="../settingswidget.ui" line="729"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove the system-tray icon entirely. With no tray to restore from, closing the window then quits the app instead of hiding it.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;সিস্টেম-ট্রে আইকনটি সম্পূর্ণরূপে সরিয়ে দিন। ফিরিয়ে আনার মতো কোনো ট্রে না থাকায়, উইন্ডো বন্ধ করলে অ্যাপটি লুকানোর বদলে বন্ধ হয়ে যায়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="722"/>
+        <location filename="../settingswidget.ui" line="732"/>
         <source>Hide tray icon</source>
         <translation>ট্রে আইকন লুকান</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="729"/>
+        <location filename="../settingswidget.ui" line="739"/>
         <source>Font family</source>
         <translation>ফন্ট পরিবার</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="736"/>
+        <location filename="../settingswidget.ui" line="746"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Render WhatsApp Web&apos;s text in a font installed on your system. Emoji, icons and monospaced message formatting are left untouched.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web-এর টেক্সট আপনার সিস্টেমে ইনস্টল করা একটি ফন্টে রেন্ডার করুন। ইমোজি, আইকন ও মনোস্পেসড বার্তা ফরম্যাটিং অপরিবর্তিত থাকে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="743"/>
+        <location filename="../settingswidget.ui" line="753"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hide the &quot;Muted updates&quot; section in the Status/Updates panel, so statuses from contacts you have muted do not show up at all.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;স্ট্যাটাস/আপডেট প্যানেলে &quot;মিউট করা আপডেট&quot; বিভাগটি লুকিয়ে রাখুন, যাতে আপনার মিউট করা পরিচিতিদের স্ট্যাটাস একদমই না দেখায়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="746"/>
+        <location filename="../settingswidget.ui" line="756"/>
         <source>Hide muted status updates</source>
         <translation>নিঃশব্দ স্ট্যাটাস আপডেট লুকান</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="753"/>
+        <location filename="../settingswidget.ui" line="763"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Underlines misspelt words as you type, and offers corrections in the right-click menu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;টাইপ করার সময় ভুল বানানের শব্দ আন্ডারলাইন করে, এবং রাইট-ক্লিক মেনুতে সংশোধন সাজেস্ট করে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="756"/>
-        <location filename="../settingswidget.cpp" line="2634"/>
+        <location filename="../settingswidget.ui" line="766"/>
+        <location filename="../settingswidget.cpp" line="2642"/>
         <source>Check spelling as I type</source>
         <translation>টাইপ করার সময় বানান যাচাই করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="763"/>
+        <location filename="../settingswidget.ui" line="773"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The language to check against.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;যে ভাষার বিরুদ্ধে যাচাই করা হবে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="770"/>
+        <location filename="../settingswidget.ui" line="780"/>
         <source>Interface font size</source>
         <translation>ইন্টারফেস ফন্টের আকার</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="777"/>
+        <location filename="../settingswidget.ui" line="787"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Point size of the app&apos;s own interface — menus, settings and dialogs. This does not affect WhatsApp Web&apos;s text; use the zoom for that.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;অ্যাপের নিজস্ব ইন্টারফেসের পয়েন্ট সাইজ — মেনু, সেটিংস ও ডায়ালগ। এটি WhatsApp Web-এর টেক্সটকে প্রভাবিত করে না; তার জন্য জুম ব্যবহার করুন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="780"/>
+        <location filename="../settingswidget.ui" line="790"/>
         <source> pt</source>
         <translation> পয়েন্ট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="793"/>
+        <location filename="../settingswidget.ui" line="803"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If WhatsApp Web&apos;s page process crashes, reload it automatically instead of asking first.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web-এর পেজ প্রসেস ক্র্যাশ করলে, আগে জিজ্ঞাসা না করে সেটি স্বয়ংক্রিয়ভাবে পুনরায় লোড করুন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="796"/>
+        <location filename="../settingswidget.ui" line="806"/>
         <source>Reload automatically after a crash</source>
         <translation>ক্র্যাশের পর স্বয়ংক্রিয়ভাবে পুনরায় লোড করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="803"/>
+        <location filename="../settingswidget.ui" line="813"/>
         <source>Privacy blur</source>
         <translation>গোপনীয়তা ব্লার</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="810"/>
+        <location filename="../settingswidget.ui" line="820"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Blurs your chats until you hover over them, so someone glancing at the screen cannot read them. Hovering a row reveals just that row.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;আপনি হোভার না করা পর্যন্ত আপনার চ্যাট ঝাপসা করে রাখে, যাতে পর্দার দিকে চোখ বোলানো কেউ সেগুলো পড়তে না পারে। কোনো সারিতে হোভার করলে কেবল সেই সারিটিই প্রকাশ পায়।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="817"/>
+        <location filename="../settingswidget.ui" line="827"/>
         <source>Chat colour Tint</source>
         <translation>চ্যাট রঙের আভা</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="824"/>
+        <location filename="../settingswidget.ui" line="834"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Recolours WhatsApp Web itself. Photos, avatars and stickers keep their own colours. Works on top of the light or dark theme, whichever is active.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp Web-কেই নতুন রঙে রাঙায়। ছবি, অবতার ও স্টিকার নিজেদের রঙ ধরে রাখে। হালকা বা গাঢ় থিম যেটিই সক্রিয় থাক, তার উপরে কাজ করে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="831"/>
-        <location filename="../settingswidget.cpp" line="1620"/>
+        <location filename="../settingswidget.ui" line="841"/>
+        <location filename="../settingswidget.cpp" line="1623"/>
         <source>Chat wallpaper</source>
         <translation>চ্যাট ওয়ালপেপার</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="840"/>
+        <location filename="../settingswidget.ui" line="850"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use one of your own images as the background of the chat pane, as WhatsApp does on Android. The image is stored inside Whatly, not uploaded anywhere, and is only visible to you.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;WhatsApp যেমন Android-এ করে, তেমনি আপনার নিজের কোনো ছবি চ্যাট পেনের ব্যাকগ্রাউন্ড হিসেবে ব্যবহার করুন। ছবিটি Whatly-র ভেতরে সংরক্ষিত থাকে, কোথাও আপলোড হয় না, এবং কেবল আপনিই দেখতে পান।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="843"/>
+        <location filename="../settingswidget.ui" line="853"/>
         <source>Choose image…</source>
         <translation>ছবি নির্বাচন করুন…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="859"/>
+        <location filename="../settingswidget.ui" line="869"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;New logins appear as &amp;quot;Whatly for Linux&amp;quot; (or the matching platform) in your phone&apos;s linked-devices list instead of &amp;quot;Google Chrome (Linux)&amp;quot;. The name is stored on the phone when a device is linked, so changing this only affects future links — log out and re-link to rename an existing session.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;নতুন লগইনগুলো আপনার ফোনের লিঙ্কড-ডিভাইস তালিকায় &amp;quot;Google Chrome (Linux)&amp;quot;-এর বদলে &amp;quot;Whatly for Linux&amp;quot; (বা মানানসই প্ল্যাটফর্ম) হিসেবে দেখা যায়। ডিভাইস লিঙ্ক করার সময় নামটি ফোনে সংরক্ষিত হয়, তাই এটি পরিবর্তন করলে কেবল ভবিষ্যতের লিঙ্কেই প্রভাব পড়ে — বিদ্যমান সেশনের নাম বদলাতে লগ আউট করে আবার লিঙ্ক করুন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="862"/>
+        <location filename="../settingswidget.ui" line="872"/>
         <source>Identify as Whatly in linked devices</source>
         <translation>লিঙ্কড ডিভাইসে Whatly হিসেবে সনাক্ত করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="871"/>
+        <location filename="../settingswidget.ui" line="881"/>
         <source>Browser name for linking</source>
         <translation>লিঙ্ক করার জন্য ব্রাউজারের নাম</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="878"/>
+        <location filename="../settingswidget.ui" line="888"/>
         <source>Whatly</source>
         <translation>Whatly</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="881"/>
+        <location filename="../settingswidget.ui" line="891"/>
         <source>Leave empty to show just &quot;Whatly&quot;. Set a browser WhatsApp knows, such as Chrome, if linking by phone number does not work.</source>
         <translation>শুধু &quot;Whatly&quot; দেখাতে খালি রাখুন। ফোন নম্বর দিয়ে লিঙ্ক কাজ না করলে WhatsApp চেনে এমন একটি ব্রাউজার, যেমন Chrome, লিখুন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="897"/>
+        <location filename="../settingswidget.ui" line="907"/>
         <source>User Agent</source>
         <translation>ইউজার এজেন্ট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="900"/>
+        <location filename="../settingswidget.ui" line="910"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Advanced — leave this alone unless you know exactly what you are doing. A non-standard user agent can make WhatsApp refuse to load, and unusual values risk your WhatsApp account being flagged or blacklisted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;উন্নত — আপনি ঠিক কী করছেন তা না জানলে এটিতে হাত দেবেন না। একটি অ-মানক ইউজার এজেন্ট WhatsApp-কে লোড হতে অস্বীকার করাতে পারে, এবং অস্বাভাবিক মান আপনার WhatsApp অ্যাকাউন্ট ফ্ল্যাগ বা ব্ল্যাকলিস্ট হওয়ার ঝুঁকি তৈরি করে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="910"/>
+        <location filename="../settingswidget.ui" line="920"/>
         <source>  Set</source>
         <translation>  সেট করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="921"/>
+        <location filename="../settingswidget.ui" line="931"/>
         <source>Reset to default</source>
         <translation>ডিফল্টে রিসেট করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="944"/>
+        <location filename="../settingswidget.ui" line="954"/>
         <source>Zoom factor when normal</source>
         <translation>সাধারণ অবস্থায় জুম ফ্যাক্টর</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="972"/>
-        <location filename="../settingswidget.ui" line="1107"/>
+        <location filename="../settingswidget.ui" line="982"/>
+        <location filename="../settingswidget.ui" line="1117"/>
         <source>Zoom Out</source>
         <translation>জুম আউট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1011"/>
-        <location filename="../settingswidget.ui" line="1146"/>
+        <location filename="../settingswidget.ui" line="1021"/>
+        <location filename="../settingswidget.ui" line="1156"/>
         <source>Zoom In</source>
         <translation>জুম ইন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1056"/>
-        <location filename="../settingswidget.ui" line="1191"/>
+        <location filename="../settingswidget.ui" line="1066"/>
+        <location filename="../settingswidget.ui" line="1201"/>
         <source>reset</source>
         <translation>রিসেট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1079"/>
+        <location filename="../settingswidget.ui" line="1089"/>
         <source>Zoom factor when maximized/fullscreen</source>
         <translation>সর্বোচ্চ/পূর্ণস্ক্রিন অবস্থায় জুম ফ্যাক্টর</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1214"/>
+        <location filename="../settingswidget.ui" line="1224"/>
         <source>Minimize to tray</source>
         <translation>ট্রেতে মিনিমাইজ করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1223"/>
+        <location filename="../settingswidget.ui" line="1233"/>
         <source>Quit</source>
         <translation>প্রস্থান করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1235"/>
+        <location filename="../settingswidget.ui" line="1245"/>
         <source>Global shortcuts</source>
         <translation>গ্লোবাল শর্টকাট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1242"/>
+        <location filename="../settingswidget.ui" line="1252"/>
         <source>Close button action</source>
         <translation>বন্ধ বোতামের ক্রিয়া</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1249"/>
+        <location filename="../settingswidget.ui" line="1259"/>
         <source>  Show shortcuts</source>
         <translation>  শর্টকাট দেখান</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1260"/>
+        <location filename="../settingswidget.ui" line="1270"/>
         <source>Permissions</source>
         <translation>অনুমতি</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1267"/>
+        <location filename="../settingswidget.ui" line="1277"/>
         <source>  Show permissions</source>
         <translation>  অনুমতি দেখান</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1282"/>
+        <location filename="../settingswidget.ui" line="1292"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable lock screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;লক স্ক্রিন সক্রিয় করুন।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1285"/>
+        <location filename="../settingswidget.ui" line="1295"/>
         <source>Enable App lock on start</source>
         <translation>চালু করার সময় অ্যাপ লক সক্রিয় করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1292"/>
+        <location filename="../settingswidget.ui" line="1302"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When the window hides to the system tray, lock it behind the passcode. Requires a password to be set.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;উইন্ডোটি যখন সিস্টেম ট্রেতে লুকায়, তখন সেটি পাসকোডের আড়ালে লক করে দিন। এর জন্য একটি পাসওয়ার্ড সেট করা থাকতে হবে।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1295"/>
+        <location filename="../settingswidget.ui" line="1305"/>
         <source>Lock when hidden to tray</source>
         <translation>ট্রেতে লুকানো অবস্থায় লক করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1302"/>
+        <location filename="../settingswidget.ui" line="1312"/>
         <source>Also lock Whatly when the desktop session locks. Requires a password to be set. (Linux)</source>
         <translation>ডেস্কটপ সেশন লক হলে Whatly-ও লক করুন। একটি পাসওয়ার্ড সেট থাকা প্রয়োজন। (Linux)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1305"/>
+        <location filename="../settingswidget.ui" line="1315"/>
         <source>Lock when the screen locks</source>
         <translation>স্ক্রিন লক হলে লক করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1312"/>
+        <location filename="../settingswidget.ui" line="1322"/>
         <source>Current Password</source>
         <translation>বর্তমান পাসওয়ার্ড</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1319"/>
-        <location filename="../settingswidget.ui" line="1353"/>
+        <location filename="../settingswidget.ui" line="1329"/>
+        <location filename="../settingswidget.ui" line="1363"/>
         <source>Change password</source>
         <translation>পাসওয়ার্ড পরিবর্তন করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1322"/>
-        <location filename="../settingswidget.ui" line="1431"/>
+        <location filename="../settingswidget.ui" line="1332"/>
+        <location filename="../settingswidget.ui" line="1441"/>
         <source>Change</source>
         <translation>পরিবর্তন করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1333"/>
+        <location filename="../settingswidget.ui" line="1343"/>
         <source>Enable auto locking after</source>
         <translation>এর পরে স্বয়ংক্রিয় লকিং সক্রিয় করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1356"/>
+        <location filename="../settingswidget.ui" line="1366"/>
         <source>Reset</source>
         <translation>রিসেট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1388"/>
+        <location filename="../settingswidget.ui" line="1398"/>
         <source>View password</source>
         <translation>পাসওয়ার্ড দেখুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1415"/>
+        <location filename="../settingswidget.ui" line="1425"/>
         <source>Default Download location</source>
         <translation>ডিফল্ট ডাউনলোড অবস্থান</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1428"/>
+        <location filename="../settingswidget.ui" line="1438"/>
         <source>Change Download Location</source>
         <translation>ডাউনলোড অবস্থান পরিবর্তন করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1447"/>
+        <location filename="../settingswidget.ui" line="1457"/>
         <source>Storage </source>
         <translation>সংরক্ষণাগার </translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1467"/>
+        <location filename="../settingswidget.ui" line="1477"/>
         <source>Property</source>
         <translation>বৈশিষ্ট্য</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1474"/>
+        <location filename="../settingswidget.ui" line="1484"/>
         <source>  Clear (requires restart)</source>
         <translation>  পরিষ্কার করুন (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1485"/>
+        <location filename="../settingswidget.ui" line="1495"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Persistent data includes persistent cookies, HTML5 local storage, and visited links.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;স্থায়ী ডেটার মধ্যে রয়েছে স্থায়ী কুকি, HTML5 লোকাল স্টোরেজ, এবং পরিদর্শিত লিঙ্ক।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1488"/>
+        <location filename="../settingswidget.ui" line="1498"/>
         <source>Persistent data</source>
         <translation>স্থায়ী ডেটা</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1495"/>
-        <location filename="../settingswidget.ui" line="1515"/>
+        <location filename="../settingswidget.ui" line="1505"/>
+        <location filename="../settingswidget.ui" line="1525"/>
         <source>-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1505"/>
+        <location filename="../settingswidget.ui" line="1515"/>
         <source>The HTTP/media cache. Clearing it is safe — it is re-downloaded as needed.</source>
         <translation>HTTP/মিডিয়া ক্যাশে। এটি পরিষ্কার করা নিরাপদ — প্রয়োজন অনুসারে এটি আবার ডাউনলোড হয়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1508"/>
+        <location filename="../settingswidget.ui" line="1518"/>
         <source>Cache</source>
         <translation>ক্যাশে</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1525"/>
+        <location filename="../settingswidget.ui" line="1535"/>
         <source>  Clear cache</source>
         <translation>  ক্যাশে পরিষ্কার করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1548"/>
+        <location filename="../settingswidget.ui" line="1558"/>
         <source>Size</source>
         <translation>আকার</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1570"/>
+        <location filename="../settingswidget.ui" line="1580"/>
         <source>Action</source>
         <translation>ক্রিয়া</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1584"/>
+        <location filename="../settingswidget.ui" line="1594"/>
         <source>Backup</source>
         <translation>ব্যাকআপ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1591"/>
+        <location filename="../settingswidget.ui" line="1601"/>
         <source>Save this account (settings, session and addons) to a .tar.gz archive. The archive contains your logged-in session — keep it private.</source>
         <translation>এই অ্যাকাউন্টটি (সেটিংস, সেশন এবং অ্যাডঅন) একটি .tar.gz আর্কাইভে সংরক্ষণ করুন। আর্কাইভে আপনার লগ-ইন করা সেশন থাকে — এটি ব্যক্তিগত রাখুন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1594"/>
+        <location filename="../settingswidget.ui" line="1604"/>
         <source>Export profile…</source>
         <translation>প্রোফাইল রপ্তানি করুন…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1601"/>
+        <location filename="../settingswidget.ui" line="1611"/>
         <source>Restore an account from a .tar.gz archive. This overwrites the current data and needs a restart.</source>
         <translation>একটি .tar.gz আর্কাইভ থেকে একটি অ্যাকাউন্ট পুনরুদ্ধার করুন। এটি বর্তমান ডেটা প্রতিস্থাপন করে এবং পুনরায় চালু করা প্রয়োজন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1604"/>
+        <location filename="../settingswidget.ui" line="1614"/>
         <source>Import profile…</source>
         <translation>প্রোফাইল আমদানি করুন…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1629"/>
+        <location filename="../settingswidget.ui" line="1639"/>
         <source>Performance (requires restart)</source>
         <translation>কর্মক্ষমতা (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1635"/>
+        <location filename="../settingswidget.ui" line="1645"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
         <translation>রেন্ডারিং ইঞ্জিন সূক্ষ্মভাবে সমন্বয় করুন। বেশিরভাগ সিস্টেমে ডিফল্ট মানগুলো নিরাপদ; উইন্ডো ফাঁকা থাকলে বা অ্যাপ চালু হওয়ার সময় ক্র্যাশ করলে, অথবা আটকে গেলে, এগুলো পরিবর্তন করে দেখুন। পরিবর্তনগুলো পুনরায় চালু করার পরে প্রযোজ্য হয়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1645"/>
+        <location filename="../settingswidget.ui" line="1655"/>
         <source>Render entirely on the CPU (--disable-gpu). Fixes blank windows and start-up crashes on some GPU/driver setups. Default on Linux.</source>
         <translation>সম্পূর্ণভাবে CPU-তে রেন্ডার করুন (--disable-gpu)। কিছু GPU/ড্রাইভার সেটআপে ফাঁকা উইন্ডো এবং চালু হওয়ার সময় ক্র্যাশ ঠিক করে। Linux-এ ডিফল্ট।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1648"/>
+        <location filename="../settingswidget.ui" line="1658"/>
         <source>Disable GPU acceleration</source>
         <translation>GPU ত্বরণ নিষ্ক্রিয় করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1655"/>
+        <location filename="../settingswidget.ui" line="1665"/>
         <source>Composite the page on the CPU (--disable-gpu-compositing). Avoids stale-frame flicker on some drivers.</source>
         <translation>পৃষ্ঠাটি CPU-তে কম্পোজিট করুন (--disable-gpu-compositing)। কিছু ড্রাইভারে পুরনো-ফ্রেমের ঝিলমিল এড়ায়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1658"/>
+        <location filename="../settingswidget.ui" line="1668"/>
         <source>Disable GPU compositing</source>
         <translation>GPU কম্পোজিটিং নিষ্ক্রিয় করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1665"/>
+        <location filename="../settingswidget.ui" line="1675"/>
         <source>Disable GPU VSync (--disable-gpu-vsync). May reduce input lag at the cost of tearing.</source>
         <translation>GPU VSync নিষ্ক্রিয় করুন (--disable-gpu-vsync)। টিয়ারিং-এর বিনিময়ে ইনপুট ল্যাগ কমাতে পারে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1668"/>
+        <location filename="../settingswidget.ui" line="1678"/>
         <source>Disable GPU VSync</source>
         <translation>GPU VSync নিষ্ক্রিয় করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1675"/>
+        <location filename="../settingswidget.ui" line="1685"/>
         <source>Run the GPU process inside the main process (--in-process-gpu). A workaround for some sandboxed setups.</source>
         <translation>GPU প্রক্রিয়াটি মূল প্রক্রিয়ার ভেতরে চালান (--in-process-gpu)। কিছু স্যান্ডবক্সড সেটআপের জন্য একটি সমাধান।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1678"/>
+        <location filename="../settingswidget.ui" line="1688"/>
         <source>Run GPU in-process</source>
         <translation>GPU ইন-প্রসেস চালান</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1685"/>
+        <location filename="../settingswidget.ui" line="1695"/>
         <source>Force acceleration even when the driver is blocklisted (--ignore-gpu-blocklist). Try this to turn the GPU back on.</source>
         <translation>ড্রাইভার ব্লকলিস্টে থাকলেও ত্বরণ বাধ্যতামূলক করুন (--ignore-gpu-blocklist)। GPU আবার চালু করতে এটি চেষ্টা করুন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1688"/>
+        <location filename="../settingswidget.ui" line="1698"/>
         <source>Ignore GPU blocklist</source>
         <translation>GPU ব্লকলিস্ট উপেক্ষা করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1695"/>
+        <location filename="../settingswidget.ui" line="1705"/>
         <source>Run everything in a single process (--single-process). Uses less memory but is less stable.</source>
         <translation>সবকিছু একটি একক প্রক্রিয়ায় চালান (--single-process)। কম মেমরি ব্যবহার করে কিন্তু কম স্থিতিশীল।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1698"/>
+        <location filename="../settingswidget.ui" line="1708"/>
         <source>Single-process mode (lower memory)</source>
         <translation>একক-প্রক্রিয়া মোড (কম মেমরি)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1705"/>
+        <location filename="../settingswidget.ui" line="1715"/>
         <source>Share one renderer process per site (--process-per-site). Reduces memory use.</source>
         <translation>প্রতি সাইটে একটি রেন্ডারার প্রক্রিয়া ভাগ করুন (--process-per-site)। মেমরির ব্যবহার কমায়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1708"/>
+        <location filename="../settingswidget.ui" line="1718"/>
         <source>One process per site (lower memory)</source>
         <translation>প্রতি সাইটে একটি প্রক্রিয়া (কম মেমরি)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1715"/>
+        <location filename="../settingswidget.ui" line="1725"/>
         <source>Ask the JavaScript engine to use less memory at a small cost in speed (V8 --optimize-for-size). Recommended for an app that stays in the tray. Ignored when a JavaScript memory limit is set below.</source>
         <translation>JavaScript ইঞ্জিনকে সামান্য গতির বিনিময়ে কম মেমরি ব্যবহার করতে বলুন (V8 --optimize-for-size)। ট্রেতে থাকা অ্যাপের জন্য সুপারিশকৃত। নিচে একটি JavaScript মেমরি সীমা নির্ধারণ করা থাকলে উপেক্ষা করা হয়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1718"/>
+        <location filename="../settingswidget.ui" line="1728"/>
         <source>Optimize memory over speed (lower memory)</source>
         <translation>গতির চেয়ে মেমরিকে অগ্রাধিকার দিন (কম মেমরি)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1725"/>
+        <location filename="../settingswidget.ui" line="1735"/>
         <source>Hide contact names and message previews in the chat list (hover to reveal one). Useful when sharing your screen. The open conversation is untouched.</source>
         <translation>চ্যাট তালিকায় পরিচিতির নাম এবং বার্তার প্রিভিউ লুকান (একটি প্রকাশ করতে হোভার করুন)। স্ক্রিন শেয়ার করার সময় উপকারী। খোলা কথোপকথন অপরিবর্তিত থাকে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1728"/>
+        <location filename="../settingswidget.ui" line="1738"/>
         <source>Focus mode (hide chat-list previews)</source>
         <translation>ফোকাস মোড (চ্যাট-তালিকার প্রিভিউ লুকান)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1735"/>
+        <location filename="../settingswidget.ui" line="1745"/>
         <source>Default photos and videos to HD quality in the media editor. Depends on WhatsApp Web&apos;s layout; if a WhatsApp update breaks it, turn it off.</source>
         <translation>মিডিয়া এডিটরে ফটো এবং ভিডিও ডিফল্টভাবে HD মানে রাখুন। এটি WhatsApp Web-এর লেআউটের উপর নির্ভর করে; কোনো WhatsApp আপডেট এটি ভেঙে দিলে, এটি বন্ধ করে দিন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1738"/>
+        <location filename="../settingswidget.ui" line="1748"/>
         <source>Send photos and videos in HD by default</source>
         <translation>ফটো এবং ভিডিও ডিফল্টভাবে HD-তে পাঠান</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1747"/>
+        <location filename="../settingswidget.ui" line="1757"/>
         <source>Hold a message for a few seconds after you press Enter, showing an &quot;Undo&quot; button before it is actually sent. Press Enter again to send at once.</source>
         <translation>Enter চাপার পর কয়েক সেকেন্ড বার্তাটি ধরে রাখুন, প্রকৃতপক্ষে পাঠানোর আগে একটি &quot;পূর্বাবস্থায় ফেরান&quot; বোতাম দেখায়। অবিলম্বে পাঠাতে আবার Enter চাপুন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1750"/>
+        <location filename="../settingswidget.ui" line="1760"/>
         <source>Undo send (hold Enter-sent messages briefly)</source>
         <translation>পাঠানো পূর্বাবস্থায় ফেরান (Enter-এ পাঠানো বার্তা কিছুক্ষণ ধরে রাখুন)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1757"/>
+        <location filename="../settingswidget.ui" line="1767"/>
         <source>How long to hold a message before it is sent.</source>
         <translation>পাঠানোর আগে একটি বার্তা কতক্ষণ ধরে রাখতে হবে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1760"/>
+        <location filename="../settingswidget.ui" line="1770"/>
         <source> s</source>
         <translation> সে</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1775"/>
+        <location filename="../settingswidget.ui" line="1785"/>
         <source>Inline translation</source>
         <translation>ইনলাইন অনুবাদ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1781"/>
+        <location filename="../settingswidget.ui" line="1791"/>
         <source>Translate selected text or your message box through a LibreTranslate-compatible service. The request is made by the app, so the endpoint and key never reach WhatsApp Web. Bind keys to &quot;Translate selection&quot; / &quot;Translate message box&quot; in Shortcuts, or use the command palette.</source>
         <translation>একটি LibreTranslate-সামঞ্জস্যপূর্ণ পরিষেবার মাধ্যমে নির্বাচিত টেক্সট বা আপনার বার্তা বাক্স অনুবাদ করুন। অনুরোধটি অ্যাপ দ্বারা করা হয়, তাই এন্ডপয়েন্ট এবং কী কখনো WhatsApp Web-এ পৌঁছায় না। শর্টকাটে &quot;নির্বাচন অনুবাদ করুন&quot; / &quot;বার্তা বাক্স অনুবাদ করুন&quot;-এ কী বাঁধুন, অথবা কমান্ড প্যালেট ব্যবহার করুন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1784"/>
+        <location filename="../settingswidget.ui" line="1794"/>
         <source>Enable inline translation</source>
         <translation>ইনলাইন অনুবাদ সক্ষম করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1791"/>
-        <location filename="../settingswidget.ui" line="1861"/>
+        <location filename="../settingswidget.ui" line="1801"/>
+        <location filename="../settingswidget.ui" line="1871"/>
         <source>Endpoint</source>
         <translation>এন্ডপয়েন্ট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1798"/>
+        <location filename="../settingswidget.ui" line="1808"/>
         <source>A LibreTranslate-compatible &quot;/translate&quot; URL, e.g. http://localhost:5000/translate for a self-hosted instance.</source>
         <translation>একটি LibreTranslate-সামঞ্জস্যপূর্ণ &quot;/translate&quot; URL, যেমন একটি স্ব-হোস্টেড ইনস্ট্যান্সের জন্য http://localhost:5000/translate।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1801"/>
+        <location filename="../settingswidget.ui" line="1811"/>
         <source>https://your-libretranslate/translate</source>
         <translation>https://your-libretranslate/translate</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1808"/>
-        <location filename="../settingswidget.ui" line="1895"/>
+        <location filename="../settingswidget.ui" line="1818"/>
+        <location filename="../settingswidget.ui" line="1905"/>
         <source>API key (optional)</source>
         <translation>API কী (ঐচ্ছিক)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1815"/>
+        <location filename="../settingswidget.ui" line="1825"/>
         <source>Only needed by endpoints that require one. Stored locally.</source>
         <translation>কেবল সেই এন্ডপয়েন্টগুলোর প্রয়োজন যেগুলোর একটি কী দরকার। স্থানীয়ভাবে সংরক্ষিত।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1825"/>
+        <location filename="../settingswidget.ui" line="1835"/>
         <source>Target language</source>
         <translation>লক্ষ্য ভাষা</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1832"/>
+        <location filename="../settingswidget.ui" line="1842"/>
         <source>Two-letter code to translate into (e.g. en, es, fr). Leave empty to use the app&apos;s language. The source language is detected automatically.</source>
         <translation>যে ভাষায় অনুবাদ করতে হবে তার দুই-অক্ষরের কোড (যেমন en, es, fr)। অ্যাপের ভাষা ব্যবহার করতে খালি রাখুন। উৎস ভাষা স্বয়ংক্রিয়ভাবে সনাক্ত করা হয়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1835"/>
+        <location filename="../settingswidget.ui" line="1845"/>
         <source>app language</source>
         <translation>অ্যাপের ভাষা</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1845"/>
+        <location filename="../settingswidget.ui" line="1855"/>
         <source>AI assistant</source>
         <translation>AI সহকারী</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1851"/>
+        <location filename="../settingswidget.ui" line="1861"/>
         <source>Summarise a chat, improve your draft or suggest a reply through an OpenAI-compatible service. The chat text is sent to that service, so use one you trust (a local runner keeps it on your machine). The request is made by the app, so the endpoint and key never reach WhatsApp Web. Actions live in the command palette and Shortcuts.</source>
         <translation>একটি OpenAI-সামঞ্জস্যপূর্ণ পরিষেবার মাধ্যমে একটি চ্যাট সারসংক্ষেপ করুন, আপনার খসড়া উন্নত করুন বা একটি উত্তর প্রস্তাব করুন। চ্যাটের টেক্সট সেই পরিষেবায় পাঠানো হয়, তাই এমন একটি ব্যবহার করুন যা আপনি বিশ্বাস করেন (একটি স্থানীয় রানার এটি আপনার মেশিনে রাখে)। অনুরোধটি অ্যাপ দ্বারা করা হয়, তাই এন্ডপয়েন্ট এবং কী কখনো WhatsApp Web-এ পৌঁছায় না। ক্রিয়াগুলো কমান্ড প্যালেট এবং শর্টকাটে থাকে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1854"/>
+        <location filename="../settingswidget.ui" line="1864"/>
         <source>Enable AI assistant</source>
         <translation>AI সহকারী সক্ষম করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1868"/>
+        <location filename="../settingswidget.ui" line="1878"/>
         <source>An OpenAI-compatible /chat/completions URL, e.g. https://api.openai.com/v1/chat/completions or http://localhost:11434/v1/chat/completions for a local Ollama.</source>
         <translation>একটি OpenAI-সামঞ্জস্যপূর্ণ /chat/completions URL, যেমন https://api.openai.com/v1/chat/completions অথবা একটি স্থানীয় Ollama-এর জন্য http://localhost:11434/v1/chat/completions।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1871"/>
+        <location filename="../settingswidget.ui" line="1881"/>
         <source>https://api.openai.com/v1/chat/completions</source>
         <translation>https://api.openai.com/v1/chat/completions</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1878"/>
+        <location filename="../settingswidget.ui" line="1888"/>
         <source>Model</source>
         <translation>মডেল</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1885"/>
+        <location filename="../settingswidget.ui" line="1895"/>
         <source>The model name the endpoint expects, e.g. gpt-4o-mini or llama3.</source>
         <translation>এন্ডপয়েন্ট যে মডেলের নাম প্রত্যাশা করে, যেমন gpt-4o-mini বা llama3।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1888"/>
+        <location filename="../settingswidget.ui" line="1898"/>
         <source>e.g. gpt-4o-mini</source>
         <translation>যেমন gpt-4o-mini</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1902"/>
+        <location filename="../settingswidget.ui" line="1912"/>
         <source>Sent as a Bearer token. Not needed by most local runners. Stored locally.</source>
         <translation>একটি Bearer টোকেন হিসেবে পাঠানো হয়। বেশিরভাগ স্থানীয় রানারের প্রয়োজন হয় না। স্থানীয়ভাবে সংরক্ষিত।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1919"/>
+        <location filename="../settingswidget.ui" line="1929"/>
         <source>Local models (Ollama)</source>
         <translation>স্থানীয় মডেল (Ollama)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1928"/>
+        <location filename="../settingswidget.ui" line="1938"/>
         <source>Check for a local Ollama and list its installed models.</source>
         <translation>একটি স্থানীয় Ollama-র জন্য পরীক্ষা করুন এবং এর ইনস্টল করা মডেলগুলো তালিকাভুক্ত করুন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1931"/>
+        <location filename="../settingswidget.ui" line="1941"/>
         <source>Detect Ollama</source>
         <translation>Ollama সনাক্ত করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1947"/>
+        <location filename="../settingswidget.ui" line="1957"/>
         <source>Installed model</source>
         <translation>ইনস্টল করা মডেল</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1954"/>
+        <location filename="../settingswidget.ui" line="1964"/>
         <source>Pick one of the models already installed in Ollama; it becomes the model above.</source>
         <translation>Ollama-তে ইতিমধ্যে ইনস্টল করা মডেলগুলোর একটি বেছে নিন; এটি উপরের মডেল হয়ে যায়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1961"/>
+        <location filename="../settingswidget.ui" line="1971"/>
         <source>Download a light model</source>
         <translation>একটি হালকা মডেল ডাউনলোড করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1970"/>
+        <location filename="../settingswidget.ui" line="1980"/>
         <source>Light, fast models that run well on modest hardware.</source>
         <translation>হালকা, দ্রুত মডেল যা সাধারণ হার্ডওয়্যারে ভালো চলে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="1977"/>
+        <location filename="../settingswidget.ui" line="1987"/>
         <source>Download</source>
         <translation>ডাউনলোড</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2009"/>
+        <location filename="../settingswidget.ui" line="2019"/>
         <source>Stop WebRTC from revealing your local IP address over non-proxied connections.</source>
         <translation>WebRTC-কে নন-প্রক্সিড সংযোগের মাধ্যমে আপনার স্থানীয় IP ঠিকানা প্রকাশ করা থেকে বিরত রাখুন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2012"/>
+        <location filename="../settingswidget.ui" line="2022"/>
         <source>Prevent WebRTC IP leak</source>
         <translation>WebRTC IP লিক প্রতিরোধ করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2021"/>
+        <location filename="../settingswidget.ui" line="2031"/>
         <source>JavaScript memory limit</source>
         <translation>JavaScript মেমরি সীমা</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2028"/>
+        <location filename="../settingswidget.ui" line="2038"/>
         <source>Cap the JavaScript heap (V8 --max-old-space-size). 0 = automatic. Lower it if the app uses too much RAM.</source>
         <translation>JavaScript হিপ সীমাবদ্ধ করুন (V8 --max-old-space-size)। 0 = স্বয়ংক্রিয়। অ্যাপ খুব বেশি RAM ব্যবহার করলে এটি কমান।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2034"/>
-        <location filename="../settingswidget.ui" line="2078"/>
+        <location filename="../settingswidget.ui" line="2044"/>
+        <location filename="../settingswidget.ui" line="2088"/>
         <source> MB</source>
         <translation> MB</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2051"/>
+        <location filename="../settingswidget.ui" line="2061"/>
         <source>HTTP cache</source>
         <translation>HTTP ক্যাশে</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2058"/>
+        <location filename="../settingswidget.ui" line="2068"/>
         <source>Where to keep the HTTP cache. Memory clears on exit; None disables caching.</source>
         <translation>HTTP ক্যাশে কোথায় রাখতে হবে। Memory বন্ধ করার সময় পরিষ্কার হয়; None ক্যাশিং নিষ্ক্রিয় করে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2065"/>
+        <location filename="../settingswidget.ui" line="2075"/>
         <source>Max size</source>
         <translation>সর্বোচ্চ আকার</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2072"/>
+        <location filename="../settingswidget.ui" line="2082"/>
         <source>Maximum on-disk cache size. 0 = automatic.</source>
         <translation>সর্বোচ্চ অন-ডিস্ক ক্যাশে আকার। 0 = স্বয়ংক্রিয়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2095"/>
+        <location filename="../settingswidget.ui" line="2105"/>
         <source>Font hinting</source>
         <translation>ফন্ট হিন্টিং</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2102"/>
+        <location filename="../settingswidget.ui" line="2112"/>
         <source>How glyph edges are snapped to pixels. Automatic follows your system; a lighter level can fix heavy or uneven text.</source>
         <translation>গ্লিফের প্রান্তগুলো কীভাবে পিক্সেলে সংযুক্ত হয়। Automatic আপনার সিস্টেম অনুসরণ করে; একটি হালকা স্তর ভারী বা অসম টেক্সট ঠিক করতে পারে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2113"/>
+        <location filename="../settingswidget.ui" line="2123"/>
         <source>Free memory by unloading accounts you are not viewing. An unloaded account does not receive messages, and reloads to where it was when you switch back to it. Single-account setups are unaffected.</source>
         <translation>আপনি যেসব অ্যাকাউন্ট দেখছেন না সেগুলো আনলোড করে মেমরি খালি করুন। একটি আনলোড করা অ্যাকাউন্ট বার্তা গ্রহণ করে না, এবং আপনি ফিরে গেলে যেখানে ছিল সেখানে পুনরায় লোড হয়। একক-অ্যাকাউন্ট সেটআপ অপ্রভাবিত থাকে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2116"/>
+        <location filename="../settingswidget.ui" line="2126"/>
         <source>Unload inactive accounts from memory</source>
         <translation>নিষ্ক্রিয় অ্যাকাউন্টগুলো মেমরি থেকে আনলোড করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2123"/>
+        <location filename="../settingswidget.ui" line="2133"/>
         <source>after</source>
         <translation>পরে</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2130"/>
+        <location filename="../settingswidget.ui" line="2140"/>
         <source> min</source>
         <translation> মিনিট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2145"/>
+        <location filename="../settingswidget.ui" line="2155"/>
         <source>Also unload the account a window was showing, once that window has been minimised or put away to the tray for the same length of time as above. Nothing reaches an unloaded account: while Whatly is away there are no notifications from it and its counts stand still, and it takes a few seconds to come back when you return to the window. Needs the setting above.</source>
         <translation>একটি উইন্ডো যে অ্যাকাউন্ট দেখাচ্ছিল সেটিও আনলোড করুন, একবার সেই উইন্ডোটি উপরের মতো একই সময়ের জন্য ছোট করা বা ট্রেতে সরিয়ে রাখা হলে। একটি আনলোড করা অ্যাকাউন্টে কিছুই পৌঁছায় না: Whatly যতক্ষণ দূরে থাকে ততক্ষণ এটি থেকে কোনো বিজ্ঞপ্তি আসে না এবং এর সংখ্যা স্থির থাকে, এবং আপনি উইন্ডোতে ফিরে এলে এটি ফিরে আসতে কয়েক সেকেন্ড সময় নেয়। উপরের সেটিংটি প্রয়োজন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2148"/>
+        <location filename="../settingswidget.ui" line="2158"/>
         <source>Unload also minimised and hidden accounts</source>
         <translation>ছোট করা এবং লুকানো অ্যাকাউন্টগুলোও আনলোড করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2158"/>
+        <location filename="../settingswidget.ui" line="2168"/>
         <source>Network &amp; Startup</source>
         <translation>নেটওয়ার্ক &amp; স্টার্টআপ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2164"/>
+        <location filename="../settingswidget.ui" line="2174"/>
         <source>Launch Whatly automatically when you log in to your desktop session.</source>
         <translation>আপনি আপনার ডেস্কটপ সেশনে লগ ইন করলে Whatly স্বয়ংক্রিয়ভাবে চালু করুন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2167"/>
+        <location filename="../settingswidget.ui" line="2177"/>
         <source>Start Whatly when I log in</source>
         <translation>আমি লগ ইন করলে Whatly চালু করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2174"/>
+        <location filename="../settingswidget.ui" line="2184"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>সিস্টেমের পরিবর্তে Whatly-কে উইন্ডোর সীমানা এবং টাইটেল বার আঁকতে দিন, যাতে সেগুলো Whatly-র নিজস্ব থিম অনুসরণ করে। এটি নিজে থেকে কেবল সেগুলোর চেহারা পরিবর্তন করে; টাইটেল সারিটি সম্পূর্ণরূপে সরিয়ে ফেলতে &quot;টাইটেল বার লুকান&quot;-ও টিক করুন। পুনরায় চালু করার পরে প্রযোজ্য হয়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2177"/>
+        <location filename="../settingswidget.ui" line="2187"/>
         <source>Use a custom window frame (requires restart)</source>
         <translation>একটি কাস্টম উইন্ডো ফ্রেম ব্যবহার করুন (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2190"/>
+        <location filename="../settingswidget.ui" line="2200"/>
         <source>Restart Whatly now so the settings above take effect. The windows, and this page with it, come back exactly as they are.</source>
         <translation>উপরের সেটিংস কার্যকর করতে এখন Whatly পুনরায় চালু করুন। উইন্ডোগুলো, এবং এই পৃষ্ঠাটিও, ঠিক যেমন আছে তেমনই ফিরে আসে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2193"/>
+        <location filename="../settingswidget.ui" line="2203"/>
         <source>Restart now</source>
         <translation>এখন পুনরায় চালু করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2200"/>
+        <location filename="../settingswidget.ui" line="2210"/>
         <source>Keep the account tab strip up even when there is only one account, so its &quot;+&quot; is always at hand. With it off, the strip appears once a second account exists; you can still add one with Ctrl+K.</source>
         <translation>কেবল একটি অ্যাকাউন্ট থাকলেও অ্যাকাউন্ট ট্যাব স্ট্রিপটি চালু রাখুন, যাতে এর &quot;+&quot; সবসময় হাতের কাছে থাকে। এটি বন্ধ থাকলে, একটি দ্বিতীয় অ্যাকাউন্ট থাকলে স্ট্রিপটি প্রদর্শিত হয়; আপনি এখনও Ctrl+K দিয়ে একটি যোগ করতে পারেন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2203"/>
+        <location filename="../settingswidget.ui" line="2213"/>
         <source>Show the account tabs even with a single account</source>
         <translation>একটি একক অ্যাকাউন্ট থাকলেও অ্যাকাউন্ট ট্যাবগুলো দেখান</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2210"/>
+        <location filename="../settingswidget.ui" line="2220"/>
         <source>Drop the title bar and put its buttons at the end of the account tab strip, the way a browser does, instead of giving them a row of their own. Switches on the custom window frame, which it needs. Applies after a restart.</source>
         <translation>টাইটেল বার বাদ দিন এবং একটি ব্রাউজারের মতো এর বোতামগুলো অ্যাকাউন্ট ট্যাব স্ট্রিপের শেষে রাখুন, তাদের জন্য আলাদা একটি সারি দেওয়ার পরিবর্তে। এটি কাস্টম উইন্ডো ফ্রেম চালু করে, যা এর প্রয়োজন। পুনরায় চালু করার পরে প্রযোজ্য হয়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2213"/>
+        <location filename="../settingswidget.ui" line="2223"/>
         <source>Hide the title bar (requires restart)</source>
         <translation>টাইটেল বার লুকান (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2220"/>
+        <location filename="../settingswidget.ui" line="2230"/>
         <source>Check GitHub once a day for a newer release and let you know. Whatly never downloads or installs anything on its own.</source>
         <translation>একটি নতুন রিলিজের জন্য দিনে একবার GitHub পরীক্ষা করুন এবং আপনাকে জানান। Whatly কখনো নিজে থেকে কিছু ডাউনলোড বা ইনস্টল করে না।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2223"/>
+        <location filename="../settingswidget.ui" line="2233"/>
         <source>Check for updates automatically</source>
         <translation>স্বয়ংক্রিয়ভাবে আপডেটের জন্য পরীক্ষা করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2232"/>
+        <location filename="../settingswidget.ui" line="2242"/>
         <source>Interface scale (requires restart)</source>
         <translation>ইন্টারফেস স্কেল (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2239"/>
+        <location filename="../settingswidget.ui" line="2249"/>
         <source>Scale the whole window and the page (QT_SCALE_FACTOR). Automatic follows the desktop. A QT_SCALE_FACTOR environment variable, if set, overrides this. Applies after a restart.</source>
         <translation>পুরো উইন্ডো এবং পৃষ্ঠাটি স্কেল করুন (QT_SCALE_FACTOR)। Automatic ডেস্কটপ অনুসরণ করে। একটি QT_SCALE_FACTOR এনভায়রনমেন্ট ভেরিয়েবল সেট করা থাকলে, তা এটিকে অগ্রাহ্য করে। পুনরায় চালু করার পরে প্রযোজ্য হয়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2275"/>
+        <location filename="../settingswidget.ui" line="2285"/>
         <source>Proxy</source>
         <translation>প্রক্সি</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2282"/>
+        <location filename="../settingswidget.ui" line="2292"/>
         <source>How Whatly connects to the network. System follows the operating system; None connects directly.</source>
         <translation>Whatly কীভাবে নেটওয়ার্কের সাথে সংযোগ করে। System অপারেটিং সিস্টেম অনুসরণ করে; None সরাসরি সংযোগ করে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2307"/>
+        <location filename="../settingswidget.ui" line="2317"/>
         <source>Host</source>
         <translation>হোস্ট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2314"/>
+        <location filename="../settingswidget.ui" line="2324"/>
         <source>127.0.0.1</source>
         <translation>127.0.0.1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2321"/>
-        <location filename="../settingswidget.ui" line="2601"/>
+        <location filename="../settingswidget.ui" line="2331"/>
+        <location filename="../settingswidget.ui" line="2611"/>
         <source>Port</source>
         <translation>পোর্ট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2335"/>
+        <location filename="../settingswidget.ui" line="2345"/>
         <source>Username</source>
         <translation>ব্যবহারকারীর নাম</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2342"/>
-        <location filename="../settingswidget.ui" line="2359"/>
+        <location filename="../settingswidget.ui" line="2352"/>
+        <location filename="../settingswidget.ui" line="2369"/>
         <source>Optional</source>
         <translation>ঐচ্ছিক</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2349"/>
+        <location filename="../settingswidget.ui" line="2359"/>
         <source>Password</source>
         <translation>পাসওয়ার্ড</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2372"/>
+        <location filename="../settingswidget.ui" line="2382"/>
         <source>Custom JavaScript addons (requires restart)</source>
         <translation>কাস্টম JavaScript অ্যাডঅন (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2378"/>
+        <location filename="../settingswidget.ui" line="2388"/>
         <source>Load .js files to run on WhatsApp Web. Each addon runs in its own sandbox, so a broken one cannot take down the others or the page. Untick an addon to disable it without removing it. Changes apply after a restart.</source>
         <translation>WhatsApp Web-এ চালানোর জন্য .js ফাইল লোড করুন। প্রতিটি অ্যাডঅন তার নিজস্ব স্যান্ডবক্সে চলে, তাই একটি ভাঙা অ্যাডঅন অন্যগুলো বা পৃষ্ঠাটিকে বিকল করতে পারে না। একটি অ্যাডঅন সরিয়ে না ফেলে নিষ্ক্রিয় করতে সেটি আনটিক করুন। পরিবর্তনগুলো পুনরায় চালু করার পরে প্রযোজ্য হয়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2400"/>
+        <location filename="../settingswidget.ui" line="2410"/>
         <source>Add addon…</source>
         <translation>অ্যাডঅন যোগ করুন…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2407"/>
-        <location filename="../settingswidget.ui" line="2467"/>
+        <location filename="../settingswidget.ui" line="2417"/>
+        <location filename="../settingswidget.ui" line="2477"/>
         <source>Remove</source>
         <translation>সরান</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2432"/>
+        <location filename="../settingswidget.ui" line="2442"/>
         <source>Saved replies</source>
         <translation>সংরক্ষিত উত্তর</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2438"/>
+        <location filename="../settingswidget.ui" line="2448"/>
         <source>Short texts you send often. Insert one from the command palette (Ctrl+K) — type &quot;Insert&quot; and pick it; the text is typed into the message box.</source>
         <translation>ছোট টেক্সট যা আপনি প্রায়ই পাঠান। কমান্ড প্যালেট (Ctrl+K) থেকে একটি সন্নিবেশ করুন — &quot;Insert&quot; টাইপ করুন এবং এটি বেছে নিন; টেক্সটটি বার্তা বাক্সে টাইপ হয়ে যায়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2460"/>
+        <location filename="../settingswidget.ui" line="2470"/>
         <source>Add reply…</source>
         <translation>উত্তর যোগ করুন…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2492"/>
+        <location filename="../settingswidget.ui" line="2502"/>
         <source>Keyboard shortcuts (requires restart)</source>
         <translation>কীবোর্ড শর্টকাট (পুনরায় চালু করা প্রয়োজন)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2498"/>
+        <location filename="../settingswidget.ui" line="2508"/>
         <source>Click a field and press the key combination. Clear a field to remove the shortcut. Changes apply after a restart.</source>
         <translation>একটি ক্ষেত্রে ক্লিক করুন এবং কী সংমিশ্রণ চাপুন। শর্টকাট সরাতে একটি ক্ষেত্র পরিষ্কার করুন। পরিবর্তনগুলো পুনরায় চালু করার পরে প্রযোজ্য হয়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2514"/>
+        <location filename="../settingswidget.ui" line="2524"/>
         <source>Cloud API (send without a browser session)</source>
         <translation>Cloud API (একটি ব্রাউজার সেশন ছাড়াই পাঠান)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2520"/>
+        <location filename="../settingswidget.ui" line="2530"/>
         <source>Send with `--send --backend cloud` through the Meta WhatsApp Business Cloud API — no running WhatsApp Web session needed. The access token is one you supply from Meta; it is stored in this account&apos;s config and Whatly never obtains it itself.</source>
         <translation>Meta WhatsApp Business Cloud API-এর মাধ্যমে `--send --backend cloud` দিয়ে পাঠান — কোনো চালু WhatsApp Web সেশনের প্রয়োজন নেই। অ্যাক্সেস টোকেনটি আপনি Meta থেকে সরবরাহ করেন; এটি এই অ্যাকাউন্টের কনফিগে সংরক্ষিত থাকে এবং Whatly কখনো নিজে এটি অর্জন করে না।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2530"/>
+        <location filename="../settingswidget.ui" line="2540"/>
         <source>Phone-number ID</source>
         <translation>ফোন-নম্বর ID</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2544"/>
+        <location filename="../settingswidget.ui" line="2554"/>
         <source>Access token</source>
         <translation>অ্যাক্সেস টোকেন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2554"/>
+        <location filename="../settingswidget.ui" line="2564"/>
         <source>your Meta access token</source>
         <translation>আপনার Meta অ্যাক্সেস টোকেন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2561"/>
+        <location filename="../settingswidget.ui" line="2571"/>
         <source>Graph API version</source>
         <translation>Graph API সংস্করণ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2578"/>
+        <location filename="../settingswidget.ui" line="2588"/>
         <source>Local API &amp; Cloud webhooks</source>
         <translation>লোকাল API &amp; ক্লাউড ওয়েবহুক</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2584"/>
+        <location filename="../settingswidget.ui" line="2594"/>
         <source>A small HTTP endpoint on the loopback interface (127.0.0.1) lets other programs on this machine send through Whatly, and lets Meta deliver Cloud API webhooks (incoming messages) so auto-reply works without a browser. It is never exposed to the network; to receive webhooks from Meta, forward the port with a tunnel or reverse proxy (e.g. cloudflared or ngrok).</source>
         <translation>লুপব্যাক ইন্টারফেসে (127.0.0.1) একটি ছোট HTTP এন্ডপয়েন্ট এই মেশিনের অন্যান্য প্রোগ্রামকে Whatly-এর মাধ্যমে পাঠাতে দেয়, এবং Meta-কে Cloud API ওয়েবহুক (আগত বার্তা) পৌঁছে দিতে দেয় যাতে ব্রাউজার ছাড়াই স্বয়ংক্রিয় উত্তর কাজ করে। এটি কখনও নেটওয়ার্কে উন্মুক্ত হয় না; Meta থেকে ওয়েবহুক পেতে হলে একটি টানেল বা রিভার্স প্রক্সি দিয়ে পোর্ট ফরওয়ার্ড করুন (যেমন cloudflared বা ngrok)।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2594"/>
+        <location filename="../settingswidget.ui" line="2604"/>
         <source>Enable the local HTTP API (send over HTTP)</source>
         <translation>লোকাল HTTP API চালু করুন (HTTP-এর মাধ্যমে পাঠান)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2618"/>
+        <location filename="../settingswidget.ui" line="2628"/>
         <source>Bearer token</source>
         <translation>বেয়ারার টোকেন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2628"/>
+        <location filename="../settingswidget.ui" line="2638"/>
         <source>required to authorise requests</source>
         <translation>অনুরোধ অনুমোদনের জন্য প্রয়োজন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2635"/>
+        <location filename="../settingswidget.ui" line="2645"/>
         <source>Receive Cloud API webhooks (incoming messages)</source>
         <translation>Cloud API ওয়েবহুক গ্রহণ করুন (আগত বার্তা)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2642"/>
+        <location filename="../settingswidget.ui" line="2652"/>
         <source>Webhook verify token</source>
         <translation>ওয়েবহুক ভেরিফাই টোকেন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2652"/>
+        <location filename="../settingswidget.ui" line="2662"/>
         <source>echoed to Meta during setup</source>
         <translation>সেটআপের সময় Meta-কে প্রতিধ্বনিত করা হয়</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2659"/>
+        <location filename="../settingswidget.ui" line="2669"/>
         <source>Meta app secret</source>
         <translation>Meta অ্যাপ সিক্রেট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.ui" line="2669"/>
+        <location filename="../settingswidget.ui" line="2679"/>
         <source>verifies the webhook signature</source>
         <translation>ওয়েবহুক স্বাক্ষর যাচাই করে</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="541"/>
+        <location filename="../settingswidget.cpp" line="543"/>
         <source>Basics</source>
         <translation>মৌলিক</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="550"/>
+        <location filename="../settingswidget.cpp" line="552"/>
         <source>Appearance</source>
         <translation>চেহারা</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="569"/>
+        <location filename="../settingswidget.cpp" line="572"/>
         <source>Notifications</source>
         <translation>নোটিফিকেশন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="573"/>
+        <location filename="../settingswidget.cpp" line="576"/>
         <source>Chatting</source>
         <translation>চ্যাটিং</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="680"/>
+        <location filename="../settingswidget.cpp" line="683"/>
         <source>Privacy &amp; Lock</source>
         <translation>গোপনীয়তা &amp; লক</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="694"/>
+        <location filename="../settingswidget.cpp" line="697"/>
         <source>Window &amp;&amp; zoom</source>
         <translation>উইন্ডো &amp;&amp; জুম</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="723"/>
+        <location filename="../settingswidget.cpp" line="726"/>
         <source>AI &amp;&amp; translation</source>
         <translation>AI &amp;&amp; অনুবাদ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="730"/>
+        <location filename="../settingswidget.cpp" line="733"/>
         <source>Advanced</source>
         <translation>উন্নত</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="856"/>
+        <location filename="../settingswidget.cpp" line="859"/>
         <source>Collect scroll diagnostics</source>
         <translation>স্ক্রল ডায়াগনস্টিক সংগ্রহ করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="858"/>
+        <location filename="../settingswidget.cpp" line="861"/>
         <source>Records how smoothly the chat scrolls, to attach to a bug report. Off by default; it does nothing until you turn it on, and adds nothing to a normal session.</source>
         <translation>চ্যাট কতটা মসৃণভাবে স্ক্রল হয় তা রেকর্ড করে, যাতে বাগ রিপোর্টে সংযুক্ত করা যায়। ডিফল্টভাবে বন্ধ; আপনি চালু না করা পর্যন্ত এটি কিছুই করে না, এবং সাধারণ সেশনে কিছু যোগ করে না।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="868"/>
+        <location filename="../settingswidget.cpp" line="871"/>
         <source>Copy diagnostics</source>
         <translation>ডায়াগনস্টিক কপি করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="870"/>
+        <location filename="../settingswidget.cpp" line="873"/>
         <source>Copy the collected scroll figures to the clipboard (and the log) so they can be pasted into a bug report.</source>
         <translation>সংগৃহীত স্ক্রল পরিসংখ্যান ক্লিপবোর্ডে (এবং লগে) কপি করুন যাতে সেগুলো বাগ রিপোর্টে পেস্ট করা যায়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="971"/>
+        <location filename="../settingswidget.cpp" line="974"/>
         <source>Fetching the list of languages…</source>
         <translation>ভাষার তালিকা আনা হচ্ছে…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1194"/>
+        <location filename="../settingswidget.cpp" line="1197"/>
         <source>Shortcut in use</source>
         <translation>শর্টকাট ব্যবহৃত হচ্ছে</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1195"/>
+        <location filename="../settingswidget.cpp" line="1198"/>
         <source>That shortcut is already used by another action.</source>
         <translation>সেই শর্টকাটটি ইতিমধ্যে অন্য একটি কাজের জন্য ব্যবহৃত হচ্ছে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1207"/>
+        <location filename="../settingswidget.cpp" line="1210"/>
         <source>Clear cache</source>
         <translation>ক্যাশ পরিষ্কার করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1208"/>
+        <location filename="../settingswidget.cpp" line="1211"/>
         <source>Clear the cache now? It will be re-downloaded as needed.</source>
         <translation>এখনই ক্যাশ পরিষ্কার করবেন? প্রয়োজন অনুযায়ী এটি আবার ডাউনলোড করা হবে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1218"/>
-        <location filename="../settingswidget.cpp" line="1224"/>
-        <location filename="../settingswidget.cpp" line="1233"/>
+        <location filename="../settingswidget.cpp" line="1221"/>
+        <location filename="../settingswidget.cpp" line="1227"/>
         <location filename="../settingswidget.cpp" line="1236"/>
+        <location filename="../settingswidget.cpp" line="1239"/>
         <source>Export profile</source>
         <translation>প্রোফাইল রপ্তানি করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1219"/>
+        <location filename="../settingswidget.cpp" line="1222"/>
         <source>The archive will contain your logged-in WhatsApp session. Keep it private. Continue?</source>
         <translation>আর্কাইভে আপনার লগ-ইন করা WhatsApp সেশন থাকবে। এটি ব্যক্তিগত রাখুন। চালিয়ে যাবেন?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1226"/>
-        <location filename="../settingswidget.cpp" line="1241"/>
+        <location filename="../settingswidget.cpp" line="1229"/>
+        <location filename="../settingswidget.cpp" line="1244"/>
         <source>Archives (*.tar.gz)</source>
         <translation>আর্কাইভ (*.tar.gz)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1234"/>
+        <location filename="../settingswidget.cpp" line="1237"/>
         <source>Profile exported.</source>
         <translation>প্রোফাইল রপ্তানি হয়েছে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1241"/>
-        <location filename="../settingswidget.cpp" line="1245"/>
-        <location filename="../settingswidget.cpp" line="1253"/>
+        <location filename="../settingswidget.cpp" line="1244"/>
+        <location filename="../settingswidget.cpp" line="1248"/>
         <location filename="../settingswidget.cpp" line="1256"/>
+        <location filename="../settingswidget.cpp" line="1259"/>
         <source>Import profile</source>
         <translation>প্রোফাইল আমদানি করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1246"/>
+        <location filename="../settingswidget.cpp" line="1249"/>
         <source>This overwrites the current account&apos;s data with the archive, then Whatly must be restarted. Continue?</source>
         <translation>এটি বর্তমান অ্যাকাউন্টের ডেটা আর্কাইভ দিয়ে প্রতিস্থাপন করবে, এরপর Whatly পুনরায় চালু করতে হবে। চালিয়ে যাবেন?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1254"/>
+        <location filename="../settingswidget.cpp" line="1257"/>
         <source>Profile imported. Please restart Whatly.</source>
         <translation>প্রোফাইল আমদানি হয়েছে। অনুগ্রহ করে Whatly পুনরায় চালু করুন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1277"/>
+        <location filename="../settingswidget.cpp" line="1280"/>
         <source>This will delete Persistent Data ! Persistent data includes persistent cookies and Cache, and Quit the application.</source>
         <translation>এটি স্থায়ী ডেটা মুছে ফেলবে! স্থায়ী ডেটার মধ্যে স্থায়ী কুকি এবং ক্যাশ অন্তর্ভুক্ত, এবং অ্যাপ্লিকেশন বন্ধ করে দেবে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1282"/>
+        <location filename="../settingswidget.cpp" line="1285"/>
         <source>Delete Cookies and Quit Application?</source>
         <translation>কুকি মুছে অ্যাপ্লিকেশন বন্ধ করবেন?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1388"/>
+        <location filename="../settingswidget.cpp" line="1391"/>
         <source>| Error</source>
         <translation>| ত্রুটি</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1389"/>
+        <location filename="../settingswidget.cpp" line="1392"/>
         <source>Cannot set an empty UserAgent String.</source>
         <translation>খালি UserAgent স্ট্রিং সেট করা যাবে না।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1440"/>
+        <location filename="../settingswidget.cpp" line="1443"/>
         <source>Automatic theme switching was disabled due to manual theme toggle.</source>
         <translation>ম্যানুয়াল থিম টগলের কারণে স্বয়ংক্রিয় থিম পরিবর্তন নিষ্ক্রিয় করা হয়েছে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1457"/>
+        <location filename="../settingswidget.cpp" line="1460"/>
         <source>Require setup</source>
         <translation>সেটআপ প্রয়োজন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1486"/>
+        <location filename="../settingswidget.cpp" line="1489"/>
         <source>App lock is not configured.</source>
         <translation>অ্যাপ লক কনফিগার করা নেই।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1490"/>
+        <location filename="../settingswidget.cpp" line="1493"/>
         <source>Do you want to setup App lock now?</source>
         <translation>আপনি কি এখন অ্যাপ লক সেটআপ করতে চান?</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1532"/>
+        <location filename="../settingswidget.cpp" line="1535"/>
         <source>Feature permissions</source>
         <translation>ফিচার অনুমতি</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1611"/>
+        <location filename="../settingswidget.cpp" line="1614"/>
         <source>Choose a chat wallpaper</source>
         <translation>একটি চ্যাট ওয়ালপেপার বেছে নিন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1613"/>
+        <location filename="../settingswidget.cpp" line="1616"/>
         <source>Images (%1)</source>
         <translation>ছবি (%1)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1621"/>
+        <location filename="../settingswidget.cpp" line="1624"/>
         <source>Could not use that image: %1</source>
         <translation>সেই ছবিটি ব্যবহার করা যায়নি: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1636"/>
+        <location filename="../settingswidget.cpp" line="1639"/>
         <source>Choose a CSS file</source>
         <translation>একটি CSS ফাইল বেছে নিন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1638"/>
+        <location filename="../settingswidget.cpp" line="1641"/>
         <source>Stylesheets (*.css);;All files (*)</source>
         <translation>স্টাইলশিট (*.css);;সব ফাইল (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1645"/>
+        <location filename="../settingswidget.cpp" line="1648"/>
         <source>Could not read that file: %1</source>
         <translation>সেই ফাইলটি পড়া যায়নি: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1718"/>
+        <location filename="../settingswidget.cpp" line="1726"/>
         <source>Disk</source>
         <translation>ডিস্ক</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1719"/>
+        <location filename="../settingswidget.cpp" line="1727"/>
         <source>Memory</source>
         <translation>মেমরি</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1720"/>
         <location filename="../settingswidget.cpp" line="1728"/>
+        <location filename="../settingswidget.cpp" line="1736"/>
         <source>None</source>
         <translation>কোনোটি নয়</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1729"/>
+        <location filename="../settingswidget.cpp" line="1737"/>
         <source>Slight</source>
         <translation>সামান্য</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1730"/>
+        <location filename="../settingswidget.cpp" line="1738"/>
         <source>Medium</source>
         <translation>মাঝারি</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1731"/>
+        <location filename="../settingswidget.cpp" line="1739"/>
         <source>Full</source>
         <translation>সম্পূর্ণ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1877"/>
+        <location filename="../settingswidget.cpp" line="1885"/>
         <source>Ollama not found at this address.</source>
         <translation>এই ঠিকানায় Ollama পাওয়া যায়নি।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1882"/>
+        <location filename="../settingswidget.cpp" line="1890"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama পাওয়া গেছে (%1টি মডেল ইনস্টল করা আছে)।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1907"/>
+        <location filename="../settingswidget.cpp" line="1915"/>
         <source>Download complete.</source>
         <translation>ডাউনলোড সম্পূর্ণ।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1910"/>
+        <location filename="../settingswidget.cpp" line="1918"/>
         <source>Download failed: %1</source>
         <translation>ডাউনলোড ব্যর্থ: %1</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1921"/>
+        <location filename="../settingswidget.cpp" line="1929"/>
         <source>Checking…</source>
         <translation>যাচাই করা হচ্ছে…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="1946"/>
+        <location filename="../settingswidget.cpp" line="1954"/>
         <source>Starting download of %1…</source>
         <translation>%1-এর ডাউনলোড শুরু হচ্ছে…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2001"/>
+        <location filename="../settingswidget.cpp" line="2009"/>
         <source>System</source>
         <translation>সিস্টেম</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2002"/>
+        <location filename="../settingswidget.cpp" line="2010"/>
         <source>None (direct)</source>
         <translation>কোনোটি নয় (সরাসরি)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2003"/>
+        <location filename="../settingswidget.cpp" line="2011"/>
         <source>SOCKS5</source>
         <translation>SOCKS5</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2004"/>
+        <location filename="../settingswidget.cpp" line="2012"/>
         <source>HTTP</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2030"/>
+        <location filename="../settingswidget.cpp" line="2038"/>
         <source>Desktop portal (Flatpak)</source>
         <translation>ডেস্কটপ পোর্টাল (Flatpak)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2032"/>
+        <location filename="../settingswidget.cpp" line="2040"/>
         <source>System service (libnotify)</source>
         <translation>সিস্টেম সার্ভিস (libnotify)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2217"/>
-        <location filename="../settingswidget.cpp" line="2221"/>
+        <location filename="../settingswidget.cpp" line="2225"/>
+        <location filename="../settingswidget.cpp" line="2229"/>
         <source>Add reply</source>
         <translation>উত্তর যোগ করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2217"/>
+        <location filename="../settingswidget.cpp" line="2225"/>
         <source>Name</source>
         <translation>নাম</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2221"/>
+        <location filename="../settingswidget.cpp" line="2229"/>
         <source>Text to insert</source>
         <translation>সন্নিবেশ করার টেক্সট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2238"/>
+        <location filename="../settingswidget.cpp" line="2246"/>
         <source>Choose a JavaScript file</source>
         <translation>একটি JavaScript ফাইল বেছে নিন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2239"/>
+        <location filename="../settingswidget.cpp" line="2247"/>
         <source>JavaScript (*.js);;All files (*)</source>
         <translation>JavaScript (*.js);;সব ফাইল (*)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2244"/>
+        <location filename="../settingswidget.cpp" line="2252"/>
         <source>Could not add addon</source>
         <translation>অ্যাডঅন যোগ করা যায়নি</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2257"/>
+        <location filename="../settingswidget.cpp" line="2265"/>
         <source>Remove addon</source>
         <translation>অ্যাডঅন সরান</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2258"/>
+        <location filename="../settingswidget.cpp" line="2266"/>
         <source>Remove the addon &quot;%1&quot;? This deletes its file.</source>
         <translation>&quot;%1&quot; অ্যাডঅনটি সরাবেন? এটি এর ফাইল মুছে ফেলবে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2368"/>
+        <location filename="../settingswidget.cpp" line="2376"/>
         <source>Search settings</source>
         <translation>সেটিংস অনুসন্ধান করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2370"/>
+        <location filename="../settingswidget.cpp" line="2378"/>
         <source>Show only the settings that match. What you find is the setting itself, working where it stands — not a list to click through. Tooltips are searched as well as labels, and so are the English names of the settings when Whatly is running in another language.</source>
         <translation>শুধু সেই সেটিংসগুলো দেখান যা মিলে যায়। আপনি যা খুঁজে পান তা সেটিংটি নিজেই, নিজের জায়গায় কার্যকর — ক্লিক করে যাওয়ার তালিকা নয়। লেবেলের পাশাপাশি টুলটিপও অনুসন্ধান করা হয়, এবং Whatly অন্য ভাষায় চললে সেটিংসের ইংরেজি নামগুলোও অনুসন্ধান করা হয়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2492"/>
+        <location filename="../settingswidget.cpp" line="2500"/>
         <source>No setting matches “%1”. Tooltips are searched too, so a plainer word usually finds it.</source>
         <translation>“%1”-এর সাথে কোনো সেটিং মেলেনি। টুলটিপও অনুসন্ধান করা হয়, তাই সহজ কোনো শব্দ সাধারণত এটি খুঁজে পায়।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2633"/>
+        <location filename="../settingswidget.cpp" line="2641"/>
         <source>Spell checker (no dictionaries installed)</source>
         <translation>বানান পরীক্ষক (কোনো অভিধান ইনস্টল করা নেই)</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2739"/>
+        <location filename="../settingswidget.cpp" line="2747"/>
         <source>Downloadable languages unavailable — click to try again</source>
         <translation>ডাউনলোডযোগ্য ভাষা অনুপলব্ধ — আবার চেষ্টা করতে ক্লিক করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2753"/>
+        <location filename="../settingswidget.cpp" line="2761"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>যেসব ভাষার বিপরীতে বানান পরীক্ষা করতে চান সেগুলো টিক দিন। প্রতিটি সারি তার অভিধান ডাউনলোড বা মুছে ফেলে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2855"/>
+        <location filename="../settingswidget.cpp" line="2863"/>
         <source>Choose languages…</source>
         <translation>ভাষা বেছে নিন…</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2861"/>
+        <location filename="../settingswidget.cpp" line="2869"/>
         <source>%1 of %2 chosen</source>
         <translation>%2-এর মধ্যে %1টি বাছাই করা হয়েছে</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2863"/>
+        <location filename="../settingswidget.cpp" line="2871"/>
         <source>%1 languages</source>
         <translation>%1টি ভাষা</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="2988"/>
+        <location filename="../settingswidget.cpp" line="2996"/>
         <source>WhatsApp default</source>
         <translation>WhatsApp ডিফল্ট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3027"/>
+        <location filename="../settingswidget.cpp" line="3035"/>
         <source>System default</source>
         <translation>সিস্টেম ডিফল্ট</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3057"/>
+        <location filename="../settingswidget.cpp" line="3065"/>
         <source>The interface language will change when you restart %1.</source>
         <translation>আপনি %1 পুনরায় চালু করলে ইন্টারফেসের ভাষা পরিবর্তন হবে।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3082"/>
+        <location filename="../settingswidget.cpp" line="3090"/>
         <source>App Lock Setup</source>
         <translation>অ্যাপ লক সেটআপ</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3083"/>
+        <location filename="../settingswidget.cpp" line="3091"/>
         <source>Please setup the App lock password first.</source>
         <translation>অনুগ্রহ করে প্রথমে অ্যাপ লক পাসওয়ার্ড সেটআপ করুন।</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3199"/>
-        <location filename="../settingswidget.cpp" line="3210"/>
+        <location filename="../settingswidget.cpp" line="3207"/>
+        <location filename="../settingswidget.cpp" line="3218"/>
         <source>Select download directory</source>
         <translation>ডাউনলোড ডিরেক্টরি নির্বাচন করুন</translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3250"/>
+        <location filename="../settingswidget.cpp" line="3258"/>
         <source>You are about to change your current app lock password!
 
 This will LogOut your current session.
@@ -4190,7 +4200,7 @@ You may also require a complete restart of Application!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../settingswidget.cpp" line="3256"/>
+        <location filename="../settingswidget.cpp" line="3264"/>
         <source>Do you want to proceed?</source>
         <translation>আপনি কি এগিয়ে যেতে চান?</translation>
     </message>

@@ -748,21 +748,25 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason) {
 // resume is visible instead of being noticed hours later), and the unread
 // count. Composed here from one source rather than shipping a matrix of PNGs.
 const QIcon MainWindow::getTrayIcon(const int &notificationCount) const {
-  const bool monochrome = SettingsManager::instance()
-                              .settings()
-                              .value("monochromeTrayIcon", false)
-                              .toBool();
+  const auto &settings = SettingsManager::instance().settings();
+  const bool monochrome =
+      settings.value("monochromeTrayIcon", false).toBool();
+  // Opt-in: draw the count in red even on the monochrome icon, so the number
+  // stands out. Off by default, keeping the fully-colourless look.
+  const bool monoBadgeRed = settings.value("monochromeBadgeRed", false).toBool();
   // The whole composition (monochrome/colour, count badge, connection dimming,
   // and the SVG→colour fallback) lives in a pure, unit-tested helper.
   //
   // Composed at several sizes rather than at 64 alone: a panel draws the tray icon
   // at about 22 px, and a two-digit badge downscaled from 64 to 22 turns to mush,
-  // while the same badge drawn at 22 keeps its digits. QIcon hands the platform
-  // whichever size it asks for.
+  // while the same badge drawn at 22 keeps its digits. The 128/256 sizes matter on
+  // a HiDPI tray, which asks for more than 64 and would otherwise upscale the
+  // largest raster to a blur (#112); the colour base is now vector so those render
+  // crisp. QIcon hands the platform whichever size it asks for.
   QIcon icon;
-  for (const int size : {22, 24, 32, 48, 64})
+  for (const int size : {22, 24, 32, 48, 64, 128, 256})
     icon.addPixmap(QPixmap::fromImage(TrayIcon::composeTrayImage(
-        notificationCount, monochrome, m_trayConnected, size)));
+        notificationCount, monochrome, m_trayConnected, size, monoBadgeRed)));
   return icon;
 }
 

@@ -267,6 +267,8 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
       SettingsManager::instance().settings().value("smoothScrolling", false).toBool());
   ui->monochromeTrayIconCheckBox->setChecked(
       SettingsManager::instance().settings().value("monochromeTrayIcon", false).toBool());
+  ui->monochromeBadgeRedCheckBox->setChecked(
+      SettingsManager::instance().settings().value("monochromeBadgeRed", false).toBool());
   ui->hideTrayIconCheckBox->blockSignals(true);
   ui->hideTrayIconCheckBox->setChecked(
       SettingsManager::instance().settings().value("hideTrayIcon", false).toBool());
@@ -564,6 +566,7 @@ SettingsWidget::SettingsWidget(QWidget *parent, int screenNumber,
             ui->chatListPreviewSizeComboBox, G);
     moveWidget(body(appearance), ui->smoothScrollingCheckBox, G);
     moveWidget(body(appearance), ui->monochromeTrayIconCheckBox, G);
+    moveWidget(body(appearance), ui->monochromeBadgeRedCheckBox, G);
 
     // ── Notifications ───────────────────────────────────────
     auto *notifications = newSection(tr("Notifications"));
@@ -1688,6 +1691,11 @@ void SettingsWidget::on_hideMutedStatusCheckBox_toggled(bool checked) {
 
 void SettingsWidget::on_monochromeTrayIconCheckBox_toggled(bool checked) {
   SettingsManager::instance().settings().setValue("monochromeTrayIcon", checked);
+  emit trayIconChanged();
+}
+
+void SettingsWidget::on_monochromeBadgeRedCheckBox_toggled(bool checked) {
+  SettingsManager::instance().settings().setValue("monochromeBadgeRed", checked);
   emit trayIconChanged();
 }
 

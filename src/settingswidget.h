@@ -147,6 +147,7 @@ private slots:
   void on_clearCustomCssButton_clicked();
   void on_smoothScrollingCheckBox_toggled(bool checked);
   void on_monochromeTrayIconCheckBox_toggled(bool checked);
+  void on_monochromeBadgeRedCheckBox_toggled(bool checked);
   void on_hideTrayIconCheckBox_toggled(bool checked);
   void on_lockOnMinimizeCheckBox_toggled(bool checked);
   void on_lockOnScreenLockCheckBox_toggled(bool checked);

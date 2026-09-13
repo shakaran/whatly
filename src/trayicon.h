@@ -35,8 +35,12 @@ QString badgeText(int count);
 // choice just like a busy one (the #14 regression: the idle path used to bypass
 // this and always show the colour icon). Falls back to the colour icon if the
 // monochrome glyph cannot be rendered.
+// monoBadgeRed: when the monochrome icon is requested, draw the count badge in
+// the artwork's red (opt-in) instead of the default neutral grey, so the number
+// stands out while the glyph stays colourless. Ignored in colour mode (always
+// red there).
 QImage composeTrayImage(int notificationCount, bool monochrome, bool connected,
-                        int size);
+                        int size, bool monoBadgeRed = false);
 
 // Compose the unread badge over a caller-supplied base image at the given square
 // size. Unlike composeTrayImage, the base is not the 64px tray artwork but

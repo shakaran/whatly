@@ -114,7 +114,7 @@ QString badgeText(int count) {
 }
 
 QImage composeTrayImage(int notificationCount, bool monochrome, bool connected,
-                        int size) {
+                        int size, bool monoBadgeRed) {
   // No longer clamped to ten. The clamp was invisible while the count came from
   // the window title and under-reported wildly; with a real count of unread chats
   // the ceiling is reached and stayed at, so the badge stopped saying anything.
@@ -164,26 +164,27 @@ QImage composeTrayImage(int notificationCount, bool monochrome, bool connected,
     p.drawPixmap(0, 0, light);
     p.end();
   } else {
-    // The colourful icons carry a baked-in badge for one to nine. Past nine there
-    // is no artwork for it — there used to be one file, whatly-notify-10.png, with
-    // a bare "+" and no digit in it — so take the plain icon and draw the badge.
-    QPixmap glyph(colourPath(count <= 9 ? count : 0));
+    // Render the colour icon from its scalable source so it stays crisp at any
+    // size a HiDPI tray or panel asks for, instead of upscaling the 64px notify
+    // PNG (#112, reported by Nigel1992). The count is drawn below for every count,
+    // not just past nine, since the vector base carries none baked in — the drawn
+    // badge is measured to match the artwork the notify-1..9 PNGs used to bake.
     QPainter p(&base);
-    p.drawPixmap(base.rect(), glyph);
+    QSvgRenderer svg(QStringLiteral(":/icons/app/icon.svg"));
+    if (svg.isValid())
+      svg.render(&p);
+    else
+      p.drawPixmap(base.rect(), QPixmap(colourPath(count <= 9 ? count : 0)));
   }
 
-  // Draw the count: always in monochrome, where nothing is baked in, and past nine
-  // in colour, where the artwork stops. One badge, one rule, two palettes — the two
-  // modes used to disagree, and the colour one said less than the monochrome one.
-  if (const QString text = badgeText(count);
-      !text.isEmpty() && (monochrome || count > 9)) {
+  // Draw the count badge (nothing at zero). Colour uses the artwork's red.
+  // Monochrome uses a neutral grey cut out of the glyph so the icon stays
+  // colourless — unless the user opts in to a red count (monoBadgeRed), which
+  // keeps the glyph monochrome but lets the number stand out (requested by
+  // Nigel1992).
+  if (const QString text = badgeText(count); !text.isEmpty()) {
     QPainter p(&base);
-    if (monochrome)
-      // Grey rather than the glyph's own light tone: a badge in the same tone
-      // merged with the glyph into one bright blob, leaving the digits — three or
-      // four pixels of them at panel size — as the only thing to read. Mid-grey
-      // with white digits gives the badge an edge of its own and keeps the whole
-      // icon colourless, which is what the setting is for.
+    if (monochrome && !monoBadgeRed)
       paintCountBadge(p, size, text, QColor(0x6a, 0x6a, 0x6a), Qt::white,
                       /*cutOut=*/true);
     else

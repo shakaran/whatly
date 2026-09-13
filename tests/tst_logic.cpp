@@ -3012,6 +3012,18 @@ private slots:
              TrayIcon::composeTrayImage(5000, true, true, 64));
   }
 
+  // The opt-in red count on the monochrome icon (Nigel1992's request) changes
+  // only the badge: it differs from the default grey count, makes no difference
+  // when there is nothing unread, and is ignored in colour mode (always red).
+  void monoRedBadgeIsOptIn() {
+    QVERIFY(TrayIcon::composeTrayImage(3, true, true, 64, /*monoBadgeRed=*/false) !=
+            TrayIcon::composeTrayImage(3, true, true, 64, /*monoBadgeRed=*/true));
+    QCOMPARE(TrayIcon::composeTrayImage(0, true, true, 64, false),
+             TrayIcon::composeTrayImage(0, true, true, 64, true));
+    QCOMPARE(TrayIcon::composeTrayImage(3, false, true, 64, false),
+             TrayIcon::composeTrayImage(3, false, true, 64, true));
+  }
+
   // A disconnected state dims the icon, so it differs from the connected one.
   void disconnectedIsDimmed() {
     const QImage up = TrayIcon::composeTrayImage(0, false, true, 64);

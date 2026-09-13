@@ -675,6 +675,16 @@ background:transparent;
               </property>
              </widget>
             </item>
+            <item row="14" column="1">
+             <widget class="QCheckBox" name="monochromeBadgeRedCheckBox">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Draw the unread count in red on the monochrome tray icon, so the number stands out while the glyph stays colourless. Off keeps the count the same neutral tone as the glyph. Only applies when the monochrome tray icon is on.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Red count on the monochrome icon</string>
+              </property>
+             </widget>
+            </item>
             <item row="12" column="0">
              <widget class="QCheckBox" name="smoothScrollingCheckBox">
               <property name="toolTip">
