@@ -1,5 +1,7 @@
 ## Unreleased
 
+## 7.6.4 (2026-09-13)
+
 - **The colour tray icon is sharp on HiDPI too (#112).** The tray's colour icon was drawn from a 64px raster, so a HiDPI tray or panel that asked for a larger size upscaled it to a blur (the monochrome icon was already drawn from the SVG, which is why only it stayed crisp, as Nigel1992 noted). The colour icon is now rendered from the scalable app logo as well, and the tray composes it at up to 256px, so it stays crisp at any size. The count badge, previously baked into the 1-9 artwork, is now drawn at every count to match.
 - **Optional red unread count on the monochrome tray icon (#112).** A new setting, *Red count on the monochrome icon* (Settings → Appearance, under the monochrome tray option), draws the unread number in red on the otherwise colourless monochrome icon so it stands out. Off by default, keeping the count the same neutral tone as the glyph. Requested by Nigel1992.
 

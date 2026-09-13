@@ -1,3 +1,14 @@
+whatly (7.6.4) unstable; urgency=medium
+
+  * The colour tray icon is sharp on HiDPI too (#112): it is now rendered from
+    the scalable app logo and composed at up to 256px, instead of upscaling a
+    64px raster. The count badge is drawn at every count to match.
+  * New optional setting, "Red count on the monochrome icon" (Appearance), draws
+    the unread count in red on the monochrome tray icon so it stands out; off by
+    default. Requested by Nigel1992.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Sun, 13 Sep 2026 12:00:00 +0200
+
 whatly (7.6.3) unstable; urgency=medium
 
   * The taskbar icon is sharp again while there are unread messages (#112). The

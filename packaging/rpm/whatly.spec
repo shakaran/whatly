@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        7.6.3
+Version:        7.6.4
 # Reference system-Qt spec for downstream packagers; the release itself builds
 # the native rpm from packaging/obs/whatly.spec. Release kept at 0 to match it
 # (both are the system-Qt "whatly"), so this never looks newer than, or collides
@@ -65,6 +65,12 @@ not affiliated with WhatsApp or Meta.
 # %%{_datadir}/whatly/ back here if you do.
 
 %changelog
+* Sun Sep 13 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.6.4-1
+- The colour tray icon is sharp on HiDPI too: rendered from the scalable app
+  logo and composed at up to 256px instead of upscaling a 64px raster (#112).
+- New optional "Red count on the monochrome icon" setting draws the unread
+  count in red on the monochrome tray icon; off by default (#112).
+
 * Sat Sep 12 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.6.3-1
 - The taskbar icon is sharp again while there are unread messages: the unread
   badge is composited over the high-resolution app icon instead of the 64px tray

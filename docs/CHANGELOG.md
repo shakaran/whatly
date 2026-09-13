@@ -1,3 +1,9 @@
+## 7.6.4 (2026-09-13)
+
+- **The colour tray icon is sharp on HiDPI too (#112).** The tray's colour icon was drawn from a 64px raster, so a HiDPI tray or panel that asked for a larger size upscaled it to a blur (the monochrome icon was already drawn from the SVG, which is why only it stayed crisp, as Nigel1992 noted). The colour icon is now rendered from the scalable app logo as well, and the tray composes it at up to 256px, so it stays crisp at any size. The count badge, previously baked into the 1-9 artwork, is now drawn at every count to match.
+- **Optional red unread count on the monochrome tray icon (#112).** A new setting, *Red count on the monochrome icon* (Settings → Appearance, under the monochrome tray option), draws the unread number in red on the otherwise colourless monochrome icon so it stands out. Off by default, keeping the count the same neutral tone as the glyph. Requested by Nigel1992.
+
+
 ## 7.6.3 (2026-09-12)
 
 - **The taskbar icon is sharp again while there are unread messages (#112).** To show the unread count in the taskbar, the account window borrowed the tray icon as its window icon whenever the inbox was not empty. But the tray artwork is composed only up to 64px, since a tray slot is about 22px, so a HiDPI panel or a titlebar drawing it larger had to upscale that 64px raster, and it blurred. That is why 7.6.2's icon work (a 512px size and the scalable SVG) did not help this case: it only backs the window icon at zero unread, which was already sharp. The window icon now composites the unread badge over the high-resolution app icon (the SVG / 512px) instead, so it stays crisp at any size a panel asks for; the tray icon keeps its own small-size artwork. Thanks to Tulis12 for the screenshot that pinned it to the badged state. (The exported desktop file, whose `Icon=` was correct all along, was a red herring.)

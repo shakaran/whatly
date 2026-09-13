@@ -108,6 +108,14 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.6.4" date="2026-09-13">
+      <description>
+        <ul>
+          <li>The colour tray icon is sharp on HiDPI too: it is now rendered from the scalable app logo and composed at up to 256px, instead of upscaling a 64px raster (#112)</li>
+          <li>New optional setting to draw the unread count in red on the monochrome tray icon, so the number stands out while the glyph stays colourless (#112)</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.6.3" date="2026-09-12">
       <description>
         <ul>
