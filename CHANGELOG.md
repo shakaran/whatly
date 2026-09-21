@@ -1,5 +1,7 @@
 ## Unreleased
 
+- **WhatsApp's “Refresh to update” notice is tamed whenever it appears, not only when the list is collapsed by hand.** The notice was tagged by the same pass that marks the pane's columns and folds the filter pills, and that pass runs when the strip is applied or when WhatsApp rebuilds the pane. The notice arrives on neither occasion: WhatsApp's service worker finds the new version while the app is open, and the bar is filled in where it already sat, beside a list that is already collapsed. So nothing looked for it, and it drew the same ladder of single letters down the strip that this handling exists to prevent — until an expand and a collapse happened to run that pass again. Tagging the notice is now a step of its own, run once a second beside the unread counts; it reads two elements and measures no layout, which is what makes it cheap enough to run on the timer.
+
 ## 7.6.4 (2026-09-13)
 
 - **The colour tray icon is sharp on HiDPI too (#112).** The tray's colour icon was drawn from a 64px raster, so a HiDPI tray or panel that asked for a larger size upscaled it to a blur (the monochrome icon was already drawn from the SVG, which is why only it stayed crisp, as Nigel1992 noted). The colour icon is now rendered from the scalable app logo as well, and the tray composes it at up to 256px, so it stays crisp at any size. The count badge, previously baked into the 1-9 artwork, is now drawn at every count to match.
