@@ -1229,6 +1229,17 @@ private slots:
     // cancels the click in the capture phase and opens the search box instead,
     // which is the whole of what "the button does nothing" looked like.
     QVERIFY(on.contains(QLatin1String("[data-whatly-banner] button,")));
+    // The notice arrives on WhatsApp's schedule, not the pane's: the service
+    // worker finds the new version while the app is open and the bar is filled
+    // in beside a list that is already collapsed, with nothing rebuilt and no
+    // tag lost. So the tagging cannot sit in prepare() alone, which runs on a
+    // toggle or a rebuild — with it there, the notice was only ever tamed by an
+    // expand followed by a collapse, and arrived as the ladder of single
+    // letters every other line here is about preventing. Pinned as its own
+    // function, and as one called from more than one place: the second caller
+    // is the once-a-second timer, and losing it brings the bug straight back.
+    QVERIFY(on.contains(QLatin1String("var tagBanner")));
+    QVERIFY(on.count(QStringLiteral("tagBanner();")) >= 2);
 
     // Expanded, the clipping rule must be gone with the rest of the stylesheet,
     // or a notice would be held to one line in a list that is not collapsed.

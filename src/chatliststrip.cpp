@@ -264,6 +264,68 @@ static const char kScriptTemplate[] = R"JS(
       });
     };
 
+    // WhatsApp's own notices in the list, tagged so the stylesheet above can
+    // clip one like a row and the hover preview can show it whole.
+    //
+    // Read off the live page: the notice is a <span> carrying
+    // data-testid="chat-butterbar", a direct child of #side and the immediate
+    // PREVIOUS SIBLING of #pane-side — above the list, not inside it. It holds
+    // a bare <svg> in a wrapper carrying no data-icon at all, two sentences,
+    // and a <button>Refresh</button> nested below its top level.
+    //
+    // Matched by that testid, which is a name WhatsApp CHOSE — "butterbar" is
+    // its own word for this class of bar — and not one its compiler generated.
+    // The class strings on the very same element are generated and change with
+    // every deploy, so they are worth nothing to match on. A testid can be
+    // renamed too, as `data-icon="send"` was, so the slot itself is kept
+    // behind it: the one element immediately above the list, and only that
+    // one, so a rename can never promote the filter row or the search box
+    // into a notice instead.
+    //
+    // The element STAYS IN THE PAGE once the update has been applied, empty
+    // and zero-height, so its presence alone means nothing. The content tests
+    // are what tell a notice from that empty shell — measured with nothing to
+    // show, it has no button, no icon and no element children at all — and
+    // they are what keeps the strip from drawing a permanent phantom cell
+    // above every chat list.
+    //
+    // ON ITS OWN, and run from the timer as well as from prepare(), because the
+    // notice does NOT arrive with the pane. The service worker finds the new
+    // version while the app is open, and the bar is filled in beside a list
+    // that is already collapsed: nothing is rebuilt, no tag is lost, and the
+    // conditions that call prepare() are therefore never met — so the notice
+    // stayed untagged and wrapped into the ladder of single letters this is
+    // here to prevent, until an expand and a collapse happened to run prepare()
+    // again. Two querySelector calls and no layout read, which is what makes it
+    // cheap enough to run every tick where prepare(), measuring every div in
+    // the document, is not.
+    //
+    // Idempotent on purpose: the attribute is written only when the answer
+    // changes, so running once a second does not mutate the page under
+    // WhatsApp's own observers.
+    var tagBanner = function () {
+      var side = document.querySelector('#side');
+      if (!side) return;
+      var pane = document.querySelector('#pane-side');
+      var note = side.querySelector('[data-testid="chat-butterbar"]');
+      if (!note && pane) note = pane.previousElementSibling;
+      var isNotice = !!note && !note.querySelector('[role="row"]') &&
+                     !!note.querySelector('svg,[data-icon]') &&
+                     !!note.querySelector('button,[role="button"],a');
+      if (isNotice) {
+        var bt = (note.textContent || '').trim();
+        // A word fits at 97px and needs nothing doing; a page of text is a
+        // container that happened to pass the tests above. Length is the
+        // whole test, so this holds in every interface language.
+        isNotice = bt.length >= 12 && bt.length <= 400;
+      }
+      document.querySelectorAll('[data-whatly-banner]').forEach(function (e) {
+        if (!isNotice || e !== note) e.removeAttribute('data-whatly-banner');
+      });
+      if (isNotice && !note.hasAttribute('data-whatly-banner'))
+        note.setAttribute('data-whatly-banner', '1');
+    };
+
     // Find every column the pane occupies and mark it, so the stylesheet has
     // something to select. There is more than one: the wrapper that actually
     // holds #side, and a parallel column inside the legacy `.two` container
@@ -323,44 +385,7 @@ static const char kScriptTemplate[] = R"JS(
         });
       }
 
-      // WhatsApp's own notices in the list, tagged so the stylesheet above can
-      // clip one like a row and the hover preview can show it whole.
-      //
-      // Read off the live page: the notice is a <span> carrying
-      // data-testid="chat-butterbar", a direct child of #side and the immediate
-      // PREVIOUS SIBLING of #pane-side — above the list, not inside it. It holds
-      // a bare <svg> in a wrapper carrying no data-icon at all, two sentences,
-      // and a <button>Refresh</button> nested below its top level.
-      //
-      // Matched by that testid, which is a name WhatsApp CHOSE — "butterbar" is
-      // its own word for this class of bar — and not one its compiler generated.
-      // The class strings on the very same element are generated and change with
-      // every deploy, so they are worth nothing to match on. A testid can be
-      // renamed too, as `data-icon="send"` was, so the slot itself is kept
-      // behind it: the one element immediately above the list, and only that
-      // one, so a rename can never promote the filter row or the search box
-      // into a notice instead.
-      //
-      // The element STAYS IN THE PAGE once the update has been applied, empty
-      // and zero-height, so its presence alone means nothing. The content tests
-      // are what tell a notice from that empty shell — measured with nothing to
-      // show, it has no button, no icon and no element children at all — and
-      // they are what keeps the strip from drawing a permanent phantom cell
-      // above every chat list.
-      untag('data-whatly-banner');
-      var pane = document.querySelector('#pane-side');
-      var note = side.querySelector('[data-testid="chat-butterbar"]');
-      if (!note && pane) note = pane.previousElementSibling;
-      if (note && !note.querySelector('[role="row"]') &&
-          note.querySelector('svg,[data-icon]') &&
-          note.querySelector('button,[role="button"],a')) {
-        var bt = (note.textContent || '').trim();
-        // A word fits at 97px and needs nothing doing; a page of text is a
-        // container that happened to pass the tests above. Length is the
-        // whole test, so this holds in every interface language.
-        if (bt.length >= 12 && bt.length <= 400)
-          note.setAttribute('data-whatly-banner', '1');
-      }
+      tagBanner();
 
       // The filter pills: the row that holds both the "all" pill and the "more"
       // button, and a letter for each pill that is actually on screen.
@@ -565,8 +590,12 @@ R"JS(
           prepare();
         }
         // Only while collapsed, and only over the rows WhatsApp has rendered.
-        if (applied)
+        // The notice is picked up here as well, because it arrives on
+        // WhatsApp's schedule rather than the pane's; see tagBanner().
+        if (applied) {
+          tagBanner();
           markUnread();
+        }
         // A net under the click handler: the panel can also be opened from the
         // keyboard, and this costs one querySelector on a node that is empty
         // whenever no panel is open.
