@@ -308,7 +308,18 @@ static const char kScriptTemplate[] = R"JS(
       if (!side) return;
       var pane = document.querySelector('#pane-side');
       var note = side.querySelector('[data-testid="chat-butterbar"]');
-      if (!note && pane) note = pane.previousElementSibling;
+      // The slot kept behind the name, for the day the name changes — and it
+      // has to refuse the filter row, because that is what sits immediately
+      // above the list when the bar is not in the page at all. A filter row
+      // passes every content test below on its own merits: buttons, an svg
+      // inside the "more" control, no row, and a caption over twelve characters
+      // in any language. It is named here by the ids WhatsApp chose for those
+      // controls, the same two the pill folding already relies on.
+      if (!note && pane) {
+        note = pane.previousElementSibling;
+        if (note && note.querySelector('#all-filter,#additional-filters'))
+          note = null;
+      }
       var isNotice = !!note && !note.querySelector('[role="row"]') &&
                      !!note.querySelector('svg,[data-icon]') &&
                      !!note.querySelector('button,[role="button"],a');
