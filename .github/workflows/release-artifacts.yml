@@ -65,7 +65,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@48d3ad6db93f3627c8ee7a0454bc6f3744f7e730 # v4
+        uses: jurplel/install-qt-action@bcb88e3bed2e992f5f9e24c0f9e364a231d278eb # v4
         with:
           version: '6.10.3'  # exact pin (#71): bump deliberately, don't glob
           arch: win64_msvc2022_64
@@ -145,7 +145,7 @@ jobs:
 
       - name: Code-sign with SignPath
         if: env.SIGNPATH_API_TOKEN != ''
-        uses: signpath/github-action-submit-signing-request@c92b958760219087e01f8d67a1669ed57afe2627 # v2.3
+        uses: signpath/github-action-submit-signing-request@f6d04783b4569d051e0c80105fe66e82819d0092 # v3.0
         with:
           api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
           organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
@@ -305,7 +305,7 @@ jobs:
           submodules: recursive
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@48d3ad6db93f3627c8ee7a0454bc6f3744f7e730 # v4
+        uses: jurplel/install-qt-action@bcb88e3bed2e992f5f9e24c0f9e364a231d278eb # v4
         with:
           version: '6.10.3'  # exact pin (#71): bump deliberately, don't glob
           # qtserialport: the qtpositioning nmea plugin links it, and
@@ -447,7 +447,7 @@ jobs:
           submodules: recursive
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@48d3ad6db93f3627c8ee7a0454bc6f3744f7e730 # v4
+        uses: jurplel/install-qt-action@bcb88e3bed2e992f5f9e24c0f9e364a231d278eb # v4
         with:
           version: '6.10.3'  # exact pin (#71): bump deliberately, don't glob
           modules: 'qtwebengine qtwebchannel qtpositioning qtserialport'
