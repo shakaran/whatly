@@ -1,3 +1,13 @@
+whatly (7.6.5) unstable; urgency=medium
+
+  * WhatsApp's "Refresh to update" notice is handled in the collapsed chat list
+    whenever it appears, including when it arrives while the list is already
+    collapsed; before, only a manual expand and collapse picked it up (#117).
+  * The collapsed chat list no longer mistakes the filter row for an update
+    notice (#117). Both fixes by gbmaizol.
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Sat, 26 Sep 2026 12:00:00 +0200
+
 whatly (7.6.4) unstable; urgency=medium
 
   * The colour tray icon is sharp on HiDPI too (#112): it is now rendered from

@@ -108,6 +108,14 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.6.5" date="2026-09-26">
+      <description>
+        <ul>
+          <li>WhatsApp's "Refresh to update" notice is handled in the collapsed chat list whenever it appears, including when it arrives while the list is already collapsed (#117)</li>
+          <li>The collapsed chat list no longer mistakes the filter row for an update notice (#117)</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.6.4" date="2026-09-13">
       <description>
         <ul>
