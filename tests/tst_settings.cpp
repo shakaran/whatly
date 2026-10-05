@@ -506,6 +506,41 @@ private slots:
   //
   // Two: the box is editable so it can show that summary, which is exactly why a
   // click on it did nothing — an editable combo opens its list from the arrow alone.
+  // English is the language the interface is written in, so there is no en.ts to
+  // compile and no en.qm for the picker to list — which left it the one language
+  // that could not be chosen. A system already in English gets it from "System
+  // default"; on a system in anything else there was no route to English at all,
+  // and none back out of a translation once one had been picked.
+  void englishIsOfferedAsAnInterfaceLanguage() {
+    QTemporaryDir cache, storage;
+    SettingsWidget sw(nullptr, 0, cache.path(), storage.path());
+    auto *combo = sw.findChild<QComboBox *>(QStringLiteral("languageComboBox"));
+    QVERIFY(combo);
+
+    const int en = combo->findData(QStringLiteral("en"));
+    QVERIFY2(en >= 0, "English is missing from the interface language picker");
+    // Named in itself and left untranslated, like every other entry, so someone
+    // who cannot read the current interface language can still find their own.
+    // Never through languageLabel(), which answers "American English" for a bare
+    // "en" because Qt fills in the likeliest territory.
+    QCOMPARE(combo->itemText(en), QStringLiteral("English"));
+
+    // In code order with the rest rather than bolted onto either end: after
+    // el_GR, before eo.
+    const int eo = combo->findData(QStringLiteral("eo"));
+    if (eo >= 0)
+      QVERIFY(en < eo);
+    // "System default" stays first: following the system is still the default,
+    // and English is a choice like any other.
+    QCOMPARE(combo->itemData(0).toString(), QString());
+
+    // The entry carries no catalogue, which is the whole mechanism — with "en"
+    // stored, installTranslations() finds nothing to load and the untranslated
+    // source is what shows.
+    QVERIFY(!QFile::exists(QStringLiteral(":/i18n/en.qm")));
+    QVERIFY(!QFile::exists(QStringLiteral(":/i18n/en_US.qm")));
+  }
+
   void languageBoxFollowsTheFocusAndOpensOnClick() {
     QTemporaryDir dicts;
     QVERIFY(dicts.isValid());

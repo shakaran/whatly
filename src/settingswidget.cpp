@@ -3037,8 +3037,31 @@ void SettingsWidget::populateLanguages() {
   const QFileInfoList files =
       QDir(QStringLiteral(":/i18n")).entryInfoList({QStringLiteral("*.qm")},
                                                    QDir::Files, QDir::Name);
+  // English is the language the interface is WRITTEN in, so there is no en.ts to
+  // compile and no en.qm to list — which left it as the one language that could
+  // not be chosen at all. A system already in English gets it from "System
+  // default", but anyone else had no way back to the source strings once they
+  // were in a translation, and no way to ask for English in the first place.
+  //
+  // The entry loads nothing: with "en" stored, installTranslations() finds
+  // neither :/i18n/en_US.qm nor :/i18n/en.qm, installs no translator, and the
+  // untranslated source is what shows — which IS English.
+  //
+  // Named in plain, because languageLabel() asks Qt and Qt fills the likeliest
+  // territory in for a bare language, giving "American English"; the source
+  // strings belong to no territory. The name is not translated, for the same
+  // reason the rest of this list is not: a language is named in itself, so that
+  // someone who cannot read the current interface language can still find
+  // their own.
+  bool english = false;
+  const QString englishCode = QStringLiteral("en");
   for (const QFileInfo &file : files) {
     const QString code = file.completeBaseName(); // e.g. es_ES
+    // In code order with the rest, rather than bolted onto either end.
+    if (!english && englishCode < code) {
+      ui->languageComboBox->addItem(QStringLiteral("English"), englishCode);
+      english = true;
+    }
     // Named by the same routine as the spell-check languages, so the two lists
     // that a reader compares — the language Whatly speaks and the languages it
     // checks spelling in — call the same language by the same name. That routine
@@ -3047,6 +3070,10 @@ void SettingsWidget::populateLanguages() {
     // back to the bare code for anything Qt does not model.
     ui->languageComboBox->addItem(Dictionaries::languageLabel(code), code);
   }
+  // Nothing sorted after it, which would mean a bundle of translations that all
+  // sort before "en". Unlikely, and cheap to be right about.
+  if (!english)
+    ui->languageComboBox->addItem(QStringLiteral("English"), englishCode);
 
   const int index = ui->languageComboBox->findData(current);
   ui->languageComboBox->setCurrentIndex(index >= 0 ? index : 0);
