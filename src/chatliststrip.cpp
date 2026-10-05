@@ -114,6 +114,20 @@ static const char kCollapseCss[] =
     // so show() takes the attribute off the clone.
     "[data-whatly-banner],[data-whatly-banner] *{white-space:nowrap!important;"
     "overflow:hidden!important;text-overflow:clip!important}"
+    // Clipping alone left the icon out: at 97px the notice showed two cropped
+    // sentences and no picture, while the hover preview — the same markup,
+    // cloned and laid out at the list's natural width — drew it whole. That
+    // difference is the diagnosis. Nothing is hidden; the notice's contents sit
+    // on a flex line, and a flex item gives up width in proportion to its own
+    // size, so the icon, the smallest thing on that line, is squeezed away to
+    // nothing while two sentences keep the column.
+    //
+    // Pinning the items ends the squeeze: the icon keeps its natural size where
+    // an avatar would sit, and the words overflow instead and are clipped by the
+    // rule above, which is what a row does and what this was always meant to
+    // look like. The preview is unaffected either way — the clone is not inside
+    // anything carrying the attribute, so none of these rules reach it.
+    "[data-whatly-banner] *{flex-shrink:0!important}"
     // The filter pills (All / Unread / Favourites / more) are a horizontal row
     // that a 97px column simply guillotines. Fold them into a 2x2 grid of round
     // buttons instead, each labelled with the first letter of its own caption —

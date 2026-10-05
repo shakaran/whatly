@@ -1205,6 +1205,13 @@ private slots:
     // bare text, which `*` cannot reach.
     QVERIFY(on.contains(QLatin1String(
         "[data-whatly-banner],[data-whatly-banner] *{white-space:nowrap")));
+    // Clipping is not enough on its own. The notice's contents sit on a flex
+    // line, and a flex item gives up width in proportion to its own size, so at
+    // 97px the icon — the smallest thing on that line — was squeezed away to
+    // nothing and the strip showed two cropped sentences and no picture, while
+    // the hover preview drew the same markup whole because it is laid out at the
+    // list's natural width. Pinning the items is what keeps the icon.
+    QVERIFY(on.contains(QLatin1String("[data-whatly-banner] *{flex-shrink:0")));
     // Matched by the name WhatsApp chose for the bar, not by the generated
     // class names next to it on the same element.
     QVERIFY(on.contains(QLatin1String("[data-testid=\"chat-butterbar\"]")));
