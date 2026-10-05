@@ -110,8 +110,15 @@ static const char kCollapseCss[] =
     // reduced to its icon, drawn at the size an avatar is drawn and centred
     // where one sits. Nothing is lost by it: the whole notice, words and all, is
     // what the hover preview shows, and that is where it is read.
+    //
+    // Centred means centred in the COLUMN, so the notice's own horizontal
+    // padding goes with the words it was there for. A bar padded for a sentence
+    // and a button, with only an icon left in it, puts that icon off to one
+    // side. The vertical padding is left alone: it is what gives the cell the
+    // height of a row.
     "[data-whatly-banner]{overflow:hidden!important;display:flex!important;"
-    "align-items:center!important;justify-content:center!important}"
+    "align-items:center!important;justify-content:center!important;"
+    "gap:0!important;padding-left:0!important;padding-right:0!important}"
     "[data-whatly-banner],[data-whatly-banner] *{cursor:pointer!important}"
     // The rule that does the actual work; everything else here follows from it.
     // The notice's own box is named as well as its descendants: the capture
@@ -145,8 +152,13 @@ static const char kCollapseCss[] =
     // wrapper reserves for it, and a wrapper that clipped would cut it straight
     // back down. The notice's own box keeps the result inside the strip, which
     // is the one place the clipping is needed.
+    // The same goes for every gap, margin and padding inside it. They are spacing
+    // between an icon, a sentence and a button; with the sentence and the button
+    // gone to nothing, they are all that is left to push the icon off centre —
+    // measured at about ten pixels left of centre from one `gap` alone.
     "[data-whatly-banner] *{flex-shrink:0!important;overflow:visible!important;"
-    "justify-content:center!important}"
+    "justify-content:center!important;gap:0!important;margin:0!important;"
+    "padding:0!important}"
     // The icon at the size an avatar is drawn, 48px, which is WhatsApp's own
     // avatar size and the measurement the strip width is built from.
     //
