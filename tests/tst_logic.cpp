@@ -1212,6 +1212,23 @@ private slots:
     // the hover preview drew the same markup whole because it is laid out at the
     // list's natural width. Pinning the items is what keeps the icon.
     QVERIFY(on.contains(QLatin1String("[data-whatly-banner] *{flex-shrink:0")));
+    // At 97px a chat is its picture, so the notice is reduced to its icon at the
+    // size an avatar is drawn and centred where one sits, rather than showing
+    // fragments of a sentence beside it. The words are not lost — the hover
+    // preview carries the whole notice, and the clone drops the attribute, so
+    // none of these rules reach it.
+    //
+    // The wrapper has to grow with the icon or the layout still reserves the
+    // small box for it, and it is matched by :has() because every class here is
+    // generated. Nothing inside may clip, or the grown icon is cut back to the
+    // box it outgrew; the notice's own box is where the clipping belongs.
+    QVERIFY(on.contains(QLatin1String(
+        "[data-whatly-banner] svg{width:48px!important;height:48px!important}")));
+    QVERIFY(on.contains(QLatin1String("[data-whatly-banner] *:has(>svg)")));
+    QVERIFY(on.contains(QLatin1String("overflow:visible!important")));
+    // The sentences sit as bare text inside the bar, where no selector reaches
+    // them, so they go by font-size on whatever holds them.
+    QVERIFY(on.contains(QLatin1String("font-size:0!important")));
     // Matched by the name WhatsApp chose for the bar, not by the generated
     // class names next to it on the same element.
     QVERIFY(on.contains(QLatin1String("[data-testid=\"chat-butterbar\"]")));
