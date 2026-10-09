@@ -116,6 +116,35 @@ static const char kCollapseCss[] =
     // and a button, with only an icon left in it, puts that icon off to one
     // side. The vertical padding is left alone: it is what gives the cell the
     // height of a row.
+    // Nothing is drawn before it has been looked at. Everything below keys on
+    // the tag, and the tag is written by a pass that runs once a second, so
+    // between WhatsApp filling the bar and the next tick there is up to a
+    // second in which the notice is in the page and carries no tag at all —
+    // and an untagged notice in a 97px column is precisely the ladder of single
+    // letters this exists to prevent. It flashed the old defect, briefly, every
+    // single time a notice arrived.
+    //
+    // Asked as a question about the bar itself, because remembering which bars
+    // have been looked at does not work: WHATSAPP REFILLS THE SAME BAR. The
+    // shell has sat in the page since the last update was applied, so any mark
+    // put on it is already there when the contents arrive, and the window this
+    // closes is exactly the window in which the contents are new and the mark
+    // is old. A bar that holds something and has not been claimed is a bar the
+    // strip has not got to yet, whenever it was first seen.
+    //
+    // Holding something is the whole test, and the spent shell is why: emptied
+    // when its update was applied, it has no element children at all, so it is
+    // never caught here and never becomes a phantom cell above the chat list.
+    //
+    // Scoped inside #side so it cannot reach the hover preview, which is a
+    // clone of this same markup parked on document.body. The clone has the tag
+    // taken off it, which would otherwise be all this rule needs to hide it.
+    //
+    // The name unquoted, which CSS allows for a value that is a plain
+    // identifier: this stylesheet is handed to the page inside a JavaScript
+    // string, where a quote of its own would arrive escaped.
+    "#side [data-testid=chat-butterbar]:has(*):not([data-whatly-banner])"
+    "{display:none!important}"
     "[data-whatly-banner]{overflow:hidden!important;display:flex!important;"
     "align-items:center!important;justify-content:center!important;"
     "gap:0!important;padding-left:0!important;padding-right:0!important}"

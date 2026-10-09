@@ -1233,6 +1233,20 @@ private slots:
     // element in the page.
     QVERIFY(on.contains(QLatin1String(
         "[data-whatly-banner] *:has(>svg)~*{display:none!important}")));
+    // Everything above keys on the tag, and the tag is written once a second,
+    // so a notice is in the page untagged for up to a second after WhatsApp
+    // fills the bar — long enough to flash the ladder it replaces. Asked of the
+    // bar rather than of a memory of it, because WhatsApp refills the same bar:
+    // a mark put on the shell is already there when the contents arrive, which
+    // is precisely the window this closes. Holding something is the test, so
+    // the spent shell — emptied, with no element children — is never caught and
+    // never becomes a phantom cell. Scoped inside #side so it cannot reach the
+    // preview, which is this markup cloned onto document.body with the tag
+    // removed. Unquoted, because the CSS travels inside a JavaScript string.
+    QVERIFY(on.contains(QLatin1String(
+        "#side [data-testid=chat-butterbar]:has(*):not([data-whatly-banner])"
+        "{display:none!important}")));
+    QVERIFY(!on.contains(QLatin1String("data-whatly-seen")));
     // The sentences sit as bare text inside the bar, where no selector reaches
     // them, so they go by font-size on whatever holds them.
     QVERIFY(on.contains(QLatin1String("font-size:0!important")));
