@@ -169,6 +169,25 @@ static const char kCollapseCss[] =
     // this week.
     "[data-whatly-banner] svg{width:48px!important;height:48px!important}"
     "[data-whatly-banner] *:has(>svg){width:48px!important;height:48px!important}"
+    // Collapsed to nothing is not collapsed to no width. Measured on the real
+    // notice, the block holding the sentences and the button still occupied
+    // 6.4px of the flex line with its text at font-size 0, which put the icon
+    // half of that — three pixels — left of centre and left a sliver of the
+    // notice's own background showing beside it. Taking that block out of the
+    // layout altogether makes the line exactly as wide as the icon, so the
+    // notice draws as a 48px square with the icon centred in it.
+    //
+    // Taken as what follows the icon's own box, reusing the match above rather
+    // than naming anything: in a notice the icon comes first and the words come
+    // after it. A notice built the other way round keeps its words and falls
+    // back to the clipping above, which is what the strip did before this and
+    // is a safe thing to fall back to. Matching on a sibling is also the cheap
+    // way to ask: the question is put to the elements beside an icon, not to
+    // every element in the page on every style pass.
+    //
+    // The button goes out of the layout, not out of the markup, so the click
+    // carried to it below still finds it.
+    "[data-whatly-banner] *:has(>svg)~*{display:none!important}"
     // The filter pills (All / Unread / Favourites / more) are a horizontal row
     // that a 97px column simply guillotines. Fold them into a 2x2 grid of round
     // buttons instead, each labelled with the first letter of its own caption —

@@ -1226,6 +1226,13 @@ private slots:
         "[data-whatly-banner] svg{width:48px!important;height:48px!important}")));
     QVERIFY(on.contains(QLatin1String("[data-whatly-banner] *:has(>svg)")));
     QVERIFY(on.contains(QLatin1String("overflow:visible!important")));
+    // Text at font-size 0 still held 6.4px of the flex line on the real notice,
+    // which is what put the icon three pixels left of centre. Taking what
+    // follows the icon out of the layout leaves a line exactly as wide as the
+    // icon, and asks the question of an icon's siblings rather than of every
+    // element in the page.
+    QVERIFY(on.contains(QLatin1String(
+        "[data-whatly-banner] *:has(>svg)~*{display:none!important}")));
     // The sentences sit as bare text inside the bar, where no selector reaches
     // them, so they go by font-size on whatever holds them.
     QVERIFY(on.contains(QLatin1String("font-size:0!important")));
