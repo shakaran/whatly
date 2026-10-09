@@ -103,7 +103,51 @@ static const char kCollapseCss[] =
     // row's are, and the whole notice goes in the hover preview. Nothing is
     // hidden and no size is imposed, so the notice keeps its own background and
     // still reads as not-a-chat.
-    "[data-whatly-banner]{overflow:hidden!important}"
+    //
+    // At 97px a chat IS its picture: the row's name and message are cut off and
+    // the avatar is what survives. Fragments of a sentence are not the
+    // equivalent of a name — "Refre" over "A nev" is litter — so the notice is
+    // reduced to its icon, drawn at the size an avatar is drawn and centred
+    // where one sits. Nothing is lost by it: the whole notice, words and all, is
+    // what the hover preview shows, and that is where it is read.
+    //
+    // Centred means centred in the COLUMN, so the notice's own horizontal
+    // padding goes with the words it was there for. A bar padded for a sentence
+    // and a button, with only an icon left in it, puts that icon off to one
+    // side. The vertical padding is left alone: it is what gives the cell the
+    // height of a row.
+    // Nothing is drawn before it has been looked at. Everything below keys on
+    // the tag, and the tag is written by a pass that runs once a second, so
+    // between WhatsApp filling the bar and the next tick there is up to a
+    // second in which the notice is in the page and carries no tag at all —
+    // and an untagged notice in a 97px column is precisely the ladder of single
+    // letters this exists to prevent. It flashed the old defect, briefly, every
+    // single time a notice arrived.
+    //
+    // Asked as a question about the bar itself, because remembering which bars
+    // have been looked at does not work: WHATSAPP REFILLS THE SAME BAR. The
+    // shell has sat in the page since the last update was applied, so any mark
+    // put on it is already there when the contents arrive, and the window this
+    // closes is exactly the window in which the contents are new and the mark
+    // is old. A bar that holds something and has not been claimed is a bar the
+    // strip has not got to yet, whenever it was first seen.
+    //
+    // Holding something is the whole test, and the spent shell is why: emptied
+    // when its update was applied, it has no element children at all, so it is
+    // never caught here and never becomes a phantom cell above the chat list.
+    //
+    // Scoped inside #side so it cannot reach the hover preview, which is a
+    // clone of this same markup parked on document.body. The clone has the tag
+    // taken off it, which would otherwise be all this rule needs to hide it.
+    //
+    // The name unquoted, which CSS allows for a value that is a plain
+    // identifier: this stylesheet is handed to the page inside a JavaScript
+    // string, where a quote of its own would arrive escaped.
+    "#side [data-testid=chat-butterbar]:has(*):not([data-whatly-banner])"
+    "{display:none!important}"
+    "[data-whatly-banner]{overflow:hidden!important;display:flex!important;"
+    "align-items:center!important;justify-content:center!important;"
+    "gap:0!important;padding-left:0!important;padding-right:0!important}"
     "[data-whatly-banner],[data-whatly-banner] *{cursor:pointer!important}"
     // The rule that does the actual work; everything else here follows from it.
     // The notice's own box is named as well as its descendants: the capture
@@ -112,8 +156,67 @@ static const char kCollapseCss[] =
     // set on whatever holds it.
     // The preview is a clone and would inherit this and show one clipped line,
     // so show() takes the attribute off the clone.
+    // The words go by font-size rather than by display:none, because the
+    // sentences sit as bare text directly inside the bar and a text node has no
+    // element of its own for a selector to reach — the same reason the notice's
+    // own box is named here alongside its descendants. nowrap stays as cheap
+    // insurance, in case a descendant ever carries a size of its own.
     "[data-whatly-banner],[data-whatly-banner] *{white-space:nowrap!important;"
-    "overflow:hidden!important;text-overflow:clip!important}"
+    "font-size:0!important;text-overflow:clip!important}"
+    // Clipping alone left the icon out: at 97px the notice showed two cropped
+    // sentences and no picture, while the hover preview — the same markup,
+    // cloned and laid out at the list's natural width — drew it whole. That
+    // difference is the diagnosis. Nothing is hidden; the notice's contents sit
+    // on a flex line, and a flex item gives up width in proportion to its own
+    // size, so the icon, the smallest thing on that line, is squeezed away to
+    // nothing while two sentences keep the column.
+    //
+    // Pinning the items ends the squeeze: the icon keeps its natural size where
+    // an avatar would sit, and the words overflow instead and are clipped by the
+    // rule above, which is what a row does and what this was always meant to
+    // look like. The preview is unaffected either way — the clone is not inside
+    // anything carrying the attribute, so none of these rules reach it.
+    //
+    // Nothing inside may clip, either: the icon is grown past the box its own
+    // wrapper reserves for it, and a wrapper that clipped would cut it straight
+    // back down. The notice's own box keeps the result inside the strip, which
+    // is the one place the clipping is needed.
+    // The same goes for every gap, margin and padding inside it. They are spacing
+    // between an icon, a sentence and a button; with the sentence and the button
+    // gone to nothing, they are all that is left to push the icon off centre —
+    // measured at about ten pixels left of centre from one `gap` alone.
+    "[data-whatly-banner] *{flex-shrink:0!important;overflow:visible!important;"
+    "justify-content:center!important;gap:0!important;margin:0!important;"
+    "padding:0!important}"
+    // The icon at the size an avatar is drawn, 48px, which is WhatsApp's own
+    // avatar size and the measurement the strip width is built from.
+    //
+    // Its wrapper has to grow with it or the layout still reserves the small
+    // box, and the wrapper is matched through :has() rather than by name because
+    // every class here is generated afresh with each deploy: the one element
+    // that directly holds an svg is the icon's own box, whatever it is called
+    // this week.
+    "[data-whatly-banner] svg{width:48px!important;height:48px!important}"
+    "[data-whatly-banner] *:has(>svg){width:48px!important;height:48px!important}"
+    // Collapsed to nothing is not collapsed to no width. Measured on the real
+    // notice, the block holding the sentences and the button still occupied
+    // 6.4px of the flex line with its text at font-size 0, which put the icon
+    // half of that — three pixels — left of centre and left a sliver of the
+    // notice's own background showing beside it. Taking that block out of the
+    // layout altogether makes the line exactly as wide as the icon, so the
+    // notice draws as a 48px square with the icon centred in it.
+    //
+    // Taken as what follows the icon's own box, reusing the match above rather
+    // than naming anything: in a notice the icon comes first and the words come
+    // after it. A notice built the other way round keeps its words and falls
+    // back to the clipping above, which is what the strip did before this and
+    // is a safe thing to fall back to. Matching on a sibling is also the cheap
+    // way to ask: the question is put to the elements beside an icon, not to
+    // every element in the page on every style pass.
+    //
+    // The button goes out of the layout, not out of the markup, so the click
+    // carried to it below still finds it.
+    "[data-whatly-banner] *:has(>svg)~*{display:none!important}"
     // The filter pills (All / Unread / Favourites / more) are a horizontal row
     // that a 97px column simply guillotines. Fold them into a 2x2 grid of round
     // buttons instead, each labelled with the first letter of its own caption —

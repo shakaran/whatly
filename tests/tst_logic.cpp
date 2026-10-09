@@ -1205,6 +1205,51 @@ private slots:
     // bare text, which `*` cannot reach.
     QVERIFY(on.contains(QLatin1String(
         "[data-whatly-banner],[data-whatly-banner] *{white-space:nowrap")));
+    // Clipping is not enough on its own. The notice's contents sit on a flex
+    // line, and a flex item gives up width in proportion to its own size, so at
+    // 97px the icon — the smallest thing on that line — was squeezed away to
+    // nothing and the strip showed two cropped sentences and no picture, while
+    // the hover preview drew the same markup whole because it is laid out at the
+    // list's natural width. Pinning the items is what keeps the icon.
+    QVERIFY(on.contains(QLatin1String("[data-whatly-banner] *{flex-shrink:0")));
+    // At 97px a chat is its picture, so the notice is reduced to its icon at the
+    // size an avatar is drawn and centred where one sits, rather than showing
+    // fragments of a sentence beside it. The words are not lost — the hover
+    // preview carries the whole notice, and the clone drops the attribute, so
+    // none of these rules reach it.
+    //
+    // The wrapper has to grow with the icon or the layout still reserves the
+    // small box for it, and it is matched by :has() because every class here is
+    // generated. Nothing inside may clip, or the grown icon is cut back to the
+    // box it outgrew; the notice's own box is where the clipping belongs.
+    QVERIFY(on.contains(QLatin1String(
+        "[data-whatly-banner] svg{width:48px!important;height:48px!important}")));
+    QVERIFY(on.contains(QLatin1String("[data-whatly-banner] *:has(>svg)")));
+    QVERIFY(on.contains(QLatin1String("overflow:visible!important")));
+    // Text at font-size 0 still held 6.4px of the flex line on the real notice,
+    // which is what put the icon three pixels left of centre. Taking what
+    // follows the icon out of the layout leaves a line exactly as wide as the
+    // icon, and asks the question of an icon's siblings rather than of every
+    // element in the page.
+    QVERIFY(on.contains(QLatin1String(
+        "[data-whatly-banner] *:has(>svg)~*{display:none!important}")));
+    // Everything above keys on the tag, and the tag is written once a second,
+    // so a notice is in the page untagged for up to a second after WhatsApp
+    // fills the bar — long enough to flash the ladder it replaces. Asked of the
+    // bar rather than of a memory of it, because WhatsApp refills the same bar:
+    // a mark put on the shell is already there when the contents arrive, which
+    // is precisely the window this closes. Holding something is the test, so
+    // the spent shell — emptied, with no element children — is never caught and
+    // never becomes a phantom cell. Scoped inside #side so it cannot reach the
+    // preview, which is this markup cloned onto document.body with the tag
+    // removed. Unquoted, because the CSS travels inside a JavaScript string.
+    QVERIFY(on.contains(QLatin1String(
+        "#side [data-testid=chat-butterbar]:has(*):not([data-whatly-banner])"
+        "{display:none!important}")));
+    QVERIFY(!on.contains(QLatin1String("data-whatly-seen")));
+    // The sentences sit as bare text inside the bar, where no selector reaches
+    // them, so they go by font-size on whatever holds them.
+    QVERIFY(on.contains(QLatin1String("font-size:0!important")));
     // Matched by the name WhatsApp chose for the bar, not by the generated
     // class names next to it on the same element.
     QVERIFY(on.contains(QLatin1String("[data-testid=\"chat-butterbar\"]")));
