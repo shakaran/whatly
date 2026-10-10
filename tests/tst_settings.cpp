@@ -497,15 +497,6 @@ private slots:
     QVERIFY(pageBar->value() > crossing);
   }
 
-  // Dogfood round 18, two findings against the spell-check picker.
-  //
-  // One: the language box shows a summary of what is ticked, but which language is
-  // being checked can be changed from the tray menu or the keyboard — and an open
-  // Settings page went on showing "3 languages" while one of the three was doing
-  // the work, because it only re-read that line when the picker itself was used.
-  //
-  // Two: the box is editable so it can show that summary, which is exactly why a
-  // click on it did nothing — an editable combo opens its list from the arrow alone.
   // English is the language the interface is written in, so there is no en.ts to
   // compile and no en.qm for the picker to list — which left it the one language
   // that could not be chosen. A system already in English gets it from "System
@@ -541,6 +532,15 @@ private slots:
     QVERIFY(!QFile::exists(QStringLiteral(":/i18n/en_US.qm")));
   }
 
+  // Dogfood round 18, two findings against the spell-check picker.
+  //
+  // One: the language box shows a summary of what is ticked, but which language is
+  // being checked can be changed from the tray menu or the keyboard — and an open
+  // Settings page went on showing "3 languages" while one of the three was doing
+  // the work, because it only re-read that line when the picker itself was used.
+  //
+  // Two: the box is editable so it can show that summary, which is exactly why a
+  // click on it did nothing — an editable combo opens its list from the arrow alone.
   void languageBoxFollowsTheFocusAndOpensOnClick() {
     QTemporaryDir dicts;
     QVERIFY(dicts.isValid());
