@@ -1,6 +1,8 @@
 ## Unreleased
 
-- **English can be chosen as the interface language.** The picker is built by listing the compiled translations, and English is the language the interface is written in, so there is no catalogue for it and it never appeared — thirty languages, none of them English. A system already set to English got it through "System default", but on a system in any other language there was no way to ask for English at all, and no way back out of a translation once one had been picked. English now appears in the list, in its own place in it, and selecting it simply loads no translation, which is what shows the interface in the language it is written in.
+## 7.6.6 (2026-10-10)
+
+- **English can be chosen as the interface language.** The picker is built by listing the compiled translations, and English is the language the interface is written in, so there is no catalogue for it and it never appeared: thirty languages, none of them English. A system already set to English got it through "System default", but on a system in any other language there was no way to ask for English at all, and no way back out of a translation once one had been picked. English now appears in the list, in its own place in it, and selecting it simply loads no translation, which is what shows the interface in the language it is written in. Thanks to gbmaizol (#120).
 
 ## 7.6.5 (2026-09-26)
 

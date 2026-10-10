@@ -1,3 +1,11 @@
+whatly (7.6.6) unstable; urgency=medium
+
+  * English can be chosen as the interface language. It was missing from the
+    picker, so a system in another language had no way to select it (#120,
+    by gbmaizol).
+
+ -- Ángel Guzmán Maeso <angel@guzmanmaeso.com>  Sat, 10 Oct 2026 12:00:00 +0200
+
 whatly (7.6.5) unstable; urgency=medium
 
   * WhatsApp's "Refresh to update" notice is handled in the collapsed chat list

@@ -108,6 +108,13 @@
   <content_rating type="oars-1.0" />
 
   <releases>
+    <release version="7.6.6" date="2026-10-10">
+      <description>
+        <ul>
+          <li>English can be chosen as the interface language, also on a system set to another language (#120)</li>
+        </ul>
+      </description>
+    </release>
     <release version="7.6.5" date="2026-09-26">
       <description>
         <ul>

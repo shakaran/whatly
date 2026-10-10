@@ -1,5 +1,5 @@
 Name:           whatly
-Version:        7.6.5
+Version:        7.6.6
 # Reference system-Qt spec for downstream packagers; the release itself builds
 # the native rpm from packaging/obs/whatly.spec. Release kept at 0 to match it
 # (both are the system-Qt "whatly"), so this never looks newer than, or collides
@@ -65,6 +65,10 @@ not affiliated with WhatsApp or Meta.
 # %%{_datadir}/whatly/ back here if you do.
 
 %changelog
+* Sat Oct 10 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.6.6-1
+- English can be chosen as the interface language; it was missing from the
+  picker (#120, by gbmaizol).
+
 * Sat Sep 26 2026 Ángel Guzmán Maeso <angel@guzmanmaeso.com> - 7.6.5-1
 - WhatsApp's "Refresh to update" notice is handled in the collapsed chat list
   whenever it appears, not only after a manual expand and collapse; the filter
