@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ينسخ معلومات التصحيح أدناه إلى الحافظة ويفتح متتبّع المشكلات، حتى يمكن لصقها مباشرة في التقرير.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>الإبلاغ عن خطأ</translation>
     </message>
@@ -211,19 +211,24 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>صغير</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>متوسط</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>كبير</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>تجاهل</translation>
     </message>
 </context>
 <context>
@@ -338,41 +343,6 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>إغلاق</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">تعذّر جلب قائمة القواميس القابلة للتنزيل: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">فشل تنزيل %1: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">جارٍ تحميل القواميس المتاحة…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">لا توجد قواميس متاحة.</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">مثبَّت</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">حذف</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">مثبَّت (مضمَّن)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">تنزيل</translation>
     </message>
 </context>
 <context>
@@ -603,10 +573,6 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../mainwindow_webengine.cpp" line="1231"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>لا يستطيع هذا الإصدار إرسال مقاطع فيديو H.264/MP4: فقد بُني محرك المتصفح فيه بدون البرامج المرمّزة الاحتكارية. أما الصور ومقاطع فيديو WebM/VP9 فتعمل. لإرسال MP4، استخدم إصدار Flatpak الذي بُني محركه مزوّدًا بها. (انقر للإغلاق.)</translation>
-    </message>
-    <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">هذه النسخة لا يمكنها إرسال مقاطع H.264/MP4: بُني محرك المتصفح دون الترميزات المملوكة. الصور ومقاطع WebM/VP9 تعمل؛ لـ MP4 استخدم حزمة توزيعة/أصلية مبنية بالترميزات. (انقر للإغلاق.)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
@@ -1446,14 +1412,6 @@ Open Settings now?</source>
         <translation>استعادة</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">رسائل</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">رسالة</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>إضافة حساب</translation>
@@ -1876,11 +1834,11 @@ Please setup the password in the Settings first.</source>
         <translation>لا شيء لنسخه احتياطيًا</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>تعذّر إنشاء %1</translation>
     </message>
@@ -2150,17 +2108,17 @@ Please setup the password in the Settings first.</source>
         <translation>لم تُرجع خدمة الترجمة أي نص.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>لم يتم تكوين نقطة نهاية للترجمة (الإعدادات → الترجمة).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>لا يوجد شيء لترجمته.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>فشلت الترجمة.</translation>
     </message>
@@ -2510,14 +2468,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="462"/>
         <source>e.g. Noisy group</source>
         <translation>مثل: مجموعة صاخبة</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">تعليق الحسابات غير النشطة</translation>
-    </message>
-    <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">يوفّر الذاكرة بتعليق الحسابات التي لا تعرضها. الحساب المُعلَّق لا يستقبل الرسائل حتى تعود إليه. الإعدادات ذات الحساب الواحد لا تتأثر.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2133"/>
@@ -3763,10 +3713,6 @@ Please setup the password in the Settings first.</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;يضيف أزرار التصغير / إعادة التعيين / التكبير إلى الشريط الجانبي لـ WhatsApp، لتغيير حجم الصفحة مباشرةً دون فتح الإعدادات.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">الأداء والخصوصية (يتطلب إعادة تشغيل)</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2184"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>دع Whatly يرسم حدود النافذة وشريط عنوانها بدلاً من النظام، حتى يتبعا سمة Whatly الخاصة. هذا وحده يغيّر مظهرهما فقط؛ فعّل أيضًا &quot;إخفاء شريط العنوان&quot; للتخلص من صف العنوان بالكامل. يُطبَّق بعد إعادة التشغيل.</translation>
@@ -4109,10 +4055,6 @@ Please setup the password in the Settings first.</source>
         <translation>المحادثة</translation>
     </message>
     <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">قواميس التدقيق الإملائي</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.cpp" line="683"/>
         <source>Privacy &amp; Lock</source>
         <translation>الخصوصية والقفل</translation>
@@ -4223,14 +4165,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="1890"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>تم العثور على Ollama (%1 نماذج مثبّتة).</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">تنزيل</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">حدّد لغة واحدة أو أكثر للتحقق من التدقيق الإملائي بها.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

@@ -63,6 +63,16 @@ static const char kCollapseCss[] =
     "min-width:%1!important;max-width:%1!important}"
     "#side,#pane-side{overflow-x:hidden!important}"
     "#pane-side [role=\"row\"]{overflow:hidden!important}"
+    // WhatsApp's own footer at the end of the list, which says the messages
+    // are end-to-end encrypted and links to an explainer. It is not a notice
+    // and it offers nothing to put it away: no control, no cross. At 97px it
+    // wraps its sentence into a block of 12px text 57px wide below the last
+    // chat, where it cannot be read and cannot be dismissed. Out of the
+    // collapsed layout, and back the moment the list is expanded, which is
+    // where there is room to read it. Named by the id WhatsApp chose for it,
+    // as the butterbar rules and the pill folding already are, so a renamed
+    // id stops matching and the footer simply comes back.
+    "#pane-side [data-testid=chatlist-e2e-message]{display:none!important}"
     // The unread count, put back. WhatsApp's own badge sits at the right-hand end
     // of a full-width row, so a 97px column cuts it off — and losing it is losing
     // the one thing the collapsed list most needs to tell you. Redrawn as a pill
@@ -155,6 +165,7 @@ static const char kCollapseCss[] =
     ":not([data-whatly-passed]){display:none!important}"
     "[data-whatly-banner]{overflow:hidden!important;display:flex!important;"
     "align-items:center!important;justify-content:center!important;"
+    "position:relative!important;"
     "gap:0!important;padding-left:0!important;padding-right:0!important}"
     "[data-whatly-banner],[data-whatly-banner] *{cursor:pointer!important}"
     // The rule that does the actual work; everything else here follows from it.
@@ -200,12 +211,15 @@ static const char kCollapseCss[] =
     // avatar size and the measurement the strip width is built from.
     //
     // Its wrapper has to grow with it or the layout still reserves the small
-    // box, and the wrapper is matched through :has() rather than by name because
-    // every class here is generated afresh with each deploy: the one element
-    // that directly holds an svg is the icon's own box, whatever it is called
-    // this week.
-    "[data-whatly-banner] svg{width:48px!important;height:48px!important}"
-    "[data-whatly-banner] *:has(>svg){width:48px!important;height:48px!important}"
+    // box. The wrapper is named by tagBanner() rather than matched through
+    // :has(>svg), because every element that directly holds an svg answers to
+    // that — a dismiss cross as readily as the picture — and sizing them all
+    // drew the cross at 48px beside, or instead of, the notice itself.
+    "[data-whatly-banner] [data-whatly-icon]{width:48px!important;"
+    "height:48px!important}"
+    "[data-whatly-banner] [data-whatly-icon]>svg,"
+    "[data-whatly-banner] [data-whatly-icon]>img{width:100%!important;"
+    "height:100%!important}"
     // Collapsed to nothing is not collapsed to no width. Measured on the real
     // notice, the block holding the sentences and the button still occupied
     // 6.4px of the flex line with its text at font-size 0, which put the icon
@@ -214,8 +228,8 @@ static const char kCollapseCss[] =
     // layout altogether makes the line exactly as wide as the icon, so the
     // notice draws as a 48px square with the icon centred in it.
     //
-    // Taken as what follows the icon's own box, reusing the match above rather
-    // than naming anything: in a notice the icon comes first and the words come
+    // Taken as what follows the icon's own box, and what follows each step on
+    // the way down to it: in a notice the icon comes first and the words come
     // after it. A notice built the other way round keeps its words and falls
     // back to the clipping above, which is what the strip did before this and
     // is a safe thing to fall back to. Matching on a sibling is also the cheap
@@ -224,7 +238,46 @@ static const char kCollapseCss[] =
     //
     // The button goes out of the layout, not out of the markup, so the click
     // carried to it below still finds it.
-    "[data-whatly-banner] *:has(>svg)~*{display:none!important}"
+    "[data-whatly-banner] [data-whatly-icon]~*,"
+    "[data-whatly-banner] [data-whatly-icon-path]~*{display:none!important}"
+    // The dismiss cross, which WhatsApp sets against the notice's own box: a
+    // little in from the right and centred down the side. Against a bar as wide
+    // as its sentences that reads as the top-right corner; against a 48px
+    // square it lands over the middle of the picture, where a cross says the
+    // picture itself is wrong rather than that the notice can be put away.
+    // Back into the corner, and the centring transform with it — an offset from
+    // the middle of a box this small is most of the way across it.
+    //
+    // What is pinned is the box WhatsApp itself positions, not the control
+    // inside it: the control is a 40px hit area with a 13px glyph centred in
+    // it, so pinning the control alone still left the glyph a third of the way
+    // into the picture — about where it already was. The box is sized down to a
+    // corner badge, and the chain inside it made to fill that box, because the
+    // glyph is centred by flex rows that otherwise keep their original width
+    // and push it straight back off the corner. The rows inside the svg are
+    // left alone: <title> and <desc> are never rendered, and a display of
+    // block would ask for them to be.
+    //
+    // Clipped to that box, because filling it is asked of every element in
+    // the chain and one of them is an empty spacer beside the picture rather
+    // than above it: given a size it reached down over the picture, where it
+    // drew nothing but still answered the pointer — and being inside the
+    // control, a click there put the notice away. Clipping takes it out of
+    // hit-testing as well as out of sight.
+    "[data-whatly-banner] [data-whatly-dismiss]{position:absolute!important;"
+    "top:0!important;right:0!important;left:auto!important;"
+    "bottom:auto!important;transform:none!important;width:18px!important;"
+    "height:18px!important;overflow:hidden!important}"
+    "[data-whatly-banner] [data-whatly-dismiss] *:not(svg *)"
+    "{display:block!important;width:100%!important;height:100%!important}"
+    // WhatsApp names its icons with an SVG <title> ("ic-close"), and that is
+    // where the tooltip over the cross comes from: an svg's own <title> is
+    // nearer the pointer than a title attribute on anything above it, so
+    // labelling the control could never win while the picture was hoverable.
+    // Out of hit-testing it goes; the pointer then rests on the control, whose
+    // title the pass below sets, and a click lands on the control either way.
+    "[data-whatly-banner] [data-whatly-dismiss] svg"
+    "{pointer-events:none!important}"
     // The filter pills (All / Unread / Favourites / more) are a horizontal row
     // that a 97px column simply guillotines. Fold them into a 2x2 grid of round
     // buttons instead, each labelled with the first letter of its own caption —
@@ -309,6 +362,10 @@ static const char kScriptTemplate[] = R"JS(
     // from here rather than close over it. See the note on sync().
     window.__whatlyStripCss = __CSS__;
     window.__whatlyStripZoom = __ZOOM__;
+    // What the dismiss cross is called once the sentence beside it is gone.
+    // WhatsApp's own word for it is "Close", which on a bare cross over an icon
+    // reads as closing the window rather than putting one notice away.
+    var DISMISS = __DISMISS__;
     var el = document.getElementById('whatly-chatlist-strip');
 
     // Read each visible row's unread count into an attribute, which the
@@ -407,45 +464,287 @@ static const char kScriptTemplate[] = R"JS(
     // conditions that call prepare() are therefore never met — so the notice
     // stayed untagged and wrapped into the ladder of single letters this is
     // here to prevent, until an expand and a collapse happened to run prepare()
-    // again. Two querySelector calls and no layout read, which is what makes it
-    // cheap enough to run every tick where prepare(), measuring every div in
-    // the document, is not.
+    // again. The named routes are querySelector calls and no layout read; the
+    // sweep for a bar with no name at all measures, so it is asked only while
+    // the list is collapsed, which is the only state where anything wraps and
+    // the only state the result is used in. prepare(), which measures every div
+    // in the document, stays off the tick either way.
     //
-    // Idempotent on purpose: the attribute is written only when the answer
+    // Idempotent on purpose: an attribute is written only where the answer
     // changes, so running once a second does not mutate the page under
     // WhatsApp's own observers.
+    // A chat row, or anything inside one. The strip clips a row, so a row's own
+    // name and message wrap to one letter per line out of sight and measure
+    // exactly like an untreated notice. Refuses on exception too, because a
+    // guess here costs a chat its picture.
+    var inRow = function (el) {
+      try {
+        return !!(el && el.closest &&
+                  el.closest('[role="row"],[role="listitem"],[role="gridcell"],'
+                             + '[data-testid="cell-frame-container"]'));
+      } catch (e) { return true; }
+    };
+
+    // On the screen and actually drawn. A hidden copy of a bar measures like
+    // the bar, and acting on one draws a second icon beside the first and takes
+    // it away again on the next pass.
+    var drawn = function (el) {
+      try {
+        if (el.checkVisibility &&
+            !el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true }))
+          return false;
+        var r = el.getBoundingClientRect();
+        return r.width > 0 && r.height > 0 && r.bottom > 0 &&
+               r.top < (window.innerHeight || 900);
+      } catch (e) { return false; }
+    };
+
+    // The words a control actually shows. WhatsApp labels its icons with an SVG
+    // <title> — "ic-close" on the cross, "ic-sync" on the notice's own picture
+    // — and that text lands in textContent, where it reads as a caption. Both
+    // searches below ask whether a control has something written on it, so with
+    // textContent both answered yes for every control a notice has and both
+    // picked the wrong one: no cross was ever found, and the click carried to
+    // the icon went to the cross instead of to the notice's own button.
+    var words = function (el) {
+      var t = '';
+      try {
+        var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+        var n;
+        while ((n = w.nextNode())) {
+          var p = n.parentNode;
+          if (p && p.closest && p.closest('svg')) continue;
+          t += n.nodeValue;
+        }
+      } catch (e) { t = el.textContent || ''; }
+      return t.trim();
+    };
+
+    // The picture the notice is about, which is NOT simply the first element
+    // holding an svg: a dismiss cross holds one too and often comes first in
+    // document order. An icon inside a control is never the notice's own, and
+    // one is taken only when the notice has nothing else.
+    var noticeIcon = function (bar) {
+      var all = bar.querySelectorAll('*');
+      var spare = null;
+      for (var i = 0; i < all.length; i++) {
+        var kids = all[i].children;
+        for (var j = 0; j < kids.length; j++) {
+          var t = (kids[j].tagName || '').toLowerCase();
+          if (t !== 'svg' && t !== 'img') continue;
+          if (all[i].closest('button,[role="button"],a')) {
+            if (!spare) spare = all[i];
+            continue;
+          }
+          return all[i];
+        }
+      }
+      return spare;
+    };
+
+    // The control that puts the notice away: the one control it offers that
+    // carries a picture and no words. That is the same test the click carried
+    // to the icon uses to avoid it — a notice's action is the control with
+    // something written on it — read here from the other side.
+    // Never whatever is holding the notice's own picture, which noticeIcon()
+    // falls back to a control for when the notice has nothing else: that one
+    // carries a picture and no words too, and pinning it to the corner would
+    // move the very thing the strip draws the notice for.
+    var noticeDismiss = function (bar, icon) {
+      var acts = bar.querySelectorAll('button,[role="button"],a');
+      for (var i = 0; i < acts.length; i++) {
+        if (words(acts[i])) continue;
+        if (icon && acts[i].contains(icon)) continue;
+        if (acts[i].querySelector('svg,img,[data-icon]')) return acts[i];
+      }
+      return null;
+    };
+
+    // The top of the cross's own branch: the outermost element that holds the
+    // cross and not the picture. That is the one WhatsApp gives a position to,
+    // and so the one worth moving — the button below it is laid out in flow
+    // inside it and moving that alone leaves the branch sitting where it was.
+    var dismissBox = function (bar, ctl) {
+      var e = ctl;
+      while (e.parentElement && e.parentElement !== bar &&
+             !e.parentElement.hasAttribute('data-whatly-icon-path'))
+        e = e.parentElement;
+      return e;
+    };
+
+    // Forget which element was the picture, everywhere inside one bar.
+    var unname = function (bar) {
+      bar.querySelectorAll('[data-whatly-icon],[data-whatly-icon-path],'
+                           + '[data-whatly-dismiss]')
+         .forEach(function (m) {
+           m.removeAttribute('data-whatly-icon');
+           m.removeAttribute('data-whatly-icon-path');
+           m.removeAttribute('data-whatly-dismiss');
+         });
+    };
+
+    // Everything that makes a bar a notice. `loose` drops the one test a
+    // promotion below the list cannot pass: it renders its dismiss control
+    // under the pointer and holds none at rest. Only a bar recognised by its
+    // own wrapping is adopted that way, which is a far narrower door than the
+    // slot behind #pane-side. `kept` drops drawn() as well, for a bar that
+    // already carries the tag; see the end of tagBanner().
+    var noticeLike = function (el, pane, loose, kept) {
+      if (!el || el.nodeType !== 1 || el === pane) return false;
+      if (pane && el.contains(pane)) return false;
+      if (inRow(el)) return false;
+      if (el.querySelector('[role="row"],[role="grid"]')) return false;
+      if (el.querySelector('#all-filter,#additional-filters')) return false;
+      if (el.querySelector('input,textarea,[contenteditable="true"]')) return false;
+      // A notice HOLDS controls; it is not one. The list's own Archived button
+      // passes every other test on its own merits.
+      if (el.matches('button,[role="button"],a')) return false;
+      if (!el.querySelector('svg,[data-icon],img')) return false;
+      if (!loose && !el.querySelector('button,[role="button"],a')) return false;
+      var t = (el.textContent || '').trim();
+      // A word fits at 97px and needs nothing doing; a page of text is a
+      // container that happened to pass the tests above. Length is the whole
+      // test, so this holds in every interface language.
+      if (t.length < 12 || t.length > 400) return false;
+      return kept || drawn(el);
+    };
+
+    // A notice no name can reach, recognised by what the strip itself does to
+    // it: a sentence in a 97px column wraps to one letter per line, tall and
+    // narrow in a way nothing else in a chat list is. The first ancestor that
+    // also holds a picture is the bar — an icon and a sentence on one line is
+    // what a notice is — bounded by everything it must never swallow. A
+    // promotion below the list carries no testid, no id and no role at all, and
+    // is reachable no other way.
+    var wrappedNotices = function (side, pane) {
+      var out = [];
+      // Rows are most of what #side holds and nothing inside one is a notice,
+      // so each row is skipped whole rather than visited node by node, and so
+      // is a bar that is already tagged. What is left is the list's own
+      // scaffolding, and only that is measured.
+      var walk = document.createTreeWalker(side, NodeFilter.SHOW_ELEMENT, {
+        acceptNode: function (n) {
+          return n.hasAttribute('data-whatly-banner') || inRow(n)
+                     ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      var e;
+      while (out.length < 4 && (e = walk.nextNode())) {
+        var t = (e.textContent || '').trim();
+        if (t.length < 8) continue;
+        var r = e.getBoundingClientRect();
+        if (r.width > 40 || r.height < 60) continue;
+        if (!drawn(e)) continue;
+        var p = e.parentElement, d = 0;
+        while (p && p !== side && d < 20) {
+          if (p === pane || (pane && p.contains(pane))) { p = null; break; }
+          if (inRow(p) || p.querySelector('[role="row"],[role="grid"]')) {
+            p = null;
+            break;
+          }
+          if (p.getBoundingClientRect().width > 60 &&
+              p.querySelector('svg,[data-icon],img')) break;
+          p = p.parentElement;
+          d++;
+        }
+        if (p && p !== side && out.indexOf(p) < 0) out.push(p);
+      }
+      return out;
+    };
+
+)JS"
+// Another 16380-byte literal reached, and split for the same build constraint
+// as the one below. Adjacent literals are concatenated by the compiler, so the
+// script is unchanged by where the seams fall.
+R"JS(
     var tagBanner = function () {
       var side = document.querySelector('#side');
       if (!side) return;
       var pane = document.querySelector('#pane-side');
-      var note = side.querySelector('[data-testid="chat-butterbar"]');
+      var notes = [];
+      var add = function (el, loose) {
+        if (el && notes.indexOf(el) < 0 && noticeLike(el, pane, loose))
+          notes.push(el);
+      };
+      // EVERY bar carrying the name, not just the first. A list can hold two at
+      // once — an update notice and a sync notice — and the one left untagged
+      // was held back by the stylesheet or wrapped into the ladder of single
+      // letters this is here to prevent.
+      side.querySelectorAll('[data-testid="chat-butterbar"]')
+          .forEach(function (e) { add(e, false); });
       // The slot kept behind the name, for the day the name changes — and it
       // has to refuse the filter row, because that is what sits immediately
       // above the list when the bar is not in the page at all. A filter row
-      // passes every content test below on its own merits: buttons, an svg
-      // inside the "more" control, no row, and a caption over twelve characters
-      // in any language. It is named here by the ids WhatsApp chose for those
+      // passes every content test on its own merits: buttons, an svg inside the
+      // "more" control, no row, and a caption over twelve characters in any
+      // language. It is named here by the ids WhatsApp chose for those
       // controls, the same two the pill folding already relies on.
-      if (!note && pane) {
-        note = pane.previousElementSibling;
-        if (note && note.querySelector('#all-filter,#additional-filters'))
-          note = null;
-      }
-      var isNotice = !!note && !note.querySelector('[role="row"]') &&
-                     !!note.querySelector('svg,[data-icon]') &&
-                     !!note.querySelector('button,[role="button"],a');
-      if (isNotice) {
-        var bt = (note.textContent || '').trim();
-        // A word fits at 97px and needs nothing doing; a page of text is a
-        // container that happened to pass the tests above. Length is the
-        // whole test, so this holds in every interface language.
-        isNotice = bt.length >= 12 && bt.length <= 400;
-      }
+      if (pane) add(pane.previousElementSibling, false);
+      // And whatever is wrapping with no name at all, which is the only way to
+      // reach a promotion below the list. Collapsed only: expanded, nothing
+      // wraps, and this is the one pass here that reads layout.
+      try {
+        if (collapsed())
+          wrappedNotices(side, pane).forEach(function (e) { add(e, true); });
+      } catch (e) { /* never break the page */ }
+      // A bar keeps its tag only while it would still earn one. WhatsApp reuses
+      // its nodes: when a notice goes, its bar, or the container adopted around
+      // it, can be refilled with something else that has a picture, and a tag
+      // that outlived the notice would hide that content behind the rules on
+      // [data-whatly-icon]~* for as long as the list stays collapsed.
+      //
+      // So keeping a tag runs every content test that earning one runs, and
+      // leaves out only what a notice drawn as an icon can no longer show: its
+      // own wrapping, which an icon no longer does, so it can never be found
+      // that way a second time; a control at rest, which a promotion does not
+      // hold; and being on screen this very second, so a kept bar that is
+      // briefly out of sight is not dropped and drawn as the ladder of single
+      // letters until the next pass. Asking any of those of a kept bar has it
+      // tagged, drawn, dropped and tagged again, which reads on screen as an
+      // icon flickering once a second.
       document.querySelectorAll('[data-whatly-banner]').forEach(function (e) {
-        if (!isNotice || e !== note) e.removeAttribute('data-whatly-banner');
+        if (notes.indexOf(e) >= 0) return;
+        if (side.contains(e) && noticeLike(e, pane, true, true)) {
+          notes.push(e);
+          return;
+        }
+        e.removeAttribute('data-whatly-banner');
+        unname(e);
       });
-      if (isNotice && !note.hasAttribute('data-whatly-banner'))
-        note.setAttribute('data-whatly-banner', '1');
+      notes.forEach(function (e) {
+        if (!e.hasAttribute('data-whatly-banner'))
+          e.setAttribute('data-whatly-banner', '1');
+        var want = noticeIcon(e);
+        if (want && e.querySelector('[data-whatly-icon]') !== want) {
+          unname(e);
+          want.setAttribute('data-whatly-icon', '1');
+          // And the way down to it, so the words beside each step leave the
+          // layout along with the words beside the icon itself.
+          var p = want.parentElement;
+          while (p && p !== e) {
+            p.setAttribute('data-whatly-icon-path', '1');
+            p = p.parentElement;
+          }
+        }
+        // The cross is named for the same reason the picture is: where it sits
+        // is set against the notice's own box, and that box is now 48px square.
+        // After the naming above, which clears every mark in the bar when the
+        // picture changes.
+        var x = noticeDismiss(e, e.querySelector('[data-whatly-icon]'));
+        var box = x ? dismissBox(e, x) : null;
+        if (box !== e.querySelector('[data-whatly-dismiss]')) {
+          e.querySelectorAll('[data-whatly-dismiss]').forEach(function (m) {
+            m.removeAttribute('data-whatly-dismiss');
+          });
+          if (box) box.setAttribute('data-whatly-dismiss', '1');
+        }
+        // Written only where it is not already what it should be, so running
+        // once a second does not mutate the page under WhatsApp's observers.
+        if (x && DISMISS && x.getAttribute('title') !== DISMISS) {
+          x.setAttribute('title', DISMISS);
+          x.setAttribute('aria-label', DISMISS);
+        }
+      });
       // Every other bar in that slot is let through, so the stylesheet holds
       // one back only until this pass has looked at it. Marked only while it
       // holds something, because the spent shell is refilled where it sits: a
@@ -453,7 +752,7 @@ static const char kScriptTemplate[] = R"JS(
       // next notice arrives, which is the one moment it must not be.
       side.querySelectorAll('[data-testid="chat-butterbar"]')
           .forEach(function (e) {
-            var pass = !(isNotice && e === note) && !!e.firstElementChild;
+            var pass = notes.indexOf(e) < 0 && !!e.firstElementChild;
             if (pass === e.hasAttribute('data-whatly-passed')) return;
             if (pass) e.setAttribute('data-whatly-passed', '1');
             else e.removeAttribute('data-whatly-passed');
@@ -687,13 +986,11 @@ R"JS(
       var s = document.getElementById('whatly-chatlist-strip');
       return !!(s && s.textContent);
     };
-    // WhatsApp rebuilds this pane whenever the section changes, taking the tags
-    // with it. A timer costs one querySelector per tick and puts them back; a
-    // MutationObserver over a tree WhatsApp mutates continuously would measure
-    // the layout several times a second instead.
     // WhatsApp swaps the pane out when the section changes, taking the tags
-    // with it, and nothing tells us it happened. A timer costs a couple of
-    // querySelector calls per tick and puts everything back; a MutationObserver
+    // with it, and nothing tells us it happened. A timer puts everything back
+    // for a few querySelector calls per tick and, only while the list is
+    // collapsed, one sweep of #side for a notice with no name, which skips the
+    // rows and measures what is left; see wrappedNotices(). A MutationObserver
     // over a tree WhatsApp mutates continuously would measure the layout
     // several times a second instead — that cost 40% of a core once already.
     setInterval(function () {
@@ -780,8 +1077,11 @@ R"JS(
       var clone = row.cloneNode(true);
       clone.removeAttribute('id');
       // A notice is clipped to one nowrapped line in the strip; the preview is
-      // the place it gets read, so the clone must not inherit that.
+      // the place it gets read, so the clone must not inherit that — nor the
+      // naming of its picture, which would draw at 48px and take the sentence
+      // beside it out of the layout in the preview too.
       clone.removeAttribute('data-whatly-banner');
+      unname(clone);
       clone.style.zoom = zoom;
       // A chat row is built to hold exactly one line of preview, so its inner
       // blocks have fixed heights and centre what is in them. Let the message
@@ -864,8 +1164,9 @@ R"JS(
     // offers a bare icon button — a dismiss cross is the obvious one — would
     // otherwise have that picked simply for being first in the markup, and
     // dismissing an update prompt is the opposite of what the click meant. Falls
-    // back to the first control of any kind, so a notice whose only button is an
-    // icon still works.
+    // back to the first control that is not the dismiss cross, so a notice
+    // whose action is a bare icon still works, and a click on the picture still
+    // never puts the notice away.
     //
     // A click that already landed on a control is left entirely alone, so
     // WhatsApp never receives it twice.
@@ -879,9 +1180,13 @@ R"JS(
         var acts = note.querySelectorAll('button,[role="button"],a');
         var act = null;
         for (var ai = 0; ai < acts.length; ai++) {
-          if ((acts[ai].textContent || '').trim()) { act = acts[ai]; break; }
+          if (words(acts[ai])) { act = acts[ai]; break; }
         }
-        if (!act) act = acts[0];
+        // With no words to go by, the first control in the markup is as likely
+        // to be the cross as the action, and tagBanner() has named the cross.
+        for (ai = 0; !act && ai < acts.length; ai++) {
+          if (!acts[ai].closest('[data-whatly-dismiss]')) act = acts[ai];
+        }
         if (!act) return;
         ev.preventDefault();
         // Immediate, because the notice turns out to live in the strip ABOVE
@@ -1066,6 +1371,9 @@ QString scriptSource() {
   QString source = QString::fromUtf8(kScriptTemplate);
   source.replace(QLatin1String("__CSS__"), jsStringLiteral(css));
   source.replace(QLatin1String("__ZOOM__"), QLatin1String(zoom));
+  source.replace(
+      QLatin1String("__DISMISS__"),
+      jsStringLiteral(QCoreApplication::translate("ChatListStrip", "Dismiss")));
   return source;
 }
 

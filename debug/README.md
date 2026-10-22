@@ -84,6 +84,7 @@ cd debug
 npm install
 node scroll-harness.js                          # 14 assertions
 node banner-probe-harness.js update-banner-probe.js   # 7 assertions
+node strip-notice-harness.js ../src/chatliststrip.cpp # 25 assertions
 ```
 
 `jsdom@24` is pinned: jsdom 25+ pulls an ESM-only dependency that Node 20's
@@ -93,3 +94,12 @@ The scroll harness asserts, among other things, that every listener is passive,
 that a short flick records nothing, that backwards motion is caught with its
 distance, that an honest change of direction is *not* counted as a glitch, and
 that Ctrl+wheel starts no burst.
+
+The strip harness is the odd one out: it proves Whatly's own code rather than a
+probe. It reads the collapsed strip's script out of `src/chatliststrip.cpp`, runs
+it against a stand-in page and drives its one-second timer by hand. jsdom does no
+layout, so every box the script measures is given to it in a `data-box`
+attribute. It asserts which bar is tagged, that the tag goes once WhatsApp
+refills the bar with something that is not a notice, that a notice drawn as an
+icon, or briefly out of sight, keeps it, and that a click on a collapsed notice
+reaches the notice's own action and never its dismiss cross.

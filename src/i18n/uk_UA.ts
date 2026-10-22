@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Копіює наведену нижче налагоджувальну інформацію в буфер обміну та відкриває трекер задач, щоб її можна було одразу вставити у звіт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>Повідомити про помилку</translation>
     </message>
@@ -211,19 +211,24 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>Малий</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>Середній</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>Великий</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>Відхилити</translation>
     </message>
 </context>
 <context>
@@ -338,41 +343,6 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>Закрити</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">Не вдалося отримати список словників для завантаження: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">Не вдалося завантажити %1: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">Завантаження доступних словників…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">Немає доступних словників.</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">встановлено</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Видалити</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">встановлено (вбудований)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">Завантажити</translation>
     </message>
 </context>
 <context>
@@ -883,14 +853,6 @@ WebEngine не ініціалізовано.</translation>
         <translation>Відновити</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">повідомлень</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">повідомлення</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>Додати обліковий запис</translation>
@@ -1293,10 +1255,6 @@ Open Settings now?</source>
         <translation>Ця збірка не може надсилати відео H.264/MP4: її рушій браузера зібрано без пропрієтарних кодеків. Фото та відео WebM/VP9 працюють. Для MP4 скористайтеся версією Flatpak, рушій якої зібрано з ними. (Натисніть, щоб закрити.)</translation>
     </message>
     <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">Ця збірка не може надсилати відео H.264/MP4: її рушій браузера зібрано без пропрієтарних кодеків. Фото та відео WebM/VP9 працюють; для MP4 використовуйте пакет дистрибутива/нативний, зібраний із кодеками. (Натисніть, щоб закрити.)</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>Вбудований переклад вимкнено (увімкніть його в Налаштування → Переклад).</translation>
@@ -1668,11 +1626,11 @@ Open Settings now?</source>
         <translation>Немає чого резервувати</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>Не вдалося створити %1</translation>
     </message>
@@ -2060,17 +2018,17 @@ Please setup the password in the Settings first.</source>
         <translation>Служба перекладу не повернула текст.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Не налаштовано кінцеву точку перекладу (Налаштування → Переклад).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>Немає що перекладати.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>Не вдалося перекласти.</translation>
     </message>
@@ -3259,10 +3217,6 @@ Please setup the password in the Settings first.</source>
         <translation>Вивантажувати неактивні облікові записи з пам&apos;яті</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">Продуктивність і конфіденційність (потрібен перезапуск)</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="1645"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
         <translation>Тонке налаштування рушія рендерингу. Типові значення безпечні для більшості систем; якщо вікно порожнє, застосунок падає при запуску або зависає, спробуйте змінити ці параметри. Зміни застосовуються після перезапуску.</translation>
@@ -3586,14 +3540,6 @@ Please setup the password in the Settings first.</source>
         <translation>Як краї гліфів прив&apos;язуються до пікселів. Автоматичний режим слідує вашій системі; легший рівень може виправити важкий або нерівний текст.</translation>
     </message>
     <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">Звільняти пам&apos;ять, призупиняючи облікові записи, які ви не переглядаєте. Призупинений обліковий запис не отримує повідомлень, доки ви не повернетеся до нього. Налаштування з одним обліковим записом не зачіпаються.</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">Призупиняти неактивні облікові записи</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2133"/>
         <source>after</source>
         <translation>через</translation>
@@ -3875,10 +3821,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="576"/>
         <source>Chatting</source>
         <translation>Спілкування</translation>
-    </message>
-    <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">Словники перевірки орфографії</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="683"/>
@@ -4223,14 +4165,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="2761"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>Позначте мови для перевірки орфографії. Кожен рядок завантажує або видаляє свій словник.</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">завантажити</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">Позначте одну або кілька мов для перевірки орфографії.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

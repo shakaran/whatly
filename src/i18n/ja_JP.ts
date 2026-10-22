@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;下のデバッグ情報をクリップボードにコピーし、issue トラッカーを開くので、そのままレポートに貼り付けられます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>バグを報告</translation>
     </message>
@@ -211,19 +211,24 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>小</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>中</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>大</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>非表示</translation>
     </message>
 </context>
 <context>
@@ -338,41 +343,6 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>閉じる</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">ダウンロード可能な辞書の一覧を取得できませんでした: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">%1 のダウンロードに失敗しました: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">利用可能な辞書を読み込み中…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">利用可能な辞書はありません。</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">インストール済み</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">削除</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">インストール済み（同梱）</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">ダウンロード</translation>
     </message>
 </context>
 <context>
@@ -603,10 +573,6 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../mainwindow_webengine.cpp" line="1231"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>このビルドは H.264/MP4 動画を送信できません。ブラウザーエンジンが独自コーデックなしでビルドされているためです。写真と WebM/VP9 動画は利用できます。MP4 には、それらを含めてエンジンがビルドされている Flatpak をご利用ください。(クリックで閉じます。)</translation>
-    </message>
-    <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">このビルドは H.264/MP4 動画を送信できません。ブラウザーエンジンがプロプライエタリコーデックなしでビルドされています。写真と WebM/VP9 動画は使えます。MP4 にはコーデック入りのディストリ/ネイティブ版をご利用ください。（クリックで閉じる）</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
@@ -1446,14 +1412,6 @@ Open Settings now?</source>
         <translation>元に戻す</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">件のメッセージ</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">件のメッセージ</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>アカウントを追加</translation>
@@ -1876,11 +1834,11 @@ Please setup the password in the Settings first.</source>
         <translation>バックアップするものがありません</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>%1 を作成できません</translation>
     </message>
@@ -2150,17 +2108,17 @@ Please setup the password in the Settings first.</source>
         <translation>翻訳サービスがテキストを返しませんでした。</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>翻訳エンドポイントが設定されていません（設定 → 翻訳）。</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>翻訳するものがありません。</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>翻訳に失敗しました。</translation>
     </message>
@@ -2510,14 +2468,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="462"/>
         <source>e.g. Noisy group</source>
         <translation>例: うるさいグループ</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">非アクティブなアカウントを一時停止</translation>
-    </message>
-    <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">表示していないアカウントを一時停止してメモリを解放します。一時停止したアカウントは、切り替えて戻すまでメッセージを受信しません。単一アカウントの設定には影響しません。</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2133"/>
@@ -3763,10 +3713,6 @@ Please setup the password in the Settings first.</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;設定を開かずにページをその場で拡大縮小できるよう、WhatsApp のサイドバーに縮小 / リセット / 拡大ボタンを追加します。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">パフォーマンスとプライバシー（再起動が必要）</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2184"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>ウィンドウの枠とタイトルバーをシステムではなく Whatly に描画させ、Whatly 自身のテーマに合わせます。これだけでは見た目が変わるだけです。タイトル行を完全になくすには &quot;タイトルバーを非表示にする&quot; も併せてオンにしてください。再起動後に適用されます。</translation>
@@ -4109,10 +4055,6 @@ Please setup the password in the Settings first.</source>
         <translation>チャット</translation>
     </message>
     <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">スペルチェック辞書</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.cpp" line="683"/>
         <source>Privacy &amp; Lock</source>
         <translation>プライバシーとロック</translation>
@@ -4223,14 +4165,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="1890"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama を検出（%1 個のモデルがインストール済み）。</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">ダウンロード</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">スペルチェックに使用する言語を1つ以上選択してください。</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

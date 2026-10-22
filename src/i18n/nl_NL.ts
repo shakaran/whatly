@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kopieert de onderstaande foutopsporingsinformatie naar het klembord en opent de issue-tracker, zodat deze rechtstreeks in het rapport kan worden geplakt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>Een bug melden</translation>
     </message>
@@ -211,19 +211,24 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>Klein</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>Gemiddeld</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>Groot</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>Negeren</translation>
     </message>
 </context>
 <context>
@@ -338,41 +343,6 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>Sluiten</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">Kan de lijst met downloadbare woordenboeken niet ophalen: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">Downloaden van %1 mislukt: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">Beschikbare woordenboeken laden…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">Geen woordenboeken beschikbaar.</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">geïnstalleerd</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Verwijderen</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">geïnstalleerd (meegeleverd)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">Downloaden</translation>
     </message>
 </context>
 <context>
@@ -603,10 +573,6 @@ Wilt u de beveiligingscontrole negeren en doorgaan?   </translation>
         <location filename="../mainwindow_webengine.cpp" line="1231"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>Deze build kan geen H.264/MP4-video&apos;s verzenden: de browser-engine is gebouwd zonder de propriëtaire codecs. Foto&apos;s en WebM/VP9-video&apos;s werken wel. Gebruik voor MP4 de Flatpak, waarvan de engine mét die codecs is gebouwd. (Klik om te sluiten.)</translation>
-    </message>
-    <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">Deze build kan geen H.264/MP4-video&apos;s versturen: de browser-engine is gebouwd zonder de propriëtaire codecs. Foto&apos;s en WebM/VP9-video&apos;s werken; gebruik voor MP4 een distributie-/native pakket dat met de codecs is gebouwd. (Klik om te sluiten.)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
@@ -1446,14 +1412,6 @@ Instellingen nu openen?</translation>
         <translation>Herstellen</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">berichten</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">bericht</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>Account toevoegen</translation>
@@ -1876,11 +1834,11 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Niets om een back-up van te maken</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>Kan %1 niet aanmaken</translation>
     </message>
@@ -2150,17 +2108,17 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>De vertaaldienst gaf geen tekst terug.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Er is geen vertaal-endpoint ingesteld (Instellingen → Vertaling).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>Niets om te vertalen.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>Vertaling mislukt.</translation>
     </message>
@@ -2510,14 +2468,6 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <location filename="../settingswidget.ui" line="462"/>
         <source>e.g. Noisy group</source>
         <translation>bijv. Luidruchtige groep</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">Inactieve accounts opschorten</translation>
-    </message>
-    <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">Maakt geheugen vrij door accounts die je niet bekijkt op te schorten. Een opgeschort account ontvangt geen berichten tot je terugschakelt. Configuraties met één account worden niet beïnvloed.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2133"/>
@@ -3763,10 +3713,6 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voegt knoppen voor uitzoomen / herstellen / inzoomen toe aan de zijbalk van WhatsApp, om de pagina live te schalen zonder de Instellingen te openen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">Prestaties en privacy (herstart vereist)</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2184"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>Laat Whatly de rand en de titelbalk van het venster tekenen in plaats van het systeem, zodat ze het eigen thema van Whatly volgen. Op zichzelf verandert dit alleen hun uiterlijk; vink ook &quot;Titelbalk verbergen&quot; aan om de titelrij helemaal te verwijderen. Wordt van kracht na een herstart.</translation>
@@ -4109,10 +4055,6 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <translation>Chatten</translation>
     </message>
     <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">Spellingcontrolewoordenboeken</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.cpp" line="683"/>
         <source>Privacy &amp; Lock</source>
         <translation>Privacy en vergrendeling</translation>
@@ -4223,14 +4165,6 @@ Stel eerst het wachtwoord in bij de instellingen.</translation>
         <location filename="../settingswidget.cpp" line="1890"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama gevonden (%1 modellen geïnstalleerd).</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">downloaden</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">Vink een of meer talen aan voor de spellingcontrole.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

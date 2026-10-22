@@ -69,8 +69,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kopias la sencimigan informon sube al la tondujo kaj malfermas la cimlistigilon, por ke vi povu rekte alglui ĝin en la raporton.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>Raporti cimon</translation>
     </message>
@@ -216,19 +216,24 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>Malgranda</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>Meza</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>Granda</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>Forigi</translation>
     </message>
 </context>
 <context>
@@ -343,41 +348,6 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>Fermi</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">Ne eblis akiri la liston de elŝuteblaj vortaroj: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">Elŝuto de %1 malsukcesis: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">Ŝargado de disponeblaj vortaroj…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">Neniuj vortaroj disponeblas.</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">instalita</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Forigi</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">instalita (kunpakita)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">Elŝuti</translation>
     </message>
 </context>
 <context>
@@ -933,14 +903,6 @@ La retmotoro ne estas pravalorizita.</translation>
         <translation>Restarigi</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">mesaĝoj</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">mesaĝo</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>Aldoni konton</translation>
@@ -1265,10 +1227,6 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <location filename="../mainwindow_webengine.cpp" line="1077"/>
         <source>Waiting for network…</source>
         <translation>Atendado de la reto…</translation>
-    </message>
-    <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">Ĉi tiu muntaĵo ne povas sendi H.264/MP4-videojn: ĝia retumila motoro estis muntita sen la proprietaj kodekoj. Fotoj kaj WebM/VP9-videoj funkcias; por MP4 uzu distribuan/denaskan pakon muntitan kun la kodekoj. (Alklaku por forigi.)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1231"/>
@@ -1721,11 +1679,11 @@ Bonvolu unue agordi la pasvorton en la Agordoj.
         <translation>Nenio por sekurkopii</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>Ne eblas krei %1</translation>
     </message>
@@ -2158,17 +2116,17 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>La tradukservo redonis neniun tekston.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Neniu tradukservo agordita (Agordoj → Traduko).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>Nenio tradukebla.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>Traduko malsukcesis.</translation>
     </message>
@@ -3863,10 +3821,6 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <translation>Fenestro &amp;&amp; zomo</translation>
     </message>
     <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">Literumkontrolaj vortaroj</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.cpp" line="733"/>
         <source>Advanced</source>
         <translation>Fakula</translation>
@@ -4164,14 +4118,6 @@ Bonvolu unue agordi la pasvorton en la Agordoj.</translation>
         <location filename="../settingswidget.cpp" line="2761"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>Marku la lingvojn por literumkontrolo. Ĉiu vico elŝutas aŭ forigas sian vortaron.</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">elŝuti</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">Marku unu aŭ plurajn lingvojn por literumkontrolo.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

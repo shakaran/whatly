@@ -9,8 +9,8 @@
         <translation>ورژن: </translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>بگ رپورٹ کریں</translation>
     </message>
@@ -203,19 +203,24 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>چھوٹا</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>درمیانہ</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>بڑا</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>نظر انداز کریں</translation>
     </message>
 </context>
 <context>
@@ -1253,10 +1258,6 @@ Open Settings now?</source>
         <translation>یہ بلڈ H.264/MP4 ویڈیوز نہیں بھیج سکتا: اس کا براؤزر انجن ملکیتی کوڈیکس کے بغیر بنایا گیا ہے۔ تصاویر اور WebM/VP9 ویڈیوز کام کرتی ہیں۔ MP4 کے لیے Flatpak استعمال کریں، جس کا انجن ان کے ساتھ بنایا گیا ہے۔ (برخاست کرنے کے لیے کلک کریں۔)</translation>
     </message>
     <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">یہ بلڈ H.264/MP4 ویڈیوز نہیں بھیج سکتا: اس کا براؤزر انجن ملکیتی کوڈیکس کے بغیر بنایا گیا ہے۔ تصاویر اور WebM/VP9 ویڈیوز کام کرتی ہیں؛ MP4 کے لیے کوڈیکس کے ساتھ بنایا گیا کوئی ڈسٹرو/نیٹو پیکج استعمال کریں۔ (برخاست کرنے کے لیے کلک کریں۔)</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_webengine.cpp" line="1243"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs, and no build of Whatly with them exists for this platform. Photos and WebM/VP9 videos work; to send an MP4, convert it to WebM first or share it as a document. (Click to dismiss.)</source>
         <translation>یہ بلڈ H.264/MP4 ویڈیوز نہیں بھیج سکتا: اس کا براؤزر انجن ملکیتی کوڈیکس کے بغیر بنایا گیا ہے، اور اس پلیٹ فارم کے لیے اُن کے ساتھ Whatly کا کوئی بلڈ موجود نہیں۔ تصاویر اور WebM/VP9 ویڈیوز کام کرتی ہیں؛ MP4 بھیجنے کے لیے، پہلے اسے WebM میں تبدیل کریں یا بطور دستاویز شیئر کریں۔ (بند کرنے کے لیے کلک کریں۔)</translation>
@@ -1748,11 +1749,11 @@ Open Settings now?</source>
         <translation>بن اسے ہٹا دیتا ہے؛ اسے دوبارہ ڈاؤن لوڈ کیا جا سکتا ہے۔</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>%1 نہیں بنایا جا سکا</translation>
     </message>
@@ -1808,17 +1809,17 @@ Open Settings now?</source>
         <translation>ترجمہ سروس نے کوئی متن واپس نہیں کیا۔</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>کوئی ترجمہ اینڈ پوائنٹ ترتیب نہیں دیا گیا (سیٹنگز → ترجمہ)۔</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>ترجمہ کرنے کے لیے کچھ نہیں۔</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>ترجمہ ناکام ہو گیا۔</translation>
     </message>

@@ -4,7 +4,7 @@
   "private": true,
   "description": "Harnesses that prove the debug probes before they are trusted with a measurement",
   "scripts": {
-    "test": "node scroll-harness.js && node banner-probe-harness.js update-banner-probe.js"
+    "test": "node scroll-harness.js && node banner-probe-harness.js update-banner-probe.js && node strip-notice-harness.js ../src/chatliststrip.cpp"
   },
   "devDependencies": {
     "jsdom": "24.1.3"

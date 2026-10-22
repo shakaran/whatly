@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Menyalin informasi debug di bawah ke papan klip dan membuka pelacak masalah, sehingga dapat langsung ditempelkan ke laporan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>Laporkan bug</translation>
     </message>
@@ -211,19 +211,24 @@ Apakah Anda ingin melewati pemeriksaan keamanan dan melanjutkan?   </translation
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>Kecil</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>Sedang</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>Besar</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>Abaikan</translation>
     </message>
 </context>
 <context>
@@ -338,41 +343,6 @@ Apakah Anda ingin melewati pemeriksaan keamanan dan melanjutkan?   </translation
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>Tutup</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">Tidak dapat mengambil daftar kamus yang dapat diunduh: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">Gagal mengunduh %1: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">Memuat kamus yang tersedia…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">Tidak ada kamus yang tersedia.</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">terpasang</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Hapus</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">terpasang (bawaan)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">Unduh</translation>
     </message>
 </context>
 <context>
@@ -603,10 +573,6 @@ Apakah Anda ingin melewati pemeriksaan keamanan dan melanjutkan?   </translation
         <location filename="../mainwindow_webengine.cpp" line="1231"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>Build ini tidak dapat mengirim video H.264/MP4: mesin perambannya dibangun tanpa codec berpemilik. Foto dan video WebM/VP9 tetap berfungsi. Untuk MP4, gunakan Flatpak, yang mesinnya dibangun dengan codec tersebut. (Klik untuk menutup.)</translation>
-    </message>
-    <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">Build ini tidak dapat mengirim video H.264/MP4: mesin perambannya dibangun tanpa codec berpemilik. Foto dan video WebM/VP9 berfungsi; untuk MP4, gunakan paket distro/native yang dibangun dengan codec. (Klik untuk menutup.)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
@@ -1446,14 +1412,6 @@ Buka pengaturan sekarang?</translation>
         <translation>Pulihkan</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">pesan</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">pesan</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>Tambah akun</translation>
@@ -1876,11 +1834,11 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Tidak ada yang perlu dicadangkan</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>Tidak dapat membuat %1</translation>
     </message>
@@ -2150,17 +2108,17 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Layanan terjemahan tidak mengembalikan teks.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Tidak ada endpoint terjemahan yang dikonfigurasi (Pengaturan → Terjemahan).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>Tidak ada yang perlu diterjemahkan.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>Terjemahan gagal.</translation>
     </message>
@@ -2510,14 +2468,6 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <location filename="../settingswidget.ui" line="462"/>
         <source>e.g. Noisy group</source>
         <translation>mis. Grup berisik</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">Tangguhkan akun tidak aktif</translation>
-    </message>
-    <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">Membebaskan memori dengan menangguhkan akun yang tidak Anda lihat. Akun yang ditangguhkan tidak menerima pesan sampai Anda beralih kembali. Pengaturan akun tunggal tidak terpengaruh.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2133"/>
@@ -3763,10 +3713,6 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Menambahkan tombol perkecil / atur ulang / perbesar ke bilah sisi WhatsApp, untuk menskalakan halaman secara langsung tanpa membuka Pengaturan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">Kinerja &amp; privasi (perlu mulai ulang)</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2184"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>Biarkan Whatly menggambar bingkai dan bilah judul jendela alih-alih sistem, sehingga keduanya mengikuti tema Whatly sendiri. Dengan sendirinya, ini hanya mengubah tampilannya; centang juga &quot;Sembunyikan bilah judul&quot; untuk menghilangkan baris judul sepenuhnya. Berlaku setelah dimulai ulang.</translation>
@@ -4109,10 +4055,6 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <translation>Obrolan</translation>
     </message>
     <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">Kamus pemeriksa ejaan</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.cpp" line="683"/>
         <source>Privacy &amp; Lock</source>
         <translation>Privasi dan kunci</translation>
@@ -4223,14 +4165,6 @@ Silakan atur kata sandi di pengaturan terlebih dahulu.</translation>
         <location filename="../settingswidget.cpp" line="1890"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama ditemukan (%1 model terpasang).</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">unduh</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">Centang satu atau beberapa bahasa untuk pemeriksaan ejaan.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

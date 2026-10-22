@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;اطلاعات اشکال‌زدایی زیر را در کلیپ‌بورد کپی می‌کند و ردیاب مشکلات (issue tracker) را باز می‌کند تا مستقیماً در گزارش جای‌گذاری شود.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>گزارش اشکال</translation>
     </message>
@@ -211,19 +211,24 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>کوچک</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>متوسط</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>بزرگ</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>رد کردن</translation>
     </message>
 </context>
 <context>
@@ -338,41 +343,6 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>بستن</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">دریافت فهرست واژه‌نامه‌های قابل دانلود ممکن نشد: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">دانلود %1 ناموفق بود: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">در حال بارگذاری واژه‌نامه‌های موجود…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">هیچ واژه‌نامه‌ای در دسترس نیست.</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">نصب‌شده</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">حذف</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">نصب‌شده (همراه برنامه)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">دانلود</translation>
     </message>
 </context>
 <context>
@@ -883,14 +853,6 @@ WebEngine مقداردهی اولیه نشده است.</translation>
         <translation>بازگردانی</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">پیام</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">پیام</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>افزودن حساب</translation>
@@ -1293,10 +1255,6 @@ Open Settings now?</source>
         <translation>این نسخه نمی‌تواند ویدیوهای H.264/MP4 ارسال کند: موتور مرورگر آن بدون کُدک‌های اختصاصی ساخته شده است. عکس‌ها و ویدیوهای WebM/VP9 کار می‌کنند. برای MP4 از نسخهٔ Flatpak استفاده کنید که موتور آن با آن‌ها ساخته شده است. (برای بستن کلیک کنید.)</translation>
     </message>
     <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">این نسخه نمی‌تواند ویدیوهای H.264/MP4 ارسال کند: موتور مرورگرش بدون کدک‌های اختصاصی ساخته شده است. عکس‌ها و ویدیوهای WebM/VP9 کار می‌کنند؛ برای MP4 از بسته توزیع/بومی ساخته‌شده با کدک‌ها استفاده کنید. (برای بستن کلیک کنید.)</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>ترجمه درون‌خطی خاموش است (آن را در تنظیمات ← ترجمه فعال کنید).</translation>
@@ -1668,11 +1626,11 @@ Open Settings now?</source>
         <translation>چیزی برای پشتیبان‌گیری وجود ندارد</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>ایجاد %1 ممکن نیست</translation>
     </message>
@@ -2060,17 +2018,17 @@ Please setup the password in the Settings first.</source>
         <translation>سرویس ترجمه هیچ متنی برنگرداند.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>هیچ نقطه پایانی ترجمه پیکربندی نشده است (تنظیمات ← ترجمه).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>چیزی برای ترجمه وجود ندارد.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>ترجمه ناموفق بود.</translation>
     </message>
@@ -3259,10 +3217,6 @@ Please setup the password in the Settings first.</source>
         <translation>تخلیه حساب‌های غیرفعال از حافظه</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">عملکرد و حریم خصوصی (نیاز به راه‌اندازی مجدد)</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="1645"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
         <translation>تنظیم دقیق موتور رندر. پیش‌فرض‌ها در بیشتر سیستم‌ها ایمن هستند؛ اگر پنجره خالی است یا برنامه هنگام شروع خراب می‌شود، یا لگ دارد، این موارد را تغییر دهید. تغییرات پس از راه‌اندازی مجدد اعمال می‌شود.</translation>
@@ -3586,14 +3540,6 @@ Please setup the password in the Settings first.</source>
         <translation>نحوه تنظیم لبه‌های حروف روی پیکسل‌ها. حالت خودکار از سیستم شما پیروی می‌کند؛ سطح سبک‌تر می‌تواند متن سنگین یا ناهموار را اصلاح کند.</translation>
     </message>
     <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">آزادسازی حافظه با معلق کردن حساب‌هایی که مشاهده نمی‌کنید. حساب معلق‌شده تا زمانی که به آن برنگردید پیامی دریافت نمی‌کند. تنظیمات تک‌حسابی تحت تأثیر قرار نمی‌گیرند.</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">معلق کردن حساب‌های غیرفعال</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2133"/>
         <source>after</source>
         <translation>پس از</translation>
@@ -3875,10 +3821,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="576"/>
         <source>Chatting</source>
         <translation>گفتگو</translation>
-    </message>
-    <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">واژه‌نامه‌های غلط‌یاب املایی</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="683"/>
@@ -4223,14 +4165,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="2761"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>زبان‌هایی را که می‌خواهید غلط‌یابی املایی شوند علامت بزنید. هر ردیف واژه‌نامهٔ خود را دانلود یا حذف می‌کند.</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">دانلود</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">یک یا چند زبان را برای بررسی املا انتخاب کنید.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

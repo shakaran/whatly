@@ -69,8 +69,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Copia negli appunti le informazioni di debug qui sotto e apre il tracker delle segnalazioni, così da incollarle direttamente nel report.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>Segnala un bug</translation>
     </message>
@@ -217,19 +217,24 @@ Desideri ignorare il controllo di sicurezza e continuare?</translation>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>Piccolo</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>Medio</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>Grande</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>Ignora</translation>
     </message>
 </context>
 <context>
@@ -344,41 +349,6 @@ Desideri ignorare il controllo di sicurezza e continuare?</translation>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>Chiudi</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">Impossibile recuperare l&apos;elenco dei dizionari scaricabili: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">Download di %1 non riuscito: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">Caricamento dei dizionari disponibili…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">Nessun dizionario disponibile.</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">installato</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Elimina</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">installato (incluso)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">Scarica</translation>
     </message>
 </context>
 <context>
@@ -609,10 +579,6 @@ Desideri ignorare il controllo di sicurezza e continuare?</translation>
         <location filename="../mainwindow_webengine.cpp" line="1231"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>Questa build non può inviare video H.264/MP4: il suo motore del browser è stato compilato senza i codec proprietari. Le foto e i video WebM/VP9 funzionano. Per gli MP4 usa il Flatpak, il cui motore è compilato con essi. (Fai clic per chiudere.)</translation>
-    </message>
-    <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">Questa build non può inviare video H.264/MP4: il suo motore browser è stato compilato senza i codec proprietari. Le foto e i video WebM/VP9 funzionano; per l&apos;MP4 usa un pacchetto della distribuzione/nativo compilato con i codec. (Clicca per chiudere.)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
@@ -1214,14 +1180,6 @@ Aprire le Impostazioni ora?</translation>
         <location filename="../mainwindow_accounts.cpp" line="2225"/>
         <source>Add another account</source>
         <translation>Aggiungi un altro account</translation>
-    </message>
-    <message>
-        <source>messages</source>
-        <translation type="vanished">messaggi</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">messaggio</translation>
     </message>
     <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
@@ -1882,11 +1840,11 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Nulla di cui fare il backup</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>Impossibile creare %1</translation>
     </message>
@@ -2156,17 +2114,17 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Il servizio di traduzione non ha restituito testo.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Nessun endpoint di traduzione configurato (Impostazioni → Traduzione).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>Niente da tradurre.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>Traduzione non riuscita.</translation>
     </message>
@@ -2516,14 +2474,6 @@ Imposta la password nelle Impostazioni.</translation>
         <location filename="../settingswidget.ui" line="462"/>
         <source>e.g. Noisy group</source>
         <translation>es. Gruppo rumoroso</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">Sospendi gli account inattivi</translation>
-    </message>
-    <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">Libera memoria sospendendo gli account che non stai guardando. Un account sospeso non riceve messaggi finché non ci torni. Le configurazioni a account singolo non sono interessate.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2133"/>
@@ -3622,10 +3572,6 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aggiunge pulsanti riduci / reimposta / ingrandisci alla barra laterale di WhatsApp, per ridimensionare la pagina in tempo reale senza aprire le Impostazioni.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">Prestazioni e privacy (richiede riavvio)</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2184"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>Lascia che sia Whatly a disegnare il bordo e la barra del titolo della finestra invece del sistema, così da seguire il tema di Whatly. Da solo, questo cambia solo il loro aspetto; seleziona anche &quot;Nascondi la barra del titolo&quot; per eliminare del tutto la riga del titolo. Si applica dopo un riavvio.</translation>
@@ -4116,10 +4062,6 @@ Imposta la password nelle Impostazioni.</translation>
         <translation>Messaggistica</translation>
     </message>
     <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">Dizionari di controllo ortografico</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.cpp" line="683"/>
         <source>Privacy &amp; Lock</source>
         <translation>Privacy e blocco</translation>
@@ -4230,14 +4172,6 @@ Imposta la password nelle Impostazioni.</translation>
         <location filename="../settingswidget.cpp" line="1890"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama trovato (%1 modelli installati).</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">scarica</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">Seleziona una o più lingue per il controllo ortografico.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

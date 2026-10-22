@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sao chép thông tin gỡ lỗi bên dưới vào bộ nhớ tạm và mở trình theo dõi lỗi (issue tracker), để bạn có thể dán trực tiếp vào báo cáo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>Báo lỗi</translation>
     </message>
@@ -211,19 +211,24 @@ Bạn có muốn bỏ qua kiểm tra bảo mật và tiếp tục không?   </tr
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>Nhỏ</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>Vừa</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>Lớn</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>Bỏ qua</translation>
     </message>
 </context>
 <context>
@@ -338,41 +343,6 @@ Bạn có muốn bỏ qua kiểm tra bảo mật và tiếp tục không?   </tr
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>Đóng</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">Không thể lấy danh sách từ điển có thể tải xuống: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">Tải xuống %1 thất bại: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">Đang tải các từ điển có sẵn…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">Không có từ điển nào khả dụng.</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">đã cài đặt</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Xóa</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">đã cài đặt (tích hợp sẵn)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">Tải xuống</translation>
     </message>
 </context>
 <context>
@@ -883,14 +853,6 @@ Webengine chưa được khởi tạo.</translation>
         <translation>Khôi phục</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">tin nhắn</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">tin nhắn</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>Thêm tài khoản</translation>
@@ -1293,10 +1255,6 @@ Mở Cài đặt ngay bây giờ?</translation>
         <translation>Bản dựng này không thể gửi video H.264/MP4: công cụ trình duyệt của nó được biên dịch mà không có các codec độc quyền. Ảnh và video WebM/VP9 vẫn hoạt động. Với MP4, hãy dùng bản Flatpak, có công cụ được biên dịch kèm các codec đó. (Nhấp để đóng.)</translation>
     </message>
     <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">Bản dựng này không thể gửi video H.264/MP4: engine trình duyệt của nó được biên dịch không kèm codec độc quyền. Ảnh và video WebM/VP9 vẫn hoạt động; với MP4, hãy dùng gói bản phân phối/gốc được biên dịch kèm codec. (Nhấp để đóng.)</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>Dịch nhanh đang tắt (bật trong Cài đặt → Dịch thuật).</translation>
@@ -1668,11 +1626,11 @@ Mở Cài đặt ngay bây giờ?</translation>
         <translation>Không có gì để sao lưu</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>Không thể tạo %1</translation>
     </message>
@@ -2060,17 +2018,17 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <translation>Dịch vụ dịch thuật không trả về văn bản nào.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Chưa cấu hình điểm cuối dịch thuật (Cài đặt → Dịch thuật).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>Không có gì để dịch.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>Dịch thất bại.</translation>
     </message>
@@ -3259,10 +3217,6 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <translation>Dỡ tải các tài khoản không hoạt động khỏi bộ nhớ</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">Hiệu năng &amp; Quyền riêng tư (cần khởi động lại)</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="1645"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
         <translation>Tinh chỉnh engine kết xuất. Cài đặt mặc định an toàn trên hầu hết hệ thống; nếu cửa sổ trống, ứng dụng gặp sự cố khi khởi động, hoặc bị giật, hãy thử thay đổi các mục này. Thay đổi có hiệu lực sau khi khởi động lại.</translation>
@@ -3586,14 +3540,6 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <translation>Cách các cạnh ký tự được căn theo pixel. Tự động sẽ theo hệ thống của bạn; mức nhẹ hơn có thể khắc phục văn bản đậm hoặc không đều.</translation>
     </message>
     <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">Giải phóng bộ nhớ bằng cách tạm dừng các tài khoản bạn không xem. Tài khoản tạm dừng sẽ không nhận tin nhắn cho đến khi bạn chuyển lại. Cấu hình một tài khoản không bị ảnh hưởng.</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">Tạm dừng tài khoản không hoạt động</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2133"/>
         <source>after</source>
         <translation>sau</translation>
@@ -3875,10 +3821,6 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <location filename="../settingswidget.cpp" line="576"/>
         <source>Chatting</source>
         <translation>Trò chuyện</translation>
-    </message>
-    <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">Từ điển kiểm tra chính tả</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="683"/>
@@ -4223,14 +4165,6 @@ Vui lòng thiết lập mật khẩu trong Cài đặt trước.</translation>
         <location filename="../settingswidget.cpp" line="2761"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>Đánh dấu các ngôn ngữ để kiểm tra chính tả. Mỗi hàng tải xuống hoặc xóa từ điển của nó.</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">tải xuống</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">Chọn một hoặc nhiều ngôn ngữ để kiểm tra chính tả.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

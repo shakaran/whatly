@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;नीचे दी गई डिबग जानकारी को क्लिपबोर्ड पर कॉपी करता है और इश्यू ट्रैकर खोलता है, ताकि इसे सीधे रिपोर्ट में पेस्ट किया जा सके।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>बग की रिपोर्ट करें</translation>
     </message>
@@ -211,19 +211,24 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>छोटा</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>मध्यम</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>बड़ा</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>खारिज करें</translation>
     </message>
 </context>
 <context>
@@ -338,41 +343,6 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>बंद करें</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">डाउनलोड करने योग्य शब्दकोशों की सूची प्राप्त नहीं हो सकी: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">%1 डाउनलोड करना विफल रहा: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">उपलब्ध शब्दकोश लोड हो रहे हैं…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">कोई शब्दकोश उपलब्ध नहीं है।</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">स्थापित</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">हटाएँ</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">स्थापित (अंतर्निहित)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">डाउनलोड</translation>
     </message>
 </context>
 <context>
@@ -603,10 +573,6 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../mainwindow_webengine.cpp" line="1231"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>यह बिल्ड H.264/MP4 वीडियो नहीं भेज सकता: इसका ब्राउज़र इंजन मालिकाना कोडेक के बिना बनाया गया है। फ़ोटो और WebM/VP9 वीडियो काम करते हैं। MP4 के लिए Flatpak का उपयोग करें, जिसका इंजन उनके साथ बनाया गया है। (खारिज करने के लिए क्लिक करें।)</translation>
-    </message>
-    <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">यह बिल्ड H.264/MP4 वीडियो नहीं भेज सकता: इसका ब्राउज़र इंजन मालिकाना कोडेक के बिना बनाया गया है। फ़ोटो और WebM/VP9 वीडियो काम करते हैं; MP4 के लिए कोडेक सहित बना डिस्ट्रो/नेटिव पैकेज उपयोग करें। (बंद करने के लिए क्लिक करें।)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
@@ -1446,14 +1412,6 @@ Open Settings now?</source>
         <translation>पुनर्स्थापित करें</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">संदेश</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">संदेश</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>खाता जोड़ें</translation>
@@ -1876,11 +1834,11 @@ Please setup the password in the Settings first.</source>
         <translation>बैकअप के लिए कुछ नहीं है</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>%1 नहीं बनाया जा सका</translation>
     </message>
@@ -2150,17 +2108,17 @@ Please setup the password in the Settings first.</source>
         <translation>अनुवाद सेवा ने कोई पाठ नहीं लौटाया।</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>कोई अनुवाद एंडपॉइंट कॉन्फ़िगर नहीं है (सेटिंग्स → अनुवाद)।</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>अनुवाद करने के लिए कुछ नहीं है।</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>अनुवाद विफल रहा।</translation>
     </message>
@@ -2510,14 +2468,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="462"/>
         <source>e.g. Noisy group</source>
         <translation>उदा. शोरगुल वाला समूह</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">निष्क्रिय खाते निलंबित करें</translation>
-    </message>
-    <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">उन खातों को निलंबित करके मेमोरी खाली करता है जिन्हें आप नहीं देख रहे। निलंबित खाता तब तक संदेश नहीं पाता जब तक आप वापस नहीं जाते। एकल-खाता सेटअप प्रभावित नहीं होते।</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2133"/>
@@ -3763,10 +3713,6 @@ Please setup the password in the Settings first.</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;पेज को सेटिंग्स खोले बिना लाइव स्केल करने के लिए WhatsApp की साइडबार में ज़ूम आउट / रीसेट / ज़ूम इन बटन जोड़ता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">प्रदर्शन और गोपनीयता (पुनरारंभ आवश्यक)</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2184"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>विंडो का किनारा और शीर्षक पट्टी सिस्टम के बजाय Whatly से बनवाएं, ताकि वे Whatly की अपनी थीम का अनुसरण करें। अकेले यह केवल उनका रूप बदलता है; शीर्षक पंक्ति को पूरी तरह हटाने के लिए &quot;शीर्षक पट्टी छिपाएं&quot; को भी चुनें। पुनः आरंभ के बाद लागू होता है।</translation>
@@ -4109,10 +4055,6 @@ Please setup the password in the Settings first.</source>
         <translation>बातचीत</translation>
     </message>
     <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">वर्तनी-जाँच शब्दकोश</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.cpp" line="683"/>
         <source>Privacy &amp; Lock</source>
         <translation>गोपनीयता और लॉक</translation>
@@ -4223,14 +4165,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="1890"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama मिला (%1 मॉडल इंस्टॉल हैं)।</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">डाउनलोड करें</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">वर्तनी जाँच के लिए एक या अधिक भाषाएँ चुनें।</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

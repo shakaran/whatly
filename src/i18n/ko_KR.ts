@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;아래의 디버그 정보를 클립보드에 복사하고 이슈 트래커를 열어 보고서에 바로 붙여넣을 수 있게 합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>버그 신고</translation>
     </message>
@@ -211,19 +211,24 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>작게</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>보통</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>크게</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>숨기기</translation>
     </message>
 </context>
 <context>
@@ -338,41 +343,6 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>닫기</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">다운로드 가능한 사전 목록을 가져올 수 없습니다: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">%1 다운로드 실패: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">사용 가능한 사전을 불러오는 중…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">사용 가능한 사전이 없습니다.</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">설치됨</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">삭제</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">설치됨 (기본 포함)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">다운로드</translation>
     </message>
 </context>
 <context>
@@ -603,10 +573,6 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../mainwindow_webengine.cpp" line="1231"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>이 빌드는 H.264/MP4 동영상을 보낼 수 없습니다. 브라우저 엔진이 독점 코덱 없이 빌드되었기 때문입니다. 사진과 WebM/VP9 동영상은 정상 작동합니다. MP4의 경우 해당 코덱이 포함되어 엔진이 빌드된 Flatpak을 사용하세요. (클릭하여 닫기.)</translation>
-    </message>
-    <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">이 빌드는 H.264/MP4 동영상을 보낼 수 없습니다. 브라우저 엔진이 독점 코덱 없이 빌드되었습니다. 사진과 WebM/VP9 동영상은 작동합니다. MP4는 코덱이 포함된 배포판/네이티브 패키지를 사용하세요. (클릭하여 닫기.)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
@@ -1446,14 +1412,6 @@ Open Settings now?</source>
         <translation>복원</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">개의 메시지</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">개의 메시지</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>계정 추가</translation>
@@ -1876,11 +1834,11 @@ Please setup the password in the Settings first.</source>
         <translation>백업할 항목이 없습니다</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>%1 을(를) 만들 수 없습니다</translation>
     </message>
@@ -2150,17 +2108,17 @@ Please setup the password in the Settings first.</source>
         <translation>번역 서비스가 텍스트를 반환하지 않았습니다.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>번역 엔드포인트가 구성되지 않았습니다 (설정 → 번역).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>번역할 내용이 없습니다.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>번역에 실패했습니다.</translation>
     </message>
@@ -2510,14 +2468,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.ui" line="462"/>
         <source>e.g. Noisy group</source>
         <translation>예: 시끄러운 그룹</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">비활성 계정 일시 중단</translation>
-    </message>
-    <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">보고 있지 않은 계정을 일시 중단하여 메모리를 확보합니다. 일시 중단된 계정은 다시 전환할 때까지 메시지를 받지 않습니다. 단일 계정 설정은 영향을 받지 않습니다.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2133"/>
@@ -3763,10 +3713,6 @@ Please setup the password in the Settings first.</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;설정을 열지 않고 페이지를 실시간으로 확대/축소할 수 있도록 WhatsApp 사이드바에 축소 / 초기화 / 확대 버튼을 추가합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">성능 및 개인정보 (재시작 필요)</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2184"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>창의 테두리와 제목 표시줄을 시스템 대신 Whatly가 그리도록 하여 Whatly 자체 테마를 따르게 합니다. 이것만으로는 모양만 바뀝니다. 제목 줄을 완전히 없애려면 &quot;제목 표시줄 숨기기&quot;도 함께 선택하세요. 다시 시작한 뒤에 적용됩니다.</translation>
@@ -4109,10 +4055,6 @@ Please setup the password in the Settings first.</source>
         <translation>채팅</translation>
     </message>
     <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">맞춤법 검사 사전</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.cpp" line="683"/>
         <source>Privacy &amp; Lock</source>
         <translation>개인정보 및 잠금</translation>
@@ -4223,14 +4165,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="1890"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama 발견 (%1개 모델 설치됨).</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">다운로드</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">맞춤법 검사를 할 언어를 하나 이상 선택하세요.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

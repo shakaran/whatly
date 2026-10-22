@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;將下方的除錯資訊複製到剪貼簿,並開啟問題追蹤系統,方便直接貼到回報內容中。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>回報錯誤</translation>
     </message>
@@ -211,19 +211,24 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>小</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>中</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>大</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>忽略</translation>
     </message>
 </context>
 <context>
@@ -338,41 +343,6 @@ Do you wish to override the security check and continue ?   </source>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>關閉</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">無法取得可下載字典清單：%1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">下載 %1 失敗：%2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">正在載入可用字典…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">沒有可用的字典。</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">已安裝</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">刪除</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">已安裝（內建）</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">下載</translation>
     </message>
 </context>
 <context>
@@ -883,14 +853,6 @@ WebEngine 尚未初始化。</translation>
         <translation>還原</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">則訊息</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">則訊息</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>新增帳號</translation>
@@ -1293,10 +1255,6 @@ Open Settings now?</source>
         <translation>此版本無法傳送 H.264/MP4 影片：其瀏覽器引擎在建置時未包含專有編解碼器。相片與 WebM/VP9 影片可正常使用。若要傳送 MP4，請使用 Flatpak 版本，其引擎已包含這些編解碼器。（按一下即可關閉。）</translation>
     </message>
     <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">此版本無法傳送 H.264/MP4 影片：其瀏覽器引擎建置時未包含專有編解碼器。相片與 WebM/VP9 影片可用；如需 MP4，請使用含編解碼器建置的發行版/原生套件。（點擊關閉。）</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
         <source>Inline translation is off (enable it in Settings → Translation).</source>
         <translation>行內翻譯已關閉（請在設定 → 翻譯中啟用）。</translation>
@@ -1668,11 +1626,11 @@ Open Settings now?</source>
         <translation>沒有可備份的內容</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>無法建立 %1</translation>
     </message>
@@ -2060,17 +2018,17 @@ Please setup the password in the Settings first.</source>
         <translation>翻譯服務未傳回任何文字。</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>尚未設定翻譯端點（設定 → 翻譯）。</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>沒有可翻譯的內容。</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>翻譯失敗。</translation>
     </message>
@@ -3259,10 +3217,6 @@ Please setup the password in the Settings first.</source>
         <translation>從記憶體卸載不活躍的帳號</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">效能與隱私（需要重新啟動）</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="1645"/>
         <source>Fine-tune the rendering engine. The defaults are safe on most systems; if the window is blank or the app crashes on start, or if it stutters, try changing these. Changes apply after a restart.</source>
         <translation>微調繪圖引擎。預設值在大多數系統上都是安全的；若視窗空白、應用程式啟動時當機，或出現卡頓，可嘗試調整這些設定。變更需要重新啟動才會套用。</translation>
@@ -3586,14 +3540,6 @@ Please setup the password in the Settings first.</source>
         <translation>字形邊緣對齊像素的方式。自動模式會跟隨您的系統設定；較輕的層級可修正過粗或不均勻的文字。</translation>
     </message>
     <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">暫停您未檢視中的帳號以釋放記憶體。暫停的帳號在您切換回去之前不會接收訊息。單一帳號設定不受影響。</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">暫停未使用中的帳號</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2133"/>
         <source>after</source>
         <translation>之後</translation>
@@ -3875,10 +3821,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="576"/>
         <source>Chatting</source>
         <translation>聊天</translation>
-    </message>
-    <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">拼字檢查字典</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="683"/>
@@ -4223,14 +4165,6 @@ Please setup the password in the Settings first.</source>
         <location filename="../settingswidget.cpp" line="2761"/>
         <source>Tick the languages to check spelling against. Each row downloads or deletes its dictionary.</source>
         <translation>勾選用於拼字檢查的語言。每列可下載或刪除其字典。</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">下載</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">勾選一種或多種語言以進行拼字檢查。</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

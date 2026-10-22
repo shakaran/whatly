@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kopiuje poniższe informacje diagnostyczne do schowka i otwiera system zgłoszeń, aby wkleić je bezpośrednio do zgłoszenia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>Zgłoś błąd</translation>
     </message>
@@ -211,19 +211,24 @@ Czy chcesz pominąć kontrolę bezpieczeństwa i kontynuować?   </translation>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>Mały</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>Średni</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>Duży</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>Odrzuć</translation>
     </message>
 </context>
 <context>
@@ -338,41 +343,6 @@ Czy chcesz pominąć kontrolę bezpieczeństwa i kontynuować?   </translation>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>Zamknij</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">Nie można pobrać listy słowników do pobrania: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">Pobieranie %1 nie powiodło się: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">Ładowanie dostępnych słowników…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">Brak dostępnych słowników.</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">zainstalowany</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Usuń</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">zainstalowany (wbudowany)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">Pobierz</translation>
     </message>
 </context>
 <context>
@@ -603,10 +573,6 @@ Czy chcesz pominąć kontrolę bezpieczeństwa i kontynuować?   </translation>
         <location filename="../mainwindow_webengine.cpp" line="1231"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>Ta kompilacja nie może wysyłać filmów H.264/MP4: jej silnik przeglądarki zbudowano bez zastrzeżonych kodeków. Zdjęcia i filmy WebM/VP9 działają. W przypadku MP4 użyj wersji Flatpak, której silnik zbudowano z tymi kodekami. (Kliknij, aby zamknąć.)</translation>
-    </message>
-    <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">Ta kompilacja nie może wysyłać filmów H.264/MP4: jej silnik przeglądarki zbudowano bez zastrzeżonych kodeków. Zdjęcia i filmy WebM/VP9 działają; do MP4 użyj pakietu dystrybucji/natywnego zbudowanego z kodekami. (Kliknij, aby zamknąć.)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
@@ -1446,14 +1412,6 @@ Otworzyć ustawienia teraz?</translation>
         <translation>Przywróć</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">wiadomości</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">wiadomość</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>Dodaj konto</translation>
@@ -1876,11 +1834,11 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <translation>Brak danych do zapisania</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>Nie można utworzyć %1</translation>
     </message>
@@ -2150,17 +2108,17 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <translation>Usługa tłumaczenia nie zwróciła tekstu.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Nie skonfigurowano punktu końcowego tłumaczenia (Ustawienia → Tłumaczenie).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>Nie ma czego tłumaczyć.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>Tłumaczenie nie powiodło się.</translation>
     </message>
@@ -2510,14 +2468,6 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <location filename="../settingswidget.ui" line="462"/>
         <source>e.g. Noisy group</source>
         <translation>np. Hałaśliwa grupa</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">Wstrzymaj nieaktywne konta</translation>
-    </message>
-    <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">Zwalnia pamięć, wstrzymując konta, których nie przeglądasz. Wstrzymane konto nie odbiera wiadomości, dopóki do niego nie wrócisz. Konfiguracje z jednym kontem nie są objęte.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2133"/>
@@ -3763,10 +3713,6 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dodaje przyciski pomniejszania / resetowania / powiększania do paska bocznego WhatsAppa, aby skalować stronę na żywo bez otwierania Ustawień.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">Wydajność i prywatność (wymaga ponownego uruchomienia)</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2184"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>Pozwól, aby to Whatly rysował obramowanie i pasek tytułu okna zamiast systemu, dzięki czemu będą zgodne z własnym motywem Whatly. Samo w sobie zmienia to tylko ich wygląd; zaznacz również &quot;Ukryj pasek tytułu&quot;, aby całkowicie usunąć wiersz tytułu. Zmiana działa po ponownym uruchomieniu.</translation>
@@ -4109,10 +4055,6 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <translation>Czat</translation>
     </message>
     <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">Słowniki sprawdzania pisowni</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.cpp" line="683"/>
         <source>Privacy &amp; Lock</source>
         <translation>Prywatność i blokada</translation>
@@ -4223,14 +4165,6 @@ Najpierw ustaw hasło w ustawieniach.</translation>
         <location filename="../settingswidget.cpp" line="1890"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Znaleziono Ollama (%1 zainstalowanych modeli).</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">pobierz</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">Zaznacz jeden lub więcej języków do sprawdzania pisowni.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

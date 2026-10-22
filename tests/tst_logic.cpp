@@ -1219,20 +1219,28 @@ private slots:
     // none of these rules reach it.
     //
     // The wrapper has to grow with the icon or the layout still reserves the
-    // small box for it, and it is matched by :has() because every class here is
-    // generated. Nothing inside may clip, or the grown icon is cut back to the
-    // box it outgrew; the notice's own box is where the clipping belongs.
+    // small box for it, and tagBanner() names it rather than :has(>svg) finding
+    // it, because every element that directly holds an svg answers to that — a
+    // dismiss cross as readily as the picture — and sizing them all drew the
+    // cross at 48px beside, or instead of, the notice itself. Nothing inside may
+    // clip, or the grown icon is cut back to the box it outgrew; the notice's
+    // own box is where the clipping belongs.
     QVERIFY(on.contains(QLatin1String(
-        "[data-whatly-banner] svg{width:48px!important;height:48px!important}")));
-    QVERIFY(on.contains(QLatin1String("[data-whatly-banner] *:has(>svg)")));
+        "[data-whatly-banner] [data-whatly-icon]{width:48px!important;"
+        "height:48px!important}")));
+    QVERIFY(on.contains(
+        QLatin1String("[data-whatly-banner] [data-whatly-icon]>svg,")));
     QVERIFY(on.contains(QLatin1String("overflow:visible!important")));
     // Text at font-size 0 still held 6.4px of the flex line on the real notice,
     // which is what put the icon three pixels left of centre. Taking what
     // follows the icon out of the layout leaves a line exactly as wide as the
-    // icon, and asks the question of an icon's siblings rather than of every
-    // element in the page.
+    // icon, and asks the question of the tagged icon's siblings rather than of
+    // every element in the page. The path tag carries the same question down
+    // every step between the notice and its icon, so the words beside those
+    // steps leave the layout along with the words beside the icon itself.
     QVERIFY(on.contains(QLatin1String(
-        "[data-whatly-banner] *:has(>svg)~*{display:none!important}")));
+        "[data-whatly-banner] [data-whatly-icon]~*,"
+        "[data-whatly-banner] [data-whatly-icon-path]~*{display:none!important}")));
     // Everything above keys on the tag, and the tag is written once a second,
     // so a notice is in the page untagged for up to a second after WhatsApp
     // fills the bar — long enough to flash the ladder it replaces. Asked of the
@@ -1253,8 +1261,10 @@ private slots:
     QVERIFY(!on.contains(QLatin1String("data-whatly-seen")));
     // The second tag goes on while the bar holds something and comes off when
     // it does not, so the emptied shell carries nothing into its next filling.
+    // Every notice already drawn is spared, not just one: the strip adopts all
+    // of them, so asking about a single notice would hide the rest for a tick.
     QVERIFY(on.contains(QLatin1String(
-        "var pass = !(isNotice && e === note) && !!e.firstElementChild;")));
+        "var pass = notes.indexOf(e) < 0 && !!e.firstElementChild;")));
     QVERIFY(on.contains(QLatin1String("e.removeAttribute('data-whatly-passed')")));
     // The sentences sit as bare text inside the bar, where no selector reaches
     // them, so they go by font-size on whatever holds them.

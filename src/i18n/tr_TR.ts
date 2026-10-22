@@ -64,8 +64,8 @@ p, li { white-space: pre-wrap; }
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aşağıdaki hata ayıklama bilgilerini panoya kopyalar ve sorun izleyiciyi açar, böylece doğrudan bildirime yapıştırılabilir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>Hata bildir</translation>
     </message>
@@ -211,19 +211,24 @@ Güvenlik denetimini atlayıp devam etmek istiyor musunuz?   </translation>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>Küçük</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>Orta</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>Büyük</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>Yoksay</translation>
     </message>
 </context>
 <context>
@@ -338,41 +343,6 @@ Güvenlik denetimini atlayıp devam etmek istiyor musunuz?   </translation>
         <location filename="../customtitlebar.cpp" line="98"/>
         <source>Close</source>
         <translation>Kapat</translation>
-    </message>
-</context>
-<context>
-    <name>DictionariesSection</name>
-    <message>
-        <source>Could not fetch the list of downloadable dictionaries: %1</source>
-        <translation type="vanished">İndirilebilir sözlüklerin listesi alınamadı: %1</translation>
-    </message>
-    <message>
-        <source>Downloading %1 failed: %2</source>
-        <translation type="vanished">%1 indirilemedi: %2</translation>
-    </message>
-    <message>
-        <source>Loading available dictionaries…</source>
-        <translation type="vanished">Kullanılabilir sözlükler yükleniyor…</translation>
-    </message>
-    <message>
-        <source>No dictionaries are available.</source>
-        <translation type="vanished">Kullanılabilir sözlük yok.</translation>
-    </message>
-    <message>
-        <source>installed</source>
-        <translation type="vanished">yüklü</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Sil</translation>
-    </message>
-    <message>
-        <source>installed (bundled)</source>
-        <translation type="vanished">yüklü (dahili)</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="obsolete">İndir</translation>
     </message>
 </context>
 <context>
@@ -603,10 +573,6 @@ Güvenlik denetimini atlayıp devam etmek istiyor musunuz?   </translation>
         <location filename="../mainwindow_webengine.cpp" line="1231"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work. For MP4, use the Flatpak, whose engine is built with them. (Click to dismiss.)</source>
         <translation>Bu sürüm H.264/MP4 videoları gönderemez: tarayıcı motoru tescilli kodekler olmadan derlenmiştir. Fotoğraflar ile WebM/VP9 videoları çalışır. MP4 için, motoru bu kodeklerle derlenen Flatpak&apos;i kullanın. (Kapatmak için tıklayın.)</translation>
-    </message>
-    <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">Bu sürüm H.264/MP4 videoları gönderemez: tarayıcı motoru tescilli kodekler olmadan derlendi. Fotoğraflar ve WebM/VP9 videoları çalışır; MP4 için kodeklerle derlenmiş bir dağıtım/yerel paket kullanın. (Kapatmak için tıklayın.)</translation>
     </message>
     <message>
         <location filename="../mainwindow_webengine.cpp" line="1544"/>
@@ -1446,14 +1412,6 @@ Ayarlar şimdi açılsın mı?</translation>
         <translation>Geri yükle</translation>
     </message>
     <message>
-        <source>messages</source>
-        <translation type="vanished">mesaj</translation>
-    </message>
-    <message>
-        <source>message</source>
-        <translation type="vanished">mesaj</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_accounts.cpp" line="1668"/>
         <source>Add account</source>
         <translation>Hesap ekle</translation>
@@ -1876,11 +1834,11 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Yedeklenecek bir şey yok</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>%1 oluşturulamıyor</translation>
     </message>
@@ -2150,17 +2108,17 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Çeviri hizmeti metin döndürmedi.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>Çeviri uç noktası yapılandırılmadı (Ayarlar → Çeviri).</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>Çevrilecek bir şey yok.</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>Çeviri başarısız oldu.</translation>
     </message>
@@ -2510,14 +2468,6 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <location filename="../settingswidget.ui" line="462"/>
         <source>e.g. Noisy group</source>
         <translation>örn. Gürültülü grup</translation>
-    </message>
-    <message>
-        <source>Suspend inactive accounts</source>
-        <translation type="vanished">Etkin olmayan hesapları askıya al</translation>
-    </message>
-    <message>
-        <source>Free memory by suspending accounts you are not viewing. A suspended account does not receive messages until you switch back to it. Single-account setups are unaffected.</source>
-        <translation type="vanished">Görüntülemediğiniz hesapları askıya alarak bellek boşaltır. Askıya alınmış bir hesap, ona geri dönene kadar mesaj almaz. Tek hesaplı kurulumlar etkilenmez.</translation>
     </message>
     <message>
         <location filename="../settingswidget.ui" line="2133"/>
@@ -3763,10 +3713,6 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ayarları açmadan sayfayı canlı ölçeklendirmek için WhatsApp&apos;ın kenar çubuğuna uzaklaştır / sıfırla / yakınlaştır düğmeleri ekler.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Performance &amp; Privacy (requires restart)</source>
-        <translation type="vanished">Performans ve gizlilik (yeniden başlatma gerekir)</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.ui" line="2184"/>
         <source>Let Whatly draw the window&apos;s border and title bar instead of the system, so they follow Whatly&apos;s own theme. On its own this only changes their appearance; tick &quot;Hide the title bar&quot; as well to get rid of the title row altogether. Applies after a restart.</source>
         <translation>Pencerenin kenarlığını ve başlık çubuğunu sistem yerine Whatly&apos;nin çizmesine izin verin; böylece Whatly&apos;nin kendi temasına uyarlar. Tek başına bu yalnızca görünümlerini değiştirir; başlık satırını tamamen kaldırmak için ayrıca &quot;Başlık çubuğunu gizle&quot; seçeneğini işaretleyin. Yeniden başlatmadan sonra geçerli olur.</translation>
@@ -4109,10 +4055,6 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <translation>Sohbet</translation>
     </message>
     <message>
-        <source>Spell-check dictionaries</source>
-        <translation type="vanished">Yazım denetimi sözlükleri</translation>
-    </message>
-    <message>
         <location filename="../settingswidget.cpp" line="683"/>
         <source>Privacy &amp; Lock</source>
         <translation>Gizlilik ve kilit</translation>
@@ -4223,14 +4165,6 @@ Lütfen önce ayarlardan parolayı belirleyin.</translation>
         <location filename="../settingswidget.cpp" line="1890"/>
         <source>Ollama found (%1 models installed).</source>
         <translation>Ollama bulundu (%1 model kurulu).</translation>
-    </message>
-    <message>
-        <source>download</source>
-        <translation type="vanished">indir</translation>
-    </message>
-    <message>
-        <source>Tick one or more languages to check spelling against.</source>
-        <translation type="vanished">Yazım denetimi için bir veya daha fazla dil işaretleyin.</translation>
     </message>
     <message>
         <location filename="../settingswidget.cpp" line="2863"/>

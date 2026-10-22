@@ -1218,7 +1218,7 @@ void MainWindow::checkMediaCodecs() {
                   .arg(reported)
                   .arg(kLastChromeWithCalls);
           m_webEngine->page()->runJavaScript(
-              Translate::toastScript(text, /*persistent=*/true));
+              Translate::toastScript(text, /*persistent=*/true, /*top=*/true));
           return;
         }
         if (codecNoticeShown)
@@ -1262,7 +1262,7 @@ void MainWindow::checkMediaCodecs() {
                 tr("Voice and video calls need the same codecs, so this build "
                    "cannot make them either.");
         m_webEngine->page()->runJavaScript(
-            Translate::toastScript(text, /*persistent=*/true));
+            Translate::toastScript(text, /*persistent=*/true, /*top=*/true));
       });
 }
 

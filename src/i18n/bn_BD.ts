@@ -9,8 +9,8 @@
         <translation>সংস্করণ: </translation>
     </message>
     <message>
-        <location filename="../about.cpp" line="144"/>
         <location filename="../about.ui" line="220"/>
+        <location filename="../about.cpp" line="144"/>
         <source>Report a Bug</source>
         <translation>একটি বাগ রিপোর্ট করুন</translation>
     </message>
@@ -203,19 +203,24 @@ Do you wish to override the security check and continue ?   </source>
 <context>
     <name>ChatListStrip</name>
     <message>
-        <location filename="../chatliststrip.cpp" line="1029"/>
+        <location filename="../chatliststrip.cpp" line="1240"/>
         <source>Small</source>
         <translation>ছোট</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1031"/>
+        <location filename="../chatliststrip.cpp" line="1242"/>
         <source>Medium</source>
         <translation>মাঝারি</translation>
     </message>
     <message>
-        <location filename="../chatliststrip.cpp" line="1033"/>
+        <location filename="../chatliststrip.cpp" line="1244"/>
         <source>Large</source>
         <translation>বড়</translation>
+    </message>
+    <message>
+        <location filename="../chatliststrip.cpp" line="1282"/>
+        <source>Dismiss</source>
+        <translation>খারিজ করুন</translation>
     </message>
 </context>
 <context>
@@ -1253,10 +1258,6 @@ Open Settings now?</source>
         <translation>এই বিল্ড H.264/MP4 ভিডিও পাঠাতে পারে না: এর ব্রাউজার ইঞ্জিন মালিকানাধীন কোডেক ছাড়া তৈরি করা হয়েছে। ছবি এবং WebM/VP9 ভিডিও কাজ করে। MP4-এর জন্য Flatpak ব্যবহার করুন, যার ইঞ্জিন সেগুলো সহ তৈরি করা হয়েছে। (বাতিল করতে ক্লিক করুন।)</translation>
     </message>
     <message>
-        <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs. Photos and WebM/VP9 videos work; for MP4, use a distro/native package built with the codecs. (Click to dismiss.)</source>
-        <translation type="vanished">এই বিল্ড H.264/MP4 ভিডিও পাঠাতে পারে না: এর ব্রাউজার ইঞ্জিন মালিকানাধীন কোডেক ছাড়া তৈরি করা হয়েছে। ছবি এবং WebM/VP9 ভিডিও কাজ করে; MP4-এর জন্য কোডেক সহ তৈরি করা কোনো ডিস্ট্রো/নেটিভ প্যাকেজ ব্যবহার করুন। (বাতিল করতে ক্লিক করুন।)</translation>
-    </message>
-    <message>
         <location filename="../mainwindow_webengine.cpp" line="1243"/>
         <source>This build cannot send H.264/MP4 videos: its browser engine was built without the proprietary codecs, and no build of Whatly with them exists for this platform. Photos and WebM/VP9 videos work; to send an MP4, convert it to WebM first or share it as a document. (Click to dismiss.)</source>
         <translation>এই বিল্ডটি H.264/MP4 ভিডিও পাঠাতে পারে না: এর ব্রাউজার ইঞ্জিন মালিকানাধীন কোডেক ছাড়াই তৈরি হয়েছে, এবং এই প্ল্যাটফর্মের জন্য সেগুলিসহ Whatly-এর কোনো বিল্ড নেই। ছবি এবং WebM/VP9 ভিডিও কাজ করে; MP4 পাঠাতে, প্রথমে এটিকে WebM-এ রূপান্তর করুন বা নথি হিসেবে শেয়ার করুন। (বন্ধ করতে ক্লিক করুন।)</translation>
@@ -1748,11 +1749,11 @@ Open Settings now?</source>
         <translation>বিন এটি সরিয়ে দেয়; এটি আবার ডাউনলোড করা যায়।</translation>
     </message>
     <message>
+        <location filename="../backup.cpp" line="48"/>
+        <location filename="../backup.cpp" line="66"/>
         <location filename="../chatwallpaper.cpp" line="150"/>
         <location filename="../customcss.cpp" line="88"/>
         <location filename="../customjs.cpp" line="84"/>
-        <location filename="../backup.cpp" line="48"/>
-        <location filename="../backup.cpp" line="66"/>
         <source>Cannot create %1</source>
         <translation>%1 তৈরি করা যায়নি</translation>
     </message>
@@ -1808,17 +1809,17 @@ Open Settings now?</source>
         <translation>অনুবাদ পরিষেবা কোনো লেখা ফেরত দেয়নি।</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="230"/>
+        <location filename="../translator.cpp" line="237"/>
         <source>No translation endpoint is configured (Settings → Translation).</source>
         <translation>কোনো অনুবাদ এন্ডপয়েন্ট কনফিগার করা নেই (সেটিংস → অনুবাদ)।</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="236"/>
+        <location filename="../translator.cpp" line="243"/>
         <source>Nothing to translate.</source>
         <translation>অনুবাদ করার কিছু নেই।</translation>
     </message>
     <message>
-        <location filename="../translator.cpp" line="262"/>
+        <location filename="../translator.cpp" line="269"/>
         <source>Translation failed.</source>
         <translation>অনুবাদ ব্যর্থ হয়েছে।</translation>
     </message>

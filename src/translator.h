@@ -45,8 +45,12 @@ QString replaceComposerScript(const QString &text);
 // JS showing a small dismissable toast with `text` near the current selection
 // (or bottom-centre if there is none). The text is JSON-escaped. When
 // `persistent` is true the toast stays until replaced or hidden (for long
-// operations); otherwise it fades after a few seconds.
-QString toastScript(const QString &text, bool persistent = false);
+// operations); otherwise it fades after a few seconds. `top` ignores the
+// selection and puts the toast at the top instead, which is where a notice
+// about the app itself belongs: bottom-centre is over the composer, so a
+// persistent one has to be cleared before the next message can be typed.
+QString toastScript(const QString &text, bool persistent = false,
+                    bool top = false);
 // JS removing the toast, if any (pairs with a persistent toastScript()).
 QString hideToastScript();
 

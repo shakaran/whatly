@@ -174,13 +174,14 @@ QString hideToastScript() {
       "if(e)e.remove();})();");
 }
 
-QString toastScript(const QString &text, bool persistent) {
+QString toastScript(const QString &text, bool persistent, bool top) {
   QString js = QString::fromLatin1(R"JS(
 (function () {
   'use strict';
   try {
     var TEXT = __TEXT__;
     var PERSIST = __PERSIST__;
+    var TOP = __TOP__;
     var old = document.getElementById('whatly-translate-toast');
     if (old) old.remove();
     var t = document.createElement('div');
@@ -191,16 +192,29 @@ QString toastScript(const QString &text, bool persistent) {
       'box-shadow:0 6px 22px rgba(0,0,0,.5);font-size:14px;line-height:1.4;' +
       'white-space:pre-wrap;cursor:pointer;';
     // Anchor above the current selection when there is one, else bottom-centre.
+    // A toast about the app itself has no selection to sit by and nothing to do
+    // with the conversation, so it is put at the top out of the way instead.
     var x = null, y = null;
     try {
-      var sel = window.getSelection();
+      var sel = TOP ? null : window.getSelection();
       if (sel && sel.rangeCount) {
         var r = sel.getRangeAt(0).getBoundingClientRect();
         if (r && (r.width || r.height)) { x = r.left; y = r.top; }
       }
     } catch (e) {}
     if (x === null) {
-      t.style.left = '50%'; t.style.bottom = '90px';
+      t.style.left = '50%';
+      if (TOP) {
+        // Under the conversation header rather than over it: the header is
+        // where the call buttons such a notice is usually about actually are,
+        // and covering them would hide what it is asking the reader to look at.
+        var head = document.querySelector('#main header');
+        var hb = head && head.getBoundingClientRect();
+        var under = hb && hb.bottom > 0 ? hb.bottom + 10 : 72;
+        t.style.top = Math.round(under) + 'px';
+      } else {
+        t.style.bottom = '90px';
+      }
       t.style.transform = 'translateX(-50%)';
     } else {
       t.style.left = Math.max(8, Math.min(x, window.innerWidth - 320)) + 'px';
@@ -217,6 +231,8 @@ QString toastScript(const QString &text, bool persistent) {
   js.replace(QLatin1String("__TEXT__"), jsString(text));
   js.replace(QLatin1String("__PERSIST__"),
              persistent ? QLatin1String("true") : QLatin1String("false"));
+  js.replace(QLatin1String("__TOP__"),
+             top ? QLatin1String("true") : QLatin1String("false"));
   return js;
 }
 
