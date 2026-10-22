@@ -371,7 +371,7 @@ static void setChromiumFlags() {
     flags += QStringLiteral(" --disable-backgrounding-occluded-windows "
                             "--disable-renderer-backgrounding "
                             "--disable-background-timer-throttling");
-#ifdef QT_DEBUG
+#if defined(QT_DEBUG) || defined(WHATLY_DOGFOOD)
   flags.prepend(QStringLiteral("--remote-debugging-port=9421 "));
 #endif
 

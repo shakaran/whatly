@@ -100,6 +100,7 @@ rm -rf build/
 - `CMAKE_BUILD_TYPE`: `Debug` or `Release` (default: `Release`)
 - `CMAKE_INSTALL_PREFIX`: installation prefix (default: `/usr/local`)
 - `FLATPAK_BUILD`: skip spell-check dictionary compilation (`ON`/`OFF`, default: `OFF`)
+- `WHATLY_DOGFOOD`: a build handed over to be tried, carrying every debugging aid: Chromium's remote debugging port on `127.0.0.1:9421`, and `qDebug()` output that a Release build compiles out (`ON`/`OFF`, default: `OFF`). **Never ship one:** any process on the machine can attach to that port and drive the WhatsApp session. The value is cached, so configure again with `-DWHATLY_DOGFOOD=OFF` before building anything else in the same build directory.
 - `-G <generator>`: build system generator (`Ninja` recommended, or `"Unix Makefiles"`)
 
 ```bash
