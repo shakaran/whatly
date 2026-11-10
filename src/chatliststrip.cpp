@@ -460,6 +460,27 @@ static const char kScriptTemplate[] = R"JS(
           });
     };
 
+    // #side is an id, and still not one element. Calls builds a pane of its own
+    // that carries it, inside the layer laid over the list, and the list's
+    // stays in the page underneath: two of them for as long as Calls is open,
+    // and for about a tenth of a second after Chats is pressed again. The
+    // pane's comes first in the document, so in that tenth of a second a plain
+    // querySelector answers with the call log.
+    //
+    // The list's own is the one nearest the root: its column is a child of the
+    // app's row, where the pane's sits ten levels further down. Depth, because
+    // it takes no layout read and no class name to tell.
+    var listSide = function () {
+      var all = document.querySelectorAll('#side');
+      var best = null, least = Infinity;
+      for (var i = 0; i < all.length; i++) {
+        var depth = 0;
+        for (var n = all[i]; n; n = n.parentElement) depth++;
+        if (depth < least) { least = depth; best = all[i]; }
+      }
+      return best;
+    };
+
     // Find every column the pane occupies and mark it, so the stylesheet has
     // something to select. There is more than one: the wrapper that actually
     // holds #side, and a parallel column inside the legacy `.two` container
@@ -469,7 +490,7 @@ static const char kScriptTemplate[] = R"JS(
     // keeps working after the collapse, when the columns are 97px rather than
     // their natural width.
     var prepare = function () {
-      var side = document.querySelector('#side');
+      var side = listSide();
       if (!side) return false;
       var wrap = side.parentElement;
       var w = wrap.getBoundingClientRect();
@@ -628,7 +649,10 @@ R"JS(
     // it collapses again, exactly as it was.
     var listed = function () {
       try {
-        var pane = document.querySelector('#pane-side');
+        // The list's own rows; see listSide(). A call log still in the page
+        // has rows whether or not Chats does.
+        var side = listSide();
+        var pane = side && side.querySelector('#pane-side');
         return !!(pane && pane.querySelector('[role="row"]'));
       } catch (e) {
         return true;
@@ -701,10 +725,16 @@ R"JS(
         if (!window.__whatlyStripCss) return; // expanded: nothing to keep up
         var style = document.getElementById('whatly-chatlist-strip');
         var applied = !!style;
+        var side = listSide();
         // Leaving or entering Chats, a filter emptying or refilling the list,
-        // or WhatsApp rebuilding the pane under us.
+        // or WhatsApp rebuilding the pane under us. That last one is asked of
+        // the list's own column and not of the page: a mark left anywhere else
+        // used to answer for all of them, so a column that had lost its own was
+        // never given it back. It cannot spin, because marking that very column
+        // is the last thing prepare() does with the marks.
         if (applied !== wanted() ||
-            (applied && !document.querySelector('[data-whatly-pane]')))
+            (applied &&
+             !(side && side.parentElement.hasAttribute('data-whatly-pane'))))
           sync();
         // On a cold start the script runs before WhatsApp has built the filter
         // row, so this is also how the buttons first get their letters.
