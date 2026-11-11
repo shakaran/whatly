@@ -62,6 +62,19 @@ static const char kCollapseCss[] =
     "flex-basis:auto!important;width:%1!important;"
     "min-width:%1!important;max-width:%1!important}"
     "#side,#pane-side{overflow-x:hidden!important}"
+    // How wide a row is depends on whether the list scrolls, and the clip
+    // below cuts at the row's own edge. A list long enough to scroll draws its
+    // scrollbar, and a row ends where that begins: just past the avatar. A list
+    // that fits (a filter with a handful of chats in it) draws none, the row
+    // takes the scrollbar's width as well, and what shows in it is the start of
+    // everything the clip was hiding: the time wrapped to one letter per line,
+    // the edge of WhatsApp's own unread badge, a sliver of each down the
+    // strip's right-hand side. So the scrollbar's space is kept whether or not
+    // there is anything to scroll, and a short list is laid out exactly as a
+    // long one is: the same row, the same clip, the count pill in the same
+    // place. A long list is untouched, because that space is where its
+    // scrollbar already is.
+    "#pane-side{scrollbar-gutter:stable!important}"
     "#pane-side [role=\"row\"]{overflow:hidden!important}"
     // The unread count, put back. WhatsApp's own badge sits at the right-hand end
     // of a full-width row, so a 97px column cuts it off — and losing it is losing

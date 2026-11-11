@@ -1157,6 +1157,15 @@ private slots:
     // height and fold the section into a 97px box.
     QVERIFY(!on.contains(QLatin1String("flex:0 0")));
     QVERIFY(on.contains(QLatin1String("flex-basis:auto")));
+    // A list short enough to fit draws no scrollbar, and its rows would be
+    // that much wider than a long list's: enough for the clip at the row's
+    // edge to let the start of the time and of WhatsApp's own unread badge
+    // show down the strip's right side. The list keeps its scrollbar's space
+    // instead, and only while collapsed: expanded, the scrollbar is
+    // WhatsApp's to lay out.
+    QVERIFY(on.contains(
+        QLatin1String("#pane-side{scrollbar-gutter:stable!important}")));
+    QVERIFY(!off.contains(QLatin1String("scrollbar-gutter")));
     // Collapsed, the clipped name/preview/time stay reachable as a hover
     // preview — a clone of the row, so emoji and formatting survive — and the
     // clipped search box stays reachable with one click.
